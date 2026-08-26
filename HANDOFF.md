@@ -64,6 +64,11 @@ Der Engine-Picker soll von der reinen Liste zu einem **Identifikations-Assistent
   bei neuen Baureihen im Katalog mitpflegen
 - `content/index.json`-Versionsstring wird im Footer angezeigt (`vdev` lokal) — beim Release prüfen
 
+## Weiterentwicklung mit Subagenten
+
+Die Zerlegung des Backlogs in parallelisierbare Arbeitspakete (Wellen, Datei-Eigentum,
+Abnahmekriterien) steht in `docs/SUBAGENT-PLAN.md`.
+
 ## Arbeits-Konventionen
 
 - Commits: Deutsch, Bullet-Sektionen im Body
