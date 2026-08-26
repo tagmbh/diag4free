@@ -929,3 +929,72 @@ code, .measure-target, .pin-num, .doc-code {
   .tabbar, .step-answerbar { display: none !important; }
   .guide-step { padding-bottom: 0 !important; }
 }
+
+/* ============================================================
+   TRICHTER auf Touch
+   ============================================================ */
+@media (max-width: 960px) {
+  /* Zwei Karten pro Reihe — genug Fläche zum Treffen, genug Übersicht */
+  .pick-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+  .pick-card { padding: var(--space-2); min-height: 132px; }
+  .pick-art svg { max-height: 62px; }
+  .pick-name { font-size: var(--text-sm); }
+  .pick-sub, .pick-meta { font-size: 11.5px; }
+
+  /* Cockpit untereinander — nebeneinander wird auf dem Phone unlesbar */
+  .cockpit { grid-template-columns: 1fr; }
+  .cockpit-veh, .cockpit-eng { min-height: 76px; }
+
+  /* Filter-Chips: horizontal wischbar statt umbrechend */
+  .chip-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .chip-row::-webkit-scrollbar { display: none; }
+  .fchip { flex: none; min-height: 44px; }
+
+  .filter-row { flex-direction: column; gap: var(--space-3); }
+
+  /* Stepper kompakter, aber Knoten bleiben antippbar */
+  .stepper { margin-bottom: var(--space-4); }
+  .step-dot { width: 44px; height: 44px; }
+  .step-node + .step-node::before { top: 21px; }
+  .step-label { font-size: 12px; }
+
+  .route { min-height: 96px; }
+}
+
+@media (max-width: 380px) {
+  /* Auf sehr schmalen Geräten eine Karte pro Reihe — lieber groß als gequetscht */
+  .pick-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Kopfbereich verdichten: die Fahrzeuge müssen ohne Scrollen sichtbar sein.
+   Stepper, Überschrift und zwei Filterzeilen haben vorher den ganzen ersten
+   Bildschirm belegt — die Einladung zum Tippen lag unter der Falz. --- */
+@media (max-width: 960px) {
+  .view-inner .page-title { font-size: 1.375rem; line-height: 1.18; }
+  .view-inner .page-lead  { font-size: var(--text-sm); line-height: 1.4; }
+
+  .stepper { gap: 0; margin-bottom: var(--space-3); }
+  .step-dot { width: 34px; height: 34px; font-size: 12px; }
+  .step-dot svg { width: 14px; height: 14px; }
+  /* Nur die rücksprungfähigen Knoten brauchen die volle Trefferfläche —
+     ohne das Layout zu verschieben (pro-rules: Hitbox erweitern, nicht Größe). */
+  .step-dot:not(:disabled)::after { content: ''; position: absolute; inset: -7px; }
+  .step-node + .step-node::before { top: 16px; }
+  .step-label { font-size: 11px; }
+  .step-value { font-size: 11px; }
+
+  .filter-row {
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+  .filter-group { gap: var(--space-1); }
+  .fchip { min-height: 40px; }
+  .filter-legend { font-size: 10px; }
+}

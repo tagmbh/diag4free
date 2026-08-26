@@ -1,0 +1,9 @@
+# Werkzeuge, keine Projektinhalte — und alles hier würde von GitHub Pages
+# (deployt `path: '.'`) mit ausgeliefert werden.
+.agents/
+.claude/skills/
+skills-lock.json
+
+# Lokale Vorschau-/Scratch-Dateien
+preview.html
+node_modules/

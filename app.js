@@ -22,7 +22,8 @@
         series: state.series,
         engine: state.engine,
         theme: state.theme,
-        view: state.view
+        view: state.view,
+        picked: state.picked
       }));
     } catch { /* Quota / Private-Mode ignore */ }
   };
@@ -119,6 +120,10 @@
     drawer: null,     // { docId | article }
     data: null,       // content/index.json
     software: null,   // content/software.json (lazy)
+    engines: null,    // content/engines.json (lazy, optional)
+    picked: false,    // hat der Nutzer Fahrzeug+Motor bewusst gewählt?
+    vehEra: 'Alle',   // Filter im Fahrzeug-Schritt
+    vehBody: 'Alle',
     installEvt: null,
     obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
@@ -176,43 +181,70 @@
 
   // -------- Engine-Picker Dialog --------
   const openEnginePicker = () => {
-    const model = state.data.models.groups.flatMap(g => g.models).find(m => m.id === state.series);
+    const model = activeModel();
     if (!model) return;
     const dlg = document.createElement('div');
     dlg.className = 'dialog-backdrop';
     dlg.setAttribute('role', 'dialog');
     dlg.setAttribute('aria-modal', 'true');
     dlg.setAttribute('aria-label', 'Motor wählen');
-    dlg.innerHTML = `
-      <div class="dialog">
-        <div class="dialog-header">
-          <h2>Motor wählen · ${escapeHtml(state.series.toUpperCase())}</h2>
-          <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
-        </div>
-        <div class="dialog-body">
-          <p class="dialog-lead">Filtert Dokumente und Diagnosepfade auf den gewählten Aggregat-Kontext.</p>
-          <div class="engine-list">
-            ${model.engines.map(e => `
-              <button class="engine-option ${e === state.engine ? 'active' : ''}" data-engine="${escapeHtml(e)}">
-                <span class="engine-name">${escapeHtml(e)}</span>
-                ${e === state.engine ? '<span class="engine-badge">aktiv</span>' : ''}
-              </button>`).join('')}
+
+    const paint = () => {
+      dlg.innerHTML = `
+        <div class="dialog dialog-wide">
+          <div class="dialog-header">
+            <h2>Welcher Motor sitzt drin?</h2>
+            <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
           </div>
-        </div>
-      </div>`;
-    document.body.appendChild(dlg);
-    const close = () => { dlg.remove(); };
-    dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
-    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
-    dlg.querySelectorAll('[data-engine]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setEngine(btn.dataset.engine);
-        close();
+          <div class="dialog-body">
+            <p class="dialog-lead">${escapeHtml(model.name)} · ${escapeHtml(model.years)}. Bauform und Aufladung sind gezeichnet — im Zweifel Bohrungen zählen und mit dem Motorraum vergleichen.</p>
+            <div class="pick-grid pick-grid-eng">
+              ${model.engines.map(e => {
+                const spec = engineSpec(e);
+                const sub = spec
+                  ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ')
+                  : 'Steckbrief folgt';
+                return `<button class="pick-card ${e === state.engine ? 'on' : ''}" data-engine="${escapeHtml(e)}" aria-label="${escapeHtml(e)}${spec ? ', ' + escapeHtml(sub) : ''}">
+                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+                  <div class="pick-body">
+                    <span class="pick-name">${escapeHtml(e)}</span>
+                    <span class="pick-sub">${escapeHtml(sub)}</span>
+                    ${(spec?.id_marks || []).length ? `<span class="pick-meta">${escapeHtml(spec.id_marks[0])}</span>` : ''}
+                  </div>
+                  ${e === state.engine ? '<span class="pick-badge">aktiv</span>' : ''}
+                </button>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>`;
+      bind();
+    };
+
+    const close = () => { dlg.remove(); document.removeEventListener('keydown', esc); };
+    const esc = (e) => { if (e.key === 'Escape') close(); };
+
+    const bind = () => {
+      dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
+      dlg.querySelectorAll('[data-engine]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          haptic();
+          setEngine(btn.dataset.engine);
+          state.picked = true;
+          savePrefs();
+          close();
+          render();
+        });
       });
-    });
-    const esc = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    };
+
+    document.body.appendChild(dlg);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
     document.addEventListener('keydown', esc);
-    dlg.querySelector('.engine-option')?.focus();
+
+    // Steckbriefe nachladen und dann neu zeichnen — der Dialog steht sofort
+    paint();
+    loadEngines().then(paint);
+    dlg.querySelector('.pick-card')?.focus();
   };
 
   const updateContext = () => {
@@ -348,114 +380,231 @@
     updateResumeDot();
   };
 
+  // -------- Motor-Steckbriefe (optional) --------
+  // engines.json ist bewusst optional: fehlt sie, bleiben die Motorkarten
+  // textbasiert. Sobald die Datei liegt, erscheinen Schema und Fakten.
+  const loadEngines = async () => {
+    if (state.engines !== null) return state.engines;
+    try {
+      const resp = await fetch('./content/engines.json', { cache: 'no-cache' });
+      state.engines = resp.ok ? await resp.json() : {};
+    } catch { state.engines = {}; }
+    return state.engines;
+  };
+  const engineSpec = (id) => (state.engines && state.engines[id]) || null;
+
+  const litres = (cc) => typeof cc === 'number' ? (cc / 1000).toFixed(1).replace('.', ',') + ' l' : null;
+  const powerRange = (spec) => {
+    const ps = (spec?.power_variants || []).map(v => v.ps).filter(n => typeof n === 'number');
+    if (!ps.length) return null;
+    const lo = Math.min(...ps), hi = Math.max(...ps);
+    return lo === hi ? `${lo} PS` : `${lo}–${hi} PS`;
+  };
+
+  const allModels = () => state.data.models.groups.flatMap(g => g.models.map(m => ({ ...m, group: g })));
+  const activeModel = () => allModels().find(m => m.id === state.series);
+
   // -------- OVERVIEW --------
   const renderOverview = () => {
     const panel = $('#overviewPanel');
-    const docsForModel = currentModelDocs();
-    const guidesForModel = currentGuides();
-    const activeGroup = state.data.models.groups.find(g => g.models.some(m => m.id === state.series));
-    const activeModel = activeGroup.models.find(m => m.id === state.series);
-    const totalDocs = state.data.stats.total_docs;
-    const totalGuides = state.data.stats.total_guides;
+    const model = activeModel();
+    if (!model) return;
+
+    // Der Trichter hat drei Stufen. Solange nichts bewusst gewählt wurde,
+    // steht die Fahrzeugwahl vorn — das ist der Einstieg, nicht eine Liste
+    // irgendwo weiter unten.
+    const stage = !state.picked ? 'vehicle' : 'ready';
+
+    const docCount = currentModelDocs().length;
+    const scopedCount = scopedDocs().length;
+    const guideCount = currentGuides().length;
 
     panel.innerHTML = `
+      ${stepperHtml(stage)}
+      ${stage === 'vehicle' ? vehicleStepHtml() : readyStepHtml(model, scopedCount, guideCount, docCount)}
+    `;
+
+    bindOverview(panel, stage);
+  };
+
+  // -------- Trichter: Fortschrittsanzeige --------
+  const stepperHtml = (stage) => {
+    const model = activeModel();
+    const steps = [
+      { key: 'vehicle', label: 'Fahrzeug', value: state.picked ? model.name : null },
+      { key: 'engine',  label: 'Motor',    value: state.picked ? state.engine : null },
+      { key: 'ready',   label: 'Wissen',   value: null }
+    ];
+    const activeIdx = stage === 'vehicle' ? 0 : 2;
+    return `
+      <ol class="stepper" aria-label="Fortschritt">
+        ${steps.map((st, i) => `
+          <li class="step-node ${i < activeIdx ? 'done' : ''} ${i === activeIdx ? 'current' : ''}">
+            <button class="step-dot" ${i < activeIdx ? `data-goto-step="${st.key}"` : 'disabled'}
+              aria-label="${escapeHtml(st.label)}${st.value ? ': ' + escapeHtml(st.value) : ''}">
+              ${i < activeIdx ? iconSvg('check') : `<span>${i + 1}</span>`}
+            </button>
+            <span class="step-label">${escapeHtml(st.label)}</span>
+            ${st.value ? `<span class="step-value">${escapeHtml(st.value)}</span>` : ''}
+          </li>`).join('')}
+      </ol>`;
+  };
+
+  // -------- Schritt 1: Fahrzeug antippen --------
+  const vehicleStepHtml = () => {
+    const models = allModels();
+    const eras = ['Alle', ...new Set(state.data.models.groups.map(g => g.label))];
+    const bodies = ['Alle', ...new Set(models.map(m => m.body).filter(Boolean))];
+
+    const shown = models.filter(m =>
+      (state.vehEra === 'Alle' || m.group.label === state.vehEra) &&
+      (state.vehBody === 'Alle' || m.body === state.vehBody));
+
+    return `
       <div class="page-header">
         <div>
-          <h1 class="page-title" id="ovTitle">Übersicht · ${escapeHtml(activeModel.name)}</h1>
-          <p class="page-lead">${escapeHtml(activeModel.desc)} · ${escapeHtml(activeModel.years)} · Motoren: ${activeModel.engines.map(escapeHtml).join(', ')}</p>
+          <h1 class="page-title" id="ovTitle">Welches Fahrzeug hast du?</h1>
+          <p class="page-lead">Tippe deine Baureihe an. Danach den Motor — ab dann ist alles auf dein Fahrzeug gefiltert.</p>
         </div>
       </div>
 
-      <div class="kpi-grid">
-        <div class="kpi">
-          <div class="kpi-label">Docs · aktives Modell</div>
-          <div class="kpi-value">${docsForModel.length}</div>
-          <div class="kpi-hint">${scopedDocs().length} passend zum Motor ${escapeHtml(state.engine)}</div>
+      <div class="filter-row">
+        <div class="filter-group">
+          <span class="filter-legend">Ära</span>
+          <div class="chip-row">
+            ${eras.map(e => `<button class="fchip ${state.vehEra === e ? 'on' : ''}" data-era="${escapeHtml(e)}">${escapeHtml(e === 'Alle' ? 'Alle' : e.split(' (')[0])}</button>`).join('')}
+          </div>
         </div>
-        <div class="kpi">
-          <div class="kpi-label">Diagnosepfade</div>
-          <div class="kpi-value">${guidesForModel.length}</div>
-          <div class="kpi-hint">geführte Fehlersuchen</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Wissensbasis gesamt</div>
-          <div class="kpi-value kpi-accent">${totalDocs}</div>
-          <div class="kpi-hint">${totalGuides} Guides über alle Baureihen</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Motor aktiv</div>
-          <div class="kpi-value" style="font-family:var(--font-mono);font-size:var(--text-lg);">${escapeHtml(state.engine)}</div>
-          <div class="kpi-hint">${activeModel.engines.length} Motoren verfügbar</div>
-          <button class="link-inline" data-change-engine aria-label="Motor wechseln" style="margin-top:var(--space-2);font-size:13px;">→ Motor wechseln</button>
+        <div class="filter-group">
+          <span class="filter-legend">Karosserie</span>
+          <div class="chip-row">
+            ${bodies.map(b => `<button class="fchip ${state.vehBody === b ? 'on' : ''}" data-body="${escapeHtml(b)}">${escapeHtml(bodyLabel(b))}</button>`).join('')}
+          </div>
         </div>
       </div>
 
-      <div class="page-header" style="margin-top:var(--space-8);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Schnellzugriff</h2>
-          <p class="page-lead">Häufig genutzte Dokumente und Diagnosepfade für ${escapeHtml(activeModel.name)}.</p>
-        </div>
-      </div>
-
-      <div class="tile-grid">
-        ${docsForModel.slice(0, 3).map(d => `
-          <button class="tile" data-open-doc="${d.id}">
-            <span class="tile-era">${escapeHtml(d.cat)}</span>
-            <span class="tile-title">${escapeHtml(d.title)}</span>
-            <span class="tile-desc">${escapeHtml(d.summary.slice(0, 120))}…</span>
-            <div class="tile-meta">
-              <span>${escapeHtml(d.id)}</span>
-              <span>${escapeHtml(d.type)}</span>
-            </div>
-          </button>`).join('')}
-        ${guidesForModel.slice(0, 2).map(g => `
-          <button class="tile" data-open-guide="${g.id}">
-            <span class="tile-era" style="color:var(--color-warning);">Diagnose · ${escapeHtml(g.code)}</span>
-            <span class="tile-title">${escapeHtml(g.name)}</span>
-            <span class="tile-desc">${escapeHtml(g.desc)}</span>
-            <div class="tile-meta">
-              <span>${(g.steps || []).length} Schritte</span>
-              <span>geführt</span>
-            </div>
-          </button>`).join('')}
-      </div>
-
-      <div class="page-header" style="margin-top:var(--space-10);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Alle Baureihen</h2>
-          <p class="page-lead">Zur anderen Baureihe wechseln.</p>
-        </div>
-      </div>
-
-      <div class="tile-grid">
-        ${state.data.models.groups.map(group => `
-          ${group.models.map(m => {
-            const count = state.data.docs.filter(d => d.model === m.id).length;
-            const active = m.id === state.series;
-            return `<button class="tile" data-set-model="${m.id}" ${active ? 'style="border-color:var(--color-primary);background:var(--color-primary-tint-2);"' : ''}>
-              <span class="tile-era">${escapeHtml(group.era)}</span>
-              <span class="tile-title">${escapeHtml(m.name)} <span style="font-weight:400;color:var(--color-text-muted);font-size:var(--text-sm);">· ${escapeHtml(m.years)}</span></span>
-              <span class="tile-desc">${escapeHtml(m.desc)}</span>
-              <div class="tile-meta">
-                <span>${count} Docs</span>
-                <span>${m.engines.length} Motoren</span>
+      ${shown.length === 0 ? `
+        <div class="empty">${iconSvg('empty')}<h3>Keine Baureihe passt zu dieser Auswahl</h3>
+        <p>Filter zurücksetzen und erneut versuchen.</p></div>` : `
+        <div class="pick-grid">
+          ${shown.map(m => {
+            const n = state.data.docs.filter(d => d.model === m.id).length;
+            const era = /19[89]/.test(m.years) ? 'classic' : 'modern';
+            return `<button class="pick-card" data-pick-model="${escapeHtml(m.id)}" aria-label="${escapeHtml(m.name)}, ${escapeHtml(m.years)}">
+              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era)}</div>
+              <div class="pick-body">
+                <span class="pick-name">${escapeHtml(m.name)}</span>
+                <span class="pick-sub">${escapeHtml(m.years)} · ${escapeHtml(bodyLabel(m.body))}</span>
+                <span class="pick-meta">${n} Docs · ${m.engines.length} Motoren</span>
               </div>
             </button>`;
           }).join('')}
-        `).join('')}
+        </div>`}
+    `;
+  };
+
+  const bodyLabel = (b) => ({ Schraegheck: 'Schrägheck', Coupe: 'Coupé' }[b] || b || '—');
+
+  // -------- Schritt 2: Motor antippen (Dialog) --------
+  const readyStepHtml = (model, scopedCount, guideCount, docCount) => {
+    const spec = engineSpec(state.engine);
+    const era = /19[89]/.test(model.years) ? 'classic' : 'modern';
+    const facts = spec ? [
+      ['Bauform', spec.layout], ['Aufladung', spec.aspiration],
+      ['Hubraum', litres(spec.displacement_cc)], ['Leistung', powerRange(spec)],
+      ['Bauzeit', spec.years], ['Ventiltrieb', (spec.valvetrain || []).join(' · ')]
+    ].filter(([, v]) => v) : [];
+
+    return `
+      <div class="cockpit">
+        <button class="cockpit-veh" data-restart-pick aria-label="Anderes Fahrzeug wählen">
+          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era)}</div>
+          <div class="cockpit-veh-body">
+            <span class="pick-name">${escapeHtml(model.name)}</span>
+            <span class="pick-sub">${escapeHtml(model.years)} · ${escapeHtml(model.desc)}</span>
+            <span class="cockpit-change">Anderes Fahrzeug</span>
+          </div>
+        </button>
+
+        <button class="cockpit-eng" data-change-engine aria-label="Anderen Motor wählen">
+          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+          <div class="cockpit-eng-body">
+            <span class="pick-name">${escapeHtml(state.engine)}</span>
+            <span class="pick-sub">${spec ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ') : 'Steckbrief folgt'}</span>
+            <span class="cockpit-change">Anderer Motor</span>
+          </div>
+        </button>
+      </div>
+
+      ${facts.length ? `
+        <div class="facts">
+          <h2 class="facts-title">${escapeHtml(state.engine)} · Fakten</h2>
+          <dl class="facts-grid">
+            ${facts.map(([k, v]) => `<div><dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd></div>`).join('')}
+          </dl>
+          ${(spec.id_marks || []).length ? `
+            <h3 class="facts-sub">Im Motorraum erkennen</h3>
+            <ul class="facts-list">${spec.id_marks.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+          ${(spec.weak_points || []).length ? `
+            <h3 class="facts-sub">Bekannte Schwachstellen</h3>
+            <ul class="facts-list">${spec.weak_points.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+        </div>` : ''}
+
+      <div class="page-header" style="margin-top:var(--space-8);">
+        <div>
+          <h2 class="page-title" style="font-size:var(--text-lg);">Womit weiter?</h2>
+          <p class="page-lead">Alles unten ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert.</p>
+        </div>
+      </div>
+
+      <div class="route-grid">
+        <button class="route" data-route="troubleshoot">
+          <span class="route-icon">${iconSvg('wrench')}</span>
+          <span class="route-title">Diagnosepfad starten</span>
+          <span class="route-desc">Geführte Fehlersuche, Schritt für Schritt</span>
+          <span class="route-count">${guideCount}</span>
+        </button>
+        <button class="route" data-route="docs">
+          <span class="route-icon">${iconSvg('docs')}</span>
+          <span class="route-title">Tech-Docs</span>
+          <span class="route-desc">Pinbelegungen, Prüfwerte, Werkzeuge</span>
+          <span class="route-count">${scopedCount}</span>
+        </button>
+        <button class="route" data-route="measure">
+          <span class="route-icon">${iconSvg('check')}</span>
+          <span class="route-title">Messplan</span>
+          <span class="route-desc">Checkliste von Versorgung bis Motor</span>
+          <span class="route-count">${measurePlan.length}</span>
+        </button>
       </div>
     `;
+  };
 
-    panel.querySelectorAll('[data-open-doc]').forEach(el =>
-      el.addEventListener('click', () => openDocDrawer(el.dataset.openDoc))
-    );
-    panel.querySelectorAll('[data-open-guide]').forEach(el =>
-      el.addEventListener('click', () => { state.guide = el.dataset.openGuide; state.step = 0; state.history = []; state.result = null; setView('troubleshoot'); })
-    );
-    panel.querySelectorAll('[data-set-model]').forEach(el =>
-      el.addEventListener('click', () => setSeries(el.dataset.setModel))
-    );
+  const bindOverview = (panel, stage) => {
+    panel.querySelectorAll('[data-era]').forEach(b => b.addEventListener('click', () => {
+      state.vehEra = b.dataset.era; renderOverview();
+    }));
+    panel.querySelectorAll('[data-body]').forEach(b => b.addEventListener('click', () => {
+      state.vehBody = b.dataset.body; renderOverview();
+    }));
+    panel.querySelectorAll('[data-pick-model]').forEach(b => b.addEventListener('click', () => {
+      haptic();
+      setSeries(b.dataset.pickModel);
+      state.picked = true;
+      savePrefs();
+      render();
+      openEnginePicker();          // direkt weiter zu Schritt 2
+    }));
+    panel.querySelector('[data-restart-pick]')?.addEventListener('click', () => {
+      state.picked = false; savePrefs(); renderOverview();
+    });
     panel.querySelector('[data-change-engine]')?.addEventListener('click', openEnginePicker);
+    panel.querySelectorAll('[data-goto-step]')?.forEach(b => b.addEventListener('click', () => {
+      state.picked = false; savePrefs(); renderOverview();
+    }));
+    panel.querySelectorAll('[data-route]').forEach(b => b.addEventListener('click', () => {
+      haptic(); setView(b.dataset.route);
+    }));
   };
 
   const changeEngineDialog_LEGACY = () => {
@@ -1548,6 +1697,8 @@
       }
     }
 
+    state.picked = prefs.picked === true;
+
     updateContext();
     renderSidebarModels();
     buildFuse();
@@ -1556,6 +1707,9 @@
     applyHash();
     render();
     registerSW();
+
+    // Motor-Steckbriefe nachladen; sind sie da, zeichnen sich die Schemata
+    loadEngines().then(() => render());
 
     // Status footer
     const now = new Date();

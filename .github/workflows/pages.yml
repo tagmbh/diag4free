@@ -24,7 +24,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+
+      - name: Validate content
+        run: node scripts/validate-content.mjs
 
       - name: Build content index
         run: node scripts/build-index.mjs

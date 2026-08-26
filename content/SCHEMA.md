@@ -161,3 +161,126 @@ Steuert Sidebar-Baum. Änderungen erfordern kompletten Katalog-Reload.
 
 Feld `obd_protocol` steuert später welche Init-Sequenz der OBD-Layer verwendet
 (`KWP2000` · `ISO9141` · `D-CAN` · `PT-CAN` · `E-NET`).
+
+---
+
+## `engines.json` — Motor-Steckbriefe (Identifikations-Assistent)
+
+Eine Datei für alle Baureihen, Schlüssel = Motor-ID wie in `models.json` → `engines[]`.
+Wird **separat** gefetcht (nicht Teil von `index.json`), wie `software.json`.
+
+**Die Datei ist optional.** Fehlt sie oder fehlt ein Motor darin, fällt der
+Motor-Picker auf die schlichte Namensliste zurück — die App bleibt funktionsfähig.
+
+```json
+{
+  "N52": {
+    "name": "N52",
+    "layout": "R6",
+    "aspiration": "Sauger",
+    "displacement_cc": 2996,
+    "years": "2004–2015",
+    "power_variants": [
+      { "ps": 218, "kw": 160, "models": ["E88 120i", "E90 325i"] },
+      { "ps": 258, "kw": 190, "models": ["E90 330i"] }
+    ],
+    "valvetrain": ["Valvetronic", "Doppel-VANOS"],
+    "block": "Magnesium-Aluminium-Verbund",
+    "id_marks": [
+      "Ventildeckel aus Kunststoff mit integriertem Ölabscheider",
+      "Valvetronic-Stellmotor liegend auf der Auslassseite"
+    ],
+    "weak_points": ["Ventildeckeldichtung", "Elektrische Wasserpumpe"],
+    "sources": [{ "label": "BMW TIS", "note": "SP-Daten N52 Motormechanik" }]
+  }
+}
+```
+
+### Feld-Referenz
+
+| Feld | Typ | Pflicht | Beschreibung |
+|------|-----|:------:|--------------|
+| `name` | string | ✓ | Anzeigename, i. d. R. gleich dem Schlüssel |
+| `layout` | enum | ✓ | `R4` · `R6` · `V8` · `V10` · `V12` — steuert die SVG-Zeichnung |
+| `aspiration` | enum | ✓ | `Sauger` · `Turbo` · `Bi-Turbo` · `Kompressor` — steuert Lader-Symbol |
+| `displacement_cc` | number | – | Hubraum in cm³; wird als Liter gerundet angezeigt |
+| `years` | string | – | Bauzeitraum |
+| `power_variants` | array | – | `{ps, kw, models[]}` — je Leistungsstufe eine Zeile |
+| `valvetrain` | string[] | – | Ventiltrieb-Merkmale (Valvetronic, VANOS …) |
+| `block` | string | – | Blockmaterial / Bauweise |
+| `id_marks` | string[] | – | **Erkennungsmerkmale im Motorraum** — Kern der Identifikation |
+| `weak_points` | string[] | – | Bekannte Schwachstellen |
+| `sources` | array | – | Attribution wie bei Docs |
+
+### Visualisierung
+
+Die Motorgrafik wird **aus `layout` und `aspiration` parametrisch erzeugt**
+(`engineSvg()` in `app.js`) — Zylinderzahl und -anordnung ergeben die Zeichnung,
+`aspiration` blendet das Lader-Symbol ein. Deshalb sind keine gezeichneten Assets
+nötig: jeder neue Motor bekommt seine Grafik allein aus den Daten. Fremde
+Schnittzeichnungen oder 3D-Modelle werden **nicht** eingebettet (Lizenzrisiko,
+siehe Inhaltsregeln in `HANDOFF.md`).
+
+---
+
+## `measure.json` — Messplan mit maschinenlesbaren Sollwerten
+
+Ersetzt den früher in `app.js` hartcodierten Messplan. Wird separat gefetcht.
+
+Der entscheidende Unterschied zur alten Prosa-Form: **Sollwerte sind Zahlen mit
+Einheit**, nicht Fließtext. Nur dadurch kann die App einen gemessenen Wert gegen
+den Sollbereich prüfen und farblich zurückmelden.
+
+```json
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "batt-ruhe",
+      "title": "Batterie-Ruhespannung",
+      "group": "Versorgung",
+      "instruction": "Zündung aus, 30 Min. Ruhe. Messung direkt an den Polen.",
+      "target": { "unit": "V", "min": 12.4, "max": 12.9 },
+      "engines": [],
+      "models": [],
+      "sources": [{ "label": "Bentley", "note": "E46 Elektrik-Grundlagen" }]
+    },
+    {
+      "id": "kerzenbild",
+      "title": "Zündkerzenbild",
+      "group": "Motor",
+      "instruction": "Alle Kerzen ziehen und vergleichen.",
+      "target": { "text": "Rehbraun, trocken · keine Öl- oder Rußspuren" }
+    }
+  ]
+}
+```
+
+### Feld-Referenz
+
+| Feld | Typ | Pflicht | Beschreibung |
+|------|-----|:------:|--------------|
+| `id` | string | ✓ | Eindeutig; trägt den Abhak-Status in `localStorage` |
+| `title` | string | ✓ | Kurzbezeichnung der Messung |
+| `group` | string | – | Abschnitt, z. B. `Versorgung` · `Kommunikation` · `Motor` |
+| `instruction` | string | ✓ | Wie gemessen wird |
+| `target` | object | ✓ | Sollwert — **entweder** numerisch **oder** `text` (siehe unten) |
+| `engines` | string[] | – | Motor-Filter; leer/fehlend = gilt für alle |
+| `models` | string[] | – | Baureihen-Filter; leer/fehlend = gilt für alle |
+| `sources` | array | – | Attribution |
+
+### `target` — numerisch oder textuell
+
+- **Numerisch:** `unit` (Pflicht) plus mindestens eines von `min` / `max` / `nominal`.
+  Optional `tolerance_pct` für „nominal ± x %". Nur bei numerischen Zielen zeigt
+  die App das Eingabefeld und die Sollbereichs-Anzeige.
+- **Textuell:** `{ "text": "…" }` für Sichtprüfungen ohne Messwert. Es erscheint
+  nur die Checkbox, kein Eingabefeld.
+
+Ein `target` ohne `unit` und ohne `text` ist ungültig und wird vom Validator abgelehnt.
+
+### Abhak-Status
+
+Persistiert unter `diag4free.checks.v2` als `{ "<id>": { "done": bool, "value": number } }`.
+Der Schlüssel ist die stabile `id`, **nicht** der Listenindex — sonst verrutschen
+alle Haken, sobald jemand eine Position einfügt.

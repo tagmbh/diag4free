@@ -26,6 +26,20 @@
 - **VIN-Decoder** (Button „VIN" in der Topbar): offline WMI + Modelljahr + Struktur-Validierung; optional Online-Details via NHTSA vPIC (`DecodeVinValues`, CORS-frei); Mapping auf Katalog-Baureihe + Motor mit „Übernehmen"-Button (`setSeries`); Decodes werden in `localStorage` gecacht. Code: `app.js` ab Marker `VIN-DECODER`.
 - **Software-Update-Checker** (`#/software`): Versions-Eingabe (`XX-NNN.NNN.NNN` oder kurz `MX-3.4.31`) → passende UPD-Datei mit Direktlinks auf BMW-CDN (bin + Readme-PDF), Präfix-Referenztabelle (MX/TX = Combox → E88-relevant, UPD01008), Diagnose-Software-Übersicht (INPA/EDIABAS, NCS Expert, ISTA-D, Tool32) und PSdZData/E-Sys-Sektion. Daten: `content/software.json`. Matching-Logik adaptiert aus Idries/bmwfirmware (MIT, attribuiert).
 
+## Gerade abgeschlossen (v0.5.0)
+
+- **Geführter Trichter Fahrzeug → Motor → Wissen** als Einstieg: Fortschrittsanzeige,
+  Filter-Chips (Ära · Karosserie), antippbare Fahrzeugkarten, danach der Motor-Schritt,
+  dann das Cockpit mit Fakten und den drei Wegen ins Wissen (mit Anzahlen).
+- **Parametrische Grafik** (`graphics.js`): Fahrzeug-Seitenansichten aus `body`,
+  Motorschemata aus `layout`/`aspiration`. Gezeichnet statt fotografiert — winzig,
+  offlinefähig, themebar, lizenzfrei, und jede Bohrung stimmt, weil sie aus Daten kommt.
+- **Datenverträge** in `content/SCHEMA.md` für `engines.json` und `measure.json`.
+- **`scripts/validate-content.mjs`** als Tor für eingehende Lieferungen; in der CI
+  vor dem Index-Build. Findet u. a. Guide-Sackgassen, tote Doc-Referenzen,
+  doppelte IDs und widersprüchliche Sollwerte.
+- `models.json` um `body` je Baureihe ergänzt; Actions auf Node 22.
+
 ## Gerade abgeschlossen (v0.4.0)
 
 - **Touch-Bedienebene**: Bottom-Tabbar in der Daumenzone (≤ 960 px, Safe-Area-aware,
@@ -39,9 +53,37 @@
 - **Bugfix**: Fällt das Fuse-CDN aus (erster Start offline), brach `init()` ab und die App
   rendert gar nichts mehr. Jetzt Substring-Suche als Fallback.
 
+## ⇤ Eingehende Content-Lieferung (Cowork-Handoff)
+
+Ein Cowork-Agent destilliert derzeit Daten und liefert sie später per GitHub-Push.
+Damit das kollisionsfrei landet, gilt folgende Aufteilung:
+
+| Wer | Besitzt | Status |
+|-----|---------|--------|
+| **Cowork-Agent** | `content/engines.json`, `content/measure.json`, `content/<modell>/*` | Die Dateien sind hier **bewusst nicht angelegt** — kein Merge-Konflikt |
+| **App/UI** | `app.js`, `graphics.js`, `*.css`, `index.html`, `scripts/*` | Fertig und wartet auf Daten |
+
+**Ablauf beim Eintreffen:**
+
+1. `node scripts/validate-content.mjs` — prüft die Lieferung gegen die Verträge
+   in `content/SCHEMA.md`. Exit-Code 1 bei Verstoß; die CI bricht dann ebenfalls ab.
+2. `node scripts/build-index.mjs`
+3. `sw.js` `VERSION` bumpen, pushen, Live-Check
+
+**Was die Daten auslösen:**
+
+- `content/engines.json` → Motorkarten zeigen statt „Steckbrief folgt" das aus
+  `layout`/`aspiration` gezeichnete Schema plus Fakten, Erkennungsmerkmale und
+  Schwachstellen. Kein Code-Eingriff nötig.
+- `content/measure.json` → ersetzt den hartcodierten Messplan; numerische
+  Sollwerte schalten die Sollbereichs-Prüfung frei.
+
+Beide Dateien sind **optional**: fehlen sie, fällt die App auf den heutigen
+Stand zurück, statt zu brechen. Deshalb kann die Lieferung jederzeit kommen.
+
 ## Offene Todos (priorisiert)
 
-### 1. Motoren-Identifikation mit Visualisierung (NEU — Userwunsch 2026-08-26)
+### 1. Motoren-Identifikation mit Visualisierung — UI steht, Daten offen
 
 Der Engine-Picker soll von der reinen Liste zu einem **Identifikations-Assistenten** ausgebaut werden:
 
