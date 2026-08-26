@@ -1332,6 +1332,20 @@
           <h4>Ausführlicher Artikel</h4>
           <div class="markdown-content" id="articleContent">Lädt …</div>
         </div>` : ''}
+      ${(doc.sources || []).length ? `
+        <div class="detail-section">
+          <h4>Quellen</h4>
+          <ul class="source-list">
+            ${doc.sources.map(q => `
+              <li>
+                ${q.url
+                  ? `<a href="${escapeHtml(q.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(q.label || q.url)}</a>`
+                  : `<span class="source-label">${escapeHtml(q.label || '—')}</span>`}
+                ${q.note ? `<span class="source-note">${escapeHtml(q.note)}</span>` : ''}
+              </li>`).join('')}
+          </ul>
+          <p class="source-hint">Fakten aus diesen Quellen sind neu formuliert, nicht übernommen.</p>
+        </div>` : ''}
     `;
 
     // Footer

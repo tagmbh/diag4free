@@ -24,6 +24,7 @@ const QUIET = process.argv.includes('--quiet');
 const errors = [];
 const warnings = [];
 const offeneArtikel = [];
+const ohneQuellen = [];
 const err = (file, msg) => errors.push(`${file}: ${msg}`);
 const warn = (file, msg) => warnings.push(`${file}: ${msg}`);
 
@@ -98,6 +99,19 @@ async function validateModelContent(modelIds, groupIds) {
         // `article` verweist auf eine Markdown-Datei im selben Verzeichnis.
         // Fehlt sie, ist das kein Vertragsbruch — der Artikel ist geplant,
         // aber noch nicht geschrieben. Ein kaputter Pfad dagegen schon.
+        // Inhaltsregel 3: Fakten stammen aus Quellen und werden neu
+        // formuliert — die Attribution ist das, was das sauber macht.
+        // Fehlt sie, ist das ein Redaktionsstand, kein Vertragsbruch.
+        if (!isArr(d.sources) || d.sources.length === 0) {
+          ohneQuellen.push(d.id);
+        } else {
+          for (const q of d.sources) {
+            if (!isStr(q.label) && !isStr(q.url)) {
+              err(f, `\`${d.id}\`: Quelle ohne \`label\` und ohne \`url\``);
+            }
+          }
+        }
+
         if (d.article !== undefined) {
           if (!isStr(d.article) || !d.article.endsWith('.md')) {
             err(f, `\`${d.id}\`: \`article\` muss ein .md-Dateiname sein`);
@@ -240,6 +254,11 @@ async function main() {
     console.log(`\n○  ${offeneArtikel.length} geplante(r) Artikel noch nicht geschrieben:`);
     for (const a of offeneArtikel) console.log(`   ${a}`);
     console.log('   (kein Vertragsbruch — die App zeigt dort einen Hinweis statt eines Fehlers)');
+  }
+
+  if (ohneQuellen.length) {
+    console.log(`\n○  ${ohneQuellen.length} von ${docIds.size} Docs ohne \`sources\` (Inhaltsregel 3):`);
+    console.log(`   ${ohneQuellen.join(', ')}`);
   }
 
   if (warnings.length) {

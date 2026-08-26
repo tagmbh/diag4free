@@ -1057,3 +1057,8 @@ code, .measure-target, .pin-num, .doc-code {
   .step-dot { width: 30px; height: 30px; }
   .step-node + .step-node::before { top: 14px; }
 }
+
+@media (max-width: 960px) {
+  /* Quellen-Links sind Trefferflächen, keine reine Typografie */
+  .source-list a { display: inline-flex; align-items: center; min-height: 44px; }
+}

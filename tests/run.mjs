@@ -435,6 +435,47 @@ async function main() {
       expect(mitFehlertext.length === 0, 'kein Doc zeigt einen Artikel-Ladefehler',
         mitFehlertext.join(', '));
 
+      // Inhaltsregel 3: gepflegte Quellen müssen auch sichtbar sein. Sie waren
+      // in den Daten vorhanden, wurden aber nirgends gerendert.
+      const belegt = await page.evaluate(async () => {
+        const d = await (await fetch('./content/index.json')).json();
+        return d.docs.filter(x => (x.sources || []).length).map(x => x.id);
+      });
+      if (belegt.length) {
+        // Zu einer Baureihe wechseln, die belegte Docs hat — sonst prüft der
+        // Test nichts und besteht durch Überspringen.
+        const baureihe = await page.evaluate(async (ids) => {
+          const d = await (await fetch('./content/index.json')).json();
+          const doc = d.docs.find(x => ids.includes(x.id));
+          return doc ? doc.model : null;
+        }, belegt);
+        if (baureihe) {
+          await page.goto(`${BASE}/#/model/${baureihe}`, { waitUntil: 'domcontentloaded' });
+          await settle(page, 1200);
+        }
+        await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+        await settle(page, 900);
+        let gezeigt = 0, geprueft = 0;
+        const karten = await page.locator('.doc-card').count();
+        for (let i = 0; i < karten; i++) {
+          const id = await page.locator('.doc-card').nth(i).getAttribute('data-doc');
+          if (!belegt.includes(id)) continue;
+          geprueft++;
+          await page.locator('.doc-card').nth(i).click();
+          await settle(page, 500);
+          if (await page.locator('.source-list li').count() > 0) gezeigt++;
+          await page.keyboard.press('Escape');
+          await settle(page, 300);
+        }
+        if (geprueft > 0) {
+          expect(gezeigt === geprueft, 'Docs mit `sources` zeigen ihre Quellen an',
+            `${gezeigt} von ${geprueft}`);
+        } else {
+          fail('Docs mit `sources` zeigen ihre Quellen an',
+            `keine belegten Docs in Baureihe ${baureihe} sichtbar — der Test hätte nichts geprüft`);
+        }
+      }
+
       await ctx.close();
     }
 
