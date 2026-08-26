@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "id": "classic",
+      "label": "Klassiker (80er–frühe 90er)",
+      "era": "OBD-1 · 20-pol. Rundstecker",
+      "models": [
+        { "id": "e30", "name": "E30", "years": "1982–1994", "engines": ["M20", "M40", "M42", "S14"], "desc": "3er, ADS/EDC-I, Motronic 1.x" },
+        { "id": "e28", "name": "E28", "years": "1981–1988", "engines": ["M20", "M30", "S38"], "desc": "5er, Motronic 1.0/1.1" },
+        { "id": "e34", "name": "E34", "years": "1987–1996", "engines": ["M20", "M50", "M60", "S38"], "desc": "5er, Übergang OBD-1 → OBD-2" }
+      ]
+    },
+    {
+      "id": "obd-transition",
+      "label": "OBD-1/OBD-2-Übergang (90er–2000er)",
+      "era": "DIS/GT1 · INPA · EDIABAS",
+      "models": [
+        { "id": "e36", "name": "E36", "years": "1990–2000", "engines": ["M43", "M44", "M50", "M52", "S50", "S52"], "desc": "3er, OBD-1 bis OBD-2 (ab 09/95 US)" },
+        { "id": "e39", "name": "E39", "years": "1995–2003", "engines": ["M52", "M54", "M62", "S62"], "desc": "5er, DME MS42/MS43, DDE M57" },
+        { "id": "e38", "name": "E38", "years": "1994–2001", "engines": ["M52", "M62", "M73"], "desc": "7er, GM-Getriebe, Nikasil-Thematik" },
+        { "id": "e46", "name": "E46", "years": "1998–2006", "engines": ["M43", "M52", "M54", "M56", "N42", "N46", "S54"], "desc": "3er, Referenzplattform für INPA/NCS" }
+      ]
+    },
+    {
+      "id": "e60-e9x",
+      "label": "CAN-Bus-Ära (2000er–frühe 2010er)",
+      "era": "ISTA/D+P · NCS Expert · E-Sys",
+      "models": [
+        { "id": "e60", "name": "E60/E61", "years": "2003–2010", "engines": ["N52", "N54", "N62", "M54", "M57", "S85"], "desc": "5er, MOST/PT-CAN, iDrive CCC/CIC" },
+        { "id": "e90", "name": "E90/E91/E92/E93", "years": "2004–2013", "engines": ["N43", "N46", "N52", "N53", "N54", "N55", "M57", "N47", "S65"], "desc": "3er, CAS3/EWS4, JBBF" },
+        { "id": "e70", "name": "E70/E71", "years": "2006–2013", "engines": ["N52", "N54", "N55", "N62", "M57", "S63"], "desc": "X5/X6, JBE, integrierte Sicherheitsmodule" },
+        { "id": "e8x", "name": "E81/E82/E87/E88", "years": "2004–2013", "engines": ["N43", "N45", "N46", "N52", "N54", "N55"], "desc": "1er, CAS3/EWS4" }
+      ]
+    },
+    {
+      "id": "f-series",
+      "label": "F-Serie (2010er)",
+      "era": "FEM/BDC · ISTA+ · E-Sys",
+      "models": [
+        { "id": "f10", "name": "F10/F11", "years": "2010–2017", "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"], "desc": "5er, FRM, JBE, FlexRay" },
+        { "id": "f30", "name": "F30/F31/F34", "years": "2011–2019", "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"], "desc": "3er, FEM ab ~03/2014" },
+        { "id": "f15", "name": "F15/F16", "years": "2013–2018", "engines": ["N20", "N55", "N57", "N63", "B57", "S63"], "desc": "X5/X6, ISTA+" },
+        { "id": "f22", "name": "F20/F21/F22/F23", "years": "2011–2019", "engines": ["N13", "N20", "N55", "B38", "B48"], "desc": "1er/2er, FEM/BDC" }
+      ]
+    }
+  ]
+}

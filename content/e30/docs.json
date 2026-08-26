@@ -1,0 +1,44 @@
+{
+  "model": "e30",
+  "docs": [
+    {
+      "id": "D4F-E30-001",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "20-poliger Runddiagnosestecker · Belegung",
+      "valid": "E30/E28/E34 · vor 09/1995",
+      "summary": "Belegung des klassischen 20-poligen Motorraum-Diagnosesteckers (round connector) für Motronic 1.x. Basis für Blinkcode-Diagnose und für Adapter auf OBD-2-Kabel.",
+      "points": [
+        "Motronic 1.1/1.3: Blinkcodes über KL15 kurzzuschließen",
+        "TXD/RXD Pins für DIS/MoDiC Anschluss",
+        "Nicht mit OBD-2 kompatibel — Adapter zwingend nötig"
+      ],
+      "pins": [
+        "Pin 1  · KL30 (+12 V dauer)",
+        "Pin 4  · Masse",
+        "Pin 15 · KL15 (Zündung ein)",
+        "Pin 19 · TXD Motronic",
+        "Pin 20 · RXD Motronic"
+      ],
+      "engines": ["M20", "M40", "M42", "M50", "S14", "S38"],
+      "url": "https://www.bmw-e30.net/"
+    },
+    {
+      "id": "D4F-E30-002",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Blinkcode-Diagnose Motronic 1.3 · M20/M42",
+      "valid": "E30 · M20, M42 mit Motronic 1.3",
+      "summary": "Auslesen der Motronic-Fehlerspeicher über Blinkcode ohne Diagnosegerät. Prozedur zum Aktivieren, Ablesen und Löschen.",
+      "points": [
+        "Zündung aus, Gaspedal ganz durchgetreten, Zündung ein → 5 s halten",
+        "Fehlercodes werden als Blinksequenz der Check-Engine-Lampe ausgegeben",
+        "Codes 1000–4444 möglich, Beginn mit 1444 = kein Fehler",
+        "Löschen: nach Auslesen Batterie 5 min abklemmen"
+      ],
+      "pins": [],
+      "engines": ["M20", "M42"],
+      "url": "https://www.bmw-e30.net/"
+    }
+  ]
+}

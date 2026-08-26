@@ -1,0 +1,917 @@
+{
+  "generated": "2026-08-26T10:35:21.258Z",
+  "version": "dev",
+  "models": {
+    "groups": [
+      {
+        "id": "classic",
+        "label": "Klassiker (80er–frühe 90er)",
+        "era": "OBD-1 · 20-pol. Rundstecker",
+        "models": [
+          {
+            "id": "e30",
+            "name": "E30",
+            "years": "1982–1994",
+            "engines": [
+              "M20",
+              "M40",
+              "M42",
+              "S14"
+            ],
+            "desc": "3er, ADS/EDC-I, Motronic 1.x"
+          },
+          {
+            "id": "e28",
+            "name": "E28",
+            "years": "1981–1988",
+            "engines": [
+              "M20",
+              "M30",
+              "S38"
+            ],
+            "desc": "5er, Motronic 1.0/1.1"
+          },
+          {
+            "id": "e34",
+            "name": "E34",
+            "years": "1987–1996",
+            "engines": [
+              "M20",
+              "M50",
+              "M60",
+              "S38"
+            ],
+            "desc": "5er, Übergang OBD-1 → OBD-2"
+          }
+        ]
+      },
+      {
+        "id": "obd-transition",
+        "label": "OBD-1/OBD-2-Übergang (90er–2000er)",
+        "era": "DIS/GT1 · INPA · EDIABAS",
+        "models": [
+          {
+            "id": "e36",
+            "name": "E36",
+            "years": "1990–2000",
+            "engines": [
+              "M43",
+              "M44",
+              "M50",
+              "M52",
+              "S50",
+              "S52"
+            ],
+            "desc": "3er, OBD-1 bis OBD-2 (ab 09/95 US)"
+          },
+          {
+            "id": "e39",
+            "name": "E39",
+            "years": "1995–2003",
+            "engines": [
+              "M52",
+              "M54",
+              "M62",
+              "S62"
+            ],
+            "desc": "5er, DME MS42/MS43, DDE M57"
+          },
+          {
+            "id": "e38",
+            "name": "E38",
+            "years": "1994–2001",
+            "engines": [
+              "M52",
+              "M62",
+              "M73"
+            ],
+            "desc": "7er, GM-Getriebe, Nikasil-Thematik"
+          },
+          {
+            "id": "e46",
+            "name": "E46",
+            "years": "1998–2006",
+            "engines": [
+              "M43",
+              "M52",
+              "M54",
+              "M56",
+              "N42",
+              "N46",
+              "S54"
+            ],
+            "desc": "3er, Referenzplattform für INPA/NCS"
+          }
+        ]
+      },
+      {
+        "id": "e60-e9x",
+        "label": "CAN-Bus-Ära (2000er–frühe 2010er)",
+        "era": "ISTA/D+P · NCS Expert · E-Sys",
+        "models": [
+          {
+            "id": "e60",
+            "name": "E60/E61",
+            "years": "2003–2010",
+            "engines": [
+              "N52",
+              "N54",
+              "N62",
+              "M54",
+              "M57",
+              "S85"
+            ],
+            "desc": "5er, MOST/PT-CAN, iDrive CCC/CIC"
+          },
+          {
+            "id": "e90",
+            "name": "E90/E91/E92/E93",
+            "years": "2004–2013",
+            "engines": [
+              "N43",
+              "N46",
+              "N52",
+              "N53",
+              "N54",
+              "N55",
+              "M57",
+              "N47",
+              "S65"
+            ],
+            "desc": "3er, CAS3/EWS4, JBBF"
+          },
+          {
+            "id": "e70",
+            "name": "E70/E71",
+            "years": "2006–2013",
+            "engines": [
+              "N52",
+              "N54",
+              "N55",
+              "N62",
+              "M57",
+              "S63"
+            ],
+            "desc": "X5/X6, JBE, integrierte Sicherheitsmodule"
+          },
+          {
+            "id": "e8x",
+            "name": "E81/E82/E87/E88",
+            "years": "2004–2013",
+            "engines": [
+              "N43",
+              "N45",
+              "N46",
+              "N52",
+              "N54",
+              "N55"
+            ],
+            "desc": "1er, CAS3/EWS4"
+          }
+        ]
+      },
+      {
+        "id": "f-series",
+        "label": "F-Serie (2010er)",
+        "era": "FEM/BDC · ISTA+ · E-Sys",
+        "models": [
+          {
+            "id": "f10",
+            "name": "F10/F11",
+            "years": "2010–2017",
+            "engines": [
+              "N20",
+              "N26",
+              "N52",
+              "N53",
+              "N55",
+              "N57",
+              "N63",
+              "S63",
+              "B47",
+              "B58"
+            ],
+            "desc": "5er, FRM, JBE, FlexRay"
+          },
+          {
+            "id": "f30",
+            "name": "F30/F31/F34",
+            "years": "2011–2019",
+            "engines": [
+              "N13",
+              "N20",
+              "N26",
+              "N55",
+              "N47",
+              "B38",
+              "B48",
+              "B58"
+            ],
+            "desc": "3er, FEM ab ~03/2014"
+          },
+          {
+            "id": "f15",
+            "name": "F15/F16",
+            "years": "2013–2018",
+            "engines": [
+              "N20",
+              "N55",
+              "N57",
+              "N63",
+              "B57",
+              "S63"
+            ],
+            "desc": "X5/X6, ISTA+"
+          },
+          {
+            "id": "f22",
+            "name": "F20/F21/F22/F23",
+            "years": "2011–2019",
+            "engines": [
+              "N13",
+              "N20",
+              "N55",
+              "B38",
+              "B48"
+            ],
+            "desc": "1er/2er, FEM/BDC"
+          }
+        ]
+      }
+    ]
+  },
+  "docs": [
+    {
+      "id": "D4F-E30-001",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "20-poliger Runddiagnosestecker · Belegung",
+      "valid": "E30/E28/E34 · vor 09/1995",
+      "summary": "Belegung des klassischen 20-poligen Motorraum-Diagnosesteckers (round connector) für Motronic 1.x. Basis für Blinkcode-Diagnose und für Adapter auf OBD-2-Kabel.",
+      "points": [
+        "Motronic 1.1/1.3: Blinkcodes über KL15 kurzzuschließen",
+        "TXD/RXD Pins für DIS/MoDiC Anschluss",
+        "Nicht mit OBD-2 kompatibel — Adapter zwingend nötig"
+      ],
+      "pins": [
+        "Pin 1  · KL30 (+12 V dauer)",
+        "Pin 4  · Masse",
+        "Pin 15 · KL15 (Zündung ein)",
+        "Pin 19 · TXD Motronic",
+        "Pin 20 · RXD Motronic"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "M50",
+        "S14",
+        "S38"
+      ],
+      "url": "https://www.bmw-e30.net/",
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-002",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Blinkcode-Diagnose Motronic 1.3 · M20/M42",
+      "valid": "E30 · M20, M42 mit Motronic 1.3",
+      "summary": "Auslesen der Motronic-Fehlerspeicher über Blinkcode ohne Diagnosegerät. Prozedur zum Aktivieren, Ablesen und Löschen.",
+      "points": [
+        "Zündung aus, Gaspedal ganz durchgetreten, Zündung ein → 5 s halten",
+        "Fehlercodes werden als Blinksequenz der Check-Engine-Lampe ausgegeben",
+        "Codes 1000–4444 möglich, Beginn mit 1444 = kein Fehler",
+        "Löschen: nach Auslesen Batterie 5 min abklemmen"
+      ],
+      "pins": [],
+      "engines": [
+        "M20",
+        "M42"
+      ],
+      "url": "https://www.bmw-e30.net/",
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E46-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "INPA Setup für E46 (K+DCAN-Kabel)",
+      "valid": "E46 · M52/M54/N42/S54",
+      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt EDIABAS-Konfiguration, OBD.INI, Registrierung des USB-Serial-Ports und Verifikation über einen erfolgreichen DME-Identify.",
+      "points": [
+        "K+DCAN-Kabel: FTDI-Chip empfohlen, kein CH340 unter Windows 11",
+        "OBD.INI: Port=COM<n>, IFH_TRACE=0, im Ordner C:\\EDIABAS\\Bin",
+        "obd.ini muss zusätzlich Interface=STD:OBD tragen",
+        "Latency Timer im Gerätemanager auf 1 ms setzen",
+        "Nach Änderung: EDIABAS-Testfunktion 'INPA' im Startmenü ausführen"
+      ],
+      "pins": [
+        "OBD2 Pin 7 · K-Line (ISO 9141-2)",
+        "OBD2 Pin 8 · DCAN-High (ab 03/2007 nicht mehr E46)",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30"
+      ],
+      "engines": [
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54",
+        "M43"
+      ],
+      "article": "inpa-setup.md",
+      "url": "https://www.bmwcoding.com/inpa-download",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-002",
+      "type": "TEST",
+      "cat": "Diagnose-Tools",
+      "title": "NCS Expert · Grundlagen und E46-Profile",
+      "valid": "E46 · Alle mit K-Line-Codierung",
+      "summary": "NCS Expert 4.0.1 mit passendem SP-Daten-Update für E46. Anlegen eines EXPERTMODE-Profils, Auslesen und Rückschreiben der Fahrzeugkodierung (FA/VO/FSW_PSW).",
+      "points": [
+        "SP-Daten E46: mindestens Stand 51 empfohlen",
+        "Profile in NCSEXPER\\PFL\\ExpertMode.pfl aktivieren",
+        "Immer erst Ist-Kodierung sichern (FSW_PSW.TRC)",
+        "Werte nie außerhalb dokumentierter Bereiche schreiben",
+        "SG_CODIEREN nur nach vollständigem Backup"
+      ],
+      "pins": [],
+      "engines": [
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ],
+      "article": "ncs-expert-basics.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-003",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Häufige DTCs · DME MS43 (M54)",
+      "valid": "E46 · M54B22/B25/B30",
+      "summary": "Sammlung praxisrelevanter Fehlercodes der DME MS43 mit typischen Ursachen, Prüfschritten und Reparaturempfehlungen. Fokus auf sporadische Fehler die INPA häufig bei Kaltstart zeigt.",
+      "points": [
+        "P0170/P0173 (Gemischadaption): DISA-Klappe, Sekundärluft, MAF prüfen",
+        "P0300–P0306 (Aussetzer): Zündspulen einzeln tauschen, Kompression testen",
+        "P0491/P0492 (Sekundärluft): Kombiventil, SLP-Membran, Schlauchführung",
+        "P1188 (Lambda vor Kat, Bank 1): Kabelbaum am Krümmer prüfen",
+        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner"
+      ],
+      "pins": [
+        "DME X60001 Pin 87 · MAF-Signal",
+        "DME X60002 Pin 1/16 · Lambda vor Kat B1/B2",
+        "DME X60001 Pin 36 · VANOS Solenoid Einlass"
+      ],
+      "engines": [
+        "M54"
+      ],
+      "article": "dtc-dme-ms43.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/mkl-motorsteuerung-motronic-ms43",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-004",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Stromlaufplan · Startsystem E46 M54",
+      "valid": "E46 · M54 · EWS3",
+      "summary": "Signalfluss beim Startvorgang: Zündschloss → EWS3 → DME → Anlasser-Steuerrelais → Anlasser. Enthält relevante Pins des 88-poligen DME-Steckers und der EWS3.",
+      "points": [
+        "KL15 aktiv → EWS3 sendet Freigabe über K-Line an DME",
+        "DME steuert Anlasser-Steuerrelais K6301 an",
+        "Startsignal auf DME-Pin 26 (X60001)",
+        "Freigabe von EWS3 auf DME-Pin 78 (X60001)"
+      ],
+      "pins": [
+        "DME X60001 Pin 26 · KL50 vom Zündschloss",
+        "DME X60001 Pin 78 · EWS-Freigabe (K-Line)",
+        "DME X60001 Pin 87 · Anlasser-Steuerrelais",
+        "EWS3 X6041 Pin 6 · K-Line zur DME",
+        "EWS3 X6041 Pin 3 · KL15"
+      ],
+      "engines": [
+        "M54",
+        "M52"
+      ],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-005",
+      "type": "FUB",
+      "cat": "Codierung",
+      "title": "Sinnvolle Codierungen für den E46",
+      "valid": "E46 · alle Baujahre",
+      "summary": "Praxiserprobte Kodierungen ohne Hardwareänderung: EU-Blinker, Auto-Verriegelung ab Fahrgeschwindigkeit, Nebelscheinwerfer als Abbiegelicht (nur mit passendem LWR), Bestätigungsblinker.",
+      "points": [
+        "LSZ: KOMFORT_ABSPERRUNG = aktiv (Auto-Lock bei 10 km/h)",
+        "LSZ: PDC_PIEP_ZENTRAL_V_R = ein (nur E46 mit PDC)",
+        "LSZ: SPIEGEL_ABSENKEN_R = aktiv (Beifahrerspiegel R-Gang)",
+        "IKE: DSC_LAMPE_BLINKEN_VERZ = aktiv",
+        "EWS: KOMFORTSTART_MENGE = 3 (Startknopfsimulation mit Zündschlüssel)"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ],
+      "article": "ncs-expert-basics.md",
+      "url": "https://www.e46codes.com/",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-006",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "DME-Stecker X60001/X60002 · MS43 Pinout",
+      "valid": "E46 · M54 · MS43",
+      "summary": "Vollständige Pinbelegung der beiden DME-Stecker der Motronic MS43. Für Fehlersuche an Sensoren, Aktuatoren und Kommunikationsleitungen.",
+      "points": [
+        "X60001 = 88-polig (Fahrzeugseite)",
+        "X60002 = 40-polig (Motorseite)",
+        "Vor Messung immer Zündung KL15 aus",
+        "Widerstandsmessung nur bei abgezogenem Stecker"
+      ],
+      "pins": [
+        "X60001 Pin 1 · KL30 dauerplus",
+        "X60001 Pin 26 · KL50",
+        "X60001 Pin 78 · EWS-Freigabe",
+        "X60001 Pin 87 · Anlasser-Steuerrelais",
+        "X60002 Pin 1 · Lambdasonde vor Kat Bank 1",
+        "X60002 Pin 16 · Lambdasonde vor Kat Bank 2",
+        "X60002 Pin 4 · Kurbelwellensensor Signal",
+        "X60002 Pin 24 · Nockenwellensensor Einlass"
+      ],
+      "engines": [
+        "M54"
+      ],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds/dme",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-007",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Steuergeräte-Einbauorte E46 Limousine",
+      "valid": "E46 · Limousine · Touring",
+      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung.",
+      "points": [
+        "DME MS43: E-Box im Wasserkasten rechts",
+        "EWS3: hinter der Lenksäulenverkleidung unten",
+        "LSZ (Licht-Schalt-Zentrum): unter Lenkrad hinter Kombiinstrument",
+        "GM5 (Grundmodul): Fahrerfußraum links, unter Lenksäule",
+        "IKE (Instrumentenkombi): mittig im Armaturenbrett",
+        "AKMB (Airbag): mittig im Fahrgastraum unter der Konsole"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-008",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "DISA-Ventil M54 · Prüfen und Erneuern",
+      "valid": "E46 · M54B22/B25/B30",
+      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüf- und Wechselanweisung mit Drehmomenten.",
+      "points": [
+        "Sichtprüfung: Klappenspiel < 1 mm axial, kein Klappern",
+        "Vakuumtest: 500 mbar über Handpumpe, muss halten",
+        "Solenoid: 30–40 Ω bei 20 °C",
+        "OEM DISA revidiert = beste Wahl (Nachbau oft mit Nietbruch)",
+        "Anzugsmoment M6-Schrauben Ansaugbrücke: 10 Nm"
+      ],
+      "pins": [
+        "DISA-Solenoid Pin 1 · KL15 (+12 V)",
+        "DISA-Solenoid Pin 2 · DME-Ansteuerung (Masse-schaltend)"
+      ],
+      "engines": [
+        "M54"
+      ],
+      "article": "disa-m54.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/motor/m54",
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E90-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "ISTA/D · E90-Diagnose einrichten",
+      "valid": "E90/E91/E92/E93 · alle Motoren",
+      "summary": "ISTA/D 4.x mit ENET- oder K+DCAN-Kabel für die E9x-Baureihe. Fahrzeugidentifikation, geführte Fehlersuche und Servicefunktionen.",
+      "points": [
+        "E90 vor 03/2007 · nur K+DCAN (OBD Pin 7/8)",
+        "E90 ab 03/2007 · zusätzlich ENET möglich (F-Serien-ähnliche Kommunikation)",
+        "VIN muss im FZG-Profil vollständig hinterlegt sein",
+        "Java 8 32-bit erforderlich für Legacy-Bedienoberfläche"
+      ],
+      "pins": [
+        "OBD Pin 6 · CAN-High",
+        "OBD Pin 14 · CAN-Low",
+        "OBD Pin 8 · DCAN (bis 03/2007)"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "ista-e90-setup.md",
+      "url": "https://www.bimmergeeks.net/",
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-002",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "N54 · Häufige DTCs bei Ladedruckproblemen",
+      "valid": "E90/E91/E92/E93 · N54B30",
+      "summary": "N54-typische Fehler an Wastegate-Rasseln, HPFP und Ladedruckregelung mit Prüfvorschlag.",
+      "points": [
+        "29DC/29CD · Wastegate-Rasseln · Turboladertausch OEM oder Rebuild",
+        "29E0/29E1 · Ladedruckabweichung · Ladeluftschlauch-Dichtheit, N54-typische Kupplungsschellen",
+        "29F0 · HPFP-Druckabfall · Hochdruckpumpe (Rückrufumfang prüfen)",
+        "30FF · Zündaussetzer sporadisch · Zündspulen und Kerzen (NGK 97506)"
+      ],
+      "pins": [
+        "DME Stecker A · Pin 15 · Ladedrucksensor Signal",
+        "DME Stecker A · Pin 32 · HPFP-Druckregelventil"
+      ],
+      "engines": [
+        "N54"
+      ],
+      "article": "dtc-n54.md",
+      "url": "https://www.n54tech.com/",
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-003",
+      "type": "TEST",
+      "cat": "Codierung",
+      "title": "E-Sys mit E9x · nur ab CIC/JBBFE nutzbar",
+      "valid": "E90 LCI · CIC oder Combox",
+      "summary": "E-Sys 3.34+ funktioniert am E9x nur bei aktueller iDrive-Generation (CIC ab 09/2008). Für Vor-Facelift NCS Expert nutzen.",
+      "points": [
+        "PSDZData mit passendem I-Level laden",
+        "FA lesen → offline anpassen → FDL-Codierung schreiben",
+        "Immer erst KIS/OKV-Backup anlegen",
+        "Falscher I-Level → Bricking-Gefahr"
+      ],
+      "pins": [],
+      "engines": [
+        "N52",
+        "N53",
+        "N54",
+        "N55"
+      ],
+      "article": "esys-basics.md",
+      "url": "https://f30.bimmerpost.com/",
+      "model": "e90"
+    },
+    {
+      "id": "D4F-F-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "E-Sys · F-Serie Codierung Grundlagen",
+      "valid": "F-Serie · alle Baureihen",
+      "summary": "E-Sys 3.34.x mit passender PSDZData für die F-Serie. FEM/BDC-Codierung, FA-Manipulation, FDL-Codierung einzelner Steuergeräte.",
+      "points": [
+        "ENET-Kabel zwingend (kein K-Line auf F-Serie)",
+        "PSDZData muss zum I-Level des Fahrzeugs passen",
+        "Immer TokenMaster/EsysLauncher PRO verwenden für Zertifikat",
+        "FA lesen → FA ändern → 'FA -> FP' → CAF/FDL neu schreiben",
+        "Bei FEM/BDC: nie ohne aktive Batterieladung codieren"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · ENET+",
+        "OBD2 Pin 11 · ENET-",
+        "OBD2 Pin 12 · Aktivierung Ethernet (mit KL15)"
+      ],
+      "engines": [
+        "N20",
+        "N55",
+        "B47",
+        "B58",
+        "N63"
+      ],
+      "article": "esys-basics.md",
+      "url": "https://www.bimmerfest.com/threads/e-sys-guide.1177361/",
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-002",
+      "type": "FUB",
+      "cat": "Codierung",
+      "title": "Nützliche F-Serien-Codierungen",
+      "valid": "F10/F20/F30 · alle Motoren",
+      "summary": "Praxiserprobte F-Serien-Codierungen: Digital Speed, Videos während der Fahrt, Enhanced Bluetooth, Sport-Displays im KOMBI.",
+      "points": [
+        "KOMBI: BC_DIGITAL_V = aktiv → Digitalgeschwindigkeit im Tacho",
+        "HU_NBT: VIDEO_IN_MOTION = aktiv → DVD/Video während Fahrt",
+        "HU_NBT: ENH_BLUETOOTH_US = aktiv → erweitertes BT-Menü",
+        "KOMBI: SPORT_DISPLAYS = aktiv → Leistungs-/Drehmomentanzeige (nur passende Motoren)",
+        "FEM_BODY: NR_TFL_PWM = 100 → hellere Tagfahrlichter"
+      ],
+      "pins": [],
+      "engines": [
+        "N20",
+        "N55",
+        "B47",
+        "B58"
+      ],
+      "url": "https://www.bimmertech.net/blog/f30-coding",
+      "model": "f-series"
+    }
+  ],
+  "guides": {
+    "e30:m20-no-spark": {
+      "code": "GF-E30-01",
+      "name": "M20 kein Zündfunke",
+      "desc": "Klassischer Ausfall am E30 mit M20. Reihenfolge: Zündspule → Hallgeber → DME → Kabelbaum.",
+      "steps": [
+        {
+          "q": "Kommt Spannung an der Zündspule KL15?",
+          "help": "Zündschloss auf Position 2. Am Klemme 15 der Zündspule (grün-schwarz) müssen ~12 V anliegen.",
+          "measure": "Zündspule KL15 · 11.5–12.6 V",
+          "doc": "D4F-E30-001",
+          "yes": 1,
+          "no": "no-kl15"
+        },
+        {
+          "q": "Löst der Hallgeber im Verteiler ein Signal aus?",
+          "help": "Beim Cranken muss ein Rechtecksignal 0/12 V am Hallgeber-Signalpin (grün) messbar sein.",
+          "measure": "Hallgeber Signal · Rechteck 0–12 V bei Anlasserdrehzahl",
+          "doc": "D4F-E30-001",
+          "yes": "check-dme",
+          "no": "hall-sensor"
+        }
+      ],
+      "model": "e30",
+      "id": "m20-no-spark",
+      "_results": {
+        "no-kl15": {
+          "title": "KL15-Versorgung fehlt",
+          "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel."
+        },
+        "hall-sensor": {
+          "title": "Hallgeber im Verteiler defekt",
+          "text": "Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Anschließend Zündung neu einstellen."
+        },
+        "check-dme": {
+          "title": "DME oder Zündspule prüfen",
+          "text": "Zündspule Primär (0.5 Ω) und Sekundär (5–8 kΩ) messen. Bei intakter Spule: DME (Motronic-Steuergerät) tauschweise prüfen."
+        }
+      }
+    },
+    "e46:no-start-m54": {
+      "code": "GF-E46-01",
+      "name": "M54 startet nicht",
+      "desc": "Anlasser dreht oder dreht nicht. Systematische Eingrenzung Versorgung → EWS-Freigabe → Kraftstoffdruck → Zündung.",
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch?",
+          "help": "Reines Klicken oder gar nichts deutet auf Batterie oder Anlasserkreis. Sauberes Drehen ohne Zündung deutet auf EWS oder Motorseite.",
+          "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
+          "doc": "D4F-E46-004",
+          "yes": 1,
+          "no": "check-power"
+        },
+        {
+          "q": "Sind Fehler in DME und EWS auslesbar (INPA)?",
+          "help": "Beide SGs müssen antworten. Keine Antwort DME → Versorgung, K-Line oder DME-Defekt. Keine Antwort EWS → EWS-Versorgung oder Lenkschloss.",
+          "measure": "DME F1 → Ident: Antwort mit ZB-Nummer und Codierindex",
+          "doc": "D4F-E46-001",
+          "yes": 2,
+          "no": "no-comm"
+        },
+        {
+          "q": "Ist die EWS-Freigabe an die DME 'erteilt'?",
+          "help": "INPA → F5 → EWS-Status: 'Freigabe erteilt' oder 'Rollcode ok'. Bei 'nicht erteilt': Schlüssel wird nicht erkannt.",
+          "measure": "EWS3 · Statuswert 'Motorstart Freigabe' = 1",
+          "doc": "D4F-E46-004",
+          "yes": 3,
+          "no": "ews-block"
+        },
+        {
+          "q": "Baut das Kraftstoffsystem Druck auf?",
+          "help": "Kraftstoffpumpe muss beim Zündungseinschalten für ca. 2 Sekunden laufen. Bei Druckabfall: Rückschlagventil in Pumpe oder Druckregler.",
+          "measure": "Systemdruck M54 · 3.5 bar ± 0.2 bar",
+          "doc": "D4F-E46-003",
+          "yes": 4,
+          "no": "fuel-pressure"
+        },
+        {
+          "q": "Bekommen die Zündspulen den Zündimpuls?",
+          "help": "Stroboskop oder Prüfstecker an einer Zündspule. Kein Zündfunke → Kurbelwellensensor, DME oder Kabelbaum.",
+          "measure": "Kurbelwellensensor Signal · 2–3 V AC bei Cranken",
+          "doc": "D4F-E46-006",
+          "yes": "compression",
+          "no": "ignition"
+        }
+      ],
+      "model": "e46",
+      "id": "no-start-m54",
+      "_results": {
+        "check-power": {
+          "title": "Versorgung zuerst stabilisieren",
+          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Bei Ruhestromverbrauch > 40 mA nach 30 min: parasitäre Last suchen."
+        },
+        "no-comm": {
+          "title": "Diagnosekommunikation gestört",
+          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 gegen Masse mit 10 kΩ Pullup. Wenn K-Line ok: DME-Sicherung F6 (Motorraum, 15 A) prüfen, danach DME KL30 an Pin 1 des X60001."
+        },
+        "ews-block": {
+          "title": "EWS erteilt keine Startfreigabe",
+          "text": "Schlüssel im Lesering des Zündschlosses positionieren, mit zweitem Schlüssel gegenprüfen. INPA EWS-Status: 'Transponder erkannt' muss vor Freigabe kommen. Bei häufigem Ausfall: Ringantenne am Zündschloss (klassischer E46-Defekt)."
+        },
+        "fuel-pressure": {
+          "title": "Kraftstoffdruck fehlt oder fällt ab",
+          "text": "Fahrschule anschließen (M14x1.5 am Rail). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+        },
+        "ignition": {
+          "title": "Zündimpuls fehlt",
+          "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung X60001 Pin 24 gegen Motorblock messen (< 0.5 Ω)."
+        },
+        "compression": {
+          "title": "Kompression prüfen",
+          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression Zylinder 1–6 messen. Sollwert warm: 10–13 bar. Bei einzelnem Zylinder deutlich niedriger → Ventilproblem (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung)."
+        },
+        "sap-pump": {
+          "title": "Sekundärluftpumpe defekt oder ohne Versorgung",
+          "text": "Sicherung F1 im Elektrokasten Motorraum (30 A) prüfen. Pumpenrelais K6304 tauschen (steckt neben DME-Relais). Wenn Versorgung ok: Pumpe elektrisch defekt (Massepunkt gegen Karosserie prüfen)."
+        },
+        "sap-valve": {
+          "title": "Kombiventil öffnet nicht",
+          "text": "Unterdruckschlauch vom Solenoid zum Ventil auf Risse prüfen. Solenoid mit 12 V direkt ansteuern — muss hörbar klicken und Unterdruck durchlassen. Danach Kombiventil selbst tauschen (verklebt durch Ruß)."
+        },
+        "sap-diag": {
+          "title": "Mechanik ok · Sensorik/DME weiter prüfen",
+          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartete Anfettung der Regelabweichung > 5% für 30–60 s. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+        }
+      }
+    },
+    "e46:sec-air-e46": {
+      "code": "GF-E46-02",
+      "name": "Sekundärluft · P0491/P0492",
+      "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Pumpe, Kombiventil und Sensorlogik.",
+      "steps": [
+        {
+          "q": "Läuft die Sekundärluftpumpe beim Kaltstart 30–90 s?",
+          "help": "Hörbar unter der Motorhaube rechts. Kein Laufen → Relais, Sicherung F1 (30 A), Pumpe selbst.",
+          "measure": "Pumpen-Klemme +30 · KL30, Klemme 87 · geschaltet über Relais",
+          "doc": "D4F-E46-003",
+          "yes": 1,
+          "no": "sap-pump"
+        },
+        {
+          "q": "Öffnet das Kombiventil bei laufender Pumpe?",
+          "help": "Ventil sitzt an der Ansaugbrücke, wird über Unterdruck vom Solenoid an der DME angesteuert.",
+          "measure": "Unterdruck am Solenoid · > 300 mbar bei Ansteuerung",
+          "doc": "D4F-E46-003",
+          "yes": "sap-diag",
+          "no": "sap-valve"
+        }
+      ],
+      "model": "e46",
+      "id": "sec-air-e46",
+      "_results": {
+        "check-power": {
+          "title": "Versorgung zuerst stabilisieren",
+          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Bei Ruhestromverbrauch > 40 mA nach 30 min: parasitäre Last suchen."
+        },
+        "no-comm": {
+          "title": "Diagnosekommunikation gestört",
+          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 gegen Masse mit 10 kΩ Pullup. Wenn K-Line ok: DME-Sicherung F6 (Motorraum, 15 A) prüfen, danach DME KL30 an Pin 1 des X60001."
+        },
+        "ews-block": {
+          "title": "EWS erteilt keine Startfreigabe",
+          "text": "Schlüssel im Lesering des Zündschlosses positionieren, mit zweitem Schlüssel gegenprüfen. INPA EWS-Status: 'Transponder erkannt' muss vor Freigabe kommen. Bei häufigem Ausfall: Ringantenne am Zündschloss (klassischer E46-Defekt)."
+        },
+        "fuel-pressure": {
+          "title": "Kraftstoffdruck fehlt oder fällt ab",
+          "text": "Fahrschule anschließen (M14x1.5 am Rail). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+        },
+        "ignition": {
+          "title": "Zündimpuls fehlt",
+          "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung X60001 Pin 24 gegen Motorblock messen (< 0.5 Ω)."
+        },
+        "compression": {
+          "title": "Kompression prüfen",
+          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression Zylinder 1–6 messen. Sollwert warm: 10–13 bar. Bei einzelnem Zylinder deutlich niedriger → Ventilproblem (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung)."
+        },
+        "sap-pump": {
+          "title": "Sekundärluftpumpe defekt oder ohne Versorgung",
+          "text": "Sicherung F1 im Elektrokasten Motorraum (30 A) prüfen. Pumpenrelais K6304 tauschen (steckt neben DME-Relais). Wenn Versorgung ok: Pumpe elektrisch defekt (Massepunkt gegen Karosserie prüfen)."
+        },
+        "sap-valve": {
+          "title": "Kombiventil öffnet nicht",
+          "text": "Unterdruckschlauch vom Solenoid zum Ventil auf Risse prüfen. Solenoid mit 12 V direkt ansteuern — muss hörbar klicken und Unterdruck durchlassen. Danach Kombiventil selbst tauschen (verklebt durch Ruß)."
+        },
+        "sap-diag": {
+          "title": "Mechanik ok · Sensorik/DME weiter prüfen",
+          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartete Anfettung der Regelabweichung > 5% für 30–60 s. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+        }
+      }
+    },
+    "e90:n54-low-boost": {
+      "code": "GF-E90-01",
+      "name": "N54 · Zu wenig Ladedruck",
+      "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP.",
+      "steps": [
+        {
+          "q": "Sind DTCs 29E0/29E1 gespeichert?",
+          "help": "ISTA/D → Motor → Fehlerspeicher lesen. 29E0/29E1 zeigt Sollwertabweichung Ladedruck.",
+          "measure": "Ladedrucksollwert bei 3500 U/min · ~0.85 bar über Umgebung",
+          "doc": "D4F-E90-002",
+          "yes": 1,
+          "no": "check-symptom"
+        },
+        {
+          "q": "Ladeluftsystem druckdicht? (Smoke-Test)",
+          "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse.",
+          "measure": "Smoke-Test 0.5 bar · keine sichtbaren Austritte",
+          "doc": "D4F-E90-002",
+          "yes": "wastegate",
+          "no": "boost-leak"
+        }
+      ],
+      "model": "e90",
+      "id": "n54-low-boost",
+      "_results": {
+        "check-symptom": {
+          "title": "Keine Ladedruckabweichung im Speicher",
+          "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: HPFP-Druck bei WOT prüfen (Soll ~200 bar)."
+        },
+        "boost-leak": {
+          "title": "Ladeluftleckage bestätigt",
+          "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle)."
+        },
+        "wastegate": {
+          "title": "Wastegate/HPFP als nächstes prüfen",
+          "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen)."
+        }
+      }
+    },
+    "f-series:fem-bricked": {
+      "code": "GF-F-01",
+      "name": "FEM/BDC nach Codierung tot",
+      "desc": "FEM/BDC reagiert nach Codierversuch nicht mehr. Rettung durch geführte Wiederinbetriebnahme.",
+      "steps": [
+        {
+          "q": "Ist das Fahrzeug noch entriegelbar?",
+          "help": "FEM-Bricking äußert sich meist durch: Fahrzeug reagiert nicht auf Schlüssel, Kombi bleibt schwarz, Motor startet nicht.",
+          "measure": "KL30-Versorgung am FEM · konstant 12 V",
+          "doc": "D4F-F-001",
+          "yes": "recovery-soft",
+          "no": "recovery-full"
+        }
+      ],
+      "model": "f-series",
+      "id": "fem-bricked",
+      "_results": {
+        "recovery-soft": {
+          "title": "Software-Recovery über E-Sys",
+          "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend."
+        },
+        "recovery-full": {
+          "title": "Bench-Recovery erforderlich",
+          "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich."
+        }
+      }
+    }
+  },
+  "stats": {
+    "total_docs": 15,
+    "total_guides": 5,
+    "per_model": {
+      "e30": 2,
+      "e46": 8,
+      "e90": 3,
+      "f-series": 2
+    }
+  }
+}

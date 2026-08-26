@@ -1,0 +1,180 @@
+{
+  "model": "e46",
+  "docs": [
+    {
+      "id": "D4F-E46-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "INPA Setup für E46 (K+DCAN-Kabel)",
+      "valid": "E46 · M52/M54/N42/S54",
+      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt EDIABAS-Konfiguration, OBD.INI, Registrierung des USB-Serial-Ports und Verifikation über einen erfolgreichen DME-Identify.",
+      "points": [
+        "K+DCAN-Kabel: FTDI-Chip empfohlen, kein CH340 unter Windows 11",
+        "OBD.INI: Port=COM<n>, IFH_TRACE=0, im Ordner C:\\EDIABAS\\Bin",
+        "obd.ini muss zusätzlich Interface=STD:OBD tragen",
+        "Latency Timer im Gerätemanager auf 1 ms setzen",
+        "Nach Änderung: EDIABAS-Testfunktion 'INPA' im Startmenü ausführen"
+      ],
+      "pins": [
+        "OBD2 Pin 7 · K-Line (ISO 9141-2)",
+        "OBD2 Pin 8 · DCAN-High (ab 03/2007 nicht mehr E46)",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30"
+      ],
+      "engines": ["M52", "M54", "N42", "N46", "S54", "M43"],
+      "article": "inpa-setup.md",
+      "url": "https://www.bmwcoding.com/inpa-download"
+    },
+    {
+      "id": "D4F-E46-002",
+      "type": "TEST",
+      "cat": "Diagnose-Tools",
+      "title": "NCS Expert · Grundlagen und E46-Profile",
+      "valid": "E46 · Alle mit K-Line-Codierung",
+      "summary": "NCS Expert 4.0.1 mit passendem SP-Daten-Update für E46. Anlegen eines EXPERTMODE-Profils, Auslesen und Rückschreiben der Fahrzeugkodierung (FA/VO/FSW_PSW).",
+      "points": [
+        "SP-Daten E46: mindestens Stand 51 empfohlen",
+        "Profile in NCSEXPER\\PFL\\ExpertMode.pfl aktivieren",
+        "Immer erst Ist-Kodierung sichern (FSW_PSW.TRC)",
+        "Werte nie außerhalb dokumentierter Bereiche schreiben",
+        "SG_CODIEREN nur nach vollständigem Backup"
+      ],
+      "pins": [],
+      "engines": ["M52", "M54", "N42", "N46", "S54"],
+      "article": "ncs-expert-basics.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine"
+    },
+    {
+      "id": "D4F-E46-003",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Häufige DTCs · DME MS43 (M54)",
+      "valid": "E46 · M54B22/B25/B30",
+      "summary": "Sammlung praxisrelevanter Fehlercodes der DME MS43 mit typischen Ursachen, Prüfschritten und Reparaturempfehlungen. Fokus auf sporadische Fehler die INPA häufig bei Kaltstart zeigt.",
+      "points": [
+        "P0170/P0173 (Gemischadaption): DISA-Klappe, Sekundärluft, MAF prüfen",
+        "P0300–P0306 (Aussetzer): Zündspulen einzeln tauschen, Kompression testen",
+        "P0491/P0492 (Sekundärluft): Kombiventil, SLP-Membran, Schlauchführung",
+        "P1188 (Lambda vor Kat, Bank 1): Kabelbaum am Krümmer prüfen",
+        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner"
+      ],
+      "pins": [
+        "DME X60001 Pin 87 · MAF-Signal",
+        "DME X60002 Pin 1/16 · Lambda vor Kat B1/B2",
+        "DME X60001 Pin 36 · VANOS Solenoid Einlass"
+      ],
+      "engines": ["M54"],
+      "article": "dtc-dme-ms43.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/mkl-motorsteuerung-motronic-ms43"
+    },
+    {
+      "id": "D4F-E46-004",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Stromlaufplan · Startsystem E46 M54",
+      "valid": "E46 · M54 · EWS3",
+      "summary": "Signalfluss beim Startvorgang: Zündschloss → EWS3 → DME → Anlasser-Steuerrelais → Anlasser. Enthält relevante Pins des 88-poligen DME-Steckers und der EWS3.",
+      "points": [
+        "KL15 aktiv → EWS3 sendet Freigabe über K-Line an DME",
+        "DME steuert Anlasser-Steuerrelais K6301 an",
+        "Startsignal auf DME-Pin 26 (X60001)",
+        "Freigabe von EWS3 auf DME-Pin 78 (X60001)"
+      ],
+      "pins": [
+        "DME X60001 Pin 26 · KL50 vom Zündschloss",
+        "DME X60001 Pin 78 · EWS-Freigabe (K-Line)",
+        "DME X60001 Pin 87 · Anlasser-Steuerrelais",
+        "EWS3 X6041 Pin 6 · K-Line zur DME",
+        "EWS3 X6041 Pin 3 · KL15"
+      ],
+      "engines": ["M54", "M52"],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds"
+    },
+    {
+      "id": "D4F-E46-005",
+      "type": "FUB",
+      "cat": "Codierung",
+      "title": "Sinnvolle Codierungen für den E46",
+      "valid": "E46 · alle Baujahre",
+      "summary": "Praxiserprobte Kodierungen ohne Hardwareänderung: EU-Blinker, Auto-Verriegelung ab Fahrgeschwindigkeit, Nebelscheinwerfer als Abbiegelicht (nur mit passendem LWR), Bestätigungsblinker.",
+      "points": [
+        "LSZ: KOMFORT_ABSPERRUNG = aktiv (Auto-Lock bei 10 km/h)",
+        "LSZ: PDC_PIEP_ZENTRAL_V_R = ein (nur E46 mit PDC)",
+        "LSZ: SPIEGEL_ABSENKEN_R = aktiv (Beifahrerspiegel R-Gang)",
+        "IKE: DSC_LAMPE_BLINKEN_VERZ = aktiv",
+        "EWS: KOMFORTSTART_MENGE = 3 (Startknopfsimulation mit Zündschlüssel)"
+      ],
+      "pins": [],
+      "engines": ["M43", "M52", "M54", "N42", "N46", "S54"],
+      "article": "ncs-expert-basics.md",
+      "url": "https://www.e46codes.com/"
+    },
+    {
+      "id": "D4F-E46-006",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "DME-Stecker X60001/X60002 · MS43 Pinout",
+      "valid": "E46 · M54 · MS43",
+      "summary": "Vollständige Pinbelegung der beiden DME-Stecker der Motronic MS43. Für Fehlersuche an Sensoren, Aktuatoren und Kommunikationsleitungen.",
+      "points": [
+        "X60001 = 88-polig (Fahrzeugseite)",
+        "X60002 = 40-polig (Motorseite)",
+        "Vor Messung immer Zündung KL15 aus",
+        "Widerstandsmessung nur bei abgezogenem Stecker"
+      ],
+      "pins": [
+        "X60001 Pin 1 · KL30 dauerplus",
+        "X60001 Pin 26 · KL50",
+        "X60001 Pin 78 · EWS-Freigabe",
+        "X60001 Pin 87 · Anlasser-Steuerrelais",
+        "X60002 Pin 1 · Lambdasonde vor Kat Bank 1",
+        "X60002 Pin 16 · Lambdasonde vor Kat Bank 2",
+        "X60002 Pin 4 · Kurbelwellensensor Signal",
+        "X60002 Pin 24 · Nockenwellensensor Einlass"
+      ],
+      "engines": ["M54"],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds/dme"
+    },
+    {
+      "id": "D4F-E46-007",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Steuergeräte-Einbauorte E46 Limousine",
+      "valid": "E46 · Limousine · Touring",
+      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung.",
+      "points": [
+        "DME MS43: E-Box im Wasserkasten rechts",
+        "EWS3: hinter der Lenksäulenverkleidung unten",
+        "LSZ (Licht-Schalt-Zentrum): unter Lenkrad hinter Kombiinstrument",
+        "GM5 (Grundmodul): Fahrerfußraum links, unter Lenksäule",
+        "IKE (Instrumentenkombi): mittig im Armaturenbrett",
+        "AKMB (Airbag): mittig im Fahrgastraum unter der Konsole"
+      ],
+      "pins": [],
+      "engines": ["M43", "M52", "M54", "N42", "N46", "S54"],
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine"
+    },
+    {
+      "id": "D4F-E46-008",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "DISA-Ventil M54 · Prüfen und Erneuern",
+      "valid": "E46 · M54B22/B25/B30",
+      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüf- und Wechselanweisung mit Drehmomenten.",
+      "points": [
+        "Sichtprüfung: Klappenspiel < 1 mm axial, kein Klappern",
+        "Vakuumtest: 500 mbar über Handpumpe, muss halten",
+        "Solenoid: 30–40 Ω bei 20 °C",
+        "OEM DISA revidiert = beste Wahl (Nachbau oft mit Nietbruch)",
+        "Anzugsmoment M6-Schrauben Ansaugbrücke: 10 Nm"
+      ],
+      "pins": [
+        "DISA-Solenoid Pin 1 · KL15 (+12 V)",
+        "DISA-Solenoid Pin 2 · DME-Ansteuerung (Masse-schaltend)"
+      ],
+      "engines": ["M54"],
+      "article": "disa-m54.md",
+      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/motor/m54"
+    }
+  ]
+}

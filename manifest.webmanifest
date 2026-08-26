@@ -1,0 +1,57 @@
+{
+  "name": "diag4free — BMW Werkstatt-Wissensbasis",
+  "short_name": "diag4free",
+  "description": "Technische Dokumentation und Diagnose-Wissensbasis für ältere BMW. Offlinefähig, PWA.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1a2d",
+  "theme_color": "#0071bb",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Diagnosepfade",
+      "url": "./#/troubleshoot",
+      "description": "Direkt in die geführte Fehlersuche"
+    },
+    {
+      "name": "Tech-Docs",
+      "url": "./#/docs",
+      "description": "Zur Dokumentbibliothek"
+    },
+    {
+      "name": "Messplan",
+      "url": "./#/measure",
+      "description": "Werkstatt-Checkliste"
+    }
+  ]
+}

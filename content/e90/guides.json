@@ -1,0 +1,42 @@
+{
+  "model": "e90",
+  "guides": {
+    "n54-low-boost": {
+      "code": "GF-E90-01",
+      "name": "N54 · Zu wenig Ladedruck",
+      "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP.",
+      "steps": [
+        {
+          "q": "Sind DTCs 29E0/29E1 gespeichert?",
+          "help": "ISTA/D → Motor → Fehlerspeicher lesen. 29E0/29E1 zeigt Sollwertabweichung Ladedruck.",
+          "measure": "Ladedrucksollwert bei 3500 U/min · ~0.85 bar über Umgebung",
+          "doc": "D4F-E90-002",
+          "yes": 1,
+          "no": "check-symptom"
+        },
+        {
+          "q": "Ladeluftsystem druckdicht? (Smoke-Test)",
+          "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse.",
+          "measure": "Smoke-Test 0.5 bar · keine sichtbaren Austritte",
+          "doc": "D4F-E90-002",
+          "yes": "wastegate",
+          "no": "boost-leak"
+        }
+      ]
+    }
+  },
+  "results": {
+    "check-symptom": {
+      "title": "Keine Ladedruckabweichung im Speicher",
+      "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: HPFP-Druck bei WOT prüfen (Soll ~200 bar)."
+    },
+    "boost-leak": {
+      "title": "Ladeluftleckage bestätigt",
+      "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle)."
+    },
+    "wastegate": {
+      "title": "Wastegate/HPFP als nächstes prüfen",
+      "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen)."
+    }
+  }
+}

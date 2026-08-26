@@ -1,0 +1,46 @@
+{
+  "model": "f-series",
+  "docs": [
+    {
+      "id": "D4F-F-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "E-Sys · F-Serie Codierung Grundlagen",
+      "valid": "F-Serie · alle Baureihen",
+      "summary": "E-Sys 3.34.x mit passender PSDZData für die F-Serie. FEM/BDC-Codierung, FA-Manipulation, FDL-Codierung einzelner Steuergeräte.",
+      "points": [
+        "ENET-Kabel zwingend (kein K-Line auf F-Serie)",
+        "PSDZData muss zum I-Level des Fahrzeugs passen",
+        "Immer TokenMaster/EsysLauncher PRO verwenden für Zertifikat",
+        "FA lesen → FA ändern → 'FA -> FP' → CAF/FDL neu schreiben",
+        "Bei FEM/BDC: nie ohne aktive Batterieladung codieren"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · ENET+",
+        "OBD2 Pin 11 · ENET-",
+        "OBD2 Pin 12 · Aktivierung Ethernet (mit KL15)"
+      ],
+      "engines": ["N20", "N55", "B47", "B58", "N63"],
+      "article": "esys-basics.md",
+      "url": "https://www.bimmerfest.com/threads/e-sys-guide.1177361/"
+    },
+    {
+      "id": "D4F-F-002",
+      "type": "FUB",
+      "cat": "Codierung",
+      "title": "Nützliche F-Serien-Codierungen",
+      "valid": "F10/F20/F30 · alle Motoren",
+      "summary": "Praxiserprobte F-Serien-Codierungen: Digital Speed, Videos während der Fahrt, Enhanced Bluetooth, Sport-Displays im KOMBI.",
+      "points": [
+        "KOMBI: BC_DIGITAL_V = aktiv → Digitalgeschwindigkeit im Tacho",
+        "HU_NBT: VIDEO_IN_MOTION = aktiv → DVD/Video während Fahrt",
+        "HU_NBT: ENH_BLUETOOTH_US = aktiv → erweitertes BT-Menü",
+        "KOMBI: SPORT_DISPLAYS = aktiv → Leistungs-/Drehmomentanzeige (nur passende Motoren)",
+        "FEM_BODY: NR_TFL_PWM = 100 → hellere Tagfahrlichter"
+      ],
+      "pins": [],
+      "engines": ["N20", "N55", "B47", "B58"],
+      "url": "https://www.bimmertech.net/blog/f30-coding"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+name: Deploy diag4free to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build content index
+        run: node scripts/build-index.mjs
+
+      - name: Generate PWA icons if missing
+        run: |
+          if [ ! -f assets/icons/icon-192.png ]; then
+            echo "Generating placeholder PNG icons from SVG…"
+            sudo apt-get update && sudo apt-get install -y librsvg2-bin
+            mkdir -p assets/icons
+            rsvg-convert -w 192 -h 192 assets/icons/favicon.svg -o assets/icons/icon-192.png
+            rsvg-convert -w 512 -h 512 assets/icons/favicon.svg -o assets/icons/icon-512.png
+            rsvg-convert -w 512 -h 512 assets/icons/favicon.svg -o assets/icons/icon-maskable-512.png
+            rsvg-convert -w 180 -h 180 assets/icons/favicon.svg -o assets/icons/apple-touch-icon.png
+          fi
+
+      - name: Add build metadata
+        run: |
+          echo "{ \"built\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"sha\": \"${GITHUB_SHA:0:7}\" }" > content/build.json
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

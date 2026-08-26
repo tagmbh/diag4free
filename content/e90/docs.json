@@ -1,0 +1,66 @@
+{
+  "model": "e90",
+  "docs": [
+    {
+      "id": "D4F-E90-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "ISTA/D · E90-Diagnose einrichten",
+      "valid": "E90/E91/E92/E93 · alle Motoren",
+      "summary": "ISTA/D 4.x mit ENET- oder K+DCAN-Kabel für die E9x-Baureihe. Fahrzeugidentifikation, geführte Fehlersuche und Servicefunktionen.",
+      "points": [
+        "E90 vor 03/2007 · nur K+DCAN (OBD Pin 7/8)",
+        "E90 ab 03/2007 · zusätzlich ENET möglich (F-Serien-ähnliche Kommunikation)",
+        "VIN muss im FZG-Profil vollständig hinterlegt sein",
+        "Java 8 32-bit erforderlich für Legacy-Bedienoberfläche"
+      ],
+      "pins": [
+        "OBD Pin 6 · CAN-High",
+        "OBD Pin 14 · CAN-Low",
+        "OBD Pin 8 · DCAN (bis 03/2007)"
+      ],
+      "engines": ["N43", "N46", "N52", "N53", "N54", "N55", "M57", "N47", "S65"],
+      "article": "ista-e90-setup.md",
+      "url": "https://www.bimmergeeks.net/"
+    },
+    {
+      "id": "D4F-E90-002",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "N54 · Häufige DTCs bei Ladedruckproblemen",
+      "valid": "E90/E91/E92/E93 · N54B30",
+      "summary": "N54-typische Fehler an Wastegate-Rasseln, HPFP und Ladedruckregelung mit Prüfvorschlag.",
+      "points": [
+        "29DC/29CD · Wastegate-Rasseln · Turboladertausch OEM oder Rebuild",
+        "29E0/29E1 · Ladedruckabweichung · Ladeluftschlauch-Dichtheit, N54-typische Kupplungsschellen",
+        "29F0 · HPFP-Druckabfall · Hochdruckpumpe (Rückrufumfang prüfen)",
+        "30FF · Zündaussetzer sporadisch · Zündspulen und Kerzen (NGK 97506)"
+      ],
+      "pins": [
+        "DME Stecker A · Pin 15 · Ladedrucksensor Signal",
+        "DME Stecker A · Pin 32 · HPFP-Druckregelventil"
+      ],
+      "engines": ["N54"],
+      "article": "dtc-n54.md",
+      "url": "https://www.n54tech.com/"
+    },
+    {
+      "id": "D4F-E90-003",
+      "type": "TEST",
+      "cat": "Codierung",
+      "title": "E-Sys mit E9x · nur ab CIC/JBBFE nutzbar",
+      "valid": "E90 LCI · CIC oder Combox",
+      "summary": "E-Sys 3.34+ funktioniert am E9x nur bei aktueller iDrive-Generation (CIC ab 09/2008). Für Vor-Facelift NCS Expert nutzen.",
+      "points": [
+        "PSDZData mit passendem I-Level laden",
+        "FA lesen → offline anpassen → FDL-Codierung schreiben",
+        "Immer erst KIS/OKV-Backup anlegen",
+        "Falscher I-Level → Bricking-Gefahr"
+      ],
+      "pins": [],
+      "engines": ["N52", "N53", "N54", "N55"],
+      "article": "esys-basics.md",
+      "url": "https://f30.bimmerpost.com/"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "model": "e30",
+  "guides": {
+    "m20-no-spark": {
+      "code": "GF-E30-01",
+      "name": "M20 kein Zündfunke",
+      "desc": "Klassischer Ausfall am E30 mit M20. Reihenfolge: Zündspule → Hallgeber → DME → Kabelbaum.",
+      "steps": [
+        {
+          "q": "Kommt Spannung an der Zündspule KL15?",
+          "help": "Zündschloss auf Position 2. Am Klemme 15 der Zündspule (grün-schwarz) müssen ~12 V anliegen.",
+          "measure": "Zündspule KL15 · 11.5–12.6 V",
+          "doc": "D4F-E30-001",
+          "yes": 1,
+          "no": "no-kl15"
+        },
+        {
+          "q": "Löst der Hallgeber im Verteiler ein Signal aus?",
+          "help": "Beim Cranken muss ein Rechtecksignal 0/12 V am Hallgeber-Signalpin (grün) messbar sein.",
+          "measure": "Hallgeber Signal · Rechteck 0–12 V bei Anlasserdrehzahl",
+          "doc": "D4F-E30-001",
+          "yes": "check-dme",
+          "no": "hall-sensor"
+        }
+      ]
+    }
+  },
+  "results": {
+    "no-kl15": {
+      "title": "KL15-Versorgung fehlt",
+      "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel."
+    },
+    "hall-sensor": {
+      "title": "Hallgeber im Verteiler defekt",
+      "text": "Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Anschließend Zündung neu einstellen."
+    },
+    "check-dme": {
+      "title": "DME oder Zündspule prüfen",
+      "text": "Zündspule Primär (0.5 Ω) und Sekundär (5–8 kΩ) messen. Bei intakter Spule: DME (Motronic-Steuergerät) tauschweise prüfen."
+    }
+  }
+}

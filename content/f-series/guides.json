@@ -1,0 +1,30 @@
+{
+  "model": "f-series",
+  "guides": {
+    "fem-bricked": {
+      "code": "GF-F-01",
+      "name": "FEM/BDC nach Codierung tot",
+      "desc": "FEM/BDC reagiert nach Codierversuch nicht mehr. Rettung durch geführte Wiederinbetriebnahme.",
+      "steps": [
+        {
+          "q": "Ist das Fahrzeug noch entriegelbar?",
+          "help": "FEM-Bricking äußert sich meist durch: Fahrzeug reagiert nicht auf Schlüssel, Kombi bleibt schwarz, Motor startet nicht.",
+          "measure": "KL30-Versorgung am FEM · konstant 12 V",
+          "doc": "D4F-F-001",
+          "yes": "recovery-soft",
+          "no": "recovery-full"
+        }
+      ]
+    }
+  },
+  "results": {
+    "recovery-soft": {
+      "title": "Software-Recovery über E-Sys",
+      "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend."
+    },
+    "recovery-full": {
+      "title": "Bench-Recovery erforderlich",
+      "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich."
+    }
+  }
+}
