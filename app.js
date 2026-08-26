@@ -832,6 +832,14 @@
     // Result view
     if (state.result) {
       const r = g._results[state.result];
+
+      // `next_docs` steht seit jeher in den Guide-Ergebnissen, wurde aber nie
+      // angezeigt — genau dort, wo der Nutzer nach der Diagnose weiterlesen
+      // will, endete der Weg. Nur auflösbare IDs zeigen, sonst tote Knöpfe.
+      const weiter = (r?.next_docs || [])
+        .map(id => state.data.docs.find(d => d.id === id))
+        .filter(Boolean);
+
       panel.innerHTML = `
         <div class="page-header">
           <div>
@@ -843,6 +851,20 @@
           <div class="result-label">Empfehlung</div>
           <div class="result-title">${escapeHtml(r?.title || 'Unbekanntes Ergebnis')}</div>
           <div class="result-text">${escapeHtml(r?.text || '')}</div>
+          ${weiter.length ? `
+            <div class="result-next">
+              <h3 class="result-next-title">Dazu weiterlesen</h3>
+              <div class="result-next-list">
+                ${weiter.map(d => `
+                  <button class="result-next-item" data-open-doc="${escapeHtml(d.id)}">
+                    <span class="doc-type" data-type="${escapeHtml(d.type)}">${escapeHtml(d.type)}</span>
+                    <span class="result-next-text">
+                      <span class="result-next-name">${escapeHtml(d.title)}</span>
+                      <span class="result-next-sub">${escapeHtml(d.summary.slice(0, 90))}${d.summary.length > 90 ? '…' : ''}</span>
+                    </span>
+                  </button>`).join('')}
+              </div>
+            </div>` : ''}
           <div class="step-actions">
             <button class="btn btn-secondary" data-reset-guide>${iconSvg('reset')} Neu starten</button>
             <button class="btn btn-ghost" data-back-to-guides>${iconSvg('back')} Andere Diagnose</button>
@@ -860,6 +882,9 @@
         clearSession(); updateResumeDot(); renderTroubleshoot();
       });
       panel.querySelector('[data-print]').addEventListener('click', () => window.print());
+      panel.querySelectorAll('[data-open-doc]').forEach(b =>
+        b.addEventListener('click', () => { haptic(); openDocDrawer(b.dataset.openDoc); })
+      );
       return;
     }
 

@@ -360,6 +360,72 @@ async function main() {
       await ctx.close();
     }
 
+    // --- next_docs: nach der Diagnose weiterlesen ---
+    {
+      console.log('\n▸ Weiterführende Docs im Ergebnis');
+      const ctx = await browser.newContext({ ...devices['iPhone 13'], serviceWorkers: 'block' });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`next_docs: ${e.message}`));
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+
+      // Baureihe wählen, deren Ergebnisse next_docs führen — sonst prüft
+      // der Test nichts und bestünde durch Überspringen.
+      const ziel = await page.evaluate(async () => {
+        const d = await (await fetch('./content/index.json')).json();
+        for (const g of Object.values(d.guides)) {
+          for (const r of Object.values(g._results || {})) {
+            if ((r.next_docs || []).length) return g.model;
+          }
+        }
+        return null;
+      });
+      expect(!!ziel, 'Content enthält Ergebnisse mit next_docs',
+        'keine gefunden — dieser Test prüft dann nichts');
+
+      if (ziel) {
+        await page.goto(`${BASE}/#/model/${ziel}`, { waitUntil: 'domcontentloaded' });
+        await settle(page, 1300);
+
+        let gefunden = false;
+        const guides = await (async () => {
+          await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+          await settle(page, 800);
+          return page.locator('[data-select-guide]').count();
+        })();
+
+        for (let gi = 0; gi < guides && !gefunden; gi++) {
+          for (const antwort of ['no', 'yes']) {
+            await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+            await settle(page, 700);
+            const wieder = page.locator('[data-discard-session]');
+            if (await wieder.count()) { await wieder.click(); await settle(page, 300); }
+            if (!(await page.locator('[data-select-guide]').count())) break;
+            await page.locator('[data-select-guide]').nth(gi).click();
+            await settle(page, 400);
+            for (let k = 0; k < 8; k++) {
+              const b = page.locator(`[data-answer="${antwort}"]`);
+              if (!(await b.count()) || !(await b.isVisible())) break;
+              await b.click();
+              await settle(page, 220);
+            }
+            if (await page.locator('.result-next-item').count() > 0) { gefunden = true; break; }
+          }
+        }
+        expect(gefunden, 'Ergebnis zeigt weiterführende Docs an',
+          'kein Ergebnis mit .result-next-item erreicht — next_docs wird nicht gerendert');
+
+        if (gefunden) {
+          await page.locator('.result-next-item').first().click();
+          await settle(page, 700);
+          const auf = await page.locator('[data-doc-drawer]').getAttribute('aria-hidden');
+          expect(auf === 'false', 'weiterführendes Doc öffnet den Drawer', `aria-hidden=${auf}`);
+        }
+      }
+      await ctx.close();
+    }
+
     // --- Reduced Motion: Bewegung aus, App weiter bedienbar ---
     {
       console.log('\n▸ Reduced Motion');

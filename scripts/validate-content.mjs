@@ -151,6 +151,17 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
       const raw = await readJson(guidesPath);
       const guides = raw.guides || raw;
       const results = raw.results || {};
+
+      // `next_docs` führt nach der Diagnose weiter. Ein Verweis ins Leere
+      // wäre ein toter Knopf im Ergebnis — dieselbe Klasse wie step.doc.
+      for (const [rid, r] of Object.entries(results)) {
+        if (r.next_docs === undefined) continue;
+        if (!isArr(r.next_docs)) { err(f, `Ergebnis \`${rid}\`: \`next_docs\` muss ein Array sein`); continue; }
+        for (const ref of r.next_docs) {
+          if (!isStr(ref)) err(f, `Ergebnis \`${rid}\`: \`next_docs\` enthält einen leeren Eintrag`);
+          else docRefs.push([f, `Ergebnis ${rid}`, ref]);
+        }
+      }
       for (const [gid, g] of Object.entries(guides)) {
         if (typeof g !== 'object' || g === null) continue;
         if (!isStr(g.name)) err(f, `Guide \`${gid}\`: \`name\` fehlt`);
@@ -263,7 +274,7 @@ async function main() {
 
   // Guide → Doc-Referenzen erst prüfen, wenn alle Doc-IDs bekannt sind
   for (const [f, gid, ref] of docRefs) {
-    if (!docIds.has(ref)) err(f, `Guide \`${gid}\`: verweist auf Doc \`${ref}\`, das es nicht gibt`);
+    if (!docIds.has(ref)) err(f, `${gid.startsWith('Ergebnis') ? gid : `Guide \`${gid}\``}: verweist auf Doc \`${ref}\`, das es nicht gibt`);
   }
 
   await validateEngines(engineIds);
