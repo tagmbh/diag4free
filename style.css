@@ -7,7 +7,7 @@
   /* Typografie-Skala (Web-App-Maßstab — max text-xl) */
   --text-xs:   clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
   --text-sm:   clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem);
-  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem); /* min 16px — mobile-lesbar (UX R67) */
   --text-md:   clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --text-lg:   clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
   --text-xl:   clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);

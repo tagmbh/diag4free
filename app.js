@@ -8,6 +8,25 @@
 (() => {
   'use strict';
 
+  // -------- Persistenz (localStorage) --------
+  const STORAGE_KEY = 'diag4free.prefs.v1';
+  const loadPrefs = () => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch { return {}; }
+  };
+  const savePrefs = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        series: state.series,
+        engine: state.engine,
+        theme: state.theme,
+        view: state.view
+      }));
+    } catch { /* Quota / Private-Mode ignore */ }
+  };
+
   // -------- State --------
   const state = {
     view: 'overview',
@@ -24,7 +43,8 @@
     theme: 'light',
     drawer: null,     // { docId | article }
     data: null,       // content/index.json
-    installEvt: null
+    installEvt: null,
+    obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
 
   // -------- Elements --------
@@ -63,7 +83,59 @@
     state.guide = null; state.step = 0; state.history = []; state.result = null;
     updateContext();
     renderSidebarModels();
+    savePrefs();
     render();
+  };
+
+  const setEngine = (engineId) => {
+    if (!state.data) return;
+    const model = state.data.models.groups.flatMap(g => g.models).find(m => m.id === state.series);
+    if (!model || !model.engines.includes(engineId)) return;
+    state.engine = engineId;
+    updateContext();
+    savePrefs();
+    render();
+  };
+
+  // -------- Engine-Picker Dialog --------
+  const openEnginePicker = () => {
+    const model = state.data.models.groups.flatMap(g => g.models).find(m => m.id === state.series);
+    if (!model) return;
+    const dlg = document.createElement('div');
+    dlg.className = 'dialog-backdrop';
+    dlg.setAttribute('role', 'dialog');
+    dlg.setAttribute('aria-modal', 'true');
+    dlg.setAttribute('aria-label', 'Motor wählen');
+    dlg.innerHTML = `
+      <div class="dialog">
+        <div class="dialog-header">
+          <h2>Motor wählen · ${escapeHtml(state.series.toUpperCase())}</h2>
+          <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
+        </div>
+        <div class="dialog-body">
+          <p class="dialog-lead">Filtert Dokumente und Diagnosepfade auf den gewählten Aggregat-Kontext.</p>
+          <div class="engine-list">
+            ${model.engines.map(e => `
+              <button class="engine-option ${e === state.engine ? 'active' : ''}" data-engine="${escapeHtml(e)}">
+                <span class="engine-name">${escapeHtml(e)}</span>
+                ${e === state.engine ? '<span class="engine-badge">aktiv</span>' : ''}
+              </button>`).join('')}
+          </div>
+        </div>
+      </div>`;
+    document.body.appendChild(dlg);
+    const close = () => { dlg.remove(); };
+    dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+    dlg.querySelectorAll('[data-engine]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setEngine(btn.dataset.engine);
+        close();
+      });
+    });
+    const esc = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    document.addEventListener('keydown', esc);
+    dlg.querySelector('.engine-option')?.focus();
   };
 
   const updateContext = () => {
@@ -229,7 +301,8 @@
         <div class="kpi">
           <div class="kpi-label">Motor aktiv</div>
           <div class="kpi-value" style="font-family:var(--font-mono);font-size:var(--text-lg);">${escapeHtml(state.engine)}</div>
-          <div class="kpi-hint">${activeModel.engines.length} Motoren verfügbar · <button class="btn-ghost" data-change-engine style="font-size:11px;padding:0;height:auto;text-decoration:underline;">wechseln</button></div>
+          <div class="kpi-hint">${activeModel.engines.length} Motoren verfügbar</div>
+          <button class="link-inline" data-change-engine aria-label="Motor wechseln" style="margin-top:var(--space-2);font-size:13px;">→ Motor wechseln</button>
         </div>
       </div>
 
@@ -298,10 +371,10 @@
     panel.querySelectorAll('[data-set-model]').forEach(el =>
       el.addEventListener('click', () => setSeries(el.dataset.setModel))
     );
-    panel.querySelector('[data-change-engine]')?.addEventListener('click', changeEngineDialog);
+    panel.querySelector('[data-change-engine]')?.addEventListener('click', openEnginePicker);
   };
 
-  const changeEngineDialog = () => {
+  const changeEngineDialog_LEGACY = () => {
     const activeGroup = state.data.models.groups.find(g => g.models.some(m => m.id === state.series));
     const activeModel = activeGroup.models.find(m => m.id === state.series);
     const choice = prompt(
@@ -818,8 +891,11 @@
     // Menu (mobile)
     $('#menuBtn').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
 
-    // Theme toggle
-    $('#themeBtn').addEventListener('click', () => applyTheme(state.theme === 'dark' ? 'light' : 'dark'));
+    // Theme toggle (persistent)
+    $('#themeBtn').addEventListener('click', () => {
+      applyTheme(state.theme === 'dark' ? 'light' : 'dark');
+      savePrefs();
+    });
 
     // Print
     $('#printBtn').addEventListener('click', () => window.print());
@@ -859,9 +935,12 @@
 
   // -------- Init --------
   const init = async () => {
-    // Theme init
+    // Prefs aus localStorage laden
+    const prefs = loadPrefs();
+
+    // Theme init: gespeichert > System-Präferenz
     const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(preferDark ? 'dark' : 'light');
+    applyTheme(prefs.theme || (preferDark ? 'dark' : 'light'));
 
     // Load content index
     try {
@@ -886,9 +965,22 @@
       state.engine = model?.engines[0] || '—';
     }
 
-    // Prefer e46/M54 if data available
+    // Prefer e46/M54 as Referenzimplementierung
     const hasE46 = state.data.docs.some(d => d.model === 'e46');
     if (hasE46) { state.series = 'e46'; state.engine = 'M54'; }
+
+    // Gespeicherte Baureihe/Motor überschreiben Default (falls im Katalog vorhanden)
+    if (prefs.series) {
+      const savedModel = state.data.models.groups.flatMap(g => g.models).find(m => m.id === prefs.series);
+      if (savedModel) {
+        state.series = prefs.series;
+        if (prefs.engine && savedModel.engines.includes(prefs.engine)) {
+          state.engine = prefs.engine;
+        } else {
+          state.engine = savedModel.engines[0] || '—';
+        }
+      }
+    }
 
     updateContext();
     renderSidebarModels();

@@ -29,7 +29,8 @@
         { "id": "e60", "name": "E60/E61", "years": "2003–2010", "engines": ["N52", "N54", "N62", "M54", "M57", "S85"], "desc": "5er, MOST/PT-CAN, iDrive CCC/CIC" },
         { "id": "e90", "name": "E90/E91/E92/E93", "years": "2004–2013", "engines": ["N43", "N46", "N52", "N53", "N54", "N55", "M57", "N47", "S65"], "desc": "3er, CAS3/EWS4, JBBF" },
         { "id": "e70", "name": "E70/E71", "years": "2006–2013", "engines": ["N52", "N54", "N55", "N62", "M57", "S63"], "desc": "X5/X6, JBE, integrierte Sicherheitsmodule" },
-        { "id": "e8x", "name": "E81/E82/E87/E88", "years": "2004–2013", "engines": ["N43", "N45", "N46", "N52", "N54", "N55"], "desc": "1er, CAS3/EWS4" }
+        { "id": "e87", "name": "E81/E82/E87", "years": "2004–2013", "engines": ["N43", "N45", "N46", "N52", "N54", "N55", "N47"], "desc": "1er Schrägheck/Coupé, CAS3/EWS4" },
+        { "id": "e88", "name": "E88", "years": "2007–2013", "chassis": "1er Cabrio", "engines": ["N43", "N46", "N52", "N54", "N55", "N47"], "desc": "1er Cabrio, CAS3/EWS4, CTM Verdecksteuerung, hybrid Soft-Top", "obd_protocol": "D-CAN" }
       ]
     },
     {

@@ -1,0 +1,114 @@
+{
+  "model": "e88",
+  "guides": {
+    "n52-startet-nicht": {
+      "code": "GF-E88-01",
+      "name": "N52 startet nicht (E88)",
+      "desc": "Anlasser dreht oder dreht nicht. Systematisch: Batterie/IBS → CAS-Freigabe → Kraftstoff → Zündung → mechanisch.",
+      "engines": ["N52"],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startknopf hörbar?",
+          "help": "Reines Klick-Klick deutet auf Batteriekreis/Massefehler. Gar nichts deutet auf CAS-Freigabe fehlend oder Startknopf-Schalter defekt.",
+          "measure": "Bordspannung während Startanforderung muss ≥ 10,5 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
+          "doc": "D4F-E88-002",
+          "obd_hint": "PID 0142 Steuermodulspannung parallel loggen — Einbruch < 9 V = Batterie",
+          "yes": 1,
+          "no": "result-startfreigabe"
+        },
+        {
+          "q": "Springt Motor an, geht aber sofort wieder aus (2–3 s Lauf)?",
+          "help": "Typisches Zeichen für EWS/CAS-Diskrepanz: Motor läuft mit DME-Startprozedur, wird dann von CAS wegen ISN-Fehler abgeschaltet.",
+          "measure": "INPA CAS Fehlerspeicher lesen. Bei ISN-Mismatch: CAS/DME-Angleich via ISTA-D erforderlich.",
+          "doc": "D4F-E88-002",
+          "yes": "result-cas-mismatch",
+          "no": 2
+        },
+        {
+          "q": "Hört man die Kraftstoffpumpe für 2 s beim Aufschließen surren?",
+          "help": "N52 hat elektrische Niederdruckpumpe im Tank. Wenn stumm: Sicherung F04 (30 A) und EKPS (Kraftstoffpumpen-Steuergerät) prüfen.",
+          "measure": "Sicherung F04 im Kofferraum-Sicherungskasten. EKPS über INPA prüfen: Statusblock „Kraftstoffpumpe Drehzahl-Anforderung“.",
+          "doc": "D4F-E88-010",
+          "obd_hint": "PID 015E Kraftstoffvorlauf-Sollrate",
+          "yes": 3,
+          "no": "result-ekps"
+        },
+        {
+          "q": "Zeigt INPA beim Start Drehzahl > 200 U/min?",
+          "help": "Wenn Anlasser dreht aber DME keine Drehzahl sieht: Kurbelwellensensor oder dessen Kabelbaum unterbrochen.",
+          "measure": "INPA Statusblock DME „Drehzahl KW“ während Startversuch. Sensor: 2-poliger induktiver Sensor am Getriebeglocken-Adapter, ~1000 Ω",
+          "doc": "D4F-E88-010",
+          "yes": "result-zuendung",
+          "no": "result-kw-sensor"
+        }
+      ]
+    },
+    "n52-ueberhitzung-standgas": {
+      "code": "GF-E88-02",
+      "name": "N52 Überhitzung im Standgas",
+      "desc": "Motor kühlt im Fahrbetrieb (Wind) noch, aber bei Standgas oder Stau steigt die Temperatur über 110 °C. Klassisches E-Wasserpumpen-Bild.",
+      "engines": ["N52"],
+      "steps": [
+        {
+          "q": "Läuft der Elektro-Lüfter bei Standgas-Überhitzung hörbar hoch?",
+          "help": "N52 hat einen einzigen elektrischen Kühlerlüfter (600 W). Wenn er nicht anläuft trotz Temperatur > 100 °C: Lüfter-Endstufe oder Ansteuerung DME.",
+          "measure": "INPA DME Statusblock „Lüfteransteuerung Soll“ > 50 % erwarten wenn T > 100 °C.",
+          "doc": "D4F-E88-011",
+          "yes": 1,
+          "no": "result-luefter"
+        },
+        {
+          "q": "Zeigt INPA Wasserpumpen-Solldrehzahl > 3000 U/min bei Standgas warm?",
+          "help": "Bei heißem Motor im Stand soll die E-Pumpe hochfahren. Wenn Solldrehzahl OK, aber Motor kocht → Pumpe reagiert nicht auf Ansteuerung.",
+          "measure": "INPA DME Statusblock „Kühlmittelpumpe Solldrehzahl“ und „Iststrom Wasserpumpe“. Ist-Strom < 2 A bei > 3000 U/min Soll = Pumpe defekt.",
+          "doc": "D4F-E88-011",
+          "obd_hint": "PID 0105 Kühlmitteltemperatur",
+          "yes": "result-wasserpumpe",
+          "no": "result-thermostat"
+        }
+      ]
+    }
+  },
+  "results": {
+    "result-startfreigabe": {
+      "title": "CAS-Freigabe fehlt oder Startknopf defekt",
+      "text": "CAS-Fehlerspeicher lesen. Häufig: Startknopf-Kontakt oxidiert, oder Fahrertür-Sensor blockiert CAS-Aufwachen. Nach Reparatur: Adaption CAS-Fahrertür durchführen.",
+      "next_docs": ["D4F-E88-002"]
+    },
+    "result-cas-mismatch": {
+      "title": "CAS/DME ISN-Mismatch",
+      "text": "Kritisch: kann nach DME-Tausch oder unsauberer Codierung auftreten. Nur mit ISTA-D + gültiger BMW-Online-Verbindung angleichbar. NIE mit gebrauchtem DME-Steuergerät ohne ISN-Reset arbeiten.",
+      "next_docs": ["D4F-E88-002"]
+    },
+    "result-ekps": {
+      "title": "Kraftstoffpumpen-Steuergerät (EKPS)",
+      "text": "EKPS sitzt hinter der Rücksitzbank rechts. Symptom stumme Pumpe trotz KL15 und heiler Sicherung → EKPS-Endstufe. Vor Tausch immer Massepunkt X4051 prüfen.",
+      "next_docs": []
+    },
+    "result-zuendung": {
+      "title": "Zündung/Einspritzung fehlt trotz Drehzahl",
+      "text": "Ursachen: Zündspulen-Endstufe DME defekt (selten), Kraftstoffdruck < 400 kPa (HDP-Vorförderung defekt beim N52 nicht relevant — N52 ist Saugrohr-Einspritzung, N54 Direkteinspritzer!). N52: Rail-Druck-Sollwert ~450 kPa, Injektor-Widerstand ~14 Ω.",
+      "next_docs": ["D4F-E88-011"]
+    },
+    "result-kw-sensor": {
+      "title": "Kurbelwellensensor / Kabelbaum",
+      "text": "Sensor sitzt an der Getriebeglocke, Stecker anfällig für Öl und Wärme. Vor Tausch: Widerstand messen (~1000 Ω), Kabelbaum bis DME auf Durchgang. Nach Tausch keine Adaption nötig.",
+      "next_docs": []
+    },
+    "result-luefter": {
+      "title": "Kühlerlüfter oder dessen Ansteuerung",
+      "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (50 A), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
+      "next_docs": ["D4F-E88-011"]
+    },
+    "result-wasserpumpe": {
+      "title": "Elektrische Wasserpumpe (Pierburg) defekt",
+      "text": "Sehr wahrscheinlich Pumpe intern hinüber. Nach Tausch: Kühlsystem entlüften — Kombiinstrument-Prozedur (Zündung an ohne Motor, Klima Volleistung heiß, Gaspedal 10 s durchtreten → Entlüftungsprogramm ~12 min). Nicht sparen: bei jedem Wechsel auch Thermostat und Ausgleichsbehälter neu.",
+      "next_docs": ["D4F-E88-011"]
+    },
+    "result-thermostat": {
+      "title": "Thermostat oder Kühlkreislauf-Luftblase",
+      "text": "Wenn Pumpe fördert aber Temperatur trotzdem steigt: Thermostat öffnet zu spät oder Luftpolster im System. Erst Entlüftungsprozedur, dann Thermostat-Kennlinie prüfen (nominal Öffnung ab 97 °C).",
+      "next_docs": []
+    }
+  }
+}

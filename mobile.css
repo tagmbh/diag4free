@@ -1,0 +1,418 @@
+/* ============================================================
+   diag4free — Mobile & Touch Layer
+   ------------------------------------------------------------
+   Angewendet nach style.css. Adressiert UI/UX-Pro-Max-Regeln:
+     R22/R66/R104  Touch-Target ≥ 24×24 (Web) / 44 px empfohlen
+     R23           ≥ 8 px Spacing zwischen Touch-Zielen
+     R25           touch-action manipulation (Tap-Delay weg)
+     R67           Body-Font ≥ 16 px auf Mobile
+     R68           Safe-Area-Insets (Notch / Home-Indicator)
+     R69           Kein horizontaler Scroll
+     R111          overflow-wrap: anywhere für lange Tokens
+     R113/R116     Essenzielle Text-Reflow, keine Clamp-Verluste
+     R115          Chip-Collection-Reflow (statt clip)
+     R119          Cancellable Transitions
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Globale Touch-Optimierung (R25 + R69)
+------------------------------------------------------------ */
+html {
+  /* iOS: Font-Size-Adjust bei Rotation abschalten */
+  -webkit-text-size-adjust: 100%;
+}
+html, body {
+  overflow-x: hidden;                      /* R69 */
+  overscroll-behavior-y: contain;          /* Kein Bounce über PWA-Shell */
+}
+button, a, [role="button"], input, select, textarea, label {
+  touch-action: manipulation;              /* R25 — 300ms Delay entfernen */
+}
+/* Größere Tap-Feedback-Area für native Buttons */
+button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ------------------------------------------------------------
+   2. Long-Token-Wrapping (R111 + R113)
+------------------------------------------------------------ */
+.drawer-title,
+.doc-title,
+.tile-title,
+.guide-name,
+.result-title,
+.kpi-value,
+.step-question,
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.doc-summary,
+.tile-desc,
+.guide-desc,
+.kpi-hint,
+.drawer-subtitle {
+  overflow-wrap: anywhere;
+}
+
+/* Code/Kabel-IDs dürfen brechen wo sinnvoll */
+code, .measure-target, .pin-num, .doc-code {
+  overflow-wrap: anywhere;
+}
+
+/* ------------------------------------------------------------
+   3. Chip-Reflow (R115)
+------------------------------------------------------------ */
+.filter-chips,
+.doc-engines,
+.detail-tags {
+  flex-wrap: wrap;
+  row-gap: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+   4. Safe-Area (R68) — Notch, Home-Indicator, Statusbar
+   Aktiv bei standalone PWA und Landscape auf iPhone
+------------------------------------------------------------ */
+@supports (padding: max(0px)) {
+  .topbar {
+    padding-left:  max(var(--space-4), env(safe-area-inset-left));
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+  }
+  .sidebar {
+    padding-left:  env(safe-area-inset-left);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .view-inner {
+    padding-left:  max(var(--space-6), env(safe-area-inset-left));
+    padding-right: max(var(--space-6), env(safe-area-inset-right));
+    padding-bottom: max(var(--space-16), env(safe-area-inset-bottom));
+  }
+  .drawer {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ------------------------------------------------------------
+   5. Reduced Motion (R119 + R66)
+------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .sidebar {
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 960 px  (Tablet Portrait + Phones)
+   ============================================================ */
+@media (max-width: 960px) {
+  /* R67 — mind. 16px Body-Text */
+  html { font-size: 16px; }
+
+  /* Touch-Targets (R22 / R66 / R104) — durchgehend ≥ 44 px */
+  .btn,
+  .icon-btn,
+  .chip,
+  .filter-chip,
+  .nav-item,
+  .model-item,
+  .step-actions .btn,
+  .card button,
+  .link-inline {
+    min-height: 44px;
+  }
+  .link-inline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 var(--space-2);
+    border-radius: var(--radius-sm);
+    background: var(--color-primary-tint-2);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .link-inline:hover,
+  .link-inline:focus-visible {
+    background: var(--color-primary-tint);
+  }
+
+  /* R23 — 8px Spacing zwischen Touch-Zielen */
+  .topbar-actions { gap: var(--space-2); }
+  .filter-chips   { gap: var(--space-2); }
+
+  /* Icon-Buttons in Topbar größer */
+  .topbar .icon-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  /* Topbar: kompaktere Höhe, größere Trefferzone */
+  :root { --topbar-h: 56px; }
+  .topbar-title-mobile {
+    font-size: var(--text-md);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* View-Padding auf Mobile knapper (Werkstatt = viel Content sichtbar) */
+  .view-inner {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-16);
+  }
+
+  /* KPI-Grid: 2×2 mit prominenten Zahlen (Bento-artig) */
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+  .kpi { padding: var(--space-3) var(--space-4); }
+  .kpi-label { font-size: 11px; }
+  .kpi-value { font-size: 1.5rem; }         /* fix statt clamp — prominenter */
+  .kpi-hint  { font-size: 12px; line-height: 1.4; }
+
+  /* Doc-Cards & Tiles: dichtere Grid, aber mit klaren Grenzen */
+  .doc-list  { grid-template-columns: 1fr; gap: var(--space-3); }
+  .tile-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+  .doc-card, .tile { padding: var(--space-4); }
+
+  /* Guide-Step: Buttons Full-Width, Aktion primär */
+  .step-actions {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .step-actions .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+    font-size: var(--text-md);
+    padding: var(--space-3) var(--space-4);
+  }
+  .step-actions .btn.btn-primary { order: -1; }   /* JA nach oben */
+
+  /* Drawer Fullwidth, Header sticky sichtbar */
+  .drawer {
+    width: 100%;
+    max-width: 100vw;
+  }
+  .drawer-header {
+    position: sticky;
+    top: 0;
+    background: var(--color-surface);
+    z-index: 5;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .drawer-footer {
+    position: sticky;
+    bottom: 0;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-divider);
+    padding-bottom: max(var(--space-3), env(safe-area-inset-bottom));
+  }
+
+  /* Metadaten (10-11px hardcodiert) auf Mobile lesbar */
+  .doc-code,
+  .doc-type-badge,
+  .kicker,
+  .measure-target {
+    font-size: 12px !important;
+  }
+
+  /* Sidebar-Baureihen-Baum: größere Trefferzonen */
+  .model-item {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+  .model-group-toggle {
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* ============================================================
+   PHONE  ≤ 480 px
+   ============================================================ */
+@media (max-width: 480px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-value { font-size: 1.375rem; }
+  .kpi-label { font-size: 10.5px; letter-spacing: 0.06em; }
+
+  /* Titelblöcke straffer */
+  .view-header h1 { font-size: 1.25rem; }
+  .view-header .kicker { display: block; margin-bottom: var(--space-1); }
+
+  /* Suche im Topbar full-width overlay */
+  .topbar-search.mobile-active {
+    padding-inline: max(var(--space-3), env(safe-area-inset-right));
+  }
+
+  /* Pin-Tabelle horizontal scrollen statt cramped */
+  .pin-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .pin-table      { min-width: 320px; font-size: 12.5px; }
+
+  /* Guide-Step: Frage groß und prominent */
+  .step-question {
+    font-size: 1.125rem;
+    line-height: 1.35;
+  }
+}
+
+/* ============================================================
+   POINTER: COARSE  (Touch-Devices, unabhängig von Breite)
+   ============================================================ */
+@media (pointer: coarse) {
+  /* Hover-Effekte, die auf Touch nach dem Tap kleben, deaktivieren */
+  .tile:hover,
+  .doc-card:hover,
+  .chip:hover,
+  .btn:hover {
+    transform: none;
+  }
+  /* Fokus-Ring bleibt für Keyboard-Nutzer */
+}
+
+/* ============================================================
+   STANDALONE (PWA installiert) — echte App-Anmutung
+   ============================================================ */
+@media (display-mode: standalone) {
+  /* iOS-Statusbar-Bereich abfangen */
+  .topbar { padding-top: max(0px, env(safe-area-inset-top)); }
+  /* Install-Button nicht mehr anzeigen */
+  #installBtn { display: none !important; }
+}
+
+/* ============================================================
+   Fokus-Ring (WCAG 2.1 — 3:1 Kontrast, sichtbar auf allen Themes)
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--color-primary-active);
+}
+
+/* ============================================================
+   Engine-Picker Dialog (Motor wählen)
+   ============================================================ */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 26, 43, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: var(--space-4);
+  animation: fadeIn 120ms ease-out;
+}
+[data-theme="dark"] .dialog-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.dialog {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 420px;
+  max-height: calc(100vh - 2rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+}
+.dialog-header h2 {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+.dialog-body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  overflow-y: auto;
+}
+.dialog-lead {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4);
+}
+.engine-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-2);
+}
+.engine-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-height: 44px;
+  transition: var(--transition-interactive);
+}
+.engine-option:hover, .engine-option:focus-visible {
+  border-color: var(--color-primary);
+  background: var(--color-primary-tint-2);
+}
+.engine-option.active {
+  background: var(--color-primary-tint);
+  border-color: var(--color-primary);
+}
+.engine-name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+.engine-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   Chip-Overflow-Disclosure (R115) — vorbereitet für +n
+   ============================================================ */
+.chip-collection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+.chip-collection .chip-overflow {
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+}
