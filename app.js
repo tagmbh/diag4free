@@ -1352,13 +1352,26 @@
     // Focus trap-ish: move focus into drawer
     setTimeout(() => $('.drawer .close-btn')?.focus(), 50);
 
-    // Lazy-load MD article
+    // Artikel nachladen. `article` benennt einen geplanten Artikel — 14 von 15
+    // Verweisen zeigen derzeit auf noch nicht geschriebene Dateien. Ein rotes
+    // „konnte nicht geladen werden" lässt die App defekt aussehen, obwohl die
+    // Bullets, Pins und Quellen darüber vollständig da sind. Deshalb: 404 wird
+    // als „noch nicht geschrieben" gezeigt, ein echter Fehler weiterhin als Fehler.
     if (doc.article) {
+      const mount = $('#articleMount');
       try {
         const resp = await fetch(`./content/${doc.model}/${doc.article}`);
-        if (!resp.ok) throw new Error('nicht gefunden');
+        if (resp.status === 404) {
+          if (mount) mount.innerHTML =
+            '<p class="article-pending">Zu diesem Dokument ist ein ausführlicher Artikel vorgesehen, aber noch nicht geschrieben.</p>';
+          return;
+        }
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const md = await resp.text();
-        const html = marked.parse(md, { breaks: false, gfm: true });
+        // marked kommt vom CDN; offline beim Erstlauf fällt es aus.
+        const html = typeof marked !== 'undefined'
+          ? marked.parse(md, { breaks: false, gfm: true })
+          : `<pre class="article-raw">${escapeHtml(md)}</pre>`;
         $('#articleContent').innerHTML = html;
       } catch (e) {
         $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';

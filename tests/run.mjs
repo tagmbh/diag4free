@@ -417,6 +417,24 @@ async function main() {
         const wiederZu = await page.locator('[data-doc-drawer]').getAttribute('aria-hidden');
         expect(wiederZu === 'true', 'Escape schließt den Doc-Drawer', `aria-hidden=${wiederZu}`);
       }
+
+      // Kein Doc darf im Drawer wie ein Defekt aussehen. 14 von 15
+      // Artikelverweisen zeigen auf noch nicht geschriebene Dateien —
+      // das ist ein offener Redaktionsstand, kein Ladefehler.
+      const mitFehlertext = [];
+      for (let i = 0; i < alle; i++) {
+        await page.locator('.doc-card').nth(i).click();
+        await settle(page, 550);
+        const txt = await page.locator('.drawer-body').textContent();
+        if (/konnte nicht geladen werden/.test(txt)) {
+          mitFehlertext.push(await page.locator('.doc-card').nth(i).getAttribute('data-doc'));
+        }
+        await page.keyboard.press('Escape');
+        await settle(page, 300);
+      }
+      expect(mitFehlertext.length === 0, 'kein Doc zeigt einen Artikel-Ladefehler',
+        mitFehlertext.join(', '));
+
       await ctx.close();
     }
 

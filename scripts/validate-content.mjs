@@ -23,6 +23,7 @@ const QUIET = process.argv.includes('--quiet');
 
 const errors = [];
 const warnings = [];
+const offeneArtikel = [];
 const err = (file, msg) => errors.push(`${file}: ${msg}`);
 const warn = (file, msg) => warnings.push(`${file}: ${msg}`);
 
@@ -93,6 +94,19 @@ async function validateModelContent(modelIds, groupIds) {
           err(f, `\`${d.id}\`: \`type\` \`${d.type}\` ist keiner von ${DOC_TYPES.join(', ')}`);
         }
         if (d.model && d.model !== dir) err(f, `\`${d.id}\`: \`model\` \`${d.model}\` passt nicht zum Verzeichnis \`${dir}\``);
+
+        // `article` verweist auf eine Markdown-Datei im selben Verzeichnis.
+        // Fehlt sie, ist das kein Vertragsbruch — der Artikel ist geplant,
+        // aber noch nicht geschrieben. Ein kaputter Pfad dagegen schon.
+        if (d.article !== undefined) {
+          if (!isStr(d.article) || !d.article.endsWith('.md')) {
+            err(f, `\`${d.id}\`: \`article\` muss ein .md-Dateiname sein`);
+          } else if (d.article.includes('/') || d.article.includes('..')) {
+            err(f, `\`${d.id}\`: \`article\` \`${d.article}\` darf nur ein Dateiname im eigenen Verzeichnis sein`);
+          } else if (!(await exists(join(CONTENT, dir, d.article)))) {
+            offeneArtikel.push(`${d.id} → content/${dir}/${d.article}`);
+          }
+        }
       }
     }
 
@@ -221,6 +235,12 @@ async function main() {
   await validateMeasure(modelIds, engineIds);
 
   if (!QUIET) console.log(`\n  ${modelIds.size} Baureihen · ${engineIds.size} Motoren · ${docIds.size} Docs`);
+
+  if (offeneArtikel.length) {
+    console.log(`\n○  ${offeneArtikel.length} geplante(r) Artikel noch nicht geschrieben:`);
+    for (const a of offeneArtikel) console.log(`   ${a}`);
+    console.log('   (kein Vertragsbruch — die App zeigt dort einen Hinweis statt eines Fehlers)');
+  }
 
   if (warnings.length) {
     console.log(`\n⚠  ${warnings.length} Hinweis(e):`);

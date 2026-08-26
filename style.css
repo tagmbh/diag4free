@@ -1602,3 +1602,20 @@
   gap: var(--space-2);
   margin-top: var(--space-3);
 }
+
+/* Ein geplanter, aber noch nicht geschriebener Artikel ist kein Fehlerfall —
+   die Bullets, Pins und Quellen darüber stehen vollständig. */
+.article-pending {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.article-raw {
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
