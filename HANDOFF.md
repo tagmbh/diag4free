@@ -26,6 +26,19 @@
 - **VIN-Decoder** (Button „VIN" in der Topbar): offline WMI + Modelljahr + Struktur-Validierung; optional Online-Details via NHTSA vPIC (`DecodeVinValues`, CORS-frei); Mapping auf Katalog-Baureihe + Motor mit „Übernehmen"-Button (`setSeries`); Decodes werden in `localStorage` gecacht. Code: `app.js` ab Marker `VIN-DECODER`.
 - **Software-Update-Checker** (`#/software`): Versions-Eingabe (`XX-NNN.NNN.NNN` oder kurz `MX-3.4.31`) → passende UPD-Datei mit Direktlinks auf BMW-CDN (bin + Readme-PDF), Präfix-Referenztabelle (MX/TX = Combox → E88-relevant, UPD01008), Diagnose-Software-Übersicht (INPA/EDIABAS, NCS Expert, ISTA-D, Tool32) und PSdZData/E-Sys-Sektion. Daten: `content/software.json`. Matching-Logik adaptiert aus Idries/bmwfirmware (MIT, attribuiert).
 
+## Gerade abgeschlossen (v0.4.0)
+
+- **Touch-Bedienebene**: Bottom-Tabbar in der Daumenzone (≤ 960 px, Safe-Area-aware,
+  Sidebar-Nav dort ausgeblendet), fixierte Antwortleiste im Diagnose-Runner (56 px Targets,
+  Kurzlabels „Ja"/„Nein" ≤ 560 px), Schritt-Spur zum Zurückspringen, Wisch-Geste nach rechts
+  = ein Schritt zurück, Haptik-Impuls bei jeder Antwort.
+- **Sitzungs-Wiederaufnahme**: laufende Fehlersuche überlebt Reload/Sperre
+  (`localStorage` `diag4free.session.v1`), Wiederaufnahme-Karte in der Diagnosepfad-Liste,
+  Punkt am Diagnose-Tab. Baureihenwechsel verwirft die Sitzung.
+- **Wake Lock**: Bildschirm bleibt während einer laufenden Fehlersuche an.
+- **Bugfix**: Fällt das Fuse-CDN aus (erster Start offline), brach `init()` ab und die App
+  rendert gar nichts mehr. Jetzt Substring-Suche als Fallback.
+
 ## Offene Todos (priorisiert)
 
 ### 1. Motoren-Identifikation mit Visualisierung (NEU — Userwunsch 2026-08-26)

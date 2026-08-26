@@ -27,6 +27,81 @@
     } catch { /* Quota / Private-Mode ignore */ }
   };
 
+  // -------- Diagnose-Sitzung (Wiederaufnahme am Fahrzeug) --------
+  // Eine laufende Fehlersuche überlebt Reload, Bildschirmsperre und App-Neustart.
+  const SESSION_KEY = 'diag4free.session.v1';
+  const saveSession = () => {
+    try {
+      if (!state.guide) { localStorage.removeItem(SESSION_KEY); return; }
+      localStorage.setItem(SESSION_KEY, JSON.stringify({
+        series: state.series,
+        engine: state.engine,
+        guide: state.guide,
+        step: state.step,
+        history: state.history,
+        result: state.result,
+        ts: Date.now()
+      }));
+    } catch { /* Quota / Private-Mode ignore */ }
+  };
+  const loadSession = () => {
+    try {
+      const raw = localStorage.getItem(SESSION_KEY);
+      if (!raw) return null;
+      const s = JSON.parse(raw);
+      // Nur Sitzungen der aktiven Baureihe anbieten — keine Baureihenmischung
+      if (!s || s.series !== state.series || !s.guide) return null;
+      if (!state.data?.guides[`${s.series}:${s.guide}`]) return null;
+      return s;
+    } catch { return null; }
+  };
+  const clearSession = () => {
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }
+  };
+  const resumeSession = (s) => {
+    state.guide = s.guide;
+    state.step = s.step || 0;
+    state.history = Array.isArray(s.history) ? s.history : [];
+    state.result = s.result || null;
+  };
+
+  // Wie lange ist das her? Für die "Weiter"-Karte.
+  const relativeTime = (ts) => {
+    const min = Math.round((Date.now() - ts) / 60000);
+    if (min < 1) return 'gerade eben';
+    if (min < 60) return `vor ${min} Min.`;
+    const h = Math.round(min / 60);
+    if (h < 24) return `vor ${h} Std.`;
+    return `vor ${Math.round(h / 24)} Tg.`;
+  };
+
+  // -------- Touch-Feedback --------
+  // Kurzer Impuls bei Diagnose-Antworten — mit Handschuhen die einzige
+  // verlässliche Rückmeldung, dass der Tap gezählt hat.
+  const haptic = (ms = 12) => {
+    try { navigator.vibrate?.(ms); } catch { /* nicht unterstützt */ }
+  };
+
+  // -------- Wake Lock --------
+  // Während einer laufenden Fehlersuche darf der Bildschirm nicht zugehen:
+  // Hände sind am Fahrzeug, nicht am Display.
+  let wakeLock = null;
+  const requestWakeLock = async () => {
+    if (wakeLock || !('wakeLock' in navigator)) return;
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', () => { wakeLock = null; });
+    } catch { wakeLock = null; }
+  };
+  const releaseWakeLock = () => {
+    try { wakeLock?.release(); } catch { /* ignore */ }
+    wakeLock = null;
+  };
+  // Nach Tab-Wechsel / Sperre erneut anfordern, solange eine Diagnose läuft
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && state.guide && !state.result) requestWakeLock();
+  });
+
   // -------- State --------
   const state = {
     view: 'overview',
@@ -82,6 +157,7 @@
     state.category = 'Alle';
     // Reset guide-Kontext, damit keine Baureihenmischung
     state.guide = null; state.step = 0; state.history = []; state.result = null;
+    clearSession();
     updateContext();
     renderSidebarModels();
     savePrefs();
@@ -254,9 +330,11 @@
   const render = () => {
     // Sichtbarkeit + Nav-Status immer mit state.view synchronisieren
     // (auch bei Deep-Links / hashchange, nicht nur bei setView)
-    $$('.nav-list [data-view]').forEach(b => {
-      if (b.dataset.view === state.view) b.setAttribute('aria-current', 'page');
+    $$('[data-view]').forEach(b => {
+      const active = b.dataset.view === state.view;
+      if (active) b.setAttribute('aria-current', 'page');
       else b.removeAttribute('aria-current');
+      if (b.classList.contains('tab')) b.classList.toggle('active', active);
     });
     $$('.view').forEach(p => p.classList.toggle('active', p.dataset.viewPanel === state.view));
     switch (state.view) {
@@ -267,6 +345,7 @@
       case 'library':      renderLibrary(); break;
       case 'software':     renderSoftware(); break;
     }
+    updateResumeDot();
   };
 
   // -------- OVERVIEW --------
@@ -483,6 +562,9 @@
     const guides = currentGuides();
 
     if (!state.guide) {
+      releaseWakeLock();
+      const session = loadSession();
+      const sessionGuide = session ? state.data.guides[`${session.series}:${session.guide}`] : null;
       panel.innerHTML = `
         <div class="page-header">
           <div>
@@ -490,6 +572,20 @@
             <p class="page-lead">Geführte Fehlersuchen für ${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)}. Jeder Schritt referenziert Messpunkte und Docs.</p>
           </div>
         </div>
+        ${sessionGuide ? `
+          <div class="resume-card">
+            <div class="resume-meta">
+              <span class="resume-badge">Angefangen</span>
+              <span class="resume-time">${escapeHtml(relativeTime(session.ts))}</span>
+            </div>
+            <div class="resume-name">${escapeHtml(sessionGuide.name)}</div>
+            <div class="resume-progress">${session.result ? 'Ergebnis erreicht' : `Schritt ${session.step + 1} von ${sessionGuide.steps.length}`}</div>
+            <div class="resume-actions">
+              <button class="btn btn-primary" data-resume-session>Weitermachen</button>
+              <button class="btn btn-ghost" data-discard-session>Verwerfen</button>
+            </div>
+          </div>
+        ` : ''}
         ${guides.length === 0 ? `
           <div class="empty">
             ${iconSvg('wrench')}
@@ -508,13 +604,24 @@
           </div>
         `}
       `;
+      panel.querySelector('[data-resume-session]')?.addEventListener('click', () => {
+        resumeSession(session);
+        updateHash();
+        renderTroubleshoot();
+      });
+      panel.querySelector('[data-discard-session]')?.addEventListener('click', () => {
+        clearSession();
+        renderTroubleshoot();
+      });
       panel.querySelectorAll('[data-select-guide]').forEach(btn => {
         btn.addEventListener('click', () => {
           state.guide = btn.dataset.selectGuide;
           state.step = 0; state.history = []; state.result = null;
+          saveSession();
           renderTroubleshoot();
         });
       });
+      updateResumeDot();
       return;
     }
 
@@ -542,11 +649,14 @@
           </div>
         </div>
       `;
+      saveSession();
+      releaseWakeLock();
       panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
-        state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+        state.step = 0; state.history = []; state.result = null; saveSession(); renderTroubleshoot();
       });
       panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
-        state.guide = null; state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+        state.guide = null; state.step = 0; state.history = []; state.result = null;
+        clearSession(); updateResumeDot(); renderTroubleshoot();
       });
       panel.querySelector('[data-print]').addEventListener('click', () => window.print());
       return;
@@ -559,6 +669,15 @@
     const progress = Math.round(((state.step) / total) * 100);
     const refDoc = step.doc ? state.data.docs.find(d => d.id === step.doc) : null;
 
+    // Schritt-Spur: was bereits beantwortet wurde, bleibt sichtbar und antippbar
+    const trail = state.history.map((idx, i) => {
+      const past = g.steps[idx];
+      return `<button class="trail-item" data-trail="${i}" title="Zurück zu Schritt ${idx + 1}">
+        <span class="trail-num">${idx + 1}</span>
+        <span class="trail-q">${escapeHtml(past?.q || '')}</span>
+      </button>`;
+    }).join('');
+
     panel.innerHTML = `
       <div class="page-header">
         <div>
@@ -568,30 +687,41 @@
         <button class="btn btn-ghost" data-back-to-guides>${iconSvg('back')} Andere Diagnose</button>
       </div>
 
-      <div class="guide-step">
+      <div class="guide-step" data-guide-runner>
         <div class="step-progress">
           <span>Schritt ${state.step + 1} / ${total}</span>
           <div class="step-progress-bar"><div class="step-progress-fill" style="width:${progress}%"></div></div>
         </div>
+        ${trail ? `<div class="step-trail" aria-label="Bisherige Schritte">${trail}</div>` : ''}
         <div class="step-question">${escapeHtml(step.q)}</div>
         ${step.help ? `<div class="step-help">${escapeHtml(step.help)}</div>` : ''}
         ${step.measure ? `<div class="step-measure">📐 ${escapeHtml(step.measure)}</div>` : ''}
-        ${refDoc ? `<div style="margin-bottom:var(--space-4);">
+        ${refDoc ? `<div class="step-doc-ref">
           <button class="btn btn-secondary" data-open-doc="${escapeHtml(refDoc.id)}">${iconSvg('docs')} Zugehöriges Dokument: ${escapeHtml(refDoc.title)}</button>
         </div>` : ''}
-        <div class="step-actions">
-          <button class="btn btn-primary" data-answer="yes">${iconSvg('check')} Ja / erfüllt</button>
-          <button class="btn btn-secondary" data-answer="no">${iconSvg('x')} Nein / abweichend</button>
-        </div>
         <div class="step-footer">
           ${state.history.length > 0 ? `<button class="btn btn-ghost" data-step-back>${iconSvg('back')} Zurück</button>` : ''}
           <button class="btn btn-ghost" data-reset-guide>${iconSvg('reset')} Zurücksetzen</button>
         </div>
       </div>
+
+      <div class="step-answerbar" role="group" aria-label="Antwort auf Schritt ${state.step + 1}">
+        <button class="answer answer-yes" data-answer="yes" aria-label="Ja, Bedingung erfüllt">
+          ${iconSvg('check')}<span class="answer-full">Ja / erfüllt</span><span class="answer-short">Ja</span>
+        </button>
+        <button class="answer answer-no" data-answer="no" aria-label="Nein, Wert weicht ab">
+          ${iconSvg('x')}<span class="answer-full">Nein / abweichend</span><span class="answer-short">Nein</span>
+        </button>
+      </div>
     `;
 
+    saveSession();
+    requestWakeLock();
+    updateResumeDot();
+
     panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
-      state.guide = null; state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+      state.guide = null; state.step = 0; state.history = []; state.result = null;
+      clearSession(); releaseWakeLock(); updateResumeDot(); renderTroubleshoot();
     });
     panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
       state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
@@ -602,6 +732,7 @@
     });
     panel.querySelector('[data-open-doc]')?.addEventListener('click', (e) => openDocDrawer(e.currentTarget.dataset.openDoc));
     panel.querySelectorAll('[data-answer]').forEach(btn => btn.addEventListener('click', () => {
+      haptic();
       const answer = btn.dataset.answer;
       const target = step[answer];
       state.history.push(state.step);
@@ -609,6 +740,49 @@
       else if (typeof target === 'string') { state.result = target; }
       renderTroubleshoot();
     }));
+
+    // Schritt-Spur: zurückspringen auf einen bereits beantworteten Schritt
+    panel.querySelectorAll('[data-trail]').forEach(btn => btn.addEventListener('click', () => {
+      const i = Number(btn.dataset.trail);
+      if (!Number.isInteger(i) || i < 0 || i >= state.history.length) return;
+      state.step = state.history[i];
+      state.history = state.history.slice(0, i);
+      state.result = null;
+      renderTroubleshoot();
+    }));
+
+    bindSwipeBack(panel.querySelector('[data-guide-runner]'));
+  };
+
+  // Nach rechts wischen = einen Schritt zurück. Am Fahrzeug schneller als
+  // den Zurück-Button zu treffen; vertikales Scrollen bleibt unberührt.
+  const bindSwipeBack = (el) => {
+    if (!el) return;
+    let x0 = null, y0 = null;
+    el.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) { x0 = null; return; }
+      x0 = e.touches[0].clientX;
+      y0 = e.touches[0].clientY;
+    }, { passive: true });
+    el.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - x0;
+      const dy = t.clientY - y0;
+      x0 = null;
+      if (dx > 70 && Math.abs(dy) < 50 && state.history.length > 0) {
+        haptic(8);
+        const prev = state.history.pop();
+        if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+      }
+    }, { passive: true });
+  };
+
+  // Punkt am Diagnose-Tab, solange eine Fehlersuche offen ist — auch nach
+  // einem Neustart, solange eine gespeicherte Sitzung existiert.
+  const updateResumeDot = () => {
+    const dot = $('#tabResumeDot');
+    if (dot) dot.hidden = !(state.guide || loadSession());
   };
 
   // -------- MEASURE --------
@@ -679,6 +853,9 @@
   let fuse = null;
   const buildFuse = () => {
     if (!state.data) return;
+    // Fuse kommt vom CDN. Ist es beim ersten Start offline nicht erreichbar,
+    // darf die App nicht komplett ausfallen — dann greift die Substring-Suche.
+    if (typeof Fuse === 'undefined') { fuse = null; return; }
     fuse = new Fuse(state.data.docs, {
       keys: [
         { name: 'title', weight: 3 },
@@ -695,11 +872,23 @@
     });
   };
 
+  // Sucht per Fuse, sonst per Substring über dieselben Felder.
+  const searchDocs = (q) => {
+    if (fuse) return fuse.search(q, { limit: 60 }).map(r => r.item);
+    const needle = q.toLowerCase();
+    const hit = (v) => Array.isArray(v)
+      ? v.some(x => String(x).toLowerCase().includes(needle))
+      : String(v ?? '').toLowerCase().includes(needle);
+    return state.data.docs
+      .filter(d => hit(d.title) || hit(d.id) || hit(d.summary) || hit(d.points) || hit(d.pins) || hit(d.cat) || hit(d.valid))
+      .slice(0, 60);
+  };
+
   const renderLibrary = () => {
     const panel = $('#libraryPanel');
     if (!fuse) buildFuse();
     const q = state.globalSearch.trim();
-    const results = q ? fuse.search(q, { limit: 60 }).map(r => r.item) : state.data.docs;
+    const results = q ? searchDocs(q) : state.data.docs;
 
     // group by model
     const byModel = {};
@@ -1258,7 +1447,7 @@
   // -------- Event Bindings --------
   const bindEvents = () => {
     // View nav
-    $$('.nav-list [data-view]').forEach(btn =>
+    $$('[data-view]').forEach(btn =>
       btn.addEventListener('click', () => setView(btn.dataset.view))
     );
 

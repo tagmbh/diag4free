@@ -6,7 +6,7 @@
      - Navigation: network-first mit App-Shell-Fallback (SPA)
 */
 
-const VERSION = 'd4f-v0.3.0';
+const VERSION = 'd4f-v0.4.0';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const VENDOR_CACHE = `${VERSION}-vendor`;
