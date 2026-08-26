@@ -229,15 +229,19 @@ code, .measure-target, .pin-num, .doc-code {
     font-size: 12px !important;
   }
 
-  /* Sidebar-Baureihen-Baum: größere Trefferzonen */
-  .model-item {
-    padding-top: var(--space-3);
-    padding-bottom: var(--space-3);
-  }
-  .model-group-toggle {
+  /* Sidebar-Baureihen-Baum: größere Trefferzonen.
+     Vorher zielten hier `.model-item` und `.model-group-toggle` — beide
+     Klassen gibt es im Markup nicht, die Regeln liefen ins Leere und die
+     Knöpfe blieben bei 33 bzw. 34 px. */
+  .model-items button,
+  .model-group-header {
     min-height: 44px;
-    padding: var(--space-2) var(--space-3);
   }
+  .model-items button { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+
+  /* Immer sichtbare Bedienelemente der Topbar */
+  .topbar-menu-btn { min-width: 44px; min-height: 44px; }
+  .vin-btn { min-height: 44px; padding-inline: var(--space-3); }
 }
 
 /* ============================================================

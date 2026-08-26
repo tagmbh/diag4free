@@ -221,12 +221,75 @@ async function main() {
         `data-check="${checkId}" sieht nach einem Index aus`);
 
       // --- Touch-Targets ---
+      // Alle sichtbaren Bedienelemente, nicht eine gepflegte Selektorliste:
+      // eine solche Liste übersieht genau das, was neu dazukommt oder wofür
+      // eine CSS-Regel ins Leere zielt.
       if (isTouch) {
-        const small = await page.evaluate(() => [...document.querySelectorAll(
-          '.tab,.answer,.fchip,.pick-card,.route,.cockpit-veh,.cockpit-eng,.trail-item,.btn,.icon-btn')]
-          .filter(el => { const r = el.getBoundingClientRect(); return r.height > 0 && r.width > 0 && r.height < 44; })
-          .map(el => `${el.className.split(' ')[0]}:${Math.round(el.getBoundingClientRect().height)}px`));
-        expect(small.length === 0, 'alle Touch-Targets >= 44px', small.join(', '));
+        const zuKlein = await page.evaluate(() => {
+          const sichtbar = el => {
+            if (el.closest('[aria-hidden="true"]') || el.closest('[hidden]')) return false;
+            let n = el;
+            while (n && n !== document.documentElement) {
+              const cs = getComputedStyle(n);
+              if (cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return false;
+              n = n.parentElement;
+            }
+            const r = el.getBoundingClientRect();
+            return r.width > 0 && r.height > 0 && r.right > 0 && r.bottom > 0 && r.left < innerWidth;
+          };
+          return [...new Set([...document.querySelectorAll('a,button,input,select,summary,[role="button"]')]
+            .filter(sichtbar)
+            // Ein kleines Steuerelement ist in Ordnung, wenn das zugehörige
+            // Label die Trefferfläche trägt (pro-rules: Hitbox erweitern,
+            // nicht das Symbol vergrößern).
+            .filter(el => {
+              if (el.getBoundingClientRect().height >= 44) return false;
+              const lab = el.closest('label');
+              return !(lab && lab.getBoundingClientRect().height >= 44);
+            })
+            .map(el => `${el.tagName.toLowerCase()}.${(el.className||'').toString().split(' ')[0]||'—'}:${Math.round(el.getBoundingClientRect().height)}px`))];
+        });
+        expect(zuKlein.length === 0, 'alle sichtbaren Touch-Targets >= 44px', zuKlein.join(', '));
+
+        // Auch mit geöffneter Sidebar — dort saßen die Baureihen-Knöpfe bei 33 px
+        await page.locator('#menuBtn').click();
+        await settle(page, 450);
+        const zuKleinOffen = await page.evaluate(() => {
+          const r = el => el.getBoundingClientRect();
+          return [...new Set([...document.querySelectorAll('#sidebar a, #sidebar button')]
+            .filter(el => r(el).width > 0 && r(el).height > 0 && r(el).height < 44)
+            .map(el => `${el.tagName.toLowerCase()}.${(el.className||'').toString().split(' ')[0]||'—'}:${Math.round(r(el).height)}px`))];
+        });
+        expect(zuKleinOffen.length === 0, 'Sidebar-Targets >= 44px', zuKleinOffen.join(', '));
+
+        // Aus der Sidebar muss man wieder herauskommen, ohne die Baureihe zu
+        // wechseln: sie überdeckt den Menü-Button, der sie geöffnet hat.
+        const vorher = await page.locator('#ctxSeries').textContent();
+        expect(await page.locator('[data-sidebar-backdrop]').isVisible(),
+          'Sidebar hat einen Backdrop', 'kein sichtbarer Backdrop');
+        const frei = await page.evaluate(() => {
+          const sb = document.querySelector('#sidebar').getBoundingClientRect();
+          return Math.round(window.innerWidth - sb.width);
+        });
+        expect(frei >= 44, 'Backdrop-Streifen breit genug zum Antippen', `nur ${frei}px frei`);
+        // Rechter Rand des Backdrops — die Sidebar deckt die linke Hälfte ab.
+        // (Feste 350 px lagen auf dem 320 px breiten iPhone SE außerhalb.)
+        const bdBox = await page.locator('[data-sidebar-backdrop]').boundingBox();
+        await page.locator('[data-sidebar-backdrop]').click({
+          position: { x: Math.round(bdBox.width - 20), y: Math.round(bdBox.height / 2) }
+        });
+        await settle(page, 400);
+        let offen = await page.locator('#sidebar').evaluate(el => el.classList.contains('open'));
+        expect(!offen, 'Backdrop-Tap schließt die Sidebar', 'Sidebar bleibt offen');
+
+        await page.locator('#menuBtn').click();
+        await settle(page, 400);
+        await page.keyboard.press('Escape');
+        await settle(page, 300);
+        offen = await page.locator('#sidebar').evaluate(el => el.classList.contains('open'));
+        expect(!offen, 'Escape schließt die Sidebar', 'Sidebar bleibt offen');
+        const nachher = await page.locator('#ctxSeries').textContent();
+        expect(vorher === nachher, 'Schließen ändert die Baureihe nicht', `${vorher} → ${nachher}`);
       }
 
       // --- Tabbar nur auf Touch ---

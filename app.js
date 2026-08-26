@@ -350,6 +350,16 @@
     });
   };
 
+  // -------- Sidebar (mobil) --------
+  const isSidebarOpen = () => $('#sidebar').classList.contains('open');
+  const setSidebar = (offen) => {
+    $('#sidebar').classList.toggle('open', offen);
+    const bd = $('[data-sidebar-backdrop]');
+    if (bd) bd.hidden = !offen;
+    $('#menuBtn').setAttribute('aria-expanded', String(offen));
+    $('#menuBtn').setAttribute('aria-label', offen ? 'Menü schließen' : 'Menü öffnen');
+  };
+
   // -------- Views --------
   const setView = (v) => {
     state.view = v;
@@ -357,7 +367,7 @@
     render();
     $('#main').scrollTop = 0;
     // close mobile sidebar
-    $('#sidebar').classList.remove('open');
+    setSidebar(false);
   };
 
   const render = () => {
@@ -1738,8 +1748,10 @@
       btn.addEventListener('click', () => setView(btn.dataset.view))
     );
 
-    // Menu (mobile)
-    $('#menuBtn').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
+    // Menu (mobile) — Backdrop und Escape schließen mit, sonst sitzt man in
+    // der Sidebar fest: sie überdeckt den Menü-Button, der sie geöffnet hat.
+    $('#menuBtn').addEventListener('click', () => setSidebar(!isSidebarOpen()));
+    $('[data-sidebar-backdrop]').addEventListener('click', () => setSidebar(false));
 
     // Theme toggle (persistent)
     $('#themeBtn').addEventListener('click', () => {
@@ -1758,6 +1770,7 @@
     $('[data-drawer-backdrop]').addEventListener('click', closeDrawer);
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && state.drawer) closeDrawer();
+      else if (e.key === 'Escape' && isSidebarOpen()) setSidebar(false);
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         $('#globalSearch').focus();
