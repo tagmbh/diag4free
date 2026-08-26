@@ -640,7 +640,7 @@ code, .measure-target, .pin-num, .doc-code {
 }
 .vin-btn:hover {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .dialog-wide { max-width: 34rem; }
 .vin-input {
@@ -803,7 +803,7 @@ code, .measure-target, .pin-num, .doc-code {
 
 .answer-yes {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .answer-no {
   background: var(--color-surface);
@@ -898,7 +898,7 @@ code, .measure-target, .pin-num, .doc-code {
   padding: 2px var(--space-2);
   border-radius: var(--radius-sm);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1018,4 +1018,38 @@ code, .measure-target, .pin-num, .doc-code {
      im umbrechenden .page-header. */
   .page-actions { display: flex; width: 100%; gap: var(--space-2); }
   .page-actions .btn { flex: 1; justify-content: center; min-height: 44px; }
+}
+
+/* ============================================================
+   QUERFORMAT auf flachen Viewports
+   Bei 390 px Höhe fressen Topbar, Antwortleiste und Tabbar die Hälfte.
+   Ohne diesen Block steht die Diagnosefrage unterhalb der Antwortleiste —
+   man soll Ja/Nein tippen, ohne die Frage lesen zu können.
+   ============================================================ */
+@media (orientation: landscape) and (max-height: 540px) {
+  .view-inner { padding-top: var(--space-3); }
+  .view-inner .page-title { font-size: 1.125rem; line-height: 1.2; }
+  .view-inner .page-lead { display: none; }          /* Kontext weicht dem Inhalt */
+  .page-header { margin-bottom: var(--space-3); }
+
+  /* Die Frage ist das Wichtigste auf dem Schirm */
+  .step-question { font-size: 1.0625rem; margin-bottom: var(--space-2); }
+  .step-progress { margin-bottom: var(--space-2); }
+  .step-trail { display: none; }                     /* Rückweg bleibt per Wischen */
+  .step-help, .step-measure { font-size: var(--text-sm); }
+  .guide-step { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+
+  /* Leisten flacher, Trefferflächen bleiben >= 44 px */
+  .step-answerbar { padding: var(--space-2) var(--space-3); inset-block-end: calc(49px + env(safe-area-inset-bottom)); }
+  .answer { min-height: 46px; }
+  .tabbar .tab { min-height: 48px; gap: 1px; }
+  .tab svg { width: 19px; height: 19px; }
+  .tab span { font-size: 10px; }
+
+  /* Fahrzeugauswahl: mehr Spalten, die Höhe ist knapper als die Breite */
+  .pick-grid { grid-template-columns: repeat(4, 1fr); }
+  .pick-art svg { max-height: 48px; }
+  .stepper { margin-bottom: var(--space-2); }
+  .step-dot { width: 30px; height: 30px; }
+  .step-node + .step-node::before { top: 14px; }
 }

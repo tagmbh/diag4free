@@ -47,6 +47,38 @@ async function newPage(browser, deviceSpec, errors, label) {
 
 const settle = (page, ms = 900) => page.waitForTimeout(ms);
 
+// Misst den Kontrast jedes sichtbaren Textknotens gegen seinen tatsächlichen
+// Hintergrund. Light- und Dark-Werte werden getrennt geprüft — Dark-Kontraste
+// lassen sich nicht aus dem Light Mode ableiten.
+const KONTRAST_SKRIPT = `(() => {
+  const lum = c => { const [r,g,b] = c.map(v => { v/=255; return v<=0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4); });
+    return 0.2126*r + 0.7152*g + 0.0722*b; };
+  const parse = s => { const m = s.match(/rgba?\(([^)]+)\)/); if (!m) return null;
+    const p = m[1].split(',').map(x => parseFloat(x)); return { rgb: p.slice(0,3), a: p.length>3 ? p[3] : 1 }; };
+  const bgOf = el => { let n = el;
+    while (n && n !== document.documentElement) { const c = parse(getComputedStyle(n).backgroundColor);
+      if (c && c.a > 0.5) return c.rgb; n = n.parentElement; }
+    const b = parse(getComputedStyle(document.body).backgroundColor); return b ? b.rgb : [255,255,255]; };
+  const ratio = (a,b) => { const l1 = lum(a), l2 = lum(b);
+    return (Math.max(l1,l2)+0.05) / (Math.min(l1,l2)+0.05); };
+  const out = [];
+  for (const el of document.querySelectorAll('p,span,dd,dt,li,h1,h2,h3,label,button,a,div')) {
+    const r = el.getBoundingClientRect();
+    if (r.width < 4 || r.height < 4) continue;
+    if (r.bottom < 0 || r.right < 0) continue;
+    const txt = [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join('');
+    if (txt.length < 2) continue;
+    const cs = getComputedStyle(el);
+    if (cs.visibility === 'hidden' || cs.opacity === '0') continue;
+    const fg = parse(cs.color); if (!fg) continue;
+    const size = parseFloat(cs.fontSize), bold = parseInt(cs.fontWeight, 10) >= 700;
+    const soll = (size >= 24 || (size >= 18.66 && bold)) ? 3 : 4.5;
+    const k = ratio(fg.rgb, bgOf(el));
+    if (k < soll) out.push(\`.\${(el.className||'').toString().split(' ')[0]} "\${txt.slice(0,30)}" \${Math.round(k*100)/100}:1 < \${soll}:1\`);
+  }
+  return [...new Set(out)];
+})()`;
+
 async function main() {
   let server;
   if (OWN_SERVER) {
@@ -202,6 +234,69 @@ async function main() {
       expect(tabbarVisible === isTouch, `Tabbar ${isTouch ? 'sichtbar' : 'ausgeblendet'} auf ${label}`,
         `sichtbar=${tabbarVisible}, erwartet=${isTouch}`);
 
+      await ctx.close();
+    }
+
+    // --- Kontrast in beiden Themes ---
+    for (const theme of ['light', 'dark']) {
+      console.log(`\n▸ Kontrast · ${theme}`);
+      const ctx = await browser.newContext({
+        ...devices['iPhone 13'], serviceWorkers: 'block', colorScheme: theme
+      });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`Kontrast/${theme}: ${e.message}`));
+      for (const route of ROUTES.slice(0, 6)) {
+        await page.goto(BASE + '/' + route, { waitUntil: 'domcontentloaded' });
+        await settle(page, 700);
+        // Aktive Zustände mitprüfen — Primary-Flächen tauchen erst dort auf
+        if (route === '#/troubleshoot') {
+          const g = page.locator('[data-select-guide]');
+          if (await g.count()) { await g.first().click(); await settle(page, 400); }
+        }
+        const verstoesse = await page.evaluate(KONTRAST_SKRIPT);
+        expect(verstoesse.length === 0, `${route} Kontrast ${theme}`, verstoesse.join('\n      '));
+      }
+      await ctx.close();
+    }
+
+    // --- Querformat: Höhe ist dort das knappe Gut ---
+    for (const [label, vp] of [['Phone quer', { width: 844, height: 390 }],
+                               ['Tablet quer', { width: 1080, height: 810 }]]) {
+      console.log(`\n▸ ${label}`);
+      const ctx = await browser.newContext({
+        viewport: vp, isMobile: true, hasTouch: true, deviceScaleFactor: 2, serviceWorkers: 'block'
+      });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`${label}: ${e.message}`));
+
+      for (const route of ROUTES) {
+        await page.goto(BASE + '/' + route, { waitUntil: 'domcontentloaded' });
+        await settle(page, 600);
+        const over = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+        expect(!over, `${route} ohne horizontalen Overflow (${label})`, 'Seite scrollt seitwärts');
+      }
+
+      // Die Diagnosefrage muss über der Antwortleiste stehen — sonst soll man
+      // Ja/Nein tippen, ohne die Frage lesen zu können.
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 900);
+      const g = page.locator('[data-select-guide]');
+      if (await g.count()) {
+        await g.first().click();
+        await settle(page, 500);
+        const lage = await page.evaluate(() => {
+          const q = document.querySelector('.step-question');
+          const bar = document.querySelector('.step-answerbar');
+          if (!q || !bar) return null;
+          const qr = q.getBoundingClientRect(), br = bar.getBoundingClientRect();
+          const fixiert = getComputedStyle(bar).position === 'fixed';
+          return { ok: qr.top >= 0 && (!fixiert || qr.bottom <= br.top + 1), top: Math.round(qr.top), barTop: Math.round(br.top) };
+        });
+        expect(lage && lage.ok, `Diagnosefrage sichtbar (${label})`,
+          lage ? `Frage bei ${lage.top}px, Antwortleiste bei ${lage.barTop}px` : 'Frage nicht gefunden');
+      }
       await ctx.close();
     }
 

@@ -35,14 +35,17 @@
 
   --color-text:         #0e1a2b;
   --color-text-muted:   #556274;
-  --color-text-faint:   #97a0ad;
+  --color-text-faint:   #656e7b;
   --color-text-inverse: #f5f7fa;
 
   /* T-Alpha-Blau — Primärakzent */
   --color-primary:          #0071bb;
+  /* Vordergrund auf Primary-Flächen. Im Dark Mode ist Primary hell —
+     Weiß käme dort nur auf 2,86:1, ein dunkler Ton auf 6,61:1. */
+  --color-on-primary:       #ffffff;
   --color-primary-hover:    #005a95;
   --color-primary-active:   #004371;
-  --color-primary-tint:     #d7ecf8;
+  --color-primary-tint:     #e1f6ff;
   --color-primary-tint-2:   #e9f3fa;
 
   /* Sidebar — bewusst dunkel, wie E88-Vorbild */
@@ -57,13 +60,13 @@
 
   /* Zustände */
   --color-success:      #157a4c;
-  --color-success-tint: #d6efe1;
-  --color-warning:      #b7690a;
+  --color-success-tint: #dbf4e6;
+  --color-warning:      #a35500;
   --color-warning-tint: #fbebc7;
   --color-error:        #b3261e;
   --color-error-tint:   #fadbd8;
   --color-info:         #0071bb;
-  --color-info-tint:    #d7ecf8;
+  --color-info-tint:    #e1f6ff;
 
   /* Radius */
   --radius-sm: 0.25rem;
@@ -102,10 +105,11 @@
 
   --color-text:         #e6ebf2;
   --color-text-muted:   #9aa5b5;
-  --color-text-faint:   #6b7686;
+  --color-text-faint:   #768191;
   --color-text-inverse: #0a0f16;
 
   --color-primary:          #3aa1e0;
+  --color-on-primary:       #06121e;
   --color-primary-hover:    #58b3ea;
   --color-primary-active:   #79c1ef;
   --color-primary-tint:     #12324a;
@@ -115,7 +119,7 @@
   --color-nav-2:        #0a121c;
   --color-nav-border:   #14202f;
   --color-nav-text:     #c9d2de;
-  --color-nav-text-muted:#6c7889;
+  --color-nav-text-muted:#707c8d;
   --color-nav-active-bg:#132c46;
   --color-nav-active-text:#ffffff;
 
@@ -144,7 +148,7 @@
     --color-border:       #263243;
     --color-text:         #e6ebf2;
     --color-text-muted:   #9aa5b5;
-    --color-text-faint:   #6b7686;
+    --color-text-faint:   #768191;
     --color-nav:          #060c14;
     --color-nav-2:        #0a121c;
     --color-nav-active-bg:#132c46;
@@ -437,7 +441,7 @@
   padding: 0 var(--space-3);
   border-radius: var(--radius-sm);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   font-size: var(--text-sm);
   font-weight: 600;
   display: none;
@@ -613,7 +617,7 @@
 }
 .chip[aria-pressed="true"] {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   border-color: var(--color-primary);
 }
 .chip .count {
@@ -814,7 +818,7 @@
 }
 .btn-primary {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .btn-primary:hover { background: var(--color-primary-hover); }
 .btn-secondary {
@@ -1233,7 +1237,7 @@
 .step-node.done .step-dot {
   border-color: var(--color-primary);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .step-node.current .step-dot {
   border-color: var(--color-primary);
@@ -1288,7 +1292,7 @@
 .fchip.on {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 /* --- Auswahlkarten (Fahrzeug + Motor) --- */
@@ -1348,7 +1352,7 @@
   padding: 2px var(--space-2);
   border-radius: var(--radius-sm);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
