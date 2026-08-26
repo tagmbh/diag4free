@@ -49,24 +49,29 @@ async function validateModels() {
   const modelIds = new Set();
   const engineIds = new Set();
   const groupIds = new Set();
+  const enginesOf = new Map();      // Modell-ID bzw. Gruppen-ID → Set der Motoren
   if (!isArr(data.groups)) { err(f, '`groups` fehlt oder ist kein Array'); return { modelIds, engineIds }; }
   for (const g of data.groups) {
     if (!isStr(g.id)) err(f, 'Gruppe ohne `id`');
-    else groupIds.add(g.id);
+    else { groupIds.add(g.id); enginesOf.set(g.id, new Set()); }
     for (const m of g.models || []) {
       if (!isStr(m.id)) { err(f, `Modell ohne \`id\` in Gruppe ${g.id}`); continue; }
       if (modelIds.has(m.id)) err(f, `doppelte Modell-ID \`${m.id}\``);
       modelIds.add(m.id);
       if (!isStr(m.name)) err(f, `Modell \`${m.id}\`: \`name\` fehlt`);
       if (!isArr(m.engines) || m.engines.length === 0) err(f, `Modell \`${m.id}\`: \`engines\` fehlt oder leer`);
-      for (const e of m.engines || []) engineIds.add(e);
+      enginesOf.set(m.id, new Set(m.engines || []));
+      for (const e of m.engines || []) {
+        engineIds.add(e);
+        enginesOf.get(g.id)?.add(e);   // Gruppe kennt die Motoren aller ihrer Modelle
+      }
     }
   }
-  return { modelIds, engineIds, groupIds };
+  return { modelIds, engineIds, groupIds, enginesOf };
 }
 
 // ---------- docs.json / guides.json pro Modell ----------
-async function validateModelContent(modelIds, groupIds) {
+async function validateModelContent(modelIds, groupIds, enginesOf) {
   const dirs = (await readdir(CONTENT, { withFileTypes: true }))
     .filter(e => e.isDirectory()).map(e => e.name);
   const docIds = new Set();
@@ -99,6 +104,22 @@ async function validateModelContent(modelIds, groupIds) {
         // `article` verweist auf eine Markdown-Datei im selben Verzeichnis.
         // Fehlt sie, ist das kein Vertragsbruch — der Artikel ist geplant,
         // aber noch nicht geschrieben. Ein kaputter Pfad dagegen schon.
+        // Ein Motor-Filter, der nirgends greift, macht das Doc lautlos
+        // unsichtbar — dieselbe Klasse Fehler wie ein Verzeichnis ohne
+        // passende Baureihe. Einzelne Ausreißer sind dagegen nur Ballast.
+        if (isArr(d.engines) && d.engines.length) {
+          const vorhanden = enginesOf.get(dir);
+          if (vorhanden && vorhanden.size) {
+            const treffer = d.engines.filter(e => vorhanden.has(e));
+            const daneben = d.engines.filter(e => !vorhanden.has(e));
+            if (treffer.length === 0) {
+              err(f, `\`${d.id}\`: kein einziger Motor aus \`engines\` (${d.engines.join(', ')}) existiert bei \`${dir}\` — das Doc wäre für niemanden sichtbar`);
+            } else if (daneben.length) {
+              warn(f, `\`${d.id}\`: \`engines\` nennt ${daneben.join(', ')} — bei \`${dir}\` nicht vorhanden, greift also nie`);
+            }
+          }
+        }
+
         // Inhaltsregel 3: Fakten stammen aus Quellen und werden neu
         // formuliert — die Attribution ist das, was das sauber macht.
         // Fehlt sie, ist das ein Redaktionsstand, kein Vertragsbruch.
@@ -237,8 +258,8 @@ async function validateMeasure(modelIds, engineIds) {
 // ---------- main ----------
 async function main() {
   if (!QUIET) console.log('diag4free · Content-Validierung\n');
-  const { modelIds, engineIds, groupIds } = await validateModels();
-  const docIds = await validateModelContent(modelIds, groupIds);
+  const { modelIds, engineIds, groupIds, enginesOf } = await validateModels();
+  const docIds = await validateModelContent(modelIds, groupIds, enginesOf);
 
   // Guide → Doc-Referenzen erst prüfen, wenn alle Doc-IDs bekannt sind
   for (const [f, gid, ref] of docRefs) {
