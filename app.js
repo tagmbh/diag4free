@@ -43,6 +43,7 @@
     theme: 'light',
     drawer: null,     // { docId | article }
     data: null,       // content/index.json
+    software: null,   // content/software.json (lazy)
     installEvt: null,
     obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
@@ -171,7 +172,7 @@
     if (parts.length === 0) return; // Default: overview
     const [head, ...rest] = parts;
 
-    if (['overview', 'docs', 'troubleshoot', 'measure', 'library'].includes(head)) {
+    if (['overview', 'docs', 'troubleshoot', 'measure', 'library', 'software'].includes(head)) {
       state.view = head;
     }
     if (head === 'model' && rest[0]) {
@@ -197,7 +198,8 @@
       docs: '#/docs',
       troubleshoot: state.guide ? `#/guide/${state.guide}` : '#/troubleshoot',
       measure: '#/measure',
-      library: '#/library'
+      library: '#/library',
+      software: '#/software'
     };
     const next = map[state.view] || '#/overview';
     if (location.hash !== next) history.replaceState(null, '', next);
@@ -242,11 +244,6 @@
   // -------- Views --------
   const setView = (v) => {
     state.view = v;
-    $$('.nav-list [data-view]').forEach(b => {
-      if (b.dataset.view === v) b.setAttribute('aria-current', 'page');
-      else b.removeAttribute('aria-current');
-    });
-    $$('.view').forEach(p => p.classList.toggle('active', p.dataset.viewPanel === v));
     updateHash();
     render();
     $('#main').scrollTop = 0;
@@ -255,12 +252,20 @@
   };
 
   const render = () => {
+    // Sichtbarkeit + Nav-Status immer mit state.view synchronisieren
+    // (auch bei Deep-Links / hashchange, nicht nur bei setView)
+    $$('.nav-list [data-view]').forEach(b => {
+      if (b.dataset.view === state.view) b.setAttribute('aria-current', 'page');
+      else b.removeAttribute('aria-current');
+    });
+    $$('.view').forEach(p => p.classList.toggle('active', p.dataset.viewPanel === state.view));
     switch (state.view) {
       case 'overview':     renderOverview(); break;
       case 'docs':         renderDocs(); break;
       case 'troubleshoot': renderTroubleshoot(); break;
       case 'measure':      renderMeasure(); break;
       case 'library':      renderLibrary(); break;
+      case 'software':     renderSoftware(); break;
     }
   };
 
@@ -857,6 +862,375 @@
   };
 
   // -------- PWA --------
+  // ============================================================
+  // SOFTWARE-UPDATES (Multimedia/Headunit + Diagnose-Tools)
+  // Versions-Matching adaptiert aus Idries/bmwfirmware (MIT).
+  // ============================================================
+  const loadSoftware = async () => {
+    if (state.software) return state.software;
+    try {
+      const resp = await fetch('./content/software.json', { cache: 'no-cache' });
+      if (!resp.ok) throw new Error('software.json not found');
+      state.software = await resp.json();
+    } catch { state.software = null; }
+    return state.software;
+  };
+
+  const parseSwVersion = (raw) => {
+    const m = raw.trim().match(/^([A-Z]{2})[-\s]?(\d{1,3})[.\-](\d{1,3})[.\-](\d{1,3})$/i);
+    if (!m) return null;
+    return {
+      prefix: m[1].toUpperCase(),
+      major: parseInt(m[2], 10),
+      minor: parseInt(m[3], 10),
+      patch: parseInt(m[4], 10),
+      style: m[2].length === 3 ? 'long' : 'short'
+    };
+  };
+
+  const matchesSwVariant = (ver, v) => {
+    if (v.prefix !== ver.prefix) return false;
+    if (v.style) return ver.style === v.style;
+    if (ver.style === 'short') return false;
+    if (v.exact) return v.exact.some(([maj, min, pat]) => maj === ver.major && min === ver.minor && pat === ver.patch);
+    if (v.minMajor !== undefined && ver.major < v.minMajor) return false;
+    if (v.maxMajor !== undefined && ver.major > v.maxMajor) return false;
+    if (v.minMinor !== undefined && ver.minor < v.minMinor) return false;
+    if (v.maxMinor !== undefined && ver.minor > v.maxMinor) return false;
+    return true;
+  };
+
+  const findSwUpdates = (ver) =>
+    (state.software?.updates || []).filter(u => u.variants.some(v => matchesSwVariant(ver, v)));
+
+  const pad3 = n => String(n).padStart(3, '0');
+
+  const renderSwResult = (raw) => {
+    const out = $('#swResult');
+    if (!out) return;
+    const trimmed = raw.trim();
+    if (!trimmed) { out.innerHTML = ''; return; }
+    const ver = parseSwVersion(trimmed);
+    if (!ver) {
+      out.innerHTML = `<div class="sw-warn">Format nicht erkannt — erwartet: <code>XX-NNN.NNN.NNN</code>, z. B. <code>TX-003.005.008</code> oder kurz <code>MX-3.4.31</code></div>`;
+      return;
+    }
+    const matches = findSwUpdates(ver);
+    const cdn = state.software.cdn;
+    if (!matches.length) {
+      out.innerHTML = `<div class="sw-none">
+        <strong>Kein Update gefunden für ${escapeHtml(ver.prefix)}-${pad3(ver.major)}.${pad3(ver.minor)}.${pad3(ver.patch)}.</strong>
+        <p>Entweder ist der Stand bereits aktuell, oder die Version ist nicht in den bekannten Update-Dateien abgedeckt.</p>
+      </div>`;
+      return;
+    }
+    out.innerHTML = matches.map(u => `
+      <div class="sw-match">
+        <div class="sw-match-head">
+          <span class="sw-file">${escapeHtml(u.file)}.bin</span>
+          <span class="sw-date">${escapeHtml(u.date)}</span>
+        </div>
+        <p class="sw-desc">${escapeHtml(u.description)}</p>
+        <dl class="sw-detail">
+          <div><dt>Gilt ab</dt><dd>${escapeHtml(u.fromNotes)}</dd></div>
+          <div><dt>Nach Update</dt><dd>${escapeHtml(u.result)}</dd></div>
+        </dl>
+        <div class="sw-actions">
+          <a class="btn-primary" href="${cdn.bin}${u.file}.bin" download rel="noopener">↓ ${escapeHtml(u.file)}.bin (BMW-CDN)</a>
+          <a class="btn-ghost" href="${cdn.pdf}Readme_${u.file}_en.pdf" target="_blank" rel="noopener">Readme-PDF</a>
+        </div>
+      </div>`).join('') + `
+      <details class="sw-install">
+        <summary>Installations-Anleitung (USB)</summary>
+        <ol>${state.software.install.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>
+        ${state.software.install.notes.map(n => `<p class="sw-note">${escapeHtml(n)}</p>`).join('')}
+      </details>`;
+  };
+
+  const renderSoftware = async () => {
+    const panel = $('#softwarePanel');
+    if (!state.software) {
+      panel.innerHTML = `<div class="empty">${iconSvg('empty')}<h3>Lade Software-Datenbank …</h3></div>`;
+      await loadSoftware();
+      if (!state.software) {
+        panel.innerHTML = `<div class="empty">${iconSvg('empty')}<h3>software.json nicht gefunden</h3><p>Deployment abwarten oder Cache leeren.</p></div>`;
+        return;
+      }
+    }
+    const sw = state.software;
+    panel.innerHTML = `
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" id="swTitle">Software-Updates</h1>
+          <p class="page-lead">Multimedia/Headunit-Updates (USB) mit direkten Links auf BMW-eigene Server, plus Diagnose-Software-Übersicht. Es wird nichts hier gehostet — alle Downloads kommen von BMW-CDN bzw. den verlinkten Quellen.</p>
+        </div>
+      </div>
+
+      <section class="sw-section">
+        <h2>Update-Checker · Multimedia &amp; Telefon</h2>
+        <p class="sw-hint">Version im Fahrzeug ablesen: <strong>Einstellungen → Software-Update → Aktuelle Version anzeigen</strong> — dann hier eingeben.</p>
+        <div class="sw-checker">
+          <input type="text" id="swVersionInput" class="sw-input" placeholder="z. B. TX-003.005.008 oder MX-3.4.31" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Aktuelle Softwareversion" />
+        </div>
+        <div id="swResult" class="sw-result" aria-live="polite"></div>
+      </section>
+
+      <section class="sw-section">
+        <h2>Welches Präfix gehört zu welchem Gerät?</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Präfix</th><th>Gerät</th><th>Typisch verbaut</th></tr></thead>
+            <tbody>
+              ${sw.prefixes.map(p => `<tr>
+                <td><code>${escapeHtml(p.prefix)}</code></td>
+                <td>${escapeHtml(p.unit)}</td>
+                <td>${escapeHtml(p.models)}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+        <p class="sw-hint">M = Multimedia · T = Telefon · H = weitere Komponente. Für den E88 mit Combox sind <code>MX/TX</code>-Versionen relevant → Update-Datei <code>UPD01008</code>.</p>
+      </section>
+
+      <section class="sw-section">
+        <h2>Diagnose-Software · E-Serie</h2>
+        <div class="sw-tools">
+          ${sw.diagnostic.map(t => `
+            <div class="sw-tool">
+              <div class="sw-tool-head"><strong>${escapeHtml(t.name)}</strong><span class="sw-tool-ver">${escapeHtml(t.version)}</span></div>
+              <p class="sw-tool-target">${escapeHtml(t.target)}</p>
+              <p class="sw-tool-note">${escapeHtml(t.note)}</p>
+              <div class="sw-tool-links">${t.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)} ↗</a>`).join('')}</div>
+            </div>`).join('')}
+        </div>
+      </section>
+
+      <section class="sw-section">
+        <h2>F-/G-Serie · PSdZData &amp; E-Sys</h2>
+        <div class="sw-tools">
+          ${sw.psdz.map(t => `
+            <div class="sw-tool">
+              <div class="sw-tool-head"><strong>${escapeHtml(t.name)}</strong><span class="sw-tool-ver">${escapeHtml(t.version)}</span></div>
+              <p class="sw-tool-target">${escapeHtml(t.target)}</p>
+              <p class="sw-tool-note">${escapeHtml(t.note)}</p>
+              <div class="sw-tool-links">${t.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)} ↗</a>`).join('')}</div>
+            </div>`).join('')}
+        </div>
+      </section>
+
+      <footer class="sw-attribution">
+        <p>Datenbasis: ${sw.attribution.map(a => `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.label)}</a>`).join(' · ')} · Stand ${escapeHtml(sw.updated)}</p>
+      </footer>`;
+
+    const input = $('#swVersionInput');
+    input.addEventListener('input', () => renderSwResult(input.value));
+  };
+
+  // ============================================================
+  // VIN-DECODER
+  // Offline: Struktur, WMI, Modelljahr-Kandidaten.
+  // Online (optional): NHTSA vPIC — Modell, Motor, Baujahr →
+  // automatischer Sprung zu Baureihe + Motor.
+  // ============================================================
+  const VIN_WMI = {
+    'WBA': 'BMW AG (PKW)', 'WBS': 'BMW M GmbH', 'WBY': 'BMW i',
+    'WBX': 'BMW X-Modelle (ältere)', '4US': 'BMW US (Spartanburg)',
+    '5UX': 'BMW US SAV (Spartanburg)', '5UM': 'BMW M US (Spartanburg)',
+    'WMW': 'MINI', 'WBW': 'BMW (Sonderserie)'
+  };
+
+  const VIN_YEAR_CODES = { A:1980, B:1981, C:1982, D:1983, E:1984, F:1985, G:1986, H:1987, J:1988, K:1989, L:1990, M:1991, N:1992, P:1993, R:1994, S:1995, T:1996, V:1997, W:1998, X:1999, Y:2000, 1:2001, 2:2002, 3:2003, 4:2004, 5:2005, 6:2006, 7:2007, 8:2008, 9:2009 };
+
+  const vinYearCandidates = (ch) => {
+    const base = VIN_YEAR_CODES[ch];
+    if (base === undefined) return [];
+    // 30-Jahre-Zyklus: A = 1980 oder 2010, 1 = 2001 oder 2031 …
+    const cands = [base, base + 30].filter(y => y >= 1981 && y <= new Date().getFullYear() + 1);
+    return cands;
+  };
+
+  const validateVin = (vin) => {
+    if (vin.length !== 17) return 'VIN muss 17 Zeichen haben (aktuell: ' + vin.length + ')';
+    if (/[IOQ]/.test(vin)) return 'VIN enthält ungültige Zeichen (I, O, Q kommen nie vor)';
+    if (!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)) return 'VIN enthält unerlaubte Zeichen';
+    return null;
+  };
+
+  const decodeVinOffline = (vin) => {
+    const wmi = vin.slice(0, 3);
+    const years = vinYearCandidates(vin[9]);
+    return {
+      wmi,
+      manufacturer: VIN_WMI[wmi] || 'Unbekannter Hersteller (' + wmi + ')',
+      modelCode: vin.slice(3, 7),
+      years,
+      serial: vin.slice(11)
+    };
+  };
+
+  // NHTSA-Antwort → Baureihen-ID im Katalog
+  const mapNhtsaToModel = (r) => {
+    const model = (r.Model || '').toLowerCase();
+    const body = (r.BodyClass || '').toLowerCase();
+    const year = parseInt(r.ModelYear, 10) || 0;
+    const isConvertible = body.includes('convertible') || body.includes('cabrio');
+    const isSAV = body.includes('sport utility') || /^x[356]/.test(model);
+
+    // 1er
+    if (/^1|^m1|1 series|114|116|118|120|123|125|128|130|135/.test(model) && year >= 2004 && year <= 2014) {
+      return isConvertible ? 'e88' : 'e87';
+    }
+    if (/^2|228|235|230|240/.test(model) && year >= 2014) return 'f22';
+    // 3er
+    if (/^3|316|318|320|323|325|328|330|335|m3/.test(model)) {
+      if (year <= 1994) return 'e30';
+      if (year <= 1999) return 'e36';
+      if (year <= 2006) return 'e46';
+      if (year <= 2013) return 'e90';
+      return 'f30';
+    }
+    // 5er
+    if (/^5|518|520|523|525|528|530|535|540|545|550|m5/.test(model)) {
+      if (year <= 1988) return 'e28';
+      if (year <= 1996) return 'e34';
+      if (year <= 2003) return 'e39';
+      if (year <= 2010) return 'e60';
+      return 'f10';
+    }
+    // 7er
+    if (/^7|728|730|735|740|750|760/.test(model) && year >= 1994 && year <= 2001) return 'e38';
+    // X5/X6
+    if (isSAV || /^x[56]/.test(model)) {
+      if (year <= 2013) return 'e70';
+      return 'f15';
+    }
+    return null;
+  };
+
+  const mapNhtsaEngine = (r, modelDef) => {
+    if (!modelDef) return null;
+    const engineStr = ((r.EngineModel || '') + ' ' + (r.EngineManufacturer || '') + ' ' + (r.Series || '')).toUpperCase();
+    return modelDef.engines.find(e => engineStr.includes(e.toUpperCase())) || null;
+  };
+
+  const vinCacheKey = 'diag4free.vin.v1';
+  const loadVinCache = () => { try { return JSON.parse(localStorage.getItem(vinCacheKey)) || {}; } catch { return {}; } };
+  const saveVinCache = (c) => { try { localStorage.setItem(vinCacheKey, JSON.stringify(c)); } catch {} };
+
+  const openVinDialog = () => {
+    const dlg = document.createElement('div');
+    dlg.className = 'dialog-backdrop';
+    dlg.setAttribute('role', 'dialog');
+    dlg.setAttribute('aria-modal', 'true');
+    dlg.setAttribute('aria-label', 'VIN-Dekodierung');
+    dlg.innerHTML = `
+      <div class="dialog dialog-wide">
+        <div class="dialog-header">
+          <h2>Fahrzeug per VIN identifizieren</h2>
+          <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
+        </div>
+        <div class="dialog-body">
+          <p class="dialog-lead">17-stellige Fahrgestellnummer eingeben. Basisdaten werden offline dekodiert; Details (Modell, Motor, Baujahr) optional online via NHTSA-Datenbank.</p>
+          <input type="text" id="vinInput" class="sw-input vin-input" maxlength="17" placeholder="z. B. WBAUL7C5XBVM…" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="VIN" />
+          <div id="vinResult" class="vin-result" aria-live="polite"></div>
+        </div>
+      </div>`;
+    document.body.appendChild(dlg);
+    const close = () => dlg.remove();
+    dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+    const esc = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    document.addEventListener('keydown', esc);
+
+    const input = dlg.querySelector('#vinInput');
+    const result = dlg.querySelector('#vinResult');
+
+    const renderOffline = (vin) => {
+      const err = validateVin(vin);
+      if (err) {
+        result.innerHTML = vin.length >= 11 ? `<div class="sw-warn">${escapeHtml(err)}</div>` : '';
+        return;
+      }
+      const d = decodeVinOffline(vin);
+      const cache = loadVinCache();
+      const cached = cache[vin];
+      result.innerHTML = `
+        <dl class="vin-facts">
+          <div><dt>Hersteller</dt><dd>${escapeHtml(d.manufacturer)}</dd></div>
+          <div><dt>Modellcode (Pos. 4–7)</dt><dd><code>${escapeHtml(d.modelCode)}</code></dd></div>
+          <div><dt>Modelljahr (Pos. 10)</dt><dd>${d.years.length ? d.years.join(' oder ') : 'nicht dekodierbar'}</dd></div>
+          <div><dt>Seriennummer</dt><dd><code>${escapeHtml(d.serial)}</code></dd></div>
+        </dl>
+        ${cached ? renderOnlineResult(cached, vin, true) : `
+        <button class="btn-primary" id="vinOnlineBtn" ${navigator.onLine ? '' : 'disabled'}>
+          ${navigator.onLine ? 'Details online abrufen (NHTSA)' : 'Offline — Online-Abruf nicht verfügbar'}
+        </button>`}
+      `;
+      const btn = result.querySelector('#vinOnlineBtn');
+      if (btn) btn.addEventListener('click', () => fetchOnline(vin));
+      bindApply();
+    };
+
+    const renderOnlineResult = (r, vin, fromCache) => {
+      const modelId = mapNhtsaToModel(r);
+      const modelDef = modelId ? state.data.models.groups.flatMap(g => g.models).find(m => m.id === modelId) : null;
+      const engine = mapNhtsaEngine(r, modelDef);
+      return `
+        <div class="vin-online">
+          <div class="vin-online-head">${fromCache ? 'Zwischengespeicherte Online-Daten' : 'NHTSA-Daten'}</div>
+          <dl class="vin-facts">
+            <div><dt>Modell</dt><dd>${escapeHtml(r.Model || '—')} ${escapeHtml(r.Trim || '')}</dd></div>
+            <div><dt>Baujahr</dt><dd>${escapeHtml(r.ModelYear || '—')}</dd></div>
+            <div><dt>Karosserie</dt><dd>${escapeHtml(r.BodyClass || '—')}</dd></div>
+            <div><dt>Motor</dt><dd>${escapeHtml(r.EngineModel || '—')} ${r.DisplacementL ? '· ' + escapeHtml(parseFloat(r.DisplacementL).toFixed(1)) + ' l' : ''}</dd></div>
+            <div><dt>Werk</dt><dd>${escapeHtml(r.PlantCity || '—')}${r.PlantCountry ? ', ' + escapeHtml(r.PlantCountry) : ''}</dd></div>
+          </dl>
+          ${modelDef ? `
+            <button class="btn-primary" data-vin-apply="${modelDef.id}" data-vin-engine="${engine || ''}">
+              Übernehmen: ${escapeHtml(modelDef.name)}${engine ? ' · ' + escapeHtml(engine) : ''}
+            </button>` : `
+            <p class="sw-hint">Keine passende Baureihe im Katalog gefunden — Baureihe manuell in der Sidebar wählen.</p>`}
+        </div>`;
+    };
+
+    const fetchOnline = async (vin) => {
+      const btn = result.querySelector('#vinOnlineBtn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Abfrage läuft …'; }
+      try {
+        const resp = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${encodeURIComponent(vin)}?format=json`);
+        const json = await resp.json();
+        const r = json.Results && json.Results[0];
+        if (!r || !r.Make) throw new Error('leer');
+        const cache = loadVinCache();
+        cache[vin] = r;
+        saveVinCache(cache);
+        const holder = document.createElement('div');
+        holder.innerHTML = renderOnlineResult(r, vin, false);
+        if (btn) btn.replaceWith(holder);
+        bindApply();
+      } catch {
+        if (btn) { btn.disabled = false; btn.textContent = 'Fehler — erneut versuchen'; }
+      }
+    };
+
+    const bindApply = () => {
+      dlg.querySelectorAll('[data-vin-apply]').forEach(b => {
+        b.addEventListener('click', () => {
+          const engine = b.dataset.vinEngine || undefined;
+          setSeries(b.dataset.vinApply, engine);
+          setView('overview');
+          close();
+        });
+      });
+    };
+
+    input.addEventListener('input', () => {
+      input.value = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+      renderOffline(input.value);
+    });
+    input.focus();
+  };
+
   const registerSW = () => {
     if (!('serviceWorker' in navigator)) return;
     // only register on http/https, not file://
@@ -899,6 +1273,9 @@
 
     // Print
     $('#printBtn').addEventListener('click', () => window.print());
+
+    // VIN-Decoder
+    $('#vinBtn').addEventListener('click', openVinDialog);
 
     // Drawer close
     $$('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
