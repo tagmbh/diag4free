@@ -133,6 +133,25 @@ Grafiken oder Fotos die der Werkstatt gehören.
 
 ---
 
+## Baureihenübergreifender Inhalt
+
+Ein Verzeichnis unter `content/` darf statt einer **Modell-ID** auch eine
+**Gruppen-ID** aus `models.json` tragen. Inhalt dort gilt für alle Modelle
+der Gruppe — `content/f-series/` erscheint also bei F10, F30, F15 und F22.
+
+Das ist für Inhalte gedacht, die tatsächlich baureihenübergreifend sind
+(„F-Serie · alle Baureihen"). Guides werden dabei unter `<gruppe>:<id>`
+abgelegt; die App schlägt beide Schlüssel nach.
+
+**Der Motorfilter greift trotzdem:** nennt ein Gruppen-Doc Motoren, die das
+konkrete Modell nicht hat, erscheint es dort nicht. Das ist gewollt — ein
+F30 mit N13 bekommt kein Dokument, das nur für N20/N55/B58 gilt.
+
+Ein Verzeichnis, das weder zu einem Modell noch zu einer Gruppe passt, wird
+vom Validator **abgelehnt**: sein Inhalt wäre für niemanden erreichbar.
+
+---
+
 ## `models.json` — Modell-Katalog
 
 Steuert Sidebar-Baum. Änderungen erfordern kompletten Katalog-Reload.

@@ -52,7 +52,7 @@
       const s = JSON.parse(raw);
       // Nur Sitzungen der aktiven Baureihe anbieten — keine Baureihenmischung
       if (!s || s.series !== state.series || !s.guide) return null;
-      if (!state.data?.guides[`${s.series}:${s.guide}`]) return null;
+      if (!findGuide(s.guide, s.series)) return null;
       return s;
     } catch { return null; }
   };
@@ -254,9 +254,21 @@
   };
 
   // -------- Data Access --------
+  // Die Gruppe der aktiven Baureihe, z. B. 'f-series' für F10/F20/F30/F22.
+  const currentGroupId = () => state.data?.models.groups
+    .find(g => g.models.some(m => m.id === state.series))?.id || null;
+
+  /**
+   * Docs der aktiven Baureihe — inklusive baureihenübergreifender Inhalte.
+   * Content darf statt einer Modell-ID auch eine Gruppen-ID tragen
+   * (`content/f-series/` gilt für alle F-Modelle). Ohne das waren die dort
+   * abgelegten Docs für niemanden erreichbar: der Filter verglich nur gegen
+   * die Modell-ID, und ein Modell namens „f-series" gibt es nicht.
+   */
   const currentModelDocs = () => {
     if (!state.data) return [];
-    return state.data.docs.filter(d => d.model === state.series);
+    const gruppe = currentGroupId();
+    return state.data.docs.filter(d => d.model === state.series || (gruppe && d.model === gruppe));
   };
 
   const scopedDocs = () => {
@@ -267,7 +279,20 @@
 
   const currentGuides = () => {
     if (!state.data) return [];
-    return Object.values(state.data.guides).filter(g => g.model === state.series);
+    const gruppe = currentGroupId();
+    return Object.values(state.data.guides).filter(g => g.model === state.series || (gruppe && g.model === gruppe));
+  };
+
+  /**
+   * Guide nachschlagen. Guides sind unter `<model>:<id>` abgelegt — bei
+   * baureihenübergreifenden Pfaden unter `<gruppe>:<id>`. Beide Schlüssel
+   * probieren, sonst ließe sich ein Gruppen-Guide zwar anzeigen, aber nicht
+   * öffnen.
+   */
+  const findGuide = (id, series = state.series) => {
+    if (!state.data || !id) return null;
+    const gruppe = state.data.models.groups.find(g => g.models.some(m => m.id === series))?.id;
+    return state.data.guides[`${series}:${id}`] || (gruppe ? state.data.guides[`${gruppe}:${id}`] : null) || null;
   };
 
   // -------- Router (hash-basiert) --------
@@ -294,8 +319,7 @@
     }
     if (head === 'guide' && rest[0]) {
       state.view = 'troubleshoot';
-      const gid = `${state.series}:${rest[0]}`;
-      if (state.data?.guides[gid]) {
+      if (findGuide(rest[0])) {
         state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
       }
     }
@@ -636,6 +660,16 @@
   const renderDocs = () => {
     const panel = $('#docsPanel');
     const all = scopedDocs();
+
+    // Eine leere Ansicht ohne Erklärung ist eine Sackgasse: für diese
+    // Baureihe kann es Dokumente geben, die nur an anderen Motoren hängen.
+    // Nur Motoren vorschlagen, die diese Baureihe tatsächlich hat. Ein
+    // baureihenübergreifendes Doc nennt auch Motoren anderer F-Modelle —
+    // die anzubieten führt zu einem Knopf, der nichts tut.
+    const eigeneMotoren = activeModel()?.engines || [];
+    const andereMotoren = all.length ? [] : [...new Set(
+      currentModelDocs().flatMap(d => d.engines || [])
+    )].filter(e => e !== state.engine && eigeneMotoren.includes(e)).sort();
     const cats = ['Alle', ...new Set(all.map(d => d.cat))];
 
     let filtered = all;
@@ -676,8 +710,12 @@
       ${filtered.length === 0 ? `
         <div class="empty">
           ${iconSvg('empty')}
-          <h3>Keine Dokumente gefunden</h3>
-          <p>Filter oder Suchbegriff anpassen.</p>
+          <h3>Keine Dokumente für ${escapeHtml(state.engine)}</h3>
+          ${andereMotoren.length ? `
+            <p>Für ${escapeHtml(state.series.toUpperCase())} gibt es Dokumente zu anderen Motoren:</p>
+            <div class="empty-actions">
+              ${andereMotoren.map(e => `<button class="btn btn-secondary" data-try-engine="${escapeHtml(e)}">${escapeHtml(e)}</button>`).join('')}
+            </div>` : `<p>Filter oder Suchbegriff anpassen.</p>`}
         </div>
       ` : `
         <div class="doc-list">
@@ -708,6 +746,9 @@
       const input = panel.querySelector('[data-doc-search]');
       if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
     });
+    panel.querySelectorAll('[data-try-engine]').forEach(b =>
+      b.addEventListener('click', () => { haptic(); setEngine(b.dataset.tryEngine); })
+    );
     panel.querySelectorAll('[data-doc]').forEach(card => {
       card.addEventListener('click', () => openDocDrawer(card.dataset.doc));
       card.addEventListener('keydown', (e) => {
@@ -724,7 +765,7 @@
     if (!state.guide) {
       releaseWakeLock();
       const session = loadSession();
-      const sessionGuide = session ? state.data.guides[`${session.series}:${session.guide}`] : null;
+      const sessionGuide = session ? findGuide(session.guide, session.series) : null;
       panel.innerHTML = `
         <div class="page-header">
           <div>
@@ -785,7 +826,7 @@
       return;
     }
 
-    const g = state.data.guides[`${state.series}:${state.guide}`];
+    const g = findGuide(state.guide);
     if (!g) { state.guide = null; renderTroubleshoot(); return; }
 
     // Result view

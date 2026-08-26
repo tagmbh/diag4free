@@ -1593,3 +1593,12 @@
   }
   .sidebar-backdrop[hidden] { display: none; }
 }
+
+/* Ausweg aus der leeren Doc-Ansicht: Motoren, an denen Inhalte hängen */
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}

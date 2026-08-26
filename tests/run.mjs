@@ -300,6 +300,66 @@ async function main() {
       await ctx.close();
     }
 
+    // --- Kein Content darf unerreichbar sein ---
+    {
+      console.log('\n▸ Erreichbarkeit des Contents');
+      const ctx = await browser.newContext({ ...devices['iPhone 13'], serviceWorkers: 'block' });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`Erreichbarkeit: ${e.message}`));
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+
+      // Jedes Doc und jeder Guide muss über eine Baureihe oder deren Gruppe
+      // auffindbar sein. `content/f-series/` lag auf einer Gruppen-ID —
+      // 2 Docs und 1 Diagnosepfad waren dadurch für niemanden sichtbar.
+      const verwaist = await page.evaluate(async () => {
+        const d = await (await fetch('./content/index.json')).json();
+        const modelle = new Set(d.models.groups.flatMap(g => g.models.map(m => m.id)));
+        const gruppen = new Set(d.models.groups.map(g => g.id));
+        const erreichbar = id => modelle.has(id) || gruppen.has(id);
+        return {
+          docs: [...new Set(d.docs.filter(x => !erreichbar(x.model)).map(x => `${x.id}@${x.model}`))],
+          guides: [...new Set(Object.values(d.guides).filter(g => !erreichbar(g.model)).map(g => `${g.id}@${g.model}`))]
+        };
+      });
+      expect(verwaist.docs.length === 0, 'kein Doc ohne erreichbare Baureihe', verwaist.docs.join(', '));
+      expect(verwaist.guides.length === 0, 'kein Guide ohne erreichbare Baureihe', verwaist.guides.join(', '));
+
+      // Baureihenübergreifender Inhalt kommt an der konkreten Baureihe an
+      await page.goto(BASE + '/#/model/f30', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 900);
+      const gruppenGuides = await page.locator('[data-select-guide]').count();
+      expect(gruppenGuides > 0, 'Gruppen-Guide erscheint bei F30', 'kein Diagnosepfad sichtbar');
+      if (gruppenGuides > 0) {
+        await page.locator('[data-select-guide]').first().click();
+        await settle(page, 500);
+        const frage = await page.locator('.step-question').count();
+        expect(frage > 0, 'Gruppen-Guide lässt sich öffnen', 'kein Schritt gerendert');
+      }
+
+      // Leere Doc-Ansicht bietet einen Ausweg statt einer Sackgasse
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await settle(page, 900);
+      const karten = await page.locator('.doc-card').count();
+      if (karten === 0) {
+        const vorschlaege = await page.locator('[data-try-engine]').allTextContents();
+        expect(vorschlaege.length > 0, 'leere Doc-Ansicht schlägt Motoren vor', 'keine Vorschläge');
+        if (vorschlaege.length) {
+          await page.locator('[data-try-engine]').first().click();
+          await settle(page, 700);
+          const jetzt = await page.locator('.doc-card').count();
+          expect(jetzt > 0, 'vorgeschlagener Motor fördert Dokumente zutage',
+            `nach Wechsel weiterhin ${jetzt} Karten — der Vorschlag war wirkungslos`);
+        }
+      } else {
+        ok('Doc-Ansicht für F30 nicht leer');
+      }
+      await ctx.close();
+    }
+
     // --- Reduced Motion: Bewegung aus, App weiter bedienbar ---
     {
       console.log('\n▸ Reduced Motion');

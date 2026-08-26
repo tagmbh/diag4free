@@ -46,9 +46,11 @@ async function validateModels() {
   const data = await readJson(join(CONTENT, 'models.json'));
   const modelIds = new Set();
   const engineIds = new Set();
+  const groupIds = new Set();
   if (!isArr(data.groups)) { err(f, '`groups` fehlt oder ist kein Array'); return { modelIds, engineIds }; }
   for (const g of data.groups) {
     if (!isStr(g.id)) err(f, 'Gruppe ohne `id`');
+    else groupIds.add(g.id);
     for (const m of g.models || []) {
       if (!isStr(m.id)) { err(f, `Modell ohne \`id\` in Gruppe ${g.id}`); continue; }
       if (modelIds.has(m.id)) err(f, `doppelte Modell-ID \`${m.id}\``);
@@ -58,17 +60,21 @@ async function validateModels() {
       for (const e of m.engines || []) engineIds.add(e);
     }
   }
-  return { modelIds, engineIds };
+  return { modelIds, engineIds, groupIds };
 }
 
 // ---------- docs.json / guides.json pro Modell ----------
-async function validateModelContent(modelIds) {
+async function validateModelContent(modelIds, groupIds) {
   const dirs = (await readdir(CONTENT, { withFileTypes: true }))
     .filter(e => e.isDirectory()).map(e => e.name);
   const docIds = new Set();
 
   for (const dir of dirs) {
-    if (!modelIds.has(dir)) warn('content/', `Verzeichnis \`${dir}\` hat kein Modell in models.json`);
+    // Ein Verzeichnis darf auf eine Modell-ID ODER eine Gruppen-ID lauten;
+    // Letzteres ist baureihenübergreifender Inhalt (z. B. `f-series`).
+    if (!modelIds.has(dir) && !groupIds.has(dir)) {
+      err('content/', `Verzeichnis \`${dir}\` passt weder zu einem Modell noch zu einer Gruppe in models.json — der Inhalt wäre für niemanden erreichbar`);
+    }
 
     const docsPath = join(CONTENT, dir, 'docs.json');
     if (await exists(docsPath)) {
@@ -203,8 +209,8 @@ async function validateMeasure(modelIds, engineIds) {
 // ---------- main ----------
 async function main() {
   if (!QUIET) console.log('diag4free · Content-Validierung\n');
-  const { modelIds, engineIds } = await validateModels();
-  const docIds = await validateModelContent(modelIds);
+  const { modelIds, engineIds, groupIds } = await validateModels();
+  const docIds = await validateModelContent(modelIds, groupIds);
 
   // Guide → Doc-Referenzen erst prüfen, wenn alle Doc-IDs bekannt sind
   for (const [f, gid, ref] of docRefs) {
