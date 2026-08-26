@@ -1061,23 +1061,13 @@
 
 /* Messplan */
 .measure-list { display: flex; flex-direction: column; gap: var(--space-2); }
-.measure-item {
-  display: flex;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  align-items: flex-start;
-}
-.measure-item input[type="checkbox"] {
+.measure-head input[type="checkbox"] {
   margin-top: 3px;
   width: 18px; height: 18px;
   accent-color: var(--color-primary);
   cursor: pointer;
   flex-shrink: 0;
 }
-.measure-item.done { background: var(--color-success-tint); }
 .measure-item.done .measure-title { text-decoration: line-through; color: var(--color-text-muted); }
 .measure-title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
 .measure-instr { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; line-height: 1.5; }
@@ -1463,3 +1453,120 @@
   font-weight: 700;
   color: var(--color-primary);
 }
+
+/* ============================================================
+   MESSPLAN — Sollwert prüfen statt nur abhaken
+   Erst wenn Sollwerte Zahlen sind, kann die App überhaupt urteilen.
+   ============================================================ */
+.measure-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.measure-progress-text {
+  flex: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.measure-progress .step-progress-bar { flex: 1; max-width: 320px; }
+
+.measure-group {
+  margin: var(--space-6) 0 var(--space-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.measure-group:first-of-type { margin-top: 0; }
+
+.measure-item {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  margin-bottom: var(--space-2);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.measure-item.done { border-left-color: var(--color-primary); }
+/* Urteil färbt die Kante — auf einen Blick sichtbar, ohne den Text zu lesen */
+.measure-item.v-ok { border-left-color: var(--color-success); }
+.measure-item.v-ab { border-left-color: var(--color-error); }
+
+.measure-head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+}
+.measure-head input[type="checkbox"] {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+.measure-text { min-width: 0; }
+.measure-item.done .measure-title { color: var(--color-text-muted); }
+
+.measure-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  padding: 0 var(--space-4) var(--space-3) calc(var(--space-4) + 22px + var(--space-3));
+}
+.measure-input-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.measure-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.measure-input input {
+  width: 6.5rem;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.measure-input input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint-2);
+}
+.measure-unit {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+.verdict svg { width: 15px; height: 15px; }
+.verdict-ok { background: var(--color-success-tint); color: var(--color-success); }
+.verdict-ab { background: var(--color-error-tint); color: var(--color-error); }

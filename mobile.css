@@ -998,3 +998,24 @@ code, .measure-target, .pin-num, .doc-code {
   .fchip { min-height: 40px; }
   .filter-legend { font-size: 10px; }
 }
+
+/* --- Messplan auf Touch: Eingabefeld groß genug für nasse Finger --- */
+@media (max-width: 960px) {
+  /* Eingabe unter den Text statt daneben — nebeneinander wird auf dem
+     Phone beides zu schmal und das Urteil läuft über den Rand. */
+  .measure-input {
+    padding-left: var(--space-4);
+    padding-bottom: var(--space-4);
+    align-items: flex-start;
+  }
+  .measure-input-row { flex: none; }
+  .verdict { flex-basis: 100%; }
+  .measure-input input { width: 8rem; min-height: 48px; font-size: 1.0625rem; }
+  .measure-head input[type="checkbox"] { width: 26px; height: 26px; }
+  .measure-progress { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+  .measure-progress .step-progress-bar { max-width: none; }
+  /* Volle Zeile, sonst hängen die beiden Buttons unausgerichtet
+     im umbrechenden .page-header. */
+  .page-actions { display: flex; width: 100%; gap: var(--space-2); }
+  .page-actions .btn { flex: 1; justify-content: center; min-height: 44px; }
+}

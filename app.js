@@ -115,7 +115,8 @@
     step: 0,
     history: [],
     result: null,
-    checks: new Set(),
+    checks: {},       // { <id>: { done, value } } — Schlüssel ist die stabile ID
+    measure: null,    // content/measure.json (lazy, optional)
     theme: 'light',
     drawer: null,     // { docId | article }
     data: null,       // content/index.json
@@ -935,6 +936,81 @@
   };
 
   // -------- MEASURE --------
+  // Der Messplan kommt aus content/measure.json, sobald die Datei existiert.
+  // Solange nicht, greift die eingebaute Liste unten — die App bleibt nutzbar.
+  const CHECKS_KEY = 'diag4free.checks.v2';
+  const loadChecks = () => {
+    try { return JSON.parse(localStorage.getItem(CHECKS_KEY)) || {}; }
+    catch { return {}; }
+  };
+  const saveChecks = () => {
+    try { localStorage.setItem(CHECKS_KEY, JSON.stringify(state.checks)); } catch { /* ignore */ }
+  };
+
+  const loadMeasure = async () => {
+    if (state.measure !== null) return state.measure;
+    try {
+      const resp = await fetch('./content/measure.json', { cache: 'no-cache' });
+      const data = resp.ok ? await resp.json() : null;
+      state.measure = Array.isArray(data?.items) ? data.items : [];
+    } catch { state.measure = []; }
+    return state.measure;
+  };
+
+  // Fällt auf die eingebaute Liste zurück und vergibt dabei stabile IDs —
+  // der Abhak-Status darf nicht am Listenindex hängen, sonst verrutscht er,
+  // sobald jemand eine Position einfügt.
+  const slug = (t) => t.toLowerCase()
+    .replace(/[äöüß]/g, c => ({ 'ä':'ae','ö':'oe','ü':'ue','ß':'ss' }[c]))
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  const measureItems = () => {
+    const fromFile = state.measure && state.measure.length ? state.measure : null;
+    const items = fromFile || measurePlan.map(([title, instruction, target]) => ({
+      id: slug(title), title, instruction, target: { text: target }, builtin: true
+    }));
+    // Auf Fahrzeug und Motor eingrenzen — leer/fehlend heißt „gilt für alle"
+    return items.filter(it =>
+      (!it.models || it.models.length === 0 || it.models.includes(state.series)) &&
+      (!it.engines || it.engines.length === 0 || it.engines.includes(state.engine)));
+  };
+
+  /**
+   * Vergleicht einen gemessenen Wert mit dem Sollbereich.
+   * @returns {null|{status:'ok'|'ab', text:string}}  null = kein Urteil möglich
+   */
+  const judge = (target, raw) => {
+    if (!target || typeof target.unit !== 'string') return null;
+    const v = parseFloat(String(raw).replace(',', '.'));
+    if (!Number.isFinite(v)) return null;
+    const { min, max, nominal, tolerance_pct } = target;
+    let lo = min, hi = max;
+    if (typeof nominal === 'number' && typeof tolerance_pct === 'number') {
+      const d = Math.abs(nominal * tolerance_pct / 100);
+      lo = typeof lo === 'number' ? lo : nominal - d;
+      hi = typeof hi === 'number' ? hi : nominal + d;
+    }
+    if (typeof lo !== 'number' && typeof hi !== 'number') return null;
+    const zuNiedrig = typeof lo === 'number' && v < lo;
+    const zuHoch = typeof hi === 'number' && v > hi;
+    if (zuNiedrig) return { status: 'ab', text: `zu niedrig · Soll ab ${lo} ${target.unit}` };
+    if (zuHoch)   return { status: 'ab', text: `zu hoch · Soll bis ${hi} ${target.unit}` };
+    return { status: 'ok', text: 'im Sollbereich' };
+  };
+
+  const targetText = (t) => {
+    if (!t) return '';
+    if (typeof t.text === 'string') return t.text;
+    const u = t.unit || '';
+    if (typeof t.min === 'number' && typeof t.max === 'number') return `${t.min}–${t.max} ${u}`;
+    if (typeof t.min === 'number') return `ab ${t.min} ${u}`;
+    if (typeof t.max === 'number') return `bis ${t.max} ${u}`;
+    if (typeof t.nominal === 'number') {
+      return t.tolerance_pct ? `${t.nominal} ${u} ±${t.tolerance_pct} %` : `${t.nominal} ${u}`;
+    }
+    return '';
+  };
+
   const measurePlan = [
     ['Batterie-Basis', 'Ruhespannung und Startstrom prüfen. Batterie unter Last testen.', '≥ 12.4 V Ruhe · Einbruch < 10.5 V beim Start'],
     ['Massepunkte Motor', 'Massepunkte M12/M13/M31 auf Sichtkontrolle und Widerstand.', '< 0.1 Ω gegen Batterie-Minus'],
@@ -950,50 +1026,112 @@
 
   const renderMeasure = () => {
     const panel = $('#measurePanel');
+    const items = measureItems();
+    const erledigt = items.filter(it => state.checks[it.id]?.done).length;
+    const quelle = state.measure && state.measure.length;
+
+    // Nach Abschnitt gruppieren, Reihenfolge des ersten Auftretens beibehalten
+    const gruppen = [];
+    for (const it of items) {
+      const g = it.group || 'Messplan';
+      let eintrag = gruppen.find(x => x.name === g);
+      if (!eintrag) { eintrag = { name: g, items: [] }; gruppen.push(eintrag); }
+      eintrag.items.push(it);
+    }
+
+    const position = (it, nr) => {
+      const st = state.checks[it.id] || {};
+      const urteil = judge(it.target, st.value);
+      const numerisch = it.target && typeof it.target.unit === 'string';
+      return `
+        <div class="measure-item ${st.done ? 'done' : ''} ${urteil ? 'v-' + urteil.status : ''}">
+          <label class="measure-head">
+            <input type="checkbox" data-check="${escapeHtml(it.id)}" ${st.done ? 'checked' : ''}
+              aria-label="${escapeHtml(it.title)} erledigt" />
+            <div class="measure-text">
+              <div class="measure-title">${nr}. ${escapeHtml(it.title)}</div>
+              <div class="measure-instr">${escapeHtml(it.instruction)}</div>
+              <div class="measure-target">Soll: ${escapeHtml(targetText(it.target))}</div>
+            </div>
+          </label>
+          ${numerisch ? `
+            <div class="measure-input">
+              <label class="measure-input-label" for="m-${escapeHtml(it.id)}">Gemessen</label>
+              <div class="measure-input-row">
+                <input id="m-${escapeHtml(it.id)}" type="text" inputmode="decimal"
+                  data-value="${escapeHtml(it.id)}" value="${escapeHtml(st.value ?? '')}"
+                  placeholder="—" autocomplete="off" />
+                <span class="measure-unit">${escapeHtml(it.target.unit)}</span>
+              </div>
+              ${urteil ? `<span class="verdict verdict-${urteil.status}">
+                ${urteil.status === 'ok' ? iconSvg('check') : iconSvg('x')}${escapeHtml(urteil.text)}
+              </span>` : ''}
+            </div>` : ''}
+        </div>`;
+    };
+
+    let nr = 0;
     panel.innerHTML = `
       <div class="page-header">
         <div>
           <h1 class="page-title" id="msTitle">Messplan</h1>
-          <p class="page-lead">Werkstattcheckliste für Diagnoseeinstieg. Reihenfolge von Versorgung zu Kommunikation zu Motor.</p>
+          <p class="page-lead">${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)} · von Versorgung über Kommunikation zum Motor.${quelle ? '' : ' Allgemeine Liste — fahrzeugspezifische Sollwerte folgen.'}</p>
         </div>
-        <div style="display:flex;gap:var(--space-2);">
+        <div class="page-actions">
           <button class="btn btn-ghost" data-reset-checks>${iconSvg('reset')} Zurücksetzen</button>
           <button class="btn btn-secondary" data-print>${iconSvg('print')} Drucken</button>
         </div>
       </div>
 
-      <div class="measure-list">
-        ${measurePlan.map((m, i) => `
-          <label class="measure-item ${state.checks.has(i) ? 'done' : ''}">
-            <input type="checkbox" data-check="${i}" ${state.checks.has(i) ? 'checked' : ''} />
-            <div>
-              <div class="measure-title">${i + 1}. ${escapeHtml(m[0])}</div>
-              <div class="measure-instr">${escapeHtml(m[1])}</div>
-              <div class="measure-target">→ ${escapeHtml(m[2])}</div>
-            </div>
-          </label>
-        `).join('')}
-      </div>
-
-      <div class="page-header" style="margin-top:var(--space-8);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Fortschritt</h2>
-          <p class="page-lead">${state.checks.size} von ${measurePlan.length} Positionen erledigt.</p>
+      <div class="measure-progress">
+        <div class="measure-progress-text">${erledigt} von ${items.length} erledigt</div>
+        <div class="step-progress-bar">
+          <div class="step-progress-fill" style="width:${items.length ? Math.round(erledigt / items.length * 100) : 0}%"></div>
         </div>
       </div>
 
-      <div class="step-progress-bar" style="max-width:400px;">
-        <div class="step-progress-fill" style="width:${Math.round(state.checks.size / measurePlan.length * 100)}%"></div>
-      </div>
+      ${gruppen.map(g => `
+        ${gruppen.length > 1 ? `<h2 class="measure-group">${escapeHtml(g.name)}</h2>` : ''}
+        <div class="measure-list">${g.items.map(it => position(it, ++nr)).join('')}</div>
+      `).join('')}
     `;
 
     panel.querySelectorAll('[data-check]').forEach(cb => cb.addEventListener('change', (e) => {
-      const i = parseInt(e.target.dataset.check, 10);
-      if (e.target.checked) state.checks.add(i); else state.checks.delete(i);
+      const id = e.target.dataset.check;
+      state.checks[id] = { ...(state.checks[id] || {}), done: e.target.checked };
+      haptic(8);
+      saveChecks();
       renderMeasure();
     }));
+
+    // Beim Tippen sofort urteilen, ohne den Fokus zu verlieren — sonst kann
+    // man am Fahrzeug keine zweite Stelle eingeben.
+    panel.querySelectorAll('[data-value]').forEach(inp => {
+      const aktualisieren = () => {
+        const id = inp.dataset.value;
+        const it = items.find(x => x.id === id);
+        state.checks[id] = { ...(state.checks[id] || {}), value: inp.value };
+        saveChecks();
+        const urteil = judge(it?.target, inp.value);
+        const box = inp.closest('.measure-item');
+        box.classList.remove('v-ok', 'v-ab');
+        if (urteil) box.classList.add('v-' + urteil.status);
+        const alt = box.querySelector('.verdict');
+        if (!urteil) { alt?.remove(); return; }
+        const html = `${urteil.status === 'ok' ? iconSvg('check') : iconSvg('x')}${escapeHtml(urteil.text)}`;
+        if (alt) { alt.className = `verdict verdict-${urteil.status}`; alt.innerHTML = html; }
+        else {
+          const el = document.createElement('span');
+          el.className = `verdict verdict-${urteil.status}`;
+          el.innerHTML = html;
+          inp.closest('.measure-input').appendChild(el);
+        }
+      };
+      inp.addEventListener('input', aktualisieren);
+    });
+
     panel.querySelector('[data-reset-checks]').addEventListener('click', () => {
-      state.checks.clear(); renderMeasure();
+      state.checks = {}; saveChecks(); renderMeasure();
     });
     panel.querySelector('[data-print]').addEventListener('click', () => window.print());
   };
@@ -1698,6 +1836,7 @@
     }
 
     state.picked = prefs.picked === true;
+    state.checks = loadChecks();
 
     updateContext();
     renderSidebarModels();
@@ -1708,8 +1847,10 @@
     render();
     registerSW();
 
-    // Motor-Steckbriefe nachladen; sind sie da, zeichnen sich die Schemata
+    // Motor-Steckbriefe und Messplan nachladen; sind sie da, zeichnet sich
+    // die App neu — fehlen sie, bleibt der bisherige Stand stehen.
     loadEngines().then(() => render());
+    loadMeasure().then(() => { if (state.view === 'measure') renderMeasure(); });
 
     // Status footer
     const now = new Date();

@@ -146,6 +146,48 @@ async function main() {
         expect(await page.locator('.resume-card').count() === 1, 'Wiederaufnahme nach Reload', 'keine Wiederaufnahme-Karte');
       }
 
+      // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
+      await page.goto(BASE + '/#/measure', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      const positionen = await page.locator('.measure-item').count();
+      expect(positionen > 0, 'Messplan hat Positionen', 'keine Position');
+
+      const eingaben = await page.locator('[data-value]').count();
+      if (eingaben > 0) {
+        // Es gibt numerische Sollwerte — dann muss die App auch urteilen.
+        const erste = page.locator('[data-value]').first();
+        const id = await erste.getAttribute('data-value');
+        const box = () => page.locator(`[data-value="${id}"]`)
+          .locator('xpath=ancestor::div[contains(@class,"measure-item")]');
+
+        await erste.fill('999999');
+        await settle(page, 200);
+        let cls = await box().getAttribute('class');
+        expect(cls.includes('v-ab'), 'Wert außerhalb wird als abweichend erkannt', `Klassen: ${cls}`);
+
+        // Deutsches Dezimalkomma muss genauso greifen wie der Punkt
+        await erste.fill('0,0001');
+        await settle(page, 200);
+        cls = await box().getAttribute('class');
+        expect(/v-(ok|ab)/.test(cls), 'Dezimalkomma wird ausgewertet', `Klassen: ${cls}`);
+
+        const gespeichert = await page.evaluate(() => localStorage.getItem('diag4free.checks.v2'));
+        expect(!!gespeichert, 'Messwerte werden gespeichert', 'kein Eintrag unter checks.v2');
+
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1300);
+        const wert = await page.locator(`[data-value="${id}"]`).inputValue();
+        expect(wert === '0,0001', 'Messwert übersteht den Reload', `gelesen: ${JSON.stringify(wert)}`);
+      } else {
+        ok('Messplan ohne numerische Sollwerte (measure.json fehlt — erwartet)');
+      }
+
+      // Abhaken hängt an der ID, nicht am Listenindex
+      const ersteBox = page.locator('[data-check]').first();
+      const checkId = await ersteBox.getAttribute('data-check');
+      expect(checkId && !/^\d+$/.test(checkId), 'Abhak-Status hängt an einer stabilen ID',
+        `data-check="${checkId}" sieht nach einem Index aus`);
+
       // --- Touch-Targets ---
       if (isTouch) {
         const small = await page.evaluate(() => [...document.querySelectorAll(
