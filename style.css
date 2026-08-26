@@ -35,14 +35,17 @@
 
   --color-text:         #0e1a2b;
   --color-text-muted:   #556274;
-  --color-text-faint:   #97a0ad;
+  --color-text-faint:   #656e7b;
   --color-text-inverse: #f5f7fa;
 
   /* T-Alpha-Blau — Primärakzent */
   --color-primary:          #0071bb;
+  /* Vordergrund auf Primary-Flächen. Im Dark Mode ist Primary hell —
+     Weiß käme dort nur auf 2,86:1, ein dunkler Ton auf 6,61:1. */
+  --color-on-primary:       #ffffff;
   --color-primary-hover:    #005a95;
   --color-primary-active:   #004371;
-  --color-primary-tint:     #d7ecf8;
+  --color-primary-tint:     #e1f6ff;
   --color-primary-tint-2:   #e9f3fa;
 
   /* Sidebar — bewusst dunkel, wie E88-Vorbild */
@@ -57,13 +60,13 @@
 
   /* Zustände */
   --color-success:      #157a4c;
-  --color-success-tint: #d6efe1;
-  --color-warning:      #b7690a;
+  --color-success-tint: #dbf4e6;
+  --color-warning:      #a35500;
   --color-warning-tint: #fbebc7;
   --color-error:        #b3261e;
   --color-error-tint:   #fadbd8;
   --color-info:         #0071bb;
-  --color-info-tint:    #d7ecf8;
+  --color-info-tint:    #e1f6ff;
 
   /* Radius */
   --radius-sm: 0.25rem;
@@ -102,10 +105,11 @@
 
   --color-text:         #e6ebf2;
   --color-text-muted:   #9aa5b5;
-  --color-text-faint:   #6b7686;
+  --color-text-faint:   #768191;
   --color-text-inverse: #0a0f16;
 
   --color-primary:          #3aa1e0;
+  --color-on-primary:       #06121e;
   --color-primary-hover:    #58b3ea;
   --color-primary-active:   #79c1ef;
   --color-primary-tint:     #12324a;
@@ -115,7 +119,7 @@
   --color-nav-2:        #0a121c;
   --color-nav-border:   #14202f;
   --color-nav-text:     #c9d2de;
-  --color-nav-text-muted:#6c7889;
+  --color-nav-text-muted:#707c8d;
   --color-nav-active-bg:#132c46;
   --color-nav-active-text:#ffffff;
 
@@ -144,7 +148,7 @@
     --color-border:       #263243;
     --color-text:         #e6ebf2;
     --color-text-muted:   #9aa5b5;
-    --color-text-faint:   #6b7686;
+    --color-text-faint:   #768191;
     --color-nav:          #060c14;
     --color-nav-2:        #0a121c;
     --color-nav-active-bg:#132c46;
@@ -437,7 +441,7 @@
   padding: 0 var(--space-3);
   border-radius: var(--radius-sm);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   font-size: var(--text-sm);
   font-weight: 600;
   display: none;
@@ -613,7 +617,7 @@
 }
 .chip[aria-pressed="true"] {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
   border-color: var(--color-primary);
 }
 .chip .count {
@@ -814,7 +818,7 @@
 }
 .btn-primary {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .btn-primary:hover { background: var(--color-primary-hover); }
 .btn-secondary {
@@ -1061,23 +1065,13 @@
 
 /* Messplan */
 .measure-list { display: flex; flex-direction: column; gap: var(--space-2); }
-.measure-item {
-  display: flex;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  align-items: flex-start;
-}
-.measure-item input[type="checkbox"] {
+.measure-head input[type="checkbox"] {
   margin-top: 3px;
   width: 18px; height: 18px;
   accent-color: var(--color-primary);
   cursor: pointer;
   flex-shrink: 0;
 }
-.measure-item.done { background: var(--color-success-tint); }
 .measure-item.done .measure-title { text-decoration: line-through; color: var(--color-text-muted); }
 .measure-title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
 .measure-instr { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; line-height: 1.5; }
@@ -1128,7 +1122,9 @@
   .sidebar {
     position: fixed;
     top: 0; left: 0; bottom: 0;
-    width: 280px;
+    /* Relativ, damit auf schmalen Phones ein greifbarer Backdrop-Streifen
+       bleibt: bei 320 px Breite waren es sonst 40 px zum Schließen. */
+    width: min(280px, 78vw);
     z-index: 200;
     transform: translateX(-100%);
     transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1184,4 +1180,477 @@
   a[href]::after { content: " (" attr(href) ")"; font-size: 10px; color: #666; }
   .markdown-content { color: #000; }
   .markdown-content code, .markdown-content pre { background: #f0f0f0 !important; }
+}
+
+/* ============================================================
+   TRICHTER — Fahrzeug → Motor → Wissen
+   Das Antippen ist der Weg durchs Wissen, nicht die Dekoration.
+   ============================================================ */
+
+/* --- Fortschritt --- */
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+.step-node {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  text-align: center;
+}
+/* Verbindungslinie zwischen den Knoten */
+.step-node + .step-node::before {
+  content: '';
+  position: absolute;
+  top: 17px;
+  right: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--color-divider);
+}
+.step-node.done + .step-node::before,
+.step-node.current::before { background: var(--color-primary); }
+
+.step-dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-divider);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+.step-dot:disabled { cursor: default; }
+.step-dot svg { width: 16px; height: 16px; }
+.step-node.done .step-dot {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.step-node.current .step-dot {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-tint-2);
+}
+.step-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.step-node.current .step-label,
+.step-node.done .step-label { color: var(--color-text); }
+.step-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* --- Filterzeile --- */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+}
+.filter-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.filter-legend {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.fchip {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.fchip:hover { border-color: var(--color-primary); }
+.fchip.on {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* --- Auswahlkarten (Fahrzeug + Motor) --- */
+.pick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+.pick-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 120ms ease;
+}
+.pick-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.pick-card:active { transform: scale(0.98); }
+.pick-card.on {
+  border-color: var(--color-primary);
+  background: var(--color-primary-tint-2);
+}
+.pick-art {
+  display: grid;
+  place-items: center;
+  padding: var(--space-2) 0;
+  color: var(--color-primary);
+}
+.pick-art svg { width: 100%; height: auto; max-height: 92px; }
+.pick-art-empty {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 72px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.pick-body { display: flex; flex-direction: column; gap: 2px; }
+.pick-name { font-size: var(--text-md); font-weight: 700; letter-spacing: -0.01em; }
+.pick-sub { font-size: var(--text-sm); color: var(--color-text-muted); }
+.pick-meta { margin-top: 2px; font-size: 12px; color: var(--color-text-muted); }
+.pick-badge {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Cockpit: gewähltes Fahrzeug + Motor, beide antippbar --- */
+.cockpit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.cockpit-veh, .cockpit-eng {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.cockpit-veh:hover, .cockpit-eng:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.cockpit-veh .pick-art, .cockpit-eng .pick-art { flex: 0 0 120px; }
+.cockpit-veh .pick-art svg, .cockpit-eng .pick-art svg { max-height: 66px; }
+.cockpit-veh-body, .cockpit-eng-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cockpit-change {
+  margin-top: var(--space-1);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* --- Faktenblock neben der Grafik --- */
+.facts {
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt, var(--color-surface));
+}
+.facts-title { margin: 0 0 var(--space-3); font-size: var(--text-md); font-weight: 700; }
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+}
+.facts-grid dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.facts-grid dd { margin: 2px 0 0; font-size: var(--text-md); font-weight: 600; }
+.facts-sub {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+.facts-list { margin: 0; padding-left: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
+.facts-list li { margin-bottom: var(--space-1); }
+
+/* --- Wege ins Wissen --- */
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+.route {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 120ms ease;
+}
+.route:hover { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
+.route:active { transform: scale(0.99); }
+.route-icon { display: block; width: 24px; height: 24px; margin-bottom: var(--space-2); color: var(--color-primary); }
+.route-icon svg { width: 100%; height: 100%; }
+.route-title { font-size: var(--text-md); font-weight: 700; }
+.route-desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+.route-count {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   MESSPLAN — Sollwert prüfen statt nur abhaken
+   Erst wenn Sollwerte Zahlen sind, kann die App überhaupt urteilen.
+   ============================================================ */
+.measure-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.measure-progress-text {
+  flex: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.measure-progress .step-progress-bar { flex: 1; max-width: 320px; }
+
+.measure-group {
+  margin: var(--space-6) 0 var(--space-2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.measure-group:first-of-type { margin-top: 0; }
+
+.measure-item {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  margin-bottom: var(--space-2);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.measure-item.done { border-left-color: var(--color-primary); }
+/* Urteil färbt die Kante — auf einen Blick sichtbar, ohne den Text zu lesen */
+.measure-item.v-ok { border-left-color: var(--color-success); }
+.measure-item.v-ab { border-left-color: var(--color-error); }
+
+.measure-head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+}
+.measure-head input[type="checkbox"] {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+.measure-text { min-width: 0; }
+.measure-item.done .measure-title { color: var(--color-text-muted); }
+
+.measure-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  padding: 0 var(--space-4) var(--space-3) calc(var(--space-4) + 22px + var(--space-3));
+}
+.measure-input-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.measure-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.measure-input input {
+  width: 6.5rem;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.measure-input input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-tint-2);
+}
+.measure-unit {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+.verdict svg { width: 15px; height: 15px; }
+.verdict-ok { background: var(--color-success-tint); color: var(--color-success); }
+.verdict-ab { background: var(--color-error-tint); color: var(--color-error); }
+
+/* Backdrop hinter der mobilen Sidebar. Ohne ihn verdeckt die geöffnete
+   Sidebar den Menü-Button, der sie geöffnet hat — der einzige Ausweg wäre
+   dann, eine Baureihe anzutippen und damit den Fahrzeugkontext zu ändern. */
+.sidebar-backdrop { display: none; }
+@media (max-width: 960px) {
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 199;                 /* unter der Sidebar (200), über allem sonst */
+    background: rgba(6, 12, 20, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+  .sidebar-backdrop[hidden] { display: none; }
+}
+
+/* Ausweg aus der leeren Doc-Ansicht: Motoren, an denen Inhalte hängen */
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Ein geplanter, aber noch nicht geschriebener Artikel ist kein Fehlerfall —
+   die Bullets, Pins und Quellen darüber stehen vollständig. */
+.article-pending {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.article-raw {
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* Quellenattribution im Doc-Drawer. Inhaltsregel 3 des Repos verlangt sie —
+   die Daten pflegen sie, die Oberfläche zeigte sie bisher nirgends. */
+.source-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.source-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-divider);
+}
+.source-list a,
+.source-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.source-label { color: var(--color-text); }
+.source-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+.source-hint {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
 }

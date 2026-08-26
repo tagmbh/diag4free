@@ -1,0 +1,17 @@
+{
+  "name": "diag4free",
+  "version": "0.5.0",
+  "private": true,
+  "description": "BMW Werkstatt-Wissensbasis — statisches PWA ohne Build-Schritt",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-content.mjs",
+    "build": "node scripts/build-index.mjs",
+    "serve": "python3 -m http.server 8126",
+    "test": "node tests/run.mjs",
+    "check": "npm run validate && npm run build && npm run test"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
+}

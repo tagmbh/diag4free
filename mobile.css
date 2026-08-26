@@ -229,15 +229,19 @@ code, .measure-target, .pin-num, .doc-code {
     font-size: 12px !important;
   }
 
-  /* Sidebar-Baureihen-Baum: größere Trefferzonen */
-  .model-item {
-    padding-top: var(--space-3);
-    padding-bottom: var(--space-3);
-  }
-  .model-group-toggle {
+  /* Sidebar-Baureihen-Baum: größere Trefferzonen.
+     Vorher zielten hier `.model-item` und `.model-group-toggle` — beide
+     Klassen gibt es im Markup nicht, die Regeln liefen ins Leere und die
+     Knöpfe blieben bei 33 bzw. 34 px. */
+  .model-items button,
+  .model-group-header {
     min-height: 44px;
-    padding: var(--space-2) var(--space-3);
   }
+  .model-items button { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+
+  /* Immer sichtbare Bedienelemente der Topbar */
+  .topbar-menu-btn { min-width: 44px; min-height: 44px; }
+  .vin-btn { min-height: 44px; padding-inline: var(--space-3); }
 }
 
 /* ============================================================
@@ -640,7 +644,7 @@ code, .measure-target, .pin-num, .doc-code {
 }
 .vin-btn:hover {
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 .dialog-wide { max-width: 34rem; }
 .vin-input {
@@ -683,4 +687,378 @@ code, .measure-target, .pin-num, .doc-code {
   color: var(--color-primary);
   font-weight: 700;
   margin-bottom: var(--space-3);
+}
+
+/* ============================================================
+   TOUCH-EBENE — Bedienung am Fahrzeug
+   Tab-Bar in der Daumenzone, Antwortleiste, Schritt-Spur.
+   Desktop bleibt unverändert: alles unten ist ≤ 960 px gated.
+   ============================================================ */
+
+/* --- Bottom-Tabbar: auf Desktop aus, auf Touch die Primärnavigation --- */
+.tabbar { display: none; }
+
+@media (max-width: 960px) {
+  .tabbar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 60;
+    background: color-mix(in srgb, var(--color-surface) 97%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-top: 1px solid var(--color-divider);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .tab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 56px;
+    padding: var(--space-2) 2px;
+    border: 0;
+    background: none;
+    color: var(--color-text-muted);
+    font: inherit;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 120ms ease, transform 120ms ease;
+  }
+  .tab svg { width: 22px; height: 22px; }
+  .tab span { line-height: 1; }
+
+  /* Aktiver Tab: Farbe + Indikator oben, kein Layout-Shift */
+  .tab.active { color: var(--color-primary); }
+  .tab.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 28px;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    background: var(--color-primary);
+  }
+  .tab:active { transform: scale(0.94); }
+
+  /* Offene Fehlersuche → Punkt am Diagnose-Tab */
+  .tab-dot {
+    position: absolute;
+    top: 8px;
+    right: calc(50% - 16px);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-surface);
+  }
+
+  /* Platz für die Tabbar, sonst verdeckt sie den letzten Eintrag */
+  .view-inner { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+
+  /* Sidebar-Nav dupliziert die Tabbar → auf Touch ausblenden,
+     die Baureihen-Auswahl im Drawer bleibt erhalten */
+  .sidebar .nav-list,
+  .sidebar .nav-section:first-of-type { display: none; }
+}
+
+/* --- Antwortleiste: klebt am unteren Rand, direkt über der Tabbar --- */
+.step-answerbar {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.answer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 52px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: var(--text-md);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 100ms ease, filter 120ms ease;
+}
+.answer svg { width: 20px; height: 20px; flex: none; }
+.answer:active { transform: scale(0.97); }
+
+/* Auf schmalen Phones tragen die Kurzlabels — sie halten beide Flächen
+   gleich groß und treffsicher; die Langform bleibt im aria-label. */
+.answer-short { display: none; }
+@media (max-width: 560px) {
+  .answer { min-width: 0; }
+  .answer-full  { display: none; }
+  .answer-short { display: inline; }
+}
+
+.answer-yes {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.answer-no {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+@media (max-width: 960px) {
+  .step-answerbar {
+    position: fixed;
+    /* 56px Tabbar + 1px deren Oberkante — sonst überlappen die Ränder */
+    inset: auto 0 calc(57px + env(safe-area-inset-bottom)) 0;
+    z-index: 55;
+    margin: 0;
+    padding: var(--space-3);
+    gap: var(--space-2);
+    background: color-mix(in srgb, var(--color-surface) 97%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--color-divider);
+  }
+  .answer { min-height: 56px; font-size: 1rem; }
+  .answer span { white-space: nowrap; }
+
+  /* Der Runner braucht Luft, damit die fixierte Leiste nichts verdeckt */
+  .guide-step { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
+
+/* --- Schritt-Spur: beantwortete Schritte bleiben antippbar --- */
+.step-trail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-divider);
+}
+.trail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+.trail-item:hover,
+.trail-item:focus-visible { background: var(--color-primary-tint-2); color: var(--color-text); }
+.trail-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-divider);
+  font-size: 11px;
+  font-weight: 700;
+}
+.trail-q {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.step-doc-ref { margin-bottom: var(--space-4); }
+
+@media (max-width: 960px) {
+  .trail-item { min-height: 44px; }
+}
+
+/* --- Wiederaufnahme: dort weitermachen, wo abgebrochen wurde --- */
+.resume-card {
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-tint-2);
+}
+.resume-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.resume-badge {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.resume-time { color: var(--color-text-muted); font-size: var(--text-sm); }
+.resume-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.resume-progress {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.resume-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+@media (max-width: 480px) {
+  .resume-actions .btn { flex: 1; justify-content: center; min-height: 48px; }
+}
+
+/* --- Druck: Touch-Chrom gehört nicht aufs Papier --- */
+@media print {
+  .tabbar, .step-answerbar { display: none !important; }
+  .guide-step { padding-bottom: 0 !important; }
+}
+
+/* ============================================================
+   TRICHTER auf Touch
+   ============================================================ */
+@media (max-width: 960px) {
+  /* Zwei Karten pro Reihe — genug Fläche zum Treffen, genug Übersicht */
+  .pick-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+  .pick-card { padding: var(--space-2); min-height: 132px; }
+  .pick-art svg { max-height: 62px; }
+  .pick-name { font-size: var(--text-sm); }
+  .pick-sub, .pick-meta { font-size: 11.5px; }
+
+  /* Cockpit untereinander — nebeneinander wird auf dem Phone unlesbar */
+  .cockpit { grid-template-columns: 1fr; }
+  .cockpit-veh, .cockpit-eng { min-height: 76px; }
+
+  /* Filter-Chips: horizontal wischbar statt umbrechend */
+  .chip-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .chip-row::-webkit-scrollbar { display: none; }
+  .fchip { flex: none; min-height: 44px; }
+
+  .filter-row { flex-direction: column; gap: var(--space-3); }
+
+  /* Stepper kompakter, aber Knoten bleiben antippbar */
+  .stepper { margin-bottom: var(--space-4); }
+  .step-dot { width: 44px; height: 44px; }
+  .step-node + .step-node::before { top: 21px; }
+  .step-label { font-size: 12px; }
+
+  .route { min-height: 96px; }
+}
+
+@media (max-width: 380px) {
+  /* Auf sehr schmalen Geräten eine Karte pro Reihe — lieber groß als gequetscht */
+  .pick-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Kopfbereich verdichten: die Fahrzeuge müssen ohne Scrollen sichtbar sein.
+   Stepper, Überschrift und zwei Filterzeilen haben vorher den ganzen ersten
+   Bildschirm belegt — die Einladung zum Tippen lag unter der Falz. --- */
+@media (max-width: 960px) {
+  .view-inner .page-title { font-size: 1.375rem; line-height: 1.18; }
+  .view-inner .page-lead  { font-size: var(--text-sm); line-height: 1.4; }
+
+  .stepper { gap: 0; margin-bottom: var(--space-3); }
+  .step-dot { width: 34px; height: 34px; font-size: 12px; }
+  .step-dot svg { width: 14px; height: 14px; }
+  /* Nur die rücksprungfähigen Knoten brauchen die volle Trefferfläche —
+     ohne das Layout zu verschieben (pro-rules: Hitbox erweitern, nicht Größe). */
+  .step-dot:not(:disabled)::after { content: ''; position: absolute; inset: -7px; }
+  .step-node + .step-node::before { top: 16px; }
+  .step-label { font-size: 11px; }
+  .step-value { font-size: 11px; }
+
+  .filter-row {
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+  .filter-group { gap: var(--space-1); }
+  .fchip { min-height: 40px; }
+  .filter-legend { font-size: 10px; }
+}
+
+/* --- Messplan auf Touch: Eingabefeld groß genug für nasse Finger --- */
+@media (max-width: 960px) {
+  /* Eingabe unter den Text statt daneben — nebeneinander wird auf dem
+     Phone beides zu schmal und das Urteil läuft über den Rand. */
+  .measure-input {
+    padding-left: var(--space-4);
+    padding-bottom: var(--space-4);
+    align-items: flex-start;
+  }
+  .measure-input-row { flex: none; }
+  .verdict { flex-basis: 100%; }
+  .measure-input input { width: 8rem; min-height: 48px; font-size: 1.0625rem; }
+  .measure-head input[type="checkbox"] { width: 26px; height: 26px; }
+  .measure-progress { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+  .measure-progress .step-progress-bar { max-width: none; }
+  /* Volle Zeile, sonst hängen die beiden Buttons unausgerichtet
+     im umbrechenden .page-header. */
+  .page-actions { display: flex; width: 100%; gap: var(--space-2); }
+  .page-actions .btn { flex: 1; justify-content: center; min-height: 44px; }
+}
+
+/* ============================================================
+   QUERFORMAT auf flachen Viewports
+   Bei 390 px Höhe fressen Topbar, Antwortleiste und Tabbar die Hälfte.
+   Ohne diesen Block steht die Diagnosefrage unterhalb der Antwortleiste —
+   man soll Ja/Nein tippen, ohne die Frage lesen zu können.
+   ============================================================ */
+@media (orientation: landscape) and (max-height: 540px) {
+  .view-inner { padding-top: var(--space-3); }
+  .view-inner .page-title { font-size: 1.125rem; line-height: 1.2; }
+  .view-inner .page-lead { display: none; }          /* Kontext weicht dem Inhalt */
+  .page-header { margin-bottom: var(--space-3); }
+
+  /* Die Frage ist das Wichtigste auf dem Schirm */
+  .step-question { font-size: 1.0625rem; margin-bottom: var(--space-2); }
+  .step-progress { margin-bottom: var(--space-2); }
+  .step-trail { display: none; }                     /* Rückweg bleibt per Wischen */
+  .step-help, .step-measure { font-size: var(--text-sm); }
+  .guide-step { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+
+  /* Leisten flacher, Trefferflächen bleiben >= 44 px */
+  .step-answerbar { padding: var(--space-2) var(--space-3); inset-block-end: calc(49px + env(safe-area-inset-bottom)); }
+  .answer { min-height: 46px; }
+  .tabbar .tab { min-height: 48px; gap: 1px; }
+  .tab svg { width: 19px; height: 19px; }
+  .tab span { font-size: 10px; }
+
+  /* Fahrzeugauswahl: mehr Spalten, die Höhe ist knapper als die Breite */
+  .pick-grid { grid-template-columns: repeat(4, 1fr); }
+  .pick-art svg { max-height: 48px; }
+  .stepper { margin-bottom: var(--space-2); }
+  .step-dot { width: 30px; height: 30px; }
+  .step-node + .step-node::before { top: 14px; }
+}
+
+@media (max-width: 960px) {
+  /* Quellen-Links sind Trefferflächen, keine reine Typografie */
+  .source-list a { display: inline-flex; align-items: center; min-height: 44px; }
 }

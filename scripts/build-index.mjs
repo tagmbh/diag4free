@@ -36,7 +36,9 @@ async function main() {
   const models = await readJson(modelsFile);
 
   const entries = await readdir(CONTENT_DIR, { withFileTypes: true });
-  const modelDirs = entries.filter(e => e.isDirectory()).map(e => e.name);
+  // Sortiert, damit die Ausgabe unabhängig von der Dateisystem-Reihenfolge
+  // reproduzierbar ist — sonst unterscheidet sich der Build je nach Maschine.
+  const modelDirs = entries.filter(e => e.isDirectory()).map(e => e.name).sort();
 
   const docs = [];
   const guides = {};
@@ -86,6 +88,28 @@ async function main() {
       per_model: stats
     }
   };
+
+  // `generated` und `version` sind Build-Metadaten: der Zeitstempel ändert sich
+  // bei jedem Lauf, die Version ist lokal 'dev' und in CI der Commit-SHA.
+  // Für den Frischevergleich zählt nur der Inhalt.
+  const BUILD_META = ['generated', 'version'];
+  const inhalt = (obj) => {
+    const copy = { ...obj };
+    for (const k of BUILD_META) delete copy[k];
+    return JSON.stringify(copy);
+  };
+
+  if (process.argv.includes('--check')) {
+    let vorhanden;
+    try { vorhanden = JSON.parse(await readFile(OUT_FILE, 'utf8')); }
+    catch { console.error('✖ content/index.json fehlt — `node scripts/build-index.mjs` ausführen und committen'); process.exit(1); }
+    if (inhalt(vorhanden) !== inhalt(index)) {
+      console.error('✖ content/index.json ist nicht aktuell — `node scripts/build-index.mjs` ausführen und committen');
+      process.exit(1);
+    }
+    console.log('✓ content/index.json ist aktuell');
+    return;
+  }
 
   await writeFile(OUT_FILE, JSON.stringify(index, null, 2), 'utf8');
 

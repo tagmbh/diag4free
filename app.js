@@ -22,10 +22,86 @@
         series: state.series,
         engine: state.engine,
         theme: state.theme,
-        view: state.view
+        view: state.view,
+        picked: state.picked
       }));
     } catch { /* Quota / Private-Mode ignore */ }
   };
+
+  // -------- Diagnose-Sitzung (Wiederaufnahme am Fahrzeug) --------
+  // Eine laufende Fehlersuche überlebt Reload, Bildschirmsperre und App-Neustart.
+  const SESSION_KEY = 'diag4free.session.v1';
+  const saveSession = () => {
+    try {
+      if (!state.guide) { localStorage.removeItem(SESSION_KEY); return; }
+      localStorage.setItem(SESSION_KEY, JSON.stringify({
+        series: state.series,
+        engine: state.engine,
+        guide: state.guide,
+        step: state.step,
+        history: state.history,
+        result: state.result,
+        ts: Date.now()
+      }));
+    } catch { /* Quota / Private-Mode ignore */ }
+  };
+  const loadSession = () => {
+    try {
+      const raw = localStorage.getItem(SESSION_KEY);
+      if (!raw) return null;
+      const s = JSON.parse(raw);
+      // Nur Sitzungen der aktiven Baureihe anbieten — keine Baureihenmischung
+      if (!s || s.series !== state.series || !s.guide) return null;
+      if (!findGuide(s.guide, s.series)) return null;
+      return s;
+    } catch { return null; }
+  };
+  const clearSession = () => {
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }
+  };
+  const resumeSession = (s) => {
+    state.guide = s.guide;
+    state.step = s.step || 0;
+    state.history = Array.isArray(s.history) ? s.history : [];
+    state.result = s.result || null;
+  };
+
+  // Wie lange ist das her? Für die "Weiter"-Karte.
+  const relativeTime = (ts) => {
+    const min = Math.round((Date.now() - ts) / 60000);
+    if (min < 1) return 'gerade eben';
+    if (min < 60) return `vor ${min} Min.`;
+    const h = Math.round(min / 60);
+    if (h < 24) return `vor ${h} Std.`;
+    return `vor ${Math.round(h / 24)} Tg.`;
+  };
+
+  // -------- Touch-Feedback --------
+  // Kurzer Impuls bei Diagnose-Antworten — mit Handschuhen die einzige
+  // verlässliche Rückmeldung, dass der Tap gezählt hat.
+  const haptic = (ms = 12) => {
+    try { navigator.vibrate?.(ms); } catch { /* nicht unterstützt */ }
+  };
+
+  // -------- Wake Lock --------
+  // Während einer laufenden Fehlersuche darf der Bildschirm nicht zugehen:
+  // Hände sind am Fahrzeug, nicht am Display.
+  let wakeLock = null;
+  const requestWakeLock = async () => {
+    if (wakeLock || !('wakeLock' in navigator)) return;
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', () => { wakeLock = null; });
+    } catch { wakeLock = null; }
+  };
+  const releaseWakeLock = () => {
+    try { wakeLock?.release(); } catch { /* ignore */ }
+    wakeLock = null;
+  };
+  // Nach Tab-Wechsel / Sperre erneut anfordern, solange eine Diagnose läuft
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && state.guide && !state.result) requestWakeLock();
+  });
 
   // -------- State --------
   const state = {
@@ -39,11 +115,16 @@
     step: 0,
     history: [],
     result: null,
-    checks: new Set(),
+    checks: {},       // { <id>: { done, value } } — Schlüssel ist die stabile ID
+    measure: null,    // content/measure.json (lazy, optional)
     theme: 'light',
     drawer: null,     // { docId | article }
     data: null,       // content/index.json
     software: null,   // content/software.json (lazy)
+    engines: null,    // content/engines.json (lazy, optional)
+    picked: false,    // hat der Nutzer Fahrzeug+Motor bewusst gewählt?
+    vehEra: 'Alle',   // Filter im Fahrzeug-Schritt
+    vehBody: 'Alle',
     installEvt: null,
     obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
@@ -82,6 +163,7 @@
     state.category = 'Alle';
     // Reset guide-Kontext, damit keine Baureihenmischung
     state.guide = null; state.step = 0; state.history = []; state.result = null;
+    clearSession();
     updateContext();
     renderSidebarModels();
     savePrefs();
@@ -100,43 +182,70 @@
 
   // -------- Engine-Picker Dialog --------
   const openEnginePicker = () => {
-    const model = state.data.models.groups.flatMap(g => g.models).find(m => m.id === state.series);
+    const model = activeModel();
     if (!model) return;
     const dlg = document.createElement('div');
     dlg.className = 'dialog-backdrop';
     dlg.setAttribute('role', 'dialog');
     dlg.setAttribute('aria-modal', 'true');
     dlg.setAttribute('aria-label', 'Motor wählen');
-    dlg.innerHTML = `
-      <div class="dialog">
-        <div class="dialog-header">
-          <h2>Motor wählen · ${escapeHtml(state.series.toUpperCase())}</h2>
-          <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
-        </div>
-        <div class="dialog-body">
-          <p class="dialog-lead">Filtert Dokumente und Diagnosepfade auf den gewählten Aggregat-Kontext.</p>
-          <div class="engine-list">
-            ${model.engines.map(e => `
-              <button class="engine-option ${e === state.engine ? 'active' : ''}" data-engine="${escapeHtml(e)}">
-                <span class="engine-name">${escapeHtml(e)}</span>
-                ${e === state.engine ? '<span class="engine-badge">aktiv</span>' : ''}
-              </button>`).join('')}
+
+    const paint = () => {
+      dlg.innerHTML = `
+        <div class="dialog dialog-wide">
+          <div class="dialog-header">
+            <h2>Welcher Motor sitzt drin?</h2>
+            <button class="icon-btn" data-close-dialog aria-label="Schließen">${iconSvg('x')}</button>
           </div>
-        </div>
-      </div>`;
-    document.body.appendChild(dlg);
-    const close = () => { dlg.remove(); };
-    dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
-    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
-    dlg.querySelectorAll('[data-engine]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setEngine(btn.dataset.engine);
-        close();
+          <div class="dialog-body">
+            <p class="dialog-lead">${escapeHtml(model.name)} · ${escapeHtml(model.years)}. Bauform und Aufladung sind gezeichnet — im Zweifel Bohrungen zählen und mit dem Motorraum vergleichen.</p>
+            <div class="pick-grid pick-grid-eng">
+              ${model.engines.map(e => {
+                const spec = engineSpec(e);
+                const sub = spec
+                  ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ')
+                  : 'Steckbrief folgt';
+                return `<button class="pick-card ${e === state.engine ? 'on' : ''}" data-engine="${escapeHtml(e)}" aria-label="${escapeHtml(e)}${spec ? ', ' + escapeHtml(sub) : ''}">
+                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+                  <div class="pick-body">
+                    <span class="pick-name">${escapeHtml(e)}</span>
+                    <span class="pick-sub">${escapeHtml(sub)}</span>
+                    ${(spec?.id_marks || []).length ? `<span class="pick-meta">${escapeHtml(spec.id_marks[0])}</span>` : ''}
+                  </div>
+                  ${e === state.engine ? '<span class="pick-badge">aktiv</span>' : ''}
+                </button>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>`;
+      bind();
+    };
+
+    const close = () => { dlg.remove(); document.removeEventListener('keydown', esc); };
+    const esc = (e) => { if (e.key === 'Escape') close(); };
+
+    const bind = () => {
+      dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
+      dlg.querySelectorAll('[data-engine]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          haptic();
+          setEngine(btn.dataset.engine);
+          state.picked = true;
+          savePrefs();
+          close();
+          render();
+        });
       });
-    });
-    const esc = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    };
+
+    document.body.appendChild(dlg);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
     document.addEventListener('keydown', esc);
-    dlg.querySelector('.engine-option')?.focus();
+
+    // Steckbriefe nachladen und dann neu zeichnen — der Dialog steht sofort
+    paint();
+    loadEngines().then(paint);
+    dlg.querySelector('.pick-card')?.focus();
   };
 
   const updateContext = () => {
@@ -145,9 +254,21 @@
   };
 
   // -------- Data Access --------
+  // Die Gruppe der aktiven Baureihe, z. B. 'f-series' für F10/F20/F30/F22.
+  const currentGroupId = () => state.data?.models.groups
+    .find(g => g.models.some(m => m.id === state.series))?.id || null;
+
+  /**
+   * Docs der aktiven Baureihe — inklusive baureihenübergreifender Inhalte.
+   * Content darf statt einer Modell-ID auch eine Gruppen-ID tragen
+   * (`content/f-series/` gilt für alle F-Modelle). Ohne das waren die dort
+   * abgelegten Docs für niemanden erreichbar: der Filter verglich nur gegen
+   * die Modell-ID, und ein Modell namens „f-series" gibt es nicht.
+   */
   const currentModelDocs = () => {
     if (!state.data) return [];
-    return state.data.docs.filter(d => d.model === state.series);
+    const gruppe = currentGroupId();
+    return state.data.docs.filter(d => d.model === state.series || (gruppe && d.model === gruppe));
   };
 
   const scopedDocs = () => {
@@ -158,7 +279,20 @@
 
   const currentGuides = () => {
     if (!state.data) return [];
-    return Object.values(state.data.guides).filter(g => g.model === state.series);
+    const gruppe = currentGroupId();
+    return Object.values(state.data.guides).filter(g => g.model === state.series || (gruppe && g.model === gruppe));
+  };
+
+  /**
+   * Guide nachschlagen. Guides sind unter `<model>:<id>` abgelegt — bei
+   * baureihenübergreifenden Pfaden unter `<gruppe>:<id>`. Beide Schlüssel
+   * probieren, sonst ließe sich ein Gruppen-Guide zwar anzeigen, aber nicht
+   * öffnen.
+   */
+  const findGuide = (id, series = state.series) => {
+    if (!state.data || !id) return null;
+    const gruppe = state.data.models.groups.find(g => g.models.some(m => m.id === series))?.id;
+    return state.data.guides[`${series}:${id}`] || (gruppe ? state.data.guides[`${gruppe}:${id}`] : null) || null;
   };
 
   // -------- Router (hash-basiert) --------
@@ -185,8 +319,7 @@
     }
     if (head === 'guide' && rest[0]) {
       state.view = 'troubleshoot';
-      const gid = `${state.series}:${rest[0]}`;
-      if (state.data?.guides[gid]) {
+      if (findGuide(rest[0])) {
         state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
       }
     }
@@ -241,6 +374,16 @@
     });
   };
 
+  // -------- Sidebar (mobil) --------
+  const isSidebarOpen = () => $('#sidebar').classList.contains('open');
+  const setSidebar = (offen) => {
+    $('#sidebar').classList.toggle('open', offen);
+    const bd = $('[data-sidebar-backdrop]');
+    if (bd) bd.hidden = !offen;
+    $('#menuBtn').setAttribute('aria-expanded', String(offen));
+    $('#menuBtn').setAttribute('aria-label', offen ? 'Menü schließen' : 'Menü öffnen');
+  };
+
   // -------- Views --------
   const setView = (v) => {
     state.view = v;
@@ -248,15 +391,17 @@
     render();
     $('#main').scrollTop = 0;
     // close mobile sidebar
-    $('#sidebar').classList.remove('open');
+    setSidebar(false);
   };
 
   const render = () => {
     // Sichtbarkeit + Nav-Status immer mit state.view synchronisieren
     // (auch bei Deep-Links / hashchange, nicht nur bei setView)
-    $$('.nav-list [data-view]').forEach(b => {
-      if (b.dataset.view === state.view) b.setAttribute('aria-current', 'page');
+    $$('[data-view]').forEach(b => {
+      const active = b.dataset.view === state.view;
+      if (active) b.setAttribute('aria-current', 'page');
       else b.removeAttribute('aria-current');
+      if (b.classList.contains('tab')) b.classList.toggle('active', active);
     });
     $$('.view').forEach(p => p.classList.toggle('active', p.dataset.viewPanel === state.view));
     switch (state.view) {
@@ -267,116 +412,234 @@
       case 'library':      renderLibrary(); break;
       case 'software':     renderSoftware(); break;
     }
+    updateResumeDot();
   };
+
+  // -------- Motor-Steckbriefe (optional) --------
+  // engines.json ist bewusst optional: fehlt sie, bleiben die Motorkarten
+  // textbasiert. Sobald die Datei liegt, erscheinen Schema und Fakten.
+  const loadEngines = async () => {
+    if (state.engines !== null) return state.engines;
+    try {
+      const resp = await fetch('./content/engines.json', { cache: 'no-cache' });
+      state.engines = resp.ok ? await resp.json() : {};
+    } catch { state.engines = {}; }
+    return state.engines;
+  };
+  const engineSpec = (id) => (state.engines && state.engines[id]) || null;
+
+  const litres = (cc) => typeof cc === 'number' ? (cc / 1000).toFixed(1).replace('.', ',') + ' l' : null;
+  const powerRange = (spec) => {
+    const ps = (spec?.power_variants || []).map(v => v.ps).filter(n => typeof n === 'number');
+    if (!ps.length) return null;
+    const lo = Math.min(...ps), hi = Math.max(...ps);
+    return lo === hi ? `${lo} PS` : `${lo}–${hi} PS`;
+  };
+
+  const allModels = () => state.data.models.groups.flatMap(g => g.models.map(m => ({ ...m, group: g })));
+  const activeModel = () => allModels().find(m => m.id === state.series);
 
   // -------- OVERVIEW --------
   const renderOverview = () => {
     const panel = $('#overviewPanel');
-    const docsForModel = currentModelDocs();
-    const guidesForModel = currentGuides();
-    const activeGroup = state.data.models.groups.find(g => g.models.some(m => m.id === state.series));
-    const activeModel = activeGroup.models.find(m => m.id === state.series);
-    const totalDocs = state.data.stats.total_docs;
-    const totalGuides = state.data.stats.total_guides;
+    const model = activeModel();
+    if (!model) return;
+
+    // Der Trichter hat drei Stufen. Solange nichts bewusst gewählt wurde,
+    // steht die Fahrzeugwahl vorn — das ist der Einstieg, nicht eine Liste
+    // irgendwo weiter unten.
+    const stage = !state.picked ? 'vehicle' : 'ready';
+
+    const docCount = currentModelDocs().length;
+    const scopedCount = scopedDocs().length;
+    const guideCount = currentGuides().length;
 
     panel.innerHTML = `
+      ${stepperHtml(stage)}
+      ${stage === 'vehicle' ? vehicleStepHtml() : readyStepHtml(model, scopedCount, guideCount, docCount)}
+    `;
+
+    bindOverview(panel, stage);
+  };
+
+  // -------- Trichter: Fortschrittsanzeige --------
+  const stepperHtml = (stage) => {
+    const model = activeModel();
+    const steps = [
+      { key: 'vehicle', label: 'Fahrzeug', value: state.picked ? model.name : null },
+      { key: 'engine',  label: 'Motor',    value: state.picked ? state.engine : null },
+      { key: 'ready',   label: 'Wissen',   value: null }
+    ];
+    const activeIdx = stage === 'vehicle' ? 0 : 2;
+    return `
+      <ol class="stepper" aria-label="Fortschritt">
+        ${steps.map((st, i) => `
+          <li class="step-node ${i < activeIdx ? 'done' : ''} ${i === activeIdx ? 'current' : ''}">
+            <button class="step-dot" ${i < activeIdx ? `data-goto-step="${st.key}"` : 'disabled'}
+              aria-label="${escapeHtml(st.label)}${st.value ? ': ' + escapeHtml(st.value) : ''}">
+              ${i < activeIdx ? iconSvg('check') : `<span>${i + 1}</span>`}
+            </button>
+            <span class="step-label">${escapeHtml(st.label)}</span>
+            ${st.value ? `<span class="step-value">${escapeHtml(st.value)}</span>` : ''}
+          </li>`).join('')}
+      </ol>`;
+  };
+
+  // -------- Schritt 1: Fahrzeug antippen --------
+  const vehicleStepHtml = () => {
+    const models = allModels();
+    const eras = ['Alle', ...new Set(state.data.models.groups.map(g => g.label))];
+    const bodies = ['Alle', ...new Set(models.map(m => m.body).filter(Boolean))];
+
+    const shown = models.filter(m =>
+      (state.vehEra === 'Alle' || m.group.label === state.vehEra) &&
+      (state.vehBody === 'Alle' || m.body === state.vehBody));
+
+    return `
       <div class="page-header">
         <div>
-          <h1 class="page-title" id="ovTitle">Übersicht · ${escapeHtml(activeModel.name)}</h1>
-          <p class="page-lead">${escapeHtml(activeModel.desc)} · ${escapeHtml(activeModel.years)} · Motoren: ${activeModel.engines.map(escapeHtml).join(', ')}</p>
+          <h1 class="page-title" id="ovTitle">Welches Fahrzeug hast du?</h1>
+          <p class="page-lead">Tippe deine Baureihe an. Danach den Motor — ab dann ist alles auf dein Fahrzeug gefiltert.</p>
         </div>
       </div>
 
-      <div class="kpi-grid">
-        <div class="kpi">
-          <div class="kpi-label">Docs · aktives Modell</div>
-          <div class="kpi-value">${docsForModel.length}</div>
-          <div class="kpi-hint">${scopedDocs().length} passend zum Motor ${escapeHtml(state.engine)}</div>
+      <div class="filter-row">
+        <div class="filter-group">
+          <span class="filter-legend">Ära</span>
+          <div class="chip-row">
+            ${eras.map(e => `<button class="fchip ${state.vehEra === e ? 'on' : ''}" data-era="${escapeHtml(e)}">${escapeHtml(e === 'Alle' ? 'Alle' : e.split(' (')[0])}</button>`).join('')}
+          </div>
         </div>
-        <div class="kpi">
-          <div class="kpi-label">Diagnosepfade</div>
-          <div class="kpi-value">${guidesForModel.length}</div>
-          <div class="kpi-hint">geführte Fehlersuchen</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Wissensbasis gesamt</div>
-          <div class="kpi-value kpi-accent">${totalDocs}</div>
-          <div class="kpi-hint">${totalGuides} Guides über alle Baureihen</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Motor aktiv</div>
-          <div class="kpi-value" style="font-family:var(--font-mono);font-size:var(--text-lg);">${escapeHtml(state.engine)}</div>
-          <div class="kpi-hint">${activeModel.engines.length} Motoren verfügbar</div>
-          <button class="link-inline" data-change-engine aria-label="Motor wechseln" style="margin-top:var(--space-2);font-size:13px;">→ Motor wechseln</button>
+        <div class="filter-group">
+          <span class="filter-legend">Karosserie</span>
+          <div class="chip-row">
+            ${bodies.map(b => `<button class="fchip ${state.vehBody === b ? 'on' : ''}" data-body="${escapeHtml(b)}">${escapeHtml(bodyLabel(b))}</button>`).join('')}
+          </div>
         </div>
       </div>
 
-      <div class="page-header" style="margin-top:var(--space-8);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Schnellzugriff</h2>
-          <p class="page-lead">Häufig genutzte Dokumente und Diagnosepfade für ${escapeHtml(activeModel.name)}.</p>
-        </div>
-      </div>
-
-      <div class="tile-grid">
-        ${docsForModel.slice(0, 3).map(d => `
-          <button class="tile" data-open-doc="${d.id}">
-            <span class="tile-era">${escapeHtml(d.cat)}</span>
-            <span class="tile-title">${escapeHtml(d.title)}</span>
-            <span class="tile-desc">${escapeHtml(d.summary.slice(0, 120))}…</span>
-            <div class="tile-meta">
-              <span>${escapeHtml(d.id)}</span>
-              <span>${escapeHtml(d.type)}</span>
-            </div>
-          </button>`).join('')}
-        ${guidesForModel.slice(0, 2).map(g => `
-          <button class="tile" data-open-guide="${g.id}">
-            <span class="tile-era" style="color:var(--color-warning);">Diagnose · ${escapeHtml(g.code)}</span>
-            <span class="tile-title">${escapeHtml(g.name)}</span>
-            <span class="tile-desc">${escapeHtml(g.desc)}</span>
-            <div class="tile-meta">
-              <span>${(g.steps || []).length} Schritte</span>
-              <span>geführt</span>
-            </div>
-          </button>`).join('')}
-      </div>
-
-      <div class="page-header" style="margin-top:var(--space-10);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Alle Baureihen</h2>
-          <p class="page-lead">Zur anderen Baureihe wechseln.</p>
-        </div>
-      </div>
-
-      <div class="tile-grid">
-        ${state.data.models.groups.map(group => `
-          ${group.models.map(m => {
-            const count = state.data.docs.filter(d => d.model === m.id).length;
-            const active = m.id === state.series;
-            return `<button class="tile" data-set-model="${m.id}" ${active ? 'style="border-color:var(--color-primary);background:var(--color-primary-tint-2);"' : ''}>
-              <span class="tile-era">${escapeHtml(group.era)}</span>
-              <span class="tile-title">${escapeHtml(m.name)} <span style="font-weight:400;color:var(--color-text-muted);font-size:var(--text-sm);">· ${escapeHtml(m.years)}</span></span>
-              <span class="tile-desc">${escapeHtml(m.desc)}</span>
-              <div class="tile-meta">
-                <span>${count} Docs</span>
-                <span>${m.engines.length} Motoren</span>
+      ${shown.length === 0 ? `
+        <div class="empty">${iconSvg('empty')}<h3>Keine Baureihe passt zu dieser Auswahl</h3>
+        <p>Filter zurücksetzen und erneut versuchen.</p></div>` : `
+        <div class="pick-grid">
+          ${shown.map(m => {
+            const n = state.data.docs.filter(d => d.model === m.id).length;
+            const era = /19[89]/.test(m.years) ? 'classic' : 'modern';
+            return `<button class="pick-card" data-pick-model="${escapeHtml(m.id)}" aria-label="${escapeHtml(m.name)}, ${escapeHtml(m.years)}">
+              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era)}</div>
+              <div class="pick-body">
+                <span class="pick-name">${escapeHtml(m.name)}</span>
+                <span class="pick-sub">${escapeHtml(m.years)} · ${escapeHtml(bodyLabel(m.body))}</span>
+                <span class="pick-meta">${n} Docs · ${m.engines.length} Motoren</span>
               </div>
             </button>`;
           }).join('')}
-        `).join('')}
+        </div>`}
+    `;
+  };
+
+  const bodyLabel = (b) => ({ Schraegheck: 'Schrägheck', Coupe: 'Coupé' }[b] || b || '—');
+
+  // -------- Schritt 2: Motor antippen (Dialog) --------
+  const readyStepHtml = (model, scopedCount, guideCount, docCount) => {
+    const spec = engineSpec(state.engine);
+    const era = /19[89]/.test(model.years) ? 'classic' : 'modern';
+    const facts = spec ? [
+      ['Bauform', spec.layout], ['Aufladung', spec.aspiration],
+      ['Hubraum', litres(spec.displacement_cc)], ['Leistung', powerRange(spec)],
+      ['Bauzeit', spec.years], ['Ventiltrieb', (spec.valvetrain || []).join(' · ')]
+    ].filter(([, v]) => v) : [];
+
+    return `
+      <div class="cockpit">
+        <button class="cockpit-veh" data-restart-pick aria-label="Anderes Fahrzeug wählen">
+          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era)}</div>
+          <div class="cockpit-veh-body">
+            <span class="pick-name">${escapeHtml(model.name)}</span>
+            <span class="pick-sub">${escapeHtml(model.years)} · ${escapeHtml(model.desc)}</span>
+            <span class="cockpit-change">Anderes Fahrzeug</span>
+          </div>
+        </button>
+
+        <button class="cockpit-eng" data-change-engine aria-label="Anderen Motor wählen">
+          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+          <div class="cockpit-eng-body">
+            <span class="pick-name">${escapeHtml(state.engine)}</span>
+            <span class="pick-sub">${spec ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ') : 'Steckbrief folgt'}</span>
+            <span class="cockpit-change">Anderer Motor</span>
+          </div>
+        </button>
+      </div>
+
+      ${facts.length ? `
+        <div class="facts">
+          <h2 class="facts-title">${escapeHtml(state.engine)} · Fakten</h2>
+          <dl class="facts-grid">
+            ${facts.map(([k, v]) => `<div><dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd></div>`).join('')}
+          </dl>
+          ${(spec.id_marks || []).length ? `
+            <h3 class="facts-sub">Im Motorraum erkennen</h3>
+            <ul class="facts-list">${spec.id_marks.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+          ${(spec.weak_points || []).length ? `
+            <h3 class="facts-sub">Bekannte Schwachstellen</h3>
+            <ul class="facts-list">${spec.weak_points.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}
+        </div>` : ''}
+
+      <div class="page-header" style="margin-top:var(--space-8);">
+        <div>
+          <h2 class="page-title" style="font-size:var(--text-lg);">Womit weiter?</h2>
+          <p class="page-lead">Alles unten ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert.</p>
+        </div>
+      </div>
+
+      <div class="route-grid">
+        <button class="route" data-route="troubleshoot">
+          <span class="route-icon">${iconSvg('wrench')}</span>
+          <span class="route-title">Diagnosepfad starten</span>
+          <span class="route-desc">Geführte Fehlersuche, Schritt für Schritt</span>
+          <span class="route-count">${guideCount}</span>
+        </button>
+        <button class="route" data-route="docs">
+          <span class="route-icon">${iconSvg('docs')}</span>
+          <span class="route-title">Tech-Docs</span>
+          <span class="route-desc">Pinbelegungen, Prüfwerte, Werkzeuge</span>
+          <span class="route-count">${scopedCount}</span>
+        </button>
+        <button class="route" data-route="measure">
+          <span class="route-icon">${iconSvg('check')}</span>
+          <span class="route-title">Messplan</span>
+          <span class="route-desc">Checkliste von Versorgung bis Motor</span>
+          <span class="route-count">${measurePlan.length}</span>
+        </button>
       </div>
     `;
+  };
 
-    panel.querySelectorAll('[data-open-doc]').forEach(el =>
-      el.addEventListener('click', () => openDocDrawer(el.dataset.openDoc))
-    );
-    panel.querySelectorAll('[data-open-guide]').forEach(el =>
-      el.addEventListener('click', () => { state.guide = el.dataset.openGuide; state.step = 0; state.history = []; state.result = null; setView('troubleshoot'); })
-    );
-    panel.querySelectorAll('[data-set-model]').forEach(el =>
-      el.addEventListener('click', () => setSeries(el.dataset.setModel))
-    );
+  const bindOverview = (panel, stage) => {
+    panel.querySelectorAll('[data-era]').forEach(b => b.addEventListener('click', () => {
+      state.vehEra = b.dataset.era; renderOverview();
+    }));
+    panel.querySelectorAll('[data-body]').forEach(b => b.addEventListener('click', () => {
+      state.vehBody = b.dataset.body; renderOverview();
+    }));
+    panel.querySelectorAll('[data-pick-model]').forEach(b => b.addEventListener('click', () => {
+      haptic();
+      setSeries(b.dataset.pickModel);
+      state.picked = true;
+      savePrefs();
+      render();
+      openEnginePicker();          // direkt weiter zu Schritt 2
+    }));
+    panel.querySelector('[data-restart-pick]')?.addEventListener('click', () => {
+      state.picked = false; savePrefs(); renderOverview();
+    });
     panel.querySelector('[data-change-engine]')?.addEventListener('click', openEnginePicker);
+    panel.querySelectorAll('[data-goto-step]')?.forEach(b => b.addEventListener('click', () => {
+      state.picked = false; savePrefs(); renderOverview();
+    }));
+    panel.querySelectorAll('[data-route]').forEach(b => b.addEventListener('click', () => {
+      haptic(); setView(b.dataset.route);
+    }));
   };
 
   const changeEngineDialog_LEGACY = () => {
@@ -397,6 +660,16 @@
   const renderDocs = () => {
     const panel = $('#docsPanel');
     const all = scopedDocs();
+
+    // Eine leere Ansicht ohne Erklärung ist eine Sackgasse: für diese
+    // Baureihe kann es Dokumente geben, die nur an anderen Motoren hängen.
+    // Nur Motoren vorschlagen, die diese Baureihe tatsächlich hat. Ein
+    // baureihenübergreifendes Doc nennt auch Motoren anderer F-Modelle —
+    // die anzubieten führt zu einem Knopf, der nichts tut.
+    const eigeneMotoren = activeModel()?.engines || [];
+    const andereMotoren = all.length ? [] : [...new Set(
+      currentModelDocs().flatMap(d => d.engines || [])
+    )].filter(e => e !== state.engine && eigeneMotoren.includes(e)).sort();
     const cats = ['Alle', ...new Set(all.map(d => d.cat))];
 
     let filtered = all;
@@ -437,8 +710,12 @@
       ${filtered.length === 0 ? `
         <div class="empty">
           ${iconSvg('empty')}
-          <h3>Keine Dokumente gefunden</h3>
-          <p>Filter oder Suchbegriff anpassen.</p>
+          <h3>Keine Dokumente für ${escapeHtml(state.engine)}</h3>
+          ${andereMotoren.length ? `
+            <p>Für ${escapeHtml(state.series.toUpperCase())} gibt es Dokumente zu anderen Motoren:</p>
+            <div class="empty-actions">
+              ${andereMotoren.map(e => `<button class="btn btn-secondary" data-try-engine="${escapeHtml(e)}">${escapeHtml(e)}</button>`).join('')}
+            </div>` : `<p>Filter oder Suchbegriff anpassen.</p>`}
         </div>
       ` : `
         <div class="doc-list">
@@ -469,6 +746,9 @@
       const input = panel.querySelector('[data-doc-search]');
       if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
     });
+    panel.querySelectorAll('[data-try-engine]').forEach(b =>
+      b.addEventListener('click', () => { haptic(); setEngine(b.dataset.tryEngine); })
+    );
     panel.querySelectorAll('[data-doc]').forEach(card => {
       card.addEventListener('click', () => openDocDrawer(card.dataset.doc));
       card.addEventListener('keydown', (e) => {
@@ -483,6 +763,9 @@
     const guides = currentGuides();
 
     if (!state.guide) {
+      releaseWakeLock();
+      const session = loadSession();
+      const sessionGuide = session ? findGuide(session.guide, session.series) : null;
       panel.innerHTML = `
         <div class="page-header">
           <div>
@@ -490,6 +773,20 @@
             <p class="page-lead">Geführte Fehlersuchen für ${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)}. Jeder Schritt referenziert Messpunkte und Docs.</p>
           </div>
         </div>
+        ${sessionGuide ? `
+          <div class="resume-card">
+            <div class="resume-meta">
+              <span class="resume-badge">Angefangen</span>
+              <span class="resume-time">${escapeHtml(relativeTime(session.ts))}</span>
+            </div>
+            <div class="resume-name">${escapeHtml(sessionGuide.name)}</div>
+            <div class="resume-progress">${session.result ? 'Ergebnis erreicht' : `Schritt ${session.step + 1} von ${sessionGuide.steps.length}`}</div>
+            <div class="resume-actions">
+              <button class="btn btn-primary" data-resume-session>Weitermachen</button>
+              <button class="btn btn-ghost" data-discard-session>Verwerfen</button>
+            </div>
+          </div>
+        ` : ''}
         ${guides.length === 0 ? `
           <div class="empty">
             ${iconSvg('wrench')}
@@ -508,17 +805,28 @@
           </div>
         `}
       `;
+      panel.querySelector('[data-resume-session]')?.addEventListener('click', () => {
+        resumeSession(session);
+        updateHash();
+        renderTroubleshoot();
+      });
+      panel.querySelector('[data-discard-session]')?.addEventListener('click', () => {
+        clearSession();
+        renderTroubleshoot();
+      });
       panel.querySelectorAll('[data-select-guide]').forEach(btn => {
         btn.addEventListener('click', () => {
           state.guide = btn.dataset.selectGuide;
           state.step = 0; state.history = []; state.result = null;
+          saveSession();
           renderTroubleshoot();
         });
       });
+      updateResumeDot();
       return;
     }
 
-    const g = state.data.guides[`${state.series}:${state.guide}`];
+    const g = findGuide(state.guide);
     if (!g) { state.guide = null; renderTroubleshoot(); return; }
 
     // Result view
@@ -542,11 +850,14 @@
           </div>
         </div>
       `;
+      saveSession();
+      releaseWakeLock();
       panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
-        state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+        state.step = 0; state.history = []; state.result = null; saveSession(); renderTroubleshoot();
       });
       panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
-        state.guide = null; state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+        state.guide = null; state.step = 0; state.history = []; state.result = null;
+        clearSession(); updateResumeDot(); renderTroubleshoot();
       });
       panel.querySelector('[data-print]').addEventListener('click', () => window.print());
       return;
@@ -559,6 +870,15 @@
     const progress = Math.round(((state.step) / total) * 100);
     const refDoc = step.doc ? state.data.docs.find(d => d.id === step.doc) : null;
 
+    // Schritt-Spur: was bereits beantwortet wurde, bleibt sichtbar und antippbar
+    const trail = state.history.map((idx, i) => {
+      const past = g.steps[idx];
+      return `<button class="trail-item" data-trail="${i}" title="Zurück zu Schritt ${idx + 1}">
+        <span class="trail-num">${idx + 1}</span>
+        <span class="trail-q">${escapeHtml(past?.q || '')}</span>
+      </button>`;
+    }).join('');
+
     panel.innerHTML = `
       <div class="page-header">
         <div>
@@ -568,30 +888,41 @@
         <button class="btn btn-ghost" data-back-to-guides>${iconSvg('back')} Andere Diagnose</button>
       </div>
 
-      <div class="guide-step">
+      <div class="guide-step" data-guide-runner>
         <div class="step-progress">
           <span>Schritt ${state.step + 1} / ${total}</span>
           <div class="step-progress-bar"><div class="step-progress-fill" style="width:${progress}%"></div></div>
         </div>
+        ${trail ? `<div class="step-trail" aria-label="Bisherige Schritte">${trail}</div>` : ''}
         <div class="step-question">${escapeHtml(step.q)}</div>
         ${step.help ? `<div class="step-help">${escapeHtml(step.help)}</div>` : ''}
         ${step.measure ? `<div class="step-measure">📐 ${escapeHtml(step.measure)}</div>` : ''}
-        ${refDoc ? `<div style="margin-bottom:var(--space-4);">
+        ${refDoc ? `<div class="step-doc-ref">
           <button class="btn btn-secondary" data-open-doc="${escapeHtml(refDoc.id)}">${iconSvg('docs')} Zugehöriges Dokument: ${escapeHtml(refDoc.title)}</button>
         </div>` : ''}
-        <div class="step-actions">
-          <button class="btn btn-primary" data-answer="yes">${iconSvg('check')} Ja / erfüllt</button>
-          <button class="btn btn-secondary" data-answer="no">${iconSvg('x')} Nein / abweichend</button>
-        </div>
         <div class="step-footer">
           ${state.history.length > 0 ? `<button class="btn btn-ghost" data-step-back>${iconSvg('back')} Zurück</button>` : ''}
           <button class="btn btn-ghost" data-reset-guide>${iconSvg('reset')} Zurücksetzen</button>
         </div>
       </div>
+
+      <div class="step-answerbar" role="group" aria-label="Antwort auf Schritt ${state.step + 1}">
+        <button class="answer answer-yes" data-answer="yes" aria-label="Ja, Bedingung erfüllt">
+          ${iconSvg('check')}<span class="answer-full">Ja / erfüllt</span><span class="answer-short">Ja</span>
+        </button>
+        <button class="answer answer-no" data-answer="no" aria-label="Nein, Wert weicht ab">
+          ${iconSvg('x')}<span class="answer-full">Nein / abweichend</span><span class="answer-short">Nein</span>
+        </button>
+      </div>
     `;
 
+    saveSession();
+    requestWakeLock();
+    updateResumeDot();
+
     panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
-      state.guide = null; state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+      state.guide = null; state.step = 0; state.history = []; state.result = null;
+      clearSession(); releaseWakeLock(); updateResumeDot(); renderTroubleshoot();
     });
     panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
       state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
@@ -602,6 +933,7 @@
     });
     panel.querySelector('[data-open-doc]')?.addEventListener('click', (e) => openDocDrawer(e.currentTarget.dataset.openDoc));
     panel.querySelectorAll('[data-answer]').forEach(btn => btn.addEventListener('click', () => {
+      haptic();
       const answer = btn.dataset.answer;
       const target = step[answer];
       state.history.push(state.step);
@@ -609,9 +941,127 @@
       else if (typeof target === 'string') { state.result = target; }
       renderTroubleshoot();
     }));
+
+    // Schritt-Spur: zurückspringen auf einen bereits beantworteten Schritt
+    panel.querySelectorAll('[data-trail]').forEach(btn => btn.addEventListener('click', () => {
+      const i = Number(btn.dataset.trail);
+      if (!Number.isInteger(i) || i < 0 || i >= state.history.length) return;
+      state.step = state.history[i];
+      state.history = state.history.slice(0, i);
+      state.result = null;
+      renderTroubleshoot();
+    }));
+
+    bindSwipeBack(panel.querySelector('[data-guide-runner]'));
+  };
+
+  // Nach rechts wischen = einen Schritt zurück. Am Fahrzeug schneller als
+  // den Zurück-Button zu treffen; vertikales Scrollen bleibt unberührt.
+  const bindSwipeBack = (el) => {
+    if (!el) return;
+    let x0 = null, y0 = null;
+    el.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) { x0 = null; return; }
+      x0 = e.touches[0].clientX;
+      y0 = e.touches[0].clientY;
+    }, { passive: true });
+    el.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - x0;
+      const dy = t.clientY - y0;
+      x0 = null;
+      if (dx > 70 && Math.abs(dy) < 50 && state.history.length > 0) {
+        haptic(8);
+        const prev = state.history.pop();
+        if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+      }
+    }, { passive: true });
+  };
+
+  // Punkt am Diagnose-Tab, solange eine Fehlersuche offen ist — auch nach
+  // einem Neustart, solange eine gespeicherte Sitzung existiert.
+  const updateResumeDot = () => {
+    const dot = $('#tabResumeDot');
+    if (dot) dot.hidden = !(state.guide || loadSession());
   };
 
   // -------- MEASURE --------
+  // Der Messplan kommt aus content/measure.json, sobald die Datei existiert.
+  // Solange nicht, greift die eingebaute Liste unten — die App bleibt nutzbar.
+  const CHECKS_KEY = 'diag4free.checks.v2';
+  const loadChecks = () => {
+    try { return JSON.parse(localStorage.getItem(CHECKS_KEY)) || {}; }
+    catch { return {}; }
+  };
+  const saveChecks = () => {
+    try { localStorage.setItem(CHECKS_KEY, JSON.stringify(state.checks)); } catch { /* ignore */ }
+  };
+
+  const loadMeasure = async () => {
+    if (state.measure !== null) return state.measure;
+    try {
+      const resp = await fetch('./content/measure.json', { cache: 'no-cache' });
+      const data = resp.ok ? await resp.json() : null;
+      state.measure = Array.isArray(data?.items) ? data.items : [];
+    } catch { state.measure = []; }
+    return state.measure;
+  };
+
+  // Fällt auf die eingebaute Liste zurück und vergibt dabei stabile IDs —
+  // der Abhak-Status darf nicht am Listenindex hängen, sonst verrutscht er,
+  // sobald jemand eine Position einfügt.
+  const slug = (t) => t.toLowerCase()
+    .replace(/[äöüß]/g, c => ({ 'ä':'ae','ö':'oe','ü':'ue','ß':'ss' }[c]))
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  const measureItems = () => {
+    const fromFile = state.measure && state.measure.length ? state.measure : null;
+    const items = fromFile || measurePlan.map(([title, instruction, target]) => ({
+      id: slug(title), title, instruction, target: { text: target }, builtin: true
+    }));
+    // Auf Fahrzeug und Motor eingrenzen — leer/fehlend heißt „gilt für alle"
+    return items.filter(it =>
+      (!it.models || it.models.length === 0 || it.models.includes(state.series)) &&
+      (!it.engines || it.engines.length === 0 || it.engines.includes(state.engine)));
+  };
+
+  /**
+   * Vergleicht einen gemessenen Wert mit dem Sollbereich.
+   * @returns {null|{status:'ok'|'ab', text:string}}  null = kein Urteil möglich
+   */
+  const judge = (target, raw) => {
+    if (!target || typeof target.unit !== 'string') return null;
+    const v = parseFloat(String(raw).replace(',', '.'));
+    if (!Number.isFinite(v)) return null;
+    const { min, max, nominal, tolerance_pct } = target;
+    let lo = min, hi = max;
+    if (typeof nominal === 'number' && typeof tolerance_pct === 'number') {
+      const d = Math.abs(nominal * tolerance_pct / 100);
+      lo = typeof lo === 'number' ? lo : nominal - d;
+      hi = typeof hi === 'number' ? hi : nominal + d;
+    }
+    if (typeof lo !== 'number' && typeof hi !== 'number') return null;
+    const zuNiedrig = typeof lo === 'number' && v < lo;
+    const zuHoch = typeof hi === 'number' && v > hi;
+    if (zuNiedrig) return { status: 'ab', text: `zu niedrig · Soll ab ${lo} ${target.unit}` };
+    if (zuHoch)   return { status: 'ab', text: `zu hoch · Soll bis ${hi} ${target.unit}` };
+    return { status: 'ok', text: 'im Sollbereich' };
+  };
+
+  const targetText = (t) => {
+    if (!t) return '';
+    if (typeof t.text === 'string') return t.text;
+    const u = t.unit || '';
+    if (typeof t.min === 'number' && typeof t.max === 'number') return `${t.min}–${t.max} ${u}`;
+    if (typeof t.min === 'number') return `ab ${t.min} ${u}`;
+    if (typeof t.max === 'number') return `bis ${t.max} ${u}`;
+    if (typeof t.nominal === 'number') {
+      return t.tolerance_pct ? `${t.nominal} ${u} ±${t.tolerance_pct} %` : `${t.nominal} ${u}`;
+    }
+    return '';
+  };
+
   const measurePlan = [
     ['Batterie-Basis', 'Ruhespannung und Startstrom prüfen. Batterie unter Last testen.', '≥ 12.4 V Ruhe · Einbruch < 10.5 V beim Start'],
     ['Massepunkte Motor', 'Massepunkte M12/M13/M31 auf Sichtkontrolle und Widerstand.', '< 0.1 Ω gegen Batterie-Minus'],
@@ -627,50 +1077,112 @@
 
   const renderMeasure = () => {
     const panel = $('#measurePanel');
+    const items = measureItems();
+    const erledigt = items.filter(it => state.checks[it.id]?.done).length;
+    const quelle = state.measure && state.measure.length;
+
+    // Nach Abschnitt gruppieren, Reihenfolge des ersten Auftretens beibehalten
+    const gruppen = [];
+    for (const it of items) {
+      const g = it.group || 'Messplan';
+      let eintrag = gruppen.find(x => x.name === g);
+      if (!eintrag) { eintrag = { name: g, items: [] }; gruppen.push(eintrag); }
+      eintrag.items.push(it);
+    }
+
+    const position = (it, nr) => {
+      const st = state.checks[it.id] || {};
+      const urteil = judge(it.target, st.value);
+      const numerisch = it.target && typeof it.target.unit === 'string';
+      return `
+        <div class="measure-item ${st.done ? 'done' : ''} ${urteil ? 'v-' + urteil.status : ''}">
+          <label class="measure-head">
+            <input type="checkbox" data-check="${escapeHtml(it.id)}" ${st.done ? 'checked' : ''}
+              aria-label="${escapeHtml(it.title)} erledigt" />
+            <div class="measure-text">
+              <div class="measure-title">${nr}. ${escapeHtml(it.title)}</div>
+              <div class="measure-instr">${escapeHtml(it.instruction)}</div>
+              <div class="measure-target">Soll: ${escapeHtml(targetText(it.target))}</div>
+            </div>
+          </label>
+          ${numerisch ? `
+            <div class="measure-input">
+              <label class="measure-input-label" for="m-${escapeHtml(it.id)}">Gemessen</label>
+              <div class="measure-input-row">
+                <input id="m-${escapeHtml(it.id)}" type="text" inputmode="decimal"
+                  data-value="${escapeHtml(it.id)}" value="${escapeHtml(st.value ?? '')}"
+                  placeholder="—" autocomplete="off" />
+                <span class="measure-unit">${escapeHtml(it.target.unit)}</span>
+              </div>
+              ${urteil ? `<span class="verdict verdict-${urteil.status}">
+                ${urteil.status === 'ok' ? iconSvg('check') : iconSvg('x')}${escapeHtml(urteil.text)}
+              </span>` : ''}
+            </div>` : ''}
+        </div>`;
+    };
+
+    let nr = 0;
     panel.innerHTML = `
       <div class="page-header">
         <div>
           <h1 class="page-title" id="msTitle">Messplan</h1>
-          <p class="page-lead">Werkstattcheckliste für Diagnoseeinstieg. Reihenfolge von Versorgung zu Kommunikation zu Motor.</p>
+          <p class="page-lead">${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)} · von Versorgung über Kommunikation zum Motor.${quelle ? '' : ' Allgemeine Liste — fahrzeugspezifische Sollwerte folgen.'}</p>
         </div>
-        <div style="display:flex;gap:var(--space-2);">
+        <div class="page-actions">
           <button class="btn btn-ghost" data-reset-checks>${iconSvg('reset')} Zurücksetzen</button>
           <button class="btn btn-secondary" data-print>${iconSvg('print')} Drucken</button>
         </div>
       </div>
 
-      <div class="measure-list">
-        ${measurePlan.map((m, i) => `
-          <label class="measure-item ${state.checks.has(i) ? 'done' : ''}">
-            <input type="checkbox" data-check="${i}" ${state.checks.has(i) ? 'checked' : ''} />
-            <div>
-              <div class="measure-title">${i + 1}. ${escapeHtml(m[0])}</div>
-              <div class="measure-instr">${escapeHtml(m[1])}</div>
-              <div class="measure-target">→ ${escapeHtml(m[2])}</div>
-            </div>
-          </label>
-        `).join('')}
-      </div>
-
-      <div class="page-header" style="margin-top:var(--space-8);">
-        <div>
-          <h2 class="page-title" style="font-size:var(--text-lg);">Fortschritt</h2>
-          <p class="page-lead">${state.checks.size} von ${measurePlan.length} Positionen erledigt.</p>
+      <div class="measure-progress">
+        <div class="measure-progress-text">${erledigt} von ${items.length} erledigt</div>
+        <div class="step-progress-bar">
+          <div class="step-progress-fill" style="width:${items.length ? Math.round(erledigt / items.length * 100) : 0}%"></div>
         </div>
       </div>
 
-      <div class="step-progress-bar" style="max-width:400px;">
-        <div class="step-progress-fill" style="width:${Math.round(state.checks.size / measurePlan.length * 100)}%"></div>
-      </div>
+      ${gruppen.map(g => `
+        ${gruppen.length > 1 ? `<h2 class="measure-group">${escapeHtml(g.name)}</h2>` : ''}
+        <div class="measure-list">${g.items.map(it => position(it, ++nr)).join('')}</div>
+      `).join('')}
     `;
 
     panel.querySelectorAll('[data-check]').forEach(cb => cb.addEventListener('change', (e) => {
-      const i = parseInt(e.target.dataset.check, 10);
-      if (e.target.checked) state.checks.add(i); else state.checks.delete(i);
+      const id = e.target.dataset.check;
+      state.checks[id] = { ...(state.checks[id] || {}), done: e.target.checked };
+      haptic(8);
+      saveChecks();
       renderMeasure();
     }));
+
+    // Beim Tippen sofort urteilen, ohne den Fokus zu verlieren — sonst kann
+    // man am Fahrzeug keine zweite Stelle eingeben.
+    panel.querySelectorAll('[data-value]').forEach(inp => {
+      const aktualisieren = () => {
+        const id = inp.dataset.value;
+        const it = items.find(x => x.id === id);
+        state.checks[id] = { ...(state.checks[id] || {}), value: inp.value };
+        saveChecks();
+        const urteil = judge(it?.target, inp.value);
+        const box = inp.closest('.measure-item');
+        box.classList.remove('v-ok', 'v-ab');
+        if (urteil) box.classList.add('v-' + urteil.status);
+        const alt = box.querySelector('.verdict');
+        if (!urteil) { alt?.remove(); return; }
+        const html = `${urteil.status === 'ok' ? iconSvg('check') : iconSvg('x')}${escapeHtml(urteil.text)}`;
+        if (alt) { alt.className = `verdict verdict-${urteil.status}`; alt.innerHTML = html; }
+        else {
+          const el = document.createElement('span');
+          el.className = `verdict verdict-${urteil.status}`;
+          el.innerHTML = html;
+          inp.closest('.measure-input').appendChild(el);
+        }
+      };
+      inp.addEventListener('input', aktualisieren);
+    });
+
     panel.querySelector('[data-reset-checks]').addEventListener('click', () => {
-      state.checks.clear(); renderMeasure();
+      state.checks = {}; saveChecks(); renderMeasure();
     });
     panel.querySelector('[data-print]').addEventListener('click', () => window.print());
   };
@@ -679,6 +1191,9 @@
   let fuse = null;
   const buildFuse = () => {
     if (!state.data) return;
+    // Fuse kommt vom CDN. Ist es beim ersten Start offline nicht erreichbar,
+    // darf die App nicht komplett ausfallen — dann greift die Substring-Suche.
+    if (typeof Fuse === 'undefined') { fuse = null; return; }
     fuse = new Fuse(state.data.docs, {
       keys: [
         { name: 'title', weight: 3 },
@@ -695,11 +1210,23 @@
     });
   };
 
+  // Sucht per Fuse, sonst per Substring über dieselben Felder.
+  const searchDocs = (q) => {
+    if (fuse) return fuse.search(q, { limit: 60 }).map(r => r.item);
+    const needle = q.toLowerCase();
+    const hit = (v) => Array.isArray(v)
+      ? v.some(x => String(x).toLowerCase().includes(needle))
+      : String(v ?? '').toLowerCase().includes(needle);
+    return state.data.docs
+      .filter(d => hit(d.title) || hit(d.id) || hit(d.summary) || hit(d.points) || hit(d.pins) || hit(d.cat) || hit(d.valid))
+      .slice(0, 60);
+  };
+
   const renderLibrary = () => {
     const panel = $('#libraryPanel');
     if (!fuse) buildFuse();
     const q = state.globalSearch.trim();
-    const results = q ? fuse.search(q, { limit: 60 }).map(r => r.item) : state.data.docs;
+    const results = q ? searchDocs(q) : state.data.docs;
 
     // group by model
     const byModel = {};
@@ -805,6 +1332,20 @@
           <h4>Ausführlicher Artikel</h4>
           <div class="markdown-content" id="articleContent">Lädt …</div>
         </div>` : ''}
+      ${(doc.sources || []).length ? `
+        <div class="detail-section">
+          <h4>Quellen</h4>
+          <ul class="source-list">
+            ${doc.sources.map(q => `
+              <li>
+                ${q.url
+                  ? `<a href="${escapeHtml(q.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(q.label || q.url)}</a>`
+                  : `<span class="source-label">${escapeHtml(q.label || '—')}</span>`}
+                ${q.note ? `<span class="source-note">${escapeHtml(q.note)}</span>` : ''}
+              </li>`).join('')}
+          </ul>
+          <p class="source-hint">Fakten aus diesen Quellen sind neu formuliert, nicht übernommen.</p>
+        </div>` : ''}
     `;
 
     // Footer
@@ -825,13 +1366,26 @@
     // Focus trap-ish: move focus into drawer
     setTimeout(() => $('.drawer .close-btn')?.focus(), 50);
 
-    // Lazy-load MD article
+    // Artikel nachladen. `article` benennt einen geplanten Artikel — 14 von 15
+    // Verweisen zeigen derzeit auf noch nicht geschriebene Dateien. Ein rotes
+    // „konnte nicht geladen werden" lässt die App defekt aussehen, obwohl die
+    // Bullets, Pins und Quellen darüber vollständig da sind. Deshalb: 404 wird
+    // als „noch nicht geschrieben" gezeigt, ein echter Fehler weiterhin als Fehler.
     if (doc.article) {
+      const mount = $('#articleMount');
       try {
         const resp = await fetch(`./content/${doc.model}/${doc.article}`);
-        if (!resp.ok) throw new Error('nicht gefunden');
+        if (resp.status === 404) {
+          if (mount) mount.innerHTML =
+            '<p class="article-pending">Zu diesem Dokument ist ein ausführlicher Artikel vorgesehen, aber noch nicht geschrieben.</p>';
+          return;
+        }
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const md = await resp.text();
-        const html = marked.parse(md, { breaks: false, gfm: true });
+        // marked kommt vom CDN; offline beim Erstlauf fällt es aus.
+        const html = typeof marked !== 'undefined'
+          ? marked.parse(md, { breaks: false, gfm: true })
+          : `<pre class="article-raw">${escapeHtml(md)}</pre>`;
         $('#articleContent').innerHTML = html;
       } catch (e) {
         $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
@@ -1258,12 +1812,14 @@
   // -------- Event Bindings --------
   const bindEvents = () => {
     // View nav
-    $$('.nav-list [data-view]').forEach(btn =>
+    $$('[data-view]').forEach(btn =>
       btn.addEventListener('click', () => setView(btn.dataset.view))
     );
 
-    // Menu (mobile)
-    $('#menuBtn').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
+    // Menu (mobile) — Backdrop und Escape schließen mit, sonst sitzt man in
+    // der Sidebar fest: sie überdeckt den Menü-Button, der sie geöffnet hat.
+    $('#menuBtn').addEventListener('click', () => setSidebar(!isSidebarOpen()));
+    $('[data-sidebar-backdrop]').addEventListener('click', () => setSidebar(false));
 
     // Theme toggle (persistent)
     $('#themeBtn').addEventListener('click', () => {
@@ -1282,6 +1838,7 @@
     $('[data-drawer-backdrop]').addEventListener('click', closeDrawer);
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && state.drawer) closeDrawer();
+      else if (e.key === 'Escape' && isSidebarOpen()) setSidebar(false);
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         $('#globalSearch').focus();
@@ -1359,6 +1916,9 @@
       }
     }
 
+    state.picked = prefs.picked === true;
+    state.checks = loadChecks();
+
     updateContext();
     renderSidebarModels();
     buildFuse();
@@ -1367,6 +1927,11 @@
     applyHash();
     render();
     registerSW();
+
+    // Motor-Steckbriefe und Messplan nachladen; sind sie da, zeichnet sich
+    // die App neu — fehlen sie, bleibt der bisherige Stand stehen.
+    loadEngines().then(() => render());
+    loadMeasure().then(() => { if (state.view === 'measure') renderMeasure(); });
 
     // Status footer
     const now = new Date();

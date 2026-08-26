@@ -1,0 +1,39 @@
+name: Abnahme (Content + UI)
+
+# Läuft bei jedem Push und PR. Bewusst getrennt vom Pages-Deploy: der
+# Browser-Download kann hängen, und ein hängender Test soll das Deployment
+# der Wissensbasis nicht blockieren. Rot hier heißt trotzdem: nicht mergen.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  abnahme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Content gegen die Verträge prüfen
+        run: node scripts/validate-content.mjs
+
+      - name: Index ist aktuell
+        # Ein veralteter index.json im Repo heißt: jemand hat Content geändert,
+        # aber den Build nicht laufen lassen — live stünde dann etwas anderes
+        # als im Repo. `--check` vergleicht nur den Inhalt, nicht die
+        # Build-Metadaten (`generated` wechselt je Lauf, `version` ist lokal
+        # 'dev' und in CI der Commit-SHA).
+        run: node scripts/build-index.mjs --check
+
+      - name: Playwright installieren
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: UI-Abnahme auf Phone, Tablet und Desktop
+        run: node tests/run.mjs

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T11:57:06.745Z",
+  "generated": "2026-08-26T19:11:45.963Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -18,7 +18,8 @@
               "M42",
               "S14"
             ],
-            "desc": "3er, ADS/EDC-I, Motronic 1.x"
+            "desc": "3er, ADS/EDC-I, Motronic 1.x",
+            "body": "Limousine"
           },
           {
             "id": "e28",
@@ -29,7 +30,8 @@
               "M30",
               "S38"
             ],
-            "desc": "5er, Motronic 1.0/1.1"
+            "desc": "5er, Motronic 1.0/1.1",
+            "body": "Limousine"
           },
           {
             "id": "e34",
@@ -41,7 +43,8 @@
               "M60",
               "S38"
             ],
-            "desc": "5er, Übergang OBD-1 → OBD-2"
+            "desc": "5er, Übergang OBD-1 → OBD-2",
+            "body": "Limousine"
           }
         ]
       },
@@ -62,7 +65,8 @@
               "S50",
               "S52"
             ],
-            "desc": "3er, OBD-1 bis OBD-2 (ab 09/95 US)"
+            "desc": "3er, OBD-1 bis OBD-2 (ab 09/95 US)",
+            "body": "Limousine"
           },
           {
             "id": "e39",
@@ -74,7 +78,8 @@
               "M62",
               "S62"
             ],
-            "desc": "5er, DME MS42/MS43, DDE M57"
+            "desc": "5er, DME MS42/MS43, DDE M57",
+            "body": "Limousine"
           },
           {
             "id": "e38",
@@ -85,7 +90,8 @@
               "M62",
               "M73"
             ],
-            "desc": "7er, GM-Getriebe, Nikasil-Thematik"
+            "desc": "7er, GM-Getriebe, Nikasil-Thematik",
+            "body": "Limousine"
           },
           {
             "id": "e46",
@@ -100,7 +106,8 @@
               "N46",
               "S54"
             ],
-            "desc": "3er, Referenzplattform für INPA/NCS"
+            "desc": "3er, Referenzplattform für INPA/NCS",
+            "body": "Limousine"
           }
         ]
       },
@@ -121,7 +128,8 @@
               "M57",
               "S85"
             ],
-            "desc": "5er, MOST/PT-CAN, iDrive CCC/CIC"
+            "desc": "5er, MOST/PT-CAN, iDrive CCC/CIC",
+            "body": "Limousine"
           },
           {
             "id": "e90",
@@ -138,7 +146,8 @@
               "N47",
               "S65"
             ],
-            "desc": "3er, CAS3/EWS4, JBBF"
+            "desc": "3er, CAS3/EWS4, JBBF",
+            "body": "Limousine"
           },
           {
             "id": "e70",
@@ -152,7 +161,8 @@
               "M57",
               "S63"
             ],
-            "desc": "X5/X6, JBE, integrierte Sicherheitsmodule"
+            "desc": "X5/X6, JBE, integrierte Sicherheitsmodule",
+            "body": "SUV"
           },
           {
             "id": "e87",
@@ -167,7 +177,8 @@
               "N55",
               "N47"
             ],
-            "desc": "1er Schrägheck/Coupé, CAS3/EWS4"
+            "desc": "1er Schrägheck/Coupé, CAS3/EWS4",
+            "body": "Schraegheck"
           },
           {
             "id": "e88",
@@ -183,7 +194,8 @@
               "N47"
             ],
             "desc": "1er Cabrio, CAS3/EWS4, CTM Verdecksteuerung, hybrid Soft-Top",
-            "obd_protocol": "D-CAN"
+            "obd_protocol": "D-CAN",
+            "body": "Cabrio"
           }
         ]
       },
@@ -208,7 +220,8 @@
               "B47",
               "B58"
             ],
-            "desc": "5er, FRM, JBE, FlexRay"
+            "desc": "5er, FRM, JBE, FlexRay",
+            "body": "Limousine"
           },
           {
             "id": "f30",
@@ -224,7 +237,8 @@
               "B48",
               "B58"
             ],
-            "desc": "3er, FEM ab ~03/2014"
+            "desc": "3er, FEM ab ~03/2014",
+            "body": "Limousine"
           },
           {
             "id": "f15",
@@ -238,7 +252,8 @@
               "B57",
               "S63"
             ],
-            "desc": "X5/X6, ISTA+"
+            "desc": "X5/X6, ISTA+",
+            "body": "SUV"
           },
           {
             "id": "f22",
@@ -251,7 +266,8 @@
               "B38",
               "B48"
             ],
-            "desc": "1er/2er, FEM/BDC"
+            "desc": "1er/2er, FEM/BDC",
+            "body": "Coupe"
           }
         ]
       }
