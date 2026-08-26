@@ -300,6 +300,66 @@ async function main() {
       await ctx.close();
     }
 
+    // --- Reduced Motion: Bewegung aus, App weiter bedienbar ---
+    {
+      console.log('\n▸ Reduced Motion');
+      const ctx = await browser.newContext({
+        ...devices['iPhone 13'], serviceWorkers: 'block', reducedMotion: 'reduce'
+      });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`ReducedMotion: ${e.message}`));
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      const bewegt = await page.evaluate(() => [...document.querySelectorAll('*')]
+        .filter(e => (getComputedStyle(e).transitionDuration || '')
+          .split(',').some(v => parseFloat(v) > 0.05))
+        .map(e => `${e.tagName.toLowerCase()}.${(e.className||'').toString().split(' ')[0]}`)
+        .slice(0, 5));
+      expect(bewegt.length === 0, 'keine Transition über 50ms bei reduced motion', bewegt.join(', '));
+      const karten = await page.locator('[data-pick-model]').count();
+      expect(karten > 0, 'App bleibt bei reduced motion bedienbar', 'keine Fahrzeugkarten');
+      await ctx.close();
+    }
+
+    // --- Docs: Filter und Detail-Drawer ---
+    {
+      console.log('\n▸ Docs · Filter und Drawer');
+      const ctx = await browser.newContext({ ...devices['iPhone 13'], serviceWorkers: 'block' });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`Docs: ${e.message}`));
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+
+      const alle = await page.locator('.doc-card').count();
+      expect(alle > 0, 'Docs-Karten vorhanden', 'keine Karte');
+
+      const chips = await page.locator('.chip').count();
+      if (chips > 1) {
+        await page.locator('.chip').nth(1).click();
+        await settle(page, 400);
+        const gefiltert = await page.locator('.doc-card').count();
+        expect(gefiltert > 0 && gefiltert < alle, 'Kategorie-Chip grenzt ein', `${alle} → ${gefiltert}`);
+        await page.locator('.chip').first().click();
+        await settle(page, 300);
+      }
+
+      if (alle > 0) {
+        await page.locator('.doc-card').first().click();
+        await settle(page, 700);
+        const zu = await page.locator('[data-doc-drawer]').getAttribute('aria-hidden');
+        expect(zu === 'false', 'Doc-Drawer öffnet', `aria-hidden=${zu}`);
+        expect(await page.locator('.drawer-backdrop').isVisible(),
+          'Drawer hat sichtbaren Backdrop', 'kein Backdrop');
+        await page.keyboard.press('Escape');
+        await settle(page, 500);
+        const wiederZu = await page.locator('[data-doc-drawer]').getAttribute('aria-hidden');
+        expect(wiederZu === 'true', 'Escape schließt den Doc-Drawer', `aria-hidden=${wiederZu}`);
+      }
+      await ctx.close();
+    }
+
     // --- Kontrast in beiden Themes ---
     for (const theme of ['light', 'dark']) {
       console.log(`\n▸ Kontrast · ${theme}`);
