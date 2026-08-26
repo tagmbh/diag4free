@@ -22,26 +22,13 @@ jobs:
       - name: Content gegen die Verträge prüfen
         run: node scripts/validate-content.mjs
 
-      - name: Index bauen
-        run: node scripts/build-index.mjs
-
       - name: Index ist aktuell
-        # Ein veralteter index.json im Repo heißt: jemand hat Content
-        # geändert, aber den Build nicht laufen lassen. Live würde dann
-        # etwas anderes stehen als im Repo.
-        # `generated` ist ein Zeitstempel und ändert sich bei jedem Build —
-        # er wird beim Vergleich ausgeklammert, sonst schlägt der Check immer an.
-        run: |
-          git show HEAD:content/index.json > "$RUNNER_TEMP/committed.json"
-          node -e '
-            const fs = require("fs");
-            const inhalt = p => { const o = JSON.parse(fs.readFileSync(p, "utf8")); delete o.generated; return JSON.stringify(o); };
-            if (inhalt(process.argv[1]) !== inhalt("content/index.json")) {
-              console.error("::error::content/index.json ist nicht aktuell — \"node scripts/build-index.mjs\" ausführen und committen");
-              process.exit(1);
-            }
-            console.log("content/index.json ist aktuell");
-          ' "$RUNNER_TEMP/committed.json"
+        # Ein veralteter index.json im Repo heißt: jemand hat Content geändert,
+        # aber den Build nicht laufen lassen — live stünde dann etwas anderes
+        # als im Repo. `--check` vergleicht nur den Inhalt, nicht die
+        # Build-Metadaten (`generated` wechselt je Lauf, `version` ist lokal
+        # 'dev' und in CI der Commit-SHA).
+        run: node scripts/build-index.mjs --check
 
       - name: Playwright installieren
         run: |
