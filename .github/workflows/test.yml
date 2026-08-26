@@ -29,12 +29,19 @@ jobs:
         # Ein veralteter index.json im Repo heißt: jemand hat Content
         # geändert, aber den Build nicht laufen lassen. Live würde dann
         # etwas anderes stehen als im Repo.
+        # `generated` ist ein Zeitstempel und ändert sich bei jedem Build —
+        # er wird beim Vergleich ausgeklammert, sonst schlägt der Check immer an.
         run: |
-          if ! git diff --quiet -- content/index.json; then
-            echo "::error::content/index.json ist nicht aktuell — 'node scripts/build-index.mjs' ausführen und committen"
-            git diff --stat -- content/index.json
-            exit 1
-          fi
+          git show HEAD:content/index.json > "$RUNNER_TEMP/committed.json"
+          node -e '
+            const fs = require("fs");
+            const inhalt = p => { const o = JSON.parse(fs.readFileSync(p, "utf8")); delete o.generated; return JSON.stringify(o); };
+            if (inhalt(process.argv[1]) !== inhalt("content/index.json")) {
+              console.error("::error::content/index.json ist nicht aktuell — \"node scripts/build-index.mjs\" ausführen und committen");
+              process.exit(1);
+            }
+            console.log("content/index.json ist aktuell");
+          ' "$RUNNER_TEMP/committed.json"
 
       - name: Playwright installieren
         run: |
