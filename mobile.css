@@ -1062,3 +1062,7 @@ code, .measure-target, .pin-num, .doc-code {
   /* Quellen-Links sind Trefferflächen, keine reine Typografie */
   .source-list a { display: inline-flex; align-items: center; min-height: 44px; }
 }
+
+@media (max-width: 960px) {
+  .result-next-item { min-height: 56px; padding: var(--space-3) var(--space-4); }
+}

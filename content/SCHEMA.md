@@ -152,6 +152,24 @@ vom Validator **abgelehnt**: sein Inhalt wäre für niemanden erreichbar.
 
 ---
 
+## `next_docs` — weiterlesen nach der Diagnose
+
+Ein Guide-Ergebnis darf `next_docs` führen: ein Array von Doc-IDs, die nach
+der Diagnose angeboten werden.
+
+```json
+"result-startfreigabe": {
+  "title": "CAS-Freigabe fehlt oder Startknopf defekt",
+  "text": "…",
+  "next_docs": ["D4F-E88-002"]
+}
+```
+
+Jede ID muss auf ein existierendes Doc zeigen — der Validator lehnt tote
+Verweise ab, weil sie im Ergebnis als Knopf erscheinen, der nichts tut.
+
+---
+
 ## `models.json` — Modell-Katalog
 
 Steuert Sidebar-Baum. Änderungen erfordern kompletten Katalog-Reload.

@@ -55,6 +55,23 @@
 
 ## ⇤ Eingehende Content-Lieferung (Cowork-Handoff)
 
+**Stand 26.08.2026, 22:00:** Der Bericht zur Lieferung liegt vor (Artifact
+„E88 Wissensbasis"), **das Paket selbst noch nicht**. Es liegt unter
+`dev/bmw/handoff/` außerhalb des Repos. Erwartet werden: E88-Docs 6 → 20,
+Diagnosepfade 2 → 6, 20 Artikel, `engines.json` mit 7 Motoren, 23 Diagramme.
+Deren Build meldet 35 Docs und 11 Guides.
+
+### Entscheidungen dazu (getroffen, kein Rückfragebedarf)
+
+| Punkt | Entscheidung | Begründung |
+|-------|--------------|------------|
+| Motorgrafik: `graphics.js` vs. der mitgelieferte SVG-Kartengenerator | **`graphics.js` bleibt.** Beim Einspielen wird nur `engines.json` übernommen, der fremde Generator nicht. | Parametrisch aus `layout`/`aspiration` gezeichnet: dreistellige Bytes statt fertiger SVG-Dateien im Offline-Cache, themebar über `currentColor`, und jeder neue Motor bekommt seine Karte allein aus den Daten. Zwei Generatoren nebeneinander wären doppelte Wahrheit. |
+| `measure.json` | **Kommt aus dieser Quelle nicht.** Der Messplan bleibt bei der eingebauten Liste. | Die BMW-Schulungshefte sind Funktionsbeschreibungen ohne Anzugsmomente, Fehlercodes und Sollwerttabellen; die Tabellen sind in den Originalen leer und verweisen auf TIS/WebTIS. Die Sollwert-Prüfung in der App steht fertig und wartet auf eine andere Quelle. |
+| Drei Widersprüche zu bestehenden Docs (Verdeck-Sicherung, Lüfter-Sicherung, Getriebetyp) | **Nicht eigenmächtig auflösen.** Beim Einspielen als offene Punkte führen. | Beide Seiten sind belegt oder unbelegt — wer sie auflöst, braucht einen Beleg, keine Mehrheitsentscheidung. |
+| Inhalte aus dem internen Bericht ins öffentliche Repo übernehmen | **Nein.** Nur das bereinigte Handoff-Paket wird eingespielt. | Der Bericht zitiert die Schulungsunterlagen eng und nennt Seitenzahlen. Das Paket hat dafür einen eigenen Leak-Check durchlaufen; einzelne Stellen von Hand herauszupicken würde ihn umgehen. |
+
+### Ablauf beim Eintreffen
+
 Ein Cowork-Agent destilliert derzeit Daten und liefert sie später per GitHub-Push.
 Damit das kollisionsfrei landet, gilt folgende Aufteilung:
 
@@ -62,8 +79,6 @@ Damit das kollisionsfrei landet, gilt folgende Aufteilung:
 |-----|---------|--------|
 | **Cowork-Agent** | `content/engines.json`, `content/measure.json`, `content/<modell>/*` | Die Dateien sind hier **bewusst nicht angelegt** — kein Merge-Konflikt |
 | **App/UI** | `app.js`, `graphics.js`, `*.css`, `index.html`, `scripts/*` | Fertig und wartet auf Daten |
-
-**Ablauf beim Eintreffen:**
 
 1. `node scripts/validate-content.mjs` — prüft die Lieferung gegen die Verträge
    in `content/SCHEMA.md`. Exit-Code 1 bei Verstoß; die CI bricht dann ebenfalls ab.
