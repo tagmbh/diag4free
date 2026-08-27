@@ -24,9 +24,22 @@
         "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
         "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
       ],
-      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
       "article": "diagnosezugang.md",
-      "details": ["D4F-F10-003", "D4F-F10-005"]
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-005"
+      ]
     },
     {
       "id": "D4F-F10-002",
@@ -43,9 +56,21 @@
         "Diesel: N57 als Sechszylinder; ab 2014 löst der B47 die Vierzylinder-Diesel ab. Beide Familien tragen den Steuerkettentrieb hinten zum Getriebe — Kaltstartrasseln aus dem hinteren Motorbereich gehört sofort nachgegangen",
         "N26 ist die SULEV-Ausführung des N20 für einzelne US-Märkte. Bei Importfahrzeugen mit 28i-Schriftzug die Motornummer lesen, bevor ein Teil bestellt wird"
       ],
-      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-F10-001"]
+      "details": [
+        "D4F-F10-001"
+      ]
     },
     {
       "id": "D4F-F10-003",
@@ -62,8 +87,21 @@
         "Vor jedem Steuergerätetausch Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne diesen Ausgangszustand fehlt später der Bezugspunkt",
         "Reihenfolge bei Arbeiten am Zugangssystem: Ladegerät anschließen, dann lesen, erst dann schreiben"
       ],
-      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
-      "details": ["D4F-F10-001", "D4F-F10-005"]
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-005"
+      ]
     },
     {
       "id": "D4F-F10-004",
@@ -80,9 +118,19 @@
         "Gemessen wird mit dem Oszilloskop. Ein Multimeter zeigt am zeitgesteuerten Protokoll nichts Brauchbares",
         "Sollpegel und Terminierungswerte dieser Baureihe stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: derselbe Messpunkt gegen den zweiten Kanal, gegen ein bekannt gutes Fahrzeug derselben Ausstattung"
       ],
-      "engines": ["N20", "N53", "N55", "N57", "N63", "S63", "B47"],
+      "engines": [
+        "N20",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
       "article": "flexray-fahrwerk.md",
-      "details": ["D4F-F10-003"]
+      "details": [
+        "D4F-F10-003"
+      ]
     },
     {
       "id": "D4F-F10-005",
@@ -99,9 +147,22 @@
         "Datenstand nach der gelesenen I-Stufe wählen. Konkrete Versionsnummern von Programmier- und Diagnosedaten altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben — hier steht deshalb bewusst keine",
         "Vor jeder Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern. Beide sind der Bezugspunkt, wenn ein Vorgang abbricht"
       ],
-      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
       "article": "i-stufe.md",
-      "details": ["D4F-F10-001", "D4F-F10-003"]
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-003"
+      ]
     },
     {
       "id": "D4F-F10-006",
@@ -118,8 +179,21 @@
         "Eine geladene Batterie zeigt in Ruhe rund 12.6 V. Gemessen wird nach mehreren Stunden Standzeit direkt an den Polen, nicht unmittelbar nach der Fahrt",
         "Bei allen Schreibvorgängen am Fahrzeug ein Werkstattladegerät anschließen. Ein Erhaltungslader reicht dafür nicht"
       ],
-      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
-      "details": ["D4F-F10-003", "D4F-F10-005"]
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-005"
+      ]
     }
   ]
 }

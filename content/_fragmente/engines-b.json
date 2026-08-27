@@ -94,10 +94,8 @@
         "Motorcode in der Form B47D20xx. Der letzte Buchstabe trennt Einbaulage und Ausbaustufe — er steht auf dem Typschild und gehört zu jeder Teilebestellung."
       ],
       "weak_points": [
-        "AGR-Kühler: der bekannteste Punkt. Glykol tritt aus dem Kühler aus, trifft im AGR-Modul auf Rußablagerungen und heiße Abgase; im Extremfall glühen Partikel und schmelzen den Ansaugtrakt an. BMW ruft deswegen seit 2018 mehrfach zurück, betroffen sind N47, N57 und B47. Vor jeder Arbeit am AGR-Modul den Rückrufstand über die Fahrgestellnummer prüfen.",
-        "Steuerkette frühe Baujahre: Erfahrungswert, in mehreren unabhängigen Werkstattberichten genannt. Die Kette längt sich früher als vorgesehen, der Spanner kann das irgendwann nicht mehr ausgleichen. Als kritisch gelten die Baujahre bis etwa 2016/2017; ab 2017/2018 gebaute Motoren gelten als deutlich unauffälliger. Die Jahresgrenze schwankt je nach Quelle — behandle sie als Anhaltspunkt, nicht als Stichtag.",
-        "Widerspruch zur Kettenlage: die englischsprachigen Quellen setzen die Steuerkette wie beim N47 auf die Schwungradseite, mehrere deutschsprachige Werkstattseiten setzen sie nach vorn. Der Unterschied entscheidet über Getriebeausbau und damit über die Arbeitszeit. Kalkuliere nichts, ohne die Lage am konkreten Motor gesehen zu haben.",
-        "Kaltstartrasseln für wenige Sekunden ist das typische Frühzeichen der Kettenthematik und gehört nachgegangen, statt abgewartet."
+        "Erfahrungswert: Steuerkette. Die Mehrzahl der Quellen legt sie wie beim N47 auf die Getriebeseite und beschreibt den Kettentrieb als ueberarbeitet, nicht verlegt; eine Minderheit deutscher Werkstattseiten setzt sie nach vorn. Das entscheidet ueber den Getriebeausbau — vor der Kalkulation am Fahrzeug nachsehen, nicht nach Quelle rechnen.",
+        "AGR-Kühler: der bekannteste Punkt. Glykol tritt aus dem Kühler aus, trifft im AGR-Modul auf Rußablagerungen und heiße Abgase; im Extremfall glühen Partikel und schmelzen den Ansaugtrakt an. BMW ruft deswegen seit 2018 mehrfach zurück, betroffen sind N47, N57 und B47. Vor jeder Arbeit am AGR-Modul den Rückrufstand über die Fahrgestellnummer prüfen."
       ]
     },
     {

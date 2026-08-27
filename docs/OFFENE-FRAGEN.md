@@ -104,6 +104,25 @@ Hinweis, dass keine der hier gefuehrten Baureihen ihn verbaut. Das
 Zusammenfuehren meldet ihn folgerichtig als „Steckbrief ohne Fahrzeug"; der
 Hinweis ist zutreffend und bleibt stehen.
 
+## Erledigt: zwei weitere Motoren gehoerten nicht in ihren Katalogeintrag
+
+Dasselbe Muster wie beim B57, zweimal gefunden vom Agenten, der F10 und F30
+geschrieben hat — und beide Male gemeldet statt eigenmaechtig geaendert.
+
+**B58 im F10** — nachgeprueft: der F10 lief mit dem N55, der B58 kam erst mit
+dem Nachfolger G30. Aus der Motorliste des F10 und seinen Filtern entfernt.
+Im F30 bleibt er, dort ist er richtig: der 340i der Modellpflege hatte ihn.
+
+**B47 fehlte im F30** — der Katalog fuehrte fuer den F30 nur den N47. Die
+Modellpflege ab 2015 fuhr 318d und 320d mit dem B47; das ist derselbe
+Motorwechsel, der die Baureihe diagnostisch in zwei Haelften teilt.
+Nachgetragen.
+
+Auffaellig ist das Muster: der Katalog trug an drei Stellen den Motor der
+**Nachfolgegeneration**. Wer ihn urspruenglich gefuellt hat, hat vermutlich
+eine Modellreihe statt einer Baureihe abgeschrieben. Die uebrigen Eintraege
+sind daraufhin nicht systematisch geprueft.
+
 ## Kategorie 3 — Motornummern
 
 Für die meisten Motoren steht nur „auf dem Block eingeschlagen". Eine
@@ -144,9 +163,16 @@ Direkteinspritzung baulich nicht haben; eine maschinell wirkende Seite
 behauptet das Gegenteil. *(engines.json)*
 
 **B47-Steuerkette, vorn oder hinten** — englischsprachige Quellen setzen
-sie auf die Schwungradseite, deutschsprachige Werkstattseiten nach vorn.
-Das entscheidet über den Getriebeausbau und damit über die Arbeitszeit.
-*(engines.json)*
+sie auf die Getriebeseite, deutschsprachige Werkstattseiten nach vorn. Das
+entscheidet über den Getriebeausbau und damit über die Arbeitszeit.
+
+*Stand 27.08.:* eine weitere unabhängige Quelle zum F30 formuliert es
+ausdrücklich — der B47 habe die Kette auf der Getriebeseite **behalten** und
+den Kettentrieb überarbeitet, nicht verlegt. Damit steht es zwei zu eins,
+und der Steckbrief nennt jetzt die Mehrheitslage als solche. Aufgelöst ist
+der Widerspruch damit nicht: die abweichende Darstellung bleibt genannt, und
+im Steckbrief steht die Anweisung, vor der Kalkulation am Fahrzeug
+nachzusehen statt nach Quelle zu rechnen. *(engines.json)*
 
 **Pin-7/8-Brücke am K+DCAN-Kabel** — Händleranleitungen sagen, sie sei für
 Fahrzeuge bis 03/2007 nötig; Anwenderberichte melden, dass mit Brücke gar
