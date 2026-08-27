@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:07:20.920Z",
+  "generated": "2026-08-27T05:08:29.741Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1696,6 +1696,219 @@
         "D4F-E60-002"
       ],
       "model": "e60"
+    },
+    {
+      "id": "D4F-E70-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E70 · D-CAN und was daran anders ist",
+      "valid": "E70/E71 · 2006–2013 · alle Motoren",
+      "summary": "Der E70 gehört zu den ersten Baureihen mit D-CAN am Diagnosestecker. Der Zugang ist damit einfacher als bei den K-Leitungs-Baureihen, aber die Kabelfrage ist eine andere: ein reines K-Leitungs-Interface findet hier gar nichts.",
+      "points": [
+        "Diagnose läuft über D-CAN an der genormten OBD-2-Buchse — Pin 6 und Pin 14, nicht über Pin 7",
+        "Interface muss D-CAN können; ein reines K-Line-Kabel meldet schlicht kein Steuergerät",
+        "Nach einer Quelle arbeitet der D-CAN mit 500 kbit/s — vor dem Anwenden gegenprüfen",
+        "Bordspannung während der Sitzung stützen: Programmier- und Codiervorgänge brechen bei sinkender Spannung ab und hinterlassen ein halb beschriebenes Steuergerät",
+        "Vor jedem Eingriff vollständigen Suchlauf fahren und die Geräteliste sichern — sie ist später der einzige Beleg dafür, was vorher da war",
+        "Fehlerspeicher aller Geräte gemeinsam beurteilen, nicht Gerät für Gerät abarbeiten — siehe D4F-E70-007"
+      ],
+      "pins": [
+        "OBD2 Pin 6 · D-CAN High",
+        "OBD2 Pin 14 · D-CAN Low",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "Bus-Topologie E70 · PT-CAN, K-CAN, FlexRay und der Weg der Diagnose",
+      "valid": "E70/E71 · 2006–2013",
+      "summary": "Der E70 trägt mehrere Bussysteme nebeneinander und ist das erste Serienfahrzeug mit FlexRay. Wer weiss, welches Steuergerät an welchem Bus hängt und über welches Gateway die Diagnose läuft, spart sich den grössten Teil der Fehlersuche.",
+      "points": [
+        "Die Junction-Box-Elektronik trägt die zentrale Gateway-Funktion und verbindet die Bussysteme untereinander",
+        "Antriebsseite am PT-CAN: Motorsteuerung, Getriebe, Fahrdynamikregelung, Verteilergetriebe",
+        "Karosserie und Komfort am K-CAN; nach einer Quelle arbeitet dieser Bus mit rund 100 kbit/s und damit deutlich langsamer als der PT-CAN",
+        "FlexRay trägt ausschliesslich die Fahrwerksregelung — nach einer Quelle mit 10 Mbit/s; das Fahrzeug hat den Bus nur mit der entsprechenden Ausstattung",
+        "Diagnoseaufträge an FlexRay-Teilnehmer laufen über ein weiteres Gateway zwischen PT-CAN und FlexRay — welches Steuergerät diese Funktion trägt, ist hier nicht gesichert",
+        "Infotainment hängt am optischen Ring und fällt bei einem Ringfehler geschlossen aus, nicht einzeln"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "article": "topologie.md",
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-006",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-003",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "FlexRay und Adaptive Drive · Dämpfersatelliten am E70",
+      "valid": "E70/E71 · nur mit Adaptive Drive",
+      "summary": "Der E70 ist das erste Serienfahrzeug mit FlexRay, und der Bus trägt dort genau eine Aufgabe: die Fahrwerksregelung mit ihren Dämpfersatelliten. Das erklärt, warum Fahrwerksfehler an diesem Fahrzeug anders zu suchen sind als alles andere.",
+      "points": [
+        "Zuerst die Ausstattung klären: ohne Adaptive Drive gibt es weder die Regelung noch den Bus — ein Fahrzeug ohne das System hat kein defektes System",
+        "An den Dämpfern sitzen eigene Satelliten, die an der Regelung hängen; ein Fehlerbild an einer Ecke gehört zuerst dieser Ecke zugeordnet",
+        "Fallen mehrere Ecken gleichzeitig aus, ist der Bus oder die zentrale Regelung verdächtig, nicht vier Dämpfer",
+        "Die Regelung ist auf die Diagnose nur über das Gateway erreichbar — antwortet das Gateway nicht, fehlt sie mit, ohne selbst defekt zu sein",
+        "Vor jedem Bauteilverdacht die Bordspannung und die Massepunkte der Hinterachse ansehen",
+        "Nach Arbeiten am Fahrwerk gehören Niveau- und Sensorabgleich in den Ablauf — siehe D4F-E70-005"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-005"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-004",
+      "type": "TEST",
+      "cat": "Antrieb · xDrive",
+      "title": "xDrive-Verteilergetriebe E70 · Steuergerät, Stellmotor, Kalibrierung",
+      "valid": "E70/E71 · xDrive mit elektrisch gestelltem Verteilergetriebe",
+      "summary": "Das Verteilergetriebe des E70 hat ein eigenes Steuergerät und einen Stellmotor, der die Lamellenkupplung verspannt. Die häufigsten Befunde liegen nicht im Getriebe, sondern im Stellmotor und in der fehlenden Kalibrierung nach einem Eingriff.",
+      "points": [
+        "Erfahrungswert: der bekannteste Ausfall ist der Stellmotor, dessen Kunststoffräder verschleissen — Fehlerbild sind Stellfehler statt mechanischer Geräusche",
+        "Nach Tausch von Steuergerät oder Stellmotor ist eine Kalibrierung zwingend; ohne sie bleibt das System im Fehler, obwohl die Teile neu sind",
+        "Nach einer Quelle liegen die Verschleisswerte der Kupplung im Steuergerät und müssen beim Gerätetausch zurückgesetzt werden — vor dem Anwenden gegenprüfen",
+        "Verweigert das Steuergerät den Stelltest, ist das kein Beweis für einen defekten Stellmotor — erst Versorgung, Kalibrierstand und Fehlerspeicher der Fahrdynamikregelung klären",
+        "Reifen prüfen, bevor Teile bestellt werden: unterschiedliche Abrollumfänge an einer Achse erzeugen Regelfehler ohne defektes Bauteil",
+        "Nach dem Ersetzen des Stellmotors die Dichtung erneuern — sonst folgt der Ölverlust auf den Reparaturerfolg"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "article": "xdrive-vtg.md",
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-005",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "Luftfederung und Niveauregelung am E70",
+      "valid": "E70/E71 · mit Niveauregelung Hinterachse oder Luftfederung",
+      "summary": "Die Niveauregelung des E70 arbeitet mit Höhensensoren, Kompressor und Ventilblock. Fast jeder Ärger nach einer Reparatur geht auf einen ausgelassenen Abgleich zurück, nicht auf ein defektes Bauteil.",
+      "points": [
+        "Nach jedem Eingriff an Federbälgen, Sensoren oder Steuergerät gehört der Niveauabgleich dazu — ohne ihn regelt das System auf falsche Ziele",
+        "Vor dem Abgleich das Fahrzeug in Ruhe bringen: Regelung abgeschlossen, Beladung unverändert, ebener Untergrund",
+        "Beladung während des Abgleichs nicht verändern — auch nicht durch Ein- und Aussteigen",
+        "Die Sollmasse für den Abgleich stammen aus der fahrzeugbezogenen Reparaturanleitung; hier ist kein Zahlenwert belegt und deshalb auch keiner angegeben",
+        "Einseitig zu hoch oder zu tief zeigt zuerst auf Sensor, Gestänge und dessen Befestigung — die Ecken gegeneinander vergleichen ersetzt jeden Absolutwert",
+        "Beidseitig zu tief mit laufendem Kompressor zeigt auf Undichtigkeit; Bälge, Leitungen und Ventilblock mit Lecksuchmittel abgehen"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "details": [
+        "D4F-E70-003",
+        "D4F-E70-006"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-006",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Steuergeräte-Einbauorte E70 und die Wasserwege dorthin",
+      "valid": "E70/E71 · 2006–2013",
+      "summary": "Wo die für die Diagnose wichtigen Steuergeräte im E70 sitzen — und ebenso wichtig: welcher Wasserweg zu ihnen führt. Mehrere der bekannten Ausfälle sind keine Elektronikfehler, sondern Folgen verstopfter Abläufe.",
+      "points": [
+        "Junction-Box-Elektronik hinter dem Handschuhfach; zum Prüfen der Stecker muss das Handschuhfach heraus",
+        "Erfahrungswert: verstopfte Schiebedachabläufe und undichte Wasserkastendichtungen führen Wasser genau dorthin — bei Elektrikfehlern zuerst auf Feuchtigkeit sehen",
+        "Motorsteuerung im Wasserkasten; die Abläufe des Wasserkastens gehören bei jeder Elektrikfehlersuche kontrolliert",
+        "Steuergerät des Verteilergetriebes fahrzeugseitig im Bereich des Getriebetunnels — genaue Lage vor dem Zerlegen am konkreten Fahrzeug klären",
+        "Regelung der Niveauregelung und deren Kompressor im Heckbereich; von dort führen die Leitungen zu den Bälgen",
+        "Vor jeder Ortsangabe die Ausstattung klären: Adaptive Drive, Luftfederung und Infotainment bringen zusätzliche Geräte mit"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "details": [
+        "D4F-E70-002"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-007",
+      "type": "GUIDE",
+      "cat": "Methodik",
+      "title": "Das falsche Steuergerät verdächtigen · die Hauptfehlerquelle am E70",
+      "valid": "E70/E71 · 2006–2013",
+      "summary": "Am E70 sind so viele Steuergeräte über so viele Busse verbunden, dass ein einzelner Fehler in Dutzenden Speichern auftaucht. Der teuerste Fehler dieser Baureihe ist nicht die Fehlmessung, sondern das Ersetzen eines Geräts, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Immer alle Fehlerspeicher gemeinsam auslesen und erst danach lesen — Gerät für Gerät zu arbeiten erzeugt genau die falsche Reihenfolge",
+        "Nach dem Auslesen die Einträge zählen: taucht ein Gerätename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Gerät, das selbst nicht antwortet, kann keinen Fehler eintragen — sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Gerätetausch Versorgung, Masse und Stecker dieses Geräts prüfen; eine fehlende Sicherung erzeugt dasselbe Bild wie ein totes Steuergerät",
+        "Fehlerspeicher erst löschen, wenn der Stand gesichert ist, und danach eine definierte Fahrt oder einen definierten Zyklus fahren — nur wiederkehrende Einträge sind aktuell",
+        "Gebrauchte Steuergeräte sind am E70 kein Tauschteil im Vorbeigehen: sie müssen fahrzeugbezogen codiert werden"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "article": "falsches-steuergeraet.md",
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-002"
+      ],
+      "model": "e70"
     },
     {
       "id": "D4F-E87-001",
@@ -6219,7 +6432,7 @@
     }
   },
   "stats": {
-    "total_docs": 74,
+    "total_docs": 81,
     "total_guides": 23,
     "per_model": {
       "e28": 7,
@@ -6229,6 +6442,7 @@
       "e39": 8,
       "e46": 8,
       "e60": 8,
+      "e70": 7,
       "e87": 8,
       "e88": 6,
       "e90": 3,
