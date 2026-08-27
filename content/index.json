@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T04:59:07.428Z",
+  "generated": "2026-08-27T05:03:59.368Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1127,10 +1127,10 @@
       "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
       "summary": "Der N62 verliert typischerweise an mehreren Stellen gleichzeitig Öl oder Kühlmittel, und die Stellen liegen dicht beieinander. Ziel dieses Dokuments ist es, die Quelle zu bestimmen, bevor eine Dichtung bestellt wird — ein Ölfleck unter dem Motor sagt für sich genommen wenig.",
       "points": [
-        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heissen Krümmer, nicht unbedingt ein Fleck am Boden",
+        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heißen Krümmer, nicht unbedingt ein Fleck am Boden",
         "Dichtung des Lichtmaschinenträgers: Öl läuft von oben über den Generator. Wird oft für eine Ventildeckeldichtung gehalten — der Unterschied liegt darin, ob das Öl oberhalb oder unterhalb der Trägerplatte ansetzt",
         "Kühlmittelverlust ohne sichtbaren Fleck deutet auf die Dichtungen des Kühlmittel-Überführungsrohrs im V zwischen den Bänken. Das ist eine Motorausbau-nahe Arbeit — Befund vorher absichern",
-        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck aussen. Kein Fehlerspeichereintrag, rein optischer Befund",
+        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck außen. Kein Fehlerspeichereintrag, rein optischer Befund",
         "Valvetronic-Stellmotoren müssen vor dem Abnehmen der Ventildeckel in Parkstellung gebracht und nach dem Zusammenbau neu angelernt werden. Wer diesen Schritt überspringt, riskiert den Verstelltrieb",
         "Sollwerte fehlen: Anzugsmomente der Ventildeckel und des Trägers sind hier nicht belegt. Sie gehören aus der Herstellervorgabe geholt — Aluminium verzeiht ein geschätztes Moment nicht"
       ],
@@ -1160,14 +1160,14 @@
       "cat": "M57 · Fehlerbilder",
       "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
       "valid": "E60/E61 · M57 (525d, 530d, 535d)",
-      "summary": "Am M57 laufen drei Themen ineinander: verrusste Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
+      "summary": "Am M57 laufen drei Themen ineinander: verrußte Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
       "points": [
-        "Drallklappen verrussen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
+        "Drallklappen verrußen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
         "Nach einer Quelle wurden ab 03/2004 Kunststoff-Drallklappen mit Rückhaltemechanismus verbaut; frühere Motoren gelten als der kritischere Fall. Vor dem Anwenden am konkreten Fahrzeug gegenprüfen",
         "Widerspruch in der Praxis: die einen entfernen die Klappen, die anderen warnen, dass die Klappenstellung in die Regeneration des Partikelfilters eingeht. Beides steht so in unabhängigen Quellen — die Entscheidung gehört dokumentiert, nicht stillschweigend getroffen",
         "Werden Klappen entfernt, müssen die Öffnungen sauber verschlossen werden. Eine undichte Ansaugbrücke zieht Falschluft und verliert Ladedruck — das Fehlerbild wandert dann auf die Ladedruckregelung",
         "Ladedruckregelung am M57 arbeitet über Unterdruck. Prüfe vor jedem Ladersverdacht die Unterdruckdose, die Schläuche und das Umschaltventil auf Dichtheit — eine gerissene Leitung erzeugt dasselbe Bild wie eine feste Ladergeometrie",
-        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von aussen"
+        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von außen"
       ],
       "pins": [],
       "engines": [
@@ -1231,7 +1231,7 @@
         "Ringlogik zuerst verstehen: der MOST überträgt optisch. Jedes Gerät empfängt Licht und gibt es weiter. Fällt ein Glied aus, schweigt der ganze Ring — die Zahl der ausgefallenen Funktionen sagt nichts über die Zahl der defekten Geräte",
         "Ringbruchdiagnose in der Werkstattsoftware nutzen: sie vergleicht die hinterlegte Ringreihenfolge mit den Geräten, die tatsächlich antworten. Das erste Gerät, das nicht mehr antwortet, markiert die Bruchstelle",
         "Ohne Kenntnis der Ringreihenfolge ist die Suche wertlos. Die Reihenfolge gehört vor dem Zerlegen ausgelesen, nicht danach rekonstruiert",
-        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schliessen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
+        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schließen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
         "Fasern brechen fast immer an Steckern und engen Radien, nicht in der Mitte. Steckverbinder zuerst ansehen, bevor ein Steuergerät verdächtigt wird",
         "Sporadischer Ausfall zusammen mit erhöhter Ruhestromaufnahme deutet darauf hin, dass ein Gerät den Ring nicht schlafen lässt. Dann ist die Ruhestrommessung der schnellere Weg als der Bauteiltausch"
       ],
@@ -1260,8 +1260,8 @@
       "points": [
         "VANOS-Hochdruckpumpe sitzt in der Ölwanne und versorgt die Verstellung. Nach mehreren unabhängigen Quellen gibt es im Hochdruckkreis keinen Drucksensor — ein beginnender Schaden bleibt deshalb unbemerkt, bis Späne im Ölkreis sind",
         "VANOS-Fehler auf allen Bänken gleichzeitig ist das Warnzeichen für die Pumpe, nicht für die Magnetventile. Meldet nur eine Bank, ist die Wahrscheinlichkeit umgekehrt",
-        "Pleuellager verschleissen am S85 erfahrungsgemäss schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
-        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiss an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
+        "Pleuellager verschleißen am S85 erfahrungsgemäß schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
+        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiß an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
         "Kein Wert ohne Beleg: Öldruck-, Lagerspiel- und Speicherdruckwerte für den S85 sind hier nicht belegt. Vergleichend arbeiten und im Zweifel die Herstellervorgabe holen",
         "Vor jeder Diagnose am M5 den Ladezustand der Batterie sichern. Der S85 und das SMG reagieren auf zu niedrige Bordspannung mit Einträgen, die wie Bauteilfehler aussehen"
       ],
@@ -3507,6 +3507,1090 @@
         }
       }
     },
+    "e60:e60-keine-verbindung": {
+      "code": "GF-E60-01",
+      "name": "E60 · Diagnose findet kein oder zu wenige Steuergeräte",
+      "desc": "Der E60 überspannt den Protokollwechsel und verteilt seine Geräte auf mehrere Busse. Systematisch: Protokoll und Kabel → Versorgung der OBD-Buchse → antwortet überhaupt jemand → ein Bus oder mehrere → Gateway oder Einzelgerät.",
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "steps": [
+        {
+          "q": "Passt die Kabelstellung zum Baujahr — bis 03/2007 K-Line, ab 03/2007 D-CAN?",
+          "help": "Der E60 wechselt im Lauf der Baureihe das Diagnoseprotokoll. Ein Kabel mit Umschalter muss dazu passen, sonst antwortet kein einziges Steuergerät, obwohl am Fahrzeug nichts defekt ist. Das Baujahr steht auf dem Typschild, nicht in den Papieren.",
+          "measure": "Baujahr am Typschild ablesen. Bis 03/2007 muss die Diagnose über die K-Line an OBD-Pin 7 laufen, ab 03/2007 über D-CAN an Pin 6 und 14. Kabel mit Schalter entsprechend stellen und den Versuch wiederholen.",
+          "doc": "D4F-E60-001",
+          "yes": 1,
+          "no": "result-protokoll"
+        },
+        {
+          "q": "Liegen an der OBD-Buchse Dauerplus und Masse an, und kommt beim Einschalten der Zündung KL15 an?",
+          "help": "Bevor irgendein Bus verdächtigt wird, muss die Buchse selbst versorgt sein. Eine durchgebrannte Sicherung im Diagnosezweig oder ein aufgeweiteter Massekontakt erzeugt dasselbe Bild wie ein totes Gateway.",
+          "measure": "An Pin 16 gegen Pin 4/5 die Bordspannung messen — es muss die Batteriespannung anstehen. Danach die Zündung einschalten und prüfen, ob die Diagnosesoftware KL15 erkennt. Steckerkontakte auf Aufweitung ansehen.",
+          "doc": "D4F-E60-001",
+          "obd_hint": "PID 0142 Steuermodulspannung mitlesen, sobald überhaupt ein Steuergerät antwortet",
+          "yes": 2,
+          "no": "result-obd-versorgung"
+        },
+        {
+          "q": "Antwortet wenigstens ein einziges Steuergerät auf das Identifizieren?",
+          "help": "Antwortet gar nichts, obwohl Protokoll und Versorgung stimmen, liegt der Verdacht auf der Diagnoseleitung und dem Gateway. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway.",
+          "measure": "In der Diagnosesoftware nacheinander Motorsteuerung, CAS und Kombiinstrument identifizieren. Erwartet wird mindestens eine Antwort. Kommt von keinem Gerät eine Rückmeldung, ist der Einstiegspunkt selbst tot.",
+          "doc": "D4F-E60-002",
+          "yes": 3,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Liegen alle nicht antwortenden Steuergeräte auf ein und demselben Bus?",
+          "help": "Das ist die entscheidende Sortierfrage. Fehlen ausschließlich Geräte des K-CAN oder ausschließlich Geräte des MOST-Rings, ist der Fehler dieser eine Bus. Verteilt sich der Ausfall über mehrere Busse, ist der Übergang zwischen ihnen der Kandidat.",
+          "measure": "Die nicht antwortenden Geräte gegen die Topologie halten: Antrieb und Fahrwerk auf PT-CAN, Karosserie auf K-CAN, Audio und Navigation auf MOST. Die Zuordnung steht im Topologie-Dokument.",
+          "doc": "D4F-E60-002",
+          "yes": "result-ein-bus",
+          "no": 4
+        },
+        {
+          "q": "Melden mehrere Steuergeräte auf mehreren Bussen gleichzeitig fehlende Kommunikation untereinander?",
+          "help": "Genau dieses Muster ist der Gateway-Ausfall: viele Geräte sind einzeln versorgt und in Ordnung, aber sie erreichen einander nicht mehr. Wer hier Bauteile tauscht, tauscht Folgefehler.",
+          "measure": "Fehlerspeicher aller erreichbaren Steuergeräte lesen und die Einträge nebeneinanderlegen. Häufen sich Einträge der Art „keine Kommunikation mit …“ über Busgrenzen hinweg, ist die Ursache der Übergang, nicht das einzelne Gerät.",
+          "doc": "D4F-E60-002",
+          "yes": "result-gateway",
+          "no": 5
+        },
+        {
+          "q": "Ist die Bordspannung während der gesamten Diagnose stabil und die Batterie geladen?",
+          "help": "Am E60 erzeugt eine schwache Batterie reihenweise Einträge, die wie Bauteilfehler aussehen. Bevor ein einzelnes Steuergerät verurteilt wird, muss die Versorgung über der Grenze liegen, unterhalb derer die Geräte abschalten.",
+          "measure": "Ruhespannung bei ausgeschalteter Zündung nach ausreichender Ruhezeit messen — rund 12.6 V zeigt eine geladene Batterie an. Während der Diagnose ein Ladegerät anschließen und beobachten, ob die Aussetzer verschwinden.",
+          "doc": "D4F-E60-060",
+          "obd_hint": "PID 0142 Steuermodulspannung während der Sitzung mitloggen",
+          "yes": "result-einzelgeraet",
+          "no": "result-spannung"
+        }
+      ],
+      "model": "e60",
+      "id": "e60-keine-verbindung",
+      "_results": {
+        "result-protokoll": {
+          "title": "Protokoll oder Kabelstellung passt nicht zum Baujahr",
+          "text": "Kabel auf das zum Baujahr passende Protokoll stellen: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6 und 14. Zusätzlich den Latency Timer des FTDI-Treibers auf 1 ms setzen. Erst danach die Diagnose erneut versuchen — vorher ist jede weitere Messung ohne Aussage.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-obd-versorgung": {
+          "title": "Versorgung der OBD-Buchse fehlt",
+          "text": "Sicherung des Diagnosezweigs und die Masseanbindung der Buchse prüfen, Kontakte auf Aufweitung ansehen und gegebenenfalls nachsetzen. Erst wenn an Pin 16 die Batteriespannung ansteht und KL15 erkannt wird, ist eine Aussage über Gateway oder Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-gateway": {
+          "title": "Gateway oder Diagnoseleitung — nicht die einzelnen Steuergeräte",
+          "text": "Das Muster passt zum Gateway-Ausfall: viele Geräte sind versorgt, erreichen einander aber nicht mehr. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway. Versorgung und Masse dieses Geräts prüfen, dann seine Steckverbindungen. Keine Bauteile tauschen, solange die Einträge über Busgrenzen hinweg auftreten — das sind Folgefehler.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-001"
+          ]
+        },
+        "result-ein-bus": {
+          "title": "Ein einzelner Bus ist gestört",
+          "text": "Der Ausfall bleibt auf einen Bus begrenzt. Jetzt diesen Bus gezielt verfolgen: beim MOST die Ringbruchdiagnose fahren und die Ringreihenfolge auslesen, bei einem CAN-Zweig die Leitung vom Gateway zum ersten stummen Gerät auf Durchgang und Kurzschluss prüfen. Ein Gerät, das den Bus blockiert, findet man, indem man es einzeln abhängt.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-040"
+          ]
+        },
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät antwortet nicht",
+          "text": "Versorgung, Masse und Steckverbindung dieses einen Geräts prüfen, danach die Busleitung von ihm zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung nachweislich in Ordnung sind, ist das Gerät selbst der Kandidat. Vor einem Tausch die vorhandenen Codierdaten sichern und klären, ob das Gerät angelernt werden muss.",
+          "next_docs": [
+            "D4F-E60-002"
+          ]
+        },
+        "result-spannung": {
+          "title": "Bordspannung zu niedrig oder instabil",
+          "text": "Die Diagnose ist erst nach stabiler Versorgung aussagekräftig. Batterie laden oder ein Ladegerät anschließen, den Batteriesensor am Minuspol auf sauberen Anschluss prüfen und danach alle Fehlerspeicher löschen. Was danach nicht wiederkommt, war ein Spannungsfolgefehler und kein Bauteildefekt.",
+          "next_docs": [
+            "D4F-E60-060"
+          ]
+        },
+        "result-kuehler-außen": {
+          "title": "Außenleck im Kühlkreis gefunden",
+          "text": "Die undichte Stelle instand setzen — am N62 sind Ausgleichsbehälter, Behälterdeckel, Schlauchverbindungen und Kühlerkästen die üblichen Kandidaten. Danach auffüllen, entlüften und den Stand über mehrere Wochen erneut beobachten. Erst ein über die Zeit stabiler Stand belegt, dass es das einzige Leck war.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-innen": {
+          "title": "Kühlmittel geht nach innen verloren",
+          "text": "Druckaufbau im kalten Kühlkreis oder süßlicher Abgasgeruch deutet auf Verbrennungsgase im Kühlmittel. Das ist ein anderer Fall als eine äußere Dichtung und gehört mit einer CO-Prüfung des Kühlmittels abgesichert, bevor der Motor geöffnet wird. Bis dahin den Motor nicht heiß fahren.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ueberfuehrungsrohr": {
+          "title": "Verdacht auf Dichtungen im V des Motors",
+          "text": "Kein Außenleck und kein Hinweis auf Verbrennungsgase: dann bleibt der Bereich zwischen den Zylinderbänken, wo das Kühlmittel-Überführungsrohr sitzt. Das ist eine aufwendige Arbeit — den Befund vorher absichern, indem das System unter Druck gesetzt und der Bereich im V gezielt beobachtet wird.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-lima-traeger": {
+          "title": "Dichtung des Lichtmaschinenträgers",
+          "text": "Die Spur beginnt oberhalb der Trägerplatte, also läuft das Öl über den Generator. Träger abdichten und dabei den Generator auf Ölbenetzung prüfen — ein von innen ölgetränkter Generator fällt später ohnehin aus. Anzugsmomente aus der Herstellervorgabe holen, sie sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ventildeckel": {
+          "title": "Ventildeckeldichtung undicht",
+          "text": "Dichtung erneuern, beide Bänke gleichzeitig ansehen — am N62 ist selten nur eine Seite betroffen. Die Valvetronic-Stellmotoren vor dem Abnehmen in Parkstellung bringen und die Anschläge nach dem Zusammenbau neu anlernen. Wird einer dieser beiden Schritte übersprungen, ist der Verstelltrieb in Gefahr.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-schaftdichtungen": {
+          "title": "Verdacht auf Ventilschaftdichtungen",
+          "text": "Öl verschwindet ohne Außenspur und der Motor raucht blau: das passt zu verhärteten Ventilschaftdichtungen. Dazu gibt es keinen Fehlerspeichereintrag, der Befund bleibt optisch. Vor der Entscheidung den Ölverbrauch über eine definierte Strecke messen und die Kurbelgehäuseentlüftung ausschließen.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-weitersuchen": {
+          "title": "Kein eindeutiger Austrittsort — weiter eingrenzen",
+          "text": "Motor gründlich reinigen, ein Kontrastmittel im Öl verwenden und nach einer definierten Fahrstrecke erneut suchen. Zusätzlich Getriebeglocke, Ölfiltergehäuse und Ölwannenkante ansehen. Ohne sichtbaren Austrittsort wird keine Dichtung bestellt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-servooel": {
+          "title": "Servokreis zuerst instand setzen",
+          "text": "Ölstand korrigieren und die undichte Stelle suchen, bevor irgendein Bauteil der Wankstabilisierung verdächtigt wird. Lenkung und Dynamic Drive teilen sich den Kreis, also wirkt jeder Verlust auf beide Systeme. Nach der Reparatur entlüften und den Fehlerspeicher löschen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-gemeinsame-ursache": {
+          "title": "Gemeinsame Ursache — Spannung oder Antriebsbus",
+          "text": "Mehrere Fahrwerkssysteme melden gleichzeitig, und Spannung oder PT-CAN sind auffällig. Zuerst die Versorgung sichern und den Batteriesensor prüfen, danach den Antriebsbus. Erst wenn beides sauber ist, alle Speicher löschen und eine Probefahrt fahren — was dann nicht wiederkommt, war ein Folgefehler.",
+          "next_docs": [
+            "D4F-E60-060",
+            "D4F-E60-002"
+          ]
+        },
+        "result-drucksensor": {
+          "title": "Drucksignal unplausibel oder Nullpunkt nicht angelernt",
+          "text": "Zuerst den Nullpunktabgleich der Drucksensoren über die Servicefunktion durchführen und erneut auslesen. Bleibt ein Kanal auffällig, den betroffenen Sensor und seine Steckverbindung am Ventilblock prüfen. Ein Zahlenwert für den Solldruck ist hier nicht belegt — beide Kanäle gegeneinander halten statt gegen eine Zahl von außen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-ventilblock": {
+          "title": "Ventilblock der Wankstabilisierung",
+          "text": "Ölkreis dicht, Spannung gut, Sensoren plausibel, Kreis entlüftet und der Fehler kommt zurück: dann fällt der Verdacht auf den Ventilblock. Das deckt sich mit dem Erfahrungswert aus mehreren unabhängigen Fäden, nach dem der Block deutlich häufiger ausfällt als das Steuergerät. Nach dem Tausch entlüften und die Sensornullpunkte neu anlernen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-entlueftet": {
+          "title": "Luft im Hydraulikkreis war die Ursache",
+          "text": "Der Fehler ist nach dem Entlüften weg. Ursache war Luft im Kreis, meist nach einem vorangegangenen Eingriff oder einem Ölverlust. Kontrolliere nach einigen hundert Kilometern erneut Ölstand und Fehlerspeicher — kommt die Meldung zurück, zieht der Kreis Luft und die undichte Stelle ist noch nicht gefunden.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        }
+      }
+    },
+    "e60:n62-verlust-eingrenzen": {
+      "code": "GF-E60-02",
+      "name": "N62 · Öl- oder Kühlmittelverlust eingrenzen",
+      "desc": "Der N62 verliert an mehreren dicht beieinander liegenden Stellen. Systematisch: erst Medium bestimmen, dann Ort, dann Bauteil. Ziel ist ein Befund vor der Teilebestellung.",
+      "engines": [
+        "N62"
+      ],
+      "steps": [
+        {
+          "q": "Sinkt der Kühlmittelstand im Ausgleichsbehälter über mehrere Tankfüllungen sichtbar ab?",
+          "help": "Zuerst wird das Medium bestimmt. Öl und Kühlmittel treten am N62 an verschiedenen Stellen aus und führen zu ganz verschiedenen Reparaturen. Beides gleichzeitig ist möglich — dann diesen Pfad zweimal fahren.",
+          "measure": "Stand bei kaltem Motor und ebenem Fahrzeug zwischen Min und Max ablesen und über mehrere Wochen mit derselben Methode wiederholen. Nur ein wiederholt gemessener Rückgang ist ein Befund.",
+          "doc": "D4F-E60-010",
+          "yes": 1,
+          "no": 3
+        },
+        {
+          "q": "Findest du eine nasse Stelle oder eine helle Kruste außen am Kühlsystem?",
+          "help": "Kühlmittel hinterlässt beim Verdunsten Rückstände. Ausgleichsbehälter, dessen Deckel, Schlauchschellen und Kühlernetz sind die Stellen, an denen ein Außenleck sichtbar wird, bevor es tropft.",
+          "measure": "Motorraum bei kaltem Motor mit Lampe absuchen: Ausgleichsbehälter und Nähte, Schläuche an den Schellen, Kühlerkästen, Wasserpumpengehäuse. Sichtbare Kruste oder Feuchtigkeit ist der Befund.",
+          "doc": "D4F-E60-010",
+          "yes": "result-kuehler-außen",
+          "no": 2
+        },
+        {
+          "q": "Baut sich bei kaltem Motor Druck im Ausgleichsbehälter auf oder riecht das Abgas süßlich?",
+          "help": "Kühlmittel, das nicht nach außen geht, geht nach innen. Verbrennungsdruck im Kühlkreis und süßlicher Abgasgeruch weisen darauf hin — das ist ein anderer Fall als eine Dichtung im V des Motors.",
+          "measure": "Bei kaltem Motor den Behälterdeckel vorsichtig öffnen und auf entweichenden Druck achten. Zusätzlich das Abgas im Warmlauf riechen. Beides ist qualitativ; ein Prüfdruck ist hier nicht belegt.",
+          "doc": "D4F-E60-010",
+          "yes": "result-innen",
+          "no": "result-ueberfuehrungsrohr"
+        },
+        {
+          "q": "Setzt die Ölspur oberhalb der Trägerplatte der Lichtmaschine an?",
+          "help": "Öl, das von oben über den Generator läuft, wird regelmäßig für eine undichte Ventildeckeldichtung gehalten. Der Unterschied ist die Höhe, in der die Spur beginnt — darüber entscheidet sich, welche Dichtung gemeint ist.",
+          "measure": "Motorraum reinigen, Motor eine Fahrt lang betreiben, dann mit Lampe von oben nach unten der Spur folgen. Gesucht wird der oberste Punkt, an dem die Spur beginnt.",
+          "doc": "D4F-E60-010",
+          "yes": "result-lima-traeger",
+          "no": 4
+        },
+        {
+          "q": "Ist Öl an der Kante des Ventildeckels zu sehen, oder raucht es am heißen Krümmer?",
+          "help": "Die Ventildeckeldichtungen sind am N62 der häufigste Austrittsort. Weil das Öl auf den heißen Krümmer läuft, fällt es oft eher als Geruch und Rauch auf denn als Fleck auf dem Boden.",
+          "measure": "Nach dem Reinigen die Ventildeckelkanten beider Bänke auf frische Feuchtigkeit ansehen. Zusätzlich bei betriebswarmem Motor auf Rauch und Ölgeruch aus dem Motorraum achten.",
+          "doc": "D4F-E60-010",
+          "yes": "result-ventildeckel",
+          "no": 5
+        },
+        {
+          "q": "Raucht der Motor beim Kaltstart oder nach Schubphasen blau, ohne dass außen Öl austritt?",
+          "help": "Verschwindet Öl, ohne dass eine Außenspur zu finden ist, wird es verbrannt. Blauer Rauch nach Schubphasen ist das klassische Bild verhärteter Ventilschaftdichtungen — dazu gibt es keinen Fehlerspeichereintrag.",
+          "measure": "Kaltstart und eine Schubphase mit anschließendem Gasstoß von einer zweiten Person beobachten lassen. Blaue Wolke ist der Befund; weißer Dampf bei kalter Witterung ist Kondensat und zählt nicht.",
+          "doc": "D4F-E60-010",
+          "yes": "result-schaftdichtungen",
+          "no": "result-weitersuchen"
+        }
+      ],
+      "model": "e60",
+      "id": "n62-verlust-eingrenzen",
+      "_results": {
+        "result-protokoll": {
+          "title": "Protokoll oder Kabelstellung passt nicht zum Baujahr",
+          "text": "Kabel auf das zum Baujahr passende Protokoll stellen: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6 und 14. Zusätzlich den Latency Timer des FTDI-Treibers auf 1 ms setzen. Erst danach die Diagnose erneut versuchen — vorher ist jede weitere Messung ohne Aussage.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-obd-versorgung": {
+          "title": "Versorgung der OBD-Buchse fehlt",
+          "text": "Sicherung des Diagnosezweigs und die Masseanbindung der Buchse prüfen, Kontakte auf Aufweitung ansehen und gegebenenfalls nachsetzen. Erst wenn an Pin 16 die Batteriespannung ansteht und KL15 erkannt wird, ist eine Aussage über Gateway oder Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-gateway": {
+          "title": "Gateway oder Diagnoseleitung — nicht die einzelnen Steuergeräte",
+          "text": "Das Muster passt zum Gateway-Ausfall: viele Geräte sind versorgt, erreichen einander aber nicht mehr. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway. Versorgung und Masse dieses Geräts prüfen, dann seine Steckverbindungen. Keine Bauteile tauschen, solange die Einträge über Busgrenzen hinweg auftreten — das sind Folgefehler.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-001"
+          ]
+        },
+        "result-ein-bus": {
+          "title": "Ein einzelner Bus ist gestört",
+          "text": "Der Ausfall bleibt auf einen Bus begrenzt. Jetzt diesen Bus gezielt verfolgen: beim MOST die Ringbruchdiagnose fahren und die Ringreihenfolge auslesen, bei einem CAN-Zweig die Leitung vom Gateway zum ersten stummen Gerät auf Durchgang und Kurzschluss prüfen. Ein Gerät, das den Bus blockiert, findet man, indem man es einzeln abhängt.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-040"
+          ]
+        },
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät antwortet nicht",
+          "text": "Versorgung, Masse und Steckverbindung dieses einen Geräts prüfen, danach die Busleitung von ihm zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung nachweislich in Ordnung sind, ist das Gerät selbst der Kandidat. Vor einem Tausch die vorhandenen Codierdaten sichern und klären, ob das Gerät angelernt werden muss.",
+          "next_docs": [
+            "D4F-E60-002"
+          ]
+        },
+        "result-spannung": {
+          "title": "Bordspannung zu niedrig oder instabil",
+          "text": "Die Diagnose ist erst nach stabiler Versorgung aussagekräftig. Batterie laden oder ein Ladegerät anschließen, den Batteriesensor am Minuspol auf sauberen Anschluss prüfen und danach alle Fehlerspeicher löschen. Was danach nicht wiederkommt, war ein Spannungsfolgefehler und kein Bauteildefekt.",
+          "next_docs": [
+            "D4F-E60-060"
+          ]
+        },
+        "result-kuehler-außen": {
+          "title": "Außenleck im Kühlkreis gefunden",
+          "text": "Die undichte Stelle instand setzen — am N62 sind Ausgleichsbehälter, Behälterdeckel, Schlauchverbindungen und Kühlerkästen die üblichen Kandidaten. Danach auffüllen, entlüften und den Stand über mehrere Wochen erneut beobachten. Erst ein über die Zeit stabiler Stand belegt, dass es das einzige Leck war.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-innen": {
+          "title": "Kühlmittel geht nach innen verloren",
+          "text": "Druckaufbau im kalten Kühlkreis oder süßlicher Abgasgeruch deutet auf Verbrennungsgase im Kühlmittel. Das ist ein anderer Fall als eine äußere Dichtung und gehört mit einer CO-Prüfung des Kühlmittels abgesichert, bevor der Motor geöffnet wird. Bis dahin den Motor nicht heiß fahren.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ueberfuehrungsrohr": {
+          "title": "Verdacht auf Dichtungen im V des Motors",
+          "text": "Kein Außenleck und kein Hinweis auf Verbrennungsgase: dann bleibt der Bereich zwischen den Zylinderbänken, wo das Kühlmittel-Überführungsrohr sitzt. Das ist eine aufwendige Arbeit — den Befund vorher absichern, indem das System unter Druck gesetzt und der Bereich im V gezielt beobachtet wird.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-lima-traeger": {
+          "title": "Dichtung des Lichtmaschinenträgers",
+          "text": "Die Spur beginnt oberhalb der Trägerplatte, also läuft das Öl über den Generator. Träger abdichten und dabei den Generator auf Ölbenetzung prüfen — ein von innen ölgetränkter Generator fällt später ohnehin aus. Anzugsmomente aus der Herstellervorgabe holen, sie sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ventildeckel": {
+          "title": "Ventildeckeldichtung undicht",
+          "text": "Dichtung erneuern, beide Bänke gleichzeitig ansehen — am N62 ist selten nur eine Seite betroffen. Die Valvetronic-Stellmotoren vor dem Abnehmen in Parkstellung bringen und die Anschläge nach dem Zusammenbau neu anlernen. Wird einer dieser beiden Schritte übersprungen, ist der Verstelltrieb in Gefahr.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-schaftdichtungen": {
+          "title": "Verdacht auf Ventilschaftdichtungen",
+          "text": "Öl verschwindet ohne Außenspur und der Motor raucht blau: das passt zu verhärteten Ventilschaftdichtungen. Dazu gibt es keinen Fehlerspeichereintrag, der Befund bleibt optisch. Vor der Entscheidung den Ölverbrauch über eine definierte Strecke messen und die Kurbelgehäuseentlüftung ausschließen.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-weitersuchen": {
+          "title": "Kein eindeutiger Austrittsort — weiter eingrenzen",
+          "text": "Motor gründlich reinigen, ein Kontrastmittel im Öl verwenden und nach einer definierten Fahrstrecke erneut suchen. Zusätzlich Getriebeglocke, Ölfiltergehäuse und Ölwannenkante ansehen. Ohne sichtbaren Austrittsort wird keine Dichtung bestellt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-servooel": {
+          "title": "Servokreis zuerst instand setzen",
+          "text": "Ölstand korrigieren und die undichte Stelle suchen, bevor irgendein Bauteil der Wankstabilisierung verdächtigt wird. Lenkung und Dynamic Drive teilen sich den Kreis, also wirkt jeder Verlust auf beide Systeme. Nach der Reparatur entlüften und den Fehlerspeicher löschen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-gemeinsame-ursache": {
+          "title": "Gemeinsame Ursache — Spannung oder Antriebsbus",
+          "text": "Mehrere Fahrwerkssysteme melden gleichzeitig, und Spannung oder PT-CAN sind auffällig. Zuerst die Versorgung sichern und den Batteriesensor prüfen, danach den Antriebsbus. Erst wenn beides sauber ist, alle Speicher löschen und eine Probefahrt fahren — was dann nicht wiederkommt, war ein Folgefehler.",
+          "next_docs": [
+            "D4F-E60-060",
+            "D4F-E60-002"
+          ]
+        },
+        "result-drucksensor": {
+          "title": "Drucksignal unplausibel oder Nullpunkt nicht angelernt",
+          "text": "Zuerst den Nullpunktabgleich der Drucksensoren über die Servicefunktion durchführen und erneut auslesen. Bleibt ein Kanal auffällig, den betroffenen Sensor und seine Steckverbindung am Ventilblock prüfen. Ein Zahlenwert für den Solldruck ist hier nicht belegt — beide Kanäle gegeneinander halten statt gegen eine Zahl von außen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-ventilblock": {
+          "title": "Ventilblock der Wankstabilisierung",
+          "text": "Ölkreis dicht, Spannung gut, Sensoren plausibel, Kreis entlüftet und der Fehler kommt zurück: dann fällt der Verdacht auf den Ventilblock. Das deckt sich mit dem Erfahrungswert aus mehreren unabhängigen Fäden, nach dem der Block deutlich häufiger ausfällt als das Steuergerät. Nach dem Tausch entlüften und die Sensornullpunkte neu anlernen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-entlueftet": {
+          "title": "Luft im Hydraulikkreis war die Ursache",
+          "text": "Der Fehler ist nach dem Entlüften weg. Ursache war Luft im Kreis, meist nach einem vorangegangenen Eingriff oder einem Ölverlust. Kontrolliere nach einigen hundert Kilometern erneut Ölstand und Fehlerspeicher — kommt die Meldung zurück, zieht der Kreis Luft und die undichte Stelle ist noch nicht gefunden.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        }
+      }
+    },
+    "e60:dynamic-drive-ausgefallen": {
+      "code": "GF-E60-03",
+      "name": "Dynamic Drive ausgefallen",
+      "desc": "Meldung der aktiven Wankstabilisierung. Systematisch: Servokreis → gemeinsame Ursache mit Lenkung und DSC → Drucksensoren → Entlüftung → Ventilblock. Ziel ist es, den Ventilblock erst zu verdächtigen, wenn alles davor ausgeschlossen ist.",
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "steps": [
+        {
+          "q": "Ist der Ölstand im Servokreis korrekt und der Kreis außen dicht?",
+          "help": "Lenkung und Wankstabilisierung werden am E60 aus demselben Ölkreis versorgt. Zu wenig Öl oder Luft im Kreis erzeugt dasselbe Fehlerbild wie ein defektes Bauteil — deshalb steht diese Prüfung ganz vorn.",
+          "measure": "Stand im Behälter des Servokreises nach Vorgabe des Fahrzeugs ablesen. Danach Leitungen, Verschraubungen, Ventilblock und die Stabilisatoren mit der Lampe auf feuchte Stellen absuchen.",
+          "doc": "D4F-E60-030",
+          "yes": 1,
+          "no": "result-servooel"
+        },
+        {
+          "q": "Meldet zusammen mit Dynamic Drive auch die Aktivlenkung oder die Fahrdynamikregelung?",
+          "help": "Mehrere Meldungen gleichzeitig deuten auf etwas Gemeinsames: den Ölkreis, die Bordspannung oder den PT-CAN. Eine einzelne Meldung deutet dagegen auf das System selbst.",
+          "measure": "Fehlerspeicher aller Fahrwerkssteuergeräte lesen und die Zeitstempel vergleichen. Einträge, die gemeinsam entstehen, haben in der Regel eine gemeinsame Ursache.",
+          "doc": "D4F-E60-002",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Ist die Bordspannung stabil und der PT-CAN frei von Kommunikationseinträgen?",
+          "help": "Die Fahrwerksregelungen schalten sich bei zu niedriger Spannung selbst ab und hinterlassen dabei Einträge, die wie Bauteilfehler aussehen. Dasselbe gilt für einen gestörten Antriebsbus.",
+          "measure": "Ruhespannung messen — rund 12.6 V zeigt eine geladene Batterie an. Danach die Fehlerspeicher auf Einträge der Art „keine Kommunikation“ zwischen den Fahrwerksgeräten durchsehen.",
+          "doc": "D4F-E60-060",
+          "obd_hint": "PID 0142 Steuermodulspannung während der Probefahrt mitloggen",
+          "yes": 3,
+          "no": "result-gemeinsame-ursache"
+        },
+        {
+          "q": "Liefern beide Drucksensoren am Ventilblock plausible Werte, und ist ihr Nullpunkt angelernt?",
+          "help": "Die Drucksensoren für Vorder- und Hinterachse sitzen am Ventilblock. Ihre Nullpunkte lernt das Steuergerät über eine Servicefunktion. Ein nicht angelernter Nullpunkt erzeugt eine Plausibilitätsmeldung, obwohl die Hydraulik gesund ist.",
+          "measure": "Beide Drücke im Steuergerät bei stehendem Fahrzeug gegeneinander halten — sie müssen ohne Wankanforderung dicht beieinander liegen. Weicht ein Kanal deutlich ab, zuerst den Nullpunktabgleich über die Servicefunktion durchführen und erneut lesen.",
+          "doc": "D4F-E60-030",
+          "yes": 4,
+          "no": "result-drucksensor"
+        },
+        {
+          "q": "Bleibt der Fehler auch nach vollständigem Entlüften des Hydraulikkreises stehen?",
+          "help": "Luft im Kreis ist die letzte Ursache, die sich ohne Teiletausch beheben lässt. Erst wenn der Kreis nachweislich entlüftet ist, hat ein Urteil über den Ventilblock Gewicht.",
+          "measure": "Entlüftungsprozedur des Fahrzeugs vollständig durchfahren, Fehlerspeicher löschen und eine Probefahrt mit Wechselkurven machen. Kommt die Meldung zurück, ist der Kreis nicht die Ursache.",
+          "doc": "D4F-E60-030",
+          "yes": "result-ventilblock",
+          "no": "result-entlueftet"
+        }
+      ],
+      "model": "e60",
+      "id": "dynamic-drive-ausgefallen",
+      "_results": {
+        "result-protokoll": {
+          "title": "Protokoll oder Kabelstellung passt nicht zum Baujahr",
+          "text": "Kabel auf das zum Baujahr passende Protokoll stellen: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6 und 14. Zusätzlich den Latency Timer des FTDI-Treibers auf 1 ms setzen. Erst danach die Diagnose erneut versuchen — vorher ist jede weitere Messung ohne Aussage.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-obd-versorgung": {
+          "title": "Versorgung der OBD-Buchse fehlt",
+          "text": "Sicherung des Diagnosezweigs und die Masseanbindung der Buchse prüfen, Kontakte auf Aufweitung ansehen und gegebenenfalls nachsetzen. Erst wenn an Pin 16 die Batteriespannung ansteht und KL15 erkannt wird, ist eine Aussage über Gateway oder Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E60-001"
+          ]
+        },
+        "result-gateway": {
+          "title": "Gateway oder Diagnoseleitung — nicht die einzelnen Steuergeräte",
+          "text": "Das Muster passt zum Gateway-Ausfall: viele Geräte sind versorgt, erreichen einander aber nicht mehr. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway. Versorgung und Masse dieses Geräts prüfen, dann seine Steckverbindungen. Keine Bauteile tauschen, solange die Einträge über Busgrenzen hinweg auftreten — das sind Folgefehler.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-001"
+          ]
+        },
+        "result-ein-bus": {
+          "title": "Ein einzelner Bus ist gestört",
+          "text": "Der Ausfall bleibt auf einen Bus begrenzt. Jetzt diesen Bus gezielt verfolgen: beim MOST die Ringbruchdiagnose fahren und die Ringreihenfolge auslesen, bei einem CAN-Zweig die Leitung vom Gateway zum ersten stummen Gerät auf Durchgang und Kurzschluss prüfen. Ein Gerät, das den Bus blockiert, findet man, indem man es einzeln abhängt.",
+          "next_docs": [
+            "D4F-E60-002",
+            "D4F-E60-040"
+          ]
+        },
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät antwortet nicht",
+          "text": "Versorgung, Masse und Steckverbindung dieses einen Geräts prüfen, danach die Busleitung von ihm zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung nachweislich in Ordnung sind, ist das Gerät selbst der Kandidat. Vor einem Tausch die vorhandenen Codierdaten sichern und klären, ob das Gerät angelernt werden muss.",
+          "next_docs": [
+            "D4F-E60-002"
+          ]
+        },
+        "result-spannung": {
+          "title": "Bordspannung zu niedrig oder instabil",
+          "text": "Die Diagnose ist erst nach stabiler Versorgung aussagekräftig. Batterie laden oder ein Ladegerät anschließen, den Batteriesensor am Minuspol auf sauberen Anschluss prüfen und danach alle Fehlerspeicher löschen. Was danach nicht wiederkommt, war ein Spannungsfolgefehler und kein Bauteildefekt.",
+          "next_docs": [
+            "D4F-E60-060"
+          ]
+        },
+        "result-kuehler-außen": {
+          "title": "Außenleck im Kühlkreis gefunden",
+          "text": "Die undichte Stelle instand setzen — am N62 sind Ausgleichsbehälter, Behälterdeckel, Schlauchverbindungen und Kühlerkästen die üblichen Kandidaten. Danach auffüllen, entlüften und den Stand über mehrere Wochen erneut beobachten. Erst ein über die Zeit stabiler Stand belegt, dass es das einzige Leck war.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-innen": {
+          "title": "Kühlmittel geht nach innen verloren",
+          "text": "Druckaufbau im kalten Kühlkreis oder süßlicher Abgasgeruch deutet auf Verbrennungsgase im Kühlmittel. Das ist ein anderer Fall als eine äußere Dichtung und gehört mit einer CO-Prüfung des Kühlmittels abgesichert, bevor der Motor geöffnet wird. Bis dahin den Motor nicht heiß fahren.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ueberfuehrungsrohr": {
+          "title": "Verdacht auf Dichtungen im V des Motors",
+          "text": "Kein Außenleck und kein Hinweis auf Verbrennungsgase: dann bleibt der Bereich zwischen den Zylinderbänken, wo das Kühlmittel-Überführungsrohr sitzt. Das ist eine aufwendige Arbeit — den Befund vorher absichern, indem das System unter Druck gesetzt und der Bereich im V gezielt beobachtet wird.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-lima-traeger": {
+          "title": "Dichtung des Lichtmaschinenträgers",
+          "text": "Die Spur beginnt oberhalb der Trägerplatte, also läuft das Öl über den Generator. Träger abdichten und dabei den Generator auf Ölbenetzung prüfen — ein von innen ölgetränkter Generator fällt später ohnehin aus. Anzugsmomente aus der Herstellervorgabe holen, sie sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-ventildeckel": {
+          "title": "Ventildeckeldichtung undicht",
+          "text": "Dichtung erneuern, beide Bänke gleichzeitig ansehen — am N62 ist selten nur eine Seite betroffen. Die Valvetronic-Stellmotoren vor dem Abnehmen in Parkstellung bringen und die Anschläge nach dem Zusammenbau neu anlernen. Wird einer dieser beiden Schritte übersprungen, ist der Verstelltrieb in Gefahr.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-schaftdichtungen": {
+          "title": "Verdacht auf Ventilschaftdichtungen",
+          "text": "Öl verschwindet ohne Außenspur und der Motor raucht blau: das passt zu verhärteten Ventilschaftdichtungen. Dazu gibt es keinen Fehlerspeichereintrag, der Befund bleibt optisch. Vor der Entscheidung den Ölverbrauch über eine definierte Strecke messen und die Kurbelgehäuseentlüftung ausschließen.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-weitersuchen": {
+          "title": "Kein eindeutiger Austrittsort — weiter eingrenzen",
+          "text": "Motor gründlich reinigen, ein Kontrastmittel im Öl verwenden und nach einer definierten Fahrstrecke erneut suchen. Zusätzlich Getriebeglocke, Ölfiltergehäuse und Ölwannenkante ansehen. Ohne sichtbaren Austrittsort wird keine Dichtung bestellt.",
+          "next_docs": [
+            "D4F-E60-010"
+          ]
+        },
+        "result-servooel": {
+          "title": "Servokreis zuerst instand setzen",
+          "text": "Ölstand korrigieren und die undichte Stelle suchen, bevor irgendein Bauteil der Wankstabilisierung verdächtigt wird. Lenkung und Dynamic Drive teilen sich den Kreis, also wirkt jeder Verlust auf beide Systeme. Nach der Reparatur entlüften und den Fehlerspeicher löschen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-gemeinsame-ursache": {
+          "title": "Gemeinsame Ursache — Spannung oder Antriebsbus",
+          "text": "Mehrere Fahrwerkssysteme melden gleichzeitig, und Spannung oder PT-CAN sind auffällig. Zuerst die Versorgung sichern und den Batteriesensor prüfen, danach den Antriebsbus. Erst wenn beides sauber ist, alle Speicher löschen und eine Probefahrt fahren — was dann nicht wiederkommt, war ein Folgefehler.",
+          "next_docs": [
+            "D4F-E60-060",
+            "D4F-E60-002"
+          ]
+        },
+        "result-drucksensor": {
+          "title": "Drucksignal unplausibel oder Nullpunkt nicht angelernt",
+          "text": "Zuerst den Nullpunktabgleich der Drucksensoren über die Servicefunktion durchführen und erneut auslesen. Bleibt ein Kanal auffällig, den betroffenen Sensor und seine Steckverbindung am Ventilblock prüfen. Ein Zahlenwert für den Solldruck ist hier nicht belegt — beide Kanäle gegeneinander halten statt gegen eine Zahl von außen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-ventilblock": {
+          "title": "Ventilblock der Wankstabilisierung",
+          "text": "Ölkreis dicht, Spannung gut, Sensoren plausibel, Kreis entlüftet und der Fehler kommt zurück: dann fällt der Verdacht auf den Ventilblock. Das deckt sich mit dem Erfahrungswert aus mehreren unabhängigen Fäden, nach dem der Block deutlich häufiger ausfällt als das Steuergerät. Nach dem Tausch entlüften und die Sensornullpunkte neu anlernen.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        },
+        "result-entlueftet": {
+          "title": "Luft im Hydraulikkreis war die Ursache",
+          "text": "Der Fehler ist nach dem Entlüften weg. Ursache war Luft im Kreis, meist nach einem vorangegangenen Eingriff oder einem Ölverlust. Kontrolliere nach einigen hundert Kilometern erneut Ölstand und Fehlerspeicher — kommt die Meldung zurück, zieht der Kreis Luft und die undichte Stelle ist noch nicht gefunden.",
+          "next_docs": [
+            "D4F-E60-030"
+          ]
+        }
+      }
+    },
+    "e87:n43-ruckeln": {
+      "code": "GF-E87-01",
+      "name": "N43 ruckelt und läuft rau",
+      "desc": "Rauer Lauf, Ruckeln bei niedriger Last, steigender Verbrauch. Systematisch von der billigsten zur teuersten Ursache: Zündung → Einspritzung → Magerbetriebs-Sensorik.",
+      "engines": [
+        "N43"
+      ],
+      "steps": [
+        {
+          "q": "Steht im DME-Fehlerspeicher ein Eintrag zu Verbrennungsaussetzern eines bestimmten Zylinders?",
+          "help": "Der N43 meldet Aussetzer zylinderbezogen. Ein Eintrag, der immer denselben Zylinder nennt, führt direkt zum Bauteil. Wechselnde Zylinder oder ein Sammeleintrag deuten dagegen eher auf Gemischbildung als auf ein einzelnes Teil.",
+          "measure": "DME-Fehlerspeicher lesen und notieren, welcher Zylinder genannt wird und ob der Eintrag statisch oder sporadisch abgelegt ist. Speicher danach löschen und nach einer Probefahrt erneut lesen — nur was wiederkommt, ist aktuell.",
+          "doc": "D4F-E87-010",
+          "yes": 1,
+          "no": 2
+        },
+        {
+          "q": "Wandert der Aussetzer mit, wenn du die Zündspule des auffälligen Zylinders gegen die eines unauffälligen tauschst?",
+          "help": "Der Tauschtest ist am N43 der schnellste Weg zur Zündspule und braucht keinen Sollwert. Nach dem Tausch Speicher löschen, Probefahrt, erneut lesen. Zündspulenausfälle häufen sich nach mehreren unabhängigen Berichten bei den frühen Baujahren 2007 und 2008.",
+          "measure": "Spule von Zylinder A auf Zylinder B setzen und umgekehrt, Speicher löschen, Probefahrt. Erwartet: nennt der neue Eintrag jetzt den anderen Zylinder, ist die Spule der Täter. Bleibt der Eintrag beim alten Zylinder, ist sie es nicht.",
+          "doc": "D4F-E87-010",
+          "yes": "result-zuendspule",
+          "no": 2
+        },
+        {
+          "q": "Fällt in der zylinderindividuellen Laufruheregelung ein Zylinder dauerhaft aus der Reihe?",
+          "help": "Die DME regelt die Einspritzmenge je Zylinder nach. Ein Zylinder, dessen Korrekturwert dauerhaft deutlich von den drei anderen abweicht, zeigt einen Injektor mit abweichender Menge — typisch bei Verkokung. Der Vergleich untereinander ersetzt hier den fehlenden Sollwert.",
+          "measure": "INPA DME Statusblock zur Laufruhe- beziehungsweise Mengenkorrektur je Zylinder im warmen Leerlauf beobachten. Erwartet: alle vier Werte liegen dicht beieinander. Ein einzelner Ausreißer, der über Minuten stabil abweicht, ist der Befund. Absolutwerte sind hier nicht belegt — es zählt der Abstand zu den Nachbarzylindern.",
+          "doc": "D4F-E87-010",
+          "yes": "result-injektor",
+          "no": 3
+        },
+        {
+          "q": "Steht ein Eintrag zum NOx-Sensor oder zum geschichteten Magerbetrieb an?",
+          "help": "Der N43 fährt in Teillast mager und braucht dafür die NOx-Sensorik. Fällt sie aus, verlässt die DME den Magerbetrieb. Das ist kein Notlauf und fällt beim Fahren kaum auf — es kostet Kraftstoff.",
+          "measure": "DME-Fehlerspeicher gezielt auf Einträge zu NOx-Sensor, NOx-Speicherkatalysator und Betriebsartenwechsel durchsehen. Einträge notieren, löschen, nach einer längeren Probefahrt mit Teillastanteil erneut lesen.",
+          "doc": "D4F-E87-010",
+          "yes": 4,
+          "no": 5
+        },
+        {
+          "q": "Ist der Verbrauch gestiegen, während der Motor ansonsten rund läuft?",
+          "help": "Das ist das eigentliche Erkennungszeichen des NOx-Themas: der Motor fährt sauber, nur eben immer homogen statt zeitweise mager. Ruckelt der Motor zusätzlich, hat der NOx-Eintrag mit dem Ruckeln meist nichts zu tun und es steht eine zweite Ursache daneben.",
+          "measure": "Verbrauch über mehrere vergleichbare Strecken gegen den früher gefahrenen Wert halten. Zusätzlich in INPA beobachten, ob die DME überhaupt noch in den Magerbetrieb wechselt oder dauerhaft homogen fährt.",
+          "doc": "D4F-E87-010",
+          "yes": "result-nox",
+          "no": 5
+        },
+        {
+          "q": "Verschwindet das Ruckeln, sobald der Motor auf Betriebstemperatur ist?",
+          "help": "Rauer Kaltlauf, der sich warm legt, deutet auf Gemischbildung im Warmlauf — Injektorverkokung und Ablagerungen an den Einlasskanälen zeigen genau dieses Bild. Bleibt das Ruckeln auch warm, ist die Suche noch nicht am Ende und gehört systematisch von vorn begonnen.",
+          "measure": "Motor kalt starten, Leerlauf über die ersten Minuten beobachten, dann warmgefahren erneut. INPA-Werte zur Laufruhe in beiden Zuständen vergleichen statt nur den Klang zu beurteilen.",
+          "doc": "D4F-E87-003",
+          "yes": "result-kaltlauf",
+          "no": "result-grundlagen"
+        }
+      ],
+      "model": "e87",
+      "id": "n43-ruckeln",
+      "_results": {
+        "result-zuendspule": {
+          "title": "Zündspule des betroffenen Zylinders",
+          "text": "Der Fehler ist mit der Spule mitgewandert, damit ist sie überführt. Spule ersetzen und die Zündkerze desselben Zylinders gleich mit ansehen — eine sterbende Spule hat die Kerze meist schon mitgenommen. Bei einem Fahrzeug der frühen Baujahre lohnt es sich, die übrigen Spulen im Blick zu behalten, statt einzeln nachzurüsten. Nach dem Wechsel Speicher löschen und mit einer Probefahrt bestätigen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-injektor": {
+          "title": "Injektor mit abweichender Einspritzmenge",
+          "text": "Ein Zylinder weicht dauerhaft von den drei anderen ab. Injektor ausbauen, auf Verkokung an der Spitze ansehen und reinigen oder ersetzen. Vor dem Ersatz die Dichtringe und den Sitz im Kopf prüfen. Nach dem Eingriff die Injektor-Klassifizierung beziehungsweise die Mengenkorrektur über die Servicefunktionen anlernen, sonst rechnet die DME mit den Daten des alten Teils. Ein Zahlen-Sollwert für die Abweichung ist hier nicht belegt — es zählt der Abstand zu den Nachbarzylindern.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-nox": {
+          "title": "NOx-Sensorik — Magerbetrieb ist ausgefallen",
+          "text": "Der Motor läuft rund und verbraucht mehr: das passt zum abgeschalteten Magerbetrieb. Vor dem Ersatz des Sensors dessen Stecker und Leitung prüfen, denn die Verkabelung im Abgasbereich leidet unter Wärme. Danach Speicher löschen und über eine längere Fahrt mit Teillastanteil kontrollieren, ob die DME wieder mager fährt. Kommt der Eintrag zurück, ist auch der Speicherkatalysator in die Betrachtung zu nehmen.",
+          "next_docs": [
+            "D4F-E87-010",
+            "D4F-E87-003"
+          ]
+        },
+        "result-kaltlauf": {
+          "title": "Warmlauf-Gemischbildung — Ablagerungen wahrscheinlich",
+          "text": "Rauer Kaltlauf, der sich warm legt, ohne einzelnen auffälligen Zylinder: das passt zu Ablagerungen an Injektorspitzen und Einlasskanälen. Erst die einfachen Dinge abarbeiten — Luftfilter, Kurbelgehäuseentlüftung und Falschluft im Ansaugbereich — und danach eine Reinigung der Einspritzseite planen. Vor jeder Zerlegung den Motor über längere Autobahnfahrten in höherer Last bewegen und erneut beurteilen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-grundlagen": {
+          "title": "Keine eindeutige Zuordnung — Grundlagen prüfen",
+          "text": "Das Ruckeln bleibt auch warm und lässt sich weder einem Zylinder noch der Magerbetriebs-Sensorik zuordnen. Jetzt zurück auf die Grundlagen: Falschluft im Ansaugtrakt, Kurbelgehäuseentlüftung, Kraftstoffversorgung und Massepunkte am Motor. Zusätzlich prüfen, ob die Fahrzeugauswahl in der Diagnosesoftware zum tatsächlich verbauten Motor passt — eine falsche Auswahl liefert Statuswerte, die zum Fahrzeug nicht gehören.",
+          "next_docs": [
+            "D4F-E87-003",
+            "D4F-E87-001"
+          ]
+        },
+        "result-sporadik": {
+          "title": "Alle Wege arbeiten — sporadischer Fehler suchen",
+          "text": "Zum Prüfzeitpunkt öffnet die Klappe auf jedem Weg. Damit ist der Fehler sporadisch, und der häufigste Grund dafür ist ein Mikrotaster, der bei Nässe oder Kälte aussetzt. Fahrzeug bei kaltem und feuchtem Wetter erneut prüfen und die Griffleiste dabei besonders beobachten. Zusätzlich Bordnetz und Batteriezustand ansehen — ein schwaches Bordnetz erzeugt genau dieses Aussetzerbild an mehreren Stellen gleichzeitig.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-050"
+          ]
+        },
+        "result-einzelweg": {
+          "title": "Ein einzelner Bedienweg fällt aus",
+          "text": "Schloss und Stellantrieb arbeiten, denn die Griffleiste öffnet die Klappe. Fehlt nur die Fernbedienung, gehören Handsender, Batterie im Sender und dessen Anlernzustand geprüft, bevor am Fahrzeug gesucht wird. Fehlt nur der Innentaster, ist dessen Leitung und Kontakt zu prüfen. In beiden Fällen bleibt die Klappe über die Griffleiste betriebsbereit — das ist eine Komfort-, keine Sicherheitsstörung.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-elektrisch": {
+          "title": "Mikrotaster schaltet mechanisch, aber nicht elektrisch",
+          "text": "Der Taster klickt, die Klappe reagiert nicht, andere Wege funktionieren: das ist das klassische Bild des verschlissenen Mikrotasters. Vor dem Ersatz die Steckverbindung am Taster und die Leitung bis in die Karosserie auf Durchgang prüfen, denn sie liegt im bewegten Bereich. Bestätigt sich der Taster, wird er in aller Regel nur als komplette Griffleiste geliefert — das gehört bei der Teilebestellung eingeplant.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-mechanisch": {
+          "title": "Kein Klicken — Mechanik der Griffleiste",
+          "text": "Der Taster wird gar nicht mehr betätigt. Griffleiste abnehmen und ansehen, ob der Hebel klemmt, ausgeschlagen ist oder nach dem Drücken nicht mehr in die Ausgangslage zurückkommt. Verschmutzung und gebrochene Rückstellung sind hier häufiger als ein elektrischer Defekt. Erst wenn die Mechanik sauber arbeitet und der Taster trotzdem nicht schaltet, ist die Griffleiste als Ganzes fällig.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-kabelbaum": {
+          "title": "Aderbruch im Faltenbalg zur Heckklappe",
+          "text": "Mehrere Verbraucher in der Klappe fallen gleichzeitig aus — das zeigt auf den bewegten Kabelbaum im Übergang zur Karosserie, nicht auf die einzelnen Bauteile. Faltenbalg öffnen und die Adern einzeln unter Bewegung der Klappe auf Durchgang prüfen; ein Bruch unter der Isolierung ist von außen oft nicht zu sehen. Reparatur mit Lötverbindung und Schrumpfschlauch, danach die Zugentlastung wiederherstellen, sonst bricht die nächste Ader an derselben Stelle.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-040"
+          ]
+        },
+        "result-schloss": {
+          "title": "Schloss, Stellantrieb oder dessen Versorgung",
+          "text": "Kein Bedienweg löst die Klappe, andere Verbraucher in der Klappe arbeiten. Damit steht der Schlosskreis im Verdacht. Versorgung und Ansteuerung am Stellantrieb während der Öffnungsanforderung prüfen: liegt Ansteuerung an, ohne dass der Antrieb arbeitet, ist er defekt; liegt keine an, führt der Weg zurück in Bordnetz und Ansteuerung. Zusätzlich das Schloss mechanisch beurteilen — ein verklemmter Schließbügel sieht nach Elektrik aus und ist keine.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-nebenaggregat": {
+          "title": "Geräusch kommt vom Riementrieb",
+          "text": "Ohne Riemen ist das Rasseln weg, damit ist der Steuertrieb entlastet. Spannrolle, Umlenkrolle, Generator-Freilauf und Klimakompressor einzeln von Hand auf Spiel und Rauheit prüfen und den Riemen auf Risse ansehen. Das ist die deutlich günstigere Reparatur — sie zuerst auszuschließen, ist der ganze Zweck dieses Schrittes.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-akut": {
+          "title": "Steuertrieb bereits messbar aus der Lage",
+          "text": "Geräusch getriebeseitig plus Eintrag zur Nockenwellen-Kurbelwellen-Zuordnung: das Fahrzeug gehört nicht weiterbewegt. Instandsetzung des Steuertriebs planen und dabei Kette, Spanner, Führungsschienen und die Kettenräder gemeinsam betrachten — Einzelteile zu tauschen, während der Rest verschlissen bleibt, führt den Motor in denselben Zustand zurück. Öl und Ölfilter gehören dazu, weil Abrieb im Kreislauf steht.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-verdacht": {
+          "title": "Begründeter Kettenverdacht ohne Fehlereintrag",
+          "text": "Das Geräuschbild passt, der Speicher ist noch leer — das ist der Frühbefund, bei dem eine Reparatur am billigsten ist. Fahrzeug in kurzen Abständen erneut kalt abhören und die Entscheidung nicht auf den Fehlerspeicher verschieben, denn der kommt spät. Bis zur Entscheidung Ölstand und Ölqualität streng führen und Kaltstarts mit sofortiger Last vermeiden.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-beobachten": {
+          "title": "Kein akuter Befund — beobachten statt zerlegen",
+          "text": "Weder Fehlereintrag noch die Kombination aus frühem Baustand und hoher Laufleistung. Das Geräusch dokumentieren, am besten mit einer Kaltstartaufnahme, und bei jedem Service erneut beurteilen. Ölwechselintervalle eng führen und die vorgeschriebene Ölspezifikation einhalten — der Kettenspanner hängt am Öldruck, und das ist der einzige Hebel, den man ohne Zerlegung in der Hand hat.",
+          "next_docs": [
+            "D4F-E87-020",
+            "D4F-E87-002"
+          ]
+        }
+      }
+    },
+    "e87:heckklappe-oeffnet-nicht": {
+      "code": "GF-E87-02",
+      "name": "Heckklappe öffnet nicht (Schrägheck)",
+      "desc": "Die Klappe reagiert gar nicht oder nur noch auf einem Weg. Systematisch: Griffleistentaster → Ansteuerweg → bewegter Kabelbaum → Schloss.",
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "steps": [
+        {
+          "q": "Öffnet die Klappe, wenn du den Taster in der Griffleiste drückst?",
+          "help": "Der Griffleistentaster ist der meistbenutzte und nach mehreren unabhängigen Berichten der am häufigsten ausfallende Öffnungsweg im E81/E87. Deshalb steht er am Anfang: er trennt den Fehler sofort in Bedienweg oder Schlosskreis.",
+          "measure": "Fahrzeug entriegelt, Zündung aus. Taster mehrfach betätigen und dabei auf das Klacken des Stellantriebs im Schloss achten. Erwartet: bei jedem Druck ein hörbares Klacken und die Klappe springt auf.",
+          "doc": "D4F-E87-030",
+          "yes": 1,
+          "no": 2
+        },
+        {
+          "q": "Öffnet sie genauso zuverlässig über Fernbedienung und Innentaster?",
+          "help": "Die Griffleiste funktioniert also. Jetzt geht es darum, ob überhaupt ein Weg klemmt. Fällt nur ein einzelner Bedienweg aus, liegt der Fehler in diesem Zweig und nicht am Schloss — das arbeitet nachweislich.",
+          "measure": "Alle drei Wege je fünfmal betätigen und zählen, wie oft die Klappe öffnet. Erwartet: dreimal fünf von fünf. Jeder Weg, der ausfällt oder aussetzt, ist der Befund.",
+          "doc": "D4F-E87-030",
+          "yes": "result-sporadik",
+          "no": "result-einzelweg"
+        },
+        {
+          "q": "Öffnet die Klappe über Fernbedienung oder über den Innentaster?",
+          "help": "Wenn ein anderer Weg die Klappe öffnet, arbeiten Schloss, Stellantrieb und deren Versorgung. Dann kann der Fehler nur noch im Griffleistenzweig liegen — Taster oder dessen Leitung. Öffnet kein Weg, ist der Schlosskreis selbst betroffen.",
+          "measure": "Fernbedienung und Innentaster je mehrfach betätigen und auf das Klacken im Schloss hören. Erwartet: mindestens einer der beiden Wege löst das Schloss aus.",
+          "doc": "D4F-E87-030",
+          "yes": 3,
+          "no": 4
+        },
+        {
+          "q": "Klickt der Mikrotaster in der Griffleiste beim Drücken mechanisch hörbar?",
+          "help": "Ein sterbender Mikrotaster klickt oft noch sauber und schaltet trotzdem nicht mehr durch. Das mechanische Klicken ist deshalb kein Funktionsnachweis, sondern nur die Auskunft, ob der Hebel überhaupt noch auf den Taster kommt.",
+          "measure": "Ohr dicht an die Griffleiste, Taster langsam durchdrücken. Anschließend elektrisch prüfen: Verkleidung der Klappe abnehmen und am Taster auf Durchgang beim Betätigen messen. Erwartet: klarer Schaltvorgang, kein Wackelkontakt.",
+          "doc": "D4F-E87-030",
+          "yes": "result-griffleiste-elektrisch",
+          "no": "result-griffleiste-mechanisch"
+        },
+        {
+          "q": "Fallen gleichzeitig Heckscheibenwischer, Kennzeichenbeleuchtung oder Heckscheibenheizung aus?",
+          "help": "Alle Leitungen zur Klappe laufen durch den Faltenbalg am Übergang zur Karosserie. Brechen dort Adern, fällt nicht ein Verbraucher aus, sondern mehrere gleichzeitig — und genau dieses Muster spart die Einzelprüfung an jedem Bauteil.",
+          "measure": "Wischer, Kennzeichenleuchten und Heckscheibenheizung einzeln ansteuern und notieren, was tot ist. Erwartet bei Aderbruch: mehrere Funktionen gleichzeitig ohne Reaktion, oft abhängig von der Klappenstellung.",
+          "doc": "D4F-E87-030",
+          "yes": "result-kabelbaum",
+          "no": "result-schloss"
+        }
+      ],
+      "model": "e87",
+      "id": "heckklappe-oeffnet-nicht",
+      "_results": {
+        "result-zuendspule": {
+          "title": "Zündspule des betroffenen Zylinders",
+          "text": "Der Fehler ist mit der Spule mitgewandert, damit ist sie überführt. Spule ersetzen und die Zündkerze desselben Zylinders gleich mit ansehen — eine sterbende Spule hat die Kerze meist schon mitgenommen. Bei einem Fahrzeug der frühen Baujahre lohnt es sich, die übrigen Spulen im Blick zu behalten, statt einzeln nachzurüsten. Nach dem Wechsel Speicher löschen und mit einer Probefahrt bestätigen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-injektor": {
+          "title": "Injektor mit abweichender Einspritzmenge",
+          "text": "Ein Zylinder weicht dauerhaft von den drei anderen ab. Injektor ausbauen, auf Verkokung an der Spitze ansehen und reinigen oder ersetzen. Vor dem Ersatz die Dichtringe und den Sitz im Kopf prüfen. Nach dem Eingriff die Injektor-Klassifizierung beziehungsweise die Mengenkorrektur über die Servicefunktionen anlernen, sonst rechnet die DME mit den Daten des alten Teils. Ein Zahlen-Sollwert für die Abweichung ist hier nicht belegt — es zählt der Abstand zu den Nachbarzylindern.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-nox": {
+          "title": "NOx-Sensorik — Magerbetrieb ist ausgefallen",
+          "text": "Der Motor läuft rund und verbraucht mehr: das passt zum abgeschalteten Magerbetrieb. Vor dem Ersatz des Sensors dessen Stecker und Leitung prüfen, denn die Verkabelung im Abgasbereich leidet unter Wärme. Danach Speicher löschen und über eine längere Fahrt mit Teillastanteil kontrollieren, ob die DME wieder mager fährt. Kommt der Eintrag zurück, ist auch der Speicherkatalysator in die Betrachtung zu nehmen.",
+          "next_docs": [
+            "D4F-E87-010",
+            "D4F-E87-003"
+          ]
+        },
+        "result-kaltlauf": {
+          "title": "Warmlauf-Gemischbildung — Ablagerungen wahrscheinlich",
+          "text": "Rauer Kaltlauf, der sich warm legt, ohne einzelnen auffälligen Zylinder: das passt zu Ablagerungen an Injektorspitzen und Einlasskanälen. Erst die einfachen Dinge abarbeiten — Luftfilter, Kurbelgehäuseentlüftung und Falschluft im Ansaugbereich — und danach eine Reinigung der Einspritzseite planen. Vor jeder Zerlegung den Motor über längere Autobahnfahrten in höherer Last bewegen und erneut beurteilen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-grundlagen": {
+          "title": "Keine eindeutige Zuordnung — Grundlagen prüfen",
+          "text": "Das Ruckeln bleibt auch warm und lässt sich weder einem Zylinder noch der Magerbetriebs-Sensorik zuordnen. Jetzt zurück auf die Grundlagen: Falschluft im Ansaugtrakt, Kurbelgehäuseentlüftung, Kraftstoffversorgung und Massepunkte am Motor. Zusätzlich prüfen, ob die Fahrzeugauswahl in der Diagnosesoftware zum tatsächlich verbauten Motor passt — eine falsche Auswahl liefert Statuswerte, die zum Fahrzeug nicht gehören.",
+          "next_docs": [
+            "D4F-E87-003",
+            "D4F-E87-001"
+          ]
+        },
+        "result-sporadik": {
+          "title": "Alle Wege arbeiten — sporadischer Fehler suchen",
+          "text": "Zum Prüfzeitpunkt öffnet die Klappe auf jedem Weg. Damit ist der Fehler sporadisch, und der häufigste Grund dafür ist ein Mikrotaster, der bei Nässe oder Kälte aussetzt. Fahrzeug bei kaltem und feuchtem Wetter erneut prüfen und die Griffleiste dabei besonders beobachten. Zusätzlich Bordnetz und Batteriezustand ansehen — ein schwaches Bordnetz erzeugt genau dieses Aussetzerbild an mehreren Stellen gleichzeitig.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-050"
+          ]
+        },
+        "result-einzelweg": {
+          "title": "Ein einzelner Bedienweg fällt aus",
+          "text": "Schloss und Stellantrieb arbeiten, denn die Griffleiste öffnet die Klappe. Fehlt nur die Fernbedienung, gehören Handsender, Batterie im Sender und dessen Anlernzustand geprüft, bevor am Fahrzeug gesucht wird. Fehlt nur der Innentaster, ist dessen Leitung und Kontakt zu prüfen. In beiden Fällen bleibt die Klappe über die Griffleiste betriebsbereit — das ist eine Komfort-, keine Sicherheitsstörung.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-elektrisch": {
+          "title": "Mikrotaster schaltet mechanisch, aber nicht elektrisch",
+          "text": "Der Taster klickt, die Klappe reagiert nicht, andere Wege funktionieren: das ist das klassische Bild des verschlissenen Mikrotasters. Vor dem Ersatz die Steckverbindung am Taster und die Leitung bis in die Karosserie auf Durchgang prüfen, denn sie liegt im bewegten Bereich. Bestätigt sich der Taster, wird er in aller Regel nur als komplette Griffleiste geliefert — das gehört bei der Teilebestellung eingeplant.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-mechanisch": {
+          "title": "Kein Klicken — Mechanik der Griffleiste",
+          "text": "Der Taster wird gar nicht mehr betätigt. Griffleiste abnehmen und ansehen, ob der Hebel klemmt, ausgeschlagen ist oder nach dem Drücken nicht mehr in die Ausgangslage zurückkommt. Verschmutzung und gebrochene Rückstellung sind hier häufiger als ein elektrischer Defekt. Erst wenn die Mechanik sauber arbeitet und der Taster trotzdem nicht schaltet, ist die Griffleiste als Ganzes fällig.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-kabelbaum": {
+          "title": "Aderbruch im Faltenbalg zur Heckklappe",
+          "text": "Mehrere Verbraucher in der Klappe fallen gleichzeitig aus — das zeigt auf den bewegten Kabelbaum im Übergang zur Karosserie, nicht auf die einzelnen Bauteile. Faltenbalg öffnen und die Adern einzeln unter Bewegung der Klappe auf Durchgang prüfen; ein Bruch unter der Isolierung ist von außen oft nicht zu sehen. Reparatur mit Lötverbindung und Schrumpfschlauch, danach die Zugentlastung wiederherstellen, sonst bricht die nächste Ader an derselben Stelle.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-040"
+          ]
+        },
+        "result-schloss": {
+          "title": "Schloss, Stellantrieb oder dessen Versorgung",
+          "text": "Kein Bedienweg löst die Klappe, andere Verbraucher in der Klappe arbeiten. Damit steht der Schlosskreis im Verdacht. Versorgung und Ansteuerung am Stellantrieb während der Öffnungsanforderung prüfen: liegt Ansteuerung an, ohne dass der Antrieb arbeitet, ist er defekt; liegt keine an, führt der Weg zurück in Bordnetz und Ansteuerung. Zusätzlich das Schloss mechanisch beurteilen — ein verklemmter Schließbügel sieht nach Elektrik aus und ist keine.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-nebenaggregat": {
+          "title": "Geräusch kommt vom Riementrieb",
+          "text": "Ohne Riemen ist das Rasseln weg, damit ist der Steuertrieb entlastet. Spannrolle, Umlenkrolle, Generator-Freilauf und Klimakompressor einzeln von Hand auf Spiel und Rauheit prüfen und den Riemen auf Risse ansehen. Das ist die deutlich günstigere Reparatur — sie zuerst auszuschließen, ist der ganze Zweck dieses Schrittes.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-akut": {
+          "title": "Steuertrieb bereits messbar aus der Lage",
+          "text": "Geräusch getriebeseitig plus Eintrag zur Nockenwellen-Kurbelwellen-Zuordnung: das Fahrzeug gehört nicht weiterbewegt. Instandsetzung des Steuertriebs planen und dabei Kette, Spanner, Führungsschienen und die Kettenräder gemeinsam betrachten — Einzelteile zu tauschen, während der Rest verschlissen bleibt, führt den Motor in denselben Zustand zurück. Öl und Ölfilter gehören dazu, weil Abrieb im Kreislauf steht.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-verdacht": {
+          "title": "Begründeter Kettenverdacht ohne Fehlereintrag",
+          "text": "Das Geräuschbild passt, der Speicher ist noch leer — das ist der Frühbefund, bei dem eine Reparatur am billigsten ist. Fahrzeug in kurzen Abständen erneut kalt abhören und die Entscheidung nicht auf den Fehlerspeicher verschieben, denn der kommt spät. Bis zur Entscheidung Ölstand und Ölqualität streng führen und Kaltstarts mit sofortiger Last vermeiden.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-beobachten": {
+          "title": "Kein akuter Befund — beobachten statt zerlegen",
+          "text": "Weder Fehlereintrag noch die Kombination aus frühem Baustand und hoher Laufleistung. Das Geräusch dokumentieren, am besten mit einer Kaltstartaufnahme, und bei jedem Service erneut beurteilen. Ölwechselintervalle eng führen und die vorgeschriebene Ölspezifikation einhalten — der Kettenspanner hängt am Öldruck, und das ist der einzige Hebel, den man ohne Zerlegung in der Hand hat.",
+          "next_docs": [
+            "D4F-E87-020",
+            "D4F-E87-002"
+          ]
+        }
+      }
+    },
+    "e87:n47-kettengeraeusch": {
+      "code": "GF-E87-03",
+      "name": "N47 Rasseln aus dem Motorraum",
+      "desc": "Metallisches Geräusch am Diesel einordnen. Ziel ist die Trennung zwischen dem getriebeseitigen Steuertrieb und den deutlich billigeren Geräuschquellen davor.",
+      "engines": [
+        "N47"
+      ],
+      "steps": [
+        {
+          "q": "Tritt das Rasseln vor allem in den ersten Sekunden nach einem echten Kaltstart auf?",
+          "help": "Der Steuertrieb des N47 liegt getriebeseitig. Bis der Öldruck den Kettenspanner dort erreicht, vergehen Sekunden — genau in diesem Fenster wird eine gelängte Kette hörbar. Ein Geräusch, das erst warm kommt, passt schlecht ins Bild.",
+          "measure": "Fahrzeug über Nacht stehen lassen, Motor starten, in den ersten zehn bis fünfzehn Sekunden hinhören. Erwartet bei intaktem Steuertrieb: kein metallisches Rasseln, nur das normale Nageln des Diesels.",
+          "doc": "D4F-E87-020",
+          "yes": 1,
+          "no": 2
+        },
+        {
+          "q": "Ist das Geräusch an der Spritzwand, also getriebeseitig, deutlicher als vorn am Riementrieb?",
+          "help": "Die Ortung entscheidet, ob überhaupt weiter Richtung Kette gesucht wird. Vorn sitzen Riemen, Spannrolle und Nebenaggregate, hinten der Steuertrieb. Beide klingen ähnlich, kommen aber aus verschiedenen Richtungen.",
+          "measure": "Mit Stethoskop oder Schlauch nacheinander an Riemenabdeckung vorn und an der Trennstelle Motor zu Getriebe abhören, jeweils während des Kaltstart-Fensters. Erwartet: eine der beiden Stellen ist deutlich lauter.",
+          "doc": "D4F-E87-020",
+          "yes": 3,
+          "no": 2
+        },
+        {
+          "q": "Bleibt das Geräusch bestehen, wenn der Keilrippenriemen abgenommen ist und der Motor kurz läuft?",
+          "help": "Ohne Riemen sind Spannrolle, Umlenkrolle, Generator und Klimakompressor als Quelle ausgeschlossen. Läuft der Motor dann leise, war das Geräusch nie im Steuertrieb. Der Lauf ohne Riemen bleibt kurz — die Kühlmittelförderung fehlt in dieser Zeit.",
+          "measure": "Riemen abnehmen, Motor nur wenige Sekunden im Leerlauf laufen lassen und erneut abhören. Erwartet bei Nebenaggregat als Ursache: das Rasseln ist weg. Kühlmitteltemperatur dabei im Auge behalten und den Versuch nicht wiederholen, bis der Motor wieder gekühlt wird.",
+          "doc": "D4F-E87-020",
+          "yes": 3,
+          "no": "result-nebenaggregat"
+        },
+        {
+          "q": "Steht in der DDE ein Eintrag zur Zuordnung von Nockenwelle und Kurbelwelle an?",
+          "help": "Ein solcher Eintrag heißt, dass die Steuerzeiten bereits messbar aus der Lage sind. Das ist kein Frühbefund mehr, sondern ein Grund, das Fahrzeug nicht weiterfahren zu lassen. Fehlt der Eintrag, ist das kein Entwarnung — er kommt erst spät.",
+          "measure": "DDE-Fehlerspeicher lesen und gezielt nach Einträgen zur Nockenwellen-Kurbelwellen-Zuordnung und zur Nockenwellenposition durchsehen. Speicher löschen, Kaltstart wiederholen, erneut lesen: kommt der Eintrag zurück, ist er aktuell.",
+          "doc": "D4F-E87-020",
+          "yes": "result-kette-akut",
+          "no": 4
+        },
+        {
+          "q": "Liegt der Baustand vor etwa 2011 und die Laufleistung deutlich über 100 tkm?",
+          "help": "Nach mehreren unabhängigen Berichten wurden Spanner und Führungsschienen etwa ab 2011 überarbeitet, und die Fälle werden danach deutlich seltener. Das ist ein Erfahrungswert zur Einordnung des Risikos, keine Grenze und kein Wartungsintervall.",
+          "measure": "Baustand vom Typschild oder aus den Fahrzeugdaten lesen, Laufleistung und Ölwechselhistorie dazunehmen. Erwartet als Entscheidungsgrundlage: je früher der Baustand und je lückenhafter die Ölhistorie, desto ernster ist das Kaltstartgeräusch zu nehmen.",
+          "doc": "D4F-E87-002",
+          "yes": "result-kette-verdacht",
+          "no": "result-beobachten"
+        }
+      ],
+      "model": "e87",
+      "id": "n47-kettengeraeusch",
+      "_results": {
+        "result-zuendspule": {
+          "title": "Zündspule des betroffenen Zylinders",
+          "text": "Der Fehler ist mit der Spule mitgewandert, damit ist sie überführt. Spule ersetzen und die Zündkerze desselben Zylinders gleich mit ansehen — eine sterbende Spule hat die Kerze meist schon mitgenommen. Bei einem Fahrzeug der frühen Baujahre lohnt es sich, die übrigen Spulen im Blick zu behalten, statt einzeln nachzurüsten. Nach dem Wechsel Speicher löschen und mit einer Probefahrt bestätigen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-injektor": {
+          "title": "Injektor mit abweichender Einspritzmenge",
+          "text": "Ein Zylinder weicht dauerhaft von den drei anderen ab. Injektor ausbauen, auf Verkokung an der Spitze ansehen und reinigen oder ersetzen. Vor dem Ersatz die Dichtringe und den Sitz im Kopf prüfen. Nach dem Eingriff die Injektor-Klassifizierung beziehungsweise die Mengenkorrektur über die Servicefunktionen anlernen, sonst rechnet die DME mit den Daten des alten Teils. Ein Zahlen-Sollwert für die Abweichung ist hier nicht belegt — es zählt der Abstand zu den Nachbarzylindern.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-nox": {
+          "title": "NOx-Sensorik — Magerbetrieb ist ausgefallen",
+          "text": "Der Motor läuft rund und verbraucht mehr: das passt zum abgeschalteten Magerbetrieb. Vor dem Ersatz des Sensors dessen Stecker und Leitung prüfen, denn die Verkabelung im Abgasbereich leidet unter Wärme. Danach Speicher löschen und über eine längere Fahrt mit Teillastanteil kontrollieren, ob die DME wieder mager fährt. Kommt der Eintrag zurück, ist auch der Speicherkatalysator in die Betrachtung zu nehmen.",
+          "next_docs": [
+            "D4F-E87-010",
+            "D4F-E87-003"
+          ]
+        },
+        "result-kaltlauf": {
+          "title": "Warmlauf-Gemischbildung — Ablagerungen wahrscheinlich",
+          "text": "Rauer Kaltlauf, der sich warm legt, ohne einzelnen auffälligen Zylinder: das passt zu Ablagerungen an Injektorspitzen und Einlasskanälen. Erst die einfachen Dinge abarbeiten — Luftfilter, Kurbelgehäuseentlüftung und Falschluft im Ansaugbereich — und danach eine Reinigung der Einspritzseite planen. Vor jeder Zerlegung den Motor über längere Autobahnfahrten in höherer Last bewegen und erneut beurteilen.",
+          "next_docs": [
+            "D4F-E87-010"
+          ]
+        },
+        "result-grundlagen": {
+          "title": "Keine eindeutige Zuordnung — Grundlagen prüfen",
+          "text": "Das Ruckeln bleibt auch warm und lässt sich weder einem Zylinder noch der Magerbetriebs-Sensorik zuordnen. Jetzt zurück auf die Grundlagen: Falschluft im Ansaugtrakt, Kurbelgehäuseentlüftung, Kraftstoffversorgung und Massepunkte am Motor. Zusätzlich prüfen, ob die Fahrzeugauswahl in der Diagnosesoftware zum tatsächlich verbauten Motor passt — eine falsche Auswahl liefert Statuswerte, die zum Fahrzeug nicht gehören.",
+          "next_docs": [
+            "D4F-E87-003",
+            "D4F-E87-001"
+          ]
+        },
+        "result-sporadik": {
+          "title": "Alle Wege arbeiten — sporadischer Fehler suchen",
+          "text": "Zum Prüfzeitpunkt öffnet die Klappe auf jedem Weg. Damit ist der Fehler sporadisch, und der häufigste Grund dafür ist ein Mikrotaster, der bei Nässe oder Kälte aussetzt. Fahrzeug bei kaltem und feuchtem Wetter erneut prüfen und die Griffleiste dabei besonders beobachten. Zusätzlich Bordnetz und Batteriezustand ansehen — ein schwaches Bordnetz erzeugt genau dieses Aussetzerbild an mehreren Stellen gleichzeitig.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-050"
+          ]
+        },
+        "result-einzelweg": {
+          "title": "Ein einzelner Bedienweg fällt aus",
+          "text": "Schloss und Stellantrieb arbeiten, denn die Griffleiste öffnet die Klappe. Fehlt nur die Fernbedienung, gehören Handsender, Batterie im Sender und dessen Anlernzustand geprüft, bevor am Fahrzeug gesucht wird. Fehlt nur der Innentaster, ist dessen Leitung und Kontakt zu prüfen. In beiden Fällen bleibt die Klappe über die Griffleiste betriebsbereit — das ist eine Komfort-, keine Sicherheitsstörung.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-elektrisch": {
+          "title": "Mikrotaster schaltet mechanisch, aber nicht elektrisch",
+          "text": "Der Taster klickt, die Klappe reagiert nicht, andere Wege funktionieren: das ist das klassische Bild des verschlissenen Mikrotasters. Vor dem Ersatz die Steckverbindung am Taster und die Leitung bis in die Karosserie auf Durchgang prüfen, denn sie liegt im bewegten Bereich. Bestätigt sich der Taster, wird er in aller Regel nur als komplette Griffleiste geliefert — das gehört bei der Teilebestellung eingeplant.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-griffleiste-mechanisch": {
+          "title": "Kein Klicken — Mechanik der Griffleiste",
+          "text": "Der Taster wird gar nicht mehr betätigt. Griffleiste abnehmen und ansehen, ob der Hebel klemmt, ausgeschlagen ist oder nach dem Drücken nicht mehr in die Ausgangslage zurückkommt. Verschmutzung und gebrochene Rückstellung sind hier häufiger als ein elektrischer Defekt. Erst wenn die Mechanik sauber arbeitet und der Taster trotzdem nicht schaltet, ist die Griffleiste als Ganzes fällig.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-kabelbaum": {
+          "title": "Aderbruch im Faltenbalg zur Heckklappe",
+          "text": "Mehrere Verbraucher in der Klappe fallen gleichzeitig aus — das zeigt auf den bewegten Kabelbaum im Übergang zur Karosserie, nicht auf die einzelnen Bauteile. Faltenbalg öffnen und die Adern einzeln unter Bewegung der Klappe auf Durchgang prüfen; ein Bruch unter der Isolierung ist von außen oft nicht zu sehen. Reparatur mit Lötverbindung und Schrumpfschlauch, danach die Zugentlastung wiederherstellen, sonst bricht die nächste Ader an derselben Stelle.",
+          "next_docs": [
+            "D4F-E87-030",
+            "D4F-E87-040"
+          ]
+        },
+        "result-schloss": {
+          "title": "Schloss, Stellantrieb oder dessen Versorgung",
+          "text": "Kein Bedienweg löst die Klappe, andere Verbraucher in der Klappe arbeiten. Damit steht der Schlosskreis im Verdacht. Versorgung und Ansteuerung am Stellantrieb während der Öffnungsanforderung prüfen: liegt Ansteuerung an, ohne dass der Antrieb arbeitet, ist er defekt; liegt keine an, führt der Weg zurück in Bordnetz und Ansteuerung. Zusätzlich das Schloss mechanisch beurteilen — ein verklemmter Schließbügel sieht nach Elektrik aus und ist keine.",
+          "next_docs": [
+            "D4F-E87-030"
+          ]
+        },
+        "result-nebenaggregat": {
+          "title": "Geräusch kommt vom Riementrieb",
+          "text": "Ohne Riemen ist das Rasseln weg, damit ist der Steuertrieb entlastet. Spannrolle, Umlenkrolle, Generator-Freilauf und Klimakompressor einzeln von Hand auf Spiel und Rauheit prüfen und den Riemen auf Risse ansehen. Das ist die deutlich günstigere Reparatur — sie zuerst auszuschließen, ist der ganze Zweck dieses Schrittes.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-akut": {
+          "title": "Steuertrieb bereits messbar aus der Lage",
+          "text": "Geräusch getriebeseitig plus Eintrag zur Nockenwellen-Kurbelwellen-Zuordnung: das Fahrzeug gehört nicht weiterbewegt. Instandsetzung des Steuertriebs planen und dabei Kette, Spanner, Führungsschienen und die Kettenräder gemeinsam betrachten — Einzelteile zu tauschen, während der Rest verschlissen bleibt, führt den Motor in denselben Zustand zurück. Öl und Ölfilter gehören dazu, weil Abrieb im Kreislauf steht.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-kette-verdacht": {
+          "title": "Begründeter Kettenverdacht ohne Fehlereintrag",
+          "text": "Das Geräuschbild passt, der Speicher ist noch leer — das ist der Frühbefund, bei dem eine Reparatur am billigsten ist. Fahrzeug in kurzen Abständen erneut kalt abhören und die Entscheidung nicht auf den Fehlerspeicher verschieben, denn der kommt spät. Bis zur Entscheidung Ölstand und Ölqualität streng führen und Kaltstarts mit sofortiger Last vermeiden.",
+          "next_docs": [
+            "D4F-E87-020"
+          ]
+        },
+        "result-beobachten": {
+          "title": "Kein akuter Befund — beobachten statt zerlegen",
+          "text": "Weder Fehlereintrag noch die Kombination aus frühem Baustand und hoher Laufleistung. Das Geräusch dokumentieren, am besten mit einer Kaltstartaufnahme, und bei jedem Service erneut beurteilen. Ölwechselintervalle eng führen und die vorgeschriebene Ölspezifikation einhalten — der Kettenspanner hängt am Öldruck, und das ist der einzige Hebel, den man ohne Zerlegung in der Hand hat.",
+          "next_docs": [
+            "D4F-E87-020",
+            "D4F-E87-002"
+          ]
+        }
+      }
+    },
     "e88:n52-startet-nicht": {
       "code": "GF-E88-01",
       "name": "N52 startet nicht (E88)",
@@ -3935,7 +5019,7 @@
   },
   "stats": {
     "total_docs": 53,
-    "total_guides": 13,
+    "total_guides": 19,
     "per_model": {
       "e30": 2,
       "e36": 8,

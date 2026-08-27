@@ -23,7 +23,7 @@
       "id": "lade-spannung",
       "title": "Ladespannung im Bordnetz",
       "group": "Versorgung",
-      "instruction": "Motor im Leerlauf, warm, danach mit eingeschaltetem Abblendlicht und Gebläse wiederholen. An den Batteriepolen messen. Die Spannung muß über der Ruhespannung liegen und unter Last nicht einbrechen.",
+      "instruction": "Motor im Leerlauf, warm, danach mit eingeschaltetem Abblendlicht und Gebläse wiederholen. An den Batteriepolen messen. Die Spannung muss über der Ruhespannung liegen und unter Last nicht einbrechen.",
       "target": { "unit": "V", "min": 13.5, "max": 14.8 },
       "engines": [],
       "models": ["e30", "e28", "e34", "e36", "e39", "e38", "e46"]
@@ -32,7 +32,7 @@
       "id": "lade-spannung-ibs",
       "title": "Ladespannung bei Energiemanagement",
       "group": "Versorgung",
-      "instruction": "Fahrzeuge mit intelligentem Batteriesensor regeln die Generatorspannung bewußt herunter, sobald die Batterie voll ist, und heben sie im Schub an. Ein einzelner Meßwert beweist hier nichts. Ladespannung an den Polen über mehrere Minuten beobachten und gegen den vom Steuergerät gemeldeten Sollwert und den Batteriestrom halten: Der Strom muß bei leerer Batterie in die Batterie fließen.",
+      "instruction": "Fahrzeuge mit intelligentem Batteriesensor regeln die Generatorspannung bewusst herunter, sobald die Batterie voll ist, und heben sie im Schub an. Ein einzelner Messwert beweist hier nichts. Ladespannung an den Polen über mehrere Minuten beobachten und gegen den vom Steuergerät gemeldeten Sollwert und den Batteriestrom halten: Der Strom muss bei leerer Batterie in die Batterie fließen.",
       "target": { "text": "Spannung folgt der Vorgabe des Energiemanagements · Ladestrom bei leerer Batterie positiv" },
       "engines": [],
       "models": ["e60", "e90", "e70", "e87", "e88", "f10", "f30", "f15", "f22"]
@@ -86,7 +86,7 @@
       "id": "ruhestrom",
       "title": "Ruhestromaufnahme nach dem Einschlafen",
       "group": "Versorgung",
-      "instruction": "Fahrzeug verschließen, alle Türen zu, Zündschlüssel raus, dann warten bis der Bus schläft — das dauert je nach Baureihe eine Viertelstunde und länger. Strommeßzange um das Minuskabel oder Amperemeter in die aufgetrennte Minusleitung, dabei die Verbindung nie unterbrechen, sonst wachen die Steuergeräte wieder auf. Beurteilt wird vergleichend: Sicherungen einzeln ziehen und beobachten, welche den Strom fallen läßt. Zu den zulässigen Absolutwerten kursieren widersprüchliche Angaben — ohne die Vorgabe für genau diese Baureihe wird kein Wert als Grenze benutzt.",
+      "instruction": "Fahrzeug verschließen, alle Türen zu, Zündschlüssel raus, dann warten bis der Bus schläft — das dauert je nach Baureihe eine Viertelstunde und länger. Strommesszange um das Minuskabel oder Amperemeter in die aufgetrennte Minusleitung, dabei die Verbindung nie unterbrechen, sonst wachen die Steuergeräte wieder auf. Beurteilt wird vergleichend: Sicherungen einzeln ziehen und beobachten, welche den Strom fallen lässt. Zu den zulässigen Absolutwerten kursieren widersprüchliche Angaben — ohne die Vorgabe für genau diese Baureihe wird kein Wert als Grenze benutzt.",
       "target": { "text": "Stromsprung beim Ziehen einer Sicherung ist der Befund · Absolutwert nur gegen die Herstellervorgabe" },
       "engines": [],
       "models": []
@@ -120,9 +120,9 @@
     },
     {
       "id": "dcan-abschluss",
-      "title": "Busabschluß am Diagnosestecker",
+      "title": "Busabschluss am Diagnosestecker",
       "group": "Kommunikation",
-      "instruction": "Zündung aus, Bus schlafend. Ohmmeter an der Diagnosedose zwischen Pin 6 und Pin 14. Zwei parallel geschaltete Abschlußwiderstände von je 120 Ohm ergeben rechnerisch 60 Ohm. Rund 120 Ohm heißt: eine Terminierung fehlt oder der Bus ist unterbrochen. Nahe null heißt Kurzschluß zwischen den Leitungen. Achtung: Nur bei Fahrzeugen mit Diagnose über CAN liegen diese Pins auf dem Bus — bei älteren Baureihen mit K-Leitung ist an Pin 6 und 14 nichts angeschlossen.",
+      "instruction": "Zündung aus, Bus schlafend. Ohmmeter an der Diagnosedose zwischen Pin 6 und Pin 14. Zwei parallel geschaltete Abschlusswiderstände von je 120 Ohm ergeben rechnerisch 60 Ohm. Rund 120 Ohm heißt: eine Terminierung fehlt oder der Bus ist unterbrochen. Nahe null heißt Kurzschluss zwischen den Leitungen. Achtung: Nur bei Fahrzeugen mit Diagnose über CAN liegen diese Pins auf dem Bus — bei älteren Baureihen mit K-Leitung ist an Pin 6 und 14 nichts angeschlossen.",
       "target": { "unit": "Ω", "min": 55.0, "max": 70.0 },
       "engines": [],
       "models": ["e60", "e90", "e70", "e87", "e88", "f10", "f30", "f15", "f22"]
@@ -167,8 +167,8 @@
       "id": "kerzenbild",
       "title": "Zündkerzenbild",
       "group": "Zündung",
-      "instruction": "Alle Kerzen ziehen, in der Reihenfolge der Zylinder ablegen und vergleichen. Beurteilt wird der Unterschied zwischen den Zylindern, nicht die absolute Färbung. Naß, ölig oder rußig an nur einem Zylinder ist ein Befund; gleichmäßige Färbung an allen ist Gemischthema, kein Zylinderthema.",
-      "target": { "text": "Alle Kerzen gleich · keine einzelne naß, ölig oder verrußt" },
+      "instruction": "Alle Kerzen ziehen, in der Reihenfolge der Zylinder ablegen und vergleichen. Beurteilt wird der Unterschied zwischen den Zylindern, nicht die absolute Färbung. Nass, ölig oder rußig an nur einem Zylinder ist ein Befund; gleichmäßige Färbung an allen ist Gemischthema, kein Zylinderthema.",
+      "target": { "text": "Alle Kerzen gleich · keine einzelne nass, ölig oder verrußt" },
       "engines": [],
       "models": []
     },
@@ -203,8 +203,8 @@
       "id": "falschluft",
       "title": "Dichtheit der Ansaugstrecke",
       "group": "Luft und Abgas",
-      "instruction": "Ansaugstrecke von der Drosselklappe bis zum Kopf mit Rauch beaufschlagen und die Übergänge, Faltenbälge, Unterdruckschläuche, Kurbelgehäuseentlüftung und den Ölmeßstab beobachten. Der Druck bleibt gering — die Strecke wird nicht abgedrückt, sondern nur gefüllt. Bei Turbomotoren die Ladeluftstrecke getrennt prüfen, dort tritt Leckage erst unter Ladedruck auf.",
-      "target": { "text": "Kein Rauchaustritt an Übergängen, Schläuchen, Entlüftung und Ölmeßstab" },
+      "instruction": "Ansaugstrecke von der Drosselklappe bis zum Kopf mit Rauch beaufschlagen und die Übergänge, Faltenbälge, Unterdruckschläuche, Kurbelgehäuseentlüftung und den Ölmessstab beobachten. Der Druck bleibt gering — die Strecke wird nicht abgedrückt, sondern nur gefüllt. Bei Turbomotoren die Ladeluftstrecke getrennt prüfen, dort tritt Leckage erst unter Ladedruck auf.",
+      "target": { "text": "Kein Rauchaustritt an Übergängen, Schläuchen, Entlüftung und Ölmessstab" },
       "engines": [],
       "models": []
     },
@@ -212,7 +212,7 @@
       "id": "lambda-vorne",
       "title": "Signal der Regelsonde vor dem Katalysator",
       "group": "Luft und Abgas",
-      "instruction": "Motor warm, geschlossener Regelkreis. Sondensignal live mitschreiben und dabei bewußt stören: Falschluft ziehen und kurz anfetten. Beurteilt wird die Bewegung, nicht der Momentanwert — eine Sonde, die auf einem mittleren Wert steht und auf Störungen nicht reagiert, ist tot, selbst wenn ihr Wert plausibel aussieht. Bei zwei Bänken beide Sonden gegeneinander halten.",
+      "instruction": "Motor warm, geschlossener Regelkreis. Sondensignal live mitschreiben und dabei bewusst stören: Falschluft ziehen und kurz anfetten. Beurteilt wird die Bewegung, nicht der Momentanwert — eine Sonde, die auf einem mittleren Wert steht und auf Störungen nicht reagiert, ist tot, selbst wenn ihr Wert plausibel aussieht. Bei zwei Bänken beide Sonden gegeneinander halten.",
       "target": { "text": "Sonde springt und folgt der Störung · kein Stehenbleiben auf einem festen Wert" },
       "engines": [],
       "models": []
@@ -230,7 +230,7 @@
       "id": "agr-funktion",
       "title": "Funktion der Abgasrückführung",
       "group": "Luft und Abgas",
-      "instruction": "Nur bei Fahrzeugen mit Abgasrückführung. Ventilstellung Soll gegen Ist live mitschreiben und dabei die Luftmasse beobachten: Öffnet das Ventil, muß die gemessene Luftmasse sichtbar fallen. Reagiert die Luftmasse nicht, hängt das Ventil oder die Strecke ist zugesetzt. Ansteuerung und Rückmeldung getrennt beurteilen, damit ein defekter Positionsgeber nicht als hängendes Ventil gilt.",
+      "instruction": "Nur bei Fahrzeugen mit Abgasrückführung. Ventilstellung Soll gegen Ist live mitschreiben und dabei die Luftmasse beobachten: Öffnet das Ventil, muss die gemessene Luftmasse sichtbar fallen. Reagiert die Luftmasse nicht, hängt das Ventil oder die Strecke ist zugesetzt. Ansteuerung und Rückmeldung getrennt beurteilen, damit ein defekter Positionsgeber nicht als hängendes Ventil gilt.",
       "target": { "text": "Luftmasse fällt beim Öffnen sichtbar · Ist folgt dem Soll ohne Verzug" },
       "engines": [],
       "models": []
@@ -257,7 +257,7 @@
       "id": "pumpe-luefter",
       "title": "Kühlmittelförderung und Lüfterstufen",
       "group": "Kühlung",
-      "instruction": "Elektrische Wasserpumpe und Lüfter über die Diagnose ansteuern und die Rückmeldung beobachten: Stromaufnahme mit der Zange, Drehzahlrückmeldung im Steuergerät, hörbarer Lauf. Bei viskosegekuppeltem Lüfter vergleichend beurteilen — er muß im warmen Zustand spürbar zupacken. Zusätzlich prüfen, ob der Lüfter bei steigender Temperatur selbständig hochstuft.",
+      "instruction": "Elektrische Wasserpumpe und Lüfter über die Diagnose ansteuern und die Rückmeldung beobachten: Stromaufnahme mit der Zange, Drehzahlrückmeldung im Steuergerät, hörbarer Lauf. Bei viskosegekuppeltem Lüfter vergleichend beurteilen — er muss im warmen Zustand spürbar zupacken. Zusätzlich prüfen, ob der Lüfter bei steigender Temperatur selbständig hochstuft.",
       "target": { "text": "Pumpe und Lüfter laufen auf Ansteuerung an · Lüfter stuft mit steigender Temperatur selbständig hoch" },
       "engines": [],
       "models": []
@@ -266,7 +266,7 @@
       "id": "kuehlkreis-dicht",
       "title": "Dichtheit und Druckhaltung des Kühlkreises",
       "group": "Kühlung",
-      "instruction": "Kalten Kreis mit dem Abdrückgerät beaufschlagen und den Druckabfall über die Zeit beobachten; der zulässige Prüfdruck steht auf dem Verschlußdeckel und wird nicht überschritten. Beurteilt wird das Halten, nicht ein Zahlenwert. Fällt der Druck ohne sichtbaren Austritt, auf Abgas im Kühlmittel prüfen und den Ausgleichsbehälter im Betrieb auf Blasenbildung beobachten.",
+      "instruction": "Kalten Kreis mit dem Abdrückgerät beaufschlagen und den Druckabfall über die Zeit beobachten; der zulässige Prüfdruck steht auf dem Verschlussdeckel und wird nicht überschritten. Beurteilt wird das Halten, nicht ein Zahlenwert. Fällt der Druck ohne sichtbaren Austritt, auf Abgas im Kühlmittel prüfen und den Ausgleichsbehälter im Betrieb auf Blasenbildung beobachten.",
       "target": { "text": "Druck hält über mehrere Minuten · kein Austritt, keine Blasen im Ausgleichsbehälter" },
       "engines": [],
       "models": []

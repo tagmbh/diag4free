@@ -1,0 +1,260 @@
+{
+  "model": "e60",
+  "guides": {
+    "e60-keine-verbindung": {
+      "code": "GF-E60-01",
+      "name": "E60 · Diagnose findet kein oder zu wenige Steuergeräte",
+      "desc": "Der E60 überspannt den Protokollwechsel und verteilt seine Geräte auf mehrere Busse. Systematisch: Protokoll und Kabel → Versorgung der OBD-Buchse → antwortet überhaupt jemand → ein Bus oder mehrere → Gateway oder Einzelgerät.",
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "steps": [
+        {
+          "q": "Passt die Kabelstellung zum Baujahr — bis 03/2007 K-Line, ab 03/2007 D-CAN?",
+          "help": "Der E60 wechselt im Lauf der Baureihe das Diagnoseprotokoll. Ein Kabel mit Umschalter muss dazu passen, sonst antwortet kein einziges Steuergerät, obwohl am Fahrzeug nichts defekt ist. Das Baujahr steht auf dem Typschild, nicht in den Papieren.",
+          "measure": "Baujahr am Typschild ablesen. Bis 03/2007 muss die Diagnose über die K-Line an OBD-Pin 7 laufen, ab 03/2007 über D-CAN an Pin 6 und 14. Kabel mit Schalter entsprechend stellen und den Versuch wiederholen.",
+          "doc": "D4F-E60-001",
+          "yes": 1,
+          "no": "result-protokoll"
+        },
+        {
+          "q": "Liegen an der OBD-Buchse Dauerplus und Masse an, und kommt beim Einschalten der Zündung KL15 an?",
+          "help": "Bevor irgendein Bus verdächtigt wird, muss die Buchse selbst versorgt sein. Eine durchgebrannte Sicherung im Diagnosezweig oder ein aufgeweiteter Massekontakt erzeugt dasselbe Bild wie ein totes Gateway.",
+          "measure": "An Pin 16 gegen Pin 4/5 die Bordspannung messen — es muss die Batteriespannung anstehen. Danach die Zündung einschalten und prüfen, ob die Diagnosesoftware KL15 erkennt. Steckerkontakte auf Aufweitung ansehen.",
+          "doc": "D4F-E60-001",
+          "obd_hint": "PID 0142 Steuermodulspannung mitlesen, sobald überhaupt ein Steuergerät antwortet",
+          "yes": 2,
+          "no": "result-obd-versorgung"
+        },
+        {
+          "q": "Antwortet wenigstens ein einziges Steuergerät auf das Identifizieren?",
+          "help": "Antwortet gar nichts, obwohl Protokoll und Versorgung stimmen, liegt der Verdacht auf der Diagnoseleitung und dem Gateway. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway.",
+          "measure": "In der Diagnosesoftware nacheinander Motorsteuerung, CAS und Kombiinstrument identifizieren. Erwartet wird mindestens eine Antwort. Kommt von keinem Gerät eine Rückmeldung, ist der Einstiegspunkt selbst tot.",
+          "doc": "D4F-E60-002",
+          "yes": 3,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Liegen alle nicht antwortenden Steuergeräte auf ein und demselben Bus?",
+          "help": "Das ist die entscheidende Sortierfrage. Fehlen ausschließlich Geräte des K-CAN oder ausschließlich Geräte des MOST-Rings, ist der Fehler dieser eine Bus. Verteilt sich der Ausfall über mehrere Busse, ist der Übergang zwischen ihnen der Kandidat.",
+          "measure": "Die nicht antwortenden Geräte gegen die Topologie halten: Antrieb und Fahrwerk auf PT-CAN, Karosserie auf K-CAN, Audio und Navigation auf MOST. Die Zuordnung steht im Topologie-Dokument.",
+          "doc": "D4F-E60-002",
+          "yes": "result-ein-bus",
+          "no": 4
+        },
+        {
+          "q": "Melden mehrere Steuergeräte auf mehreren Bussen gleichzeitig fehlende Kommunikation untereinander?",
+          "help": "Genau dieses Muster ist der Gateway-Ausfall: viele Geräte sind einzeln versorgt und in Ordnung, aber sie erreichen einander nicht mehr. Wer hier Bauteile tauscht, tauscht Folgefehler.",
+          "measure": "Fehlerspeicher aller erreichbaren Steuergeräte lesen und die Einträge nebeneinanderlegen. Häufen sich Einträge der Art „keine Kommunikation mit …“ über Busgrenzen hinweg, ist die Ursache der Übergang, nicht das einzelne Gerät.",
+          "doc": "D4F-E60-002",
+          "yes": "result-gateway",
+          "no": 5
+        },
+        {
+          "q": "Ist die Bordspannung während der gesamten Diagnose stabil und die Batterie geladen?",
+          "help": "Am E60 erzeugt eine schwache Batterie reihenweise Einträge, die wie Bauteilfehler aussehen. Bevor ein einzelnes Steuergerät verurteilt wird, muss die Versorgung über der Grenze liegen, unterhalb derer die Geräte abschalten.",
+          "measure": "Ruhespannung bei ausgeschalteter Zündung nach ausreichender Ruhezeit messen — rund 12.6 V zeigt eine geladene Batterie an. Während der Diagnose ein Ladegerät anschließen und beobachten, ob die Aussetzer verschwinden.",
+          "doc": "D4F-E60-060",
+          "obd_hint": "PID 0142 Steuermodulspannung während der Sitzung mitloggen",
+          "yes": "result-einzelgeraet",
+          "no": "result-spannung"
+        }
+      ]
+    },
+    "n62-verlust-eingrenzen": {
+      "code": "GF-E60-02",
+      "name": "N62 · Öl- oder Kühlmittelverlust eingrenzen",
+      "desc": "Der N62 verliert an mehreren dicht beieinander liegenden Stellen. Systematisch: erst Medium bestimmen, dann Ort, dann Bauteil. Ziel ist ein Befund vor der Teilebestellung.",
+      "engines": ["N62"],
+      "steps": [
+        {
+          "q": "Sinkt der Kühlmittelstand im Ausgleichsbehälter über mehrere Tankfüllungen sichtbar ab?",
+          "help": "Zuerst wird das Medium bestimmt. Öl und Kühlmittel treten am N62 an verschiedenen Stellen aus und führen zu ganz verschiedenen Reparaturen. Beides gleichzeitig ist möglich — dann diesen Pfad zweimal fahren.",
+          "measure": "Stand bei kaltem Motor und ebenem Fahrzeug zwischen Min und Max ablesen und über mehrere Wochen mit derselben Methode wiederholen. Nur ein wiederholt gemessener Rückgang ist ein Befund.",
+          "doc": "D4F-E60-010",
+          "yes": 1,
+          "no": 3
+        },
+        {
+          "q": "Findest du eine nasse Stelle oder eine helle Kruste außen am Kühlsystem?",
+          "help": "Kühlmittel hinterlässt beim Verdunsten Rückstände. Ausgleichsbehälter, dessen Deckel, Schlauchschellen und Kühlernetz sind die Stellen, an denen ein Außenleck sichtbar wird, bevor es tropft.",
+          "measure": "Motorraum bei kaltem Motor mit Lampe absuchen: Ausgleichsbehälter und Nähte, Schläuche an den Schellen, Kühlerkästen, Wasserpumpengehäuse. Sichtbare Kruste oder Feuchtigkeit ist der Befund.",
+          "doc": "D4F-E60-010",
+          "yes": "result-kuehler-außen",
+          "no": 2
+        },
+        {
+          "q": "Baut sich bei kaltem Motor Druck im Ausgleichsbehälter auf oder riecht das Abgas süßlich?",
+          "help": "Kühlmittel, das nicht nach außen geht, geht nach innen. Verbrennungsdruck im Kühlkreis und süßlicher Abgasgeruch weisen darauf hin — das ist ein anderer Fall als eine Dichtung im V des Motors.",
+          "measure": "Bei kaltem Motor den Behälterdeckel vorsichtig öffnen und auf entweichenden Druck achten. Zusätzlich das Abgas im Warmlauf riechen. Beides ist qualitativ; ein Prüfdruck ist hier nicht belegt.",
+          "doc": "D4F-E60-010",
+          "yes": "result-innen",
+          "no": "result-ueberfuehrungsrohr"
+        },
+        {
+          "q": "Setzt die Ölspur oberhalb der Trägerplatte der Lichtmaschine an?",
+          "help": "Öl, das von oben über den Generator läuft, wird regelmäßig für eine undichte Ventildeckeldichtung gehalten. Der Unterschied ist die Höhe, in der die Spur beginnt — darüber entscheidet sich, welche Dichtung gemeint ist.",
+          "measure": "Motorraum reinigen, Motor eine Fahrt lang betreiben, dann mit Lampe von oben nach unten der Spur folgen. Gesucht wird der oberste Punkt, an dem die Spur beginnt.",
+          "doc": "D4F-E60-010",
+          "yes": "result-lima-traeger",
+          "no": 4
+        },
+        {
+          "q": "Ist Öl an der Kante des Ventildeckels zu sehen, oder raucht es am heißen Krümmer?",
+          "help": "Die Ventildeckeldichtungen sind am N62 der häufigste Austrittsort. Weil das Öl auf den heißen Krümmer läuft, fällt es oft eher als Geruch und Rauch auf denn als Fleck auf dem Boden.",
+          "measure": "Nach dem Reinigen die Ventildeckelkanten beider Bänke auf frische Feuchtigkeit ansehen. Zusätzlich bei betriebswarmem Motor auf Rauch und Ölgeruch aus dem Motorraum achten.",
+          "doc": "D4F-E60-010",
+          "yes": "result-ventildeckel",
+          "no": 5
+        },
+        {
+          "q": "Raucht der Motor beim Kaltstart oder nach Schubphasen blau, ohne dass außen Öl austritt?",
+          "help": "Verschwindet Öl, ohne dass eine Außenspur zu finden ist, wird es verbrannt. Blauer Rauch nach Schubphasen ist das klassische Bild verhärteter Ventilschaftdichtungen — dazu gibt es keinen Fehlerspeichereintrag.",
+          "measure": "Kaltstart und eine Schubphase mit anschließendem Gasstoß von einer zweiten Person beobachten lassen. Blaue Wolke ist der Befund; weißer Dampf bei kalter Witterung ist Kondensat und zählt nicht.",
+          "doc": "D4F-E60-010",
+          "yes": "result-schaftdichtungen",
+          "no": "result-weitersuchen"
+        }
+      ]
+    },
+    "dynamic-drive-ausgefallen": {
+      "code": "GF-E60-03",
+      "name": "Dynamic Drive ausgefallen",
+      "desc": "Meldung der aktiven Wankstabilisierung. Systematisch: Servokreis → gemeinsame Ursache mit Lenkung und DSC → Drucksensoren → Entlüftung → Ventilblock. Ziel ist es, den Ventilblock erst zu verdächtigen, wenn alles davor ausgeschlossen ist.",
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "steps": [
+        {
+          "q": "Ist der Ölstand im Servokreis korrekt und der Kreis außen dicht?",
+          "help": "Lenkung und Wankstabilisierung werden am E60 aus demselben Ölkreis versorgt. Zu wenig Öl oder Luft im Kreis erzeugt dasselbe Fehlerbild wie ein defektes Bauteil — deshalb steht diese Prüfung ganz vorn.",
+          "measure": "Stand im Behälter des Servokreises nach Vorgabe des Fahrzeugs ablesen. Danach Leitungen, Verschraubungen, Ventilblock und die Stabilisatoren mit der Lampe auf feuchte Stellen absuchen.",
+          "doc": "D4F-E60-030",
+          "yes": 1,
+          "no": "result-servooel"
+        },
+        {
+          "q": "Meldet zusammen mit Dynamic Drive auch die Aktivlenkung oder die Fahrdynamikregelung?",
+          "help": "Mehrere Meldungen gleichzeitig deuten auf etwas Gemeinsames: den Ölkreis, die Bordspannung oder den PT-CAN. Eine einzelne Meldung deutet dagegen auf das System selbst.",
+          "measure": "Fehlerspeicher aller Fahrwerkssteuergeräte lesen und die Zeitstempel vergleichen. Einträge, die gemeinsam entstehen, haben in der Regel eine gemeinsame Ursache.",
+          "doc": "D4F-E60-002",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Ist die Bordspannung stabil und der PT-CAN frei von Kommunikationseinträgen?",
+          "help": "Die Fahrwerksregelungen schalten sich bei zu niedriger Spannung selbst ab und hinterlassen dabei Einträge, die wie Bauteilfehler aussehen. Dasselbe gilt für einen gestörten Antriebsbus.",
+          "measure": "Ruhespannung messen — rund 12.6 V zeigt eine geladene Batterie an. Danach die Fehlerspeicher auf Einträge der Art „keine Kommunikation“ zwischen den Fahrwerksgeräten durchsehen.",
+          "doc": "D4F-E60-060",
+          "obd_hint": "PID 0142 Steuermodulspannung während der Probefahrt mitloggen",
+          "yes": 3,
+          "no": "result-gemeinsame-ursache"
+        },
+        {
+          "q": "Liefern beide Drucksensoren am Ventilblock plausible Werte, und ist ihr Nullpunkt angelernt?",
+          "help": "Die Drucksensoren für Vorder- und Hinterachse sitzen am Ventilblock. Ihre Nullpunkte lernt das Steuergerät über eine Servicefunktion. Ein nicht angelernter Nullpunkt erzeugt eine Plausibilitätsmeldung, obwohl die Hydraulik gesund ist.",
+          "measure": "Beide Drücke im Steuergerät bei stehendem Fahrzeug gegeneinander halten — sie müssen ohne Wankanforderung dicht beieinander liegen. Weicht ein Kanal deutlich ab, zuerst den Nullpunktabgleich über die Servicefunktion durchführen und erneut lesen.",
+          "doc": "D4F-E60-030",
+          "yes": 4,
+          "no": "result-drucksensor"
+        },
+        {
+          "q": "Bleibt der Fehler auch nach vollständigem Entlüften des Hydraulikkreises stehen?",
+          "help": "Luft im Kreis ist die letzte Ursache, die sich ohne Teiletausch beheben lässt. Erst wenn der Kreis nachweislich entlüftet ist, hat ein Urteil über den Ventilblock Gewicht.",
+          "measure": "Entlüftungsprozedur des Fahrzeugs vollständig durchfahren, Fehlerspeicher löschen und eine Probefahrt mit Wechselkurven machen. Kommt die Meldung zurück, ist der Kreis nicht die Ursache.",
+          "doc": "D4F-E60-030",
+          "yes": "result-ventilblock",
+          "no": "result-entlueftet"
+        }
+      ]
+    }
+  },
+  "results": {
+    "result-protokoll": {
+      "title": "Protokoll oder Kabelstellung passt nicht zum Baujahr",
+      "text": "Kabel auf das zum Baujahr passende Protokoll stellen: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6 und 14. Zusätzlich den Latency Timer des FTDI-Treibers auf 1 ms setzen. Erst danach die Diagnose erneut versuchen — vorher ist jede weitere Messung ohne Aussage.",
+      "next_docs": ["D4F-E60-001"]
+    },
+    "result-obd-versorgung": {
+      "title": "Versorgung der OBD-Buchse fehlt",
+      "text": "Sicherung des Diagnosezweigs und die Masseanbindung der Buchse prüfen, Kontakte auf Aufweitung ansehen und gegebenenfalls nachsetzen. Erst wenn an Pin 16 die Batteriespannung ansteht und KL15 erkannt wird, ist eine Aussage über Gateway oder Steuergeräte möglich.",
+      "next_docs": ["D4F-E60-001"]
+    },
+    "result-gateway": {
+      "title": "Gateway oder Diagnoseleitung — nicht die einzelnen Steuergeräte",
+      "text": "Das Muster passt zum Gateway-Ausfall: viele Geräte sind versorgt, erreichen einander aber nicht mehr. Am frühen E60 führt die Diagnoseleitung zum SGM, ab 09/2005 zum Karosserie-Gateway. Versorgung und Masse dieses Geräts prüfen, dann seine Steckverbindungen. Keine Bauteile tauschen, solange die Einträge über Busgrenzen hinweg auftreten — das sind Folgefehler.",
+      "next_docs": ["D4F-E60-002", "D4F-E60-001"]
+    },
+    "result-ein-bus": {
+      "title": "Ein einzelner Bus ist gestört",
+      "text": "Der Ausfall bleibt auf einen Bus begrenzt. Jetzt diesen Bus gezielt verfolgen: beim MOST die Ringbruchdiagnose fahren und die Ringreihenfolge auslesen, bei einem CAN-Zweig die Leitung vom Gateway zum ersten stummen Gerät auf Durchgang und Kurzschluss prüfen. Ein Gerät, das den Bus blockiert, findet man, indem man es einzeln abhängt.",
+      "next_docs": ["D4F-E60-002", "D4F-E60-040"]
+    },
+    "result-einzelgeraet": {
+      "title": "Einzelnes Steuergerät antwortet nicht",
+      "text": "Versorgung, Masse und Steckverbindung dieses einen Geräts prüfen, danach die Busleitung von ihm zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung nachweislich in Ordnung sind, ist das Gerät selbst der Kandidat. Vor einem Tausch die vorhandenen Codierdaten sichern und klären, ob das Gerät angelernt werden muss.",
+      "next_docs": ["D4F-E60-002"]
+    },
+    "result-spannung": {
+      "title": "Bordspannung zu niedrig oder instabil",
+      "text": "Die Diagnose ist erst nach stabiler Versorgung aussagekräftig. Batterie laden oder ein Ladegerät anschließen, den Batteriesensor am Minuspol auf sauberen Anschluss prüfen und danach alle Fehlerspeicher löschen. Was danach nicht wiederkommt, war ein Spannungsfolgefehler und kein Bauteildefekt.",
+      "next_docs": ["D4F-E60-060"]
+    },
+    "result-kuehler-außen": {
+      "title": "Außenleck im Kühlkreis gefunden",
+      "text": "Die undichte Stelle instand setzen — am N62 sind Ausgleichsbehälter, Behälterdeckel, Schlauchverbindungen und Kühlerkästen die üblichen Kandidaten. Danach auffüllen, entlüften und den Stand über mehrere Wochen erneut beobachten. Erst ein über die Zeit stabiler Stand belegt, dass es das einzige Leck war.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-innen": {
+      "title": "Kühlmittel geht nach innen verloren",
+      "text": "Druckaufbau im kalten Kühlkreis oder süßlicher Abgasgeruch deutet auf Verbrennungsgase im Kühlmittel. Das ist ein anderer Fall als eine äußere Dichtung und gehört mit einer CO-Prüfung des Kühlmittels abgesichert, bevor der Motor geöffnet wird. Bis dahin den Motor nicht heiß fahren.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-ueberfuehrungsrohr": {
+      "title": "Verdacht auf Dichtungen im V des Motors",
+      "text": "Kein Außenleck und kein Hinweis auf Verbrennungsgase: dann bleibt der Bereich zwischen den Zylinderbänken, wo das Kühlmittel-Überführungsrohr sitzt. Das ist eine aufwendige Arbeit — den Befund vorher absichern, indem das System unter Druck gesetzt und der Bereich im V gezielt beobachtet wird.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-lima-traeger": {
+      "title": "Dichtung des Lichtmaschinenträgers",
+      "text": "Die Spur beginnt oberhalb der Trägerplatte, also läuft das Öl über den Generator. Träger abdichten und dabei den Generator auf Ölbenetzung prüfen — ein von innen ölgetränkter Generator fällt später ohnehin aus. Anzugsmomente aus der Herstellervorgabe holen, sie sind hier nicht belegt.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-ventildeckel": {
+      "title": "Ventildeckeldichtung undicht",
+      "text": "Dichtung erneuern, beide Bänke gleichzeitig ansehen — am N62 ist selten nur eine Seite betroffen. Die Valvetronic-Stellmotoren vor dem Abnehmen in Parkstellung bringen und die Anschläge nach dem Zusammenbau neu anlernen. Wird einer dieser beiden Schritte übersprungen, ist der Verstelltrieb in Gefahr.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-schaftdichtungen": {
+      "title": "Verdacht auf Ventilschaftdichtungen",
+      "text": "Öl verschwindet ohne Außenspur und der Motor raucht blau: das passt zu verhärteten Ventilschaftdichtungen. Dazu gibt es keinen Fehlerspeichereintrag, der Befund bleibt optisch. Vor der Entscheidung den Ölverbrauch über eine definierte Strecke messen und die Kurbelgehäuseentlüftung ausschließen.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-weitersuchen": {
+      "title": "Kein eindeutiger Austrittsort — weiter eingrenzen",
+      "text": "Motor gründlich reinigen, ein Kontrastmittel im Öl verwenden und nach einer definierten Fahrstrecke erneut suchen. Zusätzlich Getriebeglocke, Ölfiltergehäuse und Ölwannenkante ansehen. Ohne sichtbaren Austrittsort wird keine Dichtung bestellt.",
+      "next_docs": ["D4F-E60-010"]
+    },
+    "result-servooel": {
+      "title": "Servokreis zuerst instand setzen",
+      "text": "Ölstand korrigieren und die undichte Stelle suchen, bevor irgendein Bauteil der Wankstabilisierung verdächtigt wird. Lenkung und Dynamic Drive teilen sich den Kreis, also wirkt jeder Verlust auf beide Systeme. Nach der Reparatur entlüften und den Fehlerspeicher löschen.",
+      "next_docs": ["D4F-E60-030"]
+    },
+    "result-gemeinsame-ursache": {
+      "title": "Gemeinsame Ursache — Spannung oder Antriebsbus",
+      "text": "Mehrere Fahrwerkssysteme melden gleichzeitig, und Spannung oder PT-CAN sind auffällig. Zuerst die Versorgung sichern und den Batteriesensor prüfen, danach den Antriebsbus. Erst wenn beides sauber ist, alle Speicher löschen und eine Probefahrt fahren — was dann nicht wiederkommt, war ein Folgefehler.",
+      "next_docs": ["D4F-E60-060", "D4F-E60-002"]
+    },
+    "result-drucksensor": {
+      "title": "Drucksignal unplausibel oder Nullpunkt nicht angelernt",
+      "text": "Zuerst den Nullpunktabgleich der Drucksensoren über die Servicefunktion durchführen und erneut auslesen. Bleibt ein Kanal auffällig, den betroffenen Sensor und seine Steckverbindung am Ventilblock prüfen. Ein Zahlenwert für den Solldruck ist hier nicht belegt — beide Kanäle gegeneinander halten statt gegen eine Zahl von außen.",
+      "next_docs": ["D4F-E60-030"]
+    },
+    "result-ventilblock": {
+      "title": "Ventilblock der Wankstabilisierung",
+      "text": "Ölkreis dicht, Spannung gut, Sensoren plausibel, Kreis entlüftet und der Fehler kommt zurück: dann fällt der Verdacht auf den Ventilblock. Das deckt sich mit dem Erfahrungswert aus mehreren unabhängigen Fäden, nach dem der Block deutlich häufiger ausfällt als das Steuergerät. Nach dem Tausch entlüften und die Sensornullpunkte neu anlernen.",
+      "next_docs": ["D4F-E60-030"]
+    },
+    "result-entlueftet": {
+      "title": "Luft im Hydraulikkreis war die Ursache",
+      "text": "Der Fehler ist nach dem Entlüften weg. Ursache war Luft im Kreis, meist nach einem vorangegangenen Eingriff oder einem Ölverlust. Kontrolliere nach einigen hundert Kilometern erneut Ölstand und Fehlerspeicher — kommt die Meldung zurück, zieht der Kreis Luft und die undichte Stelle ist noch nicht gefunden.",
+      "next_docs": ["D4F-E60-030"]
+    }
+  }
+}

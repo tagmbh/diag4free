@@ -57,6 +57,31 @@ Im Zweifel: keine Zahl. Das vergleichende Verfahren — gegen die andere Bank,
 gegen den Nachbarzylinder, gegen ein bekannt gutes Teil — ist fast immer
 möglich und braucht keinen Sollwert.
 
+## Was in dieser Umgebung geht und was nicht
+
+**Websuche funktioniert.** Sie läuft serverseitig, nicht über den
+Egress-Proxy dieser Sitzung.
+
+**Seitenabruf funktioniert nicht.** `WebFetch` und `curl` werden für
+praktisch alle einschlägigen Hosts mit 403 abgewiesen — Wikipedia,
+Foren, Pinout-Sammlungen, Herstellerseiten. Das ist eine
+Organisationsregel und wird nicht umgangen.
+
+Praktisch heisst das: du liest **Suchergebnis-Zusammenfassungen, keine
+Primärseiten**. Das drückt die erreichbare Belegstufe und ist der Grund,
+warum manche Widersprüche offen bleiben müssen, obwohl die Antwort auf der
+Seite stünde.
+
+Zwei Folgerungen für die Arbeit:
+
+- **Unabhängigkeit prüfst du über die Domain**, nicht über den Text. Wenn
+  drei Zusammenfassungen wortgleich klingen, sind es drei Kopien einer
+  Quelle, egal wie verschieden die Adressen aussehen.
+- **Melde im Bericht, wo dir der Seitenabruf gefehlt hat.** Wenn eine
+  Angabe nur deshalb auf „einfach belegt" steht, weil die Primärseite
+  gesperrt war, gehört das gesagt — dann lässt sich gezielt entscheiden,
+  ob der Host freigegeben werden soll.
+
 ## Quellengüte
 
 Von oben nach unten abnehmend brauchbar:

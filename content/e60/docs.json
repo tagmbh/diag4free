@@ -63,10 +63,10 @@
       "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
       "summary": "Der N62 verliert typischerweise an mehreren Stellen gleichzeitig Öl oder Kühlmittel, und die Stellen liegen dicht beieinander. Ziel dieses Dokuments ist es, die Quelle zu bestimmen, bevor eine Dichtung bestellt wird — ein Ölfleck unter dem Motor sagt für sich genommen wenig.",
       "points": [
-        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heissen Krümmer, nicht unbedingt ein Fleck am Boden",
+        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heißen Krümmer, nicht unbedingt ein Fleck am Boden",
         "Dichtung des Lichtmaschinenträgers: Öl läuft von oben über den Generator. Wird oft für eine Ventildeckeldichtung gehalten — der Unterschied liegt darin, ob das Öl oberhalb oder unterhalb der Trägerplatte ansetzt",
         "Kühlmittelverlust ohne sichtbaren Fleck deutet auf die Dichtungen des Kühlmittel-Überführungsrohrs im V zwischen den Bänken. Das ist eine Motorausbau-nahe Arbeit — Befund vorher absichern",
-        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck aussen. Kein Fehlerspeichereintrag, rein optischer Befund",
+        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck außen. Kein Fehlerspeichereintrag, rein optischer Befund",
         "Valvetronic-Stellmotoren müssen vor dem Abnehmen der Ventildeckel in Parkstellung gebracht und nach dem Zusammenbau neu angelernt werden. Wer diesen Schritt überspringt, riskiert den Verstelltrieb",
         "Sollwerte fehlen: Anzugsmomente der Ventildeckel und des Trägers sind hier nicht belegt. Sie gehören aus der Herstellervorgabe geholt — Aluminium verzeiht ein geschätztes Moment nicht"
       ],
@@ -85,14 +85,14 @@
       "cat": "M57 · Fehlerbilder",
       "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
       "valid": "E60/E61 · M57 (525d, 530d, 535d)",
-      "summary": "Am M57 laufen drei Themen ineinander: verrusste Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
+      "summary": "Am M57 laufen drei Themen ineinander: verrußte Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
       "points": [
-        "Drallklappen verrussen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
+        "Drallklappen verrußen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
         "Nach einer Quelle wurden ab 03/2004 Kunststoff-Drallklappen mit Rückhaltemechanismus verbaut; frühere Motoren gelten als der kritischere Fall. Vor dem Anwenden am konkreten Fahrzeug gegenprüfen",
         "Widerspruch in der Praxis: die einen entfernen die Klappen, die anderen warnen, dass die Klappenstellung in die Regeneration des Partikelfilters eingeht. Beides steht so in unabhängigen Quellen — die Entscheidung gehört dokumentiert, nicht stillschweigend getroffen",
         "Werden Klappen entfernt, müssen die Öffnungen sauber verschlossen werden. Eine undichte Ansaugbrücke zieht Falschluft und verliert Ladedruck — das Fehlerbild wandert dann auf die Ladedruckregelung",
         "Ladedruckregelung am M57 arbeitet über Unterdruck. Prüfe vor jedem Ladersverdacht die Unterdruckdose, die Schläuche und das Umschaltventil auf Dichtheit — eine gerissene Leitung erzeugt dasselbe Bild wie eine feste Ladergeometrie",
-        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von aussen"
+        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von außen"
       ],
       "pins": [],
       "engines": ["M57"],
@@ -133,7 +133,7 @@
         "Ringlogik zuerst verstehen: der MOST überträgt optisch. Jedes Gerät empfängt Licht und gibt es weiter. Fällt ein Glied aus, schweigt der ganze Ring — die Zahl der ausgefallenen Funktionen sagt nichts über die Zahl der defekten Geräte",
         "Ringbruchdiagnose in der Werkstattsoftware nutzen: sie vergleicht die hinterlegte Ringreihenfolge mit den Geräten, die tatsächlich antworten. Das erste Gerät, das nicht mehr antwortet, markiert die Bruchstelle",
         "Ohne Kenntnis der Ringreihenfolge ist die Suche wertlos. Die Reihenfolge gehört vor dem Zerlegen ausgelesen, nicht danach rekonstruiert",
-        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schliessen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
+        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schließen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
         "Fasern brechen fast immer an Steckern und engen Radien, nicht in der Mitte. Steckverbinder zuerst ansehen, bevor ein Steuergerät verdächtigt wird",
         "Sporadischer Ausfall zusammen mit erhöhter Ruhestromaufnahme deutet darauf hin, dass ein Gerät den Ring nicht schlafen lässt. Dann ist die Ruhestrommessung der schnellere Weg als der Bauteiltausch"
       ],
@@ -152,8 +152,8 @@
       "points": [
         "VANOS-Hochdruckpumpe sitzt in der Ölwanne und versorgt die Verstellung. Nach mehreren unabhängigen Quellen gibt es im Hochdruckkreis keinen Drucksensor — ein beginnender Schaden bleibt deshalb unbemerkt, bis Späne im Ölkreis sind",
         "VANOS-Fehler auf allen Bänken gleichzeitig ist das Warnzeichen für die Pumpe, nicht für die Magnetventile. Meldet nur eine Bank, ist die Wahrscheinlichkeit umgekehrt",
-        "Pleuellager verschleissen am S85 erfahrungsgemäss schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
-        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiss an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
+        "Pleuellager verschleißen am S85 erfahrungsgemäß schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
+        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiß an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
         "Kein Wert ohne Beleg: Öldruck-, Lagerspiel- und Speicherdruckwerte für den S85 sind hier nicht belegt. Vergleichend arbeiten und im Zweifel die Herstellervorgabe holen",
         "Vor jeder Diagnose am M5 den Ladezustand der Batterie sichern. Der S85 und das SMG reagieren auf zu niedrige Bordspannung mit Einträgen, die wie Bauteilfehler aussehen"
       ],

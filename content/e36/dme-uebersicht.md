@@ -24,7 +24,7 @@ Der E36 wurde zehn Jahre gebaut und hat in dieser Zeit fast jede Motorsteuerung 
 
 **Die VANOS-Frage teilt die Sechszylinder.** M3.1 steuert keine Verstellung, weil der Motor keine hat. Beim S50B30 sitzt die VANOS-Ansteuerung in einem eigenen Steuergerät neben der DME — wer dort die Verstellung an der DME sucht, sucht am falschen Gerät. Ab MSS50 und MS41 liegt alles in einem Gehäuse.
 
-**Die Codetabellen sind nicht austauschbar.** Derselbe vierstellige Blinkcode kann an einer M3.1 und an einer MS41 verschiedene Bauteile meinen. Gleich dieselben Codes über verschiedene DME-Stände hinweg nie ab, ohne die Bedeutung gegen den verbauten Stand zu prüfen.
+**Die Codetabellen sind nicht austauschbar.** Derselbe vierstellige Blinkcode kann an einer M3.1 und an einer MS41 verschiedene Bauteile meinen. Übernimm eine Codebedeutung nie von einem DME-Stand auf einen anderen, ohne sie gegen den verbauten Stand zu prüfen.
 
 ## Das Steuergerät am Fahrzeug bestimmen
 
