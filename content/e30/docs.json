@@ -5,16 +5,16 @@
       "id": "D4F-E30-001",
       "type": "PIN",
       "cat": "Verkabelung",
-      "title": "20-poliger Runddiagnosestecker · Belegung",
-      "valid": "E30/E28/E34 · vor 09/1995",
-      "summary": "Der 20-polige Runddiagnosestecker im Motorraum ist am E30 der Zugang zur Motronic. Die kursierenden Pinbelegungen widersprechen sich bei Masse und Dauerplus — hier steht deshalb das Ausmessverfahren statt einer Tabelle.",
+      "title": "20-poliger Runddiagnosestecker · Belegung ausmessen",
+      "valid": "E30 · Rundstecker nach einer Quelle ab MJ 1988",
+      "summary": "Der 20-polige Runddiagnosestecker im Motorraum ist am E30 der serielle Zugang zur Motronic. Die kursierenden Pinbelegungen widersprechen sich bei Masse und Dauerplus — hier steht deshalb das Ausmessverfahren statt einer Tabelle.",
       "points": [
+        "Erst nachsehen, ob das Fahrzeug den Stecker hat — nach einer Quelle erst ab Modelljahr 1988 verbaut",
         "Belegung nicht gesichert: die kursierenden Angaben widersprechen sich bei Masse und Dauerplus — nichts raten, ausmessen",
         "Masse finden: Durchgang nahe null gegen einen blanken Massepunkt am Motor",
         "Dauerplus finden: Bordnetzspannung gegen Masse bei ausgeschalteter Zündung",
         "Klemme 15 finden: Spannung kommt sprunghaft beim Einschalten der Zündung und verschwindet sofort wieder",
-        "Vor jeder Brücke die drei Kontakte selbst bestimmen — eine Brücke auf den falschen Kontakt legt Dauerplus auf eine Signalleitung",
-        "Der Stecker sitzt im Motorraum und führt auch bei abgezogenem Zündschlüssel Spannung"
+        "Vor jeder Brücke die drei Kontakte selbst bestimmen — eine Brücke auf den falschen Kontakt legt Dauerplus auf eine Signalleitung"
       ],
       "engines": [
         "M20",
@@ -24,30 +24,292 @@
       ],
       "article": "diagnosestecker-20-polig.md",
       "details": [
-        "D4F-E30-002"
+        "D4F-E30-007",
+        "D4F-E30-002",
+        "D4F-E30-008"
       ]
     },
     {
       "id": "D4F-E30-002",
       "type": "TEST",
       "cat": "Fehlercodes",
-      "title": "Blinkcode-Diagnose Motronic 1.3 · M20/M42",
-      "valid": "E30 · M20, M42 mit Motronic 1.3",
-      "summary": "Auslesen der Motronic-Fehlerspeicher über Blinkcode ohne Diagnosegerät. Prozedur zum Aktivieren, Ablesen und Löschen.",
+      "title": "Blinkcode Motronic 1.3 · vierstellige Codes über das Fahrpedal",
+      "valid": "E30 · Motronic 1.3, M20 und M40",
+      "summary": "Vierstellige Fehlercodes der Motronic 1.3 über die Motorkontrollleuchte auslesen, ohne Gerät und ohne Kabel. Prozedur zum Auslösen, Weiterschalten und Löschen samt der beiden im Umlauf befindlichen Fassungen.",
       "points": [
-        "Zündung aus, Gaspedal ganz durchgetreten, Zündung ein → 5 s halten",
-        "Fehlercodes werden als Blinksequenz der Check-Engine-Lampe ausgegeben",
-        "Codes 1000–4444 möglich, Beginn mit 1444 = kein Fehler",
-        "Löschen: nach Auslesen Batterie 5 min abklemmen"
+        "Zündung ein, Motor aus, Fahrpedal fünfmal ganz durchtreten innerhalb von rund 5 s",
+        "Nach jedem Code erneut fünfmal treten — sonst bleibt derselbe Eintrag stehen",
+        "Codes vierstellig, jede Stelle 1 bis 4; 1444 heißt kein Fehler, 1000 beendet die Ausgabe",
+        "Voraussetzung ist ein funktionierender Drosselklappengeber mit sicherem Vollastkontakt",
+        "Abweichende Fassung im Umlauf: Pedal halten, dann Zündung ein — nicht belegt, aber einen Versuch wert",
+        "Löschen über Batterie ab, 5 min warten; kostet Radiocode und gelernte Anpassungen mit"
       ],
-      "pins": [],
       "engines": [
         "M20",
-        "M42"
+        "M40"
       ],
       "article": "blinkcode-motronic-13.md",
       "details": [
+        "D4F-E30-003",
+        "D4F-E30-004",
         "D4F-E30-001"
+      ]
+    },
+    {
+      "id": "D4F-E30-003",
+      "type": "TEST",
+      "cat": "Motorsteuerung",
+      "title": "Motorzuordnung E30 · M20, M40, M42 und S14",
+      "valid": "E30 · 1982–1994",
+      "summary": "Welcher Motor und welcher Motronic-Stand im Fahrzeug sitzt, entscheidet über jeden weiteren Diagnoseschritt. Erkennungsmerkmale im Motorraum und die Zuordnung der Steuergeräte, ohne sich auf Papiere zu verlassen.",
+      "points": [
+        "Stirnseite entscheidet: Zahnriemen unter Kunststoffdeckel heißt M20 oder M40, Steuerkette heißt M42 oder S14",
+        "Vier Einzeldrosselklappen vor dem Kopf heißen S14 — kein anderer Motor der Baureihe hat sie",
+        "Steuerungen laut Steckbrief: M20 Motronic 1.1/1.3, M40 Motronic 1.3, M42 Motronic 1.7, S14 Versionsangabe widersprüchlich",
+        "Nach einer Quelle löst die Motronic 1.3 die 1.1 im Jahr 1988 ab, mit Ausnahme des 318is",
+        "Umgemotorte E30 sind die Regel — am Steuergerät und an der Motornummer nachsehen, nicht im Fahrzeugschein",
+        "Aus der Zuordnung folgt der Weg: 1.3 nach D4F-E30-002, 1.1 nach D4F-E30-004, S14 nach D4F-E30-006"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-E30-002",
+        "D4F-E30-004",
+        "D4F-E30-006"
+      ]
+    },
+    {
+      "id": "D4F-E30-004",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Motronic 1.1 · was die Lampe am frühen E30 hergibt",
+      "valid": "E30 · frühe Fahrzeuge mit Motronic 1.1",
+      "summary": "Am frühen E30 mit Motronic 1.1 gibt es keine vierstelligen Codes und keine Pedalprozedur, sondern eine kurze Blitzfolge mit sehr kleinem Umfang. Was sie kann, was sie nicht sieht und in welcher Reihenfolge stattdessen gemessen wird.",
+      "points": [
+        "Zündung ein, Motor aus — nach einer Quelle beginnt die Ausgabe nach rund 3 s von selbst, ohne Zutun am Pedal",
+        "Einzelne Blitze im Abstand von rund 1 s zählen, keine vierstelligen Codes",
+        "Zuordnung nur einfach belegt: 1 Luftmengenmessung, 2 Lambdasonde, 3 Kühlmitteltemperatur, 4 Drosselklappenschalter",
+        "Leerer Speicher heißt an diesem Stand wenig — Falschluft, Leerlaufsteller und Zündverteiler tauchen dort nie auf",
+        "Reihenfolge: Falschluft und Sichtprüfung, dann Versorgung und Masse, dann Zündung, erst dann Elektronik",
+        "Kommen vierstellige Codes, ist es kein 1.1-Stand — dann gilt D4F-E30-002"
+      ],
+      "engines": [
+        "M20"
+      ],
+      "article": "blinkcode-motronic-11.md",
+      "details": [
+        "D4F-E30-003",
+        "D4F-E30-002",
+        "D4F-E30-009"
+      ]
+    },
+    {
+      "id": "D4F-E30-005",
+      "type": "TEST",
+      "cat": "Motormechanik",
+      "title": "M40 · Nockenwelle und Zahnriemen beurteilen",
+      "valid": "E30 · M40 in 316i und 318i",
+      "summary": "Die beiden bestimmenden Themen des M40 sind mechanisch: einlaufende Nocken durch fehlende Ölversorgung und ein Zahnriemen mit kurzem Intervall. Beurteilung am offenen Ventiltrieb und Verifikation über den Zylindervergleich.",
+      "points": [
+        "Ventildeckel ab und Nocken untereinander vergleichen — Stufe, matte Fläche oder abgeflachte Spitze fällt im Vergleich sofort auf",
+        "Ölspritzleiste über der Welle auf freie Bohrungen prüfen: verkokt ist die Ursache, die eingelaufene Welle die Folge",
+        "Schlepphebelauflagen mitbeurteilen — nur die Welle zu tauschen fängt den Schaden von vorn an",
+        "Zahnriemen nach einer Quelle auf 40 tkm beziehungsweise 4 Jahre herabgesetzt; Erfahrungswert 40–60 tkm, Alter zählt wie Laufleistung",
+        "Riemenriss zerstört Ventile; Wasserpumpe nach einer Quelle beim Riemenwechsel mitnehmen, Spannrolle nicht zwingend",
+        "Verifikation ohne Sollwert: Kompression der vier Zylinder warm gegeneinander halten"
+      ],
+      "engines": [
+        "M40"
+      ],
+      "article": "m40-nockenwelle-zahnriemen.md",
+      "details": [
+        "D4F-E30-003",
+        "D4F-E30-002"
+      ]
+    },
+    {
+      "id": "D4F-E30-006",
+      "type": "TEST",
+      "cat": "Motorsteuerung",
+      "title": "S14 · Diagnosewege am M3-Motor",
+      "valid": "E30 · S14 in M3 und 320is",
+      "summary": "Der S14 hat vier Einzeldrosselklappen und damit viele Dichtstellen, und sein Motronic-Stand ist nicht gesichert. Diagnose läuft deshalb über Falschluft, Drosselklappenschalter, Steckverbindungen und Vergleich statt über Fehlercodes.",
+      "points": [
+        "Blinkcode nicht belegt: die Prozedur aus D4F-E30-002 gilt für diesen Motor nicht — keine Ausgabe ist kein Befund",
+        "Falschluft zuerst: Übergang Sammler zur Drosselklappeneinheit und Dichtungen der Klappengehäuse sind die häufigsten Stellen",
+        "Drosselklappenschalter nach einer Quelle ohne Ausbau prüfbar — beim leichten Bewegen der Klappenwelle muss der Kontakt hörbar klicken",
+        "Leerlaufsteller ausbauen, reinigen, auf Leichtgängigkeit prüfen — klärt einen Teil der Leerlaufbeschwerden ohne Ersatzteil",
+        "Nach einer Quelle läuft der Kabelbaum über eine Schraubsteckverbindung an der Spritzwand; Korrosion dort sieht aus wie ein defektes Steuergerät",
+        "Ventilspiel über Einstellplättchen, keine Hydrostößel — vernachlässigte Kontrolle geht zulasten der Nockenwelle"
+      ],
+      "engines": [
+        "S14"
+      ],
+      "article": "s14-diagnose.md",
+      "details": [
+        "D4F-E30-003",
+        "D4F-E30-007",
+        "D4F-E30-012"
+      ]
+    },
+    {
+      "id": "D4F-E30-007",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnose ohne genormtes OBD · Werkzeug und Wege am E30",
+      "valid": "E30 · alle Motoren, kein OBD-2",
+      "summary": "Der E30 hat keine 16-polige Buchse, kein D-CAN und keine P-Codes. Welches Werkzeug an dieser Baureihe trägt, was ein Adapter auf OBD-2 leistet und warum die vergleichende Messung den fehlenden Sollwert ersetzt.",
+      "points": [
+        "Kein OBD-2 am E30: Generic-Scanner und Mode-01-Daten gibt es hier nicht, mit Adapter genauso wenig",
+        "Drei Wege: Blinkcode über die Leuchte, seriell über den Rundstecker, Messen am Bauteil",
+        "Hauptwerkzeug ist das hochohmige Multimeter; für Rechtecksignale wie den Hallgeber das Oszilloskop",
+        "Prüflampe nur an Versorgungs- und Lastkreisen, nie an Signalleitungen des Steuergeräts",
+        "Adapter auf 16-polig führt nur mechanisch um — das Protokoll bleibt das alte, Software muss es sprechen",
+        "Adapterbelegung für den E30 nicht belegt: fertigen Adapter vor dem ersten Anstecken durchklingeln"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ],
+      "article": "zugang-ohne-obd2.md",
+      "details": [
+        "D4F-E30-001",
+        "D4F-E30-002",
+        "D4F-E30-004"
+      ]
+    },
+    {
+      "id": "D4F-E30-008",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Einbauorte am E30 · Steuergerät, Relais, Sicherungen, Diagnosestecker",
+      "valid": "E30 · 1982–1994",
+      "summary": "Wo am E30 die Teile sitzen, die bei jeder Diagnose gebraucht werden: Motorsteuergerät, Hauptrelais, Sicherungskasten und Runddiagnosestecker. Ohne diese vier Orte fängt keine Messung an.",
+      "points": [
+        "Sicherungskasten im Motorraum links nahe der Windschutzscheibe, nicht im Fußraum",
+        "Hauptrelais der Motronic im Kasten neben dem Federbeindom — beim Einschalten der Zündung muss es hörbar klicken",
+        "Motorsteuergerät im Innenraum, nach einer Quelle hinter beziehungsweise über dem Handschuhfach unter einer Kunststoffabdeckung",
+        "Runddiagnosestecker im Motorraum unter runder Schutzkappe; er führt auch bei abgezogenem Schlüssel Spannung",
+        "Kabeldurchführung zum Innenraum an der Spritzwand — nach einer Quelle beim S14 eine Schraubsteckverbindung nahe dem Diagnoseanschluss",
+        "Sicherungsnummern nicht belegt: nach Deckelaufdruck des Fahrzeugs arbeiten, Sicherung beidseitig gegen Masse messen"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ],
+      "details": [
+        "D4F-E30-011",
+        "D4F-E30-001",
+        "D4F-E30-012"
+      ]
+    },
+    {
+      "id": "D4F-E30-009",
+      "type": "TEST",
+      "cat": "Zündung",
+      "title": "Zündanlage M20 und M40 · Hochspannungsseite prüfen",
+      "valid": "E30 · M20 und M40 mit Verteilerzündung",
+      "summary": "Zündspule, Verteilerkappe, Verteilerfinger und Zündkabel sind an einer dreißig Jahre alten Verteilerzündung die häufigste Ursache für Aussetzer und Startprobleme. Prüfreihenfolge von der Spule bis zur Kerze.",
+      "points": [
+        "Funkenprobe am mittleren Zündkabel mit isolierter Zange gegen einen blanken Massepunkt, nie in der Hand halten",
+        "Kräftiger, regelmäßiger Überschlag bei Anlasserdrehzahl zählt; vereinzelte schwache Überschläge zählen als Ausfall",
+        "Verteilerkappe innen auf Kriechspuren, Risse und abgebrannte Kontakte prüfen, Finger auf Durchbrand",
+        "Zündkabel und Kerzenstecker einzeln auf Durchgang messen und untereinander vergleichen",
+        "Kerzenbild aller Zylinder nebeneinanderlegen — der abweichende Zylinder ist der, an dem du weitersuchst",
+        "Widerstandsfenster der Zündspule nicht belegt: tauschweise gegen eine bekannt gute Spule arbeiten"
+      ],
+      "engines": [
+        "M20",
+        "M40"
+      ],
+      "details": [
+        "D4F-E30-010",
+        "D4F-E30-011"
+      ]
+    },
+    {
+      "id": "D4F-E30-010",
+      "type": "TEST",
+      "cat": "Zündung",
+      "title": "Hallgeber im Verteiler · Versorgung und Signal prüfen",
+      "valid": "E30 · M20 und M40 mit Hallgeber im Verteiler",
+      "summary": "Ohne Signal des Hallgebers steuert die Motronic weder Zündung noch Einspritzung an. Versorgung, Masse und Rechtecksignal am Verteilerstecker prüfen, bevor der Geber getauscht wird.",
+      "points": [
+        "Versorgung des Hallgebers kommt beim M20 vom Steuergerät, nicht direkt aus dem Zündschloss",
+        "Stecker am Verteiler abziehen, Zündung ein: Versorgungspin gegen Motormasse messen, Massepin auf Durchgang prüfen",
+        "Signal am aufgesteckten Stecker mit Abgreifadapter messen, nicht in die Leitung stechen",
+        "Beim Cranken wechselt das Signal zwischen Masse und Versorgungsniveau — dauerhaft 0 V oder dauerhaft Bordspannung zählt als Ausfall",
+        "Mit dem Multimeter nur als springende Spannung erkennbar; sauber beurteilen lässt es sich am Oszilloskop",
+        "Alterungsdefekt des Gebers ist an dieser Baureihe häufig — trotzdem erst Versorgung und Masse klären"
+      ],
+      "engines": [
+        "M20",
+        "M40"
+      ],
+      "details": [
+        "D4F-E30-009",
+        "D4F-E30-007"
+      ]
+    },
+    {
+      "id": "D4F-E30-011",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Versorgung der Motronic · Klemme 15, Hauptrelais und Steuergerätemasse",
+      "valid": "E30 · alle Motronic-Stände",
+      "summary": "Bevor ein Steuergerät verdächtigt wird, muss seine Versorgung stehen: Klemme 15, Dauerplus, Hauptrelais und Masse. Am E30 sind Relaissockel und kalte Lötstellen die häufigste Ursache für einen Motor, der plötzlich nichts mehr tut.",
+      "points": [
+        "Hauptrelais muss beim Einschalten der Zündung hörbar klicken — bleibt es still, endet die Suche hier",
+        "Geschaltete Versorgung und Dauerplus am Steuergerätestecker gegen die Steuergerätemasse messen, nicht gegen Karosserie",
+        "Bordspannung immer gegen die direkt an den Polen gemessene Spannung halten; mehr als rund 0.5 V Abfall ist Übergangswiderstand",
+        "Relaissockel und Lötstellen der Relaisplatine auf kalte Stellen prüfen — ein klassischer E30-Befund",
+        "Sicherung der Zündungsversorgung bei eingeschalteter Zündung beidseitig gegen Masse messen, nicht nur ansehen",
+        "Sollwerte für Ruhestrom und Relaiswiderstände sind hier nicht belegt — vergleichend gegen ein bekannt gutes Relais arbeiten"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ],
+      "details": [
+        "D4F-E30-008",
+        "D4F-E30-012"
+      ]
+    },
+    {
+      "id": "D4F-E30-012",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Massepunkte und Kabelbaum am E30 · typische Bruchstellen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Nach dreißig Jahren erzeugt der Kabelbaum Fehlerbilder, die wie defekte Steuergeräte aussehen. Wo am E30 gescheuert, gebrochen und korrodiert wird und wie sich das von einem echten Bauteilfehler trennen lässt.",
+      "points": [
+        "Leitungen von Stecker zu Stecker messen, Widerstand praktisch null, und zusätzlich jede Leitung gegen Masse prüfen",
+        "Beim Wackeln am Kabelbaum darf der Messwert nicht springen — springt er, ist der Befund gefunden",
+        "Typische Stellen: Durchführung an der Spritzwand, Übergang zum beweglichen Motorkabelbaum, letzte Zentimeter vor den Steckern",
+        "Massepunkte am Motor und an der Karosserie abnehmen, blank machen und wieder festziehen statt nur nachziehen",
+        "Ein Scheuerschluss gegen Karosserie sieht in der Messung aus wie ein defektes Steuergerät",
+        "Reparaturstellen löten und schrumpfen, nicht klemmen — Quetschverbinder werden an dieser Stelle wieder zum Fehler"
+      ],
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ],
+      "details": [
+        "D4F-E30-011",
+        "D4F-E30-008"
       ]
     }
   ]

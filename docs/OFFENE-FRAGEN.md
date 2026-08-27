@@ -163,9 +163,9 @@ gekennzeichnet:**
 **Zurückgeschnitten, weil widersprüchlich:**
 
 - **M50, M52, M54** — die Höhe ist unstrittig, unten an der Trennfuge zur
-  Ölwanne. Die Seite ist es nicht: dieselbe Fundstelle nennt für
-  Sechszylinder dieser Zeit einmal die Ansaugseite unter der Saugbrücke und
-  einmal ausdrücklich die Auslassseite. Die Steckbriefe nennen jetzt beide
+  Ölwanne. Die Seite ist es nicht: zwei Fundstellen derselben Community
+  nennen für Sechszylinder dieser Zeit einmal die Ansaugseite unter der
+  Saugbrücke, einmal ausdrücklich die Auslassseite. Die Steckbriefe nennen jetzt beide
   Seiten und sagen, dass beide abzusuchen sind. Die frühere Einstufung
   „belegt (einfach)" für diese drei ist damit hinfällig
 - **S14** — eine Quelle setzt die Nummer links unten an den Block, eine
@@ -178,7 +178,7 @@ N13, N20, N26, N42, N43, N45, N46, N47, N52, N53, N55, N57, N63 sowie M56,
 M60, M62, M73, S38, S50, S52, S62, S63, S65, S85, B47, B57, B58, M57.
 
 Bei der N-Reihe ist das eine echte Korrektur, keine Lücke, die stehen
-geblieben ist: dreizehn Steckbriefe führten „Auslassseite" als Tatsache. Für
+geblieben ist: elf Steckbriefe führten „Auslassseite" als Tatsache. Für
 keinen einzelnen dieser Motoren liess sich das belegen, und für die Baureihe
 insgesamt sprechen mehrere Quellen von der Einlassseite. Wer nach einer
 solchen Angabe unter den Krümmer greift, sucht an der falschen Seite.
