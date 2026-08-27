@@ -19,7 +19,7 @@
         "Ein einzelner Twin-Scroll-Lader auf der Auslassseite, dazu Direkteinspritzung und Valvetronic. Der N13 ist der erste kleine BMW-Benziner, der beides gleichzeitig hat.",
         "Abgrenzung zum Vorgänger N43: Der N43 ist Saugmotor, der N13 hat einen Lader. Wer im Motorraum eines F20/F30 einen Turbo sieht, hat keinen N43.",
         "Abgrenzung zum N20: gleiche Baureihen, aber der N20 ist ein 2.0-Liter-Motor mit BMW-eigenem Block. Der N13 sitzt nur in den Einstiegsmodellen 114i, 116i, 118i, 316i und dem 320i EfficientDynamics.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite, unterhalb der Trennfuge zum Zylinderkopf. Vor dem Ablesen den Schmutzrand wegwischen — der Schlagstempel ist flach."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten absuchen. Vor dem Ablesen den Schmutzrand wegwischen, der Schlagstempel ist flach."
       ],
       "weak_points": [
         "Erfahrungswert: Steuerkette und Kettenspanner gelten als Schwachpunkt der Prince-Familie. Rasseln beim Kaltstart ist das Leitsymptom.",
@@ -50,7 +50,7 @@
         "Abgrenzung zum N26: äusserlich nahezu identisch. Der N26 ist die SULEV-Ausführung für einzelne US-Bundesstaaten. Verlass dich auf die Motornummer, nicht auf das Aussehen.",
         "Ausbaustufe Steuerkette: Motoren bis etwa 2015 haben die frühe Ausführung von Kettenspanner und Gleitschienen, danach die überarbeitete. Der Unterschied ist ein Diagnoseunterschied — bei einem frühen Motor mit Rasseln lohnt der Blick auf die Kette zuerst, bei einem späten sucht man weiter.",
         "Es gibt zusätzlich eine 1.6-Liter-Ausführung N20B16 (1598 cm³) in einzelnen Märkten. Sie ist im deutschsprachigen Raum selten und wird leicht mit dem N13 verwechselt.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite, hinter dem Anlasserbereich."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert und der bekannteste Punkt: Steuerkettentrieb. Die frühen Gleitschienen zerbröseln, die Kette überspringt, der Motor geht kapital. Rasseln nach dem Kaltstart ernst nehmen.",
@@ -76,7 +76,7 @@
         "Der N26 ist die SULEV-Ausführung des N20. Gebaut für die US-Bundesstaaten mit der schärferen Abgasstufe, in Europa nicht regulär verkauft.",
         "Abgrenzung zum N20 — der wichtigste Punkt: mechanisch gleicher Motor, aber dichtere Katalysatoren, elektrischer Ladedrucksteller, geänderte Kurbelgehäuseentlüftung und metallene statt gummierter Kraftstoffleitungen. Teile sind deshalb nicht durchgängig tauschbar, obwohl der Motor gleich aussieht.",
         "Wenn ein Importfahrzeug aus den USA mit 28i-Schriftzug in der Werkstatt steht, prüfe die Motornummer, bevor du ein N20-Teil bestellst. Diese Verwechslung kostet regelmässig einen Anlauf.",
-        "Motornummer an derselben Stelle wie beim N20: Kurbelgehäuse, Auslassseite."
+        "Motornummer an derselben Stelle wie beim N20 auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt."
       ],
       "weak_points": [
         "Erfahrungswert: derselbe Steuerkettentrieb wie beim N20 und dieselbe Schwäche der frühen Gleitschienen. Die Überarbeitung lief parallel zum N20.",
@@ -102,7 +102,7 @@
         "Ausschliesslich im E46 verbaut: 316i, 316ti, 318i, 318Ci, 318ti Compact. Zwei Hubräume, 1796 cm³ als N42B18 und 1995 cm³ als N42B20.",
         "Abgrenzung zum Nachfolger N46 — der häufigste Irrtum in dieser Ecke: äusserlich sehr ähnlich, der N46 löste den N42 2004 ab. Im E46 heisst die Grenze grob Modelljahr 2004; darüber entscheidet die Motornummer, nicht das Baujahr des Fahrzeugs.",
         "Abgrenzung zum M43: der M43 hat weder Valvetronic noch Doppel-VANOS und einen Zahnriemen-freien, aber deutlich einfacheren Ventiltrieb ohne Stellmotor auf dem Kopf.",
-        "Motornummer auf dem Kurbelgehäuse unterhalb des Ansaugkrümmers, Fahrzeugfront in Fahrtrichtung rechts."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert und Hauptthema: die Valvetronic. Eingelaufene Lagerstellen der Exzenterwelle, defekter Stellmotor, defekter Exzenterwellensensor. Leitsymptom sind starke Leerlaufschwankungen und Notlauf.",
@@ -130,7 +130,7 @@
         "Abgrenzung zum N46 — der wichtigste Punkt: der N43 hat Direkteinspritzung, aber keine Valvetronic. Es fehlt der Stellmotor auf dem Zylinderkopf, weil der Platz für die Injektoren gebraucht wird. Wer im Motorraum eines E87/E90 nach dem Valvetronic-Stellmotor sucht und ihn nicht findet, hat einen N43, keinen N46.",
         "Der N43 wurde nur in Märkten mit schwefelarmem Kraftstoff verkauft. N45 und N46 liefen parallel weiter — im selben Modelljahr desselben Modells kann also beides drinstecken.",
         "Abgrenzung zum grossen Bruder N53: gleiches Konzept, aber R6 statt R4. Wer die Zylinderzahl zählt, ist fertig.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert und Dauerbrenner: Piezo-Injektoren. Rauer Leerlauf, Aussetzerfehler auf einzelnen Zylindern, Kaltstartprobleme.",
@@ -158,7 +158,7 @@
         "Abgrenzung zum N46 — genau hier wird verwechselt: N45 und N46 liefen gleichzeitig und sehen sich ähnlich. Der N45 wurde nur in Ländern verkauft, in denen die Steuer kleinen Hubraum belohnt.",
         "Sonderfall N45B20S: die 2.0-Liter-Hochdrehzahlvariante mit 1997 cm³ im 320si (E90), der Homologationsbasis für den Tourenwagensport. Anderer Kopf, andere Kurbelwelle, nicht mit dem normalen N45B16 zu verwechseln.",
         "2007 kam die überarbeitete Ausführung N45N.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: Steuerkettentrieb wie beim N42/N46 — Längung und nachlassender Spanner.",
@@ -186,7 +186,7 @@
         "Abgrenzung zum N42: der N46 löste ihn 2004 ab. Aussen kaum zu trennen — die Motornummer entscheidet.",
         "Abgrenzung zum N43 — der wichtigste Punkt in dieser Ecke: der N46 hat Saugrohreinspritzung und Valvetronic, der N43 Direkteinspritzung und keine Valvetronic. Im E87 und E90 stecken je nach Markt beide, im gleichen Modelljahr, unter demselben Typschild.",
         "Ausbaustufe: 2007 kam der N46N. Mit ihm wechselte die Motorsteuerung von ME9.2 auf MEV17.4 — das ist ein Diagnoseunterschied, weil ISTA und INPA unterschiedliche Steuergerätebeschreibungen laden.",
-        "Motornummer auf dem Kurbelgehäuse unterhalb des Ansaugkrümmers."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: Valvetronic — eingelaufene Exzenterwelle, defekter Stellmotor, defekter Exzenterwellensensor. Leerlaufschwankungen bis Notlauf.",
@@ -219,7 +219,7 @@
         "Abgrenzung zum Vorgänger M47: beim M47 sitzt der Steuertrieb vorn. Das ist das schnellste Unterscheidungsmerkmal am eingebauten Motor.",
         "Ausbaustufe Steuerkette — der wichtigste Diagnosepunkt: Motoren mit Produktionsdatum bis etwa 2010 haben die erste Ausführung von Kettenspanner und Gleitschienen und gelten als am stärksten betroffen. Ab etwa 2011 überarbeitete BMW Spanner und Schienen. Massgeblich ist das Produktionsdatum des Motors, nicht die Erstzulassung des Fahrzeugs.",
         "Es gibt zusätzlich eine 1.6-Liter-Ausführung (N47D16) in 114d und 116d der F20-Reihe.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite, in Fahrtrichtung rechts."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert und das Thema schlechthin: die Steuerkette hinten. Leitsymptom ist ein metallisches Rasseln aus dem hinteren Motorbereich direkt nach dem Kaltstart, das nach fünf bis fünfzehn Sekunden abklingt. Reisst die Kette, ist der Motor hin.",
@@ -253,7 +253,7 @@
         "Regionale Trennung: In Europa löste der N53 den N52 ab 2007 weitgehend ab. In den USA, Kanada, Australien und einigen weiteren Märkten blieb der N52, weil der Schwefelgehalt im Kraftstoff dem N53 nicht bekam. Ein US-Import mit 328i-Schriftzug hat deshalb fast sicher einen N52.",
         "Der N51 ist die SULEV-Ausführung des N52 für einzelne US-Bundesstaaten und hat zusätzlich eine Sekundärluftpumpe. Er sieht dem N52 zum Verwechseln ähnlich.",
         "Ausbaustufe: 2007 kam der N52N mit geänderter Motorsteuerung (MSV70 auf MSV80).",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite, unterhalb des Krümmers."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: die elektrische Kühlmittelpumpe fällt aus. Fehlerbild ist Überhitzung ohne vorheriges Kühlmittelleck. Der zugehörige Thermostat wird üblicherweise gleich mitgetauscht.",
@@ -284,7 +284,7 @@
         "Abgrenzung zum N52 — der wichtigste Punkt und die häufigste Fehlzuordnung: der N53 hat keine Valvetronic. Der Platz im Zylinderkopf ging an die Direkteinspritzung. Es gibt also keinen Stellmotor der Exzenterwelle. Mehrere Nachschlagewerke schreiben dem N53 trotzdem Valvetronic zu — das ist falsch und führt bei der Ersatzteilsuche in die Irre.",
         "Abgrenzung zum N43: gleiches Konzept mit vier statt sechs Zylindern.",
         "Nicht in Märkten mit schwefelreichem Kraftstoff verkauft. Dort blieb der N52 im Programm.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert und Hauptthema: Piezo-Injektoren. Leitsymptom ist rauer Leerlauf mit Aussetzerfehlern auf einzelnen Zylindern, oft nur im kalten Zustand.",
@@ -314,7 +314,7 @@
         "Zweites Trennmerkmal: der N54 hat keine Valvetronic, der N55 hat sie. Auf dem Zylinderkopf des N54 fehlt der Stellmotor der Exzenterwelle.",
         "Drittes Trennmerkmal: der N54 arbeitet mit Piezo-Injektoren, der N55 mit Magnetventil-Injektoren. Die Stecker und Bauformen unterscheiden sich sichtbar.",
         "Grobe Zeitgrenze: bis etwa 2010 N54, danach N55. In der Übergangszeit gab es beide parallel — verlass dich nicht auf das Baujahr, sondern auf den Motorraum.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite, unterhalb der Krümmer."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen, nach einer Quelle auf der Einlassseite — sie ist wegen der Schräglage des Motors von oben besser zugänglich. Dieselbe Quelle nennt zusätzlich einen Aufkleber am Getriebeflansch."
       ],
       "weak_points": [
         "Erfahrungswert und der bekannteste Punkt: Hochdruckpumpe. Leitsymptom sind Startverzögerung, Leistungsverlust und Raildruckfehler. BMW hat die Pumpe mehrfach überarbeitet.",
@@ -346,7 +346,7 @@
         "Zweites Trennmerkmal: der N55 hat Valvetronic. Der Stellmotor der Exzenterwelle sitzt quer auf dem Zylinderkopf — beim N54 fehlt er.",
         "Drittes Trennmerkmal: Magnetventil-Injektoren statt der Piezo-Injektoren des N54.",
         "Der Ventildeckel enthält beim N55 die Kurbelgehäuseentlüftung. Er ist ein Bauteil, keine Baugruppe mit separater Dichtung — das ist bei der Teilebestellung relevant.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: Kurbelgehäuseentlüftung im Ventildeckel. Undichte Membran zieht Öl in den Ansaugtrakt, das Fehlerbild ist Ölverbrauch und Falschluft. Weil die Dichtung integriert ist, wird der ganze Ventildeckel getauscht.",
@@ -378,7 +378,7 @@
         "Abgrenzung zum N47 — die häufigste Verwechslung: gleiche Konstruktionsfamilie, gleicher Steuerkettentrieb hinten zum Getriebe, aber der N57 hat sechs Zylinder und 3.0 Liter, der N47 vier und 2.0. Zylinder zählen genügt.",
         "Abgrenzung zum Vorgänger M57: die Kettenlage trennt die beiden nicht — M47, M57, N47 und N57 tragen den Steuertrieb alle hinten zur Schwungradseite. Getrennt wird über die Motorkennung am Block. Wer nach der Kettenlage geht, kalkuliert falsch: bei allen vieren gehört das Getriebe herunter.",
         "Vorsicht bei der Aufladungsangabe: dieselbe Motorkennung N57D30 taucht mit einem, zwei und drei Ladern auf. Ohne die vollständige Kennung ist die Ladeanordnung nicht bestimmt.",
-        "Motornummer auf dem Kurbelgehäuse, Auslassseite."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: Drallklappen im Ansaugkrümmer setzen sich zu, verklemmen oder brechen ab.",
@@ -411,7 +411,7 @@
         "Kurbelgehäuse aus Alusil. Die Zylinderlaufbahnen sind nicht gebüchst, sondern freigelegte Siliziumkristalle — beim Instandsetzen ist das der entscheidende Unterschied zu einem gebüchsten Block.",
         "Abgrenzung zum N63 — der wichtigste Punkt: der N62 ist Saugmotor. Der N63 hat zwei Turbolader, und zwar innerhalb des V. Wenn du zwischen den Zylinderbänken Lader und heisse Krümmer siehst, ist es ein N63; wenn dort die Sauganlage sitzt, ein N62.",
         "Abgrenzung zum Vorgänger M62: der M62 hat keine Valvetronic, also keine Stellmotoren auf den Köpfen.",
-        "Motornummer auf dem Kurbelgehäuse, in Fahrtrichtung rechts unterhalb der Trennfuge."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen, nach einer Quelle oben im V zwischen den Zylinderbänken neben dem Papieraufkleber. Dafür muss die Sammelsauganlage herunter."
       ],
       "weak_points": [
         "Erfahrungswert und der Klassiker: Ventilschaftdichtungen. Leitsymptom ist blauer Rauch beim Kaltstart oder nach längerem Schiebebetrieb, ohne dass der Motor sonst auffällt.",
@@ -441,7 +441,7 @@
         "Abgrenzung zum N62 — die zentrale Verwechslung bei den V8: N62 ist Saugmotor mit Sauganlage im V, N63 ist Bi-Turbo mit Ladern im V. Beide sitzen im 550i, 650i und 750i, je nach Baujahr.",
         "Abgrenzung zum S63: der S63 ist die M-Ausführung desselben Grundmotors, unter anderem mit Cross-Bank-Abgaskrümmer. Er sitzt in M5, M6 und den X5 M / X6 M — nicht in den Basismodellen.",
         "Ausbaustufe — Diagnoseunterschied: der N63TÜ ab 2012 bekam Valvetronic dazu, der ursprüngliche N63 hat sie nicht. Der Stellmotor der Exzenterwelle auf den Köpfen trennt die beiden Ausbaustufen zuverlässig.",
-        "Motornummer auf dem Kurbelgehäuse, in Fahrtrichtung rechts."
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt."
       ],
       "weak_points": [
         "Erfahrungswert: erhöhter Ölverbrauch. Die Ursache liegt meist an verschlissenen Ventilschaftdichtungen, nicht an der Kurbelgehäuseentlüftung — diese Fehlzuordnung kostet regelmässig einen Anlauf.",

@@ -53,7 +53,7 @@
         "Gegenüber dem M20 sofort am Format zu erkennen: der M30 baut spürbar länger und höher und füllt den Motorraum eines E28 fast vollständig aus.",
         "Eine obenliegende Nockenwelle, angetrieben von einer Steuerkette — nicht von einem Zahnriemen. Das unterscheidet ihn vom gleichzeitig gebauten M20.",
         "Graugussblock, Aluminiumkopf, Zündverteiler am vorderen Kopfende.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite über der Ölwannenkante.",
+        "Motornummer auf dem Block eingeschlagen, hinten am Blockende über dem Anlasser, kurz vor der Kupplungsglocke. Sie ist siebenstellig und von zwei Pluszeichen eingefasst.",
         "M30B34 und M30B35 haben denselben Hubraum von 3430 cc. Unterschieden werden sie nicht am Hubraum, sondern an Steuerung und Kopf: der B34 der E28-/E23-Zeit gegen den späteren B35 in E32 und E34."
       ],
       "weak_points": [
@@ -82,7 +82,7 @@
         "Wichtigste Unterscheidung im Motorraum: der M40 hat einen Zahnriemen hinter einem Kunststoffdeckel an der Stirnseite. Der gleich große M42 hat dort eine Steuerkette und zwei Nockenwellendeckel nebeneinander. Ein Blick auf die Stirnseite genügt.",
         "Flacher, einteiliger Ventildeckel. Der M42 trägt einen deutlich höheren, breiteren Deckel über zwei Nockenwellen.",
         "Zündverteiler am Kopfende, angetrieben von der Nockenwelle.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite."
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle unten auf der Ansaugseite über der Trennfuge zur Ölwanne."
       ],
       "weak_points": [
         "Erfahrungswert: Nockenwellen- und Kipphebelverschleiß ist der Ruf dieses Motors. Ursache ist meist eine verstopfte Ölspritzleiste oder zu langes Ölwechselintervall. Bei abgenommenem Ventildeckel sind die Nocken sichtbar eingelaufen.",
@@ -108,7 +108,7 @@
         "Der sportliche Vierzylinder der Baureihe: zwei obenliegende Nockenwellen, 16 Ventile, Steuerkette. Er sitzt im E30 318is und im E36 318is und 318ti.",
         "Vom gleich großen M40 unterscheidest du ihn ohne Werkzeug: hoher, breiter Ventildeckel über zwei Nockenwellen, kein Zahnriemendeckel an der Stirnseite.",
         "Kunststoff-Ansaugbrücke mit langen, geschwungenen Saugrohren über der Motoroberseite.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle auf der Ansaugseite des Kurbelgehäuses.",
         "Der M44 ist die 1.9-Liter-Weiterentwicklung desselben Motors und äußerlich sehr ähnlich. Unterscheide über Motornummer und Baujahr, nicht über den Blick von oben."
       ],
       "weak_points": [
@@ -138,7 +138,7 @@
         "Gegenüber dem M40 gleicher Bauzeit ist der Antrieb der Nockenwelle das Merkmal: der M43 hat eine Steuerkette, der M40 einen Zahnriemen. An der Stirnseite fehlt beim M43 der Kunststoff-Riemendeckel.",
         "Gegenüber M42 und M44 gleicher Fahrzeuggröße: nur ein Nockenwellendeckel, kein Doppelnocken-Kopf. Wer im E36 unter der Haube acht statt sechzehn Ventile hat, hat den M43.",
         "Ab 1998 M43TU: Kunststoff-Ansaugbrücke, Heißfilm-Luftmassenmesser statt Luftmengenmesser, Kurbelwellen-Impulsgeber im Kurbelgehäuse und die Steuerung BMS 46. Der Wechsel vom Luftmengen- zum Luftmassenmesser im Ansaugtrakt ist von außen sichtbar.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite."
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle unten auf der Ansaugseite über der Ölwanne, unter der Ansaugbrücke."
       ],
       "weak_points": [
         "Erfahrungswert: Zylinderkopfdichtung und Kühlsystem — Thermostat und Wasserpumpe gelten als Verschleißteile mit begrenzter Standzeit.",
@@ -165,7 +165,7 @@
         "Die 1.9-Liter-Weiterentwicklung des M42. Gleiches Grundkonzept: zwei Nockenwellen, 16 Ventile, Steuerkette.",
         "Merkmal gegenüber dem M42: der M44 hat die zweistufige Ansaugbrücke DISA. Das Umschaltelement mit Unterdruckdose sitzt sichtbar an der Ansaugbrücke — beim M42 fehlt es.",
         "Merkmal gegenüber dem gleich großen M43B19 beziehungsweise M43TUB19: derselbe Nennhubraum, aber doppelt so viele Ventile und zwei Nockenwellen. Ein Blick auf den Ventildeckel entscheidet.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle auf der Ansaugseite des Kurbelgehäuses.",
         "Verbaut im E36 318i, 318is und 318ti sowie im Z3 1.9 bis zur Ablösung durch den Sechszylinder."
       ],
       "weak_points": [
@@ -196,7 +196,7 @@
         "Zweites Merkmal des TU: der Vor-TU hat noch einen Luftmengenmesser mit Stauklappe, der TU einen Heißfilm-Luftmassenmesser.",
         "Graugussblock mit Aluminiumkopf. Der Magnet hält am Block — beim Nachfolger M52 mit Aluminiumblock hält er nicht. Das ist der schnellste Test, um M50 und M52 auseinanderzuhalten.",
         "Einzelzündspulen unter einer Abdeckung, kein Zündverteiler mehr.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite unten, zwischen Ölfiltergehäuse und Ölwannenflansch."
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen."
       ],
       "weak_points": [
         "Erfahrungswert: VANOS-Dichtungen der TU-Version verhärten. Folge sind Leistungsverlust im unteren Drehzahlbereich und ein Rasseln aus dem Bereich der Einheit.",
@@ -231,7 +231,7 @@
         "Zweites TU-Merkmal: elektronisch geregeltes Thermostat mit Steckeranschluss am Thermostatgehäuse. Der Vor-TU hat dort ein rein mechanisches Thermostat ohne Kabel.",
         "Drittes TU-Merkmal: Steuergerät. Vor-TU ist Siemens MS 41.1, TU ist Siemens MS 42. Über die Diagnose eindeutig auslesbar, wenn die Sichtprüfung nicht reicht.",
         "Gegenüber dem Nachfolger M54: der M52TU hat noch einen mechanischen Gaszug zur Drosselklappe. Beim M54 fehlt der Zug vollständig. Das ist die sicherste Unterscheidung der beiden im Motorraum.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite unten zwischen Ölfiltergehäuse und Ölwanne. Nach einer Quelle steht dort außerdem der Typschlüssel des Motors, etwa 28 6S1 für die 2.8-Liter-Sechszylinderausführung — vor dem Anwenden gegenprüfen."
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen. Nach einer Quelle steht dort außerdem der Typschlüssel des Motors, etwa 28 6S1 für die 2.8-Liter-Sechszylinderausführung — vor dem Anwenden gegenprüfen."
       ],
       "weak_points": [
         "Erfahrungswert: europäische Blöcke bis etwa 1998 haben Nikasil-Laufbahnen. Bei dauerhaft schwefelhaltigem Kraftstoff verschleißen sie, Folge sind Kompressionsverlust und schlechter Warmstart. Spätere Blöcke haben Graugussbuchsen. Bei Verdacht Kompression vergleichend über alle sechs Zylinder messen.",
@@ -261,7 +261,7 @@
         "Sicherste Unterscheidung zum M52TU: der M54 hat eine vollelektronische Drosselklappe ohne mechanischen Rückfallweg. Am Drosselklappenstutzen hängt kein Gaszug, nur ein Stecker. Findest du dort einen Bowdenzug, ist es ein M52 oder M52TU.",
         "Doppel-VANOS auf Einlass und Auslass, elektronisch geregeltes Thermostat, zweistufige Ansaugbrücke DISA.",
         "Aluminiumblock. Der Magnet hält nicht.",
-        "Motornummer auf dem Block eingeschlagen, Ansaugseite unten zwischen Ölfiltergehäuse und Ölwannenflansch. Zusätzlich trägt der Block einen Typschlüssel nach dem Muster Hubraum in Dezilitern, Zylinderzahl, S und Index.",
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen. Zusätzlich trägt der Block einen Typschlüssel nach dem Muster Hubraum in Dezilitern, Zylinderzahl, S und Index.",
         "Gegenüber dem M56: der M54 arbeitet mit der Steuerung MS 43, der M56 mit MS 45.1. Beim M54 sitzt der Öleinfülldeckel nicht auf derselben Seite des Ventildeckels wie beim M56 — nach einer Quelle liegt er beim M56 rechts. Vor dem Anwenden gegenprüfen, im Zweifel über die Motornummer gehen."
       ],
       "weak_points": [

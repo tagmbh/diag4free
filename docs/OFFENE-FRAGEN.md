@@ -130,19 +130,74 @@ einer Vorlage zu sein.
 
 ## Kategorie 3 — Motornummern
 
-Für die meisten Motoren steht nur „auf dem Block eingeschlagen". Eine
-Ortsangabe, mit der man sie ohne Suchen findet, ist nur für wenige belegt:
+*Stand 27.08., zweiter Durchgang.* Die frühere Fassung dieses Abschnitts und
+die Steckbriefe widersprachen sich: hier stand „nicht belegt", dort standen
+konkrete Ortsangaben. Jede dieser Angaben ist einzeln nachgesucht worden.
+Der Bestand danach:
 
-- **Belegt (einfach):** S14 (links unten am Block), S54 (Auslassseite unten
-  über der Ölwanne), M50/M52/M54 (Ansaugseite unten zwischen
-  Ölfiltergehäuse und Ölwannenflansch), B38 und B48 (Kurbelgehäuse hinter
-  dem vorderen Steuergehäusedeckel)
-- **Nicht belegt:** M20, M30, M40, M42, M43, M44, M56, M60, M62, M73, S38,
-  S50, S52, S62, S63, S65, S85, B47, B57, B58, M57 sowie die gesamte
-  N-Reihe
+**Gesichert — zwei unabhängige Domains nennen dieselbe Stelle:**
 
-Für einen Werkstattnutzen wäre genau das wertvoll — ohne Ortsangabe sucht
-man an einem verbauten Motor lange.
+- **M20** — Ansaugseite, unten auf einer Planfläche über der Trennfuge zur
+  Ölwanne
+- **M30** — hinten am Blockende über dem Anlasser, kurz vor der
+  Kupplungsglocke; siebenstellig, von zwei Pluszeichen eingefasst. Das
+  ersetzt die frühere Angabe „Ansaugseite über der Ölwannenkante", die keine
+  Quelle trug
+- **S54** — Auslassseite unten am Block, dicht über der Ölwanne, unter dem
+  Krümmerbereich
+
+**Einfach belegt — eine Quelle, im Steckbrief mit „nach einer Quelle"
+gekennzeichnet:**
+
+- **M40** — Ansaugseite unten über der Trennfuge zur Ölwanne
+- **M42, M44** — Ansaugseite des Kurbelgehäuses
+- **M43** — unten auf der Ansaugseite über der Ölwanne, unter der
+  Ansaugbrücke
+- **N54** — Einlassseite, laut Quelle wegen der Schräglage des Motors von
+  oben besser zugänglich; dazu ein Aufkleber am Getriebeflansch
+- **N62** — oben im V zwischen den Zylinderbänken, neben dem
+  Papieraufkleber; dafür muss die Sammelsauganlage herunter
+- **B38, B48** — Kurbelgehäuse hinter dem vorderen Steuergehäusedeckel
+  (unverändert aus dem ersten Durchgang)
+
+**Zurückgeschnitten, weil widersprüchlich:**
+
+- **M50, M52, M54** — die Höhe ist unstrittig, unten an der Trennfuge zur
+  Ölwanne. Die Seite ist es nicht: dieselbe Fundstelle nennt für
+  Sechszylinder dieser Zeit einmal die Ansaugseite unter der Saugbrücke und
+  einmal ausdrücklich die Auslassseite. Die Steckbriefe nennen jetzt beide
+  Seiten und sagen, dass beide abzusuchen sind. Die frühere Einstufung
+  „belegt (einfach)" für diese drei ist damit hinfällig
+- **S14** — eine Quelle setzt die Nummer links unten an den Block, eine
+  andere auf die Planfläche am Anlasserflansch
+
+**Nicht belegt — im Steckbrief steht nur noch „auf dem Block
+eingeschlagen":**
+
+N13, N20, N26, N42, N43, N45, N46, N47, N52, N53, N55, N57, N63 sowie M56,
+M60, M62, M73, S38, S50, S52, S62, S63, S65, S85, B47, B57, B58, M57.
+
+Bei der N-Reihe ist das eine echte Korrektur, keine Lücke, die stehen
+geblieben ist: dreizehn Steckbriefe führten „Auslassseite" als Tatsache. Für
+keinen einzelnen dieser Motoren liess sich das belegen, und für die Baureihe
+insgesamt sprechen mehrere Quellen von der Einlassseite. Wer nach einer
+solchen Angabe unter den Krümmer greift, sucht an der falschen Seite.
+
+**Was dabei bewusst nicht verallgemeinert wurde.** Ein Beleg für einen Motor
+stützt den nächsten derselben Familie nicht. Der N54-Fund wurde nicht auf
+N55, N52 und N53 übertragen, der N62-Fund nicht auf den N63, der M20-Fund
+nicht auf M40 bis M44, und der E46-Sechszylinderfund nicht auf N42 und N46 —
+obwohl das jeweils naheliegt. Plausibel ist keine Belegstufe.
+
+**Richtungsangaben sind ersatzlos gestrichen.** „In Fahrtrichtung rechts"
+stand bei N42, N47, N62 und N63 ohne Bezugspunkt. Am ausgebauten Motor
+bedeutet das etwas anderes als am eingebauten, und bei Rechtslenkern noch
+einmal etwas anderes. Brauchbar sind nur Ansaug- und Auslassseite — die sind
+am Motor selbst eindeutig.
+
+**Was das schliessen würde:** Reparaturliteratur oder ein Blick am Fahrzeug.
+Für die Sechszylinder-Frage Ansaug- gegen Auslassseite reicht ein einziger
+Motor auf der Bühne.
 
 ## Kategorie 4 — Widersprüche, bewusst offen gelassen
 

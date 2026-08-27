@@ -6,7 +6,7 @@ Der N52 im E88 kommt in mehreren Leistungsstufen — N52B30 in den Ausführungen
 
 - **Kein DISA-Ventil wie beim N46.** Die Luftmasse wird über die Exzenterwelle der Valvetronic geregelt, nicht über die Drosselklappe. Die Drosselklappe ist im Normalbetrieb offen. Eine Fehlersuche, die von Drosselklappenregelung ausgeht, führt am N52 in die Irre.
 - **Elektrische Wasserpumpe** von Pierburg, per PWM von der DME angesteuert. Kein Riemenantrieb, also auch keine Aussage über die Förderung, nur weil der Riemen läuft.
-- **Doppel-VANOS**, Einlass und Auslass je ein Magnetventil. Die Solenoide sind identisch und deshalb zum Vergleichstest untereinander tauschbar.
+- **Doppel-VANOS**, Einlass und Auslass je ein Magnetventil. Beide tragen dieselbe Teilenummer und sind deshalb zum Vergleichstest untereinander tauschbar. Ein Widerstands-Sollwert für sie ist hier nicht belegt und wird auch nicht gebraucht — der Tauschtest ist die schärfere Prüfung.
 - **Ölstandsensor QLT** statt Peilstab. Werksseitig ist kein mechanischer Peilstab verbaut; der Stand wird über die Servicefunktion in INPA ausgelesen.
 - **Ansaugbrücke aus Kunststoff mit Resonanzklappensteller.** Fällt der Steller aus, erscheinen P1004/P1005.
 
@@ -37,4 +37,4 @@ Die Belegung gilt für die MSV80. Bei einer MSV90 vor dem Messen die Zuordnung a
 
 ## Weiter
 
-Die vier klassischen Reparaturthemen des N52 — Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse — stehen in `D4F-E88-011`.
+Die vier klassischen Reparaturthemen des N52 — Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse — stehen in `D4F-E88-011`. Zum Getriebe dahinter führt `D4F-E88-020`, zur Diagnoseverbindung `D4F-E88-001`.

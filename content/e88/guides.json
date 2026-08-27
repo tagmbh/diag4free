@@ -12,7 +12,7 @@
         {
           "q": "Dreht der Anlasser beim Startknopf hörbar?",
           "help": "Reines Klick-Klick deutet auf Batteriekreis/Massefehler. Gar nichts deutet auf CAS-Freigabe fehlend oder Startknopf-Schalter defekt.",
-          "measure": "Bordspannung während Startanforderung muss nicht unter rund 9.6 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
+          "measure": "Bordspannung während der Startanforderung mitloggen. Ein Grenzwert ist hier nicht belegt — beurteilt wird vergleichend: bricht die Spannung beim Drehen deutlich ein und erholt sich erst nach dem Loslassen, liegt der Fehler im Batterie- und Anlasserkreis. Gegenprobe mit einer bekannt guten Batterie. IBS am Minuspol MUSS Kontakt haben, sonst kappt CAS die Startfreigabe.",
           "doc": "D4F-E88-002",
           "obd_hint": "PID 0142 Steuermodulspannung parallel loggen — bricht die Spannung während des Startversuchs deutlich ein, liegt der Fehler im Batterie- und Anlasserkreis",
           "yes": 1,
@@ -28,8 +28,8 @@
         },
         {
           "q": "Hört man die Kraftstoffpumpe beim Aufschließen kurz surren?",
-          "help": "N52 hat elektrische Niederdruckpumpe im Tank. Wenn stumm: Sicherung F04 (Amperewert laut Sicherungsplan) und EKPS (Kraftstoffpumpen-Steuergerät) prüfen.",
-          "measure": "Sicherung F04 im Kofferraum-Sicherungskasten. EKPS über INPA prüfen: Statusblock „Kraftstoffpumpe Drehzahl-Anforderung“.",
+          "help": "N52 hat elektrische Niederdruckpumpe im Tank. Wenn stumm: Versorgung der Pumpe und das EKPS (Kraftstoffpumpen-Steuergerät) prüfen. Welche Sicherung den Kreis trägt, hängt von Baujahr und Ausstattung ab — die Zuordnung steht auf dem Deckelaufdruck des Sicherungskastens, nicht in einer Tabelle von außen.",
+          "measure": "Sicherungskreis über den Deckelaufdruck bestimmen, dann beim Aufschließen an beiden Kontakten der Sicherung gegen Masse messen: kommt und geht die Spannung mit der Anforderung, ist der Kreis der richtige. EKPS über INPA prüfen: Statusblock „Kraftstoffpumpe Drehzahl-Anforderung“.",
           "doc": "D4F-E88-010",
           "obd_hint": "PID 015E Kraftstoffvorlauf-Sollrate",
           "yes": 3,
@@ -71,7 +71,7 @@
         },
         {
           "q": "Steigt die Wasserpumpen-Solldrehzahl mit, während die Kühlmitteltemperatur im Stand klettert?",
-          "help": "Bei heissem Motor im Stand soll die DME die elektrische Pumpe hochfahren. Bleibt die Solldrehzahl unten, obwohl die Temperatur steigt, fehlt die Anforderung — dann ist nicht die Pumpe das Problem, sondern das Temperatursignal oder die Ansteuerung.",
+          "help": "Bei heißem Motor im Stand soll die DME die elektrische Pumpe hochfahren. Bleibt die Solldrehzahl unten, obwohl die Temperatur steigt, fehlt die Anforderung — dann ist nicht die Pumpe das Problem, sondern das Temperatursignal oder die Ansteuerung.",
           "measure": "INPA DME Statusblock „Kühlmittelpumpe Solldrehzahl“ zusammen mit der Kühlmitteltemperatur beobachten. Erwartet: Temperatur steigt, Solldrehzahl steigt mit. Bleibt die Solldrehzahl unverändert, während die Temperatur weiter klettert, kommt keine Anforderung an.",
           "doc": "D4F-E88-010",
           "obd_hint": "PID 0105 Kühlmitteltemperatur parallel mitloggen",
@@ -79,7 +79,7 @@
           "no": "result-anforderung"
         },
         {
-          "q": "Fliesst bei anstehender Solldrehzahl auch ein Iststrom durch die Wasserpumpe?",
+          "q": "Fließt bei anstehender Solldrehzahl auch ein Iststrom durch die Wasserpumpe?",
           "help": "Die DME fordert Förderung an. Jetzt entscheidet der Iststrom: nimmt die Pumpe keinen Strom auf, läuft sie nicht — dann ist sie oder ihre Versorgung defekt. Nimmt sie Strom auf, läuft sie, und der Fehler liegt weiter hinten im Kreislauf.",
           "measure": "INPA DME Statusblock „Iststrom Wasserpumpe“ gegen „Kühlmittelpumpe Solldrehzahl“ halten. Iststrom rund 0 A trotz anstehender Solldrehzahl = Pumpe fördert nicht. Vor dem Urteil den Pumpenstecker prüfen: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM von der DME.",
           "doc": "D4F-E88-011",
@@ -88,9 +88,9 @@
           "no": "result-wasserpumpe"
         },
         {
-          "q": "Wird der obere Kühlerschlauch heiss, sobald die Betriebstemperatur erreicht ist?",
+          "q": "Wird der obere Kühlerschlauch heiß, sobald die Betriebstemperatur erreicht ist?",
           "help": "Die Pumpe fördert nachweislich. Bleibt der obere Kühlerschlauch trotzdem deutlich kühler als der Motor, kommt kein Kühlmittel im Kühler an — das Thermostat öffnet nicht oder ein Luftpolster steht im Weg.",
-          "measure": "Vorsichtig am oberen Kühlerschlauch fühlen oder berührungslos messen, während die Kühlmitteltemperatur in INPA steigt. Erwartet: sobald das Thermostat öffnet, wird der Schlauch spürbar heiss. Bleibt er kühl, während die Motortemperatur weiter steigt, öffnet der grosse Kreislauf nicht.",
+          "measure": "Vorsichtig am oberen Kühlerschlauch fühlen oder berührungslos messen, während die Kühlmitteltemperatur in INPA steigt. Erwartet: sobald das Thermostat öffnet, wird der Schlauch spürbar heiß. Bleibt er kühl, während die Motortemperatur weiter steigt, öffnet der große Kreislauf nicht.",
           "doc": "D4F-E88-011",
           "obd_hint": "PID 0105 Kühlmitteltemperatur",
           "yes": "result-kuehler-luft",
@@ -133,7 +133,7 @@
     },
     "result-luefter": {
       "title": "Kühlerlüfter oder dessen Ansteuerung",
-      "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (Amperewert laut Sicherungsplan), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
+      "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Versorgung des Lüfterkreises — welche Sicherung ihn trägt, steht auf dem Deckelaufdruck des Sicherungskastens und nicht in einer Tabelle von außen; am gefundenen Kreis an beiden Kontakten gegen Masse messen, 2) Ansteuerspannung PWM am Lüfter-Stecker während des Belastungstests, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
       "next_docs": [
         "D4F-E88-011"
       ]

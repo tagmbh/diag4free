@@ -54,4 +54,4 @@ Der N52 hat im Sammler eine Klappe, die dieselbe Rolle spielt wie die DISA beim 
 | Ölspur zur Getriebeglocke, kein DTC | Ölfiltergehäuse |
 | Klappern 1500–2500 U/min | Resonanzklappe |
 
-Der geführte Weg für das Überhitzungsbild liegt als Diagnosepfad „N52 Überhitzung im Standgas" bereit.
+Der geführte Weg für das Überhitzungsbild liegt als Diagnosepfad „N52 Überhitzung im Standgas" bereit. Den Einstieg in die Motordiagnose beschreibt `D4F-E88-010`.

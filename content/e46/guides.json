@@ -5,6 +5,7 @@
       "code": "GF-E46-01",
       "name": "M54 startet nicht",
       "desc": "Anlasser dreht oder dreht nicht. Systematische Eingrenzung Versorgung → EWS-Freigabe → Kraftstoffdruck → Zündung.",
+      "engines": ["M54"],
       "steps": [
         {
           "q": "Dreht der Anlasser beim Startversuch?",
@@ -52,6 +53,7 @@
       "code": "GF-E46-02",
       "name": "Sekundärluft · P0491/P0492",
       "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Vorbedingung, Pumpenversorgung, Kombiventil und Lambda-Reaktion.",
+      "engines": ["M54"],
       "steps": [
         {
           "q": "Ist der Motor kalt genug, dass der Sekundärlufttakt überhaupt anläuft?",
@@ -99,51 +101,63 @@
   "results": {
     "check-power": {
       "title": "Versorgung zuerst stabilisieren",
-      "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Ruhestrom erst messen, wenn alle Steuergeräte schlafen. Auffällig ist er, wenn er nach der Ruhephase nicht absinkt oder beim Ziehen einer einzelnen Sicherung deutlich einbricht — so wird der Verbraucher gefunden. Ein Grenzwert in mA ist in diesem Repository nicht belegt."
+      "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Ruhestrom erst messen, wenn alle Steuergeräte schlafen. Auffällig ist er, wenn er nach der Ruhephase nicht absinkt oder beim Ziehen einer einzelnen Sicherung deutlich einbricht — so wird der Verbraucher gefunden. Ein Grenzwert in mA ist in diesem Repository nicht belegt.",
+      "next_docs": ["D4F-E46-004"]
     },
     "no-comm": {
       "title": "Diagnosekommunikation gestört",
-      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001."
+      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001.",
+      "next_docs": ["D4F-E46-001", "D4F-E46-006"]
     },
     "ews-block": {
       "title": "EWS erteilt keine Startfreigabe",
-      "text": "Schlüssel im Lesering des Zündschlosses positionieren, mit zweitem Schlüssel gegenprüfen. INPA EWS-Status: 'Transponder erkannt' muss vor Freigabe kommen. Bei häufigem Ausfall: Ringantenne am Zündschloss (klassischer E46-Defekt)."
+      "text": "Schlüssel im Lesering des Zündschlosses positionieren, mit zweitem Schlüssel gegenprüfen. INPA EWS-Status: 'Transponder erkannt' muss vor Freigabe kommen. Bei häufigem Ausfall: Ringantenne am Zündschloss (klassischer E46-Defekt).",
+      "next_docs": ["D4F-E46-004"]
     },
     "fuel-pressure": {
       "title": "Kraftstoffdruck fehlt oder fällt ab",
-      "text": "Manometer am Kraftstoffrail anschließen (Adaptergewinde laut Werkzeugsatz). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+      "text": "Manometer am Kraftstoffrail anschließen (Adaptergewinde laut Werkzeugsatz). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt.",
+      "next_docs": ["D4F-E46-003"]
     },
     "ignition": {
       "title": "Zündimpuls fehlt",
-      "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung X60001 Pin 24 gegen Motorblock messen (< 0.5 Ω)."
+      "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung X60001 Pin 24 gegen Motorblock messen (< 0.5 Ω).",
+      "next_docs": ["D4F-E46-006", "D4F-E46-003"]
     },
     "compression": {
       "title": "Kompression prüfen",
-      "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression der Zylinder 1–6 bei betriebswarmem Motor messen und die sechs Werte untereinander vergleichen. Fällt ein Zylinder deutlich gegen die übrigen ab, ist er der Befund (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung). Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt."
+      "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression der Zylinder 1–6 bei betriebswarmem Motor messen und die sechs Werte untereinander vergleichen. Fällt ein Zylinder deutlich gegen die übrigen ab, ist er der Befund (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung). Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt.",
+      "next_docs": ["D4F-E46-003", "D4F-E46-008"]
     },
     "sap-pump": {
       "title": "Pumpe elektrisch versorgt, läuft aber nicht",
-      "text": "Spannung und Masse liegen am Stecker an, die Pumpe reagiert trotzdem nicht — dann ist sie selbst defekt und wird ersetzt. Vor dem Einbau der neuen Pumpe die Massestelle gegen Karosserie reinigen und den Ansaugschlauch prüfen: eine Pumpe, die über Jahre Wasser gezogen hat, ist der Regelfall beim E46, und der neue Teil geht auf demselben Weg wieder kaputt."
+      "text": "Spannung und Masse liegen am Stecker an, die Pumpe reagiert trotzdem nicht — dann ist sie selbst defekt und wird ersetzt. Vor dem Einbau der neuen Pumpe die Massestelle gegen Karosserie reinigen und den Ansaugschlauch prüfen: eine Pumpe, die über Jahre Wasser gezogen hat, ist der Regelfall beim E46, und der neue Teil geht auf demselben Weg wieder kaputt.",
+      "next_docs": ["D4F-E46-003"]
     },
     "sap-valve": {
       "title": "Kombiventil öffnet nicht",
-      "text": "Unterdruckschlauch vom Solenoid zum Ventil auf Risse prüfen. Solenoid mit 12 V direkt ansteuern — muss hörbar klicken und Unterdruck durchlassen. Danach Kombiventil selbst tauschen (verklebt durch Ruß)."
+      "text": "Unterdruckschlauch vom Solenoid zum Ventil auf Risse prüfen. Solenoid mit 12 V direkt ansteuern — muss hörbar klicken und Unterdruck durchlassen. Danach Kombiventil selbst tauschen (verklebt durch Ruß).",
+      "next_docs": ["D4F-E46-003", "D4F-E46-008"]
     },
     "sap-diag": {
       "title": "Mechanik ok · Sensorik/DME weiter prüfen",
-      "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartet wird, dass sich die Regelabweichung während des Sekundärlufttakts sichtbar verschiebt und danach wieder auf den Wert davor zurückgeht — gewertet wird diese Bewegung, nicht ein Prozent-Grenzwert; ein solcher ist hier nicht belegt. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+      "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartet wird, dass sich die Regelabweichung während des Sekundärlufttakts sichtbar verschiebt und danach wieder auf den Wert davor zurückgeht — gewertet wird diese Bewegung, nicht ein Prozent-Grenzwert; ein solcher ist hier nicht belegt. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen.",
+      "next_docs": ["D4F-E46-003", "D4F-E46-006"]
     },
     "sap-precond": {
       "title": "Vorbedingung fehlt · Test erst nach echtem Kaltstart",
-      "text": "Der Sekundärlufttakt läuft nur nach einem Kaltstart. Fahrzeug abstellen, bis die Kühlmitteltemperatur wieder nahe Umgebungstemperatur liegt, dann den Pfad erneut durchgehen. Wer sofort prüfen muss, steuert die Pumpe stattdessen über die Stellglieddiagnose in INPA an — das ersetzt aber nicht die Beobachtung im echten Takt."
+      "text": "Der Sekundärlufttakt läuft nur nach einem Kaltstart. Fahrzeug abstellen, bis die Kühlmitteltemperatur wieder nahe Umgebungstemperatur liegt, dann den Pfad erneut durchgehen. Wer sofort prüfen muss, steuert die Pumpe stattdessen über die Stellglieddiagnose in INPA an — das ersetzt aber nicht die Beobachtung im echten Takt.",
+      "next_docs": ["D4F-E46-001"]
     },
     "sap-supply": {
       "title": "Keine Versorgung an der Pumpe",
-      "text": "Sicherung F1 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach das Pumpenrelais K6304 gegen ein baugleiches tauschen. Kommt danach immer noch keine Spannung an: Leitung vom Relais zur Pumpe auf Durchgang messen und die Ansteuerleitung von der DME zum Relais prüfen. Erst wenn die Versorgung steht, ist eine Aussage über die Pumpe selbst möglich."
+      "text": "Sicherung F1 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach das Pumpenrelais K6304 gegen ein baugleiches tauschen. Kommt danach immer noch keine Spannung an: Leitung vom Relais zur Pumpe auf Durchgang messen und die Ansteuerleitung von der DME zum Relais prüfen. Erst wenn die Versorgung steht, ist eine Aussage über die Pumpe selbst möglich.",
+      "next_docs": ["D4F-E46-004", "D4F-E46-007"]
     },
     "sap-ok": {
       "title": "Sekundärluftsystem arbeitet · Adaption zurücksetzen",
-      "text": "Pumpe fördert, Kombiventil öffnet, die Lambdaregelung sieht die Zusatzluft. Der abgelegte Fehler stammt dann aus einem früheren Zustand. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts fahren. Kommt P0491 oder P0492 danach nicht wieder, ist die Sache erledigt; kommt er wieder, den Pfad mit Blick auf grenzwertige Fördermenge und verrußte Kanäle erneut durchgehen."
+      "text": "Pumpe fördert, Kombiventil öffnet, die Lambdaregelung sieht die Zusatzluft. Der abgelegte Fehler stammt dann aus einem früheren Zustand. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts fahren. Kommt P0491 oder P0492 danach nicht wieder, ist die Sache erledigt; kommt er wieder, den Pfad mit Blick auf grenzwertige Fördermenge und verrußte Kanäle erneut durchgehen.",
+      "next_docs": ["D4F-E46-003", "D4F-E46-001"]
     }
   }
 }
