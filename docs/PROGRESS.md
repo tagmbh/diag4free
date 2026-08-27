@@ -64,16 +64,18 @@ done
 ## Offen — braucht eine Entscheidung des Nutzers
 
 1. **PR #7 mergen.** Bis dahin sieht der Nutzer live 21 Dokumente statt 125.
-2. **Fotorealistische Motorbilder.** Die Fahrzeuge sind erledigt (siehe
-   unten). Bei den Motoren ist die Lage anders: ein generiertes Bild eines
-   N54 wäre ein erfundener Motor. Entweder es bleibt bei der gerechneten
-   Zeichnung, oder es braucht eine belegte Vorlage. Das ist eine
-   inhaltliche Entscheidung, keine technische.
-3. **Gesperrte Hosts, die nachweislich Substanz gekostet haben.** Jeder davon
-   würde eine offene Kategorie in einem Durchgang schliessen:
-   `ms4x.net` (MS43-Pinliste), `bmwrepairguide.com` (Motornummern-Positionen),
-   die Sicherungsplan-Sammlungen (E88-Sicherungsnummern),
-   `archive.org` (BMW-Schulungsunterlagen).
+2. **Fotorealistische Motorbilder — entschieden, blockiert.** Die Fahrzeuge
+   sind erledigt. Bei den Motoren ist die Lage anders: ein generiertes Bild
+   eines N54 waere ein erfundener Motor, also braucht es eine belegte
+   Vorlage. Der Weg dorthin ist gewaehlt (Patentschnittzeichnungen, hilfsweise
+   CC-BY-SA-Fotos) und haengt nur noch an der Netzfreigabe — siehe
+   `docs/GESPERRTE-HOSTS.md`. Bis dahin bleibt das gerechnete Schema.
+3. **Gesperrte Hosts.** Die vollstaendige Liste steht in
+   `docs/GESPERRTE-HOSTS.md` — sechzehn Hosts, je mit dem, was eine Freigabe
+   konkret einbringt. Sie zerfaellt in zwei Teile: Bildquellen fuer die
+   Motoren (Patentschriften sind der saubere Weg, BMW-Pressebilder
+   ausdruecklich nicht) und vier inhaltliche Luecken, die je eine Kategorie
+   in einem Durchgang schliessen wuerden.
 
 ## Offen — inhaltlich, ohne Entscheidung machbar
 
