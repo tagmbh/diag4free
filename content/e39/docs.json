@@ -10,14 +10,14 @@
       "summary": "Der E39 überspannt den Wechsel vom 20-poligen Rundstecker im Motorraum auf die OBD-2-Buchse im Innenraum. Welcher Anschluss welches Steuergerät erreicht, welches Kabel dafür nötig ist und woran der Umbruch im Baujahr hängt.",
       "points": [
         "Bis Bauzeit 09/2000 sitzt zusätzlich der 20-polige Rundstecker im Motorraum — er ist der Weg zu allen Steuergeräten, nicht nur zur DME",
-        "OBD-2 Pin 7 führt zur DME. Body-, ABS- und Airbag-Steuergeräte hängen an der zweiten Diagnoseleitung, die erst bei den späten Baujahren auf OBD-2 Pin 8 herausgeführt ist",
+        "OBD-2 Pin 7 führt zur DME. Body-, ABS- und Airbag-Steuergeräte hängen an einer zweiten Diagnoseleitung, die an der 16-poligen Buchse nicht ankommt — ob späte Fahrzeuge sie auf Pin 8 führen, geben die Beschreibungen widersprüchlich an",
         "Bei Fahrzeugen mit beiden Buchsen: für die Werksdiagnose immer den Rundstecker verwenden, sonst antwortet nur ein Teil der Steuergeräte",
         "Kabel mit FTDI-Chip verwenden und den Latency Timer im Gerätemanager auf 1 ms setzen — sonst Timeouts in INPA",
         "Adapter 20-polig auf 16-polig nur brauchbar, wenn beide Diagnoseleitungen durchverbunden sind; einfache Adapter führen nur die Motor-K-Line"
       ],
       "pins": [
         "OBD-2 Pin 7 · K-Line zur DME",
-        "OBD-2 Pin 8 · zweite Diagnoseleitung (übrige Steuergeräte, späte Baujahre)",
+        "OBD-2 Pin 8 · herstellerfrei, kein genormtes Signal — am E39 strittig, siehe D4F-E39-003",
         "OBD-2 Pin 4/5 · Masse",
         "OBD-2 Pin 16 · KL30"
       ],
@@ -90,7 +90,7 @@
         "Rundstecker Pin 16 · KL15",
         "Rundstecker Pin 17 · TXD II, kommt aus dem DME-Stecker",
         "Rundstecker Pin 19 · Masse",
-        "Rundstecker Pin 20 · TXD, kommt aus einem Verbinder statt aus einem Steuergerät"
+        "Rundstecker Pin 20 · TXD, kommt aus einem Verbinder statt aus einem Steuergerät — die zweite Diagnoseleitung, aber nicht auf OBD-2 Pin 8 herausgeführt"
       ],
       "engines": [
         "M52",
@@ -221,7 +221,7 @@
       ],
       "pins": [
         "OBD-2 Pin 7 · K-Line zur DME",
-        "OBD-2 Pin 8 · zweite Diagnoseleitung, hierüber antwortet die EWS bei späten Baujahren"
+        "OBD-2 Pin 8 · als Weg zur EWS nicht belegt — die zweite Diagnoseleitung erreicht diese Buchse nach den auffindbaren Beschreibungen nicht, siehe D4F-E39-003"
       ],
       "engines": [
         "M52",

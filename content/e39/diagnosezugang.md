@@ -24,6 +24,16 @@ Der Grund liegt in der Leitungsführung. Die Motorsteuerung hängt an einer eige
 
 > Ein billiger Adapter von 20-polig auf 16-polig verbindet häufig nur die Motorleitung durch. Damit hast du am Rundstecker dieselbe Einschränkung wie an der OBD-2-Buchse und suchst den Fehler an der falschen Stelle. Prüf den Adapter vor dem Kauf oder miss ihn mit dem Multimeter durch.
 
+## Die Brücke am Rundstecker — und was Pin 8 damit zu tun hat
+
+Wer im Netz nach dem E39 sucht, stößt zwangsläufig auf zwei Massnahmen: eine Brücke am Rundstecker und eine Brücke zwischen Pin 7 und Pin 8 der OBD-2-Buchse. Sie werden gern gleichgesetzt. Das ist falsch.
+
+Der Grund liegt in der Norm. Pin 8 des 16-poligen Steckers trägt **kein genormtes Signal** — die Norm lässt ihn dem Hersteller frei. Was dort liegt, entscheidet also die Baureihe, nicht die Pinnummer. An der F-Serie ist es die Aktivierungsleitung für den Ethernet-Zugang, an anderen BMW-Modellen eine zweite Diagnoseleitung, und am E39 nach den auffindbaren Beschreibungen gar nichts.
+
+Die Brücke am Rundstecker arbeitet deshalb anders, als der Vergleich nahelegt. Sie legt die Leitung zur Motorsteuerung und die Leitung zu den übrigen Steuergeräten im Stecker zusammen. Danach kommen beide über dieselbe Ader an der OBD-2-Buchse an — und dort antworten alle Steuergeräte über **Pin 7**. Funktional ist das dasselbe Ergebnis wie eine Brücke 7/8 an einem Fahrzeug, das Pin 8 belegt. Elektrisch ist es etwas anderes.
+
+> **Widerspruch, nicht aufgelöst:** Welche Kontakte am Rundstecker zusammengelegt werden, geben die Beschreibungen verschieden an — die einen nennen 17 und 20, die anderen 2, 17 und 20 gemeinsam. Ebenso strittig ist, ob späte Fahrzeuge ohne Rundstecker die zweite Leitung auf Pin 8 führen oder ob beide Leitungen dort längst zusammengelegt sind. Miss vor jedem Eingriff selbst nach, statt einer der Fassungen zu glauben.
+
 ## Kabel und Anschluss einrichten
 
 1. **Kabel einstecken** und im Gerätemanager die COM-Nummer ablesen.

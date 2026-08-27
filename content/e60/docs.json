@@ -12,7 +12,7 @@
         "Baujahr zuerst klären: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6/14. Das Baujahr steht auf dem Typschild der B-Säule, nicht in der Zulassung",
         "K+DCAN-Kabel mit Schalter: für den frühen E60 in K-Line-Stellung, für den späten in DCAN-Stellung. Steht der Schalter falsch, meldet EDIABAS schlicht kein Steuergerät — kein Hardwaredefekt",
         "Latency Timer des FTDI-Treibers auf 1 ms setzen. Der Standardwert von 16 ms erzeugt Zeitüberschreitungen, die wie ein totes Steuergerät aussehen",
-        "Umstrittene Pin-7/8-Brücke: manche Kabel legen Pin 7 und 8 zusammen. Am E60 berichten Anwender beides — mit Brücke funktioniert es, mit Brücke funktioniert es nicht. Im Zweifel den Adapter ohne Brücke zuerst probieren",
+        "Pin 8 führt im 16-poligen Stecker kein genormtes Signal — die Norm lässt ihn dem Hersteller frei, und genau deshalb gehen die Angaben zur Brücke 7/8 auseinander. Am E60 berichten Anwender beides, mit und ohne. Im Zweifel den Adapter ohne Brücke zuerst probieren",
         "Der frühe E60 wird bis 09/2005 über das SGM diagnostiziert, danach über das Karosserie-Gateway. Ein Fahrzeug, das gar nicht antwortet, hat sein Problem oft im Gateway, nicht im Kabel",
         "Vor jeder Codierung die vorhandenen Codierdaten des betroffenen Steuergeräts sichern — am E60 ist das kein optionaler Schritt"
       ],
