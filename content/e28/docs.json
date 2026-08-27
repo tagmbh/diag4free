@@ -1,0 +1,138 @@
+{
+  "model": "e28",
+  "docs": [
+    {
+      "id": "D4F-E28-001",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Diagnosezugang E28 · 15-polig oder 20-polig",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat nicht einen Diagnoseanschluss, sondern zwei. Welcher im Motorraum sitzt, hängt am Steuergerätestand und entscheidet darüber, was überhaupt auslesbar ist und welcher Adapter passt.",
+      "points": [
+        "Frühe E28 tragen einen D-förmigen 15-poligen Stecker mit Schnappkappe im Motorraum",
+        "Der runde 20-polige Stecker mit Schraubkappe kommt erst spät — nach einer Quelle ab 1987 und dort mit Motronic 1.1",
+        "Die Pinzählung der beiden Stecker ist nicht dieselbe; Masse liegt nicht auf demselben Kontakt",
+        "Vor dem Anstecken Masse und Dauerplus am Stecker selbst durchmessen, statt der Zählung zu vertrauen",
+        "Kein OBD-2 — weder Form noch Protokoll. Ein Generic-Scanner liest hier auch mit Adapter nichts"
+      ],
+      "pins": [
+        "Pin 1 · Masse — nach einer Quelle nur am 15-poligen D-Stecker",
+        "Pin 19 · Masse — nach einer Quelle am 20-poligen Rundstecker",
+        "Pin 7 · Rückstellleitung der Service-Anzeige, Ader weiß-blau, nach einer Quelle",
+        "Pin 11 · Anlasseransteuerung am 15-poligen Stecker, nach einer Quelle",
+        "Pin 14 · Batterieversorgung am 15-poligen Stecker, nach einer Quelle"
+      ],
+      "engines": ["M20", "M30", "S38"],
+      "article": "diagnosezugang.md",
+      "details": ["D4F-E28-002", "D4F-E28-004", "D4F-E28-007"]
+    },
+    {
+      "id": "D4F-E28-002",
+      "type": "TEST",
+      "cat": "Motorsteuerung",
+      "title": "Motorzuordnung E28 · M20, M30 und S38",
+      "valid": "E28 · 1981–1988",
+      "summary": "Welcher Motor im E28 mit welcher Gemischbildung und welchem Steuergerät läuft — und was daraus für die Fehlersuche folgt. Der Unterschied zwischen Jetronic und Motronic entscheidet, ob es überhaupt einen Fehlerspeicher gibt.",
+      "points": [
+        "M30 im 525i, 528i und 535i: je nach Baujahr K- oder L-Jetronic, nach einer Quelle ab etwa 1985 Motronic",
+        "M20 im 520i und als langhubige eta-Variante M20B27 im 525e",
+        "S38 nur im M5; der europäische M5 (E28) fährt den M88/3, der S38B35 ist die Fassung für Nordamerika und Japan",
+        "Vor der Motronic gibt es keinen Fehlerspeicher — dort wird gemessen, nicht ausgelesen",
+        "Die Motornummer am Block, Ansaugseite über der Ölwannenkante, entscheidet die Zuordnung, nicht das Typenschild",
+        "M30 hat Steuerkette, M20 Zahnriemen — gleiche Zündungsdiagnose, völlig andere Folgen bei Steuertriebschaden"
+      ],
+      "engines": ["M20", "M30", "S38"],
+      "article": "motorzuordnung.md",
+      "details": ["D4F-E28-001", "D4F-E28-003"]
+    },
+    {
+      "id": "D4F-E28-003",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Fehlerspeicher am E28 · was ohne Diagnosegerät geht",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E30 ist der Blinkcode über das Gaspedal der schnelle Weg zum Fehlerspeicher. Am E28 ist er das in aller Regel nicht. Was hier stattdessen bleibt und woran du erkennst, welcher Fall vorliegt.",
+      "points": [
+        "Nach einer Quelle kennt Motronic Basic (1.0) keine Blinkcode-Ausgabe und hat keine Motorkontrollleuchte",
+        "Fehlt im Kombi eine Motorkontrollleuchte, brauchst du die Pedalprozedur gar nicht erst zu versuchen",
+        "Die Pedalprozedur ist für Motronic 1.3 belegt; ob der späte E28 mit Motronic 1.1 sie beherrscht, ist hier ungeprüft",
+        "Ohne Blinkcode bleiben zwei Wege: seriell über den Diagnosestecker oder reine Messdiagnose am Bauteil",
+        "Blinkcode-Bedeutungen anderer Baureihen nicht übertragen — gleiche Ziffernfolge heißt nicht gleiche Ursache"
+      ],
+      "engines": ["M20", "M30"],
+      "article": "fehlerspeicher-ohne-geraet.md",
+      "details": ["D4F-E28-001", "D4F-E28-002"]
+    },
+    {
+      "id": "D4F-E28-004",
+      "type": "GUIDE",
+      "cat": "Wartung",
+      "title": "Service-Intervall-Anzeige zurücksetzen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Service-Anzeige des E28 hängt an einer eigenen Platine im Kombiinstrument mit eingelöteten Akkuzellen. Sie stellt sich nach der Wartung nicht selbst zurück, und ausgelaufene Zellen zerstören die Platine.",
+      "points": [
+        "Die SI-Platine im Kombiinstrument speist die Anzeige aus eingelöteten Ni-Cd-Zellen",
+        "Erfahrungswert: auslaufende Zellen fressen die Leiterbahnen an — Anzeige bleibt stehen oder erlischt ganz",
+        "Rückstellung nach einer Quelle über den Diagnosestecker: Rückstellkontakt gegen Masse, Zündung ein, rund 3 s halten",
+        "Nach einer Quelle liegt der Rückstellkontakt auf Pin 7; Masse ist steckerabhängig — erst durchmessen, dann brücken",
+        "Nach einer Quelle einen Vorwiderstand in die Brücke legen statt hart kurzzuschließen",
+        "Nach dem Zellentausch bleibt die Anzeige stehen, bis sie einmal zurückgesetzt wird"
+      ],
+      "engines": ["M20", "M30", "S38"],
+      "article": "si-anzeige-ruecksetzen.md",
+      "details": ["D4F-E28-001"]
+    },
+    {
+      "id": "D4F-E28-005",
+      "type": "TEST",
+      "cat": "Kraftstoff",
+      "title": "Kraftstoffpumpenkreis prüfen · M20 und M30",
+      "valid": "E28 · 1981–1988",
+      "summary": "Dreht der Anlasser, springt der Motor aber nicht an, trennt eine einzige Messung Pumpe von Ansteuerung. Der Kreis aus Relais, Sicherung und Pumpe ist am E28 nach Jahrzehnten die naheliegendste Stelle.",
+      "points": [
+        "Erfahrungswert: das Kraftstoffpumpenrelais gehört zu den häufigsten Ursachen für Startverweigerung am E28",
+        "Nach einer Quelle steuert das Steuergerät das Relais über die Steuerwicklung an; geschaltet wird der Lastpfad von Klemme 30 auf Klemme 87",
+        "Brücke am Relaissockel von Klemme 30 auf 87: läuft die Pumpe, liegt der Fehler in der Ansteuerung, nicht in der Pumpe",
+        "Die Brücke immer abgesichert ausführen — ein Kurzschluss im Lastpfad kostet sonst den Kabelbaum",
+        "Ob die Pumpe bei Zündung ein kurz anläuft, hängt am Steuergerätestand; verlässlich ist erst der Test beim Cranken",
+        "Läuft die Pumpe mit Brücke nicht, sitzt der Fehler an der Pumpe selbst oder an ihrer Steckverbindung"
+      ],
+      "engines": ["M20", "M30"],
+      "details": ["D4F-E28-002", "D4F-E28-006"]
+    },
+    {
+      "id": "D4F-E28-006",
+      "type": "TEST",
+      "cat": "Zündung",
+      "title": "Zündkreis und Steuergeräteversorgung am E28",
+      "valid": "E28 · 1981–1988",
+      "summary": "Ohne Funke hilft kein Fehlerspeicher. Die Reihenfolge am E28 ist immer dieselbe: Versorgung, Masse, Funke an der Spule, erst danach Verteiler und Bauteile dahinter.",
+      "points": [
+        "Funkenprobe am mittleren Zündkabel gegen einen blanken Massepunkt, isolierte Zange, nie in der Hand halten",
+        "Kommt der Funke an der Spule, aber nicht an den Kerzen an, liegt der Fehler in Kappe, Läufer oder Zündkabeln",
+        "Erfahrungswert: Verteilerkappe und Läufer korrodieren, das zeigt sich zuerst als Aussetzer unter Last",
+        "Massepunkte am Motor reinigen und nachziehen, bevor du Steuergeräte verdächtigst",
+        "Sollwerte für Primär- und Sekundärwiderstand der Zündspule liegen hier nicht belegt vor — tauschweise gegen eine bekannt gute Spule prüfen"
+      ],
+      "engines": ["M20", "M30", "S38"],
+      "details": ["D4F-E28-002", "D4F-E28-005"]
+    },
+    {
+      "id": "D4F-E28-007",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Adapter und Software für den E28",
+      "valid": "E28 · 1981–1988",
+      "summary": "Was ein Adapterkabel am E28 leisten kann und was nicht. Die kurze Antwort: er verlegt Kontakte, er ändert kein Protokoll — und für den frühen 15-poligen Stecker gibt es diesen Weg gar nicht.",
+      "points": [
+        "Adapter von rund 20-polig auf 16-polig ist rein mechanisch — aus Motronic 1.x wird dadurch kein OBD-2-Steuergerät",
+        "Für den 15-poligen D-Stecker der frühen E28 ist ein solcher Adapter nicht vorgesehen",
+        "Nötig ist Software, die das BMW-eigene Protokoll spricht; ein Generic-Scanner bleibt stumm",
+        "Vor dem ersten Anstecken den fertigen Adapter durchklingeln und die Zuordnung notieren",
+        "Ein vertauschtes Datenpaar bleibt still, ein vertauschtes Plus kostet das Interface"
+      ],
+      "engines": ["M20", "M30", "S38"],
+      "details": ["D4F-E28-001", "D4F-E28-003"]
+    }
+  ]
+}

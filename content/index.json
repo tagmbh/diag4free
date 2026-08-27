@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:03:59.368Z",
+  "generated": "2026-08-27T05:05:09.716Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -588,6 +588,198 @@
         "D4F-E36-006"
       ],
       "model": "e36"
+    },
+    {
+      "id": "D4F-E38-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E38 · Rundstecker, OBD-2 und DS2",
+      "valid": "E38 · 1994–2001 · alle Motoren",
+      "summary": "Der E38 steht auf der Grenze zwischen Rundstecker und OBD-2. Welcher Anschluss welche Steuergeräte erreicht, welches Protokoll dahinterliegt und welche Software zu welchem Baujahr passt — mit den Punkten, an denen die Quellenlage auseinandergeht.",
+      "points": [
+        "Zwei Anschlüsse am Fahrzeug: der 20-polige Rundstecker im Motorraum und die 16-polige OBD-2-Buchse im Innenraum",
+        "Über beide läuft dieselbe K-Leitung; das Fahrzeugprotokoll ist DS2, nicht das genormte OBD-2-Diagnoseprotokoll",
+        "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung — Komfortsteuergeräte antworten ausschliesslich auf DS2",
+        "Interface mit FTDI-Chip verwenden; Latency Timer im Gerätemanager auf 1 ms setzen",
+        "Vor der ersten Sitzung prüfen, welcher der beiden Anschlüsse am konkreten Fahrzeug tatsächlich alle Steuergeräte liefert — das entscheidet über den Rest der Arbeit",
+        "Erst Verbindung klären, dann Fehlerspeicher lesen: ein leerer Speicher aus einer halben Verbindung ist wertlos"
+      ],
+      "pins": [
+        "OBD2 Pin 7 · K-Leitung (Diagnose)",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "Rundstecker 20-polig · Belegung am Fahrzeug durchmessen, siehe D4F-E38-007"
+      ],
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E38-002",
+        "D4F-E38-007"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "Steuergeräte-Topologie E38 · D-Bus, K-Bus, I-Bus",
+      "valid": "E38 · 1994–2001",
+      "summary": "Der E38 verteilt seine Steuergeräte auf drei Ebenen: den Diagnosebus zum Tester, den Karosseriebus mit der Komfortelektrik und den Informationsbus mit Kombi, Radio und Bordmonitor. Wer die Zuordnung kennt, verdächtigt bei einem Ausfall das Gateway statt sechs einzelner Geräte.",
+      "points": [
+        "K-Bus und I-Bus sind Eindrahtbusse mit 9600 bit/s — langsam, dafür mit einem einfachen Oszilloskop sichtbar",
+        "Das Kombiinstrument arbeitet als Gateway zwischen Diagnosebus und den beiden Komfortbussen — antwortet es nicht, verschwindet die halbe Karosserie aus der Liste",
+        "Fehlen mehrere Komfortsteuergeräte gleichzeitig, ist zuerst der Bus und dann das Gateway verdächtig, nicht jedes Gerät einzeln",
+        "Die Elektrik-Architektur teilt sich der E38 weitgehend mit dem E39 — Erkenntnisse lassen sich zwischen beiden übertragen, Teilenummern nicht",
+        "Beim M73 hängen zwei Motorsteuergeräte am Diagnosebus, die einzeln angesprochen werden müssen",
+        "Bus ohne Ruhe: bleibt der Bus nach Abstellen dauerhaft aktiv, schläft kein Steuergerät ein — siehe D4F-E38-006"
+      ],
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "article": "topologie.md",
+      "details": [
+        "D4F-E38-001",
+        "D4F-E38-005",
+        "D4F-E38-006"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-003",
+      "type": "TEST",
+      "cat": "M73 · Motor",
+      "title": "M73 · zwei Motorsteuerungen, eine je Bank",
+      "valid": "E38 750i/750iL · M73 und M73TU",
+      "summary": "Der V12 des E38 wird als zwei getrennte Motorhälften betrieben. Jede Bank hat ihr eigenes Steuergerät, ihren eigenen Luftmassenmesser, ihre eigene Lambdaregelung. Das verändert die Diagnose grundlegend: der Vergleich beider Bänke ist das stärkste Werkzeug, das dieser Motor bietet.",
+      "points": [
+        "Beide Steuergeräte einzeln auslesen — ein Fehler auf Bank 1 steht nicht im Speicher von Bank 2",
+        "Erst nach dem Auslesen beider Seiten entscheiden, ob ein Symptom einseitig oder beidseitig ist",
+        "Einseitiges Symptom heisst: das Bauteil auf dieser Bank prüfen, nicht die gemeinsame Peripherie",
+        "Beidseitiges Symptom heisst: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Masse — also das, was sich beide Bänke teilen",
+        "Alle Bank-Peripherie ist doppelt vorhanden, damit verdoppelt sich auch die Ausfallwahrscheinlichkeit",
+        "Kreuzweise tauschen statt messen: ein verdächtiges Bauteil auf die andere Bank setzen und sehen, ob das Symptom mitwandert"
+      ],
+      "engines": [
+        "M73"
+      ],
+      "article": "m73-zwei-dme.md",
+      "details": [
+        "D4F-E38-001",
+        "D4F-E38-002"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-004",
+      "type": "TEST",
+      "cat": "M62 · Fehlerbilder",
+      "title": "M62 im E38 · Gleitschienen, Kühlmittelrohr und die Nikasil-Frage",
+      "valid": "E38 735i/740i · M62 und M62TU",
+      "summary": "Die drei Themen, die am M62 des E38 die meiste Werkstattzeit kosten: brechende Steuerkettengleitschienen, das undichte Kühlmittelübergangsrohr unter der Ansaugbrücke und die immer wieder falsch gestellte Nikasil-Frage.",
+      "points": [
+        "Der M62 hat keine Nikasil-Laufbahnen — die Nikasil-Frage betrifft den Vorgänger M60, nicht diesen Motor",
+        "Beim Ölwechsel den Filter aufschneiden: Kunststoffbruchstücke darin sind der Befund für zerfallende Gleitschienen",
+        "Kettenschlagen im Leerlauf ernst nehmen, besonders am M62TUB44 — das ist der bekannteste Schaden dieses Motors",
+        "Kühlmittelverlust ohne sichtbare Pfütze: das Übergangsrohr liegt unter der Ansaugbrücke, das Kühlmittel läuft in den V-Raum",
+        "M62 gegen M62TU trennen, bevor Teile bestellt werden: TU hat Einfach-VANOS an beiden Kopfstirnseiten und elektronische Drosselklappe",
+        "Steuergerät als sichere Abgrenzung: Vor-TU Bosch Motronic M5.2, TU Bosch ME 7.2 — über die Diagnose eindeutig"
+      ],
+      "engines": [
+        "M62"
+      ],
+      "article": "m62-fehlerbilder.md",
+      "details": [
+        "D4F-E38-001"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-005",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Steuergeräte-Einbauorte E38",
+      "valid": "E38 · Limousine kurz und lang",
+      "summary": "Wo die für Diagnose und Codierung wichtigen Steuergeräte im E38 sitzen. Gedacht als Wegweiser vor dem Zerlegen — nicht als Ersatz für den Stromlaufplan des konkreten Fahrzeugs.",
+      "points": [
+        "Motorsteuerung: E-Box im Wasserkasten; beim M73 stehen dort zwei Geräte nebeneinander",
+        "Lichtmodul: Fahrerfussraum aussen — die Stelle, an der Wasser aus verstopften Schiebedachabläufen ankommt",
+        "Grundmodul der Zentralverriegelung: Fahrerseite unter der Armaturentafel",
+        "Kombiinstrument: mittig in der Armaturentafel, trägt zugleich die Gateway-Funktion",
+        "Sitzspeicher-Module: unter den Vordersitzen, je Sitz eines",
+        "Vor jeder Ortsangabe die Ausstattung klären — Fond-Klima und Bordmonitor bringen zusätzliche Geräte mit, die es ohne diese Ausstattung schlicht nicht gibt"
+      ],
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "details": [
+        "D4F-E38-002"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-006",
+      "type": "TEST",
+      "cat": "Bordnetz",
+      "title": "Ruhestrom am E38 · warum der Bus nicht einschläft",
+      "valid": "E38 · 1994–2001",
+      "summary": "Der E38 hat für seine Zeit viele Komfortsteuergeräte, und jedes davon kann den Bus wachhalten. Leere Batterie nach wenigen Tagen ist deshalb selten ein Batterieproblem, sondern fast immer ein Steuergerät, das nicht in den Ruhezustand geht.",
+      "points": [
+        "Erst die Batterie selbst beurteilen: Ruhespannung nach mehreren Stunden ohne Last messen, rund 12.6 V zeigen eine geladene Batterie an",
+        "Ruhestrommessung erst beginnen, wenn das Fahrzeug wirklich zur Ruhe gekommen ist — vorher misst man den Einschlafvorgang, nicht den Ruhestrom",
+        "Türen und Klappen mit den Schlössern verriegeln, sonst bleibt die Karosserieelektronik wach",
+        "Fällt der Strom nicht ab, den Bus ansehen: dauerhafte Aktivität auf dem Eindrahtbus heisst, ein Teilnehmer sendet weiter",
+        "Verbraucher über die Sicherungen einzeln abtrennen und beobachten, bei welchem Kreis der Strom fällt — das ersetzt jeden Sollwert",
+        "Nachrüstgeräte und Telefonvorbereitung zuerst verdächtigen, danach die serienmässigen Komfortmodule"
+      ],
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "details": [
+        "D4F-E38-002",
+        "D4F-E38-005"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-007",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Rundstecker und OBD-2 am E38 · was gesichert ist und was nicht",
+      "valid": "E38 · 1994–2001",
+      "summary": "Die Signalzuordnung der beiden Diagnoseanschlüsse ist der Punkt, an dem im Netz die meisten widersprüchlichen Angaben stehen. Dieses Dokument trennt das Gesicherte vom Ungesicherten und beschreibt, wie du die Belegung am konkreten Fahrzeug selbst feststellst.",
+      "points": [
+        "Gesichert an der OBD-2-Buchse: Pin 4 und 5 Masse, Pin 7 K-Leitung, Pin 16 Dauerplus",
+        "Zur Belegung des 20-poligen Rundsteckers widersprechen sich die verfügbaren Angaben — deshalb steht hier keine Tabelle",
+        "Vorgehen statt Tabelle: bei abgezogener Diagnoseleitung Dauerplus und Masse am Rundstecker durchmessen und die gefundene Belegung notieren",
+        "Nach einer Quelle lässt sich der Innenraum-Anschluss durch eine Brücke im Deckel des Rundsteckers auf alle Steuergeräte erweitern; welche Kontakte gebrückt werden, geben die Quellen unterschiedlich an",
+        "Bevor du brückst: die Funktion der betroffenen Kontakte am eigenen Fahrzeug messen — eine falsche Brücke legt Dauerplus auf eine Signalleitung",
+        "Fertige Rundstecker-auf-OBD-2-Adapter nehmen dir diese Entscheidung ab, aber nicht die Prüfung, ob danach wirklich alle Steuergeräte antworten"
+      ],
+      "pins": [
+        "OBD2 Pin 4 · Masse Karosserie",
+        "OBD2 Pin 5 · Signalmasse",
+        "OBD2 Pin 7 · K-Leitung",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "details": [
+        "D4F-E38-001"
+      ],
+      "model": "e38"
     },
     {
       "id": "D4F-E39-001",
@@ -5018,11 +5210,12 @@
     }
   },
   "stats": {
-    "total_docs": 53,
+    "total_docs": 60,
     "total_guides": 19,
     "per_model": {
       "e30": 2,
       "e36": 8,
+      "e38": 7,
       "e39": 8,
       "e46": 8,
       "e60": 8,
