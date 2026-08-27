@@ -4,21 +4,21 @@
     "n54-low-boost": {
       "code": "GF-E90-01",
       "name": "N54 · Zu wenig Ladedruck",
-      "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP.",
+      "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP. Einstieg über den Fehlerspeicher, ohne Eintrag über das Logfile.",
       "engines": ["N54"],
       "steps": [
         {
-          "q": "Sind DTCs 29E0/29E1 gespeichert?",
-          "help": "ISTA/D → Motor → Fehlerspeicher lesen. 29E0/29E1 zeigt Sollwertabweichung Ladedruck.",
-          "measure": "Ist- und Sollladedruck in ISTA nebeneinander lesen · bewertet wird die Abweichung des Ist-Werts von dem Sollwert, den das Steuergerät selbst führt. Ein Zahlen-Sollwert für den Ladedruck ist in diesem Repository nicht belegt",
+          "q": "Steht mindestens einer der Ladedruckcodes 29E0, 29E1 oder 30FF im DME-Fehlerspeicher?",
+          "help": "Reine Speicherfrage — an dieser Stelle wird noch nichts am Ladedruck beurteilt. 29E0/29E1 melden eine Sollwertabweichung, 30FF meldet Ladedruck zu niedrig. Alle drei zeigen in dieselbe Strecke. Steht keiner davon an, entscheidet später das Logfile.",
+          "measure": "ISTA/D oder INPA · DME · Fehlerspeicher lesen und die anstehenden Codes notieren. Speicher löschen, kurze Lastfahrt, erneut lesen — nur was wiederkommt, ist aktuell. Bewertet wird allein, ob einer der drei Codes im Speicher steht, nicht wie hoch der Ladedruck ist",
           "doc": "D4F-E90-002",
           "yes": 1,
           "no": 4
         },
         {
           "q": "Ladeluftsystem druckdicht? (Smoke-Test)",
-          "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse.",
-          "measure": "Rauchtester nach Gerätevorgabe an das Ladeluftsystem anschließen · keine sichtbaren Austritte an Kupplungsschellen, Charge-Pipe und Ladeluftkühler-Anschlüssen. Ein Prüfdruck ist hier nicht belegt — bewertet wird der sichtbare Rauchaustritt",
+          "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse. Bei 30FF gehören die Unterdruckleitungen und die Ladedruck-Magnetventile in denselben Durchgang — sie erzeugen dasselbe Bild wie eine Leckage.",
+          "measure": "Rauchtester nach Gerätevorgabe an das Ladeluftsystem anschließen · keine sichtbaren Austritte an Kupplungsschellen, Charge-Pipe und Ladeluftkühler-Anschlüssen, Unterdruckleitungen ohne Risse und Scheuerstellen. Ein Prüfdruck ist hier nicht belegt — bewertet wird der sichtbare Rauchaustritt",
           "doc": "D4F-E90-002",
           "yes": 2,
           "no": "boost-leak"
@@ -42,10 +42,114 @@
         {
           "q": "Folgt der Ist-Ladedruck im Log dem Sollwert über die ganze Volllastfahrt?",
           "help": "Ohne Eintrag im Fehlerspeicher entscheidet der Datenlogger. Ist- und Sollladedruck während einer Volllastfahrt im dritten oder vierten Gang aufzeichnen und übereinanderlegen.",
-          "measure": "Ist- und Sollkurve laufen deckungsgleich · kein Einbruch, kein Auseinanderlaufen zum Drehzahlende hin",
+          "measure": "Ist- und Sollkurve laufen deckungsgleich · kein Einbruch, kein Auseinanderlaufen zum Drehzahlende hin. Bewertet wird die Abweichung des Ist-Werts von dem Sollwert, den das Steuergerät selbst führt — ein Zahlen-Sollwert für den Ladedruck ist in diesem Repository nicht belegt",
           "doc": "D4F-E90-002",
           "yes": "check-symptom",
           "no": 1
+        }
+      ]
+    },
+    "kein-kontakt": {
+      "code": "GF-E90-02",
+      "name": "Kein Steuergerät antwortet",
+      "desc": "Die Baureihe wechselt im März 2007 das Diagnoseprotokoll. Dieser Pfad klärt in fester Reihenfolge Baustand, Kabel-Betriebsart, Versorgung und Treiber, bevor ein Steuergerät verdächtigt wird.",
+      "engines": ["N43", "N46", "N52", "N53", "N54", "N55", "M57", "N47", "S65"],
+      "steps": [
+        {
+          "q": "Ist der Baustand des Fahrzeugs am Typschild oder über die Fahrzeugdaten zur VIN bestimmt?",
+          "help": "Ohne Baustand ist jede weitere Prüfung Raten. Das Zulassungsjahr taugt nicht: es liegt regelmäßig ein Baujahr neben dem Baustand, und genau an der Grenze 2006/2007 entscheidet dieser Unterschied über die Kabelstellung.",
+          "measure": "Typschild in der Türöffnung Fahrerseite ablesen oder die Fahrzeugdaten zur VIN heranziehen · Ergebnis ist ein Monat und ein Jahr, nicht das Zulassungsdatum",
+          "doc": "D4F-E90-001",
+          "yes": 1,
+          "no": "baustand-unklar"
+        },
+        {
+          "q": "Passt die Betriebsart des Kabels zum Baustand — bis 02/2007 K-Line mit Brücke Pin 7/8, ab 03/2007 D-CAN ohne Brücke?",
+          "help": "Das ist die häufigste Ursache für „kein Steuergerät gefunden“ an dieser Baureihe, und sie ist kein Hardwaredefekt. Bis 02/2007 läuft die Diagnose über die K-Line an Pin 7 und braucht die Brücke zwischen Pin 7 und Pin 8. Ab 03/2007 läuft sie über D-CAN an Pin 6 und Pin 14, und dieselbe Brücke stört dann den Bus.",
+          "measure": "Kabelschalter beziehungsweise Steckadapter gegen den ermittelten Baustand halten · nach jedem Umschalten Kabel abziehen, Software beenden, neu starten, erst dann wieder anstecken",
+          "doc": "D4F-E90-001",
+          "yes": 2,
+          "no": "betriebsart"
+        },
+        {
+          "q": "Kommen an der OBD-Buchse Masse und Dauerplus an, und ist die Zündung wirklich eingeschaltet?",
+          "help": "Ein Kabel, das keine Versorgung bekommt, verhält sich wie ein defektes. KL30 liegt an Pin 16 dauerhaft an, Masse an Pin 4 und 5. KL15 muss für die Sitzung eingeschaltet bleiben, nicht nur zum Verbindungsaufbau.",
+          "measure": "Multimeter an der OBD-Buchse: Spannung zwischen Pin 16 und Pin 4/5 vorhanden und stabil · Statusanzeige der Software meldet Batterie und Zündung als erkannt. Ein Sollwertfenster für die Bordspannung ist hier nicht belegt — bewertet wird, ob die Spannung anliegt und unter Last nicht einbricht",
+          "doc": "D4F-E90-001",
+          "yes": 3,
+          "no": "versorgung"
+        },
+        {
+          "q": "Steht der Latency Timer des FTDI-Treibers auf 1 ms und ist der richtige COM-Port eingetragen?",
+          "help": "Der Vorgabewert von 16 ms erzeugt Zeitüberschreitungen, die wie ein totes Steuergerät aussehen. Der COM-Port muss in der EDIABAS-Konfiguration derselbe sein, den der Gerätemanager dem Kabel zugewiesen hat.",
+          "measure": "Gerätemanager · Anschlusseinstellungen · erweitert · Latency Timer auf 1 ms · COM-Port notieren und mit dem Eintrag in der Konfiguration vergleichen",
+          "doc": "D4F-E90-001",
+          "yes": 4,
+          "no": "treiber"
+        },
+        {
+          "q": "Antwortet jetzt mindestens ein Steuergerät im Suchlauf?",
+          "help": "Ab hier ist die Werkzeugseite abgearbeitet. Antwortet weiterhin nichts, verschiebt sich der Verdacht auf das Fahrzeug — auf den Diagnosezweig zum Gateway und dessen Versorgung.",
+          "measure": "Vollständigen Suchlauf fahren und die Geräteliste sichern · Ergebnis ist die Zahl der antwortenden Geräte, nicht ein einzelnes Identifizieren",
+          "doc": "D4F-E90-004",
+          "yes": 5,
+          "no": "gateway"
+        },
+        {
+          "q": "Fehlen im Suchlauf einzelne Steuergeräte, während andere antworten?",
+          "help": "Ein Teilausfall ist kein Kabelproblem mehr. Jetzt entscheidet, ob die stummen Geräte auf derselben Busstrecke liegen oder sich über mehrere verteilen.",
+          "measure": "Stumme Geräte auf die Busse aufteilen · alle auf einer Strecke deutet auf die Strecke, verteilt über mehrere auf den Knoten dazwischen",
+          "doc": "D4F-E90-004",
+          "yes": "teilausfall",
+          "no": "zugang-ok"
+        }
+      ]
+    },
+    "direkteinspritzer-ruckeln": {
+      "code": "GF-E90-03",
+      "name": "N43 oder N53 ruckelt und läuft rau",
+      "desc": "Rauer Kaltlauf, Ruckeln bei niedriger Last, steigender Verbrauch. Von der billigsten zur teuersten Ursache: Motorzuordnung → Zündung → Einspritzung → Magerbetriebs-Sensorik.",
+      "engines": ["N43", "N53"],
+      "steps": [
+        {
+          "q": "Ist gesichert, dass ein Direkteinspritzer verbaut ist — Hochdruckpumpe am Zylinderkopf und kein Valvetronic-Stellmotor?",
+          "help": "N43 und N53 sind Direkteinspritzer ohne Valvetronic, N46 und N52 Saugrohreinspritzer mit Valvetronic. Im selben Modelljahr desselben Modells steckt je nach Markt beides. Wer den Motor falsch zuordnet, sucht anschließend nach Bauteilen, die das Fahrzeug nicht hat.",
+          "measure": "Zylinderkopf ansehen: Hochdruckpumpe und Hochdruckrail vorhanden, Stellmotor der Exzenterwelle nicht vorhanden · Gegenprobe über den beim Identifizieren ausgelesenen Steuergerätetyp und die Motornummer am Kurbelgehäuse",
+          "doc": "D4F-E90-005",
+          "yes": 1,
+          "no": "falscher-motor"
+        },
+        {
+          "q": "Nennt der DME-Fehlerspeicher Verbrennungsaussetzer eines bestimmten Zylinders?",
+          "help": "Ein Eintrag, der immer denselben Zylinder nennt, führt direkt zum Bauteil. Wechselnde Zylinder oder ein Sammeleintrag deuten eher auf die Gemischbildung als auf ein einzelnes Teil.",
+          "measure": "DME-Fehlerspeicher lesen und notieren, welcher Zylinder genannt wird und ob der Eintrag statisch oder sporadisch abgelegt ist. Speicher löschen, Probefahrt, erneut lesen — nur was wiederkommt, ist aktuell",
+          "doc": "D4F-E90-005",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Wandert der Aussetzer mit, wenn du die Zündspule des auffälligen Zylinders gegen die eines unauffälligen tauschst?",
+          "help": "Der Tauschtest ist der schnellste Weg zur Zündspule und braucht keinen Sollwert. Nach dem Tausch Speicher löschen, Probefahrt, erneut lesen. Zündspulenausfälle werden an beiden Motoren häufig berichtet, oft im Verbund mit den Injektoren.",
+          "measure": "Spule von Zylinder A auf Zylinder B setzen und umgekehrt, Speicher löschen, Probefahrt. Erwartet: nennt der neue Eintrag jetzt den anderen Zylinder, ist die Spule der Täter. Bleibt der Eintrag beim alten Zylinder, ist sie es nicht",
+          "doc": "D4F-E90-005",
+          "yes": "zuendspule",
+          "no": 3
+        },
+        {
+          "q": "Fällt in der zylinderindividuellen Laufruheregelung ein Zylinder dauerhaft aus der Reihe?",
+          "help": "Die DME regelt die Einspritzmenge je Zylinder nach. Ein Zylinder, dessen Korrekturwert dauerhaft deutlich von den übrigen abweicht, zeigt einen Injektor mit abweichender Menge — typisch bei den Piezo-Injektoren dieser beiden Motoren. Der Vergleich untereinander ersetzt den fehlenden Sollwert.",
+          "measure": "Statusblock zur Laufruhe- beziehungsweise Mengenkorrektur je Zylinder im warmen Leerlauf beobachten. Erwartet: alle Werte liegen dicht beieinander. Ein einzelner Ausreißer, der über Minuten stabil abweicht, ist der Befund. Absolutwerte sind hier nicht belegt — es zählt der Abstand zu den Nachbarzylindern",
+          "doc": "D4F-E90-005",
+          "yes": "injektor",
+          "no": 4
+        },
+        {
+          "q": "Steht ein Eintrag zum NOx-Sensor an, und ist der Verbrauch gestiegen, ohne dass es dabei ruckelt?",
+          "help": "Der NOx-Sensor überwacht den Magerbetrieb. Fällt er aus, verlässt die DME den geschichteten Betrieb und fährt homogen weiter. Das Symptom ist steigender Verbrauch, selten ein Ruckeln — und es erklärt deshalb ein Ruckeln auch nicht.",
+          "measure": "Fehlerspeicher auf Einträge zur Magerbetriebs-Sensorik prüfen · Verbrauchsentwicklung über mehrere Tankfüllungen gegenhalten statt über eine Momentanzeige",
+          "doc": "D4F-E90-005",
+          "yes": "nox",
+          "no": "weitersuchen"
         }
       ]
     }
@@ -54,11 +158,11 @@
     "check-symptom": {
       "title": "Keine Ladedruckabweichung im Speicher",
       "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: Raildruck-Ist unter Volllast gegen den vom Steuergerät geführten Sollwert prüfen — ein Absacken des Ist gegen den Soll ist der Befund. Ein absoluter Raildruck-Sollwert ist in diesem Repository nicht belegt.",
-      "next_docs": ["D4F-E90-002"]
+      "next_docs": ["D4F-E90-002", "D4F-E90-005"]
     },
     "boost-leak": {
       "title": "Ladeluftleckage bestätigt",
-      "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle).",
+      "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle). Gerissene Unterdruckleitungen gehören im selben Durchgang mit erneuert — sie erzeugen dasselbe Fehlerbild und denselben Code.",
       "next_docs": ["D4F-E90-002"]
     },
     "wastegate": {
@@ -68,13 +172,73 @@
     },
     "hpfp": {
       "title": "Hochdruckpumpe hält den Raildruck nicht",
-      "text": "Befund passt zu 29F0. Vor jedem Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt — das entscheidet über die Kostenfrage. Zusätzlich Niederdruckseite und Kraftstofffilter beurteilen, damit eine neue Pumpe nicht dasselbe Bild liefert. Steht 30FF mit im Speicher, Zündspulen und Kerzen mit abarbeiten, sonst bleibt das Fahrzeug nach dem Pumpentausch auffällig.",
+      "text": "Befund passt zu 29F0. Vor jedem Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt — das entscheidet über die Kostenfrage. Zusätzlich Niederdruckseite und Kraftstofffilter beurteilen, damit eine neue Pumpe nicht dasselbe Bild liefert. Steht 30FF mit im Speicher, ist das kein Zündungshinweis, sondern ein zweiter Eintrag aus der Ladedruckstrecke: Unterdruckleitungen, Charge-Pipe und Ladedruck-Magnetventile gehören dann mit abgearbeitet.",
       "next_docs": ["D4F-E90-002"]
     },
     "kein-befund": {
       "title": "Kein Befund in Ladeluftsystem, Lader und HPFP",
-      "text": "Ladeluftsystem ist dicht, Wastegate unauffällig, Raildruck stabil — der Leistungsverlust kommt nicht aus der Ladedruckstrecke. Nächste Richtungen: Fehlerspeicher aller Steuergeräte erneut vollständig auslesen, Zündungsseite prüfen, wenn 30FF auftaucht, und Abgasgegendruck sowie Luftfilter beurteilen. Ergebnisse der Logfahrt aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+      "text": "Ladeluftsystem ist dicht, Wastegate unauffällig, Raildruck stabil — der Leistungsverlust kommt nicht aus der Ladedruckstrecke. Nächste Richtungen: Fehlerspeicher aller Steuergeräte erneut vollständig auslesen, Abgasgegendruck und Luftfilter beurteilen. Die Zündungsseite erst dann, wenn ein zündungsbezogener Eintrag tatsächlich im Speicher steht — 30FF ist keiner, der Code meldet zu niedrigen Ladedruck. Ergebnisse der Logfahrt aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
       "next_docs": ["D4F-E90-002", "D4F-E90-001"]
+    },
+    "baustand-unklar": {
+      "title": "Baustand zuerst bestimmen",
+      "text": "Ohne Baustand lässt sich die Kabel-Betriebsart nicht wählen, und jede weitere Prüfung ist Raten. Das Typschild sitzt in der Türöffnung Fahrerseite; alternativ liefern die Fahrzeugdaten zur VIN den Baustand. Das Zulassungsjahr taugt nicht — es liegt regelmäßig ein Baujahr daneben. Erst wenn Monat und Jahr feststehen, geht dieser Pfad weiter.",
+      "next_docs": ["D4F-E90-001"]
+    },
+    "betriebsart": {
+      "title": "Kabel steht in der falschen Betriebsart",
+      "text": "Bis Baustand 02/2007 läuft die Diagnose über die K-Line an Pin 7, und das Kabel braucht die Brücke zwischen Pin 7 und Pin 8 — über den Schalter oder einen Steckadapter. Ab Baustand 03/2007 läuft sie über D-CAN an Pin 6 und Pin 14, und die Brücke muss offen sein, sonst stört sie den Bus. Nach dem Umschalten: Kabel abziehen, Software beenden, neu starten, erst dann wieder anstecken. Ein ENET-Kabel ist an dieser Baureihe kein Ersatz — ENET gibt es am E90 nicht.",
+      "next_docs": ["D4F-E90-001"]
+    },
+    "versorgung": {
+      "title": "Versorgung an der OBD-Buchse fehlt",
+      "text": "Ohne Dauerplus an Pin 16 und Masse an Pin 4/5 arbeitet kein Interface. Prüfe die zugehörige Sicherung und den Leitungsweg zur Buchse, bevor du weiter an der Software suchst. Fehlt nur KL15, meldet die Software Batterie erkannt und Zündung nicht erkannt — dann ist die Zündung nicht wirklich eingeschaltet oder KL15 erreicht die Buchse nicht.",
+      "next_docs": ["D4F-E90-001", "D4F-E90-006"]
+    },
+    "treiber": {
+      "title": "Treiber- oder Portproblem",
+      "text": "Latency Timer im FTDI-Treiber auf 1 ms setzen; der Vorgabewert von 16 ms erzeugt Abbrüche, die wie ein totes Steuergerät aussehen. COM-Port aus dem Gerätemanager mit dem Eintrag in der EDIABAS-Konfiguration abgleichen. Danach Software neu starten und den Suchlauf wiederholen, bevor am Fahrzeug weitergesucht wird.",
+      "next_docs": ["D4F-E90-001"]
+    },
+    "gateway": {
+      "title": "Werkzeugseite abgearbeitet, Verdacht auf Gateway oder Diagnosezweig",
+      "text": "Baustand, Betriebsart, Versorgung und Treiber sind geklärt, und trotzdem antwortet nichts. Jetzt verschiebt sich der Verdacht auf das Fahrzeug: Diagnoseleitung von der Buchse zum Gateway, Versorgung und Masse des Gateways, und die Frage, ob ein vorangegangener Eingriff das Bordnetz verändert hat. Vor dem Ausbau eines Steuergeräts die Spannungsversorgung am Gerät selbst messen — ein Gerät ohne Spannung verhält sich am Bus wie ein defektes.",
+      "next_docs": ["D4F-E90-004", "D4F-E90-006"]
+    },
+    "teilausfall": {
+      "title": "Teilausfall — einzelne Steuergeräte antworten nicht",
+      "text": "Der Zugang funktioniert, das Problem liegt im Bordnetz. Ordne die stummen Geräte ihren Busstrecken zu: liegen alle auf derselben Strecke, ist die Strecke der Kandidat; verteilen sie sich über mehrere, ist der Knoten dazwischen verdächtig und nicht jedes einzelne Gerät. Prüfe zusätzlich, ob das Gerät, das den Eintrag geschrieben hat, selbst noch antwortet — dann ist der Eintrag im Nachbarsteuergerät ein Folgefehler.",
+      "next_docs": ["D4F-E90-004", "D4F-E90-006"]
+    },
+    "zugang-ok": {
+      "title": "Diagnosezugang steht",
+      "text": "Alle erwarteten Steuergeräte antworten. Sichere die Geräteliste, bevor du weiterarbeitest — sie ist später der einzige Beleg dafür, was vor dem Eingriff da war. Danach die Gesamtauslesung fahren und die Einträge gemeinsam beurteilen statt Gerät für Gerät. Steht ein Batteriewechsel im Raum, gehört die Registrierung dazu.",
+      "next_docs": ["D4F-E90-001", "D4F-E90-007"]
+    },
+    "falscher-motor": {
+      "title": "Motorzuordnung zuerst klären",
+      "text": "Ohne Hochdruckpumpe am Zylinderkopf ist es kein N43 und kein N53, sondern ein N46 oder N52 mit Saugrohreinspritzung und Valvetronic. Dieser Pfad passt dann nicht — die Magerbetriebs-Sensorik und die Piezo-Injektoren, um die er kreist, sind gar nicht verbaut. Ordne den Motor über Zylinderkopf, ausgelesenen Steuergerätetyp und Motornummer zu und arbeite danach mit dem passenden Fehlerbild weiter.",
+      "next_docs": ["D4F-E90-005"]
+    },
+    "zuendspule": {
+      "title": "Zündspule des betroffenen Zylinders",
+      "text": "Der Aussetzer ist mit der Spule mitgewandert — damit ist sie der Täter, ohne dass ein Sollwert gebraucht wurde. Zündspulenausfälle treten an beiden Motoren häufig im Verbund mit den Injektoren auf; wenn mehrere Zylinder auffällig waren, lohnt der Blick auf den Gesamtzustand statt auf das eine Teil. Nach dem Tausch Speicher löschen und über eine Probefahrt gegenprüfen.",
+      "next_docs": ["D4F-E90-005"]
+    },
+    "injektor": {
+      "title": "Injektor mit abweichender Menge",
+      "text": "Ein Zylinder fällt in der Mengenkorrektur dauerhaft aus der Reihe. Das passt zum bekannten Bild der Piezo-Injektoren dieser beiden Motoren. Vor dem Tausch die Zündungsseite des betroffenen Zylinders ausschließen, damit nicht das teurere Teil für den Fehler des billigeren bezahlt. Injektorwiderstände und Raildruck-Sollwerte sind hier nicht belegt — verglichen wird gegen die Nachbarzylinder und gegen den vom Steuergerät geführten Sollwert.",
+      "next_docs": ["D4F-E90-005"]
+    },
+    "nox": {
+      "title": "NOx-Sensor beziehungsweise Magerbetriebs-Sensorik",
+      "text": "Steigender Verbrauch ohne Ruckeln passt zum Ausfall der Magerbetriebs-Sensorik: die DME verlässt den geschichteten Betrieb und fährt homogen weiter. Das erklärt den Verbrauch, aber kein Ruckeln — steht beides zusammen an, ist der Sensor nicht die ganze Antwort. Ein Eintrag zur Sensorik schließt Injektor- und Zündungsfehler nicht aus, und der teuerste Eintrag ist selten die Ursache des Ruckelns.",
+      "next_docs": ["D4F-E90-005"]
+    },
+    "weitersuchen": {
+      "title": "Kein Befund in Zündung, Einspritzung und Magerbetriebs-Sensorik",
+      "text": "Keine der drei Ebenen liefert einen Befund. Nächste Richtungen: Falschluft im Ansaugtrakt, Ölkohle an den Einlassventilen nach hoher Laufleistung, und die Niederdruckseite der Kraftstoffversorgung. Vorher den Fehlerspeicher aller Steuergeräte erneut vollständig auslesen — ein Eintrag außerhalb der DME kann dasselbe Fahrverhalten erzeugen. Messwerte der Sitzung aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+      "next_docs": ["D4F-E90-005", "D4F-E90-004"]
     }
   }
 }

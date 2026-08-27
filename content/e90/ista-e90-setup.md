@@ -24,7 +24,7 @@ Der E90 hat mitten in der Bauzeit den Diagnosezugang gewechselt. Die Richtung is
 
 Die Karosserievariante hilft nur grob weiter. Limousine und Touring liefen ab 2005 und überspannen den Schnitt. Coupé, Cabrio und der M3 mit S65 kamen 2006 und 2007 und liegen am Schnitt oder dahinter. Verbindlich ist trotzdem der Baustand am konkreten Fahrzeug, nicht die Karosserie.
 
-> **Der Baustand steht nicht im Fahrzeugschein.** Zulassungsjahr und Baustand liegen regelmäßig ein Jahr auseinander, und genau an der Jahresgrenze 2006/2007 kostet dieser Irrtum eine halbe Stunde Fehlersuche in der Software. Nimm das Typschild in der Türöffnung Fahrerseite oder die Fahrzeugdaten zur VIN.
+**Der Baustand steht nicht im Fahrzeugschein.** Zulassungsjahr und Baustand liegen regelmäßig ein Jahr auseinander, und genau an der Jahresgrenze 2006/2007 kostet dieser Irrtum eine halbe Stunde Fehlersuche in der Software. Nimm das Typschild in der Türöffnung Fahrerseite oder die Fahrzeugdaten zur VIN.
 
 ## Pinbelegung an der OBD-Buchse
 
