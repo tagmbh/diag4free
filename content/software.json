@@ -1,21 +1,46 @@
 {
   "updated": "2026-08-26",
-  "attribution": [
-    { "label": "Idries/bmwfirmware (MIT)", "url": "https://github.com/Idries/bmwfirmware", "note": "Version-zu-Update-Datenbank, adaptiert unter MIT-Lizenz" },
-    { "label": "miurhz Gist", "url": "https://gist.github.com/miurhz/29d47fe097875cf40ca0707dd3ffb238", "note": "Community-Tracking der BMW-USB-Updates" },
-    { "label": "bmwupdate.hamadi.net", "url": "https://bmwupdate.hamadi.net/", "note": "Versions-Lookup-Referenz, Prefix-Zuordnung" }
-  ],
   "cdn": {
     "bin": "https://static.bmw.com/content/dam/bmw/staticContent/static_bmw_com/bluetooth/updates/bmw/bin/",
     "pdf": "https://static.bmw.com/content/dam/bmw/staticContent/static_bmw_com/bluetooth/updates/bmw/pdf/"
   },
   "prefixes": [
-    { "prefix": "MX / TX", "unit": "Combox Media (Multimedia / Telefon)", "era": "CCC-Ära und frühe CIC", "models": "E8x, E9x, E6x mit Combox · ca. 2008–2013 — auch E88" },
-    { "prefix": "ME / TE", "unit": "CIC-Ära Telematik/Media", "era": "CIC", "models": "E9x LCI, F01 früh · ca. 2009–2012" },
-    { "prefix": "MN / TN / HN", "unit": "NBT Evo", "era": "NBT Evo", "models": "i3, i8, viele Modelle 2013–2018" },
-    { "prefix": "MV / TV / HV", "unit": "EntryNav / alternatives Headunit", "era": "ca. 2016–2018", "models": "F-Serie Einstiegsnavigation" },
-    { "prefix": "MB / TB / HB", "unit": "Pro-Navi mit DVD", "era": "NBT", "models": "F-Serie mit Professional-Navi · 2012–2018" },
-    { "prefix": "MT / TT / HT", "unit": "TT/MT-Headunit", "era": "ca. 2018–2019", "models": "Späte F-Serie vor OS7" }
+    {
+      "prefix": "MX / TX",
+      "unit": "Combox Media (Multimedia / Telefon)",
+      "era": "CCC-Ära und frühe CIC",
+      "models": "E8x, E9x, E6x mit Combox · ca. 2008–2013 — auch E88"
+    },
+    {
+      "prefix": "ME / TE",
+      "unit": "CIC-Ära Telematik/Media",
+      "era": "CIC",
+      "models": "E9x LCI, F01 früh · ca. 2009–2012"
+    },
+    {
+      "prefix": "MN / TN / HN",
+      "unit": "NBT Evo",
+      "era": "NBT Evo",
+      "models": "i3, i8, viele Modelle 2013–2018"
+    },
+    {
+      "prefix": "MV / TV / HV",
+      "unit": "EntryNav / alternatives Headunit",
+      "era": "ca. 2016–2018",
+      "models": "F-Serie Einstiegsnavigation"
+    },
+    {
+      "prefix": "MB / TB / HB",
+      "unit": "Pro-Navi mit DVD",
+      "era": "NBT",
+      "models": "F-Serie mit Professional-Navi · 2012–2018"
+    },
+    {
+      "prefix": "MT / TT / HT",
+      "unit": "TT/MT-Headunit",
+      "era": "ca. 2018–2019",
+      "models": "Späte F-Serie vor OS7"
+    }
   ],
   "updates": [
     {
@@ -25,10 +50,54 @@
       "result": "MX-3.5.4 / TX-3.5.8 (bzw. TX-2.6.6 / MX-1.12.0, variantenabhängig)",
       "date": "2014",
       "variants": [
-        { "prefix": "MX", "style": "short" },
-        { "prefix": "TX", "style": "short" },
-        { "prefix": "MX", "exact": [[3,4,31],[1,10,21],[1,11,1]] },
-        { "prefix": "TX", "exact": [[3,4,31],[2,5,21],[2,5,25]] }
+        {
+          "prefix": "MX",
+          "style": "short"
+        },
+        {
+          "prefix": "TX",
+          "style": "short"
+        },
+        {
+          "prefix": "MX",
+          "exact": [
+            [
+              3,
+              4,
+              31
+            ],
+            [
+              1,
+              10,
+              21
+            ],
+            [
+              1,
+              11,
+              1
+            ]
+          ]
+        },
+        {
+          "prefix": "TX",
+          "exact": [
+            [
+              3,
+              4,
+              31
+            ],
+            [
+              2,
+              5,
+              21
+            ],
+            [
+              2,
+              5,
+              25
+            ]
+          ]
+        }
       ]
     },
     {
@@ -38,8 +107,14 @@
       "result": "ME-8.5.5 / TE-8.5.5",
       "date": "2013",
       "variants": [
-        { "prefix": "ME", "style": "short" },
-        { "prefix": "TE", "style": "short" }
+        {
+          "prefix": "ME",
+          "style": "short"
+        },
+        {
+          "prefix": "TE",
+          "style": "short"
+        }
       ]
     },
     {
@@ -49,8 +124,14 @@
       "result": "MN-2.34.1 / TN-2.34.1",
       "date": "2014",
       "variants": [
-        { "prefix": "MN", "style": "short" },
-        { "prefix": "TN", "style": "short" }
+        {
+          "prefix": "MN",
+          "style": "short"
+        },
+        {
+          "prefix": "TN",
+          "style": "short"
+        }
       ]
     },
     {
@@ -60,14 +141,161 @@
       "result": "MN-003.013.001 / TN-003.255.080 / HN-003.255.080 (oder früheres Zwischenziel, variantenabhängig)",
       "date": "2016–2018",
       "variants": [
-        { "prefix": "MN", "exact": [[1,20,22],[1,22,2],[1,36,2],[2,17,7],[2,26,3],[2,33,2],[2,38,15]] },
-        { "prefix": "MN", "minMajor": 2, "maxMajor": 2, "minMinor": 45, "maxMinor": 255 },
-        { "prefix": "TN", "exact": [[1,20,22],[1,22,2],[1,36,2],[2,17,7],[2,26,3],[2,33,2],[2,38,15]] },
-        { "prefix": "TN", "minMajor": 2, "maxMajor": 2, "minMinor": 45, "maxMinor": 255 },
-        { "prefix": "TN", "minMajor": 3, "maxMajor": 3, "minMinor": 1, "maxMinor": 255 },
-        { "prefix": "HN", "exact": [[1,20,22],[1,22,2],[1,34,6],[2,17,7],[2,26,3],[2,34,4],[2,38,15]] },
-        { "prefix": "HN", "minMajor": 2, "maxMajor": 2, "minMinor": 43, "maxMinor": 255 },
-        { "prefix": "HN", "minMajor": 3, "maxMajor": 3, "minMinor": 1, "maxMinor": 255 }
+        {
+          "prefix": "MN",
+          "exact": [
+            [
+              1,
+              20,
+              22
+            ],
+            [
+              1,
+              22,
+              2
+            ],
+            [
+              1,
+              36,
+              2
+            ],
+            [
+              2,
+              17,
+              7
+            ],
+            [
+              2,
+              26,
+              3
+            ],
+            [
+              2,
+              33,
+              2
+            ],
+            [
+              2,
+              38,
+              15
+            ]
+          ]
+        },
+        {
+          "prefix": "MN",
+          "minMajor": 2,
+          "maxMajor": 2,
+          "minMinor": 45,
+          "maxMinor": 255
+        },
+        {
+          "prefix": "TN",
+          "exact": [
+            [
+              1,
+              20,
+              22
+            ],
+            [
+              1,
+              22,
+              2
+            ],
+            [
+              1,
+              36,
+              2
+            ],
+            [
+              2,
+              17,
+              7
+            ],
+            [
+              2,
+              26,
+              3
+            ],
+            [
+              2,
+              33,
+              2
+            ],
+            [
+              2,
+              38,
+              15
+            ]
+          ]
+        },
+        {
+          "prefix": "TN",
+          "minMajor": 2,
+          "maxMajor": 2,
+          "minMinor": 45,
+          "maxMinor": 255
+        },
+        {
+          "prefix": "TN",
+          "minMajor": 3,
+          "maxMajor": 3,
+          "minMinor": 1,
+          "maxMinor": 255
+        },
+        {
+          "prefix": "HN",
+          "exact": [
+            [
+              1,
+              20,
+              22
+            ],
+            [
+              1,
+              22,
+              2
+            ],
+            [
+              1,
+              34,
+              6
+            ],
+            [
+              2,
+              17,
+              7
+            ],
+            [
+              2,
+              26,
+              3
+            ],
+            [
+              2,
+              34,
+              4
+            ],
+            [
+              2,
+              38,
+              15
+            ]
+          ]
+        },
+        {
+          "prefix": "HN",
+          "minMajor": 2,
+          "maxMajor": 2,
+          "minMinor": 43,
+          "maxMinor": 255
+        },
+        {
+          "prefix": "HN",
+          "minMajor": 3,
+          "maxMajor": 3,
+          "minMinor": 1,
+          "maxMinor": 255
+        }
       ]
     },
     {
@@ -77,8 +305,101 @@
       "result": "MV-130.009.020 / TV-130.017.020 / HV-130.017.021",
       "date": "2017",
       "variants": [
-        { "prefix": "MV", "exact": [[10,12,1],[100,11,1],[110,2,2],[110,4,1],[130,7,2],[130,6,7],[130,8,3]] },
-        { "prefix": "TV", "exact": [[10,12,1],[110,4,1],[110,2,2],[100,11,1],[130,7,2],[130,6,7],[130,8,3],[130,9,4],[130,15,1],[130,16,1]] }
+        {
+          "prefix": "MV",
+          "exact": [
+            [
+              10,
+              12,
+              1
+            ],
+            [
+              100,
+              11,
+              1
+            ],
+            [
+              110,
+              2,
+              2
+            ],
+            [
+              110,
+              4,
+              1
+            ],
+            [
+              130,
+              7,
+              2
+            ],
+            [
+              130,
+              6,
+              7
+            ],
+            [
+              130,
+              8,
+              3
+            ]
+          ]
+        },
+        {
+          "prefix": "TV",
+          "exact": [
+            [
+              10,
+              12,
+              1
+            ],
+            [
+              110,
+              4,
+              1
+            ],
+            [
+              110,
+              2,
+              2
+            ],
+            [
+              100,
+              11,
+              1
+            ],
+            [
+              130,
+              7,
+              2
+            ],
+            [
+              130,
+              6,
+              7
+            ],
+            [
+              130,
+              8,
+              3
+            ],
+            [
+              130,
+              9,
+              4
+            ],
+            [
+              130,
+              15,
+              1
+            ],
+            [
+              130,
+              16,
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -88,8 +409,26 @@
       "result": "MV-110.005.011 / TV-110.005.030 / HV-130.017.032",
       "date": "2017",
       "variants": [
-        { "prefix": "MV", "exact": [[110,2,2]] },
-        { "prefix": "TV", "exact": [[110,2,2]] }
+        {
+          "prefix": "MV",
+          "exact": [
+            [
+              110,
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "prefix": "TV",
+          "exact": [
+            [
+              110,
+              2,
+              2
+            ]
+          ]
+        }
       ]
     },
     {
@@ -99,9 +438,136 @@
       "result": "MV-130.009.020 / TV-130.025.041 / HV-130.025.041",
       "date": "2017",
       "variants": [
-        { "prefix": "MV", "exact": [[130,6,7],[130,7,2],[130,8,3]] },
-        { "prefix": "TV", "exact": [[130,6,7],[130,7,2],[130,8,3],[130,9,4],[130,15,1],[130,16,1],[130,18,3],[130,20,2],[130,22,1],[130,24,1]] },
-        { "prefix": "HV", "exact": [[130,6,7],[130,7,2],[130,8,3],[130,9,4],[130,15,1],[130,16,1],[130,18,3],[130,20,2],[130,22,1],[130,24,1]] }
+        {
+          "prefix": "MV",
+          "exact": [
+            [
+              130,
+              6,
+              7
+            ],
+            [
+              130,
+              7,
+              2
+            ],
+            [
+              130,
+              8,
+              3
+            ]
+          ]
+        },
+        {
+          "prefix": "TV",
+          "exact": [
+            [
+              130,
+              6,
+              7
+            ],
+            [
+              130,
+              7,
+              2
+            ],
+            [
+              130,
+              8,
+              3
+            ],
+            [
+              130,
+              9,
+              4
+            ],
+            [
+              130,
+              15,
+              1
+            ],
+            [
+              130,
+              16,
+              1
+            ],
+            [
+              130,
+              18,
+              3
+            ],
+            [
+              130,
+              20,
+              2
+            ],
+            [
+              130,
+              22,
+              1
+            ],
+            [
+              130,
+              24,
+              1
+            ]
+          ]
+        },
+        {
+          "prefix": "HV",
+          "exact": [
+            [
+              130,
+              6,
+              7
+            ],
+            [
+              130,
+              7,
+              2
+            ],
+            [
+              130,
+              8,
+              3
+            ],
+            [
+              130,
+              9,
+              4
+            ],
+            [
+              130,
+              15,
+              1
+            ],
+            [
+              130,
+              16,
+              1
+            ],
+            [
+              130,
+              18,
+              3
+            ],
+            [
+              130,
+              20,
+              2
+            ],
+            [
+              130,
+              22,
+              1
+            ],
+            [
+              130,
+              24,
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -111,8 +577,26 @@
       "result": "TV-130.027.051 / HV-130.027.051",
       "date": "2018",
       "variants": [
-        { "prefix": "TV", "exact": [[130,26,1]] },
-        { "prefix": "HV", "exact": [[130,26,1]] }
+        {
+          "prefix": "TV",
+          "exact": [
+            [
+              130,
+              26,
+              1
+            ]
+          ]
+        },
+        {
+          "prefix": "HV",
+          "exact": [
+            [
+              130,
+              26,
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -122,11 +606,485 @@
       "result": "TB-006.018.050 / MB-006.026.050 / HB-006.026.050 (oder früheres Zwischenziel, variantenabhängig)",
       "date": "2018–2020",
       "variants": [
-        { "prefix": "TB", "exact": [[1,30,1],[1,31,23],[1,34,7],[1,40,1],[1,41,23],[1,42,7],[1,43,2],[1,44,1],[1,45,23],[1,47,3],[1,52,4],[1,56,1],[1,58,1],[1,60,1],[1,61,23],[1,62,32],[1,63,40],[2,20,12],[2,22,1],[2,23,22],[2,32,18],[2,34,2],[2,35,22],[3,6,39],[3,8,11],[3,10,3],[3,11,23],[5,1,16],[5,2,1],[5,3,23],[5,4,32],[5,8,26],[5,10,2],[5,12,1],[5,13,32],[6,1,41],[6,1,44],[6,2,32],[6,6,6],[6,7,32],[6,15,14],[6,16,2],[6,17,6]] },
-        { "prefix": "MB", "exact": [[1,30,1],[1,34,7],[1,40,1],[1,44,1],[1,61,23],[2,22,1],[2,34,2],[5,1,16],[5,2,1],[5,8,26],[5,10,2],[5,12,1],[6,1,41],[6,1,44],[6,6,6],[6,15,14],[6,16,2],[6,17,6],[6,23,7],[6,25,1]] },
-        { "prefix": "MB", "minMajor": 1, "maxMajor": 1, "minMinor": 47, "maxMinor": 60 },
-        { "prefix": "HB", "exact": [[1,29,30],[1,34,7],[1,40,1],[1,42,7],[1,43,2],[1,61,23],[1,62,32],[2,20,12],[2,30,2],[2,32,18],[3,6,39],[3,8,11],[5,1,16],[5,2,1],[5,8,26],[5,10,2],[5,12,1],[5,3,22],[6,1,41],[6,1,44],[6,6,6],[6,7,32],[6,15,14],[6,16,2],[6,17,6],[6,23,7],[6,25,1]] },
-        { "prefix": "HB", "minMajor": 1, "maxMajor": 1, "minMinor": 46, "maxMinor": 60 }
+        {
+          "prefix": "TB",
+          "exact": [
+            [
+              1,
+              30,
+              1
+            ],
+            [
+              1,
+              31,
+              23
+            ],
+            [
+              1,
+              34,
+              7
+            ],
+            [
+              1,
+              40,
+              1
+            ],
+            [
+              1,
+              41,
+              23
+            ],
+            [
+              1,
+              42,
+              7
+            ],
+            [
+              1,
+              43,
+              2
+            ],
+            [
+              1,
+              44,
+              1
+            ],
+            [
+              1,
+              45,
+              23
+            ],
+            [
+              1,
+              47,
+              3
+            ],
+            [
+              1,
+              52,
+              4
+            ],
+            [
+              1,
+              56,
+              1
+            ],
+            [
+              1,
+              58,
+              1
+            ],
+            [
+              1,
+              60,
+              1
+            ],
+            [
+              1,
+              61,
+              23
+            ],
+            [
+              1,
+              62,
+              32
+            ],
+            [
+              1,
+              63,
+              40
+            ],
+            [
+              2,
+              20,
+              12
+            ],
+            [
+              2,
+              22,
+              1
+            ],
+            [
+              2,
+              23,
+              22
+            ],
+            [
+              2,
+              32,
+              18
+            ],
+            [
+              2,
+              34,
+              2
+            ],
+            [
+              2,
+              35,
+              22
+            ],
+            [
+              3,
+              6,
+              39
+            ],
+            [
+              3,
+              8,
+              11
+            ],
+            [
+              3,
+              10,
+              3
+            ],
+            [
+              3,
+              11,
+              23
+            ],
+            [
+              5,
+              1,
+              16
+            ],
+            [
+              5,
+              2,
+              1
+            ],
+            [
+              5,
+              3,
+              23
+            ],
+            [
+              5,
+              4,
+              32
+            ],
+            [
+              5,
+              8,
+              26
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              5,
+              12,
+              1
+            ],
+            [
+              5,
+              13,
+              32
+            ],
+            [
+              6,
+              1,
+              41
+            ],
+            [
+              6,
+              1,
+              44
+            ],
+            [
+              6,
+              2,
+              32
+            ],
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              6,
+              7,
+              32
+            ],
+            [
+              6,
+              15,
+              14
+            ],
+            [
+              6,
+              16,
+              2
+            ],
+            [
+              6,
+              17,
+              6
+            ]
+          ]
+        },
+        {
+          "prefix": "MB",
+          "exact": [
+            [
+              1,
+              30,
+              1
+            ],
+            [
+              1,
+              34,
+              7
+            ],
+            [
+              1,
+              40,
+              1
+            ],
+            [
+              1,
+              44,
+              1
+            ],
+            [
+              1,
+              61,
+              23
+            ],
+            [
+              2,
+              22,
+              1
+            ],
+            [
+              2,
+              34,
+              2
+            ],
+            [
+              5,
+              1,
+              16
+            ],
+            [
+              5,
+              2,
+              1
+            ],
+            [
+              5,
+              8,
+              26
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              5,
+              12,
+              1
+            ],
+            [
+              6,
+              1,
+              41
+            ],
+            [
+              6,
+              1,
+              44
+            ],
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              6,
+              15,
+              14
+            ],
+            [
+              6,
+              16,
+              2
+            ],
+            [
+              6,
+              17,
+              6
+            ],
+            [
+              6,
+              23,
+              7
+            ],
+            [
+              6,
+              25,
+              1
+            ]
+          ]
+        },
+        {
+          "prefix": "MB",
+          "minMajor": 1,
+          "maxMajor": 1,
+          "minMinor": 47,
+          "maxMinor": 60
+        },
+        {
+          "prefix": "HB",
+          "exact": [
+            [
+              1,
+              29,
+              30
+            ],
+            [
+              1,
+              34,
+              7
+            ],
+            [
+              1,
+              40,
+              1
+            ],
+            [
+              1,
+              42,
+              7
+            ],
+            [
+              1,
+              43,
+              2
+            ],
+            [
+              1,
+              61,
+              23
+            ],
+            [
+              1,
+              62,
+              32
+            ],
+            [
+              2,
+              20,
+              12
+            ],
+            [
+              2,
+              30,
+              2
+            ],
+            [
+              2,
+              32,
+              18
+            ],
+            [
+              3,
+              6,
+              39
+            ],
+            [
+              3,
+              8,
+              11
+            ],
+            [
+              5,
+              1,
+              16
+            ],
+            [
+              5,
+              2,
+              1
+            ],
+            [
+              5,
+              8,
+              26
+            ],
+            [
+              5,
+              10,
+              2
+            ],
+            [
+              5,
+              12,
+              1
+            ],
+            [
+              5,
+              3,
+              22
+            ],
+            [
+              6,
+              1,
+              41
+            ],
+            [
+              6,
+              1,
+              44
+            ],
+            [
+              6,
+              6,
+              6
+            ],
+            [
+              6,
+              7,
+              32
+            ],
+            [
+              6,
+              15,
+              14
+            ],
+            [
+              6,
+              16,
+              2
+            ],
+            [
+              6,
+              17,
+              6
+            ],
+            [
+              6,
+              23,
+              7
+            ],
+            [
+              6,
+              25,
+              1
+            ]
+          ]
+        },
+        {
+          "prefix": "HB",
+          "minMajor": 1,
+          "maxMajor": 1,
+          "minMinor": 46,
+          "maxMinor": 60
+        }
       ]
     },
     {
@@ -136,9 +1094,21 @@
       "result": "TT/MT 001.x aktualisiert",
       "date": "2018",
       "variants": [
-        { "prefix": "TT", "minMajor": 1, "maxMajor": 1 },
-        { "prefix": "MT", "minMajor": 1, "maxMajor": 1 },
-        { "prefix": "HT", "minMajor": 1, "maxMajor": 1 }
+        {
+          "prefix": "TT",
+          "minMajor": 1,
+          "maxMajor": 1
+        },
+        {
+          "prefix": "MT",
+          "minMajor": 1,
+          "maxMajor": 1
+        },
+        {
+          "prefix": "HT",
+          "minMajor": 1,
+          "maxMajor": 1
+        }
       ]
     },
     {
@@ -148,9 +1118,21 @@
       "result": "TT/MT 002.x aktualisiert",
       "date": "2019",
       "variants": [
-        { "prefix": "TT", "minMajor": 2, "maxMajor": 999 },
-        { "prefix": "MT", "minMajor": 2, "maxMajor": 999 },
-        { "prefix": "HT", "minMajor": 2, "maxMajor": 999 }
+        {
+          "prefix": "TT",
+          "minMajor": 2,
+          "maxMajor": 999
+        },
+        {
+          "prefix": "MT",
+          "minMajor": 2,
+          "maxMajor": 999
+        },
+        {
+          "prefix": "HT",
+          "minMajor": 2,
+          "maxMajor": 999
+        }
       ]
     }
   ],
@@ -174,36 +1156,28 @@
       "version": "INPA 5.0.6 · EDIABAS 7.3.0",
       "target": "Alle E-Serien (K-Line + D-CAN), Basisdiagnose & Statusblöcke",
       "note": "Teil der „BMW Standard Tools“. Für E88: D-CAN-Modus, FTDI-Kabel.",
-      "links": [
-        { "label": "BimmerGeeks Downloads", "url": "https://www.bimmergeeks.net/downloads" }
-      ]
+      "bezug": "Ersetzt fuer Antriebsdiagnose durch den eigenen OBD-Scan: Fehlerspeicher, Live-Werte und VIN laufen ohne dieses Werkzeug. Fuer Komfort- und Karosseriesteuergeraete bleibt es noetig."
     },
     {
       "name": "NCS Expert",
       "version": "4.0.1 + SP-Daten",
       "target": "Codierung E-Serie (FA/VO, FSW/PSW). E88: SP-Daten E89-Ordner",
       "note": "SP-Daten-Stand bestimmt, welche Steuergeräte-Versionen bekannt sind. Immer erst Ist-Zustand sichern.",
-      "links": [
-        { "label": "BimmerGeeks Downloads", "url": "https://www.bimmergeeks.net/downloads" }
-      ]
+      "bezug": "Codierung greift tiefer als die genormte OBD-Ebene und laesst sich im Browser nicht nachbilden. Die Vorgehensweise steht in den Codier-Dokumenten dieser Baureihe."
     },
     {
       "name": "ISTA-D (Rheingold)",
       "version": "4.39.x (letzter Stand mit voller E-Serien-Abdeckung)",
       "target": "Geführte Fehlersuche, Servicefunktionen (Adaptionen, Entlüftung, Registrierung)",
       "note": "Neuere ISTA-Versionen (ISTA+ 4.4x+) fokussieren F/G/i — für E-Serie reicht 4.39. Bezug über einschlägige Foren-Threads (Links wechseln häufig).",
-      "links": [
-        { "label": "bimmerpost ISTA-Thread (Index)", "url": "https://www.bimmerfest.com/forums/" }
-      ]
+      "bezug": "Gefuehrte Fehlersuche bildet diag4free ueber die eigenen Diagnosepfade ab. Servicefunktionen wie Adaptionen und Registrierung bleiben dem Werkstattwerkzeug vorbehalten."
     },
     {
       "name": "Tool32",
       "version": "Teil von EDIABAS",
       "target": "Direkte SG-Jobs (z. B. EGS-Adaption löschen, Steuergerät-Reset, ISN lesen)",
       "note": "Mächtig aber ohne Sicherheitsnetz — Jobs nur ausführen, wenn die Funktion verstanden ist.",
-      "links": [
-        { "label": "BimmerGeeks Downloads", "url": "https://www.bimmergeeks.net/downloads" }
-      ]
+      "bezug": "Direkte Steuergeraete-Jobs sind bewusst nicht nachgebildet — sie wirken ohne Sicherheitsnetz. Was ein Job bewirkt, steht bei den betroffenen Dokumenten."
     }
   ],
   "psdz": [
@@ -212,18 +1186,14 @@
       "version": "3.30.x–3.43.x",
       "target": "F-/G-Serie Codierung & Flash (FEM/BDC-Ära). Nicht für E-Serie!",
       "note": "Benötigt passendes PSdZData und Launcher (Token). E-Serie wird über NCS Expert codiert, nicht E-Sys.",
-      "links": [
-        { "label": "f30.bimmerpost E-Sys Sektion", "url": "https://f30.bimmerpost.com/forums/forumdisplay.php?f=354" }
-      ]
+      "bezug": "Bezugsquellen wechseln staendig und sind nicht offiziell — deshalb steht hier kein Link. Was das Werkzeug leistet und worauf zu achten ist, steht oben."
     },
     {
       "name": "PSdZData",
       "version": "Full (Flash) / Lite (Codierung)",
       "target": "Datenbasis für E-Sys — Version muss zum I-Stufen-Stand des Fahrzeugs passen",
       "note": "Lite reicht zum Codieren, Full nur für Programmierung. Mehrere GB — Links wechseln häufig, Foren-Index nutzen.",
-      "links": [
-        { "label": "f30.bimmerpost PSdZData-Threads", "url": "https://f30.bimmerpost.com/forums/forumdisplay.php?f=354" }
-      ]
+      "bezug": "Bezugsquellen wechseln staendig und sind nicht offiziell — deshalb steht hier kein Link. Was das Werkzeug leistet und worauf zu achten ist, steht oben."
     }
   ]
 }

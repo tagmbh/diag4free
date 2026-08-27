@@ -19,12 +19,8 @@ Build-Skript `scripts/build-index.mjs` aggregiert alles zu `content/index.json`.
     "points": ["Werkstatt-relevante Bullet-Points"],
     "pins": ["OBD2 Pin 7 · K-Line", "OBD2 Pin 8 · DCAN-High"],
     "engines": ["N43", "N46", "N52", "N54", "N55"],
-    "url": "https://...",
     "article": "content/e88/inpa-setup.md",
-    "sources": [
-      { "label": "BMW TIS", "note": "SP-Daten E89 SG-Liste" },
-      { "label": "e90post", "url": "https://..." }
-    ],
+    "details": ["D4F-E88-002", "D4F-E88-011"],
 
     "obd": {
       "pids": ["0104", "010B", "010C", "010F"],
@@ -48,10 +44,34 @@ Build-Skript `scripts/build-index.mjs` aggregiert alles zu `content/index.json`.
 | `points` | string[] | – | Werkstatt-Bullets (max 6) |
 | `pins` | string[] | – | Pin-/Signalzuweisungen |
 | `engines` | string[] | – | Motor-Filter; leer = gilt für alle Motoren des Modells |
-| `url` | string | – | Originalquelle (bmwteka, e90post, etc.) |
+| `url` | string | – | Nur BMW-eigene Ziele (`static.bmw.com`). Alles andere lehnt der Validator ab |
 | `article` | string | – | Pfad zu ausführlichem Markdown-Artikel |
-| `sources` | array | – | Attributionen für Fakten-Quellen |
+| `details` | string[] | – | Doc-IDs, die das Thema vertiefen — der Weg tiefer statt nach draussen |
 | `obd` | object | – | Vorbereitung Live-OBD-Anbindung (siehe unten) |
+
+### Warum es kein `sources` mehr gibt
+
+Früher trug jedes Doc eine Quellenliste mit Links auf fremde Sammlungen.
+Das ist aus zwei Gründen entfallen.
+
+Erstens rechtlich: Fakten sind nicht schutzfähig, geschützt ist die
+Formulierung. Weil hier ohnehin neu formuliert wird — das ist Inhaltsregel 1
+und gilt unverändert weiter — trägt eine Attribution nichts bei, was die
+Neuformulierung nicht schon leistet.
+
+Zweitens praktisch: ein Link auf ein Forum oder eine Spiegelseite ist kein
+Wissen, sondern das Eingeständnis, dass es woanders steht. Solche Ziele
+verschwinden. Von fünfzehn eingetragenen Links war beim Aufräumen keiner
+mehr aus der App heraus erreichbar.
+
+An seine Stelle tritt `details`: der Weg tiefer ins eigene Material. Ein
+Dokument über einen Schaltkreis verweist auf den Elektroplan der Baureihe,
+ein Motor-Dokument auf den Steckbrief. Fehlt `details`, sucht die App selbst
+nach Nachbarn gleicher Kategorie oder mit gemeinsamem Motor — gesetzte
+Verweise gehen dabei immer vor.
+
+`url` bleibt, aber nur für BMW-eigene Ziele. Der Validator bricht bei jedem
+anderen Host ab.
 
 ### OBD-Hook (`obd`)
 

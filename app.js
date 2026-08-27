@@ -148,6 +148,7 @@
       check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
       x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
       wrench: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+      plug: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M5 8h14v3a7 7 0 0 1-6 6.93V22h-2v-4.07A7 7 0 0 1 5 11z"/></svg>',
       docs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H4z"/><path d="M14 4v6h6"/></svg>'
     };
     return icons[name] || '';
@@ -306,7 +307,7 @@
     if (parts.length === 0) return; // Default: overview
     const [head, ...rest] = parts;
 
-    if (['overview', 'docs', 'troubleshoot', 'measure', 'library', 'software'].includes(head)) {
+    if (['overview', 'docs', 'troubleshoot', 'measure', 'library', 'software', 'scan'].includes(head)) {
       state.view = head;
     }
     if (head === 'model' && rest[0]) {
@@ -411,6 +412,7 @@
       case 'measure':      renderMeasure(); break;
       case 'library':      renderLibrary(); break;
       case 'software':     renderSoftware(); break;
+      case 'scan':         renderScan(); break;
     }
     updateResumeDot();
   };
@@ -603,6 +605,17 @@
           </div>
         </button>
       </div>
+
+      <!-- Der Scan ist das, was diag4free vom Nachschlagewerk unterscheidet.
+           Er gehoert deshalb ueber die Faktenliste, nicht unter sie. -->
+      <button class="scan-entry" data-route="scan">
+        <span class="scan-entry-icon" aria-hidden="true">${iconSvg('plug')}</span>
+        <span class="scan-entry-body">
+          <span class="scan-entry-title">Fahrzeug auslesen</span>
+          <span class="scan-entry-sub">Fehlerspeicher und Live-Werte über OBD — direkt im Browser, ohne INPA oder ISTA</span>
+        </span>
+        <span class="scan-entry-go" aria-hidden="true">→</span>
+      </button>
 
       ${facts.length ? `
         <div class="facts">
@@ -1340,6 +1353,43 @@
   // -------- DRAWER (Doc detail) --------
   let lastTrigger = null;
 
+  // Weiterfuehrende eigene Seiten zu einem Dokument.
+  //
+  // Reihenfolge der Herkunft: was die Redaktion ausdruecklich gesetzt hat
+  // (`details`), dann was der Diagnosepfad ohnehin schon kennt
+  // (`next_docs`), und erst danach die automatische Nachbarschaft — gleiche
+  // Kategorie oder gemeinsamer Motor in derselben Baureihe. Das Automatische
+  // ist bewusst zuletzt: es soll eine Luecke ueberbruecken, nicht eine
+  // bewusste Auswahl ueberstimmen.
+  const verwandteDocs = (doc, max = 5) => {
+    const alle = state.data?.docs || [];
+    const finde = (id) => alle.find(d => d.id === id);
+    const raus = new Map();
+
+    for (const id of [...(doc.details || []), ...(doc.next_docs || [])]) {
+      const t = finde(id);
+      if (t && t.id !== doc.id) raus.set(t.id, t);
+    }
+
+    if (raus.size < max) {
+      const motoren = new Set(doc.engines || []);
+      const nachbarn = alle.filter(d =>
+        d.id !== doc.id &&
+        !raus.has(d.id) &&
+        (d.cat === doc.cat || (d.engines || []).some(m => motoren.has(m)))
+      );
+      // Gleiche Kategorie zuerst — die traegt mehr Bedeutung als ein
+      // zufaellig geteilter Motor.
+      nachbarn.sort((a, b) => (b.cat === doc.cat) - (a.cat === doc.cat));
+      for (const n of nachbarn) {
+        if (raus.size >= max) break;
+        raus.set(n.id, n);
+      }
+    }
+
+    return [...raus.values()].slice(0, max).map(d => ({ ...d, kind: d.cat || d.type }));
+  };
+
   const openDocDrawer = async (docId) => {
     const doc = state.data.docs.find(d => d.id === docId);
     if (!doc) return;
@@ -1376,20 +1426,28 @@
           <h4>Ausführlicher Artikel</h4>
           <div class="markdown-content" id="articleContent">Lädt …</div>
         </div>` : ''}
-      ${(doc.sources || []).length ? `
+      ${(() => {
+        // Frueher stand hier eine Quellenliste mit Links nach draussen.
+        // Ein Verweis auf eine fremde Seite ist aber kein Wissen, sondern
+        // das Eingestaendnis, dass es woanders steht — und die Ziele
+        // verschwinden. An seine Stelle tritt der Weg tiefer ins eigene
+        // Material: das uebergeordnete Thema mit mehr Details.
+        const weiter = verwandteDocs(doc);
+        if (!weiter.length) return '';
+        return `
         <div class="detail-section">
-          <h4>Quellen</h4>
-          <ul class="source-list">
-            ${doc.sources.map(q => `
+          <h4>Mehr Details</h4>
+          <ul class="detail-links">
+            ${weiter.map(w => `
               <li>
-                ${q.url
-                  ? `<a href="${escapeHtml(q.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(q.label || q.url)}</a>`
-                  : `<span class="source-label">${escapeHtml(q.label || '—')}</span>`}
-                ${q.note ? `<span class="source-note">${escapeHtml(q.note)}</span>` : ''}
+                <button class="detail-link" data-doc="${escapeHtml(w.id)}">
+                  <span class="detail-link-title">${escapeHtml(w.title)}</span>
+                  <span class="detail-link-kind">${escapeHtml(w.kind || w.category || 'Dokument')}</span>
+                </button>
               </li>`).join('')}
           </ul>
-          <p class="source-hint">Fakten aus diesen Quellen sind neu formuliert, nicht übernommen.</p>
-        </div>` : ''}
+        </div>`;
+      })()}
     `;
 
     // Footer
@@ -1397,8 +1455,17 @@
     footer.innerHTML = `
       <button class="btn btn-ghost" data-close-drawer>Schließen</button>
       <button class="btn btn-ghost" data-print>${iconSvg('print')} Drucken</button>
-      ${doc.url ? `<a class="btn btn-primary" href="${escapeHtml(doc.url)}" target="_blank" rel="noopener noreferrer">${iconSvg('link')} Originalquelle</a>` : ''}
     `;
+    // Weiterfuehrende Seiten oeffnen den naechsten Datensatz im selben
+    // Fenster. Kein neuer Tab, kein Sprung nach draussen — der Weg bleibt
+    // in der Wissensbasis.
+    body.querySelectorAll('.detail-link[data-doc]').forEach(b => {
+      b.addEventListener('click', () => {
+        haptic();
+        openDocDrawer(b.dataset.doc);
+      });
+    });
+
     footer.querySelectorAll('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     footer.querySelector('[data-print]').addEventListener('click', () => window.print());
 
@@ -1545,6 +1612,336 @@
       </details>`;
   };
 
+  // ============================================================
+  // OBD-SCAN
+  //
+  // Der Grund, warum es diese Ansicht gibt: die Software-Seite verwies
+  // bisher auf fremde Download-Seiten fuer INPA und ISTA. Solche Verweise
+  // sind fluechtig und fuehren oft ins Leere. Die genormte OBD-Ebene
+  // braucht kein fremdes Werkzeug — sie laeuft im Browser.
+  //
+  // Was hier bewusst NICHT passiert: das Vortaeuschen von Hausdiagnose.
+  // Komfort- und Karosseriesteuergeraete sprechen proprietaer. Die Grenze
+  // steht in der Oberflaeche, damit niemand vergeblich sucht.
+  // ============================================================
+
+  const scan = {
+    schritt: 'start',      // start · verbindet · bereit · fehler
+    meldung: '',
+    fehlertext: '',
+    adapter: '',
+    status: null,          // { mil, anzahl }
+    codes: null,           // Array oder null (noch nicht gelesen)
+    vin: null,
+    werte: new Map(),      // pid → Messwert
+    stopLive: null
+  };
+
+  const SCAN_SCHRITTE = ['Adapter wählen', 'Verbinden', 'Bereit'];
+
+  const scanNeu = () => { renderScan(); };
+
+  // Verbindung aufbauen. Der Nutzer sieht bei jedem Teilschritt, woran es
+  // gerade haengt — ein stummer Spinner waehrend der ELM327-Initialisierung
+  // ist genau die Stelle, an der jemand das Kabel wieder abzieht.
+  const scanVerbinden = async (art) => {
+    scan.schritt = 'verbindet';
+    scan.meldung = 'Gerät wählen …';
+    scan.fehlertext = '';
+    scanNeu();
+
+    try {
+      const t = art === 'bluetooth' ? await OBD.connectBluetooth() : await OBD.connectSerial();
+      scan.adapter = t.name;
+
+      await OBD.init((was) => { scan.meldung = was; scanNeu(); });
+
+      scan.schritt = 'bereit';
+      scan.meldung = '';
+      haptic(20);
+
+      // Status und VIN sofort holen — das ist der Kontext, den man beim
+      // Anstecken erwartet, nicht etwas, das man erst anfordern muss.
+      scan.status = await OBD.readStatus();
+      scan.vin = await OBD.readVin();
+      scanNeu();
+    } catch (e) {
+      // Ein abgebrochener Geräte-Dialog ist kein Fehler, sondern eine
+      // Entscheidung — dafuer gibt es keine rote Meldung.
+      if (e && e.name === 'NotFoundError') {
+        scan.schritt = 'start';
+        scan.meldung = '';
+      } else {
+        scan.schritt = 'fehler';
+        scan.fehlertext = e?.message || 'Verbindung fehlgeschlagen.';
+      }
+      await OBD.disconnect().catch(() => {});
+      scanNeu();
+    }
+  };
+
+  const scanTrennen = async () => {
+    scan.stopLive?.();
+    scan.stopLive = null;
+    await OBD.disconnect().catch(() => {});
+    Object.assign(scan, {
+      schritt: 'start', meldung: '', fehlertext: '', adapter: '',
+      status: null, codes: null, vin: null, werte: new Map()
+    });
+    releaseWakeLock?.();
+    scanNeu();
+  };
+
+  const scanCodesLesen = async () => {
+    scan.codes = 'liest';
+    scanNeu();
+    try {
+      scan.codes = await OBD.readDtcs();
+      scan.status = await OBD.readStatus();
+      haptic();
+    } catch (e) {
+      scan.codes = [];
+      scan.fehlertext = e?.message || 'Fehlerspeicher nicht lesbar.';
+    }
+    scanNeu();
+  };
+
+  // Loeschen ist nicht rueckholbar und setzt auch die Readiness-Monitore
+  // zurueck. Deshalb erst die Frage, was das konkret bedeutet.
+  const scanCodesLoeschen = async () => {
+    const ok = window.confirm(
+      'Fehlerspeicher wirklich löschen?\n\n' +
+      'Das löscht auch den Freeze-Frame und setzt alle Readiness-Monitore ' +
+      'zurück. Nach dem Löschen ist das Fahrzeug bis zur nächsten ' +
+      'vollständigen Fahrprüfung nicht abgasuntersuchungsfähig. ' +
+      'Der Fehler selbst verschwindet dadurch nicht.'
+    );
+    if (!ok) return;
+    try {
+      await OBD.clearDtcs();
+      scan.codes = [];
+      scan.status = await OBD.readStatus();
+      haptic(30);
+    } catch (e) {
+      scan.fehlertext = e?.message || 'Löschen fehlgeschlagen.';
+    }
+    scanNeu();
+  };
+
+  // Live-Werte. Der Bildschirm darf dabei nicht ausgehen — beim Messen am
+  // laufenden Motor hat man die Haende nicht frei.
+  const scanLiveStarten = async () => {
+    if (scan.stopLive) { scan.stopLive(); scan.stopLive = null; scanNeu(); return; }
+    requestWakeLock?.();
+    const pids = await OBD.readSupportedPids();
+    scan.stopLive = OBD.livePoll(pids, (w) => {
+      scan.werte.set(w.pid, w);
+      scanLiveZeichnen();
+    });
+    scanNeu();
+  };
+
+  // Nur die Kacheln neu schreiben, nicht die ganze Ansicht. Ein voller
+  // Re-Render zweimal pro Sekunde wuerde jeden Tastendruck verschlucken.
+  const scanLiveZeichnen = () => {
+    const gitter = document.getElementById('scanLive');
+    if (!gitter) return;
+    for (const w of scan.werte.values()) {
+      let kachel = gitter.querySelector(`[data-pid="${w.pid}"]`);
+      if (!kachel) {
+        kachel = document.createElement('div');
+        kachel.className = 'live-tile';
+        kachel.dataset.pid = w.pid;
+        kachel.innerHTML = `<span class="live-name"></span><span class="live-val"></span><span class="live-bar"><i></i></span>`;
+        gitter.appendChild(kachel);
+      }
+      const anteil = Math.max(0, Math.min(1, (w.wert - w.min) / (w.max - w.min)));
+      kachel.querySelector('.live-name').textContent = w.name;
+      kachel.querySelector('.live-val').textContent =
+        `${w.wert.toFixed(Math.abs(w.wert) < 10 ? 1 : 0)} ${w.einheit}`;
+      kachel.querySelector('.live-bar i').style.width = `${(anteil * 100).toFixed(1)}%`;
+    }
+  };
+
+  const scanSchrittHtml = () => {
+    const idx = scan.schritt === 'start' ? 0 : scan.schritt === 'bereit' ? 2 : 1;
+    return `
+      <ol class="scan-steps" aria-label="Verbindungsfortschritt">
+        ${SCAN_SCHRITTE.map((label, i) => `
+          <li class="scan-step ${i < idx ? 'done' : i === idx ? 'now' : ''}"
+              ${i === idx ? 'aria-current="step"' : ''}>
+            <span class="scan-step-num">${i + 1}</span>
+            <span class="scan-step-label">${escapeHtml(label)}</span>
+          </li>`).join('')}
+      </ol>`;
+  };
+
+  const renderScan = () => {
+    const panel = $('#scanPanel');
+    const kann = OBD.support();
+
+    // Der ehrliche Fall zuerst: auf iOS gibt es weder Web Serial noch Web
+    // Bluetooth. Einen Verbinden-Knopf anzubieten, der nur eine Ausnahme
+    // wirft, waere eine Luege im Interface.
+    if (!kann.serial && !kann.bluetooth) {
+      panel.innerHTML = `
+        <div class="page-header">
+          <div>
+            <h1 class="page-title" id="scanTitle">OBD-Scan</h1>
+            <p class="page-lead">Fehlerspeicher und Live-Werte direkt aus dem Fahrzeug</p>
+          </div>
+        </div>
+        <div class="scan-note">
+          <h2>Dieser Browser kann nicht auf einen Adapter zugreifen</h2>
+          <p>Der Scan braucht <strong>Web Serial</strong> (USB) oder <strong>Web Bluetooth</strong>.
+             Beides gibt es derzeit in Chrome, Edge und Chrome für Android.
+             Safari und alle Browser auf iOS unterstützen es nicht — dort hilft
+             auch kein anderer Browser, weil sie alle dieselbe Engine benutzen.</p>
+          <p class="scan-note-sub">Das übrige Wissen dieser App funktioniert unverändert weiter.</p>
+        </div>`;
+      return;
+    }
+
+    if (!kann.secure) {
+      panel.innerHTML = `
+        <div class="page-header"><div><h1 class="page-title" id="scanTitle">OBD-Scan</h1></div></div>
+        <div class="scan-note">
+          <h2>Nur über HTTPS</h2>
+          <p>Geräte-Zugriff verlangt einen sicheren Kontext. Über <code>http://</code>
+             blockiert der Browser den Zugriff, unabhängig von dieser App.</p>
+        </div>`;
+      return;
+    }
+
+    const codesGelesen = Array.isArray(scan.codes);
+    const nachArt = (art) => codesGelesen ? scan.codes.filter(c => c.art === art) : [];
+
+    panel.innerHTML = `
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" id="scanTitle">OBD-Scan</h1>
+          <p class="page-lead">Fehlerspeicher und Live-Werte direkt aus dem Fahrzeug — ohne fremde Software</p>
+        </div>
+      </div>
+
+      ${scanSchrittHtml()}
+
+      ${scan.schritt === 'start' ? `
+        <div class="scan-connect">
+          ${kann.serial ? `
+            <button class="scan-big" data-scan-connect="serial">
+              <span class="scan-big-icon" aria-hidden="true">${iconSvg('plug')}</span>
+              <span class="scan-big-title">USB-Adapter</span>
+              <span class="scan-big-sub">ELM327 oder K+DCAN am Kabel</span>
+            </button>` : ''}
+          ${kann.bluetooth ? `
+            <button class="scan-big" data-scan-connect="bluetooth">
+              <span class="scan-big-icon" aria-hidden="true">${iconSvg('plug')}</span>
+              <span class="scan-big-title">Bluetooth-Adapter</span>
+              <span class="scan-big-sub">ELM327 als BLE-Dongle</span>
+            </button>` : ''}
+        </div>
+        <div class="scan-note scan-note-quiet">
+          <p><strong>Vorher:</strong> Zündung an, Motor kann laufen oder stehen.
+             Der Stecker sitzt im Fussraum links unter der Lenksäule.</p>
+          <p><strong>Grenze:</strong> Der Scan liest die genormte Antriebsebene —
+             Motor und Abgas. Komfort-, Karosserie- und Fahrwerkssteuergeräte
+             sprechen BMW-eigene Protokolle und bleiben dem Werkstattwerkzeug
+             vorbehalten.</p>
+        </div>` : ''}
+
+      ${scan.schritt === 'verbindet' ? `
+        <div class="scan-busy" role="status" aria-live="polite" aria-busy="true">
+          <span class="scan-spin" aria-hidden="true"></span>
+          <span>${escapeHtml(scan.meldung || 'Verbindet …')}</span>
+        </div>` : ''}
+
+      ${scan.schritt === 'fehler' ? `
+        <div class="scan-error" role="alert" tabindex="-1">
+          <h2>Verbindung fehlgeschlagen</h2>
+          <p>${escapeHtml(scan.fehlertext)}</p>
+          <button class="btn btn-primary" data-scan-retry>Nochmal versuchen</button>
+        </div>` : ''}
+
+      ${scan.schritt === 'bereit' ? `
+        <div class="scan-head">
+          <div class="scan-head-main">
+            <span class="scan-live-dot" aria-hidden="true"></span>
+            <strong>${escapeHtml(scan.adapter || 'Adapter')}</strong>
+            ${scan.vin ? `<span class="scan-vin">VIN ${escapeHtml(scan.vin)}</span>` : ''}
+          </div>
+          <button class="btn btn-ghost" data-scan-disconnect>Trennen</button>
+        </div>
+
+        ${scan.status ? `
+          <div class="scan-mil ${scan.status.mil ? 'on' : 'off'}">
+            <span class="scan-mil-lamp" aria-hidden="true"></span>
+            <span>${scan.status.mil
+              ? `Motorkontrollleuchte aktiv · ${scan.status.anzahl} Code${scan.status.anzahl === 1 ? '' : 's'} gespeichert`
+              : 'Motorkontrollleuchte aus'}</span>
+          </div>` : ''}
+
+        <section class="scan-section">
+          <div class="scan-section-head">
+            <h2>Fehlerspeicher</h2>
+            <div class="scan-actions">
+              <button class="btn btn-primary" data-scan-read>${codesGelesen ? 'Neu lesen' : 'Auslesen'}</button>
+              ${codesGelesen && scan.codes.length ? `<button class="btn btn-danger" data-scan-clear>Löschen</button>` : ''}
+            </div>
+          </div>
+
+          ${scan.codes === 'liest' ? `
+            <div class="scan-busy" role="status" aria-live="polite" aria-busy="true">
+              <span class="scan-spin" aria-hidden="true"></span><span>Liest Fehlerspeicher …</span>
+            </div>` : ''}
+
+          ${codesGelesen && !scan.codes.length ? `
+            <p class="scan-empty">Kein Eintrag im Fehlerspeicher.</p>` : ''}
+
+          ${codesGelesen && scan.codes.length ? `
+            <ul class="dtc-list">
+              ${['gespeichert', 'sporadisch', 'dauerhaft'].flatMap(art => {
+                const gruppe = nachArt(art);
+                if (!gruppe.length) return [];
+                return [`<li class="dtc-group">${escapeHtml(art)}</li>`, ...gruppe.map(c => `
+                  <li class="dtc-item dtc-${escapeHtml(art)}">
+                    <span class="dtc-code">${escapeHtml(c.code)}</span>
+                    <span class="dtc-meta">
+                      <span class="dtc-herkunft">${escapeHtml(c.herkunft)}</span>
+                      <span class="dtc-hinweis">${escapeHtml(c.hinweis)}</span>
+                    </span>
+                  </li>`)];
+              }).join('')}
+            </ul>` : ''}
+        </section>
+
+        <section class="scan-section">
+          <div class="scan-section-head">
+            <h2>Live-Werte</h2>
+            <button class="btn ${scan.stopLive ? 'btn-danger' : 'btn-primary'}" data-scan-live>
+              ${scan.stopLive ? 'Stoppen' : 'Starten'}
+            </button>
+          </div>
+          <!-- Bewusst keine Live-Region: neunzehn Werte zweimal pro Sekunde
+               vorgelesen macht die Ansicht mit Screenreader unbenutzbar. -->
+          <div class="live-grid" id="scanLive" aria-live="off"></div>
+          ${!scan.stopLive && !scan.werte.size ? `
+            <p class="scan-empty">Noch keine Messung. Bei laufendem Motor sind die Werte aussagekräftig.</p>` : ''}
+        </section>` : ''}
+    `;
+
+    panel.querySelectorAll('[data-scan-connect]').forEach(b =>
+      b.addEventListener('click', () => scanVerbinden(b.dataset.scanConnect)));
+    panel.querySelector('[data-scan-retry]')?.addEventListener('click', () => { scan.schritt = 'start'; scanNeu(); });
+    panel.querySelector('[data-scan-disconnect]')?.addEventListener('click', scanTrennen);
+    panel.querySelector('[data-scan-read]')?.addEventListener('click', scanCodesLesen);
+    panel.querySelector('[data-scan-clear]')?.addEventListener('click', scanCodesLoeschen);
+    panel.querySelector('[data-scan-live]')?.addEventListener('click', scanLiveStarten);
+
+    if (scan.schritt === 'bereit') scanLiveZeichnen();
+    if (scan.schritt === 'fehler') setTimeout(() => panel.querySelector('.scan-error')?.focus(), 50);
+  };
+
   const renderSoftware = async () => {
     const panel = $('#softwarePanel');
     if (!state.software) {
@@ -1598,7 +1995,7 @@
               <div class="sw-tool-head"><strong>${escapeHtml(t.name)}</strong><span class="sw-tool-ver">${escapeHtml(t.version)}</span></div>
               <p class="sw-tool-target">${escapeHtml(t.target)}</p>
               <p class="sw-tool-note">${escapeHtml(t.note)}</p>
-              <div class="sw-tool-links">${t.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)} ↗</a>`).join('')}</div>
+              ${t.bezug ? `<p class="sw-tool-bezug">${escapeHtml(t.bezug)}</p>` : ''}
             </div>`).join('')}
         </div>
       </section>
@@ -1611,13 +2008,13 @@
               <div class="sw-tool-head"><strong>${escapeHtml(t.name)}</strong><span class="sw-tool-ver">${escapeHtml(t.version)}</span></div>
               <p class="sw-tool-target">${escapeHtml(t.target)}</p>
               <p class="sw-tool-note">${escapeHtml(t.note)}</p>
-              <div class="sw-tool-links">${t.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)} ↗</a>`).join('')}</div>
+              ${t.bezug ? `<p class="sw-tool-bezug">${escapeHtml(t.bezug)}</p>` : ''}
             </div>`).join('')}
         </div>
       </section>
 
       <footer class="sw-attribution">
-        <p>Datenbasis: ${sw.attribution.map(a => `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.label)}</a>`).join(' · ')} · Stand ${escapeHtml(sw.updated)}</p>
+        <p>Stand ${escapeHtml(sw.updated)} · Die Update-Dateien liegen auf dem BMW-CDN und werden von dort geladen, nicht hier gespiegelt.</p>
       </footer>`;
 
     const input = $('#swVersionInput');
