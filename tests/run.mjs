@@ -225,6 +225,40 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Tastaturfokus muss sichtbar sein ---
+      // Und zwar anders sichtbar als Hover: in einem Kartenraster ist eine
+      // blosse Farbaenderung der Umrandung kein Fokus, weil der Zeiger
+      // dasselbe Bild erzeugt. Genau so stand es hier -- Hover und
+      // Tastaturfokus teilten sich eine Regel, die die Umrandung aufhob.
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      // Chromium setzt :focus-visible bei einem Fokus aus dem Skript nur,
+      // wenn zuletzt die Tastatur benutzt wurde. Ein Tab-Druck vorher macht
+      // die Pruefung deshalb erst aussagekraeftig.
+      await page.keyboard.press('Tab');
+      await settle(page, 200);
+      const fokusPruefung = await page.evaluate(() => {
+        const el = document.querySelector('[data-view-panel="docs"] .doc-card');
+        if (!el) return null;
+        const vorher = getComputedStyle(el);
+        const ruhe = { outline: vorher.outlineWidth, schatten: vorher.boxShadow };
+        el.focus();
+        const nachher = getComputedStyle(el);
+        return {
+          ruhe,
+          fokus: { outline: nachher.outlineWidth, schatten: nachher.boxShadow },
+          breite: parseFloat(nachher.outlineWidth) || 0
+        };
+      });
+      if (fokusPruefung) {
+        expect(fokusPruefung.breite >= 2,
+          'Tastaturfokus zeichnet einen eigenen Ring',
+          `outline-width ${fokusPruefung.fokus.outline}`);
+        expect(fokusPruefung.fokus.outline !== fokusPruefung.ruhe.outline ||
+               fokusPruefung.fokus.schatten !== fokusPruefung.ruhe.schatten,
+          'Fokus unterscheidet sich vom Ruhezustand', 'kein sichtbarer Unterschied');
+      }
+
       // --- Dokumente der Reihe nach durchgehen ---
       // Der Nutzer wollte die Tech-Docs "interaktiv durchgehen" koennen,
       // statt nach jedem Dokument zur Liste zurueckzuspringen.

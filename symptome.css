@@ -305,3 +305,9 @@
   .sym-ursache__wege { flex-direction: column; align-items: stretch; }
   .sym-weg { justify-content: center; }
 }
+
+/* Wer Bewegung abgestellt hat, bekommt den Haken sofort statt gedreht und
+   skaliert. Der Zustand bleibt sichtbar — nur der Weg dorthin entfaellt. */
+@media (prefers-reduced-motion: reduce) {
+  .sym-knopf__haken { transition: none; }
+}

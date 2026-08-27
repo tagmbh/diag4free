@@ -689,11 +689,21 @@
   text-align: left;
   transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
 }
-.doc-card:hover, .doc-card:focus-visible {
+.doc-card:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
-  outline: none;
+}
+/* Tastaturfokus darf nicht gleich aussehen wie Hover. Wer mit der Tastatur
+   durch ein Kartenraster geht, sieht sonst nicht, wo er steht — die
+   Umrandung wechselt bloss die Farbe, und genau diese Farbe zeigt der
+   Zeiger beim Darueberfahren ohnehin. */
+.doc-card:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 .doc-header {
   display: flex;
