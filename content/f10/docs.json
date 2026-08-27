@@ -10,8 +10,7 @@
       "summary": "Der F10 ist die erste 5er-Generation ohne K-Line an der OBD-Buchse. Die Diagnose läuft über Ethernet; ein K+DCAN-Kabel findet hier grundsätzlich kein Steuergerät. Welche Software passt, entscheidet nicht das Baujahr, sondern die ausgelesene I-Stufe.",
       "points": [
         "ENET-Kabel verwenden. BMW legt die Diagnose-Ethernet-Adern auf die herstellerfreien OBD-Pins. Pin 7 (K-Line) trägt am F10 keine Diagnose — ein K+DCAN-Kabel meldet deshalb schlicht kein Steuergerät, und das ist kein Defekt",
-        "Aktivierungsleitung: die gängigen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Die genannten Werte streuen, nach einer Quelle rund 510 Ω. Vor dem Selbstbau gegenprüfen — daran scheitern die meisten Eigenbaukabel",
-        "Pin 8 führt kein genormtes Signal — die Norm lässt ihn dem Hersteller frei, und BMW hat ihn je Baureihe verschieden benutzt. Die Aktivierungsleitung gilt für die F-Serie, nicht für die Pinnummer als solche. Hintergrund in D4F-F-003",
+        "Aktivierungsleitung: die gängigen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Auch Pin 8 ist ein herstellerfreier Pin — diese Bedeutung gilt für die F-Serie, nicht für die Pinnummer als solche, Hintergrund in D4F-F-003. Die genannten Widerstandswerte streuen, nach einer Quelle rund 510 Ω — vor dem Selbstbau gegenprüfen",
         "Netzwerkseite: automatische Adressvergabe am Rechner, keine feste Adresse. WLAN und VPN abschalten, sonst greift die Software auf die falsche Schnittstelle zu",
         "In EDIABAS beziehungsweise in der Schnittstellenauswahl der Diagnosesoftware auf ENET stellen. Bleibt die Voreinstellung für K-DCAN stehen, sucht die Software auf einem Bus, den das Fahrzeug nicht bedient",
         "Zündung einschalten, bevor die Verbindung aufgebaut wird. Ohne Klemmenstatus antwortet das Gateway unzuverlässig",
@@ -22,7 +21,7 @@
         "OBD2 Pin 11 · Diagnose-Ethernet RX-",
         "OBD2 Pin 12 · Diagnose-Ethernet TX+ · abweichende Zuordnung im Umlauf, siehe Artikel",
         "OBD2 Pin 13 · Diagnose-Ethernet TX-",
-        "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
+        "OBD2 Pin 8 · herstellerfrei, kein genormtes Signal · an der F-Serie Aktivierungsleitung über Widerstand auf Pin 16",
         "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
       ],
       "engines": [
@@ -38,6 +37,7 @@
       ],
       "article": "diagnosezugang.md",
       "details": [
+        "D4F-F-003",
         "D4F-F10-003",
         "D4F-F10-005"
       ]
