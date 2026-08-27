@@ -1,0 +1,184 @@
+{
+  "model": "f30",
+  "guides": {
+    "fahrzeug-bestimmen": {
+      "code": "GF-F30-01",
+      "name": "Fahrzeug bestimmen vor Codierung und Programmierung",
+      "desc": "Welches Zugangssystem, welcher Softwarestand, welche Datenbasis. Die Vorarbeit, ohne die jede Codierung am F30 ein Ratespiel ist.",
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "steps": [
+        {
+          "q": "Liegt die vollständige Fahrgestellnummer vor und lässt sich der Fahrzeugauftrag lesen?",
+          "help": "Der Fahrzeugauftrag ist die Liste dessen, was das Fahrzeug ab Werk hat und was später eingetragen wurde. Ohne ihn ist nicht entscheidbar, ob ein fehlendes Steuergerät ein Defekt oder schlicht nicht verbaut ist. Fahrgestellnummer am Fahrzeug ablesen und mit dem gelesenen Auftrag abgleichen — Abweichungen sind ein Befund für sich.",
+          "measure": "Fahrgestellnummer am Fahrzeug und im gelesenen Auftrag identisch · Auftrag vollständig lesbar · Ausstattungsmerkmale plausibel zum Fahrzeug",
+          "doc": "D4F-F30-004",
+          "yes": 1,
+          "no": "fa-fehlt"
+        },
+        {
+          "q": "Erscheint in der Steuergeräteliste ein FEM_BODY?",
+          "help": "Das ist die Weiche der ganzen Baureihe. Der F30 wurde sowohl mit CAS4 als auch mit FEM gebaut, und die Quellen nennen für den Wechsel unterschiedliche Zeitpunkte. Statt zu schätzen, wird die Liste gelesen: Ein Eintrag FEM_BODY bedeutet FEM, ein CAS-Eintrag bedeutet CAS. Danach richten sich alle folgenden Abläufe.",
+          "measure": "Vollständige Steuergeräteliste aufgebaut · Eintrag für das Zugangssystem im Klartext notiert · Version des Geräts mitgeschrieben",
+          "doc": "D4F-F30-003",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Sind Werksstand, aktueller Stand und Zielstand der I-Stufe gelesen und notiert?",
+          "help": "Drei Stände, drei verschiedene Aussagen. Der Werksstand sagt, womit das Fahrzeug ausgeliefert wurde, der aktuelle, worauf es jetzt steht, der Zielstand, wohin eine Programmierung heben würde. Alle drei aufschreiben, bevor irgendetwas geschrieben wird — nach einem abgebrochenen Vorgang sind sie die einzige Orientierung.",
+          "measure": "Alle drei Stände notiert · Präfix des Fahrzeugprogramms bei jedem Gerät geprüft · Geräte mit fremdem Präfix gesondert vermerkt",
+          "doc": "D4F-F30-004",
+          "yes": 4,
+          "no": "i-stufe-lesen"
+        },
+        {
+          "q": "Meldet sich ein CAS und lässt sich seine Ausführung bestimmen?",
+          "help": "Kein FEM verbaut, also ein CAS. Jetzt zählt die Ausführung: Nach einer Quelle lässt sich die Motorsteuerungs-Kennung nur beim CAS4 aus dem Modul lesen, beim CAS4+ nicht. Für Schlüssel- und Motorsteuerungsarbeiten entscheidet das über den möglichen Weg. Version und Teilestand des Geräts ablesen und dokumentieren.",
+          "measure": "CAS antwortet und liefert Version und Teilestand · Ausführung dokumentiert · Abweichung zwischen Auftrag und tatsächlich verbautem Gerät notiert",
+          "doc": "D4F-F30-003",
+          "yes": 2,
+          "no": "cas-variante"
+        },
+        {
+          "q": "Deckt die vorhandene Datenbasis den gelesenen Stand des Fahrzeugs ab?",
+          "help": "Die Datenbasis muss den Stand des Fahrzeugs kennen, sonst werden falsche oder gar keine Codierdaten geladen. Prüfen heißt hier: Lässt sich für jedes betroffene Steuergerät der passende Datensatz laden, ohne dass die Software auf einen Ersatz ausweicht. Weicht sie aus, ist die Grundlage nicht in Ordnung.",
+          "measure": "Für jedes betroffene Steuergerät wird ein Datensatz gefunden · keine Ersatzauswahl durch die Software · keine Meldung über einen unbekannten Stand",
+          "doc": "D4F-F30-004",
+          "yes": 5,
+          "no": "datenstand"
+        },
+        {
+          "q": "Sind Fahrzeugauftrag und Ist-Verbauliste gesichert und ist ein Werkstattladegerät aktiv?",
+          "help": "Der letzte Schritt vor dem ersten Schreibvorgang. Die Sicherung ist der Rückweg, das Ladegerät die Voraussetzung dafür, dass es keinen Rückweg braucht. Beides kostet zusammen fünf Minuten und trennt eine reparierbare Situation von einem Ausbaufall.",
+          "measure": "Sicherungsdateien vorhanden und lesbar · Ladegerät angeschlossen und aktiv · Türen zu, abschaltbare Verbraucher aus · Zündung wird während des Vorgangs nicht angefasst",
+          "doc": "D4F-F30-001",
+          "yes": "bereit",
+          "no": "sicherung"
+        }
+      ]
+    },
+    "stoerung-nach-batterie": {
+      "code": "GF-F30-02",
+      "name": "Störungen nach Batteriewechsel am F30",
+      "desc": "Nach dem Batteriewechsel melden mehrere Systeme gleichzeitig. Trennt Folgefehler und Registrierungsproblem vom echten Defekt.",
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "steps": [
+        {
+          "q": "Wurde die neue Batterie nach dem Einbau registriert?",
+          "help": "Der F30 passt sein Ladeverhalten an Alter und Zustand der Batterie an. Ohne Registrierung rechnet er weiter mit der alten, verschlissenen — die neue Batterie wird falsch geladen und das Energiemanagement regelt zu früh ab. Das erzeugt genau die Meldungen, wegen derer das Fahrzeug in der Werkstatt steht.",
+          "measure": "Registriervorgang nachvollziehbar durchgeführt und quittiert · Einbaudatum beziehungsweise Zählerstand im Energiemanagement passt zur neuen Batterie",
+          "doc": "D4F-F30-006",
+          "yes": 1,
+          "no": "registrieren"
+        },
+        {
+          "q": "Entspricht die eingebaute Batterie in Typ und Kapazität der ausgebauten?",
+          "help": "Registrieren allein reicht nicht, wenn ein anderer Batterietyp eingebaut wurde. Eine AGM-Batterie will anders geladen werden als eine Nassbatterie, und eine abweichende Kapazität verschiebt die gesamte Rechnung des Energiemanagements. Typ und Kapazität stehen auf dem ausgebauten Teil — vor der Entsorgung ablesen.",
+          "measure": "Typ und Kapazität der alten und der neuen Batterie gegenübergestellt · bei Abweichung Codierung durchgeführt und quittiert",
+          "doc": "D4F-F30-006",
+          "yes": 2,
+          "no": "codieren"
+        },
+        {
+          "q": "Arbeitet die Ladeanlage — steigt die Spannung bei laufendem Motor gegenüber dem Ruhewert an?",
+          "help": "Bevor Steuergeräte verdächtigt werden, muss die Versorgung stimmen. Ruhespannung nach mehreren Stunden Standzeit direkt an den Polen messen, danach bei laufendem Motor erneut. Eine geladene Batterie zeigt in Ruhe rund 12.6 V; bei laufendem Motor muss die Spannung deutlich darüber liegen und stabil bleiben.",
+          "measure": "Ruhespannung nach Standzeit rund 12.6 V · bei laufendem Motor deutlich höherer, stabiler Wert · kein Wandern der Spannung beim Zuschalten von Verbrauchern",
+          "doc": "D4F-F30-006",
+          "yes": 3,
+          "no": "ladeanlage"
+        },
+        {
+          "q": "Bleiben nach dem Löschen des Fehlerspeichers Einträge in mehreren Steuergeräten stehen?",
+          "help": "Alle Speicher lesen, Einträge notieren, dann löschen. Anschließend Zündung aus, kurz warten, Probefahrt, erneut lesen. Was jetzt nicht wiederkommt, war ein Folgefehler des Spannungseinbruchs beim Abklemmen. Was wiederkommt, ist die eigentliche Arbeit.",
+          "measure": "Alle Speicher vor dem Löschen dokumentiert · nach Probefahrt erneut gelesen · Liste der wiederkehrenden Einträge je Steuergerät",
+          "doc": "D4F-F30-003",
+          "yes": 4,
+          "no": "folgefehler-weg"
+        },
+        {
+          "q": "Betreffen die verbleibenden Einträge die Kommunikation — also fehlende Botschaften statt Bauteile?",
+          "help": "Der Inhalt der Einträge entscheidet über die Richtung. Einträge über fehlende Botschaften bedeuten, dass ein Gerät einen Partner nicht mehr hört; das führt zu Versorgung, Bus oder einem stummen Steuergerät. Bauteilbezogene Einträge führen dagegen direkt zum genannten Bauteil. Die beiden Klassen getrennt auflisten.",
+          "measure": "Einträge im Klartext gelesen und in zwei Listen sortiert · bei Kommunikationsfehlern notieren, welches Gerät welchen Partner vermisst",
+          "doc": "D4F-F30-003",
+          "yes": 5,
+          "no": "bauteil"
+        },
+        {
+          "q": "Fehlt in der Steuergeräteliste ein Gerät ganz — insbesondere das Zugangssystem?",
+          "help": "Steuergeräteliste gegen den Fahrzeugauftrag halten. Fehlt ein Gerät, das laut Auftrag verbaut ist, geht es um dessen Versorgung und Busanbindung. Sind alle da und melden trotzdem fehlende Botschaften, ist es meist ein Adaptions- oder Anlernzustand, der nach dem Spannungsverlust nicht wiederhergestellt wurde.",
+          "measure": "Liste vollständig gegen den Auftrag abgeglichen · fehlendes Gerät namentlich notiert · bei vollständiger Liste offene Anlern- und Adaptionsvorgänge auflisten",
+          "doc": "D4F-F30-003",
+          "yes": "sg-stumm",
+          "no": "adaption"
+        }
+      ]
+    }
+  },
+  "results": {
+    "fa-fehlt": {
+      "title": "Ohne Fahrzeugauftrag nicht weiterarbeiten",
+      "text": "Hier ist Stillstand richtig. Ohne lesbaren Fahrzeugauftrag ist nicht entscheidbar, welche Steuergeräte verbaut sein müssen und welche Ausstattung codiert ist — jede Codierung wäre geraten. Zuerst die Verbindung zum Fahrzeug in Ordnung bringen und den Auftrag lesen. Weicht die Fahrgestellnummer im Auftrag von der am Fahrzeug ab, das zuerst klären: Dann steckt ein fremdes Steuergerät im Fahrzeug.",
+      "next_docs": ["D4F-F30-004", "D4F-F30-001"]
+    },
+    "i-stufe-lesen": {
+      "title": "I-Stufe zuerst vollständig lesen",
+      "text": "Nichts schreiben, solange nicht alle drei Stände bekannt sind. Werksstand, aktuellen Stand und Zielstand auslesen und notieren, dazu bei jedem Steuergerät den Präfix des Fahrzeugprogramms prüfen. Ein Gerät mit fremdem Präfix stammt aus einem anderen Fahrzeugprogramm und braucht eine eigene Entscheidung, bevor es mitprogrammiert wird.",
+      "next_docs": ["D4F-F30-004"]
+    },
+    "cas-variante": {
+      "title": "Zugangssystem lässt sich nicht bestimmen",
+      "text": "Weder ein FEM noch ein antwortendes CAS: Damit ist die Grundlage für jede weitere Arbeit offen. Zuerst prüfen, ob die Diagnoseverbindung selbst vollständig steht und ob das Gerät versorgt ist — Sicherungen und Spannung am Stecker messen. Antwortet das Zugangssystem danach immer noch nicht, ist das der eigentliche Befund und keine Vorstufe zur Codierung.",
+      "next_docs": ["D4F-F30-003", "D4F-F30-001"]
+    },
+    "datenstand": {
+      "title": "Datenbasis deckt das Fahrzeug nicht ab",
+      "text": "Abbrechen und beschaffen. Weicht die Software auf einen Ersatzdatensatz aus oder meldet sie einen unbekannten Stand, werden im schlimmsten Fall fremde Codierdaten geschrieben. Passende Datenbasis zum gelesenen Stand besorgen, danach von vorn beginnen. Bis dahin darf gelesen, aber nicht geschrieben werden.",
+      "next_docs": ["D4F-F30-004"]
+    },
+    "sicherung": {
+      "title": "Erst sichern und versorgen, dann schreiben",
+      "text": "Fahrzeugauftrag und Ist-Verbauliste sichern und die Dateien auf Lesbarkeit prüfen, danach das Werkstattladegerät anschließen und aktivieren. Türen schließen, abschaltbare Verbraucher aus, Zündung während des Vorgangs nicht anfassen. Ein Schreibvorgang bei wandernder Bordspannung ist der häufigste Weg von einer Codierung zu einem Ausbaufall.",
+      "next_docs": ["D4F-F30-001", "D4F-F30-004"]
+    },
+    "bereit": {
+      "title": "Fahrzeug bestimmt — Arbeit kann beginnen",
+      "text": "Zugangssystem, Softwarestand und Datenbasis passen zusammen, die Sicherung liegt vor und die Versorgung steht. Jetzt geräteweise vorgehen und nach jedem Schritt den Fehlerspeicher lesen, statt am Ende alles auf einmal zu prüfen. Die notierten Stände aufbewahren — sie sind bei jedem späteren Besuch dieses Fahrzeugs der Ausgangspunkt.",
+      "next_docs": ["D4F-F30-004", "D4F-F30-003"]
+    },
+    "registrieren": {
+      "title": "Batterie registrieren und erneut prüfen",
+      "text": "Registrierung nachholen, danach alle Fehlerspeicher löschen und eine Probefahrt fahren. In vielen Fällen verschwinden die Meldungen damit vollständig, weil das Energiemanagement wieder mit den richtigen Werten rechnet. Erst wenn nach der Registrierung Einträge wiederkommen, weitersuchen.",
+      "next_docs": ["D4F-F30-006"]
+    },
+    "codieren": {
+      "title": "Abweichender Batterietyp — zusätzlich codieren",
+      "text": "Typ oder Kapazität weichen ab, also reicht das Registrieren nicht. Die Batterie zusätzlich codieren, damit das Energiemanagement die richtige Ladekennlinie verwendet. Ist der eingebaute Typ nicht bekannt, ihn am ausgebauten Teil ablesen. Danach Fehlerspeicher löschen und mit Probefahrt gegenprüfen.",
+      "next_docs": ["D4F-F30-006"]
+    },
+    "ladeanlage": {
+      "title": "Ladeanlage oder Versorgung prüfen",
+      "text": "Solange die Spannung nicht stimmt, ist jede weitere Fehlersuche Zeitverschwendung — die Meldungen sind dann Folge und nicht Ursache. Batteriepole und Masseanbindungen auf Korrosion und festen Sitz prüfen, Riementrieb ansehen, Ladespannung bei laufendem Motor mit zugeschalteten Verbrauchern erneut messen. Erst mit sauberer Versorgung zurück in den Fehlerspeicher.",
+      "next_docs": ["D4F-F30-006"]
+    },
+    "folgefehler-weg": {
+      "title": "Folgefehler des Spannungseinbruchs — erledigt",
+      "text": "Die Einträge kommen nach Löschen und Probefahrt nicht wieder. Damit waren es Folgen des Spannungsverlusts beim Abklemmen und kein Defekt. Kein Bauteil tauschen. Den Vorgang mit den ursprünglich gelesenen Einträgen dokumentieren, damit bei einem erneuten Besuch erkennbar ist, was schon einmal gemeldet hat.",
+      "next_docs": ["D4F-F30-006"]
+    },
+    "bauteil": {
+      "title": "Bauteilbezogene Einträge — dort weitersuchen",
+      "text": "Die verbleibenden Einträge nennen Bauteile statt fehlender Botschaften. Damit ist die Batteriearbeit abgeschlossen und die eigentliche Fehlersuche beginnt beim genannten Bauteil: Eintrag im Klartext lesen, Umgebungsbedingungen auswerten, Bauteil gegen die andere Fahrzeugseite oder ein bekannt gutes Teil vergleichen. Nicht nach Eintrag tauschen, sondern nach Befund.",
+      "next_docs": ["D4F-F30-005"]
+    },
+    "sg-stumm": {
+      "title": "Steuergerät meldet sich nicht mehr",
+      "text": "Ein laut Fahrzeugauftrag verbautes Gerät fehlt in der Liste. Zuerst Sicherungen prüfen, dann Dauerplus und Masse direkt am Stecker des Geräts messen und den Stecker auf Feuchtigkeit und Korrosion ansehen. Sehr oft ist es die Versorgung und nicht das Gerät. Betrifft es das Zugangssystem, vor jedem weiteren Schritt ein Werkstattladegerät anschließen und nichts auf Verdacht beschreiben.",
+      "next_docs": ["D4F-F30-003", "D4F-F30-001"]
+    },
+    "adaption": {
+      "title": "Anlern- und Adaptionsvorgänge nachholen",
+      "text": "Alle Geräte antworten, die Einträge betreffen aber die Kommunikation. Nach einem Spannungsverlust fehlen häufig Adaptionen und Anlernzustände: Lenkwinkelabgleich, Fensterheber-Endanschläge, Adaptionswerte der Motorsteuerung. Diese Vorgänge geführt nachholen, danach Speicher löschen und Probefahrt fahren. Bleibt danach etwas stehen, mit dem verbliebenen Eintrag gezielt weitersuchen.",
+      "next_docs": ["D4F-F30-005", "D4F-F30-006"]
+    }
+  }
+}

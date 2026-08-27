@@ -18,16 +18,33 @@ INPA (Interpreter für Prüfabläufe) ist das ältere, aber weiterhin unentbehrl
 
 1. **INPA-Paket entpacken** nach `C:\EDIABAS\` — nicht in Programme, nicht mit Umlauten im Pfad.
 2. **Systemvariablen setzen:** `PATH` um `C:\EDIABAS\Bin` ergänzen, `EDIABAS_CONFIG_DIR` auf `C:\EDIABAS\Bin` setzen.
-3. **OBD.INI konfigurieren** — `C:\EDIABAS\Bin\OBD.INI`, Inhalt siehe unten.
-4. **EDIABAS.INI prüfen** — `Interface = STD:OBD` muss gesetzt sein.
+3. **EDIABAS.INI prüfen** — `C:\EDIABAS\Bin\EDIABAS.INI`, Abschnitt `[Configuration]`. Dort steht der Schnittstellen-Eintrag, Inhalt siehe unten.
+4. **OBD.INI konfigurieren** — `C:\EDIABAS\Bin\OBD.INI`, Abschnitt `[OBD]`. Dort steht der COM-Port, Inhalt siehe unten.
+
+## Welche Datei welchen Eintrag trägt
+
+Hier geraten die meisten Anleitungen durcheinander. `EDIABAS.INI` sagt EDIABAS, **über welche Schnittstelle** es reden soll: der Eintrag heißt `Interface` und lautet für ein K+DCAN-Kabel am OBD-Stecker `STD:OBD`. In derselben Datei liegen die Trace-Schalter `ApiTrace` und `IfhTrace` sowie `TracePath`.
+
+```ini
+[Configuration]
+Interface = STD:OBD
+ApiTrace = 0
+IfhTrace = 0
+TracePath = C:\EDIABAS\Trace
+```
+
+`OBD.INI` ist die Datei **dieser einen Schnittstelle** und sagt, an welchem COM-Port das Kabel hängt.
 
 ```ini
 [OBD]
 Port=COM3
 Hardware=OBD
-IFH_TRACE=0
-IFH_TRACE_SIZE=1024
+RETRY=ON
 ```
+
+Ein `Interface`-Eintrag in der `OBD.INI` bewirkt nichts, und den Port sucht EDIABAS nicht in der `EDIABAS.INI`. Wer beides in eine Datei schreibt, bekommt zwei rote Lämpchen und keine Meldung, die das erklärt.
+
+> Manche INPA-Pakete lesen die `OBD.INI` nicht aus `C:\EDIABAS\Bin`, sondern aus `C:\Windows`. Welcher Pfad bei deinem Stand gilt, ist nicht belegt — prüf es, statt zu raten: leg beide Kopien an und halt sie identisch. Welche wirklich gelesen wird, zeigt sich, wenn du eine davon umbenennst und INPA neu startest.
 
 ## Kabel-Setup im Gerätemanager
 
@@ -48,7 +65,7 @@ Wenn eines davon fehlt:
 
 | Symptom | Ursache |
 |---|---|
-| Beide Lampen rot | Kabel-Treiber, COM-Port oder OBD.INI-Port falsch |
+| Beide Lampen rot | Kabel-Treiber, COM-Port in OBD.INI oder `Interface` in EDIABAS.INI falsch |
 | Batterie grün, Zündung rot | KL15 kommt nicht am Kabel an — Sicherung F51 (Innenraum) prüfen |
 | Antwortet nur ein SG | K-Line-Bus-Fehler, meist verkabelter Zusatz am OBD (Verstärker, Tracker) |
 

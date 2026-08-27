@@ -1,0 +1,3202 @@
+{
+  "schema": "diag4free/symptome/v2",
+  "note": "Symptomkatalog für die Vorauswahl vor dem Diagnosepfad. Jede Ursache trägt einen Weg in den vorhandenen Bestand — einen Guide-Slug, Doc-IDs oder beides. Ein Weg ohne Ziel gehört nicht in diese Datei. Abweichung vom ersten Entwurf: der Weg liegt nicht flach an der Ursache, sondern in wege{} je Baureihe als Liste, weil Guides und Doc-IDs baureihen- und teilweise motorspezifisch sind. Ein Eintrag ohne engines gilt für alle Motoren der Baureihe.",
+  "fallback": {
+    "was": "Zugang zum Fahrzeug zuerst klären",
+    "wie": "Zu dieser Auswahl steht nichts im Bestand. Der nächstliegende allgemeine Weg ist, erst den Diagnosezugang herzustellen — ohne ihn bleibt jede weitere Vermutung ungeprüft.",
+    "symptom": "diag-keine-verbindung"
+  },
+  "gruppen": [
+    {
+      "id": "start",
+      "titel": "Springt nicht an",
+      "symptome": [
+        {
+          "id": "start-dreht-nicht",
+          "frage": "Der Anlasser dreht gar nicht — es klickt nur oder bleibt still",
+          "hilfe": "Du drehst den Schlüssel oder drückst den Startknopf, und der Motor wird nicht durchgedreht.",
+          "series": [
+            "e28",
+            "e30",
+            "e34",
+            "e36",
+            "e39",
+            "e46",
+            "e88",
+            "e90"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Batterie, Masse oder Anlasserkreis",
+              "wie": "Ein Anlasser, der nur klickt, bekommt Strom für das Relais, aber nicht für den Hauptkreis. Das ist meist Ladezustand, Polklemme oder Masse — selten der Anlasser selbst.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-crank-no-start",
+                    "docs": [
+                      "D4F-E28-006"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "docs": [
+                      "D4F-E30-011",
+                      "D4F-E30-008"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m50-crank-no-start",
+                    "engines": [
+                      "M50"
+                    ],
+                    "docs": [
+                      "D4F-E34-007"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-008"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-004"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "docs": [
+                      "D4F-E90-009",
+                      "D4F-E90-007"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Startfreigabe fehlt — Wegfahrsperre oder Zugangssystem",
+              "wie": "Ab der Wegfahrsperre darf das Steuergerät den Anlasser sperren. Das Bordnetz ist dann gesund, und der Motor dreht trotzdem nicht.",
+              "wege": {
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-008"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-004"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "start-dreht-springt-nicht-an",
+          "frage": "Der Anlasser dreht normal, der Motor springt aber nicht an",
+          "hilfe": "Der Motor wird zügig durchgedreht, fängt aber nicht zu laufen an — auch nicht kurz.",
+          "series": [
+            "e28",
+            "e30",
+            "e34",
+            "e36",
+            "e39",
+            "e46",
+            "e88",
+            "e90"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Kraftstoff kommt nicht an",
+              "wie": "Die Pumpe hörbar zu prüfen kostet nichts und schließt den halben Kraftstoffweg aus. Deshalb steht sie vorn.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-crank-no-start",
+                    "docs": [
+                      "D4F-E28-005"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m50-crank-no-start",
+                    "engines": [
+                      "M50"
+                    ],
+                    "docs": [
+                      "D4F-E34-007"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-002"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-003"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-010"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "engines": [
+                      "M57",
+                      "N47"
+                    ],
+                    "docs": [
+                      "D4F-E90-010",
+                      "D4F-E90-009"
+                    ]
+                  },
+                  {
+                    "guide": "startet-nicht",
+                    "engines": [
+                      "N43",
+                      "N46",
+                      "N52",
+                      "N53",
+                      "N54",
+                      "N55",
+                      "S65"
+                    ],
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kein Zündfunke",
+              "wie": "Eine gezogene Kerze gegen Masse zeigt in einer Minute, ob die Zündung überhaupt arbeitet.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-crank-no-start",
+                    "docs": [
+                      "D4F-E28-006"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "guide": "m20-no-spark",
+                    "engines": [
+                      "M20"
+                    ],
+                    "docs": [
+                      "D4F-E30-009"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-009"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "M42",
+                      "S14"
+                    ],
+                    "docs": [
+                      "D4F-E30-011",
+                      "D4F-E30-007"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m50-crank-no-start",
+                    "engines": [
+                      "M50"
+                    ],
+                    "docs": [
+                      "D4F-E34-002"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-003"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-002"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-006"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "engines": [
+                      "N43",
+                      "N46",
+                      "N52",
+                      "N53",
+                      "N54",
+                      "N55",
+                      "S65"
+                    ],
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Startfreigabe fehlt — Wegfahrsperre oder Zugangssystem",
+              "wie": "Bleiben Zündung und Einspritzung gemeinsam aus, obwohl beide Kreise versorgt sind, steht meist die Freigabe aus.",
+              "wege": {
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-008"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-004"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kein Drehzahlsignal vom Geber",
+              "wie": "Ohne Drehzahlsignal fallen Zündung und Einspritzung gleichzeitig aus — das erklärt beide Ausfälle mit einer Ursache.",
+              "wege": {
+                "e30": [
+                  {
+                    "guide": "m20-no-spark",
+                    "engines": [
+                      "M20"
+                    ],
+                    "docs": [
+                      "D4F-E30-010"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-010"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m50-crank-no-start",
+                    "engines": [
+                      "M50"
+                    ],
+                    "docs": [
+                      "D4F-E34-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-002"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-010"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Verdichtung oder Steuertrieb",
+              "wie": "Die teuerste Vermutung kommt zuletzt. Sie wird erst geprüft, wenn Kraftstoff und Zündung nachweislich da sind.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-crank-no-start",
+                    "docs": [
+                      "D4F-E28-002"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "engines": [
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-005"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m50-crank-no-start",
+                    "engines": [
+                      "M50"
+                    ],
+                    "docs": [
+                      "D4F-E34-005"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36"
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "engines": [
+                      "M57",
+                      "N47"
+                    ],
+                    "docs": [
+                      "D4F-E90-010"
+                    ]
+                  },
+                  {
+                    "guide": "startet-nicht",
+                    "engines": [
+                      "N43",
+                      "N46",
+                      "N52",
+                      "N53",
+                      "N54",
+                      "N55",
+                      "S65"
+                    ],
+                    "docs": [
+                      "D4F-E90-005"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "start-geht-sofort-wieder-aus",
+          "frage": "Er springt an und geht nach ein, zwei Sekunden von selbst wieder aus",
+          "hilfe": "Der Motor läuft kurz, stirbt dann ab. Beim nächsten Versuch passiert dasselbe.",
+          "series": [
+            "e36",
+            "e39",
+            "e46",
+            "e88",
+            "e90"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Wegfahrsperre gibt nur kurz frei",
+              "wie": "Das Anspringen und sofortige Absterben ist das typische Bild eines fehlenden Abgleichs zwischen Zugangssystem und Motorsteuerung.",
+              "wege": {
+                "e36": [
+                  {
+                    "guide": "startet-nicht-e36",
+                    "docs": [
+                      "D4F-E36-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-008"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-004"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "startet-nicht",
+                    "docs": [
+                      "D4F-E90-009"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kraftstoffdruck bricht nach dem Anspringen ein",
+              "wie": "Reicht der Restdruck nur für die ersten Umdrehungen, läuft der Motor an und geht sofort wieder aus.",
+              "wege": {
+                "e39": [
+                  {
+                    "guide": "startet-nicht-r6",
+                    "docs": [
+                      "D4F-E39-002"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "no-start-m54",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-003"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "guide": "n52-startet-nicht",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-010"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lauf",
+      "titel": "Läuft, aber nicht rund",
+      "symptome": [
+        {
+          "id": "lauf-leerlauf-unruhig",
+          "frage": "Im Stand schwankt die Drehzahl, der Motor zittert oder geht aus",
+          "hilfe": "Betrifft den Leerlauf. Beim Fahren fällt es kaum auf.",
+          "series": [
+            "e30",
+            "e34",
+            "e36",
+            "e38"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Falschluft oder verkokter Leerlaufsteller",
+              "wie": "Die häufigste Ursache und die billigste Prüfung: Ansaugstrecke abdrücken, Steller ausbauen und reinigen.",
+              "wege": {
+                "e30": [
+                  {
+                    "guide": "s14-leerlauf",
+                    "engines": [
+                      "S14"
+                    ],
+                    "docs": [
+                      "D4F-E30-006"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-006"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "leerlauf-unruhig-e36",
+                    "engines": [
+                      "M50",
+                      "M52",
+                      "S50",
+                      "S52"
+                    ],
+                    "docs": [
+                      "D4F-E36-008"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kurbelgehäuseentlüftung zugesetzt oder verhärtet",
+              "wie": "Verhärtete Schläuche reißen an den Stutzen ab und ziehen ungemessene Luft — dasselbe Bild wie Falschluft, aber an anderer Stelle.",
+              "wege": {
+                "e36": [
+                  {
+                    "guide": "leerlauf-unruhig-e36",
+                    "engines": [
+                      "M50",
+                      "M52",
+                      "S50",
+                      "S52"
+                    ],
+                    "docs": [
+                      "D4F-E36-008"
+                    ]
+                  }
+                ],
+                "e38": [
+                  {
+                    "guide": "m73-unrunder-lauf",
+                    "engines": [
+                      "M73"
+                    ],
+                    "docs": [
+                      "D4F-E38-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Versorgung, Masse oder Steckverbindung",
+              "wie": "Ein Uebergangswiderstand macht Messwerte wandern, ohne dass ein Bauteil defekt ist. Wackeln am Kabelbaum zeigt es.",
+              "wege": {
+                "e30": [
+                  {
+                    "guide": "s14-leerlauf",
+                    "engines": [
+                      "S14"
+                    ],
+                    "docs": [
+                      "D4F-E30-011",
+                      "D4F-E30-012"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Sensorik — Luftmasse, Lambda oder Kühlmitteltemperatur",
+              "wie": "Kommt zuletzt, weil ein Sensor selten ausfällt, aber gern für Falschluft verantwortlich gemacht wird.",
+              "wege": {
+                "e36": [
+                  {
+                    "guide": "leerlauf-unruhig-e36",
+                    "engines": [
+                      "M50",
+                      "M52",
+                      "S50",
+                      "S52"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "guide": "s14-leerlauf",
+                    "engines": [
+                      "S14"
+                    ],
+                    "docs": [
+                      "D4F-E30-006"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-ruckeln-teillast",
+          "frage": "Beim gleichmäßigen Fahren ruckelt es, der Motor läuft rau, der Verbrauch steigt",
+          "hilfe": "Auffällig vor allem bei wenig Gas und niedriger Drehzahl, nicht unter Volllast.",
+          "series": [
+            "e30",
+            "e38",
+            "e87",
+            "e90"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Zündspule oder Kerze eines einzelnen Zylinders",
+              "wie": "Ein einzelner Zylinder fällt aus. Die Spule auf einen unauffälligen Zylinder zu setzen kostet nichts und beweist es.",
+              "wege": {
+                "e30": [
+                  {
+                    "guide": "m40-unrund",
+                    "engines": [
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-009"
+                    ]
+                  }
+                ],
+                "e87": [
+                  {
+                    "guide": "n43-ruckeln",
+                    "engines": [
+                      "N43"
+                    ],
+                    "docs": [
+                      "D4F-E87-010"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "direkteinspritzer-ruckeln",
+                    "engines": [
+                      "N43",
+                      "N53"
+                    ],
+                    "docs": [
+                      "D4F-E90-005"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Injektor mit abweichender Einspritzmenge",
+              "wie": "Wandert der Aussetzer beim Tausch der Spule nicht mit, bleibt der Einspritzweg desselben Zylinders übrig.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "n43-ruckeln",
+                    "engines": [
+                      "N43"
+                    ],
+                    "docs": [
+                      "D4F-E87-010"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "direkteinspritzer-ruckeln",
+                    "engines": [
+                      "N43",
+                      "N53"
+                    ],
+                    "docs": [
+                      "D4F-E90-005"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Magerbetriebs-Sensorik — NOx-Sensor",
+              "wie": "Fällt der Magerbetrieb aus, steigt der Verbrauch spürbar, ohne dass ein einzelner Zylinder auffällt.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "n43-ruckeln",
+                    "engines": [
+                      "N43"
+                    ],
+                    "docs": [
+                      "D4F-E87-010"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "direkteinspritzer-ruckeln",
+                    "engines": [
+                      "N43",
+                      "N53"
+                    ],
+                    "docs": [
+                      "D4F-E90-005"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Nur eine Motorhälfte betroffen",
+              "wie": "Der V12 arbeitet als zwei getrennte Motoren. Die Frage, ob eine oder beide Hälften auffallen, halbiert den Suchraum sofort.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "m73-unrunder-lauf",
+                    "engines": [
+                      "M73"
+                    ],
+                    "docs": [
+                      "D4F-E38-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ventiltrieb oder Nockenwelle verschlissen",
+              "wie": "Am Vierzylinder mit Zahnriemen steht die Mechanik vor der Elektronik — Nocken und Ölspritzleiste zuerst ansehen.",
+              "wege": {
+                "e30": [
+                  {
+                    "guide": "m40-unrund",
+                    "engines": [
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-005"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-kalt-ruckelt-warm-gut",
+          "frage": "Kalt ruckelt er, warm läuft er sauber",
+          "hilfe": "Das Bild verschwindet, sobald der Motor Betriebstemperatur hat.",
+          "series": [
+            "e39",
+            "e87"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "VANOS-Verstellung träge oder ohne Öldruck",
+              "wie": "Kalt ist das Öl zäh. Eine träge Verstellung fällt deshalb genau dann auf und verschwindet warm wieder.",
+              "wege": {
+                "e39": [
+                  {
+                    "guide": "vanos-doppel",
+                    "engines": [
+                      "M52",
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E39-005"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ablagerungen in der Warmlauf-Gemischbildung",
+              "wie": "Im Kaltlauf läuft der Motor fett und mit anderer Steuerung. Ablagerungen stören genau dort und fallen warm nicht mehr auf.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "n43-ruckeln",
+                    "engines": [
+                      "N43"
+                    ],
+                    "docs": [
+                      "D4F-E87-010"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-warmstart-schlecht",
+          "frage": "Warm springt er schlecht an, kalt ohne Probleme",
+          "hilfe": "Nach einer Fahrt und kurzer Standzeit orgelt er lange. Am nächsten Morgen kalt startet er normal.",
+          "series": [
+            "e34"
+          ],
+          "engines": [
+            "M60"
+          ],
+          "ursachen": [
+            {
+              "was": "Falschluft oder Kühlsystem",
+              "wie": "Die billigen Ursachen zuerst — dicht ist dicht, und das lässt sich ohne Zerlegen feststellen.",
+              "wege": {
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Sekundärluftsystem auffällig",
+              "wie": "Ein Eintrag zum Sekundärluftsystem erklärt das Warmstartbild mit, bevor die Mechanik verdächtigt wird.",
+              "wege": {
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Laufbahnen des Blocks",
+              "wie": "Die teuerste Vermutung am V8 und die, die am schnellsten ausgesprochen wird. Sie kommt zuletzt: erst Gussnummer ablesen, dann vergleichend messen.",
+              "wege": {
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-006"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-leistung-fehlt",
+          "frage": "Beim Beschleunigen fehlt Schub, der Lader baut keinen Druck auf",
+          "hilfe": "Der Motor läuft rund, zieht aber nicht durch. Oft ohne Warnleuchte.",
+          "series": [
+            "e60",
+            "e90",
+            "f22"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Undichtigkeit im Ladeluftweg",
+              "wie": "Eine abgerutschte Schelle kostet nichts und macht dasselbe Bild wie ein defekter Lader. Deshalb zuerst abdrücken.",
+              "wege": {
+                "e90": [
+                  {
+                    "guide": "n54-low-boost",
+                    "engines": [
+                      "N54"
+                    ],
+                    "docs": [
+                      "D4F-E90-002"
+                    ]
+                  }
+                ],
+                "f22": [
+                  {
+                    "engines": [
+                      "N55"
+                    ],
+                    "docs": [
+                      "D4F-F22-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Wastegate oder Ladedrucksteller",
+              "wie": "Rasselt es unter Last aus dem Laderbereich, steht die Verstellung im Verdacht, nicht der Verdichter.",
+              "wege": {
+                "e90": [
+                  {
+                    "guide": "n54-low-boost",
+                    "engines": [
+                      "N54"
+                    ],
+                    "docs": [
+                      "D4F-E90-002"
+                    ]
+                  }
+                ],
+                "f22": [
+                  {
+                    "engines": [
+                      "N55"
+                    ],
+                    "docs": [
+                      "D4F-F22-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Hochdruckpumpe hält den Raildruck nicht",
+              "wie": "Fällt der Raildruck unter Volllast ab, nimmt die Steuerung den Ladedruck zurück — das Symptom sieht nach Lader aus, kommt aber vom Kraftstoff.",
+              "wege": {
+                "e90": [
+                  {
+                    "guide": "n54-low-boost",
+                    "engines": [
+                      "N54"
+                    ],
+                    "docs": [
+                      "D4F-E90-002"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Drallklappen, Abgasrückführung oder Ladedruck am Diesel",
+              "wie": "Am Diesel sitzen die häufigen Leistungsbremsen im Ansaug- und Abgasweg, nicht im Lader.",
+              "wege": {
+                "e60": [
+                  {
+                    "engines": [
+                      "M57"
+                    ],
+                    "docs": [
+                      "D4F-E60-020"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-notlauf",
+          "frage": "Der Motor nimmt kaum Gas an und hängt im Notlauf",
+          "hilfe": "Die Drehzahl bleibt begrenzt, das Fahrzeug fährt nur noch langsam.",
+          "series": [
+            "f22"
+          ],
+          "engines": [
+            "N13",
+            "N20",
+            "N55",
+            "B38",
+            "B48"
+          ],
+          "ursachen": [
+            {
+              "was": "Ventilhubsteuerung — Valvetronic",
+              "wie": "Fällt die Hubverstellung aus, läuft der Motor nur noch über die Drosselklappe weiter. Das ist der Notlauf, den man spürt.",
+              "wege": {
+                "f22": [
+                  {
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N55",
+                      "B38",
+                      "B48"
+                    ],
+                    "docs": [
+                      "D4F-F22-004"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lauf-drehmoment-untenrum-fehlt",
+          "frage": "Untenherum fehlt Drehmoment, aus dem Ansaugbereich klappert es",
+          "hilfe": "Der Motor dreht oben normal, zieht aber aus niedrigen Drehzahlen schlecht.",
+          "series": [
+            "e46"
+          ],
+          "engines": [
+            "M54"
+          ],
+          "ursachen": [
+            {
+              "was": "Umschaltklappe im Ansaugrohr — DISA",
+              "wie": "Die Klappe verstellt die Rohrlänge. Löst sich ihre Lagerung, klappert es und das Drehmoment untenherum bleibt weg.",
+              "wege": {
+                "e46": [
+                  {
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-008"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geraeusch",
+      "titel": "Geräusche",
+      "symptome": [
+        {
+          "id": "geraeusch-rasseln-kaltstart",
+          "frage": "In den ersten Sekunden nach dem Kaltstart rasselt es metallisch",
+          "hilfe": "Nur beim ersten Start des Tages. Danach ist es weg, bis der Motor wieder ganz kalt ist.",
+          "series": [
+            "e87",
+            "f22"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Ölstand und Ölzustand",
+              "wie": "Zu wenig oder zu altes Öl lässt den Kettenspanner später aufbauen. Das kostet nichts zu prüfen und steht deshalb vorn.",
+              "wege": {
+                "f22": [
+                  {
+                    "guide": "n13-rasseln",
+                    "engines": [
+                      "N13"
+                    ],
+                    "docs": [
+                      "D4F-F22-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Steuerkette oder Kettenspanner",
+              "wie": "Wo das Geräusch sitzt, entscheidet: getriebeseitig deutet auf den Steuertrieb, stirnseitig auf den Riementrieb davor.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "n47-kettengeraeusch",
+                    "engines": [
+                      "N47"
+                    ],
+                    "docs": [
+                      "D4F-E87-020"
+                    ]
+                  }
+                ],
+                "f22": [
+                  {
+                    "guide": "n13-rasseln",
+                    "engines": [
+                      "N13"
+                    ],
+                    "docs": [
+                      "D4F-F22-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Riementrieb oder Nebenaggregat",
+              "wie": "Die deutlich billigere Geräuschquelle. Bleibt das Rasseln ohne Riemen bestehen, ist sie ausgeschlossen.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "n47-kettengeraeusch",
+                    "engines": [
+                      "N47"
+                    ],
+                    "docs": [
+                      "D4F-E87-020"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "geraeusch-kurbeltrieb-klackern",
+          "frage": "Aus dem Kurbeltrieb klackert es, oder die Öldruckwarnung kommt kurz",
+          "hilfe": "Dumpfes, drehzahlabhängiges Klackern tief aus dem Motor. Betrifft die großen M-Saugmotoren.",
+          "series": [
+            "e60",
+            "e90"
+          ],
+          "engines": [
+            "S85",
+            "S65"
+          ],
+          "ursachen": [
+            {
+              "was": "Pleuellager",
+              "wie": "Ein bekanntes Fehlerbild dieser Motoren. Das Geräusch tief aus dem Block und eine kurze Öldruckmeldung gehören zusammen und werden nicht abgewartet.",
+              "wege": {
+                "e60": [
+                  {
+                    "engines": [
+                      "S85"
+                    ],
+                    "docs": [
+                      "D4F-E60-050"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "engines": [
+                      "S65"
+                    ],
+                    "docs": [
+                      "D4F-E90-008"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temperatur",
+      "titel": "Temperatur und Flüssigkeiten",
+      "symptome": [
+        {
+          "id": "temp-heiss-im-stand",
+          "frage": "Im Stau oder Standgas steigt die Temperaturanzeige, beim Fahren nicht",
+          "hilfe": "Solange Fahrtwind da ist, bleibt alles normal. Erst im Stand klettert die Anzeige.",
+          "series": [
+            "e88"
+          ],
+          "engines": [
+            "N52"
+          ],
+          "ursachen": [
+            {
+              "was": "Kühlmittelstand oder Undichtigkeit",
+              "wie": "Der Blick in den Ausgleichsbehälter bei kaltem Motor kostet nichts und erklärt viele Fälle allein.",
+              "wege": {
+                "e88": [
+                  {
+                    "guide": "n52-ueberhitzung-standgas",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kühlerlüfter oder dessen Ansteuerung",
+              "wie": "Im Stand trägt nur der Lüfter die Wärmeabfuhr. Läuft er nicht hoch, passt das Bild genau.",
+              "wege": {
+                "e88": [
+                  {
+                    "guide": "n52-ueberhitzung-standgas",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Elektrische Wasserpumpe oder fehlende Anforderung",
+              "wie": "Die Pumpe wird angesteuert statt vom Riemen getrieben. Es ist deshalb zu trennen, ob die Anforderung fehlt oder die Pumpe ihr nicht folgt.",
+              "wege": {
+                "e88": [
+                  {
+                    "guide": "n52-ueberhitzung-standgas",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011",
+                      "D4F-E88-010"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Thermostat oder Luft im Kühlkreis",
+              "wie": "Bleibt der obere Kühlerschlauch kalt, obwohl die Anzeige steigt, öffnet der Kreis nicht.",
+              "wege": {
+                "e88": [
+                  {
+                    "guide": "n52-ueberhitzung-standgas",
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "verlust-kuehlmittel",
+          "frage": "Der Kühlmittelstand sinkt immer wieder",
+          "hilfe": "Du füllst nach, und nach ein paar Wochen ist der Stand wieder unten.",
+          "series": [
+            "e34",
+            "e36",
+            "e60"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Undichte Stelle von außen",
+              "wie": "Eine nasse Stelle oder helle Kruste ist der billigste Befund. Danach wird nicht mehr geraten.",
+              "wege": {
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-006"
+                    ]
+                  }
+                ],
+                "e60": [
+                  {
+                    "guide": "n62-verlust-eingrenzen",
+                    "engines": [
+                      "N62"
+                    ],
+                    "docs": [
+                      "D4F-E60-010"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Versprödete Kunststoffteile im Kühlkreis",
+              "wie": "An dieser Baureihe sind Ausgleichsbehälter, Thermostatgehäuse und Stutzen aus Kunststoff der Regelfall des Kühlmittelverlusts.",
+              "wege": {
+                "e36": [
+                  {
+                    "docs": [
+                      "D4F-E36-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kühlmittel geht nach innen verloren",
+              "wie": "Kein Austritt außen, aber Druck im kalten Behälter oder süßlicher Abgasgeruch — dann verschwindet es nach innen.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "n62-verlust-eingrenzen",
+                    "engines": [
+                      "N62"
+                    ],
+                    "docs": [
+                      "D4F-E60-010"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "verlust-oel",
+          "frage": "Es tropft Öl, oder es riecht am heißen Motor verbrannt",
+          "hilfe": "Flecken auf dem Boden, oder Qualm und Geruch nach einer Fahrt.",
+          "series": [
+            "e38",
+            "e60",
+            "e88"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Ventildeckeldichtung",
+              "wie": "Die häufigste und billigste Austrittsstelle. Öl an der Deckelkante oder Qualm am Krümmer passt dazu.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "n62-verlust-eingrenzen",
+                    "engines": [
+                      "N62"
+                    ],
+                    "docs": [
+                      "D4F-E60-010"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ölfiltergehäusedichtung",
+              "wie": "Sitzt weiter unten und wird oft mit der Ventildeckeldichtung verwechselt, weil das Öl von oben kommt.",
+              "wege": {
+                "e88": [
+                  {
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-011"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Dichtung des Lichtmaschinenträgers",
+              "wie": "Setzt die Ölspur oberhalb der Trägerplatte an, kommt sie von dort und nicht vom Ventildeckel.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "n62-verlust-eingrenzen",
+                    "engines": [
+                      "N62"
+                    ],
+                    "docs": [
+                      "D4F-E60-010"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Gleitschienen und Kühlmittelrohr im V des Motors",
+              "wie": "Beim V8 dieser Baureihe liegen die bekannten Stellen im V — dort wird gezielt gesucht, statt außen weiterzusuchen.",
+              "wege": {
+                "e38": [
+                  {
+                    "engines": [
+                      "M62"
+                    ],
+                    "docs": [
+                      "D4F-E38-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ventilschaftdichtungen",
+              "wie": "Blauer Rauch beim Kaltstart oder nach Schubphasen, ohne dass außen Öl austritt — dann verbrennt es mit.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "n62-verlust-eingrenzen",
+                    "engines": [
+                      "N62"
+                    ],
+                    "docs": [
+                      "D4F-E60-010"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diagnose",
+      "titel": "Kein Kontakt zum Fahrzeug",
+      "symptome": [
+        {
+          "id": "diag-keine-verbindung",
+          "frage": "Das Diagnosegerät bekommt überhaupt keine Verbindung",
+          "hilfe": "Die Software meldet, dass sich kein Steuergerät identifizieren lässt.",
+          "series": [
+            "e28",
+            "e30",
+            "e34",
+            "e36",
+            "e38",
+            "e39",
+            "e46",
+            "e60",
+            "e70",
+            "e87",
+            "e88",
+            "e90",
+            "f10",
+            "f15",
+            "f22",
+            "f30"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Falsches Kabel oder falsche Betriebsart",
+              "wie": "Der Protokollwechsel innerhalb einer Baureihe ist die häufigste Ursache. Das Kabel muss zum Baustand passen, nicht zur Buchse.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-diagnosezugang",
+                    "docs": [
+                      "D4F-E28-007"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "keine-verbindung-e36",
+                    "docs": [
+                      "D4F-E36-001"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "keine-diagnoseverbindung",
+                    "docs": [
+                      "D4F-E39-001"
+                    ]
+                  }
+                ],
+                "e60": [
+                  {
+                    "guide": "e60-keine-verbindung",
+                    "docs": [
+                      "D4F-E60-001"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "kein-kontakt",
+                    "docs": [
+                      "D4F-E90-001"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "enet-kein-zugriff",
+                    "docs": [
+                      "D4F-F10-001",
+                      "D4F-F-003"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "docs": [
+                      "D4F-F15-001",
+                      "D4F-F-003"
+                    ]
+                  }
+                ],
+                "f22": [
+                  {
+                    "docs": [
+                      "D4F-F22-001",
+                      "D4F-F-003"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "docs": [
+                      "D4F-F30-001",
+                      "D4F-F-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Versorgung an der Diagnosebuchse fehlt",
+              "wie": "Ohne Masse, Dauerplus und Klemme 15 an der Buchse antwortet nichts. Das ist in fünf Minuten gemessen.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-diagnosezugang",
+                    "docs": [
+                      "D4F-E28-001"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "keine-verbindung-e36",
+                    "docs": [
+                      "D4F-E36-002"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "keine-diagnoseverbindung",
+                    "docs": [
+                      "D4F-E39-003"
+                    ]
+                  }
+                ],
+                "e60": [
+                  {
+                    "guide": "e60-keine-verbindung",
+                    "docs": [
+                      "D4F-E60-001"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "kein-kontakt",
+                    "docs": [
+                      "D4F-E90-001"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "enet-kein-zugriff",
+                    "docs": [
+                      "D4F-F10-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Falsche Buchse für dieses Baujahr",
+              "wie": "Aeltere Baureihen tragen Rundstecker im Motorraum und OBD-Buchse im Innenraum nebeneinander, mit unterschiedlichem Umfang.",
+              "wege": {
+                "e28": [
+                  {
+                    "guide": "e28-diagnosezugang",
+                    "docs": [
+                      "D4F-E28-001"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "docs": [
+                      "D4F-E30-001",
+                      "D4F-E30-007"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "docs": [
+                      "D4F-E34-001",
+                      "D4F-E34-008"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "guide": "keine-verbindung-e36",
+                    "docs": [
+                      "D4F-E36-002"
+                    ]
+                  }
+                ],
+                "e38": [
+                  {
+                    "docs": [
+                      "D4F-E38-001",
+                      "D4F-E38-007"
+                    ]
+                  }
+                ],
+                "e39": [
+                  {
+                    "guide": "keine-diagnoseverbindung",
+                    "docs": [
+                      "D4F-E39-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Treiber, COM-Port oder Netzwerkschnittstelle",
+              "wie": "Die Werkzeugseite wird zuletzt geprüft, aber sie wird geprüft — Latency Timer, Portnummer und Schnittstellenwahl entscheiden über Erfolg oder Fehlanzeige.",
+              "wege": {
+                "e46": [
+                  {
+                    "docs": [
+                      "D4F-E46-001"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-001"
+                    ]
+                  }
+                ],
+                "e87": [
+                  {
+                    "docs": [
+                      "D4F-E87-001"
+                    ]
+                  }
+                ],
+                "e88": [
+                  {
+                    "docs": [
+                      "D4F-E88-001"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "kein-kontakt",
+                    "docs": [
+                      "D4F-E90-001"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "enet-kein-zugriff",
+                    "docs": [
+                      "D4F-F10-001"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "diag-teil-fehlt",
+          "frage": "Nur ein Teil der Steuergeräte antwortet, andere fehlen im Suchlauf",
+          "hilfe": "Die Verbindung steht grundsätzlich, aber die Geräteliste ist unvollständig.",
+          "series": [
+            "e38",
+            "e60",
+            "e70",
+            "e87",
+            "e90",
+            "f10",
+            "f30"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Bordspannung bricht während der Diagnose ein",
+              "wie": "Ein Suchlauf zieht Strom. Fällt die Spannung, verabschieden sich Geräte der Reihe nach — das sieht aus wie ein Defekt und ist keiner.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "e60-keine-verbindung",
+                    "docs": [
+                      "D4F-E60-060"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "guide": "e70-mehrere-sg-fehlen",
+                    "docs": [
+                      "D4F-E70-001"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-006"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "stoerung-nach-batterie",
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Gemeinsame Sicherung oder gemeinsamer Massepunkt",
+              "wie": "Fehlen mehrere Geräte gleichzeitig, ist die Frage nicht welches defekt ist, sondern was sie teilen.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "e38-komfort-tot",
+                    "docs": [
+                      "D4F-E38-006"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "guide": "e70-mehrere-sg-fehlen",
+                    "docs": [
+                      "D4F-E70-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ein einzelner Bus ist gestört",
+              "wie": "Liegen alle fehlenden Geräte auf demselben Bus, ist die Leitung der Verdächtige und nicht das Gerät.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "e38-komfort-tot",
+                    "docs": [
+                      "D4F-E38-002"
+                    ]
+                  }
+                ],
+                "e60": [
+                  {
+                    "guide": "e60-keine-verbindung",
+                    "docs": [
+                      "D4F-E60-002"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "guide": "e70-mehrere-sg-fehlen",
+                    "docs": [
+                      "D4F-E70-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "kein-kontakt",
+                    "docs": [
+                      "D4F-E90-004"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Gateway antwortet nicht",
+              "wie": "Das zentrale Gateway reicht die Diagnose weiter. Fällt es aus, fehlen ganze Zweige auf einmal.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "e60-keine-verbindung",
+                    "docs": [
+                      "D4F-E60-002"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "guide": "e70-mehrere-sg-fehlen",
+                    "docs": [
+                      "D4F-E70-002"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "guide": "kein-kontakt",
+                    "docs": [
+                      "D4F-E90-004"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "enet-kein-zugriff",
+                    "docs": [
+                      "D4F-F10-003"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "fahrzeug-bestimmen",
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N26",
+                      "N55",
+                      "N47",
+                      "B38",
+                      "B48",
+                      "B58"
+                    ],
+                    "docs": [
+                      "D4F-F30-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Wasser am Steuergerät",
+              "wie": "An bekannten Wasserwegen sitzen Steuergeräte tief. Ein nasses Gerät stört den Bus, ohne selbst aufzufallen.",
+              "wege": {
+                "e70": [
+                  {
+                    "guide": "e70-mehrere-sg-fehlen",
+                    "docs": [
+                      "D4F-E70-006"
+                    ]
+                  }
+                ],
+                "e87": [
+                  {
+                    "docs": [
+                      "D4F-E87-040"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "diag-mkl-ohne-auslesbaren-code",
+          "frage": "Die Motorkontrollleuchte leuchtet, ein OBD-Gerät findet aber nichts",
+          "hilfe": "Betrifft ältere Fahrzeuge, deren Speicher nicht über die genormte OBD-Ebene erreichbar ist.",
+          "series": [
+            "e28",
+            "e30",
+            "e34",
+            "e36"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Speicher nur über Blinkcode erreichbar",
+              "wie": "Vor der genormten Diagnose gibt die Lampe den Code selbst aus. Das braucht kein Gerät, nur die richtige Abfolge.",
+              "wege": {
+                "e28": [
+                  {
+                    "engines": [
+                      "M20",
+                      "M30"
+                    ],
+                    "docs": [
+                      "D4F-E28-003"
+                    ]
+                  }
+                ],
+                "e30": [
+                  {
+                    "engines": [
+                      "M20",
+                      "M40"
+                    ],
+                    "docs": [
+                      "D4F-E30-002"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "M20"
+                    ],
+                    "docs": [
+                      "D4F-E30-004"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "M42",
+                      "S14"
+                    ],
+                    "docs": [
+                      "D4F-E30-007"
+                    ]
+                  }
+                ],
+                "e34": [
+                  {
+                    "engines": [
+                      "M20",
+                      "M50",
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-003"
+                    ]
+                  }
+                ],
+                "e36": [
+                  {
+                    "engines": [
+                      "M43",
+                      "M50",
+                      "S50"
+                    ],
+                    "docs": [
+                      "D4F-E36-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Warnung kommt aus ABS oder ASC, nicht aus dem Motor",
+              "wie": "Fahrwerksregelungen haben ihren eigenen Speicher und ihre eigene Ausgabe. Die falsche Leuchte zu lesen kostet einen Nachmittag.",
+              "wege": {
+                "e34": [
+                  {
+                    "docs": [
+                      "D4F-E34-004"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bordnetz",
+      "titel": "Bordnetz und Eingriffe",
+      "symptome": [
+        {
+          "id": "bordnetz-nach-batteriewechsel",
+          "frage": "Seit dem Batteriewechsel melden mehrere Systeme Fehler",
+          "hilfe": "Vor dem Wechsel war alles in Ordnung, danach leuchten mehrere Warnungen gleichzeitig.",
+          "series": [
+            "e60",
+            "e87",
+            "e90",
+            "f10",
+            "f30"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Batterie nicht registriert",
+              "wie": "Das Energiemanagement lädt nach dem Alter der alten Batterie weiter. Die Registrierung ist der erste und billigste Schritt.",
+              "wege": {
+                "e60": [
+                  {
+                    "docs": [
+                      "D4F-E60-060"
+                    ]
+                  }
+                ],
+                "e87": [
+                  {
+                    "docs": [
+                      "D4F-E87-050"
+                    ]
+                  }
+                ],
+                "e90": [
+                  {
+                    "docs": [
+                      "D4F-E90-007"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-006"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "stoerung-nach-batterie",
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Abweichender Batterietyp — Codierung fehlt",
+              "wie": "Weicht die neue Batterie in Bauart oder Kapazität ab, reicht die Registrierung nicht; der Typ muss mit.",
+              "wege": {
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-006"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "stoerung-nach-batterie",
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Folgefehler des Spannungseinbruchs",
+              "wie": "Beim Abklemmen fällt die Spannung, und viele Geräte legen einen Kommunikationsfehler ab. Löschen und nachfahren trennt Folge von Ursache.",
+              "wege": {
+                "e60": [
+                  {
+                    "docs": [
+                      "D4F-E60-060"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "stoerung-nach-batterie",
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ladeanlage arbeitet nicht",
+              "wie": "Steigt die Spannung bei laufendem Motor nicht über den Ruhewert, war die Batterie nur das Symptom.",
+              "wege": {
+                "e90": [
+                  {
+                    "docs": [
+                      "D4F-E90-007"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "stoerung-nach-batterie",
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bordnetz-nach-codierung-tot",
+          "frage": "Nach einem Codier- oder Programmierversuch reagiert das Fahrzeug nicht mehr",
+          "hilfe": "Während oder nach dem Schreiben ist das Zugangssystem stumm geblieben.",
+          "series": [
+            "f10",
+            "f15",
+            "f22",
+            "f30"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Versorgung während des Schreibens eingebrochen",
+              "wie": "Ohne aktives Werkstattladegerät bricht die Spannung im Schreibvorgang ein. Das ist die häufigste Ursache und die erste Frage.",
+              "wege": {
+                "f10": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f22": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Zugangssystem fehlt in der Geräteliste",
+              "wie": "Ob FEM/BDC oder CAS verbaut ist, entscheidet über jeden weiteren Schritt. Ohne diese Zuordnung wird geraten.",
+              "wege": {
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-003"
+                    ]
+                  }
+                ],
+                "f22": [
+                  {
+                    "docs": [
+                      "D4F-F22-007"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "fahrzeug-bestimmen",
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N26",
+                      "N55",
+                      "N47",
+                      "B38",
+                      "B48",
+                      "B58"
+                    ],
+                    "docs": [
+                      "D4F-F30-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Datenstand passt nicht zum Fahrzeug",
+              "wie": "Deckt die Datenbasis die gelesene I-Stufe nicht ab, schreibt das Werkzeug etwas Falsches — sauber und trotzdem falsch.",
+              "wege": {
+                "f10": [
+                  {
+                    "docs": [
+                      "D4F-F10-005"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "fahrzeug-bestimmen",
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N26",
+                      "N55",
+                      "N47",
+                      "B38",
+                      "B48",
+                      "B58"
+                    ],
+                    "docs": [
+                      "D4F-F30-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kein Backup vorhanden",
+              "wie": "Ohne Sicherung des Ausgangszustands endet jeder weitere Schreibversuch im Rückbau über die Werkbank. Hier wird gestoppt, nicht weitergeflasht.",
+              "wege": {
+                "f10": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f22": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ],
+                "f30": [
+                  {
+                    "guide": "fem-bricked"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bordnetz-komfort-gemeinsam-tot",
+          "frage": "Zentralverriegelung, Klima oder Bordmonitor fallen gemeinsam aus",
+          "hilfe": "Mehrere Komfortfunktionen gehen gleichzeitig, nicht einzeln nacheinander.",
+          "series": [
+            "e38"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Spannungsversorgung oder Massepunkt",
+              "wie": "Der gemeinsame Ausfall zeigt auf etwas Gemeinsames. Massepunkte im Fußraum stehen dabei vor jedem Steuergerät.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "e38-komfort-tot",
+                    "docs": [
+                      "D4F-E38-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Gateway-Funktion des Kombiinstruments",
+              "wie": "Das Kombiinstrument reicht die Diagnose an den Komfortbus weiter. Antwortet es nicht, fehlt alles dahinter.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "e38-komfort-tot",
+                    "docs": [
+                      "D4F-E38-002"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ein Teilnehmer hält den Bus fest",
+              "wie": "Ein einzelnes störendes Modul legt den ganzen Strang lahm. Abziehen und neu suchen findet es.",
+              "wege": {
+                "e38": [
+                  {
+                    "guide": "e38-komfort-tot",
+                    "docs": [
+                      "D4F-E38-005"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "bordnetz-batterie-leer",
+          "frage": "Nach ein paar Tagen Stehen ist die Batterie leer",
+          "hilfe": "Das Fahrzeug wird nicht bewegt und ist danach nicht mehr startbereit.",
+          "series": [
+            "e38"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Der Bus schläft nicht ein",
+              "wie": "Bleibt ein Steuergerät wach, halten alle anderen mit. Das erklärt einen erhöhten Ruhestrom ohne defektes Bauteil.",
+              "wege": {
+                "e38": [
+                  {
+                    "docs": [
+                      "D4F-E38-006"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fahrwerk",
+      "titel": "Fahrwerk, Lenkung, Allrad",
+      "symptome": [
+        {
+          "id": "fahrwerk-mehrere-meldungen",
+          "frage": "Fahrwerk, Lenkung und Stabilitätsregelung melden gleichzeitig",
+          "hilfe": "Mehrere Warnungen kommen zusammen, nicht nacheinander.",
+          "series": [
+            "e60",
+            "e70",
+            "f10"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Bordspannung oder fehlende Batterieregistrierung",
+              "wie": "Geregelte Fahrwerkssysteme melden als Erstes, wenn die Spannung nicht steht. Das ist keine Fahrwerksstörung.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "dynamic-drive-ausgefallen",
+                    "docs": [
+                      "D4F-E60-060"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "fahrwerk-flexray",
+                    "engines": [
+                      "N20",
+                      "N53",
+                      "N55",
+                      "N57",
+                      "N63",
+                      "S63",
+                      "B47"
+                    ],
+                    "docs": [
+                      "D4F-F10-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Gemeinsame Ursache auf dem Fahrwerks- oder Antriebsbus",
+              "wie": "Melden mehrere Regelungen zusammen, ist das Busbild vom Bauteilbild zu trennen, bevor ein Aktor getauscht wird.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "dynamic-drive-ausgefallen",
+                    "docs": [
+                      "D4F-E60-002"
+                    ]
+                  }
+                ],
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-003"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "fahrwerk-flexray",
+                    "engines": [
+                      "N20",
+                      "N53",
+                      "N55",
+                      "N57",
+                      "N63",
+                      "S63",
+                      "B47"
+                    ],
+                    "docs": [
+                      "D4F-F10-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Ein einzelner Teilnehmer meldet sich nicht",
+              "wie": "Fehlt genau ein Satellit in der Liste, ist die Leitung zu ihm zu prüfen, nicht die zentrale Regelung.",
+              "wege": {
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-003"
+                    ]
+                  }
+                ],
+                "f10": [
+                  {
+                    "guide": "fahrwerk-flexray",
+                    "engines": [
+                      "N20",
+                      "N53",
+                      "N55",
+                      "N57",
+                      "N63",
+                      "S63",
+                      "B47"
+                    ],
+                    "docs": [
+                      "D4F-F10-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Servokreis der Wankstabilisierung",
+              "wie": "Ölstand und Dichtheit des Servokreises stehen vor jedem Verdacht auf den Ventilblock.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "dynamic-drive-ausgefallen",
+                    "docs": [
+                      "D4F-E60-030"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fahrwerk-lenkung-schwer",
+          "frage": "Die Lenkung wird schwergängig oder das Lenkradsymbol leuchtet",
+          "hilfe": "Die Unterstützung fällt dauerhaft oder sporadisch aus.",
+          "series": [
+            "e60",
+            "f22",
+            "f30"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Bordspannung oder Batteriezustand",
+              "wie": "Die elektrische Lenkung zieht viel Strom und schaltet als Erstes ab. Batterie und Ladekreis stehen deshalb vorn.",
+              "wege": {
+                "f22": [
+                  {
+                    "guide": "eps-ausfall",
+                    "docs": [
+                      "D4F-F22-005"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N55",
+                      "N47",
+                      "B38",
+                      "B48",
+                      "B58"
+                    ],
+                    "docs": [
+                      "D4F-F30-005",
+                      "D4F-F30-006"
+                    ]
+                  },
+                  {
+                    "engines": [
+                      "N26",
+                      "B47"
+                    ],
+                    "docs": [
+                      "D4F-F30-006"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Softwarestand der Lenkung",
+              "wie": "Passt der Stand der Lenkung nicht zum I-Level des Fahrzeugs, meldet sie, ohne defekt zu sein.",
+              "wege": {
+                "f22": [
+                  {
+                    "guide": "eps-ausfall",
+                    "docs": [
+                      "D4F-F22-001"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "docs": [
+                      "D4F-F30-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Leitung, Stecker oder Masse an der Lenkung",
+              "wie": "Sporadische Ausfälle kommen häufiger aus der Steckverbindung als aus dem Gerät.",
+              "wege": {
+                "f22": [
+                  {
+                    "guide": "eps-ausfall",
+                    "docs": [
+                      "D4F-F22-005"
+                    ]
+                  }
+                ],
+                "f30": [
+                  {
+                    "engines": [
+                      "N13",
+                      "N20",
+                      "N55",
+                      "N47",
+                      "B38",
+                      "B48",
+                      "B58"
+                    ],
+                    "docs": [
+                      "D4F-F30-005"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Aktivlenkung meldet mit",
+              "wie": "An dieser Baureihe teilt sich die Aktivlenkung Versorgung und Bus mit der Wankstabilisierung — sie meldet oft nur mit.",
+              "wege": {
+                "e60": [
+                  {
+                    "guide": "dynamic-drive-ausgefallen",
+                    "docs": [
+                      "D4F-E60-030"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fahrwerk-sackt-ab",
+          "frage": "Das Fahrzeug sackt über Nacht ab oder steht schief",
+          "hilfe": "Am Morgen liegt es hinten auf oder steht einseitig tief.",
+          "series": [
+            "e70",
+            "f15"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Undichtigkeit im Luftkreis",
+              "wie": "Steigt das Fahrzeug an und sackt im Stand über Stunden wieder ab, ist es eine Leckage und keine Regelung.",
+              "wege": {
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-005"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "luftfederung-absacken",
+                    "docs": [
+                      "D4F-F15-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kompressor läuft nicht an",
+              "wie": "Läuft der Kompressor gar nicht, sind Versorgung und Ansteuerung zu prüfen, bevor Balgen verdächtigt werden.",
+              "wege": {
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-005"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "luftfederung-absacken",
+                    "docs": [
+                      "D4F-F15-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Niveaugeber nicht abgeglichen",
+              "wie": "Nach Arbeiten am Fahrwerk regelt die Anlage auf einen falschen Nullpunkt. Der Abgleich kostet nichts und wird oft vergessen.",
+              "wege": {
+                "e70": [
+                  {
+                    "docs": [
+                      "D4F-E70-005"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "luftfederung-absacken",
+                    "docs": [
+                      "D4F-F15-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Anhängererkennung greift ein",
+              "wie": "Mit erkannter Anhängevorrichtung regelt die Niveauregelung anders. Verhält sich das Fahrzeug nur dann auffällig, ist das Fahrwerk gesund.",
+              "wege": {
+                "f15": [
+                  {
+                    "guide": "luftfederung-absacken",
+                    "engines": [
+                      "N55",
+                      "N57",
+                      "N63",
+                      "S63"
+                    ],
+                    "docs": [
+                      "D4F-F15-006"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fahrwerk-allrad-ruckelt",
+          "frage": "In engen Kurven ruckelt es, oder der Allrad meldet einen Fehler",
+          "hilfe": "Am deutlichsten beim langsamen Rangieren mit vollem Lenkeinschlag.",
+          "series": [
+            "e70",
+            "f15"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Reifen mit unterschiedlichem Abrollumfang",
+              "wie": "Verschiedene Größen oder Profiltiefen erzeugen genau dieses Bild, ohne dass am Antrieb etwas defekt ist. Das wird zuerst ausgeschlossen.",
+              "wege": {
+                "e70": [
+                  {
+                    "guide": "e70-xdrive-fehler",
+                    "docs": [
+                      "D4F-E70-004"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "xdrive-vtg",
+                    "docs": [
+                      "D4F-F15-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kalibrierung des Verteilergetriebes fehlt",
+              "wie": "Nach Eingriff oder Ölwechsel muss kalibriert werden. Ohne das regelt die Kupplung an der falschen Stelle.",
+              "wege": {
+                "e70": [
+                  {
+                    "guide": "e70-xdrive-fehler",
+                    "docs": [
+                      "D4F-E70-004"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "xdrive-vtg",
+                    "docs": [
+                      "D4F-F15-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Stellmotor der Lamellenkupplung",
+              "wie": "Erst wenn der Stellmotor im Stelltest nicht sauber folgt, wird das Getriebe selbst zum Thema.",
+              "wege": {
+                "e70": [
+                  {
+                    "guide": "e70-xdrive-fehler",
+                    "docs": [
+                      "D4F-E70-004"
+                    ]
+                  }
+                ],
+                "f15": [
+                  {
+                    "guide": "xdrive-vtg",
+                    "docs": [
+                      "D4F-F15-004"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Vorgelagerter Fehler in Fahrdynamik oder Raddrehzahl",
+              "wie": "Der Allrad rechnet mit den Raddrehzahlen. Ein Geberfehler davor lässt ihn melden, obwohl er in Ordnung ist.",
+              "wege": {
+                "e70": [
+                  {
+                    "guide": "e70-xdrive-fehler",
+                    "docs": [
+                      "D4F-E70-007"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "karosserie",
+      "titel": "Karosserie und Komfort",
+      "symptome": [
+        {
+          "id": "karosserie-heckklappe",
+          "frage": "Die Heckklappe öffnet nicht mehr",
+          "hilfe": "Sie reagiert gar nicht oder nur noch über einen der Bedienwege.",
+          "series": [
+            "e87"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Taster in der Griffleiste",
+              "wie": "Fällt nur der Griffleistenweg aus, während Fernbedienung und Innentaster arbeiten, sitzt der Fehler im Taster.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "heckklappe-oeffnet-nicht",
+                    "docs": [
+                      "D4F-E87-030"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Aderbruch im Faltenbalg zur Klappe",
+              "wie": "Fallen Wischer, Kennzeichenlicht oder Heckscheibenheizung mit aus, liegt es an der bewegten Leitung, nicht am Schloss.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "heckklappe-oeffnet-nicht",
+                    "docs": [
+                      "D4F-E87-030",
+                      "D4F-E87-040"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Schloss oder Stellantrieb",
+              "wie": "Bleibt als Letztes übrig, wenn alle Bedienwege gleich ausfallen und die Leitung steht.",
+              "wege": {
+                "e87": [
+                  {
+                    "guide": "heckklappe-oeffnet-nicht",
+                    "docs": [
+                      "D4F-E87-030"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "karosserie-verdeck",
+          "frage": "Das Cabrio-Verdeck bleibt stehen oder fährt nicht ganz zu",
+          "hilfe": "Der Vorgang bricht mitten in der Bewegung ab.",
+          "series": [
+            "e88"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Verdecksteuerung und ihre Endlagen",
+              "wie": "Die Steuerung bricht ab, sobald ein Endschalter oder Hydraulikweg nicht meldet. Der Fehlerspeicher der Verdecksteuerung sagt, welcher.",
+              "wege": {
+                "e88": [
+                  {
+                    "docs": [
+                      "D4F-E88-030"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "karosserie-automatik-schaltet-hart",
+          "frage": "Die Automatik schaltet hart oder ruckt beim Anfahren",
+          "hilfe": "Spürbare Schläge beim Gangwechsel oder verzögertes Einkuppeln.",
+          "series": [
+            "e88"
+          ],
+          "engines": [
+            "N52"
+          ],
+          "ursachen": [
+            {
+              "was": "Ölstand und Adaption des Getriebes",
+              "wie": "Erst muss feststehen, welches Getriebe verbaut ist; Ölstand und Adaption gehen jeder Bauteilvermutung voraus.",
+              "wege": {
+                "e88": [
+                  {
+                    "engines": [
+                      "N52"
+                    ],
+                    "docs": [
+                      "D4F-E88-020"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "karosserie-idrive-tot",
+          "frage": "Bildschirm, Radio oder iDrive reagieren nicht",
+          "hilfe": "Die Anzeige bleibt dunkel oder das System startet immer wieder neu.",
+          "series": [
+            "e60"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Ringbruch im optischen Bus",
+              "wie": "Die Geräte hängen in einem Ring. Ein einziger unterbrochener Teilnehmer legt alle still — gesucht wird die Stelle, nicht das Gerät.",
+              "wege": {
+                "e60": [
+                  {
+                    "docs": [
+                      "D4F-E60-040"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abgas",
+      "titel": "Abgas und Warnleuchten",
+      "symptome": [
+        {
+          "id": "abgas-mkl-nach-kaltstart",
+          "frage": "Kurz nach dem Kaltstart kommt die Motorkontrollleuchte, danach läuft alles normal",
+          "hilfe": "Nur nach einem echten Kaltstart. Bei betriebswarmem Motor tritt es nicht auf.",
+          "series": [
+            "e34",
+            "e46"
+          ],
+          "engines": [],
+          "ursachen": [
+            {
+              "was": "Sekundärluftpumpe läuft nicht",
+              "wie": "Der Sekundärlufttakt läuft nur kalt. Ob die Pumpe hörbar anläuft, ist ohne Werkzeug festzustellen.",
+              "wege": {
+                "e34": [
+                  {
+                    "guide": "m60-warmstart",
+                    "engines": [
+                      "M60"
+                    ],
+                    "docs": [
+                      "D4F-E34-003"
+                    ]
+                  }
+                ],
+                "e46": [
+                  {
+                    "guide": "sec-air-e46",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Kombiventil öffnet nicht",
+              "wie": "Läuft die Pumpe und kommt trotzdem keine Luft an, sitzt das Ventil dazwischen fest.",
+              "wege": {
+                "e46": [
+                  {
+                    "guide": "sec-air-e46",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-003"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "was": "Versorgung der Pumpe fehlt",
+              "wie": "Ohne Spannung am Pumpenstecker während der Ansteuerung ist die Pumpe unschuldig — Relais und Leitung sind es.",
+              "wege": {
+                "e46": [
+                  {
+                    "guide": "sec-air-e46",
+                    "engines": [
+                      "M54"
+                    ],
+                    "docs": [
+                      "D4F-E46-004"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "abgas-adblue-warnung",
+          "frage": "Eine AdBlue-Warnung kündigt eine Startsperre an",
+          "hilfe": "Betrifft Dieselfahrzeuge mit Abgasnachbehandlung durch Harnstoffeinspritzung.",
+          "series": [
+            "f15"
+          ],
+          "engines": [
+            "N57"
+          ],
+          "ursachen": [
+            {
+              "was": "Dosierung oder Vorratssystem",
+              "wie": "Die Warnung nennt eine Restreichweite. Erst ist zu klären, ob Vorrat, Dosierung oder Sensorik meldet, bevor ein Teil bestellt wird.",
+              "wege": {
+                "f15": [
+                  {
+                    "engines": [
+                      "N57"
+                    ],
+                    "docs": [
+                      "D4F-F15-005"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

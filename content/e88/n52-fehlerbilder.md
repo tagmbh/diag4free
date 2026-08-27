@@ -15,7 +15,7 @@ Am Stecker der Pumpe: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM-Signal von der DME.
 ## 2 — Valvetronic-Servomotor
 
 - **Symptom:** Notlauf, Leistung reduziert, der Motor regelt auf Drosselklappe zurück. DTC `2A82` und `2A87`.
-- **Diagnose:** Servomotor am Stecker mit dem Multimeter prüfen — an den Motor-Pins rund `1.5–2 Ω`.
+- **Diagnose:** Servomotor am Stecker prüfen — Wicklung auf Unterbruch (kein Durchgang zwischen den Motor-Pins) und auf Masseschluss (Durchgang gegen das Gehäuse). Beides sind Ja-Nein-Befunde und brauchen keinen Sollwert. Bleibt der Verdacht, vergleiche gegen ein bekannt gutes Exemplar, statt einen Widerstandswert zu raten.
 - **Nach dem Wechsel ist die Adaption über ISTA zwingend.** Ohne sie bleibt der Motor im Notlauf, und der Wechsel sieht aus wie fehlgeschlagen.
 
 Am Servomotor: Pin 1/2 Motoransteuerung (H-Brücke), Pin 3/4 Positionssensor.
@@ -23,18 +23,18 @@ Am Servomotor: Pin 1/2 Motoransteuerung (H-Brücke), Pin 3/4 Positionssensor.
 ## 3 — VANOS-Solenoid verklebt
 
 - **Symptom:** sporadische `P052A`, `P052B`, `P052E`, Ruckeln im kalten Zustand.
-- **Diagnose:** Solenoide Einlass gegen Auslass tauschen — sie sind baugleich. Wandert der Fehler mit, ist das Solenoid schuld: reinigen oder ersetzen. Ein Solenoid ist ein Kleinteil — der Tauschtest kostet nichts ausser Zeit und beantwortet die Frage eindeutig.
+- **Diagnose:** Solenoide Einlass gegen Auslass tauschen — sie sind baugleich. Wandert der Fehler mit, ist das Solenoid schuld: reinigen oder ersetzen. Ein Solenoid ist ein Kleinteil — der Tauschtest kostet nichts außer Zeit und beantwortet die Frage eindeutig.
 - **Immer mitmessen:** den Öldruck an der Bohrung des Kettenspanners. Ein verklebtes Solenoid und zu wenig Öldruck erzeugen dasselbe Bild.
 
-Der Solenoid-Stecker ist zweipolig, Widerstand rund `7.5 Ω` bei `20 °C`.
+Der Solenoid-Stecker ist zweipolig. Einlass und Auslass tragen dieselbe Teilenummer — genau darauf beruht der Tauschtest.
 
-> **Sollwert fehlt:** Für den Öldruck an der Kettenspanner-Bohrung liegt hier kein geprüfter Grenzwert vor. Miss deshalb vergleichend — kalt gegen warm, Standgas gegen erhöhte Drehzahl — und dokumentiere den Wert, statt ihn gegen eine geschätzte Zahl zu halten.
+> **Sollwerte fehlen:** Weder ein Widerstandsfenster für das Solenoid noch ein Grenzwert für den Öldruck an der Kettenspanner-Bohrung ist hier belegt. Die im Netz kursierenden Ohm-Angaben widersprechen sich um mehr als das Doppelte — nach so einer Zahl wird ein intaktes Ventil verworfen. Prüfe deshalb vergleichend: Solenoid gegen sein baugleiches Gegenstück, Öldruck kalt gegen warm und Standgas gegen erhöhte Drehzahl.
 
 ## 4 — Ölfiltergehäusedichtung
 
 - **Symptom:** Ölspur zwischen Motor und Getriebe, Öl auf dem Anlasser.
 - **Kein Fehlercode.** Das ist eine rein optische Diagnose — wer nur den Speicher liest, findet hier nichts.
-- **Ursache:** Die Hartgummi-Dichtung wird spröde, typischerweise ab rund `100 tkm`.
+- **Ursache:** Die Hartgummi-Dichtung wird mit Alter und Wärme spröde. Das ist ein Befund der zweiten Fahrzeughälfte, nicht an eine feste Laufleistung gebunden.
 - **Verwechslungsgefahr:** VVT- bzw. VANOS-Dichtung. Vor dem Zerlegen die Laufrichtung der Ölspur von oben nach unten verfolgen.
 
 ## Dazu: Resonanzklappe im Sammler
@@ -54,4 +54,4 @@ Der N52 hat im Sammler eine Klappe, die dieselbe Rolle spielt wie die DISA beim 
 | Ölspur zur Getriebeglocke, kein DTC | Ölfiltergehäuse |
 | Klappern 1500–2500 U/min | Resonanzklappe |
 
-Der geführte Weg für das Überhitzungsbild liegt als Diagnosepfad „N52 Überhitzung im Standgas" bereit.
+Der geführte Weg für das Überhitzungsbild liegt als Diagnosepfad „N52 Überhitzung im Standgas" bereit. Den Einstieg in die Motordiagnose beschreibt `D4F-E88-010`.

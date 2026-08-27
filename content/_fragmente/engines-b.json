@@ -1,0 +1,309 @@
+{
+  "schema": "diag4free/engines/v1",
+  "note": "Fragment B — modulare B-Baureihe (B38, B47, B48, B57, B58) und der ältere Reihensechszylinder-Diesel M57. Wird mit den übrigen Fragmenten zu content/engines.json zusammengeführt.",
+  "engines": [
+    {
+      "id": "B38",
+      "name": "B38",
+      "layout": "R3",
+      "aspiration": "Turbo",
+      "displacement_cc": 1499,
+      "years": "2013–",
+      "valvetrain": [
+        "DOHC",
+        "12V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
+      "power_variants": [
+        {
+          "label": "116i (F20 LCI)",
+          "ps": 109,
+          "nm": 180
+        },
+        {
+          "label": "118i · 218i · 318i",
+          "ps": 136,
+          "nm": 220
+        },
+        {
+          "label": "118i (spätere Ausführung)",
+          "ps": 140,
+          "nm": 220
+        },
+        {
+          "label": "i8 (Quereinbau, Mittelmotor)",
+          "ps": 231,
+          "nm": 320
+        }
+      ],
+      "id_marks": [
+        "Drei Zylinder: drei Zündspulen, drei Kerzenschächte im Ventildeckel. Das ist das schnellste und sicherste Unterscheidungsmerkmal gegenüber dem B48.",
+        "Baukastenprinzip: rund 500 cm³ pro Zylinder, Bohrung 82 mm, Hub 94.6 mm — dieselben Maße wie B48 und B58. Ein Blick in den Motorraum unterscheidet die drei nur über die Zylinderzahl, nicht über die Bauteile.",
+        "Ein Reihendreizylinder läuft nicht frei von Massenkräften. B38, B47 und B48 tragen deshalb eine Ausgleichswelle, der B58 als Reihensechszylinder nicht.",
+        "Der Motorcode steht in der Form B38A15xx bzw. B38B15xx. Buchstabe an dritter Stelle: A = quer eingebaut (Frontantrieb-Architektur, Mini und Active Tourer), B = längs eingebaut (F20, F30). Das entscheidet über Anbauteile und Teilenummern.",
+        "Motornummer und Motorcode sitzen nach einer Quelle am Kurbelgehäuse hinter dem vorderen Steuergehäusedeckel. Vor dem Bestellen am Fahrzeug prüfen — Position und Lesbarkeit unterscheiden sich je nach Einbaulage.",
+        "Ab Produktion Juli 2018 tragen alle BMW-Benziner in Europa einen Ottopartikelfilter. Ein B38 mit OPF ist damit ein Motor der überarbeiteten Generation (TÜ1)."
+      ],
+      "weak_points": [
+        "Steuerkette und Kettenspanner: Erfahrungswert. Rasseln beim Kaltstart gilt als Vorbote. Die Quellenlage ist widersprüchlich — mehrere Instandsetzer berichten von gelängten Ketten und Kettenrissen, andere Darstellungen bezeichnen den B38 als von der Kettenthematik unbelastet. Bei Kaltstartrasseln also ernst nehmen und prüfen, statt sich auf eine der beiden Aussagen zu verlassen.",
+        "Kurbelwellenlager frühe Ausführungen: nach einer Quelle gab es Lagerschäden, weil die Lagerschale zu knapp ausgelegt war; später wurde auf ein rundum geschlossenes Lager umgestellt. Einzelquelle — vor dem Anwenden gegenprüfen.",
+        "Turbolader: Lagerschaden oder Ölverlust als Erfahrungswert. Leistungsverlust unter Last und bläulicher Rauch sind die typischen Anzeichen.",
+        "Erhöhter Ölverbrauch bei einzelnen Motoren, als Erfahrungswert berichtet, ohne belastbare Häufigkeitsangabe."
+      ],
+      "dme": "Bosch MEVD17.2.3"
+    },
+    {
+      "id": "B47",
+      "name": "B47",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1995,
+      "years": "2014–",
+      "valvetrain": [
+        "DOHC",
+        "16V",
+        "Common-Rail-Direkteinspritzung"
+      ],
+      "power_variants": [
+        {
+          "label": "116d",
+          "ps": 116
+        },
+        {
+          "label": "118d",
+          "ps": 150,
+          "nm": 320
+        },
+        {
+          "label": "320d · 520d",
+          "ps": 190,
+          "nm": 400
+        },
+        {
+          "label": "125d · 225d · 325d · 425d",
+          "ps": 224
+        }
+      ],
+      "id_marks": [
+        "Vier Zylinder: vier Injektoren, vier Glühkerzen. Der B57 daneben hat sechs — das ist der Unterschied, den man im Motorraum ohne Werkzeug sieht. Beide Motoren teilen Bohrung, Hub und einen großen Teil der Anbauteile, äußerlich unterscheiden sie sich fast nur in der Baulänge.",
+        "Diesel-Baukasten: Bohrung 84 mm, Hub 90 mm, rund 500 cm³ pro Zylinder — identisch zum B57. Aus den Zylindermaßen lässt sich der Motor also nicht bestimmen, nur aus der Zylinderzahl.",
+        "Gegenüber den Benzinern der Baureihe: keine Zündspulen, statt dessen Common-Rail mit Hochdruckpumpe und Rail auf der Einlassseite.",
+        "Ausbaustufen mit zweistufiger Aufladung: die stärkeren Varianten (125d, 225d, 325d, 425d) arbeiten mit zwei in Reihe geschalteten Ladern, die schwächeren mit einem einzelnen Lader mit variabler Turbinengeometrie. Vor dem Bestellen zählen, wie viele Lader verbaut sind.",
+        "Überarbeitung B47TÜ1, angekündigt im November 2017: alle Varianten mit zweistufiger Aufladung, SCR-Abgasnachbehandlung mit AdBlue-Eindosierung, überarbeitete Zylinderlaufflächen und Kolben sowie höherer Einspritzdruck. Ein B47 mit AdBlue-Tank ist damit ein Motor der zweiten Generation.",
+        "Motorcode in der Form B47D20xx. Der letzte Buchstabe trennt Einbaulage und Ausbaustufe — er steht auf dem Typschild und gehört zu jeder Teilebestellung."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkette. Wo sie sitzt, ist offen — die Quellen widersprechen sich, und zwar quer durch alle Sprachen und Kategorien: dieselbe Sorte Seite legt sie einmal wie beim N47 auf die Getriebeseite und einmal nach vorn. Eine Mehrheit laesst sich daraus nicht bilden. Das entscheidet ueber den Getriebeausbau und damit ueber die halbe Rechnung — vor der Kalkulation am Fahrzeug nachsehen, nicht nach Quelle rechnen.",
+        "AGR-Kühler: der bekannteste Punkt. Glykol tritt aus dem Kühler aus, trifft im AGR-Modul auf Rußablagerungen und heiße Abgase; im Extremfall glühen Partikel und schmelzen den Ansaugtrakt an. BMW ruft deswegen seit 2018 mehrfach zurück, betroffen sind N47, N57 und B47. Vor jeder Arbeit am AGR-Modul den Rückrufstand über die Fahrgestellnummer prüfen."
+      ]
+    },
+    {
+      "id": "B48",
+      "name": "B48",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1998,
+      "years": "2014–",
+      "valvetrain": [
+        "DOHC",
+        "16V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
+      "power_variants": [
+        {
+          "label": "320i",
+          "ps": 184,
+          "nm": 290
+        },
+        {
+          "label": "230i · 330i · 430i",
+          "ps": 252,
+          "nm": 350
+        },
+        {
+          "label": "M135i xDrive (stärkste Ausbaustufe)",
+          "ps": 306,
+          "nm": 450
+        }
+      ],
+      "id_marks": [
+        "Vier Zylinder, vier Zündspulen. Gegenüber dem B58 mit sechs ist das der Unterschied, den man beim Öffnen der Haube sofort sieht. Bohrung, Hub und viele Anbauteile sind zwischen beiden gleich.",
+        "Der B48 trägt eine Ausgleichswelle, der B58 nicht — der Reihensechszylinder braucht keine.",
+        "Ueber die gesamte Baureihe reicht die Leistung von rund 115 bis 225 kW, das Drehmoment von rund 270 bis 450 Nm. Alle Stufen teilen denselben Block. Aus Klang, Ansaugtrakt oder Ladergröße lässt sich die Stufe nicht ablesen; sie steht im Motorcode.",
+        "Motorcode B48A20xx (quer eingebaut) oder B48B20xx (längs eingebaut). Der Schwestermotor B46 ist derselbe Motor mit erweiterter Abgasnachbehandlung — die Bezeichnung wechselt, die Mechanik nicht.",
+        "Motornummer und Motorcode sitzen nach einer Quelle am Kurbelgehäuse hinter dem vorderen Steuergehäusedeckel.",
+        "Ab Produktion Juli 2018 mit Ottopartikelfilter (TÜ1-Generation). Die Überarbeitung brachte außerdem eine Kraftstoffanlage mit deutlich höherem Einspritzdruck sowie getrennte Kühlkreise für Kopf und Kurbelgehäuse."
+      ],
+      "weak_points": [
+        "Kühlmittelverlust: häufigster Punkt in den Werkstattberichten. Als Ursache wird eine undichte Kühlmittelleitung zwischen Zylinderkopf und Ausgleichsbehälter genannt, die sich mit der Zeit löst. Betroffen sind nach diesen Berichten vor allem Motoren bis etwa 2017. Erfahrungswert, kein Rückruf.",
+        "VANOS-Magnetventile und Nockenwellenversteller mit ihren Zentralventilen: bei den neueren Baukastenmotoren wird die Kette seltener zum Thema, dafür häufiger die Verstellung. Erfahrungswert.",
+        "Ventildeckel und Ölwannendichtung als Undichtigkeiten mit steigender Laufleistung.",
+        "Steuerkette: die Quellen widersprechen sich. Ein Teil sieht den B48 in der Kettenthematik des N20 stehen, ein anderer hält sie mit dem B48 für erledigt. Bei Kaltstartrasseln nicht auf eine der beiden Aussagen bauen, sondern prüfen.",
+        "Verkokte Einlassventile und Injektoren als Folge der Direkteinspritzung — Leistungsverlust und unrunder Lauf. Erfahrungswert, laufleistungsabhängig."
+      ],
+      "dme": "Bosch MG1CS003"
+    },
+    {
+      "id": "B57",
+      "name": "B57",
+      "layout": "R6",
+      "aspiration": "Turbo",
+      "displacement_cc": 2993,
+      "years": "2015–",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Common-Rail-Direkteinspritzung"
+      ],
+      "power_variants": [
+        {
+          "label": "730d · 530d (Basisstufe)",
+          "ps": 265
+        },
+        {
+          "label": "40d (X3 M40d, X5 xDrive40d)",
+          "ps": 340
+        },
+        {
+          "label": "740d",
+          "ps": 320
+        },
+        {
+          "label": "750d · M50d (stärkste Ausbaustufe)",
+          "ps": 400
+        }
+      ],
+      "id_marks": [
+        "Kommt in keiner der hier gefuehrten Baureihen vor: der F15 lief mit dem N57, der B57 kam erst mit der Nachfolgegeneration. Der Steckbrief steht hier zur Abgrenzung gegen den N57, nicht weil ein Fahrzeug im Katalog ihn haette.",
+        "Sechs Zylinder, sechs Injektoren, sechs Glühkerzen — das trennt ihn vom sonst weitgehend baugleichen B47. Bohrung, Hub und viele Anbauteile sind identisch, nur die Baulänge und die Zylinderzahl unterscheiden sich.",
+        "Als Reihensechszylinder ohne Ausgleichswelle. B47, B48 und B38 haben eine.",
+        "Die Zahl der Lader unterscheidet die Ausbaustufen erheblich: Basisstufen mit einem Lader mit variabler Turbinengeometrie, mittlere Stufen zweistufig, die 400-PS-Stufe mit vier Ladern — zwei Niederdruck- und zwei Hochdrucklader, die im mittleren Drehzahlbereich zugeschaltet werden. Zähle die Lader, bevor du ein Teil bestellst; die Stufen teilen den Block, aber nicht die Ladergruppe.",
+        "Ab Sommer 2020 wurde die 30d-Stufe auf zweistufige Aufladung umgestellt (286 PS). Ein 30d mit zwei Ladern ist damit ein Motor der späteren Bauzeit.",
+        "Nachfolger des N57. Ein äußerlich sicheres Unterscheidungsmerkmal zum N57 hat sich in den zugänglichen Quellen nicht belegen lassen — gehe über den Motorcode am Typschild, nicht über das Aussehen.",
+        "Motorcode in der Form B57D30xx. Der letzte Buchstabe trennt die Ausbaustufen (unter anderem A, B, C) und gehört zu jeder Teilebestellung."
+      ],
+      "weak_points": [
+        "AGR-Ventil verrußt, AGR-Kühler kann undicht werden. Symptome sind Leistungsverlust und Notlauf. Erfahrungswert; der große BMW-Rückruf zum AGR-Kühler betrifft nach Angaben des Kraftfahrt-Bundesamtes zahlreiche Dieselbaureihen — prüfe den Rückrufstand über die Fahrgestellnummer.",
+        "Turbolader der stärkeren Stufen: die variable Turbinengeometrie wird träge, der Lader zieht Öl. Ein ölgefüllter Ladeluftkühler ist das typische Bild; in mehreren dokumentierten Fällen führte der Laderschaden weiter zum Lagerschaden. Erfahrungswert.",
+        "Common-Rail-Injektoren mit begrenzter Lebensdauer. Ruckeln, schlechtes Startverhalten und steigender Verbrauch sind die Anzeichen. Erfahrungswert, laufleistungsabhängig.",
+        "Steuerkette und Kettenspanner: einzelne Berichte über vorzeitigen Verschleiß. Deutlich seltener als bei der N-Baureihe, aber nicht ausgeschlossen. Erfahrungswert."
+      ]
+    },
+    {
+      "id": "B58",
+      "name": "B58",
+      "layout": "R6",
+      "aspiration": "Turbo",
+      "displacement_cc": 2998,
+      "years": "2015–",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
+      "power_variants": [
+        {
+          "label": "340i · 440i · 740i",
+          "ps": 326,
+          "nm": 450
+        },
+        {
+          "label": "M140i · M240i · 540i · X3 M40i",
+          "ps": 340,
+          "nm": 500
+        },
+        {
+          "label": "M340i (TÜ1)",
+          "ps": 374,
+          "nm": 500
+        }
+      ],
+      "id_marks": [
+        "Sechs Zylinder, sechs Zündspulen. Gegenüber dem B48 mit vier ist das der schnellste Griff. Bohrung 82 mm und Hub 94.6 mm sind bei beiden gleich, viele Anbauteile ebenso.",
+        "Wichtigster Unterschied zum Vorgänger N55: der Ladeluftkühler ist ein Wasser-Luft-Kühler und sitzt in der Ansaugbrücke. Der N55 kühlt über einen Luft-Luft-Kühler vorn im Fahrzeug. Wer in die Ansaugbrücke schaut und Kühlwasseranschlüsse findet, hat einen B58.",
+        "Zweiter Unterschied zum N55: der Abgaskrümmer ist in den Zylinderkopf integriert. Am B58 führt kein separater Krümmer vom Kopf zum Lader — das ist ohne Demontage sichtbar.",
+        "Dritter Unterschied: geschlossenes Deck (Closed Deck) am Kurbelgehäuse gegenüber dem offenen Deck des N55. Sichtbar nur bei abgenommenem Kopf, aber der Grund, warum der B58 andere Dichtungen und andere Instandsetzungswege hat.",
+        "Getrennte Kühlkreise für Zylinderkopf und Kurbelgehäuse (Split Cooling). Kurbelgehäuse, Zylinderkopf und Ölwanne aus Aluminium.",
+        "Als Reihensechszylinder ohne Ausgleichswelle — anders als B38, B47 und B48.",
+        "Überarbeitung TÜ1: Ottopartikelfilter ab Produktion Juli 2018, Kraftstoffanlage mit deutlich höherem Einspritzdruck, einteilige statt zweiteilige Steuerkette, getrennte Kühlkreise. Der Partikelfilter im mittleren Abgasstrang ist das von außen sichtbarste Merkmal.",
+        "Motorcode in der Form B58B30xx."
+      ],
+      "weak_points": [
+        "Kurbelgehäuseentlüftung: der meistgenannte Punkt. Die Membran im Ventildeckel reißt, besonders bei leistungsgesteigerten Motoren. Folge ist steigender Ölverbrauch, weil über die defekte Membran ständig Öl in den Ansaugtrakt gezogen wird. Erfahrungswert aus mehreren unabhängigen Fäden.",
+        "Verstopfte Entlüftung als zweite Ausprägung desselben Problems: die Gase suchen sich einen anderen Weg und drücken Kurbelwellensimmerring oder Ventildeckeldichtung heraus. Wer einen ausgedrückten Simmerring findet, sollte die Entlüftung prüfen, bevor er nur abdichtet.",
+        "Ventildeckeldichtung als Undichtigkeit bei höherer Laufleistung.",
+        "Ansonsten gilt der B58 in den Werkstattquellen als robust — die bekannten Schwächen liegen im Entlüftungssystem und in Dichtungen, nicht im Grundmotor. Erfahrungswert."
+      ],
+      "dme": "Bosch MG1CS003"
+    },
+    {
+      "id": "M57",
+      "name": "M57",
+      "layout": "R6",
+      "aspiration": "Turbo",
+      "displacement_cc": 2993,
+      "years": "1998–2013",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Common-Rail-Direkteinspritzung"
+      ],
+      "power_variants": [
+        {
+          "label": "530d (E39, 1998–2000)",
+          "ps": 184,
+          "nm": 390
+        },
+        {
+          "label": "530d (E39 Facelift, ab 2000)",
+          "ps": 193,
+          "nm": 410
+        },
+        {
+          "label": "330d (E46)",
+          "ps": 204,
+          "nm": 410
+        },
+        {
+          "label": "530d (E60) · 730d (E65)",
+          "ps": 218,
+          "nm": 500
+        },
+        {
+          "label": "330d (E90)",
+          "ps": 231,
+          "nm": 500
+        },
+        {
+          "label": "535d (E60)",
+          "ps": 272,
+          "nm": 560
+        },
+        {
+          "label": "335d (E90) · X5 3.0sd (E70)",
+          "ps": 286,
+          "nm": 580
+        }
+      ],
+      "id_marks": [
+        "Reihensechszylinder-Diesel, Vorgänger des N57 und Diesel-Gegenpart zu den älteren Benzinern. Erster BMW-Sechszylinder mit Common-Rail-Einspritzung.",
+        "Drei Hubraumstände: 2497 cm³ (525d), 2926 cm³ (frühe 530d, Bohrung 84 mm, Hub 88 mm) und 2993 cm³ (M57TÜ und M57TÜ2, Bohrung 84 mm, Hub 90 mm). Hier ist der 3.0-Liter eingetragen, weil er der verbreitetste ist — bei einer Teilebestellung ist der Hubraum zu prüfen, nicht anzunehmen.",
+        "Generationen an der Blockbauart erkennbar: M57 und M57TÜ haben ein Kurbelgehäuse aus Grauguss, der M57TÜ2 eines aus Aluminium. Das ist ein sicheres Unterscheidungsmerkmal — vergleiche Gewicht und Oberfläche des Blocks.",
+        "Die Steuerkette sitzt vorn am Motor und ist zugänglich. Genau darin unterscheidet er sich von den nachfolgenden Vierzylinder-Dieseln M47 und N47, deren Kette auf der Schwungradseite liegt. Wer eine Kettenarbeit kalkuliert, muss diesen Unterschied kennen.",
+        "Zweistufige Aufladung nur in der Topstufe (M57TÜ2TOP, 272 und 286 PS): zwei Lader in Reihe. Alle übrigen Stufen haben einen Lader. Zähle nach, bevor du bestellst.",
+        "Verbaut unter anderem in E39, E46, E60, E65, E70, E83, E90."
+      ],
+      "weak_points": [
+        "Drallklappen in der Ansaugbrücke: der bekannteste Punkt. Sie verrußen über die Abgasrückführung, brechen mit der Laufleistung und landen im Brennraum — das endet regelmäßig im Motorschaden. Erfahrungswert aus vielen unabhängigen Fäden; genannt wird eine Größenordnung ab etwa 150 tkm, die Streuung ist groß. Der übliche Weg ist der präventive Ausbau der Klappen mit Verschließen der Wellen.",
+        "Ansaugbrücke selbst kann undicht werden und Öl austreten lassen.",
+        "Kurbelwellendämpfer wird bei sehr hoher Laufleistung weich und macht Geräusche. Kleines Teil, aber eine häufige Fehldiagnose-Quelle.",
+        "Steuerkette gilt beim M57 als unauffällig — anders als beim N47. Sie ist breiter ausgelegt und sitzt vorn. Klackern aus dem vorderen Motorbereich ist trotzdem nachzugehen, weil einzelne angerissene Ketten dokumentiert sind.",
+        "Insgesamt gilt der M57 in den Werkstattquellen als sehr langlebig. Erfahrungswert, keine Zusage."
+      ],
+      "dme": "Bosch DDE 4.0 · 5.0 · 6.0 je nach Ausbaustufe"
+    }
+  ]
+}

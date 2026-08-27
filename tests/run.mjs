@@ -9,6 +9,14 @@
  *   node tests/run.mjs                 # startet selbst einen Server auf :8126
  *   BASE=http://localhost:8126 node tests/run.mjs   # gegen laufenden Server
  *
+ * Findet Playwright seinen Browser nicht ("Executable doesn't exist"), liegt
+ * das an einer Umgebung mit vorinstalliertem Chromium unter einem anderen
+ * Pfad als dem, den die installierte Playwright-Version erwartet. Dann den
+ * Pfad direkt setzen, statt einen zweiten Browser herunterzuladen:
+ *
+ *   CHROMIUM_PATH=$(find /opt/pw-browsers -name chrome -type f | head -1) \
+ *     node tests/run.mjs
+ *
  * CDN-Requests (Fonts, marked, Fuse) werden abgewiesen — so testen wir den
  * Offline-Erstlauf, also genau den Fall Werkstatt ohne Netz.
  */
@@ -179,9 +187,294 @@ async function main() {
         const session = await page.evaluate(() => localStorage.getItem('diag4free.session.v1'));
         expect(!!session, 'Sitzung gespeichert', 'kein Sitzungs-Eintrag');
 
+        // Nach dem Reload steht der Schritt in der Adresse — die App kommt
+        // deshalb direkt an derselben Frage heraus, nicht ueber eine
+        // Wiederaufnahme-Karte. Das ist ein Griff weniger am Fahrzeug.
+        const hashVorReload = await page.evaluate(() => location.hash);
         await page.reload({ waitUntil: 'domcontentloaded' });
         await settle(page, 1200);
-        expect(await page.locator('.resume-card').count() === 1, 'Wiederaufnahme nach Reload', 'keine Wiederaufnahme-Karte');
+        expect(/^#\/guide\//.test(hashVorReload), 'Schritt steht in der Adresse', `Hash war ${hashVorReload}`);
+        expect(await page.locator('[data-guide-runner]').count() === 1,
+          'Reload landet wieder im Diagnosepfad', 'kein Runner nach Reload');
+        expect(await page.locator('.trail-item').count() > 0,
+          'Schritt-Spur ueberlebt den Reload', 'keine Spur nach Reload');
+
+        // Die Wiederaufnahme-Karte ist fuer den anderen Fall da: Neustart
+        // ohne Pfad in der Adresse. Dann muss sie erscheinen.
+        // Wichtig: ein reiner Hashwechsel laedt die Seite nicht neu, der
+        // Zustand im Speicher bliebe stehen. Fuer diesen Fall braucht es
+        // einen echten Neustart.
+        await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1200);
+        expect(await page.locator('.resume-card').count() === 1,
+          'Wiederaufnahme-Karte ohne Pfad in der Adresse', 'keine Wiederaufnahme-Karte');
+
+        // Zurueck muss zurueck heissen: der Browser-Knopf gehoert in die App,
+        // nicht aus ihr heraus. Das war der teuerste Fehlgriff der alten
+        // Fassung — ein Griff daneben und die halbe Fehlersuche war weg.
+        await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+        await settle(page, 900);
+        // Je nach Breite fuehrt die Seitenleiste oder die Tableiste dorthin —
+        // genommen wird, was gerade sichtbar ist.
+        await page.locator('[data-view="measure"]:visible').first().click();
+        await settle(page, 500);
+        await page.goBack();
+        await settle(page, 500);
+        expect(await page.evaluate(() => location.hash) === '#/overview',
+          'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
+      }
+
+      // --- Jedes Bedienelement muss sagen, was es tut ---
+      // Ein Knopf, der nur ein Symbol traegt, ist fuer eine Sprachausgabe
+      // stumm. Geprueft wird ueber alle Ansichten, nicht nur die aktive.
+      for (const route of ['#/overview', '#/docs', '#/troubleshoot', '#/measure', '#/library', '#/scan']) {
+        await page.goto(BASE + '/' + route, { waitUntil: 'domcontentloaded' });
+        await settle(page, 900);
+        const stumm = await page.evaluate(() => {
+          const out = [];
+          for (const el of document.querySelectorAll('button, a[href], [role="button"]')) {
+            if (!el.offsetParent && el.offsetWidth === 0) continue;
+            const text = (el.innerText || '').trim();
+            const label = el.getAttribute('aria-label') || el.getAttribute('title') ||
+                          (el.getAttribute('aria-labelledby') ? 'x' : '');
+            if (!text && !label) out.push(el.className || el.tagName);
+          }
+          return [...new Set(out)];
+        });
+        expect(stumm.length === 0, `Bedienelemente beschriftet (${route})`, stumm.join(' | '));
+      }
+
+      // --- Startzustand: nie eine leere Flaeche ---
+      // Vor dem Laden von content/index.json stand hier nichts. Ueber eine
+      // langsame Verbindung sieht das aus wie eine kaputte App.
+      const rohHtml = await (await fetch(BASE + '/index.html')).text();
+      expect(/aria-busy="true"/.test(rohHtml) && /class="boot"/.test(rohHtml),
+        'Startzustand steht schon im HTML', 'kein Platzhalter vor dem ersten Zeichnen');
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      expect(await page.locator('.boot').count() === 0,
+        'Startzustand verschwindet nach dem Laden', 'Platzhalter steht noch da');
+
+      // --- Tastaturfokus muss sichtbar sein ---
+      // Und zwar anders sichtbar als Hover: in einem Kartenraster ist eine
+      // blosse Farbaenderung der Umrandung kein Fokus, weil der Zeiger
+      // dasselbe Bild erzeugt. Genau so stand es hier -- Hover und
+      // Tastaturfokus teilten sich eine Regel, die die Umrandung aufhob.
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      // Chromium setzt :focus-visible bei einem Fokus aus dem Skript nur,
+      // wenn zuletzt die Tastatur benutzt wurde. Ein Tab-Druck vorher macht
+      // die Pruefung deshalb erst aussagekraeftig.
+      await page.keyboard.press('Tab');
+      await settle(page, 200);
+      const fokusPruefung = await page.evaluate(() => {
+        const el = document.querySelector('[data-view-panel="docs"] .doc-card');
+        if (!el) return null;
+        const vorher = getComputedStyle(el);
+        const ruhe = { outline: vorher.outlineWidth, schatten: vorher.boxShadow };
+        el.focus();
+        const nachher = getComputedStyle(el);
+        return {
+          ruhe,
+          fokus: { outline: nachher.outlineWidth, schatten: nachher.boxShadow },
+          breite: parseFloat(nachher.outlineWidth) || 0
+        };
+      });
+      if (fokusPruefung) {
+        expect(fokusPruefung.breite >= 2,
+          'Tastaturfokus zeichnet einen eigenen Ring',
+          `outline-width ${fokusPruefung.fokus.outline}`);
+        expect(fokusPruefung.fokus.outline !== fokusPruefung.ruhe.outline ||
+               fokusPruefung.fokus.schatten !== fokusPruefung.ruhe.schatten,
+          'Fokus unterscheidet sich vom Ruhezustand', 'kein sichtbarer Unterschied');
+      }
+
+      // --- Dokumente der Reihe nach durchgehen ---
+      // Der Nutzer wollte die Tech-Docs "interaktiv durchgehen" koennen,
+      // statt nach jedem Dokument zur Liste zurueckzuspringen.
+      // Sauber starten: ein vorheriger Block kann eine Schublade offen
+      // gelassen haben, und die faengt dann die Klicks ab.
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      const ersteKarte = page.locator('[data-view-panel="docs"] [data-doc]').first();
+      if (await ersteKarte.count() === 1) {
+        await ersteKarte.click();
+        await settle(page, 800);
+        const blaettern = page.locator('.drawer-walk');
+        if (await blaettern.count() === 1) {
+          const posVorher = (await page.locator('.drawer-walk-pos').innerText()).trim();
+          const weiter = page.locator('.drawer-walk [data-walk]').last();
+          if (await weiter.isEnabled()) {
+            const titelVorher = await page.locator('#drawerTitle').innerText();
+            await weiter.click();
+            await settle(page, 700);
+            expect((await page.locator('#drawerTitle').innerText()) !== titelVorher,
+              'Weiter zeigt das naechste Dokument', 'Titel unveraendert');
+            expect((await page.locator('.drawer-walk-pos').innerText()).trim() !== posVorher,
+              'Position wird mitgezaehlt', `weiterhin ${posVorher}`);
+            // Geblaettert wird ueber dieselbe Schublade, also gehoert auch
+            // dieser Schritt in die Historie.
+            await page.goBack();
+            await settle(page, 600);
+            expect((await page.locator('#drawerTitle').innerText()) === titelVorher,
+              'Zurueck fuehrt zum vorigen Dokument', 'anderer Titel nach Zurueck');
+          }
+        }
+        await page.keyboard.press('Escape');
+        await settle(page, 400);
+      }
+
+      // --- Tastatur im Diagnosepfad ---
+      // Am Werkstattrechner liegt die Maus selten griffbereit. J und N
+      // beantworten, Pfeil links geht zurueck — und beides muss denselben
+      // Weg nehmen wie ein Klick, sonst laeuft die Historie auseinander.
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      const tastaturGuide = page.locator('[data-view-panel="troubleshoot"] [data-select-guide]').first();
+      if (await tastaturGuide.count() === 1) {
+        await tastaturGuide.click();
+        await settle(page, 600);
+        const hashStart = await page.evaluate(() => location.hash);
+        await page.keyboard.press('j');
+        await settle(page, 500);
+        const hashNachJa = await page.evaluate(() => location.hash);
+        expect(hashNachJa !== hashStart, 'Taste J beantwortet den Schritt', 'nichts passiert');
+        await page.keyboard.press('ArrowLeft');
+        await settle(page, 500);
+        expect(await page.evaluate(() => location.hash) === hashStart,
+          'Pfeil links geht denselben Schritt zurueck', 'Zustand stimmt nicht mehr');
+
+        // Waehrend in einem Feld getippt wird, darf keine dieser Tasten
+        // greifen. Auf schmalen Geraeten ist das Kopfzeilen-Suchfeld
+        // ausgeblendet — dann gibt es diesen Fall dort nicht zu pruefen.
+        const suchfeld = page.locator('#globalSearch');
+        if (await suchfeld.isVisible()) {
+          await suchfeld.focus();
+          await page.keyboard.type('jn');
+          await settle(page, 300);
+          expect(await suchfeld.inputValue() === 'jn',
+            'Tastenkuerzel greifen nicht im Eingabefeld', 'Eingabe wurde abgefangen');
+          await page.evaluate(() => { const el = document.querySelector('#globalSearch'); el.value = ''; el.blur(); });
+          await settle(page, 300);
+        }
+      }
+
+      // --- Erststart: kurze Einfuehrung, danach nie wieder ---
+      // Der Start wirkte "plump": sechzehn Karten, kein Wort dazu. Die
+      // Einfuehrung darf aber nicht selbst zum Hindernis werden — die
+      // Falz-Pruefung oben laeuft mit ihr zusammen.
+      await page.evaluate(() => localStorage.clear());
+      // Ein Sprung auf dieselbe Adresse laedt nicht neu — ohne echten
+      // Neustart bliebe der Zustand im Speicher stehen.
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      expect(await page.locator('.welcome').count() === 1,
+        'Erststart zeigt eine Einfuehrung', 'kein Willkommensblock');
+      // Erste Wahl treffen — danach ist der Browser kein Erstnutzer mehr.
+      await page.locator('[data-view-panel="overview"] [data-pick-model]').first().click();
+      await settle(page, 700);
+      await page.keyboard.press('Escape');
+      await settle(page, 400);
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      expect(await page.locator('.welcome').count() === 0,
+        'Einfuehrung erscheint nur einmal', 'Willkommensblock kam wieder');
+
+      // --- Uebersicht gegen Bibliothek: beide sagen, was sie sind ---
+      // Der Nutzer konnte die beiden nicht auseinanderhalten. Der Test
+      // haelt fest, dass die Bibliothek ihren Bezugsrahmen nennt und einen
+      // sichtbaren Weg zurueck an den gefilterten Arbeitsplatz traegt.
+      await page.goto(BASE + '/#/library', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      expect(await page.locator('[data-view-panel="library"] .scope-note').count() === 1,
+        'Bibliothek nennt ihren Bezugsrahmen', 'kein Hinweis auf den Geltungsbereich');
+      const zurueckKnopf = page.locator('[data-view-panel="library"] .scope-note [data-route="overview"]');
+      expect(await zurueckKnopf.count() === 1, 'Weg zurueck in den Arbeitsbereich vorhanden', 'kein Rueckweg');
+      await zurueckKnopf.click();
+      await settle(page, 700);
+      expect(await page.evaluate(() => location.hash) === '#/overview',
+        'Rueckweg fuehrt in die Uebersicht', `Hash ${await page.evaluate(() => location.hash)}`);
+
+      // Das Fahrzeugschild traegt die Auswahl und fuehrt zum Wechseln.
+      const schild = page.locator('#ctxChip');
+      expect(await schild.count() === 1, 'Fahrzeugschild vorhanden', 'kein Schild in der Kopfzeile');
+      expect((await schild.innerText()).trim().length > 0,
+        'Fahrzeugschild zeigt die Auswahl', 'Schild ist leer');
+      await schild.click();
+      await settle(page, 700);
+      expect(await page.locator('[data-pick-model], .pick-card').count() > 0,
+        'Fahrzeugschild fuehrt in die Fahrzeugwahl', 'keine Fahrzeugauswahl nach Klick');
+
+      // --- Symptom-Einstieg: die erste Frage ist "Was ist los?" ---
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      const symHost = page.locator('#symptomeHost');
+      if (await symHost.count() === 1 && !(await symHost.isHidden())) {
+        const knoepfe = page.locator('.sym-knopf');
+        const n = await knoepfe.count();
+        expect(n > 0, 'Symptome zur Auswahl vorhanden', 'keine Symptomknöpfe');
+        if (n > 0) {
+          await knoepfe.first().click();
+          await settle(page, 400);
+          expect(await knoepfe.first().getAttribute('aria-pressed') === 'true',
+            'Symptomauswahl wird gemeldet', 'aria-pressed nicht gesetzt');
+          expect(await page.locator('.sym-weg').count() > 0,
+            'Symptom führt zu einem Weg', 'keine Ursache mit Weg');
+          // Ein Ziel ohne Weg waere genau die Sackgasse, die der Nutzer
+          // als "0 Docs" schon gesehen hat.
+          for (const el of await page.locator('.sym-weg').all()) {
+            const box = await el.boundingBox();
+            if (box) expect(box.height >= 44, 'Symptomweg ist berührbar', `nur ${Math.round(box.height)}px hoch`);
+          }
+        }
+      }
+
+      // --- Glossar: Abkürzungen sind einen Klick von ihrer Erklärung weg ---
+      await page.goto(BASE + '/#/library', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      // Nur in der sichtbaren Ansicht suchen: die uebrigen Panels bleiben im
+      // DOM stehen, und ein Treffer dort ist unklickbar.
+      const mitArtikelKarte = page.locator('[data-view-panel="library"] [data-doc]').first();
+      if (await mitArtikelKarte.count() === 1) {
+        await mitArtikelKarte.click();
+        await settle(page, 900);
+        const begriffe = page.locator('#articleContent .gl-term');
+        if (await begriffe.count() > 0) {
+          const hashVorher = await page.evaluate(() => location.hash);
+          await begriffe.first().click();
+          await settle(page, 400);
+          expect(await page.locator('.gl-dialog').isVisible(),
+            'Glossar öffnet die Erklärung', 'kein sichtbarer Glossar-Dialog');
+          await page.keyboard.press('Escape');
+          await settle(page, 400);
+          // Der Dialog bleibt im DOM und wird ausgeblendet — gemessen wird
+          // deshalb die Sichtbarkeit, nicht die Existenz.
+          expect(!(await page.locator('.gl-dialog').isVisible()),
+            'Esc schließt die Erklärung', 'Dialog blieb sichtbar');
+          expect(await page.locator('.drawer').getAttribute('aria-hidden') === 'false',
+            'Esc trifft nur die Erklärung, nicht den Artikel', 'die Schublade ging mit zu');
+          // Das Glossar ist eine Einblendung, keine Seite: es darf die
+          // Historie nicht anfassen, sonst zeigt der Zurück-Knopf ins Leere.
+          expect(await page.evaluate(() => location.hash) === hashVorher,
+            'Glossar fasst die Historie nicht an', 'Hash hat sich geändert');
+        }
+      }
+
+      // --- Silhouetten: jede Baureihe muss anders aussehen ---
+      // Der Nutzer hat genau das gemeldet: sechzehn Karten, eine Zeichnung.
+      // Der Test haelt fest, dass es nicht wieder dahin zurueckfaellt.
+      await page.evaluate(() => localStorage.clear());
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      const formen = await page.$$eval('.pick-art svg path', ns => ns.map(n => n.getAttribute('d')));
+      if (formen.length > 4) {
+        expect(new Set(formen).size === formen.length,
+          'Fahrzeugkarten zeigen verschiedene Silhouetten',
+          `${formen.length} Pfade, davon nur ${new Set(formen).size} verschieden`);
       }
 
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
@@ -764,9 +1057,23 @@ async function main() {
       // einen Hinweis. Gemeldet werden sie trotzdem.
       if (fehlend.length) console.log(`  · ${fehlend.length} geplante(r) Artikel noch nicht geschrieben`);
 
-      // Und einmal durch die echte Oberflaeche, nicht nur durch den Parser
-      const mitArtikel = artikel[0];
-      await page.goto(BASE + `/#/docs/${mitArtikel.id}`, { waitUntil: 'domcontentloaded' });
+      // Und einmal durch die echte Oberflaeche, nicht nur durch den Parser.
+      //
+      // Wichtig: ein Doc nehmen, dessen Artikel auch wirklich existiert.
+      // `artikel[0]` war das falsche Kriterium — steht dort ein geplanter,
+      // noch nicht geschriebener Artikel, zeigt die App korrekt einen
+      // Hinweis statt eines Artikels, und der Test meldete einen Fehler,
+      // wo keiner war. Genau das ist in CI passiert.
+      const geschrieben = [];
+      for (const a of artikel) {
+        const da = await page.evaluate(
+          async (a) => (await fetch(`./content/${a.series}/${a.datei}`)).ok, a);
+        if (da) geschrieben.push(a);
+      }
+      expect(geschrieben.length > 0, 'mindestens ein geschriebener Artikel vorhanden',
+        `${artikel.length} geplant, keiner geschrieben`);
+      const mitArtikel = geschrieben[0];
+      await page.goto(BASE + `/#/docs/${mitArtikel?.id}`, { waitUntil: 'domcontentloaded' });
       await settle(page, 1200);
       const imDrawer = await page.evaluate(() => {
         const el = document.querySelector('#articleContent');
@@ -827,6 +1134,21 @@ async function main() {
       ]);
       expect(JSON.stringify(codes) === JSON.stringify(['P0133', 'U0123', 'C030A', 'B0000']),
         'Fehlercodes korrekt dekodiert', `bekommen: ${codes.join(', ')}`);
+
+      // Der Scan spricht genormtes OBD-2. Ein Teil der Baureihen, die der
+      // Trichter anbietet, kennt das gar nicht — dort fuehrt der
+      // Verbinden-Knopf ins Leere. Die Ansicht muss das vorher sagen,
+      // abhaengig vom gewaehlten Fahrzeug.
+      for (const [serie, erwartet] of [['e30', true], ['e46', true], ['e90', false]]) {
+        await page.goto(BASE + `/#/model/${serie}`, { waitUntil: 'domcontentloaded' });
+        await settle(page, 400);
+        await page.goto(BASE + '/#/scan', { waitUntil: 'domcontentloaded' });
+        await settle(page, 600);
+        const da = await page.locator('.scan-note-warn').count() > 0;
+        expect(da === erwartet,
+          `Scan-Eignungshinweis bei ${serie} ${erwartet ? 'vorhanden' : 'nicht vorhanden'}`,
+          `Hinweis ${da ? 'da' : 'fehlt'}, erwartet ${erwartet ? 'da' : 'weg'}`);
+      }
 
       // Der verbundene Zustand rendert Flaechen, die es im Ruhezustand
       // nicht gibt: die getoenten Fehlercode-Zeilen und die Live-Kacheln.

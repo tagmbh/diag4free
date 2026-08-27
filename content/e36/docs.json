@@ -1,0 +1,179 @@
+{
+  "model": "e36",
+  "docs": [
+    {
+      "id": "D4F-E36-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E36 · Runddose gegen OBD-2",
+      "valid": "E36 · 1990–2000 · alle Motoren",
+      "summary": "Die erste Frage vor jedem Werkzeugkauf: Welchen Diagnosezugang hat dieser E36 überhaupt. Jeder E36 trägt die 20-polige Runddose im Motorraum, nur ein Teil zusätzlich die 16-polige OBD-2-Buchse im Innenraum — und die ist längst nicht überall vollwertig.",
+      "points": [
+        "Runddose im Motorraum, 20-polig mit Schraubdeckel: an jedem E36 vorhanden, unabhängig vom Baujahr",
+        "16-polige OBD-2-Buchse unter dem Armaturenbrett: US-Modelle ab Modelljahr 1996, dazu späte EU-Compact und Z3 — nach einer Quelle ab 09/1999",
+        "Generischer OBD-2-Scanner am EU-E36: die OBD-2-Befehle sind nach einer Quelle in der Firmware gesperrt, BMW-eigene Diagnose über K-Line arbeitet trotzdem",
+        "Sind beide Buchsen vorhanden, ist die Runddose der vollständigere Zugang — die Innenraumbuchse führt nur einen Teil der Steuergeräte",
+        "Ist Pin 15 der Runddose bestückt, verlangt das Fahrzeug ein ADS-taugliches Interface; ein reines K-Line-Kabel erreicht dann nicht alle Steuergeräte",
+        "Vor jedem Kabelkauf am Fahrzeug nachsehen statt nach Baujahr raten — die Umstellung lief je nach Markt und Modell verschieden"
+      ],
+      "pins": [
+        "Runddose Pin 17 · Diagnoseleitung TXD II",
+        "Runddose Pin 20 · Diagnoseleitung TXD I",
+        "Runddose Pin 19 · Masse",
+        "Runddose Pin 15 · bestückt = ADS-Fahrzeug",
+        "OBD-2 Pin 7 · K-Line",
+        "OBD-2 Pin 4/5 · Masse"
+      ],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "article": "diagnosezugang.md",
+      "details": ["D4F-E36-002", "D4F-E36-003", "D4F-E36-004"]
+    },
+    {
+      "id": "D4F-E36-002",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Runddiagnosestecker 20-polig · Belegung und Brücke 17/20",
+      "valid": "E36 · 1990–2000 · Motorraum",
+      "summary": "Was an der 20-poligen Runddose im Motorraum belegt ist, was davon gesichert ist und was nicht — und die Brücke zwischen Pin 17 und Pin 20, mit der die Nebensteuergeräte auch an der Innenraumbuchse antworten.",
+      "points": [
+        "Deckel abschrauben, Kontakte vor der Messung auf Grünspan ansehen — der Motorraum ist der schlechteste denkbare Einbauort für einen Steckverbinder",
+        "Pin 19 führt Masse: gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen",
+        "Pin 17 und Pin 20 führen die beiden Diagnose-Datenleitungen; welche davon welche Steuergeräte trägt, ist hier nicht gesichert belegt",
+        "Brücke zwischen Pin 17 und Pin 20 legt beide Datenleitungen zusammen — danach erreicht ein Werkzeug an der 16-poligen Buchse auch ABS, Kombi und Karosseriemodul",
+        "Bestückter Pin 15 ist das Erkennungszeichen für ein ADS-Fahrzeug — nach einer Quelle, vor dem Kabelkauf gegenprüfen",
+        "Dauerplus an der Dose nicht raten, sondern gegen Pin 19 messen: eine Diagnosedose ohne Versorgung erklärt jede stumme Verbindung"
+      ],
+      "pins": [
+        "Runddose Pin 15 · ADS-Kennung, nur bei ADS-Fahrzeugen bestückt",
+        "Runddose Pin 17 · Diagnose-Datenleitung TXD II",
+        "Runddose Pin 19 · Masse",
+        "Runddose Pin 20 · Diagnose-Datenleitung TXD I",
+        "OBD-2 Pin 7 · K-Line im Innenraum",
+        "OBD-2 Pin 16 · KL30 im Innenraum"
+      ],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "article": "runddose-20pol.md",
+      "details": ["D4F-E36-001", "D4F-E36-005"]
+    },
+    {
+      "id": "D4F-E36-003",
+      "type": "FUB",
+      "cat": "Motorsteuerung",
+      "title": "Motorsteuergeräte der Baureihe E36",
+      "valid": "E36 · M43/M44/M50/M52/S50/S52",
+      "summary": "Welcher Motor welche DME trägt und was das für die Diagnose bedeutet. Der E36 spannt von der Bosch Motronic M3.1 ohne VANOS bis zur Siemens MS41 und MSS50 — die Werkzeugwahl hängt am Steuergerät, nicht am Motorkürzel.",
+      "points": [
+        "M50 ohne VANOS: Bosch Motronic M3.1 — Blinkcode möglich, keine OBD-2-Dienste",
+        "M50TU mit VANOS ab 1992: Bosch Motronic M3.3.1 mit integrierter VANOS-Ansteuerung",
+        "S50B30: Bosch Motronic M3.3, VANOS über ein eigenes Steuergerät; S50B32 ab 1995: Siemens MSS50 mit integrierter VANOS-Regelung beider Wellen",
+        "M52: Siemens MS41 — die Quellen nennen für den S52 der US-Modelle sowohl MS41.1 als auch MS41.2, der Widerspruch ist ungeklärt",
+        "M44: Bosch M5.2 beziehungsweise M5.2.1; M43 früh Bosch Motronic M1.7.x, M43TU ab 1998 Bosch BMS46",
+        "Steuergerät immer am Aufkleber der DME gegenprüfen, bevor du eine Softwareauswahl oder ein Tauschgerät festlegst"
+      ],
+      "pins": [],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "article": "dme-uebersicht.md",
+      "details": ["D4F-E36-001", "D4F-E36-004", "D4F-E36-005"]
+    },
+    {
+      "id": "D4F-E36-004",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Blinkcode auslesen ohne Diagnosegerät",
+      "valid": "E36 · OBD-1-Fahrzeuge · nach einer Quelle 1992–1995",
+      "summary": "Der E36 gibt seine Motorfehler über die Motorkontrollleuchte aus, wenn man das Fahrpedal in einer festen Folge tritt. Vierstellige BMW-Codes, kein Werkzeug nötig — brauchbar für den ersten Befund am gekauften Fahrzeug oder wenn kein Kabel greifbar ist.",
+      "points": [
+        "Zündung in Stellung 2, Motor aus; danach das Fahrpedal fünfmal zügig ganz durchtreten und ganz loslassen",
+        "Die Motorkontrollleuchte blinkt danach vier Ziffernblöcke, getrennt durch kurze Pausen; ein langer Abstand beendet den Code",
+        "Bleibt derselbe Code stehen, obwohl mehrere Fehler vorliegen, hilft nach jedem Code erneutes fünfmaliges Treten zum Weiterschalten",
+        "1000 beendet die Ausgabe, 1444 heißt kein Fehler gespeichert — kommt einer davon zuerst, ist der Speicher leer",
+        "Die Codetabelle unterscheidet sich zwischen den DME-Ständen: derselbe vierstellige Code kann an M3.1 und MS41 verschiedene Bedeutungen haben",
+        "Der Blinkcode ersetzt keine Live-Werte — Adaptionen, Lambdaregelung und Stellglieddiagnose gibt es nur über die Diagnosedose"
+      ],
+      "pins": [],
+      "engines": ["M43", "M50", "S50"],
+      "article": "blinkcode-stomptest.md",
+      "details": ["D4F-E36-001", "D4F-E36-003"]
+    },
+    {
+      "id": "D4F-E36-005",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Einbauorte Steuergeräte und Diagnosepunkte E36",
+      "valid": "E36 · Limousine · Coupé · Touring · Compact",
+      "summary": "Wo die für Diagnose und Codierung wichtigen Baugruppen im E36 sitzen: Motorsteuergerät im Wasserkasten, Runddose im Motorraum, Karosseriemodul und Wegfahrsperre im Innenraum.",
+      "points": [
+        "DME im E-Kasten unter der Abdeckung im Wasserkasten rechts, unterhalb des beifahrerseitigen Wischerarms",
+        "E-Kasten öffnen: Schaumabdeckung mit den Kunststoffknöpfen abnehmen, danach die Schrauben der harten Abdeckung lösen",
+        "20-polige Runddose im Motorraum mit aufgeschraubtem Deckel — Lage je nach Modell und Baujahr unterschiedlich, deshalb suchen statt annehmen",
+        "16-polige OBD-2-Buchse, wo vorhanden: unter dem Armaturenbrett fahrerseitig, meist hinter einer beschrifteten Klappe",
+        "Kombiinstrument mittig im Armaturenbrett; Karosseriemodul und Wegfahrsperre im Innenraum unter Verkleidung",
+        "Vor dem Ziehen eines Steuergeräts Zündung aus und Batterie abklemmen, dann protokollieren, welcher Stecker wo saß"
+      ],
+      "pins": [],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "details": ["D4F-E36-001", "D4F-E36-002", "D4F-E36-007"]
+    },
+    {
+      "id": "D4F-E36-006",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "Kühlsystem E36 · die Kunststoffteile",
+      "valid": "E36 · alle Motoren · hohe Laufleistung",
+      "summary": "Das Kühlsystem ist die bekannteste Schwachstelle des E36. Kunststoffteile werden mit den Jahren spröde und reißen ohne Vorwarnung — Ausgleichsbehälter, Kühlerhälse, Thermostatgehäuse. Dazu die Wasserpumpe mit Kunststofflaufrad der frühen Baujahre.",
+      "points": [
+        "Wasserpumpen mit Kunststofflaufrad wurden nach übereinstimmenden Erfahrungsberichten in den frühen Baujahren verbaut und später auf Metall umgestellt — das Laufrad bricht ab, ohne dass die Pumpe undicht wird",
+        "Erfahrungswert: die Kunststoffteile des Kühlkreises werden im Bereich hoher Laufleistung spröde und reißen dann reihenweise — einzeln tauschen verschiebt den nächsten Ausfall nur",
+        "Ausgleichsbehälter auf Haarrisse an der Formnaht und am Verschlusshals absuchen, kalt und mit Lampe von unten",
+        "Kühlerhälse und Schlauchflansche vorsichtig mit der Hand belasten: bricht der Kunststoff dabei, wäre er auch auf der Autobahn gebrochen",
+        "Überhitzung ohne sichtbaren Leckverlust deutet auf ein abgerissenes Pumpenlaufrad — der Motor wird heiß, obwohl der Kreis voll ist",
+        "Ein Zahlenwert für den Systemdruck des Kühlkreises ist hier nicht belegt; geprüft wird auf Druckhaltung und sichtbaren Austritt, nicht gegen einen Sollwert"
+      ],
+      "pins": [],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "article": "kuehlsystem.md",
+      "details": ["D4F-E36-003", "D4F-E36-008"]
+    },
+    {
+      "id": "D4F-E36-007",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Startfreigabe und Wegfahrsperre E36",
+      "valid": "E36 · EWS I bis 12/1994 · EWS II ab 01/1995",
+      "summary": "Der E36 hat zwei grundverschiedene Wegfahrsperren, und sie fallen unterschiedlich aus. EWS I sperrt über ein Anlasserrelais, EWS II arbeitet mit Transponder im Schlüssel. Welche verbaut ist, entscheidet, wonach du beim Startproblem suchst.",
+      "points": [
+        "Nach einer Quelle: E36 mit Baudatum bis 12/1994 tragen EWS I mit Anlasser-Sperrrelais, ab 01/1995 EWS II mit Transponderschlüssel",
+        "EWS I sperrt den Anlasserkreis — Symptom ist ein Motor, der nicht dreht, obwohl die Batterie steht",
+        "EWS II gibt die Motorsteuerung frei — Symptom ist ein Anlasser, der sauber dreht, ohne dass der Motor anspringt",
+        "Zweiten Schlüssel gegenprobieren, bevor du an der Elektrik suchst: läuft er, ist der erste Schlüssel oder dessen Transponder der Befund",
+        "Vor jedem Verdacht auf die Wegfahrsperre erst Batterie und Massepunkte klären — eine schwache Batterie erzeugt dieselben Symptome",
+        "Freigabestatus lässt sich nur über die Diagnosedose ansehen, nicht über den Blinkcode"
+      ],
+      "pins": [
+        "Anlasserkreis · KL50 vom Zündschloss",
+        "Versorgung · KL30 Dauerplus",
+        "Zündung · KL15 geschaltet"
+      ],
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "details": ["D4F-E36-001", "D4F-E36-005"]
+    },
+    {
+      "id": "D4F-E36-008",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "Unruhiger Leerlauf · Leerlaufregler und Falschluft",
+      "valid": "E36 · M50/M52/S50/S52 · hohe Laufleistung",
+      "summary": "Schwankender oder absterbender Leerlauf ist beim E36 fast immer eine von zwei Ursachen: der verkokte Leerlaufregler oder eine undichte Kurbelgehäuseentlüftung. Beide erzeugen dasselbe Bild und werden regelmäßig miteinander verwechselt.",
+      "points": [
+        "Erst die Schläuche der Kurbelgehäuseentlüftung ansehen: hart, rissig oder abgeplatzt heißt Falschluft, und die erklärt das Symptom vollständig",
+        "Leerlaufregler ausbauen und mit Reiniger spülen, bevor du ihn ersetzt — Verkokung ist die häufigere Ursache als ein defekter Steller",
+        "Stecker des Leerlaufreglers bei laufendem Motor abziehen: ändert sich nichts, arbeitet der Steller ohnehin nicht",
+        "Falschluft magert das Gemisch ab; die Regelung gleicht das aus, bis sie an ihre Grenze kommt — deshalb erscheint der Fehler oft erst nach Wochen als Adaptionsmeldung",
+        "Nach jeder Reinigung oder jedem Tausch die Adaptionswerte zurücksetzen, sonst rechnet die DME mit den alten Korrekturen weiter"
+      ],
+      "pins": [],
+      "engines": ["M50", "M52", "S50", "S52"],
+      "details": ["D4F-E36-003", "D4F-E36-006"]
+    }
+  ]
+}

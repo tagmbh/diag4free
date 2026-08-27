@@ -1,0 +1,212 @@
+{
+  "model": "e38",
+  "guides": {
+    "m73-unrunder-lauf": {
+      "code": "GF-E38-01",
+      "name": "M73 läuft unrund (E38 750i)",
+      "desc": "Der V12 arbeitet als zwei getrennte Motorhälften. Der Pfad nutzt genau das: erst beide Steuergeräte auslesen, dann entscheiden, ob das Symptom einseitig oder beidseitig ist — und erst danach am Bauteil suchen.",
+      "engines": [
+        "M73"
+      ],
+      "steps": [
+        {
+          "q": "Antworten beide Motorsteuergeräte in der Diagnose?",
+          "help": "Der M73 hat je Zylinderbank ein eigenes Steuergerät. Beide werden getrennt angesprochen. Wer nur eines erwischt, sieht die halbe Wahrheit und hält einen einseitigen Fehler für einen sporadischen.",
+          "measure": "Beide Motorsteuergeräte einzeln aufrufen und je Gerät den Identifikationsdatensatz anzeigen lassen. Erwartet: zwei getrennte Antworten. Antwortet nur eines, ist erst der Zugang zu klären, bevor irgendein Messwert beurteilt wird.",
+          "doc": "D4F-E38-003",
+          "yes": 1,
+          "no": "result-dme-zugang"
+        },
+        {
+          "q": "Stehen Fehlereinträge nur in einem der beiden Steuergeräte?",
+          "help": "Das ist die Weiche des ganzen Pfads. Einseitige Einträge zeigen auf die doppelt vorhandene Bank-Peripherie: Luftmassenmesser, Drosselklappe, Lambdaregelung, Sekundärluftkreis. Beidseitige Einträge zeigen auf das, was sich beide Bänke teilen.",
+          "measure": "Fehlerspeicher beider Steuergeräte nebeneinander legen und die Einträge nach Bank sortieren. Erwartet ist ein klares Bild: entweder eine Seite auffällig, oder beide Seiten gleich auffällig. Ein gemischtes Bild bedeutet meist zwei unabhängige Fehler — dann beide einzeln abarbeiten.",
+          "doc": "D4F-E38-003",
+          "yes": 2,
+          "no": 4
+        },
+        {
+          "q": "Weicht die betroffene Bank auch in den Laufwerten sichtbar von der anderen ab?",
+          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Größen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
+          "measure": "Gleiche Messgröße in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von außen.",
+          "doc": "D4F-E38-003",
+          "yes": 3,
+          "no": 4
+        },
+        {
+          "q": "Wandert das Symptom mit, wenn du das verdächtige Bauteil auf die andere Bank setzt?",
+          "help": "Der Kreuztausch ist am M73 der schnellste Beweis und braucht keinen Sollwert. Zündspule, Luftmassenmesser oder Lambdasonde der auffälligen Seite gegen das Gegenstück der unauffälligen Seite tauschen — mehr ist nicht nötig.",
+          "measure": "Nach dem Tausch dieselbe Messgröße erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
+          "doc": "D4F-E38-003",
+          "yes": "result-bauteil",
+          "no": "result-bank-peripherie"
+        },
+        {
+          "q": "Zeigen beide Bänke dasselbe Bild — also beide mager, beide mit Aussetzern oder beide mit derselben Abweichung?",
+          "help": "Wenn sich beide Steuergeräte einig sind, ist die Ursache nicht doppelt vorhanden. Dann kommt nur infrage, was beide Bänke gemeinsam nutzen: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Massepunkte, Ansaugluftweg vor der Verzweigung.",
+          "measure": "Dieselbe Größe in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Größenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
+          "doc": "D4F-E38-003",
+          "yes": 5,
+          "no": "result-bank-peripherie"
+        },
+        {
+          "q": "Ist die Kurbelgehäuseentlüftung frei und der Öleinfülldeckel innen frei von hellem Schlamm?",
+          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmäßig übersprungen.",
+          "measure": "Deckel abnehmen und die Innenseite ansehen: heller, emulsionsartiger Schlamm ist der Befund. Zusätzlich die Schläuche der Entlüftung auf Verhärtung, Risse und Verstopfung prüfen. Ein Unterdruck-Sollwert für das System ist hier nicht belegt — geprüft wird qualitativ auf Durchgang und Dichtheit.",
+          "doc": "D4F-E38-003",
+          "yes": "result-gemeinsam-kraftstoff",
+          "no": "result-kge"
+        }
+      ]
+    },
+    "e38-komfort-tot": {
+      "code": "GF-E38-02",
+      "name": "Mehrere Komfortsteuergeräte antworten nicht",
+      "desc": "Zentralverriegelung, Klima, Sitzspeicher oder Bordmonitor fallen gemeinsam aus oder fehlen in der Geräteliste. Der Pfad grenzt Versorgung, Gateway und Bus gegeneinander ab, bevor ein einzelnes Steuergerät verdächtigt wird.",
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "steps": [
+        {
+          "q": "Fehlen mehrere Komfortsteuergeräte gleichzeitig in der Diagnose?",
+          "help": "Die Zahl der betroffenen Geräte ist die wichtigste Information am Anfang. Ein einzelnes stummes Gerät ist ein Gerätefehler. Mehrere gleichzeitig sind fast immer Versorgung, Bus oder Gateway.",
+          "measure": "Vollständigen Steuergeräte-Suchlauf fahren und die gefundene Liste gegen die tatsächliche Ausstattung des Fahrzeugs halten. Erwartet: jedes verbaute Gerät antwortet. Fehlt genau eines, ist der Pfad hier zu Ende.",
+          "doc": "D4F-E38-002",
+          "yes": 1,
+          "no": "result-einzelgeraet"
+        },
+        {
+          "q": "Antwortet die Motorsteuerung normal?",
+          "help": "Die Motorsteuerung hängt am Diagnosebus, nicht an den Komfortbussen. Antwortet sie sauber, ist die Diagnoseverbindung als solche in Ordnung und der Fehler liegt weiter hinten. Antwortet sie ebenfalls nicht, stimmt schon der Zugang nicht.",
+          "measure": "Motorsteuergerät aufrufen und den Identifikationsdatensatz anzeigen lassen. Erwartet: vollständige Antwort mit Gerätekennung. Bleibt auch sie aus, zuerst Anschluss, Interface und Spannungsversorgung des Testers klären.",
+          "doc": "D4F-E38-001",
+          "yes": 2,
+          "no": "result-verbindung"
+        },
+        {
+          "q": "Antwortet das Kombiinstrument?",
+          "help": "Das Kombiinstrument setzt die Diagnoseaufträge auf die Komfortbusse um. Steht es, kommen die dahinterliegenden Geräte nicht mehr durch — ganz gleich, wie gesund sie selbst sind. Deshalb steht es vor allen Einzelgeräten in der Reihenfolge.",
+          "measure": "Kombiinstrument einzeln aufrufen. Erwartet: es meldet sich mit Kennung und Fehlerspeicher. Antwortet es nicht, während die Motorsteuerung antwortet, ist die Gateway-Funktion der erste Verdächtige und nicht die vermissten Komfortgeräte.",
+          "doc": "D4F-E38-002",
+          "yes": 3,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Sind Bordspannung und die Massepunkte im Fußraum in Ordnung?",
+          "help": "Ein loser oder korrodierter Massepunkt legt mehrere Steuergeräte gleichzeitig still und sieht dabei aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Punkt.",
+          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfußraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
+          "doc": "D4F-E38-006",
+          "yes": 4,
+          "no": "result-versorgung"
+        },
+        {
+          "q": "Liegt der Eindrahtbus im Ruhezustand auf Bordspannungsniveau?",
+          "help": "Der Komfortbus des E38 ist eine einzelne Leitung, die im Ruhezustand auf Bordspannung liegt und von den Sendern gegen Masse gezogen wird. Liegt sie dauerhaft nahe Masse, zieht ein Teilnehmer oder ein Scheuerschluss die Leitung fest — dann schweigt der ganze Bus.",
+          "measure": "An einem gut erreichbaren Steuergerätestecker die Busleitung gegen Masse messen, Zündung ein, Fahrzeug in Ruhe. Erwartet: Pegel nahe Bordspannung mit kurzen Einbrüchen beim Senden. Dauerhaft nahe 0 V ist der Befund für einen festgehaltenen Bus.",
+          "doc": "D4F-E38-002",
+          "yes": 5,
+          "no": "result-bus-kurzschluss"
+        },
+        {
+          "q": "Kommen die fehlenden Geräte zurück, sobald du ein verdächtiges Modul vom Bus trennst?",
+          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfußraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "measure": "Ein Gerät nach dem anderen vom Bus trennen und nach jedem Schritt den Suchlauf wiederholen. Erwartet: bleibt die Liste unverändert unvollständig, war es nicht dieses Gerät. Wird sie vollständig, ist der Störer gefunden.",
+          "doc": "D4F-E38-005",
+          "yes": "result-stoerer",
+          "no": "result-leitung"
+        }
+      ]
+    }
+  },
+  "results": {
+    "result-dme-zugang": {
+      "title": "Zugang zu den beiden Motorsteuergeräten klären",
+      "text": "Solange nicht beide Steuergeräte antworten, ist jede Aussage über den Motorlauf halb. Prüfe zuerst, über welchen Anschluss du arbeitest und ob die verwendete Software den V12 mit zwei Geräten überhaupt getrennt anspricht. Erst danach den Fehlerspeicher beurteilen.",
+      "next_docs": [
+        "D4F-E38-001",
+        "D4F-E38-003"
+      ]
+    },
+    "result-bauteil": {
+      "title": "Bauteil auf der auffälligen Bank ist der Täter",
+      "text": "Das Symptom ist mit dem Bauteil auf die andere Bank gewandert. Damit ist der Beweis erbracht, ohne dass ein Sollwert nötig war. Bauteil ersetzen, danach beide Steuergeräte löschen und den Vergleich der Bänke wiederholen — erst wenn beide Seiten wieder gleich laufen, ist die Sache abgeschlossen.",
+      "next_docs": [
+        "D4F-E38-003"
+      ]
+    },
+    "result-bank-peripherie": {
+      "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
+      "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von außen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+      "next_docs": [
+        "D4F-E38-003"
+      ]
+    },
+    "result-gemeinsam-kraftstoff": {
+      "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
+      "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von außen; ein belegter Druckwert liegt hier nicht vor.",
+      "next_docs": [
+        "D4F-E38-003"
+      ]
+    },
+    "result-kge": {
+      "title": "Kurbelgehäuseentlüftung zugesetzt",
+      "text": "Heller Schlamm am Öldeckel oder verstopfte Entlüftungsschläuche erklären das beidseitige Bild. Die Entlüftung vollständig erneuern, nicht nur reinigen, und die Schläuche auf Verhärtung prüfen. Danach Fehlerspeicher beider Steuergeräte löschen und den Motorlauf erneut über beide Bänke vergleichen.",
+      "next_docs": [
+        "D4F-E38-003"
+      ]
+    },
+    "result-einzelgeraet": {
+      "title": "Einzelnes Steuergerät statt Busproblem",
+      "text": "Es fehlt nur ein Gerät. Damit fällt der ganze Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig.",
+      "next_docs": [
+        "D4F-E38-005"
+      ]
+    },
+    "result-verbindung": {
+      "title": "Diagnoseverbindung selbst klären",
+      "text": "Es antwortet gar nichts, also ist zuerst der Zugang zu klären. Prüfe, ob du am richtigen Anschluss arbeitest, ob Dauerplus und Masse an der Buchse anliegen und ob das Interface am Rechner sauber eingebunden ist. Am E38 entscheidet zusätzlich, ob der gewählte Anschluss überhaupt alle Steuergeräte erreicht.",
+      "next_docs": [
+        "D4F-E38-001",
+        "D4F-E38-007"
+      ]
+    },
+    "result-gateway": {
+      "title": "Gateway-Funktion des Kombiinstruments",
+      "text": "Die Motorsteuerung antwortet, das Kombiinstrument nicht, und dahinter fehlt die halbe Karosserie. Das ist das typische Gateway-Bild. Prüfe Spannungsversorgung und Masse am Kombiinstrument sowie dessen Stecker, bevor du das Gerät tauschst. Ein Tausch bringt zusätzlich Aufwand mit sich, weil fahrzeugbezogene Daten im Kombi liegen.",
+      "next_docs": [
+        "D4F-E38-002",
+        "D4F-E38-005"
+      ]
+    },
+    "result-versorgung": {
+      "title": "Spannungsversorgung oder Massepunkt",
+      "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fußraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+      "next_docs": [
+        "D4F-E38-006"
+      ]
+    },
+    "result-bus-kurzschluss": {
+      "title": "Busleitung wird festgehalten",
+      "text": "Der Bus liegt dauerhaft nahe Masse, damit kann kein Teilnehmer mehr senden. Trenne die Teilnehmer schrittweise ab und beobachte, wann der Pegel wieder auf Bordspannung geht. Prüfe parallel die bekannten Scheuerstellen im Türübergang und alles, was am Fahrzeug nachgerüstet wurde.",
+      "next_docs": [
+        "D4F-E38-002"
+      ]
+    },
+    "result-stoerer": {
+      "title": "Störendes Steuergerät gefunden",
+      "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfußraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+      "next_docs": [
+        "D4F-E38-005"
+      ]
+    },
+    "result-leitung": {
+      "title": "Leitungsunterbrechung im Bus",
+      "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist die Busleitung selbst unterbrochen, typischerweise an Übergängen mit Bewegung. Miss die Leitung abschnittsweise auf Durchgang und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor, statt an beiden Enden zu raten.",
+      "next_docs": [
+        "D4F-E38-002"
+      ]
+    }
+  }
+}

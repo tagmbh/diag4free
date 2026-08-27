@@ -1,0 +1,227 @@
+{
+  "model": "e70",
+  "guides": {
+    "e70-mehrere-sg-fehlen": {
+      "code": "GF-E70-01",
+      "name": "Mehrere Steuergeräte fehlen im Suchlauf",
+      "desc": "Der Suchlauf findet nur einen Teil der verbauten Geräte. Der Pfad trennt Gateway, Versorgung, Spannung und Busleitung voneinander, bevor irgendein Steuergerät als defekt gilt.",
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Fehlen im Suchlauf mehrere Steuergeräte gleichzeitig?",
+          "help": "Die Zahl entscheidet über den ganzen weiteren Weg. Ein einzelnes stummes Gerät ist ein Gerätefehler. Mehrere gleichzeitig sind am E70 fast immer Gateway, Versorgung oder Bus — und praktisch nie mehrere gleichzeitig defekte Geräte.",
+          "measure": "Vollständigen Suchlauf fahren und die gefundene Liste gegen die tatsächliche Ausstattung halten. Erwartet: jedes verbaute Gerät antwortet. Fahrzeuge ohne Adaptive Drive oder ohne Luftfederung haben die zugehörigen Geräte gar nicht — das ist kein Fehler.",
+          "doc": "D4F-E70-002",
+          "yes": 1,
+          "no": "result-einzelgeraet"
+        },
+        {
+          "q": "Gehören die fehlenden Geräte alle zum selben Bus?",
+          "help": "Die Buszuordnung ist die schnellste Sortierung, die der E70 hergibt. Fehlt eine geschlossene Gruppe, ist der Weg zu dieser Gruppe unterbrochen. Sind die Ausfälle über mehrere Busse verstreut, liegt der Fehler eher in der Versorgung oder in der Diagnoseverbindung.",
+          "measure": "Die fehlenden Geräte nach Bus sortieren: Antrieb, Karosserie, Fahrwerk, Infotainment. Erwartet ist ein klares Muster. Fehlt zum Beispiel das gesamte Infotainment gemeinsam, deutet das auf den optischen Ring und nicht auf mehrere Einzelgeräte.",
+          "doc": "D4F-E70-002",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antwortet die Junction-Box-Elektronik als zentrales Gateway?",
+          "help": "Die Junction-Box trägt die zentrale Gateway-Funktion. Antwortet sie nicht, fehlen die dahinterliegenden Teilnehmer mit — sie sind dann stumm, ohne selbst defekt zu sein. Deshalb steht sie vor jedem Einzelgerät in der Reihenfolge.",
+          "measure": "Die Junction-Box einzeln aufrufen und den Identifikationsdatensatz anzeigen lassen. Erwartet: vollständige Antwort. Bleibt sie aus, während die Motorsteuerung antwortet, ist das Gateway der erste Verdächtige.",
+          "doc": "D4F-E70-002",
+          "yes": 4,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Haben die fehlenden Geräte eine gemeinsame Sicherung oder einen gemeinsamen Massepunkt?",
+          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmäßig übersehen, weil der Verdacht sofort auf den Bus fällt.",
+          "measure": "Die fehlenden Geräte im Sicherungs- und Massekonzept des Fahrzeugs zurückverfolgen. Erwartet: ein gemeinsamer Zweig. Sicherungen nicht nur ansehen, sondern im eingebauten Zustand auf Spannung an beiden Kontakten prüfen — ein schlechter Halter sieht heil aus.",
+          "doc": "D4F-E70-006",
+          "yes": "result-versorgung",
+          "no": 4
+        },
+        {
+          "q": "Bleibt die Bordspannung während des gesamten Suchlaufs stabil?",
+          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmäßig ein unnötiges Steuergerät.",
+          "measure": "Spannung während des Suchlaufs mitbeobachten und dabei stützen. Erwartet: keine sichtbaren Einbrüche. Rund 12.6 V Ruhespannung bei stehendem Motor zeigen eine geladene Batterie an; bricht die Spannung beim Suchlauf ein, ist zuerst die Versorgung zu klären.",
+          "doc": "D4F-E70-001",
+          "yes": 5,
+          "no": "result-spannung"
+        },
+        {
+          "q": "Kommen die fehlenden Geräte zurück, wenn du das verdächtige Modul abziehst oder es getrocknet ist?",
+          "help": "Ein einzelnes gestörtes Gerät kann den Bus blockieren. Am E70 steht die Junction-Box hinter dem Handschuhfach oben auf der Liste, weil verstopfte Abläufe genau dorthin führen. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschließen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
+          "doc": "D4F-E70-006",
+          "yes": "result-wasser",
+          "no": "result-busleitung"
+        }
+      ]
+    },
+    "e70-xdrive-fehler": {
+      "code": "GF-E70-02",
+      "name": "xDrive meldet Fehler",
+      "desc": "Allrad- oder Fahrdynamikmeldung mit Eintrag im Verteilergetriebe. Der Pfad prüft zuerst, ob der Eintrag überhaupt die Ursache ist, und arbeitet sich dann über Reifen, Kalibrierung und Stellmotor zum Getriebe vor.",
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Steht ein Eintrag im Steuergerät des Verteilergetriebes?",
+          "help": "Eine Displaymeldung sagt noch nicht, wer sie ausgelöst hat. Am E70 melden mehrere Systeme dieselbe Störung weiter. Ohne eigenen Eintrag im Verteilergetriebe ist es kein xDrive-Fehler, sondern die Anzeige eines fremden Fehlers.",
+          "measure": "Alle Fehlerspeicher gemeinsam auslesen und den Speicher des Verteilergetriebes gesondert ansehen. Erwartet bei einem echten xDrive-Fehler: eigener Eintrag im eigenen Speicher. Nur Folgeeinträge in fremden Geräten sind kein Befund.",
+          "doc": "D4F-E70-004",
+          "yes": 1,
+          "no": "result-kein-eintrag"
+        },
+        {
+          "q": "Stehen gleichzeitig Einträge in der Fahrdynamikregelung oder an den Raddrehzahlgebern?",
+          "help": "Das Verteilergetriebe regelt anhand von Signalen, die es nicht selbst erzeugt. Fehlt ein Raddrehzahlsignal, meldet es folgerichtig eine Störung — ohne selbst gestört zu sein. Diese Reihenfolge ist am E70 die häufigste Ursache für einen unnötigen Getriebeausbau.",
+          "measure": "Speicher der Fahrdynamikregelung und der Raddrehzahlgeber gegen den Speicher des Verteilergetriebes halten und die Zeitstempel vergleichen. Erwartet bei vorgelagerter Ursache: die fremden Einträge sind älter oder häufiger als die des Verteilergetriebes.",
+          "doc": "D4F-E70-007",
+          "yes": "result-vorgelagert",
+          "no": 2
+        },
+        {
+          "q": "Sind alle vier Reifen gleicher Größe, gleichen Typs und mit vergleichbarer Profiltiefe?",
+          "help": "Unterschiedliche Abrollumfänge erzeugen dauerhaften Schlupf zwischen den Achsen. Der Allrad regelt dagegen an, überhitzt und meldet einen Fehler — mit völlig intakter Mechanik. Das ist billig zu prüfen und wird trotzdem übersprungen.",
+          "measure": "Reifengrößen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
+          "doc": "D4F-E70-004",
+          "yes": 3,
+          "no": "result-reifen"
+        },
+        {
+          "q": "Meldet das Steuergerät seinen Kalibrierstand als abgeschlossen?",
+          "help": "Nach jedem Eingriff an Steuergerät oder Stellmotor braucht das System eine Kalibrierung. Fehlt sie, bleibt der Fehler stehen, obwohl die Teile in Ordnung sind. Wer das übersieht, tauscht ein zweites, gleich gutes Teil ein.",
+          "measure": "Kalibrierstand im Steuergerät des Verteilergetriebes ablesen. Erwartet: der Stand wird als abgeschlossen geführt. Wird er als nicht kalibriert geführt, ist das der Befund — und keine Bauteilaussage.",
+          "doc": "D4F-E70-004",
+          "yes": 4,
+          "no": "result-kalibrierung"
+        },
+        {
+          "q": "Folgt der Stellmotor im Stelltest der Ansteuerung, und kommt eine plausible Rückmeldung?",
+          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiß ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
+          "measure": "Stelltest starten und die Rückmeldung des Stellungsgebers mitbeobachten. Erwartet: Ansteuerung und Rückmeldung laufen gemeinsam. Verweigert das Steuergerät den Test, ist das noch kein Beweis für einen defekten Stellmotor — dann zuerst Versorgung und Kalibrierstand klären.",
+          "doc": "D4F-E70-004",
+          "yes": 5,
+          "no": "result-stellmotor"
+        },
+        {
+          "q": "Ist der Bereich um den Stellmotor trocken, ohne Ölaustritt an der Dichtfläche?",
+          "help": "Der Stellmotor sitzt am Getriebe und dichtet gegen dessen Ölraum ab. Eine undichte Dichtfläche bringt Öl an die Elektrik und erzeugt Fehler, die wie ein Getriebeschaden aussehen. Das gehört angesehen, bevor das Getriebe verurteilt wird.",
+          "measure": "Bereich um den Stellmotor und dessen Dichtfläche im Sichtbereich abwischen und nach einer Probefahrt erneut ansehen. Erwartet: trocken. Frischer Ölfilm oder feuchter Stecker ist der Befund.",
+          "doc": "D4F-E70-004",
+          "yes": "result-getriebe",
+          "no": "result-dichtung"
+        }
+      ]
+    }
+  },
+  "results": {
+    "result-einzelgeraet": {
+      "title": "Einzelnes Steuergerät statt Bus- oder Gateway-Problem",
+      "text": "Es fehlt nur ein Gerät, damit fällt der Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und die Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig — und dann bitte mit Blick auf Feuchtigkeit am Einbauort.",
+      "next_docs": [
+        "D4F-E70-006",
+        "D4F-E70-007"
+      ]
+    },
+    "result-gateway": {
+      "title": "Zentrales Gateway antwortet nicht",
+      "text": "Die Junction-Box trägt die Gateway-Funktion, und ohne sie sind die dahinterliegenden Geräte nicht erreichbar. Prüfe Versorgung, Masse und Stecker der Junction-Box und sieh dabei ausdrücklich auf Wasserspuren — der Einbauort hinter dem Handschuhfach liegt in einem bekannten Wasserweg. Erst danach über einen Ersatz nachdenken, der fahrzeugbezogen codiert werden muss.",
+      "next_docs": [
+        "D4F-E70-002",
+        "D4F-E70-006"
+      ]
+    },
+    "result-versorgung": {
+      "title": "Gemeinsame Sicherung oder gemeinsamer Massepunkt",
+      "text": "Die fehlenden Geräte teilen sich einen Versorgungspfad, damit ist die Ursache gefunden, bevor ein Bus gemessen wurde. Sicherung im eingebauten Zustand auf Spannung an beiden Kontakten prüfen, Halter auf Wärmespuren ansehen, Massepunkt lösen, Kontaktflächen reinigen und wieder festziehen. Danach den Suchlauf wiederholen.",
+      "next_docs": [
+        "D4F-E70-006"
+      ]
+    },
+    "result-spannung": {
+      "title": "Bordspannung bricht während der Diagnose ein",
+      "text": "Solange die Spannung einbricht, ist keine Geräteliste belastbar und keine Codierung sicher. Fahrzeug an ein geeignetes Stützgerät hängen, Batterie und Ladung beurteilen und den Suchlauf wiederholen. Erst das Ergebnis der zweiten Runde zählt — sehr oft ist die Liste dann vollständig und es war nie ein Busfehler.",
+      "next_docs": [
+        "D4F-E70-001"
+      ]
+    },
+    "result-wasser": {
+      "title": "Gestörtes Gerät gefunden — Wasserweg mitbehandeln",
+      "text": "Mit dem getrennten Gerät ist die Liste vollständig, damit ist der Störer identifiziert. Ersetze nicht nur das Gerät, sondern beseitige die Ursache: Schiebedachabläufe und Wasserkastenabläufe freimachen, Dichtungen kontrollieren, den Einbauraum trocknen. Wer nur das Gerät tauscht, tauscht es ein zweites Mal.",
+      "next_docs": [
+        "D4F-E70-006"
+      ]
+    },
+    "result-busleitung": {
+      "title": "Busleitung oder Steckverbindung unterbrochen",
+      "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist der Weg dorthin unterbrochen. Miss die Busleitung abschnittsweise auf Durchgang und Kurzschluss gegeneinander, und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor. Beweglichen Übergängen und nachträglichen Eingriffen im Kabelbaum gilt die erste Aufmerksamkeit.",
+      "next_docs": [
+        "D4F-E70-002"
+      ]
+    },
+    "result-kein-eintrag": {
+      "title": "Kein eigener Eintrag — die Meldung kommt woanders her",
+      "text": "Ohne Eintrag im Verteilergetriebe ist das kein xDrive-Fehler. Lies alle Speicher gemeinsam und suche das Gerät, dessen Name in fremden Speichern auftaucht. Behandle dieses Gerät und wiederhole danach die Fahrt, statt am Allrad weiterzusuchen.",
+      "next_docs": [
+        "D4F-E70-007"
+      ]
+    },
+    "result-vorgelagert": {
+      "title": "Vorgelagerte Ursache in Fahrdynamikregelung oder Raddrehzahl",
+      "text": "Das Verteilergetriebe meldet folgerichtig eine Störung, weil ihm ein Eingangssignal fehlt. Behebe zuerst den vorgelagerten Fehler — Raddrehzahlgeber, dessen Leitung oder die Fahrdynamikregelung selbst. Danach alle Speicher löschen und eine definierte Fahrt machen. Nur was wiederkommt, ist noch aktuell.",
+      "next_docs": [
+        "D4F-E70-004",
+        "D4F-E70-007"
+      ]
+    },
+    "result-reifen": {
+      "title": "Unterschiedliche Abrollumfänge",
+      "text": "Verschiedene Reifengrößen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+      "next_docs": [
+        "D4F-E70-004"
+      ]
+    },
+    "result-kalibrierung": {
+      "title": "Kalibrierung fehlt",
+      "text": "Das System führt sich als nicht kalibriert, damit ist der Fehler erklärt, ohne dass ein Bauteil beteiligt sein muss. Kalibrierung mit stabiler Bordspannung durchführen, danach löschen und nachfahren. Kommt der Fehler nicht wieder, ist die Sache erledigt; kommt er wieder, geht es mit dem Stelltest weiter.",
+      "next_docs": [
+        "D4F-E70-004"
+      ]
+    },
+    "result-stellmotor": {
+      "title": "Stellmotor der Lamellenkupplung",
+      "text": "Der Stellmotor folgt der Ansteuerung nicht. Erfahrungswert aus mehreren unabhängigen Quellen: verschlissene Kunststoffräder im Antrieb des Stellmotors sind der häufigste Befund dieser Baugruppe. Vor dem Tausch Versorgung und Leitung zum Stellmotor prüfen, nach dem Tausch Dichtung erneuern und kalibrieren.",
+      "next_docs": [
+        "D4F-E70-004"
+      ]
+    },
+    "result-getriebe": {
+      "title": "Verteilergetriebe selbst prüfen lassen",
+      "text": "Signalseite, Reifen, Kalibrierung und Stellmotor sind abgearbeitet und in Ordnung. Erst jetzt ist die Mechanik dran. Ölzustand beurteilen, Geräusche unter Last zuordnen und die Lamellenkupplung fachlich bewerten lassen. Diese Reihenfolge ist der Grund, warum an dieser Stelle selten ein Getriebe unnötig ausgebaut wird.",
+      "next_docs": [
+        "D4F-E70-004"
+      ]
+    },
+    "result-dichtung": {
+      "title": "Ölaustritt an der Dichtfläche des Stellmotors",
+      "text": "Öl an Stellmotor oder Stecker erklärt Kontaktfehler, die wie ein Getriebeschaden aussehen. Stellmotor abnehmen, Dichtfläche und Dichtung erneuern, Stecker und Leitung von Öl befreien oder ersetzen. Danach kalibrieren, Speicher löschen und den Fehler auf einer definierten Fahrt nachstellen.",
+      "next_docs": [
+        "D4F-E70-004"
+      ]
+    }
+  }
+}

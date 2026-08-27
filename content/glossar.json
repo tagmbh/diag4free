@@ -1,0 +1,1031 @@
+{
+  "schema": "diag4free/glossar/v1",
+  "note": "Einsteiger-Glossar. Jeder Eintrag erklaert, was ein Ding ist und warum es gerade jetzt interessiert — nie, welchen Wert es haben soll. Sollwerte stehen in den Docs und im Messplan, nicht hier. Das optionale Feld `alt` traegt weitere Schreibweisen, unter denen derselbe Begriff im Text auftaucht.",
+  "terms": [
+
+    {
+      "id": "dme",
+      "term": "DME",
+      "lang": "Digitale Motor-Elektronik",
+      "kurz": "Das Steuergerät, das den Motor regelt.",
+      "text": "Die DME entscheidet, wie viel Kraftstoff eingespritzt wird und wann der Zündfunke kommt. Dafür liest sie ständig Sensoren aus und steuert Einspritzventile, Zündspulen und Drosselklappe. Passt etwas nicht zusammen, legt sie einen Eintrag im Fehlerspeicher ab.",
+      "warum": "Fast jede Motordiagnose fängt hier an: Die DME ist das Gerät, mit dem dein Diagnosekabel als Erstes spricht. Steht DME im Text, ist der Rechner gemeint, nicht der Motor selbst.",
+      "docs": ["D4F-E46-003", "D4F-E39-008", "D4F-E87-002"],
+      "siehe": ["dde", "fehlerspeicher", "ews"]
+    },
+    {
+      "id": "dde",
+      "term": "DDE",
+      "lang": "Digitale Diesel-Elektronik",
+      "kurz": "Dasselbe wie die DME, nur im Diesel.",
+      "text": "Im Diesel heißt der Motorrechner DDE. Er regelt Einspritzmenge, Einspritzzeitpunkt und Ladedruck. Zündspulen gibt es hier nicht, dafür Glühkerzen, eine Hochdruckpumpe und die Abgasnachbehandlung.",
+      "warum": "Wenn du einen Diesel vor dir hast und ein Text spricht von der DME, ist es der falsche Text. Such nach DDE.",
+      "docs": ["D4F-E60-020", "D4F-E87-020", "D4F-E90-006"],
+      "siehe": ["dme", "scr", "drallklappen"]
+    },
+    {
+      "id": "ews",
+      "term": "EWS",
+      "lang": "Elektronische Wegfahrsperre",
+      "kurz": "Die Diebstahlsicherung, die den Motor nur mit dem passenden Schlüssel laufen lässt.",
+      "text": "Beim Einschalten der Zündung meldet sich der Schlüssel beim EWS-Steuergerät. Stimmt die Kennung, gibt die EWS die Motorsteuerung frei. Stimmt sie nicht, dreht der Anlasser zwar, aber der Motor bekommt weder Kraftstoff noch Zündung.",
+      "warum": "Das ist eine der häufigsten Ursachen für „dreht, springt aber nicht an“ ganz ohne mechanischen Defekt. Prüf die Freigabe, bevor du Pumpen und Zündspulen tauschst.",
+      "docs": ["D4F-E39-008", "D4F-E36-007", "D4F-E46-004"],
+      "siehe": ["dme", "cas", "isn"],
+      "alt": ["Wegfahrsperre", "EWS3", "EWS4"]
+    },
+    {
+      "id": "cas",
+      "term": "CAS",
+      "lang": "Car Access System",
+      "kurz": "Der Nachfolger der EWS: Schlüssel, Zündung und Startfreigabe in einem Gerät.",
+      "text": "Das CAS erkennt den Schlüssel, schaltet die Klemmen und gibt den Start frei. Es hält außerdem die Kennung der zugehörigen Motorsteuerung. Ohne CAS-Freigabe passiert am Startknopf nichts.",
+      "warum": "Bei jüngeren Fahrzeugen ist das CAS die erste Station bei Startproblemen und bei Fahrzeugen, die gar nicht mehr aufwachen. Und es ist der Grund, warum ein gebrauchtes Steuergerät nicht einfach passt.",
+      "docs": ["D4F-E88-002", "D4F-F30-003", "D4F-F10-003"],
+      "siehe": ["ews", "cas4", "fem", "isn"],
+      "alt": ["CAS3"]
+    },
+    {
+      "id": "cas4",
+      "term": "CAS4",
+      "lang": "Car Access System, vierte Stufe",
+      "kurz": "Die CAS-Generation der frühen F-Modelle.",
+      "text": "CAS4 macht dasselbe wie das ältere CAS, hängt aber an schnelleren Bussen und arbeitet mit anderer Software. Später ersetzt das FEM diese Rolle.",
+      "warum": "Ob dein F-Modell CAS4 oder schon FEM hat, entscheidet über Software, Codierweg und Batterieregistrierung. Mit dem falschen Weg erreichst du das Gerät schlicht nicht.",
+      "docs": ["D4F-F30-003", "D4F-F10-003"],
+      "siehe": ["cas", "fem", "istufe"]
+    },
+    {
+      "id": "fem",
+      "term": "FEM",
+      "lang": "Frontelektronikmodul",
+      "kurz": "Das Gerät, das in späteren F-Modellen die Aufgaben des CAS übernimmt.",
+      "text": "Das FEM vereint Zugangsberechtigung und Karosserieelektrik in einem Kasten. In Unterlagen taucht es oft als FEM/BDC auf — BDC ist die weiterentwickelte Variante.",
+      "warum": "CAS4 oder FEM ist am F-Modell die erste Frage vor jeder Codierung. Die Antwort bestimmt Werkzeug, Datenstand und Ablauf.",
+      "docs": ["D4F-F30-003", "D4F-F-001", "D4F-F10-003"],
+      "siehe": ["cas4", "esys", "frm"],
+      "alt": ["FEM/BDC", "BDC"]
+    },
+    {
+      "id": "frm",
+      "term": "FRM",
+      "lang": "Fußraummodul",
+      "kurz": "Das Steuergerät für Licht, Türen und Komfortfunktionen.",
+      "text": "Das FRM sitzt im Fußraum und schaltet Blinker, Standlicht, Nebelscheinwerfer und die Türverriegelung. Es hängt am Karosseriebus, nicht am Motorbus.",
+      "warum": "Fällt Licht aus oder verriegelt eine Tür nicht, ist oft nicht die Lampe oder der Schalter schuld, sondern dieses Modul. Es ist außerdem eine der häufigsten Codierstellen.",
+      "docs": ["D4F-F10-003", "D4F-E90-004", "D4F-E88-002"],
+      "siehe": ["kcan", "fem", "codierung"],
+      "alt": ["FRM3"]
+    },
+    {
+      "id": "jbbf",
+      "term": "JBBF",
+      "lang": "Junction-Box-Elektronikmodul",
+      "kurz": "Der Verteilerknoten der Karosserieelektrik.",
+      "text": "Die Junction Box liegt im Fußraum auf der Beifahrerseite beim Sicherungskasten. Sie verbindet den Karosseriebus mit den daran hängenden Strecken und verteilt gleichzeitig Strom.",
+      "warum": "Wenn mehrere voneinander unabhängige Systeme gleichzeitig „keine Kommunikation“ melden, ist meist nicht jedes Gerät defekt, sondern der Knoten dazwischen. Das spart dir das Tauschen auf Verdacht.",
+      "docs": ["D4F-E90-004", "D4F-E90-006", "D4F-E88-002"],
+      "siehe": ["zgw", "kcan", "sg"],
+      "alt": ["Junction Box", "JBBFE"]
+    },
+    {
+      "id": "zgw",
+      "term": "ZGW",
+      "lang": "Zentrales Gateway",
+      "kurz": "Die Vermittlungsstelle zwischen deinem Diagnosekabel und den Fahrzeugbussen.",
+      "text": "Das ZGW nimmt die Diagnoseanfrage an der Buchse entgegen und reicht sie an den richtigen Bus weiter. Antworten laufen denselben Weg zurück. Es trennt damit die Diagnose sauber vom laufenden Fahrbetrieb.",
+      "warum": "Melden sich Steuergeräte auf mehreren Bussen gleichzeitig nicht, ist der Übergang verdächtig — nicht jedes einzelne Gerät. Das ist der Unterschied zwischen einer Reparatur und einer Tauschorgie.",
+      "docs": ["D4F-F10-003"],
+      "siehe": ["jbbf", "enet", "sg"]
+    },
+    {
+      "id": "icm",
+      "term": "ICM",
+      "lang": "Integrated Chassis Management",
+      "kurz": "Der Rechner, der die Fahrwerksregelungen koordiniert.",
+      "text": "Das ICM wertet die Sensorik zur Fahrdynamik aus und stimmt die geregelten Systeme aufeinander ab — Stabilitätsregelung, Dämpfer, Wankstabilisierung und Aktivlenkung.",
+      "warum": "Wenn mehrere Fahrwerkslampen gleichzeitig kommen, lohnt der Blick auf den Koordinator, bevor du die einzelnen Systeme prüfst.",
+      "docs": ["D4F-F10-004"],
+      "siehe": ["flexray", "dsc"]
+    },
+    {
+      "id": "ctm",
+      "term": "CTM",
+      "lang": "Cabrio Top Module",
+      "kurz": "Das Steuergerät, das das Verdeck bewegt.",
+      "text": "Das CTM steuert Hydraulik, Verriegelung und Endlagen des Verdecks. Es gibt den Betrieb nur frei, wenn alle Bedingungen erfüllt sind — Fahrzeug steht oder rollt langsam, Verriegelungen sind gemeldet.",
+      "warum": "Bleibt das Verdeck auf halbem Weg stehen, ist selten das Steuergerät defekt. Meist wird eine Endlage nicht gemeldet, und das findest du in Minuten statt in Stunden.",
+      "docs": ["D4F-E88-030"],
+      "siehe": ["sg", "fehlerspeicher"]
+    },
+    {
+      "id": "egs",
+      "term": "EGS",
+      "lang": "Elektronische Getriebesteuerung",
+      "kurz": "Das Steuergerät des Automatikgetriebes.",
+      "text": "Das EGS entscheidet, wann geschaltet wird und mit welchem Druck. Es lernt dabei mit: Kupplungsfüllzeiten und Schaltdrücke werden über die Laufzeit angepasst.",
+      "warum": "Ruckeln beim Schalten ist oft kein mechanischer Schaden, sondern eine Adaption, die nicht mehr passt. Erst lesen, dann bewerten.",
+      "docs": ["D4F-E88-020", "D4F-E90-004"],
+      "siehe": ["steptronic", "adaption", "atf"]
+    },
+    {
+      "id": "dsc",
+      "term": "DSC",
+      "lang": "Dynamische Stabilitätskontrolle",
+      "kurz": "Die Regelung, die einzelne Räder abbremst, damit das Auto in der Spur bleibt.",
+      "text": "Das DSC baut auf dem ABS auf. Es vergleicht, wohin du lenkst, mit dem, was das Fahrzeug tatsächlich macht, und greift über Bremse und Motor ein.",
+      "warum": "Weil es Raddrehzahl, Lenkwinkel und Bremsdruck kennt, meldet das DSC oft Fehler, die anderswo entstehen. Eine DSC-Lampe heißt nicht automatisch DSC-Defekt.",
+      "docs": ["D4F-E46-005", "D4F-E90-004", "D4F-F10-004"],
+      "siehe": ["abs", "asc", "icm"]
+    },
+    {
+      "id": "abs",
+      "term": "ABS",
+      "lang": "Antiblockiersystem",
+      "kurz": "Verhindert, dass die Räder beim Bremsen blockieren.",
+      "text": "Vier Sensoren melden die Raddrehzahl. Droht ein Rad zu blockieren, senkt das Hydraulikaggregat kurzzeitig den Bremsdruck an genau diesem Rad.",
+      "warum": "Ein einzelner Raddrehzahlsensor legt gern gleich mehrere Systeme lahm, weil sein Signal auch anderswo gebraucht wird. Prüf ihn, bevor du das Steuergerät verdächtigst.",
+      "docs": ["D4F-E34-004"],
+      "siehe": ["asc", "dsc", "blinkcode"]
+    },
+    {
+      "id": "asc",
+      "term": "ASC",
+      "lang": "Automatische Stabilitätskontrolle",
+      "kurz": "Der Vorgänger des DSC: nimmt Gas weg, wenn ein Rad durchdreht.",
+      "text": "Das ASC greift beim Beschleunigen ein und begrenzt den Antriebsschlupf über Motoreingriff und Bremse. Es benutzt dieselben Raddrehzahlsensoren wie das ABS.",
+      "warum": "In älteren Fahrzeugen taucht ASC statt DSC auf. Gemeint ist dieselbe Familie von Fehlern — meist Sensorik, selten das Aggregat.",
+      "docs": ["D4F-E34-004"],
+      "siehe": ["abs", "dsc"]
+    },
+    {
+      "id": "ibs",
+      "term": "IBS",
+      "lang": "Intelligenter Batteriesensor",
+      "kurz": "Der kleine Sensor am Minuspol der Batterie.",
+      "text": "Der IBS misst laufend Strom, Spannung und Temperatur der Batterie und meldet das ans Energiemanagement. Daraus ergibt sich, wie stark der Generator lädt und welche Verbraucher abgeschaltet werden.",
+      "warum": "Fehlt der IBS — abgeklemmt, Stecker ab, nach dem Batteriewechsel vergessen — wirft die DME einen Kommunikationsfehler zum Bordnetz. Der steht dann in jedem Fehlerspeicher und lenkt von der eigentlichen Baustelle ab.",
+      "docs": ["D4F-E90-007", "D4F-E60-060", "D4F-E88-001"],
+      "siehe": ["bordnetz", "batterieregistrierung", "kl30"]
+    },
+    {
+      "id": "batterieregistrierung",
+      "term": "Batterieregistrierung",
+      "lang": null,
+      "kurz": "Dem Fahrzeug mitteilen, dass eine neue Batterie eingebaut wurde.",
+      "text": "Das Energiemanagement führt über die Lebensdauer der Batterie Buch und passt das Laden daran an. Nach einem Wechsel muss dieser Zähler zurückgesetzt und die neue Batterie mit Typ und Kapazität eingetragen werden.",
+      "warum": "Ohne Registrierung lädt das Fahrzeug weiter nach dem Profil der alten Batterie. Die neue wird dann entweder überladen oder nie voll — beides kostet sie das Leben.",
+      "docs": ["D4F-E90-007", "D4F-E60-060", "D4F-F30-006"],
+      "siehe": ["ibs", "bordnetz"],
+      "alt": ["registrieren", "registriert"]
+    },
+    {
+      "id": "eps",
+      "term": "EPS",
+      "lang": "Elektrische Servolenkung",
+      "kurz": "Lenkunterstützung durch einen Elektromotor statt durch eine Hydraulikpumpe.",
+      "text": "Ein Motor an der Lenkung stellt die Unterstützungskraft, gesteuert von einem eigenen Steuergerät. Es kennt Lenkwinkel, Moment und Geschwindigkeit.",
+      "warum": "Die Lenkung braucht viel Strom. Eine Lenkungsmeldung entsteht deshalb oft nicht in der Lenkung, sondern im Bordnetz — schwache Batterie, schlechte Masse.",
+      "docs": ["D4F-F30-005", "D4F-F22-005"],
+      "siehe": ["bordnetz", "adaption"]
+    },
+    {
+      "id": "sg",
+      "term": "Steuergerät",
+      "lang": null,
+      "kurz": "Ein kleiner Rechner im Auto, der eine bestimmte Aufgabe übernimmt.",
+      "text": "Ein modernes Fahrzeug enthält Dutzende davon: einen für den Motor, einen für die Bremse, einen fürs Licht. Jedes hat eigene Sensoren, eigene Ausgänge und einen eigenen Fehlerspeicher. Untereinander reden sie über Busleitungen. In Texten wird es oft zu SG abgekürzt.",
+      "warum": "Diagnose heißt zuerst: das richtige Steuergerät finden. Ein Fehler, den du im falschen Gerät suchst, ist unauffindbar.",
+      "docs": ["D4F-E70-007", "D4F-E90-006", "D4F-E39-004"],
+      "siehe": ["dme", "fehlerspeicher", "bus"],
+      "alt": ["Steuergeräte", "Steuergeräts", "Steuergeräten"]
+    },
+    {
+      "id": "kombiinstrument",
+      "term": "Kombiinstrument",
+      "lang": null,
+      "kurz": "Der Anzeigenblock hinter dem Lenkrad — und selbst ein Steuergerät.",
+      "text": "Das Kombiinstrument zeigt nicht nur an, es rechnet auch mit: Kilometerstand, Serviceanzeige und bei älteren Fahrzeugen ein Teil der Codierdaten liegen darin. In Unterlagen heißt es auch IKE oder Kombi.",
+      "warum": "Beim Tausch gehen die Daten darin mit verloren. Und beim Blinkcode ist es das Gerät, das den Code überhaupt ausgibt.",
+      "docs": ["D4F-E28-004", "D4F-E38-002", "D4F-E39-007"],
+      "siehe": ["blinkcode", "zcs"],
+      "alt": ["IKE", "KOMBI"]
+    },
+
+    {
+      "id": "obd2",
+      "term": "OBD-2",
+      "lang": "On-Board-Diagnose, zweite Generation",
+      "kurz": "Die genormte 16-polige Diagnosebuchse im Fußraum und das, was darüber genormt abfragbar ist.",
+      "text": "OBD-2 ist ein weltweiter Standard für abgasrelevante Diagnose. Jedes Auto mit dieser Buchse liefert dieselben Grunddaten: Fehlercodes des Antriebs, ein Satz Live-Werte, Bereitschaftstests. Alles darüber hinaus ist herstellereigen.",
+      "warum": "Ein Billigscanner an dieser Buchse liest nur die genormte Ebene. Komfort- und Karosseriesteuergeräte antwortet er nicht — dafür brauchst du BMW-Software. Das erklärt die meisten Enttäuschungen mit günstigen Adaptern.",
+      "docs": ["D4F-E39-001", "D4F-E36-001", "D4F-F-003"],
+      "siehe": ["dtc", "pid", "ds2", "inpa"],
+      "alt": ["OBD2", "OBD-II", "OBD"]
+    },
+    {
+      "id": "runddose",
+      "term": "Runddose",
+      "lang": "20-poliger Runddiagnosestecker",
+      "kurz": "Die runde Diagnosedose im Motorraum älterer BMW, vor der OBD-2-Buchse.",
+      "text": "Bis Mitte der Neunziger saß der Diagnoseanschluss als runder Stecker mit Deckel im Motorraum. Über ihn läuft die BMW-eigene Diagnose. Manche Fahrzeuge dieser Zeit haben beides — Runddose und OBD-2-Buchse.",
+      "warum": "Wenn dein Kabel an der OBD-2-Buchse nichts findet, liegt es oft nicht am Kabel: Bei diesen Baujahren trägt die Runddose die Fahrzeugdiagnose, die OBD-2-Buchse nur die Abgasdaten.",
+      "docs": ["D4F-E36-002", "D4F-E36-001", "D4F-E30-001"],
+      "siehe": ["obd2", "kline", "ads"],
+      "alt": ["Rundstecker", "Runddiagnosestecker"]
+    },
+    {
+      "id": "kline",
+      "term": "K-Line",
+      "lang": "K-Leitung",
+      "kurz": "Eine einzelne Diagnoseleitung, über die Werkzeug und Steuergerät abwechselnd sprechen.",
+      "text": "Die K-Line ist eine Drahtverbindung, auf der immer nur eine Seite gleichzeitig sendet. Sie ist langsam, aber einfach. Ältere BMW nutzen sie für die gesamte Fahrzeugdiagnose.",
+      "warum": "Ob dein Fahrzeug K-Line oder schon D-CAN spricht, entscheidet über Kabel und Software. Am falschen Protokoll meldet sich schlicht kein Steuergerät, und das sieht aus wie ein defektes Auto.",
+      "docs": ["D4F-E36-001", "D4F-E60-001", "D4F-E87-001"],
+      "siehe": ["dcan", "ds2", "runddose", "ftdi"],
+      "alt": ["K-Leitung"]
+    },
+    {
+      "id": "ds2",
+      "term": "DS2",
+      "lang": null,
+      "kurz": "Das BMW-eigene Diagnoseprotokoll auf der K-Leitung.",
+      "text": "DS2 ist die Sprache, in der ältere BMW-Steuergeräte mit der Werkstattsoftware reden. Sie läuft über dieselbe Leitung wie die genormte Diagnose, ist aber nicht dasselbe.",
+      "warum": "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung. Komfortsteuergeräte antworten ausschließlich auf DS2 — deshalb braucht es dort BMW-Software statt eines Standardscanners.",
+      "docs": ["D4F-E38-001"],
+      "siehe": ["kline", "obd2", "inpa"]
+    },
+    {
+      "id": "dcan",
+      "term": "D-CAN",
+      "lang": "Diagnose-CAN",
+      "kurz": "Diagnose über ein verdrilltes Leitungspaar statt über eine einzelne Leitung.",
+      "text": "Ab etwa 2007 läuft die Diagnose bei BMW über zwei Adern an den Pins 6 und 14 der OBD-Buchse. Das ist schneller und störsicherer als die K-Line. Kabel dafür heißen meist K+DCAN.",
+      "warum": "Der Umstieg fiel mitten in ein Modelljahr. Ob dein Fahrzeug davor oder danach gebaut wurde, bestimmt Kabel und Software — deshalb steht das Datum in fast jedem Zugangsdokument.",
+      "docs": ["D4F-E70-001", "D4F-E88-001", "D4F-E90-001"],
+      "siehe": ["kline", "enet", "busabschluss", "ftdi"],
+      "alt": ["DCAN", "K+DCAN", "K-DCAN"]
+    },
+    {
+      "id": "enet",
+      "term": "ENET",
+      "lang": "Ethernet-Diagnose",
+      "kurz": "Diagnose über Netzwerkkabel statt über eine Diagnoseleitung.",
+      "text": "Ab der F-Serie hängt der Diagnosezugang an einer Ethernet-Verbindung in der OBD-Buchse. Das Kabel hat auf der einen Seite den OBD-Stecker, auf der anderen einen Netzwerkstecker. Der Rechner bekommt vom Fahrzeug eine Adresse.",
+      "warum": "Ein K+DCAN-Kabel meldet an diesen Fahrzeugen kein einziges Steuergerät. Das ist kein Defekt, sondern das falsche Kabel.",
+      "docs": ["D4F-F10-001", "D4F-F30-001", "D4F-F22-001"],
+      "siehe": ["dcan", "esys", "zgw"]
+    },
+    {
+      "id": "bus",
+      "term": "Bus",
+      "lang": null,
+      "kurz": "Eine gemeinsame Leitung, über die viele Steuergeräte miteinander reden.",
+      "text": "Statt jedes Gerät mit jedem zu verdrahten, hängen alle an einem Leitungspaar und senden abwechselnd. Ein Fahrzeug hat mehrere solcher Busse, jeder für einen Bereich — Antrieb, Karosserie, Fahrwerk, Multimedia.",
+      "warum": "Fällt ein Bus aus, ist nicht ein Gerät stumm, sondern alle daran. Wer den betroffenen Bus kennt, weiß sofort, welche Fehler zusammengehören.",
+      "docs": ["D4F-E90-004", "D4F-E70-002", "D4F-E60-002"],
+      "siehe": ["ptcan", "kcan", "busabschluss", "zgw"],
+      "alt": ["Busse", "Bussen"]
+    },
+    {
+      "id": "ptcan",
+      "term": "PT-CAN",
+      "lang": "Powertrain-CAN",
+      "kurz": "Der Bus des Antriebs: Motor, Getriebe, Bremsregelung.",
+      "text": "Auf dem PT-CAN reden die Geräte, die das Fahren möglich machen. Er läuft schnell und ist der Bus, der zuerst wach ist.",
+      "warum": "Ein Fehler hier betrifft das Fahren selbst. Ein Fehler auf dem Karosseriebus dagegen lässt den Motor weiterlaufen — die Unterscheidung sagt dir, wie dringend die Sache ist.",
+      "docs": ["D4F-E70-002", "D4F-E90-004", "D4F-E60-002"],
+      "siehe": ["bus", "kcan", "flexray"]
+    },
+    {
+      "id": "kcan",
+      "term": "K-CAN",
+      "lang": "Karosserie-CAN",
+      "kurz": "Der Bus der Karosserie: Zugang, Licht, Türen, Klima, Anzeigen.",
+      "text": "Am K-CAN hängen CAS, Kombiinstrument, Lichtmodul, Klimabedienteil und die Türelektronik. Er ist langsamer als der Antriebsbus, weil er das nicht braucht.",
+      "warum": "Ein Ausfall hier lässt den Motor weiterlaufen, macht aber Komfortfunktionen tot. Wenn Licht, Türen und Anzeige gleichzeitig spinnen, such den Bus, nicht die Bauteile.",
+      "docs": ["D4F-E90-004", "D4F-E88-002", "D4F-E70-002"],
+      "siehe": ["bus", "ptcan", "frm", "jbbf"]
+    },
+    {
+      "id": "kbus",
+      "term": "K-Bus",
+      "lang": "Karosseriebus",
+      "kurz": "Der Karosseriebus älterer BMW, Vorgänger des K-CAN.",
+      "text": "Der K-Bus verbindet in Fahrzeugen der Neunziger und frühen Zweitausender die Komfortelektronik: Türmodule, Klimaanlage, Kombiinstrument.",
+      "warum": "Er taucht in Topologie-Übersichten neben D-Bus und I-Bus auf. Wer die drei auseinanderhält, weiß, auf welcher Leitung er messen muss.",
+      "docs": ["D4F-E38-002"],
+      "siehe": ["ibus", "kcan", "bus"]
+    },
+    {
+      "id": "ibus",
+      "term": "I-Bus",
+      "lang": "Informationsbus",
+      "kurz": "Der Bus für Radio, Navigation und Telefon in älteren BMW.",
+      "text": "Der I-Bus trägt die Unterhaltungs- und Informationsgeräte. Er ist vom Karosseriebus getrennt, hängt aber über ein Gerät mit ihm zusammen.",
+      "warum": "Fällt nur die Multimediaseite aus und sonst nichts, grenzt dich das sofort auf diesen Bus ein.",
+      "docs": ["D4F-E38-002"],
+      "siehe": ["kbus", "most", "bus"]
+    },
+    {
+      "id": "flexray",
+      "term": "FlexRay",
+      "lang": null,
+      "kurz": "Ein besonders schneller Bus für das geregelte Fahrwerk.",
+      "text": "FlexRay überträgt in festen Zeitfenstern und ist damit vorhersagbar schnell. BMW nutzt ihn für Dämpferregelung, Wankstabilisierung und Fahrdynamik.",
+      "warum": "FlexRay verlangt eigene Leitungsführung und eigene Abschlüsse. Am FlexRay-Fahrwerk hilft dir das Wissen über CAN-Leitungen nur begrenzt weiter.",
+      "docs": ["D4F-E70-002", "D4F-F10-004", "D4F-E70-003"],
+      "siehe": ["bus", "icm", "ptcan"]
+    },
+    {
+      "id": "most",
+      "term": "MOST",
+      "lang": "Media Oriented Systems Transport",
+      "kurz": "Ein Lichtwellenleiter-Ring für Audio, Navigation und Telefon.",
+      "text": "Beim MOST sind die Multimediageräte als Ring aus Glasfaser verbunden. Jedes Gerät nimmt das Lichtsignal auf und gibt es weiter. Ist der Ring an einer Stelle unterbrochen, steht alles.",
+      "warum": "Ein toter Ring sieht aus wie ein Rudel defekter Steuergeräte. Tatsächlich reicht ein abgezogener oder geknickter Lichtleiter — such die Unterbrechung, bevor du tauschst.",
+      "docs": ["D4F-E60-040", "D4F-E90-004", "D4F-E60-002"],
+      "siehe": ["ibus", "idrive", "bus"]
+    },
+    {
+      "id": "busabschluss",
+      "term": "Busabschluss",
+      "lang": "Abschlusswiderstand",
+      "kurz": "Der Widerstand an den Enden einer Busleitung, der Signalreflexionen verhindert.",
+      "text": "Ein Bus braucht an beiden Enden einen definierten Abschluss, sonst laufen die Signale zurück und stören sich selbst. Gemessen wird er zwischen den beiden Busadern, bei ausgeschalteter Zündung.",
+      "warum": "Ein fehlender oder doppelter Abschluss macht die Kommunikation unzuverlässig statt tot — Fehler, die kommen und gehen. Miss im Zweifel gegen ein bekannt gutes Fahrzeug derselben Ausstattung, nicht gegen eine Zahl aus dem Netz.",
+      "docs": ["D4F-E90-004"],
+      "siehe": ["bus", "dcan", "ptcan"],
+      "alt": ["Abschlusswiderstand", "Abschlusswiderstände"]
+    },
+    {
+      "id": "ads",
+      "term": "ADS",
+      "lang": "Antriebs-Diagnose-Schnittstelle",
+      "kurz": "Eine ältere BMW-Diagnoseschnittstelle, die ein eigenes Interface verlangt.",
+      "text": "Manche Fahrzeuge mit Runddose sprechen zusätzlich über ADS. Erkennbar ist das daran, dass die Kammer 15 der Runddose bestückt ist.",
+      "warum": "Ein einfaches K-Line-Kabel erreicht an einem ADS-Fahrzeug nicht alle Steuergeräte. Wenn einzelne Geräte dauerhaft fehlen, schau in Kammer 15, bevor du weiter suchst.",
+      "docs": ["D4F-E36-002", "D4F-E36-001"],
+      "siehe": ["runddose", "kline"]
+    },
+
+    {
+      "id": "inpa",
+      "term": "INPA",
+      "lang": "Interpreter für Prüfabläufe",
+      "kurz": "Das schlanke BMW-Werkstattprogramm zum Auslesen und Messen.",
+      "text": "INPA zeigt Fehlerspeicher, Live-Werte und Stellglieder in nüchternen Textmasken. Es führt dich nicht, es zeigt. Darunter liegt EDIABAS als eigentlicher Übersetzer zum Fahrzeug.",
+      "warum": "Für schnelles Nachsehen ist INPA das direkteste Werkzeug: keine Menüs, sondern der Messwert. Wer geführt werden will, nimmt ISTA.",
+      "docs": ["D4F-E46-001", "D4F-E88-001"],
+      "siehe": ["ediabas", "ista", "kline", "dcan"]
+    },
+    {
+      "id": "ista",
+      "term": "ISTA",
+      "lang": "Integrated Service Technical Application",
+      "kurz": "Die geführte Werkstattdiagnose von BMW.",
+      "text": "ISTA liest den Fehlerspeicher aller Steuergeräte, sortiert die Einträge und schlägt einen Prüfplan vor. Dazu bringt es Stromlaufpläne und Einbauorte mit. In Unterlagen steht auch ISTA-D oder ISTA/D.",
+      "warum": "Wenn du nicht weißt, wo du anfangen sollst, gibt ISTA dir den roten Faden. Es ist dafür deutlich schwerfälliger als INPA.",
+      "docs": ["D4F-E88-001", "D4F-E90-001"],
+      "siehe": ["inpa", "ediabas", "istufe"],
+      "alt": ["ISTA-D", "ISTA/D"]
+    },
+    {
+      "id": "ediabas",
+      "term": "EDIABAS",
+      "lang": "Elektronische Diagnose-Basis",
+      "kurz": "Die Schicht darunter, die aus einem Klick eine Fahrzeugabfrage macht.",
+      "text": "EDIABAS kennt für jedes Steuergerät eine Beschreibungsdatei und weiß dadurch, wie es angesprochen wird. INPA, NCS Expert und andere Werkzeuge setzen darauf auf.",
+      "warum": "Die meisten „geht nicht“-Fälle sind EDIABAS-Fälle: falsche Schnittstelle eingetragen, fehlende Beschreibungsdatei, falscher Anschluss. Das Programm selbst ist selten schuld.",
+      "docs": ["D4F-E46-001", "D4F-E60-001"],
+      "siehe": ["inpa", "ncsexpert", "ftdi"]
+    },
+    {
+      "id": "ncsexpert",
+      "term": "NCS Expert",
+      "lang": null,
+      "kurz": "Das Codierwerkzeug für ältere BMW.",
+      "text": "NCS Expert liest die Codierdaten eines Steuergeräts aus, lässt sie ändern und schreibt sie zurück. Es arbeitet mit Profilen, die bestimmen, was du überhaupt bearbeiten darfst.",
+      "warum": "Codieren heißt hier: vorhandene Funktionen umstellen, nicht neue erfinden. Und es heißt, vorher auszulesen und zu sichern — ohne Sicherung ist ein Fehlgriff nicht rückholbar.",
+      "docs": ["D4F-E46-002", "D4F-E39-007"],
+      "siehe": ["codierung", "esys", "zcs", "ediabas"],
+      "alt": ["NCSEXPER"]
+    },
+    {
+      "id": "esys",
+      "term": "E-Sys",
+      "lang": null,
+      "kurz": "Das Codierwerkzeug der F-Serie.",
+      "text": "E-Sys arbeitet über Ethernet und braucht einen Datenstand, der zum Fahrzeug passt. Der Ablauf ist strenger als bei älteren Werkzeugen: Auftrag lesen, ändern, zurückrechnen, dann erst schreiben.",
+      "warum": "Beim Schreiben ist die Bordspannung kein Nebenschauplatz. Ein Abbruch mitten im Vorgang hinterlässt ein Steuergerät, das nicht mehr antwortet.",
+      "docs": ["D4F-F-001", "D4F-E90-003", "D4F-F-002"],
+      "siehe": ["enet", "fdl", "istufe", "codierung"]
+    },
+    {
+      "id": "codierung",
+      "term": "Codierung",
+      "lang": null,
+      "kurz": "Einstellungen im Steuergerät ändern, ohne Hardware anzufassen.",
+      "text": "In jedem Steuergerät liegen Schalter, die festlegen, wie es sich verhält — ob das Tagfahrlicht an ist, ob der Warnton kommt, welche Ausstattung überhaupt erwartet wird. Codieren heißt, diese Schalter umzustellen.",
+      "warum": "Codieren aktiviert nur, was das Fahrzeug hardwareseitig schon kann. Und es geht nur mit vorheriger Sicherung — sonst ist der alte Zustand weg.",
+      "docs": ["D4F-E46-005", "D4F-F-002", "D4F-E39-007"],
+      "siehe": ["ncsexpert", "esys", "fdl", "zcs"],
+      "alt": ["Codierungen", "codieren", "codiert"]
+    },
+    {
+      "id": "fdl",
+      "term": "FDL",
+      "lang": "Funktionsdatenliste",
+      "kurz": "Die Codierung einzelner Funktionen an einem einzelnen Steuergerät.",
+      "text": "Statt die ganze Fahrzeugausstattung umzuschreiben, ändert die FDL-Codierung gezielt einzelne Werte in einem Gerät. Der Rest bleibt, wie er ist.",
+      "warum": "Das ist der Weg für kleine Änderungen an der F-Serie. Er ist präzise und deshalb auch präzise umkehrbar — wenn du dir notiert hast, was vorher dort stand.",
+      "docs": ["D4F-F-001", "D4F-E90-003"],
+      "siehe": ["esys", "codierung", "vo"]
+    },
+    {
+      "id": "vo",
+      "term": "FA",
+      "lang": "Fahrzeugauftrag",
+      "kurz": "Die Liste der Ausstattung, mit der das Fahrzeug das Werk verlassen hat.",
+      "text": "Der Fahrzeugauftrag steht im Zugangssteuergerät und beschreibt jede Option als kurzen Code. Werkzeuge leiten daraus ab, wie die einzelnen Steuergeräte codiert sein sollen.",
+      "warum": "Wenn ein nachgerüstetes Teil nicht arbeitet, fehlt oft nur der passende Eintrag im Auftrag. Änderungen daran wirken auf das ganze Fahrzeug, nicht nur auf ein Gerät.",
+      "docs": ["D4F-F-001", "D4F-F-002"],
+      "siehe": ["fdl", "esys", "zcs"]
+    },
+    {
+      "id": "zcs",
+      "term": "ZCS",
+      "lang": "Zentrale Codierschlüssel",
+      "kurz": "Die Ausstattungsdaten älterer BMW, zentral abgelegt statt im einzelnen Gerät.",
+      "text": "Beim ZCS-Verfahren steht die Fahrzeugausstattung nicht im jeweiligen Steuergerät, sondern zentral — bei manchen Baureihen in der Wegfahrsperre und im Kombiinstrument.",
+      "warum": "Nach einem Steuergerätetausch können die Ablagen auseinanderlaufen. Dann codiert dir das Werkzeug das Fahrzeug auf eine Ausstattung, die es nie hatte. Vorher auslesen und vergleichen.",
+      "docs": ["D4F-E39-007", "D4F-E39-004"],
+      "siehe": ["codierung", "ncsexpert", "kombiinstrument"]
+    },
+    {
+      "id": "istufe",
+      "term": "I-Stufe",
+      "lang": "Integrationsstufe",
+      "kurz": "Der Softwarestand des ganzen Fahrzeugs als eine Angabe.",
+      "text": "Die I-Stufe beschreibt, welcher Software-Gesamtstand auf dem Fahrzeug liegt. Sie besteht aus Fahrzeugprogramm, Jahr, Monat und Version.",
+      "warum": "Sie ist die erste Frage vor jeder Codierung an der F-Serie: Nur mit dem passenden Datenstand darf geschrieben werden. Nebenbei verrät sie, ob ein Steuergerät aus einem fremden Fahrzeug stammt.",
+      "docs": ["D4F-F10-005", "D4F-F30-004", "D4F-F30-001"],
+      "siehe": ["esys", "enet", "lci"]
+    },
+    {
+      "id": "isn",
+      "term": "ISN",
+      "lang": "Individuelle Seriennummer",
+      "kurz": "Die Kennung, mit der sich Motorsteuerung und Zugangssystem gegenseitig erkennen.",
+      "text": "DME und CAS tragen dieselbe Kennung. Beim Start prüfen sie sich damit gegenseitig. Stimmt sie nicht überein, gibt es keine dauerhafte Freigabe.",
+      "warum": "Beim Motorsteuerungstausch ist der ISN-Angleich Pflicht. Ohne ihn läuft der Motor kurz an und geht wieder aus — das sieht aus wie ein Kraftstoff- oder Zündungsproblem, ist aber keins.",
+      "docs": ["D4F-E88-002", "D4F-F30-003", "D4F-F10-003"],
+      "siehe": ["cas", "ews", "dme"]
+    },
+    {
+      "id": "ftdi",
+      "term": "FTDI",
+      "lang": null,
+      "kurz": "Der Chip im Diagnosekabel, der USB in eine Diagnoseleitung übersetzt.",
+      "text": "Kabel mit FTDI-Chip gelten als die zuverlässige Wahl, weil ihre Treiber stabil sind und sich einstellen lassen. Andere Chipsätze funktionieren oft, aber nicht überall.",
+      "warum": "Der Latency Timer des Treibers entscheidet mit über den Erfolg: Der Vorgabewert erzeugt Abbrüche, die wie ein totes Steuergerät aussehen. Das Setup-Dokument nennt den einzustellenden Wert.",
+      "docs": ["D4F-E46-001", "D4F-E88-001", "D4F-E60-001"],
+      "siehe": ["kline", "dcan", "inpa"]
+    },
+    {
+      "id": "vin",
+      "term": "VIN",
+      "lang": "Fahrzeug-Identifizierungsnummer",
+      "kurz": "Die 17-stellige Nummer, die genau dieses eine Fahrzeug bezeichnet.",
+      "text": "Die VIN steht in den Papieren, an der Windschutzscheibe und im Motorraum. Aus ihr lassen sich Baureihe, Modell und Produktionszeitraum ableiten.",
+      "warum": "Baureihe und Motor bestimmen, welche Dokumente überhaupt für dich gelten. Wenn du unsicher bist, welches Modell du vor dir hast, fang bei der VIN an.",
+      "docs": ["D4F-E90-001", "D4F-E87-001"],
+      "siehe": ["lci", "istufe"]
+    },
+    {
+      "id": "lci",
+      "term": "LCI",
+      "lang": "Life Cycle Impulse",
+      "kurz": "Die Modellpflege zur Halbzeit einer Baureihe.",
+      "text": "Zur Mitte der Bauzeit überarbeitet BMW eine Baureihe. Dabei ändern sich nicht nur Scheinwerfer und Stoßfänger, sondern regelmäßig auch Motoren, Steuergeräte und Bussysteme.",
+      "warum": "Vor und nach dem LCI können sich Diagnoseweg und Software unterscheiden, obwohl das Modell gleich heißt. Prüf immer das Baudatum, nicht nur die Baureihe.",
+      "docs": ["D4F-F30-002", "D4F-E87-001", "D4F-E90-003"],
+      "siehe": ["vin", "istufe"]
+    },
+    {
+      "id": "idrive",
+      "term": "iDrive",
+      "lang": null,
+      "kurz": "Das Bediensystem mit Dreh-Drück-Steller und Bildschirm.",
+      "text": "iDrive fasst Navigation, Radio, Telefon und Fahrzeugeinstellungen unter einer Oberfläche zusammen. Die Geräte dahinter wechseln über die Jahre — CCC, CIC, NBT.",
+      "warum": "Welche Generation verbaut ist, entscheidet über Codierwerkzeug und Softwarestand. Und darüber, ob der Bildschirm überhaupt am Lichtwellenleiter-Ring hängt.",
+      "docs": ["D4F-E60-040", "D4F-E90-003"],
+      "siehe": ["most", "cic", "esys"]
+    },
+    {
+      "id": "cic",
+      "term": "CIC",
+      "lang": "Car Information Computer",
+      "kurz": "Eine iDrive-Generation mit Festplattennavigation.",
+      "text": "Das CIC löst das ältere CCC ab und bringt eine schnellere Oberfläche mit. Es ist die Grenze, ab der bestimmte Codierwerkzeuge an diesen Fahrzeugen überhaupt greifen.",
+      "warum": "Ohne die passende Generation läuft E-Sys an einem E9x nicht. Erst nachsehen, was verbaut ist, dann Werkzeug wählen.",
+      "docs": ["D4F-E90-003", "D4F-E90-004"],
+      "siehe": ["idrive", "esys", "most"],
+      "alt": ["CCC", "NBT"]
+    },
+
+    {
+      "id": "motronic",
+      "term": "Motronic",
+      "lang": null,
+      "kurz": "Die Motorsteuerungsfamilie der älteren BMW-Benziner.",
+      "text": "Motronic bezeichnet die Zündungs- und Einspritzsteuerung in einem Gerät, in Ausbaustufen wie 1.1, 1.3 oder 1.7. Spätere Generationen heißen MS, MSV oder MSD.",
+      "warum": "Die Ausbaustufe bestimmt, ob du überhaupt einen Fehlerspeicher auslesen kannst und ob es einen Blinkcode gibt. Das ist der Unterschied zwischen Diagnose und Raten.",
+      "docs": ["D4F-E30-002", "D4F-E30-004", "D4F-E36-003"],
+      "siehe": ["dme", "blinkcode", "ms43"]
+    },
+    {
+      "id": "ms43",
+      "term": "MS43",
+      "lang": null,
+      "kurz": "Eine bestimmte Motorsteuerung — die des Sechszylinders M54.",
+      "text": "MS43 ist der Typ des Motorrechners, nicht der Motor. Sie hat eine feste Steckerbelegung und einen bekannten Satz typischer Fehlereinträge.",
+      "warum": "Pinbelegungen und Fehlerlisten gelten immer für die Steuerung, nicht für die Baureihe. Erst prüfen, welche Steuerung verbaut ist, dann die Tabelle benutzen.",
+      "docs": ["D4F-E46-003", "D4F-E46-006", "D4F-E39-002"],
+      "siehe": ["dme", "motronic", "dtc"]
+    },
+    {
+      "id": "msv80",
+      "term": "MSV80",
+      "lang": null,
+      "kurz": "Die Motorsteuerung der späteren N52-Sechszylinder.",
+      "text": "MSV80 löst innerhalb der N52-Familie ältere Steuerungen ab. Welche verbaut ist, hängt vom Baujahr und von der Motorvariante ab.",
+      "warum": "Für das Auslesen brauchst du die richtige Steuergerätebeschreibung. Mit der falschen meldet sich das Gerät nicht, obwohl es in Ordnung ist.",
+      "docs": ["D4F-E88-010", "D4F-E88-001"],
+      "siehe": ["dme", "ms43", "ediabas"]
+    },
+
+    {
+      "id": "vanos",
+      "term": "VANOS",
+      "lang": "Variable Nockenwellensteuerung",
+      "kurz": "Verstellt, wann die Ventile öffnen und schließen.",
+      "text": "Die VANOS dreht die Nockenwelle im Betrieb ein Stück gegen die Kurbelwelle. Dadurch passt der Motor die Ventilzeiten an Drehzahl und Last an: unten mehr Drehmoment, oben mehr Leistung. Betätigt wird sie über Öldruck.",
+      "warum": "Weil sie mit Öl arbeitet, sind Ölstand und Ölzustand Teil der Diagnose. Und weil es sie einfach und doppelt gibt, musst du wissen, welche Bauart dein Motor hat, bevor du Fehler zuordnest.",
+      "docs": ["D4F-E39-005", "D4F-E34-005", "D4F-E88-011"],
+      "siehe": ["valvetronic", "steuerkette", "dtc"]
+    },
+    {
+      "id": "valvetronic",
+      "term": "Valvetronic",
+      "lang": null,
+      "kurz": "Regelt, wie weit die Einlassventile öffnen — statt über die Drosselklappe.",
+      "text": "Ein zusätzlicher Elektromotor verstellt über eine Exzenterwelle den Ventilhub. Der Motor dosiert die Luft damit direkt am Ventil. Die Drosselklappe bleibt als Rückfallebene erhalten.",
+      "warum": "Fällt die Verstellung aus, geht der Motor in einen Notlauf und läuft nur noch über die Drosselklappe — spürbar zäh, aber fahrbar. Das ist ein eigenes Fehlerbild und kein Zündungsproblem.",
+      "docs": ["D4F-F22-004", "D4F-E88-011", "D4F-E87-003"],
+      "siehe": ["vanos", "drosselklappe", "notlauf"]
+    },
+    {
+      "id": "disa",
+      "term": "DISA",
+      "lang": "Differenzierte Sauganlage",
+      "kurz": "Eine Klappe im Ansaugtrakt, die den Weg der Luft je nach Drehzahl umschaltet.",
+      "text": "Bei niedriger Drehzahl nimmt die Luft den langen Weg, bei hoher den kurzen. Das bringt unten Drehmoment und oben Leistung. Die Klappe wird vom Motorrechner über Unterdruck oder einen Steller betätigt.",
+      "warum": "Die Lagerung der Klappe verschleißt. Löst sich ein Teil davon, wandert es in den Motor — deshalb wird die DISA bei Ansauggeräuschen und Leistungsklagen früh angesehen.",
+      "docs": ["D4F-E46-008", "D4F-E88-011"],
+      "siehe": ["drosselklappe", "falschluft"]
+    },
+    {
+      "id": "steuerkette",
+      "term": "Steuerkette",
+      "lang": null,
+      "kurz": "Die Kette, die Kurbelwelle und Nockenwelle im Takt hält.",
+      "text": "Sie läuft in Öl und wird von Gleitschienen geführt und von einem Spanner auf Spannung gehalten. Manche Motoren haben stattdessen einen Zahnriemen, der nach Intervall gewechselt wird.",
+      "warum": "Eine längende Kette verschiebt die Steuerzeiten und erzeugt Fehler, die nach Sensorik aussehen. Rasselnde Geräusche beim Kaltstart sind der klassische erste Hinweis.",
+      "docs": ["D4F-E87-020", "D4F-E38-004", "D4F-E30-005"],
+      "siehe": ["vanos", "kurbelwellensensor"],
+      "alt": ["Steuerketten", "Zahnriemen"]
+    },
+    {
+      "id": "hpfp",
+      "term": "HPFP",
+      "lang": "Hochdruckpumpe",
+      "kurz": "Die Pumpe, die den Kraftstoff auf Einspritzdruck bringt.",
+      "text": "Bei Direkteinspritzung reicht die Förderpumpe im Tank nicht aus. Eine mechanisch vom Motor angetriebene Pumpe erzeugt den hohen Druck, der im Rail ansteht.",
+      "warum": "Lässt der Druck nach, magert das Gemisch ab und der Motor ruckelt oder geht in den Notlauf. Vergleich immer Solldruck gegen Istdruck aus dem Live-Datenstrom, statt Bauteile zu tauschen.",
+      "docs": ["D4F-E90-002", "D4F-E87-010"],
+      "siehe": ["direkteinspritzung", "injektor", "notlauf"],
+      "alt": ["Hochdruckpumpe"]
+    },
+    {
+      "id": "direkteinspritzung",
+      "term": "Direkteinspritzung",
+      "lang": null,
+      "kurz": "Der Kraftstoff wird direkt in den Brennraum gespritzt, nicht in den Ansaugkanal.",
+      "text": "Das erlaubt höhere Drücke, genauere Dosierung und besondere Betriebsarten. Es braucht dafür eine Hochdruckpumpe und robustere Einspritzventile.",
+      "warum": "Weil kein Kraftstoff mehr über die Einlassventile läuft, verkoken sie bei manchen Motoren. Das ist ein bekanntes Verschleißbild und kein Defekt einzelner Teile.",
+      "docs": ["D4F-E90-005", "D4F-F10-002"],
+      "siehe": ["hpfp", "injektor", "magerbetrieb"]
+    },
+    {
+      "id": "injektor",
+      "term": "Injektor",
+      "lang": "Einspritzventil",
+      "kurz": "Das Ventil, das den Kraftstoff in den Motor gibt.",
+      "text": "Der Motorrechner öffnet es für Bruchteile einer Sekunde. Aus Öffnungsdauer und Druck ergibt sich die eingespritzte Menge. Bei Direkteinspritzung sitzt es im Brennraum und arbeitet gegen hohen Druck.",
+      "warum": "Ein einzelner schwacher Injektor erzeugt Aussetzer an genau einem Zylinder. Wenn du die Korrekturwerte je Zylinder vergleichst, siehst du sofort, welcher aus der Reihe fällt.",
+      "docs": ["D4F-E87-010", "D4F-E90-005"],
+      "siehe": ["hpfp", "zuendspule", "direkteinspritzung"],
+      "alt": ["Injektoren", "Einspritzventil", "Einspritzventile"]
+    },
+    {
+      "id": "zuendspule",
+      "term": "Zündspule",
+      "lang": null,
+      "kurz": "Erzeugt aus Bordspannung die Hochspannung für den Zündfunken.",
+      "text": "Moderne Motoren haben je Zylinder eine Spule direkt auf der Kerze. Ältere arbeiten mit einer Spule und einem Verteiler, der den Funken auf die Zylinder aufteilt.",
+      "warum": "Aussetzer an einem Zylinder prüfst du am schnellsten durch Tauschen: Spule mit dem Nachbarzylinder tauschen, neu messen. Wandert der Fehler mit, hast du ihn.",
+      "docs": ["D4F-E30-009", "D4F-E87-010", "D4F-E28-006"],
+      "siehe": ["injektor", "hallgeber", "dtc"],
+      "alt": ["Zündspulen"]
+    },
+    {
+      "id": "drosselklappe",
+      "term": "Drosselklappe",
+      "lang": null,
+      "kurz": "Die Klappe, die bestimmt, wie viel Luft der Motor bekommt.",
+      "text": "Sie sitzt zwischen Luftfilter und Ansaugbrücke. Bei älteren Fahrzeugen zieht ein Seilzug daran, bei neueren ein Stellmotor nach Vorgabe des Motorrechners. Manche Motoren haben eine Klappe je Zylinder.",
+      "warum": "Verschmutzung und ein verstellter Anschlag verändern den Leerlauf, ohne dass ein Fehler gespeichert wird. Sichtprüfung vor Bauteiltausch.",
+      "docs": ["D4F-E90-008", "D4F-E30-006"],
+      "siehe": ["valvetronic", "falschluft", "adaption"],
+      "alt": ["Drosselklappen", "Einzeldrosselklappen"]
+    },
+    {
+      "id": "hfm",
+      "term": "HFM",
+      "lang": "Heißfilm-Luftmassenmesser",
+      "kurz": "Misst, wie viel Luft der Motor tatsächlich ansaugt.",
+      "text": "Ein beheiztes Element im Ansaugrohr wird von der einströmenden Luft gekühlt. Aus der nötigen Heizleistung ergibt sich die Luftmasse. Daraus berechnet der Motorrechner die Einspritzmenge.",
+      "warum": "Ein alternder Luftmassenmesser meldet zu wenig Luft, ohne auszufallen. Der Motor läuft dann zu fett oder zu mager, und im Speicher steht ein Gemischfehler statt eines Sensorfehlers.",
+      "docs": ["D4F-E46-003", "D4F-E46-006"],
+      "siehe": ["falschluft", "lambdasonde", "gemischadaption"],
+      "alt": ["Luftmassenmesser"]
+    },
+    {
+      "id": "lambdasonde",
+      "term": "Lambdasonde",
+      "lang": null,
+      "kurz": "Misst im Abgas, ob das Gemisch zu fett oder zu mager war.",
+      "text": "Vor dem Katalysator sitzt die Regelsonde: Ihr Signal korrigiert laufend die Einspritzmenge. Hinter dem Katalysator sitzt eine zweite Sonde, die überwacht, ob der Katalysator noch arbeitet.",
+      "warum": "Ein Gemischfehler kommt selten von der Sonde selbst — sie meldet nur, was ankommt. Prüf erst Falschluft und Luftmassenmesser, bevor du die Sonde tauschst.",
+      "docs": ["D4F-E30-004", "D4F-E46-006", "D4F-E88-010"],
+      "siehe": ["hfm", "falschluft", "gemischadaption"],
+      "alt": ["Lambdasonden", "Regelsonde"]
+    },
+    {
+      "id": "falschluft",
+      "term": "Falschluft",
+      "lang": null,
+      "kurz": "Luft, die am Luftmassenmesser vorbei in den Motor gelangt.",
+      "text": "Undichte Schläuche, poröse Dichtungen oder ein gerissenes Ansaugrohr lassen ungemessene Luft ein. Der Motorrechner rechnet mit weniger Luft, als tatsächlich ankommt, und spritzt zu wenig Kraftstoff ein.",
+      "warum": "Das ist die häufigste Ursache für unruhigen Leerlauf und Magerfehler an älteren Motoren. Sie kostet nichts außer Suchen — und macht viele Bauteiltausche überflüssig.",
+      "docs": ["D4F-E36-008", "D4F-E30-004", "D4F-E30-006"],
+      "siehe": ["hfm", "lambdasonde", "gemischadaption", "sekundaerluft"]
+    },
+    {
+      "id": "gemischadaption",
+      "term": "Gemischadaption",
+      "lang": null,
+      "kurz": "Die Korrekturwerte, mit denen der Motorrechner das Gemisch dauerhaft nachjustiert.",
+      "text": "Weicht das gemessene Gemisch immer in dieselbe Richtung ab, schreibt der Rechner einen Korrekturwert mit. Es gibt einen für den Leerlauf und einen für den übrigen Betrieb.",
+      "warum": "Diese beiden Werte sagen dir, ob dein Motor Falschluft zieht oder zu fett läuft, und in welchem Lastbereich. Sie stehen im Live-Datenstrom, lange bevor eine Lampe angeht.",
+      "docs": ["D4F-E46-003"],
+      "siehe": ["falschluft", "hfm", "lambdasonde", "adaption"]
+    },
+    {
+      "id": "sekundaerluft",
+      "term": "Sekundärluft",
+      "lang": "Sekundärluftsystem",
+      "kurz": "Bläst nach dem Kaltstart Luft ins Abgas, damit der Katalysator schneller warm wird.",
+      "text": "Eine Pumpe fördert für kurze Zeit Luft über ein Ventil in den Auslass. Das Abgas brennt dort nach und heizt den Katalysator auf. Danach schließt das Ventil wieder.",
+      "warum": "Das System arbeitet nur wenige Sekunden nach dem Kaltstart. Prüfen kannst du es deshalb nur in genau diesem Fenster — sonst hörst du nichts und findest nichts.",
+      "docs": ["D4F-E46-003", "D4F-E46-009"],
+      "siehe": ["falschluft", "dtc"],
+      "alt": ["Sekundärluftsystem", "Sekundärluftpumpe"]
+    },
+    {
+      "id": "magerbetrieb",
+      "term": "Magerbetrieb",
+      "lang": null,
+      "kurz": "Betriebsart mit deutlich mehr Luft als Kraftstoff, zum Spritsparen.",
+      "text": "In Teillast schichtet der Motor das Gemisch so, dass er mit sehr wenig Kraftstoff läuft. Das erzeugt mehr Stickoxide, die ein zusätzlicher Speicherkatalysator aufnehmen muss.",
+      "warum": "Fällt der Magerbetrieb aus, läuft der Motor weiter — nur durstiger, und mit Einträgen zum Speicherkatalysator oder zum NOx-Sensor im Speicher.",
+      "docs": ["D4F-E87-010", "D4F-E87-003"],
+      "siehe": ["nox", "lambdasonde", "direkteinspritzung"]
+    },
+    {
+      "id": "nox",
+      "term": "NOx",
+      "lang": "Stickoxide",
+      "kurz": "Abgasbestandteile, die bei hohen Verbrennungstemperaturen entstehen.",
+      "text": "Stickoxide lassen sich mit dem normalen Katalysator nicht abbauen, wenn der Motor mager läuft. Deshalb gibt es Speicherkatalysatoren, NOx-Sensoren und beim Diesel die Harnstoffeinspritzung.",
+      "warum": "Ein NOx-Sensor ist ein bekanntes Verschleißteil. Sein Ausfall schaltet meist eine Betriebsart ab, statt den Motor lahmzulegen — das erklärt Mehrverbrauch ohne spürbaren Defekt.",
+      "docs": ["D4F-E87-010", "D4F-E87-003"],
+      "siehe": ["magerbetrieb", "scr", "agr"]
+    },
+    {
+      "id": "agr",
+      "term": "AGR",
+      "lang": "Abgasrückführung",
+      "kurz": "Führt einen Teil des Abgases zurück in den Motor, um Stickoxide zu senken.",
+      "text": "Ein Ventil lässt Abgas in den Ansaugtrakt zurück. Die Verbrennung wird dadurch kühler und es entstehen weniger Stickoxide. Der Preis ist Ruß im Ansaugtrakt.",
+      "warum": "Verkokte Ventile und Kanäle sind beim Diesel ein Dauerthema. Leistungsklagen und Ladedruckfehler kommen oft von hier und nicht vom Lader.",
+      "docs": ["D4F-E60-020"],
+      "siehe": ["drallklappen", "nox", "ladedruck"],
+      "alt": ["Abgasrückführung"]
+    },
+    {
+      "id": "scr",
+      "term": "SCR",
+      "lang": "Selektive katalytische Reduktion",
+      "kurz": "Abgasreinigung mit Harnstofflösung, im Alltag AdBlue genannt.",
+      "text": "Eine Dosiereinheit spritzt Harnstofflösung ins heiße Abgas. Daraus entsteht Ammoniak, das im Katalysator die Stickoxide abbaut. Das System hat einen eigenen Tank, eine Pumpe und eigene Sensoren.",
+      "warum": "Ein SCR-Fehler führt bei vielen Fahrzeugen zu einer Startsperre nach Ablauf einer Restreichweite. Das ist keine Panne, sondern gesetzlich vorgesehen — und deshalb nichts, was du liegen lassen solltest.",
+      "docs": ["D4F-F15-005", "D4F-F15-001"],
+      "siehe": ["nox", "dde", "agr"],
+      "alt": ["AdBlue"]
+    },
+    {
+      "id": "drallklappen",
+      "term": "Drallklappen",
+      "lang": null,
+      "kurz": "Klappen im Ansaugkanal, die der Luft im Diesel einen Drall geben.",
+      "text": "Bei niedriger Last verwirbeln sie die Luft und verbessern die Gemischbildung. Bewegt werden sie von einem Steller über ein Gestänge.",
+      "warum": "Gestänge und Klappen verrußen und hängen fest. Bricht ein Teil ab, geht es in den Zylinder — deshalb steht die Sichtprüfung hier weit vorn.",
+      "docs": ["D4F-E60-020"],
+      "siehe": ["agr", "dde", "ladedruck"],
+      "alt": ["Drallklappe"]
+    },
+    {
+      "id": "ladedruck",
+      "term": "Ladedruck",
+      "lang": null,
+      "kurz": "Der Druck, mit dem der Turbolader die Luft in den Motor drückt.",
+      "text": "Der Motorrechner gibt einen Solldruck vor und regelt ihn über das Wastegate nach. Ein Sensor meldet den tatsächlichen Druck zurück.",
+      "warum": "Der Vergleich von Soll und Ist im Live-Datenstrom trennt drei Fälle: undichte Ladeluftstrecke, klemmende Regelung, defekter Lader. Ohne diesen Vergleich rätst du.",
+      "docs": ["D4F-E90-002", "D4F-F22-006", "D4F-E60-020"],
+      "siehe": ["wastegate", "hpfp", "notlauf"]
+    },
+    {
+      "id": "wastegate",
+      "term": "Wastegate",
+      "lang": "Ladedruckregelventil",
+      "kurz": "Die Klappe, die Abgas am Turbolader vorbeileitet, damit der Ladedruck nicht zu hoch wird.",
+      "text": "Ein Steller öffnet die Klappe, sobald der Solldruck erreicht ist. Bleibt sie offen hängen, kommt kein Druck zustande. Klemmt sie zu, wird der Druck zu hoch.",
+      "warum": "Beide Fälle erzeugen einen Ladedruckfehler und beide sehen im Speicher ähnlich aus. Wer weiß, wozu das Wastegate da ist, prüft zuerst die Beweglichkeit des Stellers statt den Lader zu verurteilen.",
+      "docs": ["D4F-F22-006", "D4F-E90-002"],
+      "siehe": ["ladedruck", "notlauf"]
+    },
+    {
+      "id": "nikasil",
+      "term": "Nikasil",
+      "lang": null,
+      "kurz": "Eine Beschichtung der Zylinderlaufbahn in bestimmten älteren V8-Motoren.",
+      "text": "Statt Graugussbuchsen tragen diese Blöcke eine Nickel-Silizium-Schicht. Bei schwefelhaltigem Kraftstoff konnte die Schicht angegriffen werden. Die Nachfolgelösung heißt Alusil.",
+      "warum": "Beim Gebrauchtkauf eines betroffenen V8 ist das die entscheidende Frage. Sie lässt sich am Motor selbst klären — und zwar bevor Geld fließt.",
+      "docs": ["D4F-E34-006", "D4F-E39-006", "D4F-E38-004"],
+      "siehe": ["alusil"]
+    },
+    {
+      "id": "alusil",
+      "term": "Alusil",
+      "lang": null,
+      "kurz": "Die Laufbahnlösung, die Nikasil in den betroffenen V8 ablöste.",
+      "text": "Bei Alusil bildet die Aluminiumlegierung selbst die Laufbahn: Die Oberfläche wird so bearbeitet, dass harte Siliziumkristalle tragen. Sie ist unempfindlich gegen schwefelhaltigen Kraftstoff.",
+      "warum": "Welche der beiden Varianten vor dir steht, erkennst du am Motor. Das ist bei diesen V8 der Unterschied zwischen einem guten Kauf und einem Motorschaden auf Raten.",
+      "docs": ["D4F-E34-006", "D4F-E39-006"],
+      "siehe": ["nikasil"]
+    },
+    {
+      "id": "sulev",
+      "term": "SULEV",
+      "lang": "Super Ultra Low Emission Vehicle",
+      "kurz": "Eine besonders strenge US-Abgasstufe mit eigener Motorvariante.",
+      "text": "Für diese Stufe bekamen manche Motoren zusätzliche Abgasbauteile, andere Steuerung und teils andere Teilenummern. Äußerlich sind sie kaum vom Standardmotor zu unterscheiden.",
+      "warum": "Wer die Unterlagen des Standardmotors benutzt, sucht Bauteile, die es hier nicht gibt — oder übersieht welche, die nur hier verbaut sind. Erst die Variante klären.",
+      "docs": ["D4F-E46-009"],
+      "siehe": ["lambdasonde", "sekundaerluft"]
+    },
+    {
+      "id": "steptronic",
+      "term": "Steptronic",
+      "lang": null,
+      "kurz": "Die BMW-Bezeichnung für das Automatikgetriebe mit manueller Schaltgasse.",
+      "text": "Technisch ist es ein Wandlerautomat, dessen Gänge sich auch von Hand anwählen lassen. Gesteuert wird es vom Getriebesteuergerät.",
+      "warum": "Welches Getriebe genau verbaut ist, entscheidet über Ölsorte, Füllverfahren und Prüfschritte. Der Name Steptronic allein sagt das noch nicht.",
+      "docs": ["D4F-E88-020"],
+      "siehe": ["egs", "atf", "adaption"]
+    },
+    {
+      "id": "atf",
+      "term": "ATF",
+      "lang": "Automatic Transmission Fluid",
+      "kurz": "Das Öl im Automatikgetriebe.",
+      "text": "ATF schmiert, kühlt und überträgt gleichzeitig Kraft im Wandler und Druck in der Steuerung. Der Stand wird nicht kalt am Peilstab geprüft, sondern bei einer bestimmten Öltemperatur über eine Kontrollschraube.",
+      "warum": "Falscher Ölstand oder falsche Sorte erzeugt Schaltprobleme, die wie ein mechanischer Schaden aussehen. Sorte und Verfahren stehen in der Getriebeunterlage — nicht raten.",
+      "docs": ["D4F-E88-020"],
+      "siehe": ["steptronic", "egs"]
+    },
+    {
+      "id": "vtg",
+      "term": "VTG",
+      "lang": "Verteilergetriebe",
+      "kurz": "Verteilt die Antriebskraft im Allradfahrzeug zwischen Vorder- und Hinterachse.",
+      "text": "Eine Lamellenkupplung im Verteilergetriebe wird von einem Stellmotor betätigt. Ein Steuergerät bestimmt laufend, wie viel Moment nach vorn geht.",
+      "warum": "Ruckeln beim Rangieren und Allradfehler kommen oft vom Stellmotor oder von einer fehlenden Kalibrierung, nicht vom Getriebe selbst. Reihenfolge beachten, bevor teure Teile bestellt werden.",
+      "docs": ["D4F-E70-004", "D4F-F15-004"],
+      "siehe": ["xdrive", "adaption"],
+      "alt": ["Verteilergetriebe"]
+    },
+    {
+      "id": "xdrive",
+      "term": "xDrive",
+      "lang": null,
+      "kurz": "Der geregelte Allradantrieb von BMW.",
+      "text": "Statt einer festen Verteilung regelt xDrive die Momentenverteilung laufend über eine Kupplung im Verteilergetriebe. Es arbeitet mit der Stabilitätsregelung zusammen.",
+      "warum": "Weil es geregelt ist, hängt es an Sensorik und Kalibrierung. Ein Allradfehler ist deshalb oft ein Elektronikfehler.",
+      "docs": ["D4F-E70-004", "D4F-F15-004"],
+      "siehe": ["vtg", "dsc"]
+    },
+    {
+      "id": "smg",
+      "term": "SMG",
+      "lang": "Sequenzielles M Getriebe",
+      "kurz": "Ein Handschaltgetriebe, das von einer Hydraulik geschaltet wird.",
+      "text": "Kupplung und Gangwahl übernimmt eine elektrohydraulische Einheit mit eigenem Druckspeicher und Pumpe. Der Fahrer gibt nur den Befehl.",
+      "warum": "Die meisten SMG-Beschwerden kommen aus der Hydraulik oder aus fehlenden Adaptionswerten, nicht aus dem Getriebe. Erst auslesen, dann öffnen.",
+      "docs": ["D4F-E60-050"],
+      "siehe": ["egs", "adaption"]
+    },
+    {
+      "id": "hallgeber",
+      "term": "Hallgeber",
+      "lang": null,
+      "kurz": "Ein Sensor, der bei jedem Vorbeigang einer Blende ein sauberes Schaltsignal liefert.",
+      "text": "Der Hallgeber braucht eine Versorgungsspannung und gibt ein Rechtecksignal aus. Im Zündverteiler älterer Motoren sagt er der Steuerung, wann gezündet wird.",
+      "warum": "Fällt er aus, gibt es keinen Zündfunken — der Motor dreht und springt nicht an. Weil er Versorgung braucht, prüfst du zuerst die drei Leitungen und nicht gleich den Geber.",
+      "docs": ["D4F-E30-010", "D4F-E30-007"],
+      "siehe": ["kurbelwellensensor", "zuendspule", "motronic"]
+    },
+    {
+      "id": "kurbelwellensensor",
+      "term": "Kurbelwellensensor",
+      "lang": null,
+      "kurz": "Meldet der Motorsteuerung, wo die Kurbelwelle gerade steht.",
+      "text": "Er tastet ein Geberrad ab und liefert daraus Drehzahl und Stellung. Ohne dieses Signal weiß die Steuerung nicht, wann sie einspritzen und zünden soll.",
+      "warum": "Ein ausgefallener Kurbelwellensensor erzeugt das Bild „dreht, springt nicht an“ ohne weitere Auffälligkeiten. Er gehört bei diesem Fehlerbild früh in die Prüfliste.",
+      "docs": ["D4F-E34-007"],
+      "siehe": ["hallgeber", "steuerkette", "ews"],
+      "alt": ["Kurbelwellensensors", "Nockenwellensensor"]
+    },
+
+    {
+      "id": "dtc",
+      "term": "DTC",
+      "lang": "Diagnostic Trouble Code",
+      "kurz": "Ein Fehlercode aus dem Speicher eines Steuergeräts.",
+      "text": "Ein DTC besteht aus einem Buchstaben für den Bereich und vier Zeichen — P für Antrieb, C für Fahrwerk, B für Karosserie, U für Kommunikation. Zu jedem Code gehören meist noch Umgebungsdaten aus dem Moment der Speicherung.",
+      "warum": "Ein Code nennt das betroffene Signal, nicht das defekte Teil. „Signal Lambdasonde unplausibel“ heißt nicht, dass die Sonde kaputt ist — es heißt, dass ihr Wert nicht zum Rest passt.",
+      "docs": ["D4F-E46-003", "D4F-E90-002", "D4F-E88-011"],
+      "siehe": ["fehlerspeicher", "obd2", "pid"],
+      "alt": ["DTCs", "Fehlercode", "Fehlercodes"]
+    },
+    {
+      "id": "pid",
+      "term": "PID",
+      "lang": "Parameter-Identifikation",
+      "kurz": "Die Nummer eines einzelnen Live-Messwerts in der genormten Diagnose.",
+      "text": "Jeder abfragbare Wert hat eine feste Kennung — Drehzahl, Kühlmitteltemperatur, Ansaugluftmasse. Das Werkzeug fragt die Kennung ab und rechnet die Antwort in eine Einheit um.",
+      "warum": "Live-Werte sagen dir mehr als ein gespeicherter Code, weil du sie im Betrieb beobachten kannst. Genau dort siehst du, ob ein Signal springt oder wegbricht.",
+      "docs": ["D4F-E60-001", "D4F-E60-010", "D4F-E60-020"],
+      "siehe": ["dtc", "obd2"],
+      "alt": ["PIDs"]
+    },
+    {
+      "id": "fehlerspeicher",
+      "term": "Fehlerspeicher",
+      "lang": null,
+      "kurz": "Die Liste dessen, was ein Steuergerät als unplausibel bemerkt hat.",
+      "text": "Jedes Steuergerät führt einen eigenen Speicher. Zu jedem Eintrag gehören Häufigkeit, Status und oft die Bedingungen, unter denen er entstand.",
+      "warum": "Lies erst alle Steuergeräte aus und lösch erst danach — mit dem Löschen verschwinden auch die Umgebungsdaten, die den Fehler erklären. Ein Speicher, den du vorher nicht gelesen hast, ist unwiederbringlich weg.",
+      "docs": ["D4F-E28-003", "D4F-E70-007", "D4F-E90-007"],
+      "siehe": ["dtc", "blinkcode", "sg"]
+    },
+    {
+      "id": "blinkcode",
+      "term": "Blinkcode",
+      "lang": null,
+      "kurz": "Fehlercodes, die das Fahrzeug über eine blinkende Lampe ausgibt.",
+      "text": "Vor der elektronischen Diagnose meldete die Steuerung ihre Fehler über Blinkfolgen der Kontrollleuchte. Ausgelöst wird das je nach Fahrzeug über eine Pedalfolge oder eine Brücke im Diagnosestecker.",
+      "warum": "An alten Fahrzeugen ist das oft die einzige Diagnose, die ganz ohne Gerät funktioniert. Nicht jede Steuerung macht mit — welche, steht im Dokument deiner Baureihe.",
+      "docs": ["D4F-E36-004", "D4F-E28-003", "D4F-E30-002"],
+      "siehe": ["fehlerspeicher", "motronic", "kombiinstrument", "runddose"]
+    },
+    {
+      "id": "adaption",
+      "term": "Adaption",
+      "lang": null,
+      "kurz": "Werte, die ein Steuergerät im Betrieb selbst dazulernt.",
+      "text": "Getriebe lernen Schaltdrücke, Motoren lernen Gemischkorrekturen, Lenkungen lernen die Mittelstellung. Diese Werte gleichen Fertigungstoleranzen und Verschleiß aus.",
+      "warum": "Nach einer Reparatur passen die alten Lernwerte oft nicht mehr. Zurücksetzen und neu anlernen ist dann Teil der Reparatur, kein Extra.",
+      "docs": ["D4F-E88-020", "D4F-F30-005", "D4F-E36-008"],
+      "siehe": ["gemischadaption", "egs", "eps"],
+      "alt": ["Adaptionen", "Adaptionswerte"]
+    },
+    {
+      "id": "notlauf",
+      "term": "Notlauf",
+      "lang": "Notlaufprogramm",
+      "kurz": "Ein Ersatzprogramm, mit dem das Fahrzeug eingeschränkt weiterfährt.",
+      "text": "Erkennt ein Steuergerät ein unbrauchbares Signal, rechnet es mit einem Ersatzwert weiter und begrenzt Leistung oder Drehzahl. Das Fahrzeug bleibt fahrbar, aber deutlich zäher.",
+      "warum": "Der Notlauf ist ein Hinweis, kein Defekt. Er sagt dir, dass ein Signal fehlt — welches, steht im Fehlerspeicher.",
+      "docs": ["D4F-F22-004", "D4F-E90-008", "D4F-E60-020"],
+      "siehe": ["fehlerspeicher", "valvetronic", "ladedruck"]
+    },
+
+    {
+      "id": "kl30",
+      "term": "KL30",
+      "lang": "Klemme 30",
+      "kurz": "Dauerplus — direkt von der Batterie, immer da.",
+      "text": "KL30 liegt unabhängig von der Zündung an. Daran hängt alles, was auch bei abgezogenem Schlüssel Strom braucht: Speicher, Alarmanlage, Zentralverriegelung.",
+      "warum": "Wenn ein Steuergerät seine Einstellungen vergisst, fehlt oft KL30 und nicht die Zündungsversorgung. Und wer hier ohne Not trennt, verliert Lernwerte.",
+      "docs": ["D4F-E39-003", "D4F-E90-007", "D4F-E36-002"],
+      "siehe": ["kl15", "kl50", "klr", "massepunkt"],
+      "alt": ["Klemme 30"]
+    },
+    {
+      "id": "kl15",
+      "term": "KL15",
+      "lang": "Klemme 15",
+      "kurz": "Zündungsplus — Strom, sobald die Zündung an ist.",
+      "text": "KL15 wird über das Zündschloss oder das Zugangssteuergerät geschaltet. Fast jedes Steuergerät wacht damit auf.",
+      "warum": "Ohne KL15 antwortet ein Steuergerät auch bei der Diagnose nicht. Wenn sich ein Gerät „nicht meldet“, ist die Versorgung die erste Messung, nicht die letzte.",
+      "docs": ["D4F-E46-004", "D4F-E30-011", "D4F-E39-003"],
+      "siehe": ["kl30", "kl50", "klr"],
+      "alt": ["Klemme 15"]
+    },
+    {
+      "id": "kl50",
+      "term": "KL50",
+      "lang": "Klemme 50",
+      "kurz": "Startersignal — liegt nur an, solange du den Schlüssel auf Start hältst.",
+      "text": "KL50 schaltet den Anlasser. Die Motorsteuerung wertet dieses Signal mit aus, um zu erkennen, dass gerade gestartet wird.",
+      "warum": "Dreht der Anlasser nicht, trennt die Prüfung von KL50 zwei Welten: Kommt das Signal nicht an, liegt es an Schloss, Freigabe oder Leitung. Kommt es an, ist der Anlasserkreis dran.",
+      "docs": ["D4F-E46-004", "D4F-E36-007", "D4F-E46-006"],
+      "siehe": ["kl15", "kl30", "ews"],
+      "alt": ["Klemme 50"]
+    },
+    {
+      "id": "klr",
+      "term": "Klemme R",
+      "lang": null,
+      "kurz": "Radiostellung — die erste Raste des Zündschlosses.",
+      "text": "In Stellung R laufen Radio und einzelne Komfortverbraucher, die Zündung ist aber noch aus. Manche Diagnosestecker führen dieses Signal mit.",
+      "warum": "Wer Klemme R für Masse hält, misst an der falschen Ader und wundert sich über die Werte. In Pinbelegungen lohnt der genaue Blick.",
+      "docs": ["D4F-E39-003"],
+      "siehe": ["kl15", "kl30", "runddose"]
+    },
+    {
+      "id": "massepunkt",
+      "term": "Massepunkt",
+      "lang": null,
+      "kurz": "Die Stelle, an der ein Verbraucher seine Verbindung zum Minuspol bekommt.",
+      "text": "Strom braucht einen Hin- und einen Rückweg. Der Rückweg läuft über die Karosserie zu verschraubten Massepunkten. Korrosion oder eine lose Schraube erhöhen den Übergangswiderstand.",
+      "warum": "Schlechte Masse erzeugt Fehler, die überall auftauchen und nirgends passen — Flackern, sporadische Aussetzer, unplausible Werte. Miss den Spannungsabfall unter Last, nicht den Widerstand im Ruhezustand.",
+      "docs": ["D4F-E30-012", "D4F-E28-006", "D4F-E30-009"],
+      "siehe": ["bordnetz", "kl30"],
+      "alt": ["Massepunkte", "Masseverbindung"]
+    },
+    {
+      "id": "bordnetz",
+      "term": "Bordnetz",
+      "lang": null,
+      "kurz": "Die gesamte Stromversorgung des Fahrzeugs: Batterie, Generator, Leitungen, Verbraucher.",
+      "text": "Batterie und Generator liefern, alles andere verbraucht. Ein Energiemanagement verteilt und schaltet bei Bedarf ab. Zustand und Spannungslage betreffen jedes Steuergerät gleichzeitig.",
+      "warum": "Eine schwache Batterie erzeugt Fehler in Systemen, die mit Strom nichts zu tun zu haben scheinen — Lenkung, Getriebe, Komfort. Prüf das Bordnetz, bevor du einen Fehlerspeicher voller Einträge auseinandernimmst.",
+      "docs": ["D4F-E90-007", "D4F-F30-005", "D4F-E60-060"],
+      "siehe": ["ibs", "massepunkt", "ruhestrom", "batterieregistrierung"]
+    },
+    {
+      "id": "ruhestrom",
+      "term": "Ruhestrom",
+      "lang": null,
+      "kurz": "Der Strom, den das Fahrzeug noch zieht, wenn alles aus ist.",
+      "text": "Nach dem Abstellen legen sich die Steuergeräte nacheinander schlafen. Erst danach ist der Ruhestrom niedrig. Bis dahin vergehen je nach Fahrzeug einige Minuten.",
+      "warum": "Eine morgens leere Batterie ist meistens kein Batteriefehler, sondern ein Gerät, das nicht einschläft. Miss erst nach der Einschlafzeit — vorher misst du nur den Wachzustand.",
+      "docs": ["D4F-E38-006", "D4F-E60-040"],
+      "siehe": ["bordnetz", "bus", "ibs"]
+    }
+  ]
+}

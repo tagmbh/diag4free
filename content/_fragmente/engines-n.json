@@ -1,0 +1,457 @@
+{
+  "engines": [
+    {
+      "id": "N13",
+      "name": "N13",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1598,
+      "years": "2011–2016",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "114i (F20)", "ps": 102, "nm": 180 },
+        { "label": "116i (F20) / 316i (F30)", "ps": 136, "nm": 220 },
+        { "label": "118i (F20) / 320i ED (F30)", "ps": 170, "nm": 250 },
+        { "label": "120i (F20 LCI)", "ps": 177, "nm": 250 }
+      ],
+      "id_marks": [
+        "Quer eingebauter Vierzylinder im Längseinbau-Fahrzeug wirkt fremd: Der Block stammt aus der Prince-Familie, die BMW gemeinsam mit PSA entwickelt hat und die auch im Mini sitzt. Die Anbauteile sehen dadurch anders aus als bei jedem anderen BMW-Motor der N-Reihe.",
+        "Ein einzelner Twin-Scroll-Lader auf der Auslassseite, dazu Direkteinspritzung und Valvetronic. Der N13 ist der erste kleine BMW-Benziner, der beides gleichzeitig hat.",
+        "Abgrenzung zum Vorgänger N43: Der N43 ist Saugmotor, der N13 hat einen Lader. Wer im Motorraum eines F20/F30 einen Turbo sieht, hat keinen N43.",
+        "Abgrenzung zum N20: gleiche Baureihen, aber der N20 ist ein 2.0-Liter-Motor mit BMW-eigenem Block. Der N13 sitzt nur in den Einstiegsmodellen 114i, 116i, 118i, 316i und dem 320i EfficientDynamics.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten absuchen. Vor dem Ablesen den Schmutzrand wegwischen, der Schlagstempel ist flach."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkette und Kettenspanner gelten als Schwachpunkt der Prince-Familie. Rasseln beim Kaltstart ist das Leitsymptom.",
+        "Erfahrungswert: Ölkohle an den Einlassventilen. Direkteinspritzung ohne Saugrohreinspritzung spült die Ventile nicht frei — nach hoher Laufleistung Leistungsverlust und unruhiger Leerlauf.",
+        "Erfahrungswert: Hochdruckpumpe und Injektoren fallen auf, meist mit Startproblemen und Fehlern im Raildruckbereich.",
+        "Erfahrungswert: Thermostat und Kühlmittelpumpe fallen häufig aus.",
+        "Erfahrungswert: Valvetronic-Stellmotor und Exzenterwellensensor — dasselbe Fehlerbild wie bei N42/N46, unruhiger Leerlauf oder Notlauf."
+      ],
+      "dme": "MEVD17.2"
+    },
+    {
+      "id": "N20",
+      "name": "N20",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1997,
+      "years": "2011–2017",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "18i", "ps": 156, "nm": 240 },
+        { "label": "20i", "ps": 184, "nm": 270 },
+        { "label": "25i", "ps": 218, "nm": 310 },
+        { "label": "28i", "ps": 245, "nm": 350 }
+      ],
+      "id_marks": [
+        "Ein Twin-Scroll-Lader, Direkteinspritzung und Valvetronic am Vierzylinder. Nachfolger des N43/N46 in 3er, 5er, X1 und X3.",
+        "Abgrenzung zum N13: gleicher Grundaufbau, aber BMW-eigener 2.0-Liter-Block statt Prince-Basis. Wer einen F30 vor sich hat, unterscheidet nach Typschild: 316i und 320i ED sind N13, 320i, 328i und die 18i/25i-Modelle sind N20.",
+        "Abgrenzung zum N26: äusserlich nahezu identisch. Der N26 ist die SULEV-Ausführung für einzelne US-Bundesstaaten. Verlass dich auf die Motornummer, nicht auf das Aussehen.",
+        "Ausbaustufe Steuerkette: Motoren bis etwa 2015 haben die frühe Ausführung von Kettenspanner und Gleitschienen, danach die überarbeitete. Der Unterschied ist ein Diagnoseunterschied — bei einem frühen Motor mit Rasseln lohnt der Blick auf die Kette zuerst, bei einem späten sucht man weiter.",
+        "Es gibt zusätzlich eine 1.6-Liter-Ausführung N20B16 (1598 cm³) in einzelnen Märkten. Sie ist im deutschsprachigen Raum selten und wird leicht mit dem N13 verwechselt.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert und der bekannteste Punkt: Steuerkettentrieb. Die frühen Gleitschienen zerbröseln, die Kette überspringt, der Motor geht kapital. Rasseln nach dem Kaltstart ernst nehmen.",
+        "Erfahrungswert: Ölfiltergehäusedichtung wird undicht. Das Öl läuft auf den Riementrieb — der Riemen leidet mit.",
+        "Erfahrungswert: Ventildeckel beziehungsweise die integrierte Kurbelgehäuseentlüftung. Undichte oder gerissene Membran führt zu Öl im Ansaugtrakt und Falschluft.",
+        "Erfahrungswert: VANOS-Magnetventile setzen zu, Fehlerbild sind Verstellabweichungen und ruppiger Leerlauf.",
+        "Erfahrungswert: Ölkohle an den Einlassventilen wie bei jedem Direkteinspritzer dieser Generation."
+      ],
+      "dme": "MEVD17.2"
+    },
+    {
+      "id": "N26",
+      "name": "N26",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1997,
+      "years": "2012–2016",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "28i (SULEV)", "ps": 245, "nm": 350 }
+      ],
+      "id_marks": [
+        "Der N26 ist die SULEV-Ausführung des N20. Gebaut für die US-Bundesstaaten mit der schärferen Abgasstufe, in Europa nicht regulär verkauft.",
+        "Abgrenzung zum N20 — der wichtigste Punkt: mechanisch gleicher Motor, aber dichtere Katalysatoren, elektrischer Ladedrucksteller, geänderte Kurbelgehäuseentlüftung und metallene statt gummierter Kraftstoffleitungen. Teile sind deshalb nicht durchgängig tauschbar, obwohl der Motor gleich aussieht.",
+        "Wenn ein Importfahrzeug aus den USA mit 28i-Schriftzug in der Werkstatt steht, prüfe die Motornummer, bevor du ein N20-Teil bestellst. Diese Verwechslung kostet regelmässig einen Anlauf.",
+        "Motornummer an derselben Stelle wie beim N20 auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt."
+      ],
+      "weak_points": [
+        "Erfahrungswert: derselbe Steuerkettentrieb wie beim N20 und dieselbe Schwäche der frühen Gleitschienen. Die Überarbeitung lief parallel zum N20.",
+        "Erfahrungswert: Ölfiltergehäusedichtung und Ventildeckel wie beim N20.",
+        "Erfahrungswert: die dichteren Katalysatoren machen den Motor empfindlicher gegen Verbrennungsaussetzer — ein längerer Betrieb mit Zündaussetzern setzt dem Kat schneller zu."
+      ],
+      "dme": "MEVD17.2"
+    },
+    {
+      "id": "N42",
+      "name": "N42",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1995,
+      "years": "2001–2004",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "316i / 316ti (N42B18)", "ps": 116, "nm": 175 },
+        { "label": "318i / 318Ci / 318ti (N42B20)", "ps": 143, "nm": 200 }
+      ],
+      "id_marks": [
+        "Der erste BMW-Motor überhaupt mit Valvetronic. Erkennungsmerkmal ist der Stellmotor der Exzenterwelle, der quer auf dem Zylinderkopf sitzt — ein kleiner Elektromotor, den kein M43 und kein M44 hat.",
+        "Ausschliesslich im E46 verbaut: 316i, 316ti, 318i, 318Ci, 318ti Compact. Zwei Hubräume, 1796 cm³ als N42B18 und 1995 cm³ als N42B20.",
+        "Abgrenzung zum Nachfolger N46 — der häufigste Irrtum in dieser Ecke: äusserlich sehr ähnlich, der N46 löste den N42 2004 ab. Im E46 heißt die Grenze grob Modelljahr 2004; darüber entscheidet die Motornummer, nicht das Baujahr des Fahrzeugs.",
+        "Abgrenzung zum M43: der M43 hat weder Valvetronic noch Doppel-VANOS und einen Zahnriemen-freien, aber deutlich einfacheren Ventiltrieb ohne Stellmotor auf dem Kopf.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert und Hauptthema: die Valvetronic. Eingelaufene Lagerstellen der Exzenterwelle, defekter Stellmotor, defekter Exzenterwellensensor. Leitsymptom sind starke Leerlaufschwankungen und Notlauf.",
+        "Erfahrungswert: Steuerkette längt sich früh, meist wegen eines nachlassenden Kettenspanners. Ausgefallene Ölwechsel beschleunigen das deutlich.",
+        "Erfahrungswert: VANOS-Magnetventile setzen zu. Fehlerbild sind Drehzahlschwankungen und Leistungsverlust im unteren Drehzahlbereich.",
+        "Erfahrungswert: erhöhter Ölverbrauch, oft zusammen mit Undichtigkeiten am Ventildeckel."
+      ],
+      "dme": "MS45"
+    },
+    {
+      "id": "N43",
+      "name": "N43",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1995,
+      "years": "2007–2013",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "116i (N43B16)", "ps": 122, "nm": 160 },
+        { "label": "118i / 318i (N43B20)", "ps": 143, "nm": 190 },
+        { "label": "120i / 320i (N43B20)", "ps": 170, "nm": 210 }
+      ],
+      "id_marks": [
+        "Saugmotor mit Direkteinspritzung — die Kombination gibt es sonst kaum. Hochdruckpumpe am Zylinderkopf, Piezo-Injektoren mittig zwischen den Ventilen, Zündkerzen seitlich versetzt.",
+        "Abgrenzung zum N46 — der wichtigste Punkt: der N43 hat Direkteinspritzung, aber keine Valvetronic. Es fehlt der Stellmotor auf dem Zylinderkopf, weil der Platz für die Injektoren gebraucht wird. Wer im Motorraum eines E87/E90 nach dem Valvetronic-Stellmotor sucht und ihn nicht findet, hat einen N43, keinen N46.",
+        "Der N43 wurde nur in Märkten mit schwefelarmem Kraftstoff verkauft. N45 und N46 liefen parallel weiter — im selben Modelljahr desselben Modells kann also beides drinstecken.",
+        "Abgrenzung zum großen Bruder N53: gleiches Konzept, aber R6 statt R4. Wer die Zylinderzahl zählt, ist fertig.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert und Dauerbrenner: Piezo-Injektoren. Rauer Leerlauf, Aussetzerfehler auf einzelnen Zylindern, Kaltstartprobleme.",
+        "Erfahrungswert: NOx-Sensor fällt aus. Er sitzt im Abgasstrang und meldet sich mit Motorkontrollleuchte ohne Fahrbarkeitsproblem.",
+        "Erfahrungswert: Zündspulen fallen häufig aus, oft im Verbund mit den Injektoren.",
+        "Erfahrungswert: gebrochene Kunststoff-Gleitschienen der Steuerkette. Die Bruchstücke setzen das Ölsieb zu — die Folge ist Ölmangel, nicht nur ein Kettengeräusch.",
+        "Erfahrungswert: Hochdruckpumpe mit Raildruckfehlern."
+      ],
+      "dme": "MSD80 / MSD81"
+    },
+    {
+      "id": "N45",
+      "name": "N45",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1596,
+      "years": "2004–2011",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "116i / 316i (N45B16)", "ps": 116, "nm": 150 },
+        { "label": "320si (N45B20S)", "ps": 173, "nm": 200 }
+      ],
+      "id_marks": [
+        "Abgeleitet vom N46, aber ohne Valvetronic und ohne Ausgleichswellen. Doppel-VANOS ist vorhanden. Fehlt der Stellmotor auf dem Zylinderkopf und ist der Motor ein 1.6er, ist es ein N45.",
+        "Abgrenzung zum N46 — genau hier wird verwechselt: N45 und N46 liefen gleichzeitig und sehen sich ähnlich. Der N45 wurde nur in Ländern verkauft, in denen die Steuer kleinen Hubraum belohnt.",
+        "Sonderfall N45B20S: die 2.0-Liter-Hochdrehzahlvariante mit 1997 cm³ im 320si (E90), der Homologationsbasis für den Tourenwagensport. Anderer Kopf, andere Kurbelwelle, nicht mit dem normalen N45B16 zu verwechseln.",
+        "2007 kam die überarbeitete Ausführung N45N.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkettentrieb wie beim N42/N46 — Längung und nachlassender Spanner.",
+        "Erfahrungswert: VANOS-Magnetventile setzen zu.",
+        "Erfahrungswert: ohne Ausgleichswellen läuft der Motor rauer als der N46. Das ist konstruktionsbedingt und kein Defekt — bevor du hier suchst, halte es gegen einen zweiten Motor derselben Ausführung."
+      ]
+    },
+    {
+      "id": "N46",
+      "name": "N46",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1995,
+      "years": "2004–2015",
+      "valvetrain": ["DOHC", "16V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "316i / 518i (N46B18)", "ps": 116, "nm": 175 },
+        { "label": "318i / 520i (N46B20U1)", "ps": 129, "nm": 180 },
+        { "label": "318i / 320i (N46B20U2)", "ps": 136, "nm": 200 },
+        { "label": "320i / 520i (N46NB20)", "ps": 170, "nm": 210 }
+      ],
+      "id_marks": [
+        "Nachfolger des N42, mit Valvetronic und zusätzlich Ausgleichswellen. Der Stellmotor der Exzenterwelle quer auf dem Zylinderkopf ist auch hier das Erkennungsmerkmal.",
+        "Deutlich breiter eingesetzt als der N42: E46, E87, E90, E60, E83/E84 X1 und X3, sogar der 725i (E66).",
+        "Abgrenzung zum N42: der N46 löste ihn 2004 ab. Aussen kaum zu trennen — die Motornummer entscheidet.",
+        "Abgrenzung zum N43 — der wichtigste Punkt in dieser Ecke: der N46 hat Saugrohreinspritzung und Valvetronic, der N43 Direkteinspritzung und keine Valvetronic. Im E87 und E90 stecken je nach Markt beide, im gleichen Modelljahr, unter demselben Typschild.",
+        "Ausbaustufe: 2007 kam der N46N. Mit ihm wechselte die Motorsteuerung von ME9.2 auf MEV17.4 — das ist ein Diagnoseunterschied, weil ISTA und INPA unterschiedliche Steuergerätebeschreibungen laden.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Valvetronic — eingelaufene Exzenterwelle, defekter Stellmotor, defekter Exzenterwellensensor. Leerlaufschwankungen bis Notlauf.",
+        "Erfahrungswert: Steuerkette längt sich, meist über einen nachlassenden Kettenspanner.",
+        "Erfahrungswert: VANOS-Magnetventile setzen zu.",
+        "Erfahrungswert: erhöhter Ölverbrauch und Undichtigkeit am Ventildeckel."
+      ],
+      "dme": "ME9.2 (N46) / MEV17.4 (N46N)"
+    },
+    {
+      "id": "N47",
+      "name": "N47",
+      "layout": "R4",
+      "aspiration": "Turbo",
+      "displacement_cc": 1995,
+      "years": "2007–2015",
+      "valvetrain": ["DOHC", "16V"],
+      "power_variants": [
+        { "label": "116d / 316d (N47D20K0)", "ps": 116, "nm": 260 },
+        { "label": "118d / 318d / X1 / X3 (N47D20U0)", "ps": 143, "nm": 300 },
+        { "label": "120d / 320d / 520d (N47D20O0)", "ps": 177, "nm": 350 },
+        { "label": "120d / 320d (N47N, ab 2010)", "ps": 184, "nm": 380 },
+        { "label": "123d (N47S, Bi-Turbo)", "ps": 204, "nm": 400 },
+        { "label": "125d / 325d (N47S1, Bi-Turbo)", "ps": 218, "nm": 450 }
+      ],
+      "id_marks": [
+        "Vierzylinder-Diesel mit Common Rail. Nachfolger des M47. Erstes Fahrzeug war der 1er (E81/E82/E87/E88) ab 2007.",
+        "Das Erkennungsmerkmal, das alles entscheidet: der Steuerkettentrieb sitzt hinten, zum Getriebe hin. Kein Kettenkasten vorn. Wer vorn nach der Kette sucht, sucht am falschen Ende — und wer die Kette wechseln will, muss Motor oder Getriebe heraus.",
+        "Abgrenzung zum N57 — die häufigste Verwechslung: gleiches Konstruktionsprinzip, gleicher Kettentrieb hinten, aber der N57 ist ein Sechszylinder mit 3.0 Litern. Zylinder zählen genügt.",
+        "Abgrenzung zum Vorgänger M47: beim M47 sitzt der Steuertrieb vorn. Das ist das schnellste Unterscheidungsmerkmal am eingebauten Motor.",
+        "Ausbaustufe Steuerkette — der wichtigste Diagnosepunkt: Motoren mit Produktionsdatum bis etwa 2010 haben die erste Ausführung von Kettenspanner und Gleitschienen und gelten als am stärksten betroffen. Ab etwa 2011 überarbeitete BMW Spanner und Schienen. Massgeblich ist das Produktionsdatum des Motors, nicht die Erstzulassung des Fahrzeugs.",
+        "Es gibt zusätzlich eine 1.6-Liter-Ausführung (N47D16) in 114d und 116d der F20-Reihe.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert und das Thema schlechthin: die Steuerkette hinten. Leitsymptom ist ein metallisches Rasseln aus dem hinteren Motorbereich direkt nach dem Kaltstart, das nach fünf bis fünfzehn Sekunden abklingt. Reisst die Kette, ist der Motor hin.",
+        "Erfahrungswert: Drallklappen im Ansaugkrümmer setzen sich zu oder brechen ab. Abgebrochene Klappen gehen in den Brennraum.",
+        "Erfahrungswert: AGR-Kühler verrusst und wird undicht.",
+        "Erfahrungswert: Turbolader mit verklemmter Ladedruckregelung, Fehlerbild ist Notlauf unter Last.",
+        "Erfahrungswert: Injektoren mit erhöhter Rücklaufmenge, Leitsymptom sind Kaltstartprobleme und unruhiger Leerlauf."
+      ],
+      "dme": "DDE 7 (Bosch EDC17)"
+    },
+    {
+      "id": "N52",
+      "name": "N52",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2996,
+      "years": "2004–2015",
+      "valvetrain": ["DOHC", "24V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "523i / 325i (N52B25)", "ps": 177, "nm": 230 },
+        { "label": "325i / 525i (N52B25 O)", "ps": 218, "nm": 250 },
+        { "label": "328i / 128i (N52B30, US)", "ps": 230, "nm": 270 },
+        { "label": "330i / 530i / 630i (N52B30)", "ps": 258, "nm": 300 },
+        { "label": "130i / Z4 3.0si (N52B30 O)", "ps": 265, "nm": 315 },
+        { "label": "X3 3.0si (N52B30)", "ps": 272, "nm": 315 }
+      ],
+      "id_marks": [
+        "Reihensechszylinder mit Saugrohreinspritzung, Valvetronic und Doppel-VANOS. Kurbelgehäuse aus einem Magnesium-Aluminium-Verbund — der Motor ist auffällig leicht, und die Magnesiumaussenschale sieht anders aus als jedes Aluminiumgehäuse.",
+        "Elektrische Kühlmittelpumpe statt Riemenantrieb. Am Riementrieb fehlt entsprechend das Pumpenrad — ein sicheres Erkennungsmerkmal gegenüber M54 und älter.",
+        "Abgrenzung zum N53 — die teuerste Verwechslung dieser Generation: der N52 hat Saugrohreinspritzung und Valvetronic. Der N53 hat Direkteinspritzung und keine Valvetronic. Such den Stellmotor der Exzenterwelle auf dem Zylinderkopf: ist er da, ist es ein N52. Such die Hochdruckpumpe am Kopf: ist sie da, ist es ein N53.",
+        "Regionale Trennung: In Europa löste der N53 den N52 ab 2007 weitgehend ab. In den USA, Kanada, Australien und einigen weiteren Märkten blieb der N52, weil der Schwefelgehalt im Kraftstoff dem N53 nicht bekam. Ein US-Import mit 328i-Schriftzug hat deshalb fast sicher einen N52.",
+        "Der N51 ist die SULEV-Ausführung des N52 für einzelne US-Bundesstaaten und hat zusätzlich eine Sekundärluftpumpe. Er sieht dem N52 zum Verwechseln ähnlich.",
+        "Ausbaustufe: 2007 kam der N52N mit geänderter Motorsteuerung (MSV70 auf MSV80).",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: die elektrische Kühlmittelpumpe fällt aus. Fehlerbild ist Überhitzung ohne vorheriges Kühlmittelleck. Der zugehörige Thermostat wird üblicherweise gleich mitgetauscht.",
+        "Erfahrungswert: Ventildeckeldichtung wird undicht. Öl läuft über den Krümmer, der Geruch ist meist vor dem Fleck da.",
+        "Erfahrungswert: Exzenterwellensensor der Valvetronic. Leitsymptom sind Leerlaufschwankungen und Notlauf.",
+        "Erfahrungswert: Ölfiltergehäusedichtung wird undicht.",
+        "Erfahrungswert: DISA-Klappe der Sauganlage — die Klappe löst sich und geht im schlechten Fall in den Ansaugtrakt.",
+        "Erfahrungswert: Steuerkettenspanner macht sich mit kurzem Rasseln beim Kaltstart bemerkbar."
+      ],
+      "dme": "MSV70 (N52) / MSV80 (N52N)"
+    },
+    {
+      "id": "N53",
+      "name": "N53",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2996,
+      "years": "2006–2013",
+      "valvetrain": ["DOHC", "24V", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "523i (F10)", "ps": 204, "nm": 270 },
+        { "label": "325i / 525i", "ps": 218, "nm": 270 },
+        { "label": "328i / 528i", "ps": 258, "nm": 310 },
+        { "label": "330i / 530i / 630i", "ps": 272, "nm": 320 }
+      ],
+      "id_marks": [
+        "Sechszylinder-Saugmotor mit Direkteinspritzung. Hochdruckpumpe am Zylinderkopf, Piezo-Injektoren mittig im Brennraum.",
+        "Abgrenzung zum N52 — der wichtigste Punkt und die häufigste Fehlzuordnung: der N53 hat keine Valvetronic. Der Platz im Zylinderkopf ging an die Direkteinspritzung. Es gibt also keinen Stellmotor der Exzenterwelle. Mehrere Nachschlagewerke schreiben dem N53 trotzdem Valvetronic zu — das ist falsch und führt bei der Ersatzteilsuche in die Irre.",
+        "Abgrenzung zum N43: gleiches Konzept mit vier statt sechs Zylindern.",
+        "Nicht in Märkten mit schwefelreichem Kraftstoff verkauft. Dort blieb der N52 im Programm.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert und Hauptthema: Piezo-Injektoren. Leitsymptom ist rauer Leerlauf mit Aussetzerfehlern auf einzelnen Zylindern, oft nur im kalten Zustand.",
+        "Erfahrungswert: Zündspulen fallen häufig aus, gern zusammen mit den Injektoren. Beim Fehlerbild lassen sich beide nur durch Tauschversuch trennen.",
+        "Erfahrungswert: NOx-Sensor fällt aus, meldet sich mit Motorkontrollleuchte ohne spürbaren Fahrbarkeitsverlust.",
+        "Erfahrungswert: Hochdruckpumpe mit Raildruckfehlern.",
+        "Erfahrungswert: Ölkohle an den Einlassventilen nach hoher Laufleistung."
+      ],
+      "dme": "MSD80 / MSD81"
+    },
+    {
+      "id": "N54",
+      "name": "N54",
+      "layout": "R6",
+      "aspiration": "Bi-Turbo",
+      "displacement_cc": 2979,
+      "years": "2006–2016",
+      "valvetrain": ["DOHC", "24V", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "335i / 135i / 535i / X6 35i / Z4 sDrive35i", "ps": 306, "nm": 400 },
+        { "label": "335is / 740i", "ps": 326, "nm": 450 },
+        { "label": "1M / Z4 sDrive35is", "ps": 340, "nm": 450 }
+      ],
+      "id_marks": [
+        "Zwei Turbolader, in Reihe hintereinander auf der Auslassseite, jeder für drei Zylinder. Das ist das Erkennungsmerkmal. Zwei getrennte Ladergehäuse, zwei Ölzuläufe, zwei Abgaskrümmerhälften.",
+        "Abgrenzung zum N55 — der wichtigste Punkt dieser Motorenfamilie und die Verwechslung, die am meisten Zeit kostet: N54 = zwei Lader, N55 = ein Twin-Scroll-Lader. Beide leisten in der Grundversion 306 PS, beide sitzen im 335i, beide im 135i, beide im 535i. Die Leistungsangabe trennt sie also nicht. Zähl die Ladergehäuse.",
+        "Zweites Trennmerkmal: der N54 hat keine Valvetronic, der N55 hat sie. Auf dem Zylinderkopf des N54 fehlt der Stellmotor der Exzenterwelle.",
+        "Drittes Trennmerkmal: der N54 arbeitet mit Piezo-Injektoren, der N55 mit Magnetventil-Injektoren. Die Stecker und Bauformen unterscheiden sich sichtbar.",
+        "Grobe Zeitgrenze: bis etwa 2010 N54, danach N55. In der Übergangszeit gab es beide parallel — verlass dich nicht auf das Baujahr, sondern auf den Motorraum.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen, nach einer Quelle auf der Einlassseite — sie ist wegen der Schräglage des Motors von oben besser zugänglich. Dieselbe Quelle nennt zusätzlich einen Aufkleber am Getriebeflansch."
+      ],
+      "weak_points": [
+        "Erfahrungswert und der bekannteste Punkt: Hochdruckpumpe. Leitsymptom sind Startverzögerung, Leistungsverlust und Raildruckfehler. BMW hat die Pumpe mehrfach überarbeitet.",
+        "Erfahrungswert: Piezo-Injektoren. Aussetzerfehler auf einzelnen Zylindern, teils mit Kaltstartproblemen.",
+        "Erfahrungswert: Wastegate-Klappern der Lader. Ein metallisches Rasseln im Leerlauf und beim Lastwechsel, das mit dem Verschleiss der Klappenlagerung zunimmt.",
+        "Erfahrungswert: Ölfiltergehäusedichtung wird undicht, das Öl läuft auf den Riementrieb.",
+        "Erfahrungswert: Elektrische Kühlmittelpumpe und Thermostat, dasselbe Fehlerbild wie beim N52.",
+        "Erfahrungswert: Ölkohle an den Einlassventilen."
+      ],
+      "dme": "MSD80 / MSD81"
+    },
+    {
+      "id": "N55",
+      "name": "N55",
+      "layout": "R6",
+      "aspiration": "Turbo",
+      "displacement_cc": 2979,
+      "years": "2009–2018",
+      "valvetrain": ["DOHC", "24V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "335i / 135i / 535i / X3 xDrive35i", "ps": 306, "nm": 400 },
+        { "label": "M135i / M235i (frühe Ausführung)", "ps": 320, "nm": 450 },
+        { "label": "M135i / M235i / M2 (F87, N55B30T0)", "ps": 326, "nm": 450 },
+        { "label": "M2 (F87)", "ps": 370, "nm": 465 }
+      ],
+      "id_marks": [
+        "Ein einziger Turbolader mit Twin-Scroll-Gehäuse. Das ist der Kernpunkt: der N55 ist kein Bi-Turbo, auch wenn BMW ihn als TwinPower Turbo vermarktet. Der Name meint die zwei getrennten Abgasfluten im einen Lader, nicht zwei Lader.",
+        "Abgrenzung zum N54 — hier wird am häufigsten falsch zugeordnet: N55 = ein Ladergehäuse, N54 = zwei. Datenblätter und Teilelistings geben dem N55 regelmässig fälschlich zwei Lader. Zähl im Motorraum nach.",
+        "Zweites Trennmerkmal: der N55 hat Valvetronic. Der Stellmotor der Exzenterwelle sitzt quer auf dem Zylinderkopf — beim N54 fehlt er.",
+        "Drittes Trennmerkmal: Magnetventil-Injektoren statt der Piezo-Injektoren des N54.",
+        "Der Ventildeckel enthält beim N55 die Kurbelgehäuseentlüftung. Er ist ein Bauteil, keine Baugruppe mit separater Dichtung — das ist bei der Teilebestellung relevant.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Kurbelgehäuseentlüftung im Ventildeckel. Undichte Membran zieht Öl in den Ansaugtrakt, das Fehlerbild ist Ölverbrauch und Falschluft. Weil die Dichtung integriert ist, wird der ganze Ventildeckel getauscht.",
+        "Erfahrungswert: Ölfiltergehäuse und dessen Dichtung. Öl auf dem Riementrieb greift den Riemen an — nicht liegen lassen.",
+        "Erfahrungswert: Ladedrucksteller beziehungsweise Wastegate-Aktor. Notlauf unter Last, Ladedruckabweichungsfehler.",
+        "Erfahrungswert: Ölkohle an den Einlassventilen wie bei jedem Direkteinspritzer.",
+        "Erfahrungswert insgesamt: die Kinderkrankheiten des N54 — Hochdruckpumpe, Piezo-Injektoren, Wastegate-Rasseln — treten beim N55 deutlich seltener auf."
+      ],
+      "dme": "MEVD17.2"
+    },
+    {
+      "id": "N57",
+      "name": "N57",
+      "layout": "R6",
+      "aspiration": "Turbo",
+      "displacement_cc": 2993,
+      "years": "2008–2019",
+      "valvetrain": ["DOHC", "24V"],
+      "power_variants": [
+        { "label": "325d (N57D30UL)", "ps": 204, "nm": 450 },
+        { "label": "330d / 530d (N57D30O0)", "ps": 245, "nm": 540 },
+        { "label": "330d / 530d / 730d (N57TU)", "ps": 258, "nm": 560 },
+        { "label": "335d / 535d / 740d (N57D30T1, Bi-Turbo)", "ps": 313, "nm": 630 },
+        { "label": "M550d / 750d / M50d (N57D30S1, Tri-Turbo)", "ps": 381, "nm": 740 }
+      ],
+      "id_marks": [
+        "Sechszylinder-Diesel mit Common Rail und variabler Turbinengeometrie. Nachfolger des M57; ersetzte auch den V8-Diesel M67 — einen V8-Diesel-Nachfolger gab es nicht.",
+        "Aufladung nach Ausbaustufe: ein Lader in den Basisvarianten, zwei in den 313-PS-Varianten, drei im N57S mit 381 PS. Die Zahl der Ladergehäuse trennt die Ausbaustufen sicherer als jedes Typschild.",
+        "Abgrenzung zum N47 — die häufigste Verwechslung: gleiche Konstruktionsfamilie, gleicher Steuerkettentrieb hinten zum Getriebe, aber der N57 hat sechs Zylinder und 3.0 Liter, der N47 vier und 2.0. Zylinder zählen genügt.",
+        "Abgrenzung zum Vorgänger M57: die Kettenlage trennt die beiden nicht — M47, M57, N47 und N57 tragen den Steuertrieb alle hinten zur Schwungradseite. Getrennt wird über die Motorkennung am Block. Wer nach der Kettenlage geht, kalkuliert falsch: bei allen vieren gehört das Getriebe herunter.",
+        "Vorsicht bei der Aufladungsangabe: dieselbe Motorkennung N57D30 taucht mit einem, zwei und drei Ladern auf. Ohne die vollständige Kennung ist die Ladeanordnung nicht bestimmt.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt — beide Blockseiten unten an der Trennfuge zur Ölwanne absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Drallklappen im Ansaugkrümmer setzen sich zu, verklemmen oder brechen ab.",
+        "Erfahrungswert: AGR-Kühler verrusst und wird undicht.",
+        "Erfahrungswert: Injektoren mit erhöhter Rücklaufmenge — Kaltstartprobleme, rauer Leerlauf.",
+        "Erfahrungswert: Steuerkette. Der N57 gilt als weniger anfällig als der N47, aber der Kettentrieb sitzt ebenfalls hinten. Ein Kettenwechsel ist entsprechend aufwendig.",
+        "Erfahrungswert: Wirbelstromlader beziehungsweise die Ladedruckregelung der aufgeladenen Ausbaustufen mit Notlauf unter Last."
+      ],
+      "dme": "DDE 7 (Bosch EDC17)"
+    },
+    {
+      "id": "N62",
+      "name": "N62",
+      "layout": "V8",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 4398,
+      "years": "2001–2010",
+      "valvetrain": ["DOHC", "32V", "Doppel-VANOS", "Valvetronic"],
+      "power_variants": [
+        { "label": "735i (N62B36)", "ps": 272, "nm": 360 },
+        { "label": "740i (N62B40)", "ps": 306, "nm": 390 },
+        { "label": "X5 4.4i (N62B44)", "ps": 320, "nm": 440 },
+        { "label": "745i / 545i / 645Ci (N62B44)", "ps": 333, "nm": 450 },
+        { "label": "X5 4.8is (E53, N62B48)", "ps": 360, "nm": 500 },
+        { "label": "750i / 550i / 650i (N62B48)", "ps": 367, "nm": 490 }
+      ],
+      "id_marks": [
+        "Erster V8 von BMW mit Valvetronic. Auf jedem Zylinderkopf sitzt ein eigener Stellmotor der Exzenterwelle — zwei Stück insgesamt, das ist am eingebauten Motor gut zu sehen.",
+        "Die 4.4- und 4.8-Liter-Varianten haben die stufenlos verstellbare Sauganlage (DIVA). Der Ansaugkrümmer sieht deutlich voluminöser aus als bei den kleineren Varianten.",
+        "Kurbelgehäuse aus Alusil. Die Zylinderlaufbahnen sind nicht gebüchst, sondern freigelegte Siliziumkristalle — beim Instandsetzen ist das der entscheidende Unterschied zu einem gebüchsten Block.",
+        "Abgrenzung zum N63 — der wichtigste Punkt: der N62 ist Saugmotor. Der N63 hat zwei Turbolader, und zwar innerhalb des V. Wenn du zwischen den Zylinderbänken Lader und heiße Krümmer siehst, ist es ein N63; wenn dort die Sauganlage sitzt, ein N62.",
+        "Abgrenzung zum Vorgänger M62: der M62 hat keine Valvetronic, also keine Stellmotoren auf den Köpfen.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen, nach einer Quelle oben im V zwischen den Zylinderbänken neben dem Papieraufkleber. Dafür muss die Sammelsauganlage herunter."
+      ],
+      "weak_points": [
+        "Erfahrungswert und der Klassiker: Ventilschaftdichtungen. Leitsymptom ist blauer Rauch beim Kaltstart oder nach längerem Schiebebetrieb, ohne dass der Motor sonst auffällt.",
+        "Erfahrungswert: Ventildeckel und deren Dichtungen werden undicht; Kunststoffdeckel reissen.",
+        "Erfahrungswert: Ölundichtigkeit hinter dem Generator und an der Vakuumpumpe. Öl tropft von dort auf Nebenaggregate.",
+        "Erfahrungswert: Steuerkettentrieb mit gelängten Ketten und brechenden Gleitschienen.",
+        "Erfahrungswert: VANOS-Magnetventile setzen zu, Fehlerbild sind Verstellabweichungen und Leistungsverlust.",
+        "Erfahrungswert: Kühlmittelverlust aus undichten Dichtungen greift die Alusil-Laufbahnen an — ein liegengebliebener Kühlmitteleintrag macht aus einer Dichtung einen Motorschaden."
+      ],
+      "dme": "ME9.2"
+    },
+    {
+      "id": "N63",
+      "name": "N63",
+      "layout": "V8",
+      "aspiration": "Bi-Turbo",
+      "displacement_cc": 4395,
+      "years": "seit 2008",
+      "valvetrain": ["DOHC", "32V", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "750i / 550i / 650i / X5 xDrive50i (N63B44O0)", "ps": 408, "nm": 600 },
+        { "label": "N63TÜ (N63B44O1)", "ps": 450, "nm": 650 },
+        { "label": "N63TÜ3 (N63B44M3)", "ps": 462, "nm": 650 }
+      ],
+      "id_marks": [
+        "Hot-V: die beiden Turbolader sitzen innerhalb des Zylinder-V, die Abgaskrümmer zeigen nach innen, die Ansaugung nach aussen. Der erste Serienmotor überhaupt mit dieser Anordnung. Wer den Motorraum öffnet und in der Mitte des V Hitzeschilde statt einer Sauganlage sieht, hat einen N63.",
+        "Abgrenzung zum N62 — die zentrale Verwechslung bei den V8: N62 ist Saugmotor mit Sauganlage im V, N63 ist Bi-Turbo mit Ladern im V. Beide sitzen im 550i, 650i und 750i, je nach Baujahr.",
+        "Abgrenzung zum S63: der S63 ist die M-Ausführung desselben Grundmotors, unter anderem mit Cross-Bank-Abgaskrümmer. Er sitzt in M5, M6 und den X5 M / X6 M — nicht in den Basismodellen.",
+        "Ausbaustufe — Diagnoseunterschied: der N63TÜ ab 2012 bekam Valvetronic dazu, der ursprüngliche N63 hat sie nicht. Der Stellmotor der Exzenterwelle auf den Köpfen trennt die beiden Ausbaustufen zuverlässig.",
+        "Motornummer auf dem Kurbelgehäuse eingeschlagen. Die Seite ist nicht belegt."
+      ],
+      "weak_points": [
+        "Erfahrungswert: erhöhter Ölverbrauch. Die Ursache liegt meist an verschlissenen Ventilschaftdichtungen, nicht an der Kurbelgehäuseentlüftung — diese Fehlzuordnung kostet regelmässig einen Anlauf.",
+        "Erfahrungswert: Steuerkettentrieb. Gelängte Ketten brechen die Kunststoff-Gleitschienen, die Bruchstücke landen in der Ölwanne.",
+        "Erfahrungswert: Kühlmittelpumpe fällt aus, häufig im Bereich um 100 tkm.",
+        "Erfahrungswert: Injektoren mit Aussetzerfehlern auf einzelnen Zylindern.",
+        "Erfahrungswert: Kühlmittelverlust und Rissbildung im Bereich des Zündkerzenschachts.",
+        "Erfahrungswert: die Häufung der Probleme betrifft vor allem die Baujahre bis etwa 2013. Der N63TÜ gilt als deutlich ruhiger."
+      ],
+      "dme": "MSD85"
+    }
+  ]
+}

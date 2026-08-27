@@ -1,0 +1,215 @@
+{
+  "model": "e34",
+  "guides": {
+    "m50-crank-no-start": {
+      "code": "GF-E34-01",
+      "name": "M50 dreht, startet nicht",
+      "desc": "Anlasser dreht sauber, der Motor kommt nicht. Beim verteilerlosen M50 fehlen bei einem Gebersignalausfall Zündung und Einspritzung gleichzeitig. Reihenfolge: Versorgung → Drehzahlsignal → Zündung → Kraftstoff → Mechanik.",
+      "engines": [
+        "M50"
+      ],
+      "steps": [
+        {
+          "q": "Zieht das DME-Hauptrelais hörbar an, wenn du die Zündung einschaltest?",
+          "help": "Relaiskasten öffnen und beim Einschalten der Zündung mit der Hand am Relais hören und fühlen. Danach am Steuergerätestecker die geschaltete Versorgung gegen die Steuergerätemasse messen. Ein Relais, das nur manchmal zieht, ist derselbe Fehler wie eines, das gar nicht zieht.",
+          "measure": "Deutlich hörbares Anziehen beim Einschalten der Zündung, an der geschalteten Versorgung des Steuergeräts steht Bordnetzspannung. Stille oder fehlende Spannung zählt als Nein.",
+          "doc": "D4F-E34-007",
+          "yes": 1,
+          "no": "hauptrelais"
+        },
+        {
+          "q": "Zeigt der Drehzahlmesser während des Startversuchs eine Bewegung?",
+          "help": "Zündung ein, Blick auf den Drehzahlmesser, dann cranken lassen. Der Zeiger muss sich beim Durchdrehen sichtbar von der Null lösen. Beim M50 stammt dieses Signal aus dem Kurbelwellensensor; bleibt der Zeiger tot, fehlt dem Steuergerät die Drehzahlinformation und es gibt weder Zündung noch Einspritzung frei.",
+          "measure": "Sichtbarer Zeigerausschlag bei Anlasserdrehzahl. Ein Zeiger, der auf der Null stehen bleibt, zählt als Nein.",
+          "doc": "D4F-E34-007",
+          "yes": 2,
+          "no": "kurbelwellensensor"
+        },
+        {
+          "q": "Springt an einer ausgebauten Zündkerze ein Funke über, wenn du startest?",
+          "help": "Eine Zündspule mit Kerze abnehmen, die Kerze wieder in die Spule stecken, Gewinde sauber gegen Motormasse legen und cranken lassen. Kerze dabei nicht in der Hand halten. Der M50 hat keinen Verteiler — geprüft wird also die einzelne Spule, nicht ein gemeinsamer Hochspannungsweg.",
+          "measure": "Kräftiger, regelmäßiger Überschlag an der Kerzenelektrode bei Anlasserdrehzahl. Kein oder nur vereinzelter Funke zählt als Nein.",
+          "doc": "D4F-E34-002",
+          "yes": 3,
+          "no": "zuendkreis-m50"
+        },
+        {
+          "q": "Fördert die Kraftstoffpumpe während des Startversuchs?",
+          "help": "Zu zweit arbeiten: einer crankt, einer hört an der Tankgegend. Die Pumpe muss gleichmäßig surren. Bleibt es still, prüfe zuerst die Pumpensicherung und danach das Kraftstoffpumpenrelais, indem du es gegen ein baugleiches aus dem Kasten tauschst.",
+          "measure": "Gleichmäßiges Laufgeräusch während des Startversuchs. Stille zählt als Nein, auch wenn die Pumpe bei aufgelegter Brücke am Relais läuft.",
+          "doc": "D4F-E34-007",
+          "yes": 4,
+          "no": "kraftstoff-m50"
+        },
+        {
+          "q": "Ist die Kompression über alle sechs Zylinder gleichmäßig?",
+          "help": "Alle Kerzen ziehen, Kraftstoffpumpe stromlos legen, Drosselklappe offen halten und jeden Zylinder gleich lang durchdrehen. Bewertet wird die Streuung zwischen den Zylindern, nicht ein Absolutwert — dafür brauchst du keine Herstellervorgabe.",
+          "measure": "Alle sechs Werte liegen dicht beieinander. Ein einzeln abfallender Zylinder oder ein über alle Zylinder gleichmäßig niedriges Niveau zählt als Nein.",
+          "doc": "D4F-E34-005",
+          "yes": 5,
+          "no": "mechanik-m50"
+        },
+        {
+          "q": "Lässt sich am Rundstecker ein Fehlerspeicher auslesen oder eine Blinkfolge auslösen?",
+          "help": "Zündung, Kraftstoff und Mechanik sind geprüft und in Ordnung. Jetzt lohnt der Blick in den Speicher. Rundstecker im Motorraum freilegen, Masse und Versorgung durchmessen, danach Gerät anstecken. Ist keines vorhanden, versuche die Pedalprozedur — sie ist nicht für jeden Steuergerätestand belegt.",
+          "measure": "Das Gerät baut eine Verbindung auf und liefert Einträge, oder die Motorkontrollleuchte gibt eine zählbare Blinkfolge aus. Kein Kontakt und keine Blinkfolge zählt als Nein.",
+          "doc": "D4F-E34-003",
+          "yes": "speicher-lesen",
+          "no": "ohne-speicher"
+        }
+      ]
+    },
+    "m60-warmstart": {
+      "code": "GF-E34-02",
+      "name": "M60 · schlechter Warmstart und unrunder Leerlauf",
+      "desc": "Beim V8 wird dieses Bild schnell auf Nikasil geschoben. Erst die billigen Ursachen ausschließen, dann den Block ablesen, dann vergleichend messen — in dieser Reihenfolge.",
+      "engines": [
+        "M60"
+      ],
+      "steps": [
+        {
+          "q": "Ist das Kühlsystem dicht und der Motor thermisch unauffällig?",
+          "help": "Kalt beginnen. Wasserrohr unter der Ansaugbrücke, Ausgleichsbehälter, Thermostatgehäuse und Wasserpumpe auf Spuren ansehen, danach den Motor warmfahren und die Temperaturanzeige beobachten. Am M60 sind Kunststoffteile im Kühlkreis ein bekannter Schwachpunkt, und Überhitzung erzeugt genau dasselbe Symptombild wie ein Laufbahnschaden.",
+          "measure": "Keine feuchten Stellen oder Kristallspuren an den genannten Teilen, Temperaturanzeige läuft auf ihren üblichen Bereich und bleibt dort. Auffälligkeiten zählen als Nein.",
+          "doc": "D4F-E34-006",
+          "yes": 1,
+          "no": "kuehlsystem-m60"
+        },
+        {
+          "q": "Zieht der Motor Falschluft?",
+          "help": "Alle Unterdruckschläuche, die Ansaugbrückendichtungen und den Übergang zum Luftmassenmesser bei laufendem Leerlauf abgehen. Ändert sich die Leerlaufdrehzahl, wenn du eine Stelle kurz abdrückst oder benetzt, hast du sie gefunden. Am V8 lohnt der Blick auf beide Bänke getrennt.",
+          "measure": "Der Leerlauf bleibt beim Abgehen der Schläuche und Dichtstellen unverändert. Jede Drehzahländerung zählt als Nein.",
+          "doc": "D4F-E34-006",
+          "yes": 2,
+          "no": "falschluft-m60"
+        },
+        {
+          "q": "Steht im Fehlerspeicher ein Eintrag zum Sekundärluftsystem?",
+          "help": "Speicher über den Rundstecker auslesen. Der M60 hat eine Sekundärluftpumpe, die nach dem Kaltstart läuft; ihre Ventile fallen bekanntermaßen aus. Ein Eintrag dazu erklärt Kaltlaufprobleme, ohne dass an den Laufbahnen irgendetwas wäre. Hörprobe direkt nach dem Kaltstart: die Pumpe muss hörbar laufen.",
+          "measure": "Kein Eintrag zum Sekundärluftsystem, und die Pumpe läuft nach dem Kaltstart hörbar an. Ein Eintrag oder eine stumme Pumpe zählt als Nein — hier lautet die Antwort Ja, wenn das System unauffällig ist.",
+          "doc": "D4F-E34-003",
+          "yes": 3,
+          "no": "sekundaerluft-m60"
+        },
+        {
+          "q": "Lässt sich der Block über die Gussnummer sicher als Alusil ausweisen?",
+          "help": "Die Nummer sitzt aussen am Blockguss, rechte Seite auf Höhe von Zylinder 3, knapp über der Kühlmittel-Ablassschraube. Belegt sind vier Nummern: 1725970 (M60B30 Nikasil), 1745871 (M60B30 Alusil), 1725963 (M60B40 Nikasil), 1745872 (M60B40 Alusil). Es sind weitere Nikasil-Nummern im Umlauf, die hier nicht belegt sind — eine unbekannte Nummer ist deshalb kein Freispruch. Selbst ablesen, nicht auf Baujahr oder Vorbesitzererzählung verlassen.",
+          "measure": "Ja nur bei 1745871 oder 1745872 — dann ist Alusil belegt. Bei einer der beiden Nikasil-Nummern und ebenso bei jeder Nummer, die hier nicht steht, lautet die Antwort Nein: die Laufbahnfrage bleibt offen und wird gemessen.",
+          "doc": "D4F-E34-006",
+          "yes": "andere-ursache-m60",
+          "no": 4
+        },
+        {
+          "q": "Streut die Kompression über die acht Zylinder deutlich?",
+          "help": "Motor betriebswarm, alle Kerzen ziehen, Kraftstoffzufuhr stromlos legen, Drosselklappe offen, jeden Zylinder gleich lang durchdrehen. Vergleiche zuerst innerhalb jeder Bank und danach beide Bänke gegeneinander. Bewertet wird die Streuung, nicht ein Absolutwert.",
+          "measure": "Alle acht Werte liegen dicht beieinander — dann lautet die Antwort Nein. Einzelne deutlich abfallende Zylinder oder eine erkennbar schwächere Bank zählen als Ja.",
+          "doc": "D4F-E34-006",
+          "yes": "nikasil-verdacht",
+          "no": "kein-laufbahnschaden"
+        }
+      ]
+    }
+  },
+  "results": {
+    "hauptrelais": {
+      "title": "Versorgung des Steuergeräts fehlt",
+      "text": "Ohne Versorgung gibt das Steuergerät weder Zündung noch Einspritzung frei. Hauptrelais gegen ein baugleiches aus dem Kasten tauschen, Relaissockel und Lötstellen der Relaisplatine auf kalte Stellen ansehen, danach die Steuergerätemasse reinigen und nachziehen. Erst wenn das Relais sicher und wiederholbar zieht, lohnt die weitere Suche.",
+      "next_docs": [
+        "D4F-E34-007"
+      ]
+    },
+    "kurbelwellensensor": {
+      "title": "Kein Drehzahlsignal — Kurbelwellensensor prüfen",
+      "text": "Der Drehzahlmesser bleibt beim Cranken tot, damit fehlt dem Steuergerät die Grundinformation. Sensor am vorderen Motorende freilegen, Steckverbindung und Leitung auf Scheuerstellen und Masseschluss prüfen, Geberrad auf Verschmutzung ansehen. Die kursierenden Widerstandssollwerte widersprechen sich, deshalb tauschweise gegen ein bekannt gutes Teil arbeiten statt gegen eine geratene Zahl zu messen.",
+      "next_docs": [
+        "D4F-E34-007",
+        "D4F-E34-002"
+      ]
+    },
+    "zuendkreis-m50": {
+      "title": "Kein Funke trotz Drehzahlsignal",
+      "text": "Das Steuergerät kennt die Drehzahl, die Zündung kommt trotzdem nicht. Prüfe die Versorgung der Zündspulen und ihre gemeinsame Masse, danach die Ansteuerleitung vom Steuergerät zur einzelnen Spule auf Durchgang und Masseschluss. Eine geprüfte Spule aus derselben Reihe an einen anderen Zylinder setzen trennt Spulenfehler von Ansteuerungsfehler.",
+      "next_docs": [
+        "D4F-E34-002",
+        "D4F-E34-007"
+      ]
+    },
+    "kraftstoff-m50": {
+      "title": "Kraftstoffversorgung unterbrochen",
+      "text": "Die Pumpe fördert beim Cranken nicht. Pumpensicherung prüfen, Kraftstoffpumpenrelais gegen ein baugleiches tauschen, danach die Steckverbindung am Tank ansehen — nach Jahrzehnten ist das die übliche Stelle. Läuft die Pumpe mit abgesicherter Brücke, liegt der Fehler in der Ansteuerung und nicht in der Pumpe.",
+      "next_docs": [
+        "D4F-E34-007"
+      ]
+    },
+    "mechanik-m50": {
+      "title": "Kompression ungleich — Steuertrieb und Mechanik",
+      "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M50 zuerst den Kettentrieb und die Steuermarkierungen kontrollieren, danach nass gegenprüfen, um Ventil und Kolbenringe zu trennen. Ein über alle Zylinder gleichmäßig niedriges Niveau deutet auf einen übersprungenen Steuertrieb und nicht auf Verschleiß.",
+      "next_docs": [
+        "D4F-E34-005",
+        "D4F-E34-002"
+      ]
+    },
+    "speicher-lesen": {
+      "title": "Speicher lesbar — Einträge einzeln bestätigen",
+      "text": "Lies die Einträge aus und schreib sie mit, bevor du löschst. Jeden Eintrag danach einzeln am Bauteil bestätigen: ein gespeicherter Fehler nennt einen Signalpfad, nicht die Ursache. Anschließend löschen, Startversuch wiederholen und sehen, welcher Eintrag zurückkommt — nur der ist aktuell.",
+      "next_docs": [
+        "D4F-E34-003",
+        "D4F-E34-001"
+      ]
+    },
+    "ohne-speicher": {
+      "title": "Kein Zugang zum Speicher — weiter über Messung",
+      "text": "Weder Gerät noch Blinkfolge liefern etwas. Prüfe zuerst Masse und Versorgung am Rundstecker selbst, denn ein toter Stecker sieht aus wie ein totes Steuergerät. Bleibt es dabei, arbeite über Messdiagnose weiter: Einspritzventile auf Ansteuerung, Kraftstoffdruck und Druckhaltung, Luftmassenmesser und Ansaugstrecke auf Falschluft.",
+      "next_docs": [
+        "D4F-E34-001",
+        "D4F-E34-007"
+      ]
+    },
+    "kuehlsystem-m60": {
+      "title": "Kühlsystem zuerst instandsetzen",
+      "text": "Solange der Motor Kühlmittel verliert oder zu warm läuft, ist jede Aussage über die Laufbahnen wertlos. Undichte Stelle beheben, Kunststoffteile im Kreis ersetzen statt zu flicken, System sauber entlüften und danach unter Last beobachten. Erst mit stabilem Temperaturbild den Pfad von vorn durchlaufen.",
+      "next_docs": [
+        "D4F-E34-006"
+      ]
+    },
+    "falschluft-m60": {
+      "title": "Falschluft gefunden",
+      "text": "Eine undichte Stelle im Ansaugtrakt magert das Gemisch ab und erzeugt genau das Bild aus unrundem Leerlauf und schlechtem Warmstart, das dem V8 sonst als Laufbahnschaden ausgelegt wird. Schlauch oder Dichtung ersetzen, danach Leerlauf erneut beurteilen und den Pfad von vorn beginnen.",
+      "next_docs": [
+        "D4F-E34-006"
+      ]
+    },
+    "sekundaerluft-m60": {
+      "title": "Sekundärluftsystem auffällig",
+      "text": "Pumpe und Ventile des Sekundärluftsystems sind am M60 ein bekannter Ausfallpunkt und erklären Kaltlaufprobleme vollständig. Pumpe auf hörbaren Lauf nach dem Kaltstart prüfen, Umschaltventil und seine Unterdruckansteuerung kontrollieren, Leitungen auf Verkokung ansehen. Danach Speicher löschen und nach einem Kaltstart erneut lesen.",
+      "next_docs": [
+        "D4F-E34-006",
+        "D4F-E34-003"
+      ]
+    },
+    "andere-ursache-m60": {
+      "title": "Keine Nikasil-Gussnummer — anderswo weitersuchen",
+      "text": "Der Block trägt keine der bekannten Nikasil-Nummern, damit ist die naheliegende Erklärung vom Tisch. Such weiter bei Zündung und Gemischbildung: Zündkerzenbild über alle acht Zylinder vergleichen, Zündspulen einzeln beurteilen, Einspritzventile auf Dichtheit und Ansteuerung prüfen und den Luftmassenmesser gegen ein bekannt gutes Teil tauschen.",
+      "next_docs": [
+        "D4F-E34-006",
+        "D4F-E34-002"
+      ]
+    },
+    "nikasil-verdacht": {
+      "title": "Streuende Kompression bei Nikasil-Block",
+      "text": "Gussnummer und Messbild passen zusammen. Wiederhole die Messung betriebswarm und nass, um Ventil und Laufbahn zu trennen, und dokumentiere alle acht Werte schriftlich — die Streuung ist der Befund, nicht ein einzelner Wert. Vor jeder Entscheidung über den Motor die Messung an einem zweiten Tag gegenprüfen; eine einzelne Messreihe trägt eine solche Entscheidung nicht.",
+      "next_docs": [
+        "D4F-E34-006",
+        "D4F-E34-002"
+      ]
+    },
+    "kein-laufbahnschaden": {
+      "title": "Kompression gleichmäßig — Laufbahnen unauffällig",
+      "text": "Trotz Nikasil-Gussnummer verdichten alle acht Zylinder gleichmäßig. Damit ist das Symptombild nicht mechanisch erklärt. Geh zurück in die Gemischbildung: Zündkerzenbild vergleichen, Einspritzventile auf Dichtheit prüfen, Kurbelgehäuseentlüftung ansehen und Zündspulen einzeln beurteilen. Halte die Messwerte fest, damit du sie später vergleichen kannst.",
+      "next_docs": [
+        "D4F-E34-006",
+        "D4F-E34-003"
+      ]
+    }
+  }
+}

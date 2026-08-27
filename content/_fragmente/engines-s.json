@@ -1,0 +1,440 @@
+{
+  "schema": "diag4free/engines/v1",
+  "note": "Fragment: M-GmbH-Motoren (S-Reihe). Wird mit den übrigen Fragmenten zu content/engines.json zusammengeführt.",
+  "engines": [
+    {
+      "id": "S14",
+      "name": "S14",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2302,
+      "years": "1986–1991",
+      "valvetrain": [
+        "DOHC",
+        "16V",
+        "Einzeldrosselklappen",
+        "Duplex-Steuerkette",
+        "Tassenstößel mit Einstellplättchen"
+      ],
+      "power_variants": [
+        {
+          "label": "M3 (E30) ohne Kat · S14B23",
+          "ps": 200
+        },
+        {
+          "label": "M3 (E30) mit Kat · S14B23",
+          "ps": 195,
+          "nm": 230
+        },
+        {
+          "label": "M3 (E30) Evolution II ohne Kat",
+          "ps": 220
+        },
+        {
+          "label": "M3 (E30) Evolution II mit Kat",
+          "ps": 215
+        },
+        {
+          "label": "M3 (E30) Sport Evolution · S14B25",
+          "ps": 238,
+          "nm": 240
+        },
+        {
+          "label": "320is (E30, Italien/Portugal) · S14B20",
+          "ps": 192
+        }
+      ],
+      "id_marks": [
+        "Vierzylinder mit vier Ventilen je Zylinder — der einzige seiner Art im E30. Ein M10-Block trägt einen verkürzten Kopf aus der S38-Familie.",
+        "Zwei Doppel-Drosselklappengehäuse statt einer zentralen Drosselklappe. Vier Klappen für vier Zylinder, direkt vor dem Kopf.",
+        "Drei Hubräume unterscheiden die Varianten: 2302 cm³ im Serien-M3, 2467 cm³ in der Sport Evolution, 1990 cm³ im 320is.",
+        "Motornummer am Zylinderblock eingeschlagen. Zur Stelle widersprechen sich die Quellen: einmal links unten am Block, einmal auf der Planfläche am Anlasserflansch. Beide absuchen.",
+        "Optisch sind die Blöcke der S14-Varianten kaum zu unterscheiden. Die eingeschlagene Nummer entscheidet, nicht das Aussehen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Die Sauganlage wird mit dem Alter undicht. Folge sind unrunder Lauf und Leistungsverlust — Falschluft vor der Suche nach Elektronik ausschließen.",
+        "Erfahrungswert: Ölpumpe mit klemmendem Regelkolben, dadurch Öldruckprobleme. Wird bei einer Revision üblicherweise mitgeprüft.",
+        "Erfahrungswert: Pleuellagerschalen werden bei Revisionen vorsorglich erneuert.",
+        "Erfahrungswert: Das Ventilspiel wird über Einstellplättchen gesetzt, nicht über Hydrostößel. Vernachlässigte Kontrolle geht zulasten der Nockenwelle."
+      ],
+      "dme": "Bosch Motronic ML — Versionsangaben der Quellen widersprüchlich"
+    },
+    {
+      "id": "S38",
+      "name": "S38",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3535,
+      "years": "1984–1995",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Einzeldrosselklappen",
+        "Duplex-Steuerkette"
+      ],
+      "power_variants": [
+        {
+          "label": "M5 (E28) / M6 (E24), Nordamerika und Japan · S38B35 — 3453 cm³",
+          "ps": 260
+        },
+        {
+          "label": "M5 (E34) · S38B36 — 3535 cm³",
+          "ps": 315,
+          "nm": 360
+        },
+        {
+          "label": "M5 (E34) · S38B38 — 3795 cm³",
+          "ps": 340,
+          "nm": 400
+        },
+        {
+          "label": "M5 (E34) Nordamerika · S38B38 — — 314 PS (Werksangabe 310 hp SAE)",
+          "ps": 314
+        }
+      ],
+      "id_marks": [
+        "Reihensechszylinder mit sechs Einzeldrosselklappen und Doppelnockenwelle — im E28 und E34 der einzige Vierventiler.",
+        "Direkter Verwandter des M88 aus dem M1. Wer einen M88/3 sucht: der lief im europäischen M5 (E28), der S38B35 ist die Export-Fassung für Nordamerika und Japan.",
+        "Drei Hubräume trennen die Baustufen: 3453, 3535 und 3795 cm³. Die Motornummer nennt die Variante eindeutig, das Blechkleid nicht.",
+        "Der S38B36 hat eine elektrisch gesteuerte Klappe im Sammler (Schaltsaugrohr). Der S38B38 fährt Einzelzündspulen statt Verteiler.",
+        "Kein VANOS. Wer eine Nockenwellenverstellung am Kopf sucht, hat einen anderen Motor vor sich."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Der Steuertrieb läuft über eine Duplexkette und gilt im E34-M5 als haltbarer als in den älteren Fassungen — trotzdem gehört Kettenrasseln beim Kaltstart abgeklärt.",
+        "Erfahrungswert: Lose Ölpumpenschrauben sind der klassische Totalschaden-Auslöser dieser Motorenfamilie. Bei offener Ölwanne kontrollieren und sichern.",
+        "Erfahrungswert: Der Zustand hängt stärker an der Ölwechselhistorie als am Kilometerstand."
+      ],
+      "dme": "Bosch Motronic 1.2 (S38B36) · Bosch Motronic 3.3 (S38B38)"
+    },
+    {
+      "id": "S50",
+      "name": "S50",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2990,
+      "years": "1992–1999",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "VANOS",
+        "Einzeldrosselklappen"
+      ],
+      "power_variants": [
+        {
+          "label": "M3 (E36) Europa · S50B30 — 2990 cm³",
+          "ps": 286,
+          "nm": 320
+        },
+        {
+          "label": "M3 (E36) Europa · S50B32 — 3201 cm³",
+          "ps": 321,
+          "nm": 350
+        },
+        {
+          "label": "M3 (E36) Nordamerika · S50B30US — 2990 cm³, — 243 PS (Werksangabe 240 hp SAE)",
+          "ps": 243,
+          "nm": 305
+        }
+      ],
+      "id_marks": [
+        "Der europäische S50 und der nordamerikanische S50B30US sind zwei verschiedene Motoren mit gleichem Hubraum. Das Erkennungsmerkmal liegt am Ansaugtrakt: Europa hat sechs Einzeldrosselklappen, Nordamerika ein konventionelles Sammelsaugrohr.",
+        "Gegen den M50 aus dem 325i: der S50 trägt die Einzeldrosselklappen, ein größeres Kopfvolumen und die M-Motornummer. Der M50 hat eine zentrale Drosselklappe am Sammler.",
+        "S50B30 und S50B32 trennen sich am VANOS: der B30 verstellt nur die Einlassnockenwelle, der B32 hat Doppel-VANOS.",
+        "Der S50B32 hat drei Klopfsensoren und ein Siemens-Steuergerät; der S50B30 fährt Bosch Motronic.",
+        "Motornummer am Zylinderblock eingeschlagen. Sie ist bei diesen Varianten das einzige belastbare Unterscheidungsmerkmal, wenn der Ansaugtrakt bereits getauscht wurde."
+      ],
+      "weak_points": [
+        "Erfahrungswert: VANOS-Einheit wird undicht. Symptome sind Leistungsverlust im mittleren Drehzahlbereich und schlechtes Ansprechen. Verschlissene Dichtringe der Magnetventile können das Gehäuse beschädigen.",
+        "Erfahrungswert: Frühe S50B32-Einheiten und praktisch alle S50B30-Einheiten zeigen starken Verschleiß am Einlasszylinder der VANOS; bei späteren B32 wird das seltener berichtet.",
+        "Erfahrungswert: Pleuellagerschalen verschleißen bei hoher Drehzahl, verschärft durch einen klemmenden Regelkolben in der Ölpumpe.",
+        "Erfahrungswert: Rasseln aus dem Steuertrieb kommt oft vom Kettenspanner, nicht von der VANOS — Geräuschquelle vor dem Teiletausch eingrenzen."
+      ],
+      "dme": "Bosch Motronic M3.3 (S50B30) · Siemens MSS50 (S50B32)"
+    },
+    {
+      "id": "S52",
+      "name": "S52",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3152,
+      "years": "1996–2000",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "VANOS (Einlass)"
+      ],
+      "power_variants": [
+        {
+          "label": "M3 (E36) Nordamerika — 243 PS (Werksangabe 240 hp SAE)",
+          "ps": 243,
+          "nm": 320
+        },
+        {
+          "label": "Z3 M Roadster/Coupé (E36/7, E36/8) Nordamerika — 243 PS (Werksangabe 240 hp SAE)",
+          "ps": 243,
+          "nm": 320
+        }
+      ],
+      "id_marks": [
+        "Der S52 ist der M-Motor ohne Einzeldrosselklappen. Wer einen E36 M3 mit Sammelsaugrohr und einer zentralen Drosselklappe vor sich hat, sieht einen S52 oder einen S50B30US, keinen europäischen S50.",
+        "Grauguss-Zylinderblock — abgeleitet vom nordamerikanischen M52, nicht vom europäischen Aluminium-M52.",
+        "VANOS nur auf der Einlassseite und in Stufen, nicht stufenlos wie das Doppel-VANOS des S50B32.",
+        "Bohrung 86.4 mm, Hub 89.6 mm — daraus 3152 cm³. Der S50B32 hat denselben Bohrungsdurchmesser, aber 91 mm Hub und 3201 cm³.",
+        "Motornummer am Zylinderblock eingeschlagen; sie unterscheidet den S52 vom zivilen M52 zuverlässiger als der Ventildeckel."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Die Nikasil-Thematik betrifft den zivilen M52 mit Aluminiumblock, nicht den S52 mit Grauguss-Block. Für den S52 ist sie kein Prüfpunkt.",
+        "Erfahrungswert: VANOS-Einheit wird undicht wie bei den übrigen Motoren dieser Generation — Leistungsverlust im mittleren Drehzahlbereich.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung verhärtet mit dem Alter und zieht Falschluft."
+      ],
+      "dme": "Siemens MS41.1"
+    },
+    {
+      "id": "S54",
+      "name": "S54",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3246,
+      "years": "2000–2008",
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Doppel-VANOS",
+        "Einzeldrosselklappen"
+      ],
+      "power_variants": [
+        {
+          "label": "M3 (E46)",
+          "ps": 343,
+          "nm": 365
+        },
+        {
+          "label": "M3 (E46) Nordamerika — 338 PS (Werksangabe 333 hp SAE)",
+          "ps": 338
+        },
+        {
+          "label": "M3 CSL (E46) · S54B32HP",
+          "ps": 360,
+          "nm": 370
+        },
+        {
+          "label": "Z3 M Roadster/Coupé (E36/7, E36/8)",
+          "ps": 325,
+          "nm": 354
+        },
+        {
+          "label": "Z3 M Nordamerika — 319 PS (Werksangabe 315 hp SAE)",
+          "ps": 319
+        },
+        {
+          "label": "Z4 M Roadster/Coupé (E85, E86)",
+          "ps": 343,
+          "nm": 365
+        },
+        {
+          "label": "Z4 M Nordamerika — 335 PS (Werksangabe 330 hp SAE)",
+          "ps": 335
+        }
+      ],
+      "id_marks": [
+        "Sechs Einzeldrosselklappen, elektrisch betätigt über einen gemeinsamen Stellmotor. Der M54 aus dem zivilen E46 hat eine einzige elektronische Drosselklappe am Sammler — das ist der Unterschied auf den ersten Blick.",
+        "Grauguss-Zylinderblock. Der M54 hat einen Aluminiumblock und ist deutlich leichter — am Gewicht und am Klang beim Anschlagen unterscheidbar.",
+        "Bohrung 87 mm, Hub 91 mm, 3246 cm³. Der M54B30 kommt bei 2979 cm³ heraus, sieht am Kopf aber ähnlich aus.",
+        "Die Motornummer sitzt an der Auslassseite unten am Block, dicht über der Ölwanne, unter dem Krümmerbereich. Für das Ablesen ist meist eine Abdeckung oder die Alu-Bodenstrebe im Weg.",
+        "Der CSL-Motor (S54B32HP) erkennt sich am Kohlefaser-Ansaugkasten und dem leichten Krümmer, nicht an Motornummer allein."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Pleuellagerschalen sind der bekannteste Schwachpunkt. Ein vorsorglicher Wechsel gehört bei diesem Motor zum Standardrepertoire der Werkstätten.",
+        "Erfahrungswert: Die kleine Spannschiene im VANOS-Antrieb verschleißt und kann brechen; Folgeschäden sind erheblich. Berichtet wird das ab dem Bereich um 100 tkm — Erfahrungswert, keine Vorgabe.",
+        "Erfahrungswert: Magnetventilblock der VANOS und das Druckhalteventil im Block werden undicht. Beides wird üblicherweise beim Pleuellagerservice mit erledigt.",
+        "Erfahrungswert: Zylinderkopfdichtung kann zwischen benachbarten Zylindern durchbrennen; die Stege zwischen den Bohrungen sind dünn.",
+        "Erfahrungswert: Rasseln kommt häufiger vom Kettenspanner als von der VANOS. Vor dem Teiletausch die Quelle eingrenzen."
+      ],
+      "dme": "Siemens MSS54, im M3 CSL MSS54HP"
+    },
+    {
+      "id": "S62",
+      "name": "S62",
+      "layout": "V8",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 4941,
+      "years": "1998–2003",
+      "valvetrain": [
+        "DOHC",
+        "32V",
+        "Doppel-VANOS",
+        "Einzeldrosselklappen"
+      ],
+      "power_variants": [
+        {
+          "label": "M5 (E39)",
+          "ps": 400,
+          "nm": 500
+        },
+        {
+          "label": "Z8 (E52)",
+          "ps": 400,
+          "nm": 500
+        }
+      ],
+      "id_marks": [
+        "Acht Einzeldrosselklappen, elektrisch betätigt — je eine pro Zylinder. Der zivile M62 aus dem 540i hat eine zentrale Drosselklappe und einen glatten Sammler.",
+        "Erster BMW-V8 mit Doppel-VANOS, also Verstellung an Ein- und Auslassnockenwelle. Der M62TU verstellt nur den Einlass.",
+        "Bohrung 94 mm, Hub 89 mm, 4941 cm³. Der M62B44 kommt auf 4398 cm³ — der Hubraumunterschied ist an der Motornummer, nicht am Gehäuse ablesbar.",
+        "Fahrprogrammschalter für die Drosselklappenkennlinie (Normal/Sport) gehört zum Motorkonzept und findet sich beim zivilen V8 nicht.",
+        "Motornummer am Zylinderblock eingeschlagen; sie ist bei getauschten Anbauteilen das verbindliche Merkmal."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkettengleitschienen aus Kunststoff werden spröde und brechen. Bruchstücke wandern in die Ölwanne und können die Ölpumpe zusetzen. Berichtet wird der Wechsel im Bereich 160–190 tkm — Erfahrungswert, keine Vorgabe.",
+        "Erfahrungswert: VANOS wird undicht, Folge sind Leistungsverlust und schlechtes Ansprechen. Schrauben des VANOS-Antriebs können brechen und in den Motor fallen.",
+        "Erfahrungswert: Zylinderkopfdichtung kann zwischen den Zylindern reißen.",
+        "Erfahrungswert: Pleuellagerservice gehört wie bei den übrigen M-Hochdrehzahlmotoren zum üblichen Instandhaltungsumfang."
+      ],
+      "dme": "Siemens MSS52"
+    },
+    {
+      "id": "S63",
+      "name": "S63",
+      "layout": "V8",
+      "aspiration": "Bi-Turbo",
+      "displacement_cc": 4395,
+      "years": "ab 2009",
+      "valvetrain": [
+        "DOHC",
+        "32V",
+        "Doppel-VANOS",
+        "Valvetronic (ab S63B44T0)",
+        "Direkteinspritzung"
+      ],
+      "power_variants": [
+        {
+          "label": "X5 M (E70) / X6 M (E71) · S63B44O0",
+          "ps": 555,
+          "nm": 680
+        },
+        {
+          "label": "M5 (F10) · S63B44T0",
+          "ps": 560,
+          "nm": 680
+        },
+        {
+          "label": "M6 (F12/F13) · S63B44T0",
+          "ps": 560,
+          "nm": 680
+        },
+        {
+          "label": "X5 M (F85) / X6 M (F86) · S63B44T2",
+          "ps": 575,
+          "nm": 750
+        },
+        {
+          "label": "M5 (F90) · S63B44T4",
+          "ps": 600,
+          "nm": 750
+        },
+        {
+          "label": "M5 Competition (F90) · S63B44T4",
+          "ps": 625,
+          "nm": 750
+        }
+      ],
+      "id_marks": [
+        "Der einzige aufgeladene Motor dieser Reihe. Beide Turbolader sitzen im V zwischen den Zylinderbänken, nicht außen — der sogenannte Hot-V.",
+        "Der bankübergreifende Krümmer ist das sicherste Merkmal: Abgasleitungen laufen von beiden Bänken zusammen auf die innenliegenden Lader.",
+        "Abgrenzung zum N63: gleiche Grundarchitektur und gleicher Hubraum, aber M-spezifischer Kurbeltrieb, andere Lader und andere Motornummer. Die Motornummer entscheidet, nicht die Bauform.",
+        "Ab dem S63B44T0 kommt Valvetronic dazu; die frühe Fassung S63B44O0 im X5 M/X6 M (E70/E71) hat sie noch nicht.",
+        "Motornummer am Zylinderblock eingeschlagen — bei den innenliegenden Ladern und dichter Kapselung häufig nur mit demontierter Abdeckung lesbar."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Pleuellagerschalen verschleißen durch die Kombination aus Drehzahl und Ladedruck.",
+        "Erfahrungswert: Ventilschaftdichtungen härten aus, Öl gelangt in den Brennraum, der Ölverbrauch steigt deutlich. Das ist der meistgenannte Punkt dieser Motorenfamilie.",
+        "Erfahrungswert: Piezo-Injektoren fallen aus und verursachen Zündaussetzer.",
+        "Erfahrungswert: Steuerkette kann sich längen, die Gleitschiene brechen und Kunststoffbruch in der Ölwanne landen."
+      ],
+      "dme": "Siemens MSD85 (S63B44O0) · MEVD17.2 (ab S63B44T0)"
+    },
+    {
+      "id": "S65",
+      "name": "S65",
+      "layout": "V8",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3999,
+      "years": "2007–2013",
+      "valvetrain": [
+        "DOHC",
+        "32V",
+        "Doppel-VANOS",
+        "Einzeldrosselklappen"
+      ],
+      "power_variants": [
+        {
+          "label": "M3 (E90/E92/E93) · S65B40",
+          "ps": 420,
+          "nm": 400
+        },
+        {
+          "label": "M3 GTS (E92) / M3 CRT (E90) · S65B44 — 4361 cm³",
+          "ps": 450,
+          "nm": 440
+        }
+      ],
+      "id_marks": [
+        "Acht Einzeldrosselklappen mit sichtbaren Klappen im Ansaugtrakt. Der N62 aus dem zivilen V8 regelt über Valvetronic und hat eine Drosselklappe nur als Notlauf-Einrichtung — das ist der klarste Unterschied im Motorraum.",
+        "Der S65 hat kein Valvetronic. Wer den charakteristischen liegenden Valvetronic-Stellmotor auf der Auslassseite sucht und nicht findet, hat den M-Motor vor sich.",
+        "Halbtrockensumpf-Schmierung statt einfacher Ölwanne — Konstruktionsmerkmal, das der S65 vom S85 V10 übernimmt.",
+        "Der GTS/CRT-Motor S65B44 hat 4361 cm³ statt 3999 cm³. Äußerlich baugleich; die Motornummer trennt die beiden.",
+        "Motornummer am Zylinderblock eingeschlagen. Bei diesem Motor ist sie das einzig verbindliche Merkmal gegenüber dem N62."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Pleuellagerschalen sind der bekannteste Punkt. Verschleiß tritt durch die hohe Drehzahl früher ein als bei anderen BMW-M-Motoren; ein vorsorglicher Wechsel deutlich vor 100 tkm wird häufig empfohlen — Erfahrungswert, keine Werksvorgabe.",
+        "Erfahrungswert: Drosselklappenstellmotoren fallen aus, der Motor geht in den Notlauf. Berichtet werden gealterte Kunststoffzahnräder im Stellmotor.",
+        "Erfahrungswert: Schwergängige Drosselklappengestänge gehören regelmäßig gereinigt und gefettet, sonst überlastet das den Stellmotor.",
+        "Erfahrungswert: Frühe Baujahre werden bei den Pleuellagern häufiger genannt als späte. Eine belegte Baujahrsgrenze liegt nicht vor."
+      ],
+      "dme": "Siemens MSS60"
+    },
+    {
+      "id": "S85",
+      "name": "S85",
+      "layout": "V10",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 4999,
+      "years": "2005–2010",
+      "valvetrain": [
+        "DOHC",
+        "40V",
+        "Doppel-VANOS",
+        "Einzeldrosselklappen",
+        "Hydraulischer Ventilspielausgleich"
+      ],
+      "power_variants": [
+        {
+          "label": "M5 (E60/E61)",
+          "ps": 507,
+          "nm": 520
+        },
+        {
+          "label": "M6 (E63/E64)",
+          "ps": 507,
+          "nm": 520
+        }
+      ],
+      "id_marks": [
+        "Der einzige Zehnzylinder, den BMW in Serie gebaut hat. Verwechslung mit einem V8 oder V12 ist bei offener Haube nach dem Abzählen der Zündspulen ausgeschlossen.",
+        "Zehn Einzeldrosselklappen, angetrieben von zwei Stellmotoren. Nach einem Tausch müssen die Stellmotoren mit dem BMW-Tester angelernt und adaptiert werden — ohne Adaption läuft der Motor nicht sauber.",
+        "Bohrung 92 mm, Hub 75.2 mm, 4999 cm³ — kurzhubige Auslegung, an den flachen Brennräumen und dem Drehzahlband ablesbar.",
+        "Hochdruck-Doppel-VANOS mit eigener Hochdruck-Ölpumpe. Eine eigene VANOS-Hochdruckpumpe mit Druckspeicher hat sonst nur der S54 — bei den zivilen Motoren gibt es sie nicht.",
+        "Ionenstrom-Messung über die Zündkerzen statt klassischer Klopfsensoren — im Fehlerspeicher tauchen dadurch Klopf- und Aussetzermeldungen anders auf als bei den übrigen Motoren.",
+        "Motornummer am Zylinderblock eingeschlagen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Pleuellagerschalen sind der bekannteste Punkt. Häufig genannt wird der Bereich 100–150 tkm für den vorsorglichen Wechsel — Erfahrungswert, keine Werksvorgabe.",
+        "Erfahrungswert: Beide VANOS-Einheiten werden undicht; Dichtungssätze und Magnetventile sind der übliche Umfang.",
+        "Erfahrungswert: Die VANOS-Hochdruckölpumpe verschleißt und kann ausfallen. Der Ausfall zieht Folgeschäden nach sich.",
+        "Erfahrungswert: Die beiden Drosselklappenstellmotoren fallen aus, der Motor geht in den Notlauf.",
+        "Erfahrungswert: Erhöhter Ölverbrauch wird über die Laufzeit regelmäßig berichtet."
+      ],
+      "dme": "Siemens MSS65"
+    }
+  ]
+}

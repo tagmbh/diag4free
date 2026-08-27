@@ -1,0 +1,191 @@
+{
+  "model": "e60",
+  "docs": [
+    {
+      "id": "D4F-E60-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E60/E61 · Kabel, Protokoll und Software nach Baujahr",
+      "valid": "E60/E61 · 2003–2010 · alle Motoren",
+      "summary": "Der E60 überspannt den Wechsel des Diagnoseprotokolls. Fahrzeuge bis 03/2007 antworten über die K-Line an OBD-Pin 7, Fahrzeuge ab 03/2007 über D-CAN an Pin 6 und 14. Dasselbe Kabel muss dafür anders geschaltet sein — das ist die häufigste Ursache für „kein Steuergerät gefunden“.",
+      "points": [
+        "Baujahr zuerst klären: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6/14. Das Baujahr steht auf dem Typschild der B-Säule, nicht in der Zulassung",
+        "K+DCAN-Kabel mit Schalter: für den frühen E60 in K-Line-Stellung, für den späten in DCAN-Stellung. Steht der Schalter falsch, meldet EDIABAS schlicht kein Steuergerät — kein Hardwaredefekt",
+        "Latency Timer des FTDI-Treibers auf 1 ms setzen. Der Standardwert von 16 ms erzeugt Zeitüberschreitungen, die wie ein totes Steuergerät aussehen",
+        "Pin 8 führt im 16-poligen Stecker kein genormtes Signal — die Norm lässt ihn dem Hersteller frei, und genau deshalb gehen die Angaben zur Brücke 7/8 auseinander. Am E60 berichten Anwender beides, mit und ohne. Im Zweifel den Adapter ohne Brücke zuerst probieren",
+        "Der frühe E60 wird bis 09/2005 über das SGM diagnostiziert, danach über das Karosserie-Gateway. Ein Fahrzeug, das gar nicht antwortet, hat sein Problem oft im Gateway, nicht im Kabel",
+        "Vor jeder Codierung die vorhandenen Codierdaten des betroffenen Steuergeräts sichern — am E60 ist das kein optionaler Schritt"
+      ],
+      "pins": [
+        "OBD2 Pin 7 · K-Line · Diagnose bis 03/2007",
+        "OBD2 Pin 6 · D-CAN High · ab 03/2007",
+        "OBD2 Pin 14 · D-CAN Low · ab 03/2007",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 8 · herstellerfrei, kein genormtes Signal · Belegung am E60 strittig — siehe Werkstattpunkte"
+      ],
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "article": "diagnosezugang.md",
+      "details": ["D4F-E60-002"],
+      "obd": {
+        "pids": ["0100", "0104", "0105", "010B", "010C", "010F"],
+        "requires": ["ecu:DME", "protocol:D-CAN"]
+      }
+    },
+    {
+      "id": "D4F-E60-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "E60-Steuergeräte-Topologie · welcher Bus trägt welches Gerät",
+      "valid": "E60/E61 · 2003–2010",
+      "summary": "Der E60 verteilt seine Steuergeräte auf mehrere Busse: PT-CAN für Antrieb und Fahrwerk, K-CAN für die Karosserie, MOST für Audio und Navigation, byteflight für die Rückhaltesysteme der frühen Baujahre. Wer den falschen Bus verdächtigt, sucht am falschen Ende — dieses Dokument ordnet die Geräte zu.",
+      "points": [
+        "PT-CAN (Antrieb): DME beziehungsweise DDE, EGS, DSC, Lenkwinkelsensor im SZL, EMF und die Fahrwerksregelungen. Ein Ausfall hier trifft Motor, Getriebe und Bremse gleichzeitig",
+        "K-CAN (Karosserie): CAS, Kombiinstrument, Klimabedienteil, Licht- und Türfunktionen. Ein Ausfall hier lässt den Motor weiterlaufen, macht aber Komfortfunktionen tot",
+        "MOST (Lichtwellenleiter): CCC beziehungsweise Radio, Verstärker, Telefon, Tuner. Rein optisch — ein einziges gebrochenes Faserkabel legt den ganzen Ring still",
+        "byteflight nur bis 09/2005 für die Rückhaltesysteme mit Satelliten. Ab 09/2005 entfällt byteflight, das Karosserie-Gateway-Modul löst das SGM ab",
+        "Gateway-Ausfall erkennt man am Muster: mehrere Steuergeräte auf mehreren Bussen melden gleichzeitig „keine Kommunikation“, obwohl sie einzeln versorgt sind. Dann ist nicht jedes Gerät defekt, sondern der Übergang zwischen den Bussen",
+        "Regel vor jedem Bauteiltausch: erst prüfen, ob das verdächtige Gerät auf seinem eigenen Bus antwortet. Antwortet es, ist der Eintrag im Nachbarsteuergerät ein Folgefehler"
+      ],
+      "pins": [
+        "OBD2 Pin 6/14 · D-CAN — Diagnoseleitung am Gateway",
+        "OBD2 Pin 7 · K-Line — Diagnoseleitung bis 03/2007"
+      ],
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "article": "topologie.md",
+      "details": ["D4F-E60-001", "D4F-E60-040"]
+    },
+    {
+      "id": "D4F-E60-010",
+      "type": "TEST",
+      "cat": "N62 · Fehlerbilder",
+      "title": "N62-V8 im E60 · Öl- und Kühlmittelverlust eingrenzen",
+      "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
+      "summary": "Der N62 verliert typischerweise an mehreren Stellen gleichzeitig Öl oder Kühlmittel, und die Stellen liegen dicht beieinander. Ziel dieses Dokuments ist es, die Quelle zu bestimmen, bevor eine Dichtung bestellt wird — ein Ölfleck unter dem Motor sagt für sich genommen wenig.",
+      "points": [
+        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heißen Krümmer, nicht unbedingt ein Fleck am Boden",
+        "Dichtung des Lichtmaschinenträgers: Öl läuft von oben über den Generator. Wird oft für eine Ventildeckeldichtung gehalten — der Unterschied liegt darin, ob das Öl oberhalb oder unterhalb der Trägerplatte ansetzt",
+        "Kühlmittelverlust ohne sichtbaren Fleck deutet auf die Dichtungen des Kühlmittel-Überführungsrohrs im V zwischen den Bänken. Das ist eine Motorausbau-nahe Arbeit — Befund vorher absichern",
+        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck außen. Kein Fehlerspeichereintrag, rein optischer Befund",
+        "Valvetronic-Stellmotoren müssen vor dem Abnehmen der Ventildeckel in Parkstellung gebracht und nach dem Zusammenbau neu angelernt werden. Wer diesen Schritt überspringt, riskiert den Verstelltrieb",
+        "Sollwerte fehlen: Anzugsmomente der Ventildeckel und des Trägers sind hier nicht belegt. Sie gehören aus der Herstellervorgabe geholt — Aluminium verzeiht ein geschätztes Moment nicht"
+      ],
+      "pins": [],
+      "engines": ["N62"],
+      "article": "n62-fehlerbilder.md",
+      "details": ["D4F-E60-002"],
+      "obd": {
+        "pids": ["0104", "0105", "010C"],
+        "requires": ["ecu:DME"]
+      }
+    },
+    {
+      "id": "D4F-E60-020",
+      "type": "TEST",
+      "cat": "M57 · Fehlerbilder",
+      "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
+      "valid": "E60/E61 · M57 (525d, 530d, 535d)",
+      "summary": "Am M57 laufen drei Themen ineinander: verrußte Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
+      "points": [
+        "Drallklappen verrußen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
+        "Nach einer Quelle wurden ab 03/2004 Kunststoff-Drallklappen mit Rückhaltemechanismus verbaut; frühere Motoren gelten als der kritischere Fall. Vor dem Anwenden am konkreten Fahrzeug gegenprüfen",
+        "Widerspruch in der Praxis: die einen entfernen die Klappen, die anderen warnen, dass die Klappenstellung in die Regeneration des Partikelfilters eingeht. Beides steht so in unabhängigen Quellen — die Entscheidung gehört dokumentiert, nicht stillschweigend getroffen",
+        "Werden Klappen entfernt, müssen die Öffnungen sauber verschlossen werden. Eine undichte Ansaugbrücke zieht Falschluft und verliert Ladedruck — das Fehlerbild wandert dann auf die Ladedruckregelung",
+        "Ladedruckregelung am M57 arbeitet über Unterdruck. Prüfe vor jedem Ladersverdacht die Unterdruckdose, die Schläuche und das Umschaltventil auf Dichtheit — eine gerissene Leitung erzeugt dasselbe Bild wie eine feste Ladergeometrie",
+        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von außen"
+      ],
+      "pins": [],
+      "engines": ["M57"],
+      "details": ["D4F-E60-001", "D4F-E60-002"],
+      "obd": {
+        "pids": ["0104", "0105", "010B", "010F"],
+        "requires": ["ecu:DDE"]
+      }
+    },
+    {
+      "id": "D4F-E60-030",
+      "type": "GUIDE",
+      "cat": "Fahrwerk · Dynamic Drive",
+      "title": "Dynamic Drive und Aktivlenkung · was ausfällt und was nur mitmeldet",
+      "valid": "E60/E61 · mit aktiver Wankstabilisierung bzw. Aktivlenkung",
+      "summary": "Die aktive Wankstabilisierung und die Aktivlenkung sind hydraulisch beziehungsweise elektrisch eigenständige Systeme, hängen aber am selben Bus und an derselben Servopumpe. Ein Ausfall meldet sich deshalb oft an mehreren Stellen gleichzeitig, und die Meldung mit dem lautesten Text ist selten die Ursache.",
+      "points": [
+        "Dynamic Drive arbeitet mit zwei aktiven Stabilisatoren, Drucksensoren und einem Ventilblock. Die Servopumpe ist eine Tandempumpe — sie versorgt Lenkung und Wankstabilisierung aus demselben Ölkreis",
+        "Erfahrungswert aus mehreren unabhängigen Fäden: sind Stabilisatoren und Leitungen dicht, liegt der Fehler ganz überwiegend im Ventilblock, nur selten im Steuergerät. Das ist eine Häufigkeitsaussage, keine Diagnose",
+        "Typischer Eintrag ist eine Druckplausibilität zwischen Vorder- und Hinterachse. Die Drucksensoren sitzen am Ventilblock, ihre Nullpunkte werden vom Steuergerät über eine Servicefunktion angelernt",
+        "Vor jeder Bauteildiagnose Ölstand und Dichtheit des Servokreises prüfen. Zu wenig Öl oder Luft im Kreis erzeugt dasselbe Bild wie ein defekter Ventilblock",
+        "Nach jedem Eingriff in den Hydraulikkreis gehört das System entlüftet. Ohne Entlüftung bleibt der Fehler stehen, obwohl das Bauteil neu ist",
+        "Aktivlenkung meldet sich mit eigener Warnung. Steht sie zusammen mit einer Dynamic-Drive-Meldung an, zuerst die gemeinsame Ursache prüfen: Servokreis, Bordspannung, PT-CAN"
+      ],
+      "pins": [],
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "article": "dynamic-drive.md",
+      "details": ["D4F-E60-002"]
+    },
+    {
+      "id": "D4F-E60-040",
+      "type": "TEST",
+      "cat": "iDrive · MOST",
+      "title": "MOST-Ring und iDrive · Ringbruch finden statt Steuergeräte tauschen",
+      "valid": "E60/E61 · mit MOST-Ring (Radio, Navigation, Verstärker)",
+      "summary": "Audio, Telefon und Navigation hängen am MOST-Ring, einem optischen Bus. Der Ring ist in sich geschlossen: ein einziges unterbrochenes Faserkabel oder ein Gerät, das das Licht nicht weitergibt, legt alle anderen mit still. Deshalb sagt „iDrive tot“ nichts darüber aus, welches Gerät schuld ist.",
+      "points": [
+        "Ringlogik zuerst verstehen: der MOST überträgt optisch. Jedes Gerät empfängt Licht und gibt es weiter. Fällt ein Glied aus, schweigt der ganze Ring — die Zahl der ausgefallenen Funktionen sagt nichts über die Zahl der defekten Geräte",
+        "Ringbruchdiagnose in der Werkstattsoftware nutzen: sie vergleicht die hinterlegte Ringreihenfolge mit den Geräten, die tatsächlich antworten. Das erste Gerät, das nicht mehr antwortet, markiert die Bruchstelle",
+        "Ohne Kenntnis der Ringreihenfolge ist die Suche wertlos. Die Reihenfolge gehört vor dem Zerlegen ausgelesen, nicht danach rekonstruiert",
+        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schließen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
+        "Fasern brechen fast immer an Steckern und engen Radien, nicht in der Mitte. Steckverbinder zuerst ansehen, bevor ein Steuergerät verdächtigt wird",
+        "Sporadischer Ausfall zusammen mit erhöhter Ruhestromaufnahme deutet darauf hin, dass ein Gerät den Ring nicht schlafen lässt. Dann ist die Ruhestrommessung der schnellere Weg als der Bauteiltausch"
+      ],
+      "pins": [],
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "article": "most-idrive.md",
+      "details": ["D4F-E60-002"]
+    },
+    {
+      "id": "D4F-E60-050",
+      "type": "TEST",
+      "cat": "S85 · M5",
+      "title": "S85-V10 im M5 · VANOS-Hochdruckpumpe, Pleuellager und SMG",
+      "valid": "E60/E61 M5 · S85",
+      "summary": "Der S85 hat ein eigenes Steuergerätekonzept und drei Themen, die den Motor bei Vernachlässigung zerlegen: die VANOS-Hochdruckpumpe in der Ölwanne, die Pleuellager und die Hydraulikpumpe des SMG. Alle drei kündigen sich an, aber nicht über einen Fehlerspeichereintrag.",
+      "points": [
+        "VANOS-Hochdruckpumpe sitzt in der Ölwanne und versorgt die Verstellung. Nach mehreren unabhängigen Quellen gibt es im Hochdruckkreis keinen Drucksensor — ein beginnender Schaden bleibt deshalb unbemerkt, bis Späne im Ölkreis sind",
+        "VANOS-Fehler auf allen Bänken gleichzeitig ist das Warnzeichen für die Pumpe, nicht für die Magnetventile. Meldet nur eine Bank, ist die Wahrscheinlichkeit umgekehrt",
+        "Pleuellager verschleißen am S85 erfahrungsgemäß schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
+        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiß an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
+        "Kein Wert ohne Beleg: Öldruck-, Lagerspiel- und Speicherdruckwerte für den S85 sind hier nicht belegt. Vergleichend arbeiten und im Zweifel die Herstellervorgabe holen",
+        "Vor jeder Diagnose am M5 den Ladezustand der Batterie sichern. Der S85 und das SMG reagieren auf zu niedrige Bordspannung mit Einträgen, die wie Bauteilfehler aussehen"
+      ],
+      "pins": [],
+      "engines": ["S85"],
+      "details": ["D4F-E60-001", "D4F-E60-002"],
+      "obd": {
+        "pids": ["0104", "0105", "010C"],
+        "requires": ["ecu:DME"]
+      }
+    },
+    {
+      "id": "D4F-E60-060",
+      "type": "GUIDE",
+      "cat": "Bordnetz · Energie",
+      "title": "Batteriewechsel am E60 registrieren · IBS, DME und Ladeverhalten",
+      "valid": "E60/E61 · 2003–2010 · alle Motoren",
+      "summary": "Am E60 wird die Batterie nicht nur gewechselt, sondern dem Fahrzeug gemeldet. Der Batteriesensor am Minuspol berichtet der Motorsteuerung den Zustand, und die Motorsteuerung entscheidet daraufhin über die Ladespannung. Ohne Registrierung lädt das Fahrzeug die neue Batterie nach der alten Kennlinie.",
+      "points": [
+        "Der Batteriesensor am Minuspol ist Teil der Energiediagnose. Wird er beim Wechsel nicht wieder sauber angeschlossen, entstehen Bordnetzeinträge, die von der eigentlichen Baustelle ablenken",
+        "Nach einer Quelle sind Sensor, Motorsteuerung und Generator über die bitserielle Datenschnittstelle verbunden — nicht über CAN. Ein Kommunikationsfehler dorthin ist deshalb kein Busfehler",
+        "Gleiche Bauart und gleiche Kapazität: registrieren genügt. Andere Bauart oder andere Kapazität: erst codieren, dann registrieren. Diese Unterscheidung ist der häufigste Fehler beim Selbstwechsel",
+        "Registriert wird in der Motorsteuerung über die Servicefunktion zum Batteriewechsel. Der Weg dorthin unterscheidet sich je nach Softwarestand — im Menü der Energiediagnose suchen, nicht im Fehlerspeicher",
+        "Nach dem Wechsel Ruhespannung und Ladespannung getrennt bewerten. Eine Ruhespannung von rund 12.6 V zeigt eine geladene Batterie an; die Ladespannung im Betrieb regelt das Fahrzeug bewusst variabel und ist deshalb kein fester Sollwert",
+        "Nach Spannungsverlust können Fensterheber, Schiebedach und Lenkwinkelsensor ihre Endlagen verloren haben. Das gehört zum Wechsel dazu und ist kein neuer Fehler"
+      ],
+      "pins": [
+        "Batteriesensor am Minuspol · Massepunkt Kofferraum",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "details": ["D4F-E60-001", "D4F-E60-002"]
+    }
+  ]
+}

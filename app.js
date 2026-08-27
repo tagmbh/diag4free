@@ -126,6 +126,7 @@
     vehEra: 'Alle',   // Filter im Fahrzeug-Schritt
     vehBody: 'Alle',
     installEvt: null,
+    ersterStart: false,  // noch nie benutzt? Dann eine kurze Einfuehrung
     obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
 
@@ -207,11 +208,12 @@
                   ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ')
                   : 'Steckbrief folgt';
                 return `<button class="pick-card ${e === state.engine ? 'on' : ''}" data-engine="${escapeHtml(e)}" aria-label="${escapeHtml(e)}${spec ? ', ' + escapeHtml(sub) : ''}">
-                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
                   <div class="pick-body">
                     <span class="pick-name">${escapeHtml(e)}</span>
                     <span class="pick-sub">${escapeHtml(sub)}</span>
                     ${(spec?.id_marks || []).length ? `<span class="pick-meta">${escapeHtml(spec.id_marks[0])}</span>` : ''}
+                    ${(spec?.weak_points || []).length ? `<span class="pick-weak"><span class="pick-weak-label">Bekannt</span>${escapeHtml(spec.weak_points[0])}</span>` : ''}
                   </div>
                   ${e === state.engine ? '<span class="pick-badge">aktiv</span>' : ''}
                 </button>`;
@@ -252,6 +254,8 @@
   const updateContext = () => {
     $('#ctxSeries').textContent = state.series.toUpperCase();
     $('#ctxEngine').textContent = state.engine;
+    const chip = $('#ctxChip');
+    if (chip) chip.setAttribute('title', `${state.series.toUpperCase()} · ${state.engine} — antippen zum Wechseln`);
   };
 
   // -------- Data Access --------
@@ -302,41 +306,106 @@
     return h.split('/').filter(Boolean);
   };
 
-  const applyHash = () => {
-    const parts = parseHash();
-    if (parts.length === 0) return; // Default: overview
-    const [head, ...rest] = parts;
+  // Der Hash ist die einzige Wahrheit ueber den sichtbaren Zustand: Ansicht,
+  // offene Schublade, Schritt im Diagnosepfad. Alles, was sich wie eine
+  // eigene Seite anfuehlt, bekommt deshalb einen eigenen Eintrag in der
+  // Browser-Historie.
+  //
+  // Vorher stand hier nur `replaceState`. Damit hatte die App ueber ihre
+  // ganze Laufzeit genau einen Historieneintrag — und der Zurueck-Knopf des
+  // Browsers warf den Nutzer aus der App heraus, statt ihn eine Ebene
+  // hoeher zu bringen. Am Fahrzeug ist das der teuerste Fehlgriff, den die
+  // Oberflaeche anbieten kann: die halb ausgefuellte Fehlersuche ist weg.
+  const VIEW_HASH = {
+    overview: '#/overview', docs: '#/docs', troubleshoot: '#/troubleshoot',
+    measure: '#/measure', library: '#/library', software: '#/software',
+    scan: '#/scan'
+  };
 
-    if (['overview', 'docs', 'troubleshoot', 'measure', 'library', 'software', 'scan'].includes(head)) {
-      state.view = head;
+  const canonicalHash = () => {
+    if (state.drawer && state.drawer.docId) return `#/docs/${state.drawer.docId}`;
+    if (state.view === 'troubleshoot' && state.guide) {
+      if (state.result) return `#/guide/${state.guide}/ergebnis/${state.result}`;
+      return state.step ? `#/guide/${state.guide}/${state.step}` : `#/guide/${state.guide}`;
     }
-    if (head === 'model' && rest[0]) {
-      setSeries(rest[0]);
-      state.view = 'overview';
-    }
-    if (head === 'docs' && rest[0]) {
-      const doc = state.data?.docs.find(d => d.id === rest[0]);
-      if (doc) openDocDrawer(doc.id);
-    }
-    if (head === 'guide' && rest[0]) {
-      state.view = 'troubleshoot';
-      if (findGuide(rest[0])) {
-        state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
-      }
+    return VIEW_HASH[state.view] || '#/overview';
+  };
+
+  // Solange wir aus dem Hash lesen, wird nichts zurueckgeschrieben — sonst
+  // schiebt jede Rueckwaertsnavigation sofort einen neuen Eintrag nach und
+  // der Zurueck-Knopf kommt nie an.
+  let syncing = false;
+  // Wie viele Eintraege diese Sitzung selbst erzeugt hat. Nur so weit
+  // duerfen wir `history.back()` benutzen, ohne den Nutzer aus der App zu
+  // werfen — hinter einem Deep-Link liegt fremde Historie.
+  let eigeneEintraege = 0;
+
+  const updateHash = (modus = 'push') => {
+    if (syncing) return;
+    const next = canonicalHash();
+    if (location.hash === next) return;
+    if (modus === 'replace' || !location.hash) {
+      history.replaceState(null, '', next);
+    } else {
+      history.pushState(null, '', next);
+      eigeneEintraege++;
     }
   };
 
-  const updateHash = () => {
-    const map = {
-      overview: '#/overview',
-      docs: '#/docs',
-      troubleshoot: state.guide ? `#/guide/${state.guide}` : '#/troubleshoot',
-      measure: '#/measure',
-      library: '#/library',
-      software: '#/software'
-    };
-    const next = map[state.view] || '#/overview';
-    if (location.hash !== next) history.replaceState(null, '', next);
+  // Einen Schritt zurueck. Haben wir den Eintrag selbst erzeugt, laeuft es
+  // ueber die Historie — dann verhalten sich Browser-Zurueck, App-Zurueck
+  // und Wischgeste gleich. Sonst greift der uebergebene Ersatzweg.
+  const zurueck = (ersatz) => {
+    if (eigeneEintraege > 0) { eigeneEintraege--; history.back(); return; }
+    if (typeof ersatz === 'function') ersatz();
+  };
+
+  const applyHash = () => {
+    const parts = parseHash();
+    syncing = true;
+    try {
+      if (parts.length === 0) { state.view = 'overview'; return; }
+      const [head, ...rest] = parts;
+
+      const willDoc = head === 'docs' && rest[0];
+      // Schublade schliessen, sobald der Hash kein Dokument mehr nennt.
+      if (state.drawer && !willDoc) closeDrawer({ still: true });
+
+      if (VIEW_HASH[head]) state.view = head;
+
+      if (head === 'model' && rest[0]) {
+        setSeries(rest[0]);
+        state.view = 'overview';
+      }
+      if (willDoc) {
+        const doc = state.data && state.data.docs.find(d => d.id === rest[0]);
+        if (doc && (!state.drawer || state.drawer.docId !== doc.id)) openDocDrawer(doc.id, { still: true });
+      }
+      if (head === 'guide' && rest[0]) {
+        state.view = 'troubleshoot';
+        if (findGuide(rest[0])) {
+          if (state.guide !== rest[0]) {
+            state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
+          }
+          if (rest[1] === 'ergebnis' && rest[2]) {
+            state.result = rest[2];
+          } else {
+            const ziel = Number(rest[1] || 0);
+            state.result = null;
+            if (Number.isInteger(ziel) && ziel >= 0) {
+              // Rueckwaerts durch die Historie: die Spur mitfuehren, damit
+              // die Schrittanzeige nicht Fragen als beantwortet fuehrt, zu
+              // denen der Nutzer gerade zurueckgegangen ist.
+              const letzte = state.history[state.history.length - 1];
+              if (letzte === ziel) state.history.pop();
+              state.step = ziel;
+            }
+          }
+        }
+      }
+    } finally {
+      syncing = false;
+    }
   };
 
   // -------- Sidebar rendering --------
@@ -490,11 +559,20 @@
     const guideCount = currentGuides().length;
 
     panel.innerHTML = `
-      ${stepperHtml(stage)}
+      ${state.ersterStart && stage === 'vehicle' ? '' : stepperHtml(stage)}
       ${stage === 'vehicle' ? vehicleStepHtml() : readyStepHtml(model, scopedCount, guideCount, docCount)}
     `;
 
     bindOverview(panel, stage);
+    zeichneSymptome();
+  };
+
+  // Der Symptom-Baustein liegt in eigenen Dateien und ist keine
+  // Voraussetzung: fehlt er, passiert hier schlicht nichts.
+  const zeichneSymptome = () => {
+    const host = $('#symptomeHost');
+    if (!host || !window.Symptome) return;
+    window.Symptome.render(host, { series: state.series, engine: state.engine });
   };
 
   // -------- Trichter: Fortschrittsanzeige --------
@@ -521,6 +599,36 @@
   };
 
   // -------- Schritt 1: Fahrzeug antippen --------
+  // Der Start wirkte "plump" — die App fiel mit sechzehn Fahrzeugkarten ins
+  // Haus, ohne zu sagen, was sie ist und was sie will. Beim allerersten
+  // Aufruf steht deshalb ein kurzer Willkommensblock davor: drei Saetze,
+  // dann der erste Schritt. Wer die App schon einmal benutzt hat, sieht ihn
+  // nie wieder — fuer den Profi waere er genau die Ablenkung, die das
+  // Konzept ausschliesst.
+  const willkommenHtml = () => {
+    if (!state.ersterStart) return '';
+    // Auf dem Telefon darf die Einfuehrung die erste Fahrzeugkarte nicht
+    // unter die Falz schieben — sonst ersetzt die Begruessung genau die
+    // Handlung, zu der sie einladen soll. Die Schrittfolge liegt deshalb in
+    // einem aufklappbaren Block, der auf breiten Schirmen offen steht und
+    // auf schmalen einen Tipp entfernt ist.
+    const breit = window.matchMedia('(min-width: 900px)').matches;
+    return `
+    <section class="welcome" aria-labelledby="welcomeTitle">
+      <h1 class="welcome-title" id="welcomeTitle">BMW-Diagnose im Browser</h1>
+      <p class="welcome-lead">Auslesen, messen, Fehler eingrenzen — auch ohne Netz in der Garage.</p>
+      <details class="welcome-more"${breit ? ' open' : ''}>
+        <summary>So läuft es ab</summary>
+        <ol class="welcome-steps">
+          <li><strong>Fahrzeug wählen</strong> — danach ist alles auf deine Baureihe und deinen Motor gefiltert.</li>
+          <li><strong>Sagen, was los ist</strong> — aus den Symptomen entstehen mögliche Ursachen und der passende Diagnosepfad.</li>
+          <li><strong>Auslesen und messen</strong> — mit einem OBD-Adapter direkt aus dem Browser, ohne INPA oder ISTA.</li>
+        </ol>
+        <p class="welcome-hint">Fachbegriffe sind im Text unterstrichen. Ein Tipp darauf erklärt sie in einem Satz.</p>
+      </details>
+    </section>`;
+  };
+
   const vehicleStepHtml = () => {
     const models = allModels();
     const eras = ['Alle', ...new Set(state.data.models.groups.map(g => g.label))];
@@ -531,6 +639,7 @@
       (state.vehBody === 'Alle' || m.body === state.vehBody));
 
     return `
+      ${willkommenHtml()}
       <div class="page-header">
         <div>
           <h1 class="page-title" id="ovTitle">Welches Fahrzeug hast du?</h1>
@@ -561,7 +670,7 @@
             const n = state.data.docs.filter(d => d.model === m.id).length;
             const era = /19[89]/.test(m.years) ? 'classic' : 'modern';
             return `<button class="pick-card" data-pick-model="${escapeHtml(m.id)}" aria-label="${escapeHtml(m.name)}, ${escapeHtml(m.years)}">
-              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era)}</div>
+              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era, m.id)}</div>
               <div class="pick-body">
                 <span class="pick-name">${escapeHtml(m.name)}</span>
                 <span class="pick-sub">${escapeHtml(m.years)} · ${escapeHtml(bodyLabel(m.body))}</span>
@@ -588,7 +697,7 @@
     return `
       <div class="cockpit">
         <button class="cockpit-veh" data-restart-pick aria-label="Anderes Fahrzeug wählen">
-          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era)}</div>
+          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era, model.id)}</div>
           <div class="cockpit-veh-body">
             <span class="pick-name">${escapeHtml(model.name)}</span>
             <span class="pick-sub">${escapeHtml(model.years)} · ${escapeHtml(model.desc)}</span>
@@ -597,7 +706,7 @@
         </button>
 
         <button class="cockpit-eng" data-change-engine aria-label="Anderen Motor wählen">
-          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
           <div class="cockpit-eng-body">
             <span class="pick-name">${escapeHtml(state.engine)}</span>
             <span class="pick-sub">${spec ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ') : 'Steckbrief folgt'}</span>
@@ -617,6 +726,12 @@
         <span class="scan-entry-go" aria-hidden="true">→</span>
       </button>
 
+      <!-- "Was ist los?" steht vor "Womit weiter?". Wer einen Diagnosepfad
+           auswaehlen kann, braucht ihn kaum noch — die erste Frage muss
+           deshalb das Symptom sein, nicht der Pfad. Fehlt der Baustein,
+           bleibt der Behaelter leer und die Seite unveraendert. -->
+      <div id="symptomeHost" hidden></div>
+
       ${facts.length ? `
         <div class="facts">
           <h2 class="facts-title">${escapeHtml(state.engine)} · Fakten</h2>
@@ -634,7 +749,7 @@
       <div class="page-header" style="margin-top:var(--space-8);">
         <div>
           <h2 class="page-title" style="font-size:var(--text-lg);">Womit weiter?</h2>
-          <p class="page-lead">Alles unten ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert.</p>
+          <p class="page-lead">Dein Arbeitsbereich: alles hier ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert. Den Gesamtbestand über alle Baureihen findest du in der Bibliothek.</p>
         </div>
       </div>
 
@@ -683,9 +798,9 @@
     panel.querySelectorAll('[data-goto-step]')?.forEach(b => b.addEventListener('click', () => {
       state.picked = false; savePrefs(); renderOverview();
     }));
-    panel.querySelectorAll('[data-route]').forEach(b => b.addEventListener('click', () => {
-      haptic(); setView(b.dataset.route);
-    }));
+    // `[data-route]` wird zentral in bindEvents behandelt — sonst muesste
+    // jede Ansicht, die einen Weg anbietet, ihre eigene Verdrahtung
+    // mitbringen, und die Bibliothek hatte genau deshalb keine.
   };
 
   // -------- DOCS --------
@@ -851,6 +966,7 @@
           state.guide = btn.dataset.selectGuide;
           state.step = 0; state.history = []; state.result = null;
           saveSession();
+          updateHash('push');
           renderTroubleshoot();
         });
       });
@@ -971,6 +1087,9 @@
           ${iconSvg('x')}<span class="answer-full">Nein / abweichend</span><span class="answer-short">Nein</span>
         </button>
       </div>
+      <!-- Nur dort eingeblendet, wo es eine Tastatur gibt. Am Telefon waere
+           es Ballast, am Werkstattrechner spart es den Griff zur Maus. -->
+      <p class="key-hint" aria-hidden="true"><kbd>J</kbd> ja · <kbd>N</kbd> nein · <kbd>←</kbd> zurück</p>
     `;
 
     saveSession();
@@ -979,14 +1098,16 @@
 
     panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
       state.guide = null; state.step = 0; state.history = []; state.result = null;
-      clearSession(); releaseWakeLock(); updateResumeDot(); renderTroubleshoot();
+      clearSession(); releaseWakeLock(); updateResumeDot(); updateHash('push'); renderTroubleshoot();
     });
     panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
-      state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+      state.step = 0; state.history = []; state.result = null; updateHash('push'); renderTroubleshoot();
     });
     panel.querySelector('[data-step-back]')?.addEventListener('click', () => {
-      const prev = state.history.pop();
-      if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+      zurueck(() => {
+        const prev = state.history.pop();
+        if (typeof prev === 'number') { state.step = prev; state.result = null; updateHash('replace'); renderTroubleshoot(); }
+      });
     });
     panel.querySelector('[data-open-doc]')?.addEventListener('click', (e) => openDocDrawer(e.currentTarget.dataset.openDoc));
     panel.querySelectorAll('[data-answer]').forEach(btn => btn.addEventListener('click', () => {
@@ -996,6 +1117,7 @@
       state.history.push(state.step);
       if (typeof target === 'number') { state.step = target; state.result = null; }
       else if (typeof target === 'string') { state.result = target; }
+      updateHash('push');
       renderTroubleshoot();
     }));
 
@@ -1006,6 +1128,7 @@
       state.step = state.history[i];
       state.history = state.history.slice(0, i);
       state.result = null;
+      updateHash('push');
       renderTroubleshoot();
     }));
 
@@ -1030,8 +1153,10 @@
       x0 = null;
       if (dx > 70 && Math.abs(dy) < 50 && state.history.length > 0) {
         haptic(8);
-        const prev = state.history.pop();
-        if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+        zurueck(() => {
+          const prev = state.history.pop();
+          if (typeof prev === 'number') { state.step = prev; state.result = null; updateHash('replace'); renderTroubleshoot(); }
+        });
       }
     }, { passive: true });
   };
@@ -1293,8 +1418,16 @@
       <div class="page-header">
         <div>
           <h1 class="page-title" id="libTitle">Bibliothek</h1>
-          <p class="page-lead">Globale Suche über alle Baureihen. ${state.data.docs.length} Dokumente insgesamt.</p>
+          <p class="page-lead">Der Gesamtbestand über <strong>alle</strong> Baureihen — zum Nachschlagen und Suchen. ${state.data.docs.length} Dokumente.</p>
         </div>
+      </div>
+
+      <!-- Der Nutzer hat gefragt, was Uebersicht und was Bibliothek ist.
+           Beide sagen es jetzt selbst, und von hier fuehrt ein sichtbarer
+           Weg zurueck an den gefilterten Arbeitsplatz. -->
+      <div class="scope-note">
+        <span class="scope-note-text">Hier ist <strong>nichts</strong> auf dein Fahrzeug gefiltert. Der Arbeitsbereich für ${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)} liegt in der Übersicht.</span>
+        <button class="btn btn-ghost" data-route="overview">Zurück zum Arbeitsbereich</button>
       </div>
 
       <div class="topbar-search" style="max-width:none;margin-bottom:var(--space-6);">
@@ -1390,10 +1523,14 @@
     return [...raus.values()].slice(0, max).map(d => ({ ...d, kind: d.cat || d.type }));
   };
 
-  const openDocDrawer = async (docId) => {
+  // `still: true` heisst: der Aufruf kommt aus dem Hash, es wird kein
+  // neuer Historieneintrag erzeugt — sonst wuerde jede Rueckwaertsnavigation
+  // sofort wieder einen nachschieben.
+  const openDocDrawer = async (docId, opt = {}) => {
     const doc = state.data.docs.find(d => d.id === docId);
     if (!doc) return;
     state.drawer = { docId };
+    if (!opt.still) updateHash('push');
     lastTrigger = document.activeElement;
 
     $('#drawerTitle').textContent = doc.title;
@@ -1451,10 +1588,34 @@
     `;
 
     // Footer
+    // Die Dokumente einer Baureihe lassen sich der Reihe nach durchgehen,
+    // ohne jedes Mal zur Liste zurueckzuspringen. Bezug ist der gefilterte
+    // Arbeitsbereich, wenn das Dokument darin vorkommt — sonst der Bestand
+    // der Baureihe. Sonst wuerde "weiter" in eine andere Baureihe fuehren,
+    // ohne dass man es merkt.
+    const reihe = (() => {
+      const gefiltert = scopedDocs();
+      if (gefiltert.some(d => d.id === doc.id)) return gefiltert;
+      const eigene = state.data.docs.filter(d => d.model === doc.model);
+      return eigene.length ? eigene : [doc];
+    })();
+    const platz = reihe.findIndex(d => d.id === doc.id);
+    const vorher = platz > 0 ? reihe[platz - 1] : null;
+    const nachher = platz >= 0 && platz < reihe.length - 1 ? reihe[platz + 1] : null;
+
     const footer = $('#drawerFooter');
     footer.innerHTML = `
       <button class="btn btn-ghost" data-close-drawer>Schließen</button>
       <button class="btn btn-ghost" data-print>${iconSvg('print')} Drucken</button>
+      ${reihe.length > 1 ? `
+        <div class="drawer-walk" role="group" aria-label="Dokumente der Reihe nach">
+          <button class="btn btn-ghost" data-walk="${vorher ? escapeHtml(vorher.id) : ''}" ${vorher ? '' : 'disabled'}
+            aria-label="${vorher ? 'Vorheriges Dokument: ' + escapeHtml(vorher.title) : 'Kein vorheriges Dokument'}">${iconSvg('back')}</button>
+          <span class="drawer-walk-pos">${platz + 1} / ${reihe.length}</span>
+          <button class="btn btn-ghost" data-walk="${nachher ? escapeHtml(nachher.id) : ''}" ${nachher ? '' : 'disabled'}
+            aria-label="${nachher ? 'Nächstes Dokument: ' + escapeHtml(nachher.title) : 'Kein nächstes Dokument'}">
+            <span class="drawer-walk-next" aria-hidden="true">→</span></button>
+        </div>` : ''}
     `;
     // Weiterfuehrende Seiten oeffnen den naechsten Datensatz im selben
     // Fenster. Kein neuer Tab, kein Sprung nach draussen — der Weg bleibt
@@ -1468,6 +1629,11 @@
 
     footer.querySelectorAll('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     footer.querySelector('[data-print]').addEventListener('click', () => window.print());
+    footer.querySelectorAll('[data-walk]').forEach(b => b.addEventListener('click', () => {
+      if (!b.dataset.walk) return;
+      haptic();
+      openDocDrawer(b.dataset.walk);
+    }));
 
     // Show drawer
     $('.drawer').classList.add('open');
@@ -1497,19 +1663,35 @@
         // ohne Netz auf rohen Text zurück — Rautezeichen und
         // Pipe-Tabellen statt eines Artikels. In der Werkstatt ohne Netz
         // ist das der Normalfall, nicht die Ausnahme.
-        $('#articleContent').innerHTML = D4F_MD.parse(md, { ohneTitel: true });
+        // Fachbegriffe im Artikel anklickbar machen. Fehlt der Baustein,
+        // steht der Artikel unveraendert da — er ist keine Voraussetzung.
+        const html = D4F_MD.parse(md, { ohneTitel: true });
+        $('#articleContent').innerHTML = window.Glossar ? Glossar.markup(html) : html;
       } catch (e) {
         $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
       }
     }
   };
 
-  const closeDrawer = () => {
+  // Schublade wirklich zumachen — ohne Historie, das ist Sache des Aufrufers.
+  const schublade_zu = () => {
     state.drawer = null;
     $('.drawer').classList.remove('open');
     $('.drawer').setAttribute('aria-hidden', 'true');
     $('.drawer-backdrop').classList.remove('open');
     if (lastTrigger?.focus) lastTrigger.focus();
+  };
+
+  // Schliessen ist eine Rueckwaertsnavigation: die Schublade hat einen
+  // eigenen Historieneintrag, also muessen Schliessen-Knopf, Esc, Klick
+  // daneben und Browser-Zurueck dieselbe Wirkung haben. Kommt der Aufruf
+  // aus dem Hash (`still`), wird nur zugemacht.
+  const closeDrawer = (opt = {}) => {
+    if (!opt.still && state.drawer && location.hash === canonicalHash()) {
+      zurueck(() => { schublade_zu(); updateHash('replace'); });
+      return;
+    }
+    schublade_zu();
   };
 
   // -------- Theme --------
@@ -1776,6 +1958,54 @@
       </ol>`;
   };
 
+  // Der Scan spricht genormtes OBD-2. Das gibt es nicht in jedem Fahrzeug,
+  // das der Trichter anbietet — die Klassiker haben stattdessen den
+  // 20-poligen Runddiagnosestecker im Motorraum und BMW-eigene Protokolle.
+  // Wer einen E30 gewaehlt hat und auf "Auslesen" tippt, bekam bisher keine
+  // Erklaerung, sondern nur einen Adapter-Dialog, der zu nichts fuehrt.
+  //
+  // Die Jahreszahlen sind bewusst grob: OBD-2 kam je nach Markt und
+  // Kraftstoff zu verschiedenen Zeitpunkten, und ein Stichtag waere hier
+  // eine Genauigkeit, die es nicht gibt.
+  const obdEignung = () => {
+    const model = activeModel();
+    if (!model) return '';
+    const jahre = String(model.years || '').match(/\d{4}/g);
+    if (!jahre) return '';
+    const ende = parseInt(jahre[jahre.length - 1], 10);
+
+    if (ende <= 1996) {
+      return `
+        <div class="scan-note scan-note-warn">
+          <h2>${escapeHtml(model.name)}: kein genormtes OBD</h2>
+          <p>Diese Baureihe ist älter als die OBD-2-Pflicht. Es gibt keine
+             Buchse im Fussraum, sondern den 20-poligen Runddiagnosestecker
+             im Motorraum, und darauf läuft ein BMW-eigenes Protokoll. Der
+             Scan hier erreicht das Fahrzeug nicht.</p>
+          <p class="scan-note-sub">Was stattdessen geht, steht in den
+             Dokumenten dieser Baureihe — bei den meisten dieser Fahrzeuge
+             lässt sich der Fehlerspeicher ohne jedes Gerät über einen
+             Blinkcode auslesen.</p>
+        </div>`;
+    }
+
+    if (ende <= 2006) {
+      return `
+        <div class="scan-note scan-note-warn">
+          <h2>${escapeHtml(model.name)}: kommt darauf an</h2>
+          <p>Diese Baureihe überspannt den Übergang zu OBD-2. Ob der Scan
+             etwas findet, hängt an Baujahr, Markt und Kraftstoff: Benziner
+             sind je nach Markt ab Mitte der Neunziger bis Anfang der 2000er
+             dabei, Diesel später.</p>
+          <p class="scan-note-sub">Findet sich keine Buchse im Fussraum,
+             gilt für dieses Fahrzeug der Weg über den Runddiagnosestecker
+             im Motorraum. Übliche ELM327-Adapter sprechen ihn nicht an.</p>
+        </div>`;
+    }
+
+    return '';
+  };
+
   const renderScan = () => {
     const panel = $('#scanPanel');
     const kann = OBD.support();
@@ -1841,6 +2071,7 @@
               <span class="scan-big-sub">ELM327 als BLE-Dongle</span>
             </button>` : ''}
         </div>
+        ${obdEignung()}
         <div class="scan-note scan-note-quiet">
           <p><strong>Vorher:</strong> Zündung an, Motor kann laufen oder stehen.
              Der Stecker sitzt im Fussraum links unter der Lenksäule.</p>
@@ -2275,8 +2506,36 @@
     $('#vinBtn').addEventListener('click', openVinDialog);
 
     // Drawer close
+    // Ein Weg zu einer anderen Ansicht kann ueberall stehen. Delegiert
+    // gebunden, damit er auch dort wirkt, wo er neu dazukommt.
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest && e.target.closest('[data-route]');
+      if (!b) return;
+      haptic();
+      setView(b.dataset.route);
+    });
+
+    $('#ctxChip')?.addEventListener('click', () => {
+      haptic();
+      state.picked = false;
+      savePrefs();
+      if (state.view !== 'overview') setView('overview');
+      else renderOverview();
+    });
+
     $$('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     $('[data-drawer-backdrop]').addEventListener('click', closeDrawer);
+    // Am Werkstattrechner liegt die Maus selten griffbereit und die Haende
+    // sind schmutzig. Deshalb fuehrt die Tastatur durch den Diagnosepfad:
+    // J/N beantworten die Frage, Pfeil links geht zurueck, / springt in die
+    // Suche. Waehrend in einem Feld getippt wird, gilt nichts davon.
+    const tipptGerade = () => {
+      const el = document.activeElement;
+      if (!el) return false;
+      const t = (el.tagName || '').toLowerCase();
+      return t === 'input' || t === 'textarea' || t === 'select' || el.isContentEditable;
+    };
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && state.drawer) closeDrawer();
       else if (e.key === 'Escape' && isSidebarOpen()) setSidebar(false);
@@ -2284,6 +2543,27 @@
         e.preventDefault();
         $('#globalSearch').focus();
         $('#globalSearch').select();
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey || tipptGerade()) return;
+
+      if (e.key === '/') {
+        e.preventDefault();
+        $('#globalSearch').focus();
+        $('#globalSearch').select();
+        return;
+      }
+
+      // Ab hier nur noch im laufenden Diagnosepfad.
+      if (state.view !== 'troubleshoot' || !state.guide || state.result) return;
+      const ja = $('[data-answer="yes"]');
+      const nein = $('[data-answer="no"]');
+      if (!ja || !nein) return;
+
+      if (e.key === 'j' || e.key === 'J') { e.preventDefault(); ja.click(); }
+      else if (e.key === 'n' || e.key === 'N') { e.preventDefault(); nein.click(); }
+      else if (e.key === 'ArrowLeft' && state.history.length) {
+        e.preventDefault();
+        $('[data-step-back]')?.click();
       }
     });
 
@@ -2305,6 +2585,29 @@
     });
 
     // Hash change
+    // Der Symptom-Baustein meldet ueber Ereignisse, wohin es weitergeht.
+    // Beides laeuft ueber den Hash, damit der Sprung einen eigenen
+    // Historieneintrag bekommt und der Zurueck-Knopf zurueck zur Auswahl
+    // fuehrt statt aus der App.
+    // Das Glossar bietet den Weg ins Fachdokument an. Der laeuft ueber
+    // dieselbe Schublade wie jeder andere Dokumentaufruf.
+    document.addEventListener('d4f:doc', (e) => {
+      const id = e.detail && e.detail.id;
+      if (!id) return;
+      e.preventDefault();
+      openDocDrawer(id);
+    });
+
+    document.addEventListener('d4f:symptom-pfad', (e) => {
+      const id = e.detail && e.detail.guide;
+      if (id) location.hash = `#/guide/${id}`;
+    });
+    document.addEventListener('d4f:symptom-doc', (e) => {
+      const id = e.detail && e.detail.doc;
+      if (id) location.hash = `#/docs/${id}`;
+    });
+
+    window.addEventListener('popstate', () => { applyHash(); render(); });
     window.addEventListener('hashchange', () => { applyHash(); render(); });
   };
 
@@ -2312,6 +2615,9 @@
   const init = async () => {
     // Prefs aus localStorage laden
     const prefs = loadPrefs();
+    // Leere Prefs heissen: dieser Browser hat die App noch nie geoeffnet.
+    // Genau dann — und nur dann — gibt es eine Einfuehrung.
+    state.ersterStart = !Object.keys(prefs).length;
 
     // Theme init: gespeichert > System-Präferenz
     const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -2366,12 +2672,30 @@
     bindEvents();
     setupInstallPrompt();
     applyHash();
+    // Steht ein Diagnosepfad in der Adresse und liegt dazu eine gespeicherte
+    // Sitzung mit demselben Pfad und demselben Schritt vor, dann uebernehmen
+    // wir deren Schritt-Spur. Ohne das faengt die Anzeige nach jedem Neuladen
+    // bei null an und behauptet, der Nutzer haette noch nichts beantwortet.
+    if (state.guide && !state.history.length) {
+      const s = loadSession();
+      if (s && s.guide === state.guide && s.step === state.step && Array.isArray(s.history)) {
+        state.history = s.history;
+        if (!state.result) state.result = s.result || null;
+      }
+    }
+    // Beim Start den Hash einmal in die kanonische Form bringen, ohne einen
+    // Eintrag zu erzeugen — der erste Eintrag der Sitzung gehoert dem
+    // Nutzer, nicht uns.
+    updateHash('replace');
     render();
     registerSW();
 
     // Motor-Steckbriefe und Messplan nachladen; sind sie da, zeichnet sich
     // die App neu — fehlen sie, bleibt der bisherige Stand stehen.
     loadEngines().then(() => render());
+    // Symptomkatalog nachladen; danach einmal neu zeichnen, damit die
+    // Auswahl erscheint, sobald sie da ist.
+    if (window.Symptome) window.Symptome.laden().then(() => zeichneSymptome());
     loadMeasure().then(() => { if (state.view === 'measure') renderMeasure(); });
 
     // Status footer

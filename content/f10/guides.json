@@ -1,0 +1,233 @@
+{
+  "model": "f10",
+  "guides": {
+    "enet-kein-zugriff": {
+      "code": "GF-F10-01",
+      "name": "Keine Diagnoseverbindung über ENET",
+      "desc": "Die Software findet kein Steuergerät. Systematisch von der Buchse zur Datenbasis: Kabel → Klemmenstatus → Netzwerk → Schnittstelle → Gateway → Datenstand.",
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "steps": [
+        {
+          "q": "Steckt ein ENET-Kabel an der OBD-Buchse und kein K+DCAN-Kabel?",
+          "help": "Der F10 führt keine Diagnose über die K-Line. Ein K+DCAN-Kabel steckt mechanisch genauso, meldet aber nie ein Steuergerät. Das ist der mit Abstand häufigste Grund für den Abbruch und sieht wie ein Fahrzeugfehler aus. Am Kabel selbst erkennbar: das ENET-Kabel endet in einem Netzwerkstecker, das K+DCAN in einem USB-Stecker.",
+          "measure": "Fahrzeugseitig OBD-Stecker, rechnerseitig Netzwerkstecker · kein USB-Adapter im Weg · keine Verlängerung oder Zwischenstecker an der Buchse",
+          "doc": "D4F-F10-001",
+          "yes": 1,
+          "no": "falsches-kabel"
+        },
+        {
+          "q": "Ist die Zündung eingeschaltet und hängt ein Werkstattladegerät am Fahrzeug?",
+          "help": "Ohne Klemmenstatus antwortet das Gateway unzuverlässig; ohne stabile Versorgung bricht jeder längere Vorgang mittendrin ab. Beides gehört vor den ersten Verbindungsversuch und nicht danach. Türen schließen und abschaltbare Verbraucher aus, damit die Spannung während des Auslesens nicht wandert.",
+          "measure": "Klemme 15 an · Ladegerät angeschlossen und aktiv · Bordspannung während des gesamten Vorgangs stabil, keine sichtbaren Einbrüche beim Zuschalten",
+          "doc": "D4F-F10-006",
+          "yes": 2,
+          "no": "kl15-fehlt"
+        },
+        {
+          "q": "Meldet die Netzwerkschnittstelle des Rechners eine Verbindung und bezieht sie automatisch eine Adresse?",
+          "help": "Das Fahrzeug ist ein Netzwerkteilnehmer. Steht am Rechner eine feste Adresse aus einem anderen Netz, oder läuft parallel ein WLAN oder ein VPN, sucht die Software auf der falschen Schnittstelle. Erst die Verbindung auf Netzwerkebene herstellen, dann die Diagnosesoftware starten.",
+          "measure": "Schnittstelle zeigt Verbindung · Adressbezug automatisch · WLAN und VPN abgeschaltet · keine zweite aktive Netzwerkschnittstelle",
+          "doc": "D4F-F10-001",
+          "yes": 3,
+          "no": "netzwerk"
+        },
+        {
+          "q": "Steht in der Diagnosesoftware die Schnittstelle auf ENET?",
+          "help": "Viele Installationen tragen noch die Voreinstellung für das K+DCAN-Kabel. Dann sucht die Software auf einem Bus, den der F10 gar nicht bedient, und meldet dasselbe wie bei einem defekten Fahrzeug. Die Einstellung liegt in der Schnittstellenauswahl der Anwendung beziehungsweise in der EDIABAS-Konfiguration.",
+          "measure": "Schnittstelleneinstellung steht auf ENET · Anwendung nach der Änderung neu gestartet · keine zweite Installation mit abweichender Konfiguration aktiv",
+          "doc": "D4F-F10-001",
+          "yes": 4,
+          "no": "interface-falsch"
+        },
+        {
+          "q": "Antwortet das Gateway und liefert es eine vollständige Steuergeräteliste?",
+          "help": "Jetzt entscheidet sich, ob das Problem im Fahrzeug liegt. Antwortet das Gateway gar nicht, geht es um Versorgung und Verkabelung am Gateway. Antwortet es, fehlen aber einzelne Geräte, liegt der Fehler auf dem jeweiligen Fahrzeugbus dahinter — nicht am Diagnosezugang.",
+          "measure": "Steuergeräteliste wird aufgebaut · jedes Gerät liefert eine Version zurück · fehlende Geräte notieren und ihrem Bus zuordnen",
+          "doc": "D4F-F10-003",
+          "yes": 5,
+          "no": "gateway-stumm"
+        },
+        {
+          "q": "Passt die gelesene I-Stufe zu der Datenbasis, mit der gearbeitet werden soll?",
+          "help": "Die Verbindung steht, die Arbeit beginnt erst. Deckt die vorhandene Datenbasis den Stand des Fahrzeugs nicht ab, werden falsche oder gar keine Codierdaten geladen. Werksstand, aktuellen Stand und Zielstand ablesen und notieren, bevor irgendetwas geschrieben wird.",
+          "measure": "I-Stufe des Fahrzeugs gelesen und notiert · vorhandene Datenbasis deckt diesen Stand ab · Fahrzeugauftrag und Ist-Verbauliste gesichert",
+          "doc": "D4F-F10-005",
+          "yes": "verbindung-ok",
+          "no": "datenstand"
+        }
+      ]
+    },
+    "fahrwerk-flexray": {
+      "code": "GF-F10-02",
+      "name": "Mehrere Fahrwerks- und Lenkungsmeldungen gleichzeitig",
+      "desc": "Fahrwerk, Lenkung und DSC melden zusammen. Trennt das Bus-Bild vom Bauteilbild, bevor ein Aktor getauscht wird.",
+      "engines": [
+        "N20",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "steps": [
+        {
+          "q": "Stehen mehrere Meldungen gleichzeitig — Fahrwerk, Lenkung und DSC zusammen?",
+          "help": "Das Muster ist die erste Information. Die Fahrwerksregelung des F10 hängt an einem gemeinsamen Bus; fällt der aus, melden alle daran hängenden Systeme auf einmal. Meldet dagegen ein einzelnes System allein, ist der Bus wahrscheinlich in Ordnung und der Weg führt direkt zu dessen Sensorik oder Aktorik.",
+          "measure": "Meldungen im Kombi und Einträge im Fehlerspeicher gegenüberstellen · zählt, wie viele verschiedene Systeme gleichzeitig melden",
+          "doc": "D4F-F10-004",
+          "yes": 1,
+          "no": "einzelsystem"
+        },
+        {
+          "q": "Ist die Bordspannung in Ordnung und wurde die Batterie nach dem letzten Wechsel registriert?",
+          "help": "Unterspannung erzeugt an dieser Baureihe reihenweise Meldungen in Fahrwerk und Lenkung, ohne dass dort etwas defekt ist. Eine nicht registrierte Batterie wirkt genauso, weil das Energiemanagement zu früh abregelt. Diesen Punkt vor jeder weiteren Messung klären, sonst jagt man Folgefehler.",
+          "measure": "Ruhespannung nach mehreren Stunden Standzeit rund 12.6 V · Spannung beim Startvorgang ohne tiefen Einbruch · Registrierung der letzten Batterie nachvollziehbar",
+          "doc": "D4F-F10-006",
+          "yes": 2,
+          "no": "spannung"
+        },
+        {
+          "q": "Sind die Einträge nach Löschen und Probefahrt reproduzierbar?",
+          "help": "Alles löschen, Probefahrt mit Lenkeinschlag in beide Richtungen und wechselnder Fahrbahn, danach erneut lesen. Kommt nichts zurück, war es ein einmaliges Ereignis — meist ein Spannungseinbruch bei einer vorangegangenen Arbeit. Ein Bauteil nach einem einmaligen Eintrag zu tauschen, ist geraten und nicht diagnostiziert.",
+          "measure": "Fehlerspeicher aller beteiligten Steuergeräte vor der Fahrt leer · nach der Probefahrt erneut gelesen · gleiche Einträge in gleicher Kombination",
+          "doc": "D4F-F10-004",
+          "yes": 3,
+          "no": "sporadisch"
+        },
+        {
+          "q": "Melden sich alle Teilnehmer der Fahrwerksregelung in der Steuergeräteliste?",
+          "help": "Jetzt geht es um die Frage, ob ein Knoten fehlt. Steuergeräteliste lesen und mit der Ausstattung des Fahrzeugs abgleichen — welche Regelsysteme verbaut sind, steht im Fahrzeugauftrag. Fehlt ein Teilnehmer vollständig, ist entweder seine Versorgung oder seine Busanbindung unterbrochen.",
+          "measure": "Jedes verbaute Regelsystem erscheint in der Liste und gibt eine Version zurück · fehlende Teilnehmer namentlich notieren",
+          "doc": "D4F-F10-003",
+          "yes": 4,
+          "no": 5
+        },
+        {
+          "q": "Zeigen die verbleibenden Einträge auf ein einzelnes System statt auf mehrere?",
+          "help": "Alle Teilnehmer sind da. Damit ist die Busverbindung grundsätzlich in Ordnung und der Inhalt der Einträge zählt. Konzentrieren sie sich auf ein System, gehört dessen Sensorik und Aktorik geprüft. Streuen sie weiter über mehrere Systeme, bleibt die zentrale Regelung der Verdächtige.",
+          "measure": "Einträge nach Steuergerät sortieren · Anteil je System auszählen · Einträge über fehlende Botschaften getrennt von Bauteileinträgen betrachten",
+          "doc": "D4F-F10-004",
+          "yes": "einzelsystem",
+          "no": "icm-verdacht"
+        },
+        {
+          "q": "Ist der Bus-Strang am fehlenden Teilnehmer mechanisch unversehrt — Stecker, Leitungsführung, keine Reparaturstelle?",
+          "help": "Ein Teilnehmer fehlt. Vor jeder Messung die Mechanik ansehen: Stecker verriegelt, Leitung ohne Scheuerstelle, keine nachträgliche Lötverbindung im Strang. Der zeitgesteuerte Fahrwerksbus reagiert empfindlich auf veränderte Leitungseigenschaften, deshalb ist eine Flickstelle hier ein Befund und keine Nebensache.",
+          "measure": "Stecker verriegelt und trocken · verdrilltes Paar über die gesamte Länge unversehrt · keine Lötstelle, keine Klemmverbinder, keine Isolierbandreparatur",
+          "doc": "D4F-F10-004",
+          "yes": "teilnehmer-tot",
+          "no": "leitung"
+        }
+      ]
+    }
+  },
+  "results": {
+    "falsches-kabel": {
+      "title": "Falsches Kabel — ENET-Kabel verwenden",
+      "text": "Hier nicht weitersuchen. Der F10 führt an der OBD-Buchse keine Diagnose über die K-Line; ein K+DCAN-Kabel kann deshalb nie ein Steuergerät finden. Auf ein ENET-Kabel wechseln und von vorn beginnen. Bei einem Eigenbaukabel zusätzlich die Aktivierungsleitung zwischen Pin 8 und Pin 16 prüfen — fehlt sie oder ist der Widerstand falsch bestückt, verhält sich das Kabel wie gar keines. Pin 8 führt kein genormtes Signal — diese Bedeutung gilt für die F-Serie, an älteren BMW liegt dort etwas anderes. Eine Anleitung aus einer anderen Baureihe passt deshalb nicht.",
+      "next_docs": [
+        "D4F-F10-001",
+        "D4F-F-003"
+      ]
+    },
+    "kl15-fehlt": {
+      "title": "Klemmenstatus oder Versorgung herstellen",
+      "text": "Zündung einschalten und ein Werkstattladegerät anschließen, danach erneut verbinden. Ohne Klemmenstatus antwortet das Gateway unzuverlässig, und ohne stabile Versorgung bricht ein längerer Lese- oder Schreibvorgang mitten im Ablauf ab. Türen schließen, abschaltbare Verbraucher aus, kein Erhaltungslader.",
+      "next_docs": [
+        "D4F-F10-006",
+        "D4F-F10-001"
+      ]
+    },
+    "netzwerk": {
+      "title": "Netzwerkseite in Ordnung bringen",
+      "text": "Das Problem liegt am Rechner, nicht am Fahrzeug. Am Netzwerkadapter den automatischen Adressbezug einstellen, feste Adressen aus anderen Netzen entfernen, WLAN und VPN abschalten und alle weiteren aktiven Netzwerkschnittstellen deaktivieren. Danach das Kabel neu stecken und der Schnittstelle einige Sekunden für den Adressbezug geben, bevor die Diagnosesoftware startet.",
+      "next_docs": [
+        "D4F-F10-001"
+      ]
+    },
+    "interface-falsch": {
+      "title": "Schnittstelle auf ENET umstellen",
+      "text": "Die Software sucht auf dem falschen Weg. Die Schnittstelleneinstellung von der Voreinstellung für K-DCAN auf ENET ändern und die Anwendung anschließend neu starten. Ist mehr als eine Installation vorhanden, prüfen, welche tatsächlich verwendet wird — eine zweite Konfiguration mit alter Einstellung erzeugt genau dieses Fehlerbild wieder.",
+      "next_docs": [
+        "D4F-F10-001"
+      ]
+    },
+    "gateway-stumm": {
+      "title": "Gateway antwortet nicht — Versorgung und Verkabelung prüfen",
+      "text": "Jetzt liegt der Verdacht im Fahrzeug. Zuerst die Sicherungen des Gateways und der OBD-Buchse prüfen, dann Masse und Dauerplus an der Buchse selbst messen. Nachträglich eingebaute Geräte an der OBD-Buchse — Ortungsmodule, Fahrtenbuchgeber, Zusatzelektronik — abstecken und erneut versuchen; sie sind ein häufiger Grund für eine tote Diagnoseleitung. Erst wenn Versorgung und Buchse sauber sind, das Gateway selbst verdächtigen.",
+      "next_docs": [
+        "D4F-F10-003"
+      ]
+    },
+    "datenstand": {
+      "title": "Datenbasis passt nicht zur I-Stufe",
+      "text": "Die Verbindung steht, die Datengrundlage nicht. Nichts schreiben, solange die vorhandene Datenbasis den gelesenen Stand des Fahrzeugs nicht abdeckt — es werden sonst falsche oder gar keine Codierdaten geladen. Werksstand, aktuellen Stand und Zielstand notieren, passende Datenbasis beschaffen, Fahrzeugauftrag und Ist-Verbauliste sichern, danach erneut beginnen.",
+      "next_docs": [
+        "D4F-F10-005"
+      ]
+    },
+    "verbindung-ok": {
+      "title": "Zugang steht — jetzt erst arbeiten",
+      "text": "Kabel, Netzwerk, Schnittstelle, Gateway und Datenbasis passen zusammen. Vor dem ersten Schreibvorgang Fahrzeugauftrag und Ist-Verbauliste sichern und das Ladegerät angeschlossen lassen. Fehlerspeicher aller Steuergeräte lesen und die Einträge notieren, bevor gelöscht wird — was jetzt verloren geht, kommt nicht wieder.",
+      "next_docs": [
+        "D4F-F10-005",
+        "D4F-F10-003"
+      ]
+    },
+    "einzelsystem": {
+      "title": "Einzelnes System — dort weitersuchen",
+      "text": "Es ist kein Bus-Bild. Die Fehlersuche auf das meldende System begrenzen: dessen Einträge im Klartext lesen, Sensorik und Aktorik prüfen und den Zustand mit der anderen Fahrzeugseite beziehungsweise dem zweiten Kanal vergleichen. Erst wenn das System auch einzeln nicht mehr antwortet, wieder auf Versorgung und Busanbindung zurückgehen.",
+      "next_docs": [
+        "D4F-F10-004"
+      ]
+    },
+    "spannung": {
+      "title": "Zuerst Bordnetz und Batterieregistrierung in Ordnung bringen",
+      "text": "Die Meldungen sind hier voraussichtlich Folgefehler. Batterie laden oder ersetzen, die neue Batterie registrieren und bei abweichendem Typ zusätzlich codieren, danach Fehlerspeicher aller Steuergeräte löschen und Probefahrt fahren. Sehr häufig bleibt danach nichts übrig. Erst wenn die Meldungen bei sauberem Bordnetz wiederkommen, weiter in Richtung Fahrwerksbus arbeiten.",
+      "next_docs": [
+        "D4F-F10-006"
+      ]
+    },
+    "sporadisch": {
+      "title": "Einmaliges Ereignis — nichts tauschen",
+      "text": "Die Einträge kommen nicht zurück. Das spricht für einen einmaligen Spannungseinbruch, etwa bei einer vorangegangenen Arbeit am Fahrzeug oder beim Abklemmen der Batterie. Kein Bauteil tauschen. Den Vorgang dokumentieren, den Kunden auf das Fehlerbild hinweisen und bei erneutem Auftreten mit dem gleichen Ablauf wieder einsteigen — dann mit einer längeren Probefahrt einschließlich Schlechtwegstrecke.",
+      "next_docs": [
+        "D4F-F10-006"
+      ]
+    },
+    "icm-verdacht": {
+      "title": "Verdacht auf die zentrale Fahrwerksregelung",
+      "text": "Die Einträge streuen weiter über mehrere Systeme, obwohl alle Teilnehmer antworten und das Bordnetz sauber ist. Damit rückt die zentrale Regelung in den Blick. Vor jedem Tausch: Codier- und Programmierstand des Steuergeräts gegen die I-Stufe des Fahrzeugs prüfen, Verbauliste sichern und die Einträge über fehlende Botschaften auswerten — sie zeigen, welcher Teilnehmer aus Sicht der Regelung schweigt.",
+      "next_docs": [
+        "D4F-F10-004",
+        "D4F-F10-005"
+      ]
+    },
+    "teilnehmer-tot": {
+      "title": "Teilnehmer meldet sich nicht — Versorgung am Gerät prüfen",
+      "text": "Der Strang ist unversehrt, das Gerät antwortet trotzdem nicht. Jetzt am Steuergerät selbst messen: Sicherungen des Systems prüfen, Dauerplus und Masse direkt am Stecker kontrollieren und den Stecker auf Korrosion und Feuchtigkeit ansehen. Bleibt die Versorgung sauber und das Gerät stumm, ist das Steuergerät selbst der Kandidat — vorher Fahrzeugauftrag und Verbauliste sichern.",
+      "next_docs": [
+        "D4F-F10-003",
+        "D4F-F10-004"
+      ]
+    },
+    "leitung": {
+      "title": "Leitungsfehler im Fahrwerksbus",
+      "text": "Am Strang ist ein Befund sichtbar. Beschädigten Abschnitt vollständig ersetzen, nicht flicken: Lötstellen, Klemmverbinder und Isolierbandreparaturen verändern die Leitungseigenschaften des verdrillten Paares und erzeugen sporadische Ausfälle, die später niemand mehr findet. Verdrillung bis zum Stecker beibehalten. Danach Fehlerspeicher löschen und mit einer Probefahrt einschließlich Schlechtwegstrecke gegenprüfen.",
+      "next_docs": [
+        "D4F-F10-004"
+      ]
+    }
+  }
+}

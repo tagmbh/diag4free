@@ -6,7 +6,7 @@ Der N52 im E88 kommt in mehreren Leistungsstufen — N52B30 in den Ausführungen
 
 - **Kein DISA-Ventil wie beim N46.** Die Luftmasse wird über die Exzenterwelle der Valvetronic geregelt, nicht über die Drosselklappe. Die Drosselklappe ist im Normalbetrieb offen. Eine Fehlersuche, die von Drosselklappenregelung ausgeht, führt am N52 in die Irre.
 - **Elektrische Wasserpumpe** von Pierburg, per PWM von der DME angesteuert. Kein Riemenantrieb, also auch keine Aussage über die Förderung, nur weil der Riemen läuft.
-- **Doppel-VANOS**, Einlass und Auslass je ein Magnetventil. Die Solenoide sind identisch und deshalb zum Vergleichstest untereinander tauschbar.
+- **Doppel-VANOS**, Einlass und Auslass je ein Magnetventil. Beide tragen dieselbe Teilenummer und sind deshalb zum Vergleichstest untereinander tauschbar. Ein Widerstands-Sollwert für sie ist hier nicht belegt und wird auch nicht gebraucht — der Tauschtest ist die schärfere Prüfung.
 - **Ölstandsensor QLT** statt Peilstab. Werksseitig ist kein mechanischer Peilstab verbaut; der Stand wird über die Servicefunktion in INPA ausgelesen.
 - **Ansaugbrücke aus Kunststoff mit Resonanzklappensteller.** Fällt der Steller aus, erscheinen P1004/P1005.
 
@@ -22,19 +22,21 @@ Der N52 im E88 kommt in mehreren Leistungsstufen — N52B30 in den Ausführungen
 
 ## Anschlüsse an der MSV80
 
-| Signal | Pin |
-|---|---|
-| MAF-Signal (Heißfilm HFM7) | `X60001` Pin 87 |
-| Lambda vor Kat B1S1 | `X60002` Pin 1/2 |
-| VANOS-Solenoid Einlass | `X60003` Pin 22 |
-| VANOS-Solenoid Auslass | `X60003` Pin 23 |
-| Valvetronic-Motor Ansteuerung | `X60002` Pin 45 |
-| Kühlmittelpumpe PWM | `X60001` Pin 16 |
+Die MSV80 hat keinen einzelnen Stecker, sondern einen Block aus fünf Einzelsteckern. Jeder zählt eigenständig ab Pin 1. Nach einer Quelle sind das `X60001` mit 26 Polen (grau), `X60002` mit 26, `X60003` mit 6, `X60004` mit 6 und `X60005` mit 44 Polen. Zähl die Pole am Stecker nach, bevor du dich darauf verlässt.
 
-Die Belegung gilt für die MSV80. Bei einer MSV90 vor dem Messen die Zuordnung am Fahrzeug bestätigen.
+**Pinnummern gestrichen.** Frühere Fassungen dieses Artikels nannten hier `X60001` Pin 87, `X60002` Pin 45 und `X60003` Pin 22/23. Diese Kontakte gibt es an den genannten Steckern nicht — die Zahlen stammten aus einer durchlaufenden Zählung über den gesamten Block. Für MAF, Lambdasonde, VANOS-Solenoide, Valvetronic-Motor und Kühlmittelpumpe liegt hier keine belastbare Zuordnung vor.
 
-> **Sollwerte fehlen:** Zu den Signalpegeln an diesen Pins — MAF-Spannung über Last, Lambda-Signalhub, PWM-Tastverhältnis der Pumpe — liegt hier keine geprüfte Tabelle vor. Miss deshalb vergleichend: gegen den zweiten, baugleichen Kanal, oder gegen denselben Wert bei kaltem und warmem Motor. Ein Absolutwert ohne Quelle ist hier keine Prüfung.
+So bestimmst du den Kontakt am Fahrzeug, statt einer Tabelle zu glauben:
+
+1. **Stecker am Verbraucher abziehen** — am Magnetventil, am Luftmassenmesser, an der Wasserpumpe.
+2. **Pole am DME-Stecker zählen** und mit der Liste oben abgleichen. Passt die Polzahl nicht, gilt die Liste für dein Fahrzeug nicht.
+3. **Ader durchklingeln:** Multimeter im Durchgangsbereich an die Ader am Verbraucher, mit der zweiten Spitze die Kontakte am abgezogenen DME-Stecker abfahren.
+4. **Gegenprobe:** an der gefundenen Ader wackeln und prüfen, ob der Durchgang aussetzt — sonst hast du eine Nachbarader erwischt.
+
+Die Zuordnung am Fahrzeug schlägt jede Tabelle. Bei einer MSV90 gilt das erst recht — sie hat eine eigene Belegung.
+
+> **Sollwerte fehlen:** Zu den Signalpegeln an diesen Leitungen — MAF-Spannung über Last, Lambda-Signalhub, PWM-Tastverhältnis der Pumpe — liegt hier keine geprüfte Tabelle vor. Miss deshalb vergleichend: gegen den zweiten, baugleichen Kanal, oder gegen denselben Wert bei kaltem und warmem Motor. Ein Absolutwert ohne Quelle ist hier keine Prüfung.
 
 ## Weiter
 
-Die vier klassischen Reparaturthemen des N52 — Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse — stehen in `D4F-E88-011`.
+Die vier klassischen Reparaturthemen des N52 — Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse — stehen in `D4F-E88-011`. Zum Getriebe dahinter führt `D4F-E88-020`, zur Diagnoseverbindung `D4F-E88-001`.

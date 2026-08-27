@@ -1,0 +1,296 @@
+{
+  "model": "e87",
+  "docs": [
+    {
+      "id": "D4F-E87-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E81/E82/E87 · der Schnitt im März 2007",
+      "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
+      "summary": "Die Baureihe hat zwei verschiedene Diagnosezugänge. Fahrzeuge bis Baustand 02/2007 sprechen K-Line, Fahrzeuge ab 03/2007 sprechen D-CAN. Ein Kabel, das am späten E87 läuft, meldet am frühen E87 kein einziges Steuergerät — und umgekehrt. Vor jedem Anstecken den Baustand klären.",
+      "points": [
+        "Baustand zuerst bestimmen: Typschild an der B-Säule oder Fahrzeugdaten über die VIN — nicht das Zulassungsjahr verwenden, es liegt regelmäßig ein Baujahr daneben",
+        "Bis 02/2007: K-Line-Betrieb. Ein K+DCAN-Kabel braucht dafür die Brücke zwischen OBD-Pin 7 und Pin 8, entweder über den Kabelschalter oder über einen Steckadapter",
+        "Ab 03/2007 (LCI Schrägheck, sowie E82 und E88 von Anfang an): D-CAN. Brücke Pin 7/8 muss dann offen sein, sonst stört sie den Bus",
+        "Kabel mit FTDI-Chip verwenden, Latency Timer im Treiber auf 1 ms — der Vorgabewert von 16 ms erzeugt Abbrüche, die wie ein totes Steuergerät aussehen",
+        "Umschalten heißt Nachziehen: nach Wechsel der Betriebsart Kabel abziehen, EDIABAS neu starten, erst dann wieder anstecken",
+        "Meldet sich gar nichts, erst die Betriebsart prüfen, dann die Software — die Fehlersuche in INPA ist am falschen Kabel sinnlos"
+      ],
+      "pins": [
+        "OBD2 Pin 6 · D-CAN High (ab 03/2007)",
+        "OBD2 Pin 14 · D-CAN Low (ab 03/2007)",
+        "OBD2 Pin 7 · K-Line (bis 02/2007)",
+        "OBD2 Pin 7 ↔ Pin 8 · Brücke im Kabel, nur bis 02/2007",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-050"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E87-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "Motorzuordnung E81/E82/E87 · welcher Motor, welche DME",
+      "valid": "E81/E82/E87 · 2004–2013",
+      "summary": "Die Baureihe trägt sieben Motorbaureihen über neun Jahre. Vier davon sind Vierzylinder-Benziner, die im Motorraum sehr ähnlich aussehen. Dieses Dokument ordnet Motor, Steuergerätefamilie und diagnostische Folgen einander zu und sagt, woran die Zuordnung am Fahrzeug festgemacht wird statt an der Typbezeichnung am Heck.",
+      "points": [
+        "Die Typbezeichnung am Heck trägt die Zuordnung nicht: 116i gab es mit N45 und später mit N43, 118i mit N46 und später mit N43 — der Baustand entscheidet, nicht das Schild",
+        "N43 ist Direkteinspritzer, N45 und N46 sind Saugrohreinspritzer. Sichtbar am Rail: der N43 trägt eine Hochdruckpumpe am Zylinderkopf, die anderen beiden nicht",
+        "N52 ist der einzige Sechszylinder-Sauger der Baureihe (130i), N54 und N55 die aufgeladenen Sechszylinder im E82 — Zylinderzahl ist das schnellste Unterscheidungsmerkmal",
+        "N47 ist der Diesel ab 03/2007; die frühen Diesel der Baureihe tragen noch die Vorgängerbaureihe M47 und sind hier nicht abgedeckt",
+        "Den DME-Typ nicht aus der Motorbezeichnung ableiten, sondern beim Identifizieren auslesen — dieselbe Steuergerätefamilie trägt über die Baureihe hinweg mehrere Motoren",
+        "Bei Verdacht auf getauschte DME: ausgelesener Steuergerätetyp, Motornummer am Block und Fahrzeugdaten müssen zusammenpassen, sonst vor jeder Codierung klären"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-E87-003",
+        "D4F-E87-010"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "010C",
+          "010D"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E87-003",
+      "type": "TEST",
+      "cat": "Vierzylinder · Identifikation",
+      "title": "N45 gegen N46 gegen N43 · die drei Vierzylinder auseinanderhalten",
+      "valid": "E81/E87 · N45, N46, N43",
+      "summary": "Diese drei Vierzylinder-Benziner sitzen in fast gleichen Motorräumen und werden in Teilekatalog und Diagnose regelmäßig verwechselt. Der fehlende Valvetronic-Stellmotor trennt sie nicht: N45 und N43 tragen beide keinen. Erst die Einspritzart, dann die Valvetronic — so wird die Zuordnung eindeutig.",
+      "points": [
+        "Einspritzart zuerst: Der N43 ist der einzige Direkteinspritzer der drei und trägt dafür eine nockenwellengetriebene Hochdruckpumpe am Zylinderkopf, dazu Hochdruckrail und NOx-Sensorik für den Magerbetrieb. Diese Frage trennt ihn von N45 und N46 und steht deshalb vorn",
+        "Der fehlende Valvetronic-Stellmotor identifiziert keinen Motor: N45 und N43 tragen beide keinen. Am N43 belegen die Injektoren im Zylinderkopf den Platz, den die Exzenterwelle bräuchte — dasselbe Konzept wie beim N53 gegenüber dem N52. Erst nach der Frage nach der Hochdruckpumpe trennt der Stellmotor N46 von N45",
+        "N45: keine Valvetronic, keine Ausgleichswellen, keine verstellbare Ansaugung, Doppel-VANOS dagegen vorhanden. N46: Valvetronic und Ausgleichswellen, Saugrohreinspritzung — die Valvetronic-Adaption existiert nur hier und wird nach Eingriffen am Kopf gebraucht",
+        "Baujahr trennt nur in eine Richtung: der N45 lief ab 2004, der N43 erst ab 2007. Vor 2007 ist ein N43 ausgeschlossen, ab 2007 liefen beide parallel und das Baujahr schließt nichts mehr aus",
+        "Hubraum und Zylinderzahl tragen die Trennung von N45 und N43 nicht: beide sind Vierzylinder, und beide gibt es als 1.6er (N45B16 mit 1596 cm³, N43B16 mit 1599 cm³). Nur andersherum brauchbar — ein Zweiliter in dieser Baureihe ist kein N45",
+        "Folge für die Fehlersuche an N45 und N43: eine Valvetronic-Fehlermeldung kann dort nicht aus dem Bauteil kommen — dann ist die Fahrzeugauswahl falsch oder eine fremde DME verbaut. Widerspruch in den Quellen: eine Quelle schreibt dem N45B16A Valvetronic zu, mehrere andere sprechen sie ihm ab; der Widerspruch bleibt offen. Bleibt die Sichtprüfung unklar, entscheidet die Motornummer am Block"
+      ],
+      "engines": [
+        "N45",
+        "N46",
+        "N43"
+      ],
+      "article": "n45-gegen-n46.md",
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-010"
+      ]
+    },
+    {
+      "id": "D4F-E87-010",
+      "type": "TEST",
+      "cat": "N43 · Fehlerbilder",
+      "title": "N43 im E87 · Magerbetrieb, NOx-Sensor, Injektoren, Zündspulen",
+      "valid": "E81/E87 · N43 · ab 2007",
+      "summary": "Der N43 ist der Direkteinspritzer der Baureihe und der Motor mit dem eigenständigsten Fehlerbild. Rauer Lauf im Kaltstart, Ruckeln bei niedriger Last und steigender Verbrauch ohne eindeutigen Fehlercode gehören zusammen: sie kreisen alle um den geschichteten Magerbetrieb und seine Sensorik.",
+      "points": [
+        "NOx-Sensor: Ausfall ist am N43 ein häufiges Bild (Erfahrungswert aus mehreren unabhängigen Werkstatt- und Forenberichten). Symptom ist selten ein Ruckeln, sondern steigender Verbrauch — die DME verlässt den Magerbetrieb und fährt homogen weiter",
+        "Injektoren: Verkokung und Streuung der Einspritzmenge erzeugen Ruckeln und rauen Kaltlauf. Diagnose über die zylinderindividuelle Laufruheregelung in INPA — auffällig ist der Zylinder, der dauerhaft aus der Reihe fällt",
+        "Zündspulen: Ausfälle sammeln sich bei den frühen Baujahren 2007 und 2008 (Erfahrungswert). Bei Aussetzern rundum tauschen oder zumindest untereinander tauschen und beobachten, ob der Fehler mitwandert",
+        "Reihenfolge der Verdächtigen bei Ruckeln: erst Zündung, dann Einspritzung, dann Magerbetriebs-Sensorik. Umgekehrt wird viel Geld ohne Wirkung ausgegeben",
+        "Ein NOx-Sensor-Eintrag im Speicher schließt Injektor- und Zündungsfehler nicht aus. Am N43 stehen häufig mehrere Einträge gleichzeitig an, und der teuerste ist selten die Ursache des Ruckelns",
+        "Sollwerte für Raildruck und Injektorwiderstand sind hier nicht belegt — es wird gegen die Nachbarzylinder und gegen den vom Steuergerät geführten Sollwert verglichen, nicht gegen eine Zahl von außen"
+      ],
+      "engines": [
+        "N43"
+      ],
+      "article": "n43-fehlerbilder.md",
+      "details": [
+        "D4F-E87-003"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F",
+          "0114"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E87-020",
+      "type": "TEST",
+      "cat": "N47 · Diesel",
+      "title": "N47 im E81/E87 · Steuerkette auf der Getriebeseite",
+      "valid": "E81/E82/E87 · N47 · ab 03/2007",
+      "summary": "Der N47 löste ab 03/2007 den Vorgängerdiesel ab und brachte eine Besonderheit mit: der Steuertrieb liegt getriebeseitig, nicht vorn am Motor. Das verändert sowohl das Geräuschbild als auch den Aufwand einer Reparatur grundlegend und macht frühes Hinhören zur wichtigsten Maßnahme.",
+      "points": [
+        "Kettenlage getriebeseitig: das Rasseln ist am deutlichsten an der Spritzwand hörbar, nicht vorn am Riementrieb — wer vorn horcht, hört es zu spät",
+        "Kaltstart ist das Zeitfenster: ein kurzes metallisches Rasseln in den ersten Sekunden nach dem Anspringen ist der typische Frühbefund, weil der Öldruck den hinten liegenden Spanner erst mit Verzögerung erreicht",
+        "Erfahrungswert aus mehreren unabhängigen Quellen: Geräuschbeginn wird häufig ab etwa 50–100 tkm berichtet. Das ist keine Grenze und kein Intervall, sondern ein Grund, ab dieser Laufleistung bei jedem Service kurz hinzuhören",
+        "Erfahrungswert: für Baustände ab etwa 2011 werden überarbeitete Spanner und Führungsschienen berichtet und dadurch deutlich weniger Fälle. Kein Freibrief — Ölwechselhistorie bleibt entscheidend",
+        "Der Fehlerspeicher ist kein Frühwarnsystem. Einträge zur Nockenwellen-Kurbelwellen-Zuordnung erscheinen erst, wenn die Kette bereits gelängt ist. Das Ohr ist hier schneller als die Diagnose",
+        "Vor jedem Urteil die einfachen Geräuschquellen ausschließen: Riementrieb, Spannrolle, Nebenaggregate und Injektor-Nageln klingen ähnlich und sind deutlich billiger"
+      ],
+      "engines": [
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-001"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DDE"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E87-030",
+      "type": "GUIDE",
+      "cat": "Karosserieelektrik",
+      "title": "Heckklappe und Karosserieelektrik im Schrägheck",
+      "valid": "E81/E87 · 2004–2013 · Schrägheck",
+      "summary": "Das Schrägheck hat kein Verdecksteuergerät und damit auch keine Verdeckhydraulik als Fehlerquelle. Dafür trägt es eine Heckklappe mit Griffleistentaster, Kennzeichenbeleuchtung und Heckscheibenwischer in einem bewegten Kabelbaum — die Stellen, an denen im E87 die Karosseriefehler tatsächlich sitzen.",
+      "points": [
+        "Kein CTM im Schrägheck: alles, was im Cabrio über das Verdecksteuergerät läuft, entfällt hier. Wer eine Cabrio-Steuergeräteliste zugrunde legt, sucht ein Gerät, das gar nicht verbaut ist",
+        "Griffleiste mit Mikrotaster: der Taster im Griff ist die häufigste Ursache, wenn die Klappe nur noch über die Fernbedienung öffnet (Erfahrungswert aus mehreren unabhängigen Berichten). Er wird meist nur als komplette Griffleiste geliefert",
+        "Erste Weiche bei nicht öffnender Klappe: reagiert sie über Fernbedienung oder Innentaster, dann liegt der Fehler im Griffleistenzweig. Reagiert sie über keinen Weg, liegt er im Schloss, in der Versorgung oder im Bordnetz",
+        "Sporadik ist typisch für einen sterbenden Mikrotaster: er klickt mechanisch noch sauber, schaltet aber nicht mehr zuverlässig durch. Ein Klickgeräusch ist deshalb kein Funktionsnachweis",
+        "Der Übergang Karosserie zur Klappe ist ein bewegter Kabelbaum. Bei gleichzeitigem Ausfall von Wischer, Kennzeichenleuchte und Schloss zuerst dort auf Aderbruch prüfen, nicht am einzelnen Verbraucher",
+        "Der E81 unterscheidet sich vom E87 in Türen und Karosserie, teilt aber die Bordnetzarchitektur — Diagnosewege am Heck gelten für beide, die Türsteuerung nicht eins zu eins"
+      ],
+      "pins": [
+        "Griffleiste Heckklappe · Mikrotaster, 2-polig, Öffnungsanforderung",
+        "Übergang Karosserie ↔ Heckklappe · Faltenbalg mit Wischer-, Leuchten- und Schlossleitungen",
+        "Heckklappenschloss · Stellantrieb Entriegelung"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "heckklappe-karosserieelektrik.md",
+      "details": [
+        "D4F-E87-040"
+      ]
+    },
+    {
+      "id": "D4F-E87-040",
+      "type": "LOC",
+      "cat": "Karosserieelektrik",
+      "title": "Nässeschäden an Steuergeräten · wo im E87 das Wasser hinläuft",
+      "valid": "E81/E87 · 2004–2013",
+      "summary": "Wasser im Fußraum oder im Kofferraumboden ist im E87 kein Komfortproblem, sondern eine Steuergeräte-Frage. Mehrere Module sitzen tief genug, um bei stehendem Wasser mitzuleiden. Wer den Wassereintritt nicht abstellt, tauscht dasselbe Steuergerät zweimal.",
+      "points": [
+        "Erfahrungswert aus mehreren unabhängigen Berichten: Wassereintritt in den vorderen Fußraum und in die Kofferraummulde ist bei dieser Baureihe ein wiederkehrendes Thema, häufig über verstopfte Ablaufwege",
+        "Reihenfolge zwingend: erst die Ursache des Wassereintritts finden und trockenlegen, dann Steuergeräte beurteilen. Ein nasses Modul kann nach dem Trocknen tagelang unauffällig arbeiten und danach erneut ausfallen",
+        "Nach einem Nässeschaden nicht nur das offensichtlich betroffene Modul ansehen: Stecker und Kontakte in der Nähe korrodieren mit und erzeugen später sporadische Fehler ohne erkennbaren Zusammenhang",
+        "Sporadische Fehler mehrerer voneinander unabhängiger Systeme sind ein Nässe-Verdacht. Bevor einzelne Steuergeräte verdächtigt werden, Teppich und Kofferraummulde anheben und tasten",
+        "Kontakte, die einmal grün angelaufen sind, werden durch Trocknen nicht wieder gut. Betroffene Steckverbindungen reinigen oder ersetzen, sonst kommt der Fehler zurück",
+        "Vor Codier- und Programmierarbeiten Nässeschäden ausschließen: ein Modul mit korrodierter Versorgung während einer Programmierung zu verlieren, ist der teuerste Weg, den Fehler zu finden"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-030",
+        "D4F-E87-050"
+      ]
+    },
+    {
+      "id": "D4F-E87-050",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Batterietausch am E87 registrieren",
+      "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
+      "summary": "Nach einem Batteriewechsel führt das Energiemanagement die Ladestrategie mit den Alterungsdaten der alten Batterie weiter. Die neue Batterie wird dann zu schwach geladen und altert schneller als nötig. Registrieren ist deshalb kein Formalakt, sondern Teil des Einbaus.",
+      "points": [
+        "Nach einer Quelle: im 1er ist jeder Batteriewechsel zu registrieren, unabhängig davon, ob ein Batteriesensor am Minuspol verbaut ist. Vor dem Anwenden gegen die Herstellervorgabe zum konkreten Baustand prüfen",
+        "Nach einer Quelle: der Weg in INPA führt über die Motorsteuerung, Statusblock zum Energiemanagement, Servicefunktion Batteriewechsel registrieren. Der Menüpfad unterscheidet sich zwischen den Softwareständen — im Zweifel die Servicefunktionen des Fahrzeugs durchsuchen",
+        "Wechselt der Batterietyp (Nassbatterie gegen AGM) oder die Kapazität, reicht Registrieren nicht: dann ist zusätzlich zu codieren, damit die Ladestrategie zur neuen Batterie passt",
+        "Kapazitätsangabe und Typ vor dem Ausbau von der alten Batterie ablesen und notieren — hinterher ist die Angabe weg und die Codierung eine Rateübung",
+        "Symptom für unterlassene Registrierung: Startverhalten wird über Wochen schlechter, obwohl die Batterie neu ist. Nicht auf einen Ladefehler untersuchen, bevor die Registrierung geprüft ist",
+        "Der Batteriesensor am Minuspol muss angesteckt sein. Bleibt er nach dem Wechsel ab, füllt sich der Fehlerspeicher mit Bordnetzeinträgen, die von der eigentlichen Baustelle ablenken"
+      ],
+      "pins": [
+        "Batterie Minuspol · Batteriesensor, Signalleitung zum Energiemanagement",
+        "Batterie Pluspol · KL30 Hauptversorgung"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-001",
+        "D4F-E87-040"
+      ],
+      "obd": {
+        "pids": [
+          "0142"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    }
+  ]
+}

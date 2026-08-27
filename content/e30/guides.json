@@ -5,13 +5,15 @@
       "code": "GF-E30-01",
       "name": "M20 kein Zündfunke",
       "desc": "Klassischer Ausfall am E30 mit M20. Reihenfolge: Zündspule → Hallgeber → DME → Kabelbaum.",
-      "engines": ["M20"],
+      "engines": [
+        "M20"
+      ],
       "steps": [
         {
           "q": "Kommt Spannung an der Zündspule KL15?",
           "help": "Zündschloss auf Position 2. Schwarze Messspitze an einen blanken Massepunkt am Motor, rote an Klemme 15 der Zündspule (grün-schwarz). Gemessen wird gegen Motormasse, nicht gegen den Spulenkörper.",
           "measure": "Zündspule KL15 · Bordnetzspannung, bei Zündung ein rund 12 V, höchstens 0.5 V unter der direkt an der Batterie gemessenen Spannung",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-011",
           "yes": 1,
           "no": "no-kl15"
         },
@@ -19,7 +21,7 @@
           "q": "Springt an der Hochspannungsleitung der Zündspule ein Funke über, wenn du startest?",
           "help": "Mittleres Zündkabel aus der Verteilerkappe ziehen, mit einer isolierten Zange rund 5 mm vor einen blanken Massepunkt halten und cranken lassen. Nie in der Hand halten, nie über dem offenen Vergaser- oder Ansaugbereich prüfen.",
           "measure": "Kräftiger, regelmäßiger Überschlag bei Anlasserdrehzahl. Kein Funke oder nur vereinzelte schwache Überschläge zählen als Nein.",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-009",
           "yes": "verteiler",
           "no": 2
         },
@@ -27,7 +29,7 @@
           "q": "Liegen am Hallgeber-Stecker im Verteiler Versorgung und Masse an?",
           "help": "Stecker am Verteiler abziehen, Zündung ein. Am Versorgungspin gegen Motormasse messen, danach den Massepin des Steckers gegen KL30 gegenprüfen. Die Versorgung des Hallgebers kommt beim M20 vom Steuergerät, nicht direkt aus dem Zündschloss.",
           "measure": "Versorgungspin führt Spannung nahe Bordnetz, der Massepin hat Durchgang gegen Motormasse. Null Volt oder fehlende Masse zählt als Nein.",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-010",
           "yes": 3,
           "no": "hall-versorgung"
         },
@@ -35,7 +37,7 @@
           "q": "Löst der Hallgeber im Verteiler ein Signal aus?",
           "help": "Stecker wieder aufstecken, am Signalpin (grün) rückseitig anpiksen oder mit Abgreifadapter messen. Beim Cranken wechselt das Signal zwischen Masse und Versorgungsniveau. Mit einem einfachen Multimeter erkennbar als springende Spannung, sauber nur mit Oszilloskop.",
           "measure": "Hallgeber Signal · Rechteck zwischen 0 V und Versorgungsniveau (rund 12 V) bei Anlasserdrehzahl. Dauerhaft 0 V oder dauerhaft 12 V zählt als Nein.",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-007",
           "yes": 4,
           "no": "hall-sensor"
         },
@@ -43,7 +45,7 @@
           "q": "Bekommt die DME Spannung und zieht das Hauptrelais bei Zündung ein?",
           "help": "Hauptrelais im Kasten neben dem Federbeindom. Beim Einschalten der Zündung muss es hörbar klicken. Danach am Steuergerätestecker die Dauerplus- und die geschaltete Versorgung gegen die Steuergerätemasse messen. Relaissockel und die Lötstellen der Relaisplatine sind am E30 die häufigste Ursache.",
           "measure": "Hauptrelais klickt bei Zündung ein. An der geschalteten Versorgung des Steuergeräts liegt Bordnetzspannung an, die Steuergerätemasse hat Durchgang gegen Motormasse.",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-008",
           "yes": 5,
           "no": "dme-versorgung"
         },
@@ -51,9 +53,93 @@
           "q": "Sind die Leitungen zwischen Hallgeber, DME und Zündspule durchgängig?",
           "help": "Zündung aus, Batterie abklemmen. Signalleitung des Hallgebers vom Verteilerstecker bis zum Steuergerätestecker auf Durchgang messen, ebenso die Ansteuerleitung von der DME zur Zündspule Klemme 1. Beide Leitungen zusätzlich gegen Masse prüfen — ein Scheuerschluss gegen Karosserie sieht aus wie ein defektes Steuergerät.",
           "measure": "Durchgang von Stecker zu Stecker ohne Unterbruch, Widerstand praktisch null. Gegen Masse kein Durchgang. Beim Wackeln am Kabelbaum darf der Messwert nicht springen.",
-          "doc": "D4F-E30-001",
+          "doc": "D4F-E30-012",
           "yes": "check-dme",
           "no": "kabelbaum"
+        }
+      ]
+    },
+    "m40-unrund": {
+      "code": "GF-E30-02",
+      "name": "M40 läuft unrund oder hat keine Leistung",
+      "desc": "Am Vierzylinder steht die Mechanik vor der Elektronik. Reihenfolge: Motor zuordnen, Fehlerspeicher lesen, Zündung prüfen, Ventiltrieb beurteilen.",
+      "engines": [
+        "M40"
+      ],
+      "steps": [
+        {
+          "q": "Sitzt an der Stirnseite ein Kunststoffdeckel über einem Zahnriemen?",
+          "help": "M40 und M42 haben denselben Hubraum und werden ständig verwechselt. Der M40 hat einen Zahnriemen hinter einem Kunststoffdeckel und einen flachen, einteiligen Ventildeckel. Der M42 hat eine Steuerkette und einen hohen, breiten Deckel über zwei Nockenwellen. Beide tragen verschiedene Steuergeräte und verschiedene Fehlerbilder.",
+          "measure": "Sichtprüfung an der Stirnseite und am Ventildeckel; im Zweifel die Motornummer am Block auf der Ansaugseite lesen.",
+          "doc": "D4F-E30-003",
+          "yes": 1,
+          "no": "falscher-motor"
+        },
+        {
+          "q": "Gibt die Motorkontrollleuchte einen Blinkcode aus?",
+          "help": "Der M40 fährt laut Steckbrief mit Bosch Motronic 1.3. Zündung ein, Motor aus, Fahrpedal fünfmal ganz durchtreten. Kommt eine Folge, schreib sie als Zahlenkolonne mit, bevor du sie deutest.",
+          "measure": "Vierstellige Blinkfolge, jede Stelle zwischen 1 und 4. 1444 als erster Code heißt: Speicher leer. Keine Ausgabe zählt als Nein.",
+          "doc": "D4F-E30-002",
+          "yes": "code-gelesen",
+          "no": 2
+        },
+        {
+          "q": "Sind Kerzenbild, Verteilerkappe, Finger und Zündkabel in Ordnung?",
+          "help": "Alle vier Kerzen ziehen und nebeneinanderlegen, danach die Kappe innen ansehen. Kriechspuren, Risse, abgebrannte Kontakte und ein durchgebrannter Finger sind an einer dreißig Jahre alten Verteilerzündung die Regel.",
+          "measure": "Kerzenbilder untereinander vergleichbar, Kappe innen trocken und ohne Kriechspuren, Zündkabel einzeln mit Durchgang und untereinander vergleichbar.",
+          "doc": "D4F-E30-009",
+          "yes": 3,
+          "no": "zuendung-m40"
+        },
+        {
+          "q": "Sind die Nocken sauber und die Ölspritzleiste frei?",
+          "help": "Ventildeckel abnehmen und die Nocken der Reihe nach ansehen. Verglichen wird gegeneinander, nicht gegen eine Zahl: eine Stufe, eine matte ausgewaschene Fläche oder eine abgeflachte Spitze fällt sofort auf. Danach die Bohrungen der Ölspritzleiste über der Welle prüfen.",
+          "measure": "Alle Nocken mit gleichmäßig glänzender Lauffläche ohne Stufe, alle Bohrungen der Spritzleiste frei. Ein einzelner abweichender Nocken zählt als Nein.",
+          "doc": "D4F-E30-005",
+          "yes": "mechanik-ok",
+          "no": "nockenwelle"
+        }
+      ]
+    },
+    "s14-leerlauf": {
+      "code": "GF-E30-03",
+      "name": "S14 mit unruhigem oder zu hohem Leerlauf",
+      "desc": "Am M3-Motor liegt die Ursache selten im Steuergerät. Reihenfolge: Ansauganlage und Leerlaufsteller, Versorgung und Masse, Steckverbindungen, dann erst das Signal.",
+      "engines": [
+        "S14"
+      ],
+      "steps": [
+        {
+          "q": "Ist die Ansauganlage dicht und der Leerlaufsteller gereinigt?",
+          "help": "Der S14 hat vier Einzeldrosselklappen und damit viele Dichtstellen. Nach Erfahrungswerten sind der Übergang vom Sammler zur Drosselklappeneinheit und die Dichtungen der Klappengehäuse die häufigsten Nebenluftstellen. Der Leerlaufsteller verkokt mit den Jahren und wird ausgebaut, gereinigt und auf Leichtgängigkeit geprüft.",
+          "measure": "Beim Abdecken oder Benetzen einer verdächtigen Stelle darf sich die Leerlaufdrehzahl nicht ändern. Jede Änderung ist der Befund.",
+          "doc": "D4F-E30-006",
+          "yes": 1,
+          "no": "falschluft-s14"
+        },
+        {
+          "q": "Stehen Bordspannung, Steuergerätemasse und Hauptrelais?",
+          "help": "Vor jeder Aussage über Elektronik muss die Versorgung stehen. Bordspannung immer gegen die direkt an den Batteriepolen gemessene Spannung halten, Masse des Steuergeräts gegen Motormasse prüfen, Hauptrelais beim Einschalten der Zündung auf hörbares Klicken.",
+          "measure": "Spannung am Steuergerät höchstens rund 0.5 V unter der an den Polen gemessenen. Massepunkt mit Durchgang praktisch null. Relais klickt.",
+          "doc": "D4F-E30-011",
+          "yes": 2,
+          "no": "versorgung-s14"
+        },
+        {
+          "q": "Bleiben die Messwerte beim Wackeln an Kabelbaum und Spritzwandverbindung stabil?",
+          "help": "Nach einer Quelle läuft der Kabelbaum zum Steuergerät über eine Schraubsteckverbindung an der Spritzwand in der Nähe des Diagnoseanschlusses. Korrosion dort erzeugt genau das Bild eines defekten Steuergeräts: sprunghafte Werte und Aussetzer, die kommen und gehen.",
+          "measure": "Beim Bewegen von Kabelbaum und Verbindung darf kein Messwert springen. Jeder Sprung ist der Befund.",
+          "doc": "D4F-E30-012",
+          "yes": 3,
+          "no": "steckverbindung-s14"
+        },
+        {
+          "q": "Lassen sich Drosselklappenschalter und Geber sauber prüfen?",
+          "help": "Am S14 wird verglichen statt gegen Sollwerte gemessen, weil für seine Geber hier keine gesicherten Fenster stehen. Der Drosselklappenschalter muss nach einer Quelle beim leichten Bewegen der Klappenwelle hörbar klicken. Elektrisch wird hochohmig gemessen, nie mit der Glühlampenprüflampe.",
+          "measure": "Schalter klickt beim Verlassen der Ruhelage. Geberwerte ändern sich über den Bewegungsbereich stetig, ohne Aussetzer und ohne Sprünge.",
+          "doc": "D4F-E30-007",
+          "yes": "s14-elektronik",
+          "no": "geber-s14"
         }
       ]
     }
@@ -61,38 +147,137 @@
   "results": {
     "no-kl15": {
       "title": "KL15-Versorgung fehlt",
-      "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel reinigen und nachziehen. Danach die Messung an Klemme 15 der Zündspule wiederholen, bevor du weitersuchst.",
-      "next_docs": ["D4F-E30-001"]
+      "text": "Klemme 15 kommt nicht am Stecker an. Der Fehler liegt vor dem Steuergerät. Prüf das Zündschloss und die Zündungsversorgung im Sicherungskasten — der sitzt beim E30 im Motorraum links, nahe der Windschutzscheibe, nicht im Fussraum. Welche Nummer die Zündungsversorgung trägt, steht hier nicht belegt: geh nach dem Deckelaufdruck beziehungsweise dem Sicherungsplan des Fahrzeugs und miss die verdächtige Sicherung bei eingeschalteter Zündung beidseitig gegen Masse.",
+      "next_docs": [
+        "D4F-E30-011",
+        "D4F-E30-008"
+      ]
     },
     "verteiler": {
       "title": "Zündung arbeitet — Fehler liegt hinter der Spule",
       "text": "Die Spule liefert Hochspannung, sie kommt nur nicht an den Kerzen an. Verteilerkappe abnehmen und auf Kriechspuren, Risse und abgebrannte Kontakte prüfen, Verteilerfinger auf Durchbrand kontrollieren, Zündkabel und Kerzenstecker einzeln auf Durchgang messen. Kappe innen trocken und sauber montieren.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-009"
+      ]
     },
     "hall-versorgung": {
       "title": "Hallgeber wird nicht versorgt",
       "text": "Der Geber kann kein Signal liefern, weil Spannung oder Masse fehlen. Steckerkontakte am Verteiler auf Grünspan und aufgeweitete Buchsen prüfen, danach die Versorgungsleitung zurück zum Steuergerät verfolgen. Erst wenn Versorgung und Masse sicher anliegen, ist eine Aussage über den Geber selbst möglich.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-010",
+        "D4F-E30-012"
+      ]
     },
     "hall-sensor": {
       "title": "Hallgeber im Verteiler defekt",
       "text": "Versorgung liegt an, ein Signal kommt trotzdem nicht: Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Beim Zusammenbau die Blende auf Freigang prüfen und anschließend die Zündung neu einstellen.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-010",
+        "D4F-E30-009"
+      ]
     },
     "dme-versorgung": {
       "title": "Spannungsversorgung der DME fehlt",
       "text": "Ohne Versorgung schaltet das Steuergerät die Zündendstufe nicht. Hauptrelais tauschweise ersetzen, Relaissockel und die Lötstellen der Relaisplatine auf kalte Stellen prüfen, danach die Steuergerätemasse nachziehen. Erst wenn das Relais sicher einzieht, hat eine weitere Diagnose am Steuergerät Sinn.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-011",
+        "D4F-E30-008"
+      ]
     },
     "kabelbaum": {
       "title": "Unterbruch oder Kurzschluss im Kabelbaum",
       "text": "Die gefundene Leitung instandsetzen: Scheuerstellen am Durchgang zur Spritzwand, gebrochene Adern kurz vor den Steckern und aufgeweitete Kontakte sind die üblichen Stellen. Reparaturstelle löten und schrumpfen, nicht klemmen. Danach die Messung wiederholen und den Pfad von vorn durchlaufen.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-012",
+        "D4F-E30-011"
+      ]
     },
     "check-dme": {
       "title": "Verkabelung in Ordnung — Zündspule und DME prüfen",
       "text": "Alles davor ist geprüft. Zündspule tauschweise durch eine bekannt gute ersetzen; bleibt der Funke aus, ist das Motronic-Steuergerät der letzte Verdächtige und wird ebenfalls tauschweise geprüft. Sollwerte für den Primär- und Sekundärwiderstand der Zündspule stehen in keiner hier verfügbaren Quelle — deshalb tauschweise arbeiten statt gegen eine geratene Zahl zu messen.",
-      "next_docs": ["D4F-E30-001", "D4F-E30-002"]
+      "next_docs": [
+        "D4F-E30-009",
+        "D4F-E30-002"
+      ]
+    },
+    "falscher-motor": {
+      "title": "Kein M40 — Zuordnung zuerst klären",
+      "text": "Die Merkmale passen nicht zum M40. Steuerkette und ein hoher Ventildeckel über zwei Nockenwellen heißen M42, vier Einzeldrosselklappen vor dem Kopf heißen S14. Beide tragen andere Steuergeräte und andere Prozeduren. Kläre die Zuordnung über Erkennungsmerkmale und Motornummer, bevor du weitermisst — an dieser Baureihe sind umgemotorte Fahrzeuge die Regel.",
+      "next_docs": [
+        "D4F-E30-003",
+        "D4F-E30-006"
+      ]
+    },
+    "code-gelesen": {
+      "title": "Blinkcode liegt vor — jetzt am Bauteil bestätigen",
+      "text": "Schreib die Folge als Zahlenkolonne auf und wiederhole den Vorgang zur Gegenprobe. Ein Code ist ein Signalpfad, keine Ursache: neben dem Bauteil stehen Steckverbindung, Leitung und Masse als Verdächtige. Die Bedeutung der Codes ist für den E30 hier nicht belegt — ordne sie gegen eine geprüfte Unterlage zu deinem Steuergerätestand zu und bestätige den Eintrag am Bauteil, bevor du etwas bestellst.",
+      "next_docs": [
+        "D4F-E30-002",
+        "D4F-E30-012"
+      ]
+    },
+    "zuendung-m40": {
+      "title": "Zündanlage instandsetzen",
+      "text": "Verteilerkappe, Verteilerfinger, Zündkabel und Kerzen sind Verschleißteile und werden als Satz erneuert, wenn eines davon auffällt. Kappe innen trocken und sauber montieren. Danach den Leerlauf erneut beurteilen und den Pfad von vorn durchlaufen — eine schlechte Zündung erzeugt Fehlerbilder, die wie Gemischprobleme aussehen.",
+      "next_docs": [
+        "D4F-E30-009",
+        "D4F-E30-005"
+      ]
+    },
+    "nockenwelle": {
+      "title": "Ventiltrieb verschlissen oder Ölversorgung verstopft",
+      "text": "Die Nocken sind eingelaufen oder die Ölspritzleiste ist verkokt. Beides gehört zusammen behandelt: Wer nur die Nockenwelle tauscht und die Leiste sowie die Schlepphebelauflagen liegen lässt, hat den Schaden in kurzer Zeit wieder. Anzugsmomente für den Ventiltrieb stehen in keiner hier verfügbaren Quelle — nimm die Herstellervorgabe.",
+      "next_docs": [
+        "D4F-E30-005",
+        "D4F-E30-003"
+      ]
+    },
+    "mechanik-ok": {
+      "title": "Mechanik und Zündung geprüft — jetzt Gemisch und Versorgung",
+      "text": "Ventiltrieb, Zündung und Zuordnung sind geklärt. Was bleibt, sind Falschluft an gealterten Unterdruckschläuchen, ein verkokter Leerlaufsteller und Übergangswiderstände in Versorgung und Masse. Arbeite vergleichend weiter: Kerzenbilder nebeneinander, Kompression der vier Zylinder warm gegeneinander, Spannung am Steuergerät gegen die an den Batteriepolen gemessene.",
+      "next_docs": [
+        "D4F-E30-011",
+        "D4F-E30-007"
+      ]
+    },
+    "falschluft-s14": {
+      "title": "Nebenluft oder Leerlaufsteller",
+      "text": "Die Anlage ist nicht dicht oder der Steller ist verkokt. Erneuere brüchige Unterdruckschläuche vollständig statt einzeln, dichte den Übergang vom Sammler zur Drosselklappeneinheit und die Klappengehäuse neu ab und reinige den Leerlaufsteller. Erst wenn die Anlage dicht ist und die Klappen synchron stehen, hat eine Aussage über die Elektronik Sinn.",
+      "next_docs": [
+        "D4F-E30-006"
+      ]
+    },
+    "versorgung-s14": {
+      "title": "Versorgung oder Masse fehlt",
+      "text": "Ohne stehende Versorgung ist jede weitere Messung wertlos. Hauptrelais tauschweise ersetzen, Relaissockel und Lötstellen der Relaisplatine auf kalte Stellen prüfen, Massepunkte abnehmen, blank machen und wieder festziehen. Danach die Spannung am Steuergerät erneut gegen die an den Batteriepolen gemessene halten.",
+      "next_docs": [
+        "D4F-E30-011",
+        "D4F-E30-008"
+      ]
+    },
+    "steckverbindung-s14": {
+      "title": "Übergangswiderstand im Kabelbaum",
+      "text": "Ein springender Messwert beim Wackeln ist ein Befund, kein Zufall. Nimm die Schraubsteckverbindung an der Spritzwand auseinander, reinige die Kontakte trocken und sieh die Buchsen auf Aufweitung an. Reparaturstellen im Kabelbaum werden gelötet und geschrumpft, nicht geklemmt. Danach die Messung wiederholen.",
+      "next_docs": [
+        "D4F-E30-012",
+        "D4F-E30-008"
+      ]
+    },
+    "geber-s14": {
+      "title": "Drosselklappenschalter oder Geber auffällig",
+      "text": "Der Schalter meldet Leerlauf oder Vollast nicht sicher, oder ein Geber setzt über seinen Bewegungsbereich aus. Prüf vergleichend gegen ein bekannt gutes Teil — gesicherte Widerstandsfenster für die Geber des S14 stehen in keiner hier verfügbaren Quelle, und eine geratene Zahl ist an diesem Motor teurer als eine zweite Messung.",
+      "next_docs": [
+        "D4F-E30-006",
+        "D4F-E30-007"
+      ]
+    },
+    "s14-elektronik": {
+      "title": "Mechanik, Versorgung und Geber geprüft",
+      "text": "Alles davor ist ausgeschlossen. Jetzt bleibt der serielle Weg über den Runddiagnosestecker im Motorraum, sofern das Fahrzeug einen hat, und die tauschweise Prüfung gegen ein bekannt gutes Steuergerät. Ob der S14 eine Blinkcode-Ausgabe kennt, ist hier nicht belegt — bleibt die Leuchte stumm, ist das kein Befund über das Fahrzeug.",
+      "next_docs": [
+        "D4F-E30-006",
+        "D4F-E30-001"
+      ]
     }
   }
 }

@@ -46,7 +46,7 @@ Build-Skript `scripts/build-index.mjs` aggregiert alles zu `content/index.json`.
 | `engines` | string[] | – | Motor-Filter; leer = gilt für alle Motoren des Modells |
 | `url` | string | – | Nur BMW-eigene Ziele (`static.bmw.com`). Alles andere lehnt der Validator ab |
 | `article` | string | – | Pfad zu ausführlichem Markdown-Artikel |
-| `details` | string[] | – | Doc-IDs, die das Thema vertiefen — der Weg tiefer statt nach draussen |
+| `details` | string[] | – | Doc-IDs, die das Thema vertiefen — der Weg tiefer statt nach draußen |
 | `obd` | object | – | Vorbereitung Live-OBD-Anbindung (siehe unten) |
 
 ### Warum es kein `sources` mehr gibt
@@ -88,34 +88,45 @@ ELM327/D-CAN. Kann leer bleiben; Live-Layer skippt Docs ohne `obd`.
 
 ```json
 {
-  "no-start-n52": {
-    "code": "GF-E88-01",
-    "name": "N52 startet nicht",
-    "desc": "Anlasser dreht oder dreht nicht. Systematisch: Batterie → EWS → Kraftstoff → Zündung.",
-    "engines": ["N52"],
+  "model": "e88",
 
-    "steps": [
-      {
-        "q": "Dreht der Anlasser beim Startversuch?",
-        "help": "Reines Klicken oder gar nichts deutet auf Batterie/Anlasserkreis.",
-        "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
-        "doc": "D4F-E88-042",
-        "obd_hint": "PID 0142 Steuermodul-Spannung parallel beobachten",
-        "yes": 1,
-        "no": "result-battery"
-      }
-    ],
+  "guides": {
+    "no-start-n52": {
+      "code": "GF-E88-01",
+      "name": "N52 startet nicht",
+      "desc": "Anlasser dreht oder dreht nicht. Systematisch: Batterie → EWS → Kraftstoff → Zündung.",
+      "engines": ["N52"],
 
-    "results": {
-      "result-battery": {
-        "title": "Batterie/Anlasser-Kreis prüfen",
-        "text": "…",
-        "next_docs": ["D4F-E88-042"]
-      }
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch?",
+          "help": "Reines Klicken oder gar nichts deutet auf Batterie/Anlasserkreis.",
+          "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
+          "doc": "D4F-E88-042",
+          "obd_hint": "PID 0142 Steuermodul-Spannung parallel beobachten",
+          "yes": 1,
+          "no": "result-battery"
+        }
+      ]
+    }
+  },
+
+  "results": {
+    "result-battery": {
+      "title": "Batterie/Anlasser-Kreis prüfen",
+      "text": "…",
+      "next_docs": ["D4F-E88-042"]
     }
   }
 }
 ```
+
+### Aufbau der Datei
+
+- `model` — Baureihen-Slug, identisch mit dem Verzeichnisnamen
+- `guides{}` — die Pfade, Schlüssel ist der Guide-Slug aus der Route
+  `#/guide/<slug>`
+- `results{}` — der gemeinsame Vorrat an Endzuständen
 
 ### Guide-Felder
 
@@ -130,7 +141,17 @@ ELM327/D-CAN. Kann leer bleiben; Live-Layer skippt Docs ohne `obd`.
   - `obd_hint` — optional: welche PID der Techniker live beobachten sollte
   - `yes` — nächster Step-Index oder `result-*` Key
   - `no` — dito
-- `results{}` — Endzustände mit ausführlicher Auflistung nächster Schritte
+
+`results{}` steht **neben** `guides{}`, nicht darin — die Endzustände sind
+ein gemeinsamer Vorrat der Baureihe. Zwei Pfade dürfen auf denselben
+Endzustand zeigen, und genau dafür liegt er eine Ebene höher.
+
+### `results{}`
+
+- Schlüssel — der Key, den ein Step in `yes`/`no` nennt, üblich `result-*`
+- `title` — Überschrift des Endzustands
+- `text` — was jetzt zu tun ist
+- `next_docs[]` — Doc-IDs, die von hier aus weiterführen
 
 ---
 
@@ -280,8 +301,7 @@ Feldvarianten, die die App und der Validator gleichwertig behandeln:
       "Ventildeckel aus Kunststoff mit integriertem Ölabscheider",
       "Valvetronic-Stellmotor liegend auf der Auslassseite"
     ],
-    "weak_points": ["Ventildeckeldichtung", "Elektrische Wasserpumpe"],
-    "sources": [{ "label": "BMW TIS", "note": "SP-Daten N52 Motormechanik" }]
+    "weak_points": ["Ventildeckeldichtung", "Elektrische Wasserpumpe"]
   }
 }
 ```
@@ -300,7 +320,6 @@ Feldvarianten, die die App und der Validator gleichwertig behandeln:
 | `block` | string | – | Blockmaterial / Bauweise |
 | `id_marks` | string[] | – | **Erkennungsmerkmale im Motorraum** — Kern der Identifikation |
 | `weak_points` | string[] | – | Bekannte Schwachstellen |
-| `sources` | array | – | Attribution wie bei Docs |
 
 ### Visualisierung
 
@@ -312,6 +331,32 @@ Schnittzeichnungen oder 3D-Modelle werden **nicht** eingebettet (Lizenzrisiko,
 siehe Inhaltsregeln in `HANDOFF.md`).
 
 ---
+
+## `engines.json` — wird erzeugt, nicht bearbeitet
+
+43 Motoren sind zu viel für einen Bearbeiter, und mehrere gleichzeitig an
+derselben Datei heißt verlorene Arbeit. Deshalb liegen die Steckbriefe als
+Fragmente unter `content/_fragmente/` — je eine Datei pro Motorenfamilie —
+und werden zusammengeführt:
+
+```bash
+node scripts/merge-engines.mjs --dry   # nur prüfen
+node scripts/merge-engines.mjs         # content/engines.json schreiben
+```
+
+Das Zusammenführen prüft dabei jeden Steckbrief: `layout` muss eine Form
+sein, die `graphics.js` zeichnen kann, `aspiration` eine, aus der es die
+richtige Zahl Lader ableitet, `displacement_cc` eine Zahl, die
+Leistungsvarianten plausibel. Doppelte IDs über Fragmente hinweg fallen auf,
+ebenso Motoren ohne Fahrzeug und Fahrzeuge ohne Motor.
+
+Außerdem lehnt es Anzugsmomente, Widerstands- und Druckangaben in
+Steckbriefen ab. Ein solcher Wert gehört in eine Reparaturanleitung mit
+Herstellerbezug, nicht in eine Motorübersicht, wo seine Herkunft niemand
+nachvollziehen kann.
+
+`content/engines.json` selbst wird **nicht** von Hand bearbeitet — Änderungen
+gehen ins Fragment, dann neu zusammenführen.
 
 ## `measure.json` — Messplan mit maschinenlesbaren Sollwerten
 
@@ -332,8 +377,7 @@ den Sollbereich prüfen und farblich zurückmelden.
       "instruction": "Zündung aus, 30 Min. Ruhe. Messung direkt an den Polen.",
       "target": { "unit": "V", "min": 12.4, "max": 12.9 },
       "engines": [],
-      "models": [],
-      "sources": [{ "label": "Bentley", "note": "E46 Elektrik-Grundlagen" }]
+      "models": []
     },
     {
       "id": "kerzenbild",
@@ -357,7 +401,6 @@ den Sollbereich prüfen und farblich zurückmelden.
 | `target` | object | ✓ | Sollwert — **entweder** numerisch **oder** `text` (siehe unten) |
 | `engines` | string[] | – | Motor-Filter; leer/fehlend = gilt für alle |
 | `models` | string[] | – | Baureihen-Filter; leer/fehlend = gilt für alle |
-| `sources` | array | – | Attribution |
 
 ### `target` — numerisch oder textuell
 

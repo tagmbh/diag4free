@@ -88,8 +88,12 @@ Sollwerte.
 
 ## Sprache
 
-- Deutsch, **mit** ß — so schreibt der Rest des Projekts (`app.js`, der
-  vorhandene Artikel). Uneinheitlichkeit fällt mehr auf als die Wahl selbst.
+- Deutsch, **mit** ß nach der geltenden Rechtschreibung — nach langem Vokal
+  und Diphthong ß (`heißt`, `groß`, `schließen`), nach kurzem Vokal ss
+  (`muss`, `dass`, `Kurzschluss`). Nicht die Schreibung vor 1996: `muß`,
+  `naß`, `Meßwert` und `Busabschluß` sind falsch. Und nicht die Schweizer
+  Variante ohne ß — der Rest des Projekts schreibt `heißt` und `schließen`.
+  Uneinheitlichkeit fällt mehr auf als die Wahl selbst.
 - Kurze Sätze, aktiv. „Setze den Latency Timer auf 1 ms", nicht „Der Latency
   Timer sollte auf 1 ms gesetzt werden."
 - Du-Form, wie im vorhandenen Artikel.

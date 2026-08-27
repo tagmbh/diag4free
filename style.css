@@ -367,13 +367,50 @@
   font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
-.topbar-context .divider {
-  width: 1px; height: 20px;
-  background: var(--color-divider);
-}
-.topbar-context strong {
+/* Das Fahrzeugschild. Es traegt die Auswahl, auf die alles gefiltert ist,
+   und ist zugleich der Weg zum Wechseln — deshalb ein Knopf und keine
+   Beschriftung. Hoehe 44 px — das ist die Grenze, unterhalb derer ein Ziel
+   mit Handschuhen nicht mehr sicher zu treffen ist, und die Abnahme
+   besteht darauf. */
+.ctx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
   color: var(--color-text);
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease;
+}
+.ctx-chip:hover { border-color: var(--color-primary); background: var(--color-surface-offset); }
+.ctx-chip:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ctx-chip-veh {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.ctx-chip-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  opacity: .6;
+}
+.ctx-chip-eng {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
   font-weight: 600;
+  color: var(--color-primary);
+}
+.ctx-chip-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding-left: var(--space-1);
+  border-left: 1px solid var(--color-divider);
+  margin-left: var(--space-1);
 }
 
 .topbar-search {
@@ -652,11 +689,21 @@
   text-align: left;
   transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
 }
-.doc-card:hover, .doc-card:focus-visible {
+.doc-card:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
-  outline: none;
+}
+/* Tastaturfokus darf nicht gleich aussehen wie Hover. Wer mit der Tastatur
+   durch ein Kartenraster geht, sieht sonst nicht, wo er steht — die
+   Umrandung wechselt bloss die Farbe, und genau diese Farbe zeigt der
+   Zeiger beim Darueberfahren ohnehin. */
+.doc-card:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 .doc-header {
   display: flex;
@@ -798,6 +845,8 @@
   padding: var(--space-3) var(--space-5);
   border-top: 1px solid var(--color-divider);
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-2);
   flex-shrink: 0;
   background: var(--color-surface-2);
@@ -1146,8 +1195,10 @@
   }
   .topbar-search.mobile-active input { max-width: none; width: 100%; }
 
-  .topbar-context .divider,
-  .topbar-context .context-label { display: none; }
+  /* Auf schmalen Geraeten faellt nur der Zusatz weg — die Auswahl selbst
+     bleibt sichtbar, sie ist der Grund, warum alles darunter passt. */
+  .ctx-chip-hint { display: none; }
+  .ctx-chip { padding: 0 var(--space-2); }
 }
 
 @media (max-width: 600px) {
@@ -2036,3 +2087,242 @@
 /* Der erste Block eines Artikels darf keinen Abstand nach oben tragen —
    der Abschnittstitel des Drawers steht schon darueber. */
 .markdown-content > :first-child { margin-top: 0; }
+
+/* Warnung im Scan, wenn die gewaehlte Baureihe kein genormtes OBD kennt.
+   Bewusst auffaelliger als der ruhige Hinweis darunter — hier geht es
+   darum, jemandem einen vergeblichen Versuch zu ersparen. */
+.scan-note-warn {
+  background: var(--color-warning-tint);
+  border-color: var(--color-warning);
+  border-left: 4px solid var(--color-warning);
+  margin-bottom: var(--space-4);
+}
+.scan-note-warn h2 { color: var(--color-warning); }
+.scan-note-warn p  { color: var(--color-text); }
+
+/* Hinweis, in welchem Bezugsrahmen man sich gerade befindet. Der Nutzer
+   hat gefragt, was Uebersicht und was Bibliothek ist — die Antwort steht
+   jetzt auf der Seite selbst, mit dem Weg zurueck daneben. */
+.scope-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+}
+.scope-note-text {
+  flex: 1 1 260px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.scope-note-text strong { color: var(--color-text); }
+.scope-note .btn { min-height: 44px; }
+
+/* Willkommensblock beim allerersten Aufruf. Er sagt in drei Saetzen, was
+   die App ist und wie sie laeuft, und verschwindet danach fuer immer —
+   wiederkehrende Nutzer sehen ihn nie. */
+.welcome {
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+}
+.welcome-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+.welcome-lead {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 62ch;
+}
+.welcome-more > summary {
+  margin-top: var(--space-2);
+  padding: var(--space-2) 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.welcome-more[open] > summary { color: var(--color-text-muted); }
+
+.welcome-steps {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: welcome;
+  display: grid;
+  gap: var(--space-3);
+}
+.welcome-steps li {
+  counter-increment: welcome;
+  position: relative;
+  padding-left: 38px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 68ch;
+}
+.welcome-steps li::before {
+  content: counter(welcome);
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+.welcome-steps strong { color: var(--color-text); }
+.welcome-hint {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Auf breiten Schirmen darf die Begruessung wieder atmen — dort steht die
+   erste Fahrzeugkarte ohnehin im Blick. */
+@media (min-width: 900px) {
+  .welcome { padding: var(--space-6); }
+  .welcome-title { font-size: var(--text-xl); }
+  .welcome-lead { font-size: var(--text-md); }
+}
+
+/* Bekannte Schwachstelle auf der Motorkarte. Wer einen Motor auswaehlt,
+   will nicht nur wissen, was er ist, sondern was ihm typischerweise
+   fehlt — genau danach sucht der Nutzer als naechstes. */
+.pick-weak {
+  display: block;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-divider);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  text-align: left;
+}
+.pick-weak-label {
+  display: inline-block;
+  margin-right: var(--space-2);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-offset);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Tastaturhinweis im Diagnosepfad. `pointer: fine` heisst: es gibt einen
+   Zeiger, der genau trifft — praktisch ein Rechner mit Tastatur. Auf dem
+   Telefon bleibt der Hinweis aus. */
+.key-hint { display: none; }
+@media (pointer: fine) {
+  .key-hint {
+    display: block;
+    margin-top: var(--space-3);
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+  .key-hint kbd {
+    display: inline-block;
+    min-width: 20px;
+    padding: 1px 5px;
+    border: 1px solid var(--color-border);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: var(--color-surface-2);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-text);
+  }
+}
+
+/* Blaettern durch die Dokumente einer Reihe. Steht rechts im Fuss der
+   Schublade, damit es nicht mit Schliessen und Drucken konkurriert. */
+.drawer-walk {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+/* Auf schmalen Geraeten reicht die Zeile nicht fuer Schliessen, Drucken
+   und Blaettern nebeneinander — dann rutscht das Blaettern aus dem Bild.
+   Es bekommt deshalb seine eigene Zeile, ueber die volle Breite. */
+@media (max-width: 560px) {
+  .drawer-walk {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-divider);
+  }
+}
+.drawer-walk .btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-2);
+  justify-content: center;
+}
+.drawer-walk .btn[disabled] { opacity: .35; cursor: default; }
+.drawer-walk-pos {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  min-width: 44px;
+  text-align: center;
+}
+.drawer-walk-next { font-size: 16px; line-height: 1; }
+
+/* Startzustand vor dem ersten Zeichnen. Kein Rad, das sich dreht, sondern
+   Platzhalter in der Form dessen, was gleich kommt — das haelt das Layout
+   ruhig, statt den Inhalt spaeter hineinspringen zu lassen. */
+.boot { padding: var(--space-6) 0; }
+.boot-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+.boot-bars { display: grid; gap: var(--space-3); }
+.boot-bar {
+  display: block;
+  height: 72px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  animation: boot-puls 1.4s ease-in-out infinite;
+}
+.boot-bar:nth-child(2) { animation-delay: .18s; }
+.boot-bar:nth-child(3) { animation-delay: .36s; }
+@keyframes boot-puls {
+  0%, 100% { opacity: .55; }
+  50%      { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-bar { animation: none; opacity: .8; }
+}

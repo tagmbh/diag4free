@@ -1,0 +1,169 @@
+# Recherche-Regeln
+
+Gilt für jeden Agenten, der Inhalte aus Websuche erarbeitet.
+
+## Warum es diese Regeln gibt
+
+Die Wissensbasis wird in der Werkstatt benutzt. Jemand misst danach, zieht
+danach eine Schraube fest, bestellt danach ein Teil. Ein falscher Wert kostet
+Geld oder Hardware. Das Internet liefert zu jedem BMW-Motor tausend Angaben,
+davon einen erheblichen Teil falsch, veraltet oder von einem anderen Modell
+abgeschrieben.
+
+Die Regeln unten sind der Unterschied zwischen einer Wissensbasis und einer
+Sammlung von Forenbeiträgen.
+
+## Belegstufen
+
+Jede Angabe fällt in eine von drei Stufen. Die Stufe entscheidet, ob und wie
+sie geschrieben wird.
+
+**Gesichert** — mindestens **zwei voneinander unabhängige** Quellen nennen
+denselben Wert, oder es ist eine unstrittige Katalogangabe (Hubraum,
+Bauzeit, Zylinderzahl, Ventilzahl, Leistungsvarianten einer Baureihe).
+→ Wird geschrieben.
+
+Unabhängig heißt: nicht zwei Seiten, die sichtbar voneinander abgeschrieben
+haben. Zwei Händlerlistings mit identischem Wortlaut sind **eine** Quelle.
+
+**Einfach belegt** — nur eine Quelle, oder mehrere die erkennbar
+voneinander stammen.
+→ Wird geschrieben **mit Kennzeichnung**: „nach einer Quelle", und in
+Artikeln zusätzlich als Blockzitat mit dem Hinweis, vor dem Anwenden
+gegenzuprüfen.
+
+**Unbelegt oder widersprüchlich** — nichts gefunden, oder die Quellen
+widersprechen sich.
+→ Wird **nicht** geschrieben. Stattdessen wird die Lücke benannt und das
+vergleichende Verfahren beschrieben, das ohne den Wert funktioniert.
+
+Widersprüche werden **nicht geglättet**. Wenn zwei glaubwürdige Quellen
+verschiedene Werte nennen, gehören beide genannt und der Widerspruch
+markiert. Sich für einen zu entscheiden, ohne Grund, ist die schlechteste
+aller Möglichkeiten.
+
+## Was nie aus dem Netz übernommen wird
+
+Diese vier Kategorien werden **nur** bei Stufe „gesichert" geschrieben, und
+selbst dann mit dem Hinweis, die Herstellervorgabe zu prüfen:
+
+- **Anzugsmomente** — in Aluminium entscheidet das Drehmoment darüber, ob
+  ein Gewinde hält.
+- **Widerstands- und Spannungsfenster** einzelner Bauteile.
+- **Prüfdrücke und Solldrücke.**
+- **Füllmengen.**
+
+Im Zweifel: keine Zahl. Das vergleichende Verfahren — gegen die andere Bank,
+gegen den Nachbarzylinder, gegen ein bekannt gutes Teil — ist fast immer
+möglich und braucht keinen Sollwert.
+
+## Was in dieser Umgebung geht und was nicht
+
+**Websuche funktioniert.** Sie läuft serverseitig, nicht über den
+Egress-Proxy dieser Sitzung.
+
+**Seitenabruf funktioniert grösstenteils nicht.** `WebFetch` und `curl`
+werden für die meisten einschlägigen Hosts mit 403 abgewiesen — Wikipedia,
+Foren, Pinout-Sammlungen, Herstellerseiten, und auch `archive.org` samt
+`web.archive.org`. Das ist eine Organisationsregel und wird nicht umgangen.
+
+**GitHub-Rohinhalt geht dagegen.** Geprüft und bestätigt:
+
+```bash
+curl -sL https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<pfad>
+```
+
+`raw.githubusercontent.com`, `github.com` und `codeload.github.com` sind
+erreichbar. Die GitHub-**API** ist es nicht — sie ist auf das eigene
+Repository beschränkt. Der Weg ist deshalb: über die Websuche das Projekt
+und den Dateipfad finden, dann die Rohdatei ziehen und **ganz** lesen.
+
+Das ist die einzige Stelle, an der du eine Primärquelle vollständig vor dir
+hast statt einer Zusammenfassung. Nutz sie, wo es geht.
+
+### Warum Quellcode-Projekte hier weit oben stehen
+
+Ein Projekt, das ein Diagnoseprotokoll tatsächlich implementiert, hat seine
+Angaben am Fahrzeug geprüft — sonst liefe die Software nicht. Das ist eine
+andere Belegqualität als ein Forenbeitrag, der eine Tabelle weiterreicht.
+
+Einschlägig sind Implementierungen von DS2, KWP2000, D-CAN und ENET sowie
+Adapter- und Firmware-Projekte. Deren `docs/`-Verzeichnisse und
+README-Dateien tragen oft genau die Pin- und Protokollangaben, die auf den
+gesperrten Sammlungen stehen.
+
+Vorsicht bleibt geboten: auch ein Projekt kann eine falsche Tabelle
+abgeschrieben haben. Ein Beleg aus Quellcode zählt als **eine** gute Quelle,
+nicht als Beweis. Zwei Projekte, die unabhängig voneinander dasselbe
+implementieren, sind dagegen ein starker Beleg.
+
+Praktisch heißt das: du liest **Suchergebnis-Zusammenfassungen, keine
+Primärseiten**. Das drückt die erreichbare Belegstufe und ist der Grund,
+warum manche Widersprüche offen bleiben müssen, obwohl die Antwort auf der
+Seite stünde.
+
+Zwei Folgerungen für die Arbeit:
+
+- **Unabhängigkeit prüfst du über die Domain**, nicht über den Text. Wenn
+  drei Zusammenfassungen wortgleich klingen, sind es drei Kopien einer
+  Quelle, egal wie verschieden die Adressen aussehen.
+- **Melde im Bericht, wo dir der Seitenabruf gefehlt hat.** Wenn eine
+  Angabe nur deshalb auf „einfach belegt" steht, weil die Primärseite
+  gesperrt war, gehört das gesagt — dann lässt sich gezielt entscheiden,
+  ob der Host freigegeben werden soll.
+
+## Quellengüte
+
+Von oben nach unten abnehmend brauchbar:
+
+1. Herstellerdokumentation und offizielle technische Datenblätter
+2. Technische Fachliteratur, Werkstatthandbücher (Bentley und
+   Vergleichbares)
+3. Etablierte technische Wikis und Nachschlagewerke
+4. Große, fachlich moderierte Foren — brauchbar für Fehlerbilder und
+   Häufigkeiten, **nicht** für Sollwerte
+5. Händler- und Teilelistings — brauchbar für Teilenummern und
+   Verbaubarkeit, sonst nichts
+6. Blogs, Videobeschreibungen, KI-generierte Seiten — keine Quelle
+
+Für **Fehlerbilder und Schwachstellen** dreht sich das teilweise um: dass
+eine Wasserpumpe reihenweise ausfällt, weiss das Forum besser als das
+Datenblatt. Solche Aussagen sind erlaubt, wenn sie in mehreren unabhängigen
+Fäden auftauchen, und sie werden als Erfahrungswert gekennzeichnet, nicht
+als Spezifikation.
+
+## Keine Verweise nach draussen
+
+Das Repository ist öffentlich. Recherchiertes Wissen wird **neu formuliert**
+übernommen — nie im Wortlaut kopiert.
+
+Die Quelle wird **nicht verlinkt** und **nicht genannt**. Kein `url`-Feld,
+kein `sources`-Eintrag, keine Fussnote, kein Seitenname im Fliesstext. Ein
+Link nach draussen ist kein Wissen, sondern das Eingeständnis, dass es
+woanders steht — und die Ziele verschwinden.
+
+Erlaubt bleibt einzig `url` auf BMW-eigene Ziele (`static.bmw.com`). Der
+Validator lehnt jeden anderen Host ab.
+
+Im **Bericht an den Projektlead** nennst du deine Quellen dagegen
+vollständig — dort brauche ich sie, um deine Arbeit zu beurteilen. Nur ins
+Repository kommen sie nicht.
+
+## Sprache und Form
+
+`docs/ARTIKEL-STANDARD.md` gilt unverändert: deutsch mit ß, kurze Sätze,
+aktiv, Du-Form, keine Emojis, Dezimalpunkt.
+
+## Der Bericht
+
+Am Ende meldest du:
+
+1. Was du geschrieben hast
+2. **Jede Angabe der Stufe „einfach belegt"** — mit der Quelle
+3. **Jede Lücke, die du benannt statt gefüllt hast** — mit dem, was du
+   gesucht und nicht gefunden hast
+4. **Jeden Widerspruch**, den du gefunden hast
+
+Punkt 2 bis 4 sind das eigentliche Ergebnis deiner Arbeit. Ein Bericht, der
+nur sagt „alles erledigt", ist wertlos — er heißt, dass du nicht genau
+genug hingesehen hast.

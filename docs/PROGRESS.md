@@ -1,40 +1,92 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-08-27 · `main` = v0.5.1 + PR #3 · Live: https://diag4all.t-alpha.com
+> Stand: 2026-08-27 · `main` = v46f2dd4 · Arbeit liegt in **PR #7** (offen)
+> Live: https://diag4all.t-alpha.com — zeigt bis zum Merge den alten Stand.
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
 
 ## Wo die App steht
 
-Die Bedien- und Aufnahme-Ebene ist fertig, getestet und live. Was fehlt, ist
-**ausschliesslich Content**.
+Wissensbasis auf voller Abdeckung, Oberfläche nach dem ersten Nutzerfeedback
+überarbeitet. Alles davon liegt in PR #7 und ist **nicht live**.
 
 | Bereich | Zustand |
 |---------|---------|
-| Trichter Fahrzeug → Motor → Wissen | fertig, live |
-| Parametrische Fahrzeug- und Motorgrafik (`graphics.js`) | fertig, live |
-| Touch-Bedienebene (Tabbar, Runner, Wisch, Wake Lock, Sitzung) | fertig, live |
-| Messplan mit Sollwert-Prüfung | fertig — wartet auf Daten |
-| Datenverträge (`content/SCHEMA.md`) | fertig |
-| Validator (`scripts/validate-content.mjs`) | fertig, in CI vor dem Deploy |
-| Eigener OBD-Scan (`obd.js`, `#/scan`) | fertig, getestet |
-| Eigener Markdown-Renderer (`md.js`) | fertig — Artikel laufen ohne CDN |
-| Qualitäts-Audit (`scripts/audit.mjs`) | fertig, in CI blockierend |
-| Abnahme (`tests/run.mjs`) | 225 Prüfungen |
+| Dokumente | 125 in 16 Baureihen (vorher 21 in 8) |
+| Motor-Steckbriefe | 43 |
+| Artikel | 78 |
+| Messplan | 31 Positionen |
+| Symptom-Einstieg (`symptome.js`) | 32 Symptome, 94 Ursachen |
+| Glossar (`glossar.js`) | 98 Begriffe |
+| Silhouetten je Baureihe (`graphics.js`) | 16, alle unterscheidbar |
+| Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
+| Abnahme (`tests/run.mjs`) | 331 Prüfungen |
 
 **Verifizieren nach jeder Änderung:**
 
 ```bash
 node scripts/validate-content.mjs      # Verträge, Exit 1 bei Verstoss
 node scripts/audit.mjs                 # Qualität je Eintrag; --ci bricht bei „hoch“ ab
+node scripts/merge-engines.mjs         # nur wenn content/_fragmente/ geändert wurde
 node scripts/build-index.mjs --check   # Index aktuell? (ohne Build-Metadaten)
-CHROMIUM_PATH=/opt/pw-browsers/chromium \
+CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome \
   node tests/run.mjs                   # UI auf 4 Viewports, beide Themes,
                                        # beide Orientierungen, Offline-Erstlauf
 ```
 
-Playwright liegt nicht im Repo-`node_modules`; `npm install` oder den
-Scratchpad-Pfad verlinken. `CHROMIUM_PATH=/opt/pw-browsers/chromium` setzen.
+Der Browserpfad ist wichtig: In dieser Umgebung liegt Chromium vorinstalliert,
+aber unter einem anderen Pfad als die installierte Playwright-Version erwartet.
+Ohne `CHROMIUM_PATH` bricht der Lauf mit „Executable doesn't exist" ab — ein
+zweiter Download ist trotzdem nicht nötig.
+
+## Wenn parallel Agenten schreiben
+
+Zwei Fallen, beide schon zugeschnappt:
+
+1. **`git stash` und `git checkout` sind tabu**, solange Agenten laufen — sie
+   arbeiten im selben Arbeitsverzeichnis, und ein Stash nimmt ihnen die Datei
+   unter den Händen weg.
+2. **Index zuletzt bauen, danach gegenprüfen.** Wer `build-index.mjs` laufen
+   lässt, dann validiert und erst dann committet, committet einen Index, der
+   nicht zum Content passt — ein Agent hat in der Lücke geschrieben. Die CI
+   fällt darüber, und zwar zu Recht: live stünde etwas anderes als im
+   Repository. Muster:
+
+```bash
+for i in 1 2 3; do
+  node scripts/build-index.mjs >/dev/null
+  git add -A
+  node scripts/build-index.mjs --check >/dev/null 2>&1 && break
+done
+```
+
+## Offen — braucht eine Entscheidung des Nutzers
+
+1. **PR #7 mergen.** Bis dahin sieht der Nutzer live 21 Dokumente statt 125.
+2. **Fotorealistische Renderings.** Vom Nutzer gefordert, blockiert: die
+   Bild-CDN wird vom Egress-Proxy mit 403 abgewiesen. Die gezeichneten
+   Silhouetten sind der belastbare Zwischenstand, kein Ersatz.
+3. **Gesperrte Hosts, die nachweislich Substanz gekostet haben.** Jeder davon
+   würde eine offene Kategorie in einem Durchgang schliessen:
+   `ms4x.net` (MS43-Pinliste), `bmwrepairguide.com` (Motornummern-Positionen),
+   die Sicherungsplan-Sammlungen (E88-Sicherungsnummern),
+   `archive.org` (BMW-Schulungsunterlagen).
+
+## Offen — inhaltlich, ohne Entscheidung machbar
+
+- **E90 ohne Startpfad.** Die meistgefahrene Baureihe hat keinen Diagnosepfad
+  für „springt nicht an" und kein Startsystem-Doc. Der Symptomkatalog lässt
+  sie in der ganzen Gruppe aus — die auffälligste Lücke im Bestand.
+- **F30 ohne B47-Inhalt.** `models.json` gibt dem F30 einen B47; kein einziges
+  F30-Dokument und kein Guide filtert darauf. Ein Diesel-Fahrer sieht dort
+  weniger als ein Benziner. Gleiche Klasse: `D4F-E28-005` lässt den S38 aus.
+- **E30 M42.** Für seine Motronic 1.7 kam nichts Belegtes zusammen; er bleibt
+  die offene Motorlücke der Baureihe.
+- **B57 ohne Fahrzeug.** Der Steckbrief gehört zur G-Serie, die der Katalog
+  nicht führt. Entweder Katalog erweitern oder Steckbrief begründet stehen
+  lassen — das Audit meldet ihn als Hinweis.
+- **M50/M52/M54 Motornummer.** Zwei Quellen widersprechen sich in der
+  Blockseite. Ein Motor auf der Bühne klärt das, keine weitere Recherche.
 
 ## Gefundene und behobene Fehler (Verlauf)
 
@@ -222,7 +274,7 @@ gegeneinanderhalten; bei Doppelbelegung gewinnt die belegte Fassung (die
 Lieferung hat Quellen), die eigene wird verworfen oder umnummeriert. Der
 Validator schlägt bei doppelten IDs ohnehin an.
 
-Zuerst prüfen, ob der Merge etwas ausserhalb `content/` zurückdreht.
+Zuerst prüfen, ob der Merge etwas außerhalb `content/` zurückdreht.
 `content/index.json` ist generiert — Konflikte dort sind unkritisch.
 
 ## Offen — Priorität 2: bmwteka-Spiegel auswerten

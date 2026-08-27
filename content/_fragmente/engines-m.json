@@ -1,0 +1,398 @@
+{
+  "engines": [
+    {
+      "id": "M20",
+      "name": "M20",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2494,
+      "years": "1977–1993",
+      "valvetrain": ["SOHC", "12V", "Zahnriemen"],
+      "power_variants": [
+        { "label": "320i (M20B20, E30)", "ps": 129 },
+        { "label": "320i mit Kat (M20B20, E30)", "ps": 125 },
+        { "label": "323i (M20B23, E21)", "ps": 143 },
+        { "label": "323i (M20B23, E30)", "ps": 139 },
+        { "label": "325i (M20B25, E30/E34 525i)", "ps": 170, "nm": 222 },
+        { "label": "325e / 525e (M20B27, eta)", "ps": 122 }
+      ],
+      "id_marks": [
+        "Der kleine Sechszylinder der 80er. Hubraum je nach Ausbaustufe 1990 cc (B20), 2316 cc (B23), 2494 cc (B25), 2693 cc (B27) — das eingetragene Kennfeld hier ist der B25.",
+        "Sicherstes Merkmal: eine obenliegende Nockenwelle, angetrieben von einem Zahnriemen hinter einem Kunststoffdeckel an der Stirnseite. Der Nachfolger M50 hat zwei Nockenwellen und eine Steuerkette — daran sind die beiden im Motorraum nie zu verwechseln.",
+        "Zündverteiler sitzt am vorderen Ende des Zylinderkopfs. Ab dem M50 gibt es keinen Verteiler mehr, sondern Einzelzündspulen.",
+        "Graugussblock mit Aluminiumkopf. Der Magnet hält am Block — beim M52 mit Aluminiumblock nicht.",
+        "Motornummer auf dem Block eingeschlagen, Ansaugseite, oberhalb der Ölwannenkante.",
+        "Die eta-Version M20B27 erkennst du am niedrig gesetzten Rotbereich im Drehzahlmesser und an der langhubigen, auf niedrige Drehzahl ausgelegten Nockenwelle. Sie leistet trotz mehr Hubraum deutlich weniger als der B25."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Zahnriemen ist der Schwachpunkt der Baureihe. Reißt er, schlagen Ventile auf die Kolben. Riemen, Spannrolle und Wasserpumpe gehören zusammen erneuert.",
+        "Erfahrungswert: Zylinderköpfe der frühen Gussvariante mit der Kennzahl 885 reißen zwischen den Ventilsitzen. Beim Kopfabbau die Gussnummer prüfen.",
+        "Erfahrungswert: verkoktes Leerlaufregelventil führt zu unrundem Leerlauf und Absterben beim Auskuppeln.",
+        "Erfahrungswert: undichte Ventildeckeldichtung, Öl läuft über den Krümmer und riecht.",
+        "Erfahrungswert: brüchige Unterdruckschläuche ziehen Falschluft und magern das Gemisch ab."
+      ],
+      "dme": "Bosch Motronic 1.1 / 1.3 je nach Baujahr; frühe Ausbaustufen mit K-Jetronic bzw. LE-Jetronic"
+    },
+    {
+      "id": "M30",
+      "name": "M30",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3430,
+      "years": "1968–1995",
+      "valvetrain": ["SOHC", "12V", "Steuerkette"],
+      "power_variants": [
+        { "label": "525i (M30B25, E28)", "ps": 150 },
+        { "label": "528i (M30B28, E28)", "ps": 184 },
+        { "label": "535i (M30B34, E28)", "ps": 218 },
+        { "label": "530i (M30B30, E34)", "ps": 188 },
+        { "label": "535i (M30B35, E34)", "ps": 211, "nm": 305 }
+      ],
+      "id_marks": [
+        "Der große Sechszylinder, oft „Big Six“ genannt. Hubraum je nach Ausbaustufe 2494 cc bis 3430 cc; der eingetragene Wert ist die 3.4-Liter-Stufe aus 535i und 735i.",
+        "Gegenüber dem M20 sofort am Format zu erkennen: der M30 baut spürbar länger und höher und füllt den Motorraum eines E28 fast vollständig aus.",
+        "Eine obenliegende Nockenwelle, angetrieben von einer Steuerkette — nicht von einem Zahnriemen. Das unterscheidet ihn vom gleichzeitig gebauten M20.",
+        "Graugussblock, Aluminiumkopf, Zündverteiler am vorderen Kopfende.",
+        "Motornummer auf dem Block eingeschlagen, hinten am Blockende über dem Anlasser, kurz vor der Kupplungsglocke. Sie ist siebenstellig und von zwei Pluszeichen eingefasst.",
+        "M30B34 und M30B35 haben denselben Hubraum von 3430 cc. Unterschieden werden sie nicht am Hubraum, sondern an Steuerung und Kopf: der B34 der E28-/E23-Zeit gegen den späteren B35 in E32 und E34."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkettengleitschienen aus Kunststoff werden spröde. Kettenrasseln beim Kaltstart ist das Vorzeichen.",
+        "Erfahrungswert: Ventilschaftdichtungen härten aus, blauer Rauch nach dem Kaltstart und beim Schubbetrieb.",
+        "Erfahrungswert: Zündverteilerkappe und Läufer korrodieren, Aussetzer unter Last.",
+        "Erfahrungswert: Kühler und Wasserpumpe gelten als Verschleißteile der Baureihe; Überhitzung zieht den Aluminiumkopf mit."
+      ],
+      "dme": "Bosch Motronic ab etwa 1985; davor L-Jetronic bzw. K-Jetronic"
+    },
+    {
+      "id": "M40",
+      "name": "M40",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1796,
+      "years": "1987–1994",
+      "valvetrain": ["SOHC", "8V", "Zahnriemen"],
+      "power_variants": [
+        { "label": "316i (M40B16, E30/E36)", "ps": 100 },
+        { "label": "318i (M40B18, E30/E36)", "ps": 113 },
+        { "label": "518i (M40B18, E34)", "ps": 113 }
+      ],
+      "id_marks": [
+        "Vierzylinder mit einer obenliegenden Nockenwelle und acht Ventilen. Zwei Hubräume: 1596 cc (B16) und 1796 cc (B18); eingetragen ist der B18.",
+        "Wichtigste Unterscheidung im Motorraum: der M40 hat einen Zahnriemen hinter einem Kunststoffdeckel an der Stirnseite. Der gleich große M42 hat dort eine Steuerkette und zwei Nockenwellendeckel nebeneinander. Ein Blick auf die Stirnseite genügt.",
+        "Flacher, einteiliger Ventildeckel. Der M42 trägt einen deutlich höheren, breiteren Deckel über zwei Nockenwellen.",
+        "Zündverteiler am Kopfende, angetrieben von der Nockenwelle.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle unten auf der Ansaugseite über der Trennfuge zur Ölwanne."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Nockenwellen- und Kipphebelverschleiß ist der Ruf dieses Motors. Ursache ist meist eine verstopfte Ölspritzleiste oder zu langes Ölwechselintervall. Bei abgenommenem Ventildeckel sind die Nocken sichtbar eingelaufen.",
+        "Erfahrungswert: Zahnriemenriss zerstört Ventile. Riemen, Spannrolle und Wasserpumpe zusammen erneuern.",
+        "Erfahrungswert: undichte Ventildeckeldichtung.",
+        "Erfahrungswert: Leerlaufsteller verkokt, unruhiger Leerlauf."
+      ],
+      "dme": "Bosch Motronic 1.3"
+    },
+    {
+      "id": "M42",
+      "name": "M42",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1796,
+      "years": "1989–1996",
+      "valvetrain": ["DOHC", "16V", "Steuerkette"],
+      "power_variants": [
+        { "label": "318is (E30)", "ps": 136 },
+        { "label": "318is / 318ti (E36)", "ps": 140 }
+      ],
+      "id_marks": [
+        "Der sportliche Vierzylinder der Baureihe: zwei obenliegende Nockenwellen, 16 Ventile, Steuerkette. Er sitzt im E30 318is und im E36 318is und 318ti.",
+        "Vom gleich großen M40 unterscheidest du ihn ohne Werkzeug: hoher, breiter Ventildeckel über zwei Nockenwellen, kein Zahnriemendeckel an der Stirnseite.",
+        "Kunststoff-Ansaugbrücke mit langen, geschwungenen Saugrohren über der Motoroberseite.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle auf der Ansaugseite des Kurbelgehäuses.",
+        "Der M44 ist die 1.9-Liter-Weiterentwicklung desselben Motors und äußerlich sehr ähnlich. Unterscheide über Motornummer und Baujahr, nicht über den Blick von oben."
+      ],
+      "weak_points": [
+        "Erfahrungswert: die Profildichtung zwischen Steuerkettenkasten und Zylinderkopf ist der klassische Schaden dieses Motors. Sie lässt Kühlmittel durch, oft in den Ölkreis. Eine kleine Dichtung, für deren Wechsel der Kopf herunter muss.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung verstopft, Öldruck drückt Dichtungen heraus.",
+        "Erfahrungswert: Kühlmittelverlust am Ausgleichsbehälter und an den Kunststoffanschlüssen.",
+        "Erfahrungswert: Steuerkettenspanner und Gleitschienen bei hoher Laufleistung."
+      ],
+      "dme": "Bosch Motronic 1.7"
+    },
+    {
+      "id": "M43",
+      "name": "M43",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1895,
+      "years": "1991–2002",
+      "valvetrain": ["SOHC", "8V", "Steuerkette"],
+      "power_variants": [
+        { "label": "316i (M43B16, E36)", "ps": 102, "nm": 150 },
+        { "label": "318i / 518i (M43B18, E36/E34)", "ps": 115, "nm": 168 },
+        { "label": "316i (M43TUB19, E46)", "ps": 105, "nm": 180 },
+        { "label": "318i (M43TUB19, E46)", "ps": 118, "nm": 180 }
+      ],
+      "id_marks": [
+        "Der einfache Basis-Vierzylinder: eine Nockenwelle, acht Ventile. Hubräume 1596 cc, 1796 cc und 1895 cc; eingetragen ist die 1.9-Liter-Stufe des M43TU.",
+        "Gegenüber dem M40 gleicher Bauzeit ist der Antrieb der Nockenwelle das Merkmal: der M43 hat eine Steuerkette, der M40 einen Zahnriemen. An der Stirnseite fehlt beim M43 der Kunststoff-Riemendeckel.",
+        "Gegenüber M42 und M44 gleicher Fahrzeuggröße: nur ein Nockenwellendeckel, kein Doppelnocken-Kopf. Wer im E36 unter der Haube acht statt sechzehn Ventile hat, hat den M43.",
+        "Ab 1998 M43TU: Kunststoff-Ansaugbrücke, Heißfilm-Luftmassenmesser statt Luftmengenmesser, Kurbelwellen-Impulsgeber im Kurbelgehäuse und die Steuerung BMS 46. Der Wechsel vom Luftmengen- zum Luftmassenmesser im Ansaugtrakt ist von außen sichtbar.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle unten auf der Ansaugseite über der Ölwanne, unter der Ansaugbrücke."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Zylinderkopfdichtung und Kühlsystem — Thermostat und Wasserpumpe gelten als Verschleißteile mit begrenzter Standzeit.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung setzt sich zu, Öl im Ansaugtrakt.",
+        "Erfahrungswert: Zündspulen und Zündkerzenschächte, Aussetzer unter Last.",
+        "Erfahrungswert: Steuerkette läuft lang, macht sich aber durch Rasseln beim Kaltstart bemerkbar.",
+        "Erfahrungswert: der M43 gilt als der robusteste der kleinen Vierzylinder dieser Zeit, weil ihm der Zahnriemen des M40 und die Profildichtung des M42 fehlen."
+      ],
+      "dme": "Bosch Motronic 1.7 bzw. M5.2 (M43); Bosch BMS 46 (M43TU ab 1998)"
+    },
+    {
+      "id": "M44",
+      "name": "M44",
+      "layout": "R4",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 1895,
+      "years": "1996–2000",
+      "valvetrain": ["DOHC", "16V", "Steuerkette"],
+      "power_variants": [
+        { "label": "318i / 318is / 318ti (E36)", "ps": 140, "nm": 180 },
+        { "label": "Z3 1.9", "ps": 140, "nm": 180 }
+      ],
+      "id_marks": [
+        "Die 1.9-Liter-Weiterentwicklung des M42. Gleiches Grundkonzept: zwei Nockenwellen, 16 Ventile, Steuerkette.",
+        "Merkmal gegenüber dem M42: der M44 hat die zweistufige Ansaugbrücke DISA. Das Umschaltelement mit Unterdruckdose sitzt sichtbar an der Ansaugbrücke — beim M42 fehlt es.",
+        "Merkmal gegenüber dem gleich großen M43B19 beziehungsweise M43TUB19: derselbe Nennhubraum, aber doppelt so viele Ventile und zwei Nockenwellen. Ein Blick auf den Ventildeckel entscheidet.",
+        "Motornummer auf dem Block eingeschlagen, nach einer Quelle auf der Ansaugseite des Kurbelgehäuses.",
+        "Verbaut im E36 318i, 318is und 318ti sowie im Z3 1.9 bis zur Ablösung durch den Sechszylinder."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Profildichtung am Steuerkettenkasten wie beim M42 — Kühlmittelverlust, aufwendige Reparatur.",
+        "Erfahrungswert: DISA-Klappe und ihre Lagerung verschleißen, Rasseln aus der Ansaugbrücke, Drehmomentloch im mittleren Bereich.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung verstopft.",
+        "Erfahrungswert: Wasserpumpe mit Kunststoffflügelrad."
+      ],
+      "dme": "Bosch Motronic 5.2"
+    },
+    {
+      "id": "M50",
+      "name": "M50",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2494,
+      "years": "1990–1996",
+      "valvetrain": ["DOHC", "24V", "Steuerkette", "Einfach-VANOS ab M50TU"],
+      "power_variants": [
+        { "label": "520i / 320i (M50B20)", "ps": 150, "nm": 190 },
+        { "label": "520i / 320i (M50B20TU)", "ps": 150, "nm": 190 },
+        { "label": "525i / 325i (M50B25)", "ps": 192, "nm": 245 },
+        { "label": "525i / 325i (M50B25TU)", "ps": 192, "nm": 250 }
+      ],
+      "id_marks": [
+        "Erster BMW-Sechszylinder der Grossserie mit zwei Nockenwellen und 24 Ventilen — der M88 von 1978 und der daraus entwickelte S38 hatten diese Bauart schon, aber in Kleinserie. Zwei Hubräume: 1991 cc (B20) und 2494 cc (B25); eingetragen ist der B25.",
+        "Der entscheidende Unterschied für die Diagnose ist Vor-TU gegen TU. Ab September 1992 hat der M50TU eine Einfach-VANOS auf der Einlassnockenwelle. Die VANOS-Einheit sitzt als zusätzliches Gehäuse vorn oben am Zylinderkopf über dem Steuerkettendeckel. Fehlt sie und ist dort ein glatter Deckel, hast du einen Vor-TU.",
+        "Zweites Merkmal des TU: der Vor-TU hat noch einen Luftmengenmesser mit Stauklappe, der TU einen Heißfilm-Luftmassenmesser.",
+        "Graugussblock mit Aluminiumkopf. Der Magnet hält am Block — beim Nachfolger M52 mit Aluminiumblock hält er nicht. Das ist der schnellste Test, um M50 und M52 auseinanderzuhalten.",
+        "Einzelzündspulen unter einer Abdeckung, kein Zündverteiler mehr.",
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: VANOS-Dichtungen der TU-Version verhärten. Folge sind Leistungsverlust im unteren Drehzahlbereich und ein Rasseln aus dem Bereich der Einheit.",
+        "Erfahrungswert: Wasserpumpe mit Kunststoffflügelrad — bekannter Schwachpunkt, Metallflügelrad als Ersatz gängig.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung und Ölabscheider setzen sich zu.",
+        "Erfahrungswert: Leerlaufsteller verkokt.",
+        "Erfahrungswert: Kühlmittelflansch und Thermostatgehäuse werden undicht.",
+        "Erfahrungswert: Ventildeckeldichtung, Öl läuft in die Zündkerzenschächte."
+      ],
+      "dme": "Bosch DME M3.1 (M50 Vor-TU), Bosch DME M3.3.1 (M50B25TU), Siemens MS 40.1 (M50B20TU)"
+    },
+    {
+      "id": "M52",
+      "name": "M52",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2793,
+      "years": "1994–2000",
+      "valvetrain": ["DOHC", "24V", "Steuerkette", "Einfach-VANOS", "Doppel-VANOS ab M52TU"],
+      "power_variants": [
+        { "label": "320i / 520i (M52B20)", "ps": 150, "nm": 190 },
+        { "label": "323i / 523i (M52B25)", "ps": 170, "nm": 245 },
+        { "label": "328i / 528i (M52B28)", "ps": 193, "nm": 280 },
+        { "label": "320i / 520i (M52TUB20)", "ps": 150, "nm": 190 },
+        { "label": "323i / 523i (M52TUB25)", "ps": 170, "nm": 245 },
+        { "label": "328i / 528i (M52TUB28)", "ps": 193, "nm": 280 }
+      ],
+      "id_marks": [
+        "Nachfolger des M50. Hubräume 1991 cc, 2494 cc und 2793 cc; eingetragen ist der B28.",
+        "Schnellster Unterschied zum M50: der M52 hat für den europäischen Markt einen Aluminiumblock. Ein Magnet hält am M50-Graugussblock, am M52-Aluminiumblock nicht. Für Nordamerika wurde der M52B28 dagegen mit Graugussblock gebaut — dort versagt der Magnettest.",
+        "Der entscheidende Unterschied für die Diagnose ist M52 gegen M52TU. Ab September 1998 hat der M52TU Doppel-VANOS, also Verstellung auf Einlass- und Auslassnockenwelle. Die VANOS-Einheit an der Stirnseite baut dadurch deutlich größer und breiter als die schmale Einfach-VANOS des Vor-TU.",
+        "Zweites TU-Merkmal: elektronisch geregeltes Thermostat mit Steckeranschluss am Thermostatgehäuse. Der Vor-TU hat dort ein rein mechanisches Thermostat ohne Kabel.",
+        "Drittes TU-Merkmal: Steuergerät. Vor-TU ist Siemens MS 41.1, TU ist Siemens MS 42. Über die Diagnose eindeutig auslesbar, wenn die Sichtprüfung nicht reicht.",
+        "Gegenüber dem Nachfolger M54: der M52TU hat noch einen mechanischen Gaszug zur Drosselklappe. Beim M54 fehlt der Zug vollständig. Das ist die sicherste Unterscheidung der beiden im Motorraum.",
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen. Nach einer Quelle steht dort außerdem der Typschlüssel des Motors, etwa 28 6S1 für die 2.8-Liter-Sechszylinderausführung — vor dem Anwenden gegenprüfen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: europäische Blöcke bis etwa 1998 haben Nikasil-Laufbahnen. Bei dauerhaft schwefelhaltigem Kraftstoff verschleißen sie, Folge sind Kompressionsverlust und schlechter Warmstart. Spätere Blöcke haben Graugussbuchsen. Bei Verdacht Kompression vergleichend über alle sechs Zylinder messen.",
+        "Erfahrungswert: VANOS-Dichtungen verhärten, Leistungsverlust unten heraus, Rasseln an der Stirnseite.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung vereist im Winter und setzt sich zu. Folge sind Öl im Ansaugtrakt, weißer Emulsionsschlamm unter dem Öldeckel und im Extremfall abgesaugte Wellendichtringe.",
+        "Erfahrungswert: Kühlmittelflansch aus Kunststoff am hinteren Kopfende reißt.",
+        "Erfahrungswert: DISA-Klappe der Ansaugbrücke.",
+        "Erfahrungswert: Ölfiltergehäusedichtung und Ventildeckeldichtung."
+      ],
+      "dme": "Siemens MS 41.1 (M52), Siemens MS 42 (M52TU)"
+    },
+    {
+      "id": "M54",
+      "name": "M54",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2979,
+      "years": "2000–2006",
+      "valvetrain": ["DOHC", "24V", "Steuerkette", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "320i / 520i / Z3 2.2i (M54B22)", "ps": 170, "nm": 210 },
+        { "label": "325i / 525i / X3 2.5i (M54B25)", "ps": 192, "nm": 245 },
+        { "label": "330i / 530i / X5 3.0i (M54B30)", "ps": 231, "nm": 300 }
+      ],
+      "id_marks": [
+        "Letzter Ausbau der M50-Linie. Hubräume 2171 cc (B22), 2494 cc (B25) und 2979 cc (B30); eingetragen ist der B30.",
+        "Sicherste Unterscheidung zum M52TU: der M54 hat eine vollelektronische Drosselklappe ohne mechanischen Rückfallweg. Am Drosselklappenstutzen hängt kein Gaszug, nur ein Stecker. Findest du dort einen Bowdenzug, ist es ein M52 oder M52TU.",
+        "Doppel-VANOS auf Einlass und Auslass, elektronisch geregeltes Thermostat, zweistufige Ansaugbrücke DISA.",
+        "Aluminiumblock. Der Magnet hält nicht.",
+        "Motornummer auf dem Block eingeschlagen, unten an der Trennfuge zur Ölwanne. Welche Seite, ist offen — die Quellen nennen die Ansaug- und die Auslassseite. Beide absuchen. Zusätzlich trägt der Block einen Typschlüssel nach dem Muster Hubraum in Dezilitern, Zylinderzahl, S und Index.",
+        "Gegenüber dem M56: der M54 arbeitet mit der Steuerung MS 43, der M56 mit MS 45.1. Beim M54 sitzt der Öleinfülldeckel nicht auf derselben Seite des Ventildeckels wie beim M56 — nach einer Quelle liegt er beim M56 rechts. Vor dem Anwenden gegenprüfen, im Zweifel über die Motornummer gehen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Kurbelgehäuseentlüftung ist der Klassiker. Bei Kälte vereist der Ölabscheider, danach zieht der Motor Öl, es entsteht Emulsion unter dem Öldeckel und der Leerlauf wird unrund.",
+        "Erfahrungswert: DISA-Klappe. Die Lagerung schlägt aus, die Klappe kann sich lösen und in den Ansaugtrakt gelangen.",
+        "Erfahrungswert: VANOS-Dichtungen verhärten, Leistung fehlt unten heraus.",
+        "Erfahrungswert: Kühlmittelflansch aus Kunststoff am hinteren Kopfende und Ausgleichsbehälter reißen.",
+        "Erfahrungswert: Ölfiltergehäusedichtung leckt auf den Riementrieb.",
+        "Erfahrungswert: Zündspulen fallen einzeln aus, Aussetzer unter Last.",
+        "Erfahrungswert: Wasserpumpe und Thermostat gelten als Verschleißteile."
+      ],
+      "dme": "Siemens MS 43"
+    },
+    {
+      "id": "M56",
+      "name": "M56",
+      "layout": "R6",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 2494,
+      "years": "2002–2006",
+      "valvetrain": ["DOHC", "24V", "Steuerkette", "Doppel-VANOS"],
+      "power_variants": [
+        { "label": "325i SULEV (nur US-Markt) · Widerspruch: 192 PS nach Foren- und Teilequellen, 184 PS (135 kW) nach einem Nachschlagewerk — vermutlich SAE-hp gegen DIN-PS, ohne Primärquelle nicht auflösbar", "ps": 192, "nm": 245 }
+      ],
+      "id_marks": [
+        "Der M56 ist ein für die amerikanische SULEV-Abgasnorm überarbeiteter M54B25. Gleicher Hubraum, gleiche Grundkonstruktion, gleiche Leistung. Er kam nur in wenigen US-Bundesstaaten in den Verkehr und ist in Europa praktisch nicht anzutreffen.",
+        "Wichtigstes Merkmal für die Diagnose: die Steuerung ist MS 45.1, nicht MS 43 wie beim M54. Wer mit einem M54-Datensatz an einen M56 geht, findet die Sekundärluft-Überwachung und Teile der Gemischadaption nicht wieder.",
+        "Der M56 hat einen Sekundärluftmassenmesser im Sekundärluftsystem — beim M54 gibt es diesen Sensor nicht. Ein zusätzlicher Stecker im Bereich der Sekundärluftpumpe ist ein starkes Indiz.",
+        "Weitere Unterschiede: Ventildeckel mit integrierter Kurbelgehäuseentlüftung, eigener Ölmessstab ohne Ablaufrohr, eigene Ansaugbrücke und Drosselklappe, Breitband-Lambdasonden vor dem Katalysator, zusätzliche Katalysatoren hinter allen Lambdasonden.",
+        "Die Drosselklappe des M56 schließt vollständig dicht, die des M54 nicht. Bei einer Prüfung des Leerlaufverhaltens ist das der Grund für abweichendes Verhalten.",
+        "Nach einer Quelle trägt der Block den Typschlüssel 256S6 und der Öleinfülldeckel sitzt auf der rechten Seite des Ventildeckels — vor dem Anwenden gegenprüfen.",
+        "Motoren und Anbauteile sind zwischen M54 und M56 nicht wahllos tauschbar. Vor einer Teilebestellung die Motornummer lesen, nicht das Modelljahr."
+      ],
+      "weak_points": [
+        "Erfahrungswert: die Schwachstellen des M54 gelten unverändert — Kurbelgehäuseentlüftung, DISA, VANOS-Dichtungen, Kühlmittelflansch.",
+        "Erfahrungswert: das aufwendigere SULEV-Abgassystem mit zusätzlichen Katalysatoren und Breitbandsonden erzeugt eigene Fehlerbilder, die im M54-Material nicht beschrieben sind.",
+        "Erfahrungswert: Bauteile des SULEV-Kraftstoffsystems sind schwer zu beschaffen, weil sie nur für diesen Motor gebaut wurden."
+      ],
+      "dme": "Siemens MS 45.1"
+    },
+    {
+      "id": "M60",
+      "name": "M60",
+      "layout": "V8",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 3982,
+      "years": "1992–1996",
+      "valvetrain": ["DOHC", "32V", "Steuerkette"],
+      "power_variants": [
+        { "label": "530i / 730i (M60B30)", "ps": 218, "nm": 290 },
+        { "label": "540i / 740i (M60B40)", "ps": 286, "nm": 400 }
+      ],
+      "id_marks": [
+        "Erster moderner BMW-V8 mit vier Nockenwellen und 32 Ventilen. Zwei Hubräume: 2997 cc (B30) und 3982 cc (B40); eingetragen ist der B40.",
+        "Ganz aus Aluminium, mit Steuerkette. Er ersetzte im E34 den M30-Reihensechszylinder — wer im E34 einen V8 findet, hat einen M60.",
+        "Der M60 hat keine VANOS. Findest du an den Stirnseiten der Zylinderköpfe Verstelleinheiten, ist es ein M62TU, kein M60.",
+        "Die praktisch wichtigste Frage bei diesem Motor ist Nikasil oder Alusil. Nach mehreren übereinstimmenden Quellen unterscheidet die Gussnummer am Block: 1725970 ist ein M60B30 mit Nikasil, 1745871 ein M60B30 mit Alusil, 1725963 ein M60B40 mit Nikasil, 1745872 ein M60B40 mit Alusil. Die Nummer sitzt außen am Blockguss. Vor einer Kaufentscheidung selbst ablesen und nicht auf das Baujahr verlassen.",
+        "Motornummer auf dem Block eingeschlagen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Nikasil-Laufbahnen verschleißen bei dauerhaft schwefelhaltigem Kraftstoff. Symptome sind schlechter Warmstart, unrunder Leerlauf und über die Zylinder ungleich verteilte Kompression. Vergleichend über alle acht Zylinder messen, nicht gegen einen Sollwert.",
+        "Erfahrungswert: Sekundärluftpumpe und ihre Ventile fallen aus, Fehlerspeichereintrag zum Sekundärluftsystem nach Kaltstart.",
+        "Erfahrungswert: Steuerkettengleitschienen aus Kunststoff werden spröde.",
+        "Erfahrungswert: Ventildeckeldichtungen lecken auf die Krümmer.",
+        "Erfahrungswert: Kühlsystem — Kunststoffteile am Wasserrohr unter der Ansaugbrücke, Ausgleichsbehälter, Wasserpumpe."
+      ],
+      "dme": "Bosch Motronic M3.3 bzw. M3.3.1"
+    },
+    {
+      "id": "M62",
+      "name": "M62",
+      "layout": "V8",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 4398,
+      "years": "1995–2005",
+      "valvetrain": ["DOHC", "32V", "Steuerkette", "Einfach-VANOS ab M62TU"],
+      "power_variants": [
+        { "label": "535i / 735i (M62B35)", "ps": 235, "nm": 320 },
+        { "label": "540i / 740i (M62B44)", "ps": 286, "nm": 420 },
+        { "label": "540i / 740i / X5 4.4i (M62TUB44)", "ps": 286, "nm": 440 },
+        { "label": "X5 4.6is (M62TUB46)", "ps": 347, "nm": 480 }
+      ],
+      "id_marks": [
+        "Nachfolger des M60. Hubräume 3498 cc (B35), 4398 cc (B44) und 4619 cc (B46); eingetragen ist der B44.",
+        "Der entscheidende Unterschied für die Diagnose ist M62 gegen M62TU. Ab 1998 hat der M62TU eine Einfach-VANOS auf den Einlassnockenwellen. An den Stirnseiten beider Zylinderköpfe sitzen dann sichtbare Verstelleinheiten. Der Vor-TU hat dort glatte Deckel.",
+        "Zweites TU-Merkmal: elektronische Drosselklappe. Beim Vor-TU führt noch ein Gaszug zur Drosselklappe.",
+        "Drittes TU-Merkmal: Steuergerät. Vor-TU ist Bosch Motronic M5.2, TU ist Bosch ME 7.2. Über die Diagnose eindeutig.",
+        "Nikasil ist beim M62 strittig und nicht ausgeschlossen: mehrere unabhängige Quellen führen frühe Blöcke von 1996 bis etwa 1998 mit Nikasil-Laufbahnen und die Umstellung auf Alusil danach, andere Darstellungen sprechen dem M62 Nikasil ganz ab. Bei Kompressionsverlust und schlechtem Warmstart gehört die Laufbahnfrage deshalb geprüft, nicht ausgeschlossen — über die Gussnummer am Block und über den Zylindervergleich bei der Kompressionsmessung.",
+        "Motornummer auf dem Block eingeschlagen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: Steuerkettengleitschienen aus Kunststoff werden spröde und brechen. Das gilt als der bekannteste Schaden dieses Motors, besonders beim M62TUB44 in E39 540i, E38 740i und X5 4.4i. Vorzeichen sind Kettenschlagen im Leerlauf und Kunststoffbruchstücke im Ölfilter. Beim Ölwechsel den Filter aufschneiden und ansehen.",
+        "Erfahrungswert: Kühlmittelübergangsrohr unter der Ansaugbrücke wird undicht. Der Schaden ist von oben nicht sichtbar, das Kühlmittel läuft in den V-Raum.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung setzt sich zu.",
+        "Erfahrungswert: Ventildeckeldichtungen lecken auf die Krümmer.",
+        "Erfahrungswert: Sekundärluftpumpe und Umschaltventile.",
+        "Erfahrungswert: VANOS-Einheiten der TU-Version rasseln beim Kaltstart."
+      ],
+      "dme": "Bosch Motronic M5.2 (M62), Bosch ME 7.2 (M62TU)"
+    },
+    {
+      "id": "M73",
+      "name": "M73",
+      "layout": "V12",
+      "aspiration": "Saugmotor",
+      "displacement_cc": 5379,
+      "years": "1994–2002",
+      "valvetrain": ["SOHC", "24V", "Steuerkette"],
+      "power_variants": [
+        { "label": "750i / 750iL (E38, M73B54)", "ps": 326, "nm": 490 },
+        { "label": "750i / 750iL (E38, M73TUB54 ab 1998)", "ps": 326, "nm": 490 },
+        { "label": "850Ci (E31, M73B54)", "ps": 326, "nm": 490 }
+      ],
+      "id_marks": [
+        "Der Zwölfzylinder des E38 750i und des E31 850Ci. 5379 cc, 60-Grad-V12, eine Nockenwelle je Bank, zwei Ventile je Zylinder — also 24 Ventile insgesamt.",
+        "Das wichtigste Merkmal für die Werkstatt ist kein Bauteil, sondern die Architektur: der M73 wird als zwei getrennte Motorhälften betrieben, jede Zylinderbank mit eigener Motorsteuerung Bosch M5.2. In der Diagnose musst du beide Steuergeräte einzeln ansprechen. Ein Fehler auf nur einer Bank taucht im anderen Steuergerät nicht auf, und ein Vergleich der beiden Datensätze ist das stärkste Diagnosewerkzeug, das dieser Motor bietet.",
+        "Entsprechend doppelt sind auch Luftmassenmesser, Drosselklappe, Lambdaregelung und Sekundärluftkreis ausgeführt.",
+        "Unterscheidung zum Vorgänger M70: der M70 hat 4988 cc, der M73 5379 cc. Beide sind SOHC-V12 mit 24 Ventilen und arbeiten mit zwei Steuergeräten.",
+        "Unterscheidung zum Nachfolger N73: der N73 ab 2003 hat vier Nockenwellen, 48 Ventile und Direkteinspritzung. Wer im E38 einen V12 findet, hat nie einen N73.",
+        "Ab 1998 M73TU mit überarbeiteter Abgasnachbehandlung, unter anderem elektrisch vorgeheiztem Katalysator für den Kaltstart.",
+        "Motornummer auf dem Block eingeschlagen."
+      ],
+      "weak_points": [
+        "Erfahrungswert: alle Peripherie ist doppelt vorhanden, also verdoppelt sich auch die Ausfallwahrscheinlichkeit. Ungleichmäßiger Lauf geht sehr oft auf ein einseitiges Problem zurück — erst die beiden Bänke gegeneinander vergleichen, dann suchen.",
+        "Erfahrungswert: Kurbelgehäuseentlüftung setzt sich zu.",
+        "Erfahrungswert: Zündspulen und Zündkabel, Aussetzer unter Last auf einer Bank.",
+        "Erfahrungswert: Kühlsystem mit Kunststoffteilen und der großen Wärmelast des V12.",
+        "Erfahrungswert: Sekundärluftpumpen und Ventile, Fehlerspeichereinträge nach Kaltstart.",
+        "Erfahrungswert: die Zugänglichkeit im E38-Motorraum ist der eigentliche Kostentreiber, nicht das Ersatzteil."
+      ],
+      "dme": "Bosch Motronic M5.2 — zwei Steuergeräte, je eines pro Zylinderbank"
+    }
+  ]
+}
