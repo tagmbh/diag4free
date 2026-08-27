@@ -225,6 +225,31 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Uebersicht gegen Bibliothek: beide sagen, was sie sind ---
+      // Der Nutzer konnte die beiden nicht auseinanderhalten. Der Test
+      // haelt fest, dass die Bibliothek ihren Bezugsrahmen nennt und einen
+      // sichtbaren Weg zurueck an den gefilterten Arbeitsplatz traegt.
+      await page.goto(BASE + '/#/library', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      expect(await page.locator('[data-view-panel="library"] .scope-note').count() === 1,
+        'Bibliothek nennt ihren Bezugsrahmen', 'kein Hinweis auf den Geltungsbereich');
+      const zurueckKnopf = page.locator('[data-view-panel="library"] .scope-note [data-route="overview"]');
+      expect(await zurueckKnopf.count() === 1, 'Weg zurueck in den Arbeitsbereich vorhanden', 'kein Rueckweg');
+      await zurueckKnopf.click();
+      await settle(page, 700);
+      expect(await page.evaluate(() => location.hash) === '#/overview',
+        'Rueckweg fuehrt in die Uebersicht', `Hash ${await page.evaluate(() => location.hash)}`);
+
+      // Das Fahrzeugschild traegt die Auswahl und fuehrt zum Wechseln.
+      const schild = page.locator('#ctxChip');
+      expect(await schild.count() === 1, 'Fahrzeugschild vorhanden', 'kein Schild in der Kopfzeile');
+      expect((await schild.innerText()).trim().length > 0,
+        'Fahrzeugschild zeigt die Auswahl', 'Schild ist leer');
+      await schild.click();
+      await settle(page, 700);
+      expect(await page.locator('[data-pick-model], .pick-card').count() > 0,
+        'Fahrzeugschild fuehrt in die Fahrzeugwahl', 'keine Fahrzeugauswahl nach Klick');
+
       // --- Symptom-Einstieg: die erste Frage ist "Was ist los?" ---
       await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
       await settle(page, 1400);

@@ -367,13 +367,50 @@
   font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
-.topbar-context .divider {
-  width: 1px; height: 20px;
-  background: var(--color-divider);
-}
-.topbar-context strong {
+/* Das Fahrzeugschild. Es traegt die Auswahl, auf die alles gefiltert ist,
+   und ist zugleich der Weg zum Wechseln — deshalb ein Knopf und keine
+   Beschriftung. Hoehe 44 px — das ist die Grenze, unterhalb derer ein Ziel
+   mit Handschuhen nicht mehr sicher zu treffen ist, und die Abnahme
+   besteht darauf. */
+.ctx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
   color: var(--color-text);
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease;
+}
+.ctx-chip:hover { border-color: var(--color-primary); background: var(--color-surface-offset); }
+.ctx-chip:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ctx-chip-veh {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.ctx-chip-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  opacity: .6;
+}
+.ctx-chip-eng {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
   font-weight: 600;
+  color: var(--color-primary);
+}
+.ctx-chip-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding-left: var(--space-1);
+  border-left: 1px solid var(--color-divider);
+  margin-left: var(--space-1);
 }
 
 .topbar-search {
@@ -1146,8 +1183,10 @@
   }
   .topbar-search.mobile-active input { max-width: none; width: 100%; }
 
-  .topbar-context .divider,
-  .topbar-context .context-label { display: none; }
+  /* Auf schmalen Geraeten faellt nur der Zusatz weg — die Auswahl selbst
+     bleibt sichtbar, sie ist der Grund, warum alles darunter passt. */
+  .ctx-chip-hint { display: none; }
+  .ctx-chip { padding: 0 var(--space-2); }
 }
 
 @media (max-width: 600px) {
@@ -2048,3 +2087,27 @@
 }
 .scan-note-warn h2 { color: var(--color-warning); }
 .scan-note-warn p  { color: var(--color-text); }
+
+/* Hinweis, in welchem Bezugsrahmen man sich gerade befindet. Der Nutzer
+   hat gefragt, was Uebersicht und was Bibliothek ist — die Antwort steht
+   jetzt auf der Seite selbst, mit dem Weg zurueck daneben. */
+.scope-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+}
+.scope-note-text {
+  flex: 1 1 260px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.scope-note-text strong { color: var(--color-text); }
+.scope-note .btn { min-height: 44px; }

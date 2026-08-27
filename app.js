@@ -252,6 +252,8 @@
   const updateContext = () => {
     $('#ctxSeries').textContent = state.series.toUpperCase();
     $('#ctxEngine').textContent = state.engine;
+    const chip = $('#ctxChip');
+    if (chip) chip.setAttribute('title', `${state.series.toUpperCase()} · ${state.engine} — antippen zum Wechseln`);
   };
 
   // -------- Data Access --------
@@ -714,7 +716,7 @@
       <div class="page-header" style="margin-top:var(--space-8);">
         <div>
           <h2 class="page-title" style="font-size:var(--text-lg);">Womit weiter?</h2>
-          <p class="page-lead">Alles unten ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert.</p>
+          <p class="page-lead">Dein Arbeitsbereich: alles hier ist auf ${escapeHtml(model.name)} · ${escapeHtml(state.engine)} gefiltert. Den Gesamtbestand über alle Baureihen findest du in der Bibliothek.</p>
         </div>
       </div>
 
@@ -763,9 +765,9 @@
     panel.querySelectorAll('[data-goto-step]')?.forEach(b => b.addEventListener('click', () => {
       state.picked = false; savePrefs(); renderOverview();
     }));
-    panel.querySelectorAll('[data-route]').forEach(b => b.addEventListener('click', () => {
-      haptic(); setView(b.dataset.route);
-    }));
+    // `[data-route]` wird zentral in bindEvents behandelt — sonst muesste
+    // jede Ansicht, die einen Weg anbietet, ihre eigene Verdrahtung
+    // mitbringen, und die Bibliothek hatte genau deshalb keine.
   };
 
   // -------- DOCS --------
@@ -1380,8 +1382,16 @@
       <div class="page-header">
         <div>
           <h1 class="page-title" id="libTitle">Bibliothek</h1>
-          <p class="page-lead">Globale Suche über alle Baureihen. ${state.data.docs.length} Dokumente insgesamt.</p>
+          <p class="page-lead">Der Gesamtbestand über <strong>alle</strong> Baureihen — zum Nachschlagen und Suchen. ${state.data.docs.length} Dokumente.</p>
         </div>
+      </div>
+
+      <!-- Der Nutzer hat gefragt, was Uebersicht und was Bibliothek ist.
+           Beide sagen es jetzt selbst, und von hier fuehrt ein sichtbarer
+           Weg zurueck an den gefilterten Arbeitsplatz. -->
+      <div class="scope-note">
+        <span class="scope-note-text">Hier ist <strong>nichts</strong> auf dein Fahrzeug gefiltert. Der Arbeitsbereich für ${escapeHtml(state.series.toUpperCase())} · ${escapeHtml(state.engine)} liegt in der Übersicht.</span>
+        <button class="btn btn-ghost" data-route="overview">Zurück zum Arbeitsbereich</button>
       </div>
 
       <div class="topbar-search" style="max-width:none;margin-bottom:var(--space-6);">
@@ -2431,6 +2441,23 @@
     $('#vinBtn').addEventListener('click', openVinDialog);
 
     // Drawer close
+    // Ein Weg zu einer anderen Ansicht kann ueberall stehen. Delegiert
+    // gebunden, damit er auch dort wirkt, wo er neu dazukommt.
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest && e.target.closest('[data-route]');
+      if (!b) return;
+      haptic();
+      setView(b.dataset.route);
+    });
+
+    $('#ctxChip')?.addEventListener('click', () => {
+      haptic();
+      state.picked = false;
+      savePrefs();
+      if (state.view !== 'overview') setView('overview');
+      else renderOverview();
+    });
+
     $$('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     $('[data-drawer-backdrop]').addEventListener('click', closeDrawer);
     document.addEventListener('keydown', (e) => {

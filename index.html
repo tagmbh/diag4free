@@ -100,12 +100,18 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
 
+      <!-- Die aktive Auswahl ist die wichtigste Information der ganzen
+           Oberflaeche: alles darunter ist auf sie gefiltert. Frueher stand
+           sie klein zwischen zwei Beschriftungen und war nicht anklickbar —
+           man sah kaum, was gewaehlt war, und kam von hier aus nicht weg.
+           Jetzt ist sie das Schild selbst und zugleich der Weg zum Wechseln. -->
       <div class="topbar-context" aria-live="polite">
-        <span class="context-label">Fahrzeug:</span>
-        <strong id="ctxSeries">E46</strong>
-        <span class="divider"></span>
-        <span class="context-label">Motor:</span>
-        <strong id="ctxEngine">M54</strong>
+        <button class="ctx-chip" id="ctxChip" aria-label="Fahrzeug und Motor wechseln">
+          <span class="ctx-chip-veh" id="ctxSeries">E46</span>
+          <span class="ctx-chip-dot" aria-hidden="true"></span>
+          <span class="ctx-chip-eng" id="ctxEngine">M54</span>
+          <span class="ctx-chip-hint" aria-hidden="true">wechseln</span>
+        </button>
         <button class="vin-btn" id="vinBtn" aria-label="Fahrzeug per VIN identifizieren" title="VIN-Dekodierung">VIN</button>
       </div>
 
