@@ -5,8 +5,12 @@
       "id": "batt-ruhe",
       "title": "Batterie-Ruhespannung",
       "group": "Versorgung",
-      "instruction": "Zündung aus, alle Verbraucher aus, mindestens 30 Minuten Ruhe nach dem Abstellen. Direkt an den Polen messen, nicht an der Klemme. Wurde eben geladen, vorher die Oberflächenladung mit Abblendlicht für eine Minute abziehen.",
-      "target": { "unit": "V", "min": 12.4, "max": 12.9 },
+      "instruction": "Zündung aus, alle Verbraucher aus, mindestens 30 Minuten Ruhe nach dem Abstellen. Direkt an den Polen messen, nicht an der Klemme. Wurde eben geladen, vorher die Oberflächenladung mit Abblendlicht für eine Minute abziehen. Die Obergrenze ist auf 13.0 V gelegt, weil eine volle AGM-Batterie höher ruht als eine herkömmliche Nassbatterie — mit einem engeren Fenster würde eine gesunde AGM als auffällig gemeldet.",
+      "target": {
+        "unit": "V",
+        "min": 12.4,
+        "max": 13.0
+      },
       "engines": [],
       "models": []
     },
@@ -14,8 +18,12 @@
       "id": "batt-start-einbruch",
       "title": "Bordnetzspannung beim Startversuch",
       "group": "Versorgung",
-      "instruction": "Multimeter an den Batteriepolen belassen, Min/Max-Erfassung einschalten, dann starten. Der tiefste Wert während des Durchdrehens zählt. Bei kalter Batterie fällt der Wert naturgemäß tiefer aus — im Zweifel warm wiederholen.",
-      "target": { "unit": "V", "min": 10.0, "max": 12.6 },
+      "instruction": "Multimeter an den Batteriepolen belassen, Min/Max-Erfassung einschalten, dann starten. Der tiefste Wert während des Durchdrehens zählt. Bei kalter Batterie fällt der Wert naturgemäß tiefer aus — im Zweifel warm wiederholen. Die Untergrenze folgt der Belastungsprüfung für 12-V-Bleiakkus, die beim Kälteprüfstrom einen Abfall in diesen Bereich zulässt. Eine strengere Grenze verurteilt intakte Batterien, vor allem kalt.",
+      "target": {
+        "unit": "V",
+        "min": 9.6,
+        "max": 12.6
+      },
       "engines": [],
       "models": []
     },
@@ -24,25 +32,53 @@
       "title": "Ladespannung im Bordnetz",
       "group": "Versorgung",
       "instruction": "Motor im Leerlauf, warm, danach mit eingeschaltetem Abblendlicht und Gebläse wiederholen. An den Batteriepolen messen. Die Spannung muss über der Ruhespannung liegen und unter Last nicht einbrechen.",
-      "target": { "unit": "V", "min": 13.5, "max": 14.8 },
+      "target": {
+        "unit": "V",
+        "min": 13.5,
+        "max": 14.8
+      },
       "engines": [],
-      "models": ["e30", "e28", "e34", "e36", "e39", "e38", "e46"]
+      "models": [
+        "e30",
+        "e28",
+        "e34",
+        "e36",
+        "e39",
+        "e38",
+        "e46"
+      ]
     },
     {
       "id": "lade-spannung-ibs",
       "title": "Ladespannung bei Energiemanagement",
       "group": "Versorgung",
       "instruction": "Fahrzeuge mit intelligentem Batteriesensor regeln die Generatorspannung bewusst herunter, sobald die Batterie voll ist, und heben sie im Schub an. Ein einzelner Messwert beweist hier nichts. Ladespannung an den Polen über mehrere Minuten beobachten und gegen den vom Steuergerät gemeldeten Sollwert und den Batteriestrom halten: Der Strom muss bei leerer Batterie in die Batterie fließen.",
-      "target": { "text": "Spannung folgt der Vorgabe des Energiemanagements · Ladestrom bei leerer Batterie positiv" },
+      "target": {
+        "text": "Spannung folgt der Vorgabe des Energiemanagements · Ladestrom bei leerer Batterie positiv"
+      },
       "engines": [],
-      "models": ["e60", "e90", "e70", "e87", "e88", "f10", "f30", "f15", "f22"]
+      "models": [
+        "e60",
+        "e90",
+        "e70",
+        "e87",
+        "e88",
+        "f10",
+        "f30",
+        "f15",
+        "f22"
+      ]
     },
     {
       "id": "bordnetz-restwelligkeit",
       "title": "Restwelligkeit des Generators",
       "group": "Versorgung",
-      "instruction": "Motor läuft, Verbraucher zugeschaltet. Multimeter auf Wechselspannung stellen und an den Batteriepolen messen. Ein hoher Wechselanteil zeigt eine durchgebrannte Diode oder einen defekten Gleichrichter. Wenn möglich mit dem Oszilloskop gegenprüfen — eine fehlende Halbwelle ist dort eindeutig.",
-      "target": { "unit": "V", "min": 0.0, "max": 0.5 },
+      "instruction": "Motor läuft, Verbraucher zu (Licht, Gebläse, Heckscheibe). Multimeter auf Wechselspannung, direkt an den Batteriepolen. Gemessen wird der Wechselanteil, der hinter dem Gleichrichter übrig bleibt. Eine gesunde Anlage bleibt deutlich unter 0.1 V. Zwischen 0.1 und 0.3 V ist die Aussage unsicher — dort mit dem Oszilloskop gegenprüfen, ob eine einzelne Halbwelle fehlt. Ab 0.3 V ist von einer defekten Diode oder einem Statorfehler auszugehen. Das frühere Fenster dieser App reichte bis 0.5 V und hätte genau diesen Defekt als in Ordnung gemeldet.",
+      "target": {
+        "unit": "V",
+        "min": 0.0,
+        "max": 0.1
+      },
       "engines": [],
       "models": []
     },
@@ -51,7 +87,11 @@
       "title": "Massewiderstand Motor gegen Batterie-Minus",
       "group": "Versorgung",
       "instruction": "Batterie abklemmen. Ohmmeter zuerst mit kurzgeschlossenen Prüfspitzen nullen oder den Eigenwiderstand der Leitungen notieren und abziehen. Dann vom blanken Motorblock gegen das Batterie-Minuskabel messen. Gleiches Vorgehen für die Massebänder Karosserie und Getriebe.",
-      "target": { "unit": "Ω", "min": 0.0, "max": 0.1 },
+      "target": {
+        "unit": "Ω",
+        "min": 0.0,
+        "max": 0.1
+      },
       "engines": [],
       "models": []
     },
@@ -60,7 +100,11 @@
       "title": "Spannungsabfall über die Motormasse unter Last",
       "group": "Versorgung",
       "instruction": "Aussagekräftiger als der Widerstand im stromlosen Zustand. Voltmeter mit einer Spitze an den Motorblock, mit der anderen an den Minuspol der Batterie. Dann Last erzeugen — Startversuch mit unterbundener Zündung oder eingeschaltetes Fernlicht plus Gebläse. Gemessen wird der Abfall über die Masseverbindung, nicht die Bordnetzspannung.",
-      "target": { "unit": "V", "min": 0.0, "max": 0.2 },
+      "target": {
+        "unit": "V",
+        "min": 0.0,
+        "max": 0.2
+      },
       "engines": [],
       "models": []
     },
@@ -69,7 +113,11 @@
       "title": "Spannungsabfall in der Steuergeräteversorgung",
       "group": "Versorgung",
       "instruction": "Steuergerätestecker aufgelegt lassen und rückseitig anpieksen oder eine Adapterleitung verwenden. Voltmeter zwischen Batterie-Plus und Klemme 30 am Steuergerät. Gemessen wird die Differenz über Leitung, Sicherung und Relais, während das Steuergerät wach ist und arbeitet.",
-      "target": { "unit": "V", "min": 0.0, "max": 0.5 },
+      "target": {
+        "unit": "V",
+        "min": 0.0,
+        "max": 0.5
+      },
       "engines": [],
       "models": []
     },
@@ -78,7 +126,11 @@
       "title": "Durchgang einer Einzelleitung",
       "group": "Versorgung",
       "instruction": "Beide Stecker abziehen, damit nicht über ein Steuergerät gemessen wird. Eigenwiderstand der Prüfleitungen ermitteln und abziehen. Während der Messung am Kabelbaum wackeln — ein Wert, der springt, ist ein Befund, auch wenn er im Fenster bleibt.",
-      "target": { "unit": "Ω", "min": 0.0, "max": 0.5 },
+      "target": {
+        "unit": "Ω",
+        "min": 0.0,
+        "max": 0.5
+      },
       "engines": [],
       "models": []
     },
@@ -87,7 +139,9 @@
       "title": "Ruhestromaufnahme nach dem Einschlafen",
       "group": "Versorgung",
       "instruction": "Fahrzeug verschließen, alle Türen zu, Zündschlüssel raus, dann warten bis der Bus schläft — das dauert je nach Baureihe eine Viertelstunde und länger. Strommesszange um das Minuskabel oder Amperemeter in die aufgetrennte Minusleitung, dabei die Verbindung nie unterbrechen, sonst wachen die Steuergeräte wieder auf. Beurteilt wird vergleichend: Sicherungen einzeln ziehen und beobachten, welche den Strom fallen lässt. Zu den zulässigen Absolutwerten kursieren widersprüchliche Angaben — ohne die Vorgabe für genau diese Baureihe wird kein Wert als Grenze benutzt.",
-      "target": { "text": "Stromsprung beim Ziehen einer Sicherung ist der Befund · Absolutwert nur gegen die Herstellervorgabe" },
+      "target": {
+        "text": "Stromsprung beim Ziehen einer Sicherung ist der Befund · Absolutwert nur gegen die Herstellervorgabe"
+      },
       "engines": [],
       "models": []
     },
@@ -96,16 +150,30 @@
       "title": "Batterieregistrierung und Sensorwerte",
       "group": "Versorgung",
       "instruction": "Kapazität, Bautyp und Einbaudatum aus dem Energiemanagement auslesen und mit der verbauten Batterie vergleichen. Eine nicht registrierte oder falsch registrierte Batterie wird dauerhaft falsch geladen und stirbt vorzeitig. Zusätzlich die Plausibilität des Batteriesensors prüfen: gemeldete Spannung gegen die selbst gemessene halten.",
-      "target": { "text": "Registrierte Daten decken sich mit der verbauten Batterie · Sensorspannung deckt sich mit der Messung" },
+      "target": {
+        "text": "Registrierte Daten decken sich mit der verbauten Batterie · Sensorspannung deckt sich mit der Messung"
+      },
       "engines": [],
-      "models": ["e60", "e90", "e70", "e87", "e88", "f10", "f30", "f15", "f22"]
+      "models": [
+        "e60",
+        "e90",
+        "e70",
+        "e87",
+        "e88",
+        "f10",
+        "f30",
+        "f15",
+        "f22"
+      ]
     },
     {
       "id": "sg-identifikation",
       "title": "Erreichbarkeit aller Steuergeräte",
       "group": "Kommunikation",
       "instruction": "Zündung an, Motor aus, stabile Spannungsversorgung — bei schwacher Batterie mit Ladegerät stützen, sonst erzeugt die Diagnose selbst Fehler. Vollständige Identifikation über das Diagnosewerkzeug fahren und die Liste der antwortenden Steuergeräte gegen die Ausstattung des Fahrzeugs halten. Ein einzelnes fehlendes Steuergerät zeigt auf Versorgung oder Stichleitung, mehrere auf den Bus.",
-      "target": { "text": "Jedes verbaute Steuergerät antwortet mit Auftragsnummer und Softwarestand" },
+      "target": {
+        "text": "Jedes verbaute Steuergerät antwortet mit Auftragsnummer und Softwarestand"
+      },
       "engines": [],
       "models": []
     },
@@ -114,7 +182,9 @@
       "title": "Gesamtfehlerspeicher mit Umgebungsbedingungen",
       "group": "Kommunikation",
       "instruction": "Vor dem Löschen auslesen und sichern, inklusive Häufigkeitszähler und Umgebungsbedingungen. Die Umgebungsbedingungen sind der eigentliche Wert: Drehzahl, Last, Kühlmitteltemperatur und Spannung im Moment des Eintrags sagen mehr als der Fehlercode. Erst danach löschen und definiert nachfahren, um zu sehen, was wiederkommt.",
-      "target": { "text": "Speicher gesichert · nach dem Löschen und Nachfahren dokumentiert, welcher Fehler wiederkehrt" },
+      "target": {
+        "text": "Speicher gesichert · nach dem Löschen und Nachfahren dokumentiert, welcher Fehler wiederkehrt"
+      },
       "engines": [],
       "models": []
     },
@@ -123,16 +193,32 @@
       "title": "Busabschluss am Diagnosestecker",
       "group": "Kommunikation",
       "instruction": "Zündung aus, Bus schlafend. Ohmmeter an der Diagnosedose zwischen Pin 6 und Pin 14. Zwei parallel geschaltete Abschlusswiderstände von je 120 Ohm ergeben rechnerisch 60 Ohm. Rund 120 Ohm heißt: eine Terminierung fehlt oder der Bus ist unterbrochen. Nahe null heißt Kurzschluss zwischen den Leitungen. Achtung: Nur bei Fahrzeugen mit Diagnose über CAN liegen diese Pins auf dem Bus — bei älteren Baureihen mit K-Leitung ist an Pin 6 und 14 nichts angeschlossen.",
-      "target": { "unit": "Ω", "min": 55.0, "max": 70.0 },
+      "target": {
+        "unit": "Ω",
+        "min": 55.0,
+        "max": 70.0
+      },
       "engines": [],
-      "models": ["e60", "e90", "e70", "e87", "e88", "f10", "f30", "f15", "f22"]
+      "models": [
+        "e60",
+        "e90",
+        "e70",
+        "e87",
+        "e88",
+        "f10",
+        "f30",
+        "f15",
+        "f22"
+      ]
     },
     {
       "id": "can-pegel",
       "title": "Signalpegel auf dem Buspaar",
       "group": "Kommunikation",
       "instruction": "Zündung an. Mit dem Oszilloskop je Leitung gegen Masse messen. Ein arbeitendes Zweidraht-CAN liegt im Ruhezustand auf beiden Leitungen etwa gleich hoch und spreizt beim Senden gegenläufig auseinander. Beurteilt wird die Form: saubere Flanken, gegenläufiges Paar, keine Leitung, die auf Masse oder Versorgungsspannung klebt. Ein Multimeter mittelt und taugt hier nur zum Erkennen grober Kurzschlüsse.",
-      "target": { "text": "Beide Leitungen gegenläufig · saubere Flanken · keine Leitung dauerhaft auf Masse oder Plus" },
+      "target": {
+        "text": "Beide Leitungen gegenläufig · saubere Flanken · keine Leitung dauerhaft auf Masse oder Plus"
+      },
       "engines": [],
       "models": []
     },
@@ -141,7 +227,9 @@
       "title": "Einschlafverhalten des Busses",
       "group": "Kommunikation",
       "instruction": "Fahrzeug verschließen und mit Zange oder Oszilloskop beobachten, ob der Buspegel nach der üblichen Nachlaufzeit verstummt. Ein Bus, der nicht verstummt, ist die häufigste Ursache für eine über Nacht leere Batterie. Wacht er periodisch wieder auf, das Intervall notieren — es zeigt auf das weckende Steuergerät.",
-      "target": { "text": "Bus verstummt nach der Nachlaufzeit und bleibt still" },
+      "target": {
+        "text": "Bus verstummt nach der Nachlaufzeit und bleibt still"
+      },
       "engines": [],
       "models": []
     },
@@ -150,7 +238,9 @@
       "title": "Ansteuerung des Zündprimärkreises",
       "group": "Zündung",
       "instruction": "Zündspulenstecker abziehen, Versorgung gegen Masse prüfen, dann die Ansteuerleitung beim Durchdrehen mit dem Oszilloskop beobachten. Vergleichend arbeiten: dasselbe Signal an allen Zylindern abnehmen und gegeneinander halten. Ein Zylinder, dessen Ansteuerung fehlt oder anders aussieht als die übrigen, ist der Befund. Einzelwiderstände der Spule werden nicht gegen einen Sollwert geprüft.",
-      "target": { "text": "Ansteuersignal an allen Zylindern gleich · Versorgung an jeder Spule vorhanden" },
+      "target": {
+        "text": "Ansteuersignal an allen Zylindern gleich · Versorgung an jeder Spule vorhanden"
+      },
       "engines": [],
       "models": []
     },
@@ -159,7 +249,9 @@
       "title": "Laufunruhewerte je Zylinder",
       "group": "Zündung",
       "instruction": "Motor warm, Leerlauf, Verbraucher aus. Laufunruhewerte über die Diagnose live mitschreiben und die Zylinder gegeneinander halten. Ein einzelner Ausreißer zeigt auf Zündung, Einspritzung oder Kompression dieses Zylinders — welche der drei, klärt der Tausch von Spule und Injektor auf einen Nachbarzylinder und die Beobachtung, ob der Ausreißer mitwandert.",
-      "target": { "text": "Alle Zylinder auf gleichem Niveau · ein wandernder Ausreißer folgt dem getauschten Bauteil" },
+      "target": {
+        "text": "Alle Zylinder auf gleichem Niveau · ein wandernder Ausreißer folgt dem getauschten Bauteil"
+      },
       "engines": [],
       "models": []
     },
@@ -168,7 +260,9 @@
       "title": "Zündkerzenbild",
       "group": "Zündung",
       "instruction": "Alle Kerzen ziehen, in der Reihenfolge der Zylinder ablegen und vergleichen. Beurteilt wird der Unterschied zwischen den Zylindern, nicht die absolute Färbung. Nass, ölig oder rußig an nur einem Zylinder ist ein Befund; gleichmäßige Färbung an allen ist Gemischthema, kein Zylinderthema.",
-      "target": { "text": "Alle Kerzen gleich · keine einzelne nass, ölig oder verrußt" },
+      "target": {
+        "text": "Alle Kerzen gleich · keine einzelne nass, ölig oder verrußt"
+      },
       "engines": [],
       "models": []
     },
@@ -177,7 +271,9 @@
       "title": "Raildruck Soll gegen Ist",
       "group": "Kraftstoff",
       "instruction": "Nicht gegen eine Zahl aus dem Netz messen, sondern gegen den Sollwert, den das Motorsteuergerät selbst führt. Beide Größen live mitschreiben: im Leerlauf, beim Startversuch und unter Volllast. Der Befund ist die Abweichung — ein Istdruck, der dem Soll im Leerlauf folgt und unter Last absackt, zeigt auf Förderung oder Hochdruckpumpe, nicht auf den Sensor.",
-      "target": { "text": "Ist folgt dem vom Steuergerät geführten Soll · Absacken unter Last ist der Befund" },
+      "target": {
+        "text": "Ist folgt dem vom Steuergerät geführten Soll · Absacken unter Last ist der Befund"
+      },
       "engines": [],
       "models": []
     },
@@ -186,7 +282,9 @@
       "title": "Vorförderung und Niederdruck",
       "group": "Kraftstoff",
       "instruction": "Ansteuerung der Kraftstoffpumpe und ihr Relais zuerst elektrisch prüfen: Versorgung, Masse, Stromaufnahme mit der Zange beim Vorförderlauf. Danach den Niederdruck gegen den vom Steuergerät geführten Sollwert halten, falls die Baureihe ihn führt, sonst vergleichend gegen ein bekannt gutes Fahrzeug. Ein Prüfdruck aus dem Netz wird hier nicht angesetzt.",
-      "target": { "text": "Pumpe läuft an · Stromaufnahme stabil · Druck bricht beim Beschleunigen nicht ein" },
+      "target": {
+        "text": "Pumpe läuft an · Stromaufnahme stabil · Druck bricht beim Beschleunigen nicht ein"
+      },
       "engines": [],
       "models": []
     },
@@ -195,7 +293,9 @@
       "title": "Korrekturwerte der Einspritzung",
       "group": "Kraftstoff",
       "instruction": "Mengenkorrektur beziehungsweise Einspritzzeit je Zylinder live auslesen, im Leerlauf und bei erhöhter Drehzahl. Verglichen wird Zylinder gegen Zylinder und Bank gegen Bank. Ein einzelner Zylinder, der dauerhaft abweicht, zeigt auf seinen Injektor; eine ganze Bank, die abweicht, zeigt eher auf Luft, Abgas oder Kraftstoffversorgung dieser Bank.",
-      "target": { "text": "Werte je Zylinder dicht beieinander · Einzelabweichung zeigt auf den Injektor, Bankabweichung auf die Bank" },
+      "target": {
+        "text": "Werte je Zylinder dicht beieinander · Einzelabweichung zeigt auf den Injektor, Bankabweichung auf die Bank"
+      },
       "engines": [],
       "models": []
     },
@@ -204,7 +304,9 @@
       "title": "Dichtheit der Ansaugstrecke",
       "group": "Luft und Abgas",
       "instruction": "Ansaugstrecke von der Drosselklappe bis zum Kopf mit Rauch beaufschlagen und die Übergänge, Faltenbälge, Unterdruckschläuche, Kurbelgehäuseentlüftung und den Ölmessstab beobachten. Der Druck bleibt gering — die Strecke wird nicht abgedrückt, sondern nur gefüllt. Bei Turbomotoren die Ladeluftstrecke getrennt prüfen, dort tritt Leckage erst unter Ladedruck auf.",
-      "target": { "text": "Kein Rauchaustritt an Übergängen, Schläuchen, Entlüftung und Ölmessstab" },
+      "target": {
+        "text": "Kein Rauchaustritt an Übergängen, Schläuchen, Entlüftung und Ölmessstab"
+      },
       "engines": [],
       "models": []
     },
@@ -213,7 +315,9 @@
       "title": "Signal der Regelsonde vor dem Katalysator",
       "group": "Luft und Abgas",
       "instruction": "Motor warm, geschlossener Regelkreis. Sondensignal live mitschreiben und dabei bewusst stören: Falschluft ziehen und kurz anfetten. Beurteilt wird die Bewegung, nicht der Momentanwert — eine Sonde, die auf einem mittleren Wert steht und auf Störungen nicht reagiert, ist tot, selbst wenn ihr Wert plausibel aussieht. Bei zwei Bänken beide Sonden gegeneinander halten.",
-      "target": { "text": "Sonde springt und folgt der Störung · kein Stehenbleiben auf einem festen Wert" },
+      "target": {
+        "text": "Sonde springt und folgt der Störung · kein Stehenbleiben auf einem festen Wert"
+      },
       "engines": [],
       "models": []
     },
@@ -222,7 +326,9 @@
       "title": "Gemischadaption additiv und multiplikativ",
       "group": "Luft und Abgas",
       "instruction": "Adaptionswerte getrennt nach Leerlaufbereich und oberem Lastbereich auslesen, bei zwei Bänken je Bank. Die Aufteilung ist der Hinweis: ein Ausschlag nur im Leerlaufbereich zeigt auf Falschluft, ein Ausschlag über den ganzen Bereich eher auf Luftmassenerfassung oder Kraftstoffdruck. Beide Bänke gleichsinnig verschoben zeigt auf eine gemeinsame Ursache, nur eine Bank auf diese Bank.",
-      "target": { "text": "Beide Bänke gleich · Aufteilung zwischen Leerlauf und Last zeigt die Richtung" },
+      "target": {
+        "text": "Beide Bänke gleich · Aufteilung zwischen Leerlauf und Last zeigt die Richtung"
+      },
       "engines": [],
       "models": []
     },
@@ -231,7 +337,9 @@
       "title": "Funktion der Abgasrückführung",
       "group": "Luft und Abgas",
       "instruction": "Nur bei Fahrzeugen mit Abgasrückführung. Ventilstellung Soll gegen Ist live mitschreiben und dabei die Luftmasse beobachten: Öffnet das Ventil, muss die gemessene Luftmasse sichtbar fallen. Reagiert die Luftmasse nicht, hängt das Ventil oder die Strecke ist zugesetzt. Ansteuerung und Rückmeldung getrennt beurteilen, damit ein defekter Positionsgeber nicht als hängendes Ventil gilt.",
-      "target": { "text": "Luftmasse fällt beim Öffnen sichtbar · Ist folgt dem Soll ohne Verzug" },
+      "target": {
+        "text": "Luftmasse fällt beim Öffnen sichtbar · Ist folgt dem Soll ohne Verzug"
+      },
       "engines": [],
       "models": []
     },
@@ -240,7 +348,9 @@
       "title": "Ladedruck Soll gegen Ist",
       "group": "Luft und Abgas",
       "instruction": "Nur bei aufgeladenen Motoren. Soll- und Istladedruck unter Volllast live mitschreiben, dazu die Ansteuerung des Ladedruckstellers. Ein Ist, das dem Soll im Teillastbereich folgt und unter Volllast zurückbleibt, zeigt auf Leckage in der Ladeluftstrecke oder auf die Verstellung; ein Ist über dem Soll zeigt auf eine klemmende Verstellung. Umgebungsdruck beim Vergleich mitdenken, wenn absolut gemessen wird.",
-      "target": { "text": "Ist folgt dem Soll bis Volllast · Abweichung erst unter Last zeigt auf Leckage oder Verstellung" },
+      "target": {
+        "text": "Ist folgt dem Soll bis Volllast · Abweichung erst unter Last zeigt auf Leckage oder Verstellung"
+      },
       "engines": [],
       "models": []
     },
@@ -249,7 +359,9 @@
       "title": "Aufheizverhalten und Thermostat",
       "group": "Kühlung",
       "instruction": "Kühlmitteltemperatur vom Kaltstart an live mitschreiben und dabei die Schläuche anfassen: Der untere Kühlerschlauch bleibt kalt, bis der Thermostat öffnet, und wird dann zügig warm. Ein Motor, der nur langsam warm wird oder die Betriebstemperatur nicht hält, hat einen hängenden oder falsch gewählten Thermostat. Die Öffnungstemperatur ist motorspezifisch und wird hier nicht gegen einen Zahlenwert geprüft, sondern über den Knick in der Kurve und den Temperatursprung am Schlauch.",
-      "target": { "text": "Deutlicher Knick in der Temperaturkurve · unterer Schlauch wird beim Öffnen zügig warm" },
+      "target": {
+        "text": "Deutlicher Knick in der Temperaturkurve · unterer Schlauch wird beim Öffnen zügig warm"
+      },
       "engines": [],
       "models": []
     },
@@ -258,7 +370,9 @@
       "title": "Kühlmittelförderung und Lüfterstufen",
       "group": "Kühlung",
       "instruction": "Elektrische Wasserpumpe und Lüfter über die Diagnose ansteuern und die Rückmeldung beobachten: Stromaufnahme mit der Zange, Drehzahlrückmeldung im Steuergerät, hörbarer Lauf. Bei viskosegekuppeltem Lüfter vergleichend beurteilen — er muss im warmen Zustand spürbar zupacken. Zusätzlich prüfen, ob der Lüfter bei steigender Temperatur selbständig hochstuft.",
-      "target": { "text": "Pumpe und Lüfter laufen auf Ansteuerung an · Lüfter stuft mit steigender Temperatur selbständig hoch" },
+      "target": {
+        "text": "Pumpe und Lüfter laufen auf Ansteuerung an · Lüfter stuft mit steigender Temperatur selbständig hoch"
+      },
       "engines": [],
       "models": []
     },
@@ -267,7 +381,9 @@
       "title": "Dichtheit und Druckhaltung des Kühlkreises",
       "group": "Kühlung",
       "instruction": "Kalten Kreis mit dem Abdrückgerät beaufschlagen und den Druckabfall über die Zeit beobachten; der zulässige Prüfdruck steht auf dem Verschlussdeckel und wird nicht überschritten. Beurteilt wird das Halten, nicht ein Zahlenwert. Fällt der Druck ohne sichtbaren Austritt, auf Abgas im Kühlmittel prüfen und den Ausgleichsbehälter im Betrieb auf Blasenbildung beobachten.",
-      "target": { "text": "Druck hält über mehrere Minuten · kein Austritt, keine Blasen im Ausgleichsbehälter" },
+      "target": {
+        "text": "Druck hält über mehrere Minuten · kein Austritt, keine Blasen im Ausgleichsbehälter"
+      },
       "engines": [],
       "models": []
     }

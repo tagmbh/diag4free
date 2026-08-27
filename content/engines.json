@@ -549,7 +549,7 @@
         }
       ],
       "id_marks": [
-        "Erster BMW-Sechszylinder mit zwei Nockenwellen und 24 Ventilen. Zwei Hubräume: 1991 cc (B20) und 2494 cc (B25); eingetragen ist der B25.",
+        "Erster BMW-Sechszylinder der Grossserie mit zwei Nockenwellen und 24 Ventilen — der M88 von 1978 und der daraus entwickelte S38 hatten diese Bauart schon, aber in Kleinserie. Zwei Hubräume: 1991 cc (B20) und 2494 cc (B25); eingetragen ist der B25.",
         "Der entscheidende Unterschied für die Diagnose ist Vor-TU gegen TU. Ab September 1992 hat der M50TU eine Einfach-VANOS auf der Einlassnockenwelle. Die VANOS-Einheit sitzt als zusätzliches Gehäuse vorn oben am Zylinderkopf über dem Steuerkettendeckel. Fehlt sie und ist dort ein glatter Deckel, hast du einen Vor-TU.",
         "Zweites Merkmal des TU: der Vor-TU hat noch einen Luftmengenmesser mit Stauklappe, der TU einen Heißfilm-Luftmassenmesser.",
         "Graugussblock mit Aluminiumkopf. Der Magnet hält am Block — beim Nachfolger M52 mit Aluminiumblock hält er nicht. Das ist der schnellste Test, um M50 und M52 auseinanderzuhalten.",
@@ -862,7 +862,7 @@
         "Der entscheidende Unterschied für die Diagnose ist M62 gegen M62TU. Ab 1998 hat der M62TU eine Einfach-VANOS auf den Einlassnockenwellen. An den Stirnseiten beider Zylinderköpfe sitzen dann sichtbare Verstelleinheiten. Der Vor-TU hat dort glatte Deckel.",
         "Zweites TU-Merkmal: elektronische Drosselklappe. Beim Vor-TU führt noch ein Gaszug zur Drosselklappe.",
         "Drittes TU-Merkmal: Steuergerät. Vor-TU ist Bosch Motronic M5.2, TU ist Bosch ME 7.2. Über die Diagnose eindeutig.",
-        "Der M62 hat keine Nikasil-Laufbahnen — die Nikasil-Frage stellt sich nur beim Vorgänger M60. Wer beim M62 danach sucht, sucht das falsche Problem.",
+        "Nikasil ist beim M62 strittig und nicht ausgeschlossen: mehrere unabhängige Quellen führen frühe Blöcke von 1996 bis etwa 1998 mit Nikasil-Laufbahnen und die Umstellung auf Alusil danach, andere Darstellungen sprechen dem M62 Nikasil ganz ab. Bei Kompressionsverlust und schlechtem Warmstart gehört die Laufbahnfrage deshalb geprüft, nicht ausgeschlossen — über die Gussnummer am Block und über den Zylindervergleich bei der Kompressionsmessung.",
         "Motornummer auf dem Block eingeschlagen."
       ],
       "weak_points": [
@@ -1545,10 +1545,10 @@
         }
       ],
       "id_marks": [
-        "Sechszylinder-Diesel mit Common Rail und variabler Turbinengeometrie. Nachfolger des M57; ersetzte zusammen mit dem N63 auch den V8-Diesel M67.",
+        "Sechszylinder-Diesel mit Common Rail und variabler Turbinengeometrie. Nachfolger des M57; ersetzte auch den V8-Diesel M67 — einen V8-Diesel-Nachfolger gab es nicht.",
         "Aufladung nach Ausbaustufe: ein Lader in den Basisvarianten, zwei in den 313-PS-Varianten, drei im N57S mit 381 PS. Die Zahl der Ladergehäuse trennt die Ausbaustufen sicherer als jedes Typschild.",
         "Abgrenzung zum N47 — die häufigste Verwechslung: gleiche Konstruktionsfamilie, gleicher Steuerkettentrieb hinten zum Getriebe, aber der N57 hat sechs Zylinder und 3.0 Liter, der N47 vier und 2.0. Zylinder zählen genügt.",
-        "Abgrenzung zum Vorgänger M57: beim M57 sitzt der Steuertrieb vorn, beim N57 hinten. Am eingebauten Motor ist das das schnellste Merkmal.",
+        "Abgrenzung zum Vorgänger M57: die Kettenlage trennt die beiden nicht — M47, M57, N47 und N57 tragen den Steuertrieb alle hinten zur Schwungradseite. Getrennt wird über die Motorkennung am Block. Wer nach der Kettenlage geht, kalkuliert falsch: bei allen vieren gehört das Getriebe herunter.",
         "Vorsicht bei der Aufladungsangabe: dieselbe Motorkennung N57D30 taucht mit einem, zwei und drei Ladern auf. Ohne die vollständige Kennung ist die Ladeanordnung nicht bestimmt.",
         "Motornummer auf dem Kurbelgehäuse, Auslassseite."
       ],
@@ -2091,7 +2091,7 @@
         "Der einzige Zehnzylinder, den BMW in Serie gebaut hat. Verwechslung mit einem V8 oder V12 ist bei offener Haube nach dem Abzählen der Zündspulen ausgeschlossen.",
         "Zehn Einzeldrosselklappen, angetrieben von zwei Stellmotoren. Nach einem Tausch müssen die Stellmotoren mit dem BMW-Tester angelernt und adaptiert werden — ohne Adaption läuft der Motor nicht sauber.",
         "Bohrung 92 mm, Hub 75.2 mm, 4999 cm³ — kurzhubige Auslegung, an den flachen Brennräumen und dem Drehzahlband ablesbar.",
-        "Hochdruck-Doppel-VANOS mit eigener Hochdruck-Ölpumpe. Diese Pumpe hat kein anderer BMW-Serienmotor.",
+        "Hochdruck-Doppel-VANOS mit eigener Hochdruck-Ölpumpe. Eine eigene VANOS-Hochdruckpumpe mit Druckspeicher hat sonst nur der S54 — bei den zivilen Motoren gibt es sie nicht.",
         "Ionenstrom-Messung über die Zündkerzen statt klassischer Klopfsensoren — im Fehlerspeicher tauchen dadurch Klopf- und Aussetzermeldungen anders auf als bei den übrigen Motoren.",
         "Motornummer am Zylinderblock eingeschlagen."
       ],

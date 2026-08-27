@@ -373,10 +373,10 @@
         { "label": "M550d / 750d / M50d (N57D30S1, Tri-Turbo)", "ps": 381, "nm": 740 }
       ],
       "id_marks": [
-        "Sechszylinder-Diesel mit Common Rail und variabler Turbinengeometrie. Nachfolger des M57; ersetzte zusammen mit dem N63 auch den V8-Diesel M67.",
+        "Sechszylinder-Diesel mit Common Rail und variabler Turbinengeometrie. Nachfolger des M57; ersetzte auch den V8-Diesel M67 — einen V8-Diesel-Nachfolger gab es nicht.",
         "Aufladung nach Ausbaustufe: ein Lader in den Basisvarianten, zwei in den 313-PS-Varianten, drei im N57S mit 381 PS. Die Zahl der Ladergehäuse trennt die Ausbaustufen sicherer als jedes Typschild.",
         "Abgrenzung zum N47 — die häufigste Verwechslung: gleiche Konstruktionsfamilie, gleicher Steuerkettentrieb hinten zum Getriebe, aber der N57 hat sechs Zylinder und 3.0 Liter, der N47 vier und 2.0. Zylinder zählen genügt.",
-        "Abgrenzung zum Vorgänger M57: beim M57 sitzt der Steuertrieb vorn, beim N57 hinten. Am eingebauten Motor ist das das schnellste Merkmal.",
+        "Abgrenzung zum Vorgänger M57: die Kettenlage trennt die beiden nicht — M47, M57, N47 und N57 tragen den Steuertrieb alle hinten zur Schwungradseite. Getrennt wird über die Motorkennung am Block. Wer nach der Kettenlage geht, kalkuliert falsch: bei allen vieren gehört das Getriebe herunter.",
         "Vorsicht bei der Aufladungsangabe: dieselbe Motorkennung N57D30 taucht mit einem, zwei und drei Ladern auf. Ohne die vollständige Kennung ist die Ladeanordnung nicht bestimmt.",
         "Motornummer auf dem Kurbelgehäuse, Auslassseite."
       ],

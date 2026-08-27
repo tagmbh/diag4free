@@ -66,7 +66,7 @@
         {
           "q": "Dreht der Anlasser beim Startversuch sauber durch?",
           "help": "Nur Klicken oder gar nichts heißt Batterie, Massepunkt oder Anlasserkreis. Beim E36 bis 12/1994 gehört auch das Sperrrelais der Wegfahrsperre in diesen Kreis — dort sperrt die Anlage den Anlasser, nicht die Einspritzung.",
-          "measure": "Bordspannung während der Startanforderung bleibt über 10.5 V; ein Einbruch weit darunter ist der Befund",
+          "measure": "Bordspannung während der Startanforderung bleibt nicht unter rund 9.6 V; ein Einbruch weit darunter ist der Befund",
           "doc": "D4F-E36-007",
           "yes": 1,
           "no": "res-anlasser"

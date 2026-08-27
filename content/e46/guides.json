@@ -9,7 +9,7 @@
         {
           "q": "Dreht der Anlasser beim Startversuch?",
           "help": "Reines Klicken oder gar nichts deutet auf Batterie oder Anlasserkreis. Sauberes Drehen ohne Zündung deutet auf EWS oder Motorseite.",
-          "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
+          "measure": "Bordspannung während Startanforderung nicht unter rund 9.6 V halten",
           "doc": "D4F-E46-004",
           "yes": 1,
           "no": "check-power"

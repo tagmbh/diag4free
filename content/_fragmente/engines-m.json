@@ -191,7 +191,7 @@
         { "label": "525i / 325i (M50B25TU)", "ps": 192, "nm": 250 }
       ],
       "id_marks": [
-        "Erster BMW-Sechszylinder mit zwei Nockenwellen und 24 Ventilen. Zwei Hubräume: 1991 cc (B20) und 2494 cc (B25); eingetragen ist der B25.",
+        "Erster BMW-Sechszylinder der Grossserie mit zwei Nockenwellen und 24 Ventilen — der M88 von 1978 und der daraus entwickelte S38 hatten diese Bauart schon, aber in Kleinserie. Zwei Hubräume: 1991 cc (B20) und 2494 cc (B25); eingetragen ist der B25.",
         "Der entscheidende Unterschied für die Diagnose ist Vor-TU gegen TU. Ab September 1992 hat der M50TU eine Einfach-VANOS auf der Einlassnockenwelle. Die VANOS-Einheit sitzt als zusätzliches Gehäuse vorn oben am Zylinderkopf über dem Steuerkettendeckel. Fehlt sie und ist dort ein glatter Deckel, hast du einen Vor-TU.",
         "Zweites Merkmal des TU: der Vor-TU hat noch einen Luftmengenmesser mit Stauklappe, der TU einen Heißfilm-Luftmassenmesser.",
         "Graugussblock mit Aluminiumkopf. Der Magnet hält am Block — beim Nachfolger M52 mit Aluminiumblock hält er nicht. Das ist der schnellste Test, um M50 und M52 auseinanderzuhalten.",
@@ -349,7 +349,7 @@
         "Der entscheidende Unterschied für die Diagnose ist M62 gegen M62TU. Ab 1998 hat der M62TU eine Einfach-VANOS auf den Einlassnockenwellen. An den Stirnseiten beider Zylinderköpfe sitzen dann sichtbare Verstelleinheiten. Der Vor-TU hat dort glatte Deckel.",
         "Zweites TU-Merkmal: elektronische Drosselklappe. Beim Vor-TU führt noch ein Gaszug zur Drosselklappe.",
         "Drittes TU-Merkmal: Steuergerät. Vor-TU ist Bosch Motronic M5.2, TU ist Bosch ME 7.2. Über die Diagnose eindeutig.",
-        "Der M62 hat keine Nikasil-Laufbahnen — die Nikasil-Frage stellt sich nur beim Vorgänger M60. Wer beim M62 danach sucht, sucht das falsche Problem.",
+        "Nikasil ist beim M62 strittig und nicht ausgeschlossen: mehrere unabhängige Quellen führen frühe Blöcke von 1996 bis etwa 1998 mit Nikasil-Laufbahnen und die Umstellung auf Alusil danach, andere Darstellungen sprechen dem M62 Nikasil ganz ab. Bei Kompressionsverlust und schlechtem Warmstart gehört die Laufbahnfrage deshalb geprüft, nicht ausgeschlossen — über die Gussnummer am Block und über den Zylindervergleich bei der Kompressionsmessung.",
         "Motornummer auf dem Block eingeschlagen."
       ],
       "weak_points": [

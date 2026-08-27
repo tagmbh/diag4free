@@ -5,7 +5,9 @@
       "code": "GF-E30-01",
       "name": "M20 kein Zündfunke",
       "desc": "Klassischer Ausfall am E30 mit M20. Reihenfolge: Zündspule → Hallgeber → DME → Kabelbaum.",
-      "engines": ["M20"],
+      "engines": [
+        "M20"
+      ],
       "steps": [
         {
           "q": "Kommt Spannung an der Zündspule KL15?",
@@ -61,38 +63,53 @@
   "results": {
     "no-kl15": {
       "title": "KL15-Versorgung fehlt",
-      "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel reinigen und nachziehen. Danach die Messung an Klemme 15 der Zündspule wiederholen, bevor du weitersuchst.",
-      "next_docs": ["D4F-E30-001"]
+      "text": "Klemme 15 kommt nicht am Stecker an. Der Fehler liegt vor dem Steuergerät. Prüf das Zündschloss und die Zündungsversorgung im Sicherungskasten — der sitzt beim E30 im Motorraum links, nahe der Windschutzscheibe, nicht im Fussraum. Welche Nummer die Zündungsversorgung trägt, steht hier nicht belegt: geh nach dem Deckelaufdruck beziehungsweise dem Sicherungsplan des Fahrzeugs und miss die verdächtige Sicherung bei eingeschalteter Zündung beidseitig gegen Masse.",
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "verteiler": {
       "title": "Zündung arbeitet — Fehler liegt hinter der Spule",
       "text": "Die Spule liefert Hochspannung, sie kommt nur nicht an den Kerzen an. Verteilerkappe abnehmen und auf Kriechspuren, Risse und abgebrannte Kontakte prüfen, Verteilerfinger auf Durchbrand kontrollieren, Zündkabel und Kerzenstecker einzeln auf Durchgang messen. Kappe innen trocken und sauber montieren.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "hall-versorgung": {
       "title": "Hallgeber wird nicht versorgt",
       "text": "Der Geber kann kein Signal liefern, weil Spannung oder Masse fehlen. Steckerkontakte am Verteiler auf Grünspan und aufgeweitete Buchsen prüfen, danach die Versorgungsleitung zurück zum Steuergerät verfolgen. Erst wenn Versorgung und Masse sicher anliegen, ist eine Aussage über den Geber selbst möglich.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "hall-sensor": {
       "title": "Hallgeber im Verteiler defekt",
       "text": "Versorgung liegt an, ein Signal kommt trotzdem nicht: Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Beim Zusammenbau die Blende auf Freigang prüfen und anschließend die Zündung neu einstellen.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "dme-versorgung": {
       "title": "Spannungsversorgung der DME fehlt",
       "text": "Ohne Versorgung schaltet das Steuergerät die Zündendstufe nicht. Hauptrelais tauschweise ersetzen, Relaissockel und die Lötstellen der Relaisplatine auf kalte Stellen prüfen, danach die Steuergerätemasse nachziehen. Erst wenn das Relais sicher einzieht, hat eine weitere Diagnose am Steuergerät Sinn.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "kabelbaum": {
       "title": "Unterbruch oder Kurzschluss im Kabelbaum",
       "text": "Die gefundene Leitung instandsetzen: Scheuerstellen am Durchgang zur Spritzwand, gebrochene Adern kurz vor den Steckern und aufgeweitete Kontakte sind die üblichen Stellen. Reparaturstelle löten und schrumpfen, nicht klemmen. Danach die Messung wiederholen und den Pfad von vorn durchlaufen.",
-      "next_docs": ["D4F-E30-001"]
+      "next_docs": [
+        "D4F-E30-001"
+      ]
     },
     "check-dme": {
       "title": "Verkabelung in Ordnung — Zündspule und DME prüfen",
       "text": "Alles davor ist geprüft. Zündspule tauschweise durch eine bekannt gute ersetzen; bleibt der Funke aus, ist das Motronic-Steuergerät der letzte Verdächtige und wird ebenfalls tauschweise geprüft. Sollwerte für den Primär- und Sekundärwiderstand der Zündspule stehen in keiner hier verfügbaren Quelle — deshalb tauschweise arbeiten statt gegen eine geratene Zahl zu messen.",
-      "next_docs": ["D4F-E30-001", "D4F-E30-002"]
+      "next_docs": [
+        "D4F-E30-001",
+        "D4F-E30-002"
+      ]
     }
   }
 }

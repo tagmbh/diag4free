@@ -12,7 +12,7 @@
         {
           "q": "Dreht der Anlasser beim Startknopf hörbar?",
           "help": "Reines Klick-Klick deutet auf Batteriekreis/Massefehler. Gar nichts deutet auf CAS-Freigabe fehlend oder Startknopf-Schalter defekt.",
-          "measure": "Bordspannung während Startanforderung muss ≥ 10.5 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
+          "measure": "Bordspannung während Startanforderung muss nicht unter rund 9.6 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
           "doc": "D4F-E88-002",
           "obd_hint": "PID 0142 Steuermodulspannung parallel loggen — bricht die Spannung während des Startversuchs deutlich ein, liegt der Fehler im Batterie- und Anlasserkreis",
           "yes": 1,
