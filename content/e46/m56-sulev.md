@@ -33,5 +33,5 @@ Die Fahrzeugseite ist ohnehin identisch: EWS3, Grundmodul, Lichtschaltzentrum un
 |---|---|
 | Hat der M56 eine DISA-Ansaugbrücke wie der M54? | Nicht belegt. Die Ansaugbrücke ist ein eigenes Teil — vor dem Übertragen der DISA-Prüfung selbst nachsehen |
 | Genaue Bauzeit | Widersprüchlich: eine Quelle nennt 2003–2005, Teilelisten nennen 2002–2006 |
-| Leistung | Widersprüchlich: eine Quelle nennt dieselbe Leistung wie der M54B25, eine andere einen niedrigeren Wert |
+| Leistung | Widersprüchlich: 192 PS wie beim M54B25 nach Foren- und Teilequellen, 184 PS (135 kW) nach einem Nachschlagewerk — vermutlich SAE-hp gegen DIN-PS, ohne Primärquelle nicht auflösbar. Der Steckbrief führt 192 PS mit demselben Vermerk |
 | Pinbelegung der MS 45.1 | Steht in diesem Repository nicht. Die Belegung der MS 43 ist nicht übertragbar |

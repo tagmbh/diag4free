@@ -284,7 +284,7 @@
       "years": "2002–2006",
       "valvetrain": ["DOHC", "24V", "Steuerkette", "Doppel-VANOS"],
       "power_variants": [
-        { "label": "325i SULEV (nur US-Markt)", "ps": 192, "nm": 245 }
+        { "label": "325i SULEV (nur US-Markt) · Widerspruch: 192 PS nach Foren- und Teilequellen, 184 PS (135 kW) nach einem Nachschlagewerk — vermutlich SAE-hp gegen DIN-PS, ohne Primärquelle nicht auflösbar", "ps": 192, "nm": 245 }
       ],
       "id_marks": [
         "Der M56 ist ein für die amerikanische SULEV-Abgasnorm überarbeiteter M54B25. Gleicher Hubraum, gleiche Grundkonstruktion, gleiche Leistung. Er kam nur in wenigen US-Bundesstaaten in den Verkehr und ist in Europa praktisch nicht anzutreffen.",
