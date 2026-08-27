@@ -34,6 +34,8 @@ Der Punkt mit dem Netzwerk wird regelmäßig unterschätzt. Das Fahrzeug ist ein
 
 Die handelsüblichen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Daran scheitern die meisten Eigenbauten: Ohne diese Beschaltung verhält sich das Kabel wie gar keines.
 
+Auch Pin 8 gehört zu den Kontakten, die die Norm dem Hersteller freistellt — er führt **kein genormtes Signal**. Was dort liegt, entscheidet also die Baureihe und nicht die Pinnummer. BMW hat ihn verschieden benutzt: an älteren Modellen als zweite Diagnoseleitung, an der F-Serie als diese Aktivierungsleitung. Deshalb lässt sich eine Anleitung für einen E-Bau nicht auf den F10 übertragen, obwohl in beiden dieselbe Zahl steht. Die Einordnung über alle F-Baureihen steht in `D4F-F-003`.
+
 > **Wert nur einfach belegt:** Für den Widerstand nennen die verfügbaren Quellen einen Bereich um 510 Ω, teils mit Toleranzangabe. Das ist keine doppelt gesicherte Angabe. Vor dem Löten gegenprüfen — ein fertiges Kabel ist der sicherere Weg.
 
 ## Verifikation

@@ -135,9 +135,10 @@
   "results": {
     "falsches-kabel": {
       "title": "Falsches Kabel — ENET-Kabel verwenden",
-      "text": "Hier nicht weitersuchen. Der F10 führt an der OBD-Buchse keine Diagnose über die K-Line; ein K+DCAN-Kabel kann deshalb nie ein Steuergerät finden. Auf ein ENET-Kabel wechseln und von vorn beginnen. Bei einem Eigenbaukabel zusätzlich die Aktivierungsleitung zwischen Pin 8 und Pin 16 prüfen — fehlt sie oder ist der Widerstand falsch bestückt, verhält sich das Kabel wie gar keines.",
+      "text": "Hier nicht weitersuchen. Der F10 führt an der OBD-Buchse keine Diagnose über die K-Line; ein K+DCAN-Kabel kann deshalb nie ein Steuergerät finden. Auf ein ENET-Kabel wechseln und von vorn beginnen. Bei einem Eigenbaukabel zusätzlich die Aktivierungsleitung zwischen Pin 8 und Pin 16 prüfen — fehlt sie oder ist der Widerstand falsch bestückt, verhält sich das Kabel wie gar keines. Pin 8 führt kein genormtes Signal — diese Bedeutung gilt für die F-Serie, an älteren BMW liegt dort etwas anderes. Eine Anleitung aus einer anderen Baureihe passt deshalb nicht.",
       "next_docs": [
-        "D4F-F10-001"
+        "D4F-F10-001",
+        "D4F-F-003"
       ]
     },
     "kl15-fehlt": {
