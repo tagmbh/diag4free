@@ -99,14 +99,14 @@
       "cat": "Vierzylinder · Identifikation",
       "title": "N45 gegen N46 gegen N43 · die drei Vierzylinder auseinanderhalten",
       "valid": "E81/E87 · N45, N46, N43",
-      "summary": "Diese drei Vierzylinder-Benziner sitzen in optisch fast gleichen Motorräumen und werden im Teilekatalog wie in der Diagnose regelmäßig verwechselt. Der fehlende Valvetronic-Stellmotor trennt sie nicht: N45 und N43 tragen beide keinen. Erst die Einspritzart, dann die Valvetronic — in dieser Reihenfolge wird die Zuordnung eindeutig.",
+      "summary": "Diese drei Vierzylinder-Benziner sitzen in fast gleichen Motorräumen und werden in Teilekatalog und Diagnose regelmäßig verwechselt. Der fehlende Valvetronic-Stellmotor trennt sie nicht: N45 und N43 tragen beide keinen. Erst die Einspritzart, dann die Valvetronic — so wird die Zuordnung eindeutig.",
       "points": [
         "Einspritzart zuerst: Der N43 ist der einzige Direkteinspritzer der drei und trägt dafür eine nockenwellengetriebene Hochdruckpumpe am Zylinderkopf, dazu Hochdruckrail und NOx-Sensorik für den Magerbetrieb. Diese Frage trennt ihn von N45 und N46 und steht deshalb vorn",
         "Der fehlende Valvetronic-Stellmotor identifiziert keinen Motor: N45 und N43 tragen beide keinen. Am N43 belegen die Injektoren im Zylinderkopf den Platz, den die Exzenterwelle bräuchte — dasselbe Konzept wie beim N53 gegenüber dem N52. Erst nach der Frage nach der Hochdruckpumpe trennt der Stellmotor N46 von N45",
         "N45: keine Valvetronic, keine Ausgleichswellen, keine verstellbare Ansaugung, Doppel-VANOS dagegen vorhanden. N46: Valvetronic und Ausgleichswellen, Saugrohreinspritzung — die Valvetronic-Adaption existiert nur hier und wird nach Eingriffen am Kopf gebraucht",
         "Baujahr trennt nur in eine Richtung: der N45 lief ab 2004, der N43 erst ab 2007. Vor 2007 ist ein N43 ausgeschlossen, ab 2007 liefen beide parallel und das Baujahr schließt nichts mehr aus",
         "Hubraum und Zylinderzahl tragen die Trennung von N45 und N43 nicht: beide sind Vierzylinder, und beide gibt es als 1.6er (N45B16 mit 1596 cm³, N43B16 mit 1599 cm³). Nur andersherum brauchbar — ein Zweiliter in dieser Baureihe ist kein N45",
-        "Folge für die Fehlersuche an N45 und N43: eine Valvetronic-Fehlermeldung kann dort nicht aus dem Bauteil kommen. Steht sie trotzdem an, ist die Fahrzeugauswahl falsch oder es ist eine fremde DME verbaut. Widerspruch in den Quellen: eine Quelle schreibt dem N45B16A Valvetronic zu, mehrere andere sprechen sie ihm ab — die Reihenfolge oben bleibt davon unberührt. Bleibt es unklar, entscheidet die Motornummer am Block"
+        "Folge für die Fehlersuche an N45 und N43: eine Valvetronic-Fehlermeldung kann dort nicht aus dem Bauteil kommen — dann ist die Fahrzeugauswahl falsch oder eine fremde DME verbaut. Widerspruch in den Quellen: eine Quelle schreibt dem N45B16A Valvetronic zu, mehrere andere sprechen sie ihm ab; der Widerspruch bleibt offen. Bleibt die Sichtprüfung unklar, entscheidet die Motornummer am Block"
       ],
       "engines": [
         "N45",
