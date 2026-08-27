@@ -11,7 +11,7 @@
       "points": [
         "ENET-Kabel verwenden. BMW legt die Diagnose-Ethernet-Adern auf die herstellerfreien OBD-Pins. Pin 7 (K-Line) trägt am F10 keine Diagnose — ein K+DCAN-Kabel meldet deshalb schlicht kein Steuergerät, und das ist kein Defekt",
         "Aktivierungsleitung: die gängigen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Die genannten Werte streuen, nach einer Quelle rund 510 Ω. Vor dem Selbstbau gegenprüfen — daran scheitern die meisten Eigenbaukabel",
-        "Pin 8 führt kein genormtes Signal. Die Norm lässt ihn dem Hersteller frei, und BMW hat ihn über die Baureihen hinweg verschieden benutzt — die Aktivierungsleitung gilt für die F-Serie, nicht für die Pinnummer als solche. Hintergrund in D4F-F-003",
+        "Pin 8 führt kein genormtes Signal — die Norm lässt ihn dem Hersteller frei, und BMW hat ihn je Baureihe verschieden benutzt. Die Aktivierungsleitung gilt für die F-Serie, nicht für die Pinnummer als solche. Hintergrund in D4F-F-003",
         "Netzwerkseite: automatische Adressvergabe am Rechner, keine feste Adresse. WLAN und VPN abschalten, sonst greift die Software auf die falsche Schnittstelle zu",
         "In EDIABAS beziehungsweise in der Schnittstellenauswahl der Diagnosesoftware auf ENET stellen. Bleibt die Voreinstellung für K-DCAN stehen, sucht die Software auf einem Bus, den das Fahrzeug nicht bedient",
         "Zündung einschalten, bevor die Verbindung aufgebaut wird. Ohne Klemmenstatus antwortet das Gateway unzuverlässig",
