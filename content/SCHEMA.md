@@ -88,34 +88,45 @@ ELM327/D-CAN. Kann leer bleiben; Live-Layer skippt Docs ohne `obd`.
 
 ```json
 {
-  "no-start-n52": {
-    "code": "GF-E88-01",
-    "name": "N52 startet nicht",
-    "desc": "Anlasser dreht oder dreht nicht. Systematisch: Batterie → EWS → Kraftstoff → Zündung.",
-    "engines": ["N52"],
+  "model": "e88",
 
-    "steps": [
-      {
-        "q": "Dreht der Anlasser beim Startversuch?",
-        "help": "Reines Klicken oder gar nichts deutet auf Batterie/Anlasserkreis.",
-        "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
-        "doc": "D4F-E88-042",
-        "obd_hint": "PID 0142 Steuermodul-Spannung parallel beobachten",
-        "yes": 1,
-        "no": "result-battery"
-      }
-    ],
+  "guides": {
+    "no-start-n52": {
+      "code": "GF-E88-01",
+      "name": "N52 startet nicht",
+      "desc": "Anlasser dreht oder dreht nicht. Systematisch: Batterie → EWS → Kraftstoff → Zündung.",
+      "engines": ["N52"],
 
-    "results": {
-      "result-battery": {
-        "title": "Batterie/Anlasser-Kreis prüfen",
-        "text": "…",
-        "next_docs": ["D4F-E88-042"]
-      }
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch?",
+          "help": "Reines Klicken oder gar nichts deutet auf Batterie/Anlasserkreis.",
+          "measure": "Bordspannung während Startanforderung ≥ 10.5 V halten",
+          "doc": "D4F-E88-042",
+          "obd_hint": "PID 0142 Steuermodul-Spannung parallel beobachten",
+          "yes": 1,
+          "no": "result-battery"
+        }
+      ]
+    }
+  },
+
+  "results": {
+    "result-battery": {
+      "title": "Batterie/Anlasser-Kreis prüfen",
+      "text": "…",
+      "next_docs": ["D4F-E88-042"]
     }
   }
 }
 ```
+
+### Aufbau der Datei
+
+- `model` — Baureihen-Slug, identisch mit dem Verzeichnisnamen
+- `guides{}` — die Pfade, Schlüssel ist der Guide-Slug aus der Route
+  `#/guide/<slug>`
+- `results{}` — der gemeinsame Vorrat an Endzuständen
 
 ### Guide-Felder
 
@@ -130,7 +141,17 @@ ELM327/D-CAN. Kann leer bleiben; Live-Layer skippt Docs ohne `obd`.
   - `obd_hint` — optional: welche PID der Techniker live beobachten sollte
   - `yes` — nächster Step-Index oder `result-*` Key
   - `no` — dito
-- `results{}` — Endzustände mit ausführlicher Auflistung nächster Schritte
+
+`results{}` steht **neben** `guides{}`, nicht darin — die Endzustände sind
+ein gemeinsamer Vorrat der Baureihe. Zwei Pfade dürfen auf denselben
+Endzustand zeigen, und genau dafür liegt er eine Ebene höher.
+
+### `results{}`
+
+- Schlüssel — der Key, den ein Step in `yes`/`no` nennt, üblich `result-*`
+- `title` — Überschrift des Endzustands
+- `text` — was jetzt zu tun ist
+- `next_docs[]` — Doc-IDs, die von hier aus weiterführen
 
 ---
 
