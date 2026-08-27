@@ -225,6 +225,29 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Erststart: kurze Einfuehrung, danach nie wieder ---
+      // Der Start wirkte "plump": sechzehn Karten, kein Wort dazu. Die
+      // Einfuehrung darf aber nicht selbst zum Hindernis werden — die
+      // Falz-Pruefung oben laeuft mit ihr zusammen.
+      await page.evaluate(() => localStorage.clear());
+      // Ein Sprung auf dieselbe Adresse laedt nicht neu — ohne echten
+      // Neustart bliebe der Zustand im Speicher stehen.
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      expect(await page.locator('.welcome').count() === 1,
+        'Erststart zeigt eine Einfuehrung', 'kein Willkommensblock');
+      // Erste Wahl treffen — danach ist der Browser kein Erstnutzer mehr.
+      await page.locator('[data-view-panel="overview"] [data-pick-model]').first().click();
+      await settle(page, 700);
+      await page.keyboard.press('Escape');
+      await settle(page, 400);
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      expect(await page.locator('.welcome').count() === 0,
+        'Einfuehrung erscheint nur einmal', 'Willkommensblock kam wieder');
+
       // --- Uebersicht gegen Bibliothek: beide sagen, was sie sind ---
       // Der Nutzer konnte die beiden nicht auseinanderhalten. Der Test
       // haelt fest, dass die Bibliothek ihren Bezugsrahmen nennt und einen

@@ -126,6 +126,7 @@
     vehEra: 'Alle',   // Filter im Fahrzeug-Schritt
     vehBody: 'Alle',
     installEvt: null,
+    ersterStart: false,  // noch nie benutzt? Dann eine kurze Einfuehrung
     obd: null         // spätere OBD-Live-Verbindung (Web Serial / Bluetooth)
   };
 
@@ -557,7 +558,7 @@
     const guideCount = currentGuides().length;
 
     panel.innerHTML = `
-      ${stepperHtml(stage)}
+      ${state.ersterStart && stage === 'vehicle' ? '' : stepperHtml(stage)}
       ${stage === 'vehicle' ? vehicleStepHtml() : readyStepHtml(model, scopedCount, guideCount, docCount)}
     `;
 
@@ -597,6 +598,36 @@
   };
 
   // -------- Schritt 1: Fahrzeug antippen --------
+  // Der Start wirkte "plump" — die App fiel mit sechzehn Fahrzeugkarten ins
+  // Haus, ohne zu sagen, was sie ist und was sie will. Beim allerersten
+  // Aufruf steht deshalb ein kurzer Willkommensblock davor: drei Saetze,
+  // dann der erste Schritt. Wer die App schon einmal benutzt hat, sieht ihn
+  // nie wieder — fuer den Profi waere er genau die Ablenkung, die das
+  // Konzept ausschliesst.
+  const willkommenHtml = () => {
+    if (!state.ersterStart) return '';
+    // Auf dem Telefon darf die Einfuehrung die erste Fahrzeugkarte nicht
+    // unter die Falz schieben — sonst ersetzt die Begruessung genau die
+    // Handlung, zu der sie einladen soll. Die Schrittfolge liegt deshalb in
+    // einem aufklappbaren Block, der auf breiten Schirmen offen steht und
+    // auf schmalen einen Tipp entfernt ist.
+    const breit = window.matchMedia('(min-width: 900px)').matches;
+    return `
+    <section class="welcome" aria-labelledby="welcomeTitle">
+      <h1 class="welcome-title" id="welcomeTitle">BMW-Diagnose im Browser</h1>
+      <p class="welcome-lead">Auslesen, messen, Fehler eingrenzen — auch ohne Netz in der Garage.</p>
+      <details class="welcome-more"${breit ? ' open' : ''}>
+        <summary>So läuft es ab</summary>
+        <ol class="welcome-steps">
+          <li><strong>Fahrzeug wählen</strong> — danach ist alles auf deine Baureihe und deinen Motor gefiltert.</li>
+          <li><strong>Sagen, was los ist</strong> — aus den Symptomen entstehen mögliche Ursachen und der passende Diagnosepfad.</li>
+          <li><strong>Auslesen und messen</strong> — mit einem OBD-Adapter direkt aus dem Browser, ohne INPA oder ISTA.</li>
+        </ol>
+        <p class="welcome-hint">Fachbegriffe sind im Text unterstrichen. Ein Tipp darauf erklärt sie in einem Satz.</p>
+      </details>
+    </section>`;
+  };
+
   const vehicleStepHtml = () => {
     const models = allModels();
     const eras = ['Alle', ...new Set(state.data.models.groups.map(g => g.label))];
@@ -607,6 +638,7 @@
       (state.vehBody === 'Alle' || m.body === state.vehBody));
 
     return `
+      ${willkommenHtml()}
       <div class="page-header">
         <div>
           <h1 class="page-title" id="ovTitle">Welches Fahrzeug hast du?</h1>
@@ -2518,6 +2550,9 @@
   const init = async () => {
     // Prefs aus localStorage laden
     const prefs = loadPrefs();
+    // Leere Prefs heissen: dieser Browser hat die App noch nie geoeffnet.
+    // Genau dann — und nur dann — gibt es eine Einfuehrung.
+    state.ersterStart = !Object.keys(prefs).length;
 
     // Theme init: gespeichert > System-Präferenz
     const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
