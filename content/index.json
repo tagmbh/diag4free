@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:06:25.820Z",
+  "generated": "2026-08-27T05:07:20.920Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -2366,9 +2366,531 @@
         "B58"
       ],
       "model": "f-series"
+    },
+    {
+      "id": "D4F-F15-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F15/F16 — ENET statt K-Line",
+      "valid": "F15/F16 · 2013–2018 · alle Motoren",
+      "summary": "Der F15 spricht Diagnose über Ethernet an der OBD-Buchse. K-Line und die alten INPA-Kabel erreichen hier kein Steuergerät mehr. Was das für Kabel, Software und Datenstand bedeutet.",
+      "points": [
+        "ENET-Kabel verwenden: RJ45 auf OBD, kein K+DCAN-Adapter",
+        "Ethernet wird erst mit KL15 aktiv — Zündung ein, sonst kommt keine Verbindung zustande",
+        "Feste IP oder APIPA am Notebook, WLAN und VPN während der Sitzung aus",
+        "Generisches OBD-2 sieht nur die Motorsteuerung — Fahrwerk, VTG und SCR antworten darauf nicht",
+        "Datenstand nie nach Versionsnummer aus dem Netz wählen, sondern gegen den ausgelesenen I-Level des Fahrzeugs",
+        "Werkstattladegerät anhängen, bevor irgendein Schreibvorgang beginnt"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Ethernet TX+",
+        "OBD2 Pin 11 · Ethernet TX-",
+        "OBD2 Pin 12 · Ethernet RX+",
+        "OBD2 Pin 13 · Ethernet RX-",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 4/5 · Masse"
+      ],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "article": "enet-zugang.md",
+      "details": [
+        "D4F-F15-002"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-002",
+      "type": "GUIDE",
+      "cat": "Identifikation",
+      "title": "Motor- und Steuergerätezuordnung im F15/F16",
+      "valid": "F15/F16 · 2013–2018",
+      "summary": "Welcher Motor in welchem X5/X6 sitzt, welches Motorsteuergerät dazugehört und warum die Modellbezeichnung am Heck dafür nicht reicht. Grundlage für jede Teilebestellung und jede Datenstandsauswahl.",
+      "points": [
+        "Motorcode am Kurbelgehäuse ablesen, nicht vom Typschild am Heck ableiten",
+        "Benziner: 35i mit Reihensechszylinder-Turbo, 50i mit V8-Bi-Turbo im Hot-V, M-Ausführung mit eigenem V8",
+        "Vierzylinder-Benziner tritt im F15 nur im Plug-in-Hybrid auf — dort hängt Hochvolttechnik mit dran",
+        "Diesel: die Zahl der Ladergehäuse trennt die Ausbaustufen sicherer als jede Typbezeichnung",
+        "Vor der Ersatzteilsuche die vollständige Motorkennung nehmen — dieselbe Grundkennung gibt es mit einem, zwei und drei Ladern",
+        "Der Fahrzeugkatalog dieser App führt für den F15 auch den B57 — am Fahrzeug gegenprüfen, siehe Artikel"
+      ],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-F15-001",
+        "D4F-F15-007"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-003",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "Luftfederung im F15 — Ausstattung erkennen und Fehler eingrenzen",
+      "valid": "F15/F16 · nur Fahrzeuge mit Luftfederung",
+      "summary": "Der F15 fährt je nach Ausstattung mit Stahlfedern, mit Niveauregulierung nur hinten oder mit Luftfederung an beiden Achsen. Welche Variante vorliegt, entscheidet die halbe Diagnose — deshalb steht sie am Anfang.",
+      "points": [
+        "Zuerst die Ausstattung feststellen: Luftbalg oder Stahlfeder je Achse, dann die Zahl der Niveaugeber zählen",
+        "Absacken über Nacht ist eine Undichtigkeit, Absacken im Fahrbetrieb eher Regelung oder Ventilblock",
+        "Kompressor niemals dauerlaufen lassen — eine unentdeckte Leckage bringt ihn thermisch um",
+        "Seitenvergleich statt Sollwert: linke gegen rechte Seite, gemessene Höhe gegen die andere Achsseite",
+        "Ventilblock und Kompressor bilden bei diesem Fahrzeug eine Einheit — Fehler getrennt betrachten, Teil gemeinsam bewerten",
+        "Nach jedem Eingriff am Fahrwerk die Niveauregelung neu abgleichen, sonst regelt das System auf einen falschen Bezug"
+      ],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "article": "luftfederung-ehc.md",
+      "details": [
+        "D4F-F15-006"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-004",
+      "type": "TEST",
+      "cat": "Antrieb",
+      "title": "xDrive-Verteilergetriebe: Stellmotor, Kalibrierung, Ölservice",
+      "valid": "F15/F16 · Fahrzeuge mit xDrive",
+      "summary": "Das Verteilergetriebe des F15 verteilt das Moment über eine elektrisch angesteuerte Lamellenkupplung. Stellmotor, Steuergerät und Kalibrierwert bilden eine Kette — fällt ein Glied aus, sieht das Fehlerbild jedes Mal ähnlich aus.",
+      "points": [
+        "Erst Sicherung und Steckverbinder am Stellmotor prüfen, bevor das Steuergerät verdächtigt wird",
+        "Keine Kommunikation mit dem VTG-Steuergerät ist ein Versorgungs- und Busbefund, kein Getriebebefund",
+        "Nach jedem Eingriff am Verteilergetriebe die Kalibrierung neu durchführen — sonst regelt die Kupplung gegen alte Verschleißwerte",
+        "Ölservice und Kalibrierung liegen in der Diagnosesoftware unter den Servicefunktionen des Antriebs",
+        "Ruckeln in engen Kurven bei langsamer Fahrt gehört in die Bewertung der Kupplung, nicht in die Motordiagnose",
+        "Vor dem Tausch den Stellmotor gegen den bekannten Bewegungsbereich prüfen, nicht gegen eine Zahl aus dem Netz"
+      ],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "article": "vtg-xdrive.md",
+      "details": [
+        "D4F-F15-002"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-005",
+      "type": "TEST",
+      "cat": "Abgas",
+      "title": "SCR- und AdBlue-Dosierung beim F15-Diesel",
+      "valid": "F15/F16 · Sechszylinder-Diesel mit SCR",
+      "summary": "Der Diesel-F15 trägt einen eigenen Reduktionsmittelkreis mit Tank, beheizter Leitung und Dosiereinheit vor dem SCR-Katalysator. Die meisten Fehlerbilder stammen aus der Beheizung oder der Befüllung, nicht aus dem Katalysator.",
+      "points": [
+        "Vor jeder Bauteilsuche klären, was eingefüllt wurde — eine Fehlbefüllung erzeugt Fehler an mehreren Stellen gleichzeitig",
+        "Beheizung von Tank, Leitung und Dosiereinheit als eigene Baugruppe betrachten, sie fällt bevorzugt im Winter auf",
+        "Leitungsheizung im kalten Zustand prüfen und gegen einen bekannt guten Kreis vergleichen",
+        "Nach Arbeiten am Reduktionsmittelkreis die Adaptionen des SCR-Systems zurücksetzen",
+        "Startsperre nach Ablauf der Restreichweite einplanen — das Fahrzeug nicht ungefüllt abstellen und liegen lassen",
+        "Kristallisation an Dosiereinheit und Anschlüssen ist ein Sichtbefund und gehört vor jede elektrische Messung"
+      ],
+      "engines": [
+        "N57",
+        "B57"
+      ],
+      "article": "scr-adblue.md",
+      "details": [
+        "D4F-F15-002"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-006",
+      "type": "FUB",
+      "cat": "Karosserie",
+      "title": "Anhängerbetrieb im F15: Modul, Erkennung und Folgefunktionen",
+      "valid": "F15/F16 · mit werkseitiger oder nachgerüsteter Anhängevorrichtung",
+      "summary": "Am Anhängerbetrieb hängen mehr Systeme als die Steckdose: Einparkhilfe, Anhängerstabilisierung, Niveauregelung und Rückfahrkamera werten die Erkennung mit aus. Fehlt sie, zeigen mehrere Systeme gleichzeitig ein falsches Verhalten.",
+      "points": [
+        "Symptom zuerst richtig einordnen: mehrere Assistenzsysteme gleichzeitig auffällig heißt Erkennung, nicht Beleuchtung",
+        "Anhängermodul muss in der Steuergeräteliste erscheinen, bevor über Codierung nachgedacht wird",
+        "Nachrüstsätze ohne Fahrzeugauftragseintrag werden erkannt, aber die Folgefunktionen bleiben aus",
+        "Beleuchtungsausgänge einzeln gegen den Anhänger prüfen — die Erkennung hängt an der Last dieser Ausgänge",
+        "Bei Fahrzeugen mit Luftfederung den Anhängerbetrieb immer zusammen mit der Niveauregelung bewerten"
+      ],
+      "engines": [
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "details": [
+        "D4F-F15-003",
+        "D4F-F15-001"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-007",
+      "type": "TOOL",
+      "cat": "Sicherheit",
+      "title": "xDrive40e: Hochvoltanteil vor jeder Diagnose klären",
+      "valid": "F15 · Plug-in-Hybrid mit Vierzylinder-Benziner",
+      "summary": "Der einzige Vierzylinder-Benziner im F15 sitzt im Plug-in-Hybrid. Damit kommen Hochvoltspeicher, Leistungselektronik und ein eigenes Speichermanagement dazu — und damit Regeln, die für die übrigen F15 nicht gelten.",
+      "points": [
+        "Vor Arbeiten am Antrieb den Hochvoltanteil feststellen — das Typschild allein reicht dafür nicht",
+        "Arbeiten am Hochvoltsystem nur mit entsprechender Qualifikation und nach Freischaltung",
+        "Antriebsfehler können aus dem Speichermanagement kommen, obwohl die Meldung nach Motor aussieht",
+        "Diagnose über ENET wie beim übrigen F15 — die Zusatzsteuergeräte erscheinen zusätzlich in der Liste",
+        "Ladegerät am 12-V-Bordnetz bleibt Pflicht, unabhängig vom Ladestand des Hochvoltspeichers"
+      ],
+      "engines": [
+        "N20"
+      ],
+      "details": [
+        "D4F-F15-001",
+        "D4F-F15-002"
+      ],
+      "model": "f15"
     }
   ],
   "guides": {
+    "e28:e28-crank-no-start": {
+      "code": "GF-E28-01",
+      "name": "E28 dreht, startet nicht",
+      "desc": "Der Anlasser dreht, der Motor kommt nicht. Reihenfolge ohne Fehlerspeicher: Anlasserkreis → Zündung → Kraftstoff → Kompression → Gemisch.",
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser den Motor zügig und gleichmäßig durch?",
+          "help": "Zündschlüssel auf Start, dabei auf die Drehzahl hören. Träges, schleppendes Drehen oder reines Klicken ist ein Versorgungsproblem und keine Motorstörung. Miss parallel die Batteriespannung direkt an den Polen, während jemand startet — bricht sie stark ein, suchst du am falschen Ende.",
+          "measure": "Der Motor dreht hörbar gleichmäßig auf Anlasserdrehzahl. Die Batteriespannung bricht während des Startversuchs nicht auf Werte ein, bei denen das Steuergerät abschaltet. Schleppendes Drehen oder Klicken zählt als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": 1,
+          "no": "anlasserkreis"
+        },
+        {
+          "q": "Springt am mittleren Zündkabel der Spule ein Funke über, wenn du startest?",
+          "help": "Mittleres Zündkabel aus der Verteilerkappe ziehen, mit einer isolierten Zange rund 5 mm vor einen blanken Massepunkt halten und cranken lassen. Nie in der Hand halten, nie über offenem Ansaugbereich prüfen, und vorher sicherstellen, dass kein Kraftstoff im Motorraum steht.",
+          "measure": "Kräftiger, regelmäßiger Überschlag bei Anlasserdrehzahl. Kein Funke oder nur vereinzelte schwache Überschläge zählen als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Fördert die Kraftstoffpumpe, während der Anlasser dreht?",
+          "help": "Zu zweit arbeiten: einer crankt, einer hört am Tank. Die Pumpe muss ein gleichmäßiges Surren abgeben. Bleibt es still, brücke am Relaissockel abgesichert den Lastpfad von Klemme 30 auf 87 und höre erneut hin.",
+          "measure": "Gleichmäßiges Laufgeräusch der Pumpe während des Startversuchs. Stille beim Cranken zählt als Nein, auch wenn die Pumpe mit Brücke am Relais läuft.",
+          "doc": "D4F-E28-005",
+          "yes": 4,
+          "no": "kraftstoffkreis"
+        },
+        {
+          "q": "Liegt an Klemme 15 der Zündspule Bordnetzspannung an?",
+          "help": "Zündung ein. Schwarze Messspitze an einen blanken Massepunkt am Motor, rote an Klemme 15 der Zündspule. Gemessen wird gegen Motormasse, nicht gegen den Spulenkörper. Vergleiche den Wert mit der direkt an der Batterie gemessenen Spannung.",
+          "measure": "An Klemme 15 steht bei Zündung ein die Bordnetzspannung, höchstens rund 0.5 V unter dem an der Batterie gemessenen Wert. Null Volt oder ein deutlich eingebrochener Wert zählt als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": "zuendkreis",
+          "no": "kl15"
+        },
+        {
+          "q": "Ist die Kompression über alle sechs Zylinder gleichmäßig?",
+          "help": "Alle Kerzen ziehen, Kraftstoffpumpe stromlos legen, Drosselklappe offen halten und jeden Zylinder gleich lang durchdrehen. Es geht hier nicht um einen Absolutwert, sondern um die Streuung zwischen den Zylindern — die ist auch ohne Herstellervorgabe aussagekräftig.",
+          "measure": "Alle sechs Werte liegen dicht beieinander. Ein einzelner deutlich abfallender Zylinder oder ein über alle Zylinder gleichmäßig sehr niedriges Niveau — Hinweis auf übersprungenen Steuertrieb — zählt als Nein.",
+          "doc": "D4F-E28-002",
+          "yes": 5,
+          "no": "steuertrieb"
+        },
+        {
+          "q": "Läuft der Motor auf einen kurzen Stoß Starthilfespray für einige Umdrehungen an?",
+          "help": "Sehr sparsam in den offenen Ansaugtrakt geben und sofort starten. Der Test trennt zwei Fälle: kommt der Motor kurz, fehlt ihm Gemisch, obwohl Zündung und Mechanik stimmen. Bleibt er tot, stimmt eine der Voraussetzungen doch nicht. Nicht wiederholt anwenden — der Motor mag das nicht.",
+          "measure": "Der Motor zündet hörbar und läuft einige Umdrehungen, bevor er wieder ausgeht. Keinerlei Reaktion zählt als Nein.",
+          "doc": "D4F-E28-002",
+          "yes": "gemischbildung",
+          "no": "grundlagen-neu"
+        }
+      ],
+      "model": "e28",
+      "id": "e28-crank-no-start",
+      "_results": {
+        "anlasserkreis": {
+          "title": "Versorgung und Anlasserkreis in Ordnung bringen",
+          "text": "Der Motor wird nicht sauber durchgedreht, damit ist jede weitere Motordiagnose wertlos. Batterie laden und unter Last prüfen, Batterie- und Massebänder abnehmen, Kontaktflächen blank machen und nachziehen, danach die Klemme 50 am Anlasser während des Startversuchs messen. Erst wenn der Motor zügig dreht, den Pfad von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E28-006"
+          ]
+        },
+        "kraftstoffkreis": {
+          "title": "Kraftstoffversorgung unterbrochen",
+          "text": "Die Pumpe fördert beim Cranken nicht. Läuft sie mit abgesicherter Brücke von Klemme 30 auf 87 am Relaissockel, liegt der Fehler in der Ansteuerung: Relais tauschweise ersetzen, Sockel und Steuerleitung prüfen. Bleibt sie auch mit Brücke still, sitzt der Fehler an Pumpe, Sicherung oder Steckverbindung am Tank. Danach den Pfad wiederholen.",
+          "next_docs": [
+            "D4F-E28-005"
+          ]
+        },
+        "zuendkreis": {
+          "title": "Spannung liegt an — Fehler zwischen Spule und Kerze",
+          "text": "Klemme 15 wird versorgt, ein Funke kommt trotzdem nicht. Zündspule tauschweise durch eine bekannt gute ersetzen, Ansteuerleitung vom Steuergerät zur Spule auf Durchgang und auf Masseschluss messen, Verteilerkappe und Läufer auf Kriechspuren und Durchbrand prüfen. Sollwerte für die Spulenwicklungen sind hier nicht belegt, deshalb tauschweise arbeiten.",
+          "next_docs": [
+            "D4F-E28-006",
+            "D4F-E28-002"
+          ]
+        },
+        "kl15": {
+          "title": "Zündungsplus erreicht die Zündspule nicht",
+          "text": "Ohne Klemme 15 an der Spule kann keine Zündung entstehen. Zündschloss, zugehörige Sicherung und die Leitung bis zur Spule prüfen, Massepunkte am Motor reinigen und nachziehen. Erst danach hat eine Aussage über Spule oder Steuergerät Sinn — beide sind hier nur Verdächtige, solange die Versorgung fehlt.",
+          "next_docs": [
+            "D4F-E28-006"
+          ]
+        },
+        "steuertrieb": {
+          "title": "Kompression ungleich — Mechanik prüfen",
+          "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M20 zuerst den Zahnriemen und seine Steuermarkierungen kontrollieren, beim M30 den Kettentrieb und die Gleitschienen. Einzelner abfallender Zylinder heißt Ventil, Kolbenringe oder Kopfdichtung: nass gegenprüfen und die Nachbarzylinder als Maßstab nehmen.",
+          "next_docs": [
+            "D4F-E28-002"
+          ]
+        },
+        "gemischbildung": {
+          "title": "Gemischbildung liefert nichts",
+          "text": "Der Motor läuft auf Fremdgemisch an, also stimmen Zündung und Mechanik. Jetzt gehört die Gemischbildung geprüft: Einspritzventile auf Ansteuerung und Dichtheit, Systemdruck und Druckhaltung, Luftmengen- beziehungsweise Luftmassenmesser und alle Unterdruckschläuche auf Falschluft. Nach jedem Eingriff neu starten und den Erfolg einzeln bewerten.",
+          "next_docs": [
+            "D4F-E28-005",
+            "D4F-E28-002"
+          ]
+        },
+        "grundlagen-neu": {
+          "title": "Keine Reaktion — Voraussetzungen neu prüfen",
+          "text": "Der Motor zeigt selbst mit Fremdgemisch keine Zündung. Damit stimmt eine der bereits geprüften Voraussetzungen doch nicht. Funkenprobe an mehreren Kerzen wiederholen statt nur am mittleren Kabel, Zündfolge und Verteilerstellung kontrollieren und die Kompressionsmessung mit warmem Motor wiederholen. Danach den Pfad noch einmal von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E28-006",
+            "D4F-E28-002"
+          ]
+        },
+        "stecker-unbekannt": {
+          "title": "Steckerform nicht zuzuordnen",
+          "text": "Weder runder 20-poliger noch D-förmiger 15-poliger Anschluss gefunden. Suche den Anschluss zuerst an den üblichen Stellen im Motorraum, meist nahe dem Federbeindom unter einer Kappe. Bleibt es dabei, ordne das Fahrzeug über Motornummer und Steuergerätestand zu und arbeite mit reiner Messdiagnose weiter, statt einen Adapter zu raten.",
+          "next_docs": [
+            "D4F-E28-001",
+            "D4F-E28-002"
+          ]
+        },
+        "masse-fehlt": {
+          "title": "Keine Masse am Diagnosestecker",
+          "text": "Ohne Bezugsmasse ist jede Messung am Stecker und jede Kommunikation wertlos. Kontakte trocken reinigen, Grünspan entfernen und aufgeweitete Buchsen nachsetzen, danach die Masseleitung des Steckers zum Karosserie- oder Motormassepunkt verfolgen und diesen Punkt blank machen. Anschließend die Messung wiederholen.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "dauerplus-fehlt": {
+          "title": "Dauerversorgung fehlt am Stecker",
+          "text": "Ein angeschlossenes Gerät bekommt keinen Strom. Zugehörige Sicherung prüfen und die Leitung vom Stecker zurück in Richtung Batterie verfolgen; Übergangsstellen und Steckverbindungen sind nach Jahrzehnten die üblichen Stellen. Bis zur Instandsetzung ein Gerät nicht ersatzweise anderweitig versorgen, ohne die Masseverhältnisse zu kennen.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "kl15-diag": {
+          "title": "Zündungsplus erreicht den Stecker nicht",
+          "text": "Ohne geschaltetes Plus wacht das Steuergerät für die Diagnose nicht auf. Zündschloss und Zündungssicherung prüfen, Sicherungshalter auf Korrosion ansehen und die Leitung bis zum Diagnosestecker durchmessen. Kommt die Spannung nur langsam oder schwankend, ist das ein Übergangswiderstand und kein Steuergerätefehler.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "protokoll": {
+          "title": "Versorgung steht, Verbindung kommt trotzdem nicht",
+          "text": "Alle elektrischen Voraussetzungen sind erfüllt. Prüfe jetzt Adapter und Software: Adapter durchklingeln und die Zuordnung des Datenpaars gegen deine Notiz halten, danach die Software auf ein Protokoll umstellen, das dem Steuergerätestand entspricht. Bleibt es dabei, arbeite über Messdiagnose weiter — ein stummer Bus ersetzt keine Prüfung am Bauteil.",
+          "next_docs": [
+            "D4F-E28-007",
+            "D4F-E28-003"
+          ]
+        },
+        "zugang-steht": {
+          "title": "Diagnosezugang steht",
+          "text": "Die Verbindung ist aufgebaut. Lies zuerst die Identifikation des Steuergeräts aus und notiere sie mitsamt Steckerform — beides zusammen bestimmt, welche Prozeduren an diesem Fahrzeug überhaupt gelten. Erst danach den Fehlerspeicher auslesen und die Einträge einzeln gegen eine Messung am Bauteil bestätigen.",
+          "next_docs": [
+            "D4F-E28-003",
+            "D4F-E28-002"
+          ]
+        }
+      }
+    },
+    "e28:e28-diagnosezugang": {
+      "code": "GF-E28-02",
+      "name": "Kein Kontakt zum Steuergerät",
+      "desc": "Das Diagnosegerät meldet sich nicht. Erst den Stecker identifizieren, dann seine Versorgung prüfen, erst danach über Protokoll und Software nachdenken.",
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
+      "steps": [
+        {
+          "q": "Sitzt im Motorraum ein runder, 20-poliger Stecker mit aufgeschraubter Kappe?",
+          "help": "Der Anschluss steht meist aufrecht in der Nähe des Federbeindoms. Nimm die Kappe ab und zähle die Kontakte. Rund mit Schraub- oder Bajonettkappe und zwanzig Kontakten ist der späte Stand, ein flacher D-förmiger Stecker mit Schnappkappe der frühe.",
+          "measure": "Runde Bauform, zwanzig Kontakte, Kappe wird geschraubt. Alles andere zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 2,
+          "no": 1
+        },
+        {
+          "q": "Ist es stattdessen ein D-förmiger Stecker mit fünfzehn Kontakten und Schnappkappe?",
+          "help": "Flache, an einer Seite abgeflachte Bauform. Fünfzehn Kontakte, die Kappe rastet auf statt zu schrauben. Dieser Anschluss gehört zum frühen Steuergerätestand und nimmt die üblichen Rundadapter nicht auf.",
+          "measure": "D-förmige Bauform mit fünfzehn Kontakten. Findest du gar keinen Anschluss oder eine dritte Bauform, zählt das als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 2,
+          "no": "stecker-unbekannt"
+        },
+        {
+          "q": "Hat einer der Kontakte sauberen Durchgang gegen Motormasse?",
+          "help": "Batterie muss dafür nicht ab. Ein Messkabel an einen blanken Massepunkt am Motor, mit dem anderen die Kontakte der Reihe nach antippen und den Kontakt notieren, der Durchgang zeigt. Verlass dich nicht auf eine Pinnummer aus einer Tabelle — die Zählung unterscheidet sich zwischen den beiden Steckerformen.",
+          "measure": "Genau ein Kontakt zeigt praktisch widerstandslosen Durchgang gegen Motormasse. Kein solcher Kontakt zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 3,
+          "no": "masse-fehlt"
+        },
+        {
+          "q": "Liegt an einem der Kontakte Dauerplus an, auch ohne Zündung?",
+          "help": "Schwarze Messspitze auf den zuvor gefundenen Massekontakt, mit der roten die übrigen Kontakte abgehen. Zündschlüssel dabei abgezogen. Der Kontakt, der ohne Zündung Bordnetzspannung führt, ist die Dauerversorgung.",
+          "measure": "Ein Kontakt führt Bordnetzspannung bei abgezogenem Schlüssel, bei geladener Batterie rund 12.6 V im Ruhezustand. Kein solcher Kontakt zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 4,
+          "no": "dauerplus-fehlt"
+        },
+        {
+          "q": "Kommt an einem weiteren Kontakt Spannung, sobald du die Zündung einschaltest, und verschwindet sie beim Ausschalten sofort wieder?",
+          "help": "Gleiche Messanordnung, jetzt mit eingeschalteter Zündung. Achte darauf, dass die Spannung sprunghaft kommt und beim Ausschalten sofort weg ist. Eine langsam absinkende Spannung deutet auf einen schlechten Kontakt im Zündschloss oder einen korrodierten Sicherungshalter.",
+          "measure": "Sprunghaftes Kommen und Gehen der Bordnetzspannung mit dem Zündschloss. Bleibt jeder Kontakt tot, zählt das als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 5,
+          "no": "kl15-diag"
+        },
+        {
+          "q": "Meldet sich das Steuergerät jetzt auf ein Diagnosegerät mit passendem Adapter?",
+          "help": "Erst jetzt anstecken. Adapter vorher durchklingeln und die Zuordnung notieren. Software wählen, die das BMW-eigene Protokoll spricht — ein Generic-OBD-2-Scanner bleibt an diesem Fahrzeug stumm, auch wenn der Stecker mechanisch passt.",
+          "measure": "Das Gerät baut eine Verbindung auf und liefert wenigstens eine Identifikation des Steuergeräts. Zeitüberschreitung oder Dauerfehler zählt als Nein.",
+          "doc": "D4F-E28-007",
+          "yes": "zugang-steht",
+          "no": "protokoll"
+        }
+      ],
+      "model": "e28",
+      "id": "e28-diagnosezugang",
+      "_results": {
+        "anlasserkreis": {
+          "title": "Versorgung und Anlasserkreis in Ordnung bringen",
+          "text": "Der Motor wird nicht sauber durchgedreht, damit ist jede weitere Motordiagnose wertlos. Batterie laden und unter Last prüfen, Batterie- und Massebänder abnehmen, Kontaktflächen blank machen und nachziehen, danach die Klemme 50 am Anlasser während des Startversuchs messen. Erst wenn der Motor zügig dreht, den Pfad von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E28-006"
+          ]
+        },
+        "kraftstoffkreis": {
+          "title": "Kraftstoffversorgung unterbrochen",
+          "text": "Die Pumpe fördert beim Cranken nicht. Läuft sie mit abgesicherter Brücke von Klemme 30 auf 87 am Relaissockel, liegt der Fehler in der Ansteuerung: Relais tauschweise ersetzen, Sockel und Steuerleitung prüfen. Bleibt sie auch mit Brücke still, sitzt der Fehler an Pumpe, Sicherung oder Steckverbindung am Tank. Danach den Pfad wiederholen.",
+          "next_docs": [
+            "D4F-E28-005"
+          ]
+        },
+        "zuendkreis": {
+          "title": "Spannung liegt an — Fehler zwischen Spule und Kerze",
+          "text": "Klemme 15 wird versorgt, ein Funke kommt trotzdem nicht. Zündspule tauschweise durch eine bekannt gute ersetzen, Ansteuerleitung vom Steuergerät zur Spule auf Durchgang und auf Masseschluss messen, Verteilerkappe und Läufer auf Kriechspuren und Durchbrand prüfen. Sollwerte für die Spulenwicklungen sind hier nicht belegt, deshalb tauschweise arbeiten.",
+          "next_docs": [
+            "D4F-E28-006",
+            "D4F-E28-002"
+          ]
+        },
+        "kl15": {
+          "title": "Zündungsplus erreicht die Zündspule nicht",
+          "text": "Ohne Klemme 15 an der Spule kann keine Zündung entstehen. Zündschloss, zugehörige Sicherung und die Leitung bis zur Spule prüfen, Massepunkte am Motor reinigen und nachziehen. Erst danach hat eine Aussage über Spule oder Steuergerät Sinn — beide sind hier nur Verdächtige, solange die Versorgung fehlt.",
+          "next_docs": [
+            "D4F-E28-006"
+          ]
+        },
+        "steuertrieb": {
+          "title": "Kompression ungleich — Mechanik prüfen",
+          "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M20 zuerst den Zahnriemen und seine Steuermarkierungen kontrollieren, beim M30 den Kettentrieb und die Gleitschienen. Einzelner abfallender Zylinder heißt Ventil, Kolbenringe oder Kopfdichtung: nass gegenprüfen und die Nachbarzylinder als Maßstab nehmen.",
+          "next_docs": [
+            "D4F-E28-002"
+          ]
+        },
+        "gemischbildung": {
+          "title": "Gemischbildung liefert nichts",
+          "text": "Der Motor läuft auf Fremdgemisch an, also stimmen Zündung und Mechanik. Jetzt gehört die Gemischbildung geprüft: Einspritzventile auf Ansteuerung und Dichtheit, Systemdruck und Druckhaltung, Luftmengen- beziehungsweise Luftmassenmesser und alle Unterdruckschläuche auf Falschluft. Nach jedem Eingriff neu starten und den Erfolg einzeln bewerten.",
+          "next_docs": [
+            "D4F-E28-005",
+            "D4F-E28-002"
+          ]
+        },
+        "grundlagen-neu": {
+          "title": "Keine Reaktion — Voraussetzungen neu prüfen",
+          "text": "Der Motor zeigt selbst mit Fremdgemisch keine Zündung. Damit stimmt eine der bereits geprüften Voraussetzungen doch nicht. Funkenprobe an mehreren Kerzen wiederholen statt nur am mittleren Kabel, Zündfolge und Verteilerstellung kontrollieren und die Kompressionsmessung mit warmem Motor wiederholen. Danach den Pfad noch einmal von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E28-006",
+            "D4F-E28-002"
+          ]
+        },
+        "stecker-unbekannt": {
+          "title": "Steckerform nicht zuzuordnen",
+          "text": "Weder runder 20-poliger noch D-förmiger 15-poliger Anschluss gefunden. Suche den Anschluss zuerst an den üblichen Stellen im Motorraum, meist nahe dem Federbeindom unter einer Kappe. Bleibt es dabei, ordne das Fahrzeug über Motornummer und Steuergerätestand zu und arbeite mit reiner Messdiagnose weiter, statt einen Adapter zu raten.",
+          "next_docs": [
+            "D4F-E28-001",
+            "D4F-E28-002"
+          ]
+        },
+        "masse-fehlt": {
+          "title": "Keine Masse am Diagnosestecker",
+          "text": "Ohne Bezugsmasse ist jede Messung am Stecker und jede Kommunikation wertlos. Kontakte trocken reinigen, Grünspan entfernen und aufgeweitete Buchsen nachsetzen, danach die Masseleitung des Steckers zum Karosserie- oder Motormassepunkt verfolgen und diesen Punkt blank machen. Anschließend die Messung wiederholen.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "dauerplus-fehlt": {
+          "title": "Dauerversorgung fehlt am Stecker",
+          "text": "Ein angeschlossenes Gerät bekommt keinen Strom. Zugehörige Sicherung prüfen und die Leitung vom Stecker zurück in Richtung Batterie verfolgen; Übergangsstellen und Steckverbindungen sind nach Jahrzehnten die üblichen Stellen. Bis zur Instandsetzung ein Gerät nicht ersatzweise anderweitig versorgen, ohne die Masseverhältnisse zu kennen.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "kl15-diag": {
+          "title": "Zündungsplus erreicht den Stecker nicht",
+          "text": "Ohne geschaltetes Plus wacht das Steuergerät für die Diagnose nicht auf. Zündschloss und Zündungssicherung prüfen, Sicherungshalter auf Korrosion ansehen und die Leitung bis zum Diagnosestecker durchmessen. Kommt die Spannung nur langsam oder schwankend, ist das ein Übergangswiderstand und kein Steuergerätefehler.",
+          "next_docs": [
+            "D4F-E28-001"
+          ]
+        },
+        "protokoll": {
+          "title": "Versorgung steht, Verbindung kommt trotzdem nicht",
+          "text": "Alle elektrischen Voraussetzungen sind erfüllt. Prüfe jetzt Adapter und Software: Adapter durchklingeln und die Zuordnung des Datenpaars gegen deine Notiz halten, danach die Software auf ein Protokoll umstellen, das dem Steuergerätestand entspricht. Bleibt es dabei, arbeite über Messdiagnose weiter — ein stummer Bus ersetzt keine Prüfung am Bauteil.",
+          "next_docs": [
+            "D4F-E28-007",
+            "D4F-E28-003"
+          ]
+        },
+        "zugang-steht": {
+          "title": "Diagnosezugang steht",
+          "text": "Die Verbindung ist aufgebaut. Lies zuerst die Identifikation des Steuergeräts aus und notiere sie mitsamt Steckerform — beides zusammen bestimmt, welche Prozeduren an diesem Fahrzeug überhaupt gelten. Erst danach den Fehlerspeicher auslesen und die Einträge einzeln gegen eine Messung am Bauteil bestätigen.",
+          "next_docs": [
+            "D4F-E28-003",
+            "D4F-E28-002"
+          ]
+        }
+      }
+    },
     "e30:m20-no-spark": {
       "code": "GF-E30-01",
       "name": "M20 kein Zündfunke",
@@ -3114,6 +3636,306 @@
           "next_docs": [
             "D4F-E36-006",
             "D4F-E36-003"
+          ]
+        }
+      }
+    },
+    "e38:m73-unrunder-lauf": {
+      "code": "GF-E38-01",
+      "name": "M73 läuft unrund (E38 750i)",
+      "desc": "Der V12 arbeitet als zwei getrennte Motorhälften. Der Pfad nutzt genau das: erst beide Steuergeräte auslesen, dann entscheiden, ob das Symptom einseitig oder beidseitig ist — und erst danach am Bauteil suchen.",
+      "engines": [
+        "M73"
+      ],
+      "steps": [
+        {
+          "q": "Antworten beide Motorsteuergeräte in der Diagnose?",
+          "help": "Der M73 hat je Zylinderbank ein eigenes Steuergerät. Beide werden getrennt angesprochen. Wer nur eines erwischt, sieht die halbe Wahrheit und hält einen einseitigen Fehler für einen sporadischen.",
+          "measure": "Beide Motorsteuergeräte einzeln aufrufen und je Gerät den Identifikationsdatensatz anzeigen lassen. Erwartet: zwei getrennte Antworten. Antwortet nur eines, ist erst der Zugang zu klären, bevor irgendein Messwert beurteilt wird.",
+          "doc": "D4F-E38-003",
+          "yes": 1,
+          "no": "result-dme-zugang"
+        },
+        {
+          "q": "Stehen Fehlereinträge nur in einem der beiden Steuergeräte?",
+          "help": "Das ist die Weiche des ganzen Pfads. Einseitige Einträge zeigen auf die doppelt vorhandene Bank-Peripherie: Luftmassenmesser, Drosselklappe, Lambdaregelung, Sekundärluftkreis. Beidseitige Einträge zeigen auf das, was sich beide Bänke teilen.",
+          "measure": "Fehlerspeicher beider Steuergeräte nebeneinander legen und die Einträge nach Bank sortieren. Erwartet ist ein klares Bild: entweder eine Seite auffällig, oder beide Seiten gleich auffällig. Ein gemischtes Bild bedeutet meist zwei unabhängige Fehler — dann beide einzeln abarbeiten.",
+          "doc": "D4F-E38-003",
+          "yes": 2,
+          "no": 4
+        },
+        {
+          "q": "Weicht die betroffene Bank auch in den Laufwerten sichtbar von der anderen ab?",
+          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Grössen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
+          "measure": "Gleiche Messgrösse in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von aussen.",
+          "doc": "D4F-E38-003",
+          "yes": 3,
+          "no": 4
+        },
+        {
+          "q": "Wandert das Symptom mit, wenn du das verdächtige Bauteil auf die andere Bank setzt?",
+          "help": "Der Kreuztausch ist am M73 der schnellste Beweis und braucht keinen Sollwert. Zündspule, Luftmassenmesser oder Lambdasonde der auffälligen Seite gegen das Gegenstück der unauffälligen Seite tauschen — mehr ist nicht nötig.",
+          "measure": "Nach dem Tausch dieselbe Messgrösse erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
+          "doc": "D4F-E38-003",
+          "yes": "result-bauteil",
+          "no": "result-bank-peripherie"
+        },
+        {
+          "q": "Zeigen beide Bänke dasselbe Bild — also beide mager, beide mit Aussetzern oder beide mit derselben Abweichung?",
+          "help": "Wenn sich beide Steuergeräte einig sind, ist die Ursache nicht doppelt vorhanden. Dann kommt nur infrage, was beide Bänke gemeinsam nutzen: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Massepunkte, Ansaugluftweg vor der Verzweigung.",
+          "measure": "Dieselbe Grösse in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Grössenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
+          "doc": "D4F-E38-003",
+          "yes": 5,
+          "no": "result-bank-peripherie"
+        },
+        {
+          "q": "Ist die Kurbelgehäuseentlüftung frei und der Öleinfülldeckel innen frei von hellem Schlamm?",
+          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmässig übersprungen.",
+          "measure": "Deckel abnehmen und die Innenseite ansehen: heller, emulsionsartiger Schlamm ist der Befund. Zusätzlich die Schläuche der Entlüftung auf Verhärtung, Risse und Verstopfung prüfen. Ein Unterdruck-Sollwert für das System ist hier nicht belegt — geprüft wird qualitativ auf Durchgang und Dichtheit.",
+          "doc": "D4F-E38-003",
+          "yes": "result-gemeinsam-kraftstoff",
+          "no": "result-kge"
+        }
+      ],
+      "model": "e38",
+      "id": "m73-unrunder-lauf",
+      "_results": {
+        "result-dme-zugang": {
+          "title": "Zugang zu den beiden Motorsteuergeräten klären",
+          "text": "Solange nicht beide Steuergeräte antworten, ist jede Aussage über den Motorlauf halb. Prüfe zuerst, über welchen Anschluss du arbeitest und ob die verwendete Software den V12 mit zwei Geräten überhaupt getrennt anspricht. Erst danach den Fehlerspeicher beurteilen.",
+          "next_docs": [
+            "D4F-E38-001",
+            "D4F-E38-003"
+          ]
+        },
+        "result-bauteil": {
+          "title": "Bauteil auf der auffälligen Bank ist der Täter",
+          "text": "Das Symptom ist mit dem Bauteil auf die andere Bank gewandert. Damit ist der Beweis erbracht, ohne dass ein Sollwert nötig war. Bauteil ersetzen, danach beide Steuergeräte löschen und den Vergleich der Bänke wiederholen — erst wenn beide Seiten wieder gleich laufen, ist die Sache abgeschlossen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-bank-peripherie": {
+          "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
+          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von aussen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-gemeinsam-kraftstoff": {
+          "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
+          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von aussen; ein belegter Druckwert liegt hier nicht vor.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-kge": {
+          "title": "Kurbelgehäuseentlüftung zugesetzt",
+          "text": "Heller Schlamm am Öldeckel oder verstopfte Entlüftungsschläuche erklären das beidseitige Bild. Die Entlüftung vollständig erneuern, nicht nur reinigen, und die Schläuche auf Verhärtung prüfen. Danach Fehlerspeicher beider Steuergeräte löschen und den Motorlauf erneut über beide Bänke vergleichen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät statt Busproblem",
+          "text": "Es fehlt nur ein Gerät. Damit fällt der ganze Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig.",
+          "next_docs": [
+            "D4F-E38-005"
+          ]
+        },
+        "result-verbindung": {
+          "title": "Diagnoseverbindung selbst klären",
+          "text": "Es antwortet gar nichts, also ist zuerst der Zugang zu klären. Prüfe, ob du am richtigen Anschluss arbeitest, ob Dauerplus und Masse an der Buchse anliegen und ob das Interface am Rechner sauber eingebunden ist. Am E38 entscheidet zusätzlich, ob der gewählte Anschluss überhaupt alle Steuergeräte erreicht.",
+          "next_docs": [
+            "D4F-E38-001",
+            "D4F-E38-007"
+          ]
+        },
+        "result-gateway": {
+          "title": "Gateway-Funktion des Kombiinstruments",
+          "text": "Die Motorsteuerung antwortet, das Kombiinstrument nicht, und dahinter fehlt die halbe Karosserie. Das ist das typische Gateway-Bild. Prüfe Spannungsversorgung und Masse am Kombiinstrument sowie dessen Stecker, bevor du das Gerät tauschst. Ein Tausch bringt zusätzlich Aufwand mit sich, weil fahrzeugbezogene Daten im Kombi liegen.",
+          "next_docs": [
+            "D4F-E38-002",
+            "D4F-E38-005"
+          ]
+        },
+        "result-versorgung": {
+          "title": "Spannungsversorgung oder Massepunkt",
+          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fussraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+          "next_docs": [
+            "D4F-E38-006"
+          ]
+        },
+        "result-bus-kurzschluss": {
+          "title": "Busleitung wird festgehalten",
+          "text": "Der Bus liegt dauerhaft nahe Masse, damit kann kein Teilnehmer mehr senden. Trenne die Teilnehmer schrittweise ab und beobachte, wann der Pegel wieder auf Bordspannung geht. Prüfe parallel die bekannten Scheuerstellen im Türübergang und alles, was am Fahrzeug nachgerüstet wurde.",
+          "next_docs": [
+            "D4F-E38-002"
+          ]
+        },
+        "result-stoerer": {
+          "title": "Störendes Steuergerät gefunden",
+          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfussraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+          "next_docs": [
+            "D4F-E38-005"
+          ]
+        },
+        "result-leitung": {
+          "title": "Leitungsunterbrechung im Bus",
+          "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist die Busleitung selbst unterbrochen, typischerweise an Übergängen mit Bewegung. Miss die Leitung abschnittsweise auf Durchgang und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor, statt an beiden Enden zu raten.",
+          "next_docs": [
+            "D4F-E38-002"
+          ]
+        }
+      }
+    },
+    "e38:e38-komfort-tot": {
+      "code": "GF-E38-02",
+      "name": "Mehrere Komfortsteuergeräte antworten nicht",
+      "desc": "Zentralverriegelung, Klima, Sitzspeicher oder Bordmonitor fallen gemeinsam aus oder fehlen in der Geräteliste. Der Pfad grenzt Versorgung, Gateway und Bus gegeneinander ab, bevor ein einzelnes Steuergerät verdächtigt wird.",
+      "engines": [
+        "M52",
+        "M62",
+        "M73"
+      ],
+      "steps": [
+        {
+          "q": "Fehlen mehrere Komfortsteuergeräte gleichzeitig in der Diagnose?",
+          "help": "Die Zahl der betroffenen Geräte ist die wichtigste Information am Anfang. Ein einzelnes stummes Gerät ist ein Gerätefehler. Mehrere gleichzeitig sind fast immer Versorgung, Bus oder Gateway.",
+          "measure": "Vollständigen Steuergeräte-Suchlauf fahren und die gefundene Liste gegen die tatsächliche Ausstattung des Fahrzeugs halten. Erwartet: jedes verbaute Gerät antwortet. Fehlt genau eines, ist der Pfad hier zu Ende.",
+          "doc": "D4F-E38-002",
+          "yes": 1,
+          "no": "result-einzelgeraet"
+        },
+        {
+          "q": "Antwortet die Motorsteuerung normal?",
+          "help": "Die Motorsteuerung hängt am Diagnosebus, nicht an den Komfortbussen. Antwortet sie sauber, ist die Diagnoseverbindung als solche in Ordnung und der Fehler liegt weiter hinten. Antwortet sie ebenfalls nicht, stimmt schon der Zugang nicht.",
+          "measure": "Motorsteuergerät aufrufen und den Identifikationsdatensatz anzeigen lassen. Erwartet: vollständige Antwort mit Gerätekennung. Bleibt auch sie aus, zuerst Anschluss, Interface und Spannungsversorgung des Testers klären.",
+          "doc": "D4F-E38-001",
+          "yes": 2,
+          "no": "result-verbindung"
+        },
+        {
+          "q": "Antwortet das Kombiinstrument?",
+          "help": "Das Kombiinstrument setzt die Diagnoseaufträge auf die Komfortbusse um. Steht es, kommen die dahinterliegenden Geräte nicht mehr durch — ganz gleich, wie gesund sie selbst sind. Deshalb steht es vor allen Einzelgeräten in der Reihenfolge.",
+          "measure": "Kombiinstrument einzeln aufrufen. Erwartet: es meldet sich mit Kennung und Fehlerspeicher. Antwortet es nicht, während die Motorsteuerung antwortet, ist die Gateway-Funktion der erste Verdächtige und nicht die vermissten Komfortgeräte.",
+          "doc": "D4F-E38-002",
+          "yes": 3,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Sind Bordspannung und die Massepunkte im Fussraum in Ordnung?",
+          "help": "Ein loser oder korrodierter Massepunkt legt mehrere Steuergeräte gleichzeitig still und sieht dabei aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Punkt.",
+          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfussraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
+          "doc": "D4F-E38-006",
+          "yes": 4,
+          "no": "result-versorgung"
+        },
+        {
+          "q": "Liegt der Eindrahtbus im Ruhezustand auf Bordspannungsniveau?",
+          "help": "Der Komfortbus des E38 ist eine einzelne Leitung, die im Ruhezustand auf Bordspannung liegt und von den Sendern gegen Masse gezogen wird. Liegt sie dauerhaft nahe Masse, zieht ein Teilnehmer oder ein Scheuerschluss die Leitung fest — dann schweigt der ganze Bus.",
+          "measure": "An einem gut erreichbaren Steuergerätestecker die Busleitung gegen Masse messen, Zündung ein, Fahrzeug in Ruhe. Erwartet: Pegel nahe Bordspannung mit kurzen Einbrüchen beim Senden. Dauerhaft nahe 0 V ist der Befund für einen festgehaltenen Bus.",
+          "doc": "D4F-E38-002",
+          "yes": 5,
+          "no": "result-bus-kurzschluss"
+        },
+        {
+          "q": "Kommen die fehlenden Geräte zurück, sobald du ein verdächtiges Modul vom Bus trennst?",
+          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfussraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "measure": "Ein Gerät nach dem anderen vom Bus trennen und nach jedem Schritt den Suchlauf wiederholen. Erwartet: bleibt die Liste unverändert unvollständig, war es nicht dieses Gerät. Wird sie vollständig, ist der Störer gefunden.",
+          "doc": "D4F-E38-005",
+          "yes": "result-stoerer",
+          "no": "result-leitung"
+        }
+      ],
+      "model": "e38",
+      "id": "e38-komfort-tot",
+      "_results": {
+        "result-dme-zugang": {
+          "title": "Zugang zu den beiden Motorsteuergeräten klären",
+          "text": "Solange nicht beide Steuergeräte antworten, ist jede Aussage über den Motorlauf halb. Prüfe zuerst, über welchen Anschluss du arbeitest und ob die verwendete Software den V12 mit zwei Geräten überhaupt getrennt anspricht. Erst danach den Fehlerspeicher beurteilen.",
+          "next_docs": [
+            "D4F-E38-001",
+            "D4F-E38-003"
+          ]
+        },
+        "result-bauteil": {
+          "title": "Bauteil auf der auffälligen Bank ist der Täter",
+          "text": "Das Symptom ist mit dem Bauteil auf die andere Bank gewandert. Damit ist der Beweis erbracht, ohne dass ein Sollwert nötig war. Bauteil ersetzen, danach beide Steuergeräte löschen und den Vergleich der Bänke wiederholen — erst wenn beide Seiten wieder gleich laufen, ist die Sache abgeschlossen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-bank-peripherie": {
+          "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
+          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von aussen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-gemeinsam-kraftstoff": {
+          "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
+          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von aussen; ein belegter Druckwert liegt hier nicht vor.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-kge": {
+          "title": "Kurbelgehäuseentlüftung zugesetzt",
+          "text": "Heller Schlamm am Öldeckel oder verstopfte Entlüftungsschläuche erklären das beidseitige Bild. Die Entlüftung vollständig erneuern, nicht nur reinigen, und die Schläuche auf Verhärtung prüfen. Danach Fehlerspeicher beider Steuergeräte löschen und den Motorlauf erneut über beide Bänke vergleichen.",
+          "next_docs": [
+            "D4F-E38-003"
+          ]
+        },
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät statt Busproblem",
+          "text": "Es fehlt nur ein Gerät. Damit fällt der ganze Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig.",
+          "next_docs": [
+            "D4F-E38-005"
+          ]
+        },
+        "result-verbindung": {
+          "title": "Diagnoseverbindung selbst klären",
+          "text": "Es antwortet gar nichts, also ist zuerst der Zugang zu klären. Prüfe, ob du am richtigen Anschluss arbeitest, ob Dauerplus und Masse an der Buchse anliegen und ob das Interface am Rechner sauber eingebunden ist. Am E38 entscheidet zusätzlich, ob der gewählte Anschluss überhaupt alle Steuergeräte erreicht.",
+          "next_docs": [
+            "D4F-E38-001",
+            "D4F-E38-007"
+          ]
+        },
+        "result-gateway": {
+          "title": "Gateway-Funktion des Kombiinstruments",
+          "text": "Die Motorsteuerung antwortet, das Kombiinstrument nicht, und dahinter fehlt die halbe Karosserie. Das ist das typische Gateway-Bild. Prüfe Spannungsversorgung und Masse am Kombiinstrument sowie dessen Stecker, bevor du das Gerät tauschst. Ein Tausch bringt zusätzlich Aufwand mit sich, weil fahrzeugbezogene Daten im Kombi liegen.",
+          "next_docs": [
+            "D4F-E38-002",
+            "D4F-E38-005"
+          ]
+        },
+        "result-versorgung": {
+          "title": "Spannungsversorgung oder Massepunkt",
+          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fussraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+          "next_docs": [
+            "D4F-E38-006"
+          ]
+        },
+        "result-bus-kurzschluss": {
+          "title": "Busleitung wird festgehalten",
+          "text": "Der Bus liegt dauerhaft nahe Masse, damit kann kein Teilnehmer mehr senden. Trenne die Teilnehmer schrittweise ab und beobachte, wann der Pegel wieder auf Bordspannung geht. Prüfe parallel die bekannten Scheuerstellen im Türübergang und alles, was am Fahrzeug nachgerüstet wurde.",
+          "next_docs": [
+            "D4F-E38-002"
+          ]
+        },
+        "result-stoerer": {
+          "title": "Störendes Steuergerät gefunden",
+          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfussraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+          "next_docs": [
+            "D4F-E38-005"
+          ]
+        },
+        "result-leitung": {
+          "title": "Leitungsunterbrechung im Bus",
+          "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist die Busleitung selbst unterbrochen, typischerweise an Übergängen mit Bewegung. Miss die Leitung abschnittsweise auf Durchgang und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor, statt an beiden Enden zu raten.",
+          "next_docs": [
+            "D4F-E38-002"
           ]
         }
       }
@@ -5397,8 +6219,8 @@
     }
   },
   "stats": {
-    "total_docs": 67,
-    "total_guides": 19,
+    "total_docs": 74,
+    "total_guides": 23,
     "per_model": {
       "e28": 7,
       "e30": 2,
@@ -5410,7 +6232,8 @@
       "e87": 8,
       "e88": 6,
       "e90": 3,
-      "f-series": 2
+      "f-series": 2,
+      "f15": 7
     }
   }
 }

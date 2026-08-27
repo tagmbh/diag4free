@@ -1,0 +1,142 @@
+{
+  "model": "f15",
+  "docs": [
+    {
+      "id": "D4F-F15-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F15/F16 — ENET statt K-Line",
+      "valid": "F15/F16 · 2013–2018 · alle Motoren",
+      "summary": "Der F15 spricht Diagnose über Ethernet an der OBD-Buchse. K-Line und die alten INPA-Kabel erreichen hier kein Steuergerät mehr. Was das für Kabel, Software und Datenstand bedeutet.",
+      "points": [
+        "ENET-Kabel verwenden: RJ45 auf OBD, kein K+DCAN-Adapter",
+        "Ethernet wird erst mit KL15 aktiv — Zündung ein, sonst kommt keine Verbindung zustande",
+        "Feste IP oder APIPA am Notebook, WLAN und VPN während der Sitzung aus",
+        "Generisches OBD-2 sieht nur die Motorsteuerung — Fahrwerk, VTG und SCR antworten darauf nicht",
+        "Datenstand nie nach Versionsnummer aus dem Netz wählen, sondern gegen den ausgelesenen I-Level des Fahrzeugs",
+        "Werkstattladegerät anhängen, bevor irgendein Schreibvorgang beginnt"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Ethernet TX+",
+        "OBD2 Pin 11 · Ethernet TX-",
+        "OBD2 Pin 12 · Ethernet RX+",
+        "OBD2 Pin 13 · Ethernet RX-",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 4/5 · Masse"
+      ],
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "article": "enet-zugang.md",
+      "details": ["D4F-F15-002"]
+    },
+    {
+      "id": "D4F-F15-002",
+      "type": "GUIDE",
+      "cat": "Identifikation",
+      "title": "Motor- und Steuergerätezuordnung im F15/F16",
+      "valid": "F15/F16 · 2013–2018",
+      "summary": "Welcher Motor in welchem X5/X6 sitzt, welches Motorsteuergerät dazugehört und warum die Modellbezeichnung am Heck dafür nicht reicht. Grundlage für jede Teilebestellung und jede Datenstandsauswahl.",
+      "points": [
+        "Motorcode am Kurbelgehäuse ablesen, nicht vom Typschild am Heck ableiten",
+        "Benziner: 35i mit Reihensechszylinder-Turbo, 50i mit V8-Bi-Turbo im Hot-V, M-Ausführung mit eigenem V8",
+        "Vierzylinder-Benziner tritt im F15 nur im Plug-in-Hybrid auf — dort hängt Hochvolttechnik mit dran",
+        "Diesel: die Zahl der Ladergehäuse trennt die Ausbaustufen sicherer als jede Typbezeichnung",
+        "Vor der Ersatzteilsuche die vollständige Motorkennung nehmen — dieselbe Grundkennung gibt es mit einem, zwei und drei Ladern",
+        "Der Fahrzeugkatalog dieser App führt für den F15 auch den B57 — am Fahrzeug gegenprüfen, siehe Artikel"
+      ],
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "article": "motorzuordnung.md",
+      "details": ["D4F-F15-001", "D4F-F15-007"]
+    },
+    {
+      "id": "D4F-F15-003",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "Luftfederung im F15 — Ausstattung erkennen und Fehler eingrenzen",
+      "valid": "F15/F16 · nur Fahrzeuge mit Luftfederung",
+      "summary": "Der F15 fährt je nach Ausstattung mit Stahlfedern, mit Niveauregulierung nur hinten oder mit Luftfederung an beiden Achsen. Welche Variante vorliegt, entscheidet die halbe Diagnose — deshalb steht sie am Anfang.",
+      "points": [
+        "Zuerst die Ausstattung feststellen: Luftbalg oder Stahlfeder je Achse, dann die Zahl der Niveaugeber zählen",
+        "Absacken über Nacht ist eine Undichtigkeit, Absacken im Fahrbetrieb eher Regelung oder Ventilblock",
+        "Kompressor niemals dauerlaufen lassen — eine unentdeckte Leckage bringt ihn thermisch um",
+        "Seitenvergleich statt Sollwert: linke gegen rechte Seite, gemessene Höhe gegen die andere Achsseite",
+        "Ventilblock und Kompressor bilden bei diesem Fahrzeug eine Einheit — Fehler getrennt betrachten, Teil gemeinsam bewerten",
+        "Nach jedem Eingriff am Fahrwerk die Niveauregelung neu abgleichen, sonst regelt das System auf einen falschen Bezug"
+      ],
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "article": "luftfederung-ehc.md",
+      "details": ["D4F-F15-006"]
+    },
+    {
+      "id": "D4F-F15-004",
+      "type": "TEST",
+      "cat": "Antrieb",
+      "title": "xDrive-Verteilergetriebe: Stellmotor, Kalibrierung, Ölservice",
+      "valid": "F15/F16 · Fahrzeuge mit xDrive",
+      "summary": "Das Verteilergetriebe des F15 verteilt das Moment über eine elektrisch angesteuerte Lamellenkupplung. Stellmotor, Steuergerät und Kalibrierwert bilden eine Kette — fällt ein Glied aus, sieht das Fehlerbild jedes Mal ähnlich aus.",
+      "points": [
+        "Erst Sicherung und Steckverbinder am Stellmotor prüfen, bevor das Steuergerät verdächtigt wird",
+        "Keine Kommunikation mit dem VTG-Steuergerät ist ein Versorgungs- und Busbefund, kein Getriebebefund",
+        "Nach jedem Eingriff am Verteilergetriebe die Kalibrierung neu durchführen — sonst regelt die Kupplung gegen alte Verschleißwerte",
+        "Ölservice und Kalibrierung liegen in der Diagnosesoftware unter den Servicefunktionen des Antriebs",
+        "Ruckeln in engen Kurven bei langsamer Fahrt gehört in die Bewertung der Kupplung, nicht in die Motordiagnose",
+        "Vor dem Tausch den Stellmotor gegen den bekannten Bewegungsbereich prüfen, nicht gegen eine Zahl aus dem Netz"
+      ],
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "article": "vtg-xdrive.md",
+      "details": ["D4F-F15-002"]
+    },
+    {
+      "id": "D4F-F15-005",
+      "type": "TEST",
+      "cat": "Abgas",
+      "title": "SCR- und AdBlue-Dosierung beim F15-Diesel",
+      "valid": "F15/F16 · Sechszylinder-Diesel mit SCR",
+      "summary": "Der Diesel-F15 trägt einen eigenen Reduktionsmittelkreis mit Tank, beheizter Leitung und Dosiereinheit vor dem SCR-Katalysator. Die meisten Fehlerbilder stammen aus der Beheizung oder der Befüllung, nicht aus dem Katalysator.",
+      "points": [
+        "Vor jeder Bauteilsuche klären, was eingefüllt wurde — eine Fehlbefüllung erzeugt Fehler an mehreren Stellen gleichzeitig",
+        "Beheizung von Tank, Leitung und Dosiereinheit als eigene Baugruppe betrachten, sie fällt bevorzugt im Winter auf",
+        "Leitungsheizung im kalten Zustand prüfen und gegen einen bekannt guten Kreis vergleichen",
+        "Nach Arbeiten am Reduktionsmittelkreis die Adaptionen des SCR-Systems zurücksetzen",
+        "Startsperre nach Ablauf der Restreichweite einplanen — das Fahrzeug nicht ungefüllt abstellen und liegen lassen",
+        "Kristallisation an Dosiereinheit und Anschlüssen ist ein Sichtbefund und gehört vor jede elektrische Messung"
+      ],
+      "engines": ["N57", "B57"],
+      "article": "scr-adblue.md",
+      "details": ["D4F-F15-002"]
+    },
+    {
+      "id": "D4F-F15-006",
+      "type": "FUB",
+      "cat": "Karosserie",
+      "title": "Anhängerbetrieb im F15: Modul, Erkennung und Folgefunktionen",
+      "valid": "F15/F16 · mit werkseitiger oder nachgerüsteter Anhängevorrichtung",
+      "summary": "Am Anhängerbetrieb hängen mehr Systeme als die Steckdose: Einparkhilfe, Anhängerstabilisierung, Niveauregelung und Rückfahrkamera werten die Erkennung mit aus. Fehlt sie, zeigen mehrere Systeme gleichzeitig ein falsches Verhalten.",
+      "points": [
+        "Symptom zuerst richtig einordnen: mehrere Assistenzsysteme gleichzeitig auffällig heißt Erkennung, nicht Beleuchtung",
+        "Anhängermodul muss in der Steuergeräteliste erscheinen, bevor über Codierung nachgedacht wird",
+        "Nachrüstsätze ohne Fahrzeugauftragseintrag werden erkannt, aber die Folgefunktionen bleiben aus",
+        "Beleuchtungsausgänge einzeln gegen den Anhänger prüfen — die Erkennung hängt an der Last dieser Ausgänge",
+        "Bei Fahrzeugen mit Luftfederung den Anhängerbetrieb immer zusammen mit der Niveauregelung bewerten"
+      ],
+      "engines": ["N55", "N57", "N63", "B57", "S63"],
+      "details": ["D4F-F15-003", "D4F-F15-001"]
+    },
+    {
+      "id": "D4F-F15-007",
+      "type": "TOOL",
+      "cat": "Sicherheit",
+      "title": "xDrive40e: Hochvoltanteil vor jeder Diagnose klären",
+      "valid": "F15 · Plug-in-Hybrid mit Vierzylinder-Benziner",
+      "summary": "Der einzige Vierzylinder-Benziner im F15 sitzt im Plug-in-Hybrid. Damit kommen Hochvoltspeicher, Leistungselektronik und ein eigenes Speichermanagement dazu — und damit Regeln, die für die übrigen F15 nicht gelten.",
+      "points": [
+        "Vor Arbeiten am Antrieb den Hochvoltanteil feststellen — das Typschild allein reicht dafür nicht",
+        "Arbeiten am Hochvoltsystem nur mit entsprechender Qualifikation und nach Freischaltung",
+        "Antriebsfehler können aus dem Speichermanagement kommen, obwohl die Meldung nach Motor aussieht",
+        "Diagnose über ENET wie beim übrigen F15 — die Zusatzsteuergeräte erscheinen zusätzlich in der Liste",
+        "Ladegerät am 12-V-Bordnetz bleibt Pflicht, unabhängig vom Ladestand des Hochvoltspeichers"
+      ],
+      "engines": ["N20"],
+      "details": ["D4F-F15-001", "D4F-F15-002"]
+    }
+  ]
+}

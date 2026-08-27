@@ -1,0 +1,184 @@
+{
+  "model": "e28",
+  "guides": {
+    "e28-crank-no-start": {
+      "code": "GF-E28-01",
+      "name": "E28 dreht, startet nicht",
+      "desc": "Der Anlasser dreht, der Motor kommt nicht. Reihenfolge ohne Fehlerspeicher: Anlasserkreis → Zündung → Kraftstoff → Kompression → Gemisch.",
+      "engines": ["M20", "M30", "S38"],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser den Motor zügig und gleichmäßig durch?",
+          "help": "Zündschlüssel auf Start, dabei auf die Drehzahl hören. Träges, schleppendes Drehen oder reines Klicken ist ein Versorgungsproblem und keine Motorstörung. Miss parallel die Batteriespannung direkt an den Polen, während jemand startet — bricht sie stark ein, suchst du am falschen Ende.",
+          "measure": "Der Motor dreht hörbar gleichmäßig auf Anlasserdrehzahl. Die Batteriespannung bricht während des Startversuchs nicht auf Werte ein, bei denen das Steuergerät abschaltet. Schleppendes Drehen oder Klicken zählt als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": 1,
+          "no": "anlasserkreis"
+        },
+        {
+          "q": "Springt am mittleren Zündkabel der Spule ein Funke über, wenn du startest?",
+          "help": "Mittleres Zündkabel aus der Verteilerkappe ziehen, mit einer isolierten Zange rund 5 mm vor einen blanken Massepunkt halten und cranken lassen. Nie in der Hand halten, nie über offenem Ansaugbereich prüfen, und vorher sicherstellen, dass kein Kraftstoff im Motorraum steht.",
+          "measure": "Kräftiger, regelmäßiger Überschlag bei Anlasserdrehzahl. Kein Funke oder nur vereinzelte schwache Überschläge zählen als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Fördert die Kraftstoffpumpe, während der Anlasser dreht?",
+          "help": "Zu zweit arbeiten: einer crankt, einer hört am Tank. Die Pumpe muss ein gleichmäßiges Surren abgeben. Bleibt es still, brücke am Relaissockel abgesichert den Lastpfad von Klemme 30 auf 87 und höre erneut hin.",
+          "measure": "Gleichmäßiges Laufgeräusch der Pumpe während des Startversuchs. Stille beim Cranken zählt als Nein, auch wenn die Pumpe mit Brücke am Relais läuft.",
+          "doc": "D4F-E28-005",
+          "yes": 4,
+          "no": "kraftstoffkreis"
+        },
+        {
+          "q": "Liegt an Klemme 15 der Zündspule Bordnetzspannung an?",
+          "help": "Zündung ein. Schwarze Messspitze an einen blanken Massepunkt am Motor, rote an Klemme 15 der Zündspule. Gemessen wird gegen Motormasse, nicht gegen den Spulenkörper. Vergleiche den Wert mit der direkt an der Batterie gemessenen Spannung.",
+          "measure": "An Klemme 15 steht bei Zündung ein die Bordnetzspannung, höchstens rund 0.5 V unter dem an der Batterie gemessenen Wert. Null Volt oder ein deutlich eingebrochener Wert zählt als Nein.",
+          "doc": "D4F-E28-006",
+          "yes": "zuendkreis",
+          "no": "kl15"
+        },
+        {
+          "q": "Ist die Kompression über alle sechs Zylinder gleichmäßig?",
+          "help": "Alle Kerzen ziehen, Kraftstoffpumpe stromlos legen, Drosselklappe offen halten und jeden Zylinder gleich lang durchdrehen. Es geht hier nicht um einen Absolutwert, sondern um die Streuung zwischen den Zylindern — die ist auch ohne Herstellervorgabe aussagekräftig.",
+          "measure": "Alle sechs Werte liegen dicht beieinander. Ein einzelner deutlich abfallender Zylinder oder ein über alle Zylinder gleichmäßig sehr niedriges Niveau — Hinweis auf übersprungenen Steuertrieb — zählt als Nein.",
+          "doc": "D4F-E28-002",
+          "yes": 5,
+          "no": "steuertrieb"
+        },
+        {
+          "q": "Läuft der Motor auf einen kurzen Stoß Starthilfespray für einige Umdrehungen an?",
+          "help": "Sehr sparsam in den offenen Ansaugtrakt geben und sofort starten. Der Test trennt zwei Fälle: kommt der Motor kurz, fehlt ihm Gemisch, obwohl Zündung und Mechanik stimmen. Bleibt er tot, stimmt eine der Voraussetzungen doch nicht. Nicht wiederholt anwenden — der Motor mag das nicht.",
+          "measure": "Der Motor zündet hörbar und läuft einige Umdrehungen, bevor er wieder ausgeht. Keinerlei Reaktion zählt als Nein.",
+          "doc": "D4F-E28-002",
+          "yes": "gemischbildung",
+          "no": "grundlagen-neu"
+        }
+      ]
+    },
+    "e28-diagnosezugang": {
+      "code": "GF-E28-02",
+      "name": "Kein Kontakt zum Steuergerät",
+      "desc": "Das Diagnosegerät meldet sich nicht. Erst den Stecker identifizieren, dann seine Versorgung prüfen, erst danach über Protokoll und Software nachdenken.",
+      "engines": ["M20", "M30", "S38"],
+      "steps": [
+        {
+          "q": "Sitzt im Motorraum ein runder, 20-poliger Stecker mit aufgeschraubter Kappe?",
+          "help": "Der Anschluss steht meist aufrecht in der Nähe des Federbeindoms. Nimm die Kappe ab und zähle die Kontakte. Rund mit Schraub- oder Bajonettkappe und zwanzig Kontakten ist der späte Stand, ein flacher D-förmiger Stecker mit Schnappkappe der frühe.",
+          "measure": "Runde Bauform, zwanzig Kontakte, Kappe wird geschraubt. Alles andere zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 2,
+          "no": 1
+        },
+        {
+          "q": "Ist es stattdessen ein D-förmiger Stecker mit fünfzehn Kontakten und Schnappkappe?",
+          "help": "Flache, an einer Seite abgeflachte Bauform. Fünfzehn Kontakte, die Kappe rastet auf statt zu schrauben. Dieser Anschluss gehört zum frühen Steuergerätestand und nimmt die üblichen Rundadapter nicht auf.",
+          "measure": "D-förmige Bauform mit fünfzehn Kontakten. Findest du gar keinen Anschluss oder eine dritte Bauform, zählt das als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 2,
+          "no": "stecker-unbekannt"
+        },
+        {
+          "q": "Hat einer der Kontakte sauberen Durchgang gegen Motormasse?",
+          "help": "Batterie muss dafür nicht ab. Ein Messkabel an einen blanken Massepunkt am Motor, mit dem anderen die Kontakte der Reihe nach antippen und den Kontakt notieren, der Durchgang zeigt. Verlass dich nicht auf eine Pinnummer aus einer Tabelle — die Zählung unterscheidet sich zwischen den beiden Steckerformen.",
+          "measure": "Genau ein Kontakt zeigt praktisch widerstandslosen Durchgang gegen Motormasse. Kein solcher Kontakt zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 3,
+          "no": "masse-fehlt"
+        },
+        {
+          "q": "Liegt an einem der Kontakte Dauerplus an, auch ohne Zündung?",
+          "help": "Schwarze Messspitze auf den zuvor gefundenen Massekontakt, mit der roten die übrigen Kontakte abgehen. Zündschlüssel dabei abgezogen. Der Kontakt, der ohne Zündung Bordnetzspannung führt, ist die Dauerversorgung.",
+          "measure": "Ein Kontakt führt Bordnetzspannung bei abgezogenem Schlüssel, bei geladener Batterie rund 12.6 V im Ruhezustand. Kein solcher Kontakt zählt als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 4,
+          "no": "dauerplus-fehlt"
+        },
+        {
+          "q": "Kommt an einem weiteren Kontakt Spannung, sobald du die Zündung einschaltest, und verschwindet sie beim Ausschalten sofort wieder?",
+          "help": "Gleiche Messanordnung, jetzt mit eingeschalteter Zündung. Achte darauf, dass die Spannung sprunghaft kommt und beim Ausschalten sofort weg ist. Eine langsam absinkende Spannung deutet auf einen schlechten Kontakt im Zündschloss oder einen korrodierten Sicherungshalter.",
+          "measure": "Sprunghaftes Kommen und Gehen der Bordnetzspannung mit dem Zündschloss. Bleibt jeder Kontakt tot, zählt das als Nein.",
+          "doc": "D4F-E28-001",
+          "yes": 5,
+          "no": "kl15-diag"
+        },
+        {
+          "q": "Meldet sich das Steuergerät jetzt auf ein Diagnosegerät mit passendem Adapter?",
+          "help": "Erst jetzt anstecken. Adapter vorher durchklingeln und die Zuordnung notieren. Software wählen, die das BMW-eigene Protokoll spricht — ein Generic-OBD-2-Scanner bleibt an diesem Fahrzeug stumm, auch wenn der Stecker mechanisch passt.",
+          "measure": "Das Gerät baut eine Verbindung auf und liefert wenigstens eine Identifikation des Steuergeräts. Zeitüberschreitung oder Dauerfehler zählt als Nein.",
+          "doc": "D4F-E28-007",
+          "yes": "zugang-steht",
+          "no": "protokoll"
+        }
+      ]
+    }
+  },
+  "results": {
+    "anlasserkreis": {
+      "title": "Versorgung und Anlasserkreis in Ordnung bringen",
+      "text": "Der Motor wird nicht sauber durchgedreht, damit ist jede weitere Motordiagnose wertlos. Batterie laden und unter Last prüfen, Batterie- und Massebänder abnehmen, Kontaktflächen blank machen und nachziehen, danach die Klemme 50 am Anlasser während des Startversuchs messen. Erst wenn der Motor zügig dreht, den Pfad von vorn durchlaufen.",
+      "next_docs": ["D4F-E28-006"]
+    },
+    "kraftstoffkreis": {
+      "title": "Kraftstoffversorgung unterbrochen",
+      "text": "Die Pumpe fördert beim Cranken nicht. Läuft sie mit abgesicherter Brücke von Klemme 30 auf 87 am Relaissockel, liegt der Fehler in der Ansteuerung: Relais tauschweise ersetzen, Sockel und Steuerleitung prüfen. Bleibt sie auch mit Brücke still, sitzt der Fehler an Pumpe, Sicherung oder Steckverbindung am Tank. Danach den Pfad wiederholen.",
+      "next_docs": ["D4F-E28-005"]
+    },
+    "zuendkreis": {
+      "title": "Spannung liegt an — Fehler zwischen Spule und Kerze",
+      "text": "Klemme 15 wird versorgt, ein Funke kommt trotzdem nicht. Zündspule tauschweise durch eine bekannt gute ersetzen, Ansteuerleitung vom Steuergerät zur Spule auf Durchgang und auf Masseschluss messen, Verteilerkappe und Läufer auf Kriechspuren und Durchbrand prüfen. Sollwerte für die Spulenwicklungen sind hier nicht belegt, deshalb tauschweise arbeiten.",
+      "next_docs": ["D4F-E28-006", "D4F-E28-002"]
+    },
+    "kl15": {
+      "title": "Zündungsplus erreicht die Zündspule nicht",
+      "text": "Ohne Klemme 15 an der Spule kann keine Zündung entstehen. Zündschloss, zugehörige Sicherung und die Leitung bis zur Spule prüfen, Massepunkte am Motor reinigen und nachziehen. Erst danach hat eine Aussage über Spule oder Steuergerät Sinn — beide sind hier nur Verdächtige, solange die Versorgung fehlt.",
+      "next_docs": ["D4F-E28-006"]
+    },
+    "steuertrieb": {
+      "title": "Kompression ungleich — Mechanik prüfen",
+      "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M20 zuerst den Zahnriemen und seine Steuermarkierungen kontrollieren, beim M30 den Kettentrieb und die Gleitschienen. Einzelner abfallender Zylinder heißt Ventil, Kolbenringe oder Kopfdichtung: nass gegenprüfen und die Nachbarzylinder als Maßstab nehmen.",
+      "next_docs": ["D4F-E28-002"]
+    },
+    "gemischbildung": {
+      "title": "Gemischbildung liefert nichts",
+      "text": "Der Motor läuft auf Fremdgemisch an, also stimmen Zündung und Mechanik. Jetzt gehört die Gemischbildung geprüft: Einspritzventile auf Ansteuerung und Dichtheit, Systemdruck und Druckhaltung, Luftmengen- beziehungsweise Luftmassenmesser und alle Unterdruckschläuche auf Falschluft. Nach jedem Eingriff neu starten und den Erfolg einzeln bewerten.",
+      "next_docs": ["D4F-E28-005", "D4F-E28-002"]
+    },
+    "grundlagen-neu": {
+      "title": "Keine Reaktion — Voraussetzungen neu prüfen",
+      "text": "Der Motor zeigt selbst mit Fremdgemisch keine Zündung. Damit stimmt eine der bereits geprüften Voraussetzungen doch nicht. Funkenprobe an mehreren Kerzen wiederholen statt nur am mittleren Kabel, Zündfolge und Verteilerstellung kontrollieren und die Kompressionsmessung mit warmem Motor wiederholen. Danach den Pfad noch einmal von vorn durchlaufen.",
+      "next_docs": ["D4F-E28-006", "D4F-E28-002"]
+    },
+    "stecker-unbekannt": {
+      "title": "Steckerform nicht zuzuordnen",
+      "text": "Weder runder 20-poliger noch D-förmiger 15-poliger Anschluss gefunden. Suche den Anschluss zuerst an den üblichen Stellen im Motorraum, meist nahe dem Federbeindom unter einer Kappe. Bleibt es dabei, ordne das Fahrzeug über Motornummer und Steuergerätestand zu und arbeite mit reiner Messdiagnose weiter, statt einen Adapter zu raten.",
+      "next_docs": ["D4F-E28-001", "D4F-E28-002"]
+    },
+    "masse-fehlt": {
+      "title": "Keine Masse am Diagnosestecker",
+      "text": "Ohne Bezugsmasse ist jede Messung am Stecker und jede Kommunikation wertlos. Kontakte trocken reinigen, Grünspan entfernen und aufgeweitete Buchsen nachsetzen, danach die Masseleitung des Steckers zum Karosserie- oder Motormassepunkt verfolgen und diesen Punkt blank machen. Anschließend die Messung wiederholen.",
+      "next_docs": ["D4F-E28-001"]
+    },
+    "dauerplus-fehlt": {
+      "title": "Dauerversorgung fehlt am Stecker",
+      "text": "Ein angeschlossenes Gerät bekommt keinen Strom. Zugehörige Sicherung prüfen und die Leitung vom Stecker zurück in Richtung Batterie verfolgen; Übergangsstellen und Steckverbindungen sind nach Jahrzehnten die üblichen Stellen. Bis zur Instandsetzung ein Gerät nicht ersatzweise anderweitig versorgen, ohne die Masseverhältnisse zu kennen.",
+      "next_docs": ["D4F-E28-001"]
+    },
+    "kl15-diag": {
+      "title": "Zündungsplus erreicht den Stecker nicht",
+      "text": "Ohne geschaltetes Plus wacht das Steuergerät für die Diagnose nicht auf. Zündschloss und Zündungssicherung prüfen, Sicherungshalter auf Korrosion ansehen und die Leitung bis zum Diagnosestecker durchmessen. Kommt die Spannung nur langsam oder schwankend, ist das ein Übergangswiderstand und kein Steuergerätefehler.",
+      "next_docs": ["D4F-E28-001"]
+    },
+    "protokoll": {
+      "title": "Versorgung steht, Verbindung kommt trotzdem nicht",
+      "text": "Alle elektrischen Voraussetzungen sind erfüllt. Prüfe jetzt Adapter und Software: Adapter durchklingeln und die Zuordnung des Datenpaars gegen deine Notiz halten, danach die Software auf ein Protokoll umstellen, das dem Steuergerätestand entspricht. Bleibt es dabei, arbeite über Messdiagnose weiter — ein stummer Bus ersetzt keine Prüfung am Bauteil.",
+      "next_docs": ["D4F-E28-007", "D4F-E28-003"]
+    },
+    "zugang-steht": {
+      "title": "Diagnosezugang steht",
+      "text": "Die Verbindung ist aufgebaut. Lies zuerst die Identifikation des Steuergeräts aus und notiere sie mitsamt Steckerform — beides zusammen bestimmt, welche Prozeduren an diesem Fahrzeug überhaupt gelten. Erst danach den Fehlerspeicher auslesen und die Einträge einzeln gegen eine Messung am Bauteil bestätigen.",
+      "next_docs": ["D4F-E28-003", "D4F-E28-002"]
+    }
+  }
+}
