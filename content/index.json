@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:56:56.089Z",
+  "generated": "2026-08-27T05:57:12.495Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -2850,7 +2850,7 @@
       "type": "GUIDE",
       "cat": "N52 · Motor",
       "title": "N52B30 im E88 · Diagnose-Setup und Typen-Vielfalt",
-      "valid": "E88 125i/128i/130i/135i-Umfeld · N52B30",
+      "valid": "E88 · N52B30 · 125i/128i",
       "summary": "Der N52 im E88 kommt in mehreren Leistungsstufen (N52B30 O0/M0/U0) mit gleicher Grund-Mechanik aber unterschiedlicher DME-Kalibrierung. MSV80 (früh) bzw. MSV90 (spät) mit Valvetronic-2 und Doppel-VANOS. Wichtige Diagnose-Einstiegspunkte.",
       "points": [
         "Kein DISA-Ventil wie beim N46 — Luftmasse wird über Valvetronic-Exzenterwelle statt Drosselklappe geregelt",
@@ -2861,12 +2861,11 @@
         "Ansaugbrücke Kunststoff mit Klappensteller (Resonanzklappe) — Ausfall führt zu P1004/P1005"
       ],
       "pins": [
-        "MSV80 X60001 Pin 87 · MAF-Signal (Heißfilm HFM7)",
-        "MSV80 X60002 Pin 1/2 · Lambda vor Kat B1S1",
-        "MSV80 X60003 Pin 22 · VANOS Solenoid Einlass",
-        "MSV80 X60003 Pin 23 · VANOS Solenoid Auslass",
-        "MSV80 X60002 Pin 45 · Valvetronic-Motor Ansteuerung",
-        "MSV80 X60001 Pin 16 · Kühlmittelpumpe PWM"
+        "MSV80-Steckerblock, nach einer Quelle: X60001 26 (grau) · X60002 26 · X60003 6 · X60004 6 · X60005 44 Pole — Polzahl am Fahrzeug nachzählen",
+        "Jeder Stecker zählt eigenständig ab Pin 1 — eine Pinnummer ohne Steckerangabe zeigt auf nichts",
+        "Die früher hier genannten Pins 87, 45 und 22/23 gibt es an den genannten Steckern nicht; sie stammten aus einer durchlaufenden Zählung über den ganzen Block",
+        "MAF, Lambdasonde, VANOS-Solenoide, Valvetronic-Motor, Kühlmittelpumpe: Pinnummern hier nicht belegt",
+        "Zuordnung am Fahrzeug bestimmen: Stecker am Bauteil abziehen, Pole am DME-Stecker zählen, Ader durchklingeln"
       ],
       "engines": [
         "N52"
