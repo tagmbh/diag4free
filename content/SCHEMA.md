@@ -46,7 +46,7 @@ Build-Skript `scripts/build-index.mjs` aggregiert alles zu `content/index.json`.
 | `engines` | string[] | – | Motor-Filter; leer = gilt für alle Motoren des Modells |
 | `url` | string | – | Nur BMW-eigene Ziele (`static.bmw.com`). Alles andere lehnt der Validator ab |
 | `article` | string | – | Pfad zu ausführlichem Markdown-Artikel |
-| `details` | string[] | – | Doc-IDs, die das Thema vertiefen — der Weg tiefer statt nach draussen |
+| `details` | string[] | – | Doc-IDs, die das Thema vertiefen — der Weg tiefer statt nach draußen |
 | `obd` | object | – | Vorbereitung Live-OBD-Anbindung (siehe unten) |
 
 ### Warum es kein `sources` mehr gibt
