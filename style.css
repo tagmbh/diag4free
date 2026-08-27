@@ -1383,6 +1383,25 @@
   color: var(--color-primary);
 }
 .pick-art svg { width: 100%; height: auto; max-height: 92px; }
+
+/* Fahrzeugbild — Foto ueber Zeichnung.
+   Das freigestellte Seitenfoto liegt absolut ueber der gerechneten
+   Silhouette und verdeckt sie. Verdecken statt ausblenden ist Absicht:
+   faellt das Bild aus (404, kein webp, onerror), steht die Zeichnung
+   sofort wieder da, ohne dass Javascript etwas umschalten muss.
+   Der Verlauf am Fuss nimmt den hellen Bodenstreifen aus dem Render
+   heraus, der im dunklen Thema sonst als Balken unter dem Auto steht. */
+.veh-art { position: relative; display: block; width: 100%; }
+.veh-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0 87%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0 87%, transparent 100%);
+}
 .pick-art-empty {
   display: grid;
   place-items: center;

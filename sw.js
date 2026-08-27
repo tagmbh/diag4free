@@ -6,7 +6,7 @@
      - Navigation: network-first mit App-Shell-Fallback (SPA)
 */
 
-const VERSION = 'd4f-v0.9.0';
+const VERSION = 'd4f-v0.10.0';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const VENDOR_CACHE = `${VERSION}-vendor`;
@@ -39,10 +39,22 @@ const VENDOR_ORIGINS = [
   'https://fonts.gstatic.com'
 ];
 
+// Freigestellte Fahrzeugfotos. Bewusst nicht in SHELL_ASSETS: addAll ist
+// alles-oder-nichts, ein einziges fehlendes Bild wuerde den ganzen
+// Vorrat kippen und die App offline unbrauchbar machen. Diese hier
+// duerfen einzeln fehlschlagen — dann zeichnet graphics.js die Silhouette.
+const BILD_ASSETS = [
+  'e28', 'e30', 'e34', 'e36', 'e38', 'e39', 'e46', 'e60', 'e70',
+  'e87', 'e88', 'e90', 'f10', 'f15', 'f22', 'f30'
+].map(id => `./assets/fahrzeuge/${id}.webp`);
+
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(SHELL_CACHE)
-      .then(cache => cache.addAll(SHELL_ASSETS))
+      .then(async cache => {
+        await cache.addAll(SHELL_ASSETS);
+        await Promise.all(BILD_ASSETS.map(u => cache.add(u).catch(() => {})));
+      })
       .then(() => self.skipWaiting())
   );
 });

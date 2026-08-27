@@ -68,14 +68,21 @@ pro Form eine Silhouette — alle Limousinen von 1981 bis 2019 teilten sich
 dieselbe. Das ist schlechter als keine Grafik, weil es Unterscheidbarkeit
 vortäuscht.
 
-Anforderung, inzwischen umgesetzt: Jede Baureihe ist an ihrer Silhouette
+Erster Schritt, umgesetzt: Jede Baureihe ist an ihrer Silhouette
 erkennbar — Epoche, Karosserieform und Proportion stimmen, gerechnet aus
-echten Fahrzeugmassen. Bei den Motorschemata gilt zusätzlich, dass nur
-gezeichnet wird, was `content/engines.json` belegt.
+echten Fahrzeugmassen.
 
-> Fotorealistische Renderings bleiben das Ziel. Der Weg dorthin ist
-> derzeit blockiert (die Bild-CDN wird vom Egress-Proxy abgewiesen). Bis
-> dahin gilt: gezeichnet, aber richtig gezeichnet.
+Zweiter Schritt, ebenfalls umgesetzt: Alle sechzehn Baureihen tragen ein
+freigestelltes fotorealistisches Seitenprofil (`assets/fahrzeuge/*.webp`,
+zusammen rund 120 kB). Es liegt über der Zeichnung, nicht an ihrer Stelle —
+fällt es aus, steht die Silhouette sofort wieder da, ohne dass Javascript
+etwas umschalten muss. Ein Eintrag in `D4F_GFX.fotos` ohne Datei daneben
+ist ein Befund der Stufe „hoch" in `scripts/audit.mjs`.
+
+Bei den Motorschemata gilt weiterhin, dass nur gezeichnet wird, was
+`content/engines.json` belegt. Ein generiertes „Foto" eines N54 wäre ein
+erfundener Motor; die Zeichnung dagegen ist überprüfbar. Fotorealistische
+Motorbilder sind damit **nicht** abgeschlossen, sondern bewusst offen.
 
 ## Abkürzungen
 
@@ -105,7 +112,7 @@ liegt jede neue Funktion in einer eigenen Datei mit klarem Vertrag.
 
 | Baustein | Dateien | Vertrag |
 |---|---|---|
-| Grafiken | `graphics.js` | `window.D4F_GFX.vehicleSvg(body, era, seriesId)`, `.engineSvg(layout, aspiration, engineId)` — SVG-String |
+| Grafiken | `graphics.js`, `assets/fahrzeuge/` | `window.D4F_GFX.vehicleArt(body, era, seriesId)` — Foto über Zeichnung, `.vehicleSvg(…)` — nur Zeichnung, `.engineSvg(layout, aspiration, engineId)`, `.formen`, `.baureihen`, `.fotos` |
 | Glossar | `glossar.js`, `glossar.css`, `content/glossar.json` | `window.Glossar.markup(text)`, `.open(term)`, `.has(term)` |
 | Symptome | `symptome.js`, `symptome.css`, `content/symptome.json` | `window.Symptome.render(el, ctx)`, `.suggest(ids, ctx)` |
 | Rahmen | `app.js`, `index.html`, `style.css`, `mobile.css` | Projektlead |
@@ -130,6 +137,8 @@ CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome \
 Was die Abnahme inzwischen festhält, damit es nicht zurückfällt:
 
 - Fahrzeugkarten zeigen verschiedene Silhouetten
+- Jede Fahrzeugkarte trägt ein Foto, das wirklich lädt, und darunter
+  weiterhin die Zeichnung
 - Browser-Zurück bleibt in der App, ein Neuladen im Pfad landet an
   derselben Frage
 - Tastaturfokus zeichnet einen eigenen Ring, nicht denselben wie Hover

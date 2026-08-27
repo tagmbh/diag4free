@@ -670,7 +670,7 @@
             const n = state.data.docs.filter(d => d.model === m.id).length;
             const era = /19[89]/.test(m.years) ? 'classic' : 'modern';
             return `<button class="pick-card" data-pick-model="${escapeHtml(m.id)}" aria-label="${escapeHtml(m.name)}, ${escapeHtml(m.years)}">
-              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era, m.id)}</div>
+              <div class="pick-art">${D4F_GFX.vehicleArt(m.body, era, m.id)}</div>
               <div class="pick-body">
                 <span class="pick-name">${escapeHtml(m.name)}</span>
                 <span class="pick-sub">${escapeHtml(m.years)} · ${escapeHtml(bodyLabel(m.body))}</span>
@@ -697,7 +697,7 @@
     return `
       <div class="cockpit">
         <button class="cockpit-veh" data-restart-pick aria-label="Anderes Fahrzeug wählen">
-          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era, model.id)}</div>
+          <div class="pick-art">${D4F_GFX.vehicleArt(model.body, era, model.id)}</div>
           <div class="cockpit-veh-body">
             <span class="pick-name">${escapeHtml(model.name)}</span>
             <span class="pick-sub">${escapeHtml(model.years)} · ${escapeHtml(model.desc)}</span>

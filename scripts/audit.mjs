@@ -45,6 +45,18 @@ const kenntForm = (form) => FORMEN.includes(form);
 // Zeichnung.
 const BAUREIHEN_GFX = Array.isArray(GFX.baureihen) ? GFX.baureihen : [];
 
+// Dritter Teil des Vertrags: Wer in graphics.js als `fotos` gelistet ist,
+// bekommt statt der Zeichnung ein freigestelltes Seitenfoto vorgeblendet.
+// Steht der Eintrag ohne Datei da, laedt der Browser ins Leere. Sichtbar
+// waere davon nichts — das onerror raeumt das Bild weg und die Zeichnung
+// bleibt stehen. Genau deshalb muss es hier auffallen.
+const FOTOS_GFX = Array.isArray(GFX.fotos) ? GFX.fotos : [];
+for (const id of FOTOS_GFX) {
+  if (!await gibt(join('assets', 'fahrzeuge', `${id}.webp`))) {
+    melde('graphics.js', id, 'hoch', `als Foto gelistet, aber assets/fahrzeuge/${id}.webp fehlt`);
+  }
+}
+
 const models = await lies(join(CONTENT, 'models.json'));
 const genutzt = new Set();
 const alleModelle = [];

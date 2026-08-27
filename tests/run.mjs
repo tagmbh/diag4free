@@ -477,6 +477,26 @@ async function main() {
           `${formen.length} Pfade, davon nur ${new Set(formen).size} verschieden`);
       }
 
+      // --- Fahrzeugfotos: gefordert war "keine Stichzeichnungen" ---
+      // Zwei Dinge muessen stimmen, und beide sind schon einmal getrennt
+      // schiefgegangen: das Bild muss im Markup stehen UND es muss wirklich
+      // ankommen. Ein 404 sieht hier nach nichts aus, weil onerror das Bild
+      // wegraeumt und die Zeichnung darunter stehen bleibt — deshalb wird
+      // naturalWidth gefragt und nicht nur gezaehlt.
+      const fotos = await page.$$eval('.pick-card .veh-photo',
+        ns => ns.map(n => ({ src: n.getAttribute('src'), breite: n.naturalWidth })));
+      expect(fotos.length > 4,
+        'Fahrzeugkarten tragen ein Foto', `nur ${fotos.length} Bilder gefunden`);
+      const kaputt = fotos.filter(f => !f.breite).map(f => f.src);
+      expect(kaputt.length === 0,
+        'Alle Fahrzeugfotos laden wirklich', `nicht geladen: ${kaputt.join(', ')}`);
+      // Die Zeichnung bleibt als Rueckfall im Markup — wer sie herauswirft,
+      // nimmt der App das Bild auf jedem Browser ohne webp.
+      const mitSvg = await page.$$eval('.pick-card .veh-art svg', ns => ns.length);
+      expect(mitSvg >= fotos.length,
+        'Unter jedem Foto liegt weiterhin die Zeichnung',
+        `${fotos.length} Fotos, aber nur ${mitSvg} Zeichnungen`);
+
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
       await page.goto(BASE + '/#/measure', { waitUntil: 'domcontentloaded' });
       await settle(page, 1300);
