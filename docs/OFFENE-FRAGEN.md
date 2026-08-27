@@ -87,6 +87,23 @@ niemand mehr.
   Pin 6 und Pin 14. Im Inhalt steht die Mehrheitsangabe, der Widerspruch
   daneben.
 
+## Erledigt: B57 gehoert nicht in den F15
+
+`models.json` fuehrte den B57 in der Motorliste des F15. Der Agent, der die
+Baureihe geschrieben hat, ist beim Recherchieren darauf gestossen, hat den
+Filter aber **nicht** eigenmaechtig geaendert, sondern den Widerspruch
+gemeldet — richtig entschieden, das ist eine Katalogfrage.
+
+Nachgeprueft: der F15 lief 2013 bis 2018 durchgehend mit dem N57, der B57
+kam erst mit der Nachfolgegeneration. Zwei unabhaengige Befunde.
+
+Der B57 ist damit aus der Motorliste des F15 und aus den Filtern des
+F15-Inhalts entfernt. Sein Steckbrief bleibt bestehen — er ist inhaltlich
+richtig und dient der Abgrenzung gegen den N57 — traegt jetzt aber vorn den
+Hinweis, dass keine der hier gefuehrten Baureihen ihn verbaut. Das
+Zusammenfuehren meldet ihn folgerichtig als „Steckbrief ohne Fahrzeug"; der
+Hinweis ist zutreffend und bleibt stehen.
+
 ## Kategorie 3 — Motornummern
 
 Für die meisten Motoren steht nur „auf dem Block eingeschlagen". Eine

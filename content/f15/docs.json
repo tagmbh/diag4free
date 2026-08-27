@@ -24,9 +24,17 @@
         "OBD2 Pin 16 · KL30 Dauerplus",
         "OBD2 Pin 4/5 · Masse"
       ],
-      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "S63"
+      ],
       "article": "enet-zugang.md",
-      "details": ["D4F-F15-002"]
+      "details": [
+        "D4F-F15-002"
+      ]
     },
     {
       "id": "D4F-F15-002",
@@ -43,9 +51,18 @@
         "Vor der Ersatzteilsuche die vollständige Motorkennung nehmen — dieselbe Grundkennung gibt es mit einem, zwei und drei Ladern",
         "Der Fahrzeugkatalog dieser App führt für den F15 auch den B57 — am Fahrzeug gegenprüfen, siehe Artikel"
       ],
-      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "S63"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-F15-001", "D4F-F15-007"]
+      "details": [
+        "D4F-F15-001",
+        "D4F-F15-007"
+      ]
     },
     {
       "id": "D4F-F15-003",
@@ -62,9 +79,17 @@
         "Ventilblock und Kompressor bilden bei diesem Fahrzeug eine Einheit — Fehler getrennt betrachten, Teil gemeinsam bewerten",
         "Nach jedem Eingriff am Fahrwerk die Niveauregelung neu abgleichen, sonst regelt das System auf einen falschen Bezug"
       ],
-      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "S63"
+      ],
       "article": "luftfederung-ehc.md",
-      "details": ["D4F-F15-006"]
+      "details": [
+        "D4F-F15-006"
+      ]
     },
     {
       "id": "D4F-F15-004",
@@ -81,9 +106,17 @@
         "Ruckeln in engen Kurven bei langsamer Fahrt gehört in die Bewertung der Kupplung, nicht in die Motordiagnose",
         "Vor dem Tausch den Stellmotor gegen den bekannten Bewegungsbereich prüfen, nicht gegen eine Zahl aus dem Netz"
       ],
-      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "S63"
+      ],
       "article": "vtg-xdrive.md",
-      "details": ["D4F-F15-002"]
+      "details": [
+        "D4F-F15-002"
+      ]
     },
     {
       "id": "D4F-F15-005",
@@ -100,9 +133,13 @@
         "Startsperre nach Ablauf der Restreichweite einplanen — das Fahrzeug nicht ungefüllt abstellen und liegen lassen",
         "Kristallisation an Dosiereinheit und Anschlüssen ist ein Sichtbefund und gehört vor jede elektrische Messung"
       ],
-      "engines": ["N57", "B57"],
+      "engines": [
+        "N57"
+      ],
       "article": "scr-adblue.md",
-      "details": ["D4F-F15-002"]
+      "details": [
+        "D4F-F15-002"
+      ]
     },
     {
       "id": "D4F-F15-006",
@@ -118,8 +155,16 @@
         "Beleuchtungsausgänge einzeln gegen den Anhänger prüfen — die Erkennung hängt an der Last dieser Ausgänge",
         "Bei Fahrzeugen mit Luftfederung den Anhängerbetrieb immer zusammen mit der Niveauregelung bewerten"
       ],
-      "engines": ["N55", "N57", "N63", "B57", "S63"],
-      "details": ["D4F-F15-003", "D4F-F15-001"]
+      "engines": [
+        "N55",
+        "N57",
+        "N63",
+        "S63"
+      ],
+      "details": [
+        "D4F-F15-003",
+        "D4F-F15-001"
+      ]
     },
     {
       "id": "D4F-F15-007",
@@ -135,8 +180,13 @@
         "Diagnose über ENET wie beim übrigen F15 — die Zusatzsteuergeräte erscheinen zusätzlich in der Liste",
         "Ladegerät am 12-V-Bordnetz bleibt Pflicht, unabhängig vom Ladestand des Hochvoltspeichers"
       ],
-      "engines": ["N20"],
-      "details": ["D4F-F15-001", "D4F-F15-002"]
+      "engines": [
+        "N20"
+      ],
+      "details": [
+        "D4F-F15-001",
+        "D4F-F15-002"
+      ]
     }
   ]
 }

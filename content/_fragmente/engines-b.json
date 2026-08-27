@@ -9,12 +9,33 @@
       "aspiration": "Turbo",
       "displacement_cc": 1499,
       "years": "2013–",
-      "valvetrain": ["DOHC", "12V", "Valvetronic", "Doppel-VANOS"],
+      "valvetrain": [
+        "DOHC",
+        "12V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
       "power_variants": [
-        { "label": "116i (F20 LCI)", "ps": 109, "nm": 180 },
-        { "label": "118i · 218i · 318i", "ps": 136, "nm": 220 },
-        { "label": "118i (spätere Ausführung)", "ps": 140, "nm": 220 },
-        { "label": "i8 (Quereinbau, Mittelmotor)", "ps": 231, "nm": 320 }
+        {
+          "label": "116i (F20 LCI)",
+          "ps": 109,
+          "nm": 180
+        },
+        {
+          "label": "118i · 218i · 318i",
+          "ps": 136,
+          "nm": 220
+        },
+        {
+          "label": "118i (spätere Ausführung)",
+          "ps": 140,
+          "nm": 220
+        },
+        {
+          "label": "i8 (Quereinbau, Mittelmotor)",
+          "ps": 231,
+          "nm": 320
+        }
       ],
       "id_marks": [
         "Drei Zylinder: drei Zündspulen, drei Kerzenschächte im Ventildeckel. Das ist das schnellste und sicherste Unterscheidungsmerkmal gegenüber dem B48.",
@@ -39,12 +60,30 @@
       "aspiration": "Turbo",
       "displacement_cc": 1995,
       "years": "2014–",
-      "valvetrain": ["DOHC", "16V", "Common-Rail-Direkteinspritzung"],
+      "valvetrain": [
+        "DOHC",
+        "16V",
+        "Common-Rail-Direkteinspritzung"
+      ],
       "power_variants": [
-        { "label": "116d", "ps": 116 },
-        { "label": "118d", "ps": 150, "nm": 320 },
-        { "label": "320d · 520d", "ps": 190, "nm": 400 },
-        { "label": "125d · 225d · 325d · 425d", "ps": 224 }
+        {
+          "label": "116d",
+          "ps": 116
+        },
+        {
+          "label": "118d",
+          "ps": 150,
+          "nm": 320
+        },
+        {
+          "label": "320d · 520d",
+          "ps": 190,
+          "nm": 400
+        },
+        {
+          "label": "125d · 225d · 325d · 425d",
+          "ps": 224
+        }
       ],
       "id_marks": [
         "Vier Zylinder: vier Injektoren, vier Glühkerzen. Der B57 daneben hat sechs — das ist der Unterschied, den man im Motorraum ohne Werkzeug sieht. Beide Motoren teilen Bohrung, Hub und einen großen Teil der Anbauteile, äußerlich unterscheiden sie sich fast nur in der Baulänge.",
@@ -68,11 +107,28 @@
       "aspiration": "Turbo",
       "displacement_cc": 1998,
       "years": "2014–",
-      "valvetrain": ["DOHC", "16V", "Valvetronic", "Doppel-VANOS"],
+      "valvetrain": [
+        "DOHC",
+        "16V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
       "power_variants": [
-        { "label": "320i", "ps": 184, "nm": 290 },
-        { "label": "230i · 330i · 430i", "ps": 252, "nm": 350 },
-        { "label": "M135i xDrive (stärkste Ausbaustufe)", "ps": 306, "nm": 450 }
+        {
+          "label": "320i",
+          "ps": 184,
+          "nm": 290
+        },
+        {
+          "label": "230i · 330i · 430i",
+          "ps": 252,
+          "nm": 350
+        },
+        {
+          "label": "M135i xDrive (stärkste Ausbaustufe)",
+          "ps": 306,
+          "nm": 450
+        }
       ],
       "id_marks": [
         "Vier Zylinder, vier Zündspulen. Gegenüber dem B58 mit sechs ist das der Unterschied, den man beim Öffnen der Haube sofort sieht. Bohrung, Hub und viele Anbauteile sind zwischen beiden gleich.",
@@ -98,14 +154,31 @@
       "aspiration": "Turbo",
       "displacement_cc": 2993,
       "years": "2015–",
-      "valvetrain": ["DOHC", "24V", "Common-Rail-Direkteinspritzung"],
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Common-Rail-Direkteinspritzung"
+      ],
       "power_variants": [
-        { "label": "730d · 530d (Basisstufe)", "ps": 265 },
-        { "label": "40d (X3 M40d, X5 xDrive40d)", "ps": 340 },
-        { "label": "740d", "ps": 320 },
-        { "label": "750d · M50d (stärkste Ausbaustufe)", "ps": 400 }
+        {
+          "label": "730d · 530d (Basisstufe)",
+          "ps": 265
+        },
+        {
+          "label": "40d (X3 M40d, X5 xDrive40d)",
+          "ps": 340
+        },
+        {
+          "label": "740d",
+          "ps": 320
+        },
+        {
+          "label": "750d · M50d (stärkste Ausbaustufe)",
+          "ps": 400
+        }
       ],
       "id_marks": [
+        "Kommt in keiner der hier gefuehrten Baureihen vor: der F15 lief mit dem N57, der B57 kam erst mit der Nachfolgegeneration. Der Steckbrief steht hier zur Abgrenzung gegen den N57, nicht weil ein Fahrzeug im Katalog ihn haette.",
         "Sechs Zylinder, sechs Injektoren, sechs Glühkerzen — das trennt ihn vom sonst weitgehend baugleichen B47. Bohrung, Hub und viele Anbauteile sind identisch, nur die Baulänge und die Zylinderzahl unterscheiden sich.",
         "Als Reihensechszylinder ohne Ausgleichswelle. B47, B48 und B38 haben eine.",
         "Die Zahl der Lader unterscheidet die Ausbaustufen erheblich: Basisstufen mit einem Lader mit variabler Turbinengeometrie, mittlere Stufen zweistufig, die 400-PS-Stufe mit vier Ladern — zwei Niederdruck- und zwei Hochdrucklader, die im mittleren Drehzahlbereich zugeschaltet werden. Zähle die Lader, bevor du ein Teil bestellst; die Stufen teilen den Block, aber nicht die Ladergruppe.",
@@ -127,11 +200,28 @@
       "aspiration": "Turbo",
       "displacement_cc": 2998,
       "years": "2015–",
-      "valvetrain": ["DOHC", "24V", "Valvetronic", "Doppel-VANOS"],
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Valvetronic",
+        "Doppel-VANOS"
+      ],
       "power_variants": [
-        { "label": "340i · 440i · 740i", "ps": 326, "nm": 450 },
-        { "label": "M140i · M240i · 540i · X3 M40i", "ps": 340, "nm": 500 },
-        { "label": "M340i (TÜ1)", "ps": 374, "nm": 500 }
+        {
+          "label": "340i · 440i · 740i",
+          "ps": 326,
+          "nm": 450
+        },
+        {
+          "label": "M140i · M240i · 540i · X3 M40i",
+          "ps": 340,
+          "nm": 500
+        },
+        {
+          "label": "M340i (TÜ1)",
+          "ps": 374,
+          "nm": 500
+        }
       ],
       "id_marks": [
         "Sechs Zylinder, sechs Zündspulen. Gegenüber dem B48 mit vier ist das der schnellste Griff. Bohrung 82 mm und Hub 94.6 mm sind bei beiden gleich, viele Anbauteile ebenso.",
@@ -158,15 +248,47 @@
       "aspiration": "Turbo",
       "displacement_cc": 2993,
       "years": "1998–2013",
-      "valvetrain": ["DOHC", "24V", "Common-Rail-Direkteinspritzung"],
+      "valvetrain": [
+        "DOHC",
+        "24V",
+        "Common-Rail-Direkteinspritzung"
+      ],
       "power_variants": [
-        { "label": "530d (E39, 1998–2000)", "ps": 184, "nm": 390 },
-        { "label": "530d (E39 Facelift, ab 2000)", "ps": 193, "nm": 410 },
-        { "label": "330d (E46)", "ps": 204, "nm": 410 },
-        { "label": "530d (E60) · 730d (E65)", "ps": 218, "nm": 500 },
-        { "label": "330d (E90)", "ps": 231, "nm": 500 },
-        { "label": "535d (E60)", "ps": 272, "nm": 560 },
-        { "label": "335d (E90) · X5 3.0sd (E70)", "ps": 286, "nm": 580 }
+        {
+          "label": "530d (E39, 1998–2000)",
+          "ps": 184,
+          "nm": 390
+        },
+        {
+          "label": "530d (E39 Facelift, ab 2000)",
+          "ps": 193,
+          "nm": 410
+        },
+        {
+          "label": "330d (E46)",
+          "ps": 204,
+          "nm": 410
+        },
+        {
+          "label": "530d (E60) · 730d (E65)",
+          "ps": 218,
+          "nm": 500
+        },
+        {
+          "label": "330d (E90)",
+          "ps": 231,
+          "nm": 500
+        },
+        {
+          "label": "535d (E60)",
+          "ps": 272,
+          "nm": 560
+        },
+        {
+          "label": "335d (E90) · X5 3.0sd (E70)",
+          "ps": 286,
+          "nm": 580
+        }
       ],
       "id_marks": [
         "Reihensechszylinder-Diesel, Vorgänger des N57 und Diesel-Gegenpart zu den älteren Benzinern. Erster BMW-Sechszylinder mit Common-Rail-Einspritzung.",
