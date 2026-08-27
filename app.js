@@ -207,7 +207,7 @@
                   ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ')
                   : 'Steckbrief folgt';
                 return `<button class="pick-card ${e === state.engine ? 'on' : ''}" data-engine="${escapeHtml(e)}" aria-label="${escapeHtml(e)}${spec ? ', ' + escapeHtml(sub) : ''}">
-                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
                   <div class="pick-body">
                     <span class="pick-name">${escapeHtml(e)}</span>
                     <span class="pick-sub">${escapeHtml(sub)}</span>
@@ -560,6 +560,15 @@
     `;
 
     bindOverview(panel, stage);
+    zeichneSymptome();
+  };
+
+  // Der Symptom-Baustein liegt in eigenen Dateien und ist keine
+  // Voraussetzung: fehlt er, passiert hier schlicht nichts.
+  const zeichneSymptome = () => {
+    const host = $('#symptomeHost');
+    if (!host || !window.Symptome) return;
+    window.Symptome.render(host, { series: state.series, engine: state.engine });
   };
 
   // -------- Trichter: Fortschrittsanzeige --------
@@ -626,7 +635,7 @@
             const n = state.data.docs.filter(d => d.model === m.id).length;
             const era = /19[89]/.test(m.years) ? 'classic' : 'modern';
             return `<button class="pick-card" data-pick-model="${escapeHtml(m.id)}" aria-label="${escapeHtml(m.name)}, ${escapeHtml(m.years)}">
-              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era)}</div>
+              <div class="pick-art">${D4F_GFX.vehicleSvg(m.body, era, m.id)}</div>
               <div class="pick-body">
                 <span class="pick-name">${escapeHtml(m.name)}</span>
                 <span class="pick-sub">${escapeHtml(m.years)} · ${escapeHtml(bodyLabel(m.body))}</span>
@@ -653,7 +662,7 @@
     return `
       <div class="cockpit">
         <button class="cockpit-veh" data-restart-pick aria-label="Anderes Fahrzeug wählen">
-          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era)}</div>
+          <div class="pick-art">${D4F_GFX.vehicleSvg(model.body, era, model.id)}</div>
           <div class="cockpit-veh-body">
             <span class="pick-name">${escapeHtml(model.name)}</span>
             <span class="pick-sub">${escapeHtml(model.years)} · ${escapeHtml(model.desc)}</span>
@@ -662,7 +671,7 @@
         </button>
 
         <button class="cockpit-eng" data-change-engine aria-label="Anderen Motor wählen">
-          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration) : '<div class="pick-art-empty">?</div>'}</div>
+          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
           <div class="cockpit-eng-body">
             <span class="pick-name">${escapeHtml(state.engine)}</span>
             <span class="pick-sub">${spec ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ') : 'Steckbrief folgt'}</span>
@@ -681,6 +690,12 @@
         </span>
         <span class="scan-entry-go" aria-hidden="true">→</span>
       </button>
+
+      <!-- "Was ist los?" steht vor "Womit weiter?". Wer einen Diagnosepfad
+           auswaehlen kann, braucht ihn kaum noch — die erste Frage muss
+           deshalb das Symptom sein, nicht der Pfad. Fehlt der Baustein,
+           bleibt der Behaelter leer und die Seite unveraendert. -->
+      <div id="symptomeHost" hidden></div>
 
       ${facts.length ? `
         <div class="facts">
@@ -1573,7 +1588,10 @@
         // ohne Netz auf rohen Text zurück — Rautezeichen und
         // Pipe-Tabellen statt eines Artikels. In der Werkstatt ohne Netz
         // ist das der Normalfall, nicht die Ausnahme.
-        $('#articleContent').innerHTML = D4F_MD.parse(md, { ohneTitel: true });
+        // Fachbegriffe im Artikel anklickbar machen. Fehlt der Baustein,
+        // steht der Artikel unveraendert da — er ist keine Voraussetzung.
+        const html = D4F_MD.parse(md, { ohneTitel: true });
+        $('#articleContent').innerHTML = window.Glossar ? Glossar.markup(html) : html;
       } catch (e) {
         $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
       }
@@ -2443,6 +2461,28 @@
     });
 
     // Hash change
+    // Der Symptom-Baustein meldet ueber Ereignisse, wohin es weitergeht.
+    // Beides laeuft ueber den Hash, damit der Sprung einen eigenen
+    // Historieneintrag bekommt und der Zurueck-Knopf zurueck zur Auswahl
+    // fuehrt statt aus der App.
+    // Das Glossar bietet den Weg ins Fachdokument an. Der laeuft ueber
+    // dieselbe Schublade wie jeder andere Dokumentaufruf.
+    document.addEventListener('d4f:doc', (e) => {
+      const id = e.detail && e.detail.id;
+      if (!id) return;
+      e.preventDefault();
+      openDocDrawer(id);
+    });
+
+    document.addEventListener('d4f:symptom-pfad', (e) => {
+      const id = e.detail && e.detail.guide;
+      if (id) location.hash = `#/guide/${id}`;
+    });
+    document.addEventListener('d4f:symptom-doc', (e) => {
+      const id = e.detail && e.detail.doc;
+      if (id) location.hash = `#/docs/${id}`;
+    });
+
     window.addEventListener('popstate', () => { applyHash(); render(); });
     window.addEventListener('hashchange', () => { applyHash(); render(); });
   };
@@ -2526,6 +2566,9 @@
     // Motor-Steckbriefe und Messplan nachladen; sind sie da, zeichnet sich
     // die App neu — fehlen sie, bleibt der bisherige Stand stehen.
     loadEngines().then(() => render());
+    // Symptomkatalog nachladen; danach einmal neu zeichnen, damit die
+    // Auswahl erscheint, sobald sie da ist.
+    if (window.Symptome) window.Symptome.laden().then(() => zeichneSymptome());
     loadMeasure().then(() => { if (state.view === 'measure') renderMeasure(); });
 
     // Status footer

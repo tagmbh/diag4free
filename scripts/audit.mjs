@@ -18,15 +18,32 @@ const lies = async (p) => JSON.parse(await readFile(p, 'utf8'));
 // graphics.js kennt feste Karosserie- und Motorformen. Steht in den Daten
 // etwas anderes, faellt die Darstellung auf einen Notfall zurueck — sichtbar
 // als falsches oder fehlendes Bild.
-const gfx = await readFile('graphics.js', 'utf8');
-// Die Formen stehen in graphics.js in einem eingerueckten Objektliteral.
-// Die Einrueckung ist kein verlaessliches Merkmal — der Schluesselname
-// gefolgt von `{ top:` schon.
-const BODIES = [...gfx.matchAll(/(\w+)\s*:\s*\{\s*top:/g)].map(m => m[1]);
-if (!BODIES.length) {
-  console.error('Abbruch: keine Karosserieformen aus graphics.js gelesen — das Pruefmuster passt nicht mehr.');
+// Frueher stand hier ein Muster, das die Formentabelle aus dem Quelltext
+// von graphics.js herauslas. Das ist zweimal gebrochen, weil eine
+// Umbenennung im Zeichner den Test mitgerissen hat — beim ersten Mal
+// still, mit falschem Ergebnis. Jetzt wird nicht mehr gelesen, sondern
+// gefragt: die Datei wird ausgefuehrt und der Zeichner selbst befragt,
+// ob er eine Form kennt. Eine unbekannte Form liefert dieselbe Zeichnung
+// wie ein Fantasiename — genau daran erkennt man sie.
+const gfxQuelle = await readFile('graphics.js', 'utf8');
+const fenster = {};
+new Function('window', gfxQuelle)(fenster);
+const GFX = fenster.D4F_GFX;
+if (!GFX || typeof GFX.vehicleSvg !== 'function') {
+  console.error('Abbruch: graphics.js liefert kein D4F_GFX.vehicleSvg — der Zeichner ist nicht ansprechbar.');
   process.exit(2);
 }
+const FORMEN = Array.isArray(GFX.formen) ? GFX.formen : [];
+if (!FORMEN.length) {
+  console.error('Abbruch: graphics.js nennt keine `formen` — der Vertrag mit dem Zeichner ist gebrochen.');
+  process.exit(2);
+}
+const kenntForm = (form) => FORMEN.includes(form);
+// Die Baureihen-Silhouetten sind der zweite Teil desselben Vertrags. Fehlt
+// eine, faellt die Karte auf die generische Form ihrer Karosserie zurueck —
+// und genau dieses Bild hat der Nutzer gemeldet: sechzehn Karten, eine
+// Zeichnung.
+const BAUREIHEN_GFX = Array.isArray(GFX.baureihen) ? GFX.baureihen : [];
 
 const models = await lies(join(CONTENT, 'models.json'));
 const genutzt = new Set();
@@ -42,7 +59,10 @@ for (const gruppe of models.groups || []) {
 
 for (const m of alleModelle) {
   if (!m.body) melde('models.json', m.id, 'hoch', 'kein `body` — Fahrzeuggrafik faellt auf Standardform zurueck');
-  else if (!BODIES.includes(m.body)) melde('models.json', m.id, 'hoch', `body "${m.body}" kennt graphics.js nicht (bekannt: ${BODIES.join(', ')})`);
+  else if (!kenntForm(m.body)) melde('models.json', m.id, 'hoch', `body "${m.body}" kennt graphics.js nicht (bekannt: ${FORMEN.join(', ')})`);
+  if (BAUREIHEN_GFX.length && !BAUREIHEN_GFX.includes(m.id)) {
+    melde('models.json', m.id, 'mittel', 'keine eigene Silhouette in graphics.js — die Karte sieht aus wie jede andere derselben Karosserieform');
+  }
   (m.engines || []).forEach(e => genutzt.add(e));
   if (!m.engines?.length) melde('models.json', m.id, 'hoch', 'keine Motoren — Trichter endet nach Schritt 1');
   if (!m.years) melde('models.json', m.id, 'mittel', 'kein Baujahrbereich');

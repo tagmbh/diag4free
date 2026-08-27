@@ -225,6 +225,74 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Symptom-Einstieg: die erste Frage ist "Was ist los?" ---
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      const symHost = page.locator('#symptomeHost');
+      if (await symHost.count() === 1 && !(await symHost.isHidden())) {
+        const knoepfe = page.locator('.sym-knopf');
+        const n = await knoepfe.count();
+        expect(n > 0, 'Symptome zur Auswahl vorhanden', 'keine Symptomknöpfe');
+        if (n > 0) {
+          await knoepfe.first().click();
+          await settle(page, 400);
+          expect(await knoepfe.first().getAttribute('aria-pressed') === 'true',
+            'Symptomauswahl wird gemeldet', 'aria-pressed nicht gesetzt');
+          expect(await page.locator('.sym-weg').count() > 0,
+            'Symptom führt zu einem Weg', 'keine Ursache mit Weg');
+          // Ein Ziel ohne Weg waere genau die Sackgasse, die der Nutzer
+          // als "0 Docs" schon gesehen hat.
+          for (const el of await page.locator('.sym-weg').all()) {
+            const box = await el.boundingBox();
+            if (box) expect(box.height >= 44, 'Symptomweg ist berührbar', `nur ${Math.round(box.height)}px hoch`);
+          }
+        }
+      }
+
+      // --- Glossar: Abkürzungen sind einen Klick von ihrer Erklärung weg ---
+      await page.goto(BASE + '/#/library', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      // Nur in der sichtbaren Ansicht suchen: die uebrigen Panels bleiben im
+      // DOM stehen, und ein Treffer dort ist unklickbar.
+      const mitArtikelKarte = page.locator('[data-view-panel="library"] [data-doc]').first();
+      if (await mitArtikelKarte.count() === 1) {
+        await mitArtikelKarte.click();
+        await settle(page, 900);
+        const begriffe = page.locator('#articleContent .gl-term');
+        if (await begriffe.count() > 0) {
+          const hashVorher = await page.evaluate(() => location.hash);
+          await begriffe.first().click();
+          await settle(page, 400);
+          expect(await page.locator('.gl-dialog').isVisible(),
+            'Glossar öffnet die Erklärung', 'kein sichtbarer Glossar-Dialog');
+          await page.keyboard.press('Escape');
+          await settle(page, 400);
+          // Der Dialog bleibt im DOM und wird ausgeblendet — gemessen wird
+          // deshalb die Sichtbarkeit, nicht die Existenz.
+          expect(!(await page.locator('.gl-dialog').isVisible()),
+            'Esc schließt die Erklärung', 'Dialog blieb sichtbar');
+          expect(await page.locator('.drawer').getAttribute('aria-hidden') === 'false',
+            'Esc trifft nur die Erklärung, nicht den Artikel', 'die Schublade ging mit zu');
+          // Das Glossar ist eine Einblendung, keine Seite: es darf die
+          // Historie nicht anfassen, sonst zeigt der Zurück-Knopf ins Leere.
+          expect(await page.evaluate(() => location.hash) === hashVorher,
+            'Glossar fasst die Historie nicht an', 'Hash hat sich geändert');
+        }
+      }
+
+      // --- Silhouetten: jede Baureihe muss anders aussehen ---
+      // Der Nutzer hat genau das gemeldet: sechzehn Karten, eine Zeichnung.
+      // Der Test haelt fest, dass es nicht wieder dahin zurueckfaellt.
+      await page.evaluate(() => localStorage.clear());
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      const formen = await page.$$eval('.pick-art svg path', ns => ns.map(n => n.getAttribute('d')));
+      if (formen.length > 4) {
+        expect(new Set(formen).size === formen.length,
+          'Fahrzeugkarten zeigen verschiedene Silhouetten',
+          `${formen.length} Pfade, davon nur ${new Set(formen).size} verschieden`);
+      }
+
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
       await page.goto(BASE + '/#/measure', { waitUntil: 'domcontentloaded' });
       await settle(page, 1300);
