@@ -225,6 +225,42 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Dokumente der Reihe nach durchgehen ---
+      // Der Nutzer wollte die Tech-Docs "interaktiv durchgehen" koennen,
+      // statt nach jedem Dokument zur Liste zurueckzuspringen.
+      // Sauber starten: ein vorheriger Block kann eine Schublade offen
+      // gelassen haben, und die faengt dann die Klicks ab.
+      await page.goto(BASE + '/#/docs', { waitUntil: 'domcontentloaded' });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      const ersteKarte = page.locator('[data-view-panel="docs"] [data-doc]').first();
+      if (await ersteKarte.count() === 1) {
+        await ersteKarte.click();
+        await settle(page, 800);
+        const blaettern = page.locator('.drawer-walk');
+        if (await blaettern.count() === 1) {
+          const posVorher = (await page.locator('.drawer-walk-pos').innerText()).trim();
+          const weiter = page.locator('.drawer-walk [data-walk]').last();
+          if (await weiter.isEnabled()) {
+            const titelVorher = await page.locator('#drawerTitle').innerText();
+            await weiter.click();
+            await settle(page, 700);
+            expect((await page.locator('#drawerTitle').innerText()) !== titelVorher,
+              'Weiter zeigt das naechste Dokument', 'Titel unveraendert');
+            expect((await page.locator('.drawer-walk-pos').innerText()).trim() !== posVorher,
+              'Position wird mitgezaehlt', `weiterhin ${posVorher}`);
+            // Geblaettert wird ueber dieselbe Schublade, also gehoert auch
+            // dieser Schritt in die Historie.
+            await page.goBack();
+            await settle(page, 600);
+            expect((await page.locator('#drawerTitle').innerText()) === titelVorher,
+              'Zurueck fuehrt zum vorigen Dokument', 'anderer Titel nach Zurueck');
+          }
+        }
+        await page.keyboard.press('Escape');
+        await settle(page, 400);
+      }
+
       // --- Tastatur im Diagnosepfad ---
       // Am Werkstattrechner liegt die Maus selten griffbereit. J und N
       // beantworten, Pfeil links geht zurueck — und beides muss denselben

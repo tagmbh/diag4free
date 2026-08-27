@@ -1588,10 +1588,34 @@
     `;
 
     // Footer
+    // Die Dokumente einer Baureihe lassen sich der Reihe nach durchgehen,
+    // ohne jedes Mal zur Liste zurueckzuspringen. Bezug ist der gefilterte
+    // Arbeitsbereich, wenn das Dokument darin vorkommt — sonst der Bestand
+    // der Baureihe. Sonst wuerde "weiter" in eine andere Baureihe fuehren,
+    // ohne dass man es merkt.
+    const reihe = (() => {
+      const gefiltert = scopedDocs();
+      if (gefiltert.some(d => d.id === doc.id)) return gefiltert;
+      const eigene = state.data.docs.filter(d => d.model === doc.model);
+      return eigene.length ? eigene : [doc];
+    })();
+    const platz = reihe.findIndex(d => d.id === doc.id);
+    const vorher = platz > 0 ? reihe[platz - 1] : null;
+    const nachher = platz >= 0 && platz < reihe.length - 1 ? reihe[platz + 1] : null;
+
     const footer = $('#drawerFooter');
     footer.innerHTML = `
       <button class="btn btn-ghost" data-close-drawer>Schließen</button>
       <button class="btn btn-ghost" data-print>${iconSvg('print')} Drucken</button>
+      ${reihe.length > 1 ? `
+        <div class="drawer-walk" role="group" aria-label="Dokumente der Reihe nach">
+          <button class="btn btn-ghost" data-walk="${vorher ? escapeHtml(vorher.id) : ''}" ${vorher ? '' : 'disabled'}
+            aria-label="${vorher ? 'Vorheriges Dokument: ' + escapeHtml(vorher.title) : 'Kein vorheriges Dokument'}">${iconSvg('back')}</button>
+          <span class="drawer-walk-pos">${platz + 1} / ${reihe.length}</span>
+          <button class="btn btn-ghost" data-walk="${nachher ? escapeHtml(nachher.id) : ''}" ${nachher ? '' : 'disabled'}
+            aria-label="${nachher ? 'Nächstes Dokument: ' + escapeHtml(nachher.title) : 'Kein nächstes Dokument'}">
+            <span class="drawer-walk-next" aria-hidden="true">→</span></button>
+        </div>` : ''}
     `;
     // Weiterfuehrende Seiten oeffnen den naechsten Datensatz im selben
     // Fenster. Kein neuer Tab, kein Sprung nach draussen — der Weg bleibt
@@ -1605,6 +1629,11 @@
 
     footer.querySelectorAll('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     footer.querySelector('[data-print]').addEventListener('click', () => window.print());
+    footer.querySelectorAll('[data-walk]').forEach(b => b.addEventListener('click', () => {
+      if (!b.dataset.walk) return;
+      haptic();
+      openDocDrawer(b.dataset.walk);
+    }));
 
     // Show drawer
     $('.drawer').classList.add('open');

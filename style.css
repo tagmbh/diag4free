@@ -835,6 +835,8 @@
   padding: var(--space-3) var(--space-5);
   border-top: 1px solid var(--color-divider);
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-2);
   flex-shrink: 0;
   background: var(--color-surface-2);
@@ -2250,3 +2252,39 @@
     color: var(--color-text);
   }
 }
+
+/* Blaettern durch die Dokumente einer Reihe. Steht rechts im Fuss der
+   Schublade, damit es nicht mit Schliessen und Drucken konkurriert. */
+.drawer-walk {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+/* Auf schmalen Geraeten reicht die Zeile nicht fuer Schliessen, Drucken
+   und Blaettern nebeneinander — dann rutscht das Blaettern aus dem Bild.
+   Es bekommt deshalb seine eigene Zeile, ueber die volle Breite. */
+@media (max-width: 560px) {
+  .drawer-walk {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-divider);
+  }
+}
+.drawer-walk .btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-2);
+  justify-content: center;
+}
+.drawer-walk .btn[disabled] { opacity: .35; cursor: default; }
+.drawer-walk-pos {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  min-width: 44px;
+  text-align: center;
+}
+.drawer-walk-next { font-size: 16px; line-height: 1; }
