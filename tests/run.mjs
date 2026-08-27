@@ -672,6 +672,119 @@ async function main() {
       await ctx.close();
     }
 
+    // --- Kein Dokument ist eine Sackgasse ---
+    // Seit die Quellenverweise nach draussen entfallen sind, traegt der
+    // Weg tiefer die Navigation allein: ein Artikel oder Verweise auf
+    // verwandte Dokumente. Ein Doc ohne beides ist eine Stelle, an der
+    // der Leser haengenbleibt — und das faellt sonst niemandem auf, weil
+    // jede einzelne Ansicht fuer sich richtig aussieht.
+    {
+      console.log('\n▸ Wege tiefer');
+      const { ctx, page } = await newPage(browser, devices['iPhone 13'], errors, 'Tiefe');
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1000);
+      const ids = await page.evaluate(async () =>
+        (await (await fetch('./content/index.json')).json()).docs.map(d => d.id));
+
+      const ohne = [];
+      for (const id of ids) {
+        await page.goto(BASE + `/#/docs/${id}`, { waitUntil: 'domcontentloaded' });
+        await settle(page, 400);
+        const r = await page.evaluate(() => ({
+          links: document.querySelectorAll('.detail-link[data-doc]').length,
+          artikel: document.querySelector('#articleContent')?.innerHTML.length || 0
+        }));
+        if (r.links === 0 && r.artikel < 400) ohne.push(id);
+      }
+      expect(ohne.length === 0, `alle ${ids.length} Docs mit Weg tiefer`, ohne.join(', '));
+
+      // Und der Verweis muss auch wirklich zum naechsten Dokument fuehren
+      const zielId = await page.evaluate(() => {
+        const b = document.querySelector('.detail-link[data-doc]');
+        return b ? b.dataset.doc : null;
+      });
+      if (zielId) {
+        await page.locator('.detail-link[data-doc]').first().click();
+        await settle(page, 500);
+        const titel = await page.locator('#drawerSubtitle').textContent();
+        expect(titel.includes(zielId), 'Verweis öffnet das verwandte Dokument', `Untertitel: ${titel}`);
+      } else fail('Verweis öffnet das verwandte Dokument', 'kein Verweis zum Anklicken gefunden');
+
+      await ctx.close();
+    }
+
+    // --- Artikel ---
+    // Der ausfuehrliche Teil der Wissensbasis wird von einem eigenen
+    // Renderer dargestellt. Faellt der aus oder trifft er eine Syntax
+    // nicht, sieht der Leser Rautezeichen und Pipe-Tabellen statt eines
+    // Artikels — und zwar in jedem der Artikel gleichzeitig. Der Lauf
+    // hier blockiert weiterhin alle CDN-Anfragen, prueft also genau den
+    // Werkstattfall ohne Netz.
+    {
+      console.log('\n▸ Artikel');
+      const { ctx, page } = await newPage(browser, devices['iPhone 13'], errors, 'Artikel');
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+
+      const artikel = await page.evaluate(async () => {
+        const idx = await (await fetch('./content/index.json')).json();
+        return idx.docs.filter(d => d.article).map(d => ({ id: d.id, series: d.series || d.model, datei: d.article }));
+      });
+      expect(artikel.length > 0, 'Docs mit Artikel gefunden', 'keiner');
+
+      let geprueft = 0, leer = [], rest = [], fehlend = [];
+      for (const a of artikel) {
+        const erg = await page.evaluate(async (a) => {
+          const r = await fetch(`./content/${a.series}/${a.datei}`);
+          if (!r.ok) return { fehlt: true };
+          const html = window.D4F_MD.parse(await r.text(), { ohneTitel: true });
+          const box = document.createElement('div');
+          box.innerHTML = html;
+          // Sichtbarer Text ohne Tags: bleibt darin Markdown-Syntax
+          // stehen, hat der Renderer sie nicht erkannt.
+          const text = box.textContent;
+          return {
+            laenge: html.length,
+            tags: box.querySelectorAll('h2,p,li,td,blockquote,code').length,
+            restMd: /\|\s*-{2,}|\*\*|^#{1,6}\s|\[[^\]]+\]\([^)]+\)/m.test(text),
+            leereZellen: [...box.querySelectorAll('tr')].some(tr => tr.children.length === 0)
+          };
+        }, a);
+        if (erg.fehlt) { fehlend.push(a.id); continue; }
+        geprueft++;
+        if (erg.laenge < 400 || erg.tags < 5) leer.push(`${a.id}(${erg.laenge}Z/${erg.tags}tags)`);
+        if (erg.restMd) rest.push(a.id);
+      }
+
+      expect(geprueft > 0, `Artikel gerendert (${geprueft} von ${artikel.length})`, 'keiner gerendert');
+      expect(rest.length === 0, 'kein rohes Markdown im gerenderten Text', rest.join(', '));
+      expect(leer.length === 0, 'jeder Artikel hat Substanz', leer.join(', '));
+
+      // Fehlende Artikeldateien sind kein Fehler — die App zeigt dort
+      // einen Hinweis. Gemeldet werden sie trotzdem.
+      if (fehlend.length) console.log(`  · ${fehlend.length} geplante(r) Artikel noch nicht geschrieben`);
+
+      // Und einmal durch die echte Oberflaeche, nicht nur durch den Parser
+      const mitArtikel = artikel[0];
+      await page.goto(BASE + `/#/docs/${mitArtikel.id}`, { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      const imDrawer = await page.evaluate(() => {
+        const el = document.querySelector('#articleContent');
+        if (!el) return null;
+        return { laenge: el.innerHTML.length, ueber: el.querySelectorAll('h2').length,
+                 roh: /^#|\|\s*-{2,}/m.test(el.textContent) };
+      });
+      expect(imDrawer && imDrawer.laenge > 400, 'Artikel erscheint im Drawer',
+        imDrawer ? `nur ${imDrawer.laenge} Zeichen` : 'kein #articleContent');
+      expect(imDrawer && !imDrawer.roh, 'Drawer zeigt kein rohes Markdown', 'Syntax sichtbar');
+
+      // Breite Tabellen duerfen die Seite nicht seitwaerts schieben
+      const over = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+      expect(!over, 'Artikel ohne horizontalen Overflow', 'Seite scrollt seitwärts');
+
+      await ctx.close();
+    }
+
     // --- OBD-Scan ---
     // Der Scan haengt an Geraete-APIs, die es nicht ueberall gibt. Genau
     // dieser Fall ist hier der Normalfall: der Testbrowser hat weder Web

@@ -25,6 +25,10 @@
         "M40",
         "M42",
         "S14"
+      ],
+      "article": "diagnosestecker-20-polig.md",
+      "details": [
+        "D4F-E30-002"
       ]
     },
     {
@@ -44,6 +48,10 @@
       "engines": [
         "M20",
         "M42"
+      ],
+      "article": "blinkcode-motronic-13.md",
+      "details": [
+        "D4F-E30-001"
       ]
     }
   ]

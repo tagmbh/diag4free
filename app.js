@@ -1493,11 +1493,11 @@
         }
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const md = await resp.text();
-        // marked kommt vom CDN; offline beim Erstlauf fällt es aus.
-        const html = typeof marked !== 'undefined'
-          ? marked.parse(md, { breaks: false, gfm: true })
-          : `<pre class="article-raw">${escapeHtml(md)}</pre>`;
-        $('#articleContent').innerHTML = html;
+        // Eigener Renderer statt marked vom CDN. Vorher fiel die Anzeige
+        // ohne Netz auf rohen Text zurück — Rautezeichen und
+        // Pipe-Tabellen statt eines Artikels. In der Werkstatt ohne Netz
+        // ist das der Normalfall, nicht die Ausnahme.
+        $('#articleContent').innerHTML = D4F_MD.parse(md, { ohneTitel: true });
       } catch (e) {
         $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
       }

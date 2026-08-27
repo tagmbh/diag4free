@@ -1114,3 +1114,9 @@ code, .measure-target, .pin-num, .doc-code {
   .live-tile  { min-height: 72px; }
   .live-val   { font-size: var(--text-lg); }
 }
+
+/* Artikeltabellen auf dem Phone: der Container scrollt, die Seite nicht. */
+@media (max-width: 560px) {
+  .markdown-content .md-table-wrap table { font-size: var(--text-xs); }
+  .markdown-content pre { font-size: 11px; }
+}

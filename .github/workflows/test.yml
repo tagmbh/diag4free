@@ -22,6 +22,15 @@ jobs:
       - name: Content gegen die Verträge prüfen
         run: node scripts/validate-content.mjs
 
+      - name: Inhaltsqualität prüfen
+        # Der Validator prüft die Verträge — ob ein Feld da ist und den
+        # richtigen Typ hat. Das Audit prüft, ob der Eintrag etwas taugt:
+        # Diagnosepfade mit genug Schritten, Docs mit Werkstattpunkten,
+        # Motorfilter die greifen, Karosserieformen die graphics.js kennt,
+        # keine Links auf fremde Seiten. Ein Eintrag kann formal korrekt
+        # und trotzdem unbrauchbar sein.
+        run: node scripts/audit.mjs --ci
+
       - name: Index ist aktuell
         # Ein veralteter index.json im Repo heißt: jemand hat Content geändert,
         # aber den Build nicht laufen lassen — live stünde dann etwas anderes

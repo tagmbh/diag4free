@@ -18,12 +18,15 @@ Die Bedien- und Aufnahme-Ebene ist fertig, getestet und live. Was fehlt, ist
 | Datenverträge (`content/SCHEMA.md`) | fertig |
 | Validator (`scripts/validate-content.mjs`) | fertig, in CI vor dem Deploy |
 | Eigener OBD-Scan (`obd.js`, `#/scan`) | fertig, getestet |
-| Abnahme (`tests/run.mjs`) | 216 Prüfungen |
+| Eigener Markdown-Renderer (`md.js`) | fertig — Artikel laufen ohne CDN |
+| Qualitäts-Audit (`scripts/audit.mjs`) | fertig, in CI blockierend |
+| Abnahme (`tests/run.mjs`) | 225 Prüfungen |
 
 **Verifizieren nach jeder Änderung:**
 
 ```bash
 node scripts/validate-content.mjs      # Verträge, Exit 1 bei Verstoss
+node scripts/audit.mjs                 # Qualität je Eintrag; --ci bricht bei „hoch“ ab
 node scripts/build-index.mjs --check   # Index aktuell? (ohne Build-Metadaten)
 CHROMIUM_PATH=/opt/pw-browsers/chromium \
   node tests/run.mjs                   # UI auf 4 Viewports, beide Themes,
@@ -49,6 +52,74 @@ Alle in `main`, alle durch Tests abgesichert:
 10. `next_docs` wurde nirgends gerendert — Weg endete nach der Diagnose
 11. `changeEngineDialog_LEGACY` — toter `prompt()`, führte einen Folgeagenten
     zu dem Schluss, das Frontend liege nicht auf `main`
+
+## Was der Durchgang vom 27.08. ergeben hat
+
+Vollständige Prüfung jedes Eintrags, jeder Grafik, jedes Links — dann sechs
+Agenten parallel auf disjunkten Dateien, danach zwei Prüfagenten darüber.
+
+### Bestand danach
+
+| | vorher | nachher |
+|---|---|---|
+| Diagnosepfade | 7 mit **18** Schritten (Schnitt 2.6) | 7 mit **35** Schritten (Schnitt 5.0) |
+| Ergebnisse in Pfaden | 25 | 40 |
+| Artikel geschrieben | 1 von 15 | **17 von 17** |
+| Artikelzeilen | 65 | 899 |
+| Docs ohne Weg tiefer | 4 | **0** (im Browser einzeln nachgewiesen) |
+| Abnahmeprüfungen | 216 | 225 |
+
+### Gefundene und behobene Fehler
+
+Die wichtigsten stammen nicht aus dem Neugeschriebenen, sondern aus dem
+Bestand — genau deshalb war der Durchgang nötig.
+
+1. **Artikel waren offline unlesbar.** `marked` kam vom CDN; ohne Netz fiel
+   die Anzeige auf rohen Text zurück, also auf Rautezeichen und
+   Pipe-Tabellen. In der Werkstatt ohne Netz ist das der Normalfall. Ersetzt
+   durch `md.js`, einen eigenen Renderer — die CDN-Abhängigkeit ist weg.
+2. **Unbelegte Sollwerte im Bestand.** Über 30 Fundstellen in `guides.json`
+   nannten Widerstände, Drücke, Ströme und Prozentwerte, die nirgends
+   belegt waren. Alle durch das vergleichende Verfahren ersetzt, das
+   tatsächlich möglich ist, mit benannter Lücke. Der gefährlichste Fall:
+   `D4F-E46-008` nannte ein Anzugsmoment für M6 in Aluminium, und der
+   Untertitel warb mit „mit Drehmomenten".
+3. **Motorgrafik verschwand still.** `engineSvg` gab bei unbekanntem Layout
+   einen leeren String zurück — die Motorkarte blieb ohne Bild, ohne dass
+   irgendwo stand warum. Dazu traf die Aufladungsprüfung nur exakt
+   `'Bi-Turbo'`: ein Motor mit `"Biturbo"` wurde als Sauger gezeichnet.
+   Beide Felder kommen aus `engines.json`, also von aussen. Jetzt toleranter
+   Parser (R/I/L, V, W, B/H), eigener Boxer-Zweig und ein neutraler Block
+   als Rückfall. 130 Grafiken im Browser gerendert und vermessen.
+4. **Zwei Markdown-Konstrukte wurden falsch dargestellt** — eine
+   verschachtelte Liste wurde zur Textwurst mit sichtbaren Bindestrichen,
+   und ein Codeblock in einer nummerierten Liste liess die Zählung wieder
+   bei 1 beginnen („1, 2, 3, 1"). Beides in `docs/ARTIKEL-STANDARD.md`
+   festgehalten.
+5. **`D4F-E30-001` filterte auf M50 und S38**, die es im E30 nie gab.
+6. **Preise in drei Währungen** (€, CHF, „Franken") — entfernt, sie altern
+   schneller als jeder andere Inhalt.
+7. Dezimalkomma statt -punkt an fünf Stellen.
+
+### Was jetzt dauerhaft dagegen schützt
+
+- `scripts/audit.mjs` prüft je Eintrag die *Qualität*, nicht nur den
+  Vertrag: Pfade mit zu wenig Schritten, Docs ohne Werkstattpunkte,
+  Motorfilter die nie greifen, Karosserieformen die `graphics.js` nicht
+  kennt, Links nach draussen. In CI blockierend bei Stufe „hoch".
+- `docs/ARTIKEL-STANDARD.md` — Aufbau, Sprache, die harte Grenze beim
+  Erfinden von Werten, und was der Renderer kann.
+- Neue Abnahmeprüfungen: jeder Artikel wird durch den echten Renderer
+  gejagt und auf rohes Markdown geprüft; jedes Doc wird geöffnet und muss
+  einen Weg tiefer anbieten.
+
+### Bewusst nicht gefüllt
+
+Rund 20 Stellen benennen eine Lücke, statt eine Zahl zu erfinden — vor allem
+Anzugsmomente, Widerstandsfenster, Prüfdrücke und Mindestspannungen beim
+Codieren. Das ist Absicht und teuer erarbeitet: eine benannte Lücke ist
+brauchbar, eine erfundene Zahl ist gefährlich. Wer die Werte hat, trägt sie
+nach; wer sie nicht hat, misst vergleichend.
 
 ## Offen — Priorität 0: echte Fahrzeug- und Motorbilder
 
@@ -354,8 +425,9 @@ die Zeit.
 
 Sichtbar gemacht, aber ohne Belege nicht zu füllen:
 
-- 14 geplante Artikel noch nicht geschrieben (Validator zählt sie auf)
-- 4 von 21 Docs ohne Weg tiefer — kein Artikel, keine `details`, kein
-  Nachbar gleicher Kategorie (`D4F-E30-001/002`, `D4F-E46-007`, `D4F-F-002`)
+- Alle 17 geplanten Artikel sind geschrieben, kein Doc ist mehr eine
+  Sackgasse. Der Redaktionsstand ist damit nicht mehr die Engstelle.
+- Es bleiben 11 von 16 Baureihen ohne eigenen Inhalt — das ist die
+  eigentliche Lücke, und sie lässt sich nur mit Quellen schliessen.
 - `measure.json` fehlt — und kommt aus den BMW-Schulungsheften grundsätzlich
   nicht: die enthalten keine Sollwerttabellen. Braucht eine andere Quelle.

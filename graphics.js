@@ -52,10 +52,29 @@
   // Wer hinschaut, zählt die Bohrungen und sieht die Anordnung — genau das,
   // was zur Identifikation im Motorraum nötig ist.
 
+  // Die Bauform kommt aus engines.json, also von aussen. Wer sie schreibt,
+  // hat nicht dieselbe Tabelle im Kopf wie dieser Code: R6, I6 und L6
+  // meinen denselben Reihensechszylinder, B4 und H4 denselben Boxer.
+  // Ein zu enges Muster hat hier still gar keine Grafik geliefert.
   const parseLayout = (layout) => {
-    const m = /^([RV])(\d+)$/.exec(String(layout || '').toUpperCase());
+    const t = String(layout || '').toUpperCase().replace(/[\s_-]/g, '');
+    const m = /^([RILVBHW])(\d{1,2})$/.exec(t);
     if (!m) return null;
-    return { kind: m[1], count: parseInt(m[2], 10) };
+    const zahl = parseInt(m[2], 10);
+    if (!(zahl >= 1 && zahl <= 16)) return null;
+    const art = { R: 'R', I: 'R', L: 'R', V: 'V', W: 'V', B: 'B', H: 'B' }[m[1]];
+    return { kind: art, count: zahl };
+  };
+
+  // Aufladung ebenso: "Bi-Turbo", "Biturbo", "Twin Turbo" und "TwinPower
+  // Turbo" sind dasselbe. Frueher traf nur die exakte Schreibweise, ein
+  // Turbomotor wurde sonst als Sauger gezeichnet.
+  const ladeZahl = (aspiration) => {
+    const t = String(aspiration || '').toLowerCase().replace(/[\s_-]/g, '');
+    if (!t || /saug|natural|nasp/.test(t)) return 0;
+    if (/bi|twin|double|dual/.test(t) && /turbo/.test(t)) return 2;
+    if (/turbo|kompressor|supercharg|lader/.test(t)) return 1;
+    return 0;
   };
 
   // Isometrische Projektion: x nach rechts, y nach unten, z als Tiefe schräg
@@ -94,17 +113,47 @@
       <circle cx="0" cy="0" r="2.2" fill="currentColor" stroke="none"/>
     </g>`;
 
-  const FORCED = { 'Turbo': 1, 'Bi-Turbo': 2, 'Kompressor': 1 };
 
   /**
    * Motorschema.
    * @param {string} layout      'R4' | 'R6' | 'V8' | …
    * @param {string} aspiration  'Sauger' | 'Turbo' | 'Bi-Turbo' | 'Kompressor'
    */
+  // Kurbelwelle auf fester Hoehe — sie ist in jeder Bauform die Bezugslinie,
+  // an der die Baenke haengen.
+  const KURBEL = `<line x1="18" y1="96" x2="174" y2="96"
+      stroke="currentColor" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+    <circle cx="96" cy="96" r="4" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>`;
+
+  const RAHMEN = (inhalt) =>
+    `<svg class="eng-svg" viewBox="0 0 200 112" fill="none" role="img" aria-hidden="true">${inhalt}</svg>`;
+
+  /** Zeichnung fuer den Fall, dass die Bauform unbekannt ist.
+      Ein schlichter Block statt eines leeren Kastens: der Nutzer sieht,
+      dass hier ein Motor gemeint ist, und nicht einen Ladefehler. */
+  const neutralerBlock = (chargers) => {
+    const [ax, ay] = iso(0, 0, 0), [bx, by] = iso(86, 0, 0);
+    const [cx, cy] = iso(86, 0, 26), [dx, dy] = iso(0, 0, 26);
+    const H = 30;
+    const block = `<g transform="translate(56,62)">
+      <path d="M${ax},${ay} L${ax},${ay + H} L${bx},${by + H} L${bx},${by}"
+        fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-width="2"/>
+      <path d="M${bx},${by} L${cx},${cy} L${cx},${cy + H} L${bx},${by + H} Z"
+        fill="currentColor" fill-opacity="0.03" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M${ax},${ay} L${bx},${by} L${cx},${cy} L${dx},${dy} Z"
+        fill="currentColor" fill-opacity="0.10" stroke="currentColor" stroke-width="2"/>
+    </g>`;
+    const lader = Array.from({ length: chargers }, (_, i) => turbo(170, 40 + i * 24)).join('');
+    return RAHMEN(block + lader + KURBEL);
+  };
+
   const engineSvg = (layout, aspiration) => {
     const L = parseLayout(layout);
-    if (!L) return '';
-    const chargers = FORCED[aspiration] || 0;
+    const chargers = ladeZahl(aspiration);
+    // Ohne erkennbare Bauform trotzdem etwas zeigen. Vorher stand hier ein
+    // leerer String — die Motorkarte blieb dann ohne Bild, ohne dass
+    // irgendwo stand, warum.
+    if (!L) return neutralerBlock(chargers);
     const CX = 96, CRANK_Y = 96;
     let banks, blockRight;
 
@@ -113,6 +162,17 @@
       const x0 = CX - w / 2;
       banks = bank(L.count, `translate(${x0.toFixed(1)},62)`);
       blockRight = x0 + w;
+    } else if (L.kind === 'B') {
+      // Boxer: die Baenke liegen flach, links und rechts der Welle. Ohne
+      // eigenen Zweig waeren sie vorher als V gezeichnet worden — also
+      // schlicht falsch.
+      const per = Math.max(1, Math.round(L.count / 2));
+      const reach = 12 + bankWidth(per) * 0.98;
+      const fit = Math.min(1, 84 / reach);
+      const flach = bank(per, `rotate(-84) translate(-14,-24)`);
+      const setze = m => `<g transform="translate(${CX},${CRANK_Y}) scale(${(fit * m).toFixed(3)},${fit.toFixed(3)})">${flach}</g>`;
+      banks = setze(1) + setze(-1);
+      blockRight = CX + reach * fit;
     } else {
       // V: zwei gespiegelte Bänke, die vom Kurbeltrieb nach außen-oben aufgehen.
       // Negativer Winkel, damit das äußere Deckende steigt — sonst kippt das V.
@@ -128,13 +188,7 @@
     const chargerSvg = Array.from({ length: chargers }, (_, i) =>
       turbo(Math.min(blockRight + 26, 186), 40 + i * 24)).join('');
 
-    const crank = `<line x1="18" y1="${CRANK_Y}" x2="174" y2="${CRANK_Y}"
-        stroke="currentColor" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
-      <circle cx="${CX}" cy="${CRANK_Y}" r="4" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>`;
-
-    return `<svg class="eng-svg" viewBox="0 0 200 112" fill="none" role="img" aria-hidden="true">
-      ${banks}${chargerSvg}${crank}
-    </svg>`;
+    return RAHMEN(banks + chargerSvg + KURBEL);
   };
 
   window.D4F_GFX = { vehicleSvg, engineSvg };

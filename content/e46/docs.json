@@ -187,13 +187,13 @@
       "cat": "Reparatur",
       "title": "DISA-Ventil M54 · Prüfen und Erneuern",
       "valid": "E46 · M54B22/B25/B30",
-      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüf- und Wechselanweisung mit Drehmomenten.",
+      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüfreihenfolge und Wechsel, mit benannten Lücken bei den Sollwerten.",
       "points": [
-        "Sichtprüfung: Klappenspiel < 1 mm axial, kein Klappern",
-        "Vakuumtest: 500 mbar über Handpumpe, muss halten",
-        "Solenoid: 30–40 Ω bei 20 °C",
+        "Sichtprüfung: Klappe von Hand in Wellenrichtung bewegen — spürbares Spiel oder Klappern ist der Befund",
+        "Vakuumtest über Handpumpe: die Verstelldose muss das Vakuum halten, ein zügiger Abfall zeigt die undichte Membran",
+        "Solenoid gegen ein bekannt gutes Exemplar vergleichen — Unterbrechung und Windungsschluss fallen im Vergleich auf",
         "OEM DISA revidiert = beste Wahl (Nachbau oft mit Nietbruch)",
-        "Anzugsmoment M6-Schrauben Ansaugbrücke: 10 Nm"
+        "Ansaugbrücke mit Drehmomentschlüssel nach Herstellervorgabe verschrauben — im Aluminium reisst das Gewinde sonst aus"
       ],
       "pins": [
         "DISA-Solenoid Pin 1 · KL15 (+12 V)",

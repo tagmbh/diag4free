@@ -2005,3 +2005,34 @@
   .scan-live-dot { animation: none; }
   .live-bar i    { transition: none; }
 }
+
+/* -------- Markdown-Renderer: Ergaenzungen --------
+   Der eigene Renderer wickelt Tabellen in einen Container, damit eine
+   breite Tabelle in sich scrollt statt die Seite seitwaerts zu schieben.
+   Die vorhandenen `.markdown-content table`-Regeln gelten unveraendert
+   weiter. */
+.markdown-content .md-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-3);
+}
+.markdown-content .md-table-wrap table { margin-bottom: 0; min-width: 100%; }
+
+/* Ein Blockzitat enthaelt beim eigenen Renderer immer einen Absatz —
+   dessen Aussenabstand wuerde sonst unter dem farbigen Rand hervorstehen. */
+.markdown-content blockquote p { margin-bottom: 0; max-width: none; }
+
+.markdown-content h4 {
+  font-size: var(--text-sm);
+  font-weight: 650;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+.markdown-content hr {
+  border: 0;
+  border-top: 1px solid var(--color-divider);
+  margin: var(--space-5) 0;
+}
+/* Der erste Block eines Artikels darf keinen Abstand nach oben tragen —
+   der Abschnittstitel des Drawers steht schon darueber. */
+.markdown-content > :first-child { margin-top: 0; }

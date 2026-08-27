@@ -5,22 +5,47 @@
       "code": "GF-E90-01",
       "name": "N54 · Zu wenig Ladedruck",
       "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP.",
+      "engines": ["N54"],
       "steps": [
         {
           "q": "Sind DTCs 29E0/29E1 gespeichert?",
           "help": "ISTA/D → Motor → Fehlerspeicher lesen. 29E0/29E1 zeigt Sollwertabweichung Ladedruck.",
-          "measure": "Ladedrucksollwert bei 3500 U/min · ~0.85 bar über Umgebung",
+          "measure": "Ist- und Sollladedruck in ISTA nebeneinander lesen · bewertet wird die Abweichung des Ist-Werts von dem Sollwert, den das Steuergerät selbst führt. Ein Zahlen-Sollwert für den Ladedruck ist in diesem Repository nicht belegt",
           "doc": "D4F-E90-002",
           "yes": 1,
-          "no": "check-symptom"
+          "no": 4
         },
         {
           "q": "Ladeluftsystem druckdicht? (Smoke-Test)",
           "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse.",
-          "measure": "Smoke-Test 0.5 bar · keine sichtbaren Austritte",
+          "measure": "Rauchtester nach Gerätevorgabe an das Ladeluftsystem anschließen · keine sichtbaren Austritte an Kupplungsschellen, Charge-Pipe und Ladeluftkühler-Anschlüssen. Ein Prüfdruck ist hier nicht belegt — bewertet wird der sichtbare Rauchaustritt",
+          "doc": "D4F-E90-002",
+          "yes": 2,
+          "no": "boost-leak"
+        },
+        {
+          "q": "Stehen zusätzlich 29DC oder 29CD im Speicher, oder rasselt es unter Last hörbar aus dem Laderbereich?",
+          "help": "Erst prüfen, wenn das Ladeluftsystem dicht ist — bei einer Leckage erreicht die Regelung ihren Sollwert ohnehin nie und setzt die Codes als Folgefehler. Fehlerspeicher nach der Dichtheitsprüfung löschen, Probefahrt unter Last, dann erneut auslesen.",
+          "measure": "Nach gelöschtem Speicher und Lastfahrt: 29DC/29CD kommen wieder oder bleiben weg · Rasseln beim Lastwechsel hörbar oder nicht",
           "doc": "D4F-E90-002",
           "yes": "wastegate",
-          "no": "boost-leak"
+          "no": 3
+        },
+        {
+          "q": "Hält die Hochdruckpumpe den Raildruck unter Volllast?",
+          "help": "Raildruck-Ist während einer Volllastfahrt mitloggen. 29F0 im Speicher ist ein deutlicher Hinweis, fehlt aber bei beginnendem Verschleiß oft noch. Vor jeder Entscheidung über einen Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die HPFP fällt.",
+          "measure": "Raildruck-Ist folgt dem Soll über die ganze Volllastfahrt · kein Einbruch beim Lastwechsel",
+          "doc": "D4F-E90-002",
+          "yes": "kein-befund",
+          "no": "hpfp"
+        },
+        {
+          "q": "Folgt der Ist-Ladedruck im Log dem Sollwert über die ganze Volllastfahrt?",
+          "help": "Ohne Eintrag im Fehlerspeicher entscheidet der Datenlogger. Ist- und Sollladedruck während einer Volllastfahrt im dritten oder vierten Gang aufzeichnen und übereinanderlegen.",
+          "measure": "Ist- und Sollkurve laufen deckungsgleich · kein Einbruch, kein Auseinanderlaufen zum Drehzahlende hin",
+          "doc": "D4F-E90-002",
+          "yes": "check-symptom",
+          "no": 1
         }
       ]
     }
@@ -28,15 +53,28 @@
   "results": {
     "check-symptom": {
       "title": "Keine Ladedruckabweichung im Speicher",
-      "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: HPFP-Druck bei WOT prüfen (Soll ~200 bar)."
+      "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: Raildruck-Ist unter Volllast gegen den vom Steuergerät geführten Sollwert prüfen — ein Absacken des Ist gegen den Soll ist der Befund. Ein absoluter Raildruck-Sollwert ist in diesem Repository nicht belegt.",
+      "next_docs": ["D4F-E90-002"]
     },
     "boost-leak": {
       "title": "Ladeluftleckage bestätigt",
-      "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle)."
+      "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle).",
+      "next_docs": ["D4F-E90-002"]
     },
     "wastegate": {
       "title": "Wastegate/HPFP als nächstes prüfen",
-      "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen)."
+      "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen).",
+      "next_docs": ["D4F-E90-002"]
+    },
+    "hpfp": {
+      "title": "Hochdruckpumpe hält den Raildruck nicht",
+      "text": "Befund passt zu 29F0. Vor jedem Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt — das entscheidet über die Kostenfrage. Zusätzlich Niederdruckseite und Kraftstofffilter beurteilen, damit eine neue Pumpe nicht dasselbe Bild liefert. Steht 30FF mit im Speicher, Zündspulen und Kerzen mit abarbeiten, sonst bleibt das Fahrzeug nach dem Pumpentausch auffällig.",
+      "next_docs": ["D4F-E90-002"]
+    },
+    "kein-befund": {
+      "title": "Kein Befund in Ladeluftsystem, Lader und HPFP",
+      "text": "Ladeluftsystem ist dicht, Wastegate unauffällig, Raildruck stabil — der Leistungsverlust kommt nicht aus der Ladedruckstrecke. Nächste Richtungen: Fehlerspeicher aller Steuergeräte erneut vollständig auslesen, Zündungsseite prüfen, wenn 30FF auftaucht, und Abgasgegendruck sowie Luftfilter beurteilen. Ergebnisse der Logfahrt aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+      "next_docs": ["D4F-E90-002", "D4F-E90-001"]
     }
   }
 }

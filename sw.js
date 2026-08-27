@@ -2,11 +2,11 @@
    Strategie:
      - App-Shell: precache (install)
      - Content JSON/MD: stale-while-revalidate
-     - Third-party (Fonts, marked, Fuse): cache-first
+     - Third-party (Fonts, Fuse): cache-first
      - Navigation: network-first mit App-Shell-Fallback (SPA)
 */
 
-const VERSION = 'd4f-v0.6.0';
+const VERSION = 'd4f-v0.7.0';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const VENDOR_CACHE = `${VERSION}-vendor`;
@@ -21,6 +21,7 @@ const SHELL_ASSETS = [
   './app.js',
   './graphics.js',
   './obd.js',
+  './md.js',
   './manifest.webmanifest',
   './assets/icons/favicon.svg'
 ];
