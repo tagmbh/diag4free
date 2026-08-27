@@ -33,11 +33,20 @@ Beide sind aufgeladene Reihensechszylinder und sitzen in derselben Baureihe. Dre
 
 Beide sind aufgeladene Vierzylinder mit Direkteinspritzung und Valvetronic. Der N13 ist der kleinere Motor der Einstiegsmodelle und stammt aus einer anderen Motorenfamilie als der BMW-eigene N20. Am eingebauten Motor gilt derselbe Grundsatz wie überall in dieser Baureihe: Motorcode am Block lesen, nicht vom Typschild ableiten.
 
-## Der Diesel und seine Kette
+## Die Diesel und ihre Kette
+
+Auch auf der Dieselseite wechselt die Generation. Bis 2015 läuft der N47, danach der B47. Der B47 ist dessen Nachfolger und keine Ausbaustufe davon — gleicher Hubraum, gleiche Zylinderzahl, eigener Motor.
+
+| Modell bis 2015 | Motor | Modell ab 2015 | Motor |
+|---|---|---|---|
+| 316d / 318d / 320d | N47 | 316d / 318d / 320d | B47 |
+| — | — | 325d | B47, zweistufig aufgeladen |
 
 Der N47 trägt den Steuerkettentrieb hinten, zum Getriebe hin. Vorn ist kein Kettenkasten. Wer dort sucht, sucht am falschen Ende.
 
 > Metallisches Rasseln direkt nach dem Kaltstart aus dem hinteren Motorbereich ist bei diesem Motor das Leitsymptom der Kettenthematik und kein Nebengeräusch. Dem gehört sofort nachgegangen — ein Kettenwechsel bei ausgebautem Getriebe ist eine andere Rechnung als ein Motorschaden.
+
+Beim B47 ist die Kettenlage strittig: Ein Teil der Quellen lässt sie auf der Getriebeseite, ein anderer setzt sie nach vorn. Dazwischen liegt der Getriebeausbau. Die Einzelheiten stehen in `D4F-F30-007`.
 
 ## So gehst du am Fahrzeug vor
 
@@ -47,8 +56,8 @@ Der N47 trägt den Steuerkettentrieb hinten, zum Getriebe hin. Vorn ist kein Ket
 4. **Motorcode am Block lesen** und gegen den Fahrzeugauftrag halten.
 5. **Erst danach** Teile bestimmen und Sollwerte suchen.
 
-## Eine Lücke im Katalog
+## Was der Katalog nicht führt
 
-Der Fahrzeugkatalog dieses Projekts führt für den F30 unter den Dieseln nur den N47. Die späteren Vierzylinder-Diesel des Baukastens und die Sechszylinder-Diesel der Baureihe sind dort nicht hinterlegt.
+Der Fahrzeugkatalog dieses Projekts führt für den F30 die Vierzylinder-Diesel N47 und B47. Die Sechszylinder-Diesel der Baureihe sind dort nicht hinterlegt.
 
-> **Lücke, nicht gefüllt:** Für ein Fahrzeug mit einem Dieselmotor, der sich nicht als N47 bestätigen lässt, liefert diese Wissensbasis derzeit keine Motorzuordnung. Vorgehen wie immer: Motorcode am Block lesen und gegen den Fahrzeugauftrag halten, bevor Teile bestimmt werden.
+> **Lücke, nicht gefüllt:** Für ein Fahrzeug mit einem Dieselmotor, der sich weder als N47 noch als B47 bestätigen lässt, liefert diese Wissensbasis derzeit keine Motorzuordnung. Vorgehen wie immer: Motorcode am Block lesen und gegen den Fahrzeugauftrag halten, bevor Teile bestimmt werden.

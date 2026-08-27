@@ -25,8 +25,8 @@
         },
         {
           "q": "Fördert die Kraftstoffpumpe, während der Anlasser dreht?",
-          "help": "Zu zweit arbeiten: einer crankt, einer hört am Tank. Die Pumpe muss ein gleichmäßiges Surren abgeben. Bleibt es still, brücke am Relaissockel abgesichert den Lastpfad von Klemme 30 auf 87 und höre erneut hin.",
-          "measure": "Gleichmäßiges Laufgeräusch der Pumpe während des Startversuchs. Stille beim Cranken zählt als Nein, auch wenn die Pumpe mit Brücke am Relais läuft.",
+          "help": "Zu zweit arbeiten: einer crankt, einer hört. Viele E28 haben zwei Pumpen — eine Vorförderpumpe im Tank und die Hauptpumpe unter dem Fahrzeug. Hör deshalb an beiden Stellen, nicht nur am Tank. Bleibt es still, brücke am Relaissockel abgesichert den Lastpfad von Klemme 30 auf 87 und höre erneut hin.",
+          "measure": "Gleichmäßiges Laufgeräusch an jeder verbauten Pumpe während des Startversuchs. Stille beim Cranken zählt als Nein, auch wenn die Pumpe mit Brücke am Relais läuft.",
           "doc": "D4F-E28-005",
           "yes": 4,
           "no": "kraftstoffkreis"

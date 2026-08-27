@@ -86,18 +86,18 @@
       "id": "D4F-E28-005",
       "type": "TEST",
       "cat": "Kraftstoff",
-      "title": "Kraftstoffpumpenkreis prüfen · M20 und M30",
+      "title": "Kraftstoffpumpenkreis prüfen · M20, M30 und S38",
       "valid": "E28 · 1981–1988",
       "summary": "Dreht der Anlasser, springt der Motor aber nicht an, trennt eine einzige Messung Pumpe von Ansteuerung. Der Kreis aus Relais, Sicherung und Pumpe ist am E28 nach Jahrzehnten die naheliegendste Stelle.",
       "points": [
         "Erfahrungswert: das Kraftstoffpumpenrelais gehört zu den häufigsten Ursachen für Startverweigerung am E28",
-        "Nach einer Quelle steuert das Steuergerät das Relais über die Steuerwicklung an; geschaltet wird der Lastpfad von Klemme 30 auf Klemme 87",
-        "Brücke am Relaissockel von Klemme 30 auf 87: läuft die Pumpe, liegt der Fehler in der Ansteuerung, nicht in der Pumpe",
-        "Die Brücke immer abgesichert ausführen — ein Kurzschluss im Lastpfad kostet sonst den Kabelbaum",
-        "Ob die Pumpe bei Zündung ein kurz anläuft, hängt am Steuergerätestand; verlässlich ist erst der Test beim Cranken",
-        "Läuft die Pumpe mit Brücke nicht, sitzt der Fehler an der Pumpe selbst oder an ihrer Steckverbindung"
+        "Gilt für alle drei Motoren der Baureihe. Der M5 unterscheidet sich in der Gemischbildung, nicht in der Pumpenansteuerung: Relais, Lastpfad und Brückenprobe sind dieselben. Der Motorfilter nennt den S38 deshalb ausdrücklich mit — das ist kein Versehen",
+        "Nach einer Quelle steuert das Steuergerät das Relais über die Steuerwicklung an; geschaltet wird der Lastpfad von Klemme 30 auf Klemme 87. Brücke am Relaissockel von 30 auf 87 und immer abgesichert ausführen — ein Kurzschluss im Lastpfad kostet den Kabelbaum",
+        "Läuft die Pumpe mit Brücke, liegt der Fehler in der Ansteuerung, nicht in der Pumpe. Bleibt sie still, sitzt er an Sicherung, Leitung, Steckverbindung oder der Pumpe selbst",
+        "Viele E28 fördern zweistufig: eine Vorförderpumpe im Tank und die Hauptpumpe unter dem Fahrzeug. Ob eine Vorförderpumpe verbaut ist, hängt nach den vorliegenden Quellen am Baustand — nachsehen statt annehmen und beim Hörtest an beiden Stellen hören",
+        "Ob die Pumpe bei Zündung ein kurz anläuft, hängt am Steuergerätestand; verlässlich ist erst der Test beim Cranken"
       ],
-      "engines": ["M20", "M30"],
+      "engines": ["M20", "M30", "S38"],
       "details": ["D4F-E28-002", "D4F-E28-006"]
     },
     {
