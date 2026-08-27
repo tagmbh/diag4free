@@ -1,6 +1,6 @@
 # diag4free — Handoff & Backlog
 
-> Stand: 2026-08-26 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
+> Stand: 2026-08-27 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
 > Dieses Dokument ist das Übergabe-Dokument für die Weiterentwicklung (z. B. via Claude Code).
 
 ## Architektur-Kurzüberblick
@@ -10,7 +10,7 @@
 - `node scripts/build-index.mjs` baut `content/index.json` aus `content/<modell>/{docs,guides}.json`
   (`content/software.json` ist **nicht** Teil des Index-Builds, wird separat gefetcht)
 - Deployment: Push auf `main` → GitHub Actions → GitHub Pages → Custom Domain `diag4all.t-alpha.com` (~45 s)
-- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.3.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv
+- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.10.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
 - State/Persistenz: `localStorage` (`diag4free.prefs.v1` für Baureihe/Motor/Theme/Checks, `diag4free.vin.v1` für VIN-Cache)
 - Hash-Routing: `#/overview`, `#/docs`, `#/guide/<id>`, `#/measure`, `#/library`, `#/software`, `#/model/<id>`
 - Sichtbarkeits-Sync der Views passiert zentral in `render()` (nicht nur in `setView`) — wichtig für Deep-Links
@@ -98,23 +98,35 @@ Stand zurück, statt zu brechen. Deshalb kann die Lieferung jederzeit kommen.
 
 ## Offene Todos (priorisiert)
 
-### 1. Motoren-Identifikation mit Visualisierung — UI steht, Daten offen
+### 1. Motoren-Identifikation — erledigt (Stand 27.08.2026)
 
-Der Engine-Picker soll von der reinen Liste zu einem **Identifikations-Assistenten** ausgebaut werden:
+Der Engine-Picker ist der Identifikations-Assistent, der hier gefordert war.
+Umgesetzt in `content/engines.json` (43 Steckbriefe) und `graphics.js`:
 
-- Pro Motor eine Visualisierung (3D oder hochwertige 2D/SVG-Schnittdarstellung) plus Kern-Specs und Fakten:
-  Bauform (R4/R6/V8), Sauger vs. Turbo, Hubraum, Leistungsvarianten (PS/kW je Modell), Bauzeitraum,
-  Erkennungsmerkmale im Motorraum (Ventildeckel, Ansaugbrücke, Position Ölfilter …)
-- Ziel-UX: User schaut auf die Karte und kann sagen „ok, meiner: Reihen-6, ~2xx PS, Sauger → N52, passt"
-- Umsetzungsempfehlung: erst 2D/SVG-Spec-Karten (schnell, offline-fähig, kein Copyright-Risiko),
-  3D (Three.js, selbst modelliert/parametrisch) als Ausbaustufe — keine fremden 3D-Modelle ungeklärter Lizenz einbetten
-- Einstiegspunkte: `openEnginePicker()` in `app.js` erweitern; Motor-Specs als neues Feld in `content/models.json`
-  oder eigene `content/engines.json` (Schema in `content/SCHEMA.md` ergänzen)
+- Bauform, Aufladung, Hubraum, Leistungsvarianten, Bauzeit, Ventiltrieb
+- `id_marks` — Erkennungsmerkmale im Motorraum, je Motor
+- `weak_points` — bekannte Schwachstellen
+- `engineSvg()` zeichnet das Schema aus den belegten Merkmalen
+- `engineTeile()` benennt darunter, was zu sehen ist, jeder Begriff mit
+  Glossaranschluss
 
-### 2. E88 restliche Motoren + Messplan-Sprint
+Die Empfehlung von damals — erst 2D/SVG, keine fremden 3D-Modelle
+ungeklaerter Lizenz — gilt unveraendert und hat sich bewaehrt. Was noch
+offen ist, ist **nicht** die Darstellung, sondern die Frage, ob es
+fotorealistische Motorbilder geben soll und woher sie kaemen; das steht in
+`docs/PROGRESS.md` unter „Offen — braucht eine Entscheidung".
 
-- Docs/Guides für N43, N46, N54, N55, N47 (aktuell nur N52 tief abgedeckt)
-- Messplan-Sprint N52: Sollwerte-Tabellen (Kraftstoffdruck, VANOS-Stellzeiten, Valvetronic-Ströme) mit Quellenangabe
+### 2. E88 — erledigt (Stand 27.08.2026)
+
+Alle sechs Katalogmotoren der Baureihe sind versorgt: N43, N46, N47, N52,
+N54, N55. Der Messplan traegt 31 Positionen.
+
+Was dabei auffiel und die Regel bestaetigt hat: In den E88-Inhalten standen
+zehn Sollwerte ohne Beleg, und die ATF-Paarung war falsch — das `GA6L45R`
+hatte die ZF-Oelspezifikation, obwohl es aus der GM-6L45-Familie stammt
+(Dexron VI). Beides ist korrigiert. **Kein Sollwert ohne zwei unabhaengige
+Belege**, sonst das vergleichende Verfahren beschreiben und die Luecke
+benennen.
 
 ### 3. Software-Sektion ausbauen
 
@@ -133,6 +145,27 @@ Der Engine-Picker soll von der reinen Liste zu einem **Identifikations-Assistent
 - VIN-Decoder: Baureihen-Mapping (`mapNhtsaToModel` in `app.js`) deckt aktuell den Katalog grob ab —
   bei neuen Baureihen im Katalog mitpflegen
 - `content/index.json`-Versionsstring wird im Footer angezeigt (`vdev` lokal) — beim Release prüfen
+
+## Grafik-Vertrag (`graphics.js`)
+
+`window.D4F_GFX` ist die einzige Schnittstelle; `scripts/audit.mjs` führt die
+Datei aus und **fragt** sie, statt ihren Quelltext zu lesen — eine Umbenennung
+hat den Test früher einmal still und mit falschem Ergebnis mitgerissen.
+
+| Aufruf | Liefert |
+|---|---|
+| `vehicleArt(body, era, seriesId)` | Foto über Zeichnung — der Normalfall im UI |
+| `vehicleSvg(body, era, seriesId)` | nur die gerechnete Silhouette |
+| `engineSvg(layout, aspiration, engineId)` | Motorschema |
+| `engineTeile(layout, aspiration, engineId)` | Legende dazu, aus denselben Merkmalen abgeleitet |
+| `.formen` `.baureihen` `.fotos` | was der Zeichner kennt — vom Audit geprüft |
+
+Zwei Regeln, die hier teuer erkauft sind:
+
+- **Foto verdeckt Zeichnung, ersetzt sie nicht.** Fällt das Bild aus, räumt
+  `onerror` es weg und die Silhouette steht wieder da — ohne Javascript.
+- **Die Legende wird abgeleitet, nie gepflegt.** Eine zweite Liste neben der
+  Zeichnung läuft still auseinander.
 
 ## Weiterentwicklung mit Subagenten
 
