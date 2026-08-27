@@ -280,8 +280,7 @@ Feldvarianten, die die App und der Validator gleichwertig behandeln:
       "Ventildeckel aus Kunststoff mit integriertem Ölabscheider",
       "Valvetronic-Stellmotor liegend auf der Auslassseite"
     ],
-    "weak_points": ["Ventildeckeldichtung", "Elektrische Wasserpumpe"],
-    "sources": [{ "label": "BMW TIS", "note": "SP-Daten N52 Motormechanik" }]
+    "weak_points": ["Ventildeckeldichtung", "Elektrische Wasserpumpe"]
   }
 }
 ```
@@ -300,7 +299,6 @@ Feldvarianten, die die App und der Validator gleichwertig behandeln:
 | `block` | string | – | Blockmaterial / Bauweise |
 | `id_marks` | string[] | – | **Erkennungsmerkmale im Motorraum** — Kern der Identifikation |
 | `weak_points` | string[] | – | Bekannte Schwachstellen |
-| `sources` | array | – | Attribution wie bei Docs |
 
 ### Visualisierung
 
@@ -312,6 +310,32 @@ Schnittzeichnungen oder 3D-Modelle werden **nicht** eingebettet (Lizenzrisiko,
 siehe Inhaltsregeln in `HANDOFF.md`).
 
 ---
+
+## `engines.json` — wird erzeugt, nicht bearbeitet
+
+43 Motoren sind zu viel für einen Bearbeiter, und mehrere gleichzeitig an
+derselben Datei heisst verlorene Arbeit. Deshalb liegen die Steckbriefe als
+Fragmente unter `content/_fragmente/` — je eine Datei pro Motorenfamilie —
+und werden zusammengeführt:
+
+```bash
+node scripts/merge-engines.mjs --dry   # nur prüfen
+node scripts/merge-engines.mjs         # content/engines.json schreiben
+```
+
+Das Zusammenführen prüft dabei jeden Steckbrief: `layout` muss eine Form
+sein, die `graphics.js` zeichnen kann, `aspiration` eine, aus der es die
+richtige Zahl Lader ableitet, `displacement_cc` eine Zahl, die
+Leistungsvarianten plausibel. Doppelte IDs über Fragmente hinweg fallen auf,
+ebenso Motoren ohne Fahrzeug und Fahrzeuge ohne Motor.
+
+Ausserdem lehnt es Anzugsmomente, Widerstands- und Druckangaben in
+Steckbriefen ab. Ein solcher Wert gehört in eine Reparaturanleitung mit
+Herstellerbezug, nicht in eine Motorübersicht, wo seine Herkunft niemand
+nachvollziehen kann.
+
+`content/engines.json` selbst wird **nicht** von Hand bearbeitet — Änderungen
+gehen ins Fragment, dann neu zusammenführen.
 
 ## `measure.json` — Messplan mit maschinenlesbaren Sollwerten
 
@@ -332,8 +356,7 @@ den Sollbereich prüfen und farblich zurückmelden.
       "instruction": "Zündung aus, 30 Min. Ruhe. Messung direkt an den Polen.",
       "target": { "unit": "V", "min": 12.4, "max": 12.9 },
       "engines": [],
-      "models": [],
-      "sources": [{ "label": "Bentley", "note": "E46 Elektrik-Grundlagen" }]
+      "models": []
     },
     {
       "id": "kerzenbild",
@@ -357,7 +380,6 @@ den Sollbereich prüfen und farblich zurückmelden.
 | `target` | object | ✓ | Sollwert — **entweder** numerisch **oder** `text` (siehe unten) |
 | `engines` | string[] | – | Motor-Filter; leer/fehlend = gilt für alle |
 | `models` | string[] | – | Baureihen-Filter; leer/fehlend = gilt für alle |
-| `sources` | array | – | Attribution |
 
 ### `target` — numerisch oder textuell
 

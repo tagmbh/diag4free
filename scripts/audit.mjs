@@ -29,18 +29,21 @@ if (!BODIES.length) {
 }
 
 const models = await lies(join(CONTENT, 'models.json'));
+const genutzt = new Set();
 const alleModelle = [];
-(function walk(o) {
-  if (Array.isArray(o)) return o.forEach(walk);
-  if (o && typeof o === 'object') {
-    if (o.id && o.engines) alleModelle.push(o);
-    Object.values(o).forEach(walk);
-  }
-})(models);
+// models.json gliedert die Baureihen in Gruppen (`classic`,
+// `obd-transition`, `e60-e9x`, `f-series`). Die Gruppen-ID ist zugleich ein
+// gueltiges Content-Verzeichnis: `content/f-series/` versorgt alle vier
+// F-Baureihen. Wer nur nach `m.group` sucht, uebersieht das — das Feld gibt
+// es im Datensatz gar nicht, die Zugehoerigkeit steckt in der Verschachtelung.
+for (const gruppe of models.groups || []) {
+  for (const m of gruppe.models || []) alleModelle.push({ ...m, group: gruppe.id });
+}
 
 for (const m of alleModelle) {
   if (!m.body) melde('models.json', m.id, 'hoch', 'kein `body` — Fahrzeuggrafik faellt auf Standardform zurueck');
   else if (!BODIES.includes(m.body)) melde('models.json', m.id, 'hoch', `body "${m.body}" kennt graphics.js nicht (bekannt: ${BODIES.join(', ')})`);
+  (m.engines || []).forEach(e => genutzt.add(e));
   if (!m.engines?.length) melde('models.json', m.id, 'hoch', 'keine Motoren — Trichter endet nach Schritt 1');
   if (!m.years) melde('models.json', m.id, 'mittel', 'kein Baujahrbereich');
   if (!m.desc) melde('models.json', m.id, 'mittel', 'keine Kurzbeschreibung');
@@ -177,6 +180,58 @@ for (const gruppe of ['diagnostic', 'psdz']) {
 for (const u of (sw.updates || [])) {
   if (!u.file) melde('content/software.json', 'update', 'hoch', 'Update ohne Dateiname');
   if (!u.result) melde('content/software.json', u.file, 'mittel', 'kein Zielstand angegeben');
+}
+
+// -------- Abdeckung --------
+// Die Zahl, an der das Projekt gemessen wird: wie viel von dem, was die App
+// anbietet, ist auch gefuellt. Ein Trichter, der zu einer leeren Ansicht
+// fuehrt, ist schlimmer als einer, der die Baureihe gar nicht erst nennt.
+const abdeckung = [];
+
+const mitInhalt = new Set();
+for (const [dir, docs] of Object.entries(docsProDir)) if (docs.length) mitInhalt.add(dir);
+
+const erreichbar = alleModelle.filter(m => mitInhalt.has(m.id) || mitInhalt.has(m.group || ''));
+abdeckung.push(['Baureihen mit Inhalt', erreichbar.length, alleModelle.length,
+  alleModelle.filter(m => !mitInhalt.has(m.id) && !mitInhalt.has(m.group || '')).map(m => m.id)]);
+
+const eigene = alleModelle.filter(m => mitInhalt.has(m.id));
+abdeckung.push(['Baureihen mit eigenem Inhalt', eigene.length, alleModelle.length,
+  alleModelle.filter(m => !mitInhalt.has(m.id)).map(m => m.id)]);
+
+let steckbriefe = new Set();
+if (await gibt(join(CONTENT, 'engines.json'))) {
+  const roh = await lies(join(CONTENT, 'engines.json'));
+  for (const e of (roh.engines || roh || [])) if (e?.id) steckbriefe.add(e.id);
+}
+abdeckung.push(['Motoren mit Steckbrief', steckbriefe.size, genutzt.size,
+  [...genutzt].filter(m => !steckbriefe.has(m)).sort()]);
+
+let messpunkte = 0;
+if (await gibt(join(CONTENT, 'measure.json'))) {
+  const roh = await lies(join(CONTENT, 'measure.json'));
+  messpunkte = (roh.items || []).length;
+}
+abdeckung.push(['Messpunkte im Messplan', messpunkte, 25, []]);
+
+let artikelDa = 0, artikelGeplant = 0;
+for (const [dir, docs] of Object.entries(docsProDir)) {
+  for (const d of docs) {
+    if (!d.article) continue;
+    artikelGeplant++;
+    if (await gibt(join(CONTENT, dir, d.article))) artikelDa++;
+  }
+}
+abdeckung.push(['Artikel geschrieben', artikelDa, artikelGeplant, []]);
+
+if (!process.argv.includes('--json')) {
+  console.log('\n── Abdeckung');
+  for (const [was, ist, soll, offen] of abdeckung) {
+    const p = soll ? Math.round(ist / soll * 100) : 100;
+    const balken = '█'.repeat(Math.round(p / 5)).padEnd(20, '·');
+    console.log(`  ${balken} ${String(p).padStart(3)}%  ${was} (${ist}/${soll})`);
+    if (offen.length) console.log(`  ${' '.repeat(20)}       offen: ${offen.join(', ')}`);
+  }
 }
 
 // -------- Ausgabe --------
