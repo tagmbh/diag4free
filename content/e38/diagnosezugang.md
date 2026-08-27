@@ -15,7 +15,7 @@ Der E38 steht genau auf der Grenze zwischen zwei Diagnosewelten. Unter der Haube
 
 Die 16-polige Buchse im Innenraum sieht aus wie an jedem modernen Fahrzeug, und ein handelsüblicher Fehlerauslesegerät findet dort auch etwas. Was er findet, ist die abgasrelevante Ebene der Motorsteuerung — mehr nicht.
 
-Alles, wofür der E38 gebaut wurde, liegt ausserhalb davon: Zentralverriegelung, Klimatisierung mit Fondbedienung, Sitzspeicher, Lichtmodul, Bordmonitor. Diese Steuergeräte antworten nur auf das fahrzeugeigene Diagnoseprotokoll. Ein Auslesegerät, das dieses Protokoll nicht spricht, meldet keine Fehler — und das wird regelmässig mit Fehlerfreiheit verwechselt.
+Alles, wofür der E38 gebaut wurde, liegt außerhalb davon: Zentralverriegelung, Klimatisierung mit Fondbedienung, Sitzspeicher, Lichtmodul, Bordmonitor. Diese Steuergeräte antworten nur auf das fahrzeugeigene Diagnoseprotokoll. Ein Auslesegerät, das dieses Protokoll nicht spricht, meldet keine Fehler — und das wird regelmäßig mit Fehlerfreiheit verwechselt.
 
 ## Die Reihenfolge, die funktioniert
 

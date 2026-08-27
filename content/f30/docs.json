@@ -1,0 +1,125 @@
+{
+  "model": "f30",
+  "docs": [
+    {
+      "id": "D4F-F30-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F30/F31/F34 · ENET, Buchse und Softwarewahl",
+      "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
+      "summary": "Am F30 läuft die Diagnose über Ethernet an der OBD-Buchse. Ein K+DCAN-Kabel meldet hier kein Steuergerät, weil die K-Line keine Diagnose mehr trägt. Die Softwarewahl richtet sich nach der ausgelesenen I-Stufe und nach dem verbauten Zugangssystem.",
+      "points": [
+        "ENET-Kabel verwenden. Die Diagnose-Ethernet-Adern liegen auf den herstellerfreien OBD-Pins, Pin 7 trägt keine Diagnose. Ein K+DCAN-Kabel steckt mechanisch, findet aber nie ein Steuergerät",
+        "Bei Eigenbaukabeln die Aktivierungsleitung zwischen Pin 8 und Pin 16 beachten. Die genannten Widerstandswerte streuen, nach einer Quelle liegen sie um 510 Ω — vor dem Löten gegenprüfen",
+        "Vor der Softwarewahl klären, ob das Fahrzeug CAS4/CAS4+ oder ein FEM trägt. Der F30 überspannt diesen Wechsel, und die Abläufe unterscheiden sich danach",
+        "Netzwerkseite: automatische Adressvergabe, WLAN und VPN aus, keine zweite aktive Schnittstelle. Danach erst die Diagnosesoftware starten",
+        "Schnittstelleneinstellung auf ENET umstellen und die Anwendung neu starten. Eine stehen gebliebene K-DCAN-Voreinstellung erzeugt dasselbe Bild wie ein defektes Fahrzeug",
+        "Kein Programmier- oder Codierversuch ohne Werkstattladegerät und ohne gesicherten Fahrzeugauftrag"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Diagnose-Ethernet RX+",
+        "OBD2 Pin 11 · Diagnose-Ethernet RX-",
+        "OBD2 Pin 12 · Diagnose-Ethernet TX+ · abweichende Zuordnung im Umlauf, siehe Artikel",
+        "OBD2 Pin 13 · Diagnose-Ethernet TX-",
+        "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
+        "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"],
+      "article": "diagnosezugang.md",
+      "details": ["D4F-F30-003", "D4F-F30-004"]
+    },
+    {
+      "id": "D4F-F30-002",
+      "type": "GUIDE",
+      "cat": "Motoridentifikation",
+      "title": "Motorzuordnung F30/F31/F34 · N-Motoren vor dem LCI, B-Motoren danach",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Mit dem Facelift 2015 wechselt der 3er von den N-Motoren auf den Baukasten B38/B48/B58. Dabei ändern sich auch die Typbezeichnungen: aus 328i wird 330i, aus 335i wird 340i. Wer nach Schriftzug bestellt, bestellt an der Hälfte der Fahrzeuge falsch.",
+      "points": [
+        "Vor dem Facelift: 316i und 318i mit dem aufgeladenen 1.6er N13 aus der gemeinsam mit PSA entwickelten Motorenfamilie, 320i und 328i mit dem N20, 335i mit dem Sechszylinder N55",
+        "Ab dem Facelift 2015: 318i mit dem Dreizylinder B38, 320i und 330i mit dem B48, 340i mit dem B58. Die früheren Bezeichnungen 316i, 328i und 335i entfallen",
+        "Schnellster Griff im Motorraum ist die Zahl der Zündspulen: drei bedeutet B38, vier bedeutet B48, N20 oder N13, sechs bedeutet B58 oder N55",
+        "B58 gegen N55 trennen: beim B58 sitzt der Ladeluftkühler als Wasser-Luft-Kühler in der Ansaugbrücke und der Abgaskrümmer ist in den Zylinderkopf integriert. Der N55 hat einen separaten Krümmer und einen Luft-Luft-Ladeluftkühler",
+        "N13 gegen N20 trennen: beide sind aufgeladene Vierzylinder, aber der N13 ist der 1.6er der Einstiegsmodelle mit anderem Grundmotor. Über den Motorcode am Block entscheiden, nicht über das Typschild",
+        "N47-Diesel: Steuerkettentrieb hinten zum Getriebe. Metallisches Rasseln direkt nach dem Kaltstart aus dem hinteren Motorbereich ist das Leitsymptom und gehört sofort nachgegangen"
+      ],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"],
+      "article": "motorzuordnung.md",
+      "details": ["D4F-F30-001"]
+    },
+    {
+      "id": "D4F-F30-003",
+      "type": "FUB",
+      "cat": "Steuergeräte",
+      "title": "CAS4 oder FEM · das Zugangssystem des F30 bestimmen",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Der F30 überspannt den Wechsel vom Zugangssystem CAS4 zum FEM. Welches der beiden verbaut ist, entscheidet über Abläufe bei Schlüssel-, Licht- und Karosseriearbeiten. Bestimmt wird es an der Steuergeräteliste, nicht am Baujahr in der Zulassung.",
+      "points": [
+        "Frühe Fahrzeuge tragen CAS4 beziehungsweise CAS4+, spätere ein FEM. Die vorliegenden Quellen nennen den Übergang für 2013/2014, ohne sich auf ein Datum zu einigen — verlass dich deshalb nicht auf eine Jahrestabelle",
+        "Entschieden wird es am Fahrzeug: Steuergeräteliste lesen. Erscheint ein CAS, ist es ein CAS. Erscheint FEM_BODY, ist es ein FEM. Das dauert zwei Minuten und ersetzt jede Vermutung",
+        "Das FEM fasst Zugangssystem und Karosseriefunktionen zusammen — unter anderem Licht, Fenster und Zentralverriegelung. Ein Ausfall trifft deshalb mehr Funktionen auf einmal als ein CAS-Ausfall und sieht schnell nach mehreren Defekten aus",
+        "CAS4 gegen CAS4+: nach einer Quelle lässt sich die DME-ISN nur beim CAS4 aus dem Modul auslesen. Für Schlüssel- und Motorsteuerungsarbeiten entscheidet das über den möglichen Weg",
+        "Ein Gebrauchtteil bringt Fahrzeugauftrag und Softwarestand des Spenderfahrzeugs mit. Vor dem Einbau beides lesen und mit dem eigenen Fahrzeug vergleichen",
+        "Vor jedem Tausch am Zugangssystem Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne den Ausgangszustand fehlt hinterher der Bezugspunkt"
+      ],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"],
+      "article": "cas4-oder-fem.md",
+      "details": ["D4F-F30-001", "D4F-F30-004"]
+    },
+    {
+      "id": "D4F-F30-004",
+      "type": "TEST",
+      "cat": "Softwarestand",
+      "title": "I-Stufe und Datenstand am F30 prüfen",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Am F30 ist die erste Frage vor jeder Codierung nicht, welches Bauteil hängt, sondern welcher Softwarestand auf dem Fahrzeug liegt. Die I-Stufe beantwortet das für das Gesamtfahrzeug und verrät nebenbei, ob ein Steuergerät aus einem fremden Fahrzeug stammt.",
+      "points": [
+        "Die I-Stufe beschreibt den Softwarestand des Gesamtfahrzeugs. Aufbau: Fahrzeugprogramm, Jahr, Monat, Version — zum Beispiel F020-15-11-500",
+        "Es gibt nicht eine I-Stufe, sondern drei: Werksstand bei Auslieferung, aktueller Stand und Zielstand einer Programmierung. Nur alle drei zusammen ergeben ein Bild",
+        "Auslesen: in der Diagnosesoftware unter den Fahrzeuginformationen, in der Codiersoftware über die Fahrzeugkonfiguration beziehungsweise den Fahrzeugauftrag",
+        "Der Präfix nennt das Fahrzeugprogramm, nicht die Baureihe. Ein Steuergerät mit fremdem Präfix stammt aus einem anderen Fahrzeugprogramm — daran erkennt man ein Spenderteil vor der ersten Störung",
+        "Hier steht bewusst keine Versionsnummer für Programmier- oder Diagnosedaten. Solche Angaben altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben. Maßgeblich ist, was am Fahrzeug steht",
+        "Vor der Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern und ein Werkstattladegerät anschließen. Beides ist der Rückweg, wenn ein Vorgang abbricht"
+      ],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"],
+      "details": ["D4F-F30-001", "D4F-F30-003"]
+    },
+    {
+      "id": "D4F-F30-005",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "Lenkungsmeldung am F30 einordnen · EPS, Bordnetz und Adaption",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Die elektromechanische Lenkung des F30 meldet sich häufig, ohne mechanisch defekt zu sein. Bordspannung, Adaption und Kommunikation mit den Nachbarsteuergeräten stehen vor jedem Gedanken an ein neues Lenkgetriebe.",
+      "points": [
+        "Die Lenkunterstützung hängt an der Bordspannung. Eine schwache oder nicht registrierte Batterie erzeugt Lenkungsmeldungen ohne mechanischen Fehler — deshalb zuerst das Bordnetz klären, dann die Lenkung",
+        "Häufig genanntes Fehlerbild aus mehreren unabhängigen Werkstattfäden: kurzes Haken beim Anlenken, danach normale Unterstützung. Erfahrungswert, keine Spezifikation",
+        "Fehlerspeicher immer zusammen mit DSC und der zentralen Fahrwerksregelung lesen. Einträge über fehlende Botschaften zwischen diesen Geräten deuten auf Versorgung oder Bus, nicht auf das Lenkgetriebe",
+        "Vor jedem Tausch Lenkwinkelabgleich und Adaption durchführen und danach erneut prüfen. Ein Teil der Meldungen verschwindet damit — nach mehreren Berichten reicht die Softwareseite überraschend oft",
+        "Ein Lenkgetriebe wird nach reproduzierbarem Verhalten getauscht, nicht nach einem einzelnen Eintrag. Löschen, Probefahrt mit Lenkeinschlag in beide Richtungen, erneut lesen",
+        "Sollwerte für Ströme und Momente der Lenkung stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: gleiches Fahrzeug, gleiche Bedingungen, gegebenenfalls ein zweites Fahrzeug derselben Ausstattung"
+      ],
+      "engines": ["N13", "N20", "N55", "N47", "B38", "B48", "B58"],
+      "article": "eps-lenkung.md",
+      "details": ["D4F-F30-006", "D4F-F30-003"]
+    },
+    {
+      "id": "D4F-F30-006",
+      "type": "TEST",
+      "cat": "Bordnetz",
+      "title": "Batteriewechsel und Energiemanagement am F30",
+      "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
+      "summary": "Der F30 lädt nach einem Modell, das Alter und Zustand der Batterie mitrechnet. Eine nicht registrierte Batterie wird weiter wie die alte behandelt. Das erzeugt Fehlerbilder in Komfort-, Lenkungs- und Start-Stopp-Funktionen, die nach Elektronikdefekt aussehen.",
+      "points": [
+        "Nach jedem Batteriewechsel registrieren. Ohne Registrierung rechnet das Energiemanagement weiter mit der verschlissenen Batterie und regelt zu früh ab",
+        "Zusätzlich codieren, wenn Typ oder Kapazität von der ausgebauten Batterie abweichen — nach den vorliegenden Quellen verläuft dort die Trennlinie zwischen Registrieren und Codieren",
+        "Typ und Kapazität am ausgebauten Teil ablesen. Der Wechsel von AGM auf eine Nassbatterie ändert die Ladekennlinie und wird ohne Codierung nicht berücksichtigt",
+        "Typische Folgen einer unterlassenen Registrierung: Start-Stopp arbeitet nicht mehr, Komfortverbraucher schalten früh ab, Lenkungs- und Fahrwerksmeldungen erscheinen ohne mechanischen Befund",
+        "Nach dem Wechsel Fehlerspeicher aller Steuergeräte lesen, notieren und erst dann löschen. Der Spannungseinbruch beim Abklemmen hinterlässt Einträge in Modulen, die mit der Batterie nichts zu tun haben",
+        "Eine geladene Batterie zeigt in Ruhe rund 12.6 V, gemessen nach mehreren Stunden Standzeit direkt an den Polen. Bei jedem Schreibvorgang am Fahrzeug ein Werkstattladegerät anschließen, keinen Erhaltungslader"
+      ],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B38", "B48", "B58"],
+      "details": ["D4F-F30-005", "D4F-F30-003"]
+    }
+  ]
+}

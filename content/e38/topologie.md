@@ -34,7 +34,7 @@ Zur Frage, welches Gerät die Führungsrolle auf dem Karosserie- und dem Informa
 ## Was daraus für die Praxis folgt
 
 1. **Sammelausfälle nach Bus sortieren.** Fehlen Verriegelung, Licht und Klima gemeinsam, ist das eine Gruppe. Fehlen Radio, Bordmonitor und Telefon gemeinsam, ist es die andere.
-2. **Masse vor Bus.** Ein korrodierter Massepunkt im Fussraum legt mehrere Geräte still und sieht exakt aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Fahrzeug.
+2. **Masse vor Bus.** Ein korrodierter Massepunkt im Fußraum legt mehrere Geräte still und sieht exakt aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Fahrzeug.
 3. **Ein Störer kann den ganzen Bus blockieren.** Zieh Verdächtige einzeln ab und wiederhole nach jedem Schritt den Suchlauf. Das ist schneller als jede Messreihe.
 4. **Der Bus muss zur Ruhe kommen.** Bleibt er nach dem Abstellen aktiv, schläft kein Gerät ein und die Batterie ist in wenigen Tagen leer — siehe `D4F-E38-006`.
 5. **Beim 750i hängen zwei Motorsteuergeräte am Diagnosebus.** Sie werden getrennt angesprochen, siehe `D4F-E38-003`.

@@ -11,7 +11,7 @@
       "points": [
         "Zwei Anschlüsse am Fahrzeug: der 20-polige Rundstecker im Motorraum und die 16-polige OBD-2-Buchse im Innenraum",
         "Über beide läuft dieselbe K-Leitung; das Fahrzeugprotokoll ist DS2, nicht das genormte OBD-2-Diagnoseprotokoll",
-        "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung — Komfortsteuergeräte antworten ausschliesslich auf DS2",
+        "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung — Komfortsteuergeräte antworten ausschließlich auf DS2",
         "Interface mit FTDI-Chip verwenden; Latency Timer im Gerätemanager auf 1 ms setzen",
         "Vor der ersten Sitzung prüfen, welcher der beiden Anschlüsse am konkreten Fahrzeug tatsächlich alle Steuergeräte liefert — das entscheidet über den Rest der Arbeit",
         "Erst Verbindung klären, dann Fehlerspeicher lesen: ein leerer Speicher aus einer halben Verbindung ist wertlos"
@@ -70,8 +70,8 @@
       "points": [
         "Beide Steuergeräte einzeln auslesen — ein Fehler auf Bank 1 steht nicht im Speicher von Bank 2",
         "Erst nach dem Auslesen beider Seiten entscheiden, ob ein Symptom einseitig oder beidseitig ist",
-        "Einseitiges Symptom heisst: das Bauteil auf dieser Bank prüfen, nicht die gemeinsame Peripherie",
-        "Beidseitiges Symptom heisst: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Masse — also das, was sich beide Bänke teilen",
+        "Einseitiges Symptom heißt: das Bauteil auf dieser Bank prüfen, nicht die gemeinsame Peripherie",
+        "Beidseitiges Symptom heißt: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Masse — also das, was sich beide Bänke teilen",
         "Alle Bank-Peripherie ist doppelt vorhanden, damit verdoppelt sich auch die Ausfallwahrscheinlichkeit",
         "Kreuzweise tauschen statt messen: ein verdächtiges Bauteil auf die andere Bank setzen und sehen, ob das Symptom mitwandert"
       ],
@@ -116,7 +116,7 @@
       "summary": "Wo die für Diagnose und Codierung wichtigen Steuergeräte im E38 sitzen. Gedacht als Wegweiser vor dem Zerlegen — nicht als Ersatz für den Stromlaufplan des konkreten Fahrzeugs.",
       "points": [
         "Motorsteuerung: E-Box im Wasserkasten; beim M73 stehen dort zwei Geräte nebeneinander",
-        "Lichtmodul: Fahrerfussraum aussen — die Stelle, an der Wasser aus verstopften Schiebedachabläufen ankommt",
+        "Lichtmodul: Fahrerfußraum außen — die Stelle, an der Wasser aus verstopften Schiebedachabläufen ankommt",
         "Grundmodul der Zentralverriegelung: Fahrerseite unter der Armaturentafel",
         "Kombiinstrument: mittig in der Armaturentafel, trägt zugleich die Gateway-Funktion",
         "Sitzspeicher-Module: unter den Vordersitzen, je Sitz eines",
@@ -142,9 +142,9 @@
         "Erst die Batterie selbst beurteilen: Ruhespannung nach mehreren Stunden ohne Last messen, rund 12.6 V zeigen eine geladene Batterie an",
         "Ruhestrommessung erst beginnen, wenn das Fahrzeug wirklich zur Ruhe gekommen ist — vorher misst man den Einschlafvorgang, nicht den Ruhestrom",
         "Türen und Klappen mit den Schlössern verriegeln, sonst bleibt die Karosserieelektronik wach",
-        "Fällt der Strom nicht ab, den Bus ansehen: dauerhafte Aktivität auf dem Eindrahtbus heisst, ein Teilnehmer sendet weiter",
+        "Fällt der Strom nicht ab, den Bus ansehen: dauerhafte Aktivität auf dem Eindrahtbus heißt, ein Teilnehmer sendet weiter",
         "Verbraucher über die Sicherungen einzeln abtrennen und beobachten, bei welchem Kreis der Strom fällt — das ersetzt jeden Sollwert",
-        "Nachrüstgeräte und Telefonvorbereitung zuerst verdächtigen, danach die serienmässigen Komfortmodule"
+        "Nachrüstgeräte und Telefonvorbereitung zuerst verdächtigen, danach die serienmäßigen Komfortmodule"
       ],
       "engines": [
         "M52",

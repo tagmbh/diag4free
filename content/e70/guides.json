@@ -40,7 +40,7 @@
         },
         {
           "q": "Haben die fehlenden Geräte eine gemeinsame Sicherung oder einen gemeinsamen Massepunkt?",
-          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmässig übersehen, weil der Verdacht sofort auf den Bus fällt.",
+          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmäßig übersehen, weil der Verdacht sofort auf den Bus fällt.",
           "measure": "Die fehlenden Geräte im Sicherungs- und Massekonzept des Fahrzeugs zurückverfolgen. Erwartet: ein gemeinsamer Zweig. Sicherungen nicht nur ansehen, sondern im eingebauten Zustand auf Spannung an beiden Kontakten prüfen — ein schlechter Halter sieht heil aus.",
           "doc": "D4F-E70-006",
           "yes": "result-versorgung",
@@ -48,7 +48,7 @@
         },
         {
           "q": "Bleibt die Bordspannung während des gesamten Suchlaufs stabil?",
-          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmässig ein unnötiges Steuergerät.",
+          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmäßig ein unnötiges Steuergerät.",
           "measure": "Spannung während des Suchlaufs mitbeobachten und dabei stützen. Erwartet: keine sichtbaren Einbrüche. Rund 12.6 V Ruhespannung bei stehendem Motor zeigen eine geladene Batterie an; bricht die Spannung beim Suchlauf ein, ist zuerst die Versorgung zu klären.",
           "doc": "D4F-E70-001",
           "yes": 5,
@@ -57,7 +57,7 @@
         {
           "q": "Kommen die fehlenden Geräte zurück, wenn du das verdächtige Modul abziehst oder es getrocknet ist?",
           "help": "Ein einzelnes gestörtes Gerät kann den Bus blockieren. Am E70 steht die Junction-Box hinter dem Handschuhfach oben auf der Liste, weil verstopfte Abläufe genau dorthin führen. Abziehen und erneut suchen ist schneller als jede Messreihe.",
-          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschliessen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
+          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschließen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
           "doc": "D4F-E70-006",
           "yes": "result-wasser",
           "no": "result-busleitung"
@@ -94,9 +94,9 @@
           "no": 2
         },
         {
-          "q": "Sind alle vier Reifen gleicher Grösse, gleichen Typs und mit vergleichbarer Profiltiefe?",
+          "q": "Sind alle vier Reifen gleicher Größe, gleichen Typs und mit vergleichbarer Profiltiefe?",
           "help": "Unterschiedliche Abrollumfänge erzeugen dauerhaften Schlupf zwischen den Achsen. Der Allrad regelt dagegen an, überhitzt und meldet einen Fehler — mit völlig intakter Mechanik. Das ist billig zu prüfen und wird trotzdem übersprungen.",
-          "measure": "Reifengrössen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
+          "measure": "Reifengrößen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
           "doc": "D4F-E70-004",
           "yes": 3,
           "no": "result-reifen"
@@ -111,7 +111,7 @@
         },
         {
           "q": "Folgt der Stellmotor im Stelltest der Ansteuerung, und kommt eine plausible Rückmeldung?",
-          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiss ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
+          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiß ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
           "measure": "Stelltest starten und die Rückmeldung des Stellungsgebers mitbeobachten. Erwartet: Ansteuerung und Rückmeldung laufen gemeinsam. Verweigert das Steuergerät den Test, ist das noch kein Beweis für einen defekten Stellmotor — dann zuerst Versorgung und Kalibrierstand klären.",
           "doc": "D4F-E70-004",
           "yes": 5,
@@ -190,7 +190,7 @@
     },
     "result-reifen": {
       "title": "Unterschiedliche Abrollumfänge",
-      "text": "Verschiedene Reifengrössen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+      "text": "Verschiedene Reifengrößen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
       "next_docs": [
         "D4F-E70-004"
       ]

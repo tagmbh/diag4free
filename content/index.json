@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:11:11.197Z",
+  "generated": "2026-08-27T05:14:39.189Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -967,7 +967,7 @@
       "points": [
         "Zwei Anschlüsse am Fahrzeug: der 20-polige Rundstecker im Motorraum und die 16-polige OBD-2-Buchse im Innenraum",
         "Über beide läuft dieselbe K-Leitung; das Fahrzeugprotokoll ist DS2, nicht das genormte OBD-2-Diagnoseprotokoll",
-        "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung — Komfortsteuergeräte antworten ausschliesslich auf DS2",
+        "Genormte OBD-2-Abfragen erreichen nur die Motorsteuerung — Komfortsteuergeräte antworten ausschließlich auf DS2",
         "Interface mit FTDI-Chip verwenden; Latency Timer im Gerätemanager auf 1 ms setzen",
         "Vor der ersten Sitzung prüfen, welcher der beiden Anschlüsse am konkreten Fahrzeug tatsächlich alle Steuergeräte liefert — das entscheidet über den Rest der Arbeit",
         "Erst Verbindung klären, dann Fehlerspeicher lesen: ein leerer Speicher aus einer halben Verbindung ist wertlos"
@@ -1028,8 +1028,8 @@
       "points": [
         "Beide Steuergeräte einzeln auslesen — ein Fehler auf Bank 1 steht nicht im Speicher von Bank 2",
         "Erst nach dem Auslesen beider Seiten entscheiden, ob ein Symptom einseitig oder beidseitig ist",
-        "Einseitiges Symptom heisst: das Bauteil auf dieser Bank prüfen, nicht die gemeinsame Peripherie",
-        "Beidseitiges Symptom heisst: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Masse — also das, was sich beide Bänke teilen",
+        "Einseitiges Symptom heißt: das Bauteil auf dieser Bank prüfen, nicht die gemeinsame Peripherie",
+        "Beidseitiges Symptom heißt: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Masse — also das, was sich beide Bänke teilen",
         "Alle Bank-Peripherie ist doppelt vorhanden, damit verdoppelt sich auch die Ausfallwahrscheinlichkeit",
         "Kreuzweise tauschen statt messen: ein verdächtiges Bauteil auf die andere Bank setzen und sehen, ob das Symptom mitwandert"
       ],
@@ -1076,7 +1076,7 @@
       "summary": "Wo die für Diagnose und Codierung wichtigen Steuergeräte im E38 sitzen. Gedacht als Wegweiser vor dem Zerlegen — nicht als Ersatz für den Stromlaufplan des konkreten Fahrzeugs.",
       "points": [
         "Motorsteuerung: E-Box im Wasserkasten; beim M73 stehen dort zwei Geräte nebeneinander",
-        "Lichtmodul: Fahrerfussraum aussen — die Stelle, an der Wasser aus verstopften Schiebedachabläufen ankommt",
+        "Lichtmodul: Fahrerfußraum außen — die Stelle, an der Wasser aus verstopften Schiebedachabläufen ankommt",
         "Grundmodul der Zentralverriegelung: Fahrerseite unter der Armaturentafel",
         "Kombiinstrument: mittig in der Armaturentafel, trägt zugleich die Gateway-Funktion",
         "Sitzspeicher-Module: unter den Vordersitzen, je Sitz eines",
@@ -1103,9 +1103,9 @@
         "Erst die Batterie selbst beurteilen: Ruhespannung nach mehreren Stunden ohne Last messen, rund 12.6 V zeigen eine geladene Batterie an",
         "Ruhestrommessung erst beginnen, wenn das Fahrzeug wirklich zur Ruhe gekommen ist — vorher misst man den Einschlafvorgang, nicht den Ruhestrom",
         "Türen und Klappen mit den Schlössern verriegeln, sonst bleibt die Karosserieelektronik wach",
-        "Fällt der Strom nicht ab, den Bus ansehen: dauerhafte Aktivität auf dem Eindrahtbus heisst, ein Teilnehmer sendet weiter",
+        "Fällt der Strom nicht ab, den Bus ansehen: dauerhafte Aktivität auf dem Eindrahtbus heißt, ein Teilnehmer sendet weiter",
         "Verbraucher über die Sicherungen einzeln abtrennen und beobachten, bei welchem Kreis der Strom fällt — das ersetzt jeden Sollwert",
-        "Nachrüstgeräte und Telefonvorbereitung zuerst verdächtigen, danach die serienmässigen Komfortmodule"
+        "Nachrüstgeräte und Telefonvorbereitung zuerst verdächtigen, danach die serienmäßigen Komfortmodule"
       ],
       "engines": [
         "M52",
@@ -1920,12 +1920,12 @@
       "cat": "Modell-Setup",
       "title": "Bus-Topologie E70 · PT-CAN, K-CAN, FlexRay und der Weg der Diagnose",
       "valid": "E70/E71 · 2006–2013",
-      "summary": "Der E70 trägt mehrere Bussysteme nebeneinander und ist das erste Serienfahrzeug mit FlexRay. Wer weiss, welches Steuergerät an welchem Bus hängt und über welches Gateway die Diagnose läuft, spart sich den grössten Teil der Fehlersuche.",
+      "summary": "Der E70 trägt mehrere Bussysteme nebeneinander und ist das erste Serienfahrzeug mit FlexRay. Wer weiß, welches Steuergerät an welchem Bus hängt und über welches Gateway die Diagnose läuft, spart sich den größten Teil der Fehlersuche.",
       "points": [
         "Die Junction-Box-Elektronik trägt die zentrale Gateway-Funktion und verbindet die Bussysteme untereinander",
         "Antriebsseite am PT-CAN: Motorsteuerung, Getriebe, Fahrdynamikregelung, Verteilergetriebe",
         "Karosserie und Komfort am K-CAN; nach einer Quelle arbeitet dieser Bus mit rund 100 kbit/s und damit deutlich langsamer als der PT-CAN",
-        "FlexRay trägt ausschliesslich die Fahrwerksregelung — nach einer Quelle mit 10 Mbit/s; das Fahrzeug hat den Bus nur mit der entsprechenden Ausstattung",
+        "FlexRay trägt ausschließlich die Fahrwerksregelung — nach einer Quelle mit 10 Mbit/s; das Fahrzeug hat den Bus nur mit der entsprechenden Ausstattung",
         "Diagnoseaufträge an FlexRay-Teilnehmer laufen über ein weiteres Gateway zwischen PT-CAN und FlexRay — welches Steuergerät diese Funktion trägt, ist hier nicht gesichert",
         "Infotainment hängt am optischen Ring und fällt bei einem Ringfehler geschlossen aus, nicht einzeln"
       ],
@@ -1982,9 +1982,9 @@
       "valid": "E70/E71 · xDrive mit elektrisch gestelltem Verteilergetriebe",
       "summary": "Das Verteilergetriebe des E70 hat ein eigenes Steuergerät und einen Stellmotor, der die Lamellenkupplung verspannt. Die häufigsten Befunde liegen nicht im Getriebe, sondern im Stellmotor und in der fehlenden Kalibrierung nach einem Eingriff.",
       "points": [
-        "Erfahrungswert: der bekannteste Ausfall ist der Stellmotor, dessen Kunststoffräder verschleissen — Fehlerbild sind Stellfehler statt mechanischer Geräusche",
+        "Erfahrungswert: der bekannteste Ausfall ist der Stellmotor, dessen Kunststoffräder verschleißen — Fehlerbild sind Stellfehler statt mechanischer Geräusche",
         "Nach Tausch von Steuergerät oder Stellmotor ist eine Kalibrierung zwingend; ohne sie bleibt das System im Fehler, obwohl die Teile neu sind",
-        "Nach einer Quelle liegen die Verschleisswerte der Kupplung im Steuergerät und müssen beim Gerätetausch zurückgesetzt werden — vor dem Anwenden gegenprüfen",
+        "Nach einer Quelle liegen die Verschleißwerte der Kupplung im Steuergerät und müssen beim Gerätetausch zurückgesetzt werden — vor dem Anwenden gegenprüfen",
         "Verweigert das Steuergerät den Stelltest, ist das kein Beweis für einen defekten Stellmotor — erst Versorgung, Kalibrierstand und Fehlerspeicher der Fahrdynamikregelung klären",
         "Reifen prüfen, bevor Teile bestellt werden: unterschiedliche Abrollumfänge an einer Achse erzeugen Regelfehler ohne defektes Bauteil",
         "Nach dem Ersetzen des Stellmotors die Dichtung erneuern — sonst folgt der Ölverlust auf den Reparaturerfolg"
@@ -3165,6 +3165,399 @@
         "D4F-F15-002"
       ],
       "model": "f15"
+    },
+    {
+      "id": "D4F-F22-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F20/F21/F22/F23 über ENET",
+      "valid": "F20/F21/F22/F23 · 2011–2019 · alle Motoren",
+      "summary": "Der kompakte 1er und 2er dieser Generation trägt dieselbe Diagnosearchitektur wie die großen F-Baureihen: Ethernet an der OBD-Buchse statt K-Line. Was das für Kabel, Zündung und Datenstand bedeutet.",
+      "points": [
+        "ENET-Kabel verwenden, kein K+DCAN — die alten INPA-Kabel erreichen hier kein Steuergerät",
+        "Ethernet wird erst mit KL15 aktiv, ohne Zündung meldet die Netzwerkbuchse kein Medium",
+        "WLAN und VPN am Notebook abschalten, sonst läuft der Verkehr am Fahrzeug vorbei",
+        "Datenstand gegen den ausgelesenen I-Level wählen, nie nach einer Versionsnummer aus dem Netz",
+        "Kleines Bordnetz, kleiner Puffer: Werkstattladegerät vor jedem Schreibvorgang ist hier besonders wichtig",
+        "Generisches OBD-2 zeigt nur die Motorsteuerung — Lenkung, Karosserie und Fahrwerk antworten darauf nicht"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Ethernet TX+",
+        "OBD2 Pin 11 · Ethernet TX-",
+        "OBD2 Pin 12 · Ethernet RX+",
+        "OBD2 Pin 13 · Ethernet RX-",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 4/5 · Masse"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "article": "enet-zugang.md",
+      "details": [
+        "D4F-F22-002",
+        "D4F-F22-007"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-002",
+      "type": "GUIDE",
+      "cat": "Identifikation",
+      "title": "Motorzuordnung F20 bis F23: von N13 und N20 zu B38 und B48",
+      "valid": "F20/F21/F22/F23 · 2011–2019",
+      "summary": "Diese Baureihe überspannt den Wechsel von den N-Motoren auf die Baukastenmotoren der B-Reihe. Die Umstellung fällt je nach Modell und Markt auf verschiedene Zeitpunkte — deshalb entscheidet die Motorkennung, nicht das Baujahr.",
+      "points": [
+        "Zylinder zählen trennt zuerst: drei Zündspulen sind ein Dreizylinder, vier ein Vierzylinder, sechs ein Sechszylinder",
+        "Motorkennung am Kurbelgehäuse ablesen und gegen den Fahrzeugauftrag halten",
+        "Der 1.6-Liter-Vierzylinder der N-Reihe stammt aus einer Kooperationsentwicklung und hat eigene Anbauteile",
+        "Baujahrgrenzen aus dem Netz nicht übernehmen — die Quellen widersprechen sich, siehe Artikel",
+        "Bei der Teilebestellung immer die vollständige Kennung nehmen, nicht nur die Familie",
+        "Steuergerätebezeichnung der Motorsteuerung als Gegencheck zur mechanischen Ansprache notieren"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-F22-003",
+        "D4F-F22-001"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-003",
+      "type": "TEST",
+      "cat": "Motor",
+      "title": "N13: das Erbe der Kooperationsentwicklung eingrenzen",
+      "valid": "F20/F21/F22/F23 · nur N13",
+      "summary": "Der N13 ist der einzige BMW-Motor dieser Zeit, dessen Block aus einer Kooperation mit einem anderen Hersteller stammt. Er bringt dadurch Fehlerbilder mit, die man von den übrigen N-Motoren nicht kennt — und Teile, die anders aussehen.",
+      "points": [
+        "Rasseln beim Kaltstart in den ersten Sekunden ernst nehmen und dem Kettentrieb zuordnen, nicht dem Ventiltrieb",
+        "Geräuschprüfung immer am kalten Motor, warm verschwindet das Leitsymptom oft vollständig",
+        "Startprobleme und ruppiger Lauf gehören zuerst in die Kraftstoffhochdruckseite, nicht in die Zündung",
+        "Ölkohle an den Einlassventilen als Ursache mitprüfen, bevor Zündspulen und Kerzen getauscht werden",
+        "Anbauteile weichen von den übrigen N-Motoren ab — Teile nie nach Ähnlichkeit bestellen",
+        "Erfahrungswert zur Laufleistung: Kettenauffälligkeiten treten in Berichten früh auf, teils deutlich unter 100 tkm"
+      ],
+      "engines": [
+        "N13"
+      ],
+      "article": "n13-schwachstellen.md",
+      "details": [
+        "D4F-F22-002",
+        "D4F-F22-004"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-004",
+      "type": "TEST",
+      "cat": "Motor",
+      "title": "Valvetronic im F2x: Ventilhubsteuerung eingrenzen",
+      "valid": "F20/F21/F22/F23 · Benziner mit Valvetronic",
+      "summary": "Alle Benziner dieser Baureihe stellen den Ventilhub über eine Exzenterwelle mit eigenem Stellmotor. Fällt die Verstellung aus, meldet das Fahrzeug Notlauf oder unruhigen Leerlauf — ein Fehlerbild, das leicht der Zündung zugeschrieben wird.",
+      "points": [
+        "Stellmotor der Exzenterwelle sitzt quer auf dem Zylinderkopf und ist ohne Demontage sichtbar",
+        "Vor dem Tausch die Versorgung und den Steckverbinder des Stellmotors prüfen",
+        "Exzenterwellensensor und Stellmotor sind getrennte Fehlerquellen mit ähnlichem Symptom",
+        "Nach Arbeiten an der Ventilhubsteuerung die Adaption durchführen, sonst bleibt der Notlauf",
+        "Schwergängigkeit der Exzenterwelle bringt auch einen neuen Stellmotor um — Mechanik mitbewerten"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-003",
+        "D4F-F22-006"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-005",
+      "type": "TEST",
+      "cat": "Lenkung",
+      "title": "Elektrische Servolenkung im F2x: Ausfall eingrenzen",
+      "valid": "F20/F21/F22/F23 · alle Motoren",
+      "summary": "Die Lenkunterstützung dieser Baureihe arbeitet elektrisch und hängt am Bordnetz und am Fahrzeugbus. Ein sporadischer Ausfall ist deshalb häufiger ein Spannungs- oder Kommunikationsbefund als ein defektes Lenkgetriebe.",
+      "points": [
+        "Ausfälle beim Motorstart und bei Kälte zuerst als Spannungseinbruch behandeln",
+        "Batterie und Ladezustand vor jedem anderen Schritt bewerten — Ruhespannung um 12.6 V zeigt eine geladene Batterie",
+        "Fehlereinträge in benachbarten Steuergeräten mitlesen, sie zeigen Kommunikationsausfälle deutlicher",
+        "Generisches OBD-2 sieht die Lenkung nicht — herstellerspezifischer Zugang ist Pflicht",
+        "Softwarestand der Lenkung prüfen, bevor über einen Bauteiltausch entschieden wird",
+        "Bei gelbem Lenkradsymbol bleibt meist eine Restunterstützung aktiv — das Fahrzeug bewegt sich, ist aber nicht in Ordnung"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-007"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-006",
+      "type": "TEST",
+      "cat": "Aufladung",
+      "title": "N55 im M235i: Ladedruckaufbau und Wastegate beurteilen",
+      "valid": "F22/F23 · nur N55",
+      "summary": "Der Sechszylinder-Turbo im M235i fällt mit zwei verschiedenen Themen auf, die oft verwechselt werden: ein Rasseln des Wastegate-Aktors im kalten Zustand und ein zu langsamer Ladedruckaufbau unter Last. Nur eines davon ist ein Leistungsproblem.",
+      "points": [
+        "Rasseln nur im kalten Zustand ohne Leistungsverlust ist eine andere Baustelle als schlechter Ladedruckaufbau",
+        "Vor der Laderbewertung die Ladeluftführung auf Risse und lose Verbindungen absuchen",
+        "Ladedruck-Ist gegen Ladedruck-Soll im Fahrbetrieb aufzeichnen, nicht im Stand beurteilen",
+        "Position des Wastegate-Aktors im Stellgliedtest beobachten und auf Schwankungen achten",
+        "Vergleiche über Baureihen hinweg vermeiden — dieselbe Motorenfamilie ist im F22 anders abgestimmt als im großen Fahrzeug"
+      ],
+      "engines": [
+        "N55"
+      ],
+      "article": "n55-ladedruck.md",
+      "details": [
+        "D4F-F22-004",
+        "D4F-F22-002"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-007",
+      "type": "LOC",
+      "cat": "Bordnetz",
+      "title": "Steuergeräte-Topologie im F2x: was wo sitzt",
+      "valid": "F20/F21/F22/F23 · alle Motoren",
+      "summary": "Der kompakte 1er und 2er trägt dieselbe Elektronikplattform wie die großen F-Baureihen, aber mit deutlich weniger Steuergeräten. Wer weiß, welche Baugruppen es hier gar nicht gibt, spart sich die halbe Suche.",
+      "points": [
+        "Das vordere Karosseriemodul bündelt Zugangsberechtigung, Außenlicht, Innenlicht und Fensterheber in einem Gerät",
+        "Fahrwerksmodule der großen Baureihen fehlen hier — Luftfederung und Verteilergetriebe gibt es in dieser Baureihe nicht",
+        "Steuergeräteliste zuerst lesen und mit der Ausstattung abgleichen, bevor ein fehlendes Gerät als Fehler gewertet wird",
+        "Ein fehlendes Steuergerät in der Liste ist häufiger eine nicht vorhandene Ausstattung als ein Ausfall",
+        "Bei Arbeiten am Karosseriemodul immer mit angeschlossenem Werkstattladegerät arbeiten"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-005"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F30-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F30/F31/F34 · ENET, Buchse und Softwarewahl",
+      "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
+      "summary": "Am F30 läuft die Diagnose über Ethernet an der OBD-Buchse. Ein K+DCAN-Kabel meldet hier kein Steuergerät, weil die K-Line keine Diagnose mehr trägt. Die Softwarewahl richtet sich nach der ausgelesenen I-Stufe und nach dem verbauten Zugangssystem.",
+      "points": [
+        "ENET-Kabel verwenden. Die Diagnose-Ethernet-Adern liegen auf den herstellerfreien OBD-Pins, Pin 7 trägt keine Diagnose. Ein K+DCAN-Kabel steckt mechanisch, findet aber nie ein Steuergerät",
+        "Bei Eigenbaukabeln die Aktivierungsleitung zwischen Pin 8 und Pin 16 beachten. Die genannten Widerstandswerte streuen, nach einer Quelle liegen sie um 510 Ω — vor dem Löten gegenprüfen",
+        "Vor der Softwarewahl klären, ob das Fahrzeug CAS4/CAS4+ oder ein FEM trägt. Der F30 überspannt diesen Wechsel, und die Abläufe unterscheiden sich danach",
+        "Netzwerkseite: automatische Adressvergabe, WLAN und VPN aus, keine zweite aktive Schnittstelle. Danach erst die Diagnosesoftware starten",
+        "Schnittstelleneinstellung auf ENET umstellen und die Anwendung neu starten. Eine stehen gebliebene K-DCAN-Voreinstellung erzeugt dasselbe Bild wie ein defektes Fahrzeug",
+        "Kein Programmier- oder Codierversuch ohne Werkstattladegerät und ohne gesicherten Fahrzeugauftrag"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Diagnose-Ethernet RX+",
+        "OBD2 Pin 11 · Diagnose-Ethernet RX-",
+        "OBD2 Pin 12 · Diagnose-Ethernet TX+ · abweichende Zuordnung im Umlauf, siehe Artikel",
+        "OBD2 Pin 13 · Diagnose-Ethernet TX-",
+        "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
+        "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-004"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-002",
+      "type": "GUIDE",
+      "cat": "Motoridentifikation",
+      "title": "Motorzuordnung F30/F31/F34 · N-Motoren vor dem LCI, B-Motoren danach",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Mit dem Facelift 2015 wechselt der 3er von den N-Motoren auf den Baukasten B38/B48/B58. Dabei ändern sich auch die Typbezeichnungen: aus 328i wird 330i, aus 335i wird 340i. Wer nach Schriftzug bestellt, bestellt an der Hälfte der Fahrzeuge falsch.",
+      "points": [
+        "Vor dem Facelift: 316i und 318i mit dem aufgeladenen 1.6er N13 aus der gemeinsam mit PSA entwickelten Motorenfamilie, 320i und 328i mit dem N20, 335i mit dem Sechszylinder N55",
+        "Ab dem Facelift 2015: 318i mit dem Dreizylinder B38, 320i und 330i mit dem B48, 340i mit dem B58. Die früheren Bezeichnungen 316i, 328i und 335i entfallen",
+        "Schnellster Griff im Motorraum ist die Zahl der Zündspulen: drei bedeutet B38, vier bedeutet B48, N20 oder N13, sechs bedeutet B58 oder N55",
+        "B58 gegen N55 trennen: beim B58 sitzt der Ladeluftkühler als Wasser-Luft-Kühler in der Ansaugbrücke und der Abgaskrümmer ist in den Zylinderkopf integriert. Der N55 hat einen separaten Krümmer und einen Luft-Luft-Ladeluftkühler",
+        "N13 gegen N20 trennen: beide sind aufgeladene Vierzylinder, aber der N13 ist der 1.6er der Einstiegsmodelle mit anderem Grundmotor. Über den Motorcode am Block entscheiden, nicht über das Typschild",
+        "N47-Diesel: Steuerkettentrieb hinten zum Getriebe. Metallisches Rasseln direkt nach dem Kaltstart aus dem hinteren Motorbereich ist das Leitsymptom und gehört sofort nachgegangen"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-F30-001"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-003",
+      "type": "FUB",
+      "cat": "Steuergeräte",
+      "title": "CAS4 oder FEM · das Zugangssystem des F30 bestimmen",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Der F30 überspannt den Wechsel vom Zugangssystem CAS4 zum FEM. Welches der beiden verbaut ist, entscheidet über Abläufe bei Schlüssel-, Licht- und Karosseriearbeiten. Bestimmt wird es an der Steuergeräteliste, nicht am Baujahr in der Zulassung.",
+      "points": [
+        "Frühe Fahrzeuge tragen CAS4 beziehungsweise CAS4+, spätere ein FEM. Die vorliegenden Quellen nennen den Übergang für 2013/2014, ohne sich auf ein Datum zu einigen — verlass dich deshalb nicht auf eine Jahrestabelle",
+        "Entschieden wird es am Fahrzeug: Steuergeräteliste lesen. Erscheint ein CAS, ist es ein CAS. Erscheint FEM_BODY, ist es ein FEM. Das dauert zwei Minuten und ersetzt jede Vermutung",
+        "Das FEM fasst Zugangssystem und Karosseriefunktionen zusammen — unter anderem Licht, Fenster und Zentralverriegelung. Ein Ausfall trifft deshalb mehr Funktionen auf einmal als ein CAS-Ausfall und sieht schnell nach mehreren Defekten aus",
+        "CAS4 gegen CAS4+: nach einer Quelle lässt sich die DME-ISN nur beim CAS4 aus dem Modul auslesen. Für Schlüssel- und Motorsteuerungsarbeiten entscheidet das über den möglichen Weg",
+        "Ein Gebrauchtteil bringt Fahrzeugauftrag und Softwarestand des Spenderfahrzeugs mit. Vor dem Einbau beides lesen und mit dem eigenen Fahrzeug vergleichen",
+        "Vor jedem Tausch am Zugangssystem Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne den Ausgangszustand fehlt hinterher der Bezugspunkt"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "article": "cas4-oder-fem.md",
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-004"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-004",
+      "type": "TEST",
+      "cat": "Softwarestand",
+      "title": "I-Stufe und Datenstand am F30 prüfen",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Am F30 ist die erste Frage vor jeder Codierung nicht, welches Bauteil hängt, sondern welcher Softwarestand auf dem Fahrzeug liegt. Die I-Stufe beantwortet das für das Gesamtfahrzeug und verrät nebenbei, ob ein Steuergerät aus einem fremden Fahrzeug stammt.",
+      "points": [
+        "Die I-Stufe beschreibt den Softwarestand des Gesamtfahrzeugs. Aufbau: Fahrzeugprogramm, Jahr, Monat, Version — zum Beispiel F020-15-11-500",
+        "Es gibt nicht eine I-Stufe, sondern drei: Werksstand bei Auslieferung, aktueller Stand und Zielstand einer Programmierung. Nur alle drei zusammen ergeben ein Bild",
+        "Auslesen: in der Diagnosesoftware unter den Fahrzeuginformationen, in der Codiersoftware über die Fahrzeugkonfiguration beziehungsweise den Fahrzeugauftrag",
+        "Der Präfix nennt das Fahrzeugprogramm, nicht die Baureihe. Ein Steuergerät mit fremdem Präfix stammt aus einem anderen Fahrzeugprogramm — daran erkennt man ein Spenderteil vor der ersten Störung",
+        "Hier steht bewusst keine Versionsnummer für Programmier- oder Diagnosedaten. Solche Angaben altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben. Maßgeblich ist, was am Fahrzeug steht",
+        "Vor der Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern und ein Werkstattladegerät anschließen. Beides ist der Rückweg, wenn ein Vorgang abbricht"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-003"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-005",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "Lenkungsmeldung am F30 einordnen · EPS, Bordnetz und Adaption",
+      "valid": "F30/F31/F34 · 2011–2019",
+      "summary": "Die elektromechanische Lenkung des F30 meldet sich häufig, ohne mechanisch defekt zu sein. Bordspannung, Adaption und Kommunikation mit den Nachbarsteuergeräten stehen vor jedem Gedanken an ein neues Lenkgetriebe.",
+      "points": [
+        "Die Lenkunterstützung hängt an der Bordspannung. Eine schwache oder nicht registrierte Batterie erzeugt Lenkungsmeldungen ohne mechanischen Fehler — deshalb zuerst das Bordnetz klären, dann die Lenkung",
+        "Häufig genanntes Fehlerbild aus mehreren unabhängigen Werkstattfäden: kurzes Haken beim Anlenken, danach normale Unterstützung. Erfahrungswert, keine Spezifikation",
+        "Fehlerspeicher immer zusammen mit DSC und der zentralen Fahrwerksregelung lesen. Einträge über fehlende Botschaften zwischen diesen Geräten deuten auf Versorgung oder Bus, nicht auf das Lenkgetriebe",
+        "Vor jedem Tausch Lenkwinkelabgleich und Adaption durchführen und danach erneut prüfen. Ein Teil der Meldungen verschwindet damit — nach mehreren Berichten reicht die Softwareseite überraschend oft",
+        "Ein Lenkgetriebe wird nach reproduzierbarem Verhalten getauscht, nicht nach einem einzelnen Eintrag. Löschen, Probefahrt mit Lenkeinschlag in beide Richtungen, erneut lesen",
+        "Sollwerte für Ströme und Momente der Lenkung stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: gleiches Fahrzeug, gleiche Bedingungen, gegebenenfalls ein zweites Fahrzeug derselben Ausstattung"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "article": "eps-lenkung.md",
+      "details": [
+        "D4F-F30-006",
+        "D4F-F30-003"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-006",
+      "type": "TEST",
+      "cat": "Bordnetz",
+      "title": "Batteriewechsel und Energiemanagement am F30",
+      "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
+      "summary": "Der F30 lädt nach einem Modell, das Alter und Zustand der Batterie mitrechnet. Eine nicht registrierte Batterie wird weiter wie die alte behandelt. Das erzeugt Fehlerbilder in Komfort-, Lenkungs- und Start-Stopp-Funktionen, die nach Elektronikdefekt aussehen.",
+      "points": [
+        "Nach jedem Batteriewechsel registrieren. Ohne Registrierung rechnet das Energiemanagement weiter mit der verschlissenen Batterie und regelt zu früh ab",
+        "Zusätzlich codieren, wenn Typ oder Kapazität von der ausgebauten Batterie abweichen — nach den vorliegenden Quellen verläuft dort die Trennlinie zwischen Registrieren und Codieren",
+        "Typ und Kapazität am ausgebauten Teil ablesen. Der Wechsel von AGM auf eine Nassbatterie ändert die Ladekennlinie und wird ohne Codierung nicht berücksichtigt",
+        "Typische Folgen einer unterlassenen Registrierung: Start-Stopp arbeitet nicht mehr, Komfortverbraucher schalten früh ab, Lenkungs- und Fahrwerksmeldungen erscheinen ohne mechanischen Befund",
+        "Nach dem Wechsel Fehlerspeicher aller Steuergeräte lesen, notieren und erst dann löschen. Der Spannungseinbruch beim Abklemmen hinterlässt Einträge in Modulen, die mit der Batterie nichts zu tun haben",
+        "Eine geladene Batterie zeigt in Ruhe rund 12.6 V, gemessen nach mehreren Stunden Standzeit direkt an den Polen. Bei jedem Schreibvorgang am Fahrzeug ein Werkstattladegerät anschließen, keinen Erhaltungslader"
+      ],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "details": [
+        "D4F-F30-005",
+        "D4F-F30-003"
+      ],
+      "model": "f30"
     }
   ],
   "guides": {
@@ -3598,6 +3991,322 @@
           "next_docs": [
             "D4F-E30-001",
             "D4F-E30-002"
+          ]
+        }
+      }
+    },
+    "e34:m50-crank-no-start": {
+      "code": "GF-E34-01",
+      "name": "M50 dreht, startet nicht",
+      "desc": "Anlasser dreht sauber, der Motor kommt nicht. Beim verteilerlosen M50 fehlen bei einem Gebersignalausfall Zündung und Einspritzung gleichzeitig. Reihenfolge: Versorgung → Drehzahlsignal → Zündung → Kraftstoff → Mechanik.",
+      "engines": [
+        "M50"
+      ],
+      "steps": [
+        {
+          "q": "Zieht das DME-Hauptrelais hörbar an, wenn du die Zündung einschaltest?",
+          "help": "Relaiskasten öffnen und beim Einschalten der Zündung mit der Hand am Relais hören und fühlen. Danach am Steuergerätestecker die geschaltete Versorgung gegen die Steuergerätemasse messen. Ein Relais, das nur manchmal zieht, ist derselbe Fehler wie eines, das gar nicht zieht.",
+          "measure": "Deutlich hörbares Anziehen beim Einschalten der Zündung, an der geschalteten Versorgung des Steuergeräts steht Bordnetzspannung. Stille oder fehlende Spannung zählt als Nein.",
+          "doc": "D4F-E34-007",
+          "yes": 1,
+          "no": "hauptrelais"
+        },
+        {
+          "q": "Zeigt der Drehzahlmesser während des Startversuchs eine Bewegung?",
+          "help": "Zündung ein, Blick auf den Drehzahlmesser, dann cranken lassen. Der Zeiger muss sich beim Durchdrehen sichtbar von der Null lösen. Beim M50 stammt dieses Signal aus dem Kurbelwellensensor; bleibt der Zeiger tot, fehlt dem Steuergerät die Drehzahlinformation und es gibt weder Zündung noch Einspritzung frei.",
+          "measure": "Sichtbarer Zeigerausschlag bei Anlasserdrehzahl. Ein Zeiger, der auf der Null stehen bleibt, zählt als Nein.",
+          "doc": "D4F-E34-007",
+          "yes": 2,
+          "no": "kurbelwellensensor"
+        },
+        {
+          "q": "Springt an einer ausgebauten Zündkerze ein Funke über, wenn du startest?",
+          "help": "Eine Zündspule mit Kerze abnehmen, die Kerze wieder in die Spule stecken, Gewinde sauber gegen Motormasse legen und cranken lassen. Kerze dabei nicht in der Hand halten. Der M50 hat keinen Verteiler — geprüft wird also die einzelne Spule, nicht ein gemeinsamer Hochspannungsweg.",
+          "measure": "Kräftiger, regelmäßiger Überschlag an der Kerzenelektrode bei Anlasserdrehzahl. Kein oder nur vereinzelter Funke zählt als Nein.",
+          "doc": "D4F-E34-002",
+          "yes": 3,
+          "no": "zuendkreis-m50"
+        },
+        {
+          "q": "Fördert die Kraftstoffpumpe während des Startversuchs?",
+          "help": "Zu zweit arbeiten: einer crankt, einer hört an der Tankgegend. Die Pumpe muss gleichmäßig surren. Bleibt es still, prüfe zuerst die Pumpensicherung und danach das Kraftstoffpumpenrelais, indem du es gegen ein baugleiches aus dem Kasten tauschst.",
+          "measure": "Gleichmäßiges Laufgeräusch während des Startversuchs. Stille zählt als Nein, auch wenn die Pumpe bei aufgelegter Brücke am Relais läuft.",
+          "doc": "D4F-E34-007",
+          "yes": 4,
+          "no": "kraftstoff-m50"
+        },
+        {
+          "q": "Ist die Kompression über alle sechs Zylinder gleichmäßig?",
+          "help": "Alle Kerzen ziehen, Kraftstoffpumpe stromlos legen, Drosselklappe offen halten und jeden Zylinder gleich lang durchdrehen. Bewertet wird die Streuung zwischen den Zylindern, nicht ein Absolutwert — dafür brauchst du keine Herstellervorgabe.",
+          "measure": "Alle sechs Werte liegen dicht beieinander. Ein einzeln abfallender Zylinder oder ein über alle Zylinder gleichmäßig niedriges Niveau zählt als Nein.",
+          "doc": "D4F-E34-005",
+          "yes": 5,
+          "no": "mechanik-m50"
+        },
+        {
+          "q": "Lässt sich am Rundstecker ein Fehlerspeicher auslesen oder eine Blinkfolge auslösen?",
+          "help": "Zündung, Kraftstoff und Mechanik sind geprüft und in Ordnung. Jetzt lohnt der Blick in den Speicher. Rundstecker im Motorraum freilegen, Masse und Versorgung durchmessen, danach Gerät anstecken. Ist keines vorhanden, versuche die Pedalprozedur — sie ist nicht für jeden Steuergerätestand belegt.",
+          "measure": "Das Gerät baut eine Verbindung auf und liefert Einträge, oder die Motorkontrollleuchte gibt eine zählbare Blinkfolge aus. Kein Kontakt und keine Blinkfolge zählt als Nein.",
+          "doc": "D4F-E34-003",
+          "yes": "speicher-lesen",
+          "no": "ohne-speicher"
+        }
+      ],
+      "model": "e34",
+      "id": "m50-crank-no-start",
+      "_results": {
+        "hauptrelais": {
+          "title": "Versorgung des Steuergeräts fehlt",
+          "text": "Ohne Versorgung gibt das Steuergerät weder Zündung noch Einspritzung frei. Hauptrelais gegen ein baugleiches aus dem Kasten tauschen, Relaissockel und Lötstellen der Relaisplatine auf kalte Stellen ansehen, danach die Steuergerätemasse reinigen und nachziehen. Erst wenn das Relais sicher und wiederholbar zieht, lohnt die weitere Suche.",
+          "next_docs": [
+            "D4F-E34-007"
+          ]
+        },
+        "kurbelwellensensor": {
+          "title": "Kein Drehzahlsignal — Kurbelwellensensor prüfen",
+          "text": "Der Drehzahlmesser bleibt beim Cranken tot, damit fehlt dem Steuergerät die Grundinformation. Sensor am vorderen Motorende freilegen, Steckverbindung und Leitung auf Scheuerstellen und Masseschluss prüfen, Geberrad auf Verschmutzung ansehen. Die kursierenden Widerstandssollwerte widersprechen sich, deshalb tauschweise gegen ein bekannt gutes Teil arbeiten statt gegen eine geratene Zahl zu messen.",
+          "next_docs": [
+            "D4F-E34-007",
+            "D4F-E34-002"
+          ]
+        },
+        "zuendkreis-m50": {
+          "title": "Kein Funke trotz Drehzahlsignal",
+          "text": "Das Steuergerät kennt die Drehzahl, die Zündung kommt trotzdem nicht. Prüfe die Versorgung der Zündspulen und ihre gemeinsame Masse, danach die Ansteuerleitung vom Steuergerät zur einzelnen Spule auf Durchgang und Masseschluss. Eine geprüfte Spule aus derselben Reihe an einen anderen Zylinder setzen trennt Spulenfehler von Ansteuerungsfehler.",
+          "next_docs": [
+            "D4F-E34-002",
+            "D4F-E34-007"
+          ]
+        },
+        "kraftstoff-m50": {
+          "title": "Kraftstoffversorgung unterbrochen",
+          "text": "Die Pumpe fördert beim Cranken nicht. Pumpensicherung prüfen, Kraftstoffpumpenrelais gegen ein baugleiches tauschen, danach die Steckverbindung am Tank ansehen — nach Jahrzehnten ist das die übliche Stelle. Läuft die Pumpe mit abgesicherter Brücke, liegt der Fehler in der Ansteuerung und nicht in der Pumpe.",
+          "next_docs": [
+            "D4F-E34-007"
+          ]
+        },
+        "mechanik-m50": {
+          "title": "Kompression ungleich — Steuertrieb und Mechanik",
+          "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M50 zuerst den Kettentrieb und die Steuermarkierungen kontrollieren, danach nass gegenprüfen, um Ventil und Kolbenringe zu trennen. Ein über alle Zylinder gleichmäßig niedriges Niveau deutet auf einen übersprungenen Steuertrieb und nicht auf Verschleiß.",
+          "next_docs": [
+            "D4F-E34-005",
+            "D4F-E34-002"
+          ]
+        },
+        "speicher-lesen": {
+          "title": "Speicher lesbar — Einträge einzeln bestätigen",
+          "text": "Lies die Einträge aus und schreib sie mit, bevor du löschst. Jeden Eintrag danach einzeln am Bauteil bestätigen: ein gespeicherter Fehler nennt einen Signalpfad, nicht die Ursache. Anschließend löschen, Startversuch wiederholen und sehen, welcher Eintrag zurückkommt — nur der ist aktuell.",
+          "next_docs": [
+            "D4F-E34-003",
+            "D4F-E34-001"
+          ]
+        },
+        "ohne-speicher": {
+          "title": "Kein Zugang zum Speicher — weiter über Messung",
+          "text": "Weder Gerät noch Blinkfolge liefern etwas. Prüfe zuerst Masse und Versorgung am Rundstecker selbst, denn ein toter Stecker sieht aus wie ein totes Steuergerät. Bleibt es dabei, arbeite über Messdiagnose weiter: Einspritzventile auf Ansteuerung, Kraftstoffdruck und Druckhaltung, Luftmassenmesser und Ansaugstrecke auf Falschluft.",
+          "next_docs": [
+            "D4F-E34-001",
+            "D4F-E34-007"
+          ]
+        },
+        "kuehlsystem-m60": {
+          "title": "Kühlsystem zuerst instandsetzen",
+          "text": "Solange der Motor Kühlmittel verliert oder zu warm läuft, ist jede Aussage über die Laufbahnen wertlos. Undichte Stelle beheben, Kunststoffteile im Kreis ersetzen statt zu flicken, System sauber entlüften und danach unter Last beobachten. Erst mit stabilem Temperaturbild den Pfad von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E34-006"
+          ]
+        },
+        "falschluft-m60": {
+          "title": "Falschluft gefunden",
+          "text": "Eine undichte Stelle im Ansaugtrakt magert das Gemisch ab und erzeugt genau das Bild aus unrundem Leerlauf und schlechtem Warmstart, das dem V8 sonst als Laufbahnschaden ausgelegt wird. Schlauch oder Dichtung ersetzen, danach Leerlauf erneut beurteilen und den Pfad von vorn beginnen.",
+          "next_docs": [
+            "D4F-E34-006"
+          ]
+        },
+        "sekundaerluft-m60": {
+          "title": "Sekundärluftsystem auffällig",
+          "text": "Pumpe und Ventile des Sekundärluftsystems sind am M60 ein bekannter Ausfallpunkt und erklären Kaltlaufprobleme vollständig. Pumpe auf hörbaren Lauf nach dem Kaltstart prüfen, Umschaltventil und seine Unterdruckansteuerung kontrollieren, Leitungen auf Verkokung ansehen. Danach Speicher löschen und nach einem Kaltstart erneut lesen.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-003"
+          ]
+        },
+        "andere-ursache-m60": {
+          "title": "Keine Nikasil-Gussnummer — anderswo weitersuchen",
+          "text": "Der Block trägt keine der bekannten Nikasil-Nummern, damit ist die naheliegende Erklärung vom Tisch. Such weiter bei Zündung und Gemischbildung: Zündkerzenbild über alle acht Zylinder vergleichen, Zündspulen einzeln beurteilen, Einspritzventile auf Dichtheit und Ansteuerung prüfen und den Luftmassenmesser gegen ein bekannt gutes Teil tauschen.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-002"
+          ]
+        },
+        "nikasil-verdacht": {
+          "title": "Streuende Kompression bei Nikasil-Block",
+          "text": "Gussnummer und Messbild passen zusammen. Wiederhole die Messung betriebswarm und nass, um Ventil und Laufbahn zu trennen, und dokumentiere alle acht Werte schriftlich — die Streuung ist der Befund, nicht ein einzelner Wert. Vor jeder Entscheidung über den Motor die Messung an einem zweiten Tag gegenprüfen; eine einzelne Messreihe trägt eine solche Entscheidung nicht.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-002"
+          ]
+        },
+        "kein-laufbahnschaden": {
+          "title": "Kompression gleichmäßig — Laufbahnen unauffällig",
+          "text": "Trotz Nikasil-Gussnummer verdichten alle acht Zylinder gleichmäßig. Damit ist das Symptombild nicht mechanisch erklärt. Geh zurück in die Gemischbildung: Zündkerzenbild vergleichen, Einspritzventile auf Dichtheit prüfen, Kurbelgehäuseentlüftung ansehen und Zündspulen einzeln beurteilen. Halte die Messwerte fest, damit du sie später vergleichen kannst.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-003"
+          ]
+        }
+      }
+    },
+    "e34:m60-warmstart": {
+      "code": "GF-E34-02",
+      "name": "M60 · schlechter Warmstart und unrunder Leerlauf",
+      "desc": "Beim V8 wird dieses Bild schnell auf Nikasil geschoben. Erst die billigen Ursachen ausschließen, dann den Block ablesen, dann vergleichend messen — in dieser Reihenfolge.",
+      "engines": [
+        "M60"
+      ],
+      "steps": [
+        {
+          "q": "Ist das Kühlsystem dicht und der Motor thermisch unauffällig?",
+          "help": "Kalt beginnen. Wasserrohr unter der Ansaugbrücke, Ausgleichsbehälter, Thermostatgehäuse und Wasserpumpe auf Spuren ansehen, danach den Motor warmfahren und die Temperaturanzeige beobachten. Am M60 sind Kunststoffteile im Kühlkreis ein bekannter Schwachpunkt, und Überhitzung erzeugt genau dasselbe Symptombild wie ein Laufbahnschaden.",
+          "measure": "Keine feuchten Stellen oder Kristallspuren an den genannten Teilen, Temperaturanzeige läuft auf ihren üblichen Bereich und bleibt dort. Auffälligkeiten zählen als Nein.",
+          "doc": "D4F-E34-006",
+          "yes": 1,
+          "no": "kuehlsystem-m60"
+        },
+        {
+          "q": "Zieht der Motor Falschluft?",
+          "help": "Alle Unterdruckschläuche, die Ansaugbrückendichtungen und den Übergang zum Luftmassenmesser bei laufendem Leerlauf abgehen. Ändert sich die Leerlaufdrehzahl, wenn du eine Stelle kurz abdrückst oder benetzt, hast du sie gefunden. Am V8 lohnt der Blick auf beide Bänke getrennt.",
+          "measure": "Der Leerlauf bleibt beim Abgehen der Schläuche und Dichtstellen unverändert. Jede Drehzahländerung zählt als Nein.",
+          "doc": "D4F-E34-006",
+          "yes": 2,
+          "no": "falschluft-m60"
+        },
+        {
+          "q": "Steht im Fehlerspeicher ein Eintrag zum Sekundärluftsystem?",
+          "help": "Speicher über den Rundstecker auslesen. Der M60 hat eine Sekundärluftpumpe, die nach dem Kaltstart läuft; ihre Ventile fallen bekanntermaßen aus. Ein Eintrag dazu erklärt Kaltlaufprobleme, ohne dass an den Laufbahnen irgendetwas wäre. Hörprobe direkt nach dem Kaltstart: die Pumpe muss hörbar laufen.",
+          "measure": "Kein Eintrag zum Sekundärluftsystem, und die Pumpe läuft nach dem Kaltstart hörbar an. Ein Eintrag oder eine stumme Pumpe zählt als Nein — hier lautet die Antwort Ja, wenn das System unauffällig ist.",
+          "doc": "D4F-E34-003",
+          "yes": 3,
+          "no": "sekundaerluft-m60"
+        },
+        {
+          "q": "Weist die Gussnummer am Block auf eine Nikasil-Ausführung hin?",
+          "help": "Die Nummer sitzt außen am Blockguss. Laut Steckbrief steht 1725970 für einen M60B30 mit Nikasil und 1745871 für denselben Motor mit Alusil; beim M60B40 sind es 1725963 für Nikasil und 1745872 für Alusil. Selbst ablesen, nicht auf Baujahr oder Vorbesitzererzählung verlassen.",
+          "measure": "Abgelesene Gussnummer entspricht einer der beiden Nikasil-Nummern. Eine Alusil-Nummer oder eine hier nicht aufgeführte Nummer zählt als Nein.",
+          "doc": "D4F-E34-006",
+          "yes": 4,
+          "no": "andere-ursache-m60"
+        },
+        {
+          "q": "Streut die Kompression über die acht Zylinder deutlich?",
+          "help": "Motor betriebswarm, alle Kerzen ziehen, Kraftstoffzufuhr stromlos legen, Drosselklappe offen, jeden Zylinder gleich lang durchdrehen. Vergleiche zuerst innerhalb jeder Bank und danach beide Bänke gegeneinander. Bewertet wird die Streuung, nicht ein Absolutwert.",
+          "measure": "Alle acht Werte liegen dicht beieinander — dann lautet die Antwort Nein. Einzelne deutlich abfallende Zylinder oder eine erkennbar schwächere Bank zählen als Ja.",
+          "doc": "D4F-E34-006",
+          "yes": "nikasil-verdacht",
+          "no": "kein-laufbahnschaden"
+        }
+      ],
+      "model": "e34",
+      "id": "m60-warmstart",
+      "_results": {
+        "hauptrelais": {
+          "title": "Versorgung des Steuergeräts fehlt",
+          "text": "Ohne Versorgung gibt das Steuergerät weder Zündung noch Einspritzung frei. Hauptrelais gegen ein baugleiches aus dem Kasten tauschen, Relaissockel und Lötstellen der Relaisplatine auf kalte Stellen ansehen, danach die Steuergerätemasse reinigen und nachziehen. Erst wenn das Relais sicher und wiederholbar zieht, lohnt die weitere Suche.",
+          "next_docs": [
+            "D4F-E34-007"
+          ]
+        },
+        "kurbelwellensensor": {
+          "title": "Kein Drehzahlsignal — Kurbelwellensensor prüfen",
+          "text": "Der Drehzahlmesser bleibt beim Cranken tot, damit fehlt dem Steuergerät die Grundinformation. Sensor am vorderen Motorende freilegen, Steckverbindung und Leitung auf Scheuerstellen und Masseschluss prüfen, Geberrad auf Verschmutzung ansehen. Die kursierenden Widerstandssollwerte widersprechen sich, deshalb tauschweise gegen ein bekannt gutes Teil arbeiten statt gegen eine geratene Zahl zu messen.",
+          "next_docs": [
+            "D4F-E34-007",
+            "D4F-E34-002"
+          ]
+        },
+        "zuendkreis-m50": {
+          "title": "Kein Funke trotz Drehzahlsignal",
+          "text": "Das Steuergerät kennt die Drehzahl, die Zündung kommt trotzdem nicht. Prüfe die Versorgung der Zündspulen und ihre gemeinsame Masse, danach die Ansteuerleitung vom Steuergerät zur einzelnen Spule auf Durchgang und Masseschluss. Eine geprüfte Spule aus derselben Reihe an einen anderen Zylinder setzen trennt Spulenfehler von Ansteuerungsfehler.",
+          "next_docs": [
+            "D4F-E34-002",
+            "D4F-E34-007"
+          ]
+        },
+        "kraftstoff-m50": {
+          "title": "Kraftstoffversorgung unterbrochen",
+          "text": "Die Pumpe fördert beim Cranken nicht. Pumpensicherung prüfen, Kraftstoffpumpenrelais gegen ein baugleiches tauschen, danach die Steckverbindung am Tank ansehen — nach Jahrzehnten ist das die übliche Stelle. Läuft die Pumpe mit abgesicherter Brücke, liegt der Fehler in der Ansteuerung und nicht in der Pumpe.",
+          "next_docs": [
+            "D4F-E34-007"
+          ]
+        },
+        "mechanik-m50": {
+          "title": "Kompression ungleich — Steuertrieb und Mechanik",
+          "text": "Zündung und Kraftstoff sind da, der Motor verdichtet aber nicht gleichmäßig. Beim M50 zuerst den Kettentrieb und die Steuermarkierungen kontrollieren, danach nass gegenprüfen, um Ventil und Kolbenringe zu trennen. Ein über alle Zylinder gleichmäßig niedriges Niveau deutet auf einen übersprungenen Steuertrieb und nicht auf Verschleiß.",
+          "next_docs": [
+            "D4F-E34-005",
+            "D4F-E34-002"
+          ]
+        },
+        "speicher-lesen": {
+          "title": "Speicher lesbar — Einträge einzeln bestätigen",
+          "text": "Lies die Einträge aus und schreib sie mit, bevor du löschst. Jeden Eintrag danach einzeln am Bauteil bestätigen: ein gespeicherter Fehler nennt einen Signalpfad, nicht die Ursache. Anschließend löschen, Startversuch wiederholen und sehen, welcher Eintrag zurückkommt — nur der ist aktuell.",
+          "next_docs": [
+            "D4F-E34-003",
+            "D4F-E34-001"
+          ]
+        },
+        "ohne-speicher": {
+          "title": "Kein Zugang zum Speicher — weiter über Messung",
+          "text": "Weder Gerät noch Blinkfolge liefern etwas. Prüfe zuerst Masse und Versorgung am Rundstecker selbst, denn ein toter Stecker sieht aus wie ein totes Steuergerät. Bleibt es dabei, arbeite über Messdiagnose weiter: Einspritzventile auf Ansteuerung, Kraftstoffdruck und Druckhaltung, Luftmassenmesser und Ansaugstrecke auf Falschluft.",
+          "next_docs": [
+            "D4F-E34-001",
+            "D4F-E34-007"
+          ]
+        },
+        "kuehlsystem-m60": {
+          "title": "Kühlsystem zuerst instandsetzen",
+          "text": "Solange der Motor Kühlmittel verliert oder zu warm läuft, ist jede Aussage über die Laufbahnen wertlos. Undichte Stelle beheben, Kunststoffteile im Kreis ersetzen statt zu flicken, System sauber entlüften und danach unter Last beobachten. Erst mit stabilem Temperaturbild den Pfad von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E34-006"
+          ]
+        },
+        "falschluft-m60": {
+          "title": "Falschluft gefunden",
+          "text": "Eine undichte Stelle im Ansaugtrakt magert das Gemisch ab und erzeugt genau das Bild aus unrundem Leerlauf und schlechtem Warmstart, das dem V8 sonst als Laufbahnschaden ausgelegt wird. Schlauch oder Dichtung ersetzen, danach Leerlauf erneut beurteilen und den Pfad von vorn beginnen.",
+          "next_docs": [
+            "D4F-E34-006"
+          ]
+        },
+        "sekundaerluft-m60": {
+          "title": "Sekundärluftsystem auffällig",
+          "text": "Pumpe und Ventile des Sekundärluftsystems sind am M60 ein bekannter Ausfallpunkt und erklären Kaltlaufprobleme vollständig. Pumpe auf hörbaren Lauf nach dem Kaltstart prüfen, Umschaltventil und seine Unterdruckansteuerung kontrollieren, Leitungen auf Verkokung ansehen. Danach Speicher löschen und nach einem Kaltstart erneut lesen.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-003"
+          ]
+        },
+        "andere-ursache-m60": {
+          "title": "Keine Nikasil-Gussnummer — anderswo weitersuchen",
+          "text": "Der Block trägt keine der bekannten Nikasil-Nummern, damit ist die naheliegende Erklärung vom Tisch. Such weiter bei Zündung und Gemischbildung: Zündkerzenbild über alle acht Zylinder vergleichen, Zündspulen einzeln beurteilen, Einspritzventile auf Dichtheit und Ansteuerung prüfen und den Luftmassenmesser gegen ein bekannt gutes Teil tauschen.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-002"
+          ]
+        },
+        "nikasil-verdacht": {
+          "title": "Streuende Kompression bei Nikasil-Block",
+          "text": "Gussnummer und Messbild passen zusammen. Wiederhole die Messung betriebswarm und nass, um Ventil und Laufbahn zu trennen, und dokumentiere alle acht Werte schriftlich — die Streuung ist der Befund, nicht ein einzelner Wert. Vor jeder Entscheidung über den Motor die Messung an einem zweiten Tag gegenprüfen; eine einzelne Messreihe trägt eine solche Entscheidung nicht.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-002"
+          ]
+        },
+        "kein-laufbahnschaden": {
+          "title": "Kompression gleichmäßig — Laufbahnen unauffällig",
+          "text": "Trotz Nikasil-Gussnummer verdichten alle acht Zylinder gleichmäßig. Damit ist das Symptombild nicht mechanisch erklärt. Geh zurück in die Gemischbildung: Zündkerzenbild vergleichen, Einspritzventile auf Dichtheit prüfen, Kurbelgehäuseentlüftung ansehen und Zündspulen einzeln beurteilen. Halte die Messwerte fest, damit du sie später vergleichen kannst.",
+          "next_docs": [
+            "D4F-E34-006",
+            "D4F-E34-003"
           ]
         }
       }
@@ -4265,8 +4974,8 @@
         },
         {
           "q": "Weicht die betroffene Bank auch in den Laufwerten sichtbar von der anderen ab?",
-          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Grössen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
-          "measure": "Gleiche Messgrösse in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von aussen.",
+          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Größen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
+          "measure": "Gleiche Messgröße in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von außen.",
           "doc": "D4F-E38-003",
           "yes": 3,
           "no": 4
@@ -4274,7 +4983,7 @@
         {
           "q": "Wandert das Symptom mit, wenn du das verdächtige Bauteil auf die andere Bank setzt?",
           "help": "Der Kreuztausch ist am M73 der schnellste Beweis und braucht keinen Sollwert. Zündspule, Luftmassenmesser oder Lambdasonde der auffälligen Seite gegen das Gegenstück der unauffälligen Seite tauschen — mehr ist nicht nötig.",
-          "measure": "Nach dem Tausch dieselbe Messgrösse erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
+          "measure": "Nach dem Tausch dieselbe Messgröße erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
           "doc": "D4F-E38-003",
           "yes": "result-bauteil",
           "no": "result-bank-peripherie"
@@ -4282,14 +4991,14 @@
         {
           "q": "Zeigen beide Bänke dasselbe Bild — also beide mager, beide mit Aussetzern oder beide mit derselben Abweichung?",
           "help": "Wenn sich beide Steuergeräte einig sind, ist die Ursache nicht doppelt vorhanden. Dann kommt nur infrage, was beide Bänke gemeinsam nutzen: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Massepunkte, Ansaugluftweg vor der Verzweigung.",
-          "measure": "Dieselbe Grösse in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Grössenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
+          "measure": "Dieselbe Größe in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Größenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
           "doc": "D4F-E38-003",
           "yes": 5,
           "no": "result-bank-peripherie"
         },
         {
           "q": "Ist die Kurbelgehäuseentlüftung frei und der Öleinfülldeckel innen frei von hellem Schlamm?",
-          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmässig übersprungen.",
+          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmäßig übersprungen.",
           "measure": "Deckel abnehmen und die Innenseite ansehen: heller, emulsionsartiger Schlamm ist der Befund. Zusätzlich die Schläuche der Entlüftung auf Verhärtung, Risse und Verstopfung prüfen. Ein Unterdruck-Sollwert für das System ist hier nicht belegt — geprüft wird qualitativ auf Durchgang und Dichtheit.",
           "doc": "D4F-E38-003",
           "yes": "result-gemeinsam-kraftstoff",
@@ -4316,14 +5025,14 @@
         },
         "result-bank-peripherie": {
           "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
-          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von aussen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von außen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
           "next_docs": [
             "D4F-E38-003"
           ]
         },
         "result-gemeinsam-kraftstoff": {
           "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
-          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von aussen; ein belegter Druckwert liegt hier nicht vor.",
+          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von außen; ein belegter Druckwert liegt hier nicht vor.",
           "next_docs": [
             "D4F-E38-003"
           ]
@@ -4360,7 +5069,7 @@
         },
         "result-versorgung": {
           "title": "Spannungsversorgung oder Massepunkt",
-          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fussraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fußraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
           "next_docs": [
             "D4F-E38-006"
           ]
@@ -4374,7 +5083,7 @@
         },
         "result-stoerer": {
           "title": "Störendes Steuergerät gefunden",
-          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfussraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfußraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
           "next_docs": [
             "D4F-E38-005"
           ]
@@ -4423,9 +5132,9 @@
           "no": "result-gateway"
         },
         {
-          "q": "Sind Bordspannung und die Massepunkte im Fussraum in Ordnung?",
+          "q": "Sind Bordspannung und die Massepunkte im Fußraum in Ordnung?",
           "help": "Ein loser oder korrodierter Massepunkt legt mehrere Steuergeräte gleichzeitig still und sieht dabei aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Punkt.",
-          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfussraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
+          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfußraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
           "doc": "D4F-E38-006",
           "yes": 4,
           "no": "result-versorgung"
@@ -4440,7 +5149,7 @@
         },
         {
           "q": "Kommen die fehlenden Geräte zurück, sobald du ein verdächtiges Modul vom Bus trennst?",
-          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfussraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfußraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
           "measure": "Ein Gerät nach dem anderen vom Bus trennen und nach jedem Schritt den Suchlauf wiederholen. Erwartet: bleibt die Liste unverändert unvollständig, war es nicht dieses Gerät. Wird sie vollständig, ist der Störer gefunden.",
           "doc": "D4F-E38-005",
           "yes": "result-stoerer",
@@ -4467,14 +5176,14 @@
         },
         "result-bank-peripherie": {
           "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
-          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von aussen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+          "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von außen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
           "next_docs": [
             "D4F-E38-003"
           ]
         },
         "result-gemeinsam-kraftstoff": {
           "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
-          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von aussen; ein belegter Druckwert liegt hier nicht vor.",
+          "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von außen; ein belegter Druckwert liegt hier nicht vor.",
           "next_docs": [
             "D4F-E38-003"
           ]
@@ -4511,7 +5220,7 @@
         },
         "result-versorgung": {
           "title": "Spannungsversorgung oder Massepunkt",
-          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fussraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+          "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fußraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
           "next_docs": [
             "D4F-E38-006"
           ]
@@ -4525,7 +5234,7 @@
         },
         "result-stoerer": {
           "title": "Störendes Steuergerät gefunden",
-          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfussraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+          "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfußraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
           "next_docs": [
             "D4F-E38-005"
           ]
@@ -5924,7 +6633,7 @@
         },
         {
           "q": "Haben die fehlenden Geräte eine gemeinsame Sicherung oder einen gemeinsamen Massepunkt?",
-          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmässig übersehen, weil der Verdacht sofort auf den Bus fällt.",
+          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmäßig übersehen, weil der Verdacht sofort auf den Bus fällt.",
           "measure": "Die fehlenden Geräte im Sicherungs- und Massekonzept des Fahrzeugs zurückverfolgen. Erwartet: ein gemeinsamer Zweig. Sicherungen nicht nur ansehen, sondern im eingebauten Zustand auf Spannung an beiden Kontakten prüfen — ein schlechter Halter sieht heil aus.",
           "doc": "D4F-E70-006",
           "yes": "result-versorgung",
@@ -5932,7 +6641,7 @@
         },
         {
           "q": "Bleibt die Bordspannung während des gesamten Suchlaufs stabil?",
-          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmässig ein unnötiges Steuergerät.",
+          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmäßig ein unnötiges Steuergerät.",
           "measure": "Spannung während des Suchlaufs mitbeobachten und dabei stützen. Erwartet: keine sichtbaren Einbrüche. Rund 12.6 V Ruhespannung bei stehendem Motor zeigen eine geladene Batterie an; bricht die Spannung beim Suchlauf ein, ist zuerst die Versorgung zu klären.",
           "doc": "D4F-E70-001",
           "yes": 5,
@@ -5941,7 +6650,7 @@
         {
           "q": "Kommen die fehlenden Geräte zurück, wenn du das verdächtige Modul abziehst oder es getrocknet ist?",
           "help": "Ein einzelnes gestörtes Gerät kann den Bus blockieren. Am E70 steht die Junction-Box hinter dem Handschuhfach oben auf der Liste, weil verstopfte Abläufe genau dorthin führen. Abziehen und erneut suchen ist schneller als jede Messreihe.",
-          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschliessen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
+          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschließen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
           "doc": "D4F-E70-006",
           "yes": "result-wasser",
           "no": "result-busleitung"
@@ -6011,7 +6720,7 @@
         },
         "result-reifen": {
           "title": "Unterschiedliche Abrollumfänge",
-          "text": "Verschiedene Reifengrössen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+          "text": "Verschiedene Reifengrößen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
           "next_docs": [
             "D4F-E70-004"
           ]
@@ -6076,9 +6785,9 @@
           "no": 2
         },
         {
-          "q": "Sind alle vier Reifen gleicher Grösse, gleichen Typs und mit vergleichbarer Profiltiefe?",
+          "q": "Sind alle vier Reifen gleicher Größe, gleichen Typs und mit vergleichbarer Profiltiefe?",
           "help": "Unterschiedliche Abrollumfänge erzeugen dauerhaften Schlupf zwischen den Achsen. Der Allrad regelt dagegen an, überhitzt und meldet einen Fehler — mit völlig intakter Mechanik. Das ist billig zu prüfen und wird trotzdem übersprungen.",
-          "measure": "Reifengrössen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
+          "measure": "Reifengrößen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
           "doc": "D4F-E70-004",
           "yes": 3,
           "no": "result-reifen"
@@ -6093,7 +6802,7 @@
         },
         {
           "q": "Folgt der Stellmotor im Stelltest der Ansteuerung, und kommt eine plausible Rückmeldung?",
-          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiss ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
+          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiß ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
           "measure": "Stelltest starten und die Rückmeldung des Stellungsgebers mitbeobachten. Erwartet: Ansteuerung und Rückmeldung laufen gemeinsam. Verweigert das Steuergerät den Test, ist das noch kein Beweis für einen defekten Stellmotor — dann zuerst Versorgung und Kalibrierstand klären.",
           "doc": "D4F-E70-004",
           "yes": 5,
@@ -6172,7 +6881,7 @@
         },
         "result-reifen": {
           "title": "Unterschiedliche Abrollumfänge",
-          "text": "Verschiedene Reifengrössen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+          "text": "Verschiedene Reifengrößen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
           "next_docs": [
             "D4F-E70-004"
           ]
@@ -7787,11 +8496,589 @@
           ]
         }
       }
+    },
+    "f22:n13-rasseln": {
+      "code": "GF-F22-01",
+      "name": "N13 rasselt beim Kaltstart",
+      "desc": "Metallisches Rasseln in den ersten Sekunden nach dem Kaltstart. Systematisch: Ölzustand → Geräuschort → Verstellwerte → Hochdruckseite → Entscheidung.",
+      "engines": [
+        "N13"
+      ],
+      "steps": [
+        {
+          "q": "Ist der Motor tatsächlich kalt, und liegen Ölstand und Ölzustand im Rahmen?",
+          "help": "Das Leitsymptom tritt nur beim echten Kaltstart auf, also nach mehreren Stunden Standzeit. Ein warmer Motor verschweigt es. Prüfe vorher Ölstand und Ölzustand: zu wenig Öl oder ein weit überzogenes Wechselintervall erzeugen ein Rasseln, das nach dem Ölwechsel verschwindet, ohne dass an der Kette etwas war.",
+          "measure": "Motor mehrere Stunden gestanden · Ölstand innerhalb der Markierung · Öl nicht verschlammt, Wechselintervall nachvollziehbar",
+          "doc": "D4F-F22-003",
+          "yes": 1,
+          "no": "oel-zuerst"
+        },
+        {
+          "q": "Kommt das Geräusch vom Steuertrieb an der Stirnseite und nicht aus dem Bereich des Ventildeckels?",
+          "help": "Orte das Geräusch mit einem Stethoskop oder einem langen Schraubendreher am Gehäuse. Der Steuertrieb sitzt an der Stirnseite des Motors. Ein Geräusch, das aus dem Bereich der Exzenterwelle oder der Injektoren kommt, gehört in eine andere Untersuchung — Injektoren dieser Bauart ticken hörbar, das ist normal.",
+          "measure": "Geräusch am Steuergehäusedeckel deutlich lauter als am Ventildeckel und am Ansaugtrakt",
+          "doc": "D4F-F22-003",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Verschwindet das Rasseln nach wenigen Sekunden vollständig und kehrt erst beim nächsten Kaltstart zurück?",
+          "help": "Das ist das typische Muster eines Kettenspanners, der beim Start noch nicht unter Öldruck steht. Beobachte mit der Uhr: Sekundenbereich und danach still ist etwas anderes als ein Rasseln, das auch warm unter Last bleibt. Notiere beide Beobachtungen, sie entscheiden über die Dringlichkeit.",
+          "measure": "Dauer des Geräuschs nach dem Start in Sekunden · Verhalten bei betriebswarmem Motor unter Last",
+          "doc": "D4F-F22-003",
+          "yes": 4,
+          "no": "kette-dringend"
+        },
+        {
+          "q": "Zeigt die Motorsteuerung Auffälligkeiten in der Nockenwellenverstellung oder Abweichungen zwischen Soll- und Istwinkel?",
+          "help": "Diagnosesitzung aufbauen und die Verstellwerte beider Nockenwellen im Leerlauf und bei erhöhter Drehzahl beobachten. Wichtig ist nicht ein absoluter Wert, sondern die Frage, ob die Verstellung der Anforderung folgt und ob beide Wellen sich gleichartig verhalten. Eine übersprungene Kette zeigt sich als dauerhafte Abweichung, die sich nicht ausregeln lässt.",
+          "measure": "Soll- und Istwinkel folgen einander über den Drehzahlbereich · beide Nockenwellen verhalten sich gleichartig",
+          "doc": "D4F-F22-001",
+          "yes": "kette-beobachten",
+          "no": "kette-dringend"
+        },
+        {
+          "q": "Gibt es zusätzlich Startprobleme, unrunden Lauf oder Auffälligkeiten im Kraftstoffhochdruck?",
+          "help": "Hochdruckpumpe und Injektoren sind bei diesem Motor eine eigene, gut dokumentierte Fehlerquelle. Ihr Fehlerbild — schlechtes Startverhalten, Aussetzer, unruhiger Leerlauf — überlagert sich mit dem Kettenverdacht und führt oft dazu, dass an der falschen Stelle geöffnet wird. Beobachte den Raildruck beim Start und im Leerlauf und vergleiche Soll und Ist.",
+          "measure": "Raildruck folgt beim Start und im Leerlauf der Anforderung · keine Aussetzer auf einzelnen Zylindern",
+          "doc": "D4F-F22-003",
+          "yes": "hochdruckseite",
+          "no": "kette-beobachten"
+        }
+      ],
+      "model": "f22",
+      "id": "n13-rasseln",
+      "_results": {
+        "oel-zuerst": {
+          "title": "Ölversorgung zuerst in Ordnung bringen",
+          "text": "Hier nicht weitersuchen. Ölstand korrigieren beziehungsweise Ölwechsel mit passender Spezifikation durchführen und danach erneut einen echten Kaltstart beurteilen. Ein Kettenspanner ohne ausreichenden Öldruck rasselt, auch wenn die Kette in Ordnung ist. Erst nach dem Ölwechsel ist die Geräuschbeurteilung aussagekräftig.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "kette-dringend": {
+          "title": "Kettentrieb dringend öffnen lassen",
+          "text": "Das Geräusch bleibt über die ersten Sekunden hinaus bestehen oder die Verstellung lässt sich nicht ausregeln. Das Fahrzeug nicht weiter bewegen als nötig. Steuertrieb öffnen und Kette, Spanner und Gleitschienen beurteilen; Kunststoffbruchstücke in der Ölwanne sind das Bestätigungsmerkmal. Bei diesem Motor gehört die Entscheidung früh getroffen, weil ein Kettenriss den Motor kapital beschädigt.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "kette-beobachten": {
+          "title": "Kurzes Kaltstartrasseln — dokumentieren und beobachten",
+          "text": "Das Muster passt zu einem Kettenspanner, der beim Start kurz ohne Öldruck steht. Dokumentiere Laufleistung, Dauer des Geräuschs und die Verstellwerte als Ausgangszustand und vereinbare eine Nachkontrolle. Wird das Geräusch länger, lauter oder tritt es auch warm auf, ist der Steuertrieb zu öffnen. Ein Ölwechsel mit passender Spezifikation und ein kürzeres Intervall sind der sinnvollste Zwischenschritt.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "hochdruckseite": {
+          "title": "Kraftstoffhochdruckseite bewerten",
+          "text": "Startverhalten und Laufunruhe zeigen auf Hochdruckpumpe und Injektoren, nicht auf den Steuertrieb. Raildruck beim Start und im Leerlauf gegen die Anforderung aufzeichnen, Aussetzer den Zylindern zuordnen und die Injektoren gegeneinander vergleichen. Erst wenn dieser Bereich sauber ist, die Geräuschbeurteilung des Steuertriebs wiederholen — sonst behandelst du zwei Fehler als einen.",
+          "next_docs": [
+            "D4F-F22-003",
+            "D4F-F22-004"
+          ]
+        },
+        "batterie-zuerst": {
+          "title": "Batterie und Ladekreis in Ordnung bringen",
+          "text": "Nicht weitersuchen, solange die Versorgung nicht steht. Batterie laden oder ersetzen, Klemmen reinigen und festziehen, Ladespannung bei laufendem Motor kontrollieren. Nach einem Batteriewechsel den Batterietausch im Fahrzeug registrieren, sonst lädt das Fahrzeug die neue Batterie nach dem alten Profil. Danach das Symptom über mehrere Starts erneut beurteilen.",
+          "next_docs": [
+            "D4F-F22-005"
+          ]
+        },
+        "keine-antwort": {
+          "title": "Lenkung antwortet nicht — Versorgung und Bus prüfen",
+          "text": "Ein Steuergerät, das sich gar nicht meldet, ist zuerst ein Versorgungs- und Busbefund. Sicherungen kontrollieren, Spannung und Masse direkt am Steckverbinder der Lenkung prüfen und die Busanbindung ansehen. Erst wenn Versorgung und Kommunikation stehen und das Gerät weiterhin stumm bleibt, ist das Steuergerät selbst verdächtig.",
+          "next_docs": [
+            "D4F-F22-005",
+            "D4F-F22-001"
+          ]
+        },
+        "software": {
+          "title": "Softwarestand der Lenkung nachziehen",
+          "text": "Vor jedem Bauteiltausch den Programmstand aktualisieren, passend zum ausgelesenen I-Level des Fahrzeugs. Werkstattladegerät anschließen und den Vorgang nicht unterbrechen. Danach den Fehlerspeicher löschen und das Fahrzeug über mehrere Starts und eine Probefahrt beurteilen, bevor über weitere Schritte entschieden wird.",
+          "next_docs": [
+            "D4F-F22-001",
+            "D4F-F22-005"
+          ]
+        },
+        "leitung": {
+          "title": "Leitungssatz oder Steckverbindung instand setzen",
+          "text": "Der Fehler ist mechanisch auslösbar und damit gefunden. Scheuerstelle, korrodierten Kontakt oder gelockerte Masseverbindung instand setzen, den Leitungssatz gegen Scheuern sichern und die Stelle abdichten. Danach das Symptom durch dieselbe Bewegung erneut auszulösen versuchen — bleibt es aus, ist die Reparatur bestätigt.",
+          "next_docs": [
+            "D4F-F22-005"
+          ]
+        },
+        "steuergeraet": {
+          "title": "Lenkung als Bauteil bewerten",
+          "text": "Versorgung, Kommunikation, Softwarestand und Leitungssatz sind geprüft, das Symptom bleibt. Jetzt ist die Lenkeinheit selbst der wahrscheinlichste Verursacher. Vor dem Tausch die Fahrgestellnummer auf offene Rückrufe und Serviceaktionen prüfen und die dokumentierten Vorbefunde sichern — sie entscheiden über die Kostenübernahme. Nach dem Tausch sind Codierung und Abgleich durchzuführen.",
+          "next_docs": [
+            "D4F-F22-005",
+            "D4F-F22-001"
+          ]
+        }
+      }
+    },
+    "f22:eps-ausfall": {
+      "code": "GF-F22-02",
+      "name": "Lenkunterstützung fällt aus",
+      "desc": "Lenkradsymbol im Kombiinstrument, schwergängige Lenkung oder sporadischer Ausfall. Systematisch: Bordspannung → Reproduzierbarkeit → Kommunikation → Softwarestand → Bauteil.",
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "steps": [
+        {
+          "q": "Ist die Batterie geladen und in Ordnung?",
+          "help": "Der erste Schritt, weil er der häufigste Treffer ist. Die elektrische Lenkunterstützung zieht beim Anlaufen kräftig Strom. Bricht die Bordspannung ein, schaltet sie sich ab und meldet einen Fehler, der nach Lenkung aussieht. Miss die Ruhespannung nach mehreren Stunden Standzeit direkt an den Polen; rund 12.6 V zeigen eine geladene Batterie. Prüfe zusätzlich die Klemmen auf festen Sitz und Korrosion.",
+          "measure": "Ruhespannung an den Polen nach Standzeit · Spannungsverlauf während des Startvorgangs beobachten · Klemmen fest und korrosionsfrei",
+          "doc": "D4F-F22-005",
+          "yes": 1,
+          "no": "batterie-zuerst"
+        },
+        {
+          "q": "Fehlt die Unterstützung dauerhaft, oder tritt der Ausfall nur sporadisch auf?",
+          "help": "Ein Muster ist die halbe Diagnose. Notiere über mehrere Starts, wann das Symptom kommt. Ein dauerhaft fehlender Servoeffekt ist ein anderer Fall als ein Aussetzer, der nach dem Neustart wieder weg ist. Dauerhaft heißt: Diagnose und Softwarestand zuerst. Sporadisch heißt: mechanisch wackelnde Verbindung zuerst, weil sich die genau so verhält. Antworte mit ja, wenn die Unterstützung bei jeder Fahrt fehlt.",
+          "measure": "Auftreten über mindestens fünf Starts mit Temperatur und Situation dokumentiert · dauerhaft oder sporadisch eindeutig zugeordnet",
+          "doc": "D4F-F22-005",
+          "yes": 2,
+          "no": 4
+        },
+        {
+          "q": "Meldet sich die Lenkung in der Diagnosesitzung, und stehen in den benachbarten Steuergeräten Kommunikationsfehler?",
+          "help": "Über den herstellerspezifischen Zugang die Steuergeräteliste lesen und die Fehlerspeicher der Nachbarn mitnehmen. Die Lenkung hängt am Fahrzeugbus und braucht unter anderem ein Geschwindigkeitssignal, um die Unterstützung zu dosieren. Fehlt dieses Signal, meldet nicht nur die Lenkung, sondern auch die Nachbarn — und genau diese Kombination zeigt, wo der Bruch sitzt.",
+          "measure": "Lenkung antwortet mit Version · Fehlerbilder in Lenkung und Nachbarsteuergeräten gegenüberstellen",
+          "doc": "D4F-F22-001",
+          "yes": 3,
+          "no": "keine-antwort"
+        },
+        {
+          "q": "Ist der Softwarestand der Lenkung aktuell, gemessen am I-Level des Fahrzeugs?",
+          "help": "Vor jedem Bauteiltausch den Softwarestand prüfen. Für diese Baureihe sind Programmstände im Umlauf, die genau dieses Fehlerbild adressieren. Lies den I-Level des Fahrzeugs aus und vergleiche ihn mit dem verfügbaren Stand. Übernimm dabei keine Versionsnummer aus einem Forum — solche Angaben altern schnell und werden zwischen Baureihen falsch abgeschrieben.",
+          "measure": "I-Level des Fahrzeugs ausgelesen · Softwarestand der Lenkung dagegen gehalten",
+          "doc": "D4F-F22-001",
+          "yes": 4,
+          "no": "software"
+        },
+        {
+          "q": "Sind Steckverbinder, Leitungssatz und Masse an der Lenkung mechanisch einwandfrei?",
+          "help": "Steckverbinder abziehen und die Kontakte ansehen: Korrosion, aufgeweitete Buchsen und Scheuerstellen am Leitungssatz sind Sichtbefunde und brauchen kein Messgerät. Beweg den Leitungssatz bei laufendem Motor vorsichtig und beobachte, ob das Symptom dabei auslösbar ist — ein reproduzierbar auslösbarer Fehler ist ein gefundener Fehler.",
+          "measure": "Kontakte frei von Korrosion · Symptom durch Bewegen des Leitungssatzes auslösbar ja/nein · Masseanbindung fest",
+          "doc": "D4F-F22-005",
+          "yes": "leitung",
+          "no": "steuergeraet"
+        }
+      ],
+      "model": "f22",
+      "id": "eps-ausfall",
+      "_results": {
+        "oel-zuerst": {
+          "title": "Ölversorgung zuerst in Ordnung bringen",
+          "text": "Hier nicht weitersuchen. Ölstand korrigieren beziehungsweise Ölwechsel mit passender Spezifikation durchführen und danach erneut einen echten Kaltstart beurteilen. Ein Kettenspanner ohne ausreichenden Öldruck rasselt, auch wenn die Kette in Ordnung ist. Erst nach dem Ölwechsel ist die Geräuschbeurteilung aussagekräftig.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "kette-dringend": {
+          "title": "Kettentrieb dringend öffnen lassen",
+          "text": "Das Geräusch bleibt über die ersten Sekunden hinaus bestehen oder die Verstellung lässt sich nicht ausregeln. Das Fahrzeug nicht weiter bewegen als nötig. Steuertrieb öffnen und Kette, Spanner und Gleitschienen beurteilen; Kunststoffbruchstücke in der Ölwanne sind das Bestätigungsmerkmal. Bei diesem Motor gehört die Entscheidung früh getroffen, weil ein Kettenriss den Motor kapital beschädigt.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "kette-beobachten": {
+          "title": "Kurzes Kaltstartrasseln — dokumentieren und beobachten",
+          "text": "Das Muster passt zu einem Kettenspanner, der beim Start kurz ohne Öldruck steht. Dokumentiere Laufleistung, Dauer des Geräuschs und die Verstellwerte als Ausgangszustand und vereinbare eine Nachkontrolle. Wird das Geräusch länger, lauter oder tritt es auch warm auf, ist der Steuertrieb zu öffnen. Ein Ölwechsel mit passender Spezifikation und ein kürzeres Intervall sind der sinnvollste Zwischenschritt.",
+          "next_docs": [
+            "D4F-F22-003"
+          ]
+        },
+        "hochdruckseite": {
+          "title": "Kraftstoffhochdruckseite bewerten",
+          "text": "Startverhalten und Laufunruhe zeigen auf Hochdruckpumpe und Injektoren, nicht auf den Steuertrieb. Raildruck beim Start und im Leerlauf gegen die Anforderung aufzeichnen, Aussetzer den Zylindern zuordnen und die Injektoren gegeneinander vergleichen. Erst wenn dieser Bereich sauber ist, die Geräuschbeurteilung des Steuertriebs wiederholen — sonst behandelst du zwei Fehler als einen.",
+          "next_docs": [
+            "D4F-F22-003",
+            "D4F-F22-004"
+          ]
+        },
+        "batterie-zuerst": {
+          "title": "Batterie und Ladekreis in Ordnung bringen",
+          "text": "Nicht weitersuchen, solange die Versorgung nicht steht. Batterie laden oder ersetzen, Klemmen reinigen und festziehen, Ladespannung bei laufendem Motor kontrollieren. Nach einem Batteriewechsel den Batterietausch im Fahrzeug registrieren, sonst lädt das Fahrzeug die neue Batterie nach dem alten Profil. Danach das Symptom über mehrere Starts erneut beurteilen.",
+          "next_docs": [
+            "D4F-F22-005"
+          ]
+        },
+        "keine-antwort": {
+          "title": "Lenkung antwortet nicht — Versorgung und Bus prüfen",
+          "text": "Ein Steuergerät, das sich gar nicht meldet, ist zuerst ein Versorgungs- und Busbefund. Sicherungen kontrollieren, Spannung und Masse direkt am Steckverbinder der Lenkung prüfen und die Busanbindung ansehen. Erst wenn Versorgung und Kommunikation stehen und das Gerät weiterhin stumm bleibt, ist das Steuergerät selbst verdächtig.",
+          "next_docs": [
+            "D4F-F22-005",
+            "D4F-F22-001"
+          ]
+        },
+        "software": {
+          "title": "Softwarestand der Lenkung nachziehen",
+          "text": "Vor jedem Bauteiltausch den Programmstand aktualisieren, passend zum ausgelesenen I-Level des Fahrzeugs. Werkstattladegerät anschließen und den Vorgang nicht unterbrechen. Danach den Fehlerspeicher löschen und das Fahrzeug über mehrere Starts und eine Probefahrt beurteilen, bevor über weitere Schritte entschieden wird.",
+          "next_docs": [
+            "D4F-F22-001",
+            "D4F-F22-005"
+          ]
+        },
+        "leitung": {
+          "title": "Leitungssatz oder Steckverbindung instand setzen",
+          "text": "Der Fehler ist mechanisch auslösbar und damit gefunden. Scheuerstelle, korrodierten Kontakt oder gelockerte Masseverbindung instand setzen, den Leitungssatz gegen Scheuern sichern und die Stelle abdichten. Danach das Symptom durch dieselbe Bewegung erneut auszulösen versuchen — bleibt es aus, ist die Reparatur bestätigt.",
+          "next_docs": [
+            "D4F-F22-005"
+          ]
+        },
+        "steuergeraet": {
+          "title": "Lenkung als Bauteil bewerten",
+          "text": "Versorgung, Kommunikation, Softwarestand und Leitungssatz sind geprüft, das Symptom bleibt. Jetzt ist die Lenkeinheit selbst der wahrscheinlichste Verursacher. Vor dem Tausch die Fahrgestellnummer auf offene Rückrufe und Serviceaktionen prüfen und die dokumentierten Vorbefunde sichern — sie entscheiden über die Kostenübernahme. Nach dem Tausch sind Codierung und Abgleich durchzuführen.",
+          "next_docs": [
+            "D4F-F22-005",
+            "D4F-F22-001"
+          ]
+        }
+      }
+    },
+    "f30:fahrzeug-bestimmen": {
+      "code": "GF-F30-01",
+      "name": "Fahrzeug bestimmen vor Codierung und Programmierung",
+      "desc": "Welches Zugangssystem, welcher Softwarestand, welche Datenbasis. Die Vorarbeit, ohne die jede Codierung am F30 ein Ratespiel ist.",
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "steps": [
+        {
+          "q": "Liegt die vollständige Fahrgestellnummer vor und lässt sich der Fahrzeugauftrag lesen?",
+          "help": "Der Fahrzeugauftrag ist die Liste dessen, was das Fahrzeug ab Werk hat und was später eingetragen wurde. Ohne ihn ist nicht entscheidbar, ob ein fehlendes Steuergerät ein Defekt oder schlicht nicht verbaut ist. Fahrgestellnummer am Fahrzeug ablesen und mit dem gelesenen Auftrag abgleichen — Abweichungen sind ein Befund für sich.",
+          "measure": "Fahrgestellnummer am Fahrzeug und im gelesenen Auftrag identisch · Auftrag vollständig lesbar · Ausstattungsmerkmale plausibel zum Fahrzeug",
+          "doc": "D4F-F30-004",
+          "yes": 1,
+          "no": "fa-fehlt"
+        },
+        {
+          "q": "Erscheint in der Steuergeräteliste ein FEM_BODY?",
+          "help": "Das ist die Weiche der ganzen Baureihe. Der F30 wurde sowohl mit CAS4 als auch mit FEM gebaut, und die Quellen nennen für den Wechsel unterschiedliche Zeitpunkte. Statt zu schätzen, wird die Liste gelesen: Ein Eintrag FEM_BODY bedeutet FEM, ein CAS-Eintrag bedeutet CAS. Danach richten sich alle folgenden Abläufe.",
+          "measure": "Vollständige Steuergeräteliste aufgebaut · Eintrag für das Zugangssystem im Klartext notiert · Version des Geräts mitgeschrieben",
+          "doc": "D4F-F30-003",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Sind Werksstand, aktueller Stand und Zielstand der I-Stufe gelesen und notiert?",
+          "help": "Drei Stände, drei verschiedene Aussagen. Der Werksstand sagt, womit das Fahrzeug ausgeliefert wurde, der aktuelle, worauf es jetzt steht, der Zielstand, wohin eine Programmierung heben würde. Alle drei aufschreiben, bevor irgendetwas geschrieben wird — nach einem abgebrochenen Vorgang sind sie die einzige Orientierung.",
+          "measure": "Alle drei Stände notiert · Präfix des Fahrzeugprogramms bei jedem Gerät geprüft · Geräte mit fremdem Präfix gesondert vermerkt",
+          "doc": "D4F-F30-004",
+          "yes": 4,
+          "no": "i-stufe-lesen"
+        },
+        {
+          "q": "Meldet sich ein CAS und lässt sich seine Ausführung bestimmen?",
+          "help": "Kein FEM verbaut, also ein CAS. Jetzt zählt die Ausführung: Nach einer Quelle lässt sich die Motorsteuerungs-Kennung nur beim CAS4 aus dem Modul lesen, beim CAS4+ nicht. Für Schlüssel- und Motorsteuerungsarbeiten entscheidet das über den möglichen Weg. Version und Teilestand des Geräts ablesen und dokumentieren.",
+          "measure": "CAS antwortet und liefert Version und Teilestand · Ausführung dokumentiert · Abweichung zwischen Auftrag und tatsächlich verbautem Gerät notiert",
+          "doc": "D4F-F30-003",
+          "yes": 2,
+          "no": "cas-variante"
+        },
+        {
+          "q": "Deckt die vorhandene Datenbasis den gelesenen Stand des Fahrzeugs ab?",
+          "help": "Die Datenbasis muss den Stand des Fahrzeugs kennen, sonst werden falsche oder gar keine Codierdaten geladen. Prüfen heißt hier: Lässt sich für jedes betroffene Steuergerät der passende Datensatz laden, ohne dass die Software auf einen Ersatz ausweicht. Weicht sie aus, ist die Grundlage nicht in Ordnung.",
+          "measure": "Für jedes betroffene Steuergerät wird ein Datensatz gefunden · keine Ersatzauswahl durch die Software · keine Meldung über einen unbekannten Stand",
+          "doc": "D4F-F30-004",
+          "yes": 5,
+          "no": "datenstand"
+        },
+        {
+          "q": "Sind Fahrzeugauftrag und Ist-Verbauliste gesichert und ist ein Werkstattladegerät aktiv?",
+          "help": "Der letzte Schritt vor dem ersten Schreibvorgang. Die Sicherung ist der Rückweg, das Ladegerät die Voraussetzung dafür, dass es keinen Rückweg braucht. Beides kostet zusammen fünf Minuten und trennt eine reparierbare Situation von einem Ausbaufall.",
+          "measure": "Sicherungsdateien vorhanden und lesbar · Ladegerät angeschlossen und aktiv · Türen zu, abschaltbare Verbraucher aus · Zündung wird während des Vorgangs nicht angefasst",
+          "doc": "D4F-F30-001",
+          "yes": "bereit",
+          "no": "sicherung"
+        }
+      ],
+      "model": "f30",
+      "id": "fahrzeug-bestimmen",
+      "_results": {
+        "fa-fehlt": {
+          "title": "Ohne Fahrzeugauftrag nicht weiterarbeiten",
+          "text": "Hier ist Stillstand richtig. Ohne lesbaren Fahrzeugauftrag ist nicht entscheidbar, welche Steuergeräte verbaut sein müssen und welche Ausstattung codiert ist — jede Codierung wäre geraten. Zuerst die Verbindung zum Fahrzeug in Ordnung bringen und den Auftrag lesen. Weicht die Fahrgestellnummer im Auftrag von der am Fahrzeug ab, das zuerst klären: Dann steckt ein fremdes Steuergerät im Fahrzeug.",
+          "next_docs": [
+            "D4F-F30-004",
+            "D4F-F30-001"
+          ]
+        },
+        "i-stufe-lesen": {
+          "title": "I-Stufe zuerst vollständig lesen",
+          "text": "Nichts schreiben, solange nicht alle drei Stände bekannt sind. Werksstand, aktuellen Stand und Zielstand auslesen und notieren, dazu bei jedem Steuergerät den Präfix des Fahrzeugprogramms prüfen. Ein Gerät mit fremdem Präfix stammt aus einem anderen Fahrzeugprogramm und braucht eine eigene Entscheidung, bevor es mitprogrammiert wird.",
+          "next_docs": [
+            "D4F-F30-004"
+          ]
+        },
+        "cas-variante": {
+          "title": "Zugangssystem lässt sich nicht bestimmen",
+          "text": "Weder ein FEM noch ein antwortendes CAS: Damit ist die Grundlage für jede weitere Arbeit offen. Zuerst prüfen, ob die Diagnoseverbindung selbst vollständig steht und ob das Gerät versorgt ist — Sicherungen und Spannung am Stecker messen. Antwortet das Zugangssystem danach immer noch nicht, ist das der eigentliche Befund und keine Vorstufe zur Codierung.",
+          "next_docs": [
+            "D4F-F30-003",
+            "D4F-F30-001"
+          ]
+        },
+        "datenstand": {
+          "title": "Datenbasis deckt das Fahrzeug nicht ab",
+          "text": "Abbrechen und beschaffen. Weicht die Software auf einen Ersatzdatensatz aus oder meldet sie einen unbekannten Stand, werden im schlimmsten Fall fremde Codierdaten geschrieben. Passende Datenbasis zum gelesenen Stand besorgen, danach von vorn beginnen. Bis dahin darf gelesen, aber nicht geschrieben werden.",
+          "next_docs": [
+            "D4F-F30-004"
+          ]
+        },
+        "sicherung": {
+          "title": "Erst sichern und versorgen, dann schreiben",
+          "text": "Fahrzeugauftrag und Ist-Verbauliste sichern und die Dateien auf Lesbarkeit prüfen, danach das Werkstattladegerät anschließen und aktivieren. Türen schließen, abschaltbare Verbraucher aus, Zündung während des Vorgangs nicht anfassen. Ein Schreibvorgang bei wandernder Bordspannung ist der häufigste Weg von einer Codierung zu einem Ausbaufall.",
+          "next_docs": [
+            "D4F-F30-001",
+            "D4F-F30-004"
+          ]
+        },
+        "bereit": {
+          "title": "Fahrzeug bestimmt — Arbeit kann beginnen",
+          "text": "Zugangssystem, Softwarestand und Datenbasis passen zusammen, die Sicherung liegt vor und die Versorgung steht. Jetzt geräteweise vorgehen und nach jedem Schritt den Fehlerspeicher lesen, statt am Ende alles auf einmal zu prüfen. Die notierten Stände aufbewahren — sie sind bei jedem späteren Besuch dieses Fahrzeugs der Ausgangspunkt.",
+          "next_docs": [
+            "D4F-F30-004",
+            "D4F-F30-003"
+          ]
+        },
+        "registrieren": {
+          "title": "Batterie registrieren und erneut prüfen",
+          "text": "Registrierung nachholen, danach alle Fehlerspeicher löschen und eine Probefahrt fahren. In vielen Fällen verschwinden die Meldungen damit vollständig, weil das Energiemanagement wieder mit den richtigen Werten rechnet. Erst wenn nach der Registrierung Einträge wiederkommen, weitersuchen.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "codieren": {
+          "title": "Abweichender Batterietyp — zusätzlich codieren",
+          "text": "Typ oder Kapazität weichen ab, also reicht das Registrieren nicht. Die Batterie zusätzlich codieren, damit das Energiemanagement die richtige Ladekennlinie verwendet. Ist der eingebaute Typ nicht bekannt, ihn am ausgebauten Teil ablesen. Danach Fehlerspeicher löschen und mit Probefahrt gegenprüfen.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "ladeanlage": {
+          "title": "Ladeanlage oder Versorgung prüfen",
+          "text": "Solange die Spannung nicht stimmt, ist jede weitere Fehlersuche Zeitverschwendung — die Meldungen sind dann Folge und nicht Ursache. Batteriepole und Masseanbindungen auf Korrosion und festen Sitz prüfen, Riementrieb ansehen, Ladespannung bei laufendem Motor mit zugeschalteten Verbrauchern erneut messen. Erst mit sauberer Versorgung zurück in den Fehlerspeicher.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "folgefehler-weg": {
+          "title": "Folgefehler des Spannungseinbruchs — erledigt",
+          "text": "Die Einträge kommen nach Löschen und Probefahrt nicht wieder. Damit waren es Folgen des Spannungsverlusts beim Abklemmen und kein Defekt. Kein Bauteil tauschen. Den Vorgang mit den ursprünglich gelesenen Einträgen dokumentieren, damit bei einem erneuten Besuch erkennbar ist, was schon einmal gemeldet hat.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "bauteil": {
+          "title": "Bauteilbezogene Einträge — dort weitersuchen",
+          "text": "Die verbleibenden Einträge nennen Bauteile statt fehlender Botschaften. Damit ist die Batteriearbeit abgeschlossen und die eigentliche Fehlersuche beginnt beim genannten Bauteil: Eintrag im Klartext lesen, Umgebungsbedingungen auswerten, Bauteil gegen die andere Fahrzeugseite oder ein bekannt gutes Teil vergleichen. Nicht nach Eintrag tauschen, sondern nach Befund.",
+          "next_docs": [
+            "D4F-F30-005"
+          ]
+        },
+        "sg-stumm": {
+          "title": "Steuergerät meldet sich nicht mehr",
+          "text": "Ein laut Fahrzeugauftrag verbautes Gerät fehlt in der Liste. Zuerst Sicherungen prüfen, dann Dauerplus und Masse direkt am Stecker des Geräts messen und den Stecker auf Feuchtigkeit und Korrosion ansehen. Sehr oft ist es die Versorgung und nicht das Gerät. Betrifft es das Zugangssystem, vor jedem weiteren Schritt ein Werkstattladegerät anschließen und nichts auf Verdacht beschreiben.",
+          "next_docs": [
+            "D4F-F30-003",
+            "D4F-F30-001"
+          ]
+        },
+        "adaption": {
+          "title": "Anlern- und Adaptionsvorgänge nachholen",
+          "text": "Alle Geräte antworten, die Einträge betreffen aber die Kommunikation. Nach einem Spannungsverlust fehlen häufig Adaptionen und Anlernzustände: Lenkwinkelabgleich, Fensterheber-Endanschläge, Adaptionswerte der Motorsteuerung. Diese Vorgänge geführt nachholen, danach Speicher löschen und Probefahrt fahren. Bleibt danach etwas stehen, mit dem verbliebenen Eintrag gezielt weitersuchen.",
+          "next_docs": [
+            "D4F-F30-005",
+            "D4F-F30-006"
+          ]
+        }
+      }
+    },
+    "f30:stoerung-nach-batterie": {
+      "code": "GF-F30-02",
+      "name": "Störungen nach Batteriewechsel am F30",
+      "desc": "Nach dem Batteriewechsel melden mehrere Systeme gleichzeitig. Trennt Folgefehler und Registrierungsproblem vom echten Defekt.",
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "steps": [
+        {
+          "q": "Wurde die neue Batterie nach dem Einbau registriert?",
+          "help": "Der F30 passt sein Ladeverhalten an Alter und Zustand der Batterie an. Ohne Registrierung rechnet er weiter mit der alten, verschlissenen — die neue Batterie wird falsch geladen und das Energiemanagement regelt zu früh ab. Das erzeugt genau die Meldungen, wegen derer das Fahrzeug in der Werkstatt steht.",
+          "measure": "Registriervorgang nachvollziehbar durchgeführt und quittiert · Einbaudatum beziehungsweise Zählerstand im Energiemanagement passt zur neuen Batterie",
+          "doc": "D4F-F30-006",
+          "yes": 1,
+          "no": "registrieren"
+        },
+        {
+          "q": "Entspricht die eingebaute Batterie in Typ und Kapazität der ausgebauten?",
+          "help": "Registrieren allein reicht nicht, wenn ein anderer Batterietyp eingebaut wurde. Eine AGM-Batterie will anders geladen werden als eine Nassbatterie, und eine abweichende Kapazität verschiebt die gesamte Rechnung des Energiemanagements. Typ und Kapazität stehen auf dem ausgebauten Teil — vor der Entsorgung ablesen.",
+          "measure": "Typ und Kapazität der alten und der neuen Batterie gegenübergestellt · bei Abweichung Codierung durchgeführt und quittiert",
+          "doc": "D4F-F30-006",
+          "yes": 2,
+          "no": "codieren"
+        },
+        {
+          "q": "Arbeitet die Ladeanlage — steigt die Spannung bei laufendem Motor gegenüber dem Ruhewert an?",
+          "help": "Bevor Steuergeräte verdächtigt werden, muss die Versorgung stimmen. Ruhespannung nach mehreren Stunden Standzeit direkt an den Polen messen, danach bei laufendem Motor erneut. Eine geladene Batterie zeigt in Ruhe rund 12.6 V; bei laufendem Motor muss die Spannung deutlich darüber liegen und stabil bleiben.",
+          "measure": "Ruhespannung nach Standzeit rund 12.6 V · bei laufendem Motor deutlich höherer, stabiler Wert · kein Wandern der Spannung beim Zuschalten von Verbrauchern",
+          "doc": "D4F-F30-006",
+          "yes": 3,
+          "no": "ladeanlage"
+        },
+        {
+          "q": "Bleiben nach dem Löschen des Fehlerspeichers Einträge in mehreren Steuergeräten stehen?",
+          "help": "Alle Speicher lesen, Einträge notieren, dann löschen. Anschließend Zündung aus, kurz warten, Probefahrt, erneut lesen. Was jetzt nicht wiederkommt, war ein Folgefehler des Spannungseinbruchs beim Abklemmen. Was wiederkommt, ist die eigentliche Arbeit.",
+          "measure": "Alle Speicher vor dem Löschen dokumentiert · nach Probefahrt erneut gelesen · Liste der wiederkehrenden Einträge je Steuergerät",
+          "doc": "D4F-F30-003",
+          "yes": 4,
+          "no": "folgefehler-weg"
+        },
+        {
+          "q": "Betreffen die verbleibenden Einträge die Kommunikation — also fehlende Botschaften statt Bauteile?",
+          "help": "Der Inhalt der Einträge entscheidet über die Richtung. Einträge über fehlende Botschaften bedeuten, dass ein Gerät einen Partner nicht mehr hört; das führt zu Versorgung, Bus oder einem stummen Steuergerät. Bauteilbezogene Einträge führen dagegen direkt zum genannten Bauteil. Die beiden Klassen getrennt auflisten.",
+          "measure": "Einträge im Klartext gelesen und in zwei Listen sortiert · bei Kommunikationsfehlern notieren, welches Gerät welchen Partner vermisst",
+          "doc": "D4F-F30-003",
+          "yes": 5,
+          "no": "bauteil"
+        },
+        {
+          "q": "Fehlt in der Steuergeräteliste ein Gerät ganz — insbesondere das Zugangssystem?",
+          "help": "Steuergeräteliste gegen den Fahrzeugauftrag halten. Fehlt ein Gerät, das laut Auftrag verbaut ist, geht es um dessen Versorgung und Busanbindung. Sind alle da und melden trotzdem fehlende Botschaften, ist es meist ein Adaptions- oder Anlernzustand, der nach dem Spannungsverlust nicht wiederhergestellt wurde.",
+          "measure": "Liste vollständig gegen den Auftrag abgeglichen · fehlendes Gerät namentlich notiert · bei vollständiger Liste offene Anlern- und Adaptionsvorgänge auflisten",
+          "doc": "D4F-F30-003",
+          "yes": "sg-stumm",
+          "no": "adaption"
+        }
+      ],
+      "model": "f30",
+      "id": "stoerung-nach-batterie",
+      "_results": {
+        "fa-fehlt": {
+          "title": "Ohne Fahrzeugauftrag nicht weiterarbeiten",
+          "text": "Hier ist Stillstand richtig. Ohne lesbaren Fahrzeugauftrag ist nicht entscheidbar, welche Steuergeräte verbaut sein müssen und welche Ausstattung codiert ist — jede Codierung wäre geraten. Zuerst die Verbindung zum Fahrzeug in Ordnung bringen und den Auftrag lesen. Weicht die Fahrgestellnummer im Auftrag von der am Fahrzeug ab, das zuerst klären: Dann steckt ein fremdes Steuergerät im Fahrzeug.",
+          "next_docs": [
+            "D4F-F30-004",
+            "D4F-F30-001"
+          ]
+        },
+        "i-stufe-lesen": {
+          "title": "I-Stufe zuerst vollständig lesen",
+          "text": "Nichts schreiben, solange nicht alle drei Stände bekannt sind. Werksstand, aktuellen Stand und Zielstand auslesen und notieren, dazu bei jedem Steuergerät den Präfix des Fahrzeugprogramms prüfen. Ein Gerät mit fremdem Präfix stammt aus einem anderen Fahrzeugprogramm und braucht eine eigene Entscheidung, bevor es mitprogrammiert wird.",
+          "next_docs": [
+            "D4F-F30-004"
+          ]
+        },
+        "cas-variante": {
+          "title": "Zugangssystem lässt sich nicht bestimmen",
+          "text": "Weder ein FEM noch ein antwortendes CAS: Damit ist die Grundlage für jede weitere Arbeit offen. Zuerst prüfen, ob die Diagnoseverbindung selbst vollständig steht und ob das Gerät versorgt ist — Sicherungen und Spannung am Stecker messen. Antwortet das Zugangssystem danach immer noch nicht, ist das der eigentliche Befund und keine Vorstufe zur Codierung.",
+          "next_docs": [
+            "D4F-F30-003",
+            "D4F-F30-001"
+          ]
+        },
+        "datenstand": {
+          "title": "Datenbasis deckt das Fahrzeug nicht ab",
+          "text": "Abbrechen und beschaffen. Weicht die Software auf einen Ersatzdatensatz aus oder meldet sie einen unbekannten Stand, werden im schlimmsten Fall fremde Codierdaten geschrieben. Passende Datenbasis zum gelesenen Stand besorgen, danach von vorn beginnen. Bis dahin darf gelesen, aber nicht geschrieben werden.",
+          "next_docs": [
+            "D4F-F30-004"
+          ]
+        },
+        "sicherung": {
+          "title": "Erst sichern und versorgen, dann schreiben",
+          "text": "Fahrzeugauftrag und Ist-Verbauliste sichern und die Dateien auf Lesbarkeit prüfen, danach das Werkstattladegerät anschließen und aktivieren. Türen schließen, abschaltbare Verbraucher aus, Zündung während des Vorgangs nicht anfassen. Ein Schreibvorgang bei wandernder Bordspannung ist der häufigste Weg von einer Codierung zu einem Ausbaufall.",
+          "next_docs": [
+            "D4F-F30-001",
+            "D4F-F30-004"
+          ]
+        },
+        "bereit": {
+          "title": "Fahrzeug bestimmt — Arbeit kann beginnen",
+          "text": "Zugangssystem, Softwarestand und Datenbasis passen zusammen, die Sicherung liegt vor und die Versorgung steht. Jetzt geräteweise vorgehen und nach jedem Schritt den Fehlerspeicher lesen, statt am Ende alles auf einmal zu prüfen. Die notierten Stände aufbewahren — sie sind bei jedem späteren Besuch dieses Fahrzeugs der Ausgangspunkt.",
+          "next_docs": [
+            "D4F-F30-004",
+            "D4F-F30-003"
+          ]
+        },
+        "registrieren": {
+          "title": "Batterie registrieren und erneut prüfen",
+          "text": "Registrierung nachholen, danach alle Fehlerspeicher löschen und eine Probefahrt fahren. In vielen Fällen verschwinden die Meldungen damit vollständig, weil das Energiemanagement wieder mit den richtigen Werten rechnet. Erst wenn nach der Registrierung Einträge wiederkommen, weitersuchen.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "codieren": {
+          "title": "Abweichender Batterietyp — zusätzlich codieren",
+          "text": "Typ oder Kapazität weichen ab, also reicht das Registrieren nicht. Die Batterie zusätzlich codieren, damit das Energiemanagement die richtige Ladekennlinie verwendet. Ist der eingebaute Typ nicht bekannt, ihn am ausgebauten Teil ablesen. Danach Fehlerspeicher löschen und mit Probefahrt gegenprüfen.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "ladeanlage": {
+          "title": "Ladeanlage oder Versorgung prüfen",
+          "text": "Solange die Spannung nicht stimmt, ist jede weitere Fehlersuche Zeitverschwendung — die Meldungen sind dann Folge und nicht Ursache. Batteriepole und Masseanbindungen auf Korrosion und festen Sitz prüfen, Riementrieb ansehen, Ladespannung bei laufendem Motor mit zugeschalteten Verbrauchern erneut messen. Erst mit sauberer Versorgung zurück in den Fehlerspeicher.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "folgefehler-weg": {
+          "title": "Folgefehler des Spannungseinbruchs — erledigt",
+          "text": "Die Einträge kommen nach Löschen und Probefahrt nicht wieder. Damit waren es Folgen des Spannungsverlusts beim Abklemmen und kein Defekt. Kein Bauteil tauschen. Den Vorgang mit den ursprünglich gelesenen Einträgen dokumentieren, damit bei einem erneuten Besuch erkennbar ist, was schon einmal gemeldet hat.",
+          "next_docs": [
+            "D4F-F30-006"
+          ]
+        },
+        "bauteil": {
+          "title": "Bauteilbezogene Einträge — dort weitersuchen",
+          "text": "Die verbleibenden Einträge nennen Bauteile statt fehlender Botschaften. Damit ist die Batteriearbeit abgeschlossen und die eigentliche Fehlersuche beginnt beim genannten Bauteil: Eintrag im Klartext lesen, Umgebungsbedingungen auswerten, Bauteil gegen die andere Fahrzeugseite oder ein bekannt gutes Teil vergleichen. Nicht nach Eintrag tauschen, sondern nach Befund.",
+          "next_docs": [
+            "D4F-F30-005"
+          ]
+        },
+        "sg-stumm": {
+          "title": "Steuergerät meldet sich nicht mehr",
+          "text": "Ein laut Fahrzeugauftrag verbautes Gerät fehlt in der Liste. Zuerst Sicherungen prüfen, dann Dauerplus und Masse direkt am Stecker des Geräts messen und den Stecker auf Feuchtigkeit und Korrosion ansehen. Sehr oft ist es die Versorgung und nicht das Gerät. Betrifft es das Zugangssystem, vor jedem weiteren Schritt ein Werkstattladegerät anschließen und nichts auf Verdacht beschreiben.",
+          "next_docs": [
+            "D4F-F30-003",
+            "D4F-F30-001"
+          ]
+        },
+        "adaption": {
+          "title": "Anlern- und Adaptionsvorgänge nachholen",
+          "text": "Alle Geräte antworten, die Einträge betreffen aber die Kommunikation. Nach einem Spannungsverlust fehlen häufig Adaptionen und Anlernzustände: Lenkwinkelabgleich, Fensterheber-Endanschläge, Adaptionswerte der Motorsteuerung. Diese Vorgänge geführt nachholen, danach Speicher löschen und Probefahrt fahren. Bleibt danach etwas stehen, mit dem verbliebenen Eintrag gezielt weitersuchen.",
+          "next_docs": [
+            "D4F-F30-005",
+            "D4F-F30-006"
+          ]
+        }
+      }
     }
   },
   "stats": {
-    "total_docs": 94,
-    "total_guides": 29,
+    "total_docs": 107,
+    "total_guides": 35,
     "per_model": {
       "e28": 7,
       "e30": 2,
@@ -7807,7 +9094,9 @@
       "e90": 3,
       "f-series": 2,
       "f10": 6,
-      "f15": 7
+      "f15": 7,
+      "f22": 7,
+      "f30": 6
     }
   }
 }

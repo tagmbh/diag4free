@@ -27,8 +27,8 @@
         },
         {
           "q": "Weicht die betroffene Bank auch in den Laufwerten sichtbar von der anderen ab?",
-          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Grössen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
-          "measure": "Gleiche Messgrösse in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von aussen.",
+          "help": "Der Fehlerspeicher sagt, wo etwas eingetragen wurde. Die Laufwerte sagen, ob es aktuell noch so ist. Beide Steuergeräte führen dieselben Größen, deshalb ist die Gegenüberstellung hier aussagekräftiger als jeder Absolutwert.",
+          "measure": "Gleiche Messgröße in beiden Steuergeräten bei gleichem Betriebszustand ablesen — Gemischkorrektur, Lambdaregelung, Luftmasse, Laufunruhe je Zylinder. Erwartet: beide Bänke liegen dicht beieinander. Der Befund ist die Abweichung zwischen den Bänken, nicht ein Zahlenwert von außen.",
           "doc": "D4F-E38-003",
           "yes": 3,
           "no": 4
@@ -36,7 +36,7 @@
         {
           "q": "Wandert das Symptom mit, wenn du das verdächtige Bauteil auf die andere Bank setzt?",
           "help": "Der Kreuztausch ist am M73 der schnellste Beweis und braucht keinen Sollwert. Zündspule, Luftmassenmesser oder Lambdasonde der auffälligen Seite gegen das Gegenstück der unauffälligen Seite tauschen — mehr ist nicht nötig.",
-          "measure": "Nach dem Tausch dieselbe Messgrösse erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
+          "measure": "Nach dem Tausch dieselbe Messgröße erneut in beiden Steuergeräten vergleichen. Wandert die Abweichung auf die andere Bank, ist das Bauteil der Täter. Bleibt sie auf der ursprünglichen Seite, liegt der Fehler in Verkabelung, Ansaugtrakt oder Mechanik dieser Bank.",
           "doc": "D4F-E38-003",
           "yes": "result-bauteil",
           "no": "result-bank-peripherie"
@@ -44,14 +44,14 @@
         {
           "q": "Zeigen beide Bänke dasselbe Bild — also beide mager, beide mit Aussetzern oder beide mit derselben Abweichung?",
           "help": "Wenn sich beide Steuergeräte einig sind, ist die Ursache nicht doppelt vorhanden. Dann kommt nur infrage, was beide Bänke gemeinsam nutzen: Kraftstoffversorgung, Kurbelgehäuseentlüftung, Massepunkte, Ansaugluftweg vor der Verzweigung.",
-          "measure": "Dieselbe Grösse in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Grössenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
+          "measure": "Dieselbe Größe in beiden Steuergeräten gegenüberstellen. Erwartet bei gemeinsamer Ursache: gleiche Richtung, ähnliche Größenordnung auf beiden Seiten. Weicht doch eine Seite deutlich ab, gehört sie zuerst einzeln behandelt.",
           "doc": "D4F-E38-003",
           "yes": 5,
           "no": "result-bank-peripherie"
         },
         {
           "q": "Ist die Kurbelgehäuseentlüftung frei und der Öleinfülldeckel innen frei von hellem Schlamm?",
-          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmässig übersprungen.",
+          "help": "Eine zugesetzte Kurbelgehäuseentlüftung zieht Falschluft und magert beide Bänke gleichzeitig ab — genau das Bild, das hier gerade festgestellt wurde. Sie ist billig zu prüfen und wird trotzdem regelmäßig übersprungen.",
           "measure": "Deckel abnehmen und die Innenseite ansehen: heller, emulsionsartiger Schlamm ist der Befund. Zusätzlich die Schläuche der Entlüftung auf Verhärtung, Risse und Verstopfung prüfen. Ein Unterdruck-Sollwert für das System ist hier nicht belegt — geprüft wird qualitativ auf Durchgang und Dichtheit.",
           "doc": "D4F-E38-003",
           "yes": "result-gemeinsam-kraftstoff",
@@ -94,9 +94,9 @@
           "no": "result-gateway"
         },
         {
-          "q": "Sind Bordspannung und die Massepunkte im Fussraum in Ordnung?",
+          "q": "Sind Bordspannung und die Massepunkte im Fußraum in Ordnung?",
           "help": "Ein loser oder korrodierter Massepunkt legt mehrere Steuergeräte gleichzeitig still und sieht dabei aus wie ein Busfehler. Das ist die häufigste vermeidbare Fehldiagnose an diesem Punkt.",
-          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfussraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
+          "measure": "Bordspannung bei eingeschalteter Zündung messen; rund 12.6 V bei stehendem Motor zeigen eine geladene Batterie. Massepunkte im Fahrer- und Beifahrerfußraum lösen, Kontaktflächen ansehen und wieder festziehen. Erwartet: blanke Flächen, kein Grünspan, kein Wasser.",
           "doc": "D4F-E38-006",
           "yes": 4,
           "no": "result-versorgung"
@@ -111,7 +111,7 @@
         },
         {
           "q": "Kommen die fehlenden Geräte zurück, sobald du ein verdächtiges Modul vom Bus trennst?",
-          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfussraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "help": "Ein einzelnes defektes Steuergerät kann den gesamten Bus blockieren. Das Lichtmodul im Fahrerfußraum steht dabei oben auf der Liste, weil Wasser aus verstopften Schiebedachabläufen genau dort ankommt. Abziehen und erneut suchen ist schneller als jede Messreihe.",
           "measure": "Ein Gerät nach dem anderen vom Bus trennen und nach jedem Schritt den Suchlauf wiederholen. Erwartet: bleibt die Liste unverändert unvollständig, war es nicht dieses Gerät. Wird sie vollständig, ist der Störer gefunden.",
           "doc": "D4F-E38-005",
           "yes": "result-stoerer",
@@ -138,14 +138,14 @@
     },
     "result-bank-peripherie": {
       "title": "Verkabelung, Ansaugtrakt oder Mechanik dieser Bank",
-      "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von aussen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
+      "text": "Das Bauteil ist es nicht, die Abweichung bleibt aber einseitig. Arbeite die Bank von außen nach innen ab: Stecker und Leitungssatz auf Scheuerstellen und Öl, Ansaugtrakt dieser Seite auf Falschluft, Sekundärluftweg auf Dichtheit. Bleibt alles unauffällig, die Kompression dieser Bank gegen die andere vergleichen.",
       "next_docs": [
         "D4F-E38-003"
       ]
     },
     "result-gemeinsam-kraftstoff": {
       "title": "Gemeinsame Ursache — Kraftstoffversorgung und Masse",
-      "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von aussen; ein belegter Druckwert liegt hier nicht vor.",
+      "text": "Beide Bänke zeigen dasselbe Bild, die Kurbelgehäuseentlüftung ist frei. Damit bleiben die gemeinsamen Systeme: Kraftstoffförderung und Filter, Massepunkte des Motors, gemeinsame Ansaugluftführung. Prüfe die Kraftstoffversorgung gegen den vom Steuergerät geführten Sollwert und nicht gegen eine Zahl von außen; ein belegter Druckwert liegt hier nicht vor.",
       "next_docs": [
         "D4F-E38-003"
       ]
@@ -182,7 +182,7 @@
     },
     "result-versorgung": {
       "title": "Spannungsversorgung oder Massepunkt",
-      "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fussraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
+      "text": "Der Fehler liegt vor dem Bus. Massepunkte im Fußraum reinigen und nachziehen, Batterie und Ladung beurteilen, betroffene Sicherungen einzeln ansehen — auch eine optisch heile Sicherung kann im Halter schlechten Kontakt haben. Danach den Suchlauf wiederholen, bevor du weiter am Bus misst.",
       "next_docs": [
         "D4F-E38-006"
       ]
@@ -196,7 +196,7 @@
     },
     "result-stoerer": {
       "title": "Störendes Steuergerät gefunden",
-      "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfussraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
+      "text": "Mit dem abgezogenen Gerät ist der Bus wieder vollständig. Sieh dir das Gerät und seinen Einbauort auf Wassereintritt an, bevor du es ersetzt — beim Modul im Fahrerfußraum ist der verstopfte Schiebedachablauf die häufige Ursache. Wer nur das Gerät tauscht und den Wasserweg lässt, tauscht es ein zweites Mal.",
       "next_docs": [
         "D4F-E38-005"
       ]

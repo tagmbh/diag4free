@@ -42,12 +42,12 @@
       "cat": "Modell-Setup",
       "title": "Bus-Topologie E70 · PT-CAN, K-CAN, FlexRay und der Weg der Diagnose",
       "valid": "E70/E71 · 2006–2013",
-      "summary": "Der E70 trägt mehrere Bussysteme nebeneinander und ist das erste Serienfahrzeug mit FlexRay. Wer weiss, welches Steuergerät an welchem Bus hängt und über welches Gateway die Diagnose läuft, spart sich den grössten Teil der Fehlersuche.",
+      "summary": "Der E70 trägt mehrere Bussysteme nebeneinander und ist das erste Serienfahrzeug mit FlexRay. Wer weiß, welches Steuergerät an welchem Bus hängt und über welches Gateway die Diagnose läuft, spart sich den größten Teil der Fehlersuche.",
       "points": [
         "Die Junction-Box-Elektronik trägt die zentrale Gateway-Funktion und verbindet die Bussysteme untereinander",
         "Antriebsseite am PT-CAN: Motorsteuerung, Getriebe, Fahrdynamikregelung, Verteilergetriebe",
         "Karosserie und Komfort am K-CAN; nach einer Quelle arbeitet dieser Bus mit rund 100 kbit/s und damit deutlich langsamer als der PT-CAN",
-        "FlexRay trägt ausschliesslich die Fahrwerksregelung — nach einer Quelle mit 10 Mbit/s; das Fahrzeug hat den Bus nur mit der entsprechenden Ausstattung",
+        "FlexRay trägt ausschließlich die Fahrwerksregelung — nach einer Quelle mit 10 Mbit/s; das Fahrzeug hat den Bus nur mit der entsprechenden Ausstattung",
         "Diagnoseaufträge an FlexRay-Teilnehmer laufen über ein weiteres Gateway zwischen PT-CAN und FlexRay — welches Steuergerät diese Funktion trägt, ist hier nicht gesichert",
         "Infotainment hängt am optischen Ring und fällt bei einem Ringfehler geschlossen aus, nicht einzeln"
       ],
@@ -102,9 +102,9 @@
       "valid": "E70/E71 · xDrive mit elektrisch gestelltem Verteilergetriebe",
       "summary": "Das Verteilergetriebe des E70 hat ein eigenes Steuergerät und einen Stellmotor, der die Lamellenkupplung verspannt. Die häufigsten Befunde liegen nicht im Getriebe, sondern im Stellmotor und in der fehlenden Kalibrierung nach einem Eingriff.",
       "points": [
-        "Erfahrungswert: der bekannteste Ausfall ist der Stellmotor, dessen Kunststoffräder verschleissen — Fehlerbild sind Stellfehler statt mechanischer Geräusche",
+        "Erfahrungswert: der bekannteste Ausfall ist der Stellmotor, dessen Kunststoffräder verschleißen — Fehlerbild sind Stellfehler statt mechanischer Geräusche",
         "Nach Tausch von Steuergerät oder Stellmotor ist eine Kalibrierung zwingend; ohne sie bleibt das System im Fehler, obwohl die Teile neu sind",
-        "Nach einer Quelle liegen die Verschleisswerte der Kupplung im Steuergerät und müssen beim Gerätetausch zurückgesetzt werden — vor dem Anwenden gegenprüfen",
+        "Nach einer Quelle liegen die Verschleißwerte der Kupplung im Steuergerät und müssen beim Gerätetausch zurückgesetzt werden — vor dem Anwenden gegenprüfen",
         "Verweigert das Steuergerät den Stelltest, ist das kein Beweis für einen defekten Stellmotor — erst Versorgung, Kalibrierstand und Fehlerspeicher der Fahrdynamikregelung klären",
         "Reifen prüfen, bevor Teile bestellt werden: unterschiedliche Abrollumfänge an einer Achse erzeugen Regelfehler ohne defektes Bauteil",
         "Nach dem Ersetzen des Stellmotors die Dichtung erneuern — sonst folgt der Ölverlust auf den Reparaturerfolg"

@@ -1,0 +1,140 @@
+{
+  "model": "f22",
+  "docs": [
+    {
+      "id": "D4F-F22-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F20/F21/F22/F23 über ENET",
+      "valid": "F20/F21/F22/F23 · 2011–2019 · alle Motoren",
+      "summary": "Der kompakte 1er und 2er dieser Generation trägt dieselbe Diagnosearchitektur wie die großen F-Baureihen: Ethernet an der OBD-Buchse statt K-Line. Was das für Kabel, Zündung und Datenstand bedeutet.",
+      "points": [
+        "ENET-Kabel verwenden, kein K+DCAN — die alten INPA-Kabel erreichen hier kein Steuergerät",
+        "Ethernet wird erst mit KL15 aktiv, ohne Zündung meldet die Netzwerkbuchse kein Medium",
+        "WLAN und VPN am Notebook abschalten, sonst läuft der Verkehr am Fahrzeug vorbei",
+        "Datenstand gegen den ausgelesenen I-Level wählen, nie nach einer Versionsnummer aus dem Netz",
+        "Kleines Bordnetz, kleiner Puffer: Werkstattladegerät vor jedem Schreibvorgang ist hier besonders wichtig",
+        "Generisches OBD-2 zeigt nur die Motorsteuerung — Lenkung, Karosserie und Fahrwerk antworten darauf nicht"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Ethernet TX+",
+        "OBD2 Pin 11 · Ethernet TX-",
+        "OBD2 Pin 12 · Ethernet RX+",
+        "OBD2 Pin 13 · Ethernet RX-",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 4/5 · Masse"
+      ],
+      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "article": "enet-zugang.md",
+      "details": ["D4F-F22-002", "D4F-F22-007"]
+    },
+    {
+      "id": "D4F-F22-002",
+      "type": "GUIDE",
+      "cat": "Identifikation",
+      "title": "Motorzuordnung F20 bis F23: von N13 und N20 zu B38 und B48",
+      "valid": "F20/F21/F22/F23 · 2011–2019",
+      "summary": "Diese Baureihe überspannt den Wechsel von den N-Motoren auf die Baukastenmotoren der B-Reihe. Die Umstellung fällt je nach Modell und Markt auf verschiedene Zeitpunkte — deshalb entscheidet die Motorkennung, nicht das Baujahr.",
+      "points": [
+        "Zylinder zählen trennt zuerst: drei Zündspulen sind ein Dreizylinder, vier ein Vierzylinder, sechs ein Sechszylinder",
+        "Motorkennung am Kurbelgehäuse ablesen und gegen den Fahrzeugauftrag halten",
+        "Der 1.6-Liter-Vierzylinder der N-Reihe stammt aus einer Kooperationsentwicklung und hat eigene Anbauteile",
+        "Baujahrgrenzen aus dem Netz nicht übernehmen — die Quellen widersprechen sich, siehe Artikel",
+        "Bei der Teilebestellung immer die vollständige Kennung nehmen, nicht nur die Familie",
+        "Steuergerätebezeichnung der Motorsteuerung als Gegencheck zur mechanischen Ansprache notieren"
+      ],
+      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "article": "motorzuordnung.md",
+      "details": ["D4F-F22-003", "D4F-F22-001"]
+    },
+    {
+      "id": "D4F-F22-003",
+      "type": "TEST",
+      "cat": "Motor",
+      "title": "N13: das Erbe der Kooperationsentwicklung eingrenzen",
+      "valid": "F20/F21/F22/F23 · nur N13",
+      "summary": "Der N13 ist der einzige BMW-Motor dieser Zeit, dessen Block aus einer Kooperation mit einem anderen Hersteller stammt. Er bringt dadurch Fehlerbilder mit, die man von den übrigen N-Motoren nicht kennt — und Teile, die anders aussehen.",
+      "points": [
+        "Rasseln beim Kaltstart in den ersten Sekunden ernst nehmen und dem Kettentrieb zuordnen, nicht dem Ventiltrieb",
+        "Geräuschprüfung immer am kalten Motor, warm verschwindet das Leitsymptom oft vollständig",
+        "Startprobleme und ruppiger Lauf gehören zuerst in die Kraftstoffhochdruckseite, nicht in die Zündung",
+        "Ölkohle an den Einlassventilen als Ursache mitprüfen, bevor Zündspulen und Kerzen getauscht werden",
+        "Anbauteile weichen von den übrigen N-Motoren ab — Teile nie nach Ähnlichkeit bestellen",
+        "Erfahrungswert zur Laufleistung: Kettenauffälligkeiten treten in Berichten früh auf, teils deutlich unter 100 tkm"
+      ],
+      "engines": ["N13"],
+      "article": "n13-schwachstellen.md",
+      "details": ["D4F-F22-002", "D4F-F22-004"]
+    },
+    {
+      "id": "D4F-F22-004",
+      "type": "TEST",
+      "cat": "Motor",
+      "title": "Valvetronic im F2x: Ventilhubsteuerung eingrenzen",
+      "valid": "F20/F21/F22/F23 · Benziner mit Valvetronic",
+      "summary": "Alle Benziner dieser Baureihe stellen den Ventilhub über eine Exzenterwelle mit eigenem Stellmotor. Fällt die Verstellung aus, meldet das Fahrzeug Notlauf oder unruhigen Leerlauf — ein Fehlerbild, das leicht der Zündung zugeschrieben wird.",
+      "points": [
+        "Stellmotor der Exzenterwelle sitzt quer auf dem Zylinderkopf und ist ohne Demontage sichtbar",
+        "Vor dem Tausch die Versorgung und den Steckverbinder des Stellmotors prüfen",
+        "Exzenterwellensensor und Stellmotor sind getrennte Fehlerquellen mit ähnlichem Symptom",
+        "Nach Arbeiten an der Ventilhubsteuerung die Adaption durchführen, sonst bleibt der Notlauf",
+        "Schwergängigkeit der Exzenterwelle bringt auch einen neuen Stellmotor um — Mechanik mitbewerten"
+      ],
+      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "details": ["D4F-F22-003", "D4F-F22-006"]
+    },
+    {
+      "id": "D4F-F22-005",
+      "type": "TEST",
+      "cat": "Lenkung",
+      "title": "Elektrische Servolenkung im F2x: Ausfall eingrenzen",
+      "valid": "F20/F21/F22/F23 · alle Motoren",
+      "summary": "Die Lenkunterstützung dieser Baureihe arbeitet elektrisch und hängt am Bordnetz und am Fahrzeugbus. Ein sporadischer Ausfall ist deshalb häufiger ein Spannungs- oder Kommunikationsbefund als ein defektes Lenkgetriebe.",
+      "points": [
+        "Ausfälle beim Motorstart und bei Kälte zuerst als Spannungseinbruch behandeln",
+        "Batterie und Ladezustand vor jedem anderen Schritt bewerten — Ruhespannung um 12.6 V zeigt eine geladene Batterie",
+        "Fehlereinträge in benachbarten Steuergeräten mitlesen, sie zeigen Kommunikationsausfälle deutlicher",
+        "Generisches OBD-2 sieht die Lenkung nicht — herstellerspezifischer Zugang ist Pflicht",
+        "Softwarestand der Lenkung prüfen, bevor über einen Bauteiltausch entschieden wird",
+        "Bei gelbem Lenkradsymbol bleibt meist eine Restunterstützung aktiv — das Fahrzeug bewegt sich, ist aber nicht in Ordnung"
+      ],
+      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "details": ["D4F-F22-001", "D4F-F22-007"]
+    },
+    {
+      "id": "D4F-F22-006",
+      "type": "TEST",
+      "cat": "Aufladung",
+      "title": "N55 im M235i: Ladedruckaufbau und Wastegate beurteilen",
+      "valid": "F22/F23 · nur N55",
+      "summary": "Der Sechszylinder-Turbo im M235i fällt mit zwei verschiedenen Themen auf, die oft verwechselt werden: ein Rasseln des Wastegate-Aktors im kalten Zustand und ein zu langsamer Ladedruckaufbau unter Last. Nur eines davon ist ein Leistungsproblem.",
+      "points": [
+        "Rasseln nur im kalten Zustand ohne Leistungsverlust ist eine andere Baustelle als schlechter Ladedruckaufbau",
+        "Vor der Laderbewertung die Ladeluftführung auf Risse und lose Verbindungen absuchen",
+        "Ladedruck-Ist gegen Ladedruck-Soll im Fahrbetrieb aufzeichnen, nicht im Stand beurteilen",
+        "Position des Wastegate-Aktors im Stellgliedtest beobachten und auf Schwankungen achten",
+        "Vergleiche über Baureihen hinweg vermeiden — dieselbe Motorenfamilie ist im F22 anders abgestimmt als im großen Fahrzeug"
+      ],
+      "engines": ["N55"],
+      "article": "n55-ladedruck.md",
+      "details": ["D4F-F22-004", "D4F-F22-002"]
+    },
+    {
+      "id": "D4F-F22-007",
+      "type": "LOC",
+      "cat": "Bordnetz",
+      "title": "Steuergeräte-Topologie im F2x: was wo sitzt",
+      "valid": "F20/F21/F22/F23 · alle Motoren",
+      "summary": "Der kompakte 1er und 2er trägt dieselbe Elektronikplattform wie die großen F-Baureihen, aber mit deutlich weniger Steuergeräten. Wer weiß, welche Baugruppen es hier gar nicht gibt, spart sich die halbe Suche.",
+      "points": [
+        "Das vordere Karosseriemodul bündelt Zugangsberechtigung, Außenlicht, Innenlicht und Fensterheber in einem Gerät",
+        "Fahrwerksmodule der großen Baureihen fehlen hier — Luftfederung und Verteilergetriebe gibt es in dieser Baureihe nicht",
+        "Steuergeräteliste zuerst lesen und mit der Ausstattung abgleichen, bevor ein fehlendes Gerät als Fehler gewertet wird",
+        "Ein fehlendes Steuergerät in der Liste ist häufiger eine nicht vorhandene Ausstattung als ein Ausfall",
+        "Bei Arbeiten am Karosseriemodul immer mit angeschlossenem Werkstattladegerät arbeiten"
+      ],
+      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "details": ["D4F-F22-001", "D4F-F22-005"]
+    }
+  ]
+}

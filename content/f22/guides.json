@@ -1,0 +1,178 @@
+{
+  "model": "f22",
+  "guides": {
+    "n13-rasseln": {
+      "code": "GF-F22-01",
+      "name": "N13 rasselt beim Kaltstart",
+      "desc": "Metallisches Rasseln in den ersten Sekunden nach dem Kaltstart. Systematisch: Ölzustand → Geräuschort → Verstellwerte → Hochdruckseite → Entscheidung.",
+      "engines": [
+        "N13"
+      ],
+      "steps": [
+        {
+          "q": "Ist der Motor tatsächlich kalt, und liegen Ölstand und Ölzustand im Rahmen?",
+          "help": "Das Leitsymptom tritt nur beim echten Kaltstart auf, also nach mehreren Stunden Standzeit. Ein warmer Motor verschweigt es. Prüfe vorher Ölstand und Ölzustand: zu wenig Öl oder ein weit überzogenes Wechselintervall erzeugen ein Rasseln, das nach dem Ölwechsel verschwindet, ohne dass an der Kette etwas war.",
+          "measure": "Motor mehrere Stunden gestanden · Ölstand innerhalb der Markierung · Öl nicht verschlammt, Wechselintervall nachvollziehbar",
+          "doc": "D4F-F22-003",
+          "yes": 1,
+          "no": "oel-zuerst"
+        },
+        {
+          "q": "Kommt das Geräusch vom Steuertrieb an der Stirnseite und nicht aus dem Bereich des Ventildeckels?",
+          "help": "Orte das Geräusch mit einem Stethoskop oder einem langen Schraubendreher am Gehäuse. Der Steuertrieb sitzt an der Stirnseite des Motors. Ein Geräusch, das aus dem Bereich der Exzenterwelle oder der Injektoren kommt, gehört in eine andere Untersuchung — Injektoren dieser Bauart ticken hörbar, das ist normal.",
+          "measure": "Geräusch am Steuergehäusedeckel deutlich lauter als am Ventildeckel und am Ansaugtrakt",
+          "doc": "D4F-F22-003",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Verschwindet das Rasseln nach wenigen Sekunden vollständig und kehrt erst beim nächsten Kaltstart zurück?",
+          "help": "Das ist das typische Muster eines Kettenspanners, der beim Start noch nicht unter Öldruck steht. Beobachte mit der Uhr: Sekundenbereich und danach still ist etwas anderes als ein Rasseln, das auch warm unter Last bleibt. Notiere beide Beobachtungen, sie entscheiden über die Dringlichkeit.",
+          "measure": "Dauer des Geräuschs nach dem Start in Sekunden · Verhalten bei betriebswarmem Motor unter Last",
+          "doc": "D4F-F22-003",
+          "yes": 4,
+          "no": "kette-dringend"
+        },
+        {
+          "q": "Zeigt die Motorsteuerung Auffälligkeiten in der Nockenwellenverstellung oder Abweichungen zwischen Soll- und Istwinkel?",
+          "help": "Diagnosesitzung aufbauen und die Verstellwerte beider Nockenwellen im Leerlauf und bei erhöhter Drehzahl beobachten. Wichtig ist nicht ein absoluter Wert, sondern die Frage, ob die Verstellung der Anforderung folgt und ob beide Wellen sich gleichartig verhalten. Eine übersprungene Kette zeigt sich als dauerhafte Abweichung, die sich nicht ausregeln lässt.",
+          "measure": "Soll- und Istwinkel folgen einander über den Drehzahlbereich · beide Nockenwellen verhalten sich gleichartig",
+          "doc": "D4F-F22-001",
+          "yes": "kette-beobachten",
+          "no": "kette-dringend"
+        },
+        {
+          "q": "Gibt es zusätzlich Startprobleme, unrunden Lauf oder Auffälligkeiten im Kraftstoffhochdruck?",
+          "help": "Hochdruckpumpe und Injektoren sind bei diesem Motor eine eigene, gut dokumentierte Fehlerquelle. Ihr Fehlerbild — schlechtes Startverhalten, Aussetzer, unruhiger Leerlauf — überlagert sich mit dem Kettenverdacht und führt oft dazu, dass an der falschen Stelle geöffnet wird. Beobachte den Raildruck beim Start und im Leerlauf und vergleiche Soll und Ist.",
+          "measure": "Raildruck folgt beim Start und im Leerlauf der Anforderung · keine Aussetzer auf einzelnen Zylindern",
+          "doc": "D4F-F22-003",
+          "yes": "hochdruckseite",
+          "no": "kette-beobachten"
+        }
+      ]
+    },
+    "eps-ausfall": {
+      "code": "GF-F22-02",
+      "name": "Lenkunterstützung fällt aus",
+      "desc": "Lenkradsymbol im Kombiinstrument, schwergängige Lenkung oder sporadischer Ausfall. Systematisch: Bordspannung → Reproduzierbarkeit → Kommunikation → Softwarestand → Bauteil.",
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "steps": [
+        {
+          "q": "Ist die Batterie geladen und in Ordnung?",
+          "help": "Der erste Schritt, weil er der häufigste Treffer ist. Die elektrische Lenkunterstützung zieht beim Anlaufen kräftig Strom. Bricht die Bordspannung ein, schaltet sie sich ab und meldet einen Fehler, der nach Lenkung aussieht. Miss die Ruhespannung nach mehreren Stunden Standzeit direkt an den Polen; rund 12.6 V zeigen eine geladene Batterie. Prüfe zusätzlich die Klemmen auf festen Sitz und Korrosion.",
+          "measure": "Ruhespannung an den Polen nach Standzeit · Spannungsverlauf während des Startvorgangs beobachten · Klemmen fest und korrosionsfrei",
+          "doc": "D4F-F22-005",
+          "yes": 1,
+          "no": "batterie-zuerst"
+        },
+        {
+          "q": "Fehlt die Unterstützung dauerhaft, oder tritt der Ausfall nur sporadisch auf?",
+          "help": "Ein Muster ist die halbe Diagnose. Notiere über mehrere Starts, wann das Symptom kommt. Ein dauerhaft fehlender Servoeffekt ist ein anderer Fall als ein Aussetzer, der nach dem Neustart wieder weg ist. Dauerhaft heißt: Diagnose und Softwarestand zuerst. Sporadisch heißt: mechanisch wackelnde Verbindung zuerst, weil sich die genau so verhält. Antworte mit ja, wenn die Unterstützung bei jeder Fahrt fehlt.",
+          "measure": "Auftreten über mindestens fünf Starts mit Temperatur und Situation dokumentiert · dauerhaft oder sporadisch eindeutig zugeordnet",
+          "doc": "D4F-F22-005",
+          "yes": 2,
+          "no": 4
+        },
+        {
+          "q": "Meldet sich die Lenkung in der Diagnosesitzung, und stehen in den benachbarten Steuergeräten Kommunikationsfehler?",
+          "help": "Über den herstellerspezifischen Zugang die Steuergeräteliste lesen und die Fehlerspeicher der Nachbarn mitnehmen. Die Lenkung hängt am Fahrzeugbus und braucht unter anderem ein Geschwindigkeitssignal, um die Unterstützung zu dosieren. Fehlt dieses Signal, meldet nicht nur die Lenkung, sondern auch die Nachbarn — und genau diese Kombination zeigt, wo der Bruch sitzt.",
+          "measure": "Lenkung antwortet mit Version · Fehlerbilder in Lenkung und Nachbarsteuergeräten gegenüberstellen",
+          "doc": "D4F-F22-001",
+          "yes": 3,
+          "no": "keine-antwort"
+        },
+        {
+          "q": "Ist der Softwarestand der Lenkung aktuell, gemessen am I-Level des Fahrzeugs?",
+          "help": "Vor jedem Bauteiltausch den Softwarestand prüfen. Für diese Baureihe sind Programmstände im Umlauf, die genau dieses Fehlerbild adressieren. Lies den I-Level des Fahrzeugs aus und vergleiche ihn mit dem verfügbaren Stand. Übernimm dabei keine Versionsnummer aus einem Forum — solche Angaben altern schnell und werden zwischen Baureihen falsch abgeschrieben.",
+          "measure": "I-Level des Fahrzeugs ausgelesen · Softwarestand der Lenkung dagegen gehalten",
+          "doc": "D4F-F22-001",
+          "yes": 4,
+          "no": "software"
+        },
+        {
+          "q": "Sind Steckverbinder, Leitungssatz und Masse an der Lenkung mechanisch einwandfrei?",
+          "help": "Steckverbinder abziehen und die Kontakte ansehen: Korrosion, aufgeweitete Buchsen und Scheuerstellen am Leitungssatz sind Sichtbefunde und brauchen kein Messgerät. Beweg den Leitungssatz bei laufendem Motor vorsichtig und beobachte, ob das Symptom dabei auslösbar ist — ein reproduzierbar auslösbarer Fehler ist ein gefundener Fehler.",
+          "measure": "Kontakte frei von Korrosion · Symptom durch Bewegen des Leitungssatzes auslösbar ja/nein · Masseanbindung fest",
+          "doc": "D4F-F22-005",
+          "yes": "leitung",
+          "no": "steuergeraet"
+        }
+      ]
+    }
+  },
+  "results": {
+    "oel-zuerst": {
+      "title": "Ölversorgung zuerst in Ordnung bringen",
+      "text": "Hier nicht weitersuchen. Ölstand korrigieren beziehungsweise Ölwechsel mit passender Spezifikation durchführen und danach erneut einen echten Kaltstart beurteilen. Ein Kettenspanner ohne ausreichenden Öldruck rasselt, auch wenn die Kette in Ordnung ist. Erst nach dem Ölwechsel ist die Geräuschbeurteilung aussagekräftig.",
+      "next_docs": [
+        "D4F-F22-003"
+      ]
+    },
+    "kette-dringend": {
+      "title": "Kettentrieb dringend öffnen lassen",
+      "text": "Das Geräusch bleibt über die ersten Sekunden hinaus bestehen oder die Verstellung lässt sich nicht ausregeln. Das Fahrzeug nicht weiter bewegen als nötig. Steuertrieb öffnen und Kette, Spanner und Gleitschienen beurteilen; Kunststoffbruchstücke in der Ölwanne sind das Bestätigungsmerkmal. Bei diesem Motor gehört die Entscheidung früh getroffen, weil ein Kettenriss den Motor kapital beschädigt.",
+      "next_docs": [
+        "D4F-F22-003"
+      ]
+    },
+    "kette-beobachten": {
+      "title": "Kurzes Kaltstartrasseln — dokumentieren und beobachten",
+      "text": "Das Muster passt zu einem Kettenspanner, der beim Start kurz ohne Öldruck steht. Dokumentiere Laufleistung, Dauer des Geräuschs und die Verstellwerte als Ausgangszustand und vereinbare eine Nachkontrolle. Wird das Geräusch länger, lauter oder tritt es auch warm auf, ist der Steuertrieb zu öffnen. Ein Ölwechsel mit passender Spezifikation und ein kürzeres Intervall sind der sinnvollste Zwischenschritt.",
+      "next_docs": [
+        "D4F-F22-003"
+      ]
+    },
+    "hochdruckseite": {
+      "title": "Kraftstoffhochdruckseite bewerten",
+      "text": "Startverhalten und Laufunruhe zeigen auf Hochdruckpumpe und Injektoren, nicht auf den Steuertrieb. Raildruck beim Start und im Leerlauf gegen die Anforderung aufzeichnen, Aussetzer den Zylindern zuordnen und die Injektoren gegeneinander vergleichen. Erst wenn dieser Bereich sauber ist, die Geräuschbeurteilung des Steuertriebs wiederholen — sonst behandelst du zwei Fehler als einen.",
+      "next_docs": [
+        "D4F-F22-003",
+        "D4F-F22-004"
+      ]
+    },
+    "batterie-zuerst": {
+      "title": "Batterie und Ladekreis in Ordnung bringen",
+      "text": "Nicht weitersuchen, solange die Versorgung nicht steht. Batterie laden oder ersetzen, Klemmen reinigen und festziehen, Ladespannung bei laufendem Motor kontrollieren. Nach einem Batteriewechsel den Batterietausch im Fahrzeug registrieren, sonst lädt das Fahrzeug die neue Batterie nach dem alten Profil. Danach das Symptom über mehrere Starts erneut beurteilen.",
+      "next_docs": [
+        "D4F-F22-005"
+      ]
+    },
+    "keine-antwort": {
+      "title": "Lenkung antwortet nicht — Versorgung und Bus prüfen",
+      "text": "Ein Steuergerät, das sich gar nicht meldet, ist zuerst ein Versorgungs- und Busbefund. Sicherungen kontrollieren, Spannung und Masse direkt am Steckverbinder der Lenkung prüfen und die Busanbindung ansehen. Erst wenn Versorgung und Kommunikation stehen und das Gerät weiterhin stumm bleibt, ist das Steuergerät selbst verdächtig.",
+      "next_docs": [
+        "D4F-F22-005",
+        "D4F-F22-001"
+      ]
+    },
+    "software": {
+      "title": "Softwarestand der Lenkung nachziehen",
+      "text": "Vor jedem Bauteiltausch den Programmstand aktualisieren, passend zum ausgelesenen I-Level des Fahrzeugs. Werkstattladegerät anschließen und den Vorgang nicht unterbrechen. Danach den Fehlerspeicher löschen und das Fahrzeug über mehrere Starts und eine Probefahrt beurteilen, bevor über weitere Schritte entschieden wird.",
+      "next_docs": [
+        "D4F-F22-001",
+        "D4F-F22-005"
+      ]
+    },
+    "leitung": {
+      "title": "Leitungssatz oder Steckverbindung instand setzen",
+      "text": "Der Fehler ist mechanisch auslösbar und damit gefunden. Scheuerstelle, korrodierten Kontakt oder gelockerte Masseverbindung instand setzen, den Leitungssatz gegen Scheuern sichern und die Stelle abdichten. Danach das Symptom durch dieselbe Bewegung erneut auszulösen versuchen — bleibt es aus, ist die Reparatur bestätigt.",
+      "next_docs": [
+        "D4F-F22-005"
+      ]
+    },
+    "steuergeraet": {
+      "title": "Lenkung als Bauteil bewerten",
+      "text": "Versorgung, Kommunikation, Softwarestand und Leitungssatz sind geprüft, das Symptom bleibt. Jetzt ist die Lenkeinheit selbst der wahrscheinlichste Verursacher. Vor dem Tausch die Fahrgestellnummer auf offene Rückrufe und Serviceaktionen prüfen und die dokumentierten Vorbefunde sichern — sie entscheiden über die Kostenübernahme. Nach dem Tausch sind Codierung und Abgleich durchzuführen.",
+      "next_docs": [
+        "D4F-F22-005",
+        "D4F-F22-001"
+      ]
+    }
+  }
+}
