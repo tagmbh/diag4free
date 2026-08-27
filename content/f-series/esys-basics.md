@@ -14,13 +14,18 @@ Ab der F-Serie gibt es keine K-Line mehr. Codiert wird mit E-Sys 3.34.x über Et
 
 ## Verbindung über ENET
 
-Die OBD-Buchse führt die Ethernet-Signale auf drei Pins:
+Die OBD-Buchse führt die Ethernet-Daten auf **vier** Adern, nicht auf drei:
 
-- `OBD2 Pin 3` — ENET+
-- `OBD2 Pin 11` — ENET-
-- `OBD2 Pin 12` — Aktivierung Ethernet, zusammen mit KL15
+- `OBD2 Pin 3` und `OBD2 Pin 11` — ein Adernpaar
+- `OBD2 Pin 12` und `OBD2 Pin 13` — das zweite Adernpaar
 
-Pin 12 ist der Punkt, an dem selbstgebaute Kabel scheitern: ohne die Aktivierungsleitung und ohne eingeschaltete Zündung bleibt die Schnittstelle stumm, obwohl die Adern für die Datenübertragung korrekt aufgelegt sind. Den Netzwerkadapter am Rechner auf automatische Adressvergabe stellen und keine feste IP eintragen.
+Welches Paar sendet und welches empfängt, hängt davon ab, ob du vom Fahrzeug oder vom Rechner aus zählst. Die Quellen benennen es gegenläufig — das ist kein Widerspruch, sondern eine Frage der Betrachtungsrichtung. Für den Kabelbau zählt nur, dass die Paare nicht getauscht werden.
+
+Dazu kommt die Aktivierungsleitung auf `OBD2 Pin 8`. Sie wird über einen Widerstand auf `OBD2 Pin 16` gelegt, und erst daran erkennt das Fahrzeug, dass es den Ethernet-Zugang freigeben soll. An dieser Stelle scheitern die meisten Eigenbauten: die vier Datenadern liegen richtig, die Aktivierung fehlt, und die Schnittstelle bleibt stumm. Den Netzwerkadapter am Rechner auf automatische Adressvergabe stellen und keine feste IP eintragen.
+
+Warum ausgerechnet Pin 8: Die Norm für den 16-poligen Stecker lässt diesen Kontakt dem Hersteller frei. Es steht dort kein Signal, das für alle Marken gilt — BMW hat ihn über die Baureihen hinweg verschieden benutzt. Was er an welcher Baureihe trägt und wie du es am Fahrzeug nachmisst, steht in `D4F-F-003`.
+
+**Der Widerstandswert steht auf wackligem Grund.** Mehrere unabhängige Bauanleitungen nennen rund `510 Ω`, eine davon `506` bis `560 Ω` als brauchbaren Bereich. Eine Herstellerangabe liegt hier nicht vor. Vor dem Löten gegenprüfen — und bei einem gekauften Kabel, das nicht verbindet, zuerst diesen Widerstand messen statt die Software zu verdächtigen.
 
 ## Der Ablauf
 
@@ -46,7 +51,7 @@ Pin 12 ist der Punkt, an dem selbstgebaute Kabel scheitern: ohne die Aktivierung
 
 | Symptom | Ursache |
 |---|---|
-| Keine Verbindung, Zündung ein | Aktivierungsleitung auf Pin 12 fehlt oder Kabel ist kein echtes ENET-Kabel |
+| Keine Verbindung, Zündung ein | Aktivierungsleitung auf Pin 8 fehlt oder falsch bestückt, oder das Kabel ist kein echtes ENET-Kabel |
 | Lesen geht, Schreiben wird abgelehnt | Zertifikat fehlt — TokenMaster/EsysLauncher PRO nicht eingerichtet |
 | Codierung geschrieben, Funktion bleibt aus | `FA -> FP` wurde nicht gerechnet |
 | Schreibvorgang bricht ab | I-Level und PSDZData passen nicht zusammen |

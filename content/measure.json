@@ -190,9 +190,9 @@
     },
     {
       "id": "dcan-abschluss",
-      "title": "Busabschluss am Diagnosestecker",
+      "title": "Busabschluss am Diagnosestecker · Diagnose über D-CAN",
       "group": "Kommunikation",
-      "instruction": "Zündung aus, Bus schlafend. Ohmmeter an der Diagnosedose zwischen Pin 6 und Pin 14. Zwei parallel geschaltete Abschlusswiderstände von je 120 Ohm ergeben rechnerisch 60 Ohm. Rund 120 Ohm heißt: eine Terminierung fehlt oder der Bus ist unterbrochen. Nahe null heißt Kurzschluss zwischen den Leitungen. Achtung: Nur bei Fahrzeugen mit Diagnose über CAN liegen diese Pins auf dem Bus — bei älteren Baureihen mit K-Leitung ist an Pin 6 und 14 nichts angeschlossen.",
+      "instruction": "Zündung aus, Bus schlafend. Ohmmeter an der Diagnosedose zwischen Pin 6 und Pin 14. Zwei parallel geschaltete Abschlusswiderstände von je 120 Ohm ergeben rechnerisch 60 Ohm. Rund 120 Ohm heißt: eine Terminierung fehlt oder der Bus ist unterbrochen. Nahe null heißt Kurzschluss zwischen den Leitungen. Diese Position gilt nur für Baureihen, deren Diagnose selbst über D-CAN läuft. Bei älteren Baureihen mit K-Leitung ist an Pin 6 und 14 nichts angeschlossen. Bei der F-Serie liegt dort zwar ein CAN-Paar, aber nicht der Diagnoseweg — dafür gilt die eigene Position.",
       "target": {
         "unit": "Ω",
         "min": 55.0,
@@ -204,7 +204,19 @@
         "e90",
         "e70",
         "e87",
-        "e88",
+        "e88"
+      ]
+    },
+    {
+      "id": "dcan-abschluss-f",
+      "title": "Busabschluss am Diagnosestecker · F-Serie",
+      "group": "Kommunikation",
+      "instruction": "Gleiche Messung wie beim E-Modell, andere Aussage. Die F-Serie diagnostiziert über Ethernet. An Pin 6 und Pin 14 liegt trotzdem ein CAN-Paar — es trägt die gesetzlich geforderte OBD-Kommunikation und hängt am zentralen Gateway. Ein abweichender Wert erklärt deshalb nie, warum ISTA oder E-Sys keine Verbindung bekommen; dafür sind die Ethernet-Adern und die Aktivierungsleitung auf Pin 8 zuständig. Wie viele Abschlusswiderstände dieser Strang trägt, ist hier nicht belegt. Hängt nur das Gateway daran, sind rund 120 Ohm der Normalzustand und kein Befund. Deshalb kein Sollwert, sondern vergleichend arbeiten: Wert notieren, gegen ein bekannt gutes Fahrzeug derselben Baureihe halten. Eindeutig bleibt allein der Kurzschluss — nahe null Ohm zwischen den beiden Leitungen ist immer ein Fehler.",
+      "target": {
+        "text": "Wert notiert und gegen ein bekannt gutes Fahrzeug derselben Baureihe gehalten · kein Kurzschluss zwischen Pin 6 und Pin 14"
+      },
+      "engines": [],
+      "models": [
         "f10",
         "f30",
         "f15",

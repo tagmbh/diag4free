@@ -10,17 +10,19 @@
       "summary": "E-Sys 3.34.x mit passender PSDZData für die F-Serie. FEM/BDC-Codierung, FA-Manipulation, FDL-Codierung einzelner Steuergeräte.",
       "points": [
         "ENET-Kabel zwingend (kein K-Line auf F-Serie)",
+        "Ethernet liegt auf vier Adern: OBD2 Pin 3, 11, 12 und 13 — welches Paar sendet und welches empfängt, hängt vom Bezugspunkt ab",
         "PSDZData muss zum I-Level des Fahrzeugs passen",
         "Immer TokenMaster/EsysLauncher PRO verwenden für Zertifikat",
         "FA lesen → FA ändern → 'FA -> FP' → CAF/FDL neu schreiben",
         "Bei FEM/BDC: nie ohne aktive Batterieladung codieren"
       ],
       "pins": [
-        "OBD2 Pin 3, 11, 12, 13 · Ethernet — vier Adern, nicht drei",
-        "Wie die vier auf TX und RX fallen, hängt vom Bezugspunkt ab (Fahrzeug- oder Rechnerseite). Die Quellen benennen sie gegenläufig — das ist kein Widerspruch, sondern eine Frage der Betrachtungsrichtung",
-        "OBD2 Pin 8 gegen Pin 16 · Aktivierung — strittig: eine Projektquelle bestreitet sie, die Mehrheit der übrigen Fundstellen nennt sie. Der Widerstandswert ist hier nicht belegt",
-        "OBD2 Pin 4/5 · Masse",
-        "OBD2 Pin 16 · KL30 Dauerplus"
+        "OBD2 Pin 3 und Pin 11 · Ethernet-Adernpaar",
+        "OBD2 Pin 12 und Pin 13 · zweites Ethernet-Adernpaar",
+        "OBD2 Pin 8 · Aktivierung des Ethernet-Zugangs, über einen Widerstand auf Pin 16 gelegt",
+        "OBD2 Pin 4 und Pin 5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 6 und Pin 14 · D-CAN vorhanden, aber nicht der Diagnoseweg der F-Serie"
       ],
       "engines": [
         "N20",
@@ -29,7 +31,10 @@
         "B58",
         "N63"
       ],
-      "article": "esys-basics.md"
+      "article": "esys-basics.md",
+      "details": [
+        "D4F-F-003"
+      ]
     },
     {
       "id": "D4F-F-002",
@@ -51,6 +56,33 @@
         "N55",
         "B47",
         "B58"
+      ]
+    },
+    {
+      "id": "D4F-F-003",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "OBD-Buchse an der F-Serie · was Pin 8 hier bedeutet",
+      "valid": "F-Serie · alle Baureihen",
+      "summary": "Pin 8 des 16-poligen Steckers führt kein genormtes Signal. Die Norm überlässt ihn dem Hersteller, und BMW hat ihn über die Baureihen hinweg verschieden benutzt. An der F-Serie ist er die Aktivierungsleitung für den Ethernet-Zugang.",
+      "points": [
+        "Pin 8 ist im Standard für den 16-poligen Stecker herstellerfrei — dort steht kein Signal, das für alle Marken gilt",
+        "F-Serie: Pin 8 wird über einen Widerstand auf Pin 16 gelegt und gibt damit den Ethernet-Zugang frei",
+        "Mehrere unabhängige Bauanleitungen nennen rund 510 Ω; eine davon nennt 506 bis 560 Ω als brauchbaren Bereich — vor dem Löten gegenprüfen",
+        "Widerspruch, nicht geglättet: eine Projektquelle führt Pin 8 stattdessen als Zündungsplus und lässt ihn im Eigenbaukabel unbeschaltet",
+        "E-Modelle bis 02/2007 nutzen Pin 8 als zweite Diagnoseleitung für die Steuergeräte außerhalb des Antriebs — das gilt an der F-Serie nicht mehr",
+        "Am Fahrzeug messen statt glauben: Zündung aus, Spannung von Pin 8 gegen Masse (Pin 4/5) und Widerstand von Pin 8 nach Pin 16 aufnehmen"
+      ],
+      "pins": [
+        "OBD2 Pin 8 · F-Serie: Aktivierung Ethernet, über Widerstand auf Pin 16",
+        "OBD2 Pin 8 · E-Modelle bis 02/2007: zweite K-Leitung, Steuergeräte außerhalb des Antriebs",
+        "OBD2 Pin 8 · E-Modelle ab 03/2007: unbelegt, eine Brücke nach Pin 7 stört dort den Bus",
+        "OBD2 Pin 16 · KL30 Dauerplus — Bezugspunkt der Aktivierungsleitung",
+        "OBD2 Pin 4 und Pin 5 · Masse"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F-001"
       ]
     }
   ]

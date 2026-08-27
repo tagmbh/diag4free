@@ -1,80 +1,86 @@
-# Blinkcodes der Motronic 1.3 auslesen — M20 und M42
+# Blinkcode der Motronic 1.3 auslesen — M20 und M40
 
-Die Motronic 1.3 im E30 speichert Fehler und gibt sie über die
-Motorkontrollleuchte aus. Du brauchst dafür kein Diagnosegerät, kein Kabel und
-keinen Laptop — nur das Gaspedal und Augen für die Blinkfolge. Das ist der
-schnellste Einstieg, wenn ein E30 mit M20 oder M42 unrund läuft und die Lampe
-im Kombi steht.
+Die Motronic 1.3 speichert Motorfehler und gibt sie über die
+Motorkontrollleuchte als vierstelligen Code aus. Du brauchst kein
+Diagnosegerät, kein Kabel und keinen Laptop — nur das Fahrpedal und Augen für
+die Blinkfolge. Das ist der schnellste erste Befund an einem E30, der unrund
+läuft. Welcher Motronic-Stand in deinem Fahrzeug sitzt, klärt `D4F-E30-003`;
+für die ältere Motronic 1.1 gilt ein anderes Verfahren, siehe `D4F-E30-004`.
 
 ## Auslesen
 
-1. **Zündung aus.** Der Ablauf startet nur aus dem spannungslosen Zustand des
-   Steuergeräts heraus.
-2. **Gaspedal ganz durchtreten** und unten halten. Ganz heißt bis zum
-   Anschlag — der Vollastkontakt muss sicher schließen.
-3. **Zündung einschalten**, Pedal weiter gedrückt halten, **5 s** warten.
-   Motor nicht starten.
-4. **Pedal loslassen.** Die Motorkontrollleuchte beginnt zu blinken.
-5. **Blinkfolge mitschreiben**, bevor du interpretierst. Jede Sequenz nur
-   einmal notieren, danach vergleichen.
+1. **Getriebe in Leerlauf**, Handbremse an, Motor aus.
+2. **Zündung einschalten**, nicht starten. Die Motorkontrollleuchte macht
+   ihren Lampentest.
+3. **Fahrpedal fünfmal ganz durchtreten** und jedes Mal ganz loslassen, alles
+   innerhalb von rund 5 s. Halbe Wege zählen nicht — der Vollastkontakt muss
+   sicher schließen.
+4. **Leuchte beobachten.** Nach kurzer Vorlaufzeit beginnt die Ausgabe.
+5. **Weiterschalten.** Nach jedem Code erneut fünfmal treten, bis sich die
+   Codes wiederholen. Dann sind alle ausgegeben.
 
-Notiere die Blinkfolge als Zahlenkolonne, nicht als Deutung. Wer beim Zählen
-schon überlegt, was der Code bedeutet, verzählt sich — und zählt beim
-zweiten Durchgang anders.
+Voraussetzung ist ein funktionierender Drosselklappengeber. Meldet der den
+Vollastpunkt nicht, kommt keine Ausgabe zustande — und das ist dann ein
+Befund über den Geber, nicht über den Fehlerspeicher.
+
+> **Zwei Prozeduren im Umlauf.** Verbreitet ist außerdem die Fassung
+> „Pedal gedrückt halten, dann Zündung ein, 5 s warten". Für die Motronic 1.3
+> nennen zwei voneinander unabhängige Darstellungen das fünfmalige
+> Durchtreten. Kommt damit nichts, kostet der zweite Versuch mit der anderen
+> Fassung nichts — aber verlass dich nicht darauf.
 
 ## Die Blinkfolge lesen
 
-Die Codes liegen im Bereich **1000 bis 4444**. Das heißt: vier Stellen, jede
-davon zwischen 1 und 4. Die Lampe gibt die vier Stellen nacheinander als
-Blinkgruppen aus, getrennt durch eine Pause. Vier Blitze, Pause, ein Blitz,
+Die Codes sind vierstellig, jede Stelle liegt zwischen 1 und 4. Die Lampe gibt
+die vier Stellen nacheinander als Blinkgruppen aus, getrennt durch eine kurze
+Pause; eine lange Pause trennt zwei Codes. Vier Blitze, Pause, ein Blitz,
 Pause, ein Blitz, Pause, vier Blitze ergibt `4114`.
-
-Der einzige Code, der hier belegt ist:
 
 | Code | Bedeutung |
 |---|---|
 | `1444` | Kein Fehler gespeichert |
+| `1000` | Ende der Ausgabe, kein weiterer Eintrag |
 
-`1444` am Anfang der Ausgabe ist die gute Nachricht: der Speicher ist leer.
-Alles andere ist ein Eintrag, den du einordnen musst.
+Notiere die Folge als Zahlenkolonne, nicht als Deutung. Wer beim Zählen schon
+überlegt, was der Code bedeutet, verzählt sich — und zählt beim zweiten
+Durchgang anders. Zu zweit arbeiten: einer zählt laut, einer schreibt.
 
-> **Codetabelle fehlt:** Die Bedeutung der übrigen Codes zwischen `1000` und
-> `4444` steht in keiner hier verfügbaren Quelle. Schreib den gelesenen Code
-> auf und ordne ihn gegen eine geprüfte Unterlage zu deinem Motor zu. Rate
-> nicht — eine falsch gedeutete Vierstelle schickt dich an das falsche
-> Bauteil, und der Fehler bleibt.
+> **Codetabelle fehlt:** Die Bedeutung der übrigen Codes steht für den E30 in
+> keiner hier verfügbaren Quelle. Tabellen anderer Baureihen sind
+> ausdrücklich keine Hilfe — dieselbe Ziffernfolge kann an einem anderen
+> Steuergerätestand ein anderes Bauteil meinen. Schreib den Code auf und ordne
+> ihn gegen eine geprüfte Unterlage zu deinem Steuergerät zu.
 
-Ebenfalls nicht dokumentiert ist die genaue Blinkdauer und die Länge der
-Pausen zwischen Gruppe und Code. Praktisch bedeutet das: eine lange Pause
-trennt zwei Codes, eine kurze zwei Stellen desselben Codes. Im Zweifel den
-Vorgang wiederholen und die Folge gegenprüfen.
+## Was der Blinkcode nicht kann
+
+Er zeigt den Fehlerspeicher des Motorsteuergeräts, sonst nichts. Keine
+Live-Werte, keine Adaptionen, keine Stellglieddiagnose, und nichts über
+Nebensteuergeräte. Ein leerer Speicher ist deshalb kein Freibrief: Falschluft,
+ein müder Zahnriemen oder ein Geber, der plausible aber falsche Werte liefert,
+steht dort nicht drin.
+
+Ein Code ist außerdem ein Signalpfad, keine Ursache. Neben dem Bauteil stehen
+immer Steckverbindung, Leitung und Masse als Verdächtige. Bestätige jeden
+Eintrag am Bauteil, bevor du etwas bestellst.
 
 ## Löschen
 
-Nach dem Auslesen — und erst dann — wird der Speicher gelöscht:
+Erst auslesen, dann löschen, dann Probefahrt, dann erneut auslesen. Was danach
+wieder dasteht, ist aktuell; was ausbleibt, war Altlast.
 
 1. **Zündung aus.**
 2. **Batterie abklemmen**, Minuspol zuerst, und **5 min** warten.
-3. **Wieder anklemmen**, Zündung ein, Fehlerspeicher erneut auslesen.
+3. **Wieder anklemmen**, Zündung ein, Speicher erneut auslesen.
 
-Steht der Code nach einer Probefahrt wieder da, ist der Fehler aktuell und
-nicht historisch. Genau dafür ist das Löschen da: es trennt Altlast von
-laufendem Defekt.
-
-> Das Abklemmen der Batterie löscht mehr als den Fehlerspeicher — auch
-> Radiocode und gelernte Anpassungen sind weg. Kläre den Radiocode, bevor du
-> den Pol abnimmst, nicht danach.
+Das Abklemmen kostet Radiocode und gelernte Anpassungen mit. Kläre den
+Radiocode vorher, nicht danach.
 
 ## Wenn es nicht geht
 
 | Symptom | Ursache |
 |---|---|
-| Lampe blinkt gar nicht | Prozedur zu früh abgebrochen oder Vollastkontakt schließt nicht |
-| Lampe leuchtet dauerhaft | Kein Blinkcode-Modus — Zündung aus, Ablauf von vorn |
+| Lampe blinkt gar nicht | Pedal nicht ganz durchgetreten, Vollastkontakt defekt oder anderer Motronic-Stand |
+| Lampe leuchtet dauerhaft | Lampentest, kein Blinkcode — Zündung aus und von vorn |
 | Lampe im Kombi bleibt dunkel | Birne oder deren Ansteuerung defekt, nicht die Motronic |
-| Folge lässt sich nicht zählen | Vorgang wiederholen und zu zweit mitschreiben |
-
-Kommt keine Ausgabe zustande, ist der nächste Weg der serielle: der
-20-polige Runddiagnosestecker im Motorraum, beschrieben in `D4F-E30-001`.
-Dort liegen `TXD` und `RXD` der Motronic auf, über die ein Diagnosegerät den
-Speicher direkt liest — ohne Zählen.
+| Immer derselbe Code | Nach jedem Code erneut fünfmal treten |
+| Folge lässt sich nicht zählen | Zu zweit wiederholen; sonst seriell über `D4F-E30-001` |

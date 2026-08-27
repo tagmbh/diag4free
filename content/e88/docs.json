@@ -32,6 +32,10 @@
         "N47"
       ],
       "article": "inpa-setup.md",
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-010"
+      ],
       "obd": {
         "pids": [
           "0100",
@@ -72,7 +76,12 @@
         "N55",
         "N47"
       ],
-      "article": "topologie.md"
+      "article": "topologie.md",
+      "details": [
+        "D4F-E88-001",
+        "D4F-E88-030",
+        "D4F-E88-010"
+      ]
     },
     {
       "id": "D4F-E88-010",
@@ -84,7 +93,7 @@
       "points": [
         "Kein DISA-Ventil wie beim N46 — Luftmasse wird über Valvetronic-Exzenterwelle statt Drosselklappe geregelt",
         "Elektrische Wasserpumpe (Pierburg) — Ansteuerung über DME PWM, Diagnose mit INPA Statusblock „Kühlmittelpumpe Solldrehzahl“",
-        "Doppel-VANOS Ein-/Auslass — jeweils Magnetventil mit ~7.5 Ω, Solenoide sind identisch (tauschbar zum Vergleichstest)",
+        "Doppel-VANOS Ein-/Auslass — beide Magnetventile tragen dieselbe Teilenummer und sind untereinander tauschbar; geprüft wird durch Tauschen, nicht gegen einen geratenen Widerstandswert",
         "Ölstandsensor QLT statt Peilstab — Diagnose über INPA Servicefunktion; kein mech. Peilstab werksseitig verbaut",
         "Zündspulen: Bosch mit Rüsselstecker — Aussetzer immer erst rundum tauschen bevor Kompression",
         "Ansaugbrücke Kunststoff mit Klappensteller (Resonanzklappe) — Ausfall führt zu P1004/P1005"
@@ -101,6 +110,11 @@
         "N52"
       ],
       "article": "n52-diagnose-setup.md",
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-001",
+        "D4F-E88-020"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -123,23 +137,27 @@
       "cat": "N52 · Fehlerbilder",
       "title": "N52 typische Baustellen · elektrische Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse",
       "valid": "E88 · N52 (auch E9x/E60 übertragbar)",
-      "summary": "Die vier klassischen N52-Reparaturthemen mit Symptomen, Diagnose-Weg und Grenzwerten. Ziel ist es, die Symptome eindeutig einem der vier Sub-Systeme zuzuordnen, bevor Teile bestellt werden.",
+      "summary": "Die vier klassischen N52-Reparaturthemen mit Symptomen und Diagnose-Weg. Ziel ist es, die Symptome eindeutig einem der vier Sub-Systeme zuzuordnen, bevor Teile bestellt werden. Geprüft wird vergleichend — gegen das baugleiche Gegenstück oder gegen ein bekannt gutes Exemplar.",
       "points": [
         "E-Wasserpumpe (Pierburg): typische Lebensdauer 80–120 tkm. Symptom: Überhitzung bei Standgas, dann Kaltstart-OK. Diagnose: INPA Wert „Solldrehzahl Wasserpumpe“ > 0 aber „Iststrom Wasserpumpe“ ~0 A → Pumpe defekt. Nicht mit Thermostat verwechseln.",
-        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Servo mit Multimeter ~1.5–2 Ω an den Motor-Pins, Adaption über ISTA nach Wechsel zwingend.",
+        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Wicklung auf Unterbruch und Masseschluss prüfen und gegen ein bekannt gutes Exemplar vergleichen — ein Widerstandsfenster ist hier nicht belegt. Adaption über ISTA nach Wechsel zwingend.",
         "VANOS-Solenoid verklebt: sporadischer P052A/P052B/P052E, ruckelt kalt. Diagnose: Solenoide tauschen (Einlass ↔ Auslass) — wandert der Fehler mit → Solenoid reinigen oder tauschen. Immer Öldruck an der Kettenspanner-Bohrung mit-messen.",
-        "Ölfiltergehäusedichtung: Symptom Ölspur zwischen Motor und Getriebe, Öl auf Anlasser. Kein DTC, rein optisch. Ursache Hartgummi-Dichtung wird spröde ab ~100 tkm. Nicht mit VVT/VANOS-Dichtung verwechseln.",
+        "Ölfiltergehäusedichtung: Symptom Ölspur zwischen Motor und Getriebe, Öl auf Anlasser. Kein DTC, rein optisch. Ursache: die Hartgummi-Dichtung wird mit Alter und Wärme spröde — ein Befund der zweiten Fahrzeughälfte, keine feste Laufleistung. Nicht mit VVT/VANOS-Dichtung verwechseln.",
         "DISA-Analogie: N52 hat DISA-Klappe im Sammler (Resonanzklappe). Symptom Klappern bei 1500-2500 U/min. Klappe muss beim Wechsel angelernt werden (INPA Servicefunktion)."
       ],
       "pins": [
         "Wasserpumpe X-Stecker: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM-Signal von DME",
         "Valvetronic-Motor: Pin 1/2 Motor-Ansteuerung H-Brücke, Pin 3/4 Positionssensor",
-        "VANOS-Solenoid: 2-poliger Stecker, ~7.5 Ω @ 20°C"
+        "VANOS-Solenoid: 2-poliger Stecker · Einlass und Auslass bauteilgleich, deshalb gegeneinander tauschbar"
       ],
       "engines": [
         "N52"
       ],
       "article": "n52-fehlerbilder.md",
+      "details": [
+        "D4F-E88-010",
+        "D4F-E88-001"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -165,14 +183,14 @@
       "type": "GUIDE",
       "cat": "Getriebe · Steptronic",
       "title": "GA6L45R Steptronic am N52 · Adaption und Diagnose",
-      "valid": "E88 · N52 mit Steptronic 6HP (ZF GA6L45R)",
-      "summary": "Das 6-Gang-Automatikgetriebe ZF GA6L45R am N52 im E88. Adaptionswerte lernen sich im Fahrbetrieb — nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
+      "valid": "E88 · N52 mit Steptronic-Automatik",
+      "summary": "Das Sechsgang-Automatikgetriebe hinter dem N52 im E88. Vor jedem Eingriff steht die Frage, welches Getriebe verbaut ist — im Umfeld dieser Fahrzeuge kommen zwei Bauarten vor, und sie verlangen unterschiedliches ATF. Adaptionswerte lernen sich im Fahrbetrieb; nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
       "points": [
-        "Ölwechsel-Intervall (Werkstatt-Empfehlung, nicht BMW-„lifetime“): 60–80 tkm",
-        "ATF: Shell M-1375.4 äquivalent, ca. 6.5 L Wechselmenge (Trockenmenge 8 L)",
-        "Ölmess-Prozedur: Motor bei 40 °C ATF, Wählhebel P→R→N→D je 5 s, dann Kontrollschraube offen: Öl tröpfelt = korrekter Stand. ATF-Temperatur nur über EGS auslesbar — der Öltemperaturfühler sitzt intern in der Mechatronic, es gibt keinen separaten Stecker",
-        "Adaption-Reset via ISTA-D → Servicefunktionen → EGS → Adaptionswerte löschen",
-        "Nach Reset: 20 min Fahrbetrieb mit Beschleunigung bis 3500 U/min, ruhige Rückschaltung Bergab",
+        "Erst das Getriebe bestimmen: GA6L45R stammt aus der GM-6L45-Familie, GA6HP19Z von ZF. Beide sind im Umfeld dieser Fahrzeuge verbaut, die Bezeichnung steht auf dem Getriebeschild",
+        "ATF nach verbautem Getriebe: für das GA6L45R gilt die Dexron-VI-Spezifikation, für das ZF-Getriebe die von ZF freigegebene Sorte. Vor dem Befüllen die Vorgabe zum tatsächlich verbauten Getriebe prüfen — die falsche Sorte kostet das Getriebe",
+        "Ölwechsel-Intervall (Werkstatt-Erfahrungswert, nicht BMW-„lifetime“): 60–80 tkm. Die Füllmenge ergibt sich aus der Prozedur, nicht aus einer Literzahl — eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Ölstand nur bei betriebswarmem Öl, Fahrzeug eben, Motor läuft: Wählhebel durch alle Stellungen, dann Kontrollschraube öffnen — Öl tröpfelt = korrekter Stand. ATF-Temperatur nur über EGS auslesbar, der Fühler sitzt intern in der Mechatronik",
+        "Adaption-Reset via ISTA-D → Servicefunktionen → EGS → Adaptionswerte löschen, danach gemischter Fahrbetrieb mit Zug und Schub",
         "Symptom „harter Ruck 1→2 oder 2→3“: Mechatronic-Sleeve (Steckerkontakte innen ölfeucht) — Dichtung Y-Stecker prüfen"
       ],
       "pins": [
@@ -182,6 +200,11 @@
         "N52"
       ],
       "article": "steptronic-ga6l45r.md",
+      "details": [
+        "D4F-E88-010",
+        "D4F-E88-001",
+        "D4F-E88-002"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -209,17 +232,17 @@
       "valid": "E88 · alle · Soft-Top mit Hydraulik",
       "summary": "Das E88 hat ein hybrides Soft-Top mit Hydraulikzylindern für Bogen und Verriegelung. Steuerung: CTM (Cabrio Top Module). Häufigste Fehler: Endlagenschalter Windschutzscheiben-Riegel, Hydraulikpumpe-Klemmen, Notöffnung.",
       "points": [
-        "Verdeckbetrieb nur mit KL15, Fahrzeug < 15 km/h, Kofferraum offen NEIN",
+        "Verdeckbetrieb nur mit KL15, Fahrzeug im Stand oder im Schritttempo, Kofferraum zu — die genaue ab Werk gesetzte Grenzgeschwindigkeit ist hier nicht belegt",
         "Wenn Verdeck stehen bleibt: erst Fehlerspeicher CTM auslesen, dann Endlagenschalter mit INPA Statusblock beobachten",
         "Häufig: Riegel Windschutzscheibe (Endlage nicht erreicht) → mechanisch fett/reinigen bevor SG-Tausch",
-        "Hydraulikpumpe im Kofferraum links — bei Ausfall summt Pumpe kurz und stoppt; Sicherung F49 (30 A) prüfen",
+        "Hydraulikaggregat im Kofferraum hinter der Seitenverkleidung, nach den hier verfügbaren Quellen rechts — bei Ausfall summt die Pumpe kurz und stoppt. Die Sicherung des Verdeckkreises über den Deckelaufdruck des Sicherungskastens bestimmen, nicht nach einer Nummer aus fremder Quelle",
         "Notöffnung: 6-Kant-Innenkant hinter der Rückbanklehne, im Notfall mechanisch entriegeln",
         "Codierstelle „Verdeck-Bedienung bei Fahrt bis 40 km/h“ ist retrofit-tauglich (nicht ab Werk)"
       ],
       "pins": [
         "CTM-Stecker X6100 · Endlagenschalter Riegel Windschutzscheibe",
         "CTM-Stecker X6101 · Hydraulikpumpe Ansteuerung",
-        "Sicherung F49 · 30 A · Verdeckhydraulik"
+        "Versorgung Hydraulikaggregat · Sicherung über den Deckelaufdruck des zuständigen Sicherungskastens bestimmen"
       ],
       "engines": [
         "N43",
@@ -230,6 +253,10 @@
         "N47"
       ],
       "article": "verdeck-ctm.md",
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-001"
+      ],
       "obd": {
         "requires": [
           "ecu:CTM"

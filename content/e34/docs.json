@@ -21,9 +21,18 @@
         "Pin 17 und Pin 20 · Datenleitung, nach einer Quelle gemeinsam auf OBD-2 Pin 7 geführt",
         "OBD-2 Pin 16 · Versorgung, nach einer Quelle vom Rundstecker Pin 14 gespeist"
       ],
-      "engines": ["M20", "M50", "M60", "S38"],
+      "engines": [
+        "M20",
+        "M50",
+        "M60",
+        "S38"
+      ],
       "article": "diagnosezugang.md",
-      "details": ["D4F-E34-002", "D4F-E34-003"]
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-003",
+        "D4F-E34-008"
+      ]
     },
     {
       "id": "D4F-E34-002",
@@ -40,9 +49,18 @@
         "S38 nur im M5; S38B36 mit Motronic 1.2, S38B38 mit Motronic 3.3 laut Steckbrief",
         "Motornummer am Block entscheidet, nicht das Typenschild — Vor-TU und TU sehen von außen fast gleich aus"
       ],
-      "engines": ["M20", "M50", "M60", "S38"],
+      "engines": [
+        "M20",
+        "M50",
+        "M60",
+        "S38"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-E34-001", "D4F-E34-005", "D4F-E34-006"]
+      "details": [
+        "D4F-E34-001",
+        "D4F-E34-005",
+        "D4F-E34-006"
+      ]
     },
     {
       "id": "D4F-E34-003",
@@ -59,9 +77,16 @@
         "Codebedeutungen anderer Baureihen nicht übernehmen — gleiche Ziffernfolge heißt nicht gleiche Ursache",
         "Bleibt die Ausgabe aus, führt der Weg über den Rundstecker und ein Gerät mit BMW-Protokoll"
       ],
-      "engines": ["M20", "M50", "M60"],
+      "engines": [
+        "M20",
+        "M50",
+        "M60"
+      ],
       "article": "blinkcode-e34.md",
-      "details": ["D4F-E34-001", "D4F-E34-002"]
+      "details": [
+        "D4F-E34-001",
+        "D4F-E34-002"
+      ]
     },
     {
       "id": "D4F-E34-004",
@@ -79,7 +104,9 @@
         "Vor der Codesuche die Raddrehzahlfühler und ihre Steckverbindungen auf Verschmutzung und Korrosion ansehen"
       ],
       "article": "abs-asc-blinkcode.md",
-      "details": ["D4F-E34-001"]
+      "details": [
+        "D4F-E34-001"
+      ]
     },
     {
       "id": "D4F-E34-005",
@@ -96,8 +123,13 @@
         "Erst die mechanische Zuordnung, dann die Steuergeräteauswahl — M3.1, M3.3.1 und MS 40.1 sind nicht austauschbar",
         "Der Magnettest am Block trennt M50 vom späteren M52: beim M50 hält der Magnet, beim Aluminiumblock des M52 nicht"
       ],
-      "engines": ["M50"],
-      "details": ["D4F-E34-002", "D4F-E34-007"]
+      "engines": [
+        "M50"
+      ],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-007"
+      ]
     },
     {
       "id": "D4F-E34-006",
@@ -114,8 +146,12 @@
         "Symptombild: schlechter Warmstart, unrunder Leerlauf, über die Zylinder ungleich verteilte Kompression",
         "Vergleichend über alle acht Zylinder messen statt gegen einen Sollwert — die Streuung ist die Aussage"
       ],
-      "engines": ["M60"],
-      "details": ["D4F-E34-002"]
+      "engines": [
+        "M60"
+      ],
+      "details": [
+        "D4F-E34-002"
+      ]
     },
     {
       "id": "D4F-E34-007",
@@ -132,8 +168,39 @@
         "Statt gegen eine geratene Zahl zu messen: Signal beim Cranken beobachten oder gegen ein bekannt gutes Teil tauschen",
         "Fahrzeuge mit Wegfahrsperre erst nach der Grundprüfung verdächtigen — die Verbauung ist am E34 nicht einheitlich"
       ],
-      "engines": ["M50"],
-      "details": ["D4F-E34-002", "D4F-E34-005"]
+      "engines": [
+        "M50"
+      ],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-005"
+      ]
+    },
+    {
+      "id": "D4F-E34-008",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Zweite Diagnoseleitung · Rundstecker und OBD-2 Pin 8",
+      "valid": "E34 · 1987–1996",
+      "summary": "Fahrzeuge dieser Zeit fahren zwei Diagnoseleitungen: eine für den Antrieb, eine für die übrigen Steuergeräte. Wo die zweite an einer 16-poligen Buchse landet, ist zwischen den Quellen strittig — und Pin 8 hilft dabei nicht, weil er kein genormtes Signal führt.",
+      "points": [
+        "Pin 8 des 16-poligen Steckers ist nach der Norm herstellerfrei — dort steht kein Signal, das für alle Marken gilt",
+        "BMW dieser Zeit fährt zwei Diagnoseleitungen: eine erreicht die Motorsteuerung, die andere die übrigen Steuergeräte",
+        "Welche der beiden welchen Namen trägt, benennen die Quellen gegenläufig — die Kürzel TXD und TXD II sind hier nicht verlässlich",
+        "Widerspruch, nicht geglättet: nach einer Quelle laufen die Rundstecker-Kontakte 17 und 20 gemeinsam auf OBD-2 Pin 7, nach einer anderen entspricht Kontakt 20 dem OBD-2 Pin 8",
+        "Eine dritte Fassung brückt am Rundstecker die Kontakte 2, 17 und 20 — der Zweck ist in allen Fassungen derselbe: die zweite Leitung ans Diagnosegerät bringen",
+        "Nicht glauben, messen: Schlüssel abgezogen, Durchgang zwischen den Kontakten des Rundsteckers und denen der 16-poligen Buchse aufnehmen und die gefundene Zuordnung im Fahrzeug hinterlegen"
+      ],
+      "pins": [
+        "Rundstecker Kontakt 17 und Kontakt 20 · Diagnoseleitungen — die Zuordnung zur 16-poligen Buchse ist strittig",
+        "OBD-2 Pin 7 · Diagnoseleitung zur Motorsteuerung",
+        "OBD-2 Pin 8 · herstellerfrei — bei BMW dieser Zeit die zweite Diagnoseleitung, sofern sie überhaupt herausgeführt ist",
+        "OBD-2 Pin 4 und Pin 5 · Masse, Bezugspunkt jeder Durchgangsprüfung",
+        "OBD-2 Pin 16 · Dauerplus — vor jeder Brücke prüfen, damit nichts auf eine Signalleitung gelegt wird"
+      ],
+      "details": [
+        "D4F-E34-001"
+      ]
     }
   ]
 }

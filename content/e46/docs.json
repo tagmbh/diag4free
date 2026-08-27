@@ -6,12 +6,13 @@
       "type": "TOOL",
       "cat": "Diagnose-Tools",
       "title": "INPA Setup für E46 (K+DCAN-Kabel)",
-      "valid": "E46 · M52/M54/N42/S54",
-      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt EDIABAS-Konfiguration, OBD.INI, Registrierung des USB-Serial-Ports und Verifikation über einen erfolgreichen DME-Identify.",
+      "valid": "E46 · alle Motoren",
+      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt die Aufteilung zwischen EDIABAS.INI und OBD.INI, die Registrierung des USB-Serial-Ports und die Verifikation über einen erfolgreichen DME-Identify.",
       "points": [
         "K+DCAN-Kabel: FTDI-Chip empfohlen, kein CH340 unter Windows 11",
-        "OBD.INI: Port=COM<n>, IFH_TRACE=0, im Ordner C:\\EDIABAS\\Bin",
-        "obd.ini muss zusätzlich Interface=STD:OBD tragen",
+        "EDIABAS.INI trägt den Schnittstellen-Eintrag: Interface = STD:OBD",
+        "OBD.INI trägt den Abschnitt [OBD] mit Port=COM<n>, Hardware und RETRY",
+        "Manche Stände lesen OBD.INI aus C:\\Windows statt aus C:\\EDIABAS\\Bin — beide Kopien gleich halten",
         "Latency Timer im Gerätemanager auf 1 ms setzen",
         "Nach Änderung: EDIABAS-Testfunktion 'INPA' im Startmenü ausführen"
       ],
@@ -22,14 +23,20 @@
         "OBD2 Pin 16 · KL30"
       ],
       "engines": [
+        "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
-        "S54",
-        "M43"
+        "S54"
       ],
-      "article": "inpa-setup.md"
+      "article": "inpa-setup.md",
+      "details": [
+        "D4F-E46-002",
+        "D4F-E46-003",
+        "D4F-E46-009"
+      ]
     },
     {
       "id": "D4F-E46-002",
@@ -47,27 +54,35 @@
       ],
       "pins": [],
       "engines": [
+        "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
       ],
-      "article": "ncs-expert-basics.md"
+      "article": "ncs-expert-basics.md",
+      "details": [
+        "D4F-E46-005",
+        "D4F-E46-001",
+        "D4F-E46-007"
+      ]
     },
     {
       "id": "D4F-E46-003",
       "type": "TEST",
       "cat": "Fehlercodes",
       "title": "Häufige DTCs · DME MS43 (M54)",
-      "valid": "E46 · M54B22/B25/B30",
+      "valid": "E46 · M54B22/B25/B30 · DME MS 43",
       "summary": "Sammlung praxisrelevanter Fehlercodes der DME MS43 mit typischen Ursachen, Prüfschritten und Reparaturempfehlungen. Fokus auf sporadische Fehler die INPA häufig bei Kaltstart zeigt.",
       "points": [
         "P0170/P0173 (Gemischadaption): DISA-Klappe, Sekundärluft, MAF prüfen",
         "P0300–P0306 (Aussetzer): Zündspulen einzeln tauschen, Kompression testen",
         "P0491/P0492 (Sekundärluft): Kombiventil, SLP-Membran, Schlauchführung",
         "P1188 (Lambda vor Kat, Bank 1): Kabelbaum am Krümmer prüfen",
-        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner"
+        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner",
+        "Nach einer Quelle tragen US-Fahrzeuge ab Anfang 2003 die MS 45.1 statt der MS 43 — erst die DME-Ident lesen, dann diese Liste anwenden"
       ],
       "pins": [
         "DME X60001 Pin 87 · MAF-Signal",
@@ -77,7 +92,12 @@
       "engines": [
         "M54"
       ],
-      "article": "dtc-dme-ms43.md"
+      "article": "dtc-dme-ms43.md",
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008",
+        "D4F-E46-009"
+      ]
     },
     {
       "id": "D4F-E46-004",
@@ -102,6 +122,10 @@
       "engines": [
         "M54",
         "M52"
+      ],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-007"
       ]
     },
     {
@@ -123,11 +147,16 @@
         "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
       ],
-      "article": "ncs-expert-basics.md"
+      "article": "ncs-expert-basics.md",
+      "details": [
+        "D4F-E46-002",
+        "D4F-E46-007"
+      ]
     },
     {
       "id": "D4F-E46-006",
@@ -140,7 +169,8 @@
         "X60001 = 88-polig (Fahrzeugseite)",
         "X60002 = 40-polig (Motorseite)",
         "Vor Messung immer Zündung KL15 aus",
-        "Widerstandsmessung nur bei abgezogenem Stecker"
+        "Widerstandsmessung nur bei abgezogenem Stecker",
+        "Gilt für die MS 43 — eine MS 45.1 hat eine eigene Belegung, siehe D4F-E46-009"
       ],
       "pins": [
         "X60001 Pin 1 · KL30 dauerplus",
@@ -154,6 +184,10 @@
       ],
       "engines": [
         "M54"
+      ],
+      "details": [
+        "D4F-E46-004",
+        "D4F-E46-003"
       ]
     },
     {
@@ -162,7 +196,7 @@
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E46 Limousine",
       "valid": "E46 · Limousine · Touring",
-      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung.",
+      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung — von der DME im Wasserkasten bis zum Grundmodul im Fahrerfußraum.",
       "points": [
         "DME MS43: E-Box im Wasserkasten rechts",
         "EWS3: hinter der Lenksäulenverkleidung unten",
@@ -176,9 +210,14 @@
         "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
+      ],
+      "details": [
+        "D4F-E46-004",
+        "D4F-E46-002"
       ]
     },
     {
@@ -202,7 +241,37 @@
       "engines": [
         "M54"
       ],
-      "article": "disa-m54.md"
+      "article": "disa-m54.md",
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-006"
+      ]
+    },
+    {
+      "id": "D4F-E46-009",
+      "type": "TEST",
+      "cat": "Motoridentifikation",
+      "title": "M56 SULEV · Abgrenzung zum M54 und Folgen für die Diagnose",
+      "valid": "E46 · 325i/325Ci/325iT · US-Markt",
+      "summary": "Der M56 ist der für die US-Abgasnorm SULEV überarbeitete M54B25. Gleiche Grundkonstruktion, aber eigene Motorsteuerung, eigenes Sekundärluftsystem und eigene Abgasnachbehandlung. Wer ihn für einen M54 hält, sucht Messwerte, die es dort nicht gibt.",
+      "points": [
+        "Motorsteuerung ist die Siemens MS 45.1, nicht die MS 43 — DME-Ident lesen, bevor eine MS43-Codeliste angewendet wird",
+        "Das Sekundärluftsystem trägt einen eigenen Luftmassenmesser; beim M54 gibt es diesen Sensor nicht",
+        "Vor dem Katalysator sitzen Breitbandsonden — die Sprungsonden-Bewertung aus dem M54-Material passt dort nicht",
+        "Ventildeckel mit integrierter Kurbelgehäuseentlüftung, Ölmessstab ohne Ablaufrohr, eigene Ansaugbrücke und Drosselklappe",
+        "Teile nicht nach Modelljahr bestellen, sondern nach Motornummer — M54 und M56 sind nicht wahllos tauschbar",
+        "Ein M54 aus US-Produktion kann ebenfalls die MS 45.1 tragen — die DME allein beweist den M56 nicht"
+      ],
+      "pins": [],
+      "engines": [
+        "M56"
+      ],
+      "article": "m56-sulev.md",
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-001",
+        "D4F-E46-008"
+      ]
     }
   ]
 }

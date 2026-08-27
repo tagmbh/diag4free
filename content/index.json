@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:40:30.002Z",
+  "generated": "2026-08-27T05:46:49.971Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -540,7 +540,8 @@
       "article": "diagnosezugang.md",
       "details": [
         "D4F-E34-002",
-        "D4F-E34-003"
+        "D4F-E34-003",
+        "D4F-E34-008"
       ],
       "model": "e34"
     },
@@ -689,6 +690,33 @@
       "details": [
         "D4F-E34-002",
         "D4F-E34-005"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-008",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Zweite Diagnoseleitung · Rundstecker und OBD-2 Pin 8",
+      "valid": "E34 · 1987–1996",
+      "summary": "Fahrzeuge dieser Zeit fahren zwei Diagnoseleitungen: eine für den Antrieb, eine für die übrigen Steuergeräte. Wo die zweite an einer 16-poligen Buchse landet, ist zwischen den Quellen strittig — und Pin 8 hilft dabei nicht, weil er kein genormtes Signal führt.",
+      "points": [
+        "Pin 8 des 16-poligen Steckers ist nach der Norm herstellerfrei — dort steht kein Signal, das für alle Marken gilt",
+        "BMW dieser Zeit fährt zwei Diagnoseleitungen: eine erreicht die Motorsteuerung, die andere die übrigen Steuergeräte",
+        "Welche der beiden welchen Namen trägt, benennen die Quellen gegenläufig — die Kürzel TXD und TXD II sind hier nicht verlässlich",
+        "Widerspruch, nicht geglättet: nach einer Quelle laufen die Rundstecker-Kontakte 17 und 20 gemeinsam auf OBD-2 Pin 7, nach einer anderen entspricht Kontakt 20 dem OBD-2 Pin 8",
+        "Eine dritte Fassung brückt am Rundstecker die Kontakte 2, 17 und 20 — der Zweck ist in allen Fassungen derselbe: die zweite Leitung ans Diagnosegerät bringen",
+        "Nicht glauben, messen: Schlüssel abgezogen, Durchgang zwischen den Kontakten des Rundsteckers und denen der 16-poligen Buchse aufnehmen und die gefundene Zuordnung im Fahrzeug hinterlegen"
+      ],
+      "pins": [
+        "Rundstecker Kontakt 17 und Kontakt 20 · Diagnoseleitungen — die Zuordnung zur 16-poligen Buchse ist strittig",
+        "OBD-2 Pin 7 · Diagnoseleitung zur Motorsteuerung",
+        "OBD-2 Pin 8 · herstellerfrei — bei BMW dieser Zeit die zweite Diagnoseleitung, sofern sie überhaupt herausgeführt ist",
+        "OBD-2 Pin 4 und Pin 5 · Masse, Bezugspunkt jeder Durchgangsprüfung",
+        "OBD-2 Pin 16 · Dauerplus — vor jeder Brücke prüfen, damit nichts auf eine Signalleitung gelegt wird"
+      ],
+      "details": [
+        "D4F-E34-001"
       ],
       "model": "e34"
     },
@@ -1388,12 +1416,13 @@
       "type": "TOOL",
       "cat": "Diagnose-Tools",
       "title": "INPA Setup für E46 (K+DCAN-Kabel)",
-      "valid": "E46 · M52/M54/N42/S54",
-      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt EDIABAS-Konfiguration, OBD.INI, Registrierung des USB-Serial-Ports und Verifikation über einen erfolgreichen DME-Identify.",
+      "valid": "E46 · alle Motoren",
+      "summary": "Vollständige Einrichtung von INPA 5.0.6 unter Windows 10/11 mit modernem K+DCAN-Kabel. Behandelt die Aufteilung zwischen EDIABAS.INI und OBD.INI, die Registrierung des USB-Serial-Ports und die Verifikation über einen erfolgreichen DME-Identify.",
       "points": [
         "K+DCAN-Kabel: FTDI-Chip empfohlen, kein CH340 unter Windows 11",
-        "OBD.INI: Port=COM<n>, IFH_TRACE=0, im Ordner C:\\EDIABAS\\Bin",
-        "obd.ini muss zusätzlich Interface=STD:OBD tragen",
+        "EDIABAS.INI trägt den Schnittstellen-Eintrag: Interface = STD:OBD",
+        "OBD.INI trägt den Abschnitt [OBD] mit Port=COM<n>, Hardware und RETRY",
+        "Manche Stände lesen OBD.INI aus C:\\Windows statt aus C:\\EDIABAS\\Bin — beide Kopien gleich halten",
         "Latency Timer im Gerätemanager auf 1 ms setzen",
         "Nach Änderung: EDIABAS-Testfunktion 'INPA' im Startmenü ausführen"
       ],
@@ -1404,14 +1433,20 @@
         "OBD2 Pin 16 · KL30"
       ],
       "engines": [
+        "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
-        "S54",
-        "M43"
+        "S54"
       ],
       "article": "inpa-setup.md",
+      "details": [
+        "D4F-E46-002",
+        "D4F-E46-003",
+        "D4F-E46-009"
+      ],
       "model": "e46"
     },
     {
@@ -1430,13 +1465,20 @@
       ],
       "pins": [],
       "engines": [
+        "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
       ],
       "article": "ncs-expert-basics.md",
+      "details": [
+        "D4F-E46-005",
+        "D4F-E46-001",
+        "D4F-E46-007"
+      ],
       "model": "e46"
     },
     {
@@ -1444,14 +1486,15 @@
       "type": "TEST",
       "cat": "Fehlercodes",
       "title": "Häufige DTCs · DME MS43 (M54)",
-      "valid": "E46 · M54B22/B25/B30",
+      "valid": "E46 · M54B22/B25/B30 · DME MS 43",
       "summary": "Sammlung praxisrelevanter Fehlercodes der DME MS43 mit typischen Ursachen, Prüfschritten und Reparaturempfehlungen. Fokus auf sporadische Fehler die INPA häufig bei Kaltstart zeigt.",
       "points": [
         "P0170/P0173 (Gemischadaption): DISA-Klappe, Sekundärluft, MAF prüfen",
         "P0300–P0306 (Aussetzer): Zündspulen einzeln tauschen, Kompression testen",
         "P0491/P0492 (Sekundärluft): Kombiventil, SLP-Membran, Schlauchführung",
         "P1188 (Lambda vor Kat, Bank 1): Kabelbaum am Krümmer prüfen",
-        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner"
+        "P1519 (VANOS mech.): Solenoid und Ölversorgung, Kettenspanner",
+        "Nach einer Quelle tragen US-Fahrzeuge ab Anfang 2003 die MS 45.1 statt der MS 43 — erst die DME-Ident lesen, dann diese Liste anwenden"
       ],
       "pins": [
         "DME X60001 Pin 87 · MAF-Signal",
@@ -1462,6 +1505,11 @@
         "M54"
       ],
       "article": "dtc-dme-ms43.md",
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008",
+        "D4F-E46-009"
+      ],
       "model": "e46"
     },
     {
@@ -1488,6 +1536,10 @@
         "M54",
         "M52"
       ],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-007"
+      ],
       "model": "e46"
     },
     {
@@ -1509,11 +1561,16 @@
         "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
       ],
       "article": "ncs-expert-basics.md",
+      "details": [
+        "D4F-E46-002",
+        "D4F-E46-007"
+      ],
       "model": "e46"
     },
     {
@@ -1527,7 +1584,8 @@
         "X60001 = 88-polig (Fahrzeugseite)",
         "X60002 = 40-polig (Motorseite)",
         "Vor Messung immer Zündung KL15 aus",
-        "Widerstandsmessung nur bei abgezogenem Stecker"
+        "Widerstandsmessung nur bei abgezogenem Stecker",
+        "Gilt für die MS 43 — eine MS 45.1 hat eine eigene Belegung, siehe D4F-E46-009"
       ],
       "pins": [
         "X60001 Pin 1 · KL30 dauerplus",
@@ -1542,6 +1600,10 @@
       "engines": [
         "M54"
       ],
+      "details": [
+        "D4F-E46-004",
+        "D4F-E46-003"
+      ],
       "model": "e46"
     },
     {
@@ -1550,7 +1612,7 @@
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E46 Limousine",
       "valid": "E46 · Limousine · Touring",
-      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung.",
+      "summary": "Übersicht der Einbauorte aller relevanten Steuergeräte für Diagnose und Codierung — von der DME im Wasserkasten bis zum Grundmodul im Fahrerfußraum.",
       "points": [
         "DME MS43: E-Box im Wasserkasten rechts",
         "EWS3: hinter der Lenksäulenverkleidung unten",
@@ -1564,9 +1626,14 @@
         "M43",
         "M52",
         "M54",
+        "M56",
         "N42",
         "N46",
         "S54"
+      ],
+      "details": [
+        "D4F-E46-004",
+        "D4F-E46-002"
       ],
       "model": "e46"
     },
@@ -1592,6 +1659,37 @@
         "M54"
       ],
       "article": "disa-m54.md",
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-006"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-009",
+      "type": "TEST",
+      "cat": "Motoridentifikation",
+      "title": "M56 SULEV · Abgrenzung zum M54 und Folgen für die Diagnose",
+      "valid": "E46 · 325i/325Ci/325iT · US-Markt",
+      "summary": "Der M56 ist der für die US-Abgasnorm SULEV überarbeitete M54B25. Gleiche Grundkonstruktion, aber eigene Motorsteuerung, eigenes Sekundärluftsystem und eigene Abgasnachbehandlung. Wer ihn für einen M54 hält, sucht Messwerte, die es dort nicht gibt.",
+      "points": [
+        "Motorsteuerung ist die Siemens MS 45.1, nicht die MS 43 — DME-Ident lesen, bevor eine MS43-Codeliste angewendet wird",
+        "Das Sekundärluftsystem trägt einen eigenen Luftmassenmesser; beim M54 gibt es diesen Sensor nicht",
+        "Vor dem Katalysator sitzen Breitbandsonden — die Sprungsonden-Bewertung aus dem M54-Material passt dort nicht",
+        "Ventildeckel mit integrierter Kurbelgehäuseentlüftung, Ölmessstab ohne Ablaufrohr, eigene Ansaugbrücke und Drosselklappe",
+        "Teile nicht nach Modelljahr bestellen, sondern nach Motornummer — M54 und M56 sind nicht wahllos tauschbar",
+        "Ein M54 aus US-Produktion kann ebenfalls die MS 45.1 tragen — die DME allein beweist den M56 nicht"
+      ],
+      "pins": [],
+      "engines": [
+        "M56"
+      ],
+      "article": "m56-sulev.md",
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-001",
+        "D4F-E46-008"
+      ],
       "model": "e46"
     },
     {
@@ -2421,6 +2519,10 @@
         "N47"
       ],
       "article": "inpa-setup.md",
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-010"
+      ],
       "obd": {
         "pids": [
           "0100",
@@ -2463,6 +2565,11 @@
         "N47"
       ],
       "article": "topologie.md",
+      "details": [
+        "D4F-E88-001",
+        "D4F-E88-030",
+        "D4F-E88-010"
+      ],
       "model": "e88"
     },
     {
@@ -2475,7 +2582,7 @@
       "points": [
         "Kein DISA-Ventil wie beim N46 — Luftmasse wird über Valvetronic-Exzenterwelle statt Drosselklappe geregelt",
         "Elektrische Wasserpumpe (Pierburg) — Ansteuerung über DME PWM, Diagnose mit INPA Statusblock „Kühlmittelpumpe Solldrehzahl“",
-        "Doppel-VANOS Ein-/Auslass — jeweils Magnetventil mit ~7.5 Ω, Solenoide sind identisch (tauschbar zum Vergleichstest)",
+        "Doppel-VANOS Ein-/Auslass — beide Magnetventile tragen dieselbe Teilenummer und sind untereinander tauschbar; geprüft wird durch Tauschen, nicht gegen einen geratenen Widerstandswert",
         "Ölstandsensor QLT statt Peilstab — Diagnose über INPA Servicefunktion; kein mech. Peilstab werksseitig verbaut",
         "Zündspulen: Bosch mit Rüsselstecker — Aussetzer immer erst rundum tauschen bevor Kompression",
         "Ansaugbrücke Kunststoff mit Klappensteller (Resonanzklappe) — Ausfall führt zu P1004/P1005"
@@ -2492,6 +2599,11 @@
         "N52"
       ],
       "article": "n52-diagnose-setup.md",
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-001",
+        "D4F-E88-020"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -2515,23 +2627,27 @@
       "cat": "N52 · Fehlerbilder",
       "title": "N52 typische Baustellen · elektrische Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse",
       "valid": "E88 · N52 (auch E9x/E60 übertragbar)",
-      "summary": "Die vier klassischen N52-Reparaturthemen mit Symptomen, Diagnose-Weg und Grenzwerten. Ziel ist es, die Symptome eindeutig einem der vier Sub-Systeme zuzuordnen, bevor Teile bestellt werden.",
+      "summary": "Die vier klassischen N52-Reparaturthemen mit Symptomen und Diagnose-Weg. Ziel ist es, die Symptome eindeutig einem der vier Sub-Systeme zuzuordnen, bevor Teile bestellt werden. Geprüft wird vergleichend — gegen das baugleiche Gegenstück oder gegen ein bekannt gutes Exemplar.",
       "points": [
         "E-Wasserpumpe (Pierburg): typische Lebensdauer 80–120 tkm. Symptom: Überhitzung bei Standgas, dann Kaltstart-OK. Diagnose: INPA Wert „Solldrehzahl Wasserpumpe“ > 0 aber „Iststrom Wasserpumpe“ ~0 A → Pumpe defekt. Nicht mit Thermostat verwechseln.",
-        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Servo mit Multimeter ~1.5–2 Ω an den Motor-Pins, Adaption über ISTA nach Wechsel zwingend.",
+        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Wicklung auf Unterbruch und Masseschluss prüfen und gegen ein bekannt gutes Exemplar vergleichen — ein Widerstandsfenster ist hier nicht belegt. Adaption über ISTA nach Wechsel zwingend.",
         "VANOS-Solenoid verklebt: sporadischer P052A/P052B/P052E, ruckelt kalt. Diagnose: Solenoide tauschen (Einlass ↔ Auslass) — wandert der Fehler mit → Solenoid reinigen oder tauschen. Immer Öldruck an der Kettenspanner-Bohrung mit-messen.",
-        "Ölfiltergehäusedichtung: Symptom Ölspur zwischen Motor und Getriebe, Öl auf Anlasser. Kein DTC, rein optisch. Ursache Hartgummi-Dichtung wird spröde ab ~100 tkm. Nicht mit VVT/VANOS-Dichtung verwechseln.",
+        "Ölfiltergehäusedichtung: Symptom Ölspur zwischen Motor und Getriebe, Öl auf Anlasser. Kein DTC, rein optisch. Ursache: die Hartgummi-Dichtung wird mit Alter und Wärme spröde — ein Befund der zweiten Fahrzeughälfte, keine feste Laufleistung. Nicht mit VVT/VANOS-Dichtung verwechseln.",
         "DISA-Analogie: N52 hat DISA-Klappe im Sammler (Resonanzklappe). Symptom Klappern bei 1500-2500 U/min. Klappe muss beim Wechsel angelernt werden (INPA Servicefunktion)."
       ],
       "pins": [
         "Wasserpumpe X-Stecker: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM-Signal von DME",
         "Valvetronic-Motor: Pin 1/2 Motor-Ansteuerung H-Brücke, Pin 3/4 Positionssensor",
-        "VANOS-Solenoid: 2-poliger Stecker, ~7.5 Ω @ 20°C"
+        "VANOS-Solenoid: 2-poliger Stecker · Einlass und Auslass bauteilgleich, deshalb gegeneinander tauschbar"
       ],
       "engines": [
         "N52"
       ],
       "article": "n52-fehlerbilder.md",
+      "details": [
+        "D4F-E88-010",
+        "D4F-E88-001"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -2558,14 +2674,14 @@
       "type": "GUIDE",
       "cat": "Getriebe · Steptronic",
       "title": "GA6L45R Steptronic am N52 · Adaption und Diagnose",
-      "valid": "E88 · N52 mit Steptronic 6HP (ZF GA6L45R)",
-      "summary": "Das 6-Gang-Automatikgetriebe ZF GA6L45R am N52 im E88. Adaptionswerte lernen sich im Fahrbetrieb — nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
+      "valid": "E88 · N52 mit Steptronic-Automatik",
+      "summary": "Das Sechsgang-Automatikgetriebe hinter dem N52 im E88. Vor jedem Eingriff steht die Frage, welches Getriebe verbaut ist — im Umfeld dieser Fahrzeuge kommen zwei Bauarten vor, und sie verlangen unterschiedliches ATF. Adaptionswerte lernen sich im Fahrbetrieb; nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
       "points": [
-        "Ölwechsel-Intervall (Werkstatt-Empfehlung, nicht BMW-„lifetime“): 60–80 tkm",
-        "ATF: Shell M-1375.4 äquivalent, ca. 6.5 L Wechselmenge (Trockenmenge 8 L)",
-        "Ölmess-Prozedur: Motor bei 40 °C ATF, Wählhebel P→R→N→D je 5 s, dann Kontrollschraube offen: Öl tröpfelt = korrekter Stand. ATF-Temperatur nur über EGS auslesbar — der Öltemperaturfühler sitzt intern in der Mechatronic, es gibt keinen separaten Stecker",
-        "Adaption-Reset via ISTA-D → Servicefunktionen → EGS → Adaptionswerte löschen",
-        "Nach Reset: 20 min Fahrbetrieb mit Beschleunigung bis 3500 U/min, ruhige Rückschaltung Bergab",
+        "Erst das Getriebe bestimmen: GA6L45R stammt aus der GM-6L45-Familie, GA6HP19Z von ZF. Beide sind im Umfeld dieser Fahrzeuge verbaut, die Bezeichnung steht auf dem Getriebeschild",
+        "ATF nach verbautem Getriebe: für das GA6L45R gilt die Dexron-VI-Spezifikation, für das ZF-Getriebe die von ZF freigegebene Sorte. Vor dem Befüllen die Vorgabe zum tatsächlich verbauten Getriebe prüfen — die falsche Sorte kostet das Getriebe",
+        "Ölwechsel-Intervall (Werkstatt-Erfahrungswert, nicht BMW-„lifetime“): 60–80 tkm. Die Füllmenge ergibt sich aus der Prozedur, nicht aus einer Literzahl — eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Ölstand nur bei betriebswarmem Öl, Fahrzeug eben, Motor läuft: Wählhebel durch alle Stellungen, dann Kontrollschraube öffnen — Öl tröpfelt = korrekter Stand. ATF-Temperatur nur über EGS auslesbar, der Fühler sitzt intern in der Mechatronik",
+        "Adaption-Reset via ISTA-D → Servicefunktionen → EGS → Adaptionswerte löschen, danach gemischter Fahrbetrieb mit Zug und Schub",
         "Symptom „harter Ruck 1→2 oder 2→3“: Mechatronic-Sleeve (Steckerkontakte innen ölfeucht) — Dichtung Y-Stecker prüfen"
       ],
       "pins": [
@@ -2575,6 +2691,11 @@
         "N52"
       ],
       "article": "steptronic-ga6l45r.md",
+      "details": [
+        "D4F-E88-010",
+        "D4F-E88-001",
+        "D4F-E88-002"
+      ],
       "obd": {
         "pids": [
           "0104",
@@ -2603,17 +2724,17 @@
       "valid": "E88 · alle · Soft-Top mit Hydraulik",
       "summary": "Das E88 hat ein hybrides Soft-Top mit Hydraulikzylindern für Bogen und Verriegelung. Steuerung: CTM (Cabrio Top Module). Häufigste Fehler: Endlagenschalter Windschutzscheiben-Riegel, Hydraulikpumpe-Klemmen, Notöffnung.",
       "points": [
-        "Verdeckbetrieb nur mit KL15, Fahrzeug < 15 km/h, Kofferraum offen NEIN",
+        "Verdeckbetrieb nur mit KL15, Fahrzeug im Stand oder im Schritttempo, Kofferraum zu — die genaue ab Werk gesetzte Grenzgeschwindigkeit ist hier nicht belegt",
         "Wenn Verdeck stehen bleibt: erst Fehlerspeicher CTM auslesen, dann Endlagenschalter mit INPA Statusblock beobachten",
         "Häufig: Riegel Windschutzscheibe (Endlage nicht erreicht) → mechanisch fett/reinigen bevor SG-Tausch",
-        "Hydraulikpumpe im Kofferraum links — bei Ausfall summt Pumpe kurz und stoppt; Sicherung F49 (30 A) prüfen",
+        "Hydraulikaggregat im Kofferraum hinter der Seitenverkleidung, nach den hier verfügbaren Quellen rechts — bei Ausfall summt die Pumpe kurz und stoppt. Die Sicherung des Verdeckkreises über den Deckelaufdruck des Sicherungskastens bestimmen, nicht nach einer Nummer aus fremder Quelle",
         "Notöffnung: 6-Kant-Innenkant hinter der Rückbanklehne, im Notfall mechanisch entriegeln",
         "Codierstelle „Verdeck-Bedienung bei Fahrt bis 40 km/h“ ist retrofit-tauglich (nicht ab Werk)"
       ],
       "pins": [
         "CTM-Stecker X6100 · Endlagenschalter Riegel Windschutzscheibe",
         "CTM-Stecker X6101 · Hydraulikpumpe Ansteuerung",
-        "Sicherung F49 · 30 A · Verdeckhydraulik"
+        "Versorgung Hydraulikaggregat · Sicherung über den Deckelaufdruck des zuständigen Sicherungskastens bestimmen"
       ],
       "engines": [
         "N43",
@@ -2624,6 +2745,10 @@
         "N47"
       ],
       "article": "verdeck-ctm.md",
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-001"
+      ],
       "obd": {
         "requires": [
           "ecu:CTM"
@@ -2963,17 +3088,19 @@
       "summary": "E-Sys 3.34.x mit passender PSDZData für die F-Serie. FEM/BDC-Codierung, FA-Manipulation, FDL-Codierung einzelner Steuergeräte.",
       "points": [
         "ENET-Kabel zwingend (kein K-Line auf F-Serie)",
+        "Ethernet liegt auf vier Adern: OBD2 Pin 3, 11, 12 und 13 — welches Paar sendet und welches empfängt, hängt vom Bezugspunkt ab",
         "PSDZData muss zum I-Level des Fahrzeugs passen",
         "Immer TokenMaster/EsysLauncher PRO verwenden für Zertifikat",
         "FA lesen → FA ändern → 'FA -> FP' → CAF/FDL neu schreiben",
         "Bei FEM/BDC: nie ohne aktive Batterieladung codieren"
       ],
       "pins": [
-        "OBD2 Pin 3, 11, 12, 13 · Ethernet — vier Adern, nicht drei",
-        "Wie die vier auf TX und RX fallen, hängt vom Bezugspunkt ab (Fahrzeug- oder Rechnerseite). Die Quellen benennen sie gegenläufig — das ist kein Widerspruch, sondern eine Frage der Betrachtungsrichtung",
-        "OBD2 Pin 8 gegen Pin 16 · Aktivierung — strittig: eine Projektquelle bestreitet sie, die Mehrheit der übrigen Fundstellen nennt sie. Der Widerstandswert ist hier nicht belegt",
-        "OBD2 Pin 4/5 · Masse",
-        "OBD2 Pin 16 · KL30 Dauerplus"
+        "OBD2 Pin 3 und Pin 11 · Ethernet-Adernpaar",
+        "OBD2 Pin 12 und Pin 13 · zweites Ethernet-Adernpaar",
+        "OBD2 Pin 8 · Aktivierung des Ethernet-Zugangs, über einen Widerstand auf Pin 16 gelegt",
+        "OBD2 Pin 4 und Pin 5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 6 und Pin 14 · D-CAN vorhanden, aber nicht der Diagnoseweg der F-Serie"
       ],
       "engines": [
         "N20",
@@ -2983,6 +3110,9 @@
         "N63"
       ],
       "article": "esys-basics.md",
+      "details": [
+        "D4F-F-003"
+      ],
       "model": "f-series"
     },
     {
@@ -3005,6 +3135,34 @@
         "N55",
         "B47",
         "B58"
+      ],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-003",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "OBD-Buchse an der F-Serie · was Pin 8 hier bedeutet",
+      "valid": "F-Serie · alle Baureihen",
+      "summary": "Pin 8 des 16-poligen Steckers führt kein genormtes Signal. Die Norm überlässt ihn dem Hersteller, und BMW hat ihn über die Baureihen hinweg verschieden benutzt. An der F-Serie ist er die Aktivierungsleitung für den Ethernet-Zugang.",
+      "points": [
+        "Pin 8 ist im Standard für den 16-poligen Stecker herstellerfrei — dort steht kein Signal, das für alle Marken gilt",
+        "F-Serie: Pin 8 wird über einen Widerstand auf Pin 16 gelegt und gibt damit den Ethernet-Zugang frei",
+        "Mehrere unabhängige Bauanleitungen nennen rund 510 Ω; eine davon nennt 506 bis 560 Ω als brauchbaren Bereich — vor dem Löten gegenprüfen",
+        "Widerspruch, nicht geglättet: eine Projektquelle führt Pin 8 stattdessen als Zündungsplus und lässt ihn im Eigenbaukabel unbeschaltet",
+        "E-Modelle bis 02/2007 nutzen Pin 8 als zweite Diagnoseleitung für die Steuergeräte außerhalb des Antriebs — das gilt an der F-Serie nicht mehr",
+        "Am Fahrzeug messen statt glauben: Zündung aus, Spannung von Pin 8 gegen Masse (Pin 4/5) und Widerstand von Pin 8 nach Pin 16 aufnehmen"
+      ],
+      "pins": [
+        "OBD2 Pin 8 · F-Serie: Aktivierung Ethernet, über Widerstand auf Pin 16",
+        "OBD2 Pin 8 · E-Modelle bis 02/2007: zweite K-Leitung, Steuergeräte außerhalb des Antriebs",
+        "OBD2 Pin 8 · E-Modelle ab 03/2007: unbelegt, eine Brücke nach Pin 7 stört dort den Bus",
+        "OBD2 Pin 16 · KL30 Dauerplus — Bezugspunkt der Aktivierungsleitung",
+        "OBD2 Pin 4 und Pin 5 · Masse"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F-001"
       ],
       "model": "f-series"
     },
@@ -9777,22 +9935,22 @@
     }
   },
   "stats": {
-    "total_docs": 112,
+    "total_docs": 115,
     "total_guides": 37,
     "per_model": {
       "e28": 7,
       "e30": 2,
-      "e34": 7,
+      "e34": 8,
       "e36": 8,
       "e38": 7,
       "e39": 8,
-      "e46": 8,
+      "e46": 9,
       "e60": 8,
       "e70": 7,
       "e87": 8,
       "e88": 6,
       "e90": 8,
-      "f-series": 2,
+      "f-series": 3,
       "f10": 6,
       "f15": 7,
       "f22": 7,
