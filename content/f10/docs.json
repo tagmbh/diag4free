@@ -1,0 +1,125 @@
+{
+  "model": "f10",
+  "docs": [
+    {
+      "id": "D4F-F10-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F10/F11 · ENET statt K-Line",
+      "valid": "F10/F11 · 2010–2017 · alle Motoren",
+      "summary": "Der F10 ist die erste 5er-Generation ohne K-Line an der OBD-Buchse. Die Diagnose läuft über Ethernet; ein K+DCAN-Kabel findet hier grundsätzlich kein Steuergerät. Welche Software passt, entscheidet nicht das Baujahr, sondern die ausgelesene I-Stufe.",
+      "points": [
+        "ENET-Kabel verwenden. BMW legt die Diagnose-Ethernet-Adern auf die herstellerfreien OBD-Pins. Pin 7 (K-Line) trägt am F10 keine Diagnose — ein K+DCAN-Kabel meldet deshalb schlicht kein Steuergerät, und das ist kein Defekt",
+        "Aktivierungsleitung: die gängigen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Die genannten Werte streuen, nach einer Quelle rund 510 Ω. Vor dem Selbstbau gegenprüfen — daran scheitern die meisten Eigenbaukabel",
+        "Netzwerkseite: automatische Adressvergabe am Rechner, keine feste Adresse. WLAN und VPN abschalten, sonst greift die Software auf die falsche Schnittstelle zu",
+        "In EDIABAS beziehungsweise in der Schnittstellenauswahl der Diagnosesoftware auf ENET stellen. Bleibt die Voreinstellung für K-DCAN stehen, sucht die Software auf einem Bus, den das Fahrzeug nicht bedient",
+        "Zündung einschalten, bevor die Verbindung aufgebaut wird. Ohne Klemmenstatus antwortet das Gateway unzuverlässig",
+        "Softwarestand nicht nach Baujahr wählen: erst I-Stufe auslesen, dann die Datenbasis danach aussuchen"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Diagnose-Ethernet RX+",
+        "OBD2 Pin 11 · Diagnose-Ethernet RX-",
+        "OBD2 Pin 12 · Diagnose-Ethernet TX+ · abweichende Zuordnung im Umlauf, siehe Artikel",
+        "OBD2 Pin 13 · Diagnose-Ethernet TX-",
+        "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
+        "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "article": "diagnosezugang.md",
+      "details": ["D4F-F10-003", "D4F-F10-005"]
+    },
+    {
+      "id": "D4F-F10-002",
+      "type": "GUIDE",
+      "cat": "Motoridentifikation",
+      "title": "Motorzuordnung F10/F11 · vom Saugsechszylinder zum B-Motor",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Die Baureihe überspannt zwei Motorengenerationen. Dieselbe Typbezeichnung steht am Anfang und am Ende der Bauzeit für verschiedene Motoren — der 528i ist dafür das Lehrbuchbeispiel. Dieses Dokument ordnet zu und nennt die Merkmale am Fahrzeug.",
+      "points": [
+        "Bis Herbst 2011 tragen 523i und 528i einen Sechszylinder-Saugmotor, im deutschen Markt überwiegend den N53 mit Direkteinspritzung. Ab Herbst 2011 übernehmen 520i und 528i den aufgeladenen Vierzylinder N20 — gleiches Typschild, anderer Motor",
+        "N52 gegen N53 trennen: der N52 hat Saugrohreinspritzung und Valvetronic, der N53 Direkteinspritzung und keine Valvetronic. Der N52 blieb vor allem in Märkten mit schwefelreichem Kraftstoff im Programm",
+        "535i: N55, ein einziger Lader mit Twin-Scroll-Gehäuse. Wer zwei Ladergehäuse sieht, hat keinen N55",
+        "550i: N63 V8 Bi-Turbo mit den Ladern innerhalb des Zylinder-V. Der M5 trägt den S63, denselben Grundmotor in M-Ausführung — die Motornummer entscheidet, nicht der Schriftzug",
+        "Diesel: N57 als Sechszylinder; ab 2014 löst der B47 die Vierzylinder-Diesel ab. Beide Familien tragen den Steuerkettentrieb hinten zum Getriebe — Kaltstartrasseln aus dem hinteren Motorbereich gehört sofort nachgegangen",
+        "N26 ist die SULEV-Ausführung des N20 für einzelne US-Märkte. Bei Importfahrzeugen mit 28i-Schriftzug die Motornummer lesen, bevor ein Teil bestellt wird"
+      ],
+      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "article": "motorzuordnung.md",
+      "details": ["D4F-F10-001"]
+    },
+    {
+      "id": "D4F-F10-003",
+      "type": "FUB",
+      "cat": "Steuergeräte",
+      "title": "Zugangssystem und Bus-Topologie F10/F11 · CAS4, ZGW, FRM",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Der F10 trennt Diagnose-Ethernet und Fahrzeugbusse am zentralen Gateway. Zugangssystem ist CAS4 beziehungsweise CAS4+, nicht das FEM der späten F30. Wer das verwechselt, sucht Steuergeräte, die es im Fahrzeug nicht gibt.",
+      "points": [
+        "Zugangssystem ist CAS4 beziehungsweise CAS4+. Eine Quelle ordnet dem F10-LCI ein FEM zu, mehrere andere durchgehend CAS4 — der Widerspruch bleibt offen und wird am Fahrzeug über die Steuergeräteliste entschieden, nicht über eine Tabelle",
+        "CAS4 gegen CAS4+: nach einer Quelle lässt sich die DME-ISN nur beim CAS4 aus dem Modul auslesen, beim CAS4+ nicht. Für Schlüssel- und DME-Arbeiten entscheidet das über den Weg",
+        "Das ZGW trennt den Diagnosezugang von den Fahrzeugbussen. Melden sich mehrere Steuergeräte auf mehreren Bussen gleichzeitig nicht, ist der Übergang verdächtig und nicht jedes einzelne Gerät",
+        "Das FRM steuert Licht- und Fensterfunktionen. Erfahrungswert aus mehreren unabhängigen Werkstattberichten: Spannungseinbrüche und Feuchtigkeit im Fußraum sind die meistgenannten Auslöser für FRM-Ausfälle dieser Baureihe",
+        "Vor jedem Steuergerätetausch Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne diesen Ausgangszustand fehlt später der Bezugspunkt",
+        "Reihenfolge bei Arbeiten am Zugangssystem: Ladegerät anschließen, dann lesen, erst dann schreiben"
+      ],
+      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "details": ["D4F-F10-001", "D4F-F10-005"]
+    },
+    {
+      "id": "D4F-F10-004",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "FlexRay-Fahrwerk am F10/F11 · ICM und die geregelten Systeme",
+      "valid": "F10/F11 · 2010–2017 · Fahrzeuge mit geregeltem Fahrwerk",
+      "summary": "Die Fahrwerksregelung des F10 hängt an FlexRay, einem zeitgesteuerten Bus. Ein Fehler darin meldet sich nie einzeln: Fahrwerk, Lenkung und DSC kommen zusammen. Dieses Muster von einem Bauteilfehler zu trennen, ist die eigentliche Arbeit.",
+      "points": [
+        "FlexRay ist zeitgesteuert. Kein Teilnehmer sendet spontan, jeder Knoten hat feste Zeitfenster in einem wiederkehrenden Zyklus — deshalb reagiert der Bus auf Störungen anders als CAN",
+        "Zentral hängt das ICM (Integrated Chassis Management) darin. Es wertet die Fahrdynamiksensorik aus und koordiniert DSC, Dämpferregelung, Wankstabilisierung und Integral-Aktivlenkung",
+        "Mehrere Meldungen auf einmal sind ein Bus-Bild, kein Bauteilbild. Erst wenn ein einzelnes System allein meldet, lohnt der Blick auf dessen Aktor",
+        "FlexRay läuft als verdrilltes Paar mit definierter Terminierung. Eine Reparaturstelle mit Lötverbindung und Isolierband verändert die Impedanz — Leitung ersetzen statt flicken",
+        "Gemessen wird mit dem Oszilloskop. Ein Multimeter zeigt am zeitgesteuerten Protokoll nichts Brauchbares",
+        "Sollpegel und Terminierungswerte dieser Baureihe stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: derselbe Messpunkt gegen den zweiten Kanal, gegen ein bekannt gutes Fahrzeug derselben Ausstattung"
+      ],
+      "engines": ["N20", "N53", "N55", "N57", "N63", "S63", "B47"],
+      "article": "flexray-fahrwerk.md",
+      "details": ["D4F-F10-003"]
+    },
+    {
+      "id": "D4F-F10-005",
+      "type": "TEST",
+      "cat": "Softwarestand",
+      "title": "I-Stufe am F10/F11 auslesen und einordnen",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Die häufigste Frage an diesem Fahrzeug ist nicht, welches Bauteil defekt ist, sondern welcher Softwarestand darauf liegt. Die I-Stufe beantwortet das für das Gesamtfahrzeug — und zeigt zugleich, ob ein Steuergerät aus einer fremden Baureihe stammt.",
+      "points": [
+        "Die I-Stufe ist der Softwarestand des Gesamtfahrzeugs, nicht der eines einzelnen Steuergeräts. Aufbau: Fahrzeugprogramm, Jahr, Monat, Version — zum Beispiel F010-15-11-500",
+        "Drei Stände gehören zusammen: der Werksstand bei Auslieferung, der aktuelle Stand und der Zielstand, auf den eine Programmierung heben würde. Wer nur einen liest, hat die halbe Auskunft",
+        "Auslesen: in der Diagnosesoftware unter den Fahrzeuginformationen, in der Codiersoftware über die Fahrzeugkonfiguration beziehungsweise den Fahrzeugauftrag",
+        "Der Präfix nennt das Fahrzeugprogramm, nicht die Baureihe. Ein aus einem anderen Fahrzeug eingebautes Steuergerät bringt dessen Präfix mit — genau daran erkennt man ein Spenderteil, bevor es Ärger macht",
+        "Datenstand nach der gelesenen I-Stufe wählen. Konkrete Versionsnummern von Programmier- und Diagnosedaten altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben — hier steht deshalb bewusst keine",
+        "Vor jeder Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern. Beide sind der Bezugspunkt, wenn ein Vorgang abbricht"
+      ],
+      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "article": "i-stufe.md",
+      "details": ["D4F-F10-001", "D4F-F10-003"]
+    },
+    {
+      "id": "D4F-F10-006",
+      "type": "TEST",
+      "cat": "Bordnetz",
+      "title": "Batteriewechsel am F10/F11 · registrieren und codieren",
+      "valid": "F10/F11 · 2010–2017 · alle Motoren",
+      "summary": "Der F10 lädt seine Batterie nach einem Modell, das Alter und Zustand mitrechnet. Eine neue Batterie ohne Registrierung wird weiter wie die alte behandelt. Das kostet die neue Batterie Lebensdauer und erzeugt Fehlerbilder, die nach Elektronik aussehen.",
+      "points": [
+        "Energiemanagement mit Batteriesensor am Minuspol. Ohne Registrierung rechnet das System weiter mit der verschlissenen Batterie — Folge sind früh abschaltende Komfortverbraucher und kurze Batterielebensdauer",
+        "Registrieren immer. Zusätzlich codieren dann, wenn Typ oder Kapazität von der ausgebauten Batterie abweichen — nach den vorliegenden Quellen verläuft dort die Trennlinie",
+        "Typ und Kapazität am ausgebauten Teil ablesen, nicht aus einer Onlinetabelle. Der Wechsel von AGM auf eine Nassbatterie ändert die Ladekennlinie",
+        "Nach dem Wechsel den Fehlerspeicher aller Steuergeräte lesen und löschen. Der Spannungseinbruch beim Abklemmen hinterlässt Einträge in Modulen, die mit der Batterie nichts zu tun haben",
+        "Eine geladene Batterie zeigt in Ruhe rund 12.6 V. Gemessen wird nach mehreren Stunden Standzeit direkt an den Polen, nicht unmittelbar nach der Fahrt",
+        "Bei allen Schreibvorgängen am Fahrzeug ein Werkstattladegerät anschließen. Ein Erhaltungslader reicht dafür nicht"
+      ],
+      "engines": ["N20", "N26", "N52", "N53", "N55", "N57", "N63", "S63", "B47", "B58"],
+      "details": ["D4F-F10-003", "D4F-F10-005"]
+    }
+  ]
+}

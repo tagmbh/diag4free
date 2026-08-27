@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:08:29.741Z",
+  "generated": "2026-08-27T05:11:11.197Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -515,6 +515,187 @@
         "D4F-E30-001"
       ],
       "model": "e30"
+    },
+    {
+      "id": "D4F-E34-001",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Diagnosezugang E34 · Rundstecker und der Bruch 1996",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der E34 ist die letzte 5er-Baureihe, die vollständig auf dem 20-poligen Runddiagnosestecker im Motorraum steht — und die erste, an deren Ende die 16-polige OBD-2-Buchse auftaucht. Beide Fälle gehören auseinandergehalten.",
+      "points": [
+        "Regelfall über die ganze Bauzeit: runder 20-poliger Stecker im Motorraum, Kappe geschraubt",
+        "Nach einer Quelle mussten Fahrzeuge des US-Modelljahrs 1996 OBD-2 erfüllen — beim E34 betrifft das nur den Auslauf",
+        "Eine 16-polige Buchse unter dem Armaturenbrett heißt nicht, dass der Rundstecker entfällt; beide können nebeneinander bestehen",
+        "Die Pinzählung des Rundsteckers ist zwischen den Quellen strittig — Masse und Dauerplus vor dem Anstecken selbst durchmessen",
+        "Ein Generic-OBD-2-Scanner liest an der Rundsteckerwelt nichts, auch nicht über Adapter"
+      ],
+      "pins": [
+        "Pin 19 · Masse — nach einer Quelle am 20-poligen Rundstecker",
+        "Pin 15 · L-Leitung, nach einer Quelle über Adapter auf OBD-2 Pin 15 geführt",
+        "Pin 17 und Pin 20 · Datenleitung, nach einer Quelle gemeinsam auf OBD-2 Pin 7 geführt",
+        "OBD-2 Pin 16 · Versorgung, nach einer Quelle vom Rundstecker Pin 14 gespeist"
+      ],
+      "engines": [
+        "M20",
+        "M50",
+        "M60",
+        "S38"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-003"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-002",
+      "type": "TEST",
+      "cat": "Motorsteuerung",
+      "title": "Motorzuordnung E34 · M20, M50, M60 und S38",
+      "valid": "E34 · 1987–1996",
+      "summary": "Die Baureihe überspannt neun Jahre und vier Motorenfamilien. Welcher Motor mit welchem Steuergerät läuft, entscheidet über Prozedur, Adapter und darüber, welche Fehlerbilder überhaupt zu erwarten sind.",
+      "points": [
+        "M20 im frühen 520i und 525i; nach einer Quelle löst der M50 den M20 im 525i ab Juni 1990 ab",
+        "M50 als Vor-TU ohne VANOS, ab September 1992 als M50TU mit Einfach-VANOS auf der Einlassnockenwelle",
+        "Steuergeräte laut Steckbrief: M3.1 beim Vor-TU, M3.3.1 beim M50B25TU, Siemens MS 40.1 beim M50B20TU",
+        "M60 als V8 ab 1992 im 530i und 540i, Motronic M3.3 bzw. M3.3.1, ohne VANOS",
+        "S38 nur im M5; S38B36 mit Motronic 1.2, S38B38 mit Motronic 3.3 laut Steckbrief",
+        "Motornummer am Block entscheidet, nicht das Typenschild — Vor-TU und TU sehen von außen fast gleich aus"
+      ],
+      "engines": [
+        "M20",
+        "M50",
+        "M60",
+        "S38"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-E34-001",
+        "D4F-E34-005",
+        "D4F-E34-006"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-003",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Blinkcode am E34 · welche Steuerung mitmacht",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der Pedaltrick vom E30 funktioniert am E34 nicht durchgängig. Er hängt am Steuergerätestand, nicht am Fahrzeug. Was belegt ist, was offen ist, und was du stattdessen tust.",
+      "points": [
+        "Nach einer Quelle ist die Pedalprozedur für Bosch Motronic 1.3 und für die Motronic-3er-Familie beschrieben",
+        "Damit ist sie am E34 für die Bosch-gesteuerten Motoren zu erwarten, nicht aber sicher für das Siemens-Steuergerät des M50B20TU",
+        "Vor dem Versuch prüfen, ob im Kombiinstrument überhaupt eine Motorkontrollleuchte vorhanden ist",
+        "Blinkfolge zuerst als Zahlenkolonne mitschreiben, erst danach deuten",
+        "Codebedeutungen anderer Baureihen nicht übernehmen — gleiche Ziffernfolge heißt nicht gleiche Ursache",
+        "Bleibt die Ausgabe aus, führt der Weg über den Rundstecker und ein Gerät mit BMW-Protokoll"
+      ],
+      "engines": [
+        "M20",
+        "M50",
+        "M60"
+      ],
+      "article": "blinkcode-e34.md",
+      "details": [
+        "D4F-E34-001",
+        "D4F-E34-002"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-004",
+      "type": "TEST",
+      "cat": "Bremse und Fahrwerk",
+      "title": "ABS- und ASC-Blinkcode ohne Diagnosegerät",
+      "valid": "E34 · 1987–1996",
+      "summary": "Für ABS und ASC gibt es am E34 einen eigenen Blinkcode, der über Bremspedal und ASC-Taster ausgelöst wird und nichts mit der Motorsteuerung zu tun hat. Der schnellste Weg zu einer Aussage über einen Raddrehzahlfühler.",
+      "points": [
+        "Nach einer Quelle: Bremspedal und ASC-Taster gleichzeitig gedrückt halten, Zündung ein, dann beide loslassen",
+        "Die ASC-Leuchte gibt anschließend eine Blinkfolge aus",
+        "Nach einer Quelle steht die erste Blinkstufe für kein gespeichertes Ereignis",
+        "Prozedur ist unabhängig vom Motor — sie sagt nichts über die Motorsteuerung aus",
+        "Fahrzeuge mit und ohne ASC tragen unterschiedliche Steuergeräte; ohne ASC-Taster entfällt die Auslösung",
+        "Vor der Codesuche die Raddrehzahlfühler und ihre Steckverbindungen auf Verschmutzung und Korrosion ansehen"
+      ],
+      "article": "abs-asc-blinkcode.md",
+      "details": [
+        "D4F-E34-001"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-005",
+      "type": "TEST",
+      "cat": "Motormechanik",
+      "title": "M50 gegen M50TU · VANOS erkennen und beurteilen",
+      "valid": "E34 · M50, ab 09/1992 als M50TU",
+      "summary": "Ob ein M50 eine VANOS hat, entscheidet über Steuergerät, Fehlerbild und Ersatzteile. Der Unterschied ist am Motor in dreißig Sekunden zu sehen, wenn man weiß, wohin man schaut.",
+      "points": [
+        "TU-Merkmal: zusätzliches Gehäuse vorn oben am Zylinderkopf über dem Steuerkettendeckel",
+        "Ist dort nur ein glatter Deckel, hast du einen Vor-TU ohne VANOS",
+        "Zweites Merkmal: Vor-TU mit Luftmengenmesser samt Stauklappe, TU mit Heißfilm-Luftmassenmesser",
+        "Erfahrungswert laut Steckbrief: verhärtete VANOS-Dichtungen kosten Drehmoment unten heraus und rasseln",
+        "Erst die mechanische Zuordnung, dann die Steuergeräteauswahl — M3.1, M3.3.1 und MS 40.1 sind nicht austauschbar",
+        "Der Magnettest am Block trennt M50 vom späteren M52: beim M50 hält der Magnet, beim Aluminiumblock des M52 nicht"
+      ],
+      "engines": [
+        "M50"
+      ],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-007"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-006",
+      "type": "TEST",
+      "cat": "Motormechanik",
+      "title": "M60 · Nikasil oder Alusil am Gussnummernfeld",
+      "valid": "E34 · M60 ab 1992",
+      "summary": "Zum M60 kursiert mehr Halbwissen als zu jedem anderen Motor dieser Baureihe. Die Frage Nikasil oder Alusil lässt sich am Block ablesen und mit einer vergleichenden Messung erhärten — Baujahr und Erzählung reichen nicht.",
+      "points": [
+        "Laut Steckbrief unterscheidet die Gussnummer am Block: 1725970 ist M60B30 mit Nikasil, 1745871 M60B30 mit Alusil",
+        "Laut Steckbrief weiter: 1725963 ist M60B40 mit Nikasil, 1745872 M60B40 mit Alusil",
+        "Die Nummer sitzt außen am Blockguss und wird vor jeder Kaufentscheidung selbst abgelesen",
+        "Erfahrungswert: Nikasil-Laufbahnen leiden unter dauerhaft schwefelhaltigem Kraftstoff",
+        "Symptombild: schlechter Warmstart, unrunder Leerlauf, über die Zylinder ungleich verteilte Kompression",
+        "Vergleichend über alle acht Zylinder messen statt gegen einen Sollwert — die Streuung ist die Aussage"
+      ],
+      "engines": [
+        "M60"
+      ],
+      "details": [
+        "D4F-E34-002"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-007",
+      "type": "TEST",
+      "cat": "Startprobleme",
+      "title": "M50 dreht ohne zu starten · Geber und Relais",
+      "valid": "E34 · M50, M50TU",
+      "summary": "Der M50 hat keinen Verteiler mehr. Fällt der Kurbelwellensensor aus, dreht der Anlasser sauber durch und trotzdem passiert nichts — weder Zündung noch Einspritzung. Die üblichen Verdächtigen und ihre Reihenfolge.",
+      "points": [
+        "Erfahrungswert: Kurbelwellensensor, DME-Hauptrelais, Kraftstoffpumpenrelais und Pumpensicherung führen die Liste an",
+        "Der Kurbelwellensensor sitzt nach einer Quelle am vorderen Motorende oberhalb der Kurbelwellenriemenscheibe",
+        "Ohne Drehzahlsignal gibt das Steuergerät weder Zündung noch Einspritzung frei — beides fehlt gleichzeitig",
+        "Sollwert für den Sensorwiderstand ist widersprüchlich belegt und wird hier deshalb nicht angegeben",
+        "Statt gegen eine geratene Zahl zu messen: Signal beim Cranken beobachten oder gegen ein bekannt gutes Teil tauschen",
+        "Fahrzeuge mit Wegfahrsperre erst nach der Grundprüfung verdächtigen — die Verbauung ist am E34 nicht einheitlich"
+      ],
+      "engines": [
+        "M50"
+      ],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-005"
+      ],
+      "model": "e34"
     },
     {
       "id": "D4F-E36-001",
@@ -2579,6 +2760,211 @@
         "B58"
       ],
       "model": "f-series"
+    },
+    {
+      "id": "D4F-F10-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang F10/F11 · ENET statt K-Line",
+      "valid": "F10/F11 · 2010–2017 · alle Motoren",
+      "summary": "Der F10 ist die erste 5er-Generation ohne K-Line an der OBD-Buchse. Die Diagnose läuft über Ethernet; ein K+DCAN-Kabel findet hier grundsätzlich kein Steuergerät. Welche Software passt, entscheidet nicht das Baujahr, sondern die ausgelesene I-Stufe.",
+      "points": [
+        "ENET-Kabel verwenden. BMW legt die Diagnose-Ethernet-Adern auf die herstellerfreien OBD-Pins. Pin 7 (K-Line) trägt am F10 keine Diagnose — ein K+DCAN-Kabel meldet deshalb schlicht kein Steuergerät, und das ist kein Defekt",
+        "Aktivierungsleitung: die gängigen Kabel legen einen Widerstand zwischen Pin 8 und Pin 16, damit der Ethernet-Zugang freigegeben wird. Die genannten Werte streuen, nach einer Quelle rund 510 Ω. Vor dem Selbstbau gegenprüfen — daran scheitern die meisten Eigenbaukabel",
+        "Netzwerkseite: automatische Adressvergabe am Rechner, keine feste Adresse. WLAN und VPN abschalten, sonst greift die Software auf die falsche Schnittstelle zu",
+        "In EDIABAS beziehungsweise in der Schnittstellenauswahl der Diagnosesoftware auf ENET stellen. Bleibt die Voreinstellung für K-DCAN stehen, sucht die Software auf einem Bus, den das Fahrzeug nicht bedient",
+        "Zündung einschalten, bevor die Verbindung aufgebaut wird. Ohne Klemmenstatus antwortet das Gateway unzuverlässig",
+        "Softwarestand nicht nach Baujahr wählen: erst I-Stufe auslesen, dann die Datenbasis danach aussuchen"
+      ],
+      "pins": [
+        "OBD2 Pin 3 · Diagnose-Ethernet RX+",
+        "OBD2 Pin 11 · Diagnose-Ethernet RX-",
+        "OBD2 Pin 12 · Diagnose-Ethernet TX+ · abweichende Zuordnung im Umlauf, siehe Artikel",
+        "OBD2 Pin 13 · Diagnose-Ethernet TX-",
+        "OBD2 Pin 8 · Aktivierungsleitung über Widerstand auf Pin 16",
+        "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-005"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-002",
+      "type": "GUIDE",
+      "cat": "Motoridentifikation",
+      "title": "Motorzuordnung F10/F11 · vom Saugsechszylinder zum B-Motor",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Die Baureihe überspannt zwei Motorengenerationen. Dieselbe Typbezeichnung steht am Anfang und am Ende der Bauzeit für verschiedene Motoren — der 528i ist dafür das Lehrbuchbeispiel. Dieses Dokument ordnet zu und nennt die Merkmale am Fahrzeug.",
+      "points": [
+        "Bis Herbst 2011 tragen 523i und 528i einen Sechszylinder-Saugmotor, im deutschen Markt überwiegend den N53 mit Direkteinspritzung. Ab Herbst 2011 übernehmen 520i und 528i den aufgeladenen Vierzylinder N20 — gleiches Typschild, anderer Motor",
+        "N52 gegen N53 trennen: der N52 hat Saugrohreinspritzung und Valvetronic, der N53 Direkteinspritzung und keine Valvetronic. Der N52 blieb vor allem in Märkten mit schwefelreichem Kraftstoff im Programm",
+        "535i: N55, ein einziger Lader mit Twin-Scroll-Gehäuse. Wer zwei Ladergehäuse sieht, hat keinen N55",
+        "550i: N63 V8 Bi-Turbo mit den Ladern innerhalb des Zylinder-V. Der M5 trägt den S63, denselben Grundmotor in M-Ausführung — die Motornummer entscheidet, nicht der Schriftzug",
+        "Diesel: N57 als Sechszylinder; ab 2014 löst der B47 die Vierzylinder-Diesel ab. Beide Familien tragen den Steuerkettentrieb hinten zum Getriebe — Kaltstartrasseln aus dem hinteren Motorbereich gehört sofort nachgegangen",
+        "N26 ist die SULEV-Ausführung des N20 für einzelne US-Märkte. Bei Importfahrzeugen mit 28i-Schriftzug die Motornummer lesen, bevor ein Teil bestellt wird"
+      ],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-F10-001"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-003",
+      "type": "FUB",
+      "cat": "Steuergeräte",
+      "title": "Zugangssystem und Bus-Topologie F10/F11 · CAS4, ZGW, FRM",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Der F10 trennt Diagnose-Ethernet und Fahrzeugbusse am zentralen Gateway. Zugangssystem ist CAS4 beziehungsweise CAS4+, nicht das FEM der späten F30. Wer das verwechselt, sucht Steuergeräte, die es im Fahrzeug nicht gibt.",
+      "points": [
+        "Zugangssystem ist CAS4 beziehungsweise CAS4+. Eine Quelle ordnet dem F10-LCI ein FEM zu, mehrere andere durchgehend CAS4 — der Widerspruch bleibt offen und wird am Fahrzeug über die Steuergeräteliste entschieden, nicht über eine Tabelle",
+        "CAS4 gegen CAS4+: nach einer Quelle lässt sich die DME-ISN nur beim CAS4 aus dem Modul auslesen, beim CAS4+ nicht. Für Schlüssel- und DME-Arbeiten entscheidet das über den Weg",
+        "Das ZGW trennt den Diagnosezugang von den Fahrzeugbussen. Melden sich mehrere Steuergeräte auf mehreren Bussen gleichzeitig nicht, ist der Übergang verdächtig und nicht jedes einzelne Gerät",
+        "Das FRM steuert Licht- und Fensterfunktionen. Erfahrungswert aus mehreren unabhängigen Werkstattberichten: Spannungseinbrüche und Feuchtigkeit im Fußraum sind die meistgenannten Auslöser für FRM-Ausfälle dieser Baureihe",
+        "Vor jedem Steuergerätetausch Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne diesen Ausgangszustand fehlt später der Bezugspunkt",
+        "Reihenfolge bei Arbeiten am Zugangssystem: Ladegerät anschließen, dann lesen, erst dann schreiben"
+      ],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-005"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-004",
+      "type": "TEST",
+      "cat": "Fahrwerk",
+      "title": "FlexRay-Fahrwerk am F10/F11 · ICM und die geregelten Systeme",
+      "valid": "F10/F11 · 2010–2017 · Fahrzeuge mit geregeltem Fahrwerk",
+      "summary": "Die Fahrwerksregelung des F10 hängt an FlexRay, einem zeitgesteuerten Bus. Ein Fehler darin meldet sich nie einzeln: Fahrwerk, Lenkung und DSC kommen zusammen. Dieses Muster von einem Bauteilfehler zu trennen, ist die eigentliche Arbeit.",
+      "points": [
+        "FlexRay ist zeitgesteuert. Kein Teilnehmer sendet spontan, jeder Knoten hat feste Zeitfenster in einem wiederkehrenden Zyklus — deshalb reagiert der Bus auf Störungen anders als CAN",
+        "Zentral hängt das ICM (Integrated Chassis Management) darin. Es wertet die Fahrdynamiksensorik aus und koordiniert DSC, Dämpferregelung, Wankstabilisierung und Integral-Aktivlenkung",
+        "Mehrere Meldungen auf einmal sind ein Bus-Bild, kein Bauteilbild. Erst wenn ein einzelnes System allein meldet, lohnt der Blick auf dessen Aktor",
+        "FlexRay läuft als verdrilltes Paar mit definierter Terminierung. Eine Reparaturstelle mit Lötverbindung und Isolierband verändert die Impedanz — Leitung ersetzen statt flicken",
+        "Gemessen wird mit dem Oszilloskop. Ein Multimeter zeigt am zeitgesteuerten Protokoll nichts Brauchbares",
+        "Sollpegel und Terminierungswerte dieser Baureihe stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: derselbe Messpunkt gegen den zweiten Kanal, gegen ein bekannt gutes Fahrzeug derselben Ausstattung"
+      ],
+      "engines": [
+        "N20",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "article": "flexray-fahrwerk.md",
+      "details": [
+        "D4F-F10-003"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-005",
+      "type": "TEST",
+      "cat": "Softwarestand",
+      "title": "I-Stufe am F10/F11 auslesen und einordnen",
+      "valid": "F10/F11 · 2010–2017",
+      "summary": "Die häufigste Frage an diesem Fahrzeug ist nicht, welches Bauteil defekt ist, sondern welcher Softwarestand darauf liegt. Die I-Stufe beantwortet das für das Gesamtfahrzeug — und zeigt zugleich, ob ein Steuergerät aus einer fremden Baureihe stammt.",
+      "points": [
+        "Die I-Stufe ist der Softwarestand des Gesamtfahrzeugs, nicht der eines einzelnen Steuergeräts. Aufbau: Fahrzeugprogramm, Jahr, Monat, Version — zum Beispiel F010-15-11-500",
+        "Drei Stände gehören zusammen: der Werksstand bei Auslieferung, der aktuelle Stand und der Zielstand, auf den eine Programmierung heben würde. Wer nur einen liest, hat die halbe Auskunft",
+        "Auslesen: in der Diagnosesoftware unter den Fahrzeuginformationen, in der Codiersoftware über die Fahrzeugkonfiguration beziehungsweise den Fahrzeugauftrag",
+        "Der Präfix nennt das Fahrzeugprogramm, nicht die Baureihe. Ein aus einem anderen Fahrzeug eingebautes Steuergerät bringt dessen Präfix mit — genau daran erkennt man ein Spenderteil, bevor es Ärger macht",
+        "Datenstand nach der gelesenen I-Stufe wählen. Konkrete Versionsnummern von Programmier- und Diagnosedaten altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben — hier steht deshalb bewusst keine",
+        "Vor jeder Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern. Beide sind der Bezugspunkt, wenn ein Vorgang abbricht"
+      ],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "article": "i-stufe.md",
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-003"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-006",
+      "type": "TEST",
+      "cat": "Bordnetz",
+      "title": "Batteriewechsel am F10/F11 · registrieren und codieren",
+      "valid": "F10/F11 · 2010–2017 · alle Motoren",
+      "summary": "Der F10 lädt seine Batterie nach einem Modell, das Alter und Zustand mitrechnet. Eine neue Batterie ohne Registrierung wird weiter wie die alte behandelt. Das kostet die neue Batterie Lebensdauer und erzeugt Fehlerbilder, die nach Elektronik aussehen.",
+      "points": [
+        "Energiemanagement mit Batteriesensor am Minuspol. Ohne Registrierung rechnet das System weiter mit der verschlissenen Batterie — Folge sind früh abschaltende Komfortverbraucher und kurze Batterielebensdauer",
+        "Registrieren immer. Zusätzlich codieren dann, wenn Typ oder Kapazität von der ausgebauten Batterie abweichen — nach den vorliegenden Quellen verläuft dort die Trennlinie",
+        "Typ und Kapazität am ausgebauten Teil ablesen, nicht aus einer Onlinetabelle. Der Wechsel von AGM auf eine Nassbatterie ändert die Ladekennlinie",
+        "Nach dem Wechsel den Fehlerspeicher aller Steuergeräte lesen und löschen. Der Spannungseinbruch beim Abklemmen hinterlässt Einträge in Modulen, die mit der Batterie nichts zu tun haben",
+        "Eine geladene Batterie zeigt in Ruhe rund 12.6 V. Gemessen wird nach mehreren Stunden Standzeit direkt an den Polen, nicht unmittelbar nach der Fahrt",
+        "Bei allen Schreibvorgängen am Fahrzeug ein Werkstattladegerät anschließen. Ein Erhaltungslader reicht dafür nicht"
+      ],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-005"
+      ],
+      "model": "f10"
     },
     {
       "id": "D4F-F15-001",
@@ -5499,6 +5885,328 @@
         }
       }
     },
+    "e70:e70-mehrere-sg-fehlen": {
+      "code": "GF-E70-01",
+      "name": "Mehrere Steuergeräte fehlen im Suchlauf",
+      "desc": "Der Suchlauf findet nur einen Teil der verbauten Geräte. Der Pfad trennt Gateway, Versorgung, Spannung und Busleitung voneinander, bevor irgendein Steuergerät als defekt gilt.",
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Fehlen im Suchlauf mehrere Steuergeräte gleichzeitig?",
+          "help": "Die Zahl entscheidet über den ganzen weiteren Weg. Ein einzelnes stummes Gerät ist ein Gerätefehler. Mehrere gleichzeitig sind am E70 fast immer Gateway, Versorgung oder Bus — und praktisch nie mehrere gleichzeitig defekte Geräte.",
+          "measure": "Vollständigen Suchlauf fahren und die gefundene Liste gegen die tatsächliche Ausstattung halten. Erwartet: jedes verbaute Gerät antwortet. Fahrzeuge ohne Adaptive Drive oder ohne Luftfederung haben die zugehörigen Geräte gar nicht — das ist kein Fehler.",
+          "doc": "D4F-E70-002",
+          "yes": 1,
+          "no": "result-einzelgeraet"
+        },
+        {
+          "q": "Gehören die fehlenden Geräte alle zum selben Bus?",
+          "help": "Die Buszuordnung ist die schnellste Sortierung, die der E70 hergibt. Fehlt eine geschlossene Gruppe, ist der Weg zu dieser Gruppe unterbrochen. Sind die Ausfälle über mehrere Busse verstreut, liegt der Fehler eher in der Versorgung oder in der Diagnoseverbindung.",
+          "measure": "Die fehlenden Geräte nach Bus sortieren: Antrieb, Karosserie, Fahrwerk, Infotainment. Erwartet ist ein klares Muster. Fehlt zum Beispiel das gesamte Infotainment gemeinsam, deutet das auf den optischen Ring und nicht auf mehrere Einzelgeräte.",
+          "doc": "D4F-E70-002",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antwortet die Junction-Box-Elektronik als zentrales Gateway?",
+          "help": "Die Junction-Box trägt die zentrale Gateway-Funktion. Antwortet sie nicht, fehlen die dahinterliegenden Teilnehmer mit — sie sind dann stumm, ohne selbst defekt zu sein. Deshalb steht sie vor jedem Einzelgerät in der Reihenfolge.",
+          "measure": "Die Junction-Box einzeln aufrufen und den Identifikationsdatensatz anzeigen lassen. Erwartet: vollständige Antwort. Bleibt sie aus, während die Motorsteuerung antwortet, ist das Gateway der erste Verdächtige.",
+          "doc": "D4F-E70-002",
+          "yes": 4,
+          "no": "result-gateway"
+        },
+        {
+          "q": "Haben die fehlenden Geräte eine gemeinsame Sicherung oder einen gemeinsamen Massepunkt?",
+          "help": "Über mehrere Busse verstreute Ausfälle mit einem gemeinsamen Versorgungspfad sind kein Buszufall. Eine ausgefallene Sicherung erzeugt genau dieses Bild und wird regelmässig übersehen, weil der Verdacht sofort auf den Bus fällt.",
+          "measure": "Die fehlenden Geräte im Sicherungs- und Massekonzept des Fahrzeugs zurückverfolgen. Erwartet: ein gemeinsamer Zweig. Sicherungen nicht nur ansehen, sondern im eingebauten Zustand auf Spannung an beiden Kontakten prüfen — ein schlechter Halter sieht heil aus.",
+          "doc": "D4F-E70-006",
+          "yes": "result-versorgung",
+          "no": 4
+        },
+        {
+          "q": "Bleibt die Bordspannung während des gesamten Suchlaufs stabil?",
+          "help": "Ein Suchlauf weckt viele Geräte gleichzeitig. Bei schwacher Batterie brechen einzelne Teilnehmer dabei weg, und das Ergebnis sieht aus wie ein Busfehler. Diese Fehldiagnose kostet am E70 regelmässig ein unnötiges Steuergerät.",
+          "measure": "Spannung während des Suchlaufs mitbeobachten und dabei stützen. Erwartet: keine sichtbaren Einbrüche. Rund 12.6 V Ruhespannung bei stehendem Motor zeigen eine geladene Batterie an; bricht die Spannung beim Suchlauf ein, ist zuerst die Versorgung zu klären.",
+          "doc": "D4F-E70-001",
+          "yes": 5,
+          "no": "result-spannung"
+        },
+        {
+          "q": "Kommen die fehlenden Geräte zurück, wenn du das verdächtige Modul abziehst oder es getrocknet ist?",
+          "help": "Ein einzelnes gestörtes Gerät kann den Bus blockieren. Am E70 steht die Junction-Box hinter dem Handschuhfach oben auf der Liste, weil verstopfte Abläufe genau dorthin führen. Abziehen und erneut suchen ist schneller als jede Messreihe.",
+          "measure": "Verdächtiges Gerät trennen, Suchlauf wiederholen, Ergebnis vergleichen. Erwartet bei einem Störer: die Liste wird vollständig. Bleibt sie unvollständig, war es dieses Gerät nicht. Vor dem Wiederanschliessen Stecker und Gehäuse auf Wasser, Grünspan und Kalkränder ansehen.",
+          "doc": "D4F-E70-006",
+          "yes": "result-wasser",
+          "no": "result-busleitung"
+        }
+      ],
+      "model": "e70",
+      "id": "e70-mehrere-sg-fehlen",
+      "_results": {
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät statt Bus- oder Gateway-Problem",
+          "text": "Es fehlt nur ein Gerät, damit fällt der Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und die Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig — und dann bitte mit Blick auf Feuchtigkeit am Einbauort.",
+          "next_docs": [
+            "D4F-E70-006",
+            "D4F-E70-007"
+          ]
+        },
+        "result-gateway": {
+          "title": "Zentrales Gateway antwortet nicht",
+          "text": "Die Junction-Box trägt die Gateway-Funktion, und ohne sie sind die dahinterliegenden Geräte nicht erreichbar. Prüfe Versorgung, Masse und Stecker der Junction-Box und sieh dabei ausdrücklich auf Wasserspuren — der Einbauort hinter dem Handschuhfach liegt in einem bekannten Wasserweg. Erst danach über einen Ersatz nachdenken, der fahrzeugbezogen codiert werden muss.",
+          "next_docs": [
+            "D4F-E70-002",
+            "D4F-E70-006"
+          ]
+        },
+        "result-versorgung": {
+          "title": "Gemeinsame Sicherung oder gemeinsamer Massepunkt",
+          "text": "Die fehlenden Geräte teilen sich einen Versorgungspfad, damit ist die Ursache gefunden, bevor ein Bus gemessen wurde. Sicherung im eingebauten Zustand auf Spannung an beiden Kontakten prüfen, Halter auf Wärmespuren ansehen, Massepunkt lösen, Kontaktflächen reinigen und wieder festziehen. Danach den Suchlauf wiederholen.",
+          "next_docs": [
+            "D4F-E70-006"
+          ]
+        },
+        "result-spannung": {
+          "title": "Bordspannung bricht während der Diagnose ein",
+          "text": "Solange die Spannung einbricht, ist keine Geräteliste belastbar und keine Codierung sicher. Fahrzeug an ein geeignetes Stützgerät hängen, Batterie und Ladung beurteilen und den Suchlauf wiederholen. Erst das Ergebnis der zweiten Runde zählt — sehr oft ist die Liste dann vollständig und es war nie ein Busfehler.",
+          "next_docs": [
+            "D4F-E70-001"
+          ]
+        },
+        "result-wasser": {
+          "title": "Gestörtes Gerät gefunden — Wasserweg mitbehandeln",
+          "text": "Mit dem getrennten Gerät ist die Liste vollständig, damit ist der Störer identifiziert. Ersetze nicht nur das Gerät, sondern beseitige die Ursache: Schiebedachabläufe und Wasserkastenabläufe freimachen, Dichtungen kontrollieren, den Einbauraum trocknen. Wer nur das Gerät tauscht, tauscht es ein zweites Mal.",
+          "next_docs": [
+            "D4F-E70-006"
+          ]
+        },
+        "result-busleitung": {
+          "title": "Busleitung oder Steckverbindung unterbrochen",
+          "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist der Weg dorthin unterbrochen. Miss die Busleitung abschnittsweise auf Durchgang und Kurzschluss gegeneinander, und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor. Beweglichen Übergängen und nachträglichen Eingriffen im Kabelbaum gilt die erste Aufmerksamkeit.",
+          "next_docs": [
+            "D4F-E70-002"
+          ]
+        },
+        "result-kein-eintrag": {
+          "title": "Kein eigener Eintrag — die Meldung kommt woanders her",
+          "text": "Ohne Eintrag im Verteilergetriebe ist das kein xDrive-Fehler. Lies alle Speicher gemeinsam und suche das Gerät, dessen Name in fremden Speichern auftaucht. Behandle dieses Gerät und wiederhole danach die Fahrt, statt am Allrad weiterzusuchen.",
+          "next_docs": [
+            "D4F-E70-007"
+          ]
+        },
+        "result-vorgelagert": {
+          "title": "Vorgelagerte Ursache in Fahrdynamikregelung oder Raddrehzahl",
+          "text": "Das Verteilergetriebe meldet folgerichtig eine Störung, weil ihm ein Eingangssignal fehlt. Behebe zuerst den vorgelagerten Fehler — Raddrehzahlgeber, dessen Leitung oder die Fahrdynamikregelung selbst. Danach alle Speicher löschen und eine definierte Fahrt machen. Nur was wiederkommt, ist noch aktuell.",
+          "next_docs": [
+            "D4F-E70-004",
+            "D4F-E70-007"
+          ]
+        },
+        "result-reifen": {
+          "title": "Unterschiedliche Abrollumfänge",
+          "text": "Verschiedene Reifengrössen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-kalibrierung": {
+          "title": "Kalibrierung fehlt",
+          "text": "Das System führt sich als nicht kalibriert, damit ist der Fehler erklärt, ohne dass ein Bauteil beteiligt sein muss. Kalibrierung mit stabiler Bordspannung durchführen, danach löschen und nachfahren. Kommt der Fehler nicht wieder, ist die Sache erledigt; kommt er wieder, geht es mit dem Stelltest weiter.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-stellmotor": {
+          "title": "Stellmotor der Lamellenkupplung",
+          "text": "Der Stellmotor folgt der Ansteuerung nicht. Erfahrungswert aus mehreren unabhängigen Quellen: verschlissene Kunststoffräder im Antrieb des Stellmotors sind der häufigste Befund dieser Baugruppe. Vor dem Tausch Versorgung und Leitung zum Stellmotor prüfen, nach dem Tausch Dichtung erneuern und kalibrieren.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-getriebe": {
+          "title": "Verteilergetriebe selbst prüfen lassen",
+          "text": "Signalseite, Reifen, Kalibrierung und Stellmotor sind abgearbeitet und in Ordnung. Erst jetzt ist die Mechanik dran. Ölzustand beurteilen, Geräusche unter Last zuordnen und die Lamellenkupplung fachlich bewerten lassen. Diese Reihenfolge ist der Grund, warum an dieser Stelle selten ein Getriebe unnötig ausgebaut wird.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-dichtung": {
+          "title": "Ölaustritt an der Dichtfläche des Stellmotors",
+          "text": "Öl an Stellmotor oder Stecker erklärt Kontaktfehler, die wie ein Getriebeschaden aussehen. Stellmotor abnehmen, Dichtfläche und Dichtung erneuern, Stecker und Leitung von Öl befreien oder ersetzen. Danach kalibrieren, Speicher löschen und den Fehler auf einer definierten Fahrt nachstellen.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        }
+      }
+    },
+    "e70:e70-xdrive-fehler": {
+      "code": "GF-E70-02",
+      "name": "xDrive meldet Fehler",
+      "desc": "Allrad- oder Fahrdynamikmeldung mit Eintrag im Verteilergetriebe. Der Pfad prüft zuerst, ob der Eintrag überhaupt die Ursache ist, und arbeitet sich dann über Reifen, Kalibrierung und Stellmotor zum Getriebe vor.",
+      "engines": [
+        "N52",
+        "N54",
+        "N55",
+        "N62",
+        "M57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Steht ein Eintrag im Steuergerät des Verteilergetriebes?",
+          "help": "Eine Displaymeldung sagt noch nicht, wer sie ausgelöst hat. Am E70 melden mehrere Systeme dieselbe Störung weiter. Ohne eigenen Eintrag im Verteilergetriebe ist es kein xDrive-Fehler, sondern die Anzeige eines fremden Fehlers.",
+          "measure": "Alle Fehlerspeicher gemeinsam auslesen und den Speicher des Verteilergetriebes gesondert ansehen. Erwartet bei einem echten xDrive-Fehler: eigener Eintrag im eigenen Speicher. Nur Folgeeinträge in fremden Geräten sind kein Befund.",
+          "doc": "D4F-E70-004",
+          "yes": 1,
+          "no": "result-kein-eintrag"
+        },
+        {
+          "q": "Stehen gleichzeitig Einträge in der Fahrdynamikregelung oder an den Raddrehzahlgebern?",
+          "help": "Das Verteilergetriebe regelt anhand von Signalen, die es nicht selbst erzeugt. Fehlt ein Raddrehzahlsignal, meldet es folgerichtig eine Störung — ohne selbst gestört zu sein. Diese Reihenfolge ist am E70 die häufigste Ursache für einen unnötigen Getriebeausbau.",
+          "measure": "Speicher der Fahrdynamikregelung und der Raddrehzahlgeber gegen den Speicher des Verteilergetriebes halten und die Zeitstempel vergleichen. Erwartet bei vorgelagerter Ursache: die fremden Einträge sind älter oder häufiger als die des Verteilergetriebes.",
+          "doc": "D4F-E70-007",
+          "yes": "result-vorgelagert",
+          "no": 2
+        },
+        {
+          "q": "Sind alle vier Reifen gleicher Grösse, gleichen Typs und mit vergleichbarer Profiltiefe?",
+          "help": "Unterschiedliche Abrollumfänge erzeugen dauerhaften Schlupf zwischen den Achsen. Der Allrad regelt dagegen an, überhitzt und meldet einen Fehler — mit völlig intakter Mechanik. Das ist billig zu prüfen und wird trotzdem übersprungen.",
+          "measure": "Reifengrössen an allen vier Rädern ablesen und die Profiltiefen messen. Erwartet: gleiche Bezeichnung rundum und geringe Abweichung der Profiltiefen. Auffällige Unterschiede zwischen Vorder- und Hinterachse sind der Befund, unabhängig von einer Grenzwertangabe.",
+          "doc": "D4F-E70-004",
+          "yes": 3,
+          "no": "result-reifen"
+        },
+        {
+          "q": "Meldet das Steuergerät seinen Kalibrierstand als abgeschlossen?",
+          "help": "Nach jedem Eingriff an Steuergerät oder Stellmotor braucht das System eine Kalibrierung. Fehlt sie, bleibt der Fehler stehen, obwohl die Teile in Ordnung sind. Wer das übersieht, tauscht ein zweites, gleich gutes Teil ein.",
+          "measure": "Kalibrierstand im Steuergerät des Verteilergetriebes ablesen. Erwartet: der Stand wird als abgeschlossen geführt. Wird er als nicht kalibriert geführt, ist das der Befund — und keine Bauteilaussage.",
+          "doc": "D4F-E70-004",
+          "yes": 4,
+          "no": "result-kalibrierung"
+        },
+        {
+          "q": "Folgt der Stellmotor im Stelltest der Ansteuerung, und kommt eine plausible Rückmeldung?",
+          "help": "Der Stellmotor verspannt die Lamellenkupplung. Sein Verschleiss ist der bekannteste Ausfall dieser Baugruppe. Der Stelltest trennt eine mechanisch hängende Verstellung von einem Signal- oder Versorgungsproblem, ohne dass etwas zerlegt wird.",
+          "measure": "Stelltest starten und die Rückmeldung des Stellungsgebers mitbeobachten. Erwartet: Ansteuerung und Rückmeldung laufen gemeinsam. Verweigert das Steuergerät den Test, ist das noch kein Beweis für einen defekten Stellmotor — dann zuerst Versorgung und Kalibrierstand klären.",
+          "doc": "D4F-E70-004",
+          "yes": 5,
+          "no": "result-stellmotor"
+        },
+        {
+          "q": "Ist der Bereich um den Stellmotor trocken, ohne Ölaustritt an der Dichtfläche?",
+          "help": "Der Stellmotor sitzt am Getriebe und dichtet gegen dessen Ölraum ab. Eine undichte Dichtfläche bringt Öl an die Elektrik und erzeugt Fehler, die wie ein Getriebeschaden aussehen. Das gehört angesehen, bevor das Getriebe verurteilt wird.",
+          "measure": "Bereich um den Stellmotor und dessen Dichtfläche im Sichtbereich abwischen und nach einer Probefahrt erneut ansehen. Erwartet: trocken. Frischer Ölfilm oder feuchter Stecker ist der Befund.",
+          "doc": "D4F-E70-004",
+          "yes": "result-getriebe",
+          "no": "result-dichtung"
+        }
+      ],
+      "model": "e70",
+      "id": "e70-xdrive-fehler",
+      "_results": {
+        "result-einzelgeraet": {
+          "title": "Einzelnes Steuergerät statt Bus- oder Gateway-Problem",
+          "text": "Es fehlt nur ein Gerät, damit fällt der Bus- und Gateway-Verdacht weg. Prüfe an diesem Gerät Spannungsversorgung, Masse und die Stecker, danach die Busleitung bis zum nächsten Teilnehmer. Erst wenn Versorgung und Leitung stehen, ist das Gerät selbst verdächtig — und dann bitte mit Blick auf Feuchtigkeit am Einbauort.",
+          "next_docs": [
+            "D4F-E70-006",
+            "D4F-E70-007"
+          ]
+        },
+        "result-gateway": {
+          "title": "Zentrales Gateway antwortet nicht",
+          "text": "Die Junction-Box trägt die Gateway-Funktion, und ohne sie sind die dahinterliegenden Geräte nicht erreichbar. Prüfe Versorgung, Masse und Stecker der Junction-Box und sieh dabei ausdrücklich auf Wasserspuren — der Einbauort hinter dem Handschuhfach liegt in einem bekannten Wasserweg. Erst danach über einen Ersatz nachdenken, der fahrzeugbezogen codiert werden muss.",
+          "next_docs": [
+            "D4F-E70-002",
+            "D4F-E70-006"
+          ]
+        },
+        "result-versorgung": {
+          "title": "Gemeinsame Sicherung oder gemeinsamer Massepunkt",
+          "text": "Die fehlenden Geräte teilen sich einen Versorgungspfad, damit ist die Ursache gefunden, bevor ein Bus gemessen wurde. Sicherung im eingebauten Zustand auf Spannung an beiden Kontakten prüfen, Halter auf Wärmespuren ansehen, Massepunkt lösen, Kontaktflächen reinigen und wieder festziehen. Danach den Suchlauf wiederholen.",
+          "next_docs": [
+            "D4F-E70-006"
+          ]
+        },
+        "result-spannung": {
+          "title": "Bordspannung bricht während der Diagnose ein",
+          "text": "Solange die Spannung einbricht, ist keine Geräteliste belastbar und keine Codierung sicher. Fahrzeug an ein geeignetes Stützgerät hängen, Batterie und Ladung beurteilen und den Suchlauf wiederholen. Erst das Ergebnis der zweiten Runde zählt — sehr oft ist die Liste dann vollständig und es war nie ein Busfehler.",
+          "next_docs": [
+            "D4F-E70-001"
+          ]
+        },
+        "result-wasser": {
+          "title": "Gestörtes Gerät gefunden — Wasserweg mitbehandeln",
+          "text": "Mit dem getrennten Gerät ist die Liste vollständig, damit ist der Störer identifiziert. Ersetze nicht nur das Gerät, sondern beseitige die Ursache: Schiebedachabläufe und Wasserkastenabläufe freimachen, Dichtungen kontrollieren, den Einbauraum trocknen. Wer nur das Gerät tauscht, tauscht es ein zweites Mal.",
+          "next_docs": [
+            "D4F-E70-006"
+          ]
+        },
+        "result-busleitung": {
+          "title": "Busleitung oder Steckverbindung unterbrochen",
+          "text": "Kein einzelner Teilnehmer stört, die Geräte fehlen trotzdem. Dann ist der Weg dorthin unterbrochen. Miss die Busleitung abschnittsweise auf Durchgang und Kurzschluss gegeneinander, und arbeite dich vom Gateway zum ersten fehlenden Teilnehmer vor. Beweglichen Übergängen und nachträglichen Eingriffen im Kabelbaum gilt die erste Aufmerksamkeit.",
+          "next_docs": [
+            "D4F-E70-002"
+          ]
+        },
+        "result-kein-eintrag": {
+          "title": "Kein eigener Eintrag — die Meldung kommt woanders her",
+          "text": "Ohne Eintrag im Verteilergetriebe ist das kein xDrive-Fehler. Lies alle Speicher gemeinsam und suche das Gerät, dessen Name in fremden Speichern auftaucht. Behandle dieses Gerät und wiederhole danach die Fahrt, statt am Allrad weiterzusuchen.",
+          "next_docs": [
+            "D4F-E70-007"
+          ]
+        },
+        "result-vorgelagert": {
+          "title": "Vorgelagerte Ursache in Fahrdynamikregelung oder Raddrehzahl",
+          "text": "Das Verteilergetriebe meldet folgerichtig eine Störung, weil ihm ein Eingangssignal fehlt. Behebe zuerst den vorgelagerten Fehler — Raddrehzahlgeber, dessen Leitung oder die Fahrdynamikregelung selbst. Danach alle Speicher löschen und eine definierte Fahrt machen. Nur was wiederkommt, ist noch aktuell.",
+          "next_docs": [
+            "D4F-E70-004",
+            "D4F-E70-007"
+          ]
+        },
+        "result-reifen": {
+          "title": "Unterschiedliche Abrollumfänge",
+          "text": "Verschiedene Reifengrössen oder stark unterschiedliche Profiltiefen erzeugen dauerhaften Schlupf, gegen den der Allrad anregelt. Stelle einen einheitlichen Satz her, lösche die Speicher und fahre den Fehler erneut nach. Erst wenn er mit passender Bereifung wiederkommt, hat eine Bauteildiagnose Aussagekraft.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-kalibrierung": {
+          "title": "Kalibrierung fehlt",
+          "text": "Das System führt sich als nicht kalibriert, damit ist der Fehler erklärt, ohne dass ein Bauteil beteiligt sein muss. Kalibrierung mit stabiler Bordspannung durchführen, danach löschen und nachfahren. Kommt der Fehler nicht wieder, ist die Sache erledigt; kommt er wieder, geht es mit dem Stelltest weiter.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-stellmotor": {
+          "title": "Stellmotor der Lamellenkupplung",
+          "text": "Der Stellmotor folgt der Ansteuerung nicht. Erfahrungswert aus mehreren unabhängigen Quellen: verschlissene Kunststoffräder im Antrieb des Stellmotors sind der häufigste Befund dieser Baugruppe. Vor dem Tausch Versorgung und Leitung zum Stellmotor prüfen, nach dem Tausch Dichtung erneuern und kalibrieren.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-getriebe": {
+          "title": "Verteilergetriebe selbst prüfen lassen",
+          "text": "Signalseite, Reifen, Kalibrierung und Stellmotor sind abgearbeitet und in Ordnung. Erst jetzt ist die Mechanik dran. Ölzustand beurteilen, Geräusche unter Last zuordnen und die Lamellenkupplung fachlich bewerten lassen. Diese Reihenfolge ist der Grund, warum an dieser Stelle selten ein Getriebe unnötig ausgebaut wird.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        },
+        "result-dichtung": {
+          "title": "Ölaustritt an der Dichtfläche des Stellmotors",
+          "text": "Öl an Stellmotor oder Stecker erklärt Kontaktfehler, die wie ein Getriebeschaden aussehen. Stellmotor abnehmen, Dichtfläche und Dichtung erneuern, Stecker und Leitung von Öl befreien oder ersetzen. Danach kalibrieren, Speicher löschen und den Fehler auf einer definierten Fahrt nachstellen.",
+          "next_docs": [
+            "D4F-E70-004"
+          ]
+        }
+      }
+    },
     "e87:n43-ruckeln": {
       "code": "GF-E87-01",
       "name": "N43 ruckelt und läuft rau",
@@ -6429,14 +7137,665 @@
           ]
         }
       }
+    },
+    "f10:enet-kein-zugriff": {
+      "code": "GF-F10-01",
+      "name": "Keine Diagnoseverbindung über ENET",
+      "desc": "Die Software findet kein Steuergerät. Systematisch von der Buchse zur Datenbasis: Kabel → Klemmenstatus → Netzwerk → Schnittstelle → Gateway → Datenstand.",
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47",
+        "B58"
+      ],
+      "steps": [
+        {
+          "q": "Steckt ein ENET-Kabel an der OBD-Buchse und kein K+DCAN-Kabel?",
+          "help": "Der F10 führt keine Diagnose über die K-Line. Ein K+DCAN-Kabel steckt mechanisch genauso, meldet aber nie ein Steuergerät. Das ist der mit Abstand häufigste Grund für den Abbruch und sieht wie ein Fahrzeugfehler aus. Am Kabel selbst erkennbar: das ENET-Kabel endet in einem Netzwerkstecker, das K+DCAN in einem USB-Stecker.",
+          "measure": "Fahrzeugseitig OBD-Stecker, rechnerseitig Netzwerkstecker · kein USB-Adapter im Weg · keine Verlängerung oder Zwischenstecker an der Buchse",
+          "doc": "D4F-F10-001",
+          "yes": 1,
+          "no": "falsches-kabel"
+        },
+        {
+          "q": "Ist die Zündung eingeschaltet und hängt ein Werkstattladegerät am Fahrzeug?",
+          "help": "Ohne Klemmenstatus antwortet das Gateway unzuverlässig; ohne stabile Versorgung bricht jeder längere Vorgang mittendrin ab. Beides gehört vor den ersten Verbindungsversuch und nicht danach. Türen schließen und abschaltbare Verbraucher aus, damit die Spannung während des Auslesens nicht wandert.",
+          "measure": "Klemme 15 an · Ladegerät angeschlossen und aktiv · Bordspannung während des gesamten Vorgangs stabil, keine sichtbaren Einbrüche beim Zuschalten",
+          "doc": "D4F-F10-006",
+          "yes": 2,
+          "no": "kl15-fehlt"
+        },
+        {
+          "q": "Meldet die Netzwerkschnittstelle des Rechners eine Verbindung und bezieht sie automatisch eine Adresse?",
+          "help": "Das Fahrzeug ist ein Netzwerkteilnehmer. Steht am Rechner eine feste Adresse aus einem anderen Netz, oder läuft parallel ein WLAN oder ein VPN, sucht die Software auf der falschen Schnittstelle. Erst die Verbindung auf Netzwerkebene herstellen, dann die Diagnosesoftware starten.",
+          "measure": "Schnittstelle zeigt Verbindung · Adressbezug automatisch · WLAN und VPN abgeschaltet · keine zweite aktive Netzwerkschnittstelle",
+          "doc": "D4F-F10-001",
+          "yes": 3,
+          "no": "netzwerk"
+        },
+        {
+          "q": "Steht in der Diagnosesoftware die Schnittstelle auf ENET?",
+          "help": "Viele Installationen tragen noch die Voreinstellung für das K+DCAN-Kabel. Dann sucht die Software auf einem Bus, den der F10 gar nicht bedient, und meldet dasselbe wie bei einem defekten Fahrzeug. Die Einstellung liegt in der Schnittstellenauswahl der Anwendung beziehungsweise in der EDIABAS-Konfiguration.",
+          "measure": "Schnittstelleneinstellung steht auf ENET · Anwendung nach der Änderung neu gestartet · keine zweite Installation mit abweichender Konfiguration aktiv",
+          "doc": "D4F-F10-001",
+          "yes": 4,
+          "no": "interface-falsch"
+        },
+        {
+          "q": "Antwortet das Gateway und liefert es eine vollständige Steuergeräteliste?",
+          "help": "Jetzt entscheidet sich, ob das Problem im Fahrzeug liegt. Antwortet das Gateway gar nicht, geht es um Versorgung und Verkabelung am Gateway. Antwortet es, fehlen aber einzelne Geräte, liegt der Fehler auf dem jeweiligen Fahrzeugbus dahinter — nicht am Diagnosezugang.",
+          "measure": "Steuergeräteliste wird aufgebaut · jedes Gerät liefert eine Version zurück · fehlende Geräte notieren und ihrem Bus zuordnen",
+          "doc": "D4F-F10-003",
+          "yes": 5,
+          "no": "gateway-stumm"
+        },
+        {
+          "q": "Passt die gelesene I-Stufe zu der Datenbasis, mit der gearbeitet werden soll?",
+          "help": "Die Verbindung steht, die Arbeit beginnt erst. Deckt die vorhandene Datenbasis den Stand des Fahrzeugs nicht ab, werden falsche oder gar keine Codierdaten geladen. Werksstand, aktuellen Stand und Zielstand ablesen und notieren, bevor irgendetwas geschrieben wird.",
+          "measure": "I-Stufe des Fahrzeugs gelesen und notiert · vorhandene Datenbasis deckt diesen Stand ab · Fahrzeugauftrag und Ist-Verbauliste gesichert",
+          "doc": "D4F-F10-005",
+          "yes": "verbindung-ok",
+          "no": "datenstand"
+        }
+      ],
+      "model": "f10",
+      "id": "enet-kein-zugriff",
+      "_results": {
+        "falsches-kabel": {
+          "title": "Falsches Kabel — ENET-Kabel verwenden",
+          "text": "Hier nicht weitersuchen. Der F10 führt an der OBD-Buchse keine Diagnose über die K-Line; ein K+DCAN-Kabel kann deshalb nie ein Steuergerät finden. Auf ein ENET-Kabel wechseln und von vorn beginnen. Bei einem Eigenbaukabel zusätzlich die Aktivierungsleitung zwischen Pin 8 und Pin 16 prüfen — fehlt sie oder ist der Widerstand falsch bestückt, verhält sich das Kabel wie gar keines.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "kl15-fehlt": {
+          "title": "Klemmenstatus oder Versorgung herstellen",
+          "text": "Zündung einschalten und ein Werkstattladegerät anschließen, danach erneut verbinden. Ohne Klemmenstatus antwortet das Gateway unzuverlässig, und ohne stabile Versorgung bricht ein längerer Lese- oder Schreibvorgang mitten im Ablauf ab. Türen schließen, abschaltbare Verbraucher aus, kein Erhaltungslader.",
+          "next_docs": [
+            "D4F-F10-006",
+            "D4F-F10-001"
+          ]
+        },
+        "netzwerk": {
+          "title": "Netzwerkseite in Ordnung bringen",
+          "text": "Das Problem liegt am Rechner, nicht am Fahrzeug. Am Netzwerkadapter den automatischen Adressbezug einstellen, feste Adressen aus anderen Netzen entfernen, WLAN und VPN abschalten und alle weiteren aktiven Netzwerkschnittstellen deaktivieren. Danach das Kabel neu stecken und der Schnittstelle einige Sekunden für den Adressbezug geben, bevor die Diagnosesoftware startet.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "interface-falsch": {
+          "title": "Schnittstelle auf ENET umstellen",
+          "text": "Die Software sucht auf dem falschen Weg. Die Schnittstelleneinstellung von der Voreinstellung für K-DCAN auf ENET ändern und die Anwendung anschließend neu starten. Ist mehr als eine Installation vorhanden, prüfen, welche tatsächlich verwendet wird — eine zweite Konfiguration mit alter Einstellung erzeugt genau dieses Fehlerbild wieder.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "gateway-stumm": {
+          "title": "Gateway antwortet nicht — Versorgung und Verkabelung prüfen",
+          "text": "Jetzt liegt der Verdacht im Fahrzeug. Zuerst die Sicherungen des Gateways und der OBD-Buchse prüfen, dann Masse und Dauerplus an der Buchse selbst messen. Nachträglich eingebaute Geräte an der OBD-Buchse — Ortungsmodule, Fahrtenbuchgeber, Zusatzelektronik — abstecken und erneut versuchen; sie sind ein häufiger Grund für eine tote Diagnoseleitung. Erst wenn Versorgung und Buchse sauber sind, das Gateway selbst verdächtigen.",
+          "next_docs": [
+            "D4F-F10-003"
+          ]
+        },
+        "datenstand": {
+          "title": "Datenbasis passt nicht zur I-Stufe",
+          "text": "Die Verbindung steht, die Datengrundlage nicht. Nichts schreiben, solange die vorhandene Datenbasis den gelesenen Stand des Fahrzeugs nicht abdeckt — es werden sonst falsche oder gar keine Codierdaten geladen. Werksstand, aktuellen Stand und Zielstand notieren, passende Datenbasis beschaffen, Fahrzeugauftrag und Ist-Verbauliste sichern, danach erneut beginnen.",
+          "next_docs": [
+            "D4F-F10-005"
+          ]
+        },
+        "verbindung-ok": {
+          "title": "Zugang steht — jetzt erst arbeiten",
+          "text": "Kabel, Netzwerk, Schnittstelle, Gateway und Datenbasis passen zusammen. Vor dem ersten Schreibvorgang Fahrzeugauftrag und Ist-Verbauliste sichern und das Ladegerät angeschlossen lassen. Fehlerspeicher aller Steuergeräte lesen und die Einträge notieren, bevor gelöscht wird — was jetzt verloren geht, kommt nicht wieder.",
+          "next_docs": [
+            "D4F-F10-005",
+            "D4F-F10-003"
+          ]
+        },
+        "einzelsystem": {
+          "title": "Einzelnes System — dort weitersuchen",
+          "text": "Es ist kein Bus-Bild. Die Fehlersuche auf das meldende System begrenzen: dessen Einträge im Klartext lesen, Sensorik und Aktorik prüfen und den Zustand mit der anderen Fahrzeugseite beziehungsweise dem zweiten Kanal vergleichen. Erst wenn das System auch einzeln nicht mehr antwortet, wieder auf Versorgung und Busanbindung zurückgehen.",
+          "next_docs": [
+            "D4F-F10-004"
+          ]
+        },
+        "spannung": {
+          "title": "Zuerst Bordnetz und Batterieregistrierung in Ordnung bringen",
+          "text": "Die Meldungen sind hier voraussichtlich Folgefehler. Batterie laden oder ersetzen, die neue Batterie registrieren und bei abweichendem Typ zusätzlich codieren, danach Fehlerspeicher aller Steuergeräte löschen und Probefahrt fahren. Sehr häufig bleibt danach nichts übrig. Erst wenn die Meldungen bei sauberem Bordnetz wiederkommen, weiter in Richtung Fahrwerksbus arbeiten.",
+          "next_docs": [
+            "D4F-F10-006"
+          ]
+        },
+        "sporadisch": {
+          "title": "Einmaliges Ereignis — nichts tauschen",
+          "text": "Die Einträge kommen nicht zurück. Das spricht für einen einmaligen Spannungseinbruch, etwa bei einer vorangegangenen Arbeit am Fahrzeug oder beim Abklemmen der Batterie. Kein Bauteil tauschen. Den Vorgang dokumentieren, den Kunden auf das Fehlerbild hinweisen und bei erneutem Auftreten mit dem gleichen Ablauf wieder einsteigen — dann mit einer längeren Probefahrt einschließlich Schlechtwegstrecke.",
+          "next_docs": [
+            "D4F-F10-006"
+          ]
+        },
+        "icm-verdacht": {
+          "title": "Verdacht auf die zentrale Fahrwerksregelung",
+          "text": "Die Einträge streuen weiter über mehrere Systeme, obwohl alle Teilnehmer antworten und das Bordnetz sauber ist. Damit rückt die zentrale Regelung in den Blick. Vor jedem Tausch: Codier- und Programmierstand des Steuergeräts gegen die I-Stufe des Fahrzeugs prüfen, Verbauliste sichern und die Einträge über fehlende Botschaften auswerten — sie zeigen, welcher Teilnehmer aus Sicht der Regelung schweigt.",
+          "next_docs": [
+            "D4F-F10-004",
+            "D4F-F10-005"
+          ]
+        },
+        "teilnehmer-tot": {
+          "title": "Teilnehmer meldet sich nicht — Versorgung am Gerät prüfen",
+          "text": "Der Strang ist unversehrt, das Gerät antwortet trotzdem nicht. Jetzt am Steuergerät selbst messen: Sicherungen des Systems prüfen, Dauerplus und Masse direkt am Stecker kontrollieren und den Stecker auf Korrosion und Feuchtigkeit ansehen. Bleibt die Versorgung sauber und das Gerät stumm, ist das Steuergerät selbst der Kandidat — vorher Fahrzeugauftrag und Verbauliste sichern.",
+          "next_docs": [
+            "D4F-F10-003",
+            "D4F-F10-004"
+          ]
+        },
+        "leitung": {
+          "title": "Leitungsfehler im Fahrwerksbus",
+          "text": "Am Strang ist ein Befund sichtbar. Beschädigten Abschnitt vollständig ersetzen, nicht flicken: Lötstellen, Klemmverbinder und Isolierbandreparaturen verändern die Leitungseigenschaften des verdrillten Paares und erzeugen sporadische Ausfälle, die später niemand mehr findet. Verdrillung bis zum Stecker beibehalten. Danach Fehlerspeicher löschen und mit einer Probefahrt einschließlich Schlechtwegstrecke gegenprüfen.",
+          "next_docs": [
+            "D4F-F10-004"
+          ]
+        }
+      }
+    },
+    "f10:fahrwerk-flexray": {
+      "code": "GF-F10-02",
+      "name": "Mehrere Fahrwerks- und Lenkungsmeldungen gleichzeitig",
+      "desc": "Fahrwerk, Lenkung und DSC melden zusammen. Trennt das Bus-Bild vom Bauteilbild, bevor ein Aktor getauscht wird.",
+      "engines": [
+        "N20",
+        "N53",
+        "N55",
+        "N57",
+        "N63",
+        "S63",
+        "B47"
+      ],
+      "steps": [
+        {
+          "q": "Stehen mehrere Meldungen gleichzeitig — Fahrwerk, Lenkung und DSC zusammen?",
+          "help": "Das Muster ist die erste Information. Die Fahrwerksregelung des F10 hängt an einem gemeinsamen Bus; fällt der aus, melden alle daran hängenden Systeme auf einmal. Meldet dagegen ein einzelnes System allein, ist der Bus wahrscheinlich in Ordnung und der Weg führt direkt zu dessen Sensorik oder Aktorik.",
+          "measure": "Meldungen im Kombi und Einträge im Fehlerspeicher gegenüberstellen · zählt, wie viele verschiedene Systeme gleichzeitig melden",
+          "doc": "D4F-F10-004",
+          "yes": 1,
+          "no": "einzelsystem"
+        },
+        {
+          "q": "Ist die Bordspannung in Ordnung und wurde die Batterie nach dem letzten Wechsel registriert?",
+          "help": "Unterspannung erzeugt an dieser Baureihe reihenweise Meldungen in Fahrwerk und Lenkung, ohne dass dort etwas defekt ist. Eine nicht registrierte Batterie wirkt genauso, weil das Energiemanagement zu früh abregelt. Diesen Punkt vor jeder weiteren Messung klären, sonst jagt man Folgefehler.",
+          "measure": "Ruhespannung nach mehreren Stunden Standzeit rund 12.6 V · Spannung beim Startvorgang ohne tiefen Einbruch · Registrierung der letzten Batterie nachvollziehbar",
+          "doc": "D4F-F10-006",
+          "yes": 2,
+          "no": "spannung"
+        },
+        {
+          "q": "Sind die Einträge nach Löschen und Probefahrt reproduzierbar?",
+          "help": "Alles löschen, Probefahrt mit Lenkeinschlag in beide Richtungen und wechselnder Fahrbahn, danach erneut lesen. Kommt nichts zurück, war es ein einmaliges Ereignis — meist ein Spannungseinbruch bei einer vorangegangenen Arbeit. Ein Bauteil nach einem einmaligen Eintrag zu tauschen, ist geraten und nicht diagnostiziert.",
+          "measure": "Fehlerspeicher aller beteiligten Steuergeräte vor der Fahrt leer · nach der Probefahrt erneut gelesen · gleiche Einträge in gleicher Kombination",
+          "doc": "D4F-F10-004",
+          "yes": 3,
+          "no": "sporadisch"
+        },
+        {
+          "q": "Melden sich alle Teilnehmer der Fahrwerksregelung in der Steuergeräteliste?",
+          "help": "Jetzt geht es um die Frage, ob ein Knoten fehlt. Steuergeräteliste lesen und mit der Ausstattung des Fahrzeugs abgleichen — welche Regelsysteme verbaut sind, steht im Fahrzeugauftrag. Fehlt ein Teilnehmer vollständig, ist entweder seine Versorgung oder seine Busanbindung unterbrochen.",
+          "measure": "Jedes verbaute Regelsystem erscheint in der Liste und gibt eine Version zurück · fehlende Teilnehmer namentlich notieren",
+          "doc": "D4F-F10-003",
+          "yes": 4,
+          "no": 5
+        },
+        {
+          "q": "Zeigen die verbleibenden Einträge auf ein einzelnes System statt auf mehrere?",
+          "help": "Alle Teilnehmer sind da. Damit ist die Busverbindung grundsätzlich in Ordnung und der Inhalt der Einträge zählt. Konzentrieren sie sich auf ein System, gehört dessen Sensorik und Aktorik geprüft. Streuen sie weiter über mehrere Systeme, bleibt die zentrale Regelung der Verdächtige.",
+          "measure": "Einträge nach Steuergerät sortieren · Anteil je System auszählen · Einträge über fehlende Botschaften getrennt von Bauteileinträgen betrachten",
+          "doc": "D4F-F10-004",
+          "yes": "einzelsystem",
+          "no": "icm-verdacht"
+        },
+        {
+          "q": "Ist der Bus-Strang am fehlenden Teilnehmer mechanisch unversehrt — Stecker, Leitungsführung, keine Reparaturstelle?",
+          "help": "Ein Teilnehmer fehlt. Vor jeder Messung die Mechanik ansehen: Stecker verriegelt, Leitung ohne Scheuerstelle, keine nachträgliche Lötverbindung im Strang. Der zeitgesteuerte Fahrwerksbus reagiert empfindlich auf veränderte Leitungseigenschaften, deshalb ist eine Flickstelle hier ein Befund und keine Nebensache.",
+          "measure": "Stecker verriegelt und trocken · verdrilltes Paar über die gesamte Länge unversehrt · keine Lötstelle, keine Klemmverbinder, keine Isolierbandreparatur",
+          "doc": "D4F-F10-004",
+          "yes": "teilnehmer-tot",
+          "no": "leitung"
+        }
+      ],
+      "model": "f10",
+      "id": "fahrwerk-flexray",
+      "_results": {
+        "falsches-kabel": {
+          "title": "Falsches Kabel — ENET-Kabel verwenden",
+          "text": "Hier nicht weitersuchen. Der F10 führt an der OBD-Buchse keine Diagnose über die K-Line; ein K+DCAN-Kabel kann deshalb nie ein Steuergerät finden. Auf ein ENET-Kabel wechseln und von vorn beginnen. Bei einem Eigenbaukabel zusätzlich die Aktivierungsleitung zwischen Pin 8 und Pin 16 prüfen — fehlt sie oder ist der Widerstand falsch bestückt, verhält sich das Kabel wie gar keines.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "kl15-fehlt": {
+          "title": "Klemmenstatus oder Versorgung herstellen",
+          "text": "Zündung einschalten und ein Werkstattladegerät anschließen, danach erneut verbinden. Ohne Klemmenstatus antwortet das Gateway unzuverlässig, und ohne stabile Versorgung bricht ein längerer Lese- oder Schreibvorgang mitten im Ablauf ab. Türen schließen, abschaltbare Verbraucher aus, kein Erhaltungslader.",
+          "next_docs": [
+            "D4F-F10-006",
+            "D4F-F10-001"
+          ]
+        },
+        "netzwerk": {
+          "title": "Netzwerkseite in Ordnung bringen",
+          "text": "Das Problem liegt am Rechner, nicht am Fahrzeug. Am Netzwerkadapter den automatischen Adressbezug einstellen, feste Adressen aus anderen Netzen entfernen, WLAN und VPN abschalten und alle weiteren aktiven Netzwerkschnittstellen deaktivieren. Danach das Kabel neu stecken und der Schnittstelle einige Sekunden für den Adressbezug geben, bevor die Diagnosesoftware startet.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "interface-falsch": {
+          "title": "Schnittstelle auf ENET umstellen",
+          "text": "Die Software sucht auf dem falschen Weg. Die Schnittstelleneinstellung von der Voreinstellung für K-DCAN auf ENET ändern und die Anwendung anschließend neu starten. Ist mehr als eine Installation vorhanden, prüfen, welche tatsächlich verwendet wird — eine zweite Konfiguration mit alter Einstellung erzeugt genau dieses Fehlerbild wieder.",
+          "next_docs": [
+            "D4F-F10-001"
+          ]
+        },
+        "gateway-stumm": {
+          "title": "Gateway antwortet nicht — Versorgung und Verkabelung prüfen",
+          "text": "Jetzt liegt der Verdacht im Fahrzeug. Zuerst die Sicherungen des Gateways und der OBD-Buchse prüfen, dann Masse und Dauerplus an der Buchse selbst messen. Nachträglich eingebaute Geräte an der OBD-Buchse — Ortungsmodule, Fahrtenbuchgeber, Zusatzelektronik — abstecken und erneut versuchen; sie sind ein häufiger Grund für eine tote Diagnoseleitung. Erst wenn Versorgung und Buchse sauber sind, das Gateway selbst verdächtigen.",
+          "next_docs": [
+            "D4F-F10-003"
+          ]
+        },
+        "datenstand": {
+          "title": "Datenbasis passt nicht zur I-Stufe",
+          "text": "Die Verbindung steht, die Datengrundlage nicht. Nichts schreiben, solange die vorhandene Datenbasis den gelesenen Stand des Fahrzeugs nicht abdeckt — es werden sonst falsche oder gar keine Codierdaten geladen. Werksstand, aktuellen Stand und Zielstand notieren, passende Datenbasis beschaffen, Fahrzeugauftrag und Ist-Verbauliste sichern, danach erneut beginnen.",
+          "next_docs": [
+            "D4F-F10-005"
+          ]
+        },
+        "verbindung-ok": {
+          "title": "Zugang steht — jetzt erst arbeiten",
+          "text": "Kabel, Netzwerk, Schnittstelle, Gateway und Datenbasis passen zusammen. Vor dem ersten Schreibvorgang Fahrzeugauftrag und Ist-Verbauliste sichern und das Ladegerät angeschlossen lassen. Fehlerspeicher aller Steuergeräte lesen und die Einträge notieren, bevor gelöscht wird — was jetzt verloren geht, kommt nicht wieder.",
+          "next_docs": [
+            "D4F-F10-005",
+            "D4F-F10-003"
+          ]
+        },
+        "einzelsystem": {
+          "title": "Einzelnes System — dort weitersuchen",
+          "text": "Es ist kein Bus-Bild. Die Fehlersuche auf das meldende System begrenzen: dessen Einträge im Klartext lesen, Sensorik und Aktorik prüfen und den Zustand mit der anderen Fahrzeugseite beziehungsweise dem zweiten Kanal vergleichen. Erst wenn das System auch einzeln nicht mehr antwortet, wieder auf Versorgung und Busanbindung zurückgehen.",
+          "next_docs": [
+            "D4F-F10-004"
+          ]
+        },
+        "spannung": {
+          "title": "Zuerst Bordnetz und Batterieregistrierung in Ordnung bringen",
+          "text": "Die Meldungen sind hier voraussichtlich Folgefehler. Batterie laden oder ersetzen, die neue Batterie registrieren und bei abweichendem Typ zusätzlich codieren, danach Fehlerspeicher aller Steuergeräte löschen und Probefahrt fahren. Sehr häufig bleibt danach nichts übrig. Erst wenn die Meldungen bei sauberem Bordnetz wiederkommen, weiter in Richtung Fahrwerksbus arbeiten.",
+          "next_docs": [
+            "D4F-F10-006"
+          ]
+        },
+        "sporadisch": {
+          "title": "Einmaliges Ereignis — nichts tauschen",
+          "text": "Die Einträge kommen nicht zurück. Das spricht für einen einmaligen Spannungseinbruch, etwa bei einer vorangegangenen Arbeit am Fahrzeug oder beim Abklemmen der Batterie. Kein Bauteil tauschen. Den Vorgang dokumentieren, den Kunden auf das Fehlerbild hinweisen und bei erneutem Auftreten mit dem gleichen Ablauf wieder einsteigen — dann mit einer längeren Probefahrt einschließlich Schlechtwegstrecke.",
+          "next_docs": [
+            "D4F-F10-006"
+          ]
+        },
+        "icm-verdacht": {
+          "title": "Verdacht auf die zentrale Fahrwerksregelung",
+          "text": "Die Einträge streuen weiter über mehrere Systeme, obwohl alle Teilnehmer antworten und das Bordnetz sauber ist. Damit rückt die zentrale Regelung in den Blick. Vor jedem Tausch: Codier- und Programmierstand des Steuergeräts gegen die I-Stufe des Fahrzeugs prüfen, Verbauliste sichern und die Einträge über fehlende Botschaften auswerten — sie zeigen, welcher Teilnehmer aus Sicht der Regelung schweigt.",
+          "next_docs": [
+            "D4F-F10-004",
+            "D4F-F10-005"
+          ]
+        },
+        "teilnehmer-tot": {
+          "title": "Teilnehmer meldet sich nicht — Versorgung am Gerät prüfen",
+          "text": "Der Strang ist unversehrt, das Gerät antwortet trotzdem nicht. Jetzt am Steuergerät selbst messen: Sicherungen des Systems prüfen, Dauerplus und Masse direkt am Stecker kontrollieren und den Stecker auf Korrosion und Feuchtigkeit ansehen. Bleibt die Versorgung sauber und das Gerät stumm, ist das Steuergerät selbst der Kandidat — vorher Fahrzeugauftrag und Verbauliste sichern.",
+          "next_docs": [
+            "D4F-F10-003",
+            "D4F-F10-004"
+          ]
+        },
+        "leitung": {
+          "title": "Leitungsfehler im Fahrwerksbus",
+          "text": "Am Strang ist ein Befund sichtbar. Beschädigten Abschnitt vollständig ersetzen, nicht flicken: Lötstellen, Klemmverbinder und Isolierbandreparaturen verändern die Leitungseigenschaften des verdrillten Paares und erzeugen sporadische Ausfälle, die später niemand mehr findet. Verdrillung bis zum Stecker beibehalten. Danach Fehlerspeicher löschen und mit einer Probefahrt einschließlich Schlechtwegstrecke gegenprüfen.",
+          "next_docs": [
+            "D4F-F10-004"
+          ]
+        }
+      }
+    },
+    "f15:luftfederung-absacken": {
+      "code": "GF-F15-01",
+      "name": "F15 sackt ab oder steht schief",
+      "desc": "Fahrzeug liegt hinten auf, steht einseitig tief oder regelt die Höhe nicht mehr aus. Systematisch: Ausstattung → Versorgung → Leckage → Regelung.",
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Hat das Fahrzeug überhaupt eine Luftfederung, und an welchen Achsen?",
+          "help": "Der F15 kommt mit Stahlfedern, mit Niveauregulierung nur an der Hinterachse oder mit Luftfederung an beiden Achsen. Wer das nicht zuerst klärt, sucht am falschen Ende. Schau unter das Fahrzeug: ein Luftbalg ist ein Gummifaltenbalg mit Luftanschluss, eine Stahlfeder ist eine Stahlfeder. Zähl anschließend die Niveaugeber an den Querlenkern.",
+          "measure": "Je Achse notieren: Luftbalg oder Stahlfeder · Zahl der gefundenen Niveaugeber · Kompressor vorhanden ja/nein",
+          "doc": "D4F-F15-003",
+          "yes": 1,
+          "no": "keine-luftfederung"
+        },
+        {
+          "q": "Läuft der Kompressor beim Anheben überhaupt an?",
+          "help": "Fahrzeug aufschließen, Zündung ein, Höhe über die Bedienung anfordern und hinhören. Der Kompressor sitzt im hinteren Fahrzeugbereich und ist deutlich hörbar. Läuft er gar nicht, geht es um Versorgung, Relais und Ansteuerung — nicht um Bälge. Vorher die zugehörige Sicherung prüfen, eine wiederholt auslösende Sicherung ist ein eigener Befund.",
+          "measure": "Kompressor läuft hörbar an · zugehörige Sicherung durchgängig · Spannungsversorgung am Kompressorstecker während der Anforderung vorhanden",
+          "doc": "D4F-F15-003",
+          "yes": 2,
+          "no": "versorgung-kompressor"
+        },
+        {
+          "q": "Steigt das Fahrzeug an, sackt aber im Stand über Stunden wieder ab?",
+          "help": "Fahrzeug auf Sollhöhe bringen, Höhe an allen vier Ecken messen und notieren, dann abstellen und nach mehreren Stunden erneut messen. Eine Undichtigkeit zeigt sich als Höhenverlust an genau der undichten Ecke. Zum Auffinden Lecksuchspray auf Balg, Rollfalte, Leitungsanschluss und Ventilblock geben, mit dem Motor aus und ohne Zugluft.",
+          "measure": "Höhe je Rad vor und nach der Standzeit im Vergleich · Blasenbildung an Balg, Verschraubung oder Leitung",
+          "doc": "D4F-F15-003",
+          "yes": "leckage",
+          "no": 3
+        },
+        {
+          "q": "Bleibt eine Seite oder eine Achse hängen, während die andere normal regelt?",
+          "help": "Das ist der aussagekräftigste Vergleich, den es ohne Sollwerte gibt: die eine Seite ist die Referenz für die andere. Fordere die Höhe an und beobachte, welche Ecke sich bewegt. Bewegt sich eine Ecke gar nicht, obwohl der Kompressor fördert, liegt der Verdacht auf dem zugehörigen Ventilkanal oder dem Niveaugeber dieser Ecke.",
+          "measure": "Höhenänderung je Ecke während der Anforderung · Auslenkung der Niveaugeber im Vergleich linke zu rechte Seite",
+          "doc": "D4F-F15-003",
+          "yes": "ventil-oder-geber",
+          "no": 4
+        },
+        {
+          "q": "Wurde am Fahrwerk gearbeitet oder ein Niveaugeber getauscht, ohne danach abzugleichen?",
+          "help": "Nach Arbeiten an Federbein, Querlenker oder Niveaugeber kennt die Regelung den Bezugspunkt nicht mehr. Das Fahrzeug regelt dann sauber, aber auf die falsche Höhe — oft einseitig. Frag den Vorbesitzer oder die Vorwerkstatt und sieh dir die Anlenkgestänge der Geber auf Verbiegung und Sitz an.",
+          "measure": "Anlenkgestänge beider Seiten unbeschädigt und gleich lang eingehängt · Abgleich der Niveauregelung nach dem letzten Eingriff dokumentiert",
+          "doc": "D4F-F15-003",
+          "yes": "abgleich-fehlt",
+          "no": 5
+        },
+        {
+          "q": "Ist ein Anhänger oder eine Anhängevorrichtung im Spiel, und verhält sich das Fahrzeug nur dann auffällig?",
+          "help": "Der F15 wertet die Anhängererkennung in mehreren Systemen aus, auch in der Niveauregelung. Eine falsch oder gar nicht erkannte Anhängevorrichtung erzeugt ein Regelverhalten, das nach Fahrwerksfehler aussieht. Prüfe, ob das Anhängermodul in der Steuergeräteliste erscheint und ob das Verhalten mit und ohne angekuppelten Anhänger unterschiedlich ist.",
+          "measure": "Verhalten mit und ohne Anhänger im direkten Vergleich · Anhängermodul meldet sich in der Steuergeräteliste",
+          "doc": "D4F-F15-006",
+          "yes": "anhaengererkennung",
+          "no": "regelung-weiter"
+        }
+      ],
+      "model": "f15",
+      "id": "luftfederung-absacken",
+      "_results": {
+        "keine-luftfederung": {
+          "title": "Kein Luftfahrwerk — Stahlfederfahrwerk bewerten",
+          "text": "Hier endet der Luftfederpfad. Das Fahrzeug hat an dieser Achse Stahlfedern, das Absacken oder Schiefstehen kommt dann von gebrochener Feder, ausgeschlagenen Lagern oder verschlissenen Dämpfern. Federn beidseitig sichtprüfen, Höhen links gegen rechts messen und die Dämpfer auf Ölaustritt ansehen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "versorgung-kompressor": {
+          "title": "Versorgung oder Ansteuerung des Kompressors gestört",
+          "text": "Das ist kein Balgfehler. Sicherung, Relais, Steckverbinder und Masse des Kompressors instand setzen und die Spannung während einer Höhenanforderung erneut messen. Löst dieselbe Sicherung wiederholt aus, zuerst den Kabelbaum zum Kompressor und den Ventilblock auf Kurzschluss untersuchen, bevor ein neuer Kompressor eingebaut wird.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "leckage": {
+          "title": "Undichtigkeit im Luftkreis — zuerst abdichten",
+          "text": "Die undichte Ecke ist gefunden oder eingegrenzt. Balg, Rollfalte, Leitungsanschluss oder Ventilblock instand setzen und danach erneut über mehrere Stunden gegenmessen. Wichtig: den Kompressor mitbewerten. Wenn er wegen der Leckage lange im Dauerlauf war, hat er thermisch gelitten und kann kurz nach der Reparatur ausfallen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "ventil-oder-geber": {
+          "title": "Einzelne Ecke regelt nicht — Ventilkanal oder Niveaugeber",
+          "text": "Der Fehler sitzt auf einer Ecke, während die anderen normal arbeiten. Vertausche zum Eingrenzen die Bewertung: prüfe den Niveaugeber der betroffenen Ecke auf Auslenkung und Anlenkung gegen die intakte Seite, und sieh dir den zugehörigen Ventilkanal an. Erst danach über einen Tausch entscheiden — Ventilblock und Kompressor sind bei diesem Fahrzeug eine Einheit.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "abgleich-fehlt": {
+          "title": "Niveauregelung neu abgleichen",
+          "text": "Kein Bauteilfehler, sondern ein fehlender Bezug. Fahrzeug leer, waagerecht und mit vorgeschriebenem Reifendruck abstellen, Anlenkgestänge der Geber auf Sitz und Unversehrtheit prüfen und den Abgleich über die Diagnosesoftware durchführen. Danach die Höhen an allen vier Ecken kontrollieren und die Probefahrt wiederholen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "anhaengererkennung": {
+          "title": "Anhängererkennung prüfen, nicht das Fahrwerk",
+          "text": "Das Fahrwerk ist hier vermutlich unbeteiligt. Prüfe, ob sich das Anhängermodul meldet, ob die Anhängevorrichtung im Fahrzeugauftrag steht und ob die Beleuchtungsausgänge die erwartete Last sehen. Bei nachgerüsteten Sätzen ohne Eintrag bleiben die Folgefunktionen aus, obwohl die Steckdose funktioniert.",
+          "next_docs": [
+            "D4F-F15-006",
+            "D4F-F15-003"
+          ]
+        },
+        "regelung-weiter": {
+          "title": "Regelung und Sensorik weiter eingrenzen",
+          "text": "Versorgung steht, keine Leckage gefunden, kein einseitiger Ausfall, kein fehlender Abgleich. Jetzt die Niveaugeber im laufenden Betrieb beobachten und ihre Werte gegeneinander stellen, während das Fahrzeug angehoben und abgesenkt wird. Ein Geber, dessen Wert springt oder in einem Bereich stehenbleibt, fällt dabei auf. Bleibt alles unauffällig, den Ventilblock als nächste Baugruppe bewerten.",
+          "next_docs": [
+            "D4F-F15-003",
+            "D4F-F15-001"
+          ]
+        },
+        "reifen-zuerst": {
+          "title": "Reifen angleichen, dann neu bewerten",
+          "text": "Nicht weitersuchen, solange die Abrollumfänge auseinanderliegen. Reifen achsweise oder komplett auf gleiche Größe, Bauart und ähnliche Profiltiefe bringen, danach eine Probefahrt mit engen Kurven in beiden Richtungen. Sehr häufig ist das Symptom danach weg — und ein teures Bauteil wurde nicht getauscht.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "versorgung-vtg": {
+          "title": "Versorgung oder Steckverbindung am Verteilergetriebe defekt",
+          "text": "Das ist ein Elektrikbefund, kein Getriebebefund. Defekte Sicherung ersetzen, korrodierte Kontakte instand setzen und die Masseverbindung wiederherstellen. Danach die Diagnoseverbindung erneut aufbauen: meldet sich das Steuergerät wieder, war die Ursache gefunden. Erst wenn die Versorgung sauber steht, weiter zum Stellgliedtest.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "stellmotor": {
+          "title": "Stellmotor bewegt sich nicht sauber",
+          "text": "Der Stellmotor läuft nicht an oder folgt der Ansteuerung nicht über den ganzen Bereich. Zuerst mechanisch bewerten: Motor abbauen, auf Leichtgängigkeit prüfen und die Anlenkung im Getriebe von Hand durchbewegen. Ein schwergängiger Verstellmechanismus im Getriebe bringt auch einen neuen Stellmotor um. Nach dem Tausch zwingend kalibrieren.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "kalibrieren": {
+          "title": "Verteilergetriebe kalibrieren",
+          "text": "Vor jedem weiteren Verdacht die Kalibrierung über die Servicefunktionen der Diagnosesoftware durchführen, gegebenenfalls zusammen mit dem Ölservice. Danach Probefahrt mit engen Kurven bei Schrittgeschwindigkeit in beiden Richtungen. Bleibt das Symptom weg, war der veraltete Regelbezug die Ursache und es ist kein Bauteil zu tauschen.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "mechanik": {
+          "title": "Mechanischer Schaden im Verteilergetriebe wahrscheinlich",
+          "text": "Elektrik, Kalibrierung und Reifen sind ausgeschlossen, das Symptom bleibt. Jetzt das Getriebeöl ablassen und auf Abrieb und Verfärbung beurteilen, danach über Instandsetzung oder Austauscheinheit entscheiden. Vor dem Einbau einer Austauscheinheit die Anlenkung und den Stellmotor mitbewerten, sonst wiederholt sich der Schaden.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "erledigt": {
+          "title": "Kein Befund mehr — Zustand dokumentieren",
+          "text": "Das Symptom ist nach Reifenangleich und Kalibrierung verschwunden. Dokumentiere Reifensatz, Profiltiefen, Datum der Kalibrierung und den Ölstand des Verteilergetriebes. Diese Notiz spart beim nächsten Auftreten den halben Diagnoseweg, weil der Ausgangszustand dann bekannt ist.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        }
+      }
+    },
+    "f15:xdrive-vtg": {
+      "code": "GF-F15-02",
+      "name": "Allrad zieht nicht oder ruckelt",
+      "desc": "Ruckeln in engen Kurven, Allradmeldung im Display oder kein Kontakt zum Verteilergetriebe. Systematisch: Reifen → Versorgung → Kommunikation → Stellmotor → Kalibrierung.",
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63",
+        "B57",
+        "S63"
+      ],
+      "steps": [
+        {
+          "q": "Sind alle vier Reifen gleicher Größe, gleicher Bauart und gleichmäßig abgefahren?",
+          "help": "Der erste Schritt, weil er der billigste ist. Eine Lamellenkupplung gleicht dauerhaft die Drehzahldifferenz zwischen den Achsen aus. Ungleiche Abrollumfänge zwingen sie in Dauerschlupf — das erzeugt genau die Symptome, die sonst dem Verteilergetriebe zugeschrieben werden. Profiltiefe an allen vier Rädern messen und die Reifenkennungen vergleichen.",
+          "measure": "Reifengröße, Hersteller und Bauart an allen vier Rädern identisch · Profiltiefen der vier Räder im Vergleich, achsweise und diagonal",
+          "doc": "D4F-F15-004",
+          "yes": 1,
+          "no": "reifen-zuerst"
+        },
+        {
+          "q": "Meldet sich das Steuergerät des Verteilergetriebes in der Diagnosesitzung?",
+          "help": "Über ENET verbinden und die Steuergeräteliste lesen. Entscheidend ist nicht, ob Fehler drinstehen, sondern ob sich das Steuergerät überhaupt meldet und eine Version zurückgibt. Meldet es sich nicht, ist das ein Versorgungs- oder Busbefund und keine Aussage über das Getriebe selbst.",
+          "measure": "Steuergerät erscheint in der Liste und liefert eine Version zurück",
+          "doc": "D4F-F15-001",
+          "yes": 3,
+          "no": 2
+        },
+        {
+          "q": "Liegen Versorgung und Masse am Steuergerät und am Stellmotor an, und sind die zugehörigen Sicherungen in Ordnung?",
+          "help": "Sicherungen kontrollieren, dann die Spannung direkt am Steckverbinder messen und die Masseverbindung auf Übergangswiderstand ansehen. Die Steckverbindung zum Stellmotor liegt im Unterbodenbereich und leidet unter Feuchtigkeit und Streusalz — Grünspan an den Kontakten ist ein Sichtbefund, der keinen Messwert braucht.",
+          "measure": "Spannung am Steckverbinder gegen Batteriespannung vergleichen · Kontakte frei von Korrosion · Sicherungen durchgängig",
+          "doc": "D4F-F15-004",
+          "yes": 3,
+          "no": "versorgung-vtg"
+        },
+        {
+          "q": "Lässt sich der Stellmotor über die Diagnosesoftware ansteuern und bewegt er sich dabei hörbar?",
+          "help": "Stellgliedtest aus der Diagnosesoftware starten und am Fahrzeug hinhören beziehungsweise die Hand an das Gehäuse legen. Ein Stellmotor, der überhaupt nicht anläuft, ist ein anderer Fall als einer, der anläuft und in der Endlage hängen bleibt. Achte darauf, ob die Rückmeldung der Position der Ansteuerung folgt oder stehen bleibt.",
+          "measure": "Stellmotor läuft hörbar an · zurückgemeldete Position folgt der Ansteuerung über den ganzen Bereich",
+          "doc": "D4F-F15-004",
+          "yes": 4,
+          "no": "stellmotor",
+          "obd_hint": "Fahrzeuggeschwindigkeit parallel beobachten — der Test setzt Stillstand voraus"
+        },
+        {
+          "q": "Wurde nach dem letzten Eingriff am Verteilergetriebe oder nach einem Ölwechsel kalibriert?",
+          "help": "Die Regelung der Lamellenkupplung arbeitet mit Verschleiß- und Ölwerten, die bei der Kalibrierung neu gesetzt werden. Bleibt sie aus, regelt das Getriebe gegen veraltete Werte und verhält sich in engen Kurven auffällig, ohne dass ein Bauteil defekt wäre. Frag nach der Vorgeschichte und sieh in der Servicehistorie nach.",
+          "measure": "Kalibrierung nach dem letzten Eingriff dokumentiert · Ölservice am Verteilergetriebe mit Datum und Laufleistung nachvollziehbar",
+          "doc": "D4F-F15-004",
+          "yes": 5,
+          "no": "kalibrieren"
+        },
+        {
+          "q": "Bleibt das Ruckeln nach Kalibrierung und mit einwandfreien Reifen bestehen?",
+          "help": "Nach der Probefahrt bewerten: enge Kurven bei Schrittgeschwindigkeit, beide Richtungen, warmes Getriebe. Bleibt das Symptom, geht es an die Mechanik — Lamellenpaket, Kettentrieb oder Lagerung im Verteilergetriebe. Prüfe vorher noch das Getriebeöl auf Metallabrieb und Verfärbung.",
+          "measure": "Symptom in beiden Kurvenrichtungen reproduzierbar · Ölzustand am Ablass beurteilt, Abrieb ja/nein",
+          "doc": "D4F-F15-004",
+          "yes": "mechanik",
+          "no": "erledigt"
+        }
+      ],
+      "model": "f15",
+      "id": "xdrive-vtg",
+      "_results": {
+        "keine-luftfederung": {
+          "title": "Kein Luftfahrwerk — Stahlfederfahrwerk bewerten",
+          "text": "Hier endet der Luftfederpfad. Das Fahrzeug hat an dieser Achse Stahlfedern, das Absacken oder Schiefstehen kommt dann von gebrochener Feder, ausgeschlagenen Lagern oder verschlissenen Dämpfern. Federn beidseitig sichtprüfen, Höhen links gegen rechts messen und die Dämpfer auf Ölaustritt ansehen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "versorgung-kompressor": {
+          "title": "Versorgung oder Ansteuerung des Kompressors gestört",
+          "text": "Das ist kein Balgfehler. Sicherung, Relais, Steckverbinder und Masse des Kompressors instand setzen und die Spannung während einer Höhenanforderung erneut messen. Löst dieselbe Sicherung wiederholt aus, zuerst den Kabelbaum zum Kompressor und den Ventilblock auf Kurzschluss untersuchen, bevor ein neuer Kompressor eingebaut wird.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "leckage": {
+          "title": "Undichtigkeit im Luftkreis — zuerst abdichten",
+          "text": "Die undichte Ecke ist gefunden oder eingegrenzt. Balg, Rollfalte, Leitungsanschluss oder Ventilblock instand setzen und danach erneut über mehrere Stunden gegenmessen. Wichtig: den Kompressor mitbewerten. Wenn er wegen der Leckage lange im Dauerlauf war, hat er thermisch gelitten und kann kurz nach der Reparatur ausfallen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "ventil-oder-geber": {
+          "title": "Einzelne Ecke regelt nicht — Ventilkanal oder Niveaugeber",
+          "text": "Der Fehler sitzt auf einer Ecke, während die anderen normal arbeiten. Vertausche zum Eingrenzen die Bewertung: prüfe den Niveaugeber der betroffenen Ecke auf Auslenkung und Anlenkung gegen die intakte Seite, und sieh dir den zugehörigen Ventilkanal an. Erst danach über einen Tausch entscheiden — Ventilblock und Kompressor sind bei diesem Fahrzeug eine Einheit.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "abgleich-fehlt": {
+          "title": "Niveauregelung neu abgleichen",
+          "text": "Kein Bauteilfehler, sondern ein fehlender Bezug. Fahrzeug leer, waagerecht und mit vorgeschriebenem Reifendruck abstellen, Anlenkgestänge der Geber auf Sitz und Unversehrtheit prüfen und den Abgleich über die Diagnosesoftware durchführen. Danach die Höhen an allen vier Ecken kontrollieren und die Probefahrt wiederholen.",
+          "next_docs": [
+            "D4F-F15-003"
+          ]
+        },
+        "anhaengererkennung": {
+          "title": "Anhängererkennung prüfen, nicht das Fahrwerk",
+          "text": "Das Fahrwerk ist hier vermutlich unbeteiligt. Prüfe, ob sich das Anhängermodul meldet, ob die Anhängevorrichtung im Fahrzeugauftrag steht und ob die Beleuchtungsausgänge die erwartete Last sehen. Bei nachgerüsteten Sätzen ohne Eintrag bleiben die Folgefunktionen aus, obwohl die Steckdose funktioniert.",
+          "next_docs": [
+            "D4F-F15-006",
+            "D4F-F15-003"
+          ]
+        },
+        "regelung-weiter": {
+          "title": "Regelung und Sensorik weiter eingrenzen",
+          "text": "Versorgung steht, keine Leckage gefunden, kein einseitiger Ausfall, kein fehlender Abgleich. Jetzt die Niveaugeber im laufenden Betrieb beobachten und ihre Werte gegeneinander stellen, während das Fahrzeug angehoben und abgesenkt wird. Ein Geber, dessen Wert springt oder in einem Bereich stehenbleibt, fällt dabei auf. Bleibt alles unauffällig, den Ventilblock als nächste Baugruppe bewerten.",
+          "next_docs": [
+            "D4F-F15-003",
+            "D4F-F15-001"
+          ]
+        },
+        "reifen-zuerst": {
+          "title": "Reifen angleichen, dann neu bewerten",
+          "text": "Nicht weitersuchen, solange die Abrollumfänge auseinanderliegen. Reifen achsweise oder komplett auf gleiche Größe, Bauart und ähnliche Profiltiefe bringen, danach eine Probefahrt mit engen Kurven in beiden Richtungen. Sehr häufig ist das Symptom danach weg — und ein teures Bauteil wurde nicht getauscht.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "versorgung-vtg": {
+          "title": "Versorgung oder Steckverbindung am Verteilergetriebe defekt",
+          "text": "Das ist ein Elektrikbefund, kein Getriebebefund. Defekte Sicherung ersetzen, korrodierte Kontakte instand setzen und die Masseverbindung wiederherstellen. Danach die Diagnoseverbindung erneut aufbauen: meldet sich das Steuergerät wieder, war die Ursache gefunden. Erst wenn die Versorgung sauber steht, weiter zum Stellgliedtest.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "stellmotor": {
+          "title": "Stellmotor bewegt sich nicht sauber",
+          "text": "Der Stellmotor läuft nicht an oder folgt der Ansteuerung nicht über den ganzen Bereich. Zuerst mechanisch bewerten: Motor abbauen, auf Leichtgängigkeit prüfen und die Anlenkung im Getriebe von Hand durchbewegen. Ein schwergängiger Verstellmechanismus im Getriebe bringt auch einen neuen Stellmotor um. Nach dem Tausch zwingend kalibrieren.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "kalibrieren": {
+          "title": "Verteilergetriebe kalibrieren",
+          "text": "Vor jedem weiteren Verdacht die Kalibrierung über die Servicefunktionen der Diagnosesoftware durchführen, gegebenenfalls zusammen mit dem Ölservice. Danach Probefahrt mit engen Kurven bei Schrittgeschwindigkeit in beiden Richtungen. Bleibt das Symptom weg, war der veraltete Regelbezug die Ursache und es ist kein Bauteil zu tauschen.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "mechanik": {
+          "title": "Mechanischer Schaden im Verteilergetriebe wahrscheinlich",
+          "text": "Elektrik, Kalibrierung und Reifen sind ausgeschlossen, das Symptom bleibt. Jetzt das Getriebeöl ablassen und auf Abrieb und Verfärbung beurteilen, danach über Instandsetzung oder Austauscheinheit entscheiden. Vor dem Einbau einer Austauscheinheit die Anlenkung und den Stellmotor mitbewerten, sonst wiederholt sich der Schaden.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        },
+        "erledigt": {
+          "title": "Kein Befund mehr — Zustand dokumentieren",
+          "text": "Das Symptom ist nach Reifenangleich und Kalibrierung verschwunden. Dokumentiere Reifensatz, Profiltiefen, Datum der Kalibrierung und den Ölstand des Verteilergetriebes. Diese Notiz spart beim nächsten Auftreten den halben Diagnoseweg, weil der Ausgangszustand dann bekannt ist.",
+          "next_docs": [
+            "D4F-F15-004"
+          ]
+        }
+      }
     }
   },
   "stats": {
-    "total_docs": 81,
-    "total_guides": 23,
+    "total_docs": 94,
+    "total_guides": 29,
     "per_model": {
       "e28": 7,
       "e30": 2,
+      "e34": 7,
       "e36": 8,
       "e38": 7,
       "e39": 8,
@@ -6447,6 +7806,7 @@
       "e88": 6,
       "e90": 3,
       "f-series": 2,
+      "f10": 6,
       "f15": 7
     }
   }

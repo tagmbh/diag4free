@@ -1,0 +1,185 @@
+{
+  "model": "f15",
+  "guides": {
+    "luftfederung-absacken": {
+      "code": "GF-F15-01",
+      "name": "F15 sackt ab oder steht schief",
+      "desc": "Fahrzeug liegt hinten auf, steht einseitig tief oder regelt die Höhe nicht mehr aus. Systematisch: Ausstattung → Versorgung → Leckage → Regelung.",
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "steps": [
+        {
+          "q": "Hat das Fahrzeug überhaupt eine Luftfederung, und an welchen Achsen?",
+          "help": "Der F15 kommt mit Stahlfedern, mit Niveauregulierung nur an der Hinterachse oder mit Luftfederung an beiden Achsen. Wer das nicht zuerst klärt, sucht am falschen Ende. Schau unter das Fahrzeug: ein Luftbalg ist ein Gummifaltenbalg mit Luftanschluss, eine Stahlfeder ist eine Stahlfeder. Zähl anschließend die Niveaugeber an den Querlenkern.",
+          "measure": "Je Achse notieren: Luftbalg oder Stahlfeder · Zahl der gefundenen Niveaugeber · Kompressor vorhanden ja/nein",
+          "doc": "D4F-F15-003",
+          "yes": 1,
+          "no": "keine-luftfederung"
+        },
+        {
+          "q": "Läuft der Kompressor beim Anheben überhaupt an?",
+          "help": "Fahrzeug aufschließen, Zündung ein, Höhe über die Bedienung anfordern und hinhören. Der Kompressor sitzt im hinteren Fahrzeugbereich und ist deutlich hörbar. Läuft er gar nicht, geht es um Versorgung, Relais und Ansteuerung — nicht um Bälge. Vorher die zugehörige Sicherung prüfen, eine wiederholt auslösende Sicherung ist ein eigener Befund.",
+          "measure": "Kompressor läuft hörbar an · zugehörige Sicherung durchgängig · Spannungsversorgung am Kompressorstecker während der Anforderung vorhanden",
+          "doc": "D4F-F15-003",
+          "yes": 2,
+          "no": "versorgung-kompressor"
+        },
+        {
+          "q": "Steigt das Fahrzeug an, sackt aber im Stand über Stunden wieder ab?",
+          "help": "Fahrzeug auf Sollhöhe bringen, Höhe an allen vier Ecken messen und notieren, dann abstellen und nach mehreren Stunden erneut messen. Eine Undichtigkeit zeigt sich als Höhenverlust an genau der undichten Ecke. Zum Auffinden Lecksuchspray auf Balg, Rollfalte, Leitungsanschluss und Ventilblock geben, mit dem Motor aus und ohne Zugluft.",
+          "measure": "Höhe je Rad vor und nach der Standzeit im Vergleich · Blasenbildung an Balg, Verschraubung oder Leitung",
+          "doc": "D4F-F15-003",
+          "yes": "leckage",
+          "no": 3
+        },
+        {
+          "q": "Bleibt eine Seite oder eine Achse hängen, während die andere normal regelt?",
+          "help": "Das ist der aussagekräftigste Vergleich, den es ohne Sollwerte gibt: die eine Seite ist die Referenz für die andere. Fordere die Höhe an und beobachte, welche Ecke sich bewegt. Bewegt sich eine Ecke gar nicht, obwohl der Kompressor fördert, liegt der Verdacht auf dem zugehörigen Ventilkanal oder dem Niveaugeber dieser Ecke.",
+          "measure": "Höhenänderung je Ecke während der Anforderung · Auslenkung der Niveaugeber im Vergleich linke zu rechte Seite",
+          "doc": "D4F-F15-003",
+          "yes": "ventil-oder-geber",
+          "no": 4
+        },
+        {
+          "q": "Wurde am Fahrwerk gearbeitet oder ein Niveaugeber getauscht, ohne danach abzugleichen?",
+          "help": "Nach Arbeiten an Federbein, Querlenker oder Niveaugeber kennt die Regelung den Bezugspunkt nicht mehr. Das Fahrzeug regelt dann sauber, aber auf die falsche Höhe — oft einseitig. Frag den Vorbesitzer oder die Vorwerkstatt und sieh dir die Anlenkgestänge der Geber auf Verbiegung und Sitz an.",
+          "measure": "Anlenkgestänge beider Seiten unbeschädigt und gleich lang eingehängt · Abgleich der Niveauregelung nach dem letzten Eingriff dokumentiert",
+          "doc": "D4F-F15-003",
+          "yes": "abgleich-fehlt",
+          "no": 5
+        },
+        {
+          "q": "Ist ein Anhänger oder eine Anhängevorrichtung im Spiel, und verhält sich das Fahrzeug nur dann auffällig?",
+          "help": "Der F15 wertet die Anhängererkennung in mehreren Systemen aus, auch in der Niveauregelung. Eine falsch oder gar nicht erkannte Anhängevorrichtung erzeugt ein Regelverhalten, das nach Fahrwerksfehler aussieht. Prüfe, ob das Anhängermodul in der Steuergeräteliste erscheint und ob das Verhalten mit und ohne angekuppelten Anhänger unterschiedlich ist.",
+          "measure": "Verhalten mit und ohne Anhänger im direkten Vergleich · Anhängermodul meldet sich in der Steuergeräteliste",
+          "doc": "D4F-F15-006",
+          "yes": "anhaengererkennung",
+          "no": "regelung-weiter"
+        }
+      ]
+    },
+    "xdrive-vtg": {
+      "code": "GF-F15-02",
+      "name": "Allrad zieht nicht oder ruckelt",
+      "desc": "Ruckeln in engen Kurven, Allradmeldung im Display oder kein Kontakt zum Verteilergetriebe. Systematisch: Reifen → Versorgung → Kommunikation → Stellmotor → Kalibrierung.",
+      "engines": ["N20", "N55", "N57", "N63", "B57", "S63"],
+      "steps": [
+        {
+          "q": "Sind alle vier Reifen gleicher Größe, gleicher Bauart und gleichmäßig abgefahren?",
+          "help": "Der erste Schritt, weil er der billigste ist. Eine Lamellenkupplung gleicht dauerhaft die Drehzahldifferenz zwischen den Achsen aus. Ungleiche Abrollumfänge zwingen sie in Dauerschlupf — das erzeugt genau die Symptome, die sonst dem Verteilergetriebe zugeschrieben werden. Profiltiefe an allen vier Rädern messen und die Reifenkennungen vergleichen.",
+          "measure": "Reifengröße, Hersteller und Bauart an allen vier Rädern identisch · Profiltiefen der vier Räder im Vergleich, achsweise und diagonal",
+          "doc": "D4F-F15-004",
+          "yes": 1,
+          "no": "reifen-zuerst"
+        },
+        {
+          "q": "Meldet sich das Steuergerät des Verteilergetriebes in der Diagnosesitzung?",
+          "help": "Über ENET verbinden und die Steuergeräteliste lesen. Entscheidend ist nicht, ob Fehler drinstehen, sondern ob sich das Steuergerät überhaupt meldet und eine Version zurückgibt. Meldet es sich nicht, ist das ein Versorgungs- oder Busbefund und keine Aussage über das Getriebe selbst.",
+          "measure": "Steuergerät erscheint in der Liste und liefert eine Version zurück",
+          "doc": "D4F-F15-001",
+          "yes": 3,
+          "no": 2
+        },
+        {
+          "q": "Liegen Versorgung und Masse am Steuergerät und am Stellmotor an, und sind die zugehörigen Sicherungen in Ordnung?",
+          "help": "Sicherungen kontrollieren, dann die Spannung direkt am Steckverbinder messen und die Masseverbindung auf Übergangswiderstand ansehen. Die Steckverbindung zum Stellmotor liegt im Unterbodenbereich und leidet unter Feuchtigkeit und Streusalz — Grünspan an den Kontakten ist ein Sichtbefund, der keinen Messwert braucht.",
+          "measure": "Spannung am Steckverbinder gegen Batteriespannung vergleichen · Kontakte frei von Korrosion · Sicherungen durchgängig",
+          "doc": "D4F-F15-004",
+          "yes": 3,
+          "no": "versorgung-vtg"
+        },
+        {
+          "q": "Lässt sich der Stellmotor über die Diagnosesoftware ansteuern und bewegt er sich dabei hörbar?",
+          "help": "Stellgliedtest aus der Diagnosesoftware starten und am Fahrzeug hinhören beziehungsweise die Hand an das Gehäuse legen. Ein Stellmotor, der überhaupt nicht anläuft, ist ein anderer Fall als einer, der anläuft und in der Endlage hängen bleibt. Achte darauf, ob die Rückmeldung der Position der Ansteuerung folgt oder stehen bleibt.",
+          "measure": "Stellmotor läuft hörbar an · zurückgemeldete Position folgt der Ansteuerung über den ganzen Bereich",
+          "doc": "D4F-F15-004",
+          "yes": 4,
+          "no": "stellmotor",
+          "obd_hint": "Fahrzeuggeschwindigkeit parallel beobachten — der Test setzt Stillstand voraus"
+        },
+        {
+          "q": "Wurde nach dem letzten Eingriff am Verteilergetriebe oder nach einem Ölwechsel kalibriert?",
+          "help": "Die Regelung der Lamellenkupplung arbeitet mit Verschleiß- und Ölwerten, die bei der Kalibrierung neu gesetzt werden. Bleibt sie aus, regelt das Getriebe gegen veraltete Werte und verhält sich in engen Kurven auffällig, ohne dass ein Bauteil defekt wäre. Frag nach der Vorgeschichte und sieh in der Servicehistorie nach.",
+          "measure": "Kalibrierung nach dem letzten Eingriff dokumentiert · Ölservice am Verteilergetriebe mit Datum und Laufleistung nachvollziehbar",
+          "doc": "D4F-F15-004",
+          "yes": 5,
+          "no": "kalibrieren"
+        },
+        {
+          "q": "Bleibt das Ruckeln nach Kalibrierung und mit einwandfreien Reifen bestehen?",
+          "help": "Nach der Probefahrt bewerten: enge Kurven bei Schrittgeschwindigkeit, beide Richtungen, warmes Getriebe. Bleibt das Symptom, geht es an die Mechanik — Lamellenpaket, Kettentrieb oder Lagerung im Verteilergetriebe. Prüfe vorher noch das Getriebeöl auf Metallabrieb und Verfärbung.",
+          "measure": "Symptom in beiden Kurvenrichtungen reproduzierbar · Ölzustand am Ablass beurteilt, Abrieb ja/nein",
+          "doc": "D4F-F15-004",
+          "yes": "mechanik",
+          "no": "erledigt"
+        }
+      ]
+    }
+  },
+  "results": {
+    "keine-luftfederung": {
+      "title": "Kein Luftfahrwerk — Stahlfederfahrwerk bewerten",
+      "text": "Hier endet der Luftfederpfad. Das Fahrzeug hat an dieser Achse Stahlfedern, das Absacken oder Schiefstehen kommt dann von gebrochener Feder, ausgeschlagenen Lagern oder verschlissenen Dämpfern. Federn beidseitig sichtprüfen, Höhen links gegen rechts messen und die Dämpfer auf Ölaustritt ansehen.",
+      "next_docs": ["D4F-F15-003"]
+    },
+    "versorgung-kompressor": {
+      "title": "Versorgung oder Ansteuerung des Kompressors gestört",
+      "text": "Das ist kein Balgfehler. Sicherung, Relais, Steckverbinder und Masse des Kompressors instand setzen und die Spannung während einer Höhenanforderung erneut messen. Löst dieselbe Sicherung wiederholt aus, zuerst den Kabelbaum zum Kompressor und den Ventilblock auf Kurzschluss untersuchen, bevor ein neuer Kompressor eingebaut wird.",
+      "next_docs": ["D4F-F15-003"]
+    },
+    "leckage": {
+      "title": "Undichtigkeit im Luftkreis — zuerst abdichten",
+      "text": "Die undichte Ecke ist gefunden oder eingegrenzt. Balg, Rollfalte, Leitungsanschluss oder Ventilblock instand setzen und danach erneut über mehrere Stunden gegenmessen. Wichtig: den Kompressor mitbewerten. Wenn er wegen der Leckage lange im Dauerlauf war, hat er thermisch gelitten und kann kurz nach der Reparatur ausfallen.",
+      "next_docs": ["D4F-F15-003"]
+    },
+    "ventil-oder-geber": {
+      "title": "Einzelne Ecke regelt nicht — Ventilkanal oder Niveaugeber",
+      "text": "Der Fehler sitzt auf einer Ecke, während die anderen normal arbeiten. Vertausche zum Eingrenzen die Bewertung: prüfe den Niveaugeber der betroffenen Ecke auf Auslenkung und Anlenkung gegen die intakte Seite, und sieh dir den zugehörigen Ventilkanal an. Erst danach über einen Tausch entscheiden — Ventilblock und Kompressor sind bei diesem Fahrzeug eine Einheit.",
+      "next_docs": ["D4F-F15-003"]
+    },
+    "abgleich-fehlt": {
+      "title": "Niveauregelung neu abgleichen",
+      "text": "Kein Bauteilfehler, sondern ein fehlender Bezug. Fahrzeug leer, waagerecht und mit vorgeschriebenem Reifendruck abstellen, Anlenkgestänge der Geber auf Sitz und Unversehrtheit prüfen und den Abgleich über die Diagnosesoftware durchführen. Danach die Höhen an allen vier Ecken kontrollieren und die Probefahrt wiederholen.",
+      "next_docs": ["D4F-F15-003"]
+    },
+    "anhaengererkennung": {
+      "title": "Anhängererkennung prüfen, nicht das Fahrwerk",
+      "text": "Das Fahrwerk ist hier vermutlich unbeteiligt. Prüfe, ob sich das Anhängermodul meldet, ob die Anhängevorrichtung im Fahrzeugauftrag steht und ob die Beleuchtungsausgänge die erwartete Last sehen. Bei nachgerüsteten Sätzen ohne Eintrag bleiben die Folgefunktionen aus, obwohl die Steckdose funktioniert.",
+      "next_docs": ["D4F-F15-006", "D4F-F15-003"]
+    },
+    "regelung-weiter": {
+      "title": "Regelung und Sensorik weiter eingrenzen",
+      "text": "Versorgung steht, keine Leckage gefunden, kein einseitiger Ausfall, kein fehlender Abgleich. Jetzt die Niveaugeber im laufenden Betrieb beobachten und ihre Werte gegeneinander stellen, während das Fahrzeug angehoben und abgesenkt wird. Ein Geber, dessen Wert springt oder in einem Bereich stehenbleibt, fällt dabei auf. Bleibt alles unauffällig, den Ventilblock als nächste Baugruppe bewerten.",
+      "next_docs": ["D4F-F15-003", "D4F-F15-001"]
+    },
+    "reifen-zuerst": {
+      "title": "Reifen angleichen, dann neu bewerten",
+      "text": "Nicht weitersuchen, solange die Abrollumfänge auseinanderliegen. Reifen achsweise oder komplett auf gleiche Größe, Bauart und ähnliche Profiltiefe bringen, danach eine Probefahrt mit engen Kurven in beiden Richtungen. Sehr häufig ist das Symptom danach weg — und ein teures Bauteil wurde nicht getauscht.",
+      "next_docs": ["D4F-F15-004"]
+    },
+    "versorgung-vtg": {
+      "title": "Versorgung oder Steckverbindung am Verteilergetriebe defekt",
+      "text": "Das ist ein Elektrikbefund, kein Getriebebefund. Defekte Sicherung ersetzen, korrodierte Kontakte instand setzen und die Masseverbindung wiederherstellen. Danach die Diagnoseverbindung erneut aufbauen: meldet sich das Steuergerät wieder, war die Ursache gefunden. Erst wenn die Versorgung sauber steht, weiter zum Stellgliedtest.",
+      "next_docs": ["D4F-F15-004"]
+    },
+    "stellmotor": {
+      "title": "Stellmotor bewegt sich nicht sauber",
+      "text": "Der Stellmotor läuft nicht an oder folgt der Ansteuerung nicht über den ganzen Bereich. Zuerst mechanisch bewerten: Motor abbauen, auf Leichtgängigkeit prüfen und die Anlenkung im Getriebe von Hand durchbewegen. Ein schwergängiger Verstellmechanismus im Getriebe bringt auch einen neuen Stellmotor um. Nach dem Tausch zwingend kalibrieren.",
+      "next_docs": ["D4F-F15-004"]
+    },
+    "kalibrieren": {
+      "title": "Verteilergetriebe kalibrieren",
+      "text": "Vor jedem weiteren Verdacht die Kalibrierung über die Servicefunktionen der Diagnosesoftware durchführen, gegebenenfalls zusammen mit dem Ölservice. Danach Probefahrt mit engen Kurven bei Schrittgeschwindigkeit in beiden Richtungen. Bleibt das Symptom weg, war der veraltete Regelbezug die Ursache und es ist kein Bauteil zu tauschen.",
+      "next_docs": ["D4F-F15-004"]
+    },
+    "mechanik": {
+      "title": "Mechanischer Schaden im Verteilergetriebe wahrscheinlich",
+      "text": "Elektrik, Kalibrierung und Reifen sind ausgeschlossen, das Symptom bleibt. Jetzt das Getriebeöl ablassen und auf Abrieb und Verfärbung beurteilen, danach über Instandsetzung oder Austauscheinheit entscheiden. Vor dem Einbau einer Austauscheinheit die Anlenkung und den Stellmotor mitbewerten, sonst wiederholt sich der Schaden.",
+      "next_docs": ["D4F-F15-004"]
+    },
+    "erledigt": {
+      "title": "Kein Befund mehr — Zustand dokumentieren",
+      "text": "Das Symptom ist nach Reifenangleich und Kalibrierung verschwunden. Dokumentiere Reifensatz, Profiltiefen, Datum der Kalibrierung und den Ölstand des Verteilergetriebes. Diese Notiz spart beim nächsten Auftreten den halben Diagnoseweg, weil der Ausgangszustand dann bekannt ist.",
+      "next_docs": ["D4F-F15-004"]
+    }
+  }
+}
