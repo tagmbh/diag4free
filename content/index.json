@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T08:33:12.825Z",
+  "generated": "2026-08-27T08:40:32.241Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -4059,6 +4059,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -4084,7 +4085,7 @@
         "Schnellster Griff im Motorraum ist die Zahl der Zündspulen: drei bedeutet B38, vier bedeutet B48, N20 oder N13, sechs bedeutet B58 oder N55",
         "B58 gegen N55 trennen: beim B58 sitzt der Ladeluftkühler als Wasser-Luft-Kühler in der Ansaugbrücke und der Abgaskrümmer ist in den Zylinderkopf integriert. Der N55 hat einen separaten Krümmer und einen Luft-Luft-Ladeluftkühler",
         "N13 gegen N20 trennen: beide sind aufgeladene Vierzylinder, aber der N13 ist der 1.6er der Einstiegsmodelle mit anderem Grundmotor. Über den Motorcode am Block entscheiden, nicht über das Typschild",
-        "N47-Diesel: Steuerkettentrieb hinten zum Getriebe. Metallisches Rasseln direkt nach dem Kaltstart aus dem hinteren Motorbereich ist das Leitsymptom und gehört sofort nachgegangen"
+        "Diesel: bis 2015 der N47, danach der B47 als eigener Nachfolgemotor — keine Ausbaustufe des N47. Beim N47 sitzt der Steuerkettentrieb hinten zum Getriebe, metallisches Rasseln nach dem Kaltstart aus dem hinteren Motorbereich ist dort das Leitsymptom. Die Kettenlage des B47 ist widersprüchlich belegt, Einzelheiten in D4F-F30-007"
       ],
       "engines": [
         "N13",
@@ -4092,13 +4093,15 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
       ],
       "article": "motorzuordnung.md",
       "details": [
-        "D4F-F30-001"
+        "D4F-F30-001",
+        "D4F-F30-007"
       ],
       "model": "f30"
     },
@@ -4123,6 +4126,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -4155,6 +4159,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -4185,6 +4190,7 @@
         "N20",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -4217,6 +4223,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -10423,6 +10430,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
@@ -10589,6 +10597,7 @@
         "N26",
         "N55",
         "N47",
+        "B47",
         "B38",
         "B48",
         "B58"
