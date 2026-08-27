@@ -187,9 +187,42 @@ async function main() {
         const session = await page.evaluate(() => localStorage.getItem('diag4free.session.v1'));
         expect(!!session, 'Sitzung gespeichert', 'kein Sitzungs-Eintrag');
 
+        // Nach dem Reload steht der Schritt in der Adresse — die App kommt
+        // deshalb direkt an derselben Frage heraus, nicht ueber eine
+        // Wiederaufnahme-Karte. Das ist ein Griff weniger am Fahrzeug.
+        const hashVorReload = await page.evaluate(() => location.hash);
         await page.reload({ waitUntil: 'domcontentloaded' });
         await settle(page, 1200);
-        expect(await page.locator('.resume-card').count() === 1, 'Wiederaufnahme nach Reload', 'keine Wiederaufnahme-Karte');
+        expect(/^#\/guide\//.test(hashVorReload), 'Schritt steht in der Adresse', `Hash war ${hashVorReload}`);
+        expect(await page.locator('[data-guide-runner]').count() === 1,
+          'Reload landet wieder im Diagnosepfad', 'kein Runner nach Reload');
+        expect(await page.locator('.trail-item').count() > 0,
+          'Schritt-Spur ueberlebt den Reload', 'keine Spur nach Reload');
+
+        // Die Wiederaufnahme-Karte ist fuer den anderen Fall da: Neustart
+        // ohne Pfad in der Adresse. Dann muss sie erscheinen.
+        // Wichtig: ein reiner Hashwechsel laedt die Seite nicht neu, der
+        // Zustand im Speicher bliebe stehen. Fuer diesen Fall braucht es
+        // einen echten Neustart.
+        await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1200);
+        expect(await page.locator('.resume-card').count() === 1,
+          'Wiederaufnahme-Karte ohne Pfad in der Adresse', 'keine Wiederaufnahme-Karte');
+
+        // Zurueck muss zurueck heissen: der Browser-Knopf gehoert in die App,
+        // nicht aus ihr heraus. Das war der teuerste Fehlgriff der alten
+        // Fassung — ein Griff daneben und die halbe Fehlersuche war weg.
+        await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+        await settle(page, 900);
+        // Je nach Breite fuehrt die Seitenleiste oder die Tableiste dorthin —
+        // genommen wird, was gerade sichtbar ist.
+        await page.locator('[data-view="measure"]:visible').first().click();
+        await settle(page, 500);
+        await page.goBack();
+        await settle(page, 500);
+        expect(await page.evaluate(() => location.hash) === '#/overview',
+          'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---

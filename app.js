@@ -302,41 +302,106 @@
     return h.split('/').filter(Boolean);
   };
 
-  const applyHash = () => {
-    const parts = parseHash();
-    if (parts.length === 0) return; // Default: overview
-    const [head, ...rest] = parts;
+  // Der Hash ist die einzige Wahrheit ueber den sichtbaren Zustand: Ansicht,
+  // offene Schublade, Schritt im Diagnosepfad. Alles, was sich wie eine
+  // eigene Seite anfuehlt, bekommt deshalb einen eigenen Eintrag in der
+  // Browser-Historie.
+  //
+  // Vorher stand hier nur `replaceState`. Damit hatte die App ueber ihre
+  // ganze Laufzeit genau einen Historieneintrag — und der Zurueck-Knopf des
+  // Browsers warf den Nutzer aus der App heraus, statt ihn eine Ebene
+  // hoeher zu bringen. Am Fahrzeug ist das der teuerste Fehlgriff, den die
+  // Oberflaeche anbieten kann: die halb ausgefuellte Fehlersuche ist weg.
+  const VIEW_HASH = {
+    overview: '#/overview', docs: '#/docs', troubleshoot: '#/troubleshoot',
+    measure: '#/measure', library: '#/library', software: '#/software',
+    scan: '#/scan'
+  };
 
-    if (['overview', 'docs', 'troubleshoot', 'measure', 'library', 'software', 'scan'].includes(head)) {
-      state.view = head;
+  const canonicalHash = () => {
+    if (state.drawer && state.drawer.docId) return `#/docs/${state.drawer.docId}`;
+    if (state.view === 'troubleshoot' && state.guide) {
+      if (state.result) return `#/guide/${state.guide}/ergebnis/${state.result}`;
+      return state.step ? `#/guide/${state.guide}/${state.step}` : `#/guide/${state.guide}`;
     }
-    if (head === 'model' && rest[0]) {
-      setSeries(rest[0]);
-      state.view = 'overview';
-    }
-    if (head === 'docs' && rest[0]) {
-      const doc = state.data?.docs.find(d => d.id === rest[0]);
-      if (doc) openDocDrawer(doc.id);
-    }
-    if (head === 'guide' && rest[0]) {
-      state.view = 'troubleshoot';
-      if (findGuide(rest[0])) {
-        state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
-      }
+    return VIEW_HASH[state.view] || '#/overview';
+  };
+
+  // Solange wir aus dem Hash lesen, wird nichts zurueckgeschrieben — sonst
+  // schiebt jede Rueckwaertsnavigation sofort einen neuen Eintrag nach und
+  // der Zurueck-Knopf kommt nie an.
+  let syncing = false;
+  // Wie viele Eintraege diese Sitzung selbst erzeugt hat. Nur so weit
+  // duerfen wir `history.back()` benutzen, ohne den Nutzer aus der App zu
+  // werfen — hinter einem Deep-Link liegt fremde Historie.
+  let eigeneEintraege = 0;
+
+  const updateHash = (modus = 'push') => {
+    if (syncing) return;
+    const next = canonicalHash();
+    if (location.hash === next) return;
+    if (modus === 'replace' || !location.hash) {
+      history.replaceState(null, '', next);
+    } else {
+      history.pushState(null, '', next);
+      eigeneEintraege++;
     }
   };
 
-  const updateHash = () => {
-    const map = {
-      overview: '#/overview',
-      docs: '#/docs',
-      troubleshoot: state.guide ? `#/guide/${state.guide}` : '#/troubleshoot',
-      measure: '#/measure',
-      library: '#/library',
-      software: '#/software'
-    };
-    const next = map[state.view] || '#/overview';
-    if (location.hash !== next) history.replaceState(null, '', next);
+  // Einen Schritt zurueck. Haben wir den Eintrag selbst erzeugt, laeuft es
+  // ueber die Historie — dann verhalten sich Browser-Zurueck, App-Zurueck
+  // und Wischgeste gleich. Sonst greift der uebergebene Ersatzweg.
+  const zurueck = (ersatz) => {
+    if (eigeneEintraege > 0) { eigeneEintraege--; history.back(); return; }
+    if (typeof ersatz === 'function') ersatz();
+  };
+
+  const applyHash = () => {
+    const parts = parseHash();
+    syncing = true;
+    try {
+      if (parts.length === 0) { state.view = 'overview'; return; }
+      const [head, ...rest] = parts;
+
+      const willDoc = head === 'docs' && rest[0];
+      // Schublade schliessen, sobald der Hash kein Dokument mehr nennt.
+      if (state.drawer && !willDoc) closeDrawer({ still: true });
+
+      if (VIEW_HASH[head]) state.view = head;
+
+      if (head === 'model' && rest[0]) {
+        setSeries(rest[0]);
+        state.view = 'overview';
+      }
+      if (willDoc) {
+        const doc = state.data && state.data.docs.find(d => d.id === rest[0]);
+        if (doc && (!state.drawer || state.drawer.docId !== doc.id)) openDocDrawer(doc.id, { still: true });
+      }
+      if (head === 'guide' && rest[0]) {
+        state.view = 'troubleshoot';
+        if (findGuide(rest[0])) {
+          if (state.guide !== rest[0]) {
+            state.guide = rest[0]; state.step = 0; state.history = []; state.result = null;
+          }
+          if (rest[1] === 'ergebnis' && rest[2]) {
+            state.result = rest[2];
+          } else {
+            const ziel = Number(rest[1] || 0);
+            state.result = null;
+            if (Number.isInteger(ziel) && ziel >= 0) {
+              // Rueckwaerts durch die Historie: die Spur mitfuehren, damit
+              // die Schrittanzeige nicht Fragen als beantwortet fuehrt, zu
+              // denen der Nutzer gerade zurueckgegangen ist.
+              const letzte = state.history[state.history.length - 1];
+              if (letzte === ziel) state.history.pop();
+              state.step = ziel;
+            }
+          }
+        }
+      }
+    } finally {
+      syncing = false;
+    }
   };
 
   // -------- Sidebar rendering --------
@@ -851,6 +916,7 @@
           state.guide = btn.dataset.selectGuide;
           state.step = 0; state.history = []; state.result = null;
           saveSession();
+          updateHash('push');
           renderTroubleshoot();
         });
       });
@@ -979,14 +1045,16 @@
 
     panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
       state.guide = null; state.step = 0; state.history = []; state.result = null;
-      clearSession(); releaseWakeLock(); updateResumeDot(); renderTroubleshoot();
+      clearSession(); releaseWakeLock(); updateResumeDot(); updateHash('push'); renderTroubleshoot();
     });
     panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
-      state.step = 0; state.history = []; state.result = null; renderTroubleshoot();
+      state.step = 0; state.history = []; state.result = null; updateHash('push'); renderTroubleshoot();
     });
     panel.querySelector('[data-step-back]')?.addEventListener('click', () => {
-      const prev = state.history.pop();
-      if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+      zurueck(() => {
+        const prev = state.history.pop();
+        if (typeof prev === 'number') { state.step = prev; state.result = null; updateHash('replace'); renderTroubleshoot(); }
+      });
     });
     panel.querySelector('[data-open-doc]')?.addEventListener('click', (e) => openDocDrawer(e.currentTarget.dataset.openDoc));
     panel.querySelectorAll('[data-answer]').forEach(btn => btn.addEventListener('click', () => {
@@ -996,6 +1064,7 @@
       state.history.push(state.step);
       if (typeof target === 'number') { state.step = target; state.result = null; }
       else if (typeof target === 'string') { state.result = target; }
+      updateHash('push');
       renderTroubleshoot();
     }));
 
@@ -1006,6 +1075,7 @@
       state.step = state.history[i];
       state.history = state.history.slice(0, i);
       state.result = null;
+      updateHash('push');
       renderTroubleshoot();
     }));
 
@@ -1030,8 +1100,10 @@
       x0 = null;
       if (dx > 70 && Math.abs(dy) < 50 && state.history.length > 0) {
         haptic(8);
-        const prev = state.history.pop();
-        if (typeof prev === 'number') { state.step = prev; state.result = null; renderTroubleshoot(); }
+        zurueck(() => {
+          const prev = state.history.pop();
+          if (typeof prev === 'number') { state.step = prev; state.result = null; updateHash('replace'); renderTroubleshoot(); }
+        });
       }
     }, { passive: true });
   };
@@ -1390,10 +1462,14 @@
     return [...raus.values()].slice(0, max).map(d => ({ ...d, kind: d.cat || d.type }));
   };
 
-  const openDocDrawer = async (docId) => {
+  // `still: true` heisst: der Aufruf kommt aus dem Hash, es wird kein
+  // neuer Historieneintrag erzeugt — sonst wuerde jede Rueckwaertsnavigation
+  // sofort wieder einen nachschieben.
+  const openDocDrawer = async (docId, opt = {}) => {
     const doc = state.data.docs.find(d => d.id === docId);
     if (!doc) return;
     state.drawer = { docId };
+    if (!opt.still) updateHash('push');
     lastTrigger = document.activeElement;
 
     $('#drawerTitle').textContent = doc.title;
@@ -1504,12 +1580,25 @@
     }
   };
 
-  const closeDrawer = () => {
+  // Schublade wirklich zumachen — ohne Historie, das ist Sache des Aufrufers.
+  const schublade_zu = () => {
     state.drawer = null;
     $('.drawer').classList.remove('open');
     $('.drawer').setAttribute('aria-hidden', 'true');
     $('.drawer-backdrop').classList.remove('open');
     if (lastTrigger?.focus) lastTrigger.focus();
+  };
+
+  // Schliessen ist eine Rueckwaertsnavigation: die Schublade hat einen
+  // eigenen Historieneintrag, also muessen Schliessen-Knopf, Esc, Klick
+  // daneben und Browser-Zurueck dieselbe Wirkung haben. Kommt der Aufruf
+  // aus dem Hash (`still`), wird nur zugemacht.
+  const closeDrawer = (opt = {}) => {
+    if (!opt.still && state.drawer && location.hash === canonicalHash()) {
+      zurueck(() => { schublade_zu(); updateHash('replace'); });
+      return;
+    }
+    schublade_zu();
   };
 
   // -------- Theme --------
@@ -2354,6 +2443,7 @@
     });
 
     // Hash change
+    window.addEventListener('popstate', () => { applyHash(); render(); });
     window.addEventListener('hashchange', () => { applyHash(); render(); });
   };
 
@@ -2415,6 +2505,21 @@
     bindEvents();
     setupInstallPrompt();
     applyHash();
+    // Steht ein Diagnosepfad in der Adresse und liegt dazu eine gespeicherte
+    // Sitzung mit demselben Pfad und demselben Schritt vor, dann uebernehmen
+    // wir deren Schritt-Spur. Ohne das faengt die Anzeige nach jedem Neuladen
+    // bei null an und behauptet, der Nutzer haette noch nichts beantwortet.
+    if (state.guide && !state.history.length) {
+      const s = loadSession();
+      if (s && s.guide === state.guide && s.step === state.step && Array.isArray(s.history)) {
+        state.history = s.history;
+        if (!state.result) state.result = s.result || null;
+      }
+    }
+    // Beim Start den Hash einmal in die kanonische Form bringen, ohne einen
+    // Eintrag zu erzeugen — der erste Eintrag der Sitzung gehoert dem
+    // Nutzer, nicht uns.
+    updateHash('replace');
     render();
     registerSW();
 
