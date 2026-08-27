@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:14:39.189Z",
+  "generated": "2026-08-27T05:16:56.271Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -467,18 +467,18 @@
       "cat": "Verkabelung",
       "title": "20-poliger Runddiagnosestecker · Belegung",
       "valid": "E30/E28/E34 · vor 09/1995",
-      "summary": "Belegung des klassischen 20-poligen Motorraum-Diagnosesteckers (round connector) für Motronic 1.x. Basis für Blinkcode-Diagnose und für Adapter auf OBD-2-Kabel.",
+      "summary": "Der 20-polige Runddiagnosestecker im Motorraum ist am E30 der Zugang zur Motronic. Die kursierenden Pinbelegungen widersprechen sich bei Masse und Dauerplus — hier steht deshalb das Ausmessverfahren statt einer Tabelle.",
       "points": [
         "Motronic 1.1/1.3: Blinkcodes über KL15 kurzzuschließen",
         "TXD/RXD Pins für DIS/MoDiC Anschluss",
-        "Nicht mit OBD-2 kompatibel — Adapter zwingend nötig"
+        "Nicht mit OBD-2 kompatibel — Adapter zwingend nötig",
+        "Vor jeder Brücke die Kontakte selbst ausmessen — eine Brücke auf den falschen Kontakt legt Dauerplus auf eine Signalleitung"
       ],
       "pins": [
-        "Pin 1  · KL30 (+12 V dauer)",
-        "Pin 4  · Masse",
-        "Pin 15 · KL15 (Zündung ein)",
-        "Pin 19 · TXD Motronic",
-        "Pin 20 · RXD Motronic"
+        "Belegung nicht gesichert — Quellen widersprechen sich bei Masse und Dauerplus",
+        "Masse: Kontakt mit Durchgang nahe null gegen einen blanken Massepunkt am Motor",
+        "Dauerplus: Kontakt mit Bordnetzspannung bei ausgeschalteter Zündung",
+        "Klemme 15: Kontakt, dessen Spannung beim Einschalten der Zündung sprunghaft kommt"
       ],
       "engines": [
         "M20",

@@ -8,36 +8,54 @@ Adapter der Anschluss moderner Interfaces. Wer am E30 Fehler sucht, landet
 früher oder später an diesem Stecker. Er gilt bis Baujahr 09/1995 und sitzt
 so auch im E28 und E34.
 
-## Die belegten Pins
+## Die Belegung ist nicht gesichert — miss sie aus
 
-| Pin | Bedeutung | Wofür du ihn brauchst |
-|---|---|---|
-| 1 | `KL30` — Dauerplus, direkt von der Batterie | Versorgung eines angeschlossenen Geräts, unabhängig vom Zündschloss |
-| 4 | Masse | Bezugspunkt jeder Messung am Stecker |
-| 15 | `KL15` — Zündungsplus | Trägt die Zündung, wird für die Blinkcode-Auslösung gebraucht |
-| 19 | `TXD` Motronic | Sendeleitung des Steuergeräts zum Diagnosegerät |
-| 20 | `RXD` Motronic | Empfangsleitung des Steuergeräts |
+Hier stand einmal eine Pintabelle. Sie ist entfernt worden, weil die
+verfügbaren Angaben sich widersprechen, und zwar an der gefährlichsten
+Stelle: bei Masse und Dauerplus.
 
-Pin 1 führt auch bei abgezogenem Zündschlüssel Spannung. Miss dort nie mit
-einer aufgesteckten Brücke, und lege beim Arbeiten am Stecker den Minuspol
-ab, wenn du unsicher bist.
+Eine Darstellung führt Pin 4 als Masse und Pin 15 als Zündungsplus. Eine
+andere, unabhängig davon, nennt Pin 19 als Masse, Pin 14 als Dauerplus und
+Pin 16 als Zündungsplus und behauptet ausserdem, dass an diesem Stecker
+überhaupt nur sechs Kontakte belegt sind — Pin 1, 7, 14, 16, 19 und 20. In
+dieser Aufzählung kommen Pin 4 und Pin 15 gar nicht vor.
 
-> **Belegung unvollständig:** Von zwanzig Kontakten sind hier fünf belegt
-> dokumentiert. Die übrigen führen je nach Ausstattung Signale weiterer
-> Steuergeräte. Wo hier nichts steht, gilt: nicht raten, sondern gegen Masse
-> durchmessen und die Leitung im Kabelbaum verfolgen.
+Beides kann nicht stimmen. Welche Fassung für den E30 gilt, ist mit den
+hier erreichbaren Quellen nicht zu entscheiden, und die Belegung kann sich
+über die Bauzeit geändert haben.
+
+> **Warum das keine Kleinigkeit ist:** Wer eine Brücke auf den falschen
+> Kontakt setzt, legt Dauerplus auf eine Signalleitung des Steuergeräts.
+> Der Stecker sitzt im Motorraum und führt auch bei abgezogenem
+> Zündschlüssel Spannung. Rate hier nichts.
+
+Die Kontakte selbst zu bestimmen dauert fünf Minuten und ist danach für
+dieses Fahrzeug sicher:
+
+1. **Masse finden.** Multimeter auf Durchgang, eine Spitze an einen blanken
+   Massepunkt am Motor, mit der anderen die Kontakte der Reihe nach
+   abgehen. Der Kontakt mit Durchgang nahe null ist die Masse.
+2. **Dauerplus finden.** Zündung aus. Von der gefundenen Masse aus die
+   Kontakte durchgehen — wo Bordnetzspannung ansteht, ist Dauerplus.
+3. **Zündungsplus finden.** Zündung ein und wieder aus. Der Kontakt, dessen
+   Spannung dabei sprunghaft kommt und sofort wieder verschwindet, trägt
+   Klemme 15.
+4. **Notieren.** Schreib dir die drei Nummern für dein Fahrzeug auf. Sie
+   ändern sich nicht mehr.
 
 ## Erste Prüfung: lebt der Stecker überhaupt?
 
 1. **Schutzkappe abnehmen** und die Kontakte ansehen. Grünspan, aufgeweitete
-   Buchsen oder Feuchtigkeit unter der Kappe sind am E30 nach dreißig Jahren
+   Buchsen oder Feuchtigkeit unter der Kappe sind am E30 nach dreissig Jahren
    die Regel, nicht die Ausnahme. Kontakte trocken reinigen, nicht fetten.
-2. **Masse prüfen:** Durchgang von `Pin 4` gegen einen blanken Massepunkt am
-   Motor. Ohne saubere Masse ist jede weitere Messung wertlos.
-3. **Dauerplus prüfen:** `Pin 1` gegen `Pin 4` — Bordnetzspannung, bei
-   ruhendem Fahrzeug rund 12.6 V bei geladener Batterie.
-4. **Zündungsplus prüfen:** `Pin 15` gegen `Pin 4`, Zündung ein. Die Spannung
-   muss sprunghaft kommen und beim Ausschalten sofort wieder verschwinden.
+2. **Masse prüfen:** Durchgang vom oben bestimmten Massekontakt gegen einen
+   blanken Massepunkt am Motor. Ohne saubere Masse ist jede weitere Messung
+   wertlos.
+3. **Dauerplus prüfen:** Dauerpluskontakt gegen Masse — Bordnetzspannung,
+   bei ruhendem Fahrzeug rund 12.6 V bei geladener Batterie.
+4. **Zündungsplus prüfen:** Klemme-15-Kontakt gegen Masse, Zündung ein. Die
+   Spannung muss sprunghaft kommen und beim Ausschalten sofort wieder
+   verschwinden.
 
 Fällt einer der drei Punkte durch, hat es keinen Sinn, ein Diagnosegerät
 anzustecken. Der Fehler liegt dann im Kabelbaum oder an der Sicherung, nicht
@@ -74,7 +92,7 @@ Du brauchst weiterhin eine Software, die das BMW-Protokoll spricht.
 
 | Symptom | Ursache |
 |---|---|
-| Kein Dauerplus an `Pin 1` | Sicherung oder Leitung ab Batterie unterbrochen |
-| `Pin 15` bleibt tot | Zündschloss oder Zündungssicherung — nicht das Steuergerät |
+| Kein Dauerplus am gefundenen Kontakt | Sicherung oder Leitung ab Batterie unterbrochen |
+| Klemme-15-Kontakt bleibt tot | Zündschloss oder Zündungssicherung — nicht das Steuergerät |
 | Messwerte springen beim Anfassen | Aufgeweitete Buchsen oder Grünspan im Stecker |
 | Gerät bleibt stumm, Spannungen stimmen | `TXD`/`RXD` vertauscht oder Protokoll passt nicht |

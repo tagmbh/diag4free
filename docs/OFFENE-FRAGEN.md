@@ -58,6 +58,21 @@ Zahl lässt jemanden eine Schraube überdrehen.
 Das ist die grösste geschlossene Gruppe und die am leichtesten zu
 schliessende.
 
+**Erledigt am 27.08.:** Der E30-Artikel führte eine Pintabelle als Tatsache
+— Pin 4 als Masse, Pin 15 als Zündungsplus. Zwei Agenten unabhängig
+voneinander und eine eigene Prüfung fanden dagegen Pin 19 als Masse, Pin 14
+als Dauerplus, Pin 16 als Zündungsplus, und ausserdem die Angabe, dass an
+diesem Stecker nur sechs Kontakte belegt sind: 1, 7, 14, 16, 19 und 20. Pin 4
+und Pin 15 kommen darin gar nicht vor.
+
+Die Tabelle ist entfernt. An ihrer Stelle steht das Ausmessverfahren, mit dem
+sich Masse, Dauerplus und Klemme 15 in fünf Minuten am eigenen Fahrzeug
+bestimmen lassen. Der Grund steht dabei: wer eine Brücke auf den falschen
+Kontakt setzt, legt Dauerplus auf eine Signalleitung des Steuergeräts.
+
+Welche Fassung stimmt, ist damit **weiterhin offen** — nur behauptet es jetzt
+niemand mehr.
+
 - **20-poliger Runddiagnosestecker, vollständige Belegung.** Belegt sind
   je nach Baureihe nur vier bis fünf Kontakte (Masse, die beiden
   Diagnoseleitungen, Dauerplus, Klemme 15). Die Sammlungen, die die
