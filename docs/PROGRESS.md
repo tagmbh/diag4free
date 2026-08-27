@@ -196,6 +196,85 @@ Arbeitsteilung, die trägt:
 - **Cloud (diag4free-Session):** Aufnahme, Validierung, UI, Abnahme, Deploy
 - **Nahtstelle:** ein Push auf einen Branch dieses Repos
 
+## Neustart-Rezept — so geht der Loop weiter
+
+Nach einem `/clear` in dieser Reihenfolge einsteigen. `HANDOFF.md` ist das
+Regelwerk, `docs/SUBAGENT-PLAN.md` die Rollen- und Datei-Eigentumsordnung,
+dieses Dokument der Stand.
+
+### Schritt 0 — Lage aufnehmen (2 Minuten, Hauptsession)
+
+```bash
+git fetch origin && git log --oneline -5 origin/main
+ls /root/.claude/uploads/*/            # sind die zugesagten Zips da?
+node scripts/validate-content.mjs
+GITHUB_SHA=x node scripts/build-index.mjs --check
+```
+
+Dann prüfen, ob die E88-Lieferung inzwischen als Branch auf `origin` liegt
+(`git branch -r | grep e88`). Wenn ja: Priorität 1 zuerst, sie fasst
+`content/e88/` an und würde jede parallele Redaktion dort überschreiben.
+
+### Schritt 1 — Welle starten
+
+Immer nur **eine** Welle gleichzeitig, und in einer Welle besitzt jeder Agent
+seine Dateien exklusiv. `app.js`, `content/index.json` und `sw.js` gehören
+grundsätzlich der Hauptsession, nie einem Subagenten — das ist die
+Konfliktfläche.
+
+| # | Agent | Typ | Besitzt exklusiv | Auftrag | Fertig, wenn |
+|---|-------|-----|------------------|---------|--------------|
+| A | WDS-Verlinker | `general-purpose` | `content/e46/docs.json`, `content/e90/docs.json` | Mit `scripts/wds-lookup.mjs` je Doc Kandidaten ziehen, **jeden Link einzeln öffnen und verifizieren**, nur eindeutige als `url` + `sources: [{label:"BMW WDS (Referenz)"}]` eintragen. Nichts erfinden, Mehrdeutiges weglassen und im Report benennen. | Validator grün, Report listet je Doc: Link übernommen / verworfen mit Grund |
+| B | Quellen-Redakteur | `general-purpose` | `content/e30/docs.json`, `content/f-series/docs.json` | Die 15 Docs ohne `sources` durchgehen und Attribution ergänzen, wo ein Beleg existiert. Wo keiner existiert: Lücke im Report benennen, **kein** Platzhalter. | Validator grün, Zähler „Docs ohne sources" gesunken |
+| C | Artikel-Autor | `general-purpose` | `content/e46/*.md` (neue Dateien) | Die 14 als geplant markierten Artikel schreiben, die der Validator aufzählt. Neu formuliert, Schweizer Orthografie, kein ß, keine Emojis, jede Angabe belegt. | Validator meldet 0 offene Artikel für die bearbeiteten IDs |
+| D | QA | `general-purpose` | `tests/run.mjs` | Nach der Integration: `node tests/run.mjs` auf allen Viewports, Regressionen melden. Testabdeckung für neue Felder ergänzen. | 191/193 Prüfungen grün |
+
+A, B und C können **parallel** laufen — disjunkte Dateien. D läuft danach.
+
+### Schritt 2 — Standard-Briefing (jedem Agenten voranstellen)
+
+Der Wortlaut steht in `docs/SUBAGENT-PLAN.md` §3. Die drei Punkte, an denen
+Agenten in diesem Projekt bisher gescheitert sind, gehören ausdrücklich rein:
+
+1. **Keine Spekulation.** Nur was belegt ist. Fehlendes wird als Lücke
+   benannt, nicht gefüllt. Widersprüche nicht glätten — beide Angaben nennen
+   und als unklar markieren.
+2. **Das Repo ist öffentlich.** Nichts Urheberrechtliches einchecken. Nur neu
+   formulierte Fakten, Attribution ohne Dokumentnamen und Seitenzahlen.
+   Leak-Check vor dem Push auf `ST[0-9]{3}`, `S. NN]`, `archive.org`, `_djvu`.
+3. **Nur die zugewiesenen Dateien anfassen.** Wer `app.js` braucht, liefert
+   einen Patch im Report, editiert nicht selbst.
+
+### Schritt 3 — Integration (Hauptsession, nach jeder Welle)
+
+```bash
+node scripts/validate-content.mjs
+node scripts/build-index.mjs             # Index neu bauen, nicht --check
+node tests/run.mjs
+# sw.js VERSION bumpen, wenn Frontend-Dateien berührt wurden
+git push -u origin claude/handoff-subagent-planning-9okxpy
+```
+
+Danach Draft-PR, CI abwarten, bei grün mergen. Deploy braucht rund 45
+Sekunden; verifizieren lässt er sich nur über den Actions-Status, weil die
+Live-Domain per Egress-Policy geblockt ist.
+
+### Abbruchbedingung des Loops
+
+Der Loop läuft, bis alle vier gleichzeitig zutreffen:
+
+- Validator meldet 0 offene Artikel und 0 Docs ohne `sources`
+- `node tests/run.mjs` grün auf allen vier Viewports, beiden Themes, beiden
+  Orientierungen und im Offline-Erstlauf
+- Die E88-Lieferung ist eingespielt und in `main`
+- Kein Doc mehr ohne Weg dorthin — jedes über den Trichter Fahrzeug → Motor
+  erreichbar (prüft der Validator)
+
+Solange eines offen ist, gibt es Arbeit für die nächste Welle. Was **nicht**
+in diesen Loop gehört, weil es Belege braucht, die die BMW-Schulungshefte
+nicht hergeben: `measure.json` mit Sollwerten. Dafür fehlt die Quelle, nicht
+die Zeit.
+
 ## Bekannte Grenzen dieser Session
 
 - `diag4all.t-alpha.com` und `tagmbh.github.io` sind per Egress-Policy geblockt
