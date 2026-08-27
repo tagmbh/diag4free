@@ -2,13 +2,18 @@
    diag4free — Parametrische Fahrzeug- und Motorgrafik
    Vanilla, kein Build-Schritt. Exportiert window.D4F_GFX.
 
-   Warum gezeichnet statt fotografiert:
-   - Offline-PWA: SVG kostet Bytes im dreistelligen Bereich, Fotos Megabytes
-   - Korrektheit: ein generiertes "Foto" eines N54 wäre ein erfundener Motor.
-     Hier ergibt sich jede Zeichnung aus echten Daten (Baureihe, Epoche,
-     Zylinderzahl, Anordnung, Aufladung, Ventiltrieb) — was man sieht, stimmt.
-   - Lizenz: keine fremden Schnittbilder oder 3D-Modelle im öffentlichen Repo
-   - Theming: currentColor, damit Light/Dark ohne zweiten Satz Assets geht
+   Zwei Ebenen, bewusst beide:
+   - Fahrzeuge tragen ein freigestelltes Seitenfoto (assets/fahrzeuge/*.webp,
+     je wenige Kilobyte). Wer eine Baureihe wählt, soll das Auto sehen, das
+     vor ihm steht, und nicht eine Strichzeichnung davon.
+   - Darunter liegt weiterhin die gerechnete Silhouette. Sie trägt, solange
+     das Bild lädt, wenn es fehlt und wenn der Browser webp nicht kann. Sie
+     zeichnet in currentColor, also ohne zweiten Satz Assets für Dark.
+   - Motoren bleiben vorerst gezeichnet. Ein generiertes "Foto" eines N54
+     wäre ein erfundener Motor; die Zeichnung ergibt sich dagegen aus
+     content/engines.json — Zylinderzahl, Anordnung, Aufladung, Ventiltrieb.
+   - Im öffentlichen Repo liegen nur eigene Assets, keine fremden
+     Schnittbilder, Pressefotos oder 3D-Modelle.
 
    Warum je Baureihe und nicht je Karosserieform:
    Vorher zeichnete diese Datei fünf Silhouetten — eine pro `body`. In der
@@ -524,9 +529,48 @@ Limousine  : { x0:16.1, xt:15.1, ny:40.8, hx:38.9, hy:39.3, cx:63.5, cy:37, ax:8
   // ist an einer Umbenennung zerbrochen, einmal sogar still und mit
   // falschem Ergebnis. Deshalb steht die Liste jetzt im Vertrag: wer hier
   // eine Form ergaenzt, macht sie damit zugleich pruefbar.
+  // -------- Foto statt Zeichnung, wo eines vorliegt --------
+  // Der Wunsch war ausdruecklich: keine Strichzeichnungen, sondern echte
+  // Fahrzeuge. Fuer jede Baureihe in dieser Liste liegt unter
+  // assets/fahrzeuge/<id>.webp ein freigestelltes Seitenprofil (260 px
+  // breit, wenige Kilobyte). Die Zeichnung bleibt trotzdem im Markup: sie
+  // steht darunter und traegt, wenn das Bild fehlt, noch laedt oder der
+  // Browser webp nicht kann. Ein Eintrag hier ohne Datei daneben faellt in
+  // scripts/audit.mjs auf.
+  const MIT_FOTO = [
+    'e28', 'e30', 'e34', 'e36', 'e38', 'e39', 'e46', 'e60', 'e70',
+    'e87', 'e88', 'e90', 'f10', 'f15', 'f22', 'f30'
+  ];
+
+  /**
+   * Fahrzeugbild fuer Karten und Kopfzeilen.
+   * Liefert das Foto ueber der Zeichnung; ohne Foto genau das, was
+   * vehicleSvg() bisher geliefert hat.
+   * @param {string} body      Karosserieform aus models.json
+   * @param {string} era       'classic' | 'modern'
+   * @param {string} seriesId  Baureihen-ID aus models.json
+   */
+  const vehicleArt = (body, era = 'modern', seriesId = '') => {
+    const id = String(seriesId || '').toLowerCase();
+    const svg = vehicleSvg(body, era, id);
+    if (!MIT_FOTO.includes(id)) return svg;
+    // onerror raeumt das Bild weg statt ein kaputtes Symbol stehen zu
+    // lassen — darunter liegt die Zeichnung und wird wieder sichtbar.
+    // Bewusst kein loading="lazy": alle sechzehn Bilder zusammen sind rund
+    // 120 kB und liegen ohnehin im Vorrat des Service Workers. Lazy haette
+    // hier nichts gespart, dafuer beim Scrollen durch die Baureihenliste
+    // sichtbar nachgeladen — und es macht "Bild da" von "Bild geladen"
+    // ununterscheidbar, worueber die Abnahme schon gestolpert ist.
+    return `<span class="veh-art">`
+      + `<img class="veh-photo" src="assets/fahrzeuge/${id}.webp" alt="" `
+      + `width="260" height="99" decoding="async" `
+      + `onerror="this.remove()">${svg}</span>`;
+  };
+
   window.D4F_GFX = {
-    vehicleSvg, engineSvg,
+    vehicleSvg, vehicleArt, engineSvg,
     formen: Object.keys(FORMEN),
-    baureihen: Object.keys(SERIEN)
+    baureihen: Object.keys(SERIEN),
+    fotos: MIT_FOTO.slice()
   };
 })();

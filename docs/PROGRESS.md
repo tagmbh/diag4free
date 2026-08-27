@@ -19,6 +19,7 @@ Wissensbasis auf voller Abdeckung, Oberfläche nach dem ersten Nutzerfeedback
 | Symptom-Einstieg (`symptome.js`) | 32 Symptome, 94 Ursachen |
 | Glossar (`glossar.js`) | 98 Begriffe |
 | Silhouetten je Baureihe (`graphics.js`) | 16, alle unterscheidbar |
+| Fahrzeugfotos (`assets/fahrzeuge/`) | 16 freigestellte Seitenprofile, zusammen ~120 kB |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
 | Abnahme (`tests/run.mjs`) | 331 Prüfungen |
 
@@ -63,9 +64,11 @@ done
 ## Offen — braucht eine Entscheidung des Nutzers
 
 1. **PR #7 mergen.** Bis dahin sieht der Nutzer live 21 Dokumente statt 125.
-2. **Fotorealistische Renderings.** Vom Nutzer gefordert, blockiert: die
-   Bild-CDN wird vom Egress-Proxy mit 403 abgewiesen. Die gezeichneten
-   Silhouetten sind der belastbare Zwischenstand, kein Ersatz.
+2. **Fotorealistische Motorbilder.** Die Fahrzeuge sind erledigt (siehe
+   unten). Bei den Motoren ist die Lage anders: ein generiertes Bild eines
+   N54 wäre ein erfundener Motor. Entweder es bleibt bei der gerechneten
+   Zeichnung, oder es braucht eine belegte Vorlage. Das ist eine
+   inhaltliche Entscheidung, keine technische.
 3. **Gesperrte Hosts, die nachweislich Substanz gekostet haben.** Jeder davon
    würde eine offene Kategorie in einem Durchgang schliessen:
    `ms4x.net` (MS43-Pinliste), `bmwrepairguide.com` (Motornummern-Positionen),
@@ -87,6 +90,27 @@ done
   lassen — das Audit meldet ihn als Hinweis.
 - **M50/M52/M54 Motornummer.** Zwei Quellen widersprechen sich in der
   Blockseite. Ein Motor auf der Bühne klärt das, keine weitere Recherche.
+
+## Fahrzeugfotos statt Strichzeichnungen (27.08.)
+
+Die Bild-CDN von der Erzeugungsseite (`d8j0ntlcm91z4.cloudfront.net`) bleibt
+vom Egress-Proxy abgewiesen — der Weg dorthin führt deshalb über den
+Sandkasten der Erzeugungsseite, der sie erreicht: dort erzeugen, freistellen,
+verkleinern, nach webp wandeln, danach mit Prüfsumme herüberholen. Die
+Prüfsumme ist nicht Zierde: eine lange, ungebrochene Base64-Zeile ist beim
+Transport zweimal um ein Byte verfälscht worden, still.
+
+Fünf der sechzehn Bilder mussten neu erzeugt werden, und das ist der
+eigentliche Punkt: drei zeigten schlicht das falsche Auto (der F22 einen
+Aston Martin, der E70 einen Audi, der F15 einen Mercedes mit doppeltem Dach),
+zwei trugen einen grauen Hof, den die Freistellung stehen gelassen hatte. Ein
+Bild anzuschauen ist Teil der Prüfung — es zu erzeugen ist es nicht.
+
+Im Markup liegt das Foto **über** der Zeichnung, nicht an ihrer Stelle. Fällt
+es aus, räumt `onerror` es weg und die Silhouette steht wieder da, ohne dass
+Javascript etwas umschalten muss. Der Service Worker legt die Bilder einzeln
+und fehlertolerant in den Vorrat: `addAll` ist alles-oder-nichts, ein
+fehlendes Bild hätte die App offline unbrauchbar gemacht.
 
 ## Gefundene und behobene Fehler (Verlauf)
 
