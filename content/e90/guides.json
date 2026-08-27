@@ -485,7 +485,7 @@
     },
     "start-zuendung": {
       "title": "Kein Zündfunke",
-      "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, sechs gleichzeitig defekte Spulen erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
+      "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, gleichzeitig defekte Spulen an allen Zylindern erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
       "next_docs": [
         "D4F-E90-005",
         "D4F-E90-009"
