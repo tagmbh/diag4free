@@ -497,6 +497,44 @@ async function main() {
         'Unter jedem Foto liegt weiterhin die Zeichnung',
         `${fotos.length} Fotos, aber nur ${mitSvg} Zeichnungen`);
 
+      // --- Motorschema: die Legende muss zum Bild passen ---
+      // Der Wert der Legende steht und faellt damit, dass sie aus denselben
+      // Merkmalen kommt wie die Zeichnung. Eine zweite, handgepflegte Liste
+      // waere still auseinandergelaufen — der Test haelt fest, dass genau
+      // das nicht passiert: Wo das Bild einen Lader zeichnet, nennt die
+      // Legende einen, und wo keiner gezeichnet ist, nennt sie keinen.
+      {
+        const paare = await page.evaluate(() => {
+          const G = window.D4F_GFX;
+          if (!G || !G.engineTeile) return null;
+          const proben = [
+            ['N54', 'R6', 'Bi-Turbo'], ['M20', 'R6', 'Sauger'],
+            ['S65', 'V8', 'Sauger'],   ['N47', 'R4', 'Turbo']
+          ];
+          return proben.map(([id, l, a]) => ({
+            id,
+            teile: G.engineTeile(l, a, id).map(t => t.teil),
+            svg: G.engineSvg(l, a, id)
+          }));
+        });
+        expect(Array.isArray(paare) && paare.length === 4,
+          'engineTeile ist ansprechbar', 'D4F_GFX.engineTeile fehlt');
+        for (const p of paare || []) {
+          expect(p.teile.length >= 3,
+            `${p.id}: Legende hat Substanz`, `nur ${p.teile.length} Eintraege`);
+          // Der Lader ist das Merkmal, das im Schema als eigene Form
+          // auftaucht — daran laesst sich Bild gegen Text pruefen.
+          const bildHatLader = /a9,9 0 1,1/.test(p.svg);
+          const textNenntLader = p.teile.some(t => /Turbolader|Kompressor/.test(t));
+          expect(bildHatLader === textNenntLader,
+            `${p.id}: Legende und Bild sind sich einig ueber die Aufladung`,
+            `Bild ${bildHatLader ? 'zeichnet' : 'zeichnet keinen'} Lader, Text ${textNenntLader ? 'nennt' : 'nennt keinen'}`);
+          // Zylinderzahl darf nicht auseinanderlaufen
+          expect(p.teile.some(t => t.includes('Zylinder')),
+            `${p.id}: Legende nennt die Bauform`, p.teile.join(' | '));
+        }
+      }
+
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
       await page.goto(BASE + '/#/measure', { waitUntil: 'domcontentloaded' });
       await settle(page, 1300);

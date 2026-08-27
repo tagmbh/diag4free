@@ -1494,6 +1494,28 @@
 .facts-list { margin: 0; padding-left: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
 .facts-list li { margin-bottom: var(--space-1); }
 
+/* Legende zum Motorschema.
+   Zwei Spalten auf dem Desktop, damit Begriff und Erklaerung nebeneinander
+   stehen und das Auge die Begriffe von oben nach unten abfahren kann; auf
+   schmalen Geraeten untereinander, weil eine 40-Prozent-Spalte dort nur
+   noch Silbentrennung ist. Kein Aufzaehlungspunkt: der Begriff ist die
+   Marke. */
+.teile-liste { margin: 0; padding: 0; list-style: none; font-size: var(--text-sm); }
+.teile-liste li {
+  display: grid;
+  grid-template-columns: minmax(11rem, 15rem) 1fr;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--color-border);
+}
+.teile-liste li:first-child { border-top: 0; padding-top: 0; }
+.teile-name { font-weight: 600; color: var(--color-text); }
+.teile-was { color: var(--color-text-muted); }
+
+@media (max-width: 620px) {
+  .teile-liste li { grid-template-columns: 1fr; }
+}
+
 /* --- Wege ins Wissen --- */
 .route-grid {
   display: grid;
