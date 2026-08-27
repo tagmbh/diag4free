@@ -1,27 +1,37 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-08-27 · `main` = v46f2dd4 · Arbeit liegt in **PR #7** (offen)
-> Live: https://diag4all.t-alpha.com — zeigt bis zum Merge den alten Stand.
+> Stand: 2026-08-27 · `main` = `f1e39d3` · **nichts offen, kein PR hängt**
+> Live: https://diag4all.t-alpha.com
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
 
 ## Wo die App steht
 
-Wissensbasis auf voller Abdeckung, Oberfläche nach dem ersten Nutzerfeedback
-überarbeitet. Alles davon liegt in PR #7 und ist **nicht live**.
+Vier Durchgänge sind gemerged und liegen auf `main`:
+
+| PR | Was |
+|----|-----|
+| #7 | Wissensbasis auf volle Abdeckung, Oberfläche nach dem ersten Nutzerfeedback |
+| #8 | 16 Fahrzeugfotos statt Strichzeichnungen |
+| #9 | `docs/GESPERRTE-HOSTS.md` — was eine Netzfreigabe je einbringt |
+| #10 | Legende zum Motorschema |
 
 | Bereich | Zustand |
 |---------|---------|
-| Dokumente | 125 in 16 Baureihen (vorher 21 in 8) |
+| Baureihen | 16 in 4 Gruppen, alle mit eigenem Inhalt |
+| Dokumente | 128 (Ausgangslage war 21 in 8 Baureihen) |
 | Motor-Steckbriefe | 43 |
-| Artikel | 78 |
+| Artikel | 81 |
+| Diagnosepfade | 40 |
 | Messplan | 31 Positionen |
-| Symptom-Einstieg (`symptome.js`) | 32 Symptome, 94 Ursachen |
+| Symptom-Einstieg (`symptome.js`) | 32 Symptome in 9 Gruppen, 94 Ursachen |
 | Glossar (`glossar.js`) | 98 Begriffe |
 | Silhouetten je Baureihe (`graphics.js`) | 16, alle unterscheidbar |
 | Fahrzeugfotos (`assets/fahrzeuge/`) | 16 freigestellte Seitenprofile, zusammen ~120 kB |
+| Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
-| Abnahme (`tests/run.mjs`) | 331 Prüfungen |
+| Abnahme (`tests/run.mjs`) | **435 Prüfungen**, alle grün |
+| Audit (`scripts/audit.mjs`) | 0 Befunde |
 
 **Verifizieren nach jeder Änderung:**
 
@@ -39,6 +49,33 @@ Der Browserpfad ist wichtig: In dieser Umgebung liegt Chromium vorinstalliert,
 aber unter einem anderen Pfad als die installierte Playwright-Version erwartet.
 Ohne `CHROMIUM_PATH` bricht der Lauf mit „Executable doesn't exist" ab — ein
 zweiter Download ist trotzdem nicht nötig.
+
+## Wiedereinstieg in einer neuen Session
+
+In dieser Reihenfolge, sie ist bewusst kurz:
+
+1. **`HANDOFF.md`** — Architektur und Regeln. Was dort steht, gilt.
+2. **Dieses Dokument** — Stand und offene Liste.
+3. **`docs/GESPERRTE-HOSTS.md`** — was ohne Netzfreigabe nicht geht und
+   warum BMW-Pressebilder trotz freier Zugaenglichkeit nicht ins Repo
+   duerfen.
+4. Die drei Prüfungen laufen lassen (unten). Grün heisst: der Stand im
+   Repo ist der, den dieses Dokument beschreibt.
+
+Vier Regeln, die sich in diesem Projekt jede einzeln bezahlt gemacht haben:
+
+- **Kein Sollwert ohne zwei unabhaengige Belege.** Ueber 30 erfundene
+  Zahlen sind aus dem Bestand geflogen, darunter ein Anzugsmoment fuer M6
+  in Aluminium. Im Zweifel das vergleichende Verfahren beschreiben und die
+  Luecke benennen.
+- **Kein fremdes Material ins Repo.** Es ist oeffentlich. Wissen wird
+  gelesen und in eigenen Worten uebernommen; Bilder nur, wenn die Lizenz
+  das Hosten traegt.
+- **Ein Bild zu erzeugen ist keine Pruefung.** Fuenf der sechzehn
+  Fahrzeugrenders waren beim ersten Durchgang falsch — drei zeigten ein
+  Auto einer anderen Marke. Angeschaut werden muss jedes einzeln.
+- **Organisationsdenials nicht umgehen.** Ein `403` vom Egress-Proxy wird
+  gemeldet, nicht umschifft.
 
 ## Wenn parallel Agenten schreiben
 
@@ -63,35 +100,68 @@ done
 
 ## Offen — braucht eine Entscheidung des Nutzers
 
-1. **PR #7 mergen.** Bis dahin sieht der Nutzer live 21 Dokumente statt 125.
-2. **Fotorealistische Motorbilder — entschieden, blockiert.** Die Fahrzeuge
-   sind erledigt. Bei den Motoren ist die Lage anders: ein generiertes Bild
-   eines N54 waere ein erfundener Motor, also braucht es eine belegte
-   Vorlage. Der Weg dorthin ist gewaehlt (Patentschnittzeichnungen, hilfsweise
-   CC-BY-SA-Fotos) und haengt nur noch an der Netzfreigabe — siehe
-   `docs/GESPERRTE-HOSTS.md`. Bis dahin bleibt das gerechnete Schema.
-3. **Gesperrte Hosts.** Die vollstaendige Liste steht in
-   `docs/GESPERRTE-HOSTS.md` — sechzehn Hosts, je mit dem, was eine Freigabe
-   konkret einbringt. Sie zerfaellt in zwei Teile: Bildquellen fuer die
-   Motoren (Patentschriften sind der saubere Weg, BMW-Pressebilder
-   ausdruecklich nicht) und vier inhaltliche Luecken, die je eine Kategorie
-   in einem Durchgang schliessen wuerden.
+1. **Motorbilder: Optik oder Beleg.** Die Fahrzeuge sind erledigt, bei den
+   Motoren steht eine Weggabelung, und sie ist nicht technisch, sondern
+   inhaltlich:
+   - **Belegt** heisst Patentschnittzeichnungen — amtliche
+     Veroeffentlichungen, frei verwendbar, fuer die Bauteilsuche besser als
+     ein Foto. Aber Strichgrafik in Schwarzweiss, also optisch das Gegenteil
+     der Fahrzeugfotos.
+   - **Schoen** heisst generieren wie bei den Fahrzeugen. Dann steht im
+     Motorraum ein erfundener Motor, und der Nutzer sucht am falschen
+     Bauteil. Nur mit sichtbarer Kennzeichnung als Symbolbild vertretbar.
+
+   Der urspruengliche Wunsch lautete „saubere 3D-Renders". Das ist mit
+   „belegt" nicht vereinbar — deshalb liegt die Wahl beim Nutzer und wurde
+   nicht stillschweigend entschieden.
+
+2. **Netzfreigabe fuer die Patent-Hosts.** Am 27.08. gesetzt, greift aber
+   erst in einer neuen Session: eine laufende Session liest ihre
+   Netzrichtlinie nur beim Start. Wer hier weitermacht, prueft zuerst:
+
+   ```bash
+   for h in patents.google.com worldwide.espacenet.com \
+            depatisnet.dpma.de data.epo.org; do
+     echo "$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 https://$h/)  $h"
+   done
+   ```
+
+   `000` heisst weiterhin gesperrt — dann steht **Network access** noch auf
+   *Trusted* statt *Custom*, oder die Freigabe haengt an einer anderen
+   Umgebung als der, in der die Session laeuft. Nicht umgehen, sondern
+   melden. Details in `docs/GESPERRTE-HOSTS.md`.
+
+3. **Weitere Hosts.** Vier inhaltliche Luecken haengen an Hosts, die noch
+   gesperrt sind — `ms4x.net`, `bmwrepairguide.com`, `newtis.info`,
+   `archive.org`. Jeder schliesst eine Kategorie in einem Durchgang;
+   `docs/GESPERRTE-HOSTS.md` nennt zu jedem, was er einbringt.
 
 ## Offen — inhaltlich, ohne Entscheidung machbar
 
-- **E90 ohne Startpfad.** Die meistgefahrene Baureihe hat keinen Diagnosepfad
-  für „springt nicht an" und kein Startsystem-Doc. Der Symptomkatalog lässt
-  sie in der ganzen Gruppe aus — die auffälligste Lücke im Bestand.
-- **F30 ohne B47-Inhalt.** `models.json` gibt dem F30 einen B47; kein einziges
-  F30-Dokument und kein Guide filtert darauf. Ein Diesel-Fahrer sieht dort
-  weniger als ein Benziner. Gleiche Klasse: `D4F-E28-005` lässt den S38 aus.
-- **E30 M42.** Für seine Motronic 1.7 kam nichts Belegtes zusammen; er bleibt
-  die offene Motorlücke der Baureihe.
-- **B57 ohne Fahrzeug.** Der Steckbrief gehört zur G-Serie, die der Katalog
-  nicht führt. Entweder Katalog erweitern oder Steckbrief begründet stehen
-  lassen — das Audit meldet ihn als Hinweis.
+Kurz, weil der Bestand vollstaendig ist: das Audit meldet 0 Befunde, alle
+fuenf Abdeckungs-Kennzahlen stehen bei 100 Prozent oder darueber. Was hier
+steht, ist keine Luecke im Geruest, sondern Rest.
+
+- **E30 M42.** Der Steckbrief steht (5 Erkennungsmerkmale, 4 Schwachstellen),
+  aber zur Motronic 1.7 kam nichts doppelt Belegtes zusammen. Braucht eine
+  Quelle, nicht mehr Arbeit.
+- **B57 ohne Fahrzeug.** Der Steckbrief existiert, wird aber von keinem
+  Modell referenziert — er gehoert zur G-Serie, die der Katalog nicht fuehrt.
+  Entweder Katalog erweitern oder den Steckbrief begruendet stehen lassen.
+  `validate-content.mjs` meldet ihn als Hinweis, nicht als Fehler.
 - **M50/M52/M54 Motornummer.** Zwei Quellen widersprechen sich in der
-  Blockseite. Ein Motor auf der Bühne klärt das, keine weitere Recherche.
+  Blockseite. Das klaert ein Motor auf der Buehne, keine weitere Recherche —
+  im Bestand steht die Widerspruechlichkeit benannt statt einer Behauptung.
+
+### Erledigt, damit es niemand doppelt anfaengt
+
+Frueher standen hier zwei Posten, die inzwischen zu sind und beim
+Wiedereinstieg sonst noch einmal aufgemacht wuerden:
+
+- **E90-Startpfad** — der Guide `startet-nicht` steht, 10 Dokumente, die
+  Baureihe haengt an 9 der 32 Symptome.
+- **F30-Diesel** — der B47 ist im Katalog und in `content/f-series/docs.json`
+  (`D4F-F-001`, `D4F-F-002`) versorgt.
 
 ## Fahrzeugfotos statt Strichzeichnungen (27.08.)
 
@@ -113,6 +183,28 @@ es aus, räumt `onerror` es weg und die Silhouette steht wieder da, ohne dass
 Javascript etwas umschalten muss. Der Service Worker legt die Bilder einzeln
 und fehlertolerant in den Vorrat: `addAll` ist alles-oder-nichts, ein
 fehlendes Bild hätte die App offline unbrauchbar gemacht.
+
+## Legende zum Motorschema (27.08.)
+
+Die Zeichnung zeigte seit je Nockenwellen, VANOS-Toepfe, DISA-Klappe, Lader
+und Steuertrieb — benannte davon aber nichts. Fuer den Profi reicht das Bild,
+fuer den Einsteiger ist es eine Wand; genau das stand im Feedback.
+
+`D4F_GFX.engineTeile()` leitet die Legende aus **denselben** Merkmalen ab, aus
+denen gezeichnet wird (`MOTOR[id]`, `parseLayout`, `ladeZahl`). Sie kann
+deshalb weder behaupten, was nicht im Bild steht, noch verschweigen, was drin
+ist. Eine zweite, handgepflegte Liste waere still auseinandergelaufen — diese
+Sorte Doppelpflege hat das Repo schon einmal eine falsche Grafikpruefung
+gekostet.
+
+Die Abnahme haelt die Deckung an der Aufladung fest, weil der Lader im Schema
+eine eigene Form hat: zeichnet das Bild eine Turboschnecke, muss die Legende
+einen Lader nennen — und umgekehrt.
+
+Der Text sagt, **warum das Teil jetzt interessiert**, nicht wie es
+funktioniert. Beim N47 also: die Kette sitzt hinten, an sie kommt man nur mit
+ausgebautem Getriebe. Jeder Begriff laeuft durch `Glossar.markup()` und ist
+damit einen Klick von seiner Erklaerung entfernt, ohne den Profi aufzuhalten.
 
 ## Gefundene und behobene Fehler (Verlauf)
 
