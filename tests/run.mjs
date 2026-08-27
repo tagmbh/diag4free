@@ -225,6 +225,41 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Tastatur im Diagnosepfad ---
+      // Am Werkstattrechner liegt die Maus selten griffbereit. J und N
+      // beantworten, Pfeil links geht zurueck — und beides muss denselben
+      // Weg nehmen wie ein Klick, sonst laeuft die Historie auseinander.
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1200);
+      const tastaturGuide = page.locator('[data-view-panel="troubleshoot"] [data-select-guide]').first();
+      if (await tastaturGuide.count() === 1) {
+        await tastaturGuide.click();
+        await settle(page, 600);
+        const hashStart = await page.evaluate(() => location.hash);
+        await page.keyboard.press('j');
+        await settle(page, 500);
+        const hashNachJa = await page.evaluate(() => location.hash);
+        expect(hashNachJa !== hashStart, 'Taste J beantwortet den Schritt', 'nichts passiert');
+        await page.keyboard.press('ArrowLeft');
+        await settle(page, 500);
+        expect(await page.evaluate(() => location.hash) === hashStart,
+          'Pfeil links geht denselben Schritt zurueck', 'Zustand stimmt nicht mehr');
+
+        // Waehrend in einem Feld getippt wird, darf keine dieser Tasten
+        // greifen. Auf schmalen Geraeten ist das Kopfzeilen-Suchfeld
+        // ausgeblendet — dann gibt es diesen Fall dort nicht zu pruefen.
+        const suchfeld = page.locator('#globalSearch');
+        if (await suchfeld.isVisible()) {
+          await suchfeld.focus();
+          await page.keyboard.type('jn');
+          await settle(page, 300);
+          expect(await suchfeld.inputValue() === 'jn',
+            'Tastenkuerzel greifen nicht im Eingabefeld', 'Eingabe wurde abgefangen');
+          await page.evaluate(() => { const el = document.querySelector('#globalSearch'); el.value = ''; el.blur(); });
+          await settle(page, 300);
+        }
+      }
+
       // --- Erststart: kurze Einfuehrung, danach nie wieder ---
       // Der Start wirkte "plump": sechzehn Karten, kein Wort dazu. Die
       // Einfuehrung darf aber nicht selbst zum Hindernis werden — die

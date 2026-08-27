@@ -213,6 +213,7 @@
                     <span class="pick-name">${escapeHtml(e)}</span>
                     <span class="pick-sub">${escapeHtml(sub)}</span>
                     ${(spec?.id_marks || []).length ? `<span class="pick-meta">${escapeHtml(spec.id_marks[0])}</span>` : ''}
+                    ${(spec?.weak_points || []).length ? `<span class="pick-weak"><span class="pick-weak-label">Bekannt</span>${escapeHtml(spec.weak_points[0])}</span>` : ''}
                   </div>
                   ${e === state.engine ? '<span class="pick-badge">aktiv</span>' : ''}
                 </button>`;
@@ -1086,6 +1087,9 @@
           ${iconSvg('x')}<span class="answer-full">Nein / abweichend</span><span class="answer-short">Nein</span>
         </button>
       </div>
+      <!-- Nur dort eingeblendet, wo es eine Tastatur gibt. Am Telefon waere
+           es Ballast, am Werkstattrechner spart es den Griff zur Maus. -->
+      <p class="key-hint" aria-hidden="true"><kbd>J</kbd> ja · <kbd>N</kbd> nein · <kbd>←</kbd> zurück</p>
     `;
 
     saveSession();
@@ -2492,6 +2496,17 @@
 
     $$('[data-close-drawer]').forEach(b => b.addEventListener('click', closeDrawer));
     $('[data-drawer-backdrop]').addEventListener('click', closeDrawer);
+    // Am Werkstattrechner liegt die Maus selten griffbereit und die Haende
+    // sind schmutzig. Deshalb fuehrt die Tastatur durch den Diagnosepfad:
+    // J/N beantworten die Frage, Pfeil links geht zurueck, / springt in die
+    // Suche. Waehrend in einem Feld getippt wird, gilt nichts davon.
+    const tipptGerade = () => {
+      const el = document.activeElement;
+      if (!el) return false;
+      const t = (el.tagName || '').toLowerCase();
+      return t === 'input' || t === 'textarea' || t === 'select' || el.isContentEditable;
+    };
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && state.drawer) closeDrawer();
       else if (e.key === 'Escape' && isSidebarOpen()) setSidebar(false);
@@ -2499,6 +2514,27 @@
         e.preventDefault();
         $('#globalSearch').focus();
         $('#globalSearch').select();
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey || tipptGerade()) return;
+
+      if (e.key === '/') {
+        e.preventDefault();
+        $('#globalSearch').focus();
+        $('#globalSearch').select();
+        return;
+      }
+
+      // Ab hier nur noch im laufenden Diagnosepfad.
+      if (state.view !== 'troubleshoot' || !state.guide || state.result) return;
+      const ja = $('[data-answer="yes"]');
+      const nein = $('[data-answer="no"]');
+      if (!ja || !nein) return;
+
+      if (e.key === 'j' || e.key === 'J') { e.preventDefault(); ja.click(); }
+      else if (e.key === 'n' || e.key === 'N') { e.preventDefault(); nein.click(); }
+      else if (e.key === 'ArrowLeft' && state.history.length) {
+        e.preventDefault();
+        $('[data-step-back]')?.click();
       }
     });
 
