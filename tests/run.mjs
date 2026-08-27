@@ -764,9 +764,23 @@ async function main() {
       // einen Hinweis. Gemeldet werden sie trotzdem.
       if (fehlend.length) console.log(`  · ${fehlend.length} geplante(r) Artikel noch nicht geschrieben`);
 
-      // Und einmal durch die echte Oberflaeche, nicht nur durch den Parser
-      const mitArtikel = artikel[0];
-      await page.goto(BASE + `/#/docs/${mitArtikel.id}`, { waitUntil: 'domcontentloaded' });
+      // Und einmal durch die echte Oberflaeche, nicht nur durch den Parser.
+      //
+      // Wichtig: ein Doc nehmen, dessen Artikel auch wirklich existiert.
+      // `artikel[0]` war das falsche Kriterium — steht dort ein geplanter,
+      // noch nicht geschriebener Artikel, zeigt die App korrekt einen
+      // Hinweis statt eines Artikels, und der Test meldete einen Fehler,
+      // wo keiner war. Genau das ist in CI passiert.
+      const geschrieben = [];
+      for (const a of artikel) {
+        const da = await page.evaluate(
+          async (a) => (await fetch(`./content/${a.series}/${a.datei}`)).ok, a);
+        if (da) geschrieben.push(a);
+      }
+      expect(geschrieben.length > 0, 'mindestens ein geschriebener Artikel vorhanden',
+        `${artikel.length} geplant, keiner geschrieben`);
+      const mitArtikel = geschrieben[0];
+      await page.goto(BASE + `/#/docs/${mitArtikel?.id}`, { waitUntil: 'domcontentloaded' });
       await settle(page, 1200);
       const imDrawer = await page.evaluate(() => {
         const el = document.querySelector('#articleContent');

@@ -8,7 +8,7 @@ Die Baureihe trägt über neun Baujahre sieben Motorbaureihen. Vier davon sind V
 |---|---|---|
 | N45 | Vierzylinder-Benziner, Sauger | ohne Valvetronic, ohne Ausgleichswellen |
 | N46 | Vierzylinder-Benziner, Sauger | Valvetronic, Saugrohreinspritzung |
-| N43 | Vierzylinder-Benziner, Sauger | Valvetronic plus Direkteinspritzung |
+| N43 | Vierzylinder-Benziner, Sauger | Direkteinspritzung, keine Valvetronic |
 | N52 | Sechszylinder-Benziner, Sauger | Valvetronic, Doppel-VANOS |
 | N54 | Sechszylinder-Benziner, aufgeladen | Direkteinspritzung, zwei Lader |
 | N55 | Sechszylinder-Benziner, aufgeladen | Direkteinspritzung, ein Lader |
@@ -31,8 +31,8 @@ Aus dem Schild allein folgt also nichts. Aus dem Schild plus Baustand folgt eine
 
 1. **Zylinderzahl zählen.** Vier oder sechs entscheidet bereits die halbe Frage.
 2. **Diesel oder Benziner** über Einspritzanlage und Ansauggeräusch klären.
-3. **Bei vier Zylindern: Hochdruckpumpe am Zylinderkopf?** Wenn ja, ist es der N43. Wenn nein, N45 oder N46.
-4. **Valvetronic-Stellmotor am Kopf?** Wenn nein, ist es der N45. Wenn ja, der N46.
+3. **Bei vier Zylindern: Hochdruckpumpe am Zylinderkopf?** Wenn ja, ist es der N43 — er ist der einzige Direkteinspritzer der drei. Wenn nein, bleiben N45 und N46.
+4. **Valvetronic-Stellmotor am Kopf?** Diese Frage entscheidet erst zwischen den beiden verbliebenen Saugrohreinspritzern: wenn ja, ist es der N46, wenn nein, der N45. Ohne Schritt 3 trägt sie nicht, denn der N43 hat ebenfalls keinen Stellmotor.
 5. **Motornummer am Block ablesen**, wenn die Sichtprüfung nicht eindeutig wird. Sie steht im Metall und ist von keiner Codierung beeinflusst.
 
 ## Steuergerät: auslesen statt ableiten
@@ -41,13 +41,13 @@ Naheliegend wäre, aus dem Motor auf die Steuergerätefamilie zu schließen. Das
 
 > **Lücke, bewusst offen gelassen:** Eine belastbare, in zwei unabhängigen Quellen gleichlautende Zuordnung von Motorbaureihe zu Steuergerätetyp über alle Baustände dieser Reihe war nicht zu finden. Statt eine unsichere Tabelle zu schreiben, gilt hier das Verfahren: Steuergerät am Fahrzeug identifizieren und den zurückgemeldeten Typ gegen Motornummer und Fahrzeugdaten halten.
 
-Was gesichert bleibt: der N43 ist Direkteinspritzer und braucht dafür eine Steuerung mit Hochdruck- und Magerbetriebsfunktionen. Der N45 hat keine Valvetronic und kann deshalb auch keine Valvetronic-Funktionen in der Diagnose anbieten.
+Was gesichert bleibt: der N43 ist Direkteinspritzer und braucht dafür eine Steuerung mit Hochdruck- und Magerbetriebsfunktionen. N45 und N43 haben beide keine Valvetronic und können deshalb auch keine Valvetronic-Funktionen in der Diagnose anbieten — nur der N46 hat sie.
 
 ## Verifikation
 
 Die Zuordnung ist belastbar, wenn drei Dinge zusammenpassen:
 
-- **Sichtbefund am Motor** — Zylinderzahl, Valvetronic-Stellmotor, Hochdruckpumpe.
+- **Sichtbefund am Motor** — Zylinderzahl, Hochdruckpumpe, Valvetronic-Stellmotor, in dieser Reihenfolge.
 - **Motornummer am Block.**
 - **Steuergerätetyp**, den die Diagnose beim Identifizieren zurückmeldet.
 
@@ -57,7 +57,7 @@ Weicht eines der drei ab, ist die Wahrscheinlichkeit hoch, dass Motor oder Steue
 
 | Symptom | Ursache |
 |---|---|
-| Diagnose bietet Valvetronic-Funktionen, am Kopf sitzt kein Stellmotor | Falsche Fahrzeugauswahl, oder es ist ein N45 |
+| Diagnose bietet Valvetronic-Funktionen, am Kopf sitzt kein Stellmotor | Falsche Fahrzeugauswahl, oder es ist ein N45 oder N43 |
 | Fehlereintrag zu Bauteilen, die es am Motor nicht gibt | Fremdes Steuergerät oder falsche Auswahl in der Software |
 | Steuergerätetyp passt nicht zum erwarteten Motor | Motor oder Steuergerät getauscht — vor Codierung klären |
 | Teile passen nicht trotz korrekter Typbezeichnung | Baustand übersehen, Motorwechsel innerhalb derselben Bezeichnung |

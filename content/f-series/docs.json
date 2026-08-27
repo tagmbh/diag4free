@@ -16,9 +16,11 @@
         "Bei FEM/BDC: nie ohne aktive Batterieladung codieren"
       ],
       "pins": [
-        "OBD2 Pin 3 · ENET+",
-        "OBD2 Pin 11 · ENET-",
-        "OBD2 Pin 12 · Aktivierung Ethernet (mit KL15)"
+        "OBD2 Pin 3, 11, 12, 13 · Ethernet — vier Adern, nicht drei",
+        "Wie die vier auf TX und RX fallen, hängt vom Bezugspunkt ab (Fahrzeug- oder Rechnerseite). Die Quellen benennen sie gegenläufig — das ist kein Widerspruch, sondern eine Frage der Betrachtungsrichtung",
+        "OBD2 Pin 8 gegen Pin 16 · Aktivierung — strittig: eine Projektquelle bestreitet sie, die Mehrheit der übrigen Fundstellen nennt sie. Der Widerstandswert ist hier nicht belegt",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus"
       ],
       "engines": [
         "N20",

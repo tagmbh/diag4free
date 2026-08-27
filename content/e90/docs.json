@@ -5,19 +5,24 @@
       "id": "D4F-E90-001",
       "type": "TOOL",
       "cat": "Diagnose-Tools",
-      "title": "ISTA/D · E90-Diagnose einrichten",
-      "valid": "E90/E91/E92/E93 · alle Motoren",
-      "summary": "ISTA/D 4.x mit ENET- oder K+DCAN-Kabel für die E9x-Baureihe. Fahrzeugidentifikation, geführte Fehlersuche und Servicefunktionen.",
+      "title": "Diagnosezugang E90/E91/E92/E93 · der Schnitt im März 2007",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
+      "summary": "Die Baureihe überspannt den Wechsel des Diagnoseprotokolls. Fahrzeuge bis Baustand 02/2007 antworten über die K-Line an OBD-Pin 7, Fahrzeuge ab 03/2007 über D-CAN an Pin 6 und 14. Dasselbe Kabel muss dafür anders beschaltet sein — das ist die häufigste Ursache für „kein Steuergerät gefunden“.",
       "points": [
-        "E90 vor 03/2007 · nur K+DCAN (OBD Pin 7/8)",
-        "E90 ab 03/2007 · zusätzlich ENET möglich (F-Serien-ähnliche Kommunikation)",
-        "VIN muss im FZG-Profil vollständig hinterlegt sein",
-        "Java 8 32-bit erforderlich für Legacy-Bedienoberfläche"
+        "Baustand zuerst bestimmen: Typschild in der Türöffnung Fahrerseite oder Fahrzeugdaten zur VIN — nicht das Zulassungsjahr verwenden, es liegt regelmäßig ein Baujahr daneben",
+        "Bis Baustand 02/2007: K-Line an Pin 7. Ein K+DCAN-Kabel braucht dafür die Brücke zwischen OBD-Pin 7 und Pin 8, entweder über den Kabelschalter oder über einen Steckadapter",
+        "Ab Baustand 03/2007: D-CAN an Pin 6 und Pin 14. Die Brücke Pin 7/8 muss dann offen sein, sonst stört sie den Bus",
+        "Karosserievariante hilft nur grob: die Limousine läuft ab 03/2005 und der Touring ab 09/2005, beide überspannen also den Schnitt. Das Coupé kam 2006, das Cabrio im März 2007, der M3 mit S65 erst im Herbst 2007 — diese Fahrzeuge liegen am Schnitt oder dahinter. Trotzdem gilt der Baustand am konkreten Fahrzeug, nicht die Variante",
+        "Kabel mit FTDI-Chip verwenden, Latency Timer im Treiber auf 1 ms — der Vorgabewert von 16 ms erzeugt Abbrüche, die wie ein totes Steuergerät aussehen",
+        "Umschalten heißt Nachziehen: nach Wechsel der Betriebsart Kabel abziehen, EDIABAS beziehungsweise ISTA beenden, neu starten, erst dann wieder anstecken"
       ],
       "pins": [
-        "OBD Pin 6 · CAN-High",
-        "OBD Pin 14 · CAN-Low",
-        "OBD Pin 8 · DCAN (bis 03/2007)"
+        "OBD2 Pin 7 · K-Line · Diagnose bis 02/2007",
+        "OBD2 Pin 7 ↔ Pin 8 · Brücke im Kabel, nur bis 02/2007",
+        "OBD2 Pin 6 · D-CAN High · ab 03/2007",
+        "OBD2 Pin 14 · D-CAN Low · ab 03/2007",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus"
       ],
       "engines": [
         "N43",
@@ -30,7 +35,26 @@
         "N47",
         "S65"
       ],
-      "article": "ista-e90-setup.md"
+      "article": "ista-e90-setup.md",
+      "details": [
+        "D4F-E90-004",
+        "D4F-E90-005",
+        "D4F-E90-007"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
+      }
     },
     {
       "id": "D4F-E90-002",
@@ -38,12 +62,14 @@
       "cat": "Fehlercodes",
       "title": "N54 · Häufige DTCs bei Ladedruckproblemen",
       "valid": "E90/E91/E92/E93 · N54B30",
-      "summary": "N54-typische Fehler an Wastegate-Rasseln, HPFP und Ladedruckregelung mit Prüfvorschlag.",
+      "summary": "N54-typische Fehler an Wastegate-Rasseln, HPFP und Ladedruckregelung mit Prüfvorschlag. Alle vier hier geführten Codes gehören in die Ladedruck- und Kraftstoffstrecke — keiner davon ist ein Zündungscode.",
       "points": [
-        "29DC/29CD · Wastegate-Rasseln · Turboladertausch OEM oder Rebuild",
+        "29DC/29CD · Wastegate-Rasseln · Turboladertausch OEM oder Rebuild, aber erst nach der Leckagesuche",
         "29E0/29E1 · Ladedruckabweichung · Ladeluftschlauch-Dichtheit, N54-typische Kupplungsschellen",
         "29F0 · HPFP-Druckabfall · Hochdruckpumpe (Rückrufumfang prüfen)",
-        "30FF · Zündaussetzer sporadisch · Zündspulen und Kerzen (NGK 97506)"
+        "30FF · Ladedruck zu niedrig (Underboost) · gehört in dieselbe Strecke wie 29E0/29E1: Unterdruckleitungen, Charge-Pipe, Ladedruck-Magnetventile, Wastegate-Mechanik. Nach mehreren unabhängigen Quellen gesichert",
+        "Korrigierter Altbestand: 30FF war hier früher als sporadischer Zündaussetzer geführt. Das war falsch und hat zu Zündspulen- und Kerzentausch bei einem Ladedruckfehler geführt",
+        "Zündungsseitige Codes des N54 sind in diesem Repository nicht geprüft — bei Aussetzerverdacht den ausgelesenen Code mit der Beschreibung der Diagnosesoftware abgleichen statt mit dieser Liste"
       ],
       "pins": [
         "DME Stecker A · Pin 15 · Ladedrucksensor Signal",
@@ -52,7 +78,22 @@
       "engines": [
         "N54"
       ],
-      "article": "dtc-n54.md"
+      "article": "dtc-n54.md",
+      "details": [
+        "D4F-E90-005",
+        "D4F-E90-001"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
     },
     {
       "id": "D4F-E90-003",
@@ -65,7 +106,8 @@
         "PSDZData mit passendem I-Level laden",
         "FA lesen → offline anpassen → FDL-Codierung schreiben",
         "Immer erst KIS/OKV-Backup anlegen",
-        "Falscher I-Level → Bricking-Gefahr"
+        "Falscher I-Level → Bricking-Gefahr",
+        "E-Sys spricht das Fahrzeug über D-CAN an — an einem E90 mit Baustand bis 02/2007 kommt schon die Verbindung nicht zustande, unabhängig von der iDrive-Generation"
       ],
       "pins": [],
       "engines": [
@@ -74,7 +116,212 @@
         "N54",
         "N55"
       ],
-      "article": "esys-basics.md"
+      "article": "esys-basics.md",
+      "details": [
+        "D4F-E90-001",
+        "D4F-E90-004"
+      ]
+    },
+    {
+      "id": "D4F-E90-004",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "E90-Bustopologie · welcher Bus trägt welches Gerät",
+      "valid": "E90/E91/E92/E93 · 2005–2013",
+      "summary": "Der E90 verteilt seine Steuergeräte auf mehrere Busse: PT-CAN für Antrieb und Fahrwerk, K-CAN für die Karosserie, MOST für Audio und Navigation, dazu die LIN- und Bitserien-Strecken für Einzelverbraucher. Wer den falschen Bus verdächtigt, sucht am falschen Ende — dieses Dokument ordnet die Geräte zu.",
+      "points": [
+        "PT-CAN (Antrieb): DME beziehungsweise DDE, EGS, DSC, Lenkwinkelsensor im Lenksäulenmodul, Aktivlenkung und die Fahrwerksregelungen. Ein Ausfall hier trifft Motor, Getriebe und Bremse gleichzeitig",
+        "K-CAN (Karosserie): CAS, Kombiinstrument, FRM für die Lichtfunktionen, Klimabedienteil, Tür- und Komfortelektronik. Ein Ausfall hier lässt den Motor weiterlaufen, macht aber Komfortfunktionen tot",
+        "Das Junction-Box-Elektronikmodul JBBF ist im E90 der Knoten zwischen K-CAN und den nachgelagerten Strecken. Fällt es aus, melden mehrere voneinander unabhängige Systeme gleichzeitig „keine Kommunikation“ — dann ist nicht jedes Gerät defekt, sondern der Übergang",
+        "MOST (Lichtwellenleiter): Radio beziehungsweise CCC oder CIC, Verstärker, Telefon, Tuner. Rein optisch und als Ring aufgebaut — ein einziges gebrochenes Faserkabel legt alle Teilnehmer still. Nicht jeder E90 hat einen MOST-Ring; ohne Navigation und Verstärker entfällt er",
+        "Der Diagnosezugang hängt am Gateway, nicht am einzelnen Steuergerät. Antwortet gar nichts, ist erst die Betriebsart des Kabels und dann das Gateway zu klären — siehe D4F-E90-001",
+        "Regel vor jedem Bauteiltausch: erst prüfen, ob das verdächtige Gerät auf seinem eigenen Bus antwortet. Antwortet es, ist der Eintrag im Nachbarsteuergerät ein Folgefehler",
+        "Lücke: eine geprüfte Steckerbelegung der CAN-Abschlusswiderstände im E90 liegt hier nicht vor. Busabschluss deshalb nicht gegen eine Zahl von außen messen, sondern gegen den Wert am ruhenden Bus eines bekannt guten Fahrzeugs derselben Ausstattung"
+      ],
+      "pins": [
+        "OBD2 Pin 6/14 · D-CAN — Diagnoseleitung am Gateway, ab 03/2007",
+        "OBD2 Pin 7 · K-Line — Diagnoseleitung bis 02/2007"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "topologie.md",
+      "details": [
+        "D4F-E90-001",
+        "D4F-E90-006"
+      ]
+    },
+    {
+      "id": "D4F-E90-005",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "Motorzuordnung E90/E91/E92/E93 · welcher Motor steckt drin",
+      "valid": "E90/E91/E92/E93 · 2005–2013",
+      "summary": "Die Baureihe trägt neun Motorbaureihen über neun Baujahre, darunter zwei Paare, die sich fast nur am Zylinderkopf unterscheiden: N46 gegen N43 bei den Vierzylindern und N52 gegen N53 bei den Sechszylindern. Dieses Dokument sagt, woran die Zuordnung am Fahrzeug festgemacht wird statt an der Typbezeichnung am Heck.",
+      "points": [
+        "Die Typbezeichnung am Heck trägt die Zuordnung nicht: 318i und 320i gab es mit N46 und später mit N43, 325i und 330i mit N52 und später mit N53. Der Baustand und der Markt entscheiden, nicht das Schild",
+        "Erstes Merkmal ist die Zylinderzahl: N43, N46 und N47 sind Vierzylinder, N52, N53, N54, N55 und M57 Reihensechszylinder, der S65 im M3 ein V8",
+        "N46 gegen N43 — der teuerste Irrtum bei den Vierzylindern: der N46 hat Saugrohreinspritzung und Valvetronic, der N43 Direkteinspritzung und keine Valvetronic. Beim N43 ging der Platz im Zylinderkopf an die Injektoren. Fehlt der Valvetronic-Stellmotor auf dem Kopf und sitzt stattdessen eine Hochdruckpumpe dort, ist es ein N43",
+        "N52 gegen N53 — dieselbe Logik eine Klasse höher: der N52 hat Saugrohreinspritzung und Valvetronic, der N53 Direkteinspritzung und keine Valvetronic. Such den Stellmotor der Exzenterwelle: ist er da, ist es ein N52. Such die Hochdruckpumpe am Kopf: ist sie da, ist es ein N53",
+        "Markt statt Baujahr: N43 und N53 liefen nur in Märkten mit schwefelarmem Kraftstoff. In den USA, Kanada, Australien und weiteren Märkten blieben N46 und N52 im Programm. Ein Import mit 328i-Schriftzug hat deshalb fast sicher einen N52",
+        "N54 gegen N55 bei den aufgeladenen Sechszylindern: N54 hat zwei Lader und keine Valvetronic, N55 hat einen Twin-Scroll-Lader und Valvetronic. Beide leisten in der Grundstufe dasselbe und sitzen beide im 335i — die Leistungsangabe trennt sie nicht, die Zahl der Ladergehäuse schon",
+        "Folge für die Fehlersuche: eine Valvetronic-Meldung kann an N43, N53 und N54 nicht aus dem Bauteil kommen, weil keiner von ihnen eine hat. Steht sie trotzdem an, ist die Fahrzeugauswahl in der Software falsch oder es sitzt eine fremde DME im Fahrzeug",
+        "Motornummer am Kurbelgehäuse ist die letzte Instanz. Sie steht unabhängig von jeder Codierung im Metall — beim S65 ist sie zusätzlich das einzig verbindliche Merkmal gegenüber dem N62 aus dem zivilen V8"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-E90-008",
+        "D4F-E90-002"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "010C",
+          "010D"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E90-006",
+      "type": "LOC",
+      "cat": "Steuergeräte · Einbauorte",
+      "title": "Steuergeräte-Einbauorte im E90 · wo gesucht und wo gemessen wird",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · alle Karosserievarianten",
+      "summary": "Vier Karosserievarianten teilen dieselbe Bordnetzarchitektur, aber nicht dieselben Einbauorte. Dieses Dokument sagt, in welchem Bereich ein Steuergerät zu suchen ist und was beim Zugang zu beachten ist — es ersetzt keinen Einbauplan des konkreten Fahrzeugs.",
+      "points": [
+        "DME beziehungsweise DDE sitzt im Elektronikkasten im Wasserkasten unter der Windschutzscheibe. Das ist zugleich die Stelle, an der Wasser aus verstopften Ablaufwegen ankommt — ein nasser Elektronikkasten ist ein Steuergeräteproblem, kein Komfortproblem",
+        "CAS sitzt im Bereich der Lenksäule hinter der unteren Verkleidung. Es hält die Wegfahrsperre; ein Tausch ohne Anpassung an Fahrzeug und Schlüssel macht das Fahrzeug startunfähig",
+        "JBBF beziehungsweise die Junction Box liegt im Fußraum Beifahrerseite im Bereich des Sicherungskastens. Sie ist der Knoten für die Karosserieelektrik — siehe D4F-E90-004",
+        "FRM für die Lichtfunktionen sitzt im Bereich des vorderen Fußraums Fahrerseite. Sporadische Lichtfehler ohne Bauteilbefund gehören dorthin, nicht an die Leuchte",
+        "Batterie und Batteriesensor liegen im Kofferraum, nicht im Motorraum. Der Pluspol wird im Motorraum über einen Stützpunkt abgegriffen — beim Fremdstarten und beim Messen ist das der Unterschied zwischen richtig und ratlos. Siehe D4F-E90-007",
+        "Karosserievarianten unterscheiden sich im Heck: Touring, Coupé und Cabrio haben eigene Heck- und Verdeckelektrik. Beim Cabrio kommt ein Verdecksteuergerät hinzu, das Limousine und Touring nicht haben — eine Geräteliste der Limousine führt dort in die Irre",
+        "Lücke: exakte Einbaupositionen je Baustand und Ausstattung sind hier nicht belegt. Vor dem Zerlegen die Geräteliste des konkreten Fahrzeugs auslesen und den Einbauplan des Fahrzeugs heranziehen, statt nach dieser Übersicht zu demontieren"
+      ],
+      "pins": [
+        "Elektronikkasten Wasserkasten · DME/DDE, Zugang von oben nach Abnehmen der Abdeckung",
+        "Kofferraum rechts · Batterie, Batteriesensor am Minuspol",
+        "Motorraum · Fremdstart-Stützpunkt Plus, Massepunkt am Federbeindom"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "details": [
+        "D4F-E90-004",
+        "D4F-E90-007"
+      ]
+    },
+    {
+      "id": "D4F-E90-007",
+      "type": "TOOL",
+      "cat": "Bordnetz · Energie",
+      "title": "Batteriewechsel am E90 registrieren · IBS, DME und Ladeverhalten",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
+      "summary": "Nach einem Batteriewechsel führt das Energiemanagement die Ladestrategie mit den Alterungsdaten der alten Batterie weiter. Die neue Batterie wird dann zu schwach geladen und altert schneller als nötig. Registrieren ist deshalb kein Formalakt, sondern Teil des Einbaus.",
+      "points": [
+        "Der Batteriesensor am Minuspol berichtet der Motorsteuerung den Zustand, und die Motorsteuerung entscheidet daraufhin über die Ladespannung. Bleibt er nach dem Wechsel ab, füllt sich der Fehlerspeicher mit Bordnetzeinträgen, die von der eigentlichen Baustelle ablenken",
+        "Gleiche Bauart und gleiche Kapazität: registrieren genügt. Andere Bauart oder andere Kapazität — etwa Nassbatterie gegen AGM: erst codieren, dann registrieren. Diese Unterscheidung ist der häufigste Fehler beim Selbstwechsel",
+        "Kapazitätsangabe und Typ vor dem Ausbau von der alten Batterie ablesen und notieren. Hinterher ist die Angabe weg und die Codierung eine Rateübung",
+        "Registriert wird in der Motorsteuerung über die Servicefunktion zum Batteriewechsel. Der Weg dorthin unterscheidet sich je nach Softwarestand — im Menü der Energiediagnose beziehungsweise unter den Servicefunktionen suchen, nicht im Fehlerspeicher",
+        "Symptom für unterlassene Registrierung: das Startverhalten wird über Wochen schlechter, obwohl die Batterie neu ist. Nicht auf einen Ladefehler untersuchen, bevor die Registrierung geprüft ist",
+        "Nach dem Wechsel Ruhespannung und Ladespannung getrennt bewerten. Eine Ruhespannung von rund 12.6 V zeigt eine geladene Batterie an; die Ladespannung im Betrieb regelt das Fahrzeug bewusst variabel und ist deshalb kein fester Sollwert",
+        "Nach Spannungsverlust können Fensterheber, Schiebedach und Lenkwinkelsensor ihre Endlagen verloren haben. Das gehört zum Wechsel dazu und ist kein neuer Fehler"
+      ],
+      "pins": [
+        "Batterie Minuspol im Kofferraum · Batteriesensor, Signalleitung zum Energiemanagement",
+        "Batterie Pluspol · KL30 Hauptversorgung",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "batteriewechsel.md",
+      "details": [
+        "D4F-E90-001",
+        "D4F-E90-006"
+      ],
+      "obd": {
+        "pids": [
+          "0142"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E90-008",
+      "type": "TEST",
+      "cat": "S65 · M3",
+      "title": "S65-V8 im M3 · Einzeldrosselklappen, Pleuellager, Abgrenzung zum N62",
+      "valid": "E90/E92/E93 M3 · S65 · ab Herbst 2007",
+      "summary": "Der M3 der Baureihe hat als einziges Modell einen V8 und ein eigenes Steuergerätekonzept. Zwei Themen bestimmen die Praxis: der Verschleiß der Pleuellager und die Stellmotoren der acht Einzeldrosselklappen. Beide kündigen sich an, aber nicht über einen Fehlerspeichereintrag.",
+      "points": [
+        "Erkennungsmerkmal im Motorraum: acht Einzeldrosselklappen mit sichtbaren Klappen im Ansaugtrakt. Der zivile V8 N62 regelt dagegen über Valvetronic und hat nur eine Drosselklappe als Notlauf-Einrichtung",
+        "Der S65 hat keine Valvetronic. Eine Valvetronic-Meldung am M3 kommt deshalb nicht aus dem Bauteil — dann ist die Fahrzeugauswahl in der Software falsch. Siehe D4F-E90-005",
+        "Erfahrungswert aus mehreren unabhängigen Quellen: die Pleuellagerschalen sind der bekannteste Punkt. Der Verschleiß tritt durch das hohe Drehzahlniveau früher ein als bei anderen M-Motoren; ein vorsorglicher Wechsel deutlich vor 100 tkm wird häufig empfohlen. Das ist ein Erfahrungswert, keine Werksvorgabe",
+        "Ölanalyse und lückenlose Ölwechselhistorie sagen zum Lagerzustand mehr als jeder Fehlerspeicher. Der Speicher meldet den Schaden erst, wenn er da ist",
+        "Erfahrungswert: die Stellmotoren der Drosselklappen fallen aus, der Motor geht in den Notlauf. Berichtet werden gealterte Kunststoffzahnräder im Stellmotor. Schwergängige Klappengestänge überlasten den Stellmotor und gehören gereinigt, bevor ein Motor getauscht wird",
+        "Der M3 kam erst im Herbst 2007 und liegt damit vollständig hinter dem Protokollschnitt: reines D-CAN an Pin 6 und 14, keine K-Line-Stellung am Kabel. Siehe D4F-E90-001",
+        "Es gibt zwei Hubraumstände: 3999 cm³ im Serien-M3 und 4361 cm³ in GTS und CRT. Äußerlich baugleich — die Motornummer trennt sie",
+        "Sollwerte fehlen: Öldruck, Lagerspiel und Sollwerte der Drosselklappenstellung sind hier nicht belegt. Vergleichend arbeiten — Klappenstellungen der acht Zylinder gegeneinander halten und im Zweifel die Herstellervorgabe holen"
+      ],
+      "pins": [],
+      "engines": [
+        "S65"
+      ],
+      "details": [
+        "D4F-E90-005",
+        "D4F-E90-001"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010C",
+          "0111"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
     }
   ]
 }

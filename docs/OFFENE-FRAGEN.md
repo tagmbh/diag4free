@@ -73,55 +73,60 @@ Kontakt setzt, legt Dauerplus auf eine Signalleitung des Steuergeräts.
 Welche Fassung stimmt, ist damit **weiterhin offen** — nur behauptet es jetzt
 niemand mehr.
 
-- **20-poliger Runddiagnosestecker, vollständige Belegung.** Belegt sind
-  je nach Baureihe nur vier bis fünf Kontakte (Masse, die beiden
-  Diagnoseleitungen, Dauerplus, Klemme 15). Die Sammlungen, die die
-  vollständige Tabelle führen, sind gesperrt. Betroffen: E28, E30, E34,
-  E36, E38, E39.
-- **Zuordnung TXD I zu TXD II.** Zwei Quellen ordnen die beiden Leitungen
-  gegenläufig zu. Für die Brücke 17/20 belanglos, für eine gezielte Messung
-  nicht.
-- **Adapterbelegung Rund auf OBD-2.** Welche der sechzehn Kontakte die
-  Diagnoseleitungen aufnehmen, ist nicht belegt.
-- **D-CAN-Pinlage ab 03/2007.** Eine Quelle nennt Pin 7, mehrere andere
-  Pin 6 und Pin 14. Im Inhalt steht die Mehrheitsangabe, der Widerspruch
-  daneben.
+### Stand 27.08. — grösstenteils geschlossen, aus Quellcode-Projekten
 
-## Erledigt: B57 gehoert nicht in den F15
+Seit `raw.githubusercontent.com` erreichbar ist, lassen sich Projekte lesen,
+die BMW-Diagnoseprotokolle tatsächlich implementieren. Das hat vier der fünf
+Fragen bewegt.
 
-`models.json` fuehrte den B57 in der Motorliste des F15. Der Agent, der die
-Baureihe geschrieben hat, ist beim Recherchieren darauf gestossen, hat den
-Filter aber **nicht** eigenmaechtig geaendert, sondern den Widerspruch
-gemeldet — richtig entschieden, das ist eine Katalogfrage.
+**Die falsche Tabelle ist widerlegt, nicht mehr nur bezweifelt.** In einem
+Diagnoseprojekt liegt eine BMW-Werkstatttabelle mit Stecker-, Sicherungs- und
+Kabelfarbnummern. Danach trägt Pin 4 **Klemme R** und Pin 15 **RXD** — die
+verbreitete Fassung „Pin 4 = Masse, Pin 15 = Klemme 15" ist damit falsch.
+Bestätigt wird: Pin 19 Masse, Pin 14 Klemme 30, Pin 16 Klemme 15, Pin 17 und
+Pin 20 die beiden Diagnoseleitungen.
 
-Nachgeprueft: der F15 lief 2013 bis 2018 durchgehend mit dem N57, der B57
-kam erst mit der Nachfolgegeneration. Zwei unabhaengige Befunde.
+Auch die Behauptung, nur sechs Kontakte seien belegt, ist falsch: es sind
+mindestens zehn. Die sechs sind die *diagnoserelevanten*, nicht die belegten.
 
-Der B57 ist damit aus der Motorliste des F15 und aus den Filtern des
-F15-Inhalts entfernt. Sein Steckbrief bleibt bestehen — er ist inhaltlich
-richtig und dient der Abgrenzung gegen den N57 — traegt jetzt aber vorn den
-Hinweis, dass keine der hier gefuehrten Baureihen ihn verbaut. Das
-Zusammenfuehren meldet ihn folgerichtig als „Steckbrief ohne Fahrzeug"; der
-Hinweis ist zutreffend und bleibt stehen.
+**Aber die Tabelle gilt für den E39.** Sie auf E28, E30 und E34 zu übertragen
+wäre genau der Fehler, der die falsche Tabelle in Umlauf gebracht hat. Der
+E39 trägt sie jetzt, die älteren Baureihen behalten das Ausmessverfahren.
 
-## Erledigt: zwei weitere Motoren gehoerten nicht in ihren Katalogeintrag
+**Adapterbelegung: geschlossen.** Rundstecker Pin 17 geht auf OBD-2 Pin 7,
+Pin 20 auf Pin 8 — dreifach belegt. Damit ist die bekannte Brücke 17/20
+dieselbe Massnahme wie die Brücke 7/8. Dazu ein Hinweis, den das Projekt
+selbst setzt: **mit und ohne Brücke probieren**, sie ist kein Schalter, der
+immer richtig steht. Das relativiert den Widerspruch aus Kategorie 4.
 
-Dasselbe Muster wie beim B57, zweimal gefunden vom Agenten, der F10 und F30
-geschrieben hat — und beide Male gemeldet statt eigenmaechtig geaendert.
+**D-CAN-Pinlage: geschlossen.** Pin 6 und Pin 14. Die abweichende Quelle mit
+„Pin 7" verwechselt D-CAN mit der K-Line — Pin 7 ist herstellerübergreifend
+die K-Line. Kein echter Konflikt zweier Messungen, sondern eine Verwechslung.
 
-**B58 im F10** — nachgeprueft: der F10 lief mit dem N55, der B58 kam erst mit
-dem Nachfolger G30. Aus der Motorliste des F10 und seinen Filtern entfernt.
-Im F30 bleibt er, dort ist er richtig: der 340i der Modellpflege hatte ihn.
+**TXD I gegen TXD II: die Frage war falsch gestellt.** In keiner Primärquelle
+kommt die Bezeichnung „TXD I" vor; die eine Leitung heisst „TXD II", die
+andere schlicht „TXD". Belegbar und praktisch brauchbarer ist die Herkunft:
+Pin 17 kommt aus dem Stecker des Motorsteuergeräts, Pin 20 aus einem
+Verbinder. Das lässt sich am Fahrzeug prüfen, ein Name nicht.
 
-**B47 fehlte im F30** — der Katalog fuehrte fuer den F30 nur den N47. Die
-Modellpflege ab 2015 fuhr 318d und 320d mit dem B47; das ist derselbe
-Motorwechsel, der die Baureihe diagnostisch in zwei Haelften teilt.
-Nachgetragen.
+**ENET: bleibt offen, aber eine Lücke ist geschlossen.** Ethernet liegt auf
+**vier** Kontakten — 3, 11, 12 und 13. Der Gruppeninhalt nannte drei; Pin 13
+fehlte. Nachgetragen.
 
-Auffaellig ist das Muster: der Katalog trug an drei Stellen den Motor der
-**Nachfolgegeneration**. Wer ihn urspruenglich gefuellt hat, hat vermutlich
-eine Modellreihe statt einer Baureihe abgeschrieben. Die uebrigen Eintraege
-sind daraufhin nicht systematisch geprueft.
+Ungeklärt bleibt die Aktivierung: die einzige gefundene Projektquelle
+bestreitet sie ausdrücklich und beschreibt stattdessen einen
+Leitungsabschluss, alle übrigen Fundstellen nennen einen Widerstand zwischen
+Pin 8 und Pin 16. Der Prüfagent hat die Projektquelle selbst als schwach
+eingestuft — sie weist sich im eigenen Quellenabschnitt als Foren-Digest aus
+und trägt Merkmale maschineller Autorschaft. Ein Widerstandswert fällt
+ausserdem unter die vier Kategorien, die nur bei gesicherter Beleglage
+geschrieben werden. Er bleibt deshalb ungeschrieben.
+
+**Was den Rest schliessen würde:** die beiden Pinout-Sammlungen, die laut
+Zusammenfassungen die vollständigen Tabellen führen, sind per Egress
+gesperrt. Ob sie voneinander unabhängig sind, lässt sich aus den
+Zusammenfassungen nicht beurteilen — sie klingen ähnlich genug, um Kopien
+einer Vorlage zu sein.
 
 ## Kategorie 3 — Motornummern
 

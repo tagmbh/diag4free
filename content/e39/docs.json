@@ -69,21 +69,26 @@
       "valid": "E39 · 1995–2003 · Rundstecker und OBD-2",
       "summary": "Pinbelegung des 20-poligen Rundsteckers im Motorraum und der OBD-2-Buchse im Innenraum, so weit sie hier belegt ist. Grundlage für die Prüfung eines stummen Diagnoseanschlusses mit dem Multimeter.",
       "points": [
-        "Erst Versorgung messen: ohne KL30 am Diagnosestecker antwortet kein Steuergerät, egal wie gut das Kabel ist",
-        "Masse am Diagnosestecker gegen Karosserie messen — ein hochohmiger Masseweg sieht aus wie ein defektes Interface",
-        "Die Diagnoseleitungen liegen im Ruhezustand auf Pegel; ein Schluss gegen Masse macht den ganzen Bus stumm",
-        "Belegung des Rundsteckers stammt aus einer Quelle und gilt baureihenübergreifend — vor dem Anlegen von Spannung gegen den Fahrzeugstromlaufplan prüfen"
+        "Die Brücke 17/20 am Rundstecker ist dieselbe Massnahme wie die Brücke 7/8 am OBD-2-Stecker — beide legen die zweite Diagnoseleitung dazu",
+        "Brücke immer mit UND ohne probieren: sie ist kein Schalter, der immer richtig steht, und an manchen Fahrzeugen antwortet mit Brücke gar nichts",
+        "Eine verbreitete Tabelle nennt Pin 4 als Masse und Pin 15 als Klemme 15 — beides ist für den E39 widerlegt. Wer danach eine Brücke setzt, legt Spannung auf eine Signalleitung",
+        "Die Belegung hier ist für den E39 belegt. Nicht auf E28, E30 oder E34 übertragen — die haben andere Steuergeräte und sind nicht geprüft",
+        "Bei Zweifeln immer selbst ausmessen: Masse über Durchgang, Dauerplus bei ausgeschalteter Zündung, Klemme 15 über den Spannungssprung beim Einschalten"
       ],
       "pins": [
-        "OBD-2 Pin 7 · K-Line zur DME",
-        "OBD-2 Pin 8 · zweite Diagnoseleitung, übrige Steuergeräte",
+        "OBD-2 Pin 7 · Diagnoseleitung zur DME — entspricht Rundstecker Pin 17",
+        "OBD-2 Pin 8 · zweite Diagnoseleitung, übrige Steuergeräte — entspricht Rundstecker Pin 20",
         "OBD-2 Pin 4/5 · Masse",
-        "OBD-2 Pin 16 · KL30 dauerplus",
-        "Rundstecker Pin 14 · KL30 dauerplus (nach einer Quelle)",
-        "Rundstecker Pin 15 · Diagnoseleitung RxD (nach einer Quelle)",
-        "Rundstecker Pin 16 · KL15 (nach einer Quelle)",
-        "Rundstecker Pin 19 · Masse (nach einer Quelle)",
-        "Rundstecker Pin 20 · Diagnoseleitung TxD (nach einer Quelle)"
+        "OBD-2 Pin 16 · KL30 Dauerplus",
+        "Rundstecker Pin 1 · TD (Drehzahlsignal)",
+        "Rundstecker Pin 4 · Klemme R — nicht Masse, entgegen einer verbreiteten Tabelle",
+        "Rundstecker Pin 12 · belegt, Funktion hier nicht aufgelöst",
+        "Rundstecker Pin 14 · KL30 Dauerplus",
+        "Rundstecker Pin 15 · RXD — nicht Klemme 15, entgegen einer verbreiteten Tabelle",
+        "Rundstecker Pin 16 · KL15",
+        "Rundstecker Pin 17 · TXD II, kommt aus dem DME-Stecker",
+        "Rundstecker Pin 19 · Masse",
+        "Rundstecker Pin 20 · TXD, kommt aus einem Verbinder statt aus einem Steuergerät"
       ],
       "engines": [
         "M52",
