@@ -2036,3 +2036,15 @@
 /* Der erste Block eines Artikels darf keinen Abstand nach oben tragen —
    der Abschnittstitel des Drawers steht schon darueber. */
 .markdown-content > :first-child { margin-top: 0; }
+
+/* Warnung im Scan, wenn die gewaehlte Baureihe kein genormtes OBD kennt.
+   Bewusst auffaelliger als der ruhige Hinweis darunter — hier geht es
+   darum, jemandem einen vergeblichen Versuch zu ersparen. */
+.scan-note-warn {
+  background: var(--color-warning-tint);
+  border-color: var(--color-warning);
+  border-left: 4px solid var(--color-warning);
+  margin-bottom: var(--space-4);
+}
+.scan-note-warn h2 { color: var(--color-warning); }
+.scan-note-warn p  { color: var(--color-text); }

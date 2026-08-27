@@ -1776,6 +1776,54 @@
       </ol>`;
   };
 
+  // Der Scan spricht genormtes OBD-2. Das gibt es nicht in jedem Fahrzeug,
+  // das der Trichter anbietet — die Klassiker haben stattdessen den
+  // 20-poligen Runddiagnosestecker im Motorraum und BMW-eigene Protokolle.
+  // Wer einen E30 gewaehlt hat und auf "Auslesen" tippt, bekam bisher keine
+  // Erklaerung, sondern nur einen Adapter-Dialog, der zu nichts fuehrt.
+  //
+  // Die Jahreszahlen sind bewusst grob: OBD-2 kam je nach Markt und
+  // Kraftstoff zu verschiedenen Zeitpunkten, und ein Stichtag waere hier
+  // eine Genauigkeit, die es nicht gibt.
+  const obdEignung = () => {
+    const model = activeModel();
+    if (!model) return '';
+    const jahre = String(model.years || '').match(/\d{4}/g);
+    if (!jahre) return '';
+    const ende = parseInt(jahre[jahre.length - 1], 10);
+
+    if (ende <= 1996) {
+      return `
+        <div class="scan-note scan-note-warn">
+          <h2>${escapeHtml(model.name)}: kein genormtes OBD</h2>
+          <p>Diese Baureihe ist älter als die OBD-2-Pflicht. Es gibt keine
+             Buchse im Fussraum, sondern den 20-poligen Runddiagnosestecker
+             im Motorraum, und darauf läuft ein BMW-eigenes Protokoll. Der
+             Scan hier erreicht das Fahrzeug nicht.</p>
+          <p class="scan-note-sub">Was stattdessen geht, steht in den
+             Dokumenten dieser Baureihe — bei den meisten dieser Fahrzeuge
+             lässt sich der Fehlerspeicher ohne jedes Gerät über einen
+             Blinkcode auslesen.</p>
+        </div>`;
+    }
+
+    if (ende <= 2006) {
+      return `
+        <div class="scan-note scan-note-warn">
+          <h2>${escapeHtml(model.name)}: kommt darauf an</h2>
+          <p>Diese Baureihe überspannt den Übergang zu OBD-2. Ob der Scan
+             etwas findet, hängt an Baujahr, Markt und Kraftstoff: Benziner
+             sind je nach Markt ab Mitte der Neunziger bis Anfang der 2000er
+             dabei, Diesel später.</p>
+          <p class="scan-note-sub">Findet sich keine Buchse im Fussraum,
+             gilt für dieses Fahrzeug der Weg über den Runddiagnosestecker
+             im Motorraum. Übliche ELM327-Adapter sprechen ihn nicht an.</p>
+        </div>`;
+    }
+
+    return '';
+  };
+
   const renderScan = () => {
     const panel = $('#scanPanel');
     const kann = OBD.support();
@@ -1841,6 +1889,7 @@
               <span class="scan-big-sub">ELM327 als BLE-Dongle</span>
             </button>` : ''}
         </div>
+        ${obdEignung()}
         <div class="scan-note scan-note-quiet">
           <p><strong>Vorher:</strong> Zündung an, Motor kann laufen oder stehen.
              Der Stecker sitzt im Fussraum links unter der Lenksäule.</p>

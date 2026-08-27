@@ -62,10 +62,40 @@ möglich und braucht keinen Sollwert.
 **Websuche funktioniert.** Sie läuft serverseitig, nicht über den
 Egress-Proxy dieser Sitzung.
 
-**Seitenabruf funktioniert nicht.** `WebFetch` und `curl` werden für
-praktisch alle einschlägigen Hosts mit 403 abgewiesen — Wikipedia,
-Foren, Pinout-Sammlungen, Herstellerseiten. Das ist eine
-Organisationsregel und wird nicht umgangen.
+**Seitenabruf funktioniert grösstenteils nicht.** `WebFetch` und `curl`
+werden für die meisten einschlägigen Hosts mit 403 abgewiesen — Wikipedia,
+Foren, Pinout-Sammlungen, Herstellerseiten, und auch `archive.org` samt
+`web.archive.org`. Das ist eine Organisationsregel und wird nicht umgangen.
+
+**GitHub-Rohinhalt geht dagegen.** Geprüft und bestätigt:
+
+```bash
+curl -sL https://raw.githubusercontent.com/<owner>/<repo>/<branch>/<pfad>
+```
+
+`raw.githubusercontent.com`, `github.com` und `codeload.github.com` sind
+erreichbar. Die GitHub-**API** ist es nicht — sie ist auf das eigene
+Repository beschränkt. Der Weg ist deshalb: über die Websuche das Projekt
+und den Dateipfad finden, dann die Rohdatei ziehen und **ganz** lesen.
+
+Das ist die einzige Stelle, an der du eine Primärquelle vollständig vor dir
+hast statt einer Zusammenfassung. Nutz sie, wo es geht.
+
+### Warum Quellcode-Projekte hier weit oben stehen
+
+Ein Projekt, das ein Diagnoseprotokoll tatsächlich implementiert, hat seine
+Angaben am Fahrzeug geprüft — sonst liefe die Software nicht. Das ist eine
+andere Belegqualität als ein Forenbeitrag, der eine Tabelle weiterreicht.
+
+Einschlägig sind Implementierungen von DS2, KWP2000, D-CAN und ENET sowie
+Adapter- und Firmware-Projekte. Deren `docs/`-Verzeichnisse und
+README-Dateien tragen oft genau die Pin- und Protokollangaben, die auf den
+gesperrten Sammlungen stehen.
+
+Vorsicht bleibt geboten: auch ein Projekt kann eine falsche Tabelle
+abgeschrieben haben. Ein Beleg aus Quellcode zählt als **eine** gute Quelle,
+nicht als Beweis. Zwei Projekte, die unabhängig voneinander dasselbe
+implementieren, sind dagegen ein starker Beleg.
 
 Praktisch heisst das: du liest **Suchergebnis-Zusammenfassungen, keine
 Primärseiten**. Das drückt die erreichbare Belegstufe und ist der Grund,

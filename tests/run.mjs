@@ -828,6 +828,21 @@ async function main() {
       expect(JSON.stringify(codes) === JSON.stringify(['P0133', 'U0123', 'C030A', 'B0000']),
         'Fehlercodes korrekt dekodiert', `bekommen: ${codes.join(', ')}`);
 
+      // Der Scan spricht genormtes OBD-2. Ein Teil der Baureihen, die der
+      // Trichter anbietet, kennt das gar nicht — dort fuehrt der
+      // Verbinden-Knopf ins Leere. Die Ansicht muss das vorher sagen,
+      // abhaengig vom gewaehlten Fahrzeug.
+      for (const [serie, erwartet] of [['e30', true], ['e46', true], ['e90', false]]) {
+        await page.goto(BASE + `/#/model/${serie}`, { waitUntil: 'domcontentloaded' });
+        await settle(page, 400);
+        await page.goto(BASE + '/#/scan', { waitUntil: 'domcontentloaded' });
+        await settle(page, 600);
+        const da = await page.locator('.scan-note-warn').count() > 0;
+        expect(da === erwartet,
+          `Scan-Eignungshinweis bei ${serie} ${erwartet ? 'vorhanden' : 'nicht vorhanden'}`,
+          `Hinweis ${da ? 'da' : 'fehlt'}, erwartet ${erwartet ? 'da' : 'weg'}`);
+      }
+
       // Der verbundene Zustand rendert Flaechen, die es im Ruhezustand
       // nicht gibt: die getoenten Fehlercode-Zeilen und die Live-Kacheln.
       // Genau dort bricht Kontrast. Ohne Adapter kommt man da nur hin,
