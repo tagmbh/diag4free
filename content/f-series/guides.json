@@ -7,24 +7,73 @@
       "desc": "FEM/BDC reagiert nach Codierversuch nicht mehr. Rettung durch geführte Wiederinbetriebnahme.",
       "steps": [
         {
+          "q": "Hängt ein aktives Werkstattladegerät am Fahrzeug?",
+          "help": "Erster Schritt, bevor irgendetwas anderes passiert. Der häufigste Grund für ein totes FEM/BDC ist ein Spannungseinbruch mitten im Schreibvorgang. Jeder weitere Versuch ohne stabile Versorgung wiederholt genau den Fehler und kann aus einem reparierbaren Zustand einen Bench-Fall machen. Erhaltungslader reichen nicht.",
+          "measure": "Ladegerät angeschlossen und aktiv · alle abschaltbaren Verbraucher aus · Türen zu · Zündung wird während des gesamten Vorgangs nicht angefasst",
+          "doc": "D4F-F-001",
+          "yes": 1,
+          "no": "versorgung-zuerst"
+        },
+        {
           "q": "Ist das Fahrzeug noch entriegelbar?",
           "help": "FEM-Bricking äußert sich meist durch: Fahrzeug reagiert nicht auf Schlüssel, Kombi bleibt schwarz, Motor startet nicht.",
           "measure": "KL30-Versorgung am FEM · konstant 12 V",
           "doc": "D4F-F-001",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antwortet das FEM/BDC noch auf eine Diagnoseverbindung über ENET?",
+          "help": "E-Sys oder ISTA anschließen und die Steuergeräteliste lesen. Entscheidend ist nicht, ob Funktionen gehen, sondern ob sich das Steuergerät überhaupt meldet und eine Version zurückgibt. Meldet es sich, ist die Hardware in Ordnung und nur der Datenstand unvollständig — dann bleibt der Weg über die OBD-Buchse offen. Nichts ausbauen, solange dieser Weg besteht.",
+          "measure": "FEM/BDC erscheint in der Steuergeräteliste und liefert eine Version zurück · nicht nur eine bestehende Netzwerkverbindung",
+          "doc": "D4F-F-001",
           "yes": "recovery-soft",
-          "no": "recovery-full"
+          "no": 3
+        },
+        {
+          "q": "Liegt KL30 am FEM/BDC an und sind die zugehörigen Sicherungen in Ordnung?",
+          "help": "Bevor ein Steuergerät für tot erklärt wird, die Versorgung am Stecker selbst prüfen — Sicherungen im Fahrzeug kontrollieren und die Spannung direkt am FEM/BDC messen. Ein durch den abgebrochenen Vorgang ausgelöster Sicherungsfehler oder ein beim Zugang gelockerter Stecker sieht genauso aus wie ein zerschossener Datenstand, ist aber in Minuten behoben.",
+          "measure": "KL30-Versorgung am FEM · konstant 12 V · zugehörige Sicherungen durchgängig",
+          "doc": "D4F-F-001",
+          "yes": 4,
+          "no": "versorgung-fem"
+        },
+        {
+          "q": "Liegen das KIS/OKV-Backup und der zum Fahrzeug passende PSDZData-Stand vor?",
+          "help": "Ohne den gesicherten Ausgangszustand und den richtigen I-Level fehlt das Ziel, auf das zurückgesetzt werden soll. Ein Bench-Flash mit einem geratenen Datenstand macht den Schaden größer, nicht kleiner. Prüfen, ob die Sicherung aus dem Codierversuch noch existiert und ob der ausgelesene I-Level dazu passt.",
+          "measure": "Backup-Datei vorhanden und lesbar · I-Level des Fahrzeugs bekannt und PSDZData-Stand passend dazu",
+          "doc": "D4F-F-001",
+          "yes": "recovery-full",
+          "no": "kein-backup"
         }
       ]
     }
   },
   "results": {
+    "versorgung-zuerst": {
+      "title": "Zuerst Spannungsversorgung herstellen",
+      "text": "Hier nicht weitermachen. Werkstattladegerät anschließen, Verbraucher abschalten, Türen schließen und erst dann von vorn beginnen. Ein weiterer Schreib- oder Startversuch bei einbrechender Bordspannung ist genau der Vorgang, der das Steuergerät in diesen Zustand gebracht hat. Kein Erhaltungslader, kein Fremdstartkabel von einem laufenden Fahrzeug.",
+      "next_docs": ["D4F-F-001"]
+    },
+    "versorgung-fem": {
+      "title": "Versorgung oder Sicherung am FEM/BDC defekt",
+      "text": "Das ist kein Bricking-Fall. Defekte Sicherung ersetzen beziehungsweise Steckverbindung und Masseanbindung am FEM/BDC instand setzen, danach KL30 erneut messen. Erst wenn die Versorgung sauber steht, die Diagnoseverbindung noch einmal versuchen — sehr häufig meldet sich das Steuergerät dann wieder und der Codierstand lässt sich normal über die OBD-Buchse nachziehen.",
+      "next_docs": ["D4F-F-001"]
+    },
+    "kein-backup": {
+      "title": "Kein Backup, kein passender Datenstand — nicht weiterflashen",
+      "text": "Hier ist Stillstand die richtige Entscheidung. Ohne KIS/OKV-Backup und ohne den zum I-Level passenden PSDZData-Stand fehlt das Ziel des Rückschreibens; ein Versuch auf Verdacht kann zusätzlich die Fahrzeugzuordnung zerstören. Zuerst beschaffen: ausgelesener I-Level des Fahrzeugs, dazu passende PSDZData und die Sicherung aus dem Codierversuch. Falls ohnehin ein Bench-Gerät im Spiel ist, vorher das EEPROM sichern und die Sicherung wegschreiben, bevor irgendetwas beschrieben wird.",
+      "next_docs": ["D4F-F-001"]
+    },
     "recovery-soft": {
       "title": "Software-Recovery über E-Sys",
-      "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend."
+      "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend.",
+      "next_docs": ["D4F-F-001"]
     },
     "recovery-full": {
       "title": "Bench-Recovery erforderlich",
-      "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich."
+      "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich.",
+      "next_docs": ["D4F-F-001"]
     }
   }
 }

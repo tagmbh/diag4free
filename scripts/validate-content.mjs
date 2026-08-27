@@ -25,6 +25,7 @@ const errors = [];
 const warnings = [];
 const offeneArtikel = [];
 const ohneTiefe = [];
+const alleDocs = [];
 
 // Nur diese Hosts duerfen aus dem Content heraus verlinkt werden.
 // Alles andere ist eine fremde Sammlung — das Wissen gehoert uebernommen,
@@ -137,11 +138,16 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
           }
         }
 
-        // Der Weg tiefer ins Material ersetzt den Weg nach draussen. Ein
-        // Dokument ohne Artikel, ohne gesetzte Details und ohne Nachbarn
-        // gleicher Kategorie ist eine Sackgasse.
-        const hatTiefe = isStr(d.article) || isArr(d.details) || isArr(d.next_docs);
-        if (!hatTiefe) ohneTiefe.push({ id: d.id, cat: d.cat, dir });
+        // Der Weg tiefer ins Material ersetzt den Weg nach draussen.
+        // Gemeldet wird nur, was die App auch wirklich nicht aufloesen
+        // kann — `verwandteDocs` in app.js sucht Nachbarn ueber die
+        // Kategorie *und* ueber gemeinsame Motoren. Nur die Kategorie zu
+        // pruefen hat Docs als Sackgasse gemeldet, die in der Anzeige
+        // laengst Verweise tragen.
+        alleDocs.push({ id: d.id, dir, cat: d.cat, engines: d.engines || [] });
+
+        const hatTiefe = isStr(d.article) || isArr(d.details);
+        if (!hatTiefe) ohneTiefe.push({ id: d.id, cat: d.cat, dir, engines: d.engines || [] });
 
         if (d.article !== undefined) {
           if (!isStr(d.article) || !d.article.endsWith('.md')) {
@@ -321,12 +327,14 @@ async function main() {
     // Nur melden, wo auch die automatische Nachbarschaft nicht greift —
     // ein Dokument mit Geschwistern gleicher Kategorie hat einen Weg
     // weiter, auch ohne dass ihn jemand von Hand gesetzt hat.
-    const proKategorie = new Map();
-    for (const d of ohneTiefe) {
-      const schluessel = `${d.dir}/${d.cat}`;
-      proKategorie.set(schluessel, (proKategorie.get(schluessel) || 0) + 1);
-    }
-    const echt = ohneTiefe.filter(d => proKategorie.get(`${d.dir}/${d.cat}`) === 1);
+    // Ein Doc ist nur dann eine Sackgasse, wenn es im selben Verzeichnis
+    // kein anderes gibt, das dieselbe Kategorie oder einen gemeinsamen
+    // Motor hat — genau die Bedingung, nach der die App verwandte
+    // Dokumente sucht.
+    const nachbarn = (d) => alleDocs.some(a =>
+      a.id !== d.id && a.dir === d.dir &&
+      (a.cat === d.cat || (a.engines || []).some(m => (d.engines || []).includes(m))));
+    const echt = ohneTiefe.filter(d => !nachbarn(d));
     if (echt.length) {
       console.log(`\n○  ${echt.length} von ${docIds.size} Docs ohne Weg tiefer (kein Artikel, keine \`details\`, kein Nachbar gleicher Kategorie):`);
       console.log(`   ${echt.map(d => d.id).join(', ')}`);

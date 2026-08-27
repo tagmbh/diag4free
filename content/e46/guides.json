@@ -32,8 +32,8 @@
         },
         {
           "q": "Baut das Kraftstoffsystem Druck auf?",
-          "help": "Kraftstoffpumpe muss beim Zündungseinschalten für ca. 2 Sekunden laufen. Bei Druckabfall: Rückschlagventil in Pumpe oder Druckregler.",
-          "measure": "Systemdruck M54 · 3.5 bar ± 0.2 bar",
+          "help": "Die Kraftstoffpumpe muss beim Einschalten der Zündung kurz hörbar anlaufen. Fällt der Druck nach dem Abstellen sofort ab: Rückschlagventil in der Pumpe oder Druckregler.",
+          "measure": "Kraftstoffdruck mit Manometer am Rail mitlesen: beim Einschalten der Zündung baut das System hörbar Druck auf, der nach dem Abschalten der Pumpe stehen bleibt. Ein Zahlen-Sollwert für den Systemdruck ist in diesem Repository nicht belegt — bewertet werden Druckaufbau und Druckhaltung, nicht ein abgelesener Absolutwert",
           "doc": "D4F-E46-003",
           "yes": 4,
           "no": "fuel-pressure"
@@ -41,7 +41,7 @@
         {
           "q": "Bekommen die Zündspulen den Zündimpuls?",
           "help": "Stroboskop oder Prüfstecker an einer Zündspule. Kein Zündfunke → Kurbelwellensensor, DME oder Kabelbaum.",
-          "measure": "Kurbelwellensensor Signal · 2–3 V AC bei Cranken",
+          "measure": "Am Kurbelwellensensor beim Cranken überhaupt eine wechselnde Spannung nachweisen (Multimeter auf Wechselspannung, sauber nur mit Oszilloskop). Eine bei null stehende Anzeige zählt als Nein. Ein Sollwert für die Signalamplitude ist hier nicht belegt",
           "doc": "D4F-E46-006",
           "yes": "compression",
           "no": "ignition"
@@ -51,23 +51,47 @@
     "sec-air-e46": {
       "code": "GF-E46-02",
       "name": "Sekundärluft · P0491/P0492",
-      "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Pumpe, Kombiventil und Sensorlogik.",
+      "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Vorbedingung, Pumpenversorgung, Kombiventil und Lambda-Reaktion.",
       "steps": [
         {
-          "q": "Läuft die Sekundärluftpumpe beim Kaltstart 30–90 s?",
-          "help": "Hörbar unter der Motorhaube rechts. Kein Laufen → Relais, Sicherung F1 (30 A), Pumpe selbst.",
-          "measure": "Pumpen-Klemme +30 · KL30, Klemme 87 · geschaltet über Relais",
-          "doc": "D4F-E46-003",
+          "q": "Ist der Motor kalt genug, dass der Sekundärlufttakt überhaupt anläuft?",
+          "help": "Die DME startet die Sekundärluft nur nach einem echten Kaltstart. Bei betriebswarmem Motor läuft die Pumpe nicht — ein Test daran beweist nichts. Kühlmitteltemperatur vor dem Start in INPA ablesen (F5 → E46 → F1 Motor → F5 Status).",
+          "measure": "Kühlmitteltemperatur vor dem Start nahe Umgebungstemperatur, Fahrzeug mehrere Stunden gestanden",
+          "doc": "D4F-E46-001",
           "yes": 1,
-          "no": "sap-pump"
+          "no": "sap-precond"
+        },
+        {
+          "q": "Läuft die Sekundärluftpumpe beim Kaltstart hörbar an?",
+          "help": "Hörbar unter der Motorhaube rechts, deutliches Rauschen. Alternativ die Pumpe in der Stellglieddiagnose ansteuern (INPA F8 Stellglieder). Kein Laufen trennt Elektrik von Mechanik. Wie lange der Takt läuft, ist hier nicht belegt — gewertet wird, ob die Pumpe überhaupt anläuft und wieder abschaltet.",
+          "measure": "Pumpe läuft hörbar an und wieder ab; Klemme +30 · KL30, Klemme 87 · geschaltet über Relais",
+          "doc": "D4F-E46-003",
+          "yes": 3,
+          "no": 2
+        },
+        {
+          "q": "Liegt während der Ansteuerung Spannung am Pumpenstecker an?",
+          "help": "Pumpenstecker abziehen, Spannung zwischen Klemme 87 und Pumpenmasse messen, während die Stellglieddiagnose die Pumpe ansteuert. Vorher Sicherung F1 im Elektrokasten Motorraum (Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck) und das Pumpenrelais K6304 sichten.",
+          "measure": "Bordspannung liegt während der Ansteuerung an; Masseseite gegen Karosserie < 0.5 Ω",
+          "doc": "D4F-E46-003",
+          "yes": "sap-pump",
+          "no": "sap-supply"
         },
         {
           "q": "Öffnet das Kombiventil bei laufender Pumpe?",
-          "help": "Ventil sitzt an der Ansaugbrücke, wird über Unterdruck vom Solenoid an der DME angesteuert.",
-          "measure": "Unterdruck am Solenoid · > 300 mbar bei Ansteuerung",
+          "help": "Ventil sitzt an der Ansaugbrücke, wird über Unterdruck vom Solenoid an der DME angesteuert. Solenoid mit 12 V direkt ansteuern — es muss hörbar klicken und Unterdruck durchlassen.",
+          "measure": "Solenoid klickt bei Ansteuerung hörbar und lässt den Unterdruck durch: Handvakuumpumpe an den Ventilausgang, im angesteuerten Zustand hält die Strecke kein Vakuum, im nicht angesteuerten schon. Ein Zahlenwert für den Prüfunterdruck ist hier nicht belegt",
           "doc": "D4F-E46-003",
-          "yes": "sap-diag",
+          "yes": 4,
           "no": "sap-valve"
+        },
+        {
+          "q": "Reagiert die Lambdaregelung während des Sekundärlufttakts?",
+          "help": "Sekundärluft bringt Frischluft in den Abgasstrom, die Sonde meldet daraufhin ein scheinbar mageres Gemisch. INPA F5 → Lambda während der ersten Minute nach dem Kaltstart beobachten. Keine Reaktion trotz laufender Pumpe und offenem Ventil heißt: die Luft kommt nicht am Krümmer an.",
+          "measure": "Regelabweichung Bank 1 und Bank 2 verschiebt sich während des Takts sichtbar und geht danach zurück",
+          "doc": "D4F-E46-003",
+          "yes": "sap-ok",
+          "no": "sap-diag"
         }
       ]
     }
@@ -75,11 +99,11 @@
   "results": {
     "check-power": {
       "title": "Versorgung zuerst stabilisieren",
-      "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Bei Ruhestromverbrauch > 40 mA nach 30 min: parasitäre Last suchen."
+      "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Ruhestrom erst messen, wenn alle Steuergeräte schlafen. Auffällig ist er, wenn er nach der Ruhephase nicht absinkt oder beim Ziehen einer einzelnen Sicherung deutlich einbricht — so wird der Verbraucher gefunden. Ein Grenzwert in mA ist in diesem Repository nicht belegt."
     },
     "no-comm": {
       "title": "Diagnosekommunikation gestört",
-      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 gegen Masse mit 10 kΩ Pullup. Wenn K-Line ok: DME-Sicherung F6 (Motorraum, 15 A) prüfen, danach DME KL30 an Pin 1 des X60001."
+      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001."
     },
     "ews-block": {
       "title": "EWS erteilt keine Startfreigabe",
@@ -87,7 +111,7 @@
     },
     "fuel-pressure": {
       "title": "Kraftstoffdruck fehlt oder fällt ab",
-      "text": "Fahrschule anschließen (M14x1.5 am Rail). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+      "text": "Manometer am Kraftstoffrail anschließen (Adaptergewinde laut Werkzeugsatz). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
     },
     "ignition": {
       "title": "Zündimpuls fehlt",
@@ -95,11 +119,11 @@
     },
     "compression": {
       "title": "Kompression prüfen",
-      "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression Zylinder 1–6 messen. Sollwert warm: 10–13 bar. Bei einzelnem Zylinder deutlich niedriger → Ventilproblem (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung)."
+      "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression der Zylinder 1–6 bei betriebswarmem Motor messen und die sechs Werte untereinander vergleichen. Fällt ein Zylinder deutlich gegen die übrigen ab, ist er der Befund (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung). Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt."
     },
     "sap-pump": {
-      "title": "Sekundärluftpumpe defekt oder ohne Versorgung",
-      "text": "Sicherung F1 im Elektrokasten Motorraum (30 A) prüfen. Pumpenrelais K6304 tauschen (steckt neben DME-Relais). Wenn Versorgung ok: Pumpe elektrisch defekt (Massepunkt gegen Karosserie prüfen)."
+      "title": "Pumpe elektrisch versorgt, läuft aber nicht",
+      "text": "Spannung und Masse liegen am Stecker an, die Pumpe reagiert trotzdem nicht — dann ist sie selbst defekt und wird ersetzt. Vor dem Einbau der neuen Pumpe die Massestelle gegen Karosserie reinigen und den Ansaugschlauch prüfen: eine Pumpe, die über Jahre Wasser gezogen hat, ist der Regelfall beim E46, und der neue Teil geht auf demselben Weg wieder kaputt."
     },
     "sap-valve": {
       "title": "Kombiventil öffnet nicht",
@@ -107,7 +131,19 @@
     },
     "sap-diag": {
       "title": "Mechanik ok · Sensorik/DME weiter prüfen",
-      "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartete Anfettung der Regelabweichung > 5% für 30–60 s. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+      "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartet wird, dass sich die Regelabweichung während des Sekundärlufttakts sichtbar verschiebt und danach wieder auf den Wert davor zurückgeht — gewertet wird diese Bewegung, nicht ein Prozent-Grenzwert; ein solcher ist hier nicht belegt. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+    },
+    "sap-precond": {
+      "title": "Vorbedingung fehlt · Test erst nach echtem Kaltstart",
+      "text": "Der Sekundärlufttakt läuft nur nach einem Kaltstart. Fahrzeug abstellen, bis die Kühlmitteltemperatur wieder nahe Umgebungstemperatur liegt, dann den Pfad erneut durchgehen. Wer sofort prüfen muss, steuert die Pumpe stattdessen über die Stellglieddiagnose in INPA an — das ersetzt aber nicht die Beobachtung im echten Takt."
+    },
+    "sap-supply": {
+      "title": "Keine Versorgung an der Pumpe",
+      "text": "Sicherung F1 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach das Pumpenrelais K6304 gegen ein baugleiches tauschen. Kommt danach immer noch keine Spannung an: Leitung vom Relais zur Pumpe auf Durchgang messen und die Ansteuerleitung von der DME zum Relais prüfen. Erst wenn die Versorgung steht, ist eine Aussage über die Pumpe selbst möglich."
+    },
+    "sap-ok": {
+      "title": "Sekundärluftsystem arbeitet · Adaption zurücksetzen",
+      "text": "Pumpe fördert, Kombiventil öffnet, die Lambdaregelung sieht die Zusatzluft. Der abgelegte Fehler stammt dann aus einem früheren Zustand. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts fahren. Kommt P0491 oder P0492 danach nicht wieder, ist die Sache erledigt; kommt er wieder, den Pfad mit Blick auf grenzwertige Fördermenge und verrußte Kanäle erneut durchgehen."
     }
   }
 }

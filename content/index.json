@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T03:10:27.271Z",
+  "generated": "2026-08-27T04:39:16.030Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -299,6 +299,10 @@
         "M42",
         "S14"
       ],
+      "article": "diagnosestecker-20-polig.md",
+      "details": [
+        "D4F-E30-002"
+      ],
       "model": "e30"
     },
     {
@@ -318,6 +322,10 @@
       "engines": [
         "M20",
         "M42"
+      ],
+      "article": "blinkcode-motronic-13.md",
+      "details": [
+        "D4F-E30-001"
       ],
       "model": "e30"
     },
@@ -514,13 +522,13 @@
       "cat": "Reparatur",
       "title": "DISA-Ventil M54 · Prüfen und Erneuern",
       "valid": "E46 · M54B22/B25/B30",
-      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüf- und Wechselanweisung mit Drehmomenten.",
+      "summary": "Häufigster Grund für P0170/P0173 und Leistungsverlust im mittleren Drehzahlbereich beim M54: verschlissene DISA-Klappe. Prüfreihenfolge und Wechsel, mit benannten Lücken bei den Sollwerten.",
       "points": [
-        "Sichtprüfung: Klappenspiel < 1 mm axial, kein Klappern",
-        "Vakuumtest: 500 mbar über Handpumpe, muss halten",
-        "Solenoid: 30–40 Ω bei 20 °C",
+        "Sichtprüfung: Klappe von Hand in Wellenrichtung bewegen — spürbares Spiel oder Klappern ist der Befund",
+        "Vakuumtest über Handpumpe: die Verstelldose muss das Vakuum halten, ein zügiger Abfall zeigt die undichte Membran",
+        "Solenoid gegen ein bekannt gutes Exemplar vergleichen — Unterbrechung und Windungsschluss fallen im Vergleich auf",
         "OEM DISA revidiert = beste Wahl (Nachbau oft mit Nietbruch)",
-        "Anzugsmoment M6-Schrauben Ansaugbrücke: 10 Nm"
+        "Ansaugbrücke mit Drehmomentschlüssel nach Herstellervorgabe verschrauben — im Aluminium reisst das Gewinde sonst aus"
       ],
       "pins": [
         "DISA-Solenoid Pin 1 · KL15 (+12 V)",
@@ -617,7 +625,7 @@
       "points": [
         "Kein DISA-Ventil wie beim N46 — Luftmasse wird über Valvetronic-Exzenterwelle statt Drosselklappe geregelt",
         "Elektrische Wasserpumpe (Pierburg) — Ansteuerung über DME PWM, Diagnose mit INPA Statusblock „Kühlmittelpumpe Solldrehzahl“",
-        "Doppel-VANOS Ein-/Auslass — jeweils Magnetventil mit ~7,5 Ω, Solenoide sind identisch (tauschbar zum Vergleichstest)",
+        "Doppel-VANOS Ein-/Auslass — jeweils Magnetventil mit ~7.5 Ω, Solenoide sind identisch (tauschbar zum Vergleichstest)",
         "Ölstandsensor QLT statt Peilstab — Diagnose über INPA Servicefunktion; kein mech. Peilstab werksseitig verbaut",
         "Zündspulen: Bosch mit Rüsselstecker — Aussetzer immer erst rundum tauschen bevor Kompression",
         "Ansaugbrücke Kunststoff mit Klappensteller (Resonanzklappe) — Ausfall führt zu P1004/P1005"
@@ -660,15 +668,15 @@
       "summary": "Die vier klassischen N52-Reparaturthemen mit Symptomen, Diagnose-Weg und Grenzwerten. Ziel ist es, die Symptome eindeutig einem der vier Sub-Systeme zuzuordnen, bevor Teile bestellt werden.",
       "points": [
         "E-Wasserpumpe (Pierburg): typische Lebensdauer 80–120 tkm. Symptom: Überhitzung bei Standgas, dann Kaltstart-OK. Diagnose: INPA Wert „Solldrehzahl Wasserpumpe“ > 0 aber „Iststrom Wasserpumpe“ ~0 A → Pumpe defekt. Nicht mit Thermostat verwechseln.",
-        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Servo mit Multimeter ~1,5–2 Ω an den Motor-Pins, Adaption über ISTA nach Wechsel zwingend.",
-        "VANOS-Solenoid verklebt: sporadischer P052A/P052B/P052E, ruckelt kalt. Diagnose: Solenoide tauschen (Einlass ↔ Auslass) — wandert der Fehler mit → Solenoid reinigen oder tauschen (~40 €/Stück). Immer Öldruck an der Kettenspanner-Bohrung mit-messen.",
+        "Valvetronic-Servomotor: Symptom Notlauf mit Drosselklappen-Regelung, Leistung reduziert, DTC 2A82/2A87. Diagnose: Servo mit Multimeter ~1.5–2 Ω an den Motor-Pins, Adaption über ISTA nach Wechsel zwingend.",
+        "VANOS-Solenoid verklebt: sporadischer P052A/P052B/P052E, ruckelt kalt. Diagnose: Solenoide tauschen (Einlass ↔ Auslass) — wandert der Fehler mit → Solenoid reinigen oder tauschen. Immer Öldruck an der Kettenspanner-Bohrung mit-messen.",
         "Ölfiltergehäusedichtung: Symptom Ölspur zwischen Motor und Getriebe, Öl auf Anlasser. Kein DTC, rein optisch. Ursache Hartgummi-Dichtung wird spröde ab ~100 tkm. Nicht mit VVT/VANOS-Dichtung verwechseln.",
         "DISA-Analogie: N52 hat DISA-Klappe im Sammler (Resonanzklappe). Symptom Klappern bei 1500-2500 U/min. Klappe muss beim Wechsel angelernt werden (INPA Servicefunktion)."
       ],
       "pins": [
         "Wasserpumpe X-Stecker: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM-Signal von DME",
         "Valvetronic-Motor: Pin 1/2 Motor-Ansteuerung H-Brücke, Pin 3/4 Positionssensor",
-        "VANOS-Solenoid: 2-poliger Stecker, ~7,5 Ω @ 20°C"
+        "VANOS-Solenoid: 2-poliger Stecker, ~7.5 Ω @ 20°C"
       ],
       "engines": [
         "N52"
@@ -704,15 +712,14 @@
       "summary": "Das 6-Gang-Automatikgetriebe ZF GA6L45R am N52 im E88. Adaptionswerte lernen sich im Fahrbetrieb — nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
       "points": [
         "Ölwechsel-Intervall (Werkstatt-Empfehlung, nicht BMW-„lifetime“): 60–80 tkm",
-        "ATF: Shell M-1375.4 äquivalent, ca. 6,5 L Wechselmenge (Trockenmenge 8 L)",
-        "Ölmess-Prozedur: Motor bei 40 °C ATF, Wählhebel P→R→N→D je 5 s, dann Kontrollschraube offen: Öl tröpfelt = korrekter Stand",
+        "ATF: Shell M-1375.4 äquivalent, ca. 6.5 L Wechselmenge (Trockenmenge 8 L)",
+        "Ölmess-Prozedur: Motor bei 40 °C ATF, Wählhebel P→R→N→D je 5 s, dann Kontrollschraube offen: Öl tröpfelt = korrekter Stand. ATF-Temperatur nur über EGS auslesbar — der Öltemperaturfühler sitzt intern in der Mechatronic, es gibt keinen separaten Stecker",
         "Adaption-Reset via ISTA-D → Servicefunktionen → EGS → Adaptionswerte löschen",
         "Nach Reset: 20 min Fahrbetrieb mit Beschleunigung bis 3500 U/min, ruhige Rückschaltung Bergab",
         "Symptom „harter Ruck 1→2 oder 2→3“: Mechatronic-Sleeve (Steckerkontakte innen ölfeucht) — Dichtung Y-Stecker prüfen"
       ],
       "pins": [
-        "EGS-Stecker X17 · 40-polig, Mechatronic-Adapter",
-        "Getriebe-Öltemperaturfühler intern in Mechatronic — kein separater Stecker"
+        "EGS-Stecker X17 · 40-polig, Mechatronic-Adapter"
       ],
       "engines": [
         "N52"
@@ -910,22 +917,57 @@
       "code": "GF-E30-01",
       "name": "M20 kein Zündfunke",
       "desc": "Klassischer Ausfall am E30 mit M20. Reihenfolge: Zündspule → Hallgeber → DME → Kabelbaum.",
+      "engines": [
+        "M20"
+      ],
       "steps": [
         {
           "q": "Kommt Spannung an der Zündspule KL15?",
-          "help": "Zündschloss auf Position 2. Am Klemme 15 der Zündspule (grün-schwarz) müssen ~12 V anliegen.",
-          "measure": "Zündspule KL15 · 11.5–12.6 V",
+          "help": "Zündschloss auf Position 2. Schwarze Messspitze an einen blanken Massepunkt am Motor, rote an Klemme 15 der Zündspule (grün-schwarz). Gemessen wird gegen Motormasse, nicht gegen den Spulenkörper.",
+          "measure": "Zündspule KL15 · Bordnetzspannung, bei Zündung ein rund 12 V, höchstens 0.5 V unter der direkt an der Batterie gemessenen Spannung",
           "doc": "D4F-E30-001",
           "yes": 1,
           "no": "no-kl15"
         },
         {
+          "q": "Springt an der Hochspannungsleitung der Zündspule ein Funke über, wenn du startest?",
+          "help": "Mittleres Zündkabel aus der Verteilerkappe ziehen, mit einer isolierten Zange rund 5 mm vor einen blanken Massepunkt halten und cranken lassen. Nie in der Hand halten, nie über dem offenen Vergaser- oder Ansaugbereich prüfen.",
+          "measure": "Kräftiger, regelmäßiger Überschlag bei Anlasserdrehzahl. Kein Funke oder nur vereinzelte schwache Überschläge zählen als Nein.",
+          "doc": "D4F-E30-001",
+          "yes": "verteiler",
+          "no": 2
+        },
+        {
+          "q": "Liegen am Hallgeber-Stecker im Verteiler Versorgung und Masse an?",
+          "help": "Stecker am Verteiler abziehen, Zündung ein. Am Versorgungspin gegen Motormasse messen, danach den Massepin des Steckers gegen KL30 gegenprüfen. Die Versorgung des Hallgebers kommt beim M20 vom Steuergerät, nicht direkt aus dem Zündschloss.",
+          "measure": "Versorgungspin führt Spannung nahe Bordnetz, der Massepin hat Durchgang gegen Motormasse. Null Volt oder fehlende Masse zählt als Nein.",
+          "doc": "D4F-E30-001",
+          "yes": 3,
+          "no": "hall-versorgung"
+        },
+        {
           "q": "Löst der Hallgeber im Verteiler ein Signal aus?",
-          "help": "Beim Cranken muss ein Rechtecksignal 0/12 V am Hallgeber-Signalpin (grün) messbar sein.",
-          "measure": "Hallgeber Signal · Rechteck 0–12 V bei Anlasserdrehzahl",
+          "help": "Stecker wieder aufstecken, am Signalpin (grün) rückseitig anpiksen oder mit Abgreifadapter messen. Beim Cranken wechselt das Signal zwischen Masse und Versorgungsniveau. Mit einem einfachen Multimeter erkennbar als springende Spannung, sauber nur mit Oszilloskop.",
+          "measure": "Hallgeber Signal · Rechteck zwischen 0 V und Versorgungsniveau (rund 12 V) bei Anlasserdrehzahl. Dauerhaft 0 V oder dauerhaft 12 V zählt als Nein.",
+          "doc": "D4F-E30-001",
+          "yes": 4,
+          "no": "hall-sensor"
+        },
+        {
+          "q": "Bekommt die DME Spannung und zieht das Hauptrelais bei Zündung ein?",
+          "help": "Hauptrelais im Kasten neben dem Federbeindom. Beim Einschalten der Zündung muss es hörbar klicken. Danach am Steuergerätestecker die Dauerplus- und die geschaltete Versorgung gegen die Steuergerätemasse messen. Relaissockel und die Lötstellen der Relaisplatine sind am E30 die häufigste Ursache.",
+          "measure": "Hauptrelais klickt bei Zündung ein. An der geschalteten Versorgung des Steuergeräts liegt Bordnetzspannung an, die Steuergerätemasse hat Durchgang gegen Motormasse.",
+          "doc": "D4F-E30-001",
+          "yes": 5,
+          "no": "dme-versorgung"
+        },
+        {
+          "q": "Sind die Leitungen zwischen Hallgeber, DME und Zündspule durchgängig?",
+          "help": "Zündung aus, Batterie abklemmen. Signalleitung des Hallgebers vom Verteilerstecker bis zum Steuergerätestecker auf Durchgang messen, ebenso die Ansteuerleitung von der DME zur Zündspule Klemme 1. Beide Leitungen zusätzlich gegen Masse prüfen — ein Scheuerschluss gegen Karosserie sieht aus wie ein defektes Steuergerät.",
+          "measure": "Durchgang von Stecker zu Stecker ohne Unterbruch, Widerstand praktisch null. Gegen Masse kein Durchgang. Beim Wackeln am Kabelbaum darf der Messwert nicht springen.",
           "doc": "D4F-E30-001",
           "yes": "check-dme",
-          "no": "hall-sensor"
+          "no": "kabelbaum"
         }
       ],
       "model": "e30",
@@ -933,15 +975,53 @@
       "_results": {
         "no-kl15": {
           "title": "KL15-Versorgung fehlt",
-          "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel."
+          "text": "Zündschloss und Sicherung Nr. 11 (Fahrerfußraum) prüfen. Bei intaktem KL15 aber weiterhin kein Signal: Massepunkt M1 am Ventildeckel reinigen und nachziehen. Danach die Messung an Klemme 15 der Zündspule wiederholen, bevor du weitersuchst.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
+        },
+        "verteiler": {
+          "title": "Zündung arbeitet — Fehler liegt hinter der Spule",
+          "text": "Die Spule liefert Hochspannung, sie kommt nur nicht an den Kerzen an. Verteilerkappe abnehmen und auf Kriechspuren, Risse und abgebrannte Kontakte prüfen, Verteilerfinger auf Durchbrand kontrollieren, Zündkabel und Kerzenstecker einzeln auf Durchgang messen. Kappe innen trocken und sauber montieren.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
+        },
+        "hall-versorgung": {
+          "title": "Hallgeber wird nicht versorgt",
+          "text": "Der Geber kann kein Signal liefern, weil Spannung oder Masse fehlen. Steckerkontakte am Verteiler auf Grünspan und aufgeweitete Buchsen prüfen, danach die Versorgungsleitung zurück zum Steuergerät verfolgen. Erst wenn Versorgung und Masse sicher anliegen, ist eine Aussage über den Geber selbst möglich.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
         },
         "hall-sensor": {
           "title": "Hallgeber im Verteiler defekt",
-          "text": "Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Anschließend Zündung neu einstellen."
+          "text": "Versorgung liegt an, ein Signal kommt trotzdem nicht: Hallgeber im Verteiler wechseln (E30-typischer Alterungsdefekt). Beim Zusammenbau die Blende auf Freigang prüfen und anschließend die Zündung neu einstellen.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
+        },
+        "dme-versorgung": {
+          "title": "Spannungsversorgung der DME fehlt",
+          "text": "Ohne Versorgung schaltet das Steuergerät die Zündendstufe nicht. Hauptrelais tauschweise ersetzen, Relaissockel und die Lötstellen der Relaisplatine auf kalte Stellen prüfen, danach die Steuergerätemasse nachziehen. Erst wenn das Relais sicher einzieht, hat eine weitere Diagnose am Steuergerät Sinn.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
+        },
+        "kabelbaum": {
+          "title": "Unterbruch oder Kurzschluss im Kabelbaum",
+          "text": "Die gefundene Leitung instandsetzen: Scheuerstellen am Durchgang zur Spritzwand, gebrochene Adern kurz vor den Steckern und aufgeweitete Kontakte sind die üblichen Stellen. Reparaturstelle löten und schrumpfen, nicht klemmen. Danach die Messung wiederholen und den Pfad von vorn durchlaufen.",
+          "next_docs": [
+            "D4F-E30-001"
+          ]
         },
         "check-dme": {
-          "title": "DME oder Zündspule prüfen",
-          "text": "Zündspule Primär (0.5 Ω) und Sekundär (5–8 kΩ) messen. Bei intakter Spule: DME (Motronic-Steuergerät) tauschweise prüfen."
+          "title": "Verkabelung in Ordnung — Zündspule und DME prüfen",
+          "text": "Alles davor ist geprüft. Zündspule tauschweise durch eine bekannt gute ersetzen; bleibt der Funke aus, ist das Motronic-Steuergerät der letzte Verdächtige und wird ebenfalls tauschweise geprüft. Sollwerte für den Primär- und Sekundärwiderstand der Zündspule stehen in keiner hier verfügbaren Quelle — deshalb tauschweise arbeiten statt gegen eine geratene Zahl zu messen.",
+          "next_docs": [
+            "D4F-E30-001",
+            "D4F-E30-002"
+          ]
         }
       }
     },
@@ -976,8 +1056,8 @@
         },
         {
           "q": "Baut das Kraftstoffsystem Druck auf?",
-          "help": "Kraftstoffpumpe muss beim Zündungseinschalten für ca. 2 Sekunden laufen. Bei Druckabfall: Rückschlagventil in Pumpe oder Druckregler.",
-          "measure": "Systemdruck M54 · 3.5 bar ± 0.2 bar",
+          "help": "Die Kraftstoffpumpe muss beim Einschalten der Zündung kurz hörbar anlaufen. Fällt der Druck nach dem Abstellen sofort ab: Rückschlagventil in der Pumpe oder Druckregler.",
+          "measure": "Kraftstoffdruck mit Manometer am Rail mitlesen: beim Einschalten der Zündung baut das System hörbar Druck auf, der nach dem Abschalten der Pumpe stehen bleibt. Ein Zahlen-Sollwert für den Systemdruck ist in diesem Repository nicht belegt — bewertet werden Druckaufbau und Druckhaltung, nicht ein abgelesener Absolutwert",
           "doc": "D4F-E46-003",
           "yes": 4,
           "no": "fuel-pressure"
@@ -985,7 +1065,7 @@
         {
           "q": "Bekommen die Zündspulen den Zündimpuls?",
           "help": "Stroboskop oder Prüfstecker an einer Zündspule. Kein Zündfunke → Kurbelwellensensor, DME oder Kabelbaum.",
-          "measure": "Kurbelwellensensor Signal · 2–3 V AC bei Cranken",
+          "measure": "Am Kurbelwellensensor beim Cranken überhaupt eine wechselnde Spannung nachweisen (Multimeter auf Wechselspannung, sauber nur mit Oszilloskop). Eine bei null stehende Anzeige zählt als Nein. Ein Sollwert für die Signalamplitude ist hier nicht belegt",
           "doc": "D4F-E46-006",
           "yes": "compression",
           "no": "ignition"
@@ -996,11 +1076,11 @@
       "_results": {
         "check-power": {
           "title": "Versorgung zuerst stabilisieren",
-          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Bei Ruhestromverbrauch > 40 mA nach 30 min: parasitäre Last suchen."
+          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Ruhestrom erst messen, wenn alle Steuergeräte schlafen. Auffällig ist er, wenn er nach der Ruhephase nicht absinkt oder beim Ziehen einer einzelnen Sicherung deutlich einbricht — so wird der Verbraucher gefunden. Ein Grenzwert in mA ist in diesem Repository nicht belegt."
         },
         "no-comm": {
           "title": "Diagnosekommunikation gestört",
-          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 gegen Masse mit 10 kΩ Pullup. Wenn K-Line ok: DME-Sicherung F6 (Motorraum, 15 A) prüfen, danach DME KL30 an Pin 1 des X60001."
+          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001."
         },
         "ews-block": {
           "title": "EWS erteilt keine Startfreigabe",
@@ -1008,7 +1088,7 @@
         },
         "fuel-pressure": {
           "title": "Kraftstoffdruck fehlt oder fällt ab",
-          "text": "Fahrschule anschließen (M14x1.5 am Rail). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+          "text": "Manometer am Kraftstoffrail anschließen (Adaptergewinde laut Werkzeugsatz). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
         },
         "ignition": {
           "title": "Zündimpuls fehlt",
@@ -1016,11 +1096,11 @@
         },
         "compression": {
           "title": "Kompression prüfen",
-          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression Zylinder 1–6 messen. Sollwert warm: 10–13 bar. Bei einzelnem Zylinder deutlich niedriger → Ventilproblem (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung)."
+          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression der Zylinder 1–6 bei betriebswarmem Motor messen und die sechs Werte untereinander vergleichen. Fällt ein Zylinder deutlich gegen die übrigen ab, ist er der Befund (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung). Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt."
         },
         "sap-pump": {
-          "title": "Sekundärluftpumpe defekt oder ohne Versorgung",
-          "text": "Sicherung F1 im Elektrokasten Motorraum (30 A) prüfen. Pumpenrelais K6304 tauschen (steckt neben DME-Relais). Wenn Versorgung ok: Pumpe elektrisch defekt (Massepunkt gegen Karosserie prüfen)."
+          "title": "Pumpe elektrisch versorgt, läuft aber nicht",
+          "text": "Spannung und Masse liegen am Stecker an, die Pumpe reagiert trotzdem nicht — dann ist sie selbst defekt und wird ersetzt. Vor dem Einbau der neuen Pumpe die Massestelle gegen Karosserie reinigen und den Ansaugschlauch prüfen: eine Pumpe, die über Jahre Wasser gezogen hat, ist der Regelfall beim E46, und der neue Teil geht auf demselben Weg wieder kaputt."
         },
         "sap-valve": {
           "title": "Kombiventil öffnet nicht",
@@ -1028,30 +1108,66 @@
         },
         "sap-diag": {
           "title": "Mechanik ok · Sensorik/DME weiter prüfen",
-          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartete Anfettung der Regelabweichung > 5% für 30–60 s. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartet wird, dass sich die Regelabweichung während des Sekundärlufttakts sichtbar verschiebt und danach wieder auf den Wert davor zurückgeht — gewertet wird diese Bewegung, nicht ein Prozent-Grenzwert; ein solcher ist hier nicht belegt. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+        },
+        "sap-precond": {
+          "title": "Vorbedingung fehlt · Test erst nach echtem Kaltstart",
+          "text": "Der Sekundärlufttakt läuft nur nach einem Kaltstart. Fahrzeug abstellen, bis die Kühlmitteltemperatur wieder nahe Umgebungstemperatur liegt, dann den Pfad erneut durchgehen. Wer sofort prüfen muss, steuert die Pumpe stattdessen über die Stellglieddiagnose in INPA an — das ersetzt aber nicht die Beobachtung im echten Takt."
+        },
+        "sap-supply": {
+          "title": "Keine Versorgung an der Pumpe",
+          "text": "Sicherung F1 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach das Pumpenrelais K6304 gegen ein baugleiches tauschen. Kommt danach immer noch keine Spannung an: Leitung vom Relais zur Pumpe auf Durchgang messen und die Ansteuerleitung von der DME zum Relais prüfen. Erst wenn die Versorgung steht, ist eine Aussage über die Pumpe selbst möglich."
+        },
+        "sap-ok": {
+          "title": "Sekundärluftsystem arbeitet · Adaption zurücksetzen",
+          "text": "Pumpe fördert, Kombiventil öffnet, die Lambdaregelung sieht die Zusatzluft. Der abgelegte Fehler stammt dann aus einem früheren Zustand. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts fahren. Kommt P0491 oder P0492 danach nicht wieder, ist die Sache erledigt; kommt er wieder, den Pfad mit Blick auf grenzwertige Fördermenge und verrußte Kanäle erneut durchgehen."
         }
       }
     },
     "e46:sec-air-e46": {
       "code": "GF-E46-02",
       "name": "Sekundärluft · P0491/P0492",
-      "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Pumpe, Kombiventil und Sensorlogik.",
+      "desc": "Klassischer Kaltstart-Fehler beim M54. Systematische Prüfung von Vorbedingung, Pumpenversorgung, Kombiventil und Lambda-Reaktion.",
       "steps": [
         {
-          "q": "Läuft die Sekundärluftpumpe beim Kaltstart 30–90 s?",
-          "help": "Hörbar unter der Motorhaube rechts. Kein Laufen → Relais, Sicherung F1 (30 A), Pumpe selbst.",
-          "measure": "Pumpen-Klemme +30 · KL30, Klemme 87 · geschaltet über Relais",
-          "doc": "D4F-E46-003",
+          "q": "Ist der Motor kalt genug, dass der Sekundärlufttakt überhaupt anläuft?",
+          "help": "Die DME startet die Sekundärluft nur nach einem echten Kaltstart. Bei betriebswarmem Motor läuft die Pumpe nicht — ein Test daran beweist nichts. Kühlmitteltemperatur vor dem Start in INPA ablesen (F5 → E46 → F1 Motor → F5 Status).",
+          "measure": "Kühlmitteltemperatur vor dem Start nahe Umgebungstemperatur, Fahrzeug mehrere Stunden gestanden",
+          "doc": "D4F-E46-001",
           "yes": 1,
-          "no": "sap-pump"
+          "no": "sap-precond"
+        },
+        {
+          "q": "Läuft die Sekundärluftpumpe beim Kaltstart hörbar an?",
+          "help": "Hörbar unter der Motorhaube rechts, deutliches Rauschen. Alternativ die Pumpe in der Stellglieddiagnose ansteuern (INPA F8 Stellglieder). Kein Laufen trennt Elektrik von Mechanik. Wie lange der Takt läuft, ist hier nicht belegt — gewertet wird, ob die Pumpe überhaupt anläuft und wieder abschaltet.",
+          "measure": "Pumpe läuft hörbar an und wieder ab; Klemme +30 · KL30, Klemme 87 · geschaltet über Relais",
+          "doc": "D4F-E46-003",
+          "yes": 3,
+          "no": 2
+        },
+        {
+          "q": "Liegt während der Ansteuerung Spannung am Pumpenstecker an?",
+          "help": "Pumpenstecker abziehen, Spannung zwischen Klemme 87 und Pumpenmasse messen, während die Stellglieddiagnose die Pumpe ansteuert. Vorher Sicherung F1 im Elektrokasten Motorraum (Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck) und das Pumpenrelais K6304 sichten.",
+          "measure": "Bordspannung liegt während der Ansteuerung an; Masseseite gegen Karosserie < 0.5 Ω",
+          "doc": "D4F-E46-003",
+          "yes": "sap-pump",
+          "no": "sap-supply"
         },
         {
           "q": "Öffnet das Kombiventil bei laufender Pumpe?",
-          "help": "Ventil sitzt an der Ansaugbrücke, wird über Unterdruck vom Solenoid an der DME angesteuert.",
-          "measure": "Unterdruck am Solenoid · > 300 mbar bei Ansteuerung",
+          "help": "Ventil sitzt an der Ansaugbrücke, wird über Unterdruck vom Solenoid an der DME angesteuert. Solenoid mit 12 V direkt ansteuern — es muss hörbar klicken und Unterdruck durchlassen.",
+          "measure": "Solenoid klickt bei Ansteuerung hörbar und lässt den Unterdruck durch: Handvakuumpumpe an den Ventilausgang, im angesteuerten Zustand hält die Strecke kein Vakuum, im nicht angesteuerten schon. Ein Zahlenwert für den Prüfunterdruck ist hier nicht belegt",
           "doc": "D4F-E46-003",
-          "yes": "sap-diag",
+          "yes": 4,
           "no": "sap-valve"
+        },
+        {
+          "q": "Reagiert die Lambdaregelung während des Sekundärlufttakts?",
+          "help": "Sekundärluft bringt Frischluft in den Abgasstrom, die Sonde meldet daraufhin ein scheinbar mageres Gemisch. INPA F5 → Lambda während der ersten Minute nach dem Kaltstart beobachten. Keine Reaktion trotz laufender Pumpe und offenem Ventil heißt: die Luft kommt nicht am Krümmer an.",
+          "measure": "Regelabweichung Bank 1 und Bank 2 verschiebt sich während des Takts sichtbar und geht danach zurück",
+          "doc": "D4F-E46-003",
+          "yes": "sap-ok",
+          "no": "sap-diag"
         }
       ],
       "model": "e46",
@@ -1059,11 +1175,11 @@
       "_results": {
         "check-power": {
           "title": "Versorgung zuerst stabilisieren",
-          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Bei Ruhestromverbrauch > 40 mA nach 30 min: parasitäre Last suchen."
+          "text": "Batterie unter Last messen (Belastungstester), Massepunkte M12 und M13 im Motorraum reinigen, Anlasser-Steuerleitung auf Durchgang prüfen. Ruhestrom erst messen, wenn alle Steuergeräte schlafen. Auffällig ist er, wenn er nach der Ruhephase nicht absinkt oder beim Ziehen einer einzelnen Sicherung deutlich einbricht — so wird der Verbraucher gefunden. Ein Grenzwert in mA ist in diesem Repository nicht belegt."
         },
         "no-comm": {
           "title": "Diagnosekommunikation gestört",
-          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 gegen Masse mit 10 kΩ Pullup. Wenn K-Line ok: DME-Sicherung F6 (Motorraum, 15 A) prüfen, danach DME KL30 an Pin 1 des X60001."
+          "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001."
         },
         "ews-block": {
           "title": "EWS erteilt keine Startfreigabe",
@@ -1071,7 +1187,7 @@
         },
         "fuel-pressure": {
           "title": "Kraftstoffdruck fehlt oder fällt ab",
-          "text": "Fahrschule anschließen (M14x1.5 am Rail). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
+          "text": "Manometer am Kraftstoffrail anschließen (Adaptergewinde laut Werkzeugsatz). Wenn kein Druck aufgebaut wird: Pumpenrelais, Pumpe selbst, oder Steuerung durch DME (SG-Trigger). Wenn Druck sofort abfällt: Rückschlagventil in Pumpe defekt. Wenn Druck zu niedrig: Druckregler oder Pumpe alt."
         },
         "ignition": {
           "title": "Zündimpuls fehlt",
@@ -1079,11 +1195,11 @@
         },
         "compression": {
           "title": "Kompression prüfen",
-          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression Zylinder 1–6 messen. Sollwert warm: 10–13 bar. Bei einzelnem Zylinder deutlich niedriger → Ventilproblem (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung)."
+          "text": "Kraftstoff- und Zündpfad intakt. Nächster Schritt: Kompression der Zylinder 1–6 bei betriebswarmem Motor messen und die sechs Werte untereinander vergleichen. Fällt ein Zylinder deutlich gegen die übrigen ab, ist er der Befund (M54 typisch: eingelaufene Auslassnocken bei hoher Laufleistung). Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt."
         },
         "sap-pump": {
-          "title": "Sekundärluftpumpe defekt oder ohne Versorgung",
-          "text": "Sicherung F1 im Elektrokasten Motorraum (30 A) prüfen. Pumpenrelais K6304 tauschen (steckt neben DME-Relais). Wenn Versorgung ok: Pumpe elektrisch defekt (Massepunkt gegen Karosserie prüfen)."
+          "title": "Pumpe elektrisch versorgt, läuft aber nicht",
+          "text": "Spannung und Masse liegen am Stecker an, die Pumpe reagiert trotzdem nicht — dann ist sie selbst defekt und wird ersetzt. Vor dem Einbau der neuen Pumpe die Massestelle gegen Karosserie reinigen und den Ansaugschlauch prüfen: eine Pumpe, die über Jahre Wasser gezogen hat, ist der Regelfall beim E46, und der neue Teil geht auf demselben Weg wieder kaputt."
         },
         "sap-valve": {
           "title": "Kombiventil öffnet nicht",
@@ -1091,7 +1207,19 @@
         },
         "sap-diag": {
           "title": "Mechanik ok · Sensorik/DME weiter prüfen",
-          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartete Anfettung der Regelabweichung > 5% für 30–60 s. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+          "text": "Wenn Pumpe läuft und Ventil öffnet, aber Adaption trotzdem meldet: Lambda-Werte während Sekundärlufttakt loggen (INPA F5 → Lambda). Erwartet wird, dass sich die Regelabweichung während des Sekundärlufttakts sichtbar verschiebt und danach wieder auf den Wert davor zurückgeht — gewertet wird diese Bewegung, nicht ein Prozent-Grenzwert; ein solcher ist hier nicht belegt. Wenn keine Reaktion: Krümmerdichtheit oder Kabelbaum Bank 1 am Krümmer prüfen."
+        },
+        "sap-precond": {
+          "title": "Vorbedingung fehlt · Test erst nach echtem Kaltstart",
+          "text": "Der Sekundärlufttakt läuft nur nach einem Kaltstart. Fahrzeug abstellen, bis die Kühlmitteltemperatur wieder nahe Umgebungstemperatur liegt, dann den Pfad erneut durchgehen. Wer sofort prüfen muss, steuert die Pumpe stattdessen über die Stellglieddiagnose in INPA an — das ersetzt aber nicht die Beobachtung im echten Takt."
+        },
+        "sap-supply": {
+          "title": "Keine Versorgung an der Pumpe",
+          "text": "Sicherung F1 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach das Pumpenrelais K6304 gegen ein baugleiches tauschen. Kommt danach immer noch keine Spannung an: Leitung vom Relais zur Pumpe auf Durchgang messen und die Ansteuerleitung von der DME zum Relais prüfen. Erst wenn die Versorgung steht, ist eine Aussage über die Pumpe selbst möglich."
+        },
+        "sap-ok": {
+          "title": "Sekundärluftsystem arbeitet · Adaption zurücksetzen",
+          "text": "Pumpe fördert, Kombiventil öffnet, die Lambdaregelung sieht die Zusatzluft. Der abgelegte Fehler stammt dann aus einem früheren Zustand. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts fahren. Kommt P0491 oder P0492 danach nicht wieder, ist die Sache erledigt; kommt er wieder, den Pfad mit Blick auf grenzwertige Fördermenge und verrußte Kanäle erneut durchgehen."
         }
       }
     },
@@ -1106,14 +1234,14 @@
         {
           "q": "Dreht der Anlasser beim Startknopf hörbar?",
           "help": "Reines Klick-Klick deutet auf Batteriekreis/Massefehler. Gar nichts deutet auf CAS-Freigabe fehlend oder Startknopf-Schalter defekt.",
-          "measure": "Bordspannung während Startanforderung muss ≥ 10,5 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
+          "measure": "Bordspannung während Startanforderung muss ≥ 10.5 V bleiben. IBS am Minuspol MUSS Kontakt haben (sonst kappt CAS die Startfreigabe).",
           "doc": "D4F-E88-002",
-          "obd_hint": "PID 0142 Steuermodulspannung parallel loggen — Einbruch < 9 V = Batterie",
+          "obd_hint": "PID 0142 Steuermodulspannung parallel loggen — bricht die Spannung während des Startversuchs deutlich ein, liegt der Fehler im Batterie- und Anlasserkreis",
           "yes": 1,
           "no": "result-startfreigabe"
         },
         {
-          "q": "Springt Motor an, geht aber sofort wieder aus (2–3 s Lauf)?",
+          "q": "Springt der Motor an und geht nach wenigen Sekunden von selbst wieder aus?",
           "help": "Typisches Zeichen für EWS/CAS-Diskrepanz: Motor läuft mit DME-Startprozedur, wird dann von CAS wegen ISN-Fehler abgeschaltet.",
           "measure": "INPA CAS Fehlerspeicher lesen. Bei ISN-Mismatch: CAS/DME-Angleich via ISTA-D erforderlich.",
           "doc": "D4F-E88-002",
@@ -1121,8 +1249,8 @@
           "no": 2
         },
         {
-          "q": "Hört man die Kraftstoffpumpe für 2 s beim Aufschließen surren?",
-          "help": "N52 hat elektrische Niederdruckpumpe im Tank. Wenn stumm: Sicherung F04 (30 A) und EKPS (Kraftstoffpumpen-Steuergerät) prüfen.",
+          "q": "Hört man die Kraftstoffpumpe beim Aufschließen kurz surren?",
+          "help": "N52 hat elektrische Niederdruckpumpe im Tank. Wenn stumm: Sicherung F04 (Amperewert laut Sicherungsplan) und EKPS (Kraftstoffpumpen-Steuergerät) prüfen.",
           "measure": "Sicherung F04 im Kofferraum-Sicherungskasten. EKPS über INPA prüfen: Statusblock „Kraftstoffpumpe Drehzahl-Anforderung“.",
           "doc": "D4F-E88-010",
           "obd_hint": "PID 015E Kraftstoffvorlauf-Sollrate",
@@ -1130,9 +1258,9 @@
           "no": "result-ekps"
         },
         {
-          "q": "Zeigt INPA beim Start Drehzahl > 200 U/min?",
+          "q": "Sieht die DME beim Startversuch überhaupt eine Drehzahl?",
           "help": "Wenn Anlasser dreht aber DME keine Drehzahl sieht: Kurbelwellensensor oder dessen Kabelbaum unterbrochen.",
-          "measure": "INPA Statusblock DME „Drehzahl KW“ während Startversuch. Sensor: 2-poliger induktiver Sensor am Getriebeglocken-Adapter, ~1000 Ω",
+          "measure": "INPA Statusblock DME „Drehzahl KW“ während des Startversuchs beobachten: bleibt der Wert bei null, während der Anlasser sichtbar dreht, kommt kein Kurbelwellensignal an. Der Geber ist ein 2-poliger induktiver Sensor an der Getriebeglocke; ein Widerstands-Sollwert ist hier nicht belegt",
           "doc": "D4F-E88-010",
           "yes": "result-zuendung",
           "no": "result-kw-sensor"
@@ -1162,60 +1290,108 @@
         },
         "result-zuendung": {
           "title": "Zündung/Einspritzung fehlt trotz Drehzahl",
-          "text": "Ursachen: Zündspulen-Endstufe DME defekt (selten), Kraftstoffdruck < 400 kPa (HDP-Vorförderung defekt beim N52 nicht relevant — N52 ist Saugrohr-Einspritzung, N54 Direkteinspritzer!). N52: Rail-Druck-Sollwert ~450 kPa, Injektor-Widerstand ~14 Ω.",
+          "text": "Ursachen: Zündspulen-Endstufe der DME defekt (selten) oder zu geringer Kraftstoffdruck. Der N52 ist Saugrohr-Einspritzer, keine Direkteinspritzung wie der N54 — die Hochdruckpumpen-Themen des N54 greifen hier nicht. Kraftstoffdruck über den Ist-Wert in INPA gegen den vom Steuergerät geführten Sollwert halten statt gegen eine Zahl von außen. Injektoren untereinander vergleichen: ein deutlich vom Rest abweichendes Exemplar ist der Befund. Zahlen-Sollwerte für Raildruck und Injektorwiderstand sind in diesem Repository nicht belegt.",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-kw-sensor": {
           "title": "Kurbelwellensensor / Kabelbaum",
-          "text": "Sensor sitzt an der Getriebeglocke, Stecker anfällig für Öl und Wärme. Vor Tausch: Widerstand messen (~1000 Ω), Kabelbaum bis DME auf Durchgang. Nach Tausch keine Adaption nötig.",
+          "text": "Sensor sitzt an der Getriebeglocke, Stecker anfällig für Öl und Wärme. Vor Tausch die Wicklung auf Unterbruch und Masseschluss prüfen (kein Durchgang gegen Masse, kein unendlicher Widerstand über die beiden Pins) und den Kabelbaum bis zur DME auf Durchgang messen. Ein Widerstands-Sollwert für den Geber ist hier nicht belegt — im Zweifel gegen einen bekannt guten Sensor gleichen Typs vergleichen. Nach Tausch keine Adaption nötig.",
           "next_docs": []
         },
         "result-luefter": {
           "title": "Kühlerlüfter oder dessen Ansteuerung",
-          "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (50 A), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
+          "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (Amperewert laut Sicherungsplan), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-wasserpumpe": {
           "title": "Elektrische Wasserpumpe (Pierburg) defekt",
-          "text": "Sehr wahrscheinlich Pumpe intern hinüber. Nach Tausch: Kühlsystem entlüften — Kombiinstrument-Prozedur (Zündung an ohne Motor, Klima Volleistung heiß, Gaspedal 10 s durchtreten → Entlüftungsprogramm ~12 min). Nicht sparen: bei jedem Wechsel auch Thermostat und Ausgleichsbehälter neu.",
+          "text": "Sehr wahrscheinlich Pumpe intern hinüber. Nach Tausch: Kühlsystem entlüften — Entlüftungsprogramm über die Kombiinstrument-Prozedur starten (Zündung an ohne Motor, Klima auf Volleistung heiß, Gaspedal durchtreten bis das Programm anläuft); es läuft danach mehrere Minuten selbsttätig durch. Genaue Haltedauer und Programmlaufzeit sind hier nicht belegt — abgewartet wird, bis die Pumpe von selbst abschaltet. Nicht sparen: bei jedem Wechsel auch Thermostat und Ausgleichsbehälter neu.",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-thermostat": {
           "title": "Thermostat oder Kühlkreislauf-Luftblase",
-          "text": "Wenn Pumpe fördert aber Temperatur trotzdem steigt: Thermostat öffnet zu spät oder Luftpolster im System. Erst Entlüftungsprozedur, dann Thermostat-Kennlinie prüfen (nominal Öffnung ab 97 °C).",
+          "text": "Wenn Pumpe fördert aber Temperatur trotzdem steigt: Thermostat öffnet zu spät oder Luftpolster im System. Erst Entlüftungsprozedur, dann das Thermostat prüfen: die Öffnungstemperatur ist auf dem Bauteil eingeprägt, im Zweifel das ausgebaute Thermostat im heißen Wasserbad auf Öffnen kontrollieren. Ein Sollwert dafür ist in diesem Repository nicht belegt.",
           "next_docs": []
+        },
+        "result-kuehlmittel": {
+          "title": "Kühlmittelstand oder Undichtigkeit",
+          "text": "Zuerst den Stand korrigieren und die Ursache des Verlusts suchen — Schläuche, Ausgleichsbehälter und dessen Deckel sind am N52 die üblichen Stellen. Danach die Entlüftungsprozedur fahren und den Überhitzungsfall erneut nachstellen. Erst wenn der Kreislauf voll und dicht ist, hat eine Bauteildiagnose an Pumpe oder Thermostat Aussagekraft.",
+          "next_docs": [
+            "D4F-E88-011"
+          ]
+        },
+        "result-anforderung": {
+          "title": "Pumpenanforderung fehlt — Temperatursignal oder Ansteuerung",
+          "text": "Die Pumpe wird gar nicht angefordert, also ist sie nicht der Täter. Prüfe zuerst, ob die Kühlmitteltemperatur in INPA plausibel zur tatsächlichen Motortemperatur passt; ein falsch gemeldeter Wert lässt die DME die Pumpe im Leerlauf. Danach die PWM-Leitung von der DME zum Pumpenstecker (Pin 3) auf Durchgang prüfen und den DME-Fehlerspeicher auf Einträge zum Kühlkreislauf durchsehen.",
+          "next_docs": [
+            "D4F-E88-010",
+            "D4F-E88-011"
+          ]
+        },
+        "result-kuehler-luft": {
+          "title": "Wärmeabfuhr am Kühler — Luftweg statt Kühlmittelweg",
+          "text": "Pumpe fördert, Thermostat öffnet, Lüfter läuft: dann liegt der Engpass auf der Luftseite. Kühlernetz von vorn und zwischen Kühler und Kondensator auf Verschmutzung und verbogene Lamellen prüfen, Luftführungen und Unterfahrschutz auf Vollständigkeit kontrollieren — fehlende Luftleitbleche kosten im Stand spürbar Kühlleistung. Bleibt es dabei, den Kühler auf innere Verstopfung prüfen lassen.",
+          "next_docs": [
+            "D4F-E88-011"
+          ]
         }
       }
     },
     "e88:n52-ueberhitzung-standgas": {
       "code": "GF-E88-02",
       "name": "N52 Überhitzung im Standgas",
-      "desc": "Motor kühlt im Fahrbetrieb (Wind) noch, aber bei Standgas oder Stau steigt die Temperatur über 110 °C. Klassisches E-Wasserpumpen-Bild.",
+      "desc": "Motor kühlt im Fahrbetrieb (Wind) noch, aber bei Standgas oder Stau steigt die Temperatur deutlich über den sonst gefahrenen Betriebswert. Klassisches E-Wasserpumpen-Bild.",
       "engines": [
         "N52"
       ],
       "steps": [
         {
           "q": "Läuft der Elektro-Lüfter bei Standgas-Überhitzung hörbar hoch?",
-          "help": "N52 hat einen einzigen elektrischen Kühlerlüfter (600 W). Wenn er nicht anläuft trotz Temperatur > 100 °C: Lüfter-Endstufe oder Ansteuerung DME.",
-          "measure": "INPA DME Statusblock „Lüfteransteuerung Soll“ > 50 % erwarten wenn T > 100 °C.",
+          "help": "N52 hat einen einzigen elektrischen Kühlerlüfter. Läuft er trotz weiter steigender Kühlmitteltemperatur nicht hoch: Lüfter-Endstufe oder Ansteuerung DME.",
+          "measure": "INPA DME Statusblock „Lüfteransteuerung Soll“ zusammen mit der Kühlmitteltemperatur beobachten: mit steigender Temperatur muss die Ansteuerung zunehmen und der Lüfter hörbar mitgehen. Ein Prozentwert zur jeweiligen Temperatur ist hier nicht belegt.",
           "doc": "D4F-E88-011",
           "yes": 1,
           "no": "result-luefter"
         },
         {
-          "q": "Zeigt INPA Wasserpumpen-Solldrehzahl > 3000 U/min bei Standgas warm?",
-          "help": "Bei heißem Motor im Stand soll die E-Pumpe hochfahren. Wenn Solldrehzahl OK, aber Motor kocht → Pumpe reagiert nicht auf Ansteuerung.",
-          "measure": "INPA DME Statusblock „Kühlmittelpumpe Solldrehzahl“ und „Iststrom Wasserpumpe“. Ist-Strom < 2 A bei > 3000 U/min Soll = Pumpe defekt.",
+          "q": "Steht der Kühlmittelstand im Ausgleichsbehälter bei kaltem Motor zwischen Min und Max?",
+          "help": "Ein zu niedriger Stand oder ein Luftpolster im Kreislauf erzeugt dasselbe Bild wie eine schwache Pumpe: im Fahrtwind kühlt der Motor noch, im Stand steigt die Temperatur. Deshalb vor jeder Bauteildiagnose Stand und Dichtheit ansehen.",
+          "measure": "Motor kalt, Fahrzeug eben. Stand zwischen Min- und Max-Markierung des Ausgleichsbehälters. Zusätzlich Schläuche, Behälterdeckel und Kühlernetz auf sichtbare Undichtigkeit und Verkrustung prüfen.",
+          "doc": "D4F-E88-011",
+          "yes": 2,
+          "no": "result-kuehlmittel"
+        },
+        {
+          "q": "Steigt die Wasserpumpen-Solldrehzahl mit, während die Kühlmitteltemperatur im Stand klettert?",
+          "help": "Bei heissem Motor im Stand soll die DME die elektrische Pumpe hochfahren. Bleibt die Solldrehzahl unten, obwohl die Temperatur steigt, fehlt die Anforderung — dann ist nicht die Pumpe das Problem, sondern das Temperatursignal oder die Ansteuerung.",
+          "measure": "INPA DME Statusblock „Kühlmittelpumpe Solldrehzahl“ zusammen mit der Kühlmitteltemperatur beobachten. Erwartet: Temperatur steigt, Solldrehzahl steigt mit. Bleibt die Solldrehzahl unverändert, während die Temperatur weiter klettert, kommt keine Anforderung an.",
+          "doc": "D4F-E88-010",
+          "obd_hint": "PID 0105 Kühlmitteltemperatur parallel mitloggen",
+          "yes": 3,
+          "no": "result-anforderung"
+        },
+        {
+          "q": "Fliesst bei anstehender Solldrehzahl auch ein Iststrom durch die Wasserpumpe?",
+          "help": "Die DME fordert Förderung an. Jetzt entscheidet der Iststrom: nimmt die Pumpe keinen Strom auf, läuft sie nicht — dann ist sie oder ihre Versorgung defekt. Nimmt sie Strom auf, läuft sie, und der Fehler liegt weiter hinten im Kreislauf.",
+          "measure": "INPA DME Statusblock „Iststrom Wasserpumpe“ gegen „Kühlmittelpumpe Solldrehzahl“ halten. Iststrom rund 0 A trotz anstehender Solldrehzahl = Pumpe fördert nicht. Vor dem Urteil den Pumpenstecker prüfen: Pin 1 KL30, Pin 2 Masse, Pin 3 PWM von der DME.",
           "doc": "D4F-E88-011",
           "obd_hint": "PID 0105 Kühlmitteltemperatur",
-          "yes": "result-wasserpumpe",
+          "yes": 4,
+          "no": "result-wasserpumpe"
+        },
+        {
+          "q": "Wird der obere Kühlerschlauch heiss, sobald die Betriebstemperatur erreicht ist?",
+          "help": "Die Pumpe fördert nachweislich. Bleibt der obere Kühlerschlauch trotzdem deutlich kühler als der Motor, kommt kein Kühlmittel im Kühler an — das Thermostat öffnet nicht oder ein Luftpolster steht im Weg.",
+          "measure": "Vorsichtig am oberen Kühlerschlauch fühlen oder berührungslos messen, während die Kühlmitteltemperatur in INPA steigt. Erwartet: sobald das Thermostat öffnet, wird der Schlauch spürbar heiss. Bleibt er kühl, während die Motortemperatur weiter steigt, öffnet der grosse Kreislauf nicht.",
+          "doc": "D4F-E88-011",
+          "obd_hint": "PID 0105 Kühlmitteltemperatur",
+          "yes": "result-kuehler-luft",
           "no": "result-thermostat"
         }
       ],
@@ -1243,34 +1419,56 @@
         },
         "result-zuendung": {
           "title": "Zündung/Einspritzung fehlt trotz Drehzahl",
-          "text": "Ursachen: Zündspulen-Endstufe DME defekt (selten), Kraftstoffdruck < 400 kPa (HDP-Vorförderung defekt beim N52 nicht relevant — N52 ist Saugrohr-Einspritzung, N54 Direkteinspritzer!). N52: Rail-Druck-Sollwert ~450 kPa, Injektor-Widerstand ~14 Ω.",
+          "text": "Ursachen: Zündspulen-Endstufe der DME defekt (selten) oder zu geringer Kraftstoffdruck. Der N52 ist Saugrohr-Einspritzer, keine Direkteinspritzung wie der N54 — die Hochdruckpumpen-Themen des N54 greifen hier nicht. Kraftstoffdruck über den Ist-Wert in INPA gegen den vom Steuergerät geführten Sollwert halten statt gegen eine Zahl von außen. Injektoren untereinander vergleichen: ein deutlich vom Rest abweichendes Exemplar ist der Befund. Zahlen-Sollwerte für Raildruck und Injektorwiderstand sind in diesem Repository nicht belegt.",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-kw-sensor": {
           "title": "Kurbelwellensensor / Kabelbaum",
-          "text": "Sensor sitzt an der Getriebeglocke, Stecker anfällig für Öl und Wärme. Vor Tausch: Widerstand messen (~1000 Ω), Kabelbaum bis DME auf Durchgang. Nach Tausch keine Adaption nötig.",
+          "text": "Sensor sitzt an der Getriebeglocke, Stecker anfällig für Öl und Wärme. Vor Tausch die Wicklung auf Unterbruch und Masseschluss prüfen (kein Durchgang gegen Masse, kein unendlicher Widerstand über die beiden Pins) und den Kabelbaum bis zur DME auf Durchgang messen. Ein Widerstands-Sollwert für den Geber ist hier nicht belegt — im Zweifel gegen einen bekannt guten Sensor gleichen Typs vergleichen. Nach Tausch keine Adaption nötig.",
           "next_docs": []
         },
         "result-luefter": {
           "title": "Kühlerlüfter oder dessen Ansteuerung",
-          "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (50 A), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
+          "text": "Lüfter-Endstufe sitzt am Lüfterrahmen. Prüfsequenz: 1) Sicherung F55 (Amperewert laut Sicherungsplan), 2) Ansteuerspannung PWM am Lüfter-Stecker während Belastungstest, 3) Bei fehlender Ansteuerung → DME-Endstufe defekt (selten, meist Lüfter selbst).",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-wasserpumpe": {
           "title": "Elektrische Wasserpumpe (Pierburg) defekt",
-          "text": "Sehr wahrscheinlich Pumpe intern hinüber. Nach Tausch: Kühlsystem entlüften — Kombiinstrument-Prozedur (Zündung an ohne Motor, Klima Volleistung heiß, Gaspedal 10 s durchtreten → Entlüftungsprogramm ~12 min). Nicht sparen: bei jedem Wechsel auch Thermostat und Ausgleichsbehälter neu.",
+          "text": "Sehr wahrscheinlich Pumpe intern hinüber. Nach Tausch: Kühlsystem entlüften — Entlüftungsprogramm über die Kombiinstrument-Prozedur starten (Zündung an ohne Motor, Klima auf Volleistung heiß, Gaspedal durchtreten bis das Programm anläuft); es läuft danach mehrere Minuten selbsttätig durch. Genaue Haltedauer und Programmlaufzeit sind hier nicht belegt — abgewartet wird, bis die Pumpe von selbst abschaltet. Nicht sparen: bei jedem Wechsel auch Thermostat und Ausgleichsbehälter neu.",
           "next_docs": [
             "D4F-E88-011"
           ]
         },
         "result-thermostat": {
           "title": "Thermostat oder Kühlkreislauf-Luftblase",
-          "text": "Wenn Pumpe fördert aber Temperatur trotzdem steigt: Thermostat öffnet zu spät oder Luftpolster im System. Erst Entlüftungsprozedur, dann Thermostat-Kennlinie prüfen (nominal Öffnung ab 97 °C).",
+          "text": "Wenn Pumpe fördert aber Temperatur trotzdem steigt: Thermostat öffnet zu spät oder Luftpolster im System. Erst Entlüftungsprozedur, dann das Thermostat prüfen: die Öffnungstemperatur ist auf dem Bauteil eingeprägt, im Zweifel das ausgebaute Thermostat im heißen Wasserbad auf Öffnen kontrollieren. Ein Sollwert dafür ist in diesem Repository nicht belegt.",
           "next_docs": []
+        },
+        "result-kuehlmittel": {
+          "title": "Kühlmittelstand oder Undichtigkeit",
+          "text": "Zuerst den Stand korrigieren und die Ursache des Verlusts suchen — Schläuche, Ausgleichsbehälter und dessen Deckel sind am N52 die üblichen Stellen. Danach die Entlüftungsprozedur fahren und den Überhitzungsfall erneut nachstellen. Erst wenn der Kreislauf voll und dicht ist, hat eine Bauteildiagnose an Pumpe oder Thermostat Aussagekraft.",
+          "next_docs": [
+            "D4F-E88-011"
+          ]
+        },
+        "result-anforderung": {
+          "title": "Pumpenanforderung fehlt — Temperatursignal oder Ansteuerung",
+          "text": "Die Pumpe wird gar nicht angefordert, also ist sie nicht der Täter. Prüfe zuerst, ob die Kühlmitteltemperatur in INPA plausibel zur tatsächlichen Motortemperatur passt; ein falsch gemeldeter Wert lässt die DME die Pumpe im Leerlauf. Danach die PWM-Leitung von der DME zum Pumpenstecker (Pin 3) auf Durchgang prüfen und den DME-Fehlerspeicher auf Einträge zum Kühlkreislauf durchsehen.",
+          "next_docs": [
+            "D4F-E88-010",
+            "D4F-E88-011"
+          ]
+        },
+        "result-kuehler-luft": {
+          "title": "Wärmeabfuhr am Kühler — Luftweg statt Kühlmittelweg",
+          "text": "Pumpe fördert, Thermostat öffnet, Lüfter läuft: dann liegt der Engpass auf der Luftseite. Kühlernetz von vorn und zwischen Kühler und Kondensator auf Verschmutzung und verbogene Lamellen prüfen, Luftführungen und Unterfahrschutz auf Vollständigkeit kontrollieren — fehlende Luftleitbleche kosten im Stand spürbar Kühlleistung. Bleibt es dabei, den Kühler auf innere Verstopfung prüfen lassen.",
+          "next_docs": [
+            "D4F-E88-011"
+          ]
         }
       }
     },
@@ -1278,22 +1476,49 @@
       "code": "GF-E90-01",
       "name": "N54 · Zu wenig Ladedruck",
       "desc": "Systematische Prüfung Undichtigkeit → Wastegate → HPFP.",
+      "engines": [
+        "N54"
+      ],
       "steps": [
         {
           "q": "Sind DTCs 29E0/29E1 gespeichert?",
           "help": "ISTA/D → Motor → Fehlerspeicher lesen. 29E0/29E1 zeigt Sollwertabweichung Ladedruck.",
-          "measure": "Ladedrucksollwert bei 3500 U/min · ~0.85 bar über Umgebung",
+          "measure": "Ist- und Sollladedruck in ISTA nebeneinander lesen · bewertet wird die Abweichung des Ist-Werts von dem Sollwert, den das Steuergerät selbst führt. Ein Zahlen-Sollwert für den Ladedruck ist in diesem Repository nicht belegt",
           "doc": "D4F-E90-002",
           "yes": 1,
-          "no": "check-symptom"
+          "no": 4
         },
         {
           "q": "Ladeluftsystem druckdicht? (Smoke-Test)",
           "help": "N54 hat 3 typische Leckstellen: Kupplungsschellen am Ladeluftrohr, Charge-Pipe (Nachrüst!), Ladeluftkühler-Anschlüsse.",
-          "measure": "Smoke-Test 0.5 bar · keine sichtbaren Austritte",
+          "measure": "Rauchtester nach Gerätevorgabe an das Ladeluftsystem anschließen · keine sichtbaren Austritte an Kupplungsschellen, Charge-Pipe und Ladeluftkühler-Anschlüssen. Ein Prüfdruck ist hier nicht belegt — bewertet wird der sichtbare Rauchaustritt",
+          "doc": "D4F-E90-002",
+          "yes": 2,
+          "no": "boost-leak"
+        },
+        {
+          "q": "Stehen zusätzlich 29DC oder 29CD im Speicher, oder rasselt es unter Last hörbar aus dem Laderbereich?",
+          "help": "Erst prüfen, wenn das Ladeluftsystem dicht ist — bei einer Leckage erreicht die Regelung ihren Sollwert ohnehin nie und setzt die Codes als Folgefehler. Fehlerspeicher nach der Dichtheitsprüfung löschen, Probefahrt unter Last, dann erneut auslesen.",
+          "measure": "Nach gelöschtem Speicher und Lastfahrt: 29DC/29CD kommen wieder oder bleiben weg · Rasseln beim Lastwechsel hörbar oder nicht",
           "doc": "D4F-E90-002",
           "yes": "wastegate",
-          "no": "boost-leak"
+          "no": 3
+        },
+        {
+          "q": "Hält die Hochdruckpumpe den Raildruck unter Volllast?",
+          "help": "Raildruck-Ist während einer Volllastfahrt mitloggen. 29F0 im Speicher ist ein deutlicher Hinweis, fehlt aber bei beginnendem Verschleiß oft noch. Vor jeder Entscheidung über einen Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die HPFP fällt.",
+          "measure": "Raildruck-Ist folgt dem Soll über die ganze Volllastfahrt · kein Einbruch beim Lastwechsel",
+          "doc": "D4F-E90-002",
+          "yes": "kein-befund",
+          "no": "hpfp"
+        },
+        {
+          "q": "Folgt der Ist-Ladedruck im Log dem Sollwert über die ganze Volllastfahrt?",
+          "help": "Ohne Eintrag im Fehlerspeicher entscheidet der Datenlogger. Ist- und Sollladedruck während einer Volllastfahrt im dritten oder vierten Gang aufzeichnen und übereinanderlegen.",
+          "measure": "Ist- und Sollkurve laufen deckungsgleich · kein Einbruch, kein Auseinanderlaufen zum Drehzahlende hin",
+          "doc": "D4F-E90-002",
+          "yes": "check-symptom",
+          "no": 1
         }
       ],
       "model": "e90",
@@ -1301,15 +1526,39 @@
       "_results": {
         "check-symptom": {
           "title": "Keine Ladedruckabweichung im Speicher",
-          "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: HPFP-Druck bei WOT prüfen (Soll ~200 bar)."
+          "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: Raildruck-Ist unter Volllast gegen den vom Steuergerät geführten Sollwert prüfen — ein Absacken des Ist gegen den Soll ist der Befund. Ein absoluter Raildruck-Sollwert ist in diesem Repository nicht belegt.",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
         },
         "boost-leak": {
           "title": "Ladeluftleckage bestätigt",
-          "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle)."
+          "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle).",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
         },
         "wastegate": {
           "title": "Wastegate/HPFP als nächstes prüfen",
-          "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen)."
+          "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen).",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
+        },
+        "hpfp": {
+          "title": "Hochdruckpumpe hält den Raildruck nicht",
+          "text": "Befund passt zu 29F0. Vor jedem Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt — das entscheidet über die Kostenfrage. Zusätzlich Niederdruckseite und Kraftstofffilter beurteilen, damit eine neue Pumpe nicht dasselbe Bild liefert. Steht 30FF mit im Speicher, Zündspulen und Kerzen mit abarbeiten, sonst bleibt das Fahrzeug nach dem Pumpentausch auffällig.",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
+        },
+        "kein-befund": {
+          "title": "Kein Befund in Ladeluftsystem, Lader und HPFP",
+          "text": "Ladeluftsystem ist dicht, Wastegate unauffällig, Raildruck stabil — der Leistungsverlust kommt nicht aus der Ladedruckstrecke. Nächste Richtungen: Fehlerspeicher aller Steuergeräte erneut vollständig auslesen, Zündungsseite prüfen, wenn 30FF auftaucht, und Abgasgegendruck sowie Luftfilter beurteilen. Ergebnisse der Logfahrt aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-001"
+          ]
         }
       }
     },
@@ -1319,24 +1568,83 @@
       "desc": "FEM/BDC reagiert nach Codierversuch nicht mehr. Rettung durch geführte Wiederinbetriebnahme.",
       "steps": [
         {
+          "q": "Hängt ein aktives Werkstattladegerät am Fahrzeug?",
+          "help": "Erster Schritt, bevor irgendetwas anderes passiert. Der häufigste Grund für ein totes FEM/BDC ist ein Spannungseinbruch mitten im Schreibvorgang. Jeder weitere Versuch ohne stabile Versorgung wiederholt genau den Fehler und kann aus einem reparierbaren Zustand einen Bench-Fall machen. Erhaltungslader reichen nicht.",
+          "measure": "Ladegerät angeschlossen und aktiv · alle abschaltbaren Verbraucher aus · Türen zu · Zündung wird während des gesamten Vorgangs nicht angefasst",
+          "doc": "D4F-F-001",
+          "yes": 1,
+          "no": "versorgung-zuerst"
+        },
+        {
           "q": "Ist das Fahrzeug noch entriegelbar?",
           "help": "FEM-Bricking äußert sich meist durch: Fahrzeug reagiert nicht auf Schlüssel, Kombi bleibt schwarz, Motor startet nicht.",
           "measure": "KL30-Versorgung am FEM · konstant 12 V",
           "doc": "D4F-F-001",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antwortet das FEM/BDC noch auf eine Diagnoseverbindung über ENET?",
+          "help": "E-Sys oder ISTA anschließen und die Steuergeräteliste lesen. Entscheidend ist nicht, ob Funktionen gehen, sondern ob sich das Steuergerät überhaupt meldet und eine Version zurückgibt. Meldet es sich, ist die Hardware in Ordnung und nur der Datenstand unvollständig — dann bleibt der Weg über die OBD-Buchse offen. Nichts ausbauen, solange dieser Weg besteht.",
+          "measure": "FEM/BDC erscheint in der Steuergeräteliste und liefert eine Version zurück · nicht nur eine bestehende Netzwerkverbindung",
+          "doc": "D4F-F-001",
           "yes": "recovery-soft",
-          "no": "recovery-full"
+          "no": 3
+        },
+        {
+          "q": "Liegt KL30 am FEM/BDC an und sind die zugehörigen Sicherungen in Ordnung?",
+          "help": "Bevor ein Steuergerät für tot erklärt wird, die Versorgung am Stecker selbst prüfen — Sicherungen im Fahrzeug kontrollieren und die Spannung direkt am FEM/BDC messen. Ein durch den abgebrochenen Vorgang ausgelöster Sicherungsfehler oder ein beim Zugang gelockerter Stecker sieht genauso aus wie ein zerschossener Datenstand, ist aber in Minuten behoben.",
+          "measure": "KL30-Versorgung am FEM · konstant 12 V · zugehörige Sicherungen durchgängig",
+          "doc": "D4F-F-001",
+          "yes": 4,
+          "no": "versorgung-fem"
+        },
+        {
+          "q": "Liegen das KIS/OKV-Backup und der zum Fahrzeug passende PSDZData-Stand vor?",
+          "help": "Ohne den gesicherten Ausgangszustand und den richtigen I-Level fehlt das Ziel, auf das zurückgesetzt werden soll. Ein Bench-Flash mit einem geratenen Datenstand macht den Schaden größer, nicht kleiner. Prüfen, ob die Sicherung aus dem Codierversuch noch existiert und ob der ausgelesene I-Level dazu passt.",
+          "measure": "Backup-Datei vorhanden und lesbar · I-Level des Fahrzeugs bekannt und PSDZData-Stand passend dazu",
+          "doc": "D4F-F-001",
+          "yes": "recovery-full",
+          "no": "kein-backup"
         }
       ],
       "model": "f-series",
       "id": "fem-bricked",
       "_results": {
+        "versorgung-zuerst": {
+          "title": "Zuerst Spannungsversorgung herstellen",
+          "text": "Hier nicht weitermachen. Werkstattladegerät anschließen, Verbraucher abschalten, Türen schließen und erst dann von vorn beginnen. Ein weiterer Schreib- oder Startversuch bei einbrechender Bordspannung ist genau der Vorgang, der das Steuergerät in diesen Zustand gebracht hat. Kein Erhaltungslader, kein Fremdstartkabel von einem laufenden Fahrzeug.",
+          "next_docs": [
+            "D4F-F-001"
+          ]
+        },
+        "versorgung-fem": {
+          "title": "Versorgung oder Sicherung am FEM/BDC defekt",
+          "text": "Das ist kein Bricking-Fall. Defekte Sicherung ersetzen beziehungsweise Steckverbindung und Masseanbindung am FEM/BDC instand setzen, danach KL30 erneut messen. Erst wenn die Versorgung sauber steht, die Diagnoseverbindung noch einmal versuchen — sehr häufig meldet sich das Steuergerät dann wieder und der Codierstand lässt sich normal über die OBD-Buchse nachziehen.",
+          "next_docs": [
+            "D4F-F-001"
+          ]
+        },
+        "kein-backup": {
+          "title": "Kein Backup, kein passender Datenstand — nicht weiterflashen",
+          "text": "Hier ist Stillstand die richtige Entscheidung. Ohne KIS/OKV-Backup und ohne den zum I-Level passenden PSDZData-Stand fehlt das Ziel des Rückschreibens; ein Versuch auf Verdacht kann zusätzlich die Fahrzeugzuordnung zerstören. Zuerst beschaffen: ausgelesener I-Level des Fahrzeugs, dazu passende PSDZData und die Sicherung aus dem Codierversuch. Falls ohnehin ein Bench-Gerät im Spiel ist, vorher das EEPROM sichern und die Sicherung wegschreiben, bevor irgendetwas beschrieben wird.",
+          "next_docs": [
+            "D4F-F-001"
+          ]
+        },
         "recovery-soft": {
           "title": "Software-Recovery über E-Sys",
-          "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend."
+          "text": "FEM_BODY neu programmieren mit passender I-Level-Version. Nach erfolgreicher Programmierung: CAFD neu codieren, danach ISTA/P-Nachlauf. In der Regel ausreichend.",
+          "next_docs": [
+            "D4F-F-001"
+          ]
         },
         "recovery-full": {
           "title": "Bench-Recovery erforderlich",
-          "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich."
+          "text": "FEM/BDC ausbauen und über Bench-Programmiergerät (z.B. Xhorse VVDI Prog oder AutoHex II) neu flashen. EEPROM sichern vor jedem Schritt. Bei ISN-Fehlern: DME-Sync erforderlich.",
+          "next_docs": [
+            "D4F-F-001"
+          ]
         }
       }
     }

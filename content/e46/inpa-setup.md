@@ -12,29 +12,28 @@ INPA (Interpreter für Prüfabläufe) ist das ältere, aber weiterhin unentbehrl
 | SP-Daten | mindestens SP-DATEN E46 v51 |
 | Verbindung | OBD-2-Buchse links neben Lenksäule |
 
-> Das billige „Rundum-Sorglos"-Paket auf Ebay funktioniert oft, aber viele davon nutzen den CH340-Chip. Der macht unter Windows 11 regelmäßig Probleme mit dem Latency-Timer. FTDI-basierte Kabel (z.B. von OBDResource) sind 20 CHF teurer und sparen Stunden Fehlersuche.
+> Das billige „Rundum-Sorglos"-Paket auf Ebay funktioniert oft, aber viele davon nutzen den CH340-Chip. Der macht unter Windows 11 regelmäßig Probleme mit dem Latency-Timer. FTDI-basierte Kabel sind etwas teurer und sparen Stunden Fehlersuche.
 
 ## Installation
 
 1. **INPA-Paket entpacken** nach `C:\EDIABAS\` — nicht in Programme, nicht mit Umlauten im Pfad.
-2. **Systemvariablen setzen:**
-   - `PATH` → `C:\EDIABAS\Bin` hinzufügen
-   - `EDIABAS_CONFIG_DIR` → `C:\EDIABAS\Bin`
-3. **OBD.INI konfigurieren** (`C:\EDIABAS\Bin\OBD.INI`):
-   ```ini
-   [OBD]
-   Port=COM3
-   Hardware=OBD
-   IFH_TRACE=0
-   IFH_TRACE_SIZE=1024
-   ```
+2. **Systemvariablen setzen:** `PATH` um `C:\EDIABAS\Bin` ergänzen, `EDIABAS_CONFIG_DIR` auf `C:\EDIABAS\Bin` setzen.
+3. **OBD.INI konfigurieren** — `C:\EDIABAS\Bin\OBD.INI`, Inhalt siehe unten.
 4. **EDIABAS.INI prüfen** — `Interface = STD:OBD` muss gesetzt sein.
+
+```ini
+[OBD]
+Port=COM3
+Hardware=OBD
+IFH_TRACE=0
+IFH_TRACE_SIZE=1024
+```
 
 ## Kabel-Setup im Gerätemanager
 
 1. Kabel einstecken → COM-Port merken (z.B. COM3)
 2. Rechtsklick auf Port → Eigenschaften → **Anschlusseinstellungen** → Erweitert
-3. **Latency Timer auf 1 ms** setzen (Standard ist 16 — INPA reagiert damit zäh und wirft Timeouts)
+3. **Latency Timer auf 1 ms** setzen (Standard ist 16 ms — INPA reagiert damit zäh und wirft Timeouts)
 4. Falls der Port über COM9 liegt: auf COM3–COM8 zurücksetzen (EDIABAS mag hohe COM-Nummern nicht)
 
 ## Verifikation
