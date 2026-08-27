@@ -437,7 +437,7 @@
     },
     "start-startfreigabe": {
       "title": "Startfreigabe fehlt — Schlüssel, Startbedingung oder CAS",
-      "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Baustanden gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
+      "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Bauständen gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
       "next_docs": [
         "D4F-E90-009",
         "D4F-E90-006"

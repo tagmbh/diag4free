@@ -28,7 +28,7 @@ Praktisch heißt das drei Dinge:
 
 ## Die Kettenfrage bleibt offen
 
-Beim N47 ist die Sache eindeutig: Der Steuerkettentrieb sitzt hinten, zum Getriebe hin. Beim B47 widersprechen sich die Quellen. Ein Teil beschreibt die Kette weiterhin auf der Getriebeseite und den Kettentrieb als überarbeitet, nicht als verlegt. Ein anderer Teil setzt sie nach vorn und begründet damit einen deutlich geringeren Aufwand beim Wechsel.
+Beim N47 ist die Sache eindeutig: Der Steuerkettentrieb sitzt hinten, zum Getriebe hin. Beim B47 widersprechen sich die Quellen. Ein Teil beschreibt die Kette weiterhin auf der Getriebeseite und den Kettentrieb als überarbeitet, nicht als verlegt. Ein anderer Teil setzt sie nach vorn und begründet damit einen deutlich geringeren Aufwand beim Wechsel. Der Widerspruch verläuft quer durch alle Quellenkategorien und durch beide Sprachen — dieselbe Sorte Seite sagt einmal das eine und einmal das andere. Eine Mehrheit lässt sich daraus nicht bilden.
 
 Das ist kein Detail: Zwischen den beiden Darstellungen liegt der Getriebeausbau und damit der größere Teil der Arbeitszeit.
 

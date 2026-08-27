@@ -69,8 +69,8 @@ Beim B47 ist die Kettenlage dagegen offen: Ein Teil der Quellen lässt sie auf d
 4. **Motorcode am Block lesen** und gegen den Fahrzeugauftrag halten.
 5. **Erst danach** Teile bestimmen und Sollwerte suchen.
 
-## Was der Katalog nicht führt
+## Wenn die Zuordnung nicht aufgeht
 
-Der Fahrzeugkatalog dieses Projekts führt für den F30 die Vierzylinder-Diesel N47 und B47. Die Sechszylinder-Diesel der Baureihe sind dort nicht hinterlegt.
+Bleibt ein Motor übrig, der sich weder als Vierzylinder-Diesel N47 oder B47 noch als Sechszylinder-Diesel N57 bestätigen lässt, hör auf zu raten. Das ist der Punkt, an dem ein Import, ein Umbau oder ein Spendermotor im Spiel sein kann.
 
-> **Lücke, nicht gefüllt:** Für ein Fahrzeug mit einem Dieselmotor, der sich weder als N47 noch als B47 bestätigen lässt, liefert diese Wissensbasis derzeit keine Motorzuordnung. Vorgehen wie immer: Motorcode am Block lesen und gegen den Fahrzeugauftrag halten, bevor Teile bestimmt werden.
+> **Lücke, nicht gefüllt:** Für einen Motor außerhalb dieser Zuordnung liefert diese Wissensbasis keine Aussage. Vorgehen wie immer: Motorcode am Block lesen und gegen den Fahrzeugauftrag halten, bevor Teile bestimmt werden.

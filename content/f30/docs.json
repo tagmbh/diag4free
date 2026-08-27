@@ -134,7 +134,7 @@
         "Leistungsstufen im F30: 318d mit 150 PS, 320d mit 190 PS, 325d mit 224 PS und zweistufiger Aufladung. Vor jeder Ladedruckdiagnose zählen, wie viele Lader verbaut sind — die stärkere Stufe arbeitet mit zwei in Reihe geschalteten Ladern, die schwächeren mit einem Lader mit variabler Turbinengeometrie",
         "Überarbeitung ab November 2017 (B47TÜ1): SCR-Abgasnachbehandlung mit AdBlue-Eindosierung, zweistufige Aufladung über alle Varianten, höherer Einspritzdruck. Ein B47 mit AdBlue-Tank ist ein Motor der zweiten Generation, und die Abgasnachbehandlung gehört dann mit in den Fehlerspeicherlauf",
         "AGR-Kühler ist der bekannteste Punkt: Kühlmittel verschwindet ohne Pfütze unter dem Fahrzeug, in Berichten begleitet von Abgas- oder Brandgeruch. BMW ruft dafür seit 2018 zurück, betroffen sind N47, N57 und B47. Vor jeder Arbeit am AGR-Modul den Rückrufstand über die Fahrgestellnummer prüfen",
-        "Steuerkettenlage widersprüchlich belegt: ein Teil der Quellen lässt die Kette auf der Getriebeseite und nennt den Kettentrieb überarbeitet, ein anderer setzt sie nach vorn. Das entscheidet über den Getriebeausbau und damit über die Arbeitszeit. Vor der Kalkulation am Fahrzeug nachsehen, Kaltstartrasseln in jedem Fall abklären"
+        "Steuerkettenlage widersprüchlich belegt: ein Teil der Quellen lässt die Kette auf der Getriebeseite und nennt den Kettentrieb überarbeitet, ein anderer setzt sie nach vorn. Der Widerspruch verläuft quer durch alle Quellenkategorien, eine Mehrheit lässt sich daraus nicht bilden. Das entscheidet über den Getriebeausbau und damit über die Arbeitszeit. Vor der Kalkulation am Fahrzeug nachsehen, Kaltstartrasseln in jedem Fall abklären"
       ],
       "engines": ["B47"],
       "article": "b47-diesel.md",
