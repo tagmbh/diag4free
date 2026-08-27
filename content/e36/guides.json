@@ -1,0 +1,270 @@
+{
+  "model": "e36",
+  "guides": {
+    "keine-verbindung-e36": {
+      "code": "GF-E36-01",
+      "name": "Keine Diagnoseverbindung zum E36",
+      "desc": "Das Werkzeug meldet keine Antwort. Systematisch: Versorgung am Kabel, richtige Buchse für dieses Fahrzeug, Datenleitung, ADS-Erkennung.",
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "steps": [
+        {
+          "q": "Meldet die Diagnosesoftware Batterie und Zündung als vorhanden?",
+          "help": "Fast jede BMW-Diagnosesoftware zeigt zwei Statusanzeigen. Beide müssen grün werden, sobald die Zündung eingeschaltet ist. Bleiben beide rot, kommt am Kabel keine Versorgung an — dann suchst du an der Buchse und nicht an der Software.",
+          "measure": "Zündung ein, beide Statusanzeigen wechseln auf grün. Bleibt eine rot, gilt das als Nein",
+          "doc": "D4F-E36-001",
+          "yes": 1,
+          "no": "res-versorgung"
+        },
+        {
+          "q": "Steckst du an der 16-poligen Buchse unter dem Armaturenbrett?",
+          "help": "Der E36 hat immer die 20-polige Runddose im Motorraum. Die Innenraumbuchse gibt es nicht an jedem Fahrzeug, und wo es sie gibt, führt sie nicht zwangsläufig alle Steuergeräte.",
+          "measure": "Sichtprüfung: 16-polige Trapezbuchse fahrerseitig unter dem Armaturenbrett, meist hinter einer Klappe",
+          "doc": "D4F-E36-005",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Ist das Fahrzeug ein US-Modell ab Modelljahr 1996 oder ein später EU-Compact beziehungsweise Z3?",
+          "help": "Nur diese Fahrzeuge sind über die Innenraumbuchse regulär ansprechbar. An allen übrigen E36 ist die Runddose im Motorraum der Zugang, auch wenn eine 16-polige Buchse verbaut aussieht.",
+          "measure": "Typschild und Baudatum lesen; im Zweifel beide Buchsen nacheinander probieren",
+          "doc": "D4F-E36-001",
+          "yes": 3,
+          "no": "res-runddose-benutzen"
+        },
+        {
+          "q": "Antwortet das Motorsteuergerät auf einen Identifikationsversuch?",
+          "help": "Ein Identify ist der kleinste mögliche Kommunikationstest. Kommt eine Antwort mit Gerätenummer zurück, steht die Verbindung und der Fehler liegt woanders. Kommt keine, geht die Suche an der Leitung weiter.",
+          "measure": "Rückmeldung mit Gerätenummer und Codierindex erscheint. Eine Zeitüberschreitung gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": "res-dme-ok",
+          "no": 4
+        },
+        {
+          "q": "Ist Pin 15 der Runddose bestückt?",
+          "help": "Nach einer Quelle ist ein belegter Pin 15 das Erkennungszeichen für ein ADS-Fahrzeug. Solche Fahrzeuge verlangen ein ADS-taugliches Interface; ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 funktioniert.",
+          "measure": "Deckel abschrauben und die Kammer 15 ansehen: Kontakt vorhanden oder Kammer leer",
+          "doc": "D4F-E36-002",
+          "yes": "res-ads",
+          "no": 5
+        },
+        {
+          "q": "Liegen an der Runddose Masse und Dauerplus an?",
+          "help": "Ohne Versorgung an der Dose bleibt jede Verbindung stumm, egal welches Kabel steckt. Masse liegt an Pin 19; das Dauerplus misst du gegen diesen Pin. Vorher die Kontakte auf Grünspan ansehen — die Dose sitzt im Motorraum.",
+          "measure": "Pin 19 gegen einen bekannt guten Massepunkt auf Durchgang; Versorgungspin gegen Pin 19 auf Bordspannung. Kein Sollwert nötig, es geht um vorhanden oder nicht",
+          "doc": "D4F-E36-002",
+          "yes": "res-datenleitung",
+          "no": "res-versorgung"
+        }
+      ]
+    },
+    "startet-nicht-e36": {
+      "code": "GF-E36-02",
+      "name": "E36 startet nicht",
+      "desc": "Vom Anlasser bis zur Kompression. Berücksichtigt, dass der E36 je nach Baudatum zwei verschiedene Wegfahrsperren mit verschiedenen Fehlerbildern hat.",
+      "engines": ["M43", "M44", "M50", "M52", "S50", "S52"],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch sauber durch?",
+          "help": "Nur Klicken oder gar nichts heißt Batterie, Massepunkt oder Anlasserkreis. Beim E36 bis 12/1994 gehört auch das Sperrrelais der Wegfahrsperre in diesen Kreis — dort sperrt die Anlage den Anlasser, nicht die Einspritzung.",
+          "measure": "Bordspannung während der Startanforderung bleibt über 10.5 V; ein Einbruch weit darunter ist der Befund",
+          "doc": "D4F-E36-007",
+          "yes": 1,
+          "no": "res-anlasser"
+        },
+        {
+          "q": "Läuft die Kraftstoffpumpe beim Einschalten der Zündung kurz hörbar an?",
+          "help": "Beim Einschalten der Zündung baut das System hörbar Druck auf. Bleibt es still, geht die Suche an Relais, Sicherung und Pumpe weiter — und beim E36 ab 01/1995 auch an der Wegfahrsperre, weil diese Baureihe die Motorsteuerung freigibt statt den Anlasser zu sperren.",
+          "measure": "Beim Einschalten der Zündung ist das Anlaufen der Pumpe im Heckbereich hörbar. Stille gilt als Nein",
+          "doc": "D4F-E36-007",
+          "yes": 2,
+          "no": "res-kraftstoff"
+        },
+        {
+          "q": "Liegt ein Motorfehler im Speicher — über Blinkcode oder über die Diagnosedose?",
+          "help": "Bevor du misst, lies aus. Am OBD-1-E36 geht das ohne Werkzeug über den Blinkcode, sonst über die Diagnosedose. Ein abgelegter Fehler zu Kurbelwellensensor, Luftmasse oder Kühlmitteltemperatur spart dir den halben Pfad.",
+          "measure": "Vierstelliger Blinkcode ungleich 1000 und ungleich 1444 gilt als Fehler",
+          "doc": "D4F-E36-004",
+          "yes": "res-fehlerspeicher",
+          "no": 3
+        },
+        {
+          "q": "Bekommt eine gezogene Zündkerze beim Cranken einen Funken?",
+          "help": "Kerze ziehen, Stecker aufsetzen, Gewinde sauber an den Motorblock legen und einen Helfer starten lassen. Kein Funke an allen Zylindern deutet auf Kurbelwellensensor, Versorgung der Zündung oder das Steuergerät.",
+          "measure": "Sichtbarer Funke an mehreren Zylindern. Kein Funke an keinem Zylinder gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": 4,
+          "no": "res-zuendung"
+        },
+        {
+          "q": "Ist die Kerze nach mehreren Startversuchen kraftstofffeucht?",
+          "help": "Eine nasse Kerze beweist, dass Kraftstoff bis in den Brennraum kommt. Eine trockene Kerze bei laufender Pumpe verlagert die Suche auf Einspritzventile, deren Ansteuerung und den Systemdruck.",
+          "measure": "Kerze riecht nach Kraftstoff und ist sichtbar feucht. Staubtrocken gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": 5,
+          "no": "res-einspritzung"
+        },
+        {
+          "q": "Liegt die Kompression aller Zylinder auf vergleichbarem Niveau?",
+          "help": "Alle Kerzen ziehen, Drosselklappe offen, durchmessen und die Werte untereinander vergleichen. Ein absoluter Sollwert ist hier nicht belegt — der Vergleich der Zylinder untereinander trägt die Aussage auch ohne ihn.",
+          "measure": "Die Zylinderwerte liegen dicht beieinander. Fällt einer deutlich gegen die übrigen ab, gilt das als Nein",
+          "doc": "D4F-E36-006",
+          "yes": "res-steuerzeiten",
+          "no": "res-kompression"
+        }
+      ]
+    },
+    "leerlauf-unruhig-e36": {
+      "code": "GF-E36-03",
+      "name": "Unruhiger Leerlauf am Sechszylinder",
+      "desc": "Schwankender, hängender oder absterbender Leerlauf. Trennt Falschluft von Leerlaufregler von Sensorik — die drei Ursachen, die beim E36 dasselbe Bild erzeugen.",
+      "engines": ["M50", "M52", "S50", "S52"],
+      "steps": [
+        {
+          "q": "Ist der Leerlauf auch bei betriebswarmem Motor unruhig?",
+          "help": "Ein Motor, der nur kalt unrund läuft und sich warm beruhigt, arbeitet in der Warmlaufsteuerung. Das ist ein anderer Pfad als der dauerhaft unruhige Leerlauf und beginnt bei Kühlmitteltemperaturgeber und Gemischbildung im Kaltlauf.",
+          "measure": "Motor auf Betriebstemperatur bringen und den Leerlauf mindestens eine Minute beobachten",
+          "doc": "D4F-E36-008",
+          "yes": 1,
+          "no": "res-kaltlauf"
+        },
+        {
+          "q": "Sind die Schläuche der Kurbelgehäuseentlüftung hart, rissig oder abgeplatzt?",
+          "help": "Motor aus, Schläuche einzeln in die Hand nehmen und biegen. Sprödes Material bricht dabei. Beim E36 ist diese Leitung eine der häufigsten Falschluftquellen und erzeugt genau das Bild, das sonst dem Leerlaufregler zugeschrieben wird.",
+          "measure": "Sichtprüfung und Tastprüfung aller Schläuche der Entlüftung, einschließlich der Anschlussstutzen",
+          "doc": "D4F-E36-008",
+          "yes": "res-ccv",
+          "no": 2
+        },
+        {
+          "q": "Ändert sich die Leerlaufdrehzahl, wenn du den Stecker des Leerlaufreglers bei laufendem Motor abziehst?",
+          "help": "Zieht man dem Steller die Ansteuerung weg, muss der Motor darauf reagieren. Passiert nichts, arbeitet der Steller schon vorher nicht — dann ist die Frage Elektrik oder festsitzende Mechanik, nicht Regelung.",
+          "measure": "Deutlich hörbare Drehzahländerung beim Abziehen des Steckers. Keine Reaktion gilt als Nein",
+          "doc": "D4F-E36-008",
+          "yes": 3,
+          "no": "res-icv-elektrik"
+        },
+        {
+          "q": "Läuft der Leerlauf nach Ausbau und Reinigung des Leerlaufreglers ruhig?",
+          "help": "Regler ausbauen, Verkokung mit Reiniger lösen, Gehäuse und Klappe von Hand auf Leichtgängigkeit prüfen, wieder einbauen. Danach Adaptionen zurücksetzen und warmfahren, sonst rechnet die Steuerung mit den alten Korrekturen weiter.",
+          "measure": "Leerlauf nach Reinigung und Adaptionsreset über mehrere Minuten stabil",
+          "doc": "D4F-E36-008",
+          "yes": "res-icv-ok",
+          "no": 4
+        },
+        {
+          "q": "Findest du beim Abdrücken der Ansaugstrecke eine undichte Stelle?",
+          "help": "Ansaugstrecke abdichten und mit geringem Überdruck oder Rauch beaufschlagen. Abgesucht werden Ansaugbrückendichtung, Drosselklappenanschluss, alle Unterdruckabgänge und der Übergang zum Leerlaufregler. Ein Prüfdruck ist hier nicht belegt — gearbeitet wird mit dem kleinstmöglichen Druck, der das Leck sichtbar macht.",
+          "measure": "Sichtbarer Austritt oder hörbares Zischen an einer Stelle der Ansaugstrecke",
+          "doc": "D4F-E36-008",
+          "yes": "res-falschluft",
+          "no": 5
+        },
+        {
+          "q": "Liegt ein Fehler zu Luftmasse, Lambda oder Kühlmitteltemperatur im Speicher?",
+          "help": "Jetzt ist die Mechanik abgearbeitet und die Sensorik dran. Am OBD-1-Fahrzeug reicht dafür der Blinkcode: 1215 zeigt auf die Luftmassenmessung, 1221 und 1222 auf die Lambdaseite, 1223 auf den Kühlmitteltemperaturgeber.",
+          "measure": "Blinkcode oder Fehlerspeicher enthält einen dieser Einträge",
+          "doc": "D4F-E36-004",
+          "yes": "res-sensor",
+          "no": "res-mechanik"
+        }
+      ]
+    }
+  },
+  "results": {
+    "res-versorgung": {
+      "title": "Am Diagnoseanschluss fehlt die Versorgung",
+      "text": "Ohne Masse und Dauerplus an der Dose bleibt jede Software stumm. Kontakte der Runddose auf Grünspan ansehen und vorsichtig reinigen, danach Pin 19 gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen und die Versorgung gegen diesen Pin prüfen. Erst wenn beides steht, ist eine Aussage über Kabel oder Steuergerät möglich.",
+      "next_docs": ["D4F-E36-002", "D4F-E36-005"]
+    },
+    "res-runddose-benutzen": {
+      "title": "Falsche Buchse · über die Runddose im Motorraum gehen",
+      "text": "An diesem Fahrzeug ist die 16-polige Innenraumbuchse nicht der vorgesehene Zugang. Nimm den Adapter auf die 20-polige Runddose im Motorraum und wiederhole den Verbindungsversuch dort. Wer die Innenraumbuchse dauerhaft nutzbar machen will, legt die Brücke zwischen Pin 17 und Pin 20 der Runddose — danach antworten auch die Nebensteuergeräte an der Innenraumbuchse.",
+      "next_docs": ["D4F-E36-001", "D4F-E36-002"]
+    },
+    "res-dme-ok": {
+      "title": "Verbindung steht · Fehler liegt woanders",
+      "text": "Das Motorsteuergerät antwortet, damit ist der Diagnosepfad in Ordnung. Erreichst du trotzdem einzelne Steuergeräte nicht, liegt das an der getrennten zweiten Datenleitung: die Nebensteuergeräte hängen an der anderen der beiden Leitungen der Runddose. Setz dort an, nicht an der Software.",
+      "next_docs": ["D4F-E36-002", "D4F-E36-003"]
+    },
+    "res-ads": {
+      "title": "ADS-Fahrzeug · anderes Interface nötig",
+      "text": "Ein bestückter Pin 15 weist nach einer Quelle auf ein ADS-Fahrzeug hin. Ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 arbeitet. Besorg ein ADS-taugliches Interface und prüfe vor dem Kauf, ob es an einer echten seriellen Schnittstelle betrieben wird — bei Adaptern über USB berichten mehrere Quellen von unvollständigem Zugriff.",
+      "next_docs": ["D4F-E36-001", "D4F-E36-002"]
+    },
+    "res-datenleitung": {
+      "title": "Versorgung steht · Datenleitung und Steuergerät prüfen",
+      "text": "Masse und Plus liegen an, die Verbindung kommt trotzdem nicht zustande. Jetzt sind die beiden Datenleitungen an Pin 17 und Pin 20 dran: gegen Masse gegenprüfen, denn ein Schluss macht die Leitung stumm. Bleibt die Leitung sauber, verlagert sich der Verdacht auf ein nachträglich angeschlossenes Gerät am Diagnosebus und danach auf das Steuergerät selbst.",
+      "next_docs": ["D4F-E36-002", "D4F-E36-003"]
+    },
+    "res-anlasser": {
+      "title": "Anlasserkreis oder Wegfahrsperre der frühen Baujahre",
+      "text": "Batterie unter Last messen, Massepunkte am Motorblock und an der Karosserie reinigen, Steuerleitung zum Anlasser auf Durchgang prüfen. Erst danach die Wegfahrsperre in Betracht ziehen: Fahrzeuge mit Baudatum bis 12/1994 sperren nach einer Quelle über ein Anlasserrelais, und genau das erzeugt dieses Fehlerbild. Zweiten Schlüssel gegenprobieren.",
+      "next_docs": ["D4F-E36-007"]
+    },
+    "res-kraftstoff": {
+      "title": "Kraftstoffförderung fehlt",
+      "text": "Sicherung und Pumpenrelais prüfen, danach Spannung am Pumpenstecker während der Startanforderung messen. Liegt Spannung an und die Pumpe bleibt still, ist die Pumpe der Befund. Kommt keine Spannung an, geh die Ansteuerung zurück bis zum Steuergerät und beziehe bei Fahrzeugen ab 01/1995 die Wegfahrsperre ein, weil sie dort die Motorsteuerung freigibt.",
+      "next_docs": ["D4F-E36-007", "D4F-E36-005"]
+    },
+    "res-fehlerspeicher": {
+      "title": "Abgelegter Fehler zuerst abarbeiten",
+      "text": "Ein gespeicherter Code verkürzt die Suche erheblich. Notiere den vierstelligen Code, bevor du löschst, und arbeite ihn ab, statt weiterzumessen. Achte darauf, dass sich die Codetabellen zwischen den DME-Ständen unterscheiden — prüfe die Bedeutung gegen den Stand, der in diesem Fahrzeug verbaut ist.",
+      "next_docs": ["D4F-E36-004", "D4F-E36-003"]
+    },
+    "res-zuendung": {
+      "title": "Kein Zündimpuls",
+      "text": "Fehlt der Funke an allen Zylindern gleichzeitig, ist die gemeinsame Ursache zu suchen und nicht die einzelne Spule. Kurbelwellensensor und dessen Kabelbaum prüfen, danach die Versorgung der Zündendstufe und die Masseanbindung des Steuergeräts gegen den Motorblock. Ein defekter Kurbelwellensensor kann ausfallen, ohne einen Code zu setzen.",
+      "next_docs": ["D4F-E36-003", "D4F-E36-005"]
+    },
+    "res-einspritzung": {
+      "title": "Kraftstoff kommt nicht in den Brennraum",
+      "text": "Die Pumpe läuft, die Kerze bleibt trocken. Prüfe den Systemdruck auf Aufbau und Druckhaltung — bewertet wird, ob Druck entsteht und stehen bleibt, ein Zahlensollwert ist hier nicht belegt. Danach die Ansteuerung der Einspritzventile abklopfen und den Kabelbaum am Zylinderkopf ansehen, der dort thermisch am stärksten belastet ist.",
+      "next_docs": ["D4F-E36-003"]
+    },
+    "res-steuerzeiten": {
+      "title": "Zündung, Kraftstoff und Kompression in Ordnung",
+      "text": "Alle drei Grundvoraussetzungen stehen, der Motor läuft trotzdem nicht. Jetzt sind die Steuerzeiten dran: Steuerkette und deren Spanner ansehen, die Stellung der Nockenwellen gegen die Kurbelwelle kontrollieren und bei Motoren mit VANOS die Verstelleinheit einbeziehen. Ein übersprungener Zahn erklärt genau dieses Bild.",
+      "next_docs": ["D4F-E36-003", "D4F-E36-006"]
+    },
+    "res-kompression": {
+      "title": "Ein Zylinder fällt ab",
+      "text": "Ein deutlich abfallender Zylinder ist der Befund, unabhängig davon, welchen Absolutwert das Gerät anzeigt. Wiederhole die Messung mit etwas Öl im Zylinder: steigt der Wert danach an, liegt es an Kolben und Ringen, bleibt er gleich, an Ventilen oder Kopfdichtung. Erst danach über den Umfang der Reparatur entscheiden.",
+      "next_docs": ["D4F-E36-006"]
+    },
+    "res-kaltlauf": {
+      "title": "Nur im Kaltlauf unruhig",
+      "text": "Der Motor beruhigt sich mit steigender Temperatur, also arbeitet die Warmlaufsteuerung nicht sauber. Beginne beim Kühlmitteltemperaturgeber: ein Geber, der dem Steuergerät eine zu hohe Temperatur meldet, nimmt dem Kaltlauf die Anfettung. Der Blinkcode 1223 zeigt genau auf diesen Geber, kann aber fehlen, wenn der Wert plausibel aber falsch ist.",
+      "next_docs": ["D4F-E36-004", "D4F-E36-008"]
+    },
+    "res-ccv": {
+      "title": "Kurbelgehäuseentlüftung undicht",
+      "text": "Sprödes oder gerissenes Material in der Entlüftung ist eine Falschluftquelle und erklärt den unruhigen Leerlauf vollständig. Tausche die Leitungen im Satz statt einzeln, das übrige Material hat dieselbe Vorgeschichte. Danach Adaptionswerte zurücksetzen und warmfahren, sonst arbeitet die Steuerung weiter mit der Korrektur für die Falschluft.",
+      "next_docs": ["D4F-E36-008"]
+    },
+    "res-icv-elektrik": {
+      "title": "Leerlaufregler reagiert nicht",
+      "text": "Der Motor nimmt das Abziehen des Steckers nicht wahr, also arbeitet der Steller ohnehin nicht. Prüfe zuerst Stecker und Leitung auf Bruch und Korrosion, danach nimm den Regler heraus und sieh nach, ob er mechanisch festsitzt. Verkokung blockiert die Klappe häufiger, als die Wicklung ausfällt — reinigen geht vor ersetzen.",
+      "next_docs": ["D4F-E36-008"]
+    },
+    "res-icv-ok": {
+      "title": "Verkokter Leerlaufregler war die Ursache",
+      "text": "Der Leerlauf ist nach Reinigung und Adaptionsreset stabil. Nimm dir die Ursache noch mit: Ölnebel aus der Kurbelgehäuseentlüftung ist es, der den Regler zusetzt. Sieh die Entlüftung durch, bevor du das Fahrzeug abgibst, sonst steht dasselbe Symptom in absehbarer Zeit wieder da.",
+      "next_docs": ["D4F-E36-008"]
+    },
+    "res-falschluft": {
+      "title": "Falschluft in der Ansaugstrecke gefunden",
+      "text": "Die undichte Stelle abdichten oder das Bauteil erneuern, danach erneut abdrücken — es sitzt selten nur ein Leck, wenn das Material insgesamt gealtert ist. Anschließend Fehlerspeicher löschen, Adaptionen zurücksetzen und warmfahren, damit die Gemischkorrektur sich neu einstellt.",
+      "next_docs": ["D4F-E36-008", "D4F-E36-006"]
+    },
+    "res-sensor": {
+      "title": "Sensorfehler abarbeiten",
+      "text": "Mechanik und Dichtheit sind abgearbeitet, der Speicher zeigt auf einen Geber. Prüfe den betroffenen Geber und vor allem dessen Kabelbaum und Stecker, bevor du das Teil tauschst — beim E36 sind Kontaktprobleme im Motorraum häufiger als defekte Geber. Die Bedeutung des Codes gegen den verbauten DME-Stand abgleichen, die Tabellen unterscheiden sich.",
+      "next_docs": ["D4F-E36-004", "D4F-E36-003"]
+    },
+    "res-mechanik": {
+      "title": "Kein Sensorfehler · zur Mechanik zurück",
+      "text": "Kein abgelegter Fehler und keine gefundene Undichtheit: jetzt sind Zündung und Motormechanik dran. Zündkerzen ziehen und die Kerzenbilder untereinander vergleichen, danach die Kompression aller Zylinder gegeneinander messen. Ein einzelner schwacher Zylinder erzeugt genau das gleiche Bild wie eine schlechte Leerlaufregelung, und die beiden lassen sich nur so trennen.",
+      "next_docs": ["D4F-E36-006", "D4F-E36-003"]
+    }
+  }
+}

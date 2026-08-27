@@ -26,8 +26,13 @@ const ASPIRATION = new Set(['Saugmotor', 'Turbo', 'Bi-Turbo', 'Kompressor']);
 // Werte, die in einem Steckbrief nichts zu suchen haben. Ein Anzugsmoment
 // gehoert in eine Reparaturanleitung mit Herstellerbezug, nicht in eine
 // Motoruebersicht, wo niemand seine Herkunft nachvollziehen kann.
+// Gesucht wird die Absicht, nicht die Einheit. „Drehmoment von 270 bis
+// 450 Nm" beschreibt, was der Motor abgibt — das gehoert in einen
+// Steckbrief. „Mit 25 Nm anziehen" ist eine Montageanweisung ohne
+// nachvollziehbare Herkunft und gehoert nicht hierher. Ein Muster, das nur
+// auf „Nm" schaut, kann beides nicht auseinanderhalten.
 const VERBOTEN = [
-  [/\b\d+([.,]\d+)?\s*Nm\b/, 'Anzugsmoment'],
+  [/(anzieh|festzieh|Anzugsmoment|Drehmomentschlüssel)[^.]{0,60}?\d+([.,]\d+)?\s*Nm|\d+([.,]\d+)?\s*Nm[^.]{0,30}?(anzieh|festzieh)/i, 'Anzugsmoment'],
   [/\b\d+([.,]\d+)?\s*(k?Ω|Ohm)\b/i, 'Widerstandswert'],
   [/\b\d+([.,]\d+)?\s*(bar|mbar|kPa)\b/i, 'Druckangabe'],
   [/\b\d+([.,]\d+)?\s*(Liter|l)\s*(Öl|Kühlmittel|ATF)/i, 'Füllmenge']
@@ -87,9 +92,16 @@ for (const datei of dateien) {
       warnung.push(`${e.id}: keine \`id_marks\` — woran erkennt man den Motor?`);
     }
 
-    const text = JSON.stringify(e);
+    // Nur die Freitextfelder pruefen. `power_variants[].nm` ist das
+    // abgegebene Drehmoment des Motors und gehoert selbstverstaendlich in
+    // einen Steckbrief — ein Muster ueber den ganzen Datensatz hat es als
+    // Anzugsmoment gemeldet.
+    const freitext = JSON.stringify({
+      id_marks: e.id_marks, weak_points: e.weak_points,
+      note: e.note, valvetrain: e.valvetrain, dme: e.dme
+    });
     for (const [muster, art] of VERBOTEN) {
-      const t = text.match(muster);
+      const t = freitext.match(muster);
       if (t) meld(e.id, `${art} "${t[0]}" — gehört nicht in einen Steckbrief`);
     }
 

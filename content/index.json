@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T04:39:16.030Z",
+  "generated": "2026-08-27T04:59:07.428Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -330,6 +330,500 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E36-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E36 · Runddose gegen OBD-2",
+      "valid": "E36 · 1990–2000 · alle Motoren",
+      "summary": "Die erste Frage vor jedem Werkzeugkauf: Welchen Diagnosezugang hat dieser E36 überhaupt. Jeder E36 trägt die 20-polige Runddose im Motorraum, nur ein Teil zusätzlich die 16-polige OBD-2-Buchse im Innenraum — und die ist längst nicht überall vollwertig.",
+      "points": [
+        "Runddose im Motorraum, 20-polig mit Schraubdeckel: an jedem E36 vorhanden, unabhängig vom Baujahr",
+        "16-polige OBD-2-Buchse unter dem Armaturenbrett: US-Modelle ab Modelljahr 1996, dazu späte EU-Compact und Z3 — nach einer Quelle ab 09/1999",
+        "Generischer OBD-2-Scanner am EU-E36: die OBD-2-Befehle sind nach einer Quelle in der Firmware gesperrt, BMW-eigene Diagnose über K-Line arbeitet trotzdem",
+        "Sind beide Buchsen vorhanden, ist die Runddose der vollständigere Zugang — die Innenraumbuchse führt nur einen Teil der Steuergeräte",
+        "Ist Pin 15 der Runddose bestückt, verlangt das Fahrzeug ein ADS-taugliches Interface; ein reines K-Line-Kabel erreicht dann nicht alle Steuergeräte",
+        "Vor jedem Kabelkauf am Fahrzeug nachsehen statt nach Baujahr raten — die Umstellung lief je nach Markt und Modell verschieden"
+      ],
+      "pins": [
+        "Runddose Pin 17 · Diagnoseleitung TXD II",
+        "Runddose Pin 20 · Diagnoseleitung TXD I",
+        "Runddose Pin 19 · Masse",
+        "Runddose Pin 15 · bestückt = ADS-Fahrzeug",
+        "OBD-2 Pin 7 · K-Line",
+        "OBD-2 Pin 4/5 · Masse"
+      ],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E36-002",
+        "D4F-E36-003",
+        "D4F-E36-004"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-002",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Runddiagnosestecker 20-polig · Belegung und Brücke 17/20",
+      "valid": "E36 · 1990–2000 · Motorraum",
+      "summary": "Was an der 20-poligen Runddose im Motorraum belegt ist, was davon gesichert ist und was nicht — und die Brücke zwischen Pin 17 und Pin 20, mit der die Nebensteuergeräte auch an der Innenraumbuchse antworten.",
+      "points": [
+        "Deckel abschrauben, Kontakte vor der Messung auf Grünspan ansehen — der Motorraum ist der schlechteste denkbare Einbauort für einen Steckverbinder",
+        "Pin 19 führt Masse: gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen",
+        "Pin 17 und Pin 20 führen die beiden Diagnose-Datenleitungen; welche davon welche Steuergeräte trägt, ist hier nicht gesichert belegt",
+        "Brücke zwischen Pin 17 und Pin 20 legt beide Datenleitungen zusammen — danach erreicht ein Werkzeug an der 16-poligen Buchse auch ABS, Kombi und Karosseriemodul",
+        "Bestückter Pin 15 ist das Erkennungszeichen für ein ADS-Fahrzeug — nach einer Quelle, vor dem Kabelkauf gegenprüfen",
+        "Dauerplus an der Dose nicht raten, sondern gegen Pin 19 messen: eine Diagnosedose ohne Versorgung erklärt jede stumme Verbindung"
+      ],
+      "pins": [
+        "Runddose Pin 15 · ADS-Kennung, nur bei ADS-Fahrzeugen bestückt",
+        "Runddose Pin 17 · Diagnose-Datenleitung TXD II",
+        "Runddose Pin 19 · Masse",
+        "Runddose Pin 20 · Diagnose-Datenleitung TXD I",
+        "OBD-2 Pin 7 · K-Line im Innenraum",
+        "OBD-2 Pin 16 · KL30 im Innenraum"
+      ],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "article": "runddose-20pol.md",
+      "details": [
+        "D4F-E36-001",
+        "D4F-E36-005"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-003",
+      "type": "FUB",
+      "cat": "Motorsteuerung",
+      "title": "Motorsteuergeräte der Baureihe E36",
+      "valid": "E36 · M43/M44/M50/M52/S50/S52",
+      "summary": "Welcher Motor welche DME trägt und was das für die Diagnose bedeutet. Der E36 spannt von der Bosch Motronic M3.1 ohne VANOS bis zur Siemens MS41 und MSS50 — die Werkzeugwahl hängt am Steuergerät, nicht am Motorkürzel.",
+      "points": [
+        "M50 ohne VANOS: Bosch Motronic M3.1 — Blinkcode möglich, keine OBD-2-Dienste",
+        "M50TU mit VANOS ab 1992: Bosch Motronic M3.3.1 mit integrierter VANOS-Ansteuerung",
+        "S50B30: Bosch Motronic M3.3, VANOS über ein eigenes Steuergerät; S50B32 ab 1995: Siemens MSS50 mit integrierter VANOS-Regelung beider Wellen",
+        "M52: Siemens MS41 — die Quellen nennen für den S52 der US-Modelle sowohl MS41.1 als auch MS41.2, der Widerspruch ist ungeklärt",
+        "M44: Bosch M5.2 beziehungsweise M5.2.1; M43 früh Bosch Motronic M1.7.x, M43TU ab 1998 Bosch BMS46",
+        "Steuergerät immer am Aufkleber der DME gegenprüfen, bevor du eine Softwareauswahl oder ein Tauschgerät festlegst"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "article": "dme-uebersicht.md",
+      "details": [
+        "D4F-E36-001",
+        "D4F-E36-004",
+        "D4F-E36-005"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-004",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Blinkcode auslesen ohne Diagnosegerät",
+      "valid": "E36 · OBD-1-Fahrzeuge · nach einer Quelle 1992–1995",
+      "summary": "Der E36 gibt seine Motorfehler über die Motorkontrollleuchte aus, wenn man das Fahrpedal in einer festen Folge tritt. Vierstellige BMW-Codes, kein Werkzeug nötig — brauchbar für den ersten Befund am gekauften Fahrzeug oder wenn kein Kabel greifbar ist.",
+      "points": [
+        "Zündung in Stellung 2, Motor aus; danach das Fahrpedal fünfmal zügig ganz durchtreten und ganz loslassen",
+        "Die Motorkontrollleuchte blinkt danach vier Ziffernblöcke, getrennt durch kurze Pausen; ein langer Abstand beendet den Code",
+        "Bleibt derselbe Code stehen, obwohl mehrere Fehler vorliegen, hilft nach jedem Code erneutes fünfmaliges Treten zum Weiterschalten",
+        "1000 beendet die Ausgabe, 1444 heißt kein Fehler gespeichert — kommt einer davon zuerst, ist der Speicher leer",
+        "Die Codetabelle unterscheidet sich zwischen den DME-Ständen: derselbe vierstellige Code kann an M3.1 und MS41 verschiedene Bedeutungen haben",
+        "Der Blinkcode ersetzt keine Live-Werte — Adaptionen, Lambdaregelung und Stellglieddiagnose gibt es nur über die Diagnosedose"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M50",
+        "S50"
+      ],
+      "article": "blinkcode-stomptest.md",
+      "details": [
+        "D4F-E36-001",
+        "D4F-E36-003"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-005",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Einbauorte Steuergeräte und Diagnosepunkte E36",
+      "valid": "E36 · Limousine · Coupé · Touring · Compact",
+      "summary": "Wo die für Diagnose und Codierung wichtigen Baugruppen im E36 sitzen: Motorsteuergerät im Wasserkasten, Runddose im Motorraum, Karosseriemodul und Wegfahrsperre im Innenraum.",
+      "points": [
+        "DME im E-Kasten unter der Abdeckung im Wasserkasten rechts, unterhalb des beifahrerseitigen Wischerarms",
+        "E-Kasten öffnen: Schaumabdeckung mit den Kunststoffknöpfen abnehmen, danach die Schrauben der harten Abdeckung lösen",
+        "20-polige Runddose im Motorraum mit aufgeschraubtem Deckel — Lage je nach Modell und Baujahr unterschiedlich, deshalb suchen statt annehmen",
+        "16-polige OBD-2-Buchse, wo vorhanden: unter dem Armaturenbrett fahrerseitig, meist hinter einer beschrifteten Klappe",
+        "Kombiinstrument mittig im Armaturenbrett; Karosseriemodul und Wegfahrsperre im Innenraum unter Verkleidung",
+        "Vor dem Ziehen eines Steuergeräts Zündung aus und Batterie abklemmen, dann protokollieren, welcher Stecker wo saß"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "details": [
+        "D4F-E36-001",
+        "D4F-E36-002",
+        "D4F-E36-007"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-006",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "Kühlsystem E36 · die Kunststoffteile",
+      "valid": "E36 · alle Motoren · hohe Laufleistung",
+      "summary": "Das Kühlsystem ist die bekannteste Schwachstelle des E36. Kunststoffteile werden mit den Jahren spröde und reißen ohne Vorwarnung — Ausgleichsbehälter, Kühlerhälse, Thermostatgehäuse. Dazu die Wasserpumpe mit Kunststofflaufrad der frühen Baujahre.",
+      "points": [
+        "Wasserpumpen mit Kunststofflaufrad wurden nach übereinstimmenden Erfahrungsberichten in den frühen Baujahren verbaut und später auf Metall umgestellt — das Laufrad bricht ab, ohne dass die Pumpe undicht wird",
+        "Erfahrungswert: die Kunststoffteile des Kühlkreises werden im Bereich hoher Laufleistung spröde und reißen dann reihenweise — einzeln tauschen verschiebt den nächsten Ausfall nur",
+        "Ausgleichsbehälter auf Haarrisse an der Formnaht und am Verschlusshals absuchen, kalt und mit Lampe von unten",
+        "Kühlerhälse und Schlauchflansche vorsichtig mit der Hand belasten: bricht der Kunststoff dabei, wäre er auch auf der Autobahn gebrochen",
+        "Überhitzung ohne sichtbaren Leckverlust deutet auf ein abgerissenes Pumpenlaufrad — der Motor wird heiß, obwohl der Kreis voll ist",
+        "Ein Zahlenwert für den Systemdruck des Kühlkreises ist hier nicht belegt; geprüft wird auf Druckhaltung und sichtbaren Austritt, nicht gegen einen Sollwert"
+      ],
+      "pins": [],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "article": "kuehlsystem.md",
+      "details": [
+        "D4F-E36-003",
+        "D4F-E36-008"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-007",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Startfreigabe und Wegfahrsperre E36",
+      "valid": "E36 · EWS I bis 12/1994 · EWS II ab 01/1995",
+      "summary": "Der E36 hat zwei grundverschiedene Wegfahrsperren, und sie fallen unterschiedlich aus. EWS I sperrt über ein Anlasserrelais, EWS II arbeitet mit Transponder im Schlüssel. Welche verbaut ist, entscheidet, wonach du beim Startproblem suchst.",
+      "points": [
+        "Nach einer Quelle: E36 mit Baudatum bis 12/1994 tragen EWS I mit Anlasser-Sperrrelais, ab 01/1995 EWS II mit Transponderschlüssel",
+        "EWS I sperrt den Anlasserkreis — Symptom ist ein Motor, der nicht dreht, obwohl die Batterie steht",
+        "EWS II gibt die Motorsteuerung frei — Symptom ist ein Anlasser, der sauber dreht, ohne dass der Motor anspringt",
+        "Zweiten Schlüssel gegenprobieren, bevor du an der Elektrik suchst: läuft er, ist der erste Schlüssel oder dessen Transponder der Befund",
+        "Vor jedem Verdacht auf die Wegfahrsperre erst Batterie und Massepunkte klären — eine schwache Batterie erzeugt dieselben Symptome",
+        "Freigabestatus lässt sich nur über die Diagnosedose ansehen, nicht über den Blinkcode"
+      ],
+      "pins": [
+        "Anlasserkreis · KL50 vom Zündschloss",
+        "Versorgung · KL30 Dauerplus",
+        "Zündung · KL15 geschaltet"
+      ],
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "details": [
+        "D4F-E36-001",
+        "D4F-E36-005"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-008",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "Unruhiger Leerlauf · Leerlaufregler und Falschluft",
+      "valid": "E36 · M50/M52/S50/S52 · hohe Laufleistung",
+      "summary": "Schwankender oder absterbender Leerlauf ist beim E36 fast immer eine von zwei Ursachen: der verkokte Leerlaufregler oder eine undichte Kurbelgehäuseentlüftung. Beide erzeugen dasselbe Bild und werden regelmäßig miteinander verwechselt.",
+      "points": [
+        "Erst die Schläuche der Kurbelgehäuseentlüftung ansehen: hart, rissig oder abgeplatzt heißt Falschluft, und die erklärt das Symptom vollständig",
+        "Leerlaufregler ausbauen und mit Reiniger spülen, bevor du ihn ersetzt — Verkokung ist die häufigere Ursache als ein defekter Steller",
+        "Stecker des Leerlaufreglers bei laufendem Motor abziehen: ändert sich nichts, arbeitet der Steller ohnehin nicht",
+        "Falschluft magert das Gemisch ab; die Regelung gleicht das aus, bis sie an ihre Grenze kommt — deshalb erscheint der Fehler oft erst nach Wochen als Adaptionsmeldung",
+        "Nach jeder Reinigung oder jedem Tausch die Adaptionswerte zurücksetzen, sonst rechnet die DME mit den alten Korrekturen weiter"
+      ],
+      "pins": [],
+      "engines": [
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "details": [
+        "D4F-E36-003",
+        "D4F-E36-006"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E39-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E39 · Rundstecker, OBD-2 und Protokolle",
+      "valid": "E39 · 1995–2003 · alle Motoren",
+      "summary": "Der E39 überspannt den Wechsel vom 20-poligen Rundstecker im Motorraum auf die OBD-2-Buchse im Innenraum. Welcher Anschluss welches Steuergerät erreicht, welches Kabel dafür nötig ist und woran der Umbruch im Baujahr hängt.",
+      "points": [
+        "Bis Bauzeit 09/2000 sitzt zusätzlich der 20-polige Rundstecker im Motorraum — er ist der Weg zu allen Steuergeräten, nicht nur zur DME",
+        "OBD-2 Pin 7 führt zur DME. Body-, ABS- und Airbag-Steuergeräte hängen an der zweiten Diagnoseleitung, die erst bei den späten Baujahren auf OBD-2 Pin 8 herausgeführt ist",
+        "Bei Fahrzeugen mit beiden Buchsen: für die Werksdiagnose immer den Rundstecker verwenden, sonst antwortet nur ein Teil der Steuergeräte",
+        "Kabel mit FTDI-Chip verwenden und den Latency Timer im Gerätemanager auf 1 ms setzen — sonst Timeouts in INPA",
+        "Adapter 20-polig auf 16-polig nur brauchbar, wenn beide Diagnoseleitungen durchverbunden sind; einfache Adapter führen nur die Motor-K-Line"
+      ],
+      "pins": [
+        "OBD-2 Pin 7 · K-Line zur DME",
+        "OBD-2 Pin 8 · zweite Diagnoseleitung (übrige Steuergeräte, späte Baujahre)",
+        "OBD-2 Pin 4/5 · Masse",
+        "OBD-2 Pin 16 · KL30"
+      ],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E39-003",
+        "D4F-E39-004"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-002",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Motorsteuerungen der Baureihe E39",
+      "valid": "E39 · M52 · M52TU · M54 · M62 · M62TU · S62",
+      "summary": "Welcher Motor welche DME trägt und was das für die Diagnose bedeutet. Der E39 hat innerhalb einer Baureihe fünf verschiedene Motorsteuerungen — Siemens MS41, MS42, MS43, Bosch M5.2.1, ME7.2 und die MSS52 im M5.",
+      "points": [
+        "R6 bis 09/1998: M52 mit Siemens MS41 — einfach-VANOS, nur Einlassnockenwelle verstellt",
+        "R6 ab 09/1998: M52TU mit MS42 — Doppel-VANOS, elektronisches Gaspedal, deutlich mehr Live-Werte in INPA",
+        "R6 ab 09/2000: M54 mit MS43 — gleiche Architektur wie im E46, Prüfabläufe übertragbar",
+        "V8 bis 09/1998: M62 mit Bosch M5.2.1; danach M62TU mit ME7.2",
+        "M5: S62 mit Siemens MSS52 — eigene Diagnosemasken, Drosselklappen-Adaption nach Tausch zwingend zurücksetzen",
+        "Vor jeder Fehlersuche die DME identifizieren lassen (ZB-Nummer, Codierindex) — die Baujahrgrenzen sind Umbaufahrzeugen egal"
+      ],
+      "pins": [],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "article": "motorsteuerungen.md",
+      "details": [
+        "D4F-E39-001",
+        "D4F-E39-005"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-003",
+      "type": "PIN",
+      "cat": "Verkabelung",
+      "title": "Pinbelegung der Diagnoseanschlüsse E39",
+      "valid": "E39 · 1995–2003 · Rundstecker und OBD-2",
+      "summary": "Pinbelegung des 20-poligen Rundsteckers im Motorraum und der OBD-2-Buchse im Innenraum, so weit sie hier belegt ist. Grundlage für die Prüfung eines stummen Diagnoseanschlusses mit dem Multimeter.",
+      "points": [
+        "Erst Versorgung messen: ohne KL30 am Diagnosestecker antwortet kein Steuergerät, egal wie gut das Kabel ist",
+        "Masse am Diagnosestecker gegen Karosserie messen — ein hochohmiger Masseweg sieht aus wie ein defektes Interface",
+        "Die Diagnoseleitungen liegen im Ruhezustand auf Pegel; ein Schluss gegen Masse macht den ganzen Bus stumm",
+        "Belegung des Rundsteckers stammt aus einer Quelle und gilt baureihenübergreifend — vor dem Anlegen von Spannung gegen den Fahrzeugstromlaufplan prüfen"
+      ],
+      "pins": [
+        "OBD-2 Pin 7 · K-Line zur DME",
+        "OBD-2 Pin 8 · zweite Diagnoseleitung, übrige Steuergeräte",
+        "OBD-2 Pin 4/5 · Masse",
+        "OBD-2 Pin 16 · KL30 dauerplus",
+        "Rundstecker Pin 14 · KL30 dauerplus (nach einer Quelle)",
+        "Rundstecker Pin 15 · Diagnoseleitung RxD (nach einer Quelle)",
+        "Rundstecker Pin 16 · KL15 (nach einer Quelle)",
+        "Rundstecker Pin 19 · Masse (nach einer Quelle)",
+        "Rundstecker Pin 20 · Diagnoseleitung TxD (nach einer Quelle)"
+      ],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "details": [
+        "D4F-E39-001",
+        "D4F-E39-004"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-004",
+      "type": "LOC",
+      "cat": "Einbauorte",
+      "title": "Steuergeräte-Einbauorte E39",
+      "valid": "E39 · Limousine · Touring",
+      "summary": "Wo die für Diagnose und Codierung relevanten Steuergeräte im E39 sitzen. Die Aufteilung entspricht weitgehend dem E38 — wer den einen kennt, findet sich im anderen zurecht.",
+      "points": [
+        "DME: E-Box im Wasserkasten rechts, unter dem Gehäuse des Innenraumfilters",
+        "EWS: unter der Lenksäulenverkleidung links, untere Verkleidung abnehmen",
+        "Allgemeinmodul ZKE (GM): hinter dem Handschuhfach",
+        "LCM (Lichtmodul, Baureihen E38 und E39 gemeinsam): Fahrerfußraum im Bereich der Pedalerie",
+        "Hauptsicherungskasten: im Handschuhfach hinter der Klappe; zusätzliche Sicherungen in der E-Box im Motorraum",
+        "IKE (Kombiinstrument) trägt neben der Anzeige die ZCS-Codierdaten — beim Tausch immer mit auslesen"
+      ],
+      "pins": [],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "details": [
+        "D4F-E39-001",
+        "D4F-E39-007"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-005",
+      "type": "TEST",
+      "cat": "Fehlercodes",
+      "title": "Doppel-VANOS M52TU und M54 · Fehlerbilder und Prüfung",
+      "valid": "E39 · M52TU ab 09/1998 · M54 ab 09/2000",
+      "summary": "Mit dem M52TU kam der Doppel-VANOS in den E39 und mit ihm eine eigene Fehlerklasse: Kaltstartruckeln, unruhiger Leerlauf und VANOS-Fehler im Speicher. Prüfreihenfolge von der Sensorik über die Ölversorgung bis zu den Dichtringen.",
+      "points": [
+        "Nockenwellensensor Auslass zuerst prüfen — er fällt häufig aus und erzeugt dasselbe Fehlerbild wie ein mechanischer VANOS-Schaden",
+        "VANOS-Fehler nur nach echtem Kaltstart bewerten; betriebswarm zeigt die Verstellung oft noch normale Werte",
+        "In INPA die Soll- und Ist-Position beider Nockenwellen gegeneinander stellen — bleibt Ist der Sollvorgabe dauerhaft hinterher, ist die Verstellung mechanisch träge",
+        "Solenoide gegen ein bekannt gutes Exemplar vergleichen, statt einen Widerstandswert zu raten",
+        "Verhärtete Dichtringe der VANOS-Kolben sind der typische Alterungsbefund — sie werden im Satz erneuert, nicht einzeln",
+        "Erst Öldruck und Ölstand sichern: der VANOS wird über den Motorölkreis verstellt und meldet bei Ölmangel Fehler ohne eigenen Defekt"
+      ],
+      "pins": [],
+      "engines": [
+        "M52",
+        "M54"
+      ],
+      "article": "vanos-m52tu-m54.md",
+      "details": [
+        "D4F-E39-002"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-006",
+      "type": "TEST",
+      "cat": "Reparatur",
+      "title": "Nikasil beim V8 · Beleglage und Prüfverfahren",
+      "valid": "E39 · M62 · frühe Baujahre",
+      "summary": "Zur Nikasil-Thematik der frühen V8 kursiert mehr Behauptung als Beleg. Dieses Dokument trennt, was gesichert ist, von dem, was sich widerspricht, und beschreibt das Prüfverfahren, das ohne Baujahrtabelle auskommt.",
+      "points": [
+        "Gesichert ist nur das Fehlerbild: schwefelhaltiger Kraftstoff greift die Nikasil-Laufschicht an, die Zylinderwand verschleißt, Kompression und Ölverbrauch verschlechtern sich",
+        "Widersprüchlich ist, ob und wie lange der M62 überhaupt Nikasil bekam — Angaben reichen von 'nie' über 'bis 03/1997' bis 'bis etwa 1998'",
+        "Keine belastbare Motornummern-Grenze gefunden: eine Diagnose über die Motornummer ist damit nicht möglich",
+        "Prüfen statt nachschlagen: Kompression aller acht Zylinder messen und untereinander vergleichen, danach Druckverlustprüfung an den auffälligen Zylindern",
+        "Zweites Merkmal: unrunder Leerlauf bei kaltem Motor, der sich mit Betriebstemperatur bessert, zusammen mit erhöhtem Ölverbrauch",
+        "Viele betroffene Motoren wurden seinerzeit auf Garantie ersetzt — ein auffälliger Motor kann längst ein Austauschblock sein, deshalb immer am Fahrzeug prüfen"
+      ],
+      "pins": [],
+      "engines": [
+        "M62"
+      ],
+      "article": "nikasil-v8.md",
+      "details": [
+        "D4F-E39-002"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-007",
+      "type": "FUB",
+      "cat": "Codierung",
+      "title": "Codierung am E39 · ZCS, Module und Vorgehen",
+      "valid": "E39 · alle Baujahre mit K-Line-Codierung",
+      "summary": "Der E39 wird über ZCS codiert: die Fahrzeugausstattung steht nicht im einzelnen Steuergerät, sondern zentral. Was das für den Ablauf mit NCS Expert bedeutet und welche Reihenfolge Datenverlust vermeidet.",
+      "points": [
+        "Die ZCS-Codierdaten liegen im EWS und im Kombiinstrument — bei ausgetauschten Steuergeräten können beide auseinanderlaufen",
+        "Vor jeder Änderung die Ist-Codierung aller betroffenen Module sichern und die Sicherung außerhalb des Arbeitsverzeichnisses ablegen",
+        "Beim Auslesen bevorzugt das Modul verwenden, das nachweislich original zum Fahrzeug gehört",
+        "Ein einzelnes Modul nachcodieren, nie den ganzen Fahrzeugauftrag blind zurückschreiben",
+        "Nach dem Schreiben Zündung aus, Bus schlafen lassen, dann Fehlerspeicher aller Module lesen — Codierfehler zeigen sich dort und nicht an der Funktion"
+      ],
+      "pins": [],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "details": [
+        "D4F-E39-004",
+        "D4F-E39-001"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-008",
+      "type": "WDS",
+      "cat": "Verkabelung",
+      "title": "Startfreigabe E39 · EWS und DME",
+      "valid": "E39 · EWS3 · EWS3D ab MJ 1999",
+      "summary": "Signalfluss beim Startvorgang: Schlüsseltransponder, Ringantenne, EWS, Freigabe an die DME. Ohne diese Freigabe dreht der Anlasser, der Motor springt aber nicht an — das häufigste Startproblem am E39 ohne mechanischen Befund.",
+      "points": [
+        "Ablauf: Transponder wird von der Ringantenne gelesen, EWS prüft, EWS gibt der DME frei — jeder Zwischenschritt ist in INPA einzeln sichtbar",
+        "EWS3D ab Modelljahr 1999 arbeitet mit Wechselcode; EWS und DME müssen zueinander passen",
+        "Passen sie nicht zusammen, legt die DME einen Fehler zur Manipulationserkennung ab und verweigert den Start dauerhaft",
+        "Ringantenne am Zündschloss ist ein bekannter Ausfallpunkt: Schlüssel wird sporadisch nicht erkannt, mit zweitem Schlüssel gegenprüfen",
+        "EWS hängt am K-Bus — antwortet die EWS gar nicht, zuerst ihre Versorgung und den Busanschluss prüfen, nicht das Schloss"
+      ],
+      "pins": [
+        "OBD-2 Pin 7 · K-Line zur DME",
+        "OBD-2 Pin 8 · zweite Diagnoseleitung, hierüber antwortet die EWS bei späten Baujahren"
+      ],
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "details": [
+        "D4F-E39-004",
+        "D4F-E39-002"
+      ],
+      "model": "e39"
+    },
+    {
       "id": "D4F-E46-001",
       "type": "TOOL",
       "cat": "Diagnose-Tools",
@@ -539,6 +1033,589 @@
       ],
       "article": "disa-m54.md",
       "model": "e46"
+    },
+    {
+      "id": "D4F-E60-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E60/E61 · Kabel, Protokoll und Software nach Baujahr",
+      "valid": "E60/E61 · 2003–2010 · alle Motoren",
+      "summary": "Der E60 überspannt den Wechsel des Diagnoseprotokolls. Fahrzeuge bis 03/2007 antworten über die K-Line an OBD-Pin 7, Fahrzeuge ab 03/2007 über D-CAN an Pin 6 und 14. Dasselbe Kabel muss dafür anders geschaltet sein — das ist die häufigste Ursache für „kein Steuergerät gefunden“.",
+      "points": [
+        "Baujahr zuerst klären: bis 03/2007 K-Line an Pin 7, ab 03/2007 D-CAN an Pin 6/14. Das Baujahr steht auf dem Typschild der B-Säule, nicht in der Zulassung",
+        "K+DCAN-Kabel mit Schalter: für den frühen E60 in K-Line-Stellung, für den späten in DCAN-Stellung. Steht der Schalter falsch, meldet EDIABAS schlicht kein Steuergerät — kein Hardwaredefekt",
+        "Latency Timer des FTDI-Treibers auf 1 ms setzen. Der Standardwert von 16 ms erzeugt Zeitüberschreitungen, die wie ein totes Steuergerät aussehen",
+        "Umstrittene Pin-7/8-Brücke: manche Kabel legen Pin 7 und 8 zusammen. Am E60 berichten Anwender beides — mit Brücke funktioniert es, mit Brücke funktioniert es nicht. Im Zweifel den Adapter ohne Brücke zuerst probieren",
+        "Der frühe E60 wird bis 09/2005 über das SGM diagnostiziert, danach über das Karosserie-Gateway. Ein Fahrzeug, das gar nicht antwortet, hat sein Problem oft im Gateway, nicht im Kabel",
+        "Vor jeder Codierung die vorhandenen Codierdaten des betroffenen Steuergeräts sichern — am E60 ist das kein optionaler Schritt"
+      ],
+      "pins": [
+        "OBD2 Pin 7 · K-Line · Diagnose bis 03/2007",
+        "OBD2 Pin 6 · D-CAN High · ab 03/2007",
+        "OBD2 Pin 14 · D-CAN Low · ab 03/2007",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus",
+        "OBD2 Pin 8 · Belegung strittig — siehe Werkstattpunkte"
+      ],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E60-002"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
+      },
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "E60-Steuergeräte-Topologie · welcher Bus trägt welches Gerät",
+      "valid": "E60/E61 · 2003–2010",
+      "summary": "Der E60 verteilt seine Steuergeräte auf mehrere Busse: PT-CAN für Antrieb und Fahrwerk, K-CAN für die Karosserie, MOST für Audio und Navigation, byteflight für die Rückhaltesysteme der frühen Baujahre. Wer den falschen Bus verdächtigt, sucht am falschen Ende — dieses Dokument ordnet die Geräte zu.",
+      "points": [
+        "PT-CAN (Antrieb): DME beziehungsweise DDE, EGS, DSC, Lenkwinkelsensor im SZL, EMF und die Fahrwerksregelungen. Ein Ausfall hier trifft Motor, Getriebe und Bremse gleichzeitig",
+        "K-CAN (Karosserie): CAS, Kombiinstrument, Klimabedienteil, Licht- und Türfunktionen. Ein Ausfall hier lässt den Motor weiterlaufen, macht aber Komfortfunktionen tot",
+        "MOST (Lichtwellenleiter): CCC beziehungsweise Radio, Verstärker, Telefon, Tuner. Rein optisch — ein einziges gebrochenes Faserkabel legt den ganzen Ring still",
+        "byteflight nur bis 09/2005 für die Rückhaltesysteme mit Satelliten. Ab 09/2005 entfällt byteflight, das Karosserie-Gateway-Modul löst das SGM ab",
+        "Gateway-Ausfall erkennt man am Muster: mehrere Steuergeräte auf mehreren Bussen melden gleichzeitig „keine Kommunikation“, obwohl sie einzeln versorgt sind. Dann ist nicht jedes Gerät defekt, sondern der Übergang zwischen den Bussen",
+        "Regel vor jedem Bauteiltausch: erst prüfen, ob das verdächtige Gerät auf seinem eigenen Bus antwortet. Antwortet es, ist der Eintrag im Nachbarsteuergerät ein Folgefehler"
+      ],
+      "pins": [
+        "OBD2 Pin 6/14 · D-CAN — Diagnoseleitung am Gateway",
+        "OBD2 Pin 7 · K-Line — Diagnoseleitung bis 03/2007"
+      ],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "article": "topologie.md",
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-040"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-010",
+      "type": "TEST",
+      "cat": "N62 · Fehlerbilder",
+      "title": "N62-V8 im E60 · Öl- und Kühlmittelverlust eingrenzen",
+      "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
+      "summary": "Der N62 verliert typischerweise an mehreren Stellen gleichzeitig Öl oder Kühlmittel, und die Stellen liegen dicht beieinander. Ziel dieses Dokuments ist es, die Quelle zu bestimmen, bevor eine Dichtung bestellt wird — ein Ölfleck unter dem Motor sagt für sich genommen wenig.",
+      "points": [
+        "Ventildeckeldichtungen sind der Klassiker. Erfahrungswert aus mehreren unabhängigen Fäden: undicht ab etwa 100–150 tkm. Symptom ist Ölgeruch und Rauch am heissen Krümmer, nicht unbedingt ein Fleck am Boden",
+        "Dichtung des Lichtmaschinenträgers: Öl läuft von oben über den Generator. Wird oft für eine Ventildeckeldichtung gehalten — der Unterschied liegt darin, ob das Öl oberhalb oder unterhalb der Trägerplatte ansetzt",
+        "Kühlmittelverlust ohne sichtbaren Fleck deutet auf die Dichtungen des Kühlmittel-Überführungsrohrs im V zwischen den Bänken. Das ist eine Motorausbau-nahe Arbeit — Befund vorher absichern",
+        "Ventilschaftdichtungen: blauer Rauch beim Kaltstart oder nach Schubphasen, ohne Ölfleck aussen. Kein Fehlerspeichereintrag, rein optischer Befund",
+        "Valvetronic-Stellmotoren müssen vor dem Abnehmen der Ventildeckel in Parkstellung gebracht und nach dem Zusammenbau neu angelernt werden. Wer diesen Schritt überspringt, riskiert den Verstelltrieb",
+        "Sollwerte fehlen: Anzugsmomente der Ventildeckel und des Trägers sind hier nicht belegt. Sie gehören aus der Herstellervorgabe geholt — Aluminium verzeiht ein geschätztes Moment nicht"
+      ],
+      "pins": [],
+      "engines": [
+        "N62"
+      ],
+      "article": "n62-fehlerbilder.md",
+      "details": [
+        "D4F-E60-002"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-020",
+      "type": "TEST",
+      "cat": "M57 · Fehlerbilder",
+      "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
+      "valid": "E60/E61 · M57 (525d, 530d, 535d)",
+      "summary": "Am M57 laufen drei Themen ineinander: verrusste Drallklappen in der Ansaugbrücke, eine zusetzende Abgasrückführung und ein Ladedruckregler, der über Unterdruck arbeitet. Alle drei erzeugen Leistungsverlust und Notlauf — dieses Dokument trennt sie voneinander.",
+      "points": [
+        "Drallklappen verrussen durch AGR-Ablagerungen und können brechen. Bricht eine Klappe in den Brennraum, ist der Motorschaden die Folge — das ist die Begründung für die Vorsorge, nicht die Regel",
+        "Nach einer Quelle wurden ab 03/2004 Kunststoff-Drallklappen mit Rückhaltemechanismus verbaut; frühere Motoren gelten als der kritischere Fall. Vor dem Anwenden am konkreten Fahrzeug gegenprüfen",
+        "Widerspruch in der Praxis: die einen entfernen die Klappen, die anderen warnen, dass die Klappenstellung in die Regeneration des Partikelfilters eingeht. Beides steht so in unabhängigen Quellen — die Entscheidung gehört dokumentiert, nicht stillschweigend getroffen",
+        "Werden Klappen entfernt, müssen die Öffnungen sauber verschlossen werden. Eine undichte Ansaugbrücke zieht Falschluft und verliert Ladedruck — das Fehlerbild wandert dann auf die Ladedruckregelung",
+        "Ladedruckregelung am M57 arbeitet über Unterdruck. Prüfe vor jedem Ladersverdacht die Unterdruckdose, die Schläuche und das Umschaltventil auf Dichtheit — eine gerissene Leitung erzeugt dasselbe Bild wie eine feste Ladergeometrie",
+        "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von aussen"
+      ],
+      "pins": [],
+      "engines": [
+        "M57"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DDE"
+        ]
+      },
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-030",
+      "type": "GUIDE",
+      "cat": "Fahrwerk · Dynamic Drive",
+      "title": "Dynamic Drive und Aktivlenkung · was ausfällt und was nur mitmeldet",
+      "valid": "E60/E61 · mit aktiver Wankstabilisierung bzw. Aktivlenkung",
+      "summary": "Die aktive Wankstabilisierung und die Aktivlenkung sind hydraulisch beziehungsweise elektrisch eigenständige Systeme, hängen aber am selben Bus und an derselben Servopumpe. Ein Ausfall meldet sich deshalb oft an mehreren Stellen gleichzeitig, und die Meldung mit dem lautesten Text ist selten die Ursache.",
+      "points": [
+        "Dynamic Drive arbeitet mit zwei aktiven Stabilisatoren, Drucksensoren und einem Ventilblock. Die Servopumpe ist eine Tandempumpe — sie versorgt Lenkung und Wankstabilisierung aus demselben Ölkreis",
+        "Erfahrungswert aus mehreren unabhängigen Fäden: sind Stabilisatoren und Leitungen dicht, liegt der Fehler ganz überwiegend im Ventilblock, nur selten im Steuergerät. Das ist eine Häufigkeitsaussage, keine Diagnose",
+        "Typischer Eintrag ist eine Druckplausibilität zwischen Vorder- und Hinterachse. Die Drucksensoren sitzen am Ventilblock, ihre Nullpunkte werden vom Steuergerät über eine Servicefunktion angelernt",
+        "Vor jeder Bauteildiagnose Ölstand und Dichtheit des Servokreises prüfen. Zu wenig Öl oder Luft im Kreis erzeugt dasselbe Bild wie ein defekter Ventilblock",
+        "Nach jedem Eingriff in den Hydraulikkreis gehört das System entlüftet. Ohne Entlüftung bleibt der Fehler stehen, obwohl das Bauteil neu ist",
+        "Aktivlenkung meldet sich mit eigener Warnung. Steht sie zusammen mit einer Dynamic-Drive-Meldung an, zuerst die gemeinsame Ursache prüfen: Servokreis, Bordspannung, PT-CAN"
+      ],
+      "pins": [],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "article": "dynamic-drive.md",
+      "details": [
+        "D4F-E60-002"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-040",
+      "type": "TEST",
+      "cat": "iDrive · MOST",
+      "title": "MOST-Ring und iDrive · Ringbruch finden statt Steuergeräte tauschen",
+      "valid": "E60/E61 · mit MOST-Ring (Radio, Navigation, Verstärker)",
+      "summary": "Audio, Telefon und Navigation hängen am MOST-Ring, einem optischen Bus. Der Ring ist in sich geschlossen: ein einziges unterbrochenes Faserkabel oder ein Gerät, das das Licht nicht weitergibt, legt alle anderen mit still. Deshalb sagt „iDrive tot“ nichts darüber aus, welches Gerät schuld ist.",
+      "points": [
+        "Ringlogik zuerst verstehen: der MOST überträgt optisch. Jedes Gerät empfängt Licht und gibt es weiter. Fällt ein Glied aus, schweigt der ganze Ring — die Zahl der ausgefallenen Funktionen sagt nichts über die Zahl der defekten Geräte",
+        "Ringbruchdiagnose in der Werkstattsoftware nutzen: sie vergleicht die hinterlegte Ringreihenfolge mit den Geräten, die tatsächlich antworten. Das erste Gerät, das nicht mehr antwortet, markiert die Bruchstelle",
+        "Ohne Kenntnis der Ringreihenfolge ist die Suche wertlos. Die Reihenfolge gehört vor dem Zerlegen ausgelesen, nicht danach rekonstruiert",
+        "Lichtwellenleiter-Brücken erlauben es, ein Gerät aus dem Ring zu nehmen und den Ring zu schliessen. Wird der Ring damit wieder gesund, ist das überbrückte Gerät der Kandidat",
+        "Fasern brechen fast immer an Steckern und engen Radien, nicht in der Mitte. Steckverbinder zuerst ansehen, bevor ein Steuergerät verdächtigt wird",
+        "Sporadischer Ausfall zusammen mit erhöhter Ruhestromaufnahme deutet darauf hin, dass ein Gerät den Ring nicht schlafen lässt. Dann ist die Ruhestrommessung der schnellere Weg als der Bauteiltausch"
+      ],
+      "pins": [],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "article": "most-idrive.md",
+      "details": [
+        "D4F-E60-002"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-050",
+      "type": "TEST",
+      "cat": "S85 · M5",
+      "title": "S85-V10 im M5 · VANOS-Hochdruckpumpe, Pleuellager und SMG",
+      "valid": "E60/E61 M5 · S85",
+      "summary": "Der S85 hat ein eigenes Steuergerätekonzept und drei Themen, die den Motor bei Vernachlässigung zerlegen: die VANOS-Hochdruckpumpe in der Ölwanne, die Pleuellager und die Hydraulikpumpe des SMG. Alle drei kündigen sich an, aber nicht über einen Fehlerspeichereintrag.",
+      "points": [
+        "VANOS-Hochdruckpumpe sitzt in der Ölwanne und versorgt die Verstellung. Nach mehreren unabhängigen Quellen gibt es im Hochdruckkreis keinen Drucksensor — ein beginnender Schaden bleibt deshalb unbemerkt, bis Späne im Ölkreis sind",
+        "VANOS-Fehler auf allen Bänken gleichzeitig ist das Warnzeichen für die Pumpe, nicht für die Magnetventile. Meldet nur eine Bank, ist die Wahrscheinlichkeit umgekehrt",
+        "Pleuellager verschleissen am S85 erfahrungsgemäss schneller als an anderen M-Motoren, begründet mit dem hohen Drehzahlniveau. Ölanalyse und Ölwechselhistorie sind hier aussagekräftiger als jeder Fehlerspeicher",
+        "SMG-Hydraulikpumpe: träge oder zögerliche Schaltvorgänge kündigen den Verschleiss an, bevor die Pumpe ganz ausfällt. Vor jedem Steuergerätverdacht die Pumpe auf Dichtheit und Laufzeit ansehen",
+        "Kein Wert ohne Beleg: Öldruck-, Lagerspiel- und Speicherdruckwerte für den S85 sind hier nicht belegt. Vergleichend arbeiten und im Zweifel die Herstellervorgabe holen",
+        "Vor jeder Diagnose am M5 den Ladezustand der Batterie sichern. Der S85 und das SMG reagieren auf zu niedrige Bordspannung mit Einträgen, die wie Bauteilfehler aussehen"
+      ],
+      "pins": [],
+      "engines": [
+        "S85"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-060",
+      "type": "GUIDE",
+      "cat": "Bordnetz · Energie",
+      "title": "Batteriewechsel am E60 registrieren · IBS, DME und Ladeverhalten",
+      "valid": "E60/E61 · 2003–2010 · alle Motoren",
+      "summary": "Am E60 wird die Batterie nicht nur gewechselt, sondern dem Fahrzeug gemeldet. Der Batteriesensor am Minuspol berichtet der Motorsteuerung den Zustand, und die Motorsteuerung entscheidet daraufhin über die Ladespannung. Ohne Registrierung lädt das Fahrzeug die neue Batterie nach der alten Kennlinie.",
+      "points": [
+        "Der Batteriesensor am Minuspol ist Teil der Energiediagnose. Wird er beim Wechsel nicht wieder sauber angeschlossen, entstehen Bordnetzeinträge, die von der eigentlichen Baustelle ablenken",
+        "Nach einer Quelle sind Sensor, Motorsteuerung und Generator über die bitserielle Datenschnittstelle verbunden — nicht über CAN. Ein Kommunikationsfehler dorthin ist deshalb kein Busfehler",
+        "Gleiche Bauart und gleiche Kapazität: registrieren genügt. Andere Bauart oder andere Kapazität: erst codieren, dann registrieren. Diese Unterscheidung ist der häufigste Fehler beim Selbstwechsel",
+        "Registriert wird in der Motorsteuerung über die Servicefunktion zum Batteriewechsel. Der Weg dorthin unterscheidet sich je nach Softwarestand — im Menü der Energiediagnose suchen, nicht im Fehlerspeicher",
+        "Nach dem Wechsel Ruhespannung und Ladespannung getrennt bewerten. Eine Ruhespannung von rund 12.6 V zeigt eine geladene Batterie an; die Ladespannung im Betrieb regelt das Fahrzeug bewusst variabel und ist deshalb kein fester Sollwert",
+        "Nach Spannungsverlust können Fensterheber, Schiebedach und Lenkwinkelsensor ihre Endlagen verloren haben. Das gehört zum Wechsel dazu und ist kein neuer Fehler"
+      ],
+      "pins": [
+        "Batteriesensor am Minuspol · Massepunkt Kofferraum",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E87-001",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Diagnosezugang E81/E82/E87 · der Schnitt im März 2007",
+      "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
+      "summary": "Die Baureihe hat zwei verschiedene Diagnosezugänge. Fahrzeuge bis Baustand 02/2007 sprechen K-Line, Fahrzeuge ab 03/2007 sprechen D-CAN. Ein Kabel, das am späten E87 läuft, meldet am frühen E87 kein einziges Steuergerät — und umgekehrt. Vor jedem Anstecken den Baustand klären.",
+      "points": [
+        "Baustand zuerst bestimmen: Typschild an der B-Säule oder Fahrzeugdaten über die VIN — nicht das Zulassungsjahr verwenden, es liegt regelmäßig ein Baujahr daneben",
+        "Bis 02/2007: K-Line-Betrieb. Ein K+DCAN-Kabel braucht dafür die Brücke zwischen OBD-Pin 7 und Pin 8, entweder über den Kabelschalter oder über einen Steckadapter",
+        "Ab 03/2007 (LCI Schrägheck, sowie E82 und E88 von Anfang an): D-CAN. Brücke Pin 7/8 muss dann offen sein, sonst stört sie den Bus",
+        "Kabel mit FTDI-Chip verwenden, Latency Timer im Treiber auf 1 ms — der Vorgabewert von 16 ms erzeugt Abbrüche, die wie ein totes Steuergerät aussehen",
+        "Umschalten heißt Nachziehen: nach Wechsel der Betriebsart Kabel abziehen, EDIABAS neu starten, erst dann wieder anstecken",
+        "Meldet sich gar nichts, erst die Betriebsart prüfen, dann die Software — die Fehlersuche in INPA ist am falschen Kabel sinnlos"
+      ],
+      "pins": [
+        "OBD2 Pin 6 · D-CAN High (ab 03/2007)",
+        "OBD2 Pin 14 · D-CAN Low (ab 03/2007)",
+        "OBD2 Pin 7 · K-Line (bis 02/2007)",
+        "OBD2 Pin 7 ↔ Pin 8 · Brücke im Kabel, nur bis 02/2007",
+        "OBD2 Pin 4/5 · Masse",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "diagnosezugang.md",
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-050"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
+      },
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-002",
+      "type": "GUIDE",
+      "cat": "Modell-Setup",
+      "title": "Motorzuordnung E81/E82/E87 · welcher Motor, welche DME",
+      "valid": "E81/E82/E87 · 2004–2013",
+      "summary": "Die Baureihe trägt sieben Motorbaureihen über neun Jahre. Vier davon sind Vierzylinder-Benziner, die im Motorraum sehr ähnlich aussehen. Dieses Dokument ordnet Motor, Steuergerätefamilie und diagnostische Folgen einander zu und sagt, woran die Zuordnung am Fahrzeug festgemacht wird statt an der Typbezeichnung am Heck.",
+      "points": [
+        "Die Typbezeichnung am Heck trägt die Zuordnung nicht: 116i gab es mit N45 und später mit N43, 118i mit N46 und später mit N43 — der Baustand entscheidet, nicht das Schild",
+        "N43 ist Direkteinspritzer, N45 und N46 sind Saugrohreinspritzer. Sichtbar am Rail: der N43 trägt eine Hochdruckpumpe am Zylinderkopf, die anderen beiden nicht",
+        "N52 ist der einzige Sechszylinder-Sauger der Baureihe (130i), N54 und N55 die aufgeladenen Sechszylinder im E82 — Zylinderzahl ist das schnellste Unterscheidungsmerkmal",
+        "N47 ist der Diesel ab 03/2007; die frühen Diesel der Baureihe tragen noch die Vorgängerbaureihe M47 und sind hier nicht abgedeckt",
+        "Den DME-Typ nicht aus der Motorbezeichnung ableiten, sondern beim Identifizieren auslesen — dieselbe Steuergerätefamilie trägt über die Baureihe hinweg mehrere Motoren",
+        "Bei Verdacht auf getauschte DME: ausgelesener Steuergerätetyp, Motornummer am Block und Fahrzeugdaten müssen zusammenpassen, sonst vor jeder Codierung klären"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "motorzuordnung.md",
+      "details": [
+        "D4F-E87-003",
+        "D4F-E87-010"
+      ],
+      "obd": {
+        "pids": [
+          "0100",
+          "010C",
+          "010D"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-003",
+      "type": "TEST",
+      "cat": "Vierzylinder · Identifikation",
+      "title": "N45 gegen N46 gegen N43 · die drei Vierzylinder auseinanderhalten",
+      "valid": "E81/E87 · N45, N46, N43",
+      "summary": "Diese drei Vierzylinder-Benziner sitzen in optisch fast gleichen Motorräumen und werden im Teilekatalog wie in der Diagnose regelmäßig verwechselt. Der N45 ist dabei die Besonderheit der Schrägheck-Baureihe: es gibt ihn im Cabrio nicht. Entscheidend sind Valvetronic, Ausgleichswellen und die Einspritzart.",
+      "points": [
+        "N45: keine Valvetronic, keine Ausgleichswellen, keine verstellbare Ansaugung. Doppel-VANOS ist dagegen vorhanden. Damit fehlt am N45 der Valvetronic-Stellmotor am Zylinderkopf, den N46 und N43 tragen — das ist das sicherste Merkmal von außen",
+        "N46: Valvetronic und Ausgleichswellen vorhanden, Saugrohreinspritzung. Diagnostisch heißt das: Valvetronic-Adaption existiert und wird nach Eingriffen am Kopf gebraucht",
+        "N43: Valvetronic plus Direkteinspritzung. Hochdruckpumpe und Hochdruckrail am Kopf, dazu Lambda- und NOx-Sensorik für den Magerbetrieb — die anderen beiden haben keinen NOx-Sensor",
+        "Folge für die Fehlersuche am N45: eine Fehlermeldung zur Valvetronic kann dort nicht aus dem Bauteil kommen. Steht sie trotzdem an, ist die Fahrzeugauswahl in der Diagnosesoftware falsch oder es ist eine fremde DME verbaut",
+        "Widerspruch in den Quellen: eine Quelle schreibt dem N45B16A Valvetronic II zu, mehrere andere sprechen ihm die Valvetronic ausdrücklich ab. Nicht nach Papier entscheiden — am Zylinderkopf nachsehen, ob ein Stellmotor mit Exzenterwelle sitzt",
+        "Motornummer am Block ist die letzte Instanz, wenn die Sichtprüfung nicht eindeutig wird — sie steht unabhängig von jeder Codierung im Metall"
+      ],
+      "engines": [
+        "N45",
+        "N46",
+        "N43"
+      ],
+      "article": "n45-gegen-n46.md",
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-010"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-010",
+      "type": "TEST",
+      "cat": "N43 · Fehlerbilder",
+      "title": "N43 im E87 · Magerbetrieb, NOx-Sensor, Injektoren, Zündspulen",
+      "valid": "E81/E87 · N43 · ab 2007",
+      "summary": "Der N43 ist der Direkteinspritzer der Baureihe und der Motor mit dem eigenständigsten Fehlerbild. Rauer Lauf im Kaltstart, Ruckeln bei niedriger Last und steigender Verbrauch ohne eindeutigen Fehlercode gehören zusammen: sie kreisen alle um den geschichteten Magerbetrieb und seine Sensorik.",
+      "points": [
+        "NOx-Sensor: Ausfall ist am N43 ein häufiges Bild (Erfahrungswert aus mehreren unabhängigen Werkstatt- und Forenberichten). Symptom ist selten ein Ruckeln, sondern steigender Verbrauch — die DME verlässt den Magerbetrieb und fährt homogen weiter",
+        "Injektoren: Verkokung und Streuung der Einspritzmenge erzeugen Ruckeln und rauen Kaltlauf. Diagnose über die zylinderindividuelle Laufruheregelung in INPA — auffällig ist der Zylinder, der dauerhaft aus der Reihe fällt",
+        "Zündspulen: Ausfälle sammeln sich bei den frühen Baujahren 2007 und 2008 (Erfahrungswert). Bei Aussetzern rundum tauschen oder zumindest untereinander tauschen und beobachten, ob der Fehler mitwandert",
+        "Reihenfolge der Verdächtigen bei Ruckeln: erst Zündung, dann Einspritzung, dann Magerbetriebs-Sensorik. Umgekehrt wird viel Geld ohne Wirkung ausgegeben",
+        "Ein NOx-Sensor-Eintrag im Speicher schließt Injektor- und Zündungsfehler nicht aus. Am N43 stehen häufig mehrere Einträge gleichzeitig an, und der teuerste ist selten die Ursache des Ruckelns",
+        "Sollwerte für Raildruck und Injektorwiderstand sind hier nicht belegt — es wird gegen die Nachbarzylinder und gegen den vom Steuergerät geführten Sollwert verglichen, nicht gegen eine Zahl von außen"
+      ],
+      "engines": [
+        "N43"
+      ],
+      "article": "n43-fehlerbilder.md",
+      "details": [
+        "D4F-E87-003"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F",
+          "0114"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-020",
+      "type": "TEST",
+      "cat": "N47 · Diesel",
+      "title": "N47 im E81/E87 · Steuerkette auf der Getriebeseite",
+      "valid": "E81/E82/E87 · N47 · ab 03/2007",
+      "summary": "Der N47 löste ab 03/2007 den Vorgängerdiesel ab und brachte eine Besonderheit mit: der Steuertrieb liegt getriebeseitig, nicht vorn am Motor. Das verändert sowohl das Geräuschbild als auch den Aufwand einer Reparatur grundlegend und macht frühes Hinhören zur wichtigsten Maßnahme.",
+      "points": [
+        "Kettenlage getriebeseitig: das Rasseln ist am deutlichsten an der Spritzwand hörbar, nicht vorn am Riementrieb — wer vorn horcht, hört es zu spät",
+        "Kaltstart ist das Zeitfenster: ein kurzes metallisches Rasseln in den ersten Sekunden nach dem Anspringen ist der typische Frühbefund, weil der Öldruck den hinten liegenden Spanner erst mit Verzögerung erreicht",
+        "Erfahrungswert aus mehreren unabhängigen Quellen: Geräuschbeginn wird häufig ab etwa 50–100 tkm berichtet. Das ist keine Grenze und kein Intervall, sondern ein Grund, ab dieser Laufleistung bei jedem Service kurz hinzuhören",
+        "Erfahrungswert: für Baustände ab etwa 2011 werden überarbeitete Spanner und Führungsschienen berichtet und dadurch deutlich weniger Fälle. Kein Freibrief — Ölwechselhistorie bleibt entscheidend",
+        "Der Fehlerspeicher ist kein Frühwarnsystem. Einträge zur Nockenwellen-Kurbelwellen-Zuordnung erscheinen erst, wenn die Kette bereits gelängt ist. Das Ohr ist hier schneller als die Diagnose",
+        "Vor jedem Urteil die einfachen Geräuschquellen ausschließen: Riementrieb, Spannrolle, Nebenaggregate und Injektor-Nageln klingen ähnlich und sind deutlich billiger"
+      ],
+      "engines": [
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-002",
+        "D4F-E87-001"
+      ],
+      "obd": {
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DDE"
+        ]
+      },
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-030",
+      "type": "GUIDE",
+      "cat": "Karosserieelektrik",
+      "title": "Heckklappe und Karosserieelektrik im Schrägheck",
+      "valid": "E81/E87 · 2004–2013 · Schrägheck",
+      "summary": "Das Schrägheck hat kein Verdecksteuergerät und damit auch keine Verdeckhydraulik als Fehlerquelle. Dafür trägt es eine Heckklappe mit Griffleistentaster, Kennzeichenbeleuchtung und Heckscheibenwischer in einem bewegten Kabelbaum — die Stellen, an denen im E87 die Karosseriefehler tatsächlich sitzen.",
+      "points": [
+        "Kein CTM im Schrägheck: alles, was im Cabrio über das Verdecksteuergerät läuft, entfällt hier. Wer eine Cabrio-Steuergeräteliste zugrunde legt, sucht ein Gerät, das gar nicht verbaut ist",
+        "Griffleiste mit Mikrotaster: der Taster im Griff ist die häufigste Ursache, wenn die Klappe nur noch über die Fernbedienung öffnet (Erfahrungswert aus mehreren unabhängigen Berichten). Er wird meist nur als komplette Griffleiste geliefert",
+        "Erste Weiche bei nicht öffnender Klappe: reagiert sie über Fernbedienung oder Innentaster, dann liegt der Fehler im Griffleistenzweig. Reagiert sie über keinen Weg, liegt er im Schloss, in der Versorgung oder im Bordnetz",
+        "Sporadik ist typisch für einen sterbenden Mikrotaster: er klickt mechanisch noch sauber, schaltet aber nicht mehr zuverlässig durch. Ein Klickgeräusch ist deshalb kein Funktionsnachweis",
+        "Der Übergang Karosserie zur Klappe ist ein bewegter Kabelbaum. Bei gleichzeitigem Ausfall von Wischer, Kennzeichenleuchte und Schloss zuerst dort auf Aderbruch prüfen, nicht am einzelnen Verbraucher",
+        "Der E81 unterscheidet sich vom E87 in Türen und Karosserie, teilt aber die Bordnetzarchitektur — Diagnosewege am Heck gelten für beide, die Türsteuerung nicht eins zu eins"
+      ],
+      "pins": [
+        "Griffleiste Heckklappe · Mikrotaster, 2-polig, Öffnungsanforderung",
+        "Übergang Karosserie ↔ Heckklappe · Faltenbalg mit Wischer-, Leuchten- und Schlossleitungen",
+        "Heckklappenschloss · Stellantrieb Entriegelung"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "heckklappe-karosserieelektrik.md",
+      "details": [
+        "D4F-E87-040"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-040",
+      "type": "LOC",
+      "cat": "Karosserieelektrik",
+      "title": "Nässeschäden an Steuergeräten · wo im E87 das Wasser hinläuft",
+      "valid": "E81/E87 · 2004–2013",
+      "summary": "Wasser im Fußraum oder im Kofferraumboden ist im E87 kein Komfortproblem, sondern eine Steuergeräte-Frage. Mehrere Module sitzen tief genug, um bei stehendem Wasser mitzuleiden. Wer den Wassereintritt nicht abstellt, tauscht dasselbe Steuergerät zweimal.",
+      "points": [
+        "Erfahrungswert aus mehreren unabhängigen Berichten: Wassereintritt in den vorderen Fußraum und in die Kofferraummulde ist bei dieser Baureihe ein wiederkehrendes Thema, häufig über verstopfte Ablaufwege",
+        "Reihenfolge zwingend: erst die Ursache des Wassereintritts finden und trockenlegen, dann Steuergeräte beurteilen. Ein nasses Modul kann nach dem Trocknen tagelang unauffällig arbeiten und danach erneut ausfallen",
+        "Nach einem Nässeschaden nicht nur das offensichtlich betroffene Modul ansehen: Stecker und Kontakte in der Nähe korrodieren mit und erzeugen später sporadische Fehler ohne erkennbaren Zusammenhang",
+        "Sporadische Fehler mehrerer voneinander unabhängiger Systeme sind ein Nässe-Verdacht. Bevor einzelne Steuergeräte verdächtigt werden, Teppich und Kofferraummulde anheben und tasten",
+        "Kontakte, die einmal grün angelaufen sind, werden durch Trocknen nicht wieder gut. Betroffene Steckverbindungen reinigen oder ersetzen, sonst kommt der Fehler zurück",
+        "Vor Codier- und Programmierarbeiten Nässeschäden ausschließen: ein Modul mit korrodierter Versorgung während einer Programmierung zu verlieren, ist der teuerste Weg, den Fehler zu finden"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-030",
+        "D4F-E87-050"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-050",
+      "type": "TOOL",
+      "cat": "Diagnose-Tools",
+      "title": "Batterietausch am E87 registrieren",
+      "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
+      "summary": "Nach einem Batteriewechsel führt das Energiemanagement die Ladestrategie mit den Alterungsdaten der alten Batterie weiter. Die neue Batterie wird dann zu schwach geladen und altert schneller als nötig. Registrieren ist deshalb kein Formalakt, sondern Teil des Einbaus.",
+      "points": [
+        "Nach einer Quelle: im 1er ist jeder Batteriewechsel zu registrieren, unabhängig davon, ob ein Batteriesensor am Minuspol verbaut ist. Vor dem Anwenden gegen die Herstellervorgabe zum konkreten Baustand prüfen",
+        "Nach einer Quelle: der Weg in INPA führt über die Motorsteuerung, Statusblock zum Energiemanagement, Servicefunktion Batteriewechsel registrieren. Der Menüpfad unterscheidet sich zwischen den Softwareständen — im Zweifel die Servicefunktionen des Fahrzeugs durchsuchen",
+        "Wechselt der Batterietyp (Nassbatterie gegen AGM) oder die Kapazität, reicht Registrieren nicht: dann ist zusätzlich zu codieren, damit die Ladestrategie zur neuen Batterie passt",
+        "Kapazitätsangabe und Typ vor dem Ausbau von der alten Batterie ablesen und notieren — hinterher ist die Angabe weg und die Codierung eine Rateübung",
+        "Symptom für unterlassene Registrierung: Startverhalten wird über Wochen schlechter, obwohl die Batterie neu ist. Nicht auf einen Ladefehler untersuchen, bevor die Registrierung geprüft ist",
+        "Der Batteriesensor am Minuspol muss angesteckt sein. Bleibt er nach dem Wechsel ab, füllt sich der Fehlerspeicher mit Bordnetzeinträgen, die von der eigentlichen Baustelle ablenken"
+      ],
+      "pins": [
+        "Batterie Minuspol · Batteriesensor, Signalleitung zum Energiemanagement",
+        "Batterie Pluspol · KL30 Hauptversorgung"
+      ],
+      "engines": [
+        "N43",
+        "N45",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E87-001",
+        "D4F-E87-040"
+      ],
+      "obd": {
+        "pids": [
+          "0142"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e87"
     },
     {
       "id": "D4F-E88-001",
@@ -1021,6 +2098,1213 @@
           "next_docs": [
             "D4F-E30-001",
             "D4F-E30-002"
+          ]
+        }
+      }
+    },
+    "e36:keine-verbindung-e36": {
+      "code": "GF-E36-01",
+      "name": "Keine Diagnoseverbindung zum E36",
+      "desc": "Das Werkzeug meldet keine Antwort. Systematisch: Versorgung am Kabel, richtige Buchse für dieses Fahrzeug, Datenleitung, ADS-Erkennung.",
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "steps": [
+        {
+          "q": "Meldet die Diagnosesoftware Batterie und Zündung als vorhanden?",
+          "help": "Fast jede BMW-Diagnosesoftware zeigt zwei Statusanzeigen. Beide müssen grün werden, sobald die Zündung eingeschaltet ist. Bleiben beide rot, kommt am Kabel keine Versorgung an — dann suchst du an der Buchse und nicht an der Software.",
+          "measure": "Zündung ein, beide Statusanzeigen wechseln auf grün. Bleibt eine rot, gilt das als Nein",
+          "doc": "D4F-E36-001",
+          "yes": 1,
+          "no": "res-versorgung"
+        },
+        {
+          "q": "Steckst du an der 16-poligen Buchse unter dem Armaturenbrett?",
+          "help": "Der E36 hat immer die 20-polige Runddose im Motorraum. Die Innenraumbuchse gibt es nicht an jedem Fahrzeug, und wo es sie gibt, führt sie nicht zwangsläufig alle Steuergeräte.",
+          "measure": "Sichtprüfung: 16-polige Trapezbuchse fahrerseitig unter dem Armaturenbrett, meist hinter einer Klappe",
+          "doc": "D4F-E36-005",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Ist das Fahrzeug ein US-Modell ab Modelljahr 1996 oder ein später EU-Compact beziehungsweise Z3?",
+          "help": "Nur diese Fahrzeuge sind über die Innenraumbuchse regulär ansprechbar. An allen übrigen E36 ist die Runddose im Motorraum der Zugang, auch wenn eine 16-polige Buchse verbaut aussieht.",
+          "measure": "Typschild und Baudatum lesen; im Zweifel beide Buchsen nacheinander probieren",
+          "doc": "D4F-E36-001",
+          "yes": 3,
+          "no": "res-runddose-benutzen"
+        },
+        {
+          "q": "Antwortet das Motorsteuergerät auf einen Identifikationsversuch?",
+          "help": "Ein Identify ist der kleinste mögliche Kommunikationstest. Kommt eine Antwort mit Gerätenummer zurück, steht die Verbindung und der Fehler liegt woanders. Kommt keine, geht die Suche an der Leitung weiter.",
+          "measure": "Rückmeldung mit Gerätenummer und Codierindex erscheint. Eine Zeitüberschreitung gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": "res-dme-ok",
+          "no": 4
+        },
+        {
+          "q": "Ist Pin 15 der Runddose bestückt?",
+          "help": "Nach einer Quelle ist ein belegter Pin 15 das Erkennungszeichen für ein ADS-Fahrzeug. Solche Fahrzeuge verlangen ein ADS-taugliches Interface; ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 funktioniert.",
+          "measure": "Deckel abschrauben und die Kammer 15 ansehen: Kontakt vorhanden oder Kammer leer",
+          "doc": "D4F-E36-002",
+          "yes": "res-ads",
+          "no": 5
+        },
+        {
+          "q": "Liegen an der Runddose Masse und Dauerplus an?",
+          "help": "Ohne Versorgung an der Dose bleibt jede Verbindung stumm, egal welches Kabel steckt. Masse liegt an Pin 19; das Dauerplus misst du gegen diesen Pin. Vorher die Kontakte auf Grünspan ansehen — die Dose sitzt im Motorraum.",
+          "measure": "Pin 19 gegen einen bekannt guten Massepunkt auf Durchgang; Versorgungspin gegen Pin 19 auf Bordspannung. Kein Sollwert nötig, es geht um vorhanden oder nicht",
+          "doc": "D4F-E36-002",
+          "yes": "res-datenleitung",
+          "no": "res-versorgung"
+        }
+      ],
+      "model": "e36",
+      "id": "keine-verbindung-e36",
+      "_results": {
+        "res-versorgung": {
+          "title": "Am Diagnoseanschluss fehlt die Versorgung",
+          "text": "Ohne Masse und Dauerplus an der Dose bleibt jede Software stumm. Kontakte der Runddose auf Grünspan ansehen und vorsichtig reinigen, danach Pin 19 gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen und die Versorgung gegen diesen Pin prüfen. Erst wenn beides steht, ist eine Aussage über Kabel oder Steuergerät möglich.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-005"
+          ]
+        },
+        "res-runddose-benutzen": {
+          "title": "Falsche Buchse · über die Runddose im Motorraum gehen",
+          "text": "An diesem Fahrzeug ist die 16-polige Innenraumbuchse nicht der vorgesehene Zugang. Nimm den Adapter auf die 20-polige Runddose im Motorraum und wiederhole den Verbindungsversuch dort. Wer die Innenraumbuchse dauerhaft nutzbar machen will, legt die Brücke zwischen Pin 17 und Pin 20 der Runddose — danach antworten auch die Nebensteuergeräte an der Innenraumbuchse.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-dme-ok": {
+          "title": "Verbindung steht · Fehler liegt woanders",
+          "text": "Das Motorsteuergerät antwortet, damit ist der Diagnosepfad in Ordnung. Erreichst du trotzdem einzelne Steuergeräte nicht, liegt das an der getrennten zweiten Datenleitung: die Nebensteuergeräte hängen an der anderen der beiden Leitungen der Runddose. Setz dort an, nicht an der Software.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-ads": {
+          "title": "ADS-Fahrzeug · anderes Interface nötig",
+          "text": "Ein bestückter Pin 15 weist nach einer Quelle auf ein ADS-Fahrzeug hin. Ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 arbeitet. Besorg ein ADS-taugliches Interface und prüfe vor dem Kauf, ob es an einer echten seriellen Schnittstelle betrieben wird — bei Adaptern über USB berichten mehrere Quellen von unvollständigem Zugriff.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-datenleitung": {
+          "title": "Versorgung steht · Datenleitung und Steuergerät prüfen",
+          "text": "Masse und Plus liegen an, die Verbindung kommt trotzdem nicht zustande. Jetzt sind die beiden Datenleitungen an Pin 17 und Pin 20 dran: gegen Masse gegenprüfen, denn ein Schluss macht die Leitung stumm. Bleibt die Leitung sauber, verlagert sich der Verdacht auf ein nachträglich angeschlossenes Gerät am Diagnosebus und danach auf das Steuergerät selbst.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-anlasser": {
+          "title": "Anlasserkreis oder Wegfahrsperre der frühen Baujahre",
+          "text": "Batterie unter Last messen, Massepunkte am Motorblock und an der Karosserie reinigen, Steuerleitung zum Anlasser auf Durchgang prüfen. Erst danach die Wegfahrsperre in Betracht ziehen: Fahrzeuge mit Baudatum bis 12/1994 sperren nach einer Quelle über ein Anlasserrelais, und genau das erzeugt dieses Fehlerbild. Zweiten Schlüssel gegenprobieren.",
+          "next_docs": [
+            "D4F-E36-007"
+          ]
+        },
+        "res-kraftstoff": {
+          "title": "Kraftstoffförderung fehlt",
+          "text": "Sicherung und Pumpenrelais prüfen, danach Spannung am Pumpenstecker während der Startanforderung messen. Liegt Spannung an und die Pumpe bleibt still, ist die Pumpe der Befund. Kommt keine Spannung an, geh die Ansteuerung zurück bis zum Steuergerät und beziehe bei Fahrzeugen ab 01/1995 die Wegfahrsperre ein, weil sie dort die Motorsteuerung freigibt.",
+          "next_docs": [
+            "D4F-E36-007",
+            "D4F-E36-005"
+          ]
+        },
+        "res-fehlerspeicher": {
+          "title": "Abgelegter Fehler zuerst abarbeiten",
+          "text": "Ein gespeicherter Code verkürzt die Suche erheblich. Notiere den vierstelligen Code, bevor du löschst, und arbeite ihn ab, statt weiterzumessen. Achte darauf, dass sich die Codetabellen zwischen den DME-Ständen unterscheiden — prüfe die Bedeutung gegen den Stand, der in diesem Fahrzeug verbaut ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-zuendung": {
+          "title": "Kein Zündimpuls",
+          "text": "Fehlt der Funke an allen Zylindern gleichzeitig, ist die gemeinsame Ursache zu suchen und nicht die einzelne Spule. Kurbelwellensensor und dessen Kabelbaum prüfen, danach die Versorgung der Zündendstufe und die Masseanbindung des Steuergeräts gegen den Motorblock. Ein defekter Kurbelwellensensor kann ausfallen, ohne einen Code zu setzen.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-005"
+          ]
+        },
+        "res-einspritzung": {
+          "title": "Kraftstoff kommt nicht in den Brennraum",
+          "text": "Die Pumpe läuft, die Kerze bleibt trocken. Prüfe den Systemdruck auf Aufbau und Druckhaltung — bewertet wird, ob Druck entsteht und stehen bleibt, ein Zahlensollwert ist hier nicht belegt. Danach die Ansteuerung der Einspritzventile abklopfen und den Kabelbaum am Zylinderkopf ansehen, der dort thermisch am stärksten belastet ist.",
+          "next_docs": [
+            "D4F-E36-003"
+          ]
+        },
+        "res-steuerzeiten": {
+          "title": "Zündung, Kraftstoff und Kompression in Ordnung",
+          "text": "Alle drei Grundvoraussetzungen stehen, der Motor läuft trotzdem nicht. Jetzt sind die Steuerzeiten dran: Steuerkette und deren Spanner ansehen, die Stellung der Nockenwellen gegen die Kurbelwelle kontrollieren und bei Motoren mit VANOS die Verstelleinheit einbeziehen. Ein übersprungener Zahn erklärt genau dieses Bild.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-006"
+          ]
+        },
+        "res-kompression": {
+          "title": "Ein Zylinder fällt ab",
+          "text": "Ein deutlich abfallender Zylinder ist der Befund, unabhängig davon, welchen Absolutwert das Gerät anzeigt. Wiederhole die Messung mit etwas Öl im Zylinder: steigt der Wert danach an, liegt es an Kolben und Ringen, bleibt er gleich, an Ventilen oder Kopfdichtung. Erst danach über den Umfang der Reparatur entscheiden.",
+          "next_docs": [
+            "D4F-E36-006"
+          ]
+        },
+        "res-kaltlauf": {
+          "title": "Nur im Kaltlauf unruhig",
+          "text": "Der Motor beruhigt sich mit steigender Temperatur, also arbeitet die Warmlaufsteuerung nicht sauber. Beginne beim Kühlmitteltemperaturgeber: ein Geber, der dem Steuergerät eine zu hohe Temperatur meldet, nimmt dem Kaltlauf die Anfettung. Der Blinkcode 1223 zeigt genau auf diesen Geber, kann aber fehlen, wenn der Wert plausibel aber falsch ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-008"
+          ]
+        },
+        "res-ccv": {
+          "title": "Kurbelgehäuseentlüftung undicht",
+          "text": "Sprödes oder gerissenes Material in der Entlüftung ist eine Falschluftquelle und erklärt den unruhigen Leerlauf vollständig. Tausche die Leitungen im Satz statt einzeln, das übrige Material hat dieselbe Vorgeschichte. Danach Adaptionswerte zurücksetzen und warmfahren, sonst arbeitet die Steuerung weiter mit der Korrektur für die Falschluft.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-elektrik": {
+          "title": "Leerlaufregler reagiert nicht",
+          "text": "Der Motor nimmt das Abziehen des Steckers nicht wahr, also arbeitet der Steller ohnehin nicht. Prüfe zuerst Stecker und Leitung auf Bruch und Korrosion, danach nimm den Regler heraus und sieh nach, ob er mechanisch festsitzt. Verkokung blockiert die Klappe häufiger, als die Wicklung ausfällt — reinigen geht vor ersetzen.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-ok": {
+          "title": "Verkokter Leerlaufregler war die Ursache",
+          "text": "Der Leerlauf ist nach Reinigung und Adaptionsreset stabil. Nimm dir die Ursache noch mit: Ölnebel aus der Kurbelgehäuseentlüftung ist es, der den Regler zusetzt. Sieh die Entlüftung durch, bevor du das Fahrzeug abgibst, sonst steht dasselbe Symptom in absehbarer Zeit wieder da.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-falschluft": {
+          "title": "Falschluft in der Ansaugstrecke gefunden",
+          "text": "Die undichte Stelle abdichten oder das Bauteil erneuern, danach erneut abdrücken — es sitzt selten nur ein Leck, wenn das Material insgesamt gealtert ist. Anschließend Fehlerspeicher löschen, Adaptionen zurücksetzen und warmfahren, damit die Gemischkorrektur sich neu einstellt.",
+          "next_docs": [
+            "D4F-E36-008",
+            "D4F-E36-006"
+          ]
+        },
+        "res-sensor": {
+          "title": "Sensorfehler abarbeiten",
+          "text": "Mechanik und Dichtheit sind abgearbeitet, der Speicher zeigt auf einen Geber. Prüfe den betroffenen Geber und vor allem dessen Kabelbaum und Stecker, bevor du das Teil tauschst — beim E36 sind Kontaktprobleme im Motorraum häufiger als defekte Geber. Die Bedeutung des Codes gegen den verbauten DME-Stand abgleichen, die Tabellen unterscheiden sich.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-mechanik": {
+          "title": "Kein Sensorfehler · zur Mechanik zurück",
+          "text": "Kein abgelegter Fehler und keine gefundene Undichtheit: jetzt sind Zündung und Motormechanik dran. Zündkerzen ziehen und die Kerzenbilder untereinander vergleichen, danach die Kompression aller Zylinder gegeneinander messen. Ein einzelner schwacher Zylinder erzeugt genau das gleiche Bild wie eine schlechte Leerlaufregelung, und die beiden lassen sich nur so trennen.",
+          "next_docs": [
+            "D4F-E36-006",
+            "D4F-E36-003"
+          ]
+        }
+      }
+    },
+    "e36:startet-nicht-e36": {
+      "code": "GF-E36-02",
+      "name": "E36 startet nicht",
+      "desc": "Vom Anlasser bis zur Kompression. Berücksichtigt, dass der E36 je nach Baudatum zwei verschiedene Wegfahrsperren mit verschiedenen Fehlerbildern hat.",
+      "engines": [
+        "M43",
+        "M44",
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch sauber durch?",
+          "help": "Nur Klicken oder gar nichts heißt Batterie, Massepunkt oder Anlasserkreis. Beim E36 bis 12/1994 gehört auch das Sperrrelais der Wegfahrsperre in diesen Kreis — dort sperrt die Anlage den Anlasser, nicht die Einspritzung.",
+          "measure": "Bordspannung während der Startanforderung bleibt über 10.5 V; ein Einbruch weit darunter ist der Befund",
+          "doc": "D4F-E36-007",
+          "yes": 1,
+          "no": "res-anlasser"
+        },
+        {
+          "q": "Läuft die Kraftstoffpumpe beim Einschalten der Zündung kurz hörbar an?",
+          "help": "Beim Einschalten der Zündung baut das System hörbar Druck auf. Bleibt es still, geht die Suche an Relais, Sicherung und Pumpe weiter — und beim E36 ab 01/1995 auch an der Wegfahrsperre, weil diese Baureihe die Motorsteuerung freigibt statt den Anlasser zu sperren.",
+          "measure": "Beim Einschalten der Zündung ist das Anlaufen der Pumpe im Heckbereich hörbar. Stille gilt als Nein",
+          "doc": "D4F-E36-007",
+          "yes": 2,
+          "no": "res-kraftstoff"
+        },
+        {
+          "q": "Liegt ein Motorfehler im Speicher — über Blinkcode oder über die Diagnosedose?",
+          "help": "Bevor du misst, lies aus. Am OBD-1-E36 geht das ohne Werkzeug über den Blinkcode, sonst über die Diagnosedose. Ein abgelegter Fehler zu Kurbelwellensensor, Luftmasse oder Kühlmitteltemperatur spart dir den halben Pfad.",
+          "measure": "Vierstelliger Blinkcode ungleich 1000 und ungleich 1444 gilt als Fehler",
+          "doc": "D4F-E36-004",
+          "yes": "res-fehlerspeicher",
+          "no": 3
+        },
+        {
+          "q": "Bekommt eine gezogene Zündkerze beim Cranken einen Funken?",
+          "help": "Kerze ziehen, Stecker aufsetzen, Gewinde sauber an den Motorblock legen und einen Helfer starten lassen. Kein Funke an allen Zylindern deutet auf Kurbelwellensensor, Versorgung der Zündung oder das Steuergerät.",
+          "measure": "Sichtbarer Funke an mehreren Zylindern. Kein Funke an keinem Zylinder gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": 4,
+          "no": "res-zuendung"
+        },
+        {
+          "q": "Ist die Kerze nach mehreren Startversuchen kraftstofffeucht?",
+          "help": "Eine nasse Kerze beweist, dass Kraftstoff bis in den Brennraum kommt. Eine trockene Kerze bei laufender Pumpe verlagert die Suche auf Einspritzventile, deren Ansteuerung und den Systemdruck.",
+          "measure": "Kerze riecht nach Kraftstoff und ist sichtbar feucht. Staubtrocken gilt als Nein",
+          "doc": "D4F-E36-003",
+          "yes": 5,
+          "no": "res-einspritzung"
+        },
+        {
+          "q": "Liegt die Kompression aller Zylinder auf vergleichbarem Niveau?",
+          "help": "Alle Kerzen ziehen, Drosselklappe offen, durchmessen und die Werte untereinander vergleichen. Ein absoluter Sollwert ist hier nicht belegt — der Vergleich der Zylinder untereinander trägt die Aussage auch ohne ihn.",
+          "measure": "Die Zylinderwerte liegen dicht beieinander. Fällt einer deutlich gegen die übrigen ab, gilt das als Nein",
+          "doc": "D4F-E36-006",
+          "yes": "res-steuerzeiten",
+          "no": "res-kompression"
+        }
+      ],
+      "model": "e36",
+      "id": "startet-nicht-e36",
+      "_results": {
+        "res-versorgung": {
+          "title": "Am Diagnoseanschluss fehlt die Versorgung",
+          "text": "Ohne Masse und Dauerplus an der Dose bleibt jede Software stumm. Kontakte der Runddose auf Grünspan ansehen und vorsichtig reinigen, danach Pin 19 gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen und die Versorgung gegen diesen Pin prüfen. Erst wenn beides steht, ist eine Aussage über Kabel oder Steuergerät möglich.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-005"
+          ]
+        },
+        "res-runddose-benutzen": {
+          "title": "Falsche Buchse · über die Runddose im Motorraum gehen",
+          "text": "An diesem Fahrzeug ist die 16-polige Innenraumbuchse nicht der vorgesehene Zugang. Nimm den Adapter auf die 20-polige Runddose im Motorraum und wiederhole den Verbindungsversuch dort. Wer die Innenraumbuchse dauerhaft nutzbar machen will, legt die Brücke zwischen Pin 17 und Pin 20 der Runddose — danach antworten auch die Nebensteuergeräte an der Innenraumbuchse.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-dme-ok": {
+          "title": "Verbindung steht · Fehler liegt woanders",
+          "text": "Das Motorsteuergerät antwortet, damit ist der Diagnosepfad in Ordnung. Erreichst du trotzdem einzelne Steuergeräte nicht, liegt das an der getrennten zweiten Datenleitung: die Nebensteuergeräte hängen an der anderen der beiden Leitungen der Runddose. Setz dort an, nicht an der Software.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-ads": {
+          "title": "ADS-Fahrzeug · anderes Interface nötig",
+          "text": "Ein bestückter Pin 15 weist nach einer Quelle auf ein ADS-Fahrzeug hin. Ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 arbeitet. Besorg ein ADS-taugliches Interface und prüfe vor dem Kauf, ob es an einer echten seriellen Schnittstelle betrieben wird — bei Adaptern über USB berichten mehrere Quellen von unvollständigem Zugriff.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-datenleitung": {
+          "title": "Versorgung steht · Datenleitung und Steuergerät prüfen",
+          "text": "Masse und Plus liegen an, die Verbindung kommt trotzdem nicht zustande. Jetzt sind die beiden Datenleitungen an Pin 17 und Pin 20 dran: gegen Masse gegenprüfen, denn ein Schluss macht die Leitung stumm. Bleibt die Leitung sauber, verlagert sich der Verdacht auf ein nachträglich angeschlossenes Gerät am Diagnosebus und danach auf das Steuergerät selbst.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-anlasser": {
+          "title": "Anlasserkreis oder Wegfahrsperre der frühen Baujahre",
+          "text": "Batterie unter Last messen, Massepunkte am Motorblock und an der Karosserie reinigen, Steuerleitung zum Anlasser auf Durchgang prüfen. Erst danach die Wegfahrsperre in Betracht ziehen: Fahrzeuge mit Baudatum bis 12/1994 sperren nach einer Quelle über ein Anlasserrelais, und genau das erzeugt dieses Fehlerbild. Zweiten Schlüssel gegenprobieren.",
+          "next_docs": [
+            "D4F-E36-007"
+          ]
+        },
+        "res-kraftstoff": {
+          "title": "Kraftstoffförderung fehlt",
+          "text": "Sicherung und Pumpenrelais prüfen, danach Spannung am Pumpenstecker während der Startanforderung messen. Liegt Spannung an und die Pumpe bleibt still, ist die Pumpe der Befund. Kommt keine Spannung an, geh die Ansteuerung zurück bis zum Steuergerät und beziehe bei Fahrzeugen ab 01/1995 die Wegfahrsperre ein, weil sie dort die Motorsteuerung freigibt.",
+          "next_docs": [
+            "D4F-E36-007",
+            "D4F-E36-005"
+          ]
+        },
+        "res-fehlerspeicher": {
+          "title": "Abgelegter Fehler zuerst abarbeiten",
+          "text": "Ein gespeicherter Code verkürzt die Suche erheblich. Notiere den vierstelligen Code, bevor du löschst, und arbeite ihn ab, statt weiterzumessen. Achte darauf, dass sich die Codetabellen zwischen den DME-Ständen unterscheiden — prüfe die Bedeutung gegen den Stand, der in diesem Fahrzeug verbaut ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-zuendung": {
+          "title": "Kein Zündimpuls",
+          "text": "Fehlt der Funke an allen Zylindern gleichzeitig, ist die gemeinsame Ursache zu suchen und nicht die einzelne Spule. Kurbelwellensensor und dessen Kabelbaum prüfen, danach die Versorgung der Zündendstufe und die Masseanbindung des Steuergeräts gegen den Motorblock. Ein defekter Kurbelwellensensor kann ausfallen, ohne einen Code zu setzen.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-005"
+          ]
+        },
+        "res-einspritzung": {
+          "title": "Kraftstoff kommt nicht in den Brennraum",
+          "text": "Die Pumpe läuft, die Kerze bleibt trocken. Prüfe den Systemdruck auf Aufbau und Druckhaltung — bewertet wird, ob Druck entsteht und stehen bleibt, ein Zahlensollwert ist hier nicht belegt. Danach die Ansteuerung der Einspritzventile abklopfen und den Kabelbaum am Zylinderkopf ansehen, der dort thermisch am stärksten belastet ist.",
+          "next_docs": [
+            "D4F-E36-003"
+          ]
+        },
+        "res-steuerzeiten": {
+          "title": "Zündung, Kraftstoff und Kompression in Ordnung",
+          "text": "Alle drei Grundvoraussetzungen stehen, der Motor läuft trotzdem nicht. Jetzt sind die Steuerzeiten dran: Steuerkette und deren Spanner ansehen, die Stellung der Nockenwellen gegen die Kurbelwelle kontrollieren und bei Motoren mit VANOS die Verstelleinheit einbeziehen. Ein übersprungener Zahn erklärt genau dieses Bild.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-006"
+          ]
+        },
+        "res-kompression": {
+          "title": "Ein Zylinder fällt ab",
+          "text": "Ein deutlich abfallender Zylinder ist der Befund, unabhängig davon, welchen Absolutwert das Gerät anzeigt. Wiederhole die Messung mit etwas Öl im Zylinder: steigt der Wert danach an, liegt es an Kolben und Ringen, bleibt er gleich, an Ventilen oder Kopfdichtung. Erst danach über den Umfang der Reparatur entscheiden.",
+          "next_docs": [
+            "D4F-E36-006"
+          ]
+        },
+        "res-kaltlauf": {
+          "title": "Nur im Kaltlauf unruhig",
+          "text": "Der Motor beruhigt sich mit steigender Temperatur, also arbeitet die Warmlaufsteuerung nicht sauber. Beginne beim Kühlmitteltemperaturgeber: ein Geber, der dem Steuergerät eine zu hohe Temperatur meldet, nimmt dem Kaltlauf die Anfettung. Der Blinkcode 1223 zeigt genau auf diesen Geber, kann aber fehlen, wenn der Wert plausibel aber falsch ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-008"
+          ]
+        },
+        "res-ccv": {
+          "title": "Kurbelgehäuseentlüftung undicht",
+          "text": "Sprödes oder gerissenes Material in der Entlüftung ist eine Falschluftquelle und erklärt den unruhigen Leerlauf vollständig. Tausche die Leitungen im Satz statt einzeln, das übrige Material hat dieselbe Vorgeschichte. Danach Adaptionswerte zurücksetzen und warmfahren, sonst arbeitet die Steuerung weiter mit der Korrektur für die Falschluft.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-elektrik": {
+          "title": "Leerlaufregler reagiert nicht",
+          "text": "Der Motor nimmt das Abziehen des Steckers nicht wahr, also arbeitet der Steller ohnehin nicht. Prüfe zuerst Stecker und Leitung auf Bruch und Korrosion, danach nimm den Regler heraus und sieh nach, ob er mechanisch festsitzt. Verkokung blockiert die Klappe häufiger, als die Wicklung ausfällt — reinigen geht vor ersetzen.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-ok": {
+          "title": "Verkokter Leerlaufregler war die Ursache",
+          "text": "Der Leerlauf ist nach Reinigung und Adaptionsreset stabil. Nimm dir die Ursache noch mit: Ölnebel aus der Kurbelgehäuseentlüftung ist es, der den Regler zusetzt. Sieh die Entlüftung durch, bevor du das Fahrzeug abgibst, sonst steht dasselbe Symptom in absehbarer Zeit wieder da.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-falschluft": {
+          "title": "Falschluft in der Ansaugstrecke gefunden",
+          "text": "Die undichte Stelle abdichten oder das Bauteil erneuern, danach erneut abdrücken — es sitzt selten nur ein Leck, wenn das Material insgesamt gealtert ist. Anschließend Fehlerspeicher löschen, Adaptionen zurücksetzen und warmfahren, damit die Gemischkorrektur sich neu einstellt.",
+          "next_docs": [
+            "D4F-E36-008",
+            "D4F-E36-006"
+          ]
+        },
+        "res-sensor": {
+          "title": "Sensorfehler abarbeiten",
+          "text": "Mechanik und Dichtheit sind abgearbeitet, der Speicher zeigt auf einen Geber. Prüfe den betroffenen Geber und vor allem dessen Kabelbaum und Stecker, bevor du das Teil tauschst — beim E36 sind Kontaktprobleme im Motorraum häufiger als defekte Geber. Die Bedeutung des Codes gegen den verbauten DME-Stand abgleichen, die Tabellen unterscheiden sich.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-mechanik": {
+          "title": "Kein Sensorfehler · zur Mechanik zurück",
+          "text": "Kein abgelegter Fehler und keine gefundene Undichtheit: jetzt sind Zündung und Motormechanik dran. Zündkerzen ziehen und die Kerzenbilder untereinander vergleichen, danach die Kompression aller Zylinder gegeneinander messen. Ein einzelner schwacher Zylinder erzeugt genau das gleiche Bild wie eine schlechte Leerlaufregelung, und die beiden lassen sich nur so trennen.",
+          "next_docs": [
+            "D4F-E36-006",
+            "D4F-E36-003"
+          ]
+        }
+      }
+    },
+    "e36:leerlauf-unruhig-e36": {
+      "code": "GF-E36-03",
+      "name": "Unruhiger Leerlauf am Sechszylinder",
+      "desc": "Schwankender, hängender oder absterbender Leerlauf. Trennt Falschluft von Leerlaufregler von Sensorik — die drei Ursachen, die beim E36 dasselbe Bild erzeugen.",
+      "engines": [
+        "M50",
+        "M52",
+        "S50",
+        "S52"
+      ],
+      "steps": [
+        {
+          "q": "Ist der Leerlauf auch bei betriebswarmem Motor unruhig?",
+          "help": "Ein Motor, der nur kalt unrund läuft und sich warm beruhigt, arbeitet in der Warmlaufsteuerung. Das ist ein anderer Pfad als der dauerhaft unruhige Leerlauf und beginnt bei Kühlmitteltemperaturgeber und Gemischbildung im Kaltlauf.",
+          "measure": "Motor auf Betriebstemperatur bringen und den Leerlauf mindestens eine Minute beobachten",
+          "doc": "D4F-E36-008",
+          "yes": 1,
+          "no": "res-kaltlauf"
+        },
+        {
+          "q": "Sind die Schläuche der Kurbelgehäuseentlüftung hart, rissig oder abgeplatzt?",
+          "help": "Motor aus, Schläuche einzeln in die Hand nehmen und biegen. Sprödes Material bricht dabei. Beim E36 ist diese Leitung eine der häufigsten Falschluftquellen und erzeugt genau das Bild, das sonst dem Leerlaufregler zugeschrieben wird.",
+          "measure": "Sichtprüfung und Tastprüfung aller Schläuche der Entlüftung, einschließlich der Anschlussstutzen",
+          "doc": "D4F-E36-008",
+          "yes": "res-ccv",
+          "no": 2
+        },
+        {
+          "q": "Ändert sich die Leerlaufdrehzahl, wenn du den Stecker des Leerlaufreglers bei laufendem Motor abziehst?",
+          "help": "Zieht man dem Steller die Ansteuerung weg, muss der Motor darauf reagieren. Passiert nichts, arbeitet der Steller schon vorher nicht — dann ist die Frage Elektrik oder festsitzende Mechanik, nicht Regelung.",
+          "measure": "Deutlich hörbare Drehzahländerung beim Abziehen des Steckers. Keine Reaktion gilt als Nein",
+          "doc": "D4F-E36-008",
+          "yes": 3,
+          "no": "res-icv-elektrik"
+        },
+        {
+          "q": "Läuft der Leerlauf nach Ausbau und Reinigung des Leerlaufreglers ruhig?",
+          "help": "Regler ausbauen, Verkokung mit Reiniger lösen, Gehäuse und Klappe von Hand auf Leichtgängigkeit prüfen, wieder einbauen. Danach Adaptionen zurücksetzen und warmfahren, sonst rechnet die Steuerung mit den alten Korrekturen weiter.",
+          "measure": "Leerlauf nach Reinigung und Adaptionsreset über mehrere Minuten stabil",
+          "doc": "D4F-E36-008",
+          "yes": "res-icv-ok",
+          "no": 4
+        },
+        {
+          "q": "Findest du beim Abdrücken der Ansaugstrecke eine undichte Stelle?",
+          "help": "Ansaugstrecke abdichten und mit geringem Überdruck oder Rauch beaufschlagen. Abgesucht werden Ansaugbrückendichtung, Drosselklappenanschluss, alle Unterdruckabgänge und der Übergang zum Leerlaufregler. Ein Prüfdruck ist hier nicht belegt — gearbeitet wird mit dem kleinstmöglichen Druck, der das Leck sichtbar macht.",
+          "measure": "Sichtbarer Austritt oder hörbares Zischen an einer Stelle der Ansaugstrecke",
+          "doc": "D4F-E36-008",
+          "yes": "res-falschluft",
+          "no": 5
+        },
+        {
+          "q": "Liegt ein Fehler zu Luftmasse, Lambda oder Kühlmitteltemperatur im Speicher?",
+          "help": "Jetzt ist die Mechanik abgearbeitet und die Sensorik dran. Am OBD-1-Fahrzeug reicht dafür der Blinkcode: 1215 zeigt auf die Luftmassenmessung, 1221 und 1222 auf die Lambdaseite, 1223 auf den Kühlmitteltemperaturgeber.",
+          "measure": "Blinkcode oder Fehlerspeicher enthält einen dieser Einträge",
+          "doc": "D4F-E36-004",
+          "yes": "res-sensor",
+          "no": "res-mechanik"
+        }
+      ],
+      "model": "e36",
+      "id": "leerlauf-unruhig-e36",
+      "_results": {
+        "res-versorgung": {
+          "title": "Am Diagnoseanschluss fehlt die Versorgung",
+          "text": "Ohne Masse und Dauerplus an der Dose bleibt jede Software stumm. Kontakte der Runddose auf Grünspan ansehen und vorsichtig reinigen, danach Pin 19 gegen einen bekannt guten Massepunkt am Motorblock auf Durchgang messen und die Versorgung gegen diesen Pin prüfen. Erst wenn beides steht, ist eine Aussage über Kabel oder Steuergerät möglich.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-005"
+          ]
+        },
+        "res-runddose-benutzen": {
+          "title": "Falsche Buchse · über die Runddose im Motorraum gehen",
+          "text": "An diesem Fahrzeug ist die 16-polige Innenraumbuchse nicht der vorgesehene Zugang. Nimm den Adapter auf die 20-polige Runddose im Motorraum und wiederhole den Verbindungsversuch dort. Wer die Innenraumbuchse dauerhaft nutzbar machen will, legt die Brücke zwischen Pin 17 und Pin 20 der Runddose — danach antworten auch die Nebensteuergeräte an der Innenraumbuchse.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-dme-ok": {
+          "title": "Verbindung steht · Fehler liegt woanders",
+          "text": "Das Motorsteuergerät antwortet, damit ist der Diagnosepfad in Ordnung. Erreichst du trotzdem einzelne Steuergeräte nicht, liegt das an der getrennten zweiten Datenleitung: die Nebensteuergeräte hängen an der anderen der beiden Leitungen der Runddose. Setz dort an, nicht an der Software.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-ads": {
+          "title": "ADS-Fahrzeug · anderes Interface nötig",
+          "text": "Ein bestückter Pin 15 weist nach einer Quelle auf ein ADS-Fahrzeug hin. Ein einfaches K-Line-Kabel erreicht dann nicht alle Steuergeräte, auch wenn es an anderen E36 arbeitet. Besorg ein ADS-taugliches Interface und prüfe vor dem Kauf, ob es an einer echten seriellen Schnittstelle betrieben wird — bei Adaptern über USB berichten mehrere Quellen von unvollständigem Zugriff.",
+          "next_docs": [
+            "D4F-E36-001",
+            "D4F-E36-002"
+          ]
+        },
+        "res-datenleitung": {
+          "title": "Versorgung steht · Datenleitung und Steuergerät prüfen",
+          "text": "Masse und Plus liegen an, die Verbindung kommt trotzdem nicht zustande. Jetzt sind die beiden Datenleitungen an Pin 17 und Pin 20 dran: gegen Masse gegenprüfen, denn ein Schluss macht die Leitung stumm. Bleibt die Leitung sauber, verlagert sich der Verdacht auf ein nachträglich angeschlossenes Gerät am Diagnosebus und danach auf das Steuergerät selbst.",
+          "next_docs": [
+            "D4F-E36-002",
+            "D4F-E36-003"
+          ]
+        },
+        "res-anlasser": {
+          "title": "Anlasserkreis oder Wegfahrsperre der frühen Baujahre",
+          "text": "Batterie unter Last messen, Massepunkte am Motorblock und an der Karosserie reinigen, Steuerleitung zum Anlasser auf Durchgang prüfen. Erst danach die Wegfahrsperre in Betracht ziehen: Fahrzeuge mit Baudatum bis 12/1994 sperren nach einer Quelle über ein Anlasserrelais, und genau das erzeugt dieses Fehlerbild. Zweiten Schlüssel gegenprobieren.",
+          "next_docs": [
+            "D4F-E36-007"
+          ]
+        },
+        "res-kraftstoff": {
+          "title": "Kraftstoffförderung fehlt",
+          "text": "Sicherung und Pumpenrelais prüfen, danach Spannung am Pumpenstecker während der Startanforderung messen. Liegt Spannung an und die Pumpe bleibt still, ist die Pumpe der Befund. Kommt keine Spannung an, geh die Ansteuerung zurück bis zum Steuergerät und beziehe bei Fahrzeugen ab 01/1995 die Wegfahrsperre ein, weil sie dort die Motorsteuerung freigibt.",
+          "next_docs": [
+            "D4F-E36-007",
+            "D4F-E36-005"
+          ]
+        },
+        "res-fehlerspeicher": {
+          "title": "Abgelegter Fehler zuerst abarbeiten",
+          "text": "Ein gespeicherter Code verkürzt die Suche erheblich. Notiere den vierstelligen Code, bevor du löschst, und arbeite ihn ab, statt weiterzumessen. Achte darauf, dass sich die Codetabellen zwischen den DME-Ständen unterscheiden — prüfe die Bedeutung gegen den Stand, der in diesem Fahrzeug verbaut ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-zuendung": {
+          "title": "Kein Zündimpuls",
+          "text": "Fehlt der Funke an allen Zylindern gleichzeitig, ist die gemeinsame Ursache zu suchen und nicht die einzelne Spule. Kurbelwellensensor und dessen Kabelbaum prüfen, danach die Versorgung der Zündendstufe und die Masseanbindung des Steuergeräts gegen den Motorblock. Ein defekter Kurbelwellensensor kann ausfallen, ohne einen Code zu setzen.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-005"
+          ]
+        },
+        "res-einspritzung": {
+          "title": "Kraftstoff kommt nicht in den Brennraum",
+          "text": "Die Pumpe läuft, die Kerze bleibt trocken. Prüfe den Systemdruck auf Aufbau und Druckhaltung — bewertet wird, ob Druck entsteht und stehen bleibt, ein Zahlensollwert ist hier nicht belegt. Danach die Ansteuerung der Einspritzventile abklopfen und den Kabelbaum am Zylinderkopf ansehen, der dort thermisch am stärksten belastet ist.",
+          "next_docs": [
+            "D4F-E36-003"
+          ]
+        },
+        "res-steuerzeiten": {
+          "title": "Zündung, Kraftstoff und Kompression in Ordnung",
+          "text": "Alle drei Grundvoraussetzungen stehen, der Motor läuft trotzdem nicht. Jetzt sind die Steuerzeiten dran: Steuerkette und deren Spanner ansehen, die Stellung der Nockenwellen gegen die Kurbelwelle kontrollieren und bei Motoren mit VANOS die Verstelleinheit einbeziehen. Ein übersprungener Zahn erklärt genau dieses Bild.",
+          "next_docs": [
+            "D4F-E36-003",
+            "D4F-E36-006"
+          ]
+        },
+        "res-kompression": {
+          "title": "Ein Zylinder fällt ab",
+          "text": "Ein deutlich abfallender Zylinder ist der Befund, unabhängig davon, welchen Absolutwert das Gerät anzeigt. Wiederhole die Messung mit etwas Öl im Zylinder: steigt der Wert danach an, liegt es an Kolben und Ringen, bleibt er gleich, an Ventilen oder Kopfdichtung. Erst danach über den Umfang der Reparatur entscheiden.",
+          "next_docs": [
+            "D4F-E36-006"
+          ]
+        },
+        "res-kaltlauf": {
+          "title": "Nur im Kaltlauf unruhig",
+          "text": "Der Motor beruhigt sich mit steigender Temperatur, also arbeitet die Warmlaufsteuerung nicht sauber. Beginne beim Kühlmitteltemperaturgeber: ein Geber, der dem Steuergerät eine zu hohe Temperatur meldet, nimmt dem Kaltlauf die Anfettung. Der Blinkcode 1223 zeigt genau auf diesen Geber, kann aber fehlen, wenn der Wert plausibel aber falsch ist.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-008"
+          ]
+        },
+        "res-ccv": {
+          "title": "Kurbelgehäuseentlüftung undicht",
+          "text": "Sprödes oder gerissenes Material in der Entlüftung ist eine Falschluftquelle und erklärt den unruhigen Leerlauf vollständig. Tausche die Leitungen im Satz statt einzeln, das übrige Material hat dieselbe Vorgeschichte. Danach Adaptionswerte zurücksetzen und warmfahren, sonst arbeitet die Steuerung weiter mit der Korrektur für die Falschluft.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-elektrik": {
+          "title": "Leerlaufregler reagiert nicht",
+          "text": "Der Motor nimmt das Abziehen des Steckers nicht wahr, also arbeitet der Steller ohnehin nicht. Prüfe zuerst Stecker und Leitung auf Bruch und Korrosion, danach nimm den Regler heraus und sieh nach, ob er mechanisch festsitzt. Verkokung blockiert die Klappe häufiger, als die Wicklung ausfällt — reinigen geht vor ersetzen.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-icv-ok": {
+          "title": "Verkokter Leerlaufregler war die Ursache",
+          "text": "Der Leerlauf ist nach Reinigung und Adaptionsreset stabil. Nimm dir die Ursache noch mit: Ölnebel aus der Kurbelgehäuseentlüftung ist es, der den Regler zusetzt. Sieh die Entlüftung durch, bevor du das Fahrzeug abgibst, sonst steht dasselbe Symptom in absehbarer Zeit wieder da.",
+          "next_docs": [
+            "D4F-E36-008"
+          ]
+        },
+        "res-falschluft": {
+          "title": "Falschluft in der Ansaugstrecke gefunden",
+          "text": "Die undichte Stelle abdichten oder das Bauteil erneuern, danach erneut abdrücken — es sitzt selten nur ein Leck, wenn das Material insgesamt gealtert ist. Anschließend Fehlerspeicher löschen, Adaptionen zurücksetzen und warmfahren, damit die Gemischkorrektur sich neu einstellt.",
+          "next_docs": [
+            "D4F-E36-008",
+            "D4F-E36-006"
+          ]
+        },
+        "res-sensor": {
+          "title": "Sensorfehler abarbeiten",
+          "text": "Mechanik und Dichtheit sind abgearbeitet, der Speicher zeigt auf einen Geber. Prüfe den betroffenen Geber und vor allem dessen Kabelbaum und Stecker, bevor du das Teil tauschst — beim E36 sind Kontaktprobleme im Motorraum häufiger als defekte Geber. Die Bedeutung des Codes gegen den verbauten DME-Stand abgleichen, die Tabellen unterscheiden sich.",
+          "next_docs": [
+            "D4F-E36-004",
+            "D4F-E36-003"
+          ]
+        },
+        "res-mechanik": {
+          "title": "Kein Sensorfehler · zur Mechanik zurück",
+          "text": "Kein abgelegter Fehler und keine gefundene Undichtheit: jetzt sind Zündung und Motormechanik dran. Zündkerzen ziehen und die Kerzenbilder untereinander vergleichen, danach die Kompression aller Zylinder gegeneinander messen. Ein einzelner schwacher Zylinder erzeugt genau das gleiche Bild wie eine schlechte Leerlaufregelung, und die beiden lassen sich nur so trennen.",
+          "next_docs": [
+            "D4F-E36-006",
+            "D4F-E36-003"
+          ]
+        }
+      }
+    },
+    "e39:keine-diagnoseverbindung": {
+      "code": "GF-E39-01",
+      "name": "Keine Diagnoseverbindung zum E39",
+      "desc": "Der E39 hat je nach Baujahr zwei Diagnoseanschlüsse mit unterschiedlichem Umfang. Systematische Eingrenzung: Versorgung am Stecker, richtiger Anschluss, Kabel und Port, zweite Diagnoseleitung.",
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "steps": [
+        {
+          "q": "Meldet die Diagnosesoftware Batterie und Klemme 15 als vorhanden?",
+          "help": "INPA zeigt oben zwei Statusanzeigen. Bleiben beide rot, kommt am Interface weder Dauerplus noch geschaltetes Plus an — dann ist das ein Versorgungs- und kein Softwareproblem. Zündung dabei wirklich einschalten, nicht nur den Schlüssel stecken.",
+          "measure": "Bordspannung am Diagnosestecker gegen dessen Massepin messen: sie muss der an der Batterie gemessenen Spannung entsprechen. Ein deutlicher Unterschied zeigt Übergangswiderstand in Zuleitung oder Masse",
+          "doc": "D4F-E39-003",
+          "yes": 1,
+          "no": "keine-versorgung"
+        },
+        {
+          "q": "Sitzt im Motorraum ein 20-poliger Rundstecker unter einer runden Kappe?",
+          "help": "Bis zur Bauzeit 09/2000 ist er beim E39 vorhanden, danach entfällt er. Er sitzt im Motorraum und ist der Weg zu allen Steuergeräten. Nicht mit dem Sicherungskasten verwechseln — die Kappe ist rund und trägt das BMW-Zeichen oder die Aufschrift des Diagnoseanschlusses.",
+          "measure": "Sichtprüfung im Motorraum; zusätzlich prüfen, ob die Buchse belegt und nicht korrodiert ist",
+          "doc": "D4F-E39-001",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antworten die Steuergeräte über den Rundstecker?",
+          "help": "Mit passendem Adapter oder Kabel am Rundstecker die Identifikation eines Steuergeräts abfragen. Wichtig ist, dass der Adapter beide Diagnoseleitungen durchverbindet — einfache Adapter führen nur die Motorleitung, dann antwortet auch nur die DME.",
+          "measure": "Mindestens ein Steuergerät liefert eine vollständige Identifikation mit ZB-Nummer und Codierindex",
+          "doc": "D4F-E39-003",
+          "yes": "nur-obd-buchse",
+          "no": 3
+        },
+        {
+          "q": "Antwortet die DME über die OBD-2-Buchse im Innenraum?",
+          "help": "Die OBD-2-Buchse sitzt im Fahrerfußraum. Über Pin 7 läuft die Leitung zur DME. Antwortet die DME hier nicht, liegt der Fehler entweder im Kabel und Treiber oder auf der Leitung selbst. Vor der Leitungsprüfung erst den COM-Port und den Latency Timer kontrollieren, das ist die häufigere Ursache.",
+          "measure": "DME-Identifikation liefert ZB-Nummer, Codierindex und Hardwarestand. Keine Antwort oder Abbruch nach wenigen Sekunden zählt als Nein",
+          "doc": "D4F-E39-001",
+          "yes": 4,
+          "no": "kabel-port"
+        },
+        {
+          "q": "Antworten über die OBD-2-Buchse auch Steuergeräte außerhalb des Motors?",
+          "help": "ABS, Airbag, Klimabedienteil und Allgemeinmodul hängen nicht an der Motor-K-Line, sondern an der zweiten Diagnoseleitung. Bei den frühen Baujahren ist diese Leitung nicht auf die OBD-2-Buchse geführt. Antwortet also nur die DME, ist das bei einem frühen E39 der Normalzustand und kein Defekt.",
+          "measure": "Identifikation eines Nicht-Motorsteuergeräts anfordern und beobachten, ob eine Antwort kommt",
+          "doc": "D4F-E39-001",
+          "yes": "verbindung-ok",
+          "no": "zweite-leitung"
+        }
+      ],
+      "model": "e39",
+      "id": "keine-diagnoseverbindung",
+      "_results": {
+        "keine-versorgung": {
+          "title": "Keine Versorgung am Diagnosestecker",
+          "text": "Dauerplus und Masse am Diagnosestecker prüfen, bevor irgendetwas an der Software geändert wird. Zuerst die Sicherungen im Handschuhfachkasten sichten, Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck. Danach die Masse des Steckers gegen Karosserie messen — ein hochohmiger Masseweg sieht in der Software exakt wie ein defektes Interface aus. Erst wenn Plus und Masse sauber anliegen, ist eine Aussage über Kabel und Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E39-003"
+          ]
+        },
+        "nur-obd-buchse": {
+          "title": "Rundstecker arbeitet · OBD-2-Buchse ist der falsche Weg",
+          "text": "Über den Rundstecker antworten die Steuergeräte, über die OBD-2-Buchse nicht oder nur die DME. Das ist beim frühen E39 der Normalzustand und kein Defekt: die zweite Diagnoseleitung ist dort nicht auf die OBD-2-Buchse geführt. Arbeite für alles außer der generischen Abgasdiagnose am Rundstecker weiter. Wer beides braucht, verwendet einen Adapter, der beide Diagnoseleitungen durchverbindet.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "kabel-port": {
+          "title": "Kabel, Treiber oder COM-Port",
+          "text": "Die häufigste Ursache steht nicht im Fahrzeug. Prüfe der Reihe nach: Kabel mit FTDI-Chip verwenden, im Gerätemanager die COM-Nummer in einen niedrigen Bereich legen, den Latency Timer auf 1 ms setzen und dieselbe COM-Nummer in der Konfiguration der Diagnosesoftware eintragen. Erst wenn das alles stimmt und weiterhin keine Antwort kommt, die Leitung vom Diagnosestecker zur DME auf Durchgang und gegen Masse prüfen.",
+          "next_docs": [
+            "D4F-E39-001"
+          ]
+        },
+        "zweite-leitung": {
+          "title": "Nur die DME antwortet · zweite Diagnoseleitung fehlt",
+          "text": "Die Motorsteuerung antwortet, die übrigen Steuergeräte nicht. Bei einem E39 mit Rundstecker im Motorraum ist das erwartbar — dort führt der Weg über den Rundstecker. Bei einem späten Fahrzeug ohne Rundstecker prüfe die zweite Diagnoseleitung am OBD-2-Stecker auf Durchgang und auf Schluss gegen Masse: ein Masseschluss auf dieser Leitung macht alle daran hängenden Steuergeräte gleichzeitig stumm. Verdächtig sind nachgerüstete Geräte, die am Diagnosestecker abgegriffen wurden.",
+          "next_docs": [
+            "D4F-E39-003",
+            "D4F-E39-004"
+          ]
+        },
+        "verbindung-ok": {
+          "title": "Diagnoseverbindung vollständig",
+          "text": "Motorsteuerung und weitere Steuergeräte antworten. Damit ist der Zugang in Ordnung und die eigentliche Fehlersuche kann beginnen. Lies zuerst die Fehlerspeicher aller erreichbaren Steuergeräte aus und schreibe sie mit, bevor du etwas löschst — die Kombination der Einträge über mehrere Steuergeräte hinweg ist oft aussagekräftiger als ein einzelner Code.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "versorgung": {
+          "title": "Versorgung und Anlasserkreis zuerst",
+          "text": "Batterie unter Last prüfen, Massepunkte im Motorraum und am Getriebe reinigen, Anlasser-Steuerleitung auf Durchgang messen. Solange der Anlasser nicht sauber durchdreht, ist jede Aussage über Zündung und Kraftstoff wertlos. Ist die Batterie gealtert, zuerst ersetzen und dann erneut prüfen — eine schwache Batterie erzeugt am E39 Folgefehler in mehreren Steuergeräten gleichzeitig.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "keine-komm": {
+          "title": "Steuergerät antwortet nicht",
+          "text": "Solange DME oder EWS nicht erreichbar sind, lässt sich die Startfreigabe nicht bewerten. Gehe zuerst den Pfad zur Diagnoseverbindung durch: richtiger Anschluss für dieses Baujahr, Kabel und COM-Port, danach Versorgung und Masse des betroffenen Steuergeräts. Bei frühen Baujahren erreicht man die EWS nur über den Rundstecker im Motorraum, nicht über die OBD-2-Buchse.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "transponder": {
+          "title": "Schlüssel wird nicht erkannt",
+          "text": "Mit dem zweiten Schlüssel gegenprüfen. Wird auch dieser nicht erkannt, ist die Ringantenne am Zündschloss der erste Verdacht — sie ist ein bekannter Ausfallpunkt und fällt oft zuerst sporadisch aus. Steckverbindung der Antenne sichten und den Sitz der Antenne am Schloss prüfen. Wird nur ein Schlüssel nicht erkannt, liegt es am Transponder in diesem Schlüssel.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "ews-sync": {
+          "title": "EWS und DME passen nicht zueinander",
+          "text": "Schlüssel erkannt, Freigabe verweigert: die beiden Steuergeräte sind nicht aufeinander abgestimmt. Das tritt nach dem Einbau einer gebrauchten DME oder EWS aus einem anderen Fahrzeug auf. Beide Steuergeräte müssen aufeinander abgeglichen werden, und zwar gemeinsam — eines allein anzupassen führt wieder in denselben Zustand. Vorher die vorhandene Codierung beider Steuergeräte sichern.",
+          "next_docs": [
+            "D4F-E39-008",
+            "D4F-E39-007"
+          ]
+        },
+        "kraftstoff": {
+          "title": "Kein Kraftstoffdruck",
+          "text": "Kein hörbarer Pumpenlauf beim Einschalten der Zündung: Sicherung und Kraftstoffpumpenrelais prüfen, danach die Ansteuerung des Relais durch das Steuergerät. Läuft die Pumpe und es entsteht trotzdem kein Druck, ist die Pumpe selbst oder der Filter fällig. Fällt der aufgebaute Druck nach dem Abschalten sofort ab, sitzt der Fehler im Rückschlagventil der Pumpe oder in der Druckregelung.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kurbelwellensensor": {
+          "title": "Kein Drehzahlsignal",
+          "text": "Ohne Drehzahlsignal löst die Motorsteuerung weder Zündung noch Einspritzung aus. Prüfe zuerst Stecker und Kabelbaum des Kurbelwellensensors, dann den Sensor selbst gegen ein bekannt gutes Exemplar. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Bleibt das Signal nach dem Tausch aus, die Leitung zur Motorsteuerung auf Durchgang und die Masseanbindung des Steuergeräts gegen den Motorblock prüfen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kompression-pruefen": {
+          "title": "Zündung und Kraftstoff vorhanden · Mechanik prüfen",
+          "text": "Startfreigabe, Kraftstoff und Drehzahlsignal sind vorhanden, der Motor läuft trotzdem nicht an. Nächster Schritt ist die Kompressionsprüfung: alle Zylinder messen und die Werte untereinander vergleichen. Fällt einer oder eine ganze Bank deutlich gegen die übrigen ab, ist das der Befund. Beim V8 lohnt zusätzlich der Vergleich beider Bänke gegeneinander. Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt.",
+          "next_docs": [
+            "D4F-E39-006"
+          ]
+        },
+        "falscher-pfad": {
+          "title": "Dieser Pfad passt nicht zum Fahrzeug",
+          "text": "Ohne Doppel-VANOS oder ohne passenden Fehlereintrag führt dieser Pfad nicht weiter. Kläre zuerst, welche Motorsteuerung verbaut ist: der frühe M52 verstellt nur die Einlassnockenwelle und kennt diese Fehlerklasse nicht. Lies danach den Fehlerspeicher vollständig aus und arbeite den tatsächlich abgelegten Eintrag ab, statt vom Symptom auf den VANOS zu schließen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "oel": {
+          "title": "Ölversorgung zuerst in Ordnung bringen",
+          "text": "Der VANOS wird über den Motorölkreis verstellt und meldet bei schlechter Ölversorgung Fehler, ohne selbst defekt zu sein. Ölwechsel mit der für den Motor freigegebenen Viskosität durchführen, Filter mit erneuern, Ölstand kontrollieren. Danach Fehlerspeicher löschen und das Fahrzeug erneut kalt starten. Erst wenn der Fehler dann wiederkommt, ist eine Aussage über die VANOS-Einheit sinnvoll.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "nw-sensor": {
+          "title": "Nockenwellensensor als Ursache",
+          "text": "Ein unruhiges oder aussetzendes Positionssignal erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS und ist der ungleich billigere Befund. Stecker und Kabelbaum am Zylinderkopf sichten — dort wird die Isolierung mit den Jahren hart und bricht. Sensor gegen ein Originalteil ersetzen, Fehlerspeicher löschen und mit einem echten Kaltstart nachprüfen, bevor du weiter in die Mechanik gehst.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "solenoid": {
+          "title": "VANOS-Solenoid schaltet nicht",
+          "text": "Solenoid ausbauen und ansehen: die Siebe setzen sich mit Ölkohle zu, das ist der häufigere Befund gegenüber einem elektrischen Defekt. Reinigen und wieder ansteuern. Bleibt es stumm, gegen das Solenoid der anderen Seite tauschen — wandert der Fehler mit, ist das Bauteil defekt, bleibt er an derselben Stelle, liegt er in Ansteuerung oder Leitung. Danach Fehlerspeicher löschen und kalt nachprüfen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "adaption": {
+          "title": "Verstellung arbeitet · Fehler stammt aus einem früheren Zustand",
+          "text": "Sensorik, Ölversorgung, Solenoide und Verstellung sind in Ordnung. Der abgelegte Eintrag stammt dann aus einem älteren Zustand des Fahrzeugs. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts mit anschließender Warmfahrt durchführen. Kommt der Eintrag danach nicht wieder, ist die Sache erledigt. Kommt er wieder, den Pfad mit Blick auf grenzwertige Ölversorgung erneut durchgehen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "vanos-mechanik": {
+          "title": "VANOS mechanisch träge",
+          "text": "Ansteuerung und Sensorik sind in Ordnung, die Nockenwelle folgt trotzdem nicht. Damit ist die VANOS-Einheit selbst an der Reihe: die Dichtringe der Verstellkolben verhärten mit den Jahren, die Einheit verliert Druck und verstellt zu langsam. Die Ringe werden im Satz erneuert. Prüfe bei der Gelegenheit die Steuerkette und ihre Spannvorrichtung mit, weil ein gelängter Trieb dasselbe Bild erzeugt. Anzugsmomente nach Herstellervorgabe, hier ist keines belegt.",
+          "next_docs": [
+            "D4F-E39-005",
+            "D4F-E39-002"
+          ]
+        }
+      }
+    },
+    "e39:startet-nicht-r6": {
+      "code": "GF-E39-02",
+      "name": "E39 dreht, springt aber nicht an",
+      "desc": "Anlasser dreht sauber, der Motor zündet nicht. Systematische Eingrenzung über Diagnosekommunikation, EWS-Startfreigabe, Kraftstoff und Zündauslösung.",
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch sauber durch?",
+          "help": "Reines Klicken oder gar keine Reaktion verlagert den Fehler in die Versorgung und den Anlasserkreis. Sauberes, gleichmäßiges Drehen ohne Zünden ist die Voraussetzung für alles Folgende.",
+          "measure": "Bordspannung während des Startversuchs mitschreiben: sie darf einbrechen, muss sich aber auf einem stabilen Wert halten und darf nicht in Stufen weiter absacken",
+          "doc": "D4F-E39-008",
+          "yes": 1,
+          "no": "versorgung"
+        },
+        {
+          "q": "Antworten DME und EWS in der Diagnose?",
+          "help": "Beide Steuergeräte müssen erreichbar sein, sonst ist keine Aussage über die Startfreigabe möglich. Bei frühen Baujahren ist die EWS nur über den Rundstecker im Motorraum erreichbar, nicht über die OBD-2-Buchse.",
+          "measure": "Beide Steuergeräte liefern eine vollständige Identifikation. Antwortet nur eines, zählt das als Nein",
+          "doc": "D4F-E39-001",
+          "yes": 2,
+          "no": "keine-komm"
+        },
+        {
+          "q": "Meldet die EWS den Schlüssel als erkannt?",
+          "help": "Die Ringantenne am Zündschloss liest den Transponder im Schlüsselgriff. In der EWS-Statusmaske erscheint zuerst die Schlüsselerkennung, erst danach die Freigabe. Mit dem zweiten Schlüssel gegenprüfen — erkennt die EWS den einen und den anderen nicht, ist der Schlüssel der Befund und nicht das Fahrzeug.",
+          "measure": "EWS-Status zeigt den Schlüssel als erkannt und nennt eine Schlüsselnummer. Wechselnde oder ausbleibende Erkennung zählt als Nein",
+          "doc": "D4F-E39-008",
+          "yes": 3,
+          "no": "transponder"
+        },
+        {
+          "q": "Erteilt die EWS der DME die Startfreigabe?",
+          "help": "Erkennung und Freigabe sind zwei verschiedene Zustände. Die EWS kann den Schlüssel erkennen und die Freigabe trotzdem verweigern, wenn sie nicht zur DME passt. Genau das passiert nach einem Steuergerätetausch aus einem Spenderfahrzeug.",
+          "measure": "EWS-Status meldet die Motorstartfreigabe als erteilt; parallel im DME-Fehlerspeicher nachsehen, ob ein Eintrag zur Manipulationserkennung steht",
+          "doc": "D4F-E39-008",
+          "yes": 4,
+          "no": "ews-sync"
+        },
+        {
+          "q": "Baut das Kraftstoffsystem beim Einschalten der Zündung hörbar Druck auf?",
+          "help": "Die Kraftstoffpumpe läuft beim Einschalten der Zündung kurz an. Ohr an den Tankbereich im Fahrzeugheck. Kein Anlaufgeräusch trennt den Kraftstoffpfad vom Rest. Zusätzlich Manometer am Rail anschließen und den Druckaufbau sowie die Druckhaltung nach dem Abschalten beobachten.",
+          "measure": "Beim Einschalten der Zündung baut sich Druck hörbar auf und bleibt nach dem Abschalten der Pumpe stehen. Ein Zahlen-Sollwert für den Systemdruck ist in diesem Repository nicht belegt — bewertet werden Aufbau und Haltung",
+          "doc": "D4F-E39-002",
+          "yes": 5,
+          "no": "kraftstoff"
+        },
+        {
+          "q": "Liefert der Kurbelwellensensor beim Cranken ein wechselndes Signal?",
+          "help": "Ohne Drehzahlsignal löst die DME weder Zündung noch Einspritzung aus. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Multimeter auf Wechselspannung gibt einen groben Hinweis, sauber beurteilen lässt sich das Signal nur mit dem Oszilloskop. Alternativ die Drehzahlanzeige in der Diagnose während des Crankens beobachten.",
+          "measure": "Während des Crankens erscheint in der Diagnose eine von null verschiedene Motordrehzahl. Eine bei null stehende Anzeige zählt als Nein. Ein Sollwert für die Signalamplitude ist hier nicht belegt",
+          "doc": "D4F-E39-002",
+          "yes": "kompression-pruefen",
+          "no": "kurbelwellensensor"
+        }
+      ],
+      "model": "e39",
+      "id": "startet-nicht-r6",
+      "_results": {
+        "keine-versorgung": {
+          "title": "Keine Versorgung am Diagnosestecker",
+          "text": "Dauerplus und Masse am Diagnosestecker prüfen, bevor irgendetwas an der Software geändert wird. Zuerst die Sicherungen im Handschuhfachkasten sichten, Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck. Danach die Masse des Steckers gegen Karosserie messen — ein hochohmiger Masseweg sieht in der Software exakt wie ein defektes Interface aus. Erst wenn Plus und Masse sauber anliegen, ist eine Aussage über Kabel und Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E39-003"
+          ]
+        },
+        "nur-obd-buchse": {
+          "title": "Rundstecker arbeitet · OBD-2-Buchse ist der falsche Weg",
+          "text": "Über den Rundstecker antworten die Steuergeräte, über die OBD-2-Buchse nicht oder nur die DME. Das ist beim frühen E39 der Normalzustand und kein Defekt: die zweite Diagnoseleitung ist dort nicht auf die OBD-2-Buchse geführt. Arbeite für alles außer der generischen Abgasdiagnose am Rundstecker weiter. Wer beides braucht, verwendet einen Adapter, der beide Diagnoseleitungen durchverbindet.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "kabel-port": {
+          "title": "Kabel, Treiber oder COM-Port",
+          "text": "Die häufigste Ursache steht nicht im Fahrzeug. Prüfe der Reihe nach: Kabel mit FTDI-Chip verwenden, im Gerätemanager die COM-Nummer in einen niedrigen Bereich legen, den Latency Timer auf 1 ms setzen und dieselbe COM-Nummer in der Konfiguration der Diagnosesoftware eintragen. Erst wenn das alles stimmt und weiterhin keine Antwort kommt, die Leitung vom Diagnosestecker zur DME auf Durchgang und gegen Masse prüfen.",
+          "next_docs": [
+            "D4F-E39-001"
+          ]
+        },
+        "zweite-leitung": {
+          "title": "Nur die DME antwortet · zweite Diagnoseleitung fehlt",
+          "text": "Die Motorsteuerung antwortet, die übrigen Steuergeräte nicht. Bei einem E39 mit Rundstecker im Motorraum ist das erwartbar — dort führt der Weg über den Rundstecker. Bei einem späten Fahrzeug ohne Rundstecker prüfe die zweite Diagnoseleitung am OBD-2-Stecker auf Durchgang und auf Schluss gegen Masse: ein Masseschluss auf dieser Leitung macht alle daran hängenden Steuergeräte gleichzeitig stumm. Verdächtig sind nachgerüstete Geräte, die am Diagnosestecker abgegriffen wurden.",
+          "next_docs": [
+            "D4F-E39-003",
+            "D4F-E39-004"
+          ]
+        },
+        "verbindung-ok": {
+          "title": "Diagnoseverbindung vollständig",
+          "text": "Motorsteuerung und weitere Steuergeräte antworten. Damit ist der Zugang in Ordnung und die eigentliche Fehlersuche kann beginnen. Lies zuerst die Fehlerspeicher aller erreichbaren Steuergeräte aus und schreibe sie mit, bevor du etwas löschst — die Kombination der Einträge über mehrere Steuergeräte hinweg ist oft aussagekräftiger als ein einzelner Code.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "versorgung": {
+          "title": "Versorgung und Anlasserkreis zuerst",
+          "text": "Batterie unter Last prüfen, Massepunkte im Motorraum und am Getriebe reinigen, Anlasser-Steuerleitung auf Durchgang messen. Solange der Anlasser nicht sauber durchdreht, ist jede Aussage über Zündung und Kraftstoff wertlos. Ist die Batterie gealtert, zuerst ersetzen und dann erneut prüfen — eine schwache Batterie erzeugt am E39 Folgefehler in mehreren Steuergeräten gleichzeitig.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "keine-komm": {
+          "title": "Steuergerät antwortet nicht",
+          "text": "Solange DME oder EWS nicht erreichbar sind, lässt sich die Startfreigabe nicht bewerten. Gehe zuerst den Pfad zur Diagnoseverbindung durch: richtiger Anschluss für dieses Baujahr, Kabel und COM-Port, danach Versorgung und Masse des betroffenen Steuergeräts. Bei frühen Baujahren erreicht man die EWS nur über den Rundstecker im Motorraum, nicht über die OBD-2-Buchse.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "transponder": {
+          "title": "Schlüssel wird nicht erkannt",
+          "text": "Mit dem zweiten Schlüssel gegenprüfen. Wird auch dieser nicht erkannt, ist die Ringantenne am Zündschloss der erste Verdacht — sie ist ein bekannter Ausfallpunkt und fällt oft zuerst sporadisch aus. Steckverbindung der Antenne sichten und den Sitz der Antenne am Schloss prüfen. Wird nur ein Schlüssel nicht erkannt, liegt es am Transponder in diesem Schlüssel.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "ews-sync": {
+          "title": "EWS und DME passen nicht zueinander",
+          "text": "Schlüssel erkannt, Freigabe verweigert: die beiden Steuergeräte sind nicht aufeinander abgestimmt. Das tritt nach dem Einbau einer gebrauchten DME oder EWS aus einem anderen Fahrzeug auf. Beide Steuergeräte müssen aufeinander abgeglichen werden, und zwar gemeinsam — eines allein anzupassen führt wieder in denselben Zustand. Vorher die vorhandene Codierung beider Steuergeräte sichern.",
+          "next_docs": [
+            "D4F-E39-008",
+            "D4F-E39-007"
+          ]
+        },
+        "kraftstoff": {
+          "title": "Kein Kraftstoffdruck",
+          "text": "Kein hörbarer Pumpenlauf beim Einschalten der Zündung: Sicherung und Kraftstoffpumpenrelais prüfen, danach die Ansteuerung des Relais durch das Steuergerät. Läuft die Pumpe und es entsteht trotzdem kein Druck, ist die Pumpe selbst oder der Filter fällig. Fällt der aufgebaute Druck nach dem Abschalten sofort ab, sitzt der Fehler im Rückschlagventil der Pumpe oder in der Druckregelung.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kurbelwellensensor": {
+          "title": "Kein Drehzahlsignal",
+          "text": "Ohne Drehzahlsignal löst die Motorsteuerung weder Zündung noch Einspritzung aus. Prüfe zuerst Stecker und Kabelbaum des Kurbelwellensensors, dann den Sensor selbst gegen ein bekannt gutes Exemplar. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Bleibt das Signal nach dem Tausch aus, die Leitung zur Motorsteuerung auf Durchgang und die Masseanbindung des Steuergeräts gegen den Motorblock prüfen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kompression-pruefen": {
+          "title": "Zündung und Kraftstoff vorhanden · Mechanik prüfen",
+          "text": "Startfreigabe, Kraftstoff und Drehzahlsignal sind vorhanden, der Motor läuft trotzdem nicht an. Nächster Schritt ist die Kompressionsprüfung: alle Zylinder messen und die Werte untereinander vergleichen. Fällt einer oder eine ganze Bank deutlich gegen die übrigen ab, ist das der Befund. Beim V8 lohnt zusätzlich der Vergleich beider Bänke gegeneinander. Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt.",
+          "next_docs": [
+            "D4F-E39-006"
+          ]
+        },
+        "falscher-pfad": {
+          "title": "Dieser Pfad passt nicht zum Fahrzeug",
+          "text": "Ohne Doppel-VANOS oder ohne passenden Fehlereintrag führt dieser Pfad nicht weiter. Kläre zuerst, welche Motorsteuerung verbaut ist: der frühe M52 verstellt nur die Einlassnockenwelle und kennt diese Fehlerklasse nicht. Lies danach den Fehlerspeicher vollständig aus und arbeite den tatsächlich abgelegten Eintrag ab, statt vom Symptom auf den VANOS zu schließen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "oel": {
+          "title": "Ölversorgung zuerst in Ordnung bringen",
+          "text": "Der VANOS wird über den Motorölkreis verstellt und meldet bei schlechter Ölversorgung Fehler, ohne selbst defekt zu sein. Ölwechsel mit der für den Motor freigegebenen Viskosität durchführen, Filter mit erneuern, Ölstand kontrollieren. Danach Fehlerspeicher löschen und das Fahrzeug erneut kalt starten. Erst wenn der Fehler dann wiederkommt, ist eine Aussage über die VANOS-Einheit sinnvoll.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "nw-sensor": {
+          "title": "Nockenwellensensor als Ursache",
+          "text": "Ein unruhiges oder aussetzendes Positionssignal erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS und ist der ungleich billigere Befund. Stecker und Kabelbaum am Zylinderkopf sichten — dort wird die Isolierung mit den Jahren hart und bricht. Sensor gegen ein Originalteil ersetzen, Fehlerspeicher löschen und mit einem echten Kaltstart nachprüfen, bevor du weiter in die Mechanik gehst.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "solenoid": {
+          "title": "VANOS-Solenoid schaltet nicht",
+          "text": "Solenoid ausbauen und ansehen: die Siebe setzen sich mit Ölkohle zu, das ist der häufigere Befund gegenüber einem elektrischen Defekt. Reinigen und wieder ansteuern. Bleibt es stumm, gegen das Solenoid der anderen Seite tauschen — wandert der Fehler mit, ist das Bauteil defekt, bleibt er an derselben Stelle, liegt er in Ansteuerung oder Leitung. Danach Fehlerspeicher löschen und kalt nachprüfen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "adaption": {
+          "title": "Verstellung arbeitet · Fehler stammt aus einem früheren Zustand",
+          "text": "Sensorik, Ölversorgung, Solenoide und Verstellung sind in Ordnung. Der abgelegte Eintrag stammt dann aus einem älteren Zustand des Fahrzeugs. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts mit anschließender Warmfahrt durchführen. Kommt der Eintrag danach nicht wieder, ist die Sache erledigt. Kommt er wieder, den Pfad mit Blick auf grenzwertige Ölversorgung erneut durchgehen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "vanos-mechanik": {
+          "title": "VANOS mechanisch träge",
+          "text": "Ansteuerung und Sensorik sind in Ordnung, die Nockenwelle folgt trotzdem nicht. Damit ist die VANOS-Einheit selbst an der Reihe: die Dichtringe der Verstellkolben verhärten mit den Jahren, die Einheit verliert Druck und verstellt zu langsam. Die Ringe werden im Satz erneuert. Prüfe bei der Gelegenheit die Steuerkette und ihre Spannvorrichtung mit, weil ein gelängter Trieb dasselbe Bild erzeugt. Anzugsmomente nach Herstellervorgabe, hier ist keines belegt.",
+          "next_docs": [
+            "D4F-E39-005",
+            "D4F-E39-002"
+          ]
+        }
+      }
+    },
+    "e39:vanos-doppel": {
+      "code": "GF-E39-03",
+      "name": "Doppel-VANOS · Fehler und Kaltstartruckeln",
+      "desc": "Für M52TU und M54 im E39. Trennt Sensorik, Ölversorgung, Solenoid und Mechanik, bevor die VANOS-Einheit zerlegt wird.",
+      "engines": [
+        "M52",
+        "M54"
+      ],
+      "steps": [
+        {
+          "q": "Handelt es sich um einen Motor mit Doppel-VANOS und steht ein VANOS- oder Nockenwellenfehler im Speicher?",
+          "help": "Doppel-VANOS hat der E39 ab dem M52TU, also ab Bauzeit 09/1998, und durchgehend beim M54. Der frühe M52 verstellt nur die Einlassnockenwelle und hat diese Fehlerklasse nicht. Fehlerspeicher der DME auslesen und die Einträge notieren, bevor gelöscht wird.",
+          "measure": "DME-Identifikation nennt eine Motorsteuerung der Doppel-VANOS-Generation, und im Fehlerspeicher steht mindestens ein Eintrag zur Nockenwellenverstellung",
+          "doc": "D4F-E39-002",
+          "yes": 1,
+          "no": "falscher-pfad"
+        },
+        {
+          "q": "Sind Ölstand, Ölqualität und Wechselintervall in Ordnung?",
+          "help": "Der VANOS wird mit Motoröl verstellt. Zu wenig Öl, zu dünnes Öl oder ein weit überzogenes Wechselintervall erzeugt genau dieselben Fehlerbilder wie ein mechanischer Defekt — und wird dabei regelmäßig übersehen. Ölstand bei betriebswarmem Motor und waagerechtem Stand prüfen.",
+          "measure": "Ölstand im vorgeschriebenen Bereich, Öl nicht schwarz und nicht verdünnt riechend; Wechselintervall nachweislich eingehalten",
+          "doc": "D4F-E39-005",
+          "yes": 2,
+          "no": "oel"
+        },
+        {
+          "q": "Liefert der Nockenwellensensor der Auslassseite ein plausibles Signal?",
+          "help": "Dieser Sensor ist ein häufiger Ausfallgrund und erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS. In der Diagnose die gemeldete Nockenwellenposition im Leerlauf beobachten: sie muss ruhig stehen. Sprünge oder Aussetzer sind der Befund. Zusätzlich den Stecker und den Kabelbaum am Zylinderkopf ansehen — dort wird die Isolierung hart.",
+          "measure": "Gemeldete Position der Auslassnockenwelle steht im Leerlauf ruhig und springt nicht. Vergleich gegen die Einlassseite: beide müssen sich gleich sauber verhalten",
+          "doc": "D4F-E39-005",
+          "yes": 3,
+          "no": "nw-sensor"
+        },
+        {
+          "q": "Schalten beide VANOS-Solenoide bei Ansteuerung?",
+          "help": "In der Stellglieddiagnose beide Solenoide einzeln ansteuern. Sie müssen hörbar klicken. Reagiert eines nicht, den Stecker abziehen und den Widerstand gegen das andere Solenoid halten — der Vergleich zeigt Unterbrechung und Windungsschluss, ohne dass ein Sollwert nötig ist.",
+          "measure": "Beide Solenoide klicken bei Ansteuerung hörbar; im Widerstandsvergleich untereinander liegen sie dicht beieinander. Ein Widerstandsfenster ist in diesem Repository nicht belegt",
+          "doc": "D4F-E39-005",
+          "yes": 4,
+          "no": "solenoid"
+        },
+        {
+          "q": "Folgt die Ist-Position der Nockenwellen nach einem echten Kaltstart der Sollvorgabe?",
+          "help": "Fahrzeug mehrere Stunden stehen lassen, dann starten und in der Diagnose Soll- und Ist-Position beider Nockenwellen nebeneinander beobachten. Betriebswarm verschwindet der Befund oft, deshalb ist der Kaltstart die einzig aussagekräftige Bedingung. Bleibt Ist der Sollvorgabe dauerhaft hinterher oder pendelt es, ist die Verstellung mechanisch träge.",
+          "measure": "Ist-Position folgt der Sollvorgabe zügig und bleibt dann darauf stehen. Dauerhafte Abweichung oder Pendeln zählt als Nein",
+          "doc": "D4F-E39-005",
+          "yes": "adaption",
+          "no": "vanos-mechanik"
+        }
+      ],
+      "model": "e39",
+      "id": "vanos-doppel",
+      "_results": {
+        "keine-versorgung": {
+          "title": "Keine Versorgung am Diagnosestecker",
+          "text": "Dauerplus und Masse am Diagnosestecker prüfen, bevor irgendetwas an der Software geändert wird. Zuerst die Sicherungen im Handschuhfachkasten sichten, Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck. Danach die Masse des Steckers gegen Karosserie messen — ein hochohmiger Masseweg sieht in der Software exakt wie ein defektes Interface aus. Erst wenn Plus und Masse sauber anliegen, ist eine Aussage über Kabel und Steuergeräte möglich.",
+          "next_docs": [
+            "D4F-E39-003"
+          ]
+        },
+        "nur-obd-buchse": {
+          "title": "Rundstecker arbeitet · OBD-2-Buchse ist der falsche Weg",
+          "text": "Über den Rundstecker antworten die Steuergeräte, über die OBD-2-Buchse nicht oder nur die DME. Das ist beim frühen E39 der Normalzustand und kein Defekt: die zweite Diagnoseleitung ist dort nicht auf die OBD-2-Buchse geführt. Arbeite für alles außer der generischen Abgasdiagnose am Rundstecker weiter. Wer beides braucht, verwendet einen Adapter, der beide Diagnoseleitungen durchverbindet.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "kabel-port": {
+          "title": "Kabel, Treiber oder COM-Port",
+          "text": "Die häufigste Ursache steht nicht im Fahrzeug. Prüfe der Reihe nach: Kabel mit FTDI-Chip verwenden, im Gerätemanager die COM-Nummer in einen niedrigen Bereich legen, den Latency Timer auf 1 ms setzen und dieselbe COM-Nummer in der Konfiguration der Diagnosesoftware eintragen. Erst wenn das alles stimmt und weiterhin keine Antwort kommt, die Leitung vom Diagnosestecker zur DME auf Durchgang und gegen Masse prüfen.",
+          "next_docs": [
+            "D4F-E39-001"
+          ]
+        },
+        "zweite-leitung": {
+          "title": "Nur die DME antwortet · zweite Diagnoseleitung fehlt",
+          "text": "Die Motorsteuerung antwortet, die übrigen Steuergeräte nicht. Bei einem E39 mit Rundstecker im Motorraum ist das erwartbar — dort führt der Weg über den Rundstecker. Bei einem späten Fahrzeug ohne Rundstecker prüfe die zweite Diagnoseleitung am OBD-2-Stecker auf Durchgang und auf Schluss gegen Masse: ein Masseschluss auf dieser Leitung macht alle daran hängenden Steuergeräte gleichzeitig stumm. Verdächtig sind nachgerüstete Geräte, die am Diagnosestecker abgegriffen wurden.",
+          "next_docs": [
+            "D4F-E39-003",
+            "D4F-E39-004"
+          ]
+        },
+        "verbindung-ok": {
+          "title": "Diagnoseverbindung vollständig",
+          "text": "Motorsteuerung und weitere Steuergeräte antworten. Damit ist der Zugang in Ordnung und die eigentliche Fehlersuche kann beginnen. Lies zuerst die Fehlerspeicher aller erreichbaren Steuergeräte aus und schreibe sie mit, bevor du etwas löschst — die Kombination der Einträge über mehrere Steuergeräte hinweg ist oft aussagekräftiger als ein einzelner Code.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "versorgung": {
+          "title": "Versorgung und Anlasserkreis zuerst",
+          "text": "Batterie unter Last prüfen, Massepunkte im Motorraum und am Getriebe reinigen, Anlasser-Steuerleitung auf Durchgang messen. Solange der Anlasser nicht sauber durchdreht, ist jede Aussage über Zündung und Kraftstoff wertlos. Ist die Batterie gealtert, zuerst ersetzen und dann erneut prüfen — eine schwache Batterie erzeugt am E39 Folgefehler in mehreren Steuergeräten gleichzeitig.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "keine-komm": {
+          "title": "Steuergerät antwortet nicht",
+          "text": "Solange DME oder EWS nicht erreichbar sind, lässt sich die Startfreigabe nicht bewerten. Gehe zuerst den Pfad zur Diagnoseverbindung durch: richtiger Anschluss für dieses Baujahr, Kabel und COM-Port, danach Versorgung und Masse des betroffenen Steuergeräts. Bei frühen Baujahren erreicht man die EWS nur über den Rundstecker im Motorraum, nicht über die OBD-2-Buchse.",
+          "next_docs": [
+            "D4F-E39-001",
+            "D4F-E39-003"
+          ]
+        },
+        "transponder": {
+          "title": "Schlüssel wird nicht erkannt",
+          "text": "Mit dem zweiten Schlüssel gegenprüfen. Wird auch dieser nicht erkannt, ist die Ringantenne am Zündschloss der erste Verdacht — sie ist ein bekannter Ausfallpunkt und fällt oft zuerst sporadisch aus. Steckverbindung der Antenne sichten und den Sitz der Antenne am Schloss prüfen. Wird nur ein Schlüssel nicht erkannt, liegt es am Transponder in diesem Schlüssel.",
+          "next_docs": [
+            "D4F-E39-008"
+          ]
+        },
+        "ews-sync": {
+          "title": "EWS und DME passen nicht zueinander",
+          "text": "Schlüssel erkannt, Freigabe verweigert: die beiden Steuergeräte sind nicht aufeinander abgestimmt. Das tritt nach dem Einbau einer gebrauchten DME oder EWS aus einem anderen Fahrzeug auf. Beide Steuergeräte müssen aufeinander abgeglichen werden, und zwar gemeinsam — eines allein anzupassen führt wieder in denselben Zustand. Vorher die vorhandene Codierung beider Steuergeräte sichern.",
+          "next_docs": [
+            "D4F-E39-008",
+            "D4F-E39-007"
+          ]
+        },
+        "kraftstoff": {
+          "title": "Kein Kraftstoffdruck",
+          "text": "Kein hörbarer Pumpenlauf beim Einschalten der Zündung: Sicherung und Kraftstoffpumpenrelais prüfen, danach die Ansteuerung des Relais durch das Steuergerät. Läuft die Pumpe und es entsteht trotzdem kein Druck, ist die Pumpe selbst oder der Filter fällig. Fällt der aufgebaute Druck nach dem Abschalten sofort ab, sitzt der Fehler im Rückschlagventil der Pumpe oder in der Druckregelung.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kurbelwellensensor": {
+          "title": "Kein Drehzahlsignal",
+          "text": "Ohne Drehzahlsignal löst die Motorsteuerung weder Zündung noch Einspritzung aus. Prüfe zuerst Stecker und Kabelbaum des Kurbelwellensensors, dann den Sensor selbst gegen ein bekannt gutes Exemplar. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Bleibt das Signal nach dem Tausch aus, die Leitung zur Motorsteuerung auf Durchgang und die Masseanbindung des Steuergeräts gegen den Motorblock prüfen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "kompression-pruefen": {
+          "title": "Zündung und Kraftstoff vorhanden · Mechanik prüfen",
+          "text": "Startfreigabe, Kraftstoff und Drehzahlsignal sind vorhanden, der Motor läuft trotzdem nicht an. Nächster Schritt ist die Kompressionsprüfung: alle Zylinder messen und die Werte untereinander vergleichen. Fällt einer oder eine ganze Bank deutlich gegen die übrigen ab, ist das der Befund. Beim V8 lohnt zusätzlich der Vergleich beider Bänke gegeneinander. Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt.",
+          "next_docs": [
+            "D4F-E39-006"
+          ]
+        },
+        "falscher-pfad": {
+          "title": "Dieser Pfad passt nicht zum Fahrzeug",
+          "text": "Ohne Doppel-VANOS oder ohne passenden Fehlereintrag führt dieser Pfad nicht weiter. Kläre zuerst, welche Motorsteuerung verbaut ist: der frühe M52 verstellt nur die Einlassnockenwelle und kennt diese Fehlerklasse nicht. Lies danach den Fehlerspeicher vollständig aus und arbeite den tatsächlich abgelegten Eintrag ab, statt vom Symptom auf den VANOS zu schließen.",
+          "next_docs": [
+            "D4F-E39-002"
+          ]
+        },
+        "oel": {
+          "title": "Ölversorgung zuerst in Ordnung bringen",
+          "text": "Der VANOS wird über den Motorölkreis verstellt und meldet bei schlechter Ölversorgung Fehler, ohne selbst defekt zu sein. Ölwechsel mit der für den Motor freigegebenen Viskosität durchführen, Filter mit erneuern, Ölstand kontrollieren. Danach Fehlerspeicher löschen und das Fahrzeug erneut kalt starten. Erst wenn der Fehler dann wiederkommt, ist eine Aussage über die VANOS-Einheit sinnvoll.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "nw-sensor": {
+          "title": "Nockenwellensensor als Ursache",
+          "text": "Ein unruhiges oder aussetzendes Positionssignal erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS und ist der ungleich billigere Befund. Stecker und Kabelbaum am Zylinderkopf sichten — dort wird die Isolierung mit den Jahren hart und bricht. Sensor gegen ein Originalteil ersetzen, Fehlerspeicher löschen und mit einem echten Kaltstart nachprüfen, bevor du weiter in die Mechanik gehst.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "solenoid": {
+          "title": "VANOS-Solenoid schaltet nicht",
+          "text": "Solenoid ausbauen und ansehen: die Siebe setzen sich mit Ölkohle zu, das ist der häufigere Befund gegenüber einem elektrischen Defekt. Reinigen und wieder ansteuern. Bleibt es stumm, gegen das Solenoid der anderen Seite tauschen — wandert der Fehler mit, ist das Bauteil defekt, bleibt er an derselben Stelle, liegt er in Ansteuerung oder Leitung. Danach Fehlerspeicher löschen und kalt nachprüfen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "adaption": {
+          "title": "Verstellung arbeitet · Fehler stammt aus einem früheren Zustand",
+          "text": "Sensorik, Ölversorgung, Solenoide und Verstellung sind in Ordnung. Der abgelegte Eintrag stammt dann aus einem älteren Zustand des Fahrzeugs. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts mit anschließender Warmfahrt durchführen. Kommt der Eintrag danach nicht wieder, ist die Sache erledigt. Kommt er wieder, den Pfad mit Blick auf grenzwertige Ölversorgung erneut durchgehen.",
+          "next_docs": [
+            "D4F-E39-005"
+          ]
+        },
+        "vanos-mechanik": {
+          "title": "VANOS mechanisch träge",
+          "text": "Ansteuerung und Sensorik sind in Ordnung, die Nockenwelle folgt trotzdem nicht. Damit ist die VANOS-Einheit selbst an der Reihe: die Dichtringe der Verstellkolben verhärten mit den Jahren, die Einheit verliert Druck und verstellt zu langsam. Die Ringe werden im Satz erneuert. Prüfe bei der Gelegenheit die Steuerkette und ihre Spannvorrichtung mit, weil ein gelängter Trieb dasselbe Bild erzeugt. Anzugsmomente nach Herstellervorgabe, hier ist keines belegt.",
+          "next_docs": [
+            "D4F-E39-005",
+            "D4F-E39-002"
           ]
         }
       }
@@ -1650,11 +3934,15 @@
     }
   },
   "stats": {
-    "total_docs": 21,
-    "total_guides": 7,
+    "total_docs": 53,
+    "total_guides": 13,
     "per_model": {
       "e30": 2,
+      "e36": 8,
+      "e39": 8,
       "e46": 8,
+      "e60": 8,
+      "e87": 8,
       "e88": 6,
       "e90": 3,
       "f-series": 2

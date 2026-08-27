@@ -45,8 +45,14 @@ const isStr = v => typeof v === 'string' && v.trim() !== '';
 const isArr = v => Array.isArray(v);
 
 // ---------- models.json ----------
-const LAYOUTS = ['R4', 'R6', 'V8', 'V10', 'V12'];
-const ASPIRATIONS = ['Sauger', 'Turbo', 'Bi-Turbo', 'Kompressor'];
+// Muss mit dem uebereinstimmen, was graphics.js zeichnen kann — sonst lehnt
+// der Validator eine Bauform ab, die die App laengst korrekt darstellt. Der
+// B38 ist ein Dreizylinder, R3 fehlte hier schlicht.
+const LAYOUTS = ['R3', 'R4', 'R5', 'R6', 'V8', 'V10', 'V12', 'B4', 'B6'];
+// „Sauger" und „Saugmotor" meinen dasselbe. Beide zuzulassen ist billiger,
+// als jeden Bearbeiter auf die eine Schreibweise einzuschwoeren — graphics.js
+// erkennt ohnehin beide, nur diese Liste war enger als noetig.
+const ASPIRATIONS = ['Sauger', 'Saugmotor', 'Turbo', 'Bi-Turbo', 'Kompressor'];
 const DOC_TYPES = ['WDS', 'FUB', 'PIN', 'LOC', 'TEST', 'TOOL', 'GUIDE'];
 
 async function validateModels() {
@@ -83,6 +89,11 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
   const docIds = new Set();
 
   for (const dir of dirs) {
+    // Ein Unterstrich vorn heisst: kein ausgeliefertes Verzeichnis, sondern
+    // Arbeitsmaterial. `_fragmente/` traegt die Motor-Bruchstuecke, aus denen
+    // scripts/merge-engines.mjs die engines.json baut — die App laedt es nie.
+    if (dir.startsWith('_')) continue;
+
     // Ein Verzeichnis darf auf eine Modell-ID ODER eine Gruppen-ID lauten;
     // Letzteres ist baureihenübergreifender Inhalt (z. B. `f-series`).
     if (!modelIds.has(dir) && !groupIds.has(dir)) {

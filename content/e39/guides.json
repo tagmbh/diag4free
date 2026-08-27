@@ -1,0 +1,303 @@
+{
+  "model": "e39",
+  "guides": {
+    "keine-diagnoseverbindung": {
+      "code": "GF-E39-01",
+      "name": "Keine Diagnoseverbindung zum E39",
+      "desc": "Der E39 hat je nach Baujahr zwei Diagnoseanschlüsse mit unterschiedlichem Umfang. Systematische Eingrenzung: Versorgung am Stecker, richtiger Anschluss, Kabel und Port, zweite Diagnoseleitung.",
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "steps": [
+        {
+          "q": "Meldet die Diagnosesoftware Batterie und Klemme 15 als vorhanden?",
+          "help": "INPA zeigt oben zwei Statusanzeigen. Bleiben beide rot, kommt am Interface weder Dauerplus noch geschaltetes Plus an — dann ist das ein Versorgungs- und kein Softwareproblem. Zündung dabei wirklich einschalten, nicht nur den Schlüssel stecken.",
+          "measure": "Bordspannung am Diagnosestecker gegen dessen Massepin messen: sie muss der an der Batterie gemessenen Spannung entsprechen. Ein deutlicher Unterschied zeigt Übergangswiderstand in Zuleitung oder Masse",
+          "doc": "D4F-E39-003",
+          "yes": 1,
+          "no": "keine-versorgung"
+        },
+        {
+          "q": "Sitzt im Motorraum ein 20-poliger Rundstecker unter einer runden Kappe?",
+          "help": "Bis zur Bauzeit 09/2000 ist er beim E39 vorhanden, danach entfällt er. Er sitzt im Motorraum und ist der Weg zu allen Steuergeräten. Nicht mit dem Sicherungskasten verwechseln — die Kappe ist rund und trägt das BMW-Zeichen oder die Aufschrift des Diagnoseanschlusses.",
+          "measure": "Sichtprüfung im Motorraum; zusätzlich prüfen, ob die Buchse belegt und nicht korrodiert ist",
+          "doc": "D4F-E39-001",
+          "yes": 2,
+          "no": 3
+        },
+        {
+          "q": "Antworten die Steuergeräte über den Rundstecker?",
+          "help": "Mit passendem Adapter oder Kabel am Rundstecker die Identifikation eines Steuergeräts abfragen. Wichtig ist, dass der Adapter beide Diagnoseleitungen durchverbindet — einfache Adapter führen nur die Motorleitung, dann antwortet auch nur die DME.",
+          "measure": "Mindestens ein Steuergerät liefert eine vollständige Identifikation mit ZB-Nummer und Codierindex",
+          "doc": "D4F-E39-003",
+          "yes": "nur-obd-buchse",
+          "no": 3
+        },
+        {
+          "q": "Antwortet die DME über die OBD-2-Buchse im Innenraum?",
+          "help": "Die OBD-2-Buchse sitzt im Fahrerfußraum. Über Pin 7 läuft die Leitung zur DME. Antwortet die DME hier nicht, liegt der Fehler entweder im Kabel und Treiber oder auf der Leitung selbst. Vor der Leitungsprüfung erst den COM-Port und den Latency Timer kontrollieren, das ist die häufigere Ursache.",
+          "measure": "DME-Identifikation liefert ZB-Nummer, Codierindex und Hardwarestand. Keine Antwort oder Abbruch nach wenigen Sekunden zählt als Nein",
+          "doc": "D4F-E39-001",
+          "yes": 4,
+          "no": "kabel-port"
+        },
+        {
+          "q": "Antworten über die OBD-2-Buchse auch Steuergeräte außerhalb des Motors?",
+          "help": "ABS, Airbag, Klimabedienteil und Allgemeinmodul hängen nicht an der Motor-K-Line, sondern an der zweiten Diagnoseleitung. Bei den frühen Baujahren ist diese Leitung nicht auf die OBD-2-Buchse geführt. Antwortet also nur die DME, ist das bei einem frühen E39 der Normalzustand und kein Defekt.",
+          "measure": "Identifikation eines Nicht-Motorsteuergeräts anfordern und beobachten, ob eine Antwort kommt",
+          "doc": "D4F-E39-001",
+          "yes": "verbindung-ok",
+          "no": "zweite-leitung"
+        }
+      ]
+    },
+    "startet-nicht-r6": {
+      "code": "GF-E39-02",
+      "name": "E39 dreht, springt aber nicht an",
+      "desc": "Anlasser dreht sauber, der Motor zündet nicht. Systematische Eingrenzung über Diagnosekommunikation, EWS-Startfreigabe, Kraftstoff und Zündauslösung.",
+      "engines": [
+        "M52",
+        "M54",
+        "M62",
+        "S62"
+      ],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Startversuch sauber durch?",
+          "help": "Reines Klicken oder gar keine Reaktion verlagert den Fehler in die Versorgung und den Anlasserkreis. Sauberes, gleichmäßiges Drehen ohne Zünden ist die Voraussetzung für alles Folgende.",
+          "measure": "Bordspannung während des Startversuchs mitschreiben: sie darf einbrechen, muss sich aber auf einem stabilen Wert halten und darf nicht in Stufen weiter absacken",
+          "doc": "D4F-E39-008",
+          "yes": 1,
+          "no": "versorgung"
+        },
+        {
+          "q": "Antworten DME und EWS in der Diagnose?",
+          "help": "Beide Steuergeräte müssen erreichbar sein, sonst ist keine Aussage über die Startfreigabe möglich. Bei frühen Baujahren ist die EWS nur über den Rundstecker im Motorraum erreichbar, nicht über die OBD-2-Buchse.",
+          "measure": "Beide Steuergeräte liefern eine vollständige Identifikation. Antwortet nur eines, zählt das als Nein",
+          "doc": "D4F-E39-001",
+          "yes": 2,
+          "no": "keine-komm"
+        },
+        {
+          "q": "Meldet die EWS den Schlüssel als erkannt?",
+          "help": "Die Ringantenne am Zündschloss liest den Transponder im Schlüsselgriff. In der EWS-Statusmaske erscheint zuerst die Schlüsselerkennung, erst danach die Freigabe. Mit dem zweiten Schlüssel gegenprüfen — erkennt die EWS den einen und den anderen nicht, ist der Schlüssel der Befund und nicht das Fahrzeug.",
+          "measure": "EWS-Status zeigt den Schlüssel als erkannt und nennt eine Schlüsselnummer. Wechselnde oder ausbleibende Erkennung zählt als Nein",
+          "doc": "D4F-E39-008",
+          "yes": 3,
+          "no": "transponder"
+        },
+        {
+          "q": "Erteilt die EWS der DME die Startfreigabe?",
+          "help": "Erkennung und Freigabe sind zwei verschiedene Zustände. Die EWS kann den Schlüssel erkennen und die Freigabe trotzdem verweigern, wenn sie nicht zur DME passt. Genau das passiert nach einem Steuergerätetausch aus einem Spenderfahrzeug.",
+          "measure": "EWS-Status meldet die Motorstartfreigabe als erteilt; parallel im DME-Fehlerspeicher nachsehen, ob ein Eintrag zur Manipulationserkennung steht",
+          "doc": "D4F-E39-008",
+          "yes": 4,
+          "no": "ews-sync"
+        },
+        {
+          "q": "Baut das Kraftstoffsystem beim Einschalten der Zündung hörbar Druck auf?",
+          "help": "Die Kraftstoffpumpe läuft beim Einschalten der Zündung kurz an. Ohr an den Tankbereich im Fahrzeugheck. Kein Anlaufgeräusch trennt den Kraftstoffpfad vom Rest. Zusätzlich Manometer am Rail anschließen und den Druckaufbau sowie die Druckhaltung nach dem Abschalten beobachten.",
+          "measure": "Beim Einschalten der Zündung baut sich Druck hörbar auf und bleibt nach dem Abschalten der Pumpe stehen. Ein Zahlen-Sollwert für den Systemdruck ist in diesem Repository nicht belegt — bewertet werden Aufbau und Haltung",
+          "doc": "D4F-E39-002",
+          "yes": 5,
+          "no": "kraftstoff"
+        },
+        {
+          "q": "Liefert der Kurbelwellensensor beim Cranken ein wechselndes Signal?",
+          "help": "Ohne Drehzahlsignal löst die DME weder Zündung noch Einspritzung aus. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Multimeter auf Wechselspannung gibt einen groben Hinweis, sauber beurteilen lässt sich das Signal nur mit dem Oszilloskop. Alternativ die Drehzahlanzeige in der Diagnose während des Crankens beobachten.",
+          "measure": "Während des Crankens erscheint in der Diagnose eine von null verschiedene Motordrehzahl. Eine bei null stehende Anzeige zählt als Nein. Ein Sollwert für die Signalamplitude ist hier nicht belegt",
+          "doc": "D4F-E39-002",
+          "yes": "kompression-pruefen",
+          "no": "kurbelwellensensor"
+        }
+      ]
+    },
+    "vanos-doppel": {
+      "code": "GF-E39-03",
+      "name": "Doppel-VANOS · Fehler und Kaltstartruckeln",
+      "desc": "Für M52TU und M54 im E39. Trennt Sensorik, Ölversorgung, Solenoid und Mechanik, bevor die VANOS-Einheit zerlegt wird.",
+      "engines": [
+        "M52",
+        "M54"
+      ],
+      "steps": [
+        {
+          "q": "Handelt es sich um einen Motor mit Doppel-VANOS und steht ein VANOS- oder Nockenwellenfehler im Speicher?",
+          "help": "Doppel-VANOS hat der E39 ab dem M52TU, also ab Bauzeit 09/1998, und durchgehend beim M54. Der frühe M52 verstellt nur die Einlassnockenwelle und hat diese Fehlerklasse nicht. Fehlerspeicher der DME auslesen und die Einträge notieren, bevor gelöscht wird.",
+          "measure": "DME-Identifikation nennt eine Motorsteuerung der Doppel-VANOS-Generation, und im Fehlerspeicher steht mindestens ein Eintrag zur Nockenwellenverstellung",
+          "doc": "D4F-E39-002",
+          "yes": 1,
+          "no": "falscher-pfad"
+        },
+        {
+          "q": "Sind Ölstand, Ölqualität und Wechselintervall in Ordnung?",
+          "help": "Der VANOS wird mit Motoröl verstellt. Zu wenig Öl, zu dünnes Öl oder ein weit überzogenes Wechselintervall erzeugt genau dieselben Fehlerbilder wie ein mechanischer Defekt — und wird dabei regelmäßig übersehen. Ölstand bei betriebswarmem Motor und waagerechtem Stand prüfen.",
+          "measure": "Ölstand im vorgeschriebenen Bereich, Öl nicht schwarz und nicht verdünnt riechend; Wechselintervall nachweislich eingehalten",
+          "doc": "D4F-E39-005",
+          "yes": 2,
+          "no": "oel"
+        },
+        {
+          "q": "Liefert der Nockenwellensensor der Auslassseite ein plausibles Signal?",
+          "help": "Dieser Sensor ist ein häufiger Ausfallgrund und erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS. In der Diagnose die gemeldete Nockenwellenposition im Leerlauf beobachten: sie muss ruhig stehen. Sprünge oder Aussetzer sind der Befund. Zusätzlich den Stecker und den Kabelbaum am Zylinderkopf ansehen — dort wird die Isolierung hart.",
+          "measure": "Gemeldete Position der Auslassnockenwelle steht im Leerlauf ruhig und springt nicht. Vergleich gegen die Einlassseite: beide müssen sich gleich sauber verhalten",
+          "doc": "D4F-E39-005",
+          "yes": 3,
+          "no": "nw-sensor"
+        },
+        {
+          "q": "Schalten beide VANOS-Solenoide bei Ansteuerung?",
+          "help": "In der Stellglieddiagnose beide Solenoide einzeln ansteuern. Sie müssen hörbar klicken. Reagiert eines nicht, den Stecker abziehen und den Widerstand gegen das andere Solenoid halten — der Vergleich zeigt Unterbrechung und Windungsschluss, ohne dass ein Sollwert nötig ist.",
+          "measure": "Beide Solenoide klicken bei Ansteuerung hörbar; im Widerstandsvergleich untereinander liegen sie dicht beieinander. Ein Widerstandsfenster ist in diesem Repository nicht belegt",
+          "doc": "D4F-E39-005",
+          "yes": 4,
+          "no": "solenoid"
+        },
+        {
+          "q": "Folgt die Ist-Position der Nockenwellen nach einem echten Kaltstart der Sollvorgabe?",
+          "help": "Fahrzeug mehrere Stunden stehen lassen, dann starten und in der Diagnose Soll- und Ist-Position beider Nockenwellen nebeneinander beobachten. Betriebswarm verschwindet der Befund oft, deshalb ist der Kaltstart die einzig aussagekräftige Bedingung. Bleibt Ist der Sollvorgabe dauerhaft hinterher oder pendelt es, ist die Verstellung mechanisch träge.",
+          "measure": "Ist-Position folgt der Sollvorgabe zügig und bleibt dann darauf stehen. Dauerhafte Abweichung oder Pendeln zählt als Nein",
+          "doc": "D4F-E39-005",
+          "yes": "adaption",
+          "no": "vanos-mechanik"
+        }
+      ]
+    }
+  },
+  "results": {
+    "keine-versorgung": {
+      "title": "Keine Versorgung am Diagnosestecker",
+      "text": "Dauerplus und Masse am Diagnosestecker prüfen, bevor irgendetwas an der Software geändert wird. Zuerst die Sicherungen im Handschuhfachkasten sichten, Amperewert laut Sicherungsplan beziehungsweise Deckelaufdruck. Danach die Masse des Steckers gegen Karosserie messen — ein hochohmiger Masseweg sieht in der Software exakt wie ein defektes Interface aus. Erst wenn Plus und Masse sauber anliegen, ist eine Aussage über Kabel und Steuergeräte möglich.",
+      "next_docs": [
+        "D4F-E39-003"
+      ]
+    },
+    "nur-obd-buchse": {
+      "title": "Rundstecker arbeitet · OBD-2-Buchse ist der falsche Weg",
+      "text": "Über den Rundstecker antworten die Steuergeräte, über die OBD-2-Buchse nicht oder nur die DME. Das ist beim frühen E39 der Normalzustand und kein Defekt: die zweite Diagnoseleitung ist dort nicht auf die OBD-2-Buchse geführt. Arbeite für alles außer der generischen Abgasdiagnose am Rundstecker weiter. Wer beides braucht, verwendet einen Adapter, der beide Diagnoseleitungen durchverbindet.",
+      "next_docs": [
+        "D4F-E39-001",
+        "D4F-E39-003"
+      ]
+    },
+    "kabel-port": {
+      "title": "Kabel, Treiber oder COM-Port",
+      "text": "Die häufigste Ursache steht nicht im Fahrzeug. Prüfe der Reihe nach: Kabel mit FTDI-Chip verwenden, im Gerätemanager die COM-Nummer in einen niedrigen Bereich legen, den Latency Timer auf 1 ms setzen und dieselbe COM-Nummer in der Konfiguration der Diagnosesoftware eintragen. Erst wenn das alles stimmt und weiterhin keine Antwort kommt, die Leitung vom Diagnosestecker zur DME auf Durchgang und gegen Masse prüfen.",
+      "next_docs": [
+        "D4F-E39-001"
+      ]
+    },
+    "zweite-leitung": {
+      "title": "Nur die DME antwortet · zweite Diagnoseleitung fehlt",
+      "text": "Die Motorsteuerung antwortet, die übrigen Steuergeräte nicht. Bei einem E39 mit Rundstecker im Motorraum ist das erwartbar — dort führt der Weg über den Rundstecker. Bei einem späten Fahrzeug ohne Rundstecker prüfe die zweite Diagnoseleitung am OBD-2-Stecker auf Durchgang und auf Schluss gegen Masse: ein Masseschluss auf dieser Leitung macht alle daran hängenden Steuergeräte gleichzeitig stumm. Verdächtig sind nachgerüstete Geräte, die am Diagnosestecker abgegriffen wurden.",
+      "next_docs": [
+        "D4F-E39-003",
+        "D4F-E39-004"
+      ]
+    },
+    "verbindung-ok": {
+      "title": "Diagnoseverbindung vollständig",
+      "text": "Motorsteuerung und weitere Steuergeräte antworten. Damit ist der Zugang in Ordnung und die eigentliche Fehlersuche kann beginnen. Lies zuerst die Fehlerspeicher aller erreichbaren Steuergeräte aus und schreibe sie mit, bevor du etwas löschst — die Kombination der Einträge über mehrere Steuergeräte hinweg ist oft aussagekräftiger als ein einzelner Code.",
+      "next_docs": [
+        "D4F-E39-002"
+      ]
+    },
+    "versorgung": {
+      "title": "Versorgung und Anlasserkreis zuerst",
+      "text": "Batterie unter Last prüfen, Massepunkte im Motorraum und am Getriebe reinigen, Anlasser-Steuerleitung auf Durchgang messen. Solange der Anlasser nicht sauber durchdreht, ist jede Aussage über Zündung und Kraftstoff wertlos. Ist die Batterie gealtert, zuerst ersetzen und dann erneut prüfen — eine schwache Batterie erzeugt am E39 Folgefehler in mehreren Steuergeräten gleichzeitig.",
+      "next_docs": [
+        "D4F-E39-008"
+      ]
+    },
+    "keine-komm": {
+      "title": "Steuergerät antwortet nicht",
+      "text": "Solange DME oder EWS nicht erreichbar sind, lässt sich die Startfreigabe nicht bewerten. Gehe zuerst den Pfad zur Diagnoseverbindung durch: richtiger Anschluss für dieses Baujahr, Kabel und COM-Port, danach Versorgung und Masse des betroffenen Steuergeräts. Bei frühen Baujahren erreicht man die EWS nur über den Rundstecker im Motorraum, nicht über die OBD-2-Buchse.",
+      "next_docs": [
+        "D4F-E39-001",
+        "D4F-E39-003"
+      ]
+    },
+    "transponder": {
+      "title": "Schlüssel wird nicht erkannt",
+      "text": "Mit dem zweiten Schlüssel gegenprüfen. Wird auch dieser nicht erkannt, ist die Ringantenne am Zündschloss der erste Verdacht — sie ist ein bekannter Ausfallpunkt und fällt oft zuerst sporadisch aus. Steckverbindung der Antenne sichten und den Sitz der Antenne am Schloss prüfen. Wird nur ein Schlüssel nicht erkannt, liegt es am Transponder in diesem Schlüssel.",
+      "next_docs": [
+        "D4F-E39-008"
+      ]
+    },
+    "ews-sync": {
+      "title": "EWS und DME passen nicht zueinander",
+      "text": "Schlüssel erkannt, Freigabe verweigert: die beiden Steuergeräte sind nicht aufeinander abgestimmt. Das tritt nach dem Einbau einer gebrauchten DME oder EWS aus einem anderen Fahrzeug auf. Beide Steuergeräte müssen aufeinander abgeglichen werden, und zwar gemeinsam — eines allein anzupassen führt wieder in denselben Zustand. Vorher die vorhandene Codierung beider Steuergeräte sichern.",
+      "next_docs": [
+        "D4F-E39-008",
+        "D4F-E39-007"
+      ]
+    },
+    "kraftstoff": {
+      "title": "Kein Kraftstoffdruck",
+      "text": "Kein hörbarer Pumpenlauf beim Einschalten der Zündung: Sicherung und Kraftstoffpumpenrelais prüfen, danach die Ansteuerung des Relais durch das Steuergerät. Läuft die Pumpe und es entsteht trotzdem kein Druck, ist die Pumpe selbst oder der Filter fällig. Fällt der aufgebaute Druck nach dem Abschalten sofort ab, sitzt der Fehler im Rückschlagventil der Pumpe oder in der Druckregelung.",
+      "next_docs": [
+        "D4F-E39-002"
+      ]
+    },
+    "kurbelwellensensor": {
+      "title": "Kein Drehzahlsignal",
+      "text": "Ohne Drehzahlsignal löst die Motorsteuerung weder Zündung noch Einspritzung aus. Prüfe zuerst Stecker und Kabelbaum des Kurbelwellensensors, dann den Sensor selbst gegen ein bekannt gutes Exemplar. Der Sensor kann ausfallen, ohne einen Fehler abzulegen. Bleibt das Signal nach dem Tausch aus, die Leitung zur Motorsteuerung auf Durchgang und die Masseanbindung des Steuergeräts gegen den Motorblock prüfen.",
+      "next_docs": [
+        "D4F-E39-002"
+      ]
+    },
+    "kompression-pruefen": {
+      "title": "Zündung und Kraftstoff vorhanden · Mechanik prüfen",
+      "text": "Startfreigabe, Kraftstoff und Drehzahlsignal sind vorhanden, der Motor läuft trotzdem nicht an. Nächster Schritt ist die Kompressionsprüfung: alle Zylinder messen und die Werte untereinander vergleichen. Fällt einer oder eine ganze Bank deutlich gegen die übrigen ab, ist das der Befund. Beim V8 lohnt zusätzlich der Vergleich beider Bänke gegeneinander. Ein absoluter Kompressions-Sollwert ist in diesem Repository nicht belegt.",
+      "next_docs": [
+        "D4F-E39-006"
+      ]
+    },
+    "falscher-pfad": {
+      "title": "Dieser Pfad passt nicht zum Fahrzeug",
+      "text": "Ohne Doppel-VANOS oder ohne passenden Fehlereintrag führt dieser Pfad nicht weiter. Kläre zuerst, welche Motorsteuerung verbaut ist: der frühe M52 verstellt nur die Einlassnockenwelle und kennt diese Fehlerklasse nicht. Lies danach den Fehlerspeicher vollständig aus und arbeite den tatsächlich abgelegten Eintrag ab, statt vom Symptom auf den VANOS zu schließen.",
+      "next_docs": [
+        "D4F-E39-002"
+      ]
+    },
+    "oel": {
+      "title": "Ölversorgung zuerst in Ordnung bringen",
+      "text": "Der VANOS wird über den Motorölkreis verstellt und meldet bei schlechter Ölversorgung Fehler, ohne selbst defekt zu sein. Ölwechsel mit der für den Motor freigegebenen Viskosität durchführen, Filter mit erneuern, Ölstand kontrollieren. Danach Fehlerspeicher löschen und das Fahrzeug erneut kalt starten. Erst wenn der Fehler dann wiederkommt, ist eine Aussage über die VANOS-Einheit sinnvoll.",
+      "next_docs": [
+        "D4F-E39-005"
+      ]
+    },
+    "nw-sensor": {
+      "title": "Nockenwellensensor als Ursache",
+      "text": "Ein unruhiges oder aussetzendes Positionssignal erzeugt dasselbe Fehlerbild wie ein mechanisch defekter VANOS und ist der ungleich billigere Befund. Stecker und Kabelbaum am Zylinderkopf sichten — dort wird die Isolierung mit den Jahren hart und bricht. Sensor gegen ein Originalteil ersetzen, Fehlerspeicher löschen und mit einem echten Kaltstart nachprüfen, bevor du weiter in die Mechanik gehst.",
+      "next_docs": [
+        "D4F-E39-005"
+      ]
+    },
+    "solenoid": {
+      "title": "VANOS-Solenoid schaltet nicht",
+      "text": "Solenoid ausbauen und ansehen: die Siebe setzen sich mit Ölkohle zu, das ist der häufigere Befund gegenüber einem elektrischen Defekt. Reinigen und wieder ansteuern. Bleibt es stumm, gegen das Solenoid der anderen Seite tauschen — wandert der Fehler mit, ist das Bauteil defekt, bleibt er an derselben Stelle, liegt er in Ansteuerung oder Leitung. Danach Fehlerspeicher löschen und kalt nachprüfen.",
+      "next_docs": [
+        "D4F-E39-005"
+      ]
+    },
+    "adaption": {
+      "title": "Verstellung arbeitet · Fehler stammt aus einem früheren Zustand",
+      "text": "Sensorik, Ölversorgung, Solenoide und Verstellung sind in Ordnung. Der abgelegte Eintrag stammt dann aus einem älteren Zustand des Fahrzeugs. Fehlerspeicher löschen, Adaptionswerte zurücksetzen und zwei vollständige Kaltstarts mit anschließender Warmfahrt durchführen. Kommt der Eintrag danach nicht wieder, ist die Sache erledigt. Kommt er wieder, den Pfad mit Blick auf grenzwertige Ölversorgung erneut durchgehen.",
+      "next_docs": [
+        "D4F-E39-005"
+      ]
+    },
+    "vanos-mechanik": {
+      "title": "VANOS mechanisch träge",
+      "text": "Ansteuerung und Sensorik sind in Ordnung, die Nockenwelle folgt trotzdem nicht. Damit ist die VANOS-Einheit selbst an der Reihe: die Dichtringe der Verstellkolben verhärten mit den Jahren, die Einheit verliert Druck und verstellt zu langsam. Die Ringe werden im Satz erneuert. Prüfe bei der Gelegenheit die Steuerkette und ihre Spannvorrichtung mit, weil ein gelängter Trieb dasselbe Bild erzeugt. Anzugsmomente nach Herstellervorgabe, hier ist keines belegt.",
+      "next_docs": [
+        "D4F-E39-005",
+        "D4F-E39-002"
+      ]
+    }
+  }
+}

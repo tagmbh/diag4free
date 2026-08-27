@@ -50,8 +50,9 @@ for (const m of alleModelle) {
 }
 
 // -------- Docs --------
+// Unterstrich vorn = Arbeitsmaterial, kein ausgelieferter Inhalt.
 const verzeichnisse = (await readdir(CONTENT, { withFileTypes: true }))
-  .filter(d => d.isDirectory()).map(d => d.name);
+  .filter(d => d.isDirectory() && !d.name.startsWith('_')).map(d => d.name);
 
 const alleDocIds = new Set();
 const docsProDir = {};
