@@ -23,6 +23,8 @@ Ein Kabel mit Umschalter muss entsprechend stehen. Steht es falsch, meldet EDIAB
 
 Das Baujahr entscheidet, nicht das Modelljahr im Schein. Es steht auf dem Typschild an der B-Säule.
 
+Pin 8 fällt aus diesem Schema heraus. Er führt im 16-poligen Stecker **kein genormtes Signal**: Die Norm lässt ihn dem Hersteller frei, und BMW hat ihn über die Baureihen hinweg verschieden benutzt — an der F-Serie als Aktivierungsleitung für den Ethernet-Zugang, an älteren Modellen als zweite Diagnoseleitung. Aus der Pinnummer allein folgt deshalb nichts. Das ist der Grund, warum die Beschreibungen zur Brücke 7/8 auseinandergehen, und nicht mangelnde Sorgfalt der Verfasser.
+
 > **Widerspruch, der nicht aufgelöst ist:** Manche Kabel legen Pin 7 und Pin 8 zusammen. Für den E60 berichten Anwender beides — mit Brücke geht es, mit Brücke geht gar nichts. Probiere deshalb zuerst die Variante ohne Brücke und wechsle erst dann. Eine belastbare, einheitliche Angabe dazu gibt es nicht.
 
 ## Einrichtung unter Windows

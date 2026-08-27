@@ -22,7 +22,7 @@
         "OBD2 Pin 14 · D-CAN Low · ab 03/2007",
         "OBD2 Pin 4/5 · Masse",
         "OBD2 Pin 16 · KL30 Dauerplus",
-        "OBD2 Pin 8 · Belegung strittig — siehe Werkstattpunkte"
+        "OBD2 Pin 8 · herstellerfrei, kein genormtes Signal · Belegung am E60 strittig — siehe Werkstattpunkte"
       ],
       "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
       "article": "diagnosezugang.md",
