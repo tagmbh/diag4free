@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T05:46:49.971Z",
+  "generated": "2026-08-27T05:47:21.964Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -2673,9 +2673,9 @@
       "id": "D4F-E88-020",
       "type": "GUIDE",
       "cat": "Getriebe · Steptronic",
-      "title": "GA6L45R Steptronic am N52 · Adaption und Diagnose",
+      "title": "Steptronic am N52 · Getriebe bestimmen, Ölstand, Adaption",
       "valid": "E88 · N52 mit Steptronic-Automatik",
-      "summary": "Das Sechsgang-Automatikgetriebe hinter dem N52 im E88. Vor jedem Eingriff steht die Frage, welches Getriebe verbaut ist — im Umfeld dieser Fahrzeuge kommen zwei Bauarten vor, und sie verlangen unterschiedliches ATF. Adaptionswerte lernen sich im Fahrbetrieb; nach Ölwechsel, Mechatronik-Reparatur oder Getriebetausch muss die Adaption bewusst zurückgesetzt werden.",
+      "summary": "Das Sechsgang-Automatikgetriebe hinter dem N52 im E88. Vor jedem Eingriff steht die Frage, welches Getriebe verbaut ist — es kommen zwei Bauarten vor, und sie verlangen unterschiedliches ATF. Danach: Ölstand nach Prozedur, und die Adaption, die nach Eingriffen bewusst zurückgesetzt werden muss.",
       "points": [
         "Erst das Getriebe bestimmen: GA6L45R stammt aus der GM-6L45-Familie, GA6HP19Z von ZF. Beide sind im Umfeld dieser Fahrzeuge verbaut, die Bezeichnung steht auf dem Getriebeschild",
         "ATF nach verbautem Getriebe: für das GA6L45R gilt die Dexron-VI-Spezifikation, für das ZF-Getriebe die von ZF freigegebene Sorte. Vor dem Befüllen die Vorgabe zum tatsächlich verbauten Getriebe prüfen — die falsche Sorte kostet das Getriebe",

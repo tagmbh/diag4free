@@ -43,7 +43,9 @@ sie widersprechen sich.
 | Versorgung des Geräts | Rundstecker `Pin 14` auf OBD-2 `Pin 16` |
 
 Andere Zusammenstellungen zur selben Bauform nennen dagegen `Pin 1` als
-Dauerplus und `Pin 4` als Masse.
+Dauerplus und `Pin 4` als Masse. Und wohin die zweite Datenleitung an einer
+16-poligen Buchse fällt — auf `Pin 7` oder auf `Pin 8` —, ist ebenfalls
+offen. Das steht in `D4F-E34-008`.
 
 > **Widerspruch, nicht geglättet:** Zur Massezuordnung des Rundsteckers
 > stehen sich zwei Angaben gegenüber. Keine davon gilt hier als Vorgabe. Eine
@@ -52,15 +54,13 @@ Dauerplus und `Pin 4` als Masse.
 
 ## Fünf Minuten, die das Problem lösen
 
-1. **Kappe abnehmen** und die Kontakte ansehen. Grünspan, Feuchtigkeit und
-   aufgeweitete Buchsen sind nach dreißig Jahren die Regel. Trocken reinigen,
-   nicht fetten.
+1. **Kappe abnehmen** und die Kontakte ansehen. Grünspan und aufgeweitete
+   Buchsen sind nach dreißig Jahren die Regel. Trocken reinigen, nicht fetten.
 2. **Massekontakt suchen.** Ein Messkabel an einen blanken Massepunkt am
    Motor, mit dem anderen die Kontakte abgehen. Genau einer zeigt
    widerstandslosen Durchgang.
-3. **Dauerplus suchen.** Schlüssel abgezogen, schwarze Spitze auf den
-   gefundenen Massekontakt, mit der roten die übrigen abgehen. Bei geladener
-   Batterie stehen dort rund `12.6 V`.
+3. **Dauerplus suchen.** Schlüssel abgezogen, schwarze Spitze auf die
+   gefundene Masse, mit der roten die übrigen abgehen. Dort stehen rund `12.6 V`.
 4. **Zündungsplus suchen.** Gleiche Anordnung, Zündung ein. Der gesuchte
    Kontakt kommt sprunghaft und ist beim Ausschalten sofort wieder tot.
 5. **Belegung notieren** und den Zettel im Fahrzeug lassen.
