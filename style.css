@@ -2298,3 +2298,31 @@
   text-align: center;
 }
 .drawer-walk-next { font-size: 16px; line-height: 1; }
+
+/* Startzustand vor dem ersten Zeichnen. Kein Rad, das sich dreht, sondern
+   Platzhalter in der Form dessen, was gleich kommt — das haelt das Layout
+   ruhig, statt den Inhalt spaeter hineinspringen zu lassen. */
+.boot { padding: var(--space-6) 0; }
+.boot-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+.boot-bars { display: grid; gap: var(--space-3); }
+.boot-bar {
+  display: block;
+  height: 72px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  animation: boot-puls 1.4s ease-in-out infinite;
+}
+.boot-bar:nth-child(2) { animation-delay: .18s; }
+.boot-bar:nth-child(3) { animation-delay: .36s; }
+@keyframes boot-puls {
+  0%, 100% { opacity: .55; }
+  50%      { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-bar { animation: none; opacity: .8; }
+}

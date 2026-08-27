@@ -225,6 +225,17 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Startzustand: nie eine leere Flaeche ---
+      // Vor dem Laden von content/index.json stand hier nichts. Ueber eine
+      // langsame Verbindung sieht das aus wie eine kaputte App.
+      const rohHtml = await (await fetch(BASE + '/index.html')).text();
+      expect(/aria-busy="true"/.test(rohHtml) && /class="boot"/.test(rohHtml),
+        'Startzustand steht schon im HTML', 'kein Platzhalter vor dem ersten Zeichnen');
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1400);
+      expect(await page.locator('.boot').count() === 0,
+        'Startzustand verschwindet nach dem Laden', 'Platzhalter steht noch da');
+
       // --- Tastaturfokus muss sichtbar sein ---
       // Und zwar anders sichtbar als Hover: in einem Kartenraster ist eine
       // blosse Farbaenderung der Umrandung kein Fokus, weil der Zeiger

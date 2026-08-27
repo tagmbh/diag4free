@@ -142,7 +142,20 @@
     <main class="main" id="main" tabindex="-1">
       <!-- Overview -->
       <section class="view active" data-view-panel="overview" aria-labelledby="ovTitle">
-        <div class="view-inner" id="overviewPanel"><!-- populated --></div>
+        <div class="view-inner" id="overviewPanel">
+          <!-- Startzustand, bis content/index.json geladen ist. Vorher stand
+               hier nichts: ein leerer weisser Bereich, der in der Werkstatt
+               ueber eine langsame Verbindung wie eine kaputte App aussieht.
+               Die erste Zeichnung ersetzt diesen Block vollstaendig. -->
+          <div class="boot" role="status" aria-busy="true" aria-live="polite">
+            <p class="boot-text">Wissensbasis wird geladen …</p>
+            <div class="boot-bars" aria-hidden="true">
+              <span class="boot-bar"></span>
+              <span class="boot-bar"></span>
+              <span class="boot-bar"></span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Docs -->
