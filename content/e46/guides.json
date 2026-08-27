@@ -106,7 +106,7 @@
     },
     "no-comm": {
       "title": "Diagnosekommunikation gestört",
-      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach DME KL30 an Pin 1 des X60001.",
+      "text": "K-DCAN-Kabel und COM-Port prüfen. K-Line am OBD-Stecker Pin 7 auf Durchgang zur DME prüfen und gegen Masse gegenprüfen — ein Schluss gegen Masse macht die Diagnoseleitung stumm, ein Wert für den Ruhepegel-Pullup ist hier nicht belegt. Wenn die K-Line in Ordnung ist: DME-Sicherung F6 im Elektrokasten Motorraum prüfen (Amperewert laut Sicherungsplan), danach die Dauerplus-Versorgung am 9-poligen Versorgungsstecker X60001 der DME prüfen — Pole am Stecker zählen und die Versorgungsader gegen Masse messen, Pinbelegung siehe D4F-E46-006.",
       "next_docs": ["D4F-E46-001", "D4F-E46-006"]
     },
     "ews-block": {
@@ -121,7 +121,7 @@
     },
     "ignition": {
       "title": "Zündimpuls fehlt",
-      "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung X60001 Pin 24 gegen Motorblock messen (< 0.5 Ω).",
+      "text": "Kurbelwellensensor tauschen (E46-Klassiker, Ausfall ohne DTC möglich). Danach Nockenwellensensor prüfen. DME-Masseanbindung gegen Motorblock messen. Die Masseader am DME-Steckerblock am Verbraucherende bestimmen, nicht nach Pinnummer raten — X60001 hat 9 Pole, einen Pin 24 gibt es dort nicht. Über eine intakte Masse liegt praktisch kein Widerstand: < 0.5 Ω, Prüfspitzen vorher kurzschließen und den Leitungswiderstand abziehen.",
       "next_docs": ["D4F-E46-006", "D4F-E46-003"]
     },
     "compression": {

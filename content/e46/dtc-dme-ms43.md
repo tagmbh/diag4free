@@ -29,13 +29,24 @@ Betrifft die Verstellung selbst, nicht nur die Ansteuerung. Zu prüfen sind das 
 
 ## Wo du misst
 
-Die Signale der genannten Fehler laufen auf diesen Pins zusammen. Die vollständige Belegung steht in `D4F-E46-006`.
+Die MS 43 hat keinen einzelnen Stecker, sondern einen Block aus fünf Einzelsteckern mit je eigener Zählung ab Pin 1: `X60001` 9-polig (Versorgung), `X60002` 24-polig (Peripherie), `X60003` 52-polig (Motor), `X60004` 40-polig (Fahrzeug), `X60005` 9-polig (Zündspulen). Zusammen 134 Kontakte. Eine Pinnummer ohne Steckerangabe zeigt deshalb auf nichts.
 
-| Signal | Pin |
-|---|---|
-| MAF-Signal | `X60001` Pin 87 |
-| Lambda vor Kat Bank 1 / Bank 2 | `X60002` Pin 1 / Pin 16 |
-| VANOS-Solenoid Einlass | `X60001` Pin 36 |
+| Signal | Kontakt | Beleg |
+|---|---|---|
+| HFM-Signal (Luftmasse) | `X60003` Pin 1 | nach einer Quelle — vor dem Anstechen gegenprüfen |
+| Lambda vor Kat Bank 1 / Bank 2 | nicht belegt | am Bauteil durchklingeln |
+| VANOS-Solenoid Einlass | nicht belegt | am Bauteil durchklingeln |
+
+**Pinnummern gestrichen.** Frühere Fassungen dieses Artikels nannten hier `X60001` Pin 87 und Pin 36. An einem 9-poligen Stecker gibt es diese Kontakte nicht — die Zahlen stammten aus einer durchlaufenden Zählung über den ganzen Block.
+
+So bestimmst du den Kontakt am Fahrzeug:
+
+1. **Stecker am Verbraucher abziehen** — am Luftmassenmesser, an der Lambdasonde, am VANOS-Solenoid.
+2. **Pole am DME-Stecker zählen** und mit der Liste oben abgleichen. Passt die Polzahl nicht, gilt die Liste für dein Fahrzeug nicht.
+3. **Ader durchklingeln:** Multimeter im Durchgangsbereich an die Ader am Verbraucher, mit der zweiten Spitze die Kontakte am abgezogenen DME-Stecker abfahren.
+4. **Gegenprobe:** an der gefundenen Ader wackeln und prüfen, ob der Durchgang aussetzt — sonst hast du eine Nachbarader erwischt.
+
+Die Zuordnung am Fahrzeug schlägt jede Tabelle. Die Polzahlen und was sonst belegt ist, stehen in `D4F-E46-006`.
 
 Vor jeder Widerstandsmessung Zündung KL15 aus und den Stecker abziehen. Am gesteckten Steuergerät gemessene Widerstände sind wertlos, weil parallele Pfade mitmessen.
 

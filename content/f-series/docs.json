@@ -76,7 +76,7 @@
       "pins": [
         "OBD2 Pin 8 · F-Serie: Aktivierung Ethernet, über Widerstand auf Pin 16",
         "OBD2 Pin 8 · E-Modelle bis 02/2007: zweite K-Leitung, Steuergeräte außerhalb des Antriebs",
-        "OBD2 Pin 8 · E-Modelle ab 03/2007: unbelegt, eine Brücke nach Pin 7 stört dort den Bus",
+        "OBD2 Pin 8 · E-Modelle ab 03/2007: strittig — eine Darstellung nennt ihn unbelegt, eine andere in Benutzung. Einig sind sich beide darin, dass eine Brücke nach Pin 7 dort den Bus stört",
         "OBD2 Pin 16 · KL30 Dauerplus — Bezugspunkt der Aktivierungsleitung",
         "OBD2 Pin 4 und Pin 5 · Masse"
       ],

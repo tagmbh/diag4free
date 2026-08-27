@@ -85,9 +85,9 @@
         "Nach einer Quelle tragen US-Fahrzeuge ab Anfang 2003 die MS 45.1 statt der MS 43 — erst die DME-Ident lesen, dann diese Liste anwenden"
       ],
       "pins": [
-        "DME X60001 Pin 87 · MAF-Signal",
-        "DME X60002 Pin 1/16 · Lambda vor Kat B1/B2",
-        "DME X60001 Pin 36 · VANOS Solenoid Einlass"
+        "DME-Steckerblock MS 43: X60001 9 · X60002 24 · X60003 52 · X60004 40 · X60005 9 Pole — eine Pinnummer ohne Steckerangabe zeigt auf nichts",
+        "X60003 Pin 1 · HFM-Signal (Luftmasse) — nach einer Quelle, vor dem Anstechen gegenprüfen",
+        "Lambda vor Kat und VANOS-Solenoid: Pinnummer hier nicht belegt — Leitung am Bauteil abziehen und zum DME-Stecker durchklingeln"
       ],
       "engines": [
         "M54"
@@ -105,19 +105,19 @@
       "cat": "Verkabelung",
       "title": "Stromlaufplan · Startsystem E46 M54",
       "valid": "E46 · M54 · EWS3",
-      "summary": "Signalfluss beim Startvorgang: Zündschloss → EWS3 → DME → Anlasser-Steuerrelais → Anlasser. Enthält relevante Pins des 88-poligen DME-Steckers und der EWS3.",
+      "summary": "Signalfluss beim Startvorgang: Zündschloss → EWS3 → DME → Anlasser-Steuerrelais → Anlasser. Nennt die Polzahlen des fünfteiligen DME-Steckerblocks und das Verfahren, die zugehörigen Adern am Fahrzeug zu bestimmen.",
       "points": [
         "KL15 aktiv → EWS3 sendet Freigabe über K-Line an DME",
         "DME steuert Anlasser-Steuerrelais K6301 an",
-        "Startsignal auf DME-Pin 26 (X60001)",
-        "Freigabe von EWS3 auf DME-Pin 78 (X60001)"
+        "KL50 und EWS-Freigabe laufen über den DME-Steckerblock — welcher der fünf Stecker und welcher Pin, ist hier nicht belegt",
+        "Zuordnung am Fahrzeug bestimmen: Ader am Zündschloss bzw. an der EWS abziehen und zum abgezogenen DME-Stecker durchklingeln"
       ],
       "pins": [
-        "DME X60001 Pin 26 · KL50 vom Zündschloss",
-        "DME X60001 Pin 78 · EWS-Freigabe (K-Line)",
-        "DME X60001 Pin 87 · Anlasser-Steuerrelais",
-        "EWS3 X6041 Pin 6 · K-Line zur DME",
-        "EWS3 X6041 Pin 3 · KL15"
+        "DME-Steckerblock MS 43: X60001 9 · X60002 24 · X60003 52 · X60004 40 · X60005 9 Pole",
+        "X60001 Pin 7 · KL30 / B+ aus der E-Box — nach einer Quelle, vor dem Anstechen gegenprüfen",
+        "X60001 Pin 8 · Versorgung über das DME-Relais — nach einer Quelle, vor dem Anstechen gegenprüfen",
+        "KL50, EWS-Freigabe und Anlasser-Steuerrelais: Pinnummern nicht belegt — am Fahrzeug durchklingeln",
+        "EWS3 X6041: Pinnummern für K-Line und KL15 nicht belegt — an der EWS abziehen und zur DME durchklingeln"
       ],
       "engines": [
         "M54",
@@ -162,25 +162,24 @@
       "id": "D4F-E46-006",
       "type": "PIN",
       "cat": "Verkabelung",
-      "title": "DME-Stecker X60001/X60002 · MS43 Pinout",
+      "title": "DME-Steckerblock X60001–X60005 · MS43",
       "valid": "E46 · M54 · MS43",
-      "summary": "Vollständige Pinbelegung der beiden DME-Stecker der Motronic MS43. Für Fehlersuche an Sensoren, Aktuatoren und Kommunikationsleitungen.",
+      "summary": "Der DME-Steckerblock der Motronic MS 43 besteht aus fünf Einzelsteckern, jeder mit eigener Zählung ab Pin 1. Dieses Dokument nennt die Polzahlen und das Verfahren, einen Kontakt am Fahrzeug zu bestimmen.",
       "points": [
-        "X60001 = 88-polig (Fahrzeugseite)",
-        "X60002 = 40-polig (Motorseite)",
-        "Vor Messung immer Zündung KL15 aus",
-        "Widerstandsmessung nur bei abgezogenem Stecker",
+        "Fünf Stecker, jeder mit eigener Zählung ab Pin 1 — eine Pinnummer ohne Steckerangabe zeigt auf nichts",
+        "X60001 9-polig Versorgung · X60002 24-polig Peripherie · X60003 52-polig Motor · X60004 40-polig Fahrzeug · X60005 9-polig Zündung",
+        "Zusammen 134 Kontakte — eine frühere Fassung nannte hier einen 88-poligen X60001; das ließ sich nicht belegen und ist falsch",
+        "Die Zuordnung am Fahrzeug schlägt jede Tabelle: Pole am Stecker zählen, Ader am Verbraucher abziehen, zum DME-Stecker durchklingeln",
+        "Vor der Messung Zündung KL15 aus; Widerstand nur am abgezogenen Stecker messen",
         "Gilt für die MS 43 — eine MS 45.1 hat eine eigene Belegung, siehe D4F-E46-009"
       ],
       "pins": [
-        "X60001 Pin 1 · KL30 dauerplus",
-        "X60001 Pin 26 · KL50",
-        "X60001 Pin 78 · EWS-Freigabe",
-        "X60001 Pin 87 · Anlasser-Steuerrelais",
-        "X60002 Pin 1 · Lambdasonde vor Kat Bank 1",
-        "X60002 Pin 16 · Lambdasonde vor Kat Bank 2",
-        "X60002 Pin 4 · Kurbelwellensensor Signal",
-        "X60002 Pin 24 · Nockenwellensensor Einlass"
+        "X60001 Pin 7 · KL30 / B+ vom Stützpunkt in der E-Box — nach einer Quelle",
+        "X60001 Pin 8 · Versorgung über das DME-Relais (angesteuert von X60002 Pin 23) — nach einer Quelle",
+        "X60001 Pin 1 · Relais der Einspritzventile — nach einer Quelle",
+        "X60003 Pin 1 · HFM-Signal (Luftmasse) — nach einer Quelle",
+        "Diese vier vor dem Anstechen gegenprüfen: Pole zählen und die Ader am Verbraucher durchklingeln",
+        "KL50, EWS-Freigabe, Lambdasonden, Kurbel- und Nockenwellensensor: Pinnummern hier nicht belegt"
       ],
       "engines": [
         "M54"
