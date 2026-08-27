@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T08:46:02.976Z",
+  "generated": "2026-08-27T08:50:05.127Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -3266,7 +3266,8 @@
       ],
       "details": [
         "D4F-E90-004",
-        "D4F-E90-007"
+        "D4F-E90-007",
+        "D4F-E90-009"
       ],
       "model": "e90"
     },
@@ -3304,7 +3305,8 @@
       "article": "batteriewechsel.md",
       "details": [
         "D4F-E90-001",
-        "D4F-E90-006"
+        "D4F-E90-006",
+        "D4F-E90-009"
       ],
       "obd": {
         "pids": [
@@ -3350,6 +3352,86 @@
           "ecu:DME"
         ]
       },
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-009",
+      "type": "GUIDE",
+      "cat": "Startsystem",
+      "title": "Startsystem des E90 · CAS statt EWS, Startknopf statt Zündschloss, Batterie im Kofferraum",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
+      "summary": "Am E90 entscheidet ein Steuergerät, ob der Anlasser Strom bekommt, und der Strom kommt aus dem Kofferraum. Wer diese Kette nicht kennt, misst am falschen Ende. Das Dokument beschreibt Startfreigabe, Anlasseransteuerung und die zwei Messpunkte, an denen sich der Bordnetzteil beurteilen lässt.",
+      "points": [
+        "Das CAS ist am E90 das Startrelais. Es prüft den Schlüssel, gibt die Kraftstoffpumpe frei, schickt die Startfreigabe an DME beziehungsweise DDE und schaltet KL50 zum Magnetschalter des Anlassers. Ein defekter Anlasser ist die seltenste dieser vier Ursachen",
+        "Ohne erfüllte Startbedingung schaltet das CAS KL50 nicht: Schlüssel in der Aufnahme beziehungsweise bei Komfortzugang im Innenraum erkannt, Automatik in P oder N mit getretener Bremse, Handschalter mit getretener Kupplung. Das Fahrzeug ist dann gesund und dreht trotzdem nicht",
+        "CAS und Motorsteuerung tauschen eine fahrzeugindividuelle Kennung aus. Passt sie nach einem Tausch eines der beiden Geräte nicht, dreht der Anlasser, der Motor springt aber nicht an oder geht sofort wieder aus — das ist kein Kraftstoff- und kein Zündungsfehler",
+        "Die Batterie liegt im Kofferraum, der Fremdstart-Stützpunkt im Motorraum hängt an derselben Leitung. Damit gibt es zwei Messpunkte für dieselbe Spannung: die Differenz zwischen ihnen unter Startlast ist der Zustand der Leitung dazwischen",
+        "In der Plusleitung sitzt eine pyrotechnische Sicherheitsbatterieklemme. Ausgelöst oder mit beschädigtem Stecker trennt sie Anlasser und Generator ab: die Innenraumelektrik bleibt hell, der Anlasser bleibt stumm. Das sieht aus wie eine leere Batterie und ist keine",
+        "Am Minuspol sitzt der Batteriesensor. Eine nicht registrierte Batterie wird zu schwach geladen, und das Startverhalten verschlechtert sich über Wochen — vor jeder Startdiagnose prüfen, siehe D4F-E90-007"
+      ],
+      "pins": [
+        "Batterie Pluspol Kofferraum · Sicherheitsbatterieklemme · B+ zu Anlasser und Generator",
+        "Batterie Minuspol Kofferraum · Batteriesensor · Signalleitung zum Energiemanagement",
+        "Motorraum · Fremdstart-Stützpunkt Plus · Gegenmesspunkt zur Batterie im Kofferraum",
+        "CAS · KL50 · Ansteuerung Magnetschalter Anlasser",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "startsystem.md",
+      "details": [
+        "D4F-E90-006",
+        "D4F-E90-007",
+        "D4F-E90-010"
+      ],
+      "obd": {
+        "pids": [
+          "0142"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      },
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-010",
+      "type": "TEST",
+      "cat": "Startsystem",
+      "title": "Dieselstart am E90 · M57 und N47, Vorglühanlage und Kraftstoffversorgung",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · M57, N47",
+      "summary": "Zugangssystem und Bordnetz teilen sich Diesel und Benziner, die Startbedingungen des Motors nicht. Statt einer Zündung gibt es eine Vorglühanlage, und die Kraftstoffseite reagiert empfindlich auf Luft. Das Dokument nennt, was am Diesel zusätzlich zu prüfen ist, wenn der Anlasser dreht.",
+      "points": [
+        "Die Glühkerzen hängen an einem eigenen Glühzeitsteuergerät, das die DDE anfordert. Daraus folgt die Leseregel: ein einzelner auffälliger Kreis deutet auf Kerze und Zuleitung, alle Kreise gleichzeitig auf das Glühzeitsteuergerät, seine Versorgung oder den Steckkontakt dorthin",
+        "Geglüht wird auch nach dem Start. Ein Motor, der anspringt und danach kalt rau läuft, kann ein Glühproblem haben, obwohl der Start selbst gelingt",
+        "Im Tank sitzt eine elektrische Vorförderung zur Hochdruckpumpe. Beim Startversuch zählt nicht die Höhe des Raildrucks, sondern ob er überhaupt aufgebaut wird — Ist-Wert gegen den von der DDE geführten Sollwert lesen. Absolutwerte für Nieder- und Hochdruck sind hier nicht belegt",
+        "Luft im Kraftstoffsystem zeigt sich als langer Start nach längerem Stehen, wobei der zweite Versuch besser gelingt als der erste. Undichte Verschraubungen, gealterte Leitungen und der Rücklaufweg sind die Kandidaten",
+        "Filter und Vorförderung gehören vor jeder Entscheidung über die Hochdruckpumpe beurteilt — eine neue Pumpe hinter einem zugesetzten Filter liefert dasselbe Bild wie die alte",
+        "Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite. Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund: danach wird nicht weiter georgelt, sondern die Steuerzeit geprüft. Häufigkeit als Erfahrungswert aus Werkstattberichten, nicht als Spezifikation"
+      ],
+      "pins": [
+        "Glühzeitsteuergerät · Versorgung und Steuerleitung zur DDE",
+        "Glühkerzen · je Zylinder ein Kreis, vergleichend gegeneinander messen",
+        "Kraftstofftank · elektrische Vorförderung zur Hochdruckpumpe"
+      ],
+      "engines": [
+        "M57",
+        "N47"
+      ],
+      "article": "diesel-start.md",
+      "details": [
+        "D4F-E90-009",
+        "D4F-E90-005"
+      ],
       "model": "e90"
     },
     {
@@ -9085,6 +9167,108 @@
             "D4F-E90-005",
             "D4F-E90-004"
           ]
+        },
+        "start-bordnetz": {
+          "title": "Batterie-, Masse- oder Anlasserkreis",
+          "text": "Die Spannung hält die Startanforderung nicht durch. Arbeite von der Quelle zum Verbraucher: Ladezustand und Alter der Batterie, Sauberkeit und Festsitz beider Polklemmen im Kofferraum, Masseverbindung der Karosserie. Wiederhole die Messung mit Stützgerät — hält sie damit durch, ist die Batterie der Befund und nicht die Leitung. Bevor ein Anlasser bestellt wird: eine neue Batterie, die nie registriert wurde, wird zu schwach geladen und erzeugt dasselbe Bild über Wochen hinweg.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-007"
+          ]
+        },
+        "start-sbk": {
+          "title": "Plusleitung nach vorn unterbrochen — Sicherheitsbatterieklemme prüfen",
+          "text": "Hinten volle Spannung, vorn keine: die Strecke zwischen Batterie und Motorraum ist offen. Der erste Kandidat ist die pyrotechnische Sicherheitsbatterieklemme am Pluspol, entweder ausgelöst oder mit beschädigtem Stecker. Danach kommen der Verteilerpunkt der Leitung und die Übergänge am Stützpunkt im Motorraum. Prüfe zugleich den Fehlerspeicher des Rückhaltesystems: ein Eintrag zur Sicherheitsbatterieklemme bestätigt den Befund von der anderen Seite. Die Leitung ist ein Sicherheitsbauteil — Überbrücken ist keine Reparatur.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-startfreigabe": {
+          "title": "Startfreigabe fehlt — Schlüssel, Startbedingung oder CAS",
+          "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Baustanden gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-anlasserkreis": {
+          "title": "Freigabe steht — KL50 oder Anlasser",
+          "text": "Das CAS gibt frei, die Spannung kommt vorn an, und der Anlasser dreht trotzdem nicht. Jetzt bleibt die Strecke dazwischen: die Steuerleitung KL50 zum Magnetschalter, deren Steckkontakte, und der Anlasser selbst mit seinem Hauptanschluss. Miss an der Steuerleitung während der Startanforderung, ob die Ansteuerung dort ankommt. Kommt sie an und passiert nichts, ist der Magnetschalter beziehungsweise der Anlasser der Befund — das ist der Punkt, an dem ein Tausch begründet ist und nicht früher.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-kw-geber": {
+          "title": "Kein Drehzahlsignal beim Durchdrehen",
+          "text": "Der Anlasser dreht, die Motorsteuerung sieht keine Drehzahl — damit hat sie keinen Grund einzuspritzen, und weder Kraftstoff noch Zündung erklären den Fehler. Prüfe den Kurbelwellengeber und vor allem seinen Steckkontakt: Öl, das über die Leitung in den Stecker kriecht, und Späne am Magneten sind die berichteten Ursachen. Ein Widerstands-Sollwert ist hier nicht belegt — beurteile vergleichend gegen ein bekannt gutes Fahrzeug oder über den Wechsel gegen ein bekannt gutes Teil. Prüfe zusätzlich, ob ein Eintrag zum Nockenwellengeber mit ansteht: beide zusammen deuten eher auf den gemeinsamen Leitungsweg als auf zwei Sensoren.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-motorschutz": {
+          "title": "Die Motorsteuerung spritzt nicht ein",
+          "text": "Der Speicher nennt eine fehlende Startfreigabe oder eine Abschaltung. Der häufigste Fall ist eine nicht passende Kennung zwischen CAS und Motorsteuerung nach dem Tausch eines der beiden Geräte — dann hilft kein Bauteil, sondern der Angleich beider Geräte mit einer Software, die das kann. Steht stattdessen eine Schutzfunktion im Speicher, gehört ihre Ursache zuerst behoben, nicht der Eintrag gelöscht. Notiere vor jedem Eingriff die vollständige Geräteliste: sie ist später der einzige Beleg dafür, welcher Stand vor der Arbeit im Fahrzeug war.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-001"
+          ]
+        },
+        "start-ekp": {
+          "title": "Niederdruckseite — Pumpe oder ihre Anforderung",
+          "text": "Die Kraftstoffpumpe läuft bei Startanforderung nicht an. Kläre zuerst, ob die Anforderung ankommt: das Steuergerät der Pumpe bekommt sie über den Bus, nicht über einen Schalter. Fehlt sie, ist der Weg dorthin der Befund und nicht die Pumpe. Kommt sie an, prüfe Versorgung und Sicherung des Kreises über den Deckelaufdruck des konkreten Fahrzeugs und danach die Pumpe selbst. Ein getauschtes Pumpensteuergerät muss dem Fahrzeug bekannt gemacht werden, sonst bleibt das Bild dasselbe.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-004"
+          ]
+        },
+        "start-hochdruck": {
+          "title": "Hochdruckseite baut beim Startversuch keinen Druck auf",
+          "text": "Niederdruck steht, Raildruck nicht. Beurteile in dieser Reihenfolge: Raildrucksensor und seine Leitung, das Mengenregelventil der Hochdruckpumpe, dann die Pumpe. Ein defekter Sensor meldet einen Druck, den es nicht gibt, und ein fehlender Druck kann eine Meldung sein statt ein Zustand — deshalb steht der Sensor vorn und nicht hinten. Beim N54 gehört vor jeder Entscheidung über den Tausch die Frage dazu, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt. Absolute Druckwerte sind hier nicht belegt; verglichen wird gegen den geführten Sollwert und gegen ein bekannt gutes Fahrzeug.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-005"
+          ]
+        },
+        "start-zuendung": {
+          "title": "Kein Zündfunke",
+          "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, sechs gleichzeitig defekte Spulen erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-mechanik": {
+          "title": "Kraftstoff, Zündung und Drehzahlsignal stehen — Steuertrieb und Verdichtung",
+          "text": "Alle drei Ebenen liefern einen Befund, und der Motor springt trotzdem nicht an. Jetzt geht es um die Mechanik: Verdichtung aller Zylinder gegeneinander, Stellung des Steuertriebs, Zustand der Steuerkette. Der Vergleich der Zylinder untereinander ersetzt dabei den Sollwert — mehrere gleich niedrige Werte deuten auf die Steuerzeit, ein einzelner Ausreißer auf den Zylinder. Hat es vorher aus dem Motor gerasselt, wird nicht weiter durchgedreht, sondern zuerst die Steuerzeit geprüft. Sichere vor dem Zerlegen den vollständigen Fehlerspeicher aller Steuergeräte, damit später vergleichbar bleibt, was vorher da war.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-vorgluehen": {
+          "title": "Vorglühanlage auffällig",
+          "text": "Der Speicher nennt Glühkreise. Zähl, wie viele: ein einzelner Kreis führt zur Kerze und ihrer Zuleitung, alle Kreise gleichzeitig führen zum Glühzeitsteuergerät, seiner Versorgung und dem Steckkontakt dorthin. Miss die Kerzen gegeneinander statt gegen einen Sollwert. Beachte, dass die Anlage auch nach dem Start weiterglüht: ein Fahrzeug, das anspringt und danach kalt rau läuft, kann dasselbe Problem haben. Wird das Glühzeitsteuergerät getauscht, gehört die Frage dazu, warum es ausgefallen ist — ein Dauersignal an die Kerzen zerstört das nächste genauso.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-diesel-kraftstoff": {
+          "title": "Kraftstoffseite am Diesel",
+          "text": "Der Raildruck baut sich beim Startversuch nicht auf. Arbeite von hinten nach vorn: Vorförderung im Tank, Filter, Leitungen und Verschraubungen, Rücklaufweg, dann erst die Hochdruckpumpe. Luft im System ist der Befund, der am häufigsten übersehen wird — er zeigt sich als langer Start nach längerem Stehen, bei dem der zweite Versuch besser gelingt als der erste. Eine neue Hochdruckpumpe hinter einem zugesetzten Filter oder einer undichten Leitung liefert dasselbe Bild wie die alte. Zahlenwerte für Nieder- und Hochdruck sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-mechanik-diesel": {
+          "title": "Glühen und Kraftstoff in Ordnung — Steuerkette und Verdichtung",
+          "text": "Die Vorglühanlage ist unauffällig, der Raildruck folgt dem geführten Sollwert, und der Motor springt trotzdem nicht an. Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite; ein Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund. Ist er da, wird nicht weiter georgelt — jeder weitere Startversuch vergrößert einen möglichen Schaden. Prüfe die Steuerzeit und danach die Verdichtung im Vergleich der Zylinder untereinander. Die Häufigkeit dieses Bildes am N47 ist ein Erfahrungswert aus Werkstattberichten, keine Spezifikation.",
+          "next_docs": [
+            "D4F-E90-010",
+            "D4F-E90-005"
+          ]
         }
       }
     },
@@ -9281,6 +9465,108 @@
             "D4F-E90-005",
             "D4F-E90-004"
           ]
+        },
+        "start-bordnetz": {
+          "title": "Batterie-, Masse- oder Anlasserkreis",
+          "text": "Die Spannung hält die Startanforderung nicht durch. Arbeite von der Quelle zum Verbraucher: Ladezustand und Alter der Batterie, Sauberkeit und Festsitz beider Polklemmen im Kofferraum, Masseverbindung der Karosserie. Wiederhole die Messung mit Stützgerät — hält sie damit durch, ist die Batterie der Befund und nicht die Leitung. Bevor ein Anlasser bestellt wird: eine neue Batterie, die nie registriert wurde, wird zu schwach geladen und erzeugt dasselbe Bild über Wochen hinweg.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-007"
+          ]
+        },
+        "start-sbk": {
+          "title": "Plusleitung nach vorn unterbrochen — Sicherheitsbatterieklemme prüfen",
+          "text": "Hinten volle Spannung, vorn keine: die Strecke zwischen Batterie und Motorraum ist offen. Der erste Kandidat ist die pyrotechnische Sicherheitsbatterieklemme am Pluspol, entweder ausgelöst oder mit beschädigtem Stecker. Danach kommen der Verteilerpunkt der Leitung und die Übergänge am Stützpunkt im Motorraum. Prüfe zugleich den Fehlerspeicher des Rückhaltesystems: ein Eintrag zur Sicherheitsbatterieklemme bestätigt den Befund von der anderen Seite. Die Leitung ist ein Sicherheitsbauteil — Überbrücken ist keine Reparatur.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-startfreigabe": {
+          "title": "Startfreigabe fehlt — Schlüssel, Startbedingung oder CAS",
+          "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Baustanden gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-anlasserkreis": {
+          "title": "Freigabe steht — KL50 oder Anlasser",
+          "text": "Das CAS gibt frei, die Spannung kommt vorn an, und der Anlasser dreht trotzdem nicht. Jetzt bleibt die Strecke dazwischen: die Steuerleitung KL50 zum Magnetschalter, deren Steckkontakte, und der Anlasser selbst mit seinem Hauptanschluss. Miss an der Steuerleitung während der Startanforderung, ob die Ansteuerung dort ankommt. Kommt sie an und passiert nichts, ist der Magnetschalter beziehungsweise der Anlasser der Befund — das ist der Punkt, an dem ein Tausch begründet ist und nicht früher.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-kw-geber": {
+          "title": "Kein Drehzahlsignal beim Durchdrehen",
+          "text": "Der Anlasser dreht, die Motorsteuerung sieht keine Drehzahl — damit hat sie keinen Grund einzuspritzen, und weder Kraftstoff noch Zündung erklären den Fehler. Prüfe den Kurbelwellengeber und vor allem seinen Steckkontakt: Öl, das über die Leitung in den Stecker kriecht, und Späne am Magneten sind die berichteten Ursachen. Ein Widerstands-Sollwert ist hier nicht belegt — beurteile vergleichend gegen ein bekannt gutes Fahrzeug oder über den Wechsel gegen ein bekannt gutes Teil. Prüfe zusätzlich, ob ein Eintrag zum Nockenwellengeber mit ansteht: beide zusammen deuten eher auf den gemeinsamen Leitungsweg als auf zwei Sensoren.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-motorschutz": {
+          "title": "Die Motorsteuerung spritzt nicht ein",
+          "text": "Der Speicher nennt eine fehlende Startfreigabe oder eine Abschaltung. Der häufigste Fall ist eine nicht passende Kennung zwischen CAS und Motorsteuerung nach dem Tausch eines der beiden Geräte — dann hilft kein Bauteil, sondern der Angleich beider Geräte mit einer Software, die das kann. Steht stattdessen eine Schutzfunktion im Speicher, gehört ihre Ursache zuerst behoben, nicht der Eintrag gelöscht. Notiere vor jedem Eingriff die vollständige Geräteliste: sie ist später der einzige Beleg dafür, welcher Stand vor der Arbeit im Fahrzeug war.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-001"
+          ]
+        },
+        "start-ekp": {
+          "title": "Niederdruckseite — Pumpe oder ihre Anforderung",
+          "text": "Die Kraftstoffpumpe läuft bei Startanforderung nicht an. Kläre zuerst, ob die Anforderung ankommt: das Steuergerät der Pumpe bekommt sie über den Bus, nicht über einen Schalter. Fehlt sie, ist der Weg dorthin der Befund und nicht die Pumpe. Kommt sie an, prüfe Versorgung und Sicherung des Kreises über den Deckelaufdruck des konkreten Fahrzeugs und danach die Pumpe selbst. Ein getauschtes Pumpensteuergerät muss dem Fahrzeug bekannt gemacht werden, sonst bleibt das Bild dasselbe.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-004"
+          ]
+        },
+        "start-hochdruck": {
+          "title": "Hochdruckseite baut beim Startversuch keinen Druck auf",
+          "text": "Niederdruck steht, Raildruck nicht. Beurteile in dieser Reihenfolge: Raildrucksensor und seine Leitung, das Mengenregelventil der Hochdruckpumpe, dann die Pumpe. Ein defekter Sensor meldet einen Druck, den es nicht gibt, und ein fehlender Druck kann eine Meldung sein statt ein Zustand — deshalb steht der Sensor vorn und nicht hinten. Beim N54 gehört vor jeder Entscheidung über den Tausch die Frage dazu, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt. Absolute Druckwerte sind hier nicht belegt; verglichen wird gegen den geführten Sollwert und gegen ein bekannt gutes Fahrzeug.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-005"
+          ]
+        },
+        "start-zuendung": {
+          "title": "Kein Zündfunke",
+          "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, sechs gleichzeitig defekte Spulen erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-mechanik": {
+          "title": "Kraftstoff, Zündung und Drehzahlsignal stehen — Steuertrieb und Verdichtung",
+          "text": "Alle drei Ebenen liefern einen Befund, und der Motor springt trotzdem nicht an. Jetzt geht es um die Mechanik: Verdichtung aller Zylinder gegeneinander, Stellung des Steuertriebs, Zustand der Steuerkette. Der Vergleich der Zylinder untereinander ersetzt dabei den Sollwert — mehrere gleich niedrige Werte deuten auf die Steuerzeit, ein einzelner Ausreißer auf den Zylinder. Hat es vorher aus dem Motor gerasselt, wird nicht weiter durchgedreht, sondern zuerst die Steuerzeit geprüft. Sichere vor dem Zerlegen den vollständigen Fehlerspeicher aller Steuergeräte, damit später vergleichbar bleibt, was vorher da war.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-vorgluehen": {
+          "title": "Vorglühanlage auffällig",
+          "text": "Der Speicher nennt Glühkreise. Zähl, wie viele: ein einzelner Kreis führt zur Kerze und ihrer Zuleitung, alle Kreise gleichzeitig führen zum Glühzeitsteuergerät, seiner Versorgung und dem Steckkontakt dorthin. Miss die Kerzen gegeneinander statt gegen einen Sollwert. Beachte, dass die Anlage auch nach dem Start weiterglüht: ein Fahrzeug, das anspringt und danach kalt rau läuft, kann dasselbe Problem haben. Wird das Glühzeitsteuergerät getauscht, gehört die Frage dazu, warum es ausgefallen ist — ein Dauersignal an die Kerzen zerstört das nächste genauso.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-diesel-kraftstoff": {
+          "title": "Kraftstoffseite am Diesel",
+          "text": "Der Raildruck baut sich beim Startversuch nicht auf. Arbeite von hinten nach vorn: Vorförderung im Tank, Filter, Leitungen und Verschraubungen, Rücklaufweg, dann erst die Hochdruckpumpe. Luft im System ist der Befund, der am häufigsten übersehen wird — er zeigt sich als langer Start nach längerem Stehen, bei dem der zweite Versuch besser gelingt als der erste. Eine neue Hochdruckpumpe hinter einem zugesetzten Filter oder einer undichten Leitung liefert dasselbe Bild wie die alte. Zahlenwerte für Nieder- und Hochdruck sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-mechanik-diesel": {
+          "title": "Glühen und Kraftstoff in Ordnung — Steuerkette und Verdichtung",
+          "text": "Die Vorglühanlage ist unauffällig, der Raildruck folgt dem geführten Sollwert, und der Motor springt trotzdem nicht an. Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite; ein Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund. Ist er da, wird nicht weiter georgelt — jeder weitere Startversuch vergrößert einen möglichen Schaden. Prüfe die Steuerzeit und danach die Verdichtung im Vergleich der Zylinder untereinander. Die Häufigkeit dieses Bildes am N47 ist ein Erfahrungswert aus Werkstattberichten, keine Spezifikation.",
+          "next_docs": [
+            "D4F-E90-010",
+            "D4F-E90-005"
+          ]
         }
       }
     },
@@ -9461,6 +9747,463 @@
           "next_docs": [
             "D4F-E90-005",
             "D4F-E90-004"
+          ]
+        },
+        "start-bordnetz": {
+          "title": "Batterie-, Masse- oder Anlasserkreis",
+          "text": "Die Spannung hält die Startanforderung nicht durch. Arbeite von der Quelle zum Verbraucher: Ladezustand und Alter der Batterie, Sauberkeit und Festsitz beider Polklemmen im Kofferraum, Masseverbindung der Karosserie. Wiederhole die Messung mit Stützgerät — hält sie damit durch, ist die Batterie der Befund und nicht die Leitung. Bevor ein Anlasser bestellt wird: eine neue Batterie, die nie registriert wurde, wird zu schwach geladen und erzeugt dasselbe Bild über Wochen hinweg.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-007"
+          ]
+        },
+        "start-sbk": {
+          "title": "Plusleitung nach vorn unterbrochen — Sicherheitsbatterieklemme prüfen",
+          "text": "Hinten volle Spannung, vorn keine: die Strecke zwischen Batterie und Motorraum ist offen. Der erste Kandidat ist die pyrotechnische Sicherheitsbatterieklemme am Pluspol, entweder ausgelöst oder mit beschädigtem Stecker. Danach kommen der Verteilerpunkt der Leitung und die Übergänge am Stützpunkt im Motorraum. Prüfe zugleich den Fehlerspeicher des Rückhaltesystems: ein Eintrag zur Sicherheitsbatterieklemme bestätigt den Befund von der anderen Seite. Die Leitung ist ein Sicherheitsbauteil — Überbrücken ist keine Reparatur.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-startfreigabe": {
+          "title": "Startfreigabe fehlt — Schlüssel, Startbedingung oder CAS",
+          "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Baustanden gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-anlasserkreis": {
+          "title": "Freigabe steht — KL50 oder Anlasser",
+          "text": "Das CAS gibt frei, die Spannung kommt vorn an, und der Anlasser dreht trotzdem nicht. Jetzt bleibt die Strecke dazwischen: die Steuerleitung KL50 zum Magnetschalter, deren Steckkontakte, und der Anlasser selbst mit seinem Hauptanschluss. Miss an der Steuerleitung während der Startanforderung, ob die Ansteuerung dort ankommt. Kommt sie an und passiert nichts, ist der Magnetschalter beziehungsweise der Anlasser der Befund — das ist der Punkt, an dem ein Tausch begründet ist und nicht früher.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-kw-geber": {
+          "title": "Kein Drehzahlsignal beim Durchdrehen",
+          "text": "Der Anlasser dreht, die Motorsteuerung sieht keine Drehzahl — damit hat sie keinen Grund einzuspritzen, und weder Kraftstoff noch Zündung erklären den Fehler. Prüfe den Kurbelwellengeber und vor allem seinen Steckkontakt: Öl, das über die Leitung in den Stecker kriecht, und Späne am Magneten sind die berichteten Ursachen. Ein Widerstands-Sollwert ist hier nicht belegt — beurteile vergleichend gegen ein bekannt gutes Fahrzeug oder über den Wechsel gegen ein bekannt gutes Teil. Prüfe zusätzlich, ob ein Eintrag zum Nockenwellengeber mit ansteht: beide zusammen deuten eher auf den gemeinsamen Leitungsweg als auf zwei Sensoren.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-motorschutz": {
+          "title": "Die Motorsteuerung spritzt nicht ein",
+          "text": "Der Speicher nennt eine fehlende Startfreigabe oder eine Abschaltung. Der häufigste Fall ist eine nicht passende Kennung zwischen CAS und Motorsteuerung nach dem Tausch eines der beiden Geräte — dann hilft kein Bauteil, sondern der Angleich beider Geräte mit einer Software, die das kann. Steht stattdessen eine Schutzfunktion im Speicher, gehört ihre Ursache zuerst behoben, nicht der Eintrag gelöscht. Notiere vor jedem Eingriff die vollständige Geräteliste: sie ist später der einzige Beleg dafür, welcher Stand vor der Arbeit im Fahrzeug war.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-001"
+          ]
+        },
+        "start-ekp": {
+          "title": "Niederdruckseite — Pumpe oder ihre Anforderung",
+          "text": "Die Kraftstoffpumpe läuft bei Startanforderung nicht an. Kläre zuerst, ob die Anforderung ankommt: das Steuergerät der Pumpe bekommt sie über den Bus, nicht über einen Schalter. Fehlt sie, ist der Weg dorthin der Befund und nicht die Pumpe. Kommt sie an, prüfe Versorgung und Sicherung des Kreises über den Deckelaufdruck des konkreten Fahrzeugs und danach die Pumpe selbst. Ein getauschtes Pumpensteuergerät muss dem Fahrzeug bekannt gemacht werden, sonst bleibt das Bild dasselbe.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-004"
+          ]
+        },
+        "start-hochdruck": {
+          "title": "Hochdruckseite baut beim Startversuch keinen Druck auf",
+          "text": "Niederdruck steht, Raildruck nicht. Beurteile in dieser Reihenfolge: Raildrucksensor und seine Leitung, das Mengenregelventil der Hochdruckpumpe, dann die Pumpe. Ein defekter Sensor meldet einen Druck, den es nicht gibt, und ein fehlender Druck kann eine Meldung sein statt ein Zustand — deshalb steht der Sensor vorn und nicht hinten. Beim N54 gehört vor jeder Entscheidung über den Tausch die Frage dazu, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt. Absolute Druckwerte sind hier nicht belegt; verglichen wird gegen den geführten Sollwert und gegen ein bekannt gutes Fahrzeug.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-005"
+          ]
+        },
+        "start-zuendung": {
+          "title": "Kein Zündfunke",
+          "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, sechs gleichzeitig defekte Spulen erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-mechanik": {
+          "title": "Kraftstoff, Zündung und Drehzahlsignal stehen — Steuertrieb und Verdichtung",
+          "text": "Alle drei Ebenen liefern einen Befund, und der Motor springt trotzdem nicht an. Jetzt geht es um die Mechanik: Verdichtung aller Zylinder gegeneinander, Stellung des Steuertriebs, Zustand der Steuerkette. Der Vergleich der Zylinder untereinander ersetzt dabei den Sollwert — mehrere gleich niedrige Werte deuten auf die Steuerzeit, ein einzelner Ausreißer auf den Zylinder. Hat es vorher aus dem Motor gerasselt, wird nicht weiter durchgedreht, sondern zuerst die Steuerzeit geprüft. Sichere vor dem Zerlegen den vollständigen Fehlerspeicher aller Steuergeräte, damit später vergleichbar bleibt, was vorher da war.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-vorgluehen": {
+          "title": "Vorglühanlage auffällig",
+          "text": "Der Speicher nennt Glühkreise. Zähl, wie viele: ein einzelner Kreis führt zur Kerze und ihrer Zuleitung, alle Kreise gleichzeitig führen zum Glühzeitsteuergerät, seiner Versorgung und dem Steckkontakt dorthin. Miss die Kerzen gegeneinander statt gegen einen Sollwert. Beachte, dass die Anlage auch nach dem Start weiterglüht: ein Fahrzeug, das anspringt und danach kalt rau läuft, kann dasselbe Problem haben. Wird das Glühzeitsteuergerät getauscht, gehört die Frage dazu, warum es ausgefallen ist — ein Dauersignal an die Kerzen zerstört das nächste genauso.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-diesel-kraftstoff": {
+          "title": "Kraftstoffseite am Diesel",
+          "text": "Der Raildruck baut sich beim Startversuch nicht auf. Arbeite von hinten nach vorn: Vorförderung im Tank, Filter, Leitungen und Verschraubungen, Rücklaufweg, dann erst die Hochdruckpumpe. Luft im System ist der Befund, der am häufigsten übersehen wird — er zeigt sich als langer Start nach längerem Stehen, bei dem der zweite Versuch besser gelingt als der erste. Eine neue Hochdruckpumpe hinter einem zugesetzten Filter oder einer undichten Leitung liefert dasselbe Bild wie die alte. Zahlenwerte für Nieder- und Hochdruck sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-mechanik-diesel": {
+          "title": "Glühen und Kraftstoff in Ordnung — Steuerkette und Verdichtung",
+          "text": "Die Vorglühanlage ist unauffällig, der Raildruck folgt dem geführten Sollwert, und der Motor springt trotzdem nicht an. Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite; ein Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund. Ist er da, wird nicht weiter georgelt — jeder weitere Startversuch vergrößert einen möglichen Schaden. Prüfe die Steuerzeit und danach die Verdichtung im Vergleich der Zylinder untereinander. Die Häufigkeit dieses Bildes am N47 ist ein Erfahrungswert aus Werkstattberichten, keine Spezifikation.",
+          "next_docs": [
+            "D4F-E90-010",
+            "D4F-E90-005"
+          ]
+        }
+      }
+    },
+    "e90:startet-nicht": {
+      "code": "GF-E90-04",
+      "name": "Startet nicht",
+      "desc": "Die Reihenfolge ist die Aussage: erst Bordnetz und Anlasserkreis, dann die Startfreigabe aus dem CAS, erst danach Kraftstoff, Zündung und Mechanik. Trennt Diesel, Direkteinspritzer und Saugrohreinspritzer im Pfad.",
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "steps": [
+        {
+          "q": "Dreht der Anlasser beim Druck auf den Start-Stop-Knopf durch?",
+          "help": "Diese eine Frage trennt die Hälfte des Suchraums ab. Dreht der Anlasser nicht, geht es um Bordnetz, Startfreigabe und Anlasserkreis — Kraftstoff und Zündung sind dann ohne Bedeutung. Dreht er, sind Bordnetz und Freigabe im Wesentlichen erledigt. Achte auf die Unterscheidung: reines Klicken heißt, das Relais bekommt Strom und der Hauptkreis nicht. Gar kein Geräusch heißt, es kommt schon die Anforderung nicht an.",
+          "measure": "Startversuch mit gedrückter Bremse beziehungsweise getretener Kupplung und Schlüssel in der Aufnahme. Bewertet wird nur, ob der Motor durchgedreht wird: hörbares Durchdrehen, reines Klicken oder Stille. Ein Messwert wird an dieser Stelle noch nicht gebraucht",
+          "doc": "D4F-E90-009",
+          "yes": 4,
+          "no": 1
+        },
+        {
+          "q": "Bleibt die Spannung an der Batterie im Kofferraum während der Startanforderung stabil?",
+          "help": "Gemessen wird direkt an den Polen im Kofferraum, nicht am Stützpunkt im Motorraum — der kommt im nächsten Schritt. Eine Batterie, die unter Startlast zusammenbricht, sieht in Ruhe oft unauffällig aus. Deshalb zählt hier der Verlauf während der Anforderung und nicht der Wert davor.",
+          "measure": "Multimeter direkt an den Polen im Kofferraum, Startanforderung auslösen und den Verlauf beobachten. Eine Spannungsgrenze für den Startversuch ist hier nicht belegt — beurteilt wird vergleichend: bricht die Spannung deutlich ein und erholt sich erst nach dem Loslassen, ist der Batterie- und Massekreis der Befund. Gegenprobe mit einem Stützgerät oder einer bekannt guten Batterie. Ruhespannung getrennt bewerten: rund 12.6 V zeigen eine geladene Batterie an",
+          "doc": "D4F-E90-009",
+          "obd_hint": "PID 0142 Steuermodulspannung parallel mitlesen, solange die Verbindung während des Startversuchs steht",
+          "yes": 2,
+          "no": "start-bordnetz"
+        },
+        {
+          "q": "Steht am Fremdstart-Stützpunkt im Motorraum dieselbe Spannung wie an der Batterie im Kofferraum?",
+          "help": "Das ist der Schritt, den es an den Vorgängern mit Batterie im Motorraum nicht gab. Zwischen Kofferraum und Motorraum liegt die Plusleitung mit der pyrotechnischen Sicherheitsbatterieklemme. Ist sie ausgelöst oder ihr Stecker beschädigt, bleibt die Innenraumelektrik hell und der Anlasser stumm — das Fahrzeug sieht aus wie mit leerer Batterie, misst hinten aber volle Spannung.",
+          "measure": "Beide Punkte nacheinander gegen Fahrzeugmasse messen, einmal in Ruhe und einmal während der Startanforderung. Erwartet wird vorn im Wesentlichen dieselbe Spannung wie hinten. Fehlt vorn die Spannung ganz, ist die Strecke offen; bleibt vorn unter Last deutlich weniger übrig als hinten, ist die Leitung oder ein Übergang der Befund",
+          "doc": "D4F-E90-006",
+          "yes": 3,
+          "no": "start-sbk"
+        },
+        {
+          "q": "Meldet das CAS den Schlüssel als erkannt, sind Wählhebel beziehungsweise Kupplung als Startbedingung erfüllt, und bleibt der Speicher ohne Eintrag zur fehlenden Startfreigabe?",
+          "help": "Am E90 schaltet das CAS KL50, nicht ein Zündanlassschalter. Es tut das erst, wenn Schlüssel und Startbedingung stimmen. Fehlt eines davon, ist das Fahrzeug elektrisch gesund und dreht trotzdem nicht. Frühe Baustände haben zusätzlich eine elektrische Lenkradverriegelung, die sich verspannen und den Start blockieren kann.",
+          "measure": "CAS-Statusblöcke lesen: Schlüssel erkannt, Klemmenzustand, Wählhebelstellung beziehungsweise Kupplungsschalter, Startanforderung. Fehlerspeicher von CAS und Motorsteuerung auf Einträge zur Startfreigabe und zur Lenkradverriegelung prüfen. Bewertet wird, ob die Anforderung das CAS erreicht und ob es sie freigibt",
+          "doc": "D4F-E90-009",
+          "yes": "start-anlasserkreis",
+          "no": "start-startfreigabe"
+        },
+        {
+          "q": "Sieht die Motorsteuerung beim Startversuch eine Drehzahl?",
+          "help": "Der Anlasser dreht sichtbar, und trotzdem kann der Wert für die Kurbelwellendrehzahl bei null bleiben. Dann kommt kein Signal vom Kurbelwellengeber an, und die Motorsteuerung hat keinen Grund einzuspritzen. Diese Frage steht vor jeder Prüfung an Kraftstoff und Zündung, weil sie beide erklären kann.",
+          "measure": "Statusblock der DME beziehungsweise DDE mit der Kurbelwellendrehzahl während des Startversuchs beobachten. Bleibt der Wert bei null, während der Anlasser sichtbar dreht, kommt kein Signal an. Der Geber sitzt tief am Motor und wird durch Öl an den Kontakten und Späne am Magneten auffällig; ein Widerstands-Sollwert ist hier nicht belegt",
+          "doc": "D4F-E90-009",
+          "yes": 5,
+          "no": "start-kw-geber"
+        },
+        {
+          "q": "Nennt der Fehlerspeicher der Motorsteuerung eine fehlende Startfreigabe oder eine Abschaltung durch eine Schutzfunktion?",
+          "help": "Bevor Kraftstoff und Zündung geprüft werden, gehört geklärt, ob die Motorsteuerung überhaupt einspritzen will. Passt die Kennung zwischen CAS und Motorsteuerung nicht — typisch nach dem Tausch eines der beiden Geräte —, dreht der Anlasser sauber, und es passiert nichts. Dasselbe Bild erzeugt eine Schutzfunktion, die die Einspritzung sperrt.",
+          "measure": "Fehlerspeicher von Motorsteuerung und CAS gemeinsam lesen und auf Einträge zur Startfreigabe, zur Wegfahrsperre und zu Abschaltungen durchsehen. Speicher löschen, Startversuch, erneut lesen — nur was wiederkommt, ist aktuell. Bewertet wird, ob ein Eintrag die Einspritzung sperrt, nicht wie viele Einträge stehen",
+          "doc": "D4F-E90-009",
+          "yes": "start-motorschutz",
+          "no": 6
+        },
+        {
+          "q": "Ist ein Diesel verbaut — M57 oder N47?",
+          "help": "Ab hier trennen sich die Wege. Der Diesel hat keine Zündung, dafür eine Vorglühanlage, und seine Kraftstoffseite reagiert anders. Der Benziner teilt sich noch einmal in Saugrohr- und Direkteinspritzer. Wer den Motor falsch zuordnet, sucht danach an Bauteilen, die das Fahrzeug nicht hat.",
+          "measure": "Motor über den Zylinderkopf, den beim Identifizieren ausgelesenen Steuergerätetyp und die Motornummer am Kurbelgehäuse zuordnen. Die Bezeichnung am Heck trägt die Zuordnung nicht",
+          "doc": "D4F-E90-005",
+          "yes": 10,
+          "no": 7
+        },
+        {
+          "q": "Läuft die Niederdruckversorgung bei Startanforderung an?",
+          "help": "Die Kraftstoffpumpe hängt am E90 nicht an einem Relais, sondern an einem eigenen Steuergerät, das seine Anforderung über den Bus bekommt. Bleibt sie stumm, ist das deshalb genauso oft ein Anforderungs- wie ein Pumpenproblem. Erst wenn die Niederdruckseite arbeitet, lohnt der Blick auf die Hochdruckseite.",
+          "measure": "Beim Aufschließen beziehungsweise bei Startanforderung am Tank auf das Anlaufen hören. Statusblock des Kraftstoffpumpen-Steuergeräts auf die Anforderung prüfen. Welche Sicherung den Kreis trägt, steht auf dem Deckelaufdruck des Sicherungskastens des konkreten Fahrzeugs, nicht in einer Tabelle von außen. Bewertet wird, ob Anforderung und Anlaufen zusammenpassen",
+          "doc": "D4F-E90-009",
+          "yes": 8,
+          "no": "start-ekp"
+        },
+        {
+          "q": "Ist es ein Direkteinspritzer — N43, N53, N54 oder N55?",
+          "help": "Diese vier haben eine Hochdruckpumpe am Zylinderkopf und ein Hochdruckrail; N43 und N53 zusätzlich den Magerbetrieb. N46, N52 und S65 spritzen ins Saugrohr und haben keine Hochdruckseite, an der man messen könnte. Bei ihnen geht es direkt zur Zündung.",
+          "measure": "Zylinderkopf ansehen: Hochdruckpumpe und Hochdruckrail vorhanden oder nicht. Gegenprobe über den ausgelesenen Steuergerätetyp. N46 und N52 tragen stattdessen den Stellmotor der Exzenterwelle, der S65 acht Einzeldrosselklappen",
+          "doc": "D4F-E90-005",
+          "yes": 9,
+          "no": 11
+        },
+        {
+          "q": "Baut sich beim Startversuch Raildruck auf?",
+          "help": "Beim Direkteinspritzer entscheidet nicht die Höhe des Drucks über den Start, sondern ob überhaupt einer aufgebaut wird. Bleibt der Ist-Wert unten, während der Anlasser dreht, ist die Hochdruckseite der Befund. Beim N54 gehört dabei die Frage nach einem Rückrufumfang für die Hochdruckpumpe dazu, bevor über einen Tausch entschieden wird.",
+          "measure": "Raildruck-Ist während des Startversuchs mitlesen und gegen den Sollwert halten, den das Steuergerät selbst führt. Erwartet wird ein Anstieg, der dem Soll folgt. Absolute Druckwerte sind in diesem Repository nicht belegt — bewertet wird der Verlauf gegen den geführten Sollwert und gegen ein bekannt gutes Fahrzeug",
+          "doc": "D4F-E90-002",
+          "yes": 11,
+          "no": "start-hochdruck"
+        },
+        {
+          "q": "Bleibt der Speicher der DDE frei von Einträgen zur Vorglühanlage?",
+          "help": "Die Glühkerzen hängen an einem eigenen Glühzeitsteuergerät. Deshalb zählt beim Lesen, wie viele Kreise auffällig sind: ein einzelner deutet auf Kerze und Zuleitung, alle gleichzeitig auf das Steuergerät, seine Versorgung oder den Steckkontakt dorthin. Vier gleichzeitig gestorbene Kerzen sind die unwahrscheinlichste Erklärung.",
+          "measure": "DDE-Fehlerspeicher auf Einträge zum Glühkreis lesen und notieren, ob ein Kreis oder alle genannt werden. Kerzen gegeneinander messen statt gegen einen Sollwert: ein Ausreißer gegen die übrigen gleichen Werte ist der Befund, ein Wert, den alle teilen, ist keiner. Ein Widerstands-Sollwert ist hier nicht belegt",
+          "doc": "D4F-E90-010",
+          "yes": 12,
+          "no": "start-vorgluehen"
+        },
+        {
+          "q": "Kommt an einem gezogenen Zündkerzenstecker beim Startversuch ein Funke?",
+          "help": "Der letzte der drei Wege. Kraftstoff und Drehzahlsignal sind an dieser Stelle geklärt, offen ist die Zündung. Ein Totalausfall aller Zylinder kommt selten von den Spulen selbst — er kommt eher von der gemeinsamen Versorgung oder von einem Signal, das alle Spulen ansteuert.",
+          "measure": "Eine Zündkerze ziehen, in ihre Spule stecken und mit Masseverbindung neben dem Motor auflegen, dann durchdrehen lassen — Funke sichtbar oder nicht. Aus Sicherheitsgründen ohne offenen Kraftstoff arbeiten. Fällt der Funke an allen Zylindern aus, die gemeinsame Versorgung der Spulen prüfen statt einzelne Spulen zu tauschen",
+          "doc": "D4F-E90-009",
+          "yes": "start-mechanik",
+          "no": "start-zuendung"
+        },
+        {
+          "q": "Baut sich beim Startversuch Raildruck auf, und läuft die Vorförderung im Tank an?",
+          "help": "Am Diesel ist die Kraftstoffseite der häufigere Befund als die Mechanik. Luft im System zeigt sich als langer Start nach längerem Stehen, bei dem der zweite Versuch besser gelingt als der erste. Filter und Vorförderung gehören vor jeder Entscheidung über die Hochdruckpumpe beurteilt.",
+          "measure": "Raildruck-Ist beim Startversuch gegen den von der DDE geführten Sollwert mitlesen und auf das Anlaufen der Vorförderung hören. Verschraubungen, Leitungen und den Rücklaufweg auf Undichtigkeit ansehen. Zahlenwerte für Nieder- und Hochdruck sind in diesem Repository nicht belegt — bewertet wird der Aufbau gegen den geführten Sollwert",
+          "doc": "D4F-E90-010",
+          "yes": "start-mechanik-diesel",
+          "no": "start-diesel-kraftstoff"
+        }
+      ],
+      "model": "e90",
+      "id": "startet-nicht",
+      "_results": {
+        "check-symptom": {
+          "title": "Keine Ladedruckabweichung im Speicher",
+          "text": "Live-Werte während Volllast loggen: Ist- vs. Sollladedruck. Wenn Ist folgt Soll aber Motor fühlt sich schwach an: Raildruck-Ist unter Volllast gegen den vom Steuergerät geführten Sollwert prüfen — ein Absacken des Ist gegen den Soll ist der Befund. Ein absoluter Raildruck-Sollwert ist in diesem Repository nicht belegt.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-005"
+          ]
+        },
+        "boost-leak": {
+          "title": "Ladeluftleckage bestätigt",
+          "text": "Undichte Stelle abdichten. Bei OEM-Kupplungsschellen am Charge-Pipe: durch stabilere Klammern oder Metall-Charge-Pipe ersetzen (N54-typische Schwachstelle). Gerissene Unterdruckleitungen gehören im selben Durchgang mit erneuert — sie erzeugen dasselbe Fehlerbild und denselben Code.",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
+        },
+        "wastegate": {
+          "title": "Wastegate/HPFP als nächstes prüfen",
+          "text": "N54: Wastegate-Rasseln in Adaptionswerten. Wenn 29DC/29CD auftritt: Turbolader-Rebuild oder Tausch. Wenn HPFP-Druck nicht gehalten wird: Hochdruckpumpe (BMW-Rückruf/Kulanz prüfen).",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
+        },
+        "hpfp": {
+          "title": "Hochdruckpumpe hält den Raildruck nicht",
+          "text": "Befund passt zu 29F0. Vor jedem Tausch prüfen, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt — das entscheidet über die Kostenfrage. Zusätzlich Niederdruckseite und Kraftstofffilter beurteilen, damit eine neue Pumpe nicht dasselbe Bild liefert. Steht 30FF mit im Speicher, ist das kein Zündungshinweis, sondern ein zweiter Eintrag aus der Ladedruckstrecke: Unterdruckleitungen, Charge-Pipe und Ladedruck-Magnetventile gehören dann mit abgearbeitet.",
+          "next_docs": [
+            "D4F-E90-002"
+          ]
+        },
+        "kein-befund": {
+          "title": "Kein Befund in Ladeluftsystem, Lader und HPFP",
+          "text": "Ladeluftsystem ist dicht, Wastegate unauffällig, Raildruck stabil — der Leistungsverlust kommt nicht aus der Ladedruckstrecke. Nächste Richtungen: Fehlerspeicher aller Steuergeräte erneut vollständig auslesen, Abgasgegendruck und Luftfilter beurteilen. Die Zündungsseite erst dann, wenn ein zündungsbezogener Eintrag tatsächlich im Speicher steht — 30FF ist keiner, der Code meldet zu niedrigen Ladedruck. Ergebnisse der Logfahrt aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-001"
+          ]
+        },
+        "baustand-unklar": {
+          "title": "Baustand zuerst bestimmen",
+          "text": "Ohne Baustand lässt sich die Kabel-Betriebsart nicht wählen, und jede weitere Prüfung ist Raten. Das Typschild sitzt in der Türöffnung Fahrerseite; alternativ liefern die Fahrzeugdaten zur VIN den Baustand. Das Zulassungsjahr taugt nicht — es liegt regelmäßig ein Baujahr daneben. Erst wenn Monat und Jahr feststehen, geht dieser Pfad weiter.",
+          "next_docs": [
+            "D4F-E90-001"
+          ]
+        },
+        "betriebsart": {
+          "title": "Kabel steht in der falschen Betriebsart",
+          "text": "Bis Baustand 02/2007 läuft die Diagnose über die K-Line an Pin 7, und das Kabel braucht die Brücke zwischen Pin 7 und Pin 8 — über den Schalter oder einen Steckadapter. Ab Baustand 03/2007 läuft sie über D-CAN an Pin 6 und Pin 14, und die Brücke muss offen sein, sonst stört sie den Bus. Nach dem Umschalten: Kabel abziehen, Software beenden, neu starten, erst dann wieder anstecken. Ein ENET-Kabel ist an dieser Baureihe kein Ersatz — ENET gibt es am E90 nicht.",
+          "next_docs": [
+            "D4F-E90-001"
+          ]
+        },
+        "versorgung": {
+          "title": "Versorgung an der OBD-Buchse fehlt",
+          "text": "Ohne Dauerplus an Pin 16 und Masse an Pin 4/5 arbeitet kein Interface. Prüfe die zugehörige Sicherung und den Leitungsweg zur Buchse, bevor du weiter an der Software suchst. Fehlt nur KL15, meldet die Software Batterie erkannt und Zündung nicht erkannt — dann ist die Zündung nicht wirklich eingeschaltet oder KL15 erreicht die Buchse nicht.",
+          "next_docs": [
+            "D4F-E90-001",
+            "D4F-E90-006"
+          ]
+        },
+        "treiber": {
+          "title": "Treiber- oder Portproblem",
+          "text": "Latency Timer im FTDI-Treiber auf 1 ms setzen; der Vorgabewert von 16 ms erzeugt Abbrüche, die wie ein totes Steuergerät aussehen. COM-Port aus dem Gerätemanager mit dem Eintrag in der EDIABAS-Konfiguration abgleichen. Danach Software neu starten und den Suchlauf wiederholen, bevor am Fahrzeug weitergesucht wird.",
+          "next_docs": [
+            "D4F-E90-001"
+          ]
+        },
+        "gateway": {
+          "title": "Werkzeugseite abgearbeitet, Verdacht auf Gateway oder Diagnosezweig",
+          "text": "Baustand, Betriebsart, Versorgung und Treiber sind geklärt, und trotzdem antwortet nichts. Jetzt verschiebt sich der Verdacht auf das Fahrzeug: Diagnoseleitung von der Buchse zum Gateway, Versorgung und Masse des Gateways, und die Frage, ob ein vorangegangener Eingriff das Bordnetz verändert hat. Vor dem Ausbau eines Steuergeräts die Spannungsversorgung am Gerät selbst messen — ein Gerät ohne Spannung verhält sich am Bus wie ein defektes.",
+          "next_docs": [
+            "D4F-E90-004",
+            "D4F-E90-006"
+          ]
+        },
+        "teilausfall": {
+          "title": "Teilausfall — einzelne Steuergeräte antworten nicht",
+          "text": "Der Zugang funktioniert, das Problem liegt im Bordnetz. Ordne die stummen Geräte ihren Busstrecken zu: liegen alle auf derselben Strecke, ist die Strecke der Kandidat; verteilen sie sich über mehrere, ist der Knoten dazwischen verdächtig und nicht jedes einzelne Gerät. Prüfe zusätzlich, ob das Gerät, das den Eintrag geschrieben hat, selbst noch antwortet — dann ist der Eintrag im Nachbarsteuergerät ein Folgefehler.",
+          "next_docs": [
+            "D4F-E90-004",
+            "D4F-E90-006"
+          ]
+        },
+        "zugang-ok": {
+          "title": "Diagnosezugang steht",
+          "text": "Alle erwarteten Steuergeräte antworten. Sichere die Geräteliste, bevor du weiterarbeitest — sie ist später der einzige Beleg dafür, was vor dem Eingriff da war. Danach die Gesamtauslesung fahren und die Einträge gemeinsam beurteilen statt Gerät für Gerät. Steht ein Batteriewechsel im Raum, gehört die Registrierung dazu.",
+          "next_docs": [
+            "D4F-E90-001",
+            "D4F-E90-007"
+          ]
+        },
+        "falscher-motor": {
+          "title": "Motorzuordnung zuerst klären",
+          "text": "Ohne Hochdruckpumpe am Zylinderkopf ist es kein N43 und kein N53, sondern ein N46 oder N52 mit Saugrohreinspritzung und Valvetronic. Dieser Pfad passt dann nicht — die Magerbetriebs-Sensorik und die Piezo-Injektoren, um die er kreist, sind gar nicht verbaut. Ordne den Motor über Zylinderkopf, ausgelesenen Steuergerätetyp und Motornummer zu und arbeite danach mit dem passenden Fehlerbild weiter.",
+          "next_docs": [
+            "D4F-E90-005"
+          ]
+        },
+        "zuendspule": {
+          "title": "Zündspule des betroffenen Zylinders",
+          "text": "Der Aussetzer ist mit der Spule mitgewandert — damit ist sie der Täter, ohne dass ein Sollwert gebraucht wurde. Zündspulenausfälle treten an beiden Motoren häufig im Verbund mit den Injektoren auf; wenn mehrere Zylinder auffällig waren, lohnt der Blick auf den Gesamtzustand statt auf das eine Teil. Nach dem Tausch Speicher löschen und über eine Probefahrt gegenprüfen.",
+          "next_docs": [
+            "D4F-E90-005"
+          ]
+        },
+        "injektor": {
+          "title": "Injektor mit abweichender Menge",
+          "text": "Ein Zylinder fällt in der Mengenkorrektur dauerhaft aus der Reihe. Das passt zum bekannten Bild der Piezo-Injektoren dieser beiden Motoren. Vor dem Tausch die Zündungsseite des betroffenen Zylinders ausschließen, damit nicht das teurere Teil für den Fehler des billigeren bezahlt. Injektorwiderstände und Raildruck-Sollwerte sind hier nicht belegt — verglichen wird gegen die Nachbarzylinder und gegen den vom Steuergerät geführten Sollwert.",
+          "next_docs": [
+            "D4F-E90-005"
+          ]
+        },
+        "nox": {
+          "title": "NOx-Sensor beziehungsweise Magerbetriebs-Sensorik",
+          "text": "Steigender Verbrauch ohne Ruckeln passt zum Ausfall der Magerbetriebs-Sensorik: die DME verlässt den geschichteten Betrieb und fährt homogen weiter. Das erklärt den Verbrauch, aber kein Ruckeln — steht beides zusammen an, ist der Sensor nicht die ganze Antwort. Ein Eintrag zur Sensorik schließt Injektor- und Zündungsfehler nicht aus, und der teuerste Eintrag ist selten die Ursache des Ruckelns.",
+          "next_docs": [
+            "D4F-E90-005"
+          ]
+        },
+        "weitersuchen": {
+          "title": "Kein Befund in Zündung, Einspritzung und Magerbetriebs-Sensorik",
+          "text": "Keine der drei Ebenen liefert einen Befund. Nächste Richtungen: Falschluft im Ansaugtrakt, Ölkohle an den Einlassventilen nach hoher Laufleistung, und die Niederdruckseite der Kraftstoffversorgung. Vorher den Fehlerspeicher aller Steuergeräte erneut vollständig auslesen — ein Eintrag außerhalb der DME kann dasselbe Fahrverhalten erzeugen. Messwerte der Sitzung aufbewahren, damit beim nächsten Auftreten verglichen werden kann statt neu gemessen.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-004"
+          ]
+        },
+        "start-bordnetz": {
+          "title": "Batterie-, Masse- oder Anlasserkreis",
+          "text": "Die Spannung hält die Startanforderung nicht durch. Arbeite von der Quelle zum Verbraucher: Ladezustand und Alter der Batterie, Sauberkeit und Festsitz beider Polklemmen im Kofferraum, Masseverbindung der Karosserie. Wiederhole die Messung mit Stützgerät — hält sie damit durch, ist die Batterie der Befund und nicht die Leitung. Bevor ein Anlasser bestellt wird: eine neue Batterie, die nie registriert wurde, wird zu schwach geladen und erzeugt dasselbe Bild über Wochen hinweg.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-007"
+          ]
+        },
+        "start-sbk": {
+          "title": "Plusleitung nach vorn unterbrochen — Sicherheitsbatterieklemme prüfen",
+          "text": "Hinten volle Spannung, vorn keine: die Strecke zwischen Batterie und Motorraum ist offen. Der erste Kandidat ist die pyrotechnische Sicherheitsbatterieklemme am Pluspol, entweder ausgelöst oder mit beschädigtem Stecker. Danach kommen der Verteilerpunkt der Leitung und die Übergänge am Stützpunkt im Motorraum. Prüfe zugleich den Fehlerspeicher des Rückhaltesystems: ein Eintrag zur Sicherheitsbatterieklemme bestätigt den Befund von der anderen Seite. Die Leitung ist ein Sicherheitsbauteil — Überbrücken ist keine Reparatur.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-startfreigabe": {
+          "title": "Startfreigabe fehlt — Schlüssel, Startbedingung oder CAS",
+          "text": "Das Bordnetz ist gesund, und das CAS schaltet KL50 trotzdem nicht. Arbeite die Bedingungen in dieser Reihenfolge ab: Schlüssel richtig in der Aufnahme und erkannt, Schlüsselbatterie in Ordnung, Wählhebel sicher in P oder N mit getretener Bremse beziehungsweise Kupplung ganz durchgetreten. Fehlt eines dieser Signale, ist der zugehörige Schalter oder sein Weg zum CAS der Befund, nicht das CAS. Bei frühen Baustanden gehört die elektrische Lenkradverriegelung dazu: verspannt sie sich, verweigert das CAS den Start. Erst wenn alle Eingänge stimmen und die Freigabe ausbleibt, ist das CAS selbst an der Reihe — und dann gehört die Frage nach Feuchtigkeit an seinem Einbauort dazu.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-anlasserkreis": {
+          "title": "Freigabe steht — KL50 oder Anlasser",
+          "text": "Das CAS gibt frei, die Spannung kommt vorn an, und der Anlasser dreht trotzdem nicht. Jetzt bleibt die Strecke dazwischen: die Steuerleitung KL50 zum Magnetschalter, deren Steckkontakte, und der Anlasser selbst mit seinem Hauptanschluss. Miss an der Steuerleitung während der Startanforderung, ob die Ansteuerung dort ankommt. Kommt sie an und passiert nichts, ist der Magnetschalter beziehungsweise der Anlasser der Befund — das ist der Punkt, an dem ein Tausch begründet ist und nicht früher.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-kw-geber": {
+          "title": "Kein Drehzahlsignal beim Durchdrehen",
+          "text": "Der Anlasser dreht, die Motorsteuerung sieht keine Drehzahl — damit hat sie keinen Grund einzuspritzen, und weder Kraftstoff noch Zündung erklären den Fehler. Prüfe den Kurbelwellengeber und vor allem seinen Steckkontakt: Öl, das über die Leitung in den Stecker kriecht, und Späne am Magneten sind die berichteten Ursachen. Ein Widerstands-Sollwert ist hier nicht belegt — beurteile vergleichend gegen ein bekannt gutes Fahrzeug oder über den Wechsel gegen ein bekannt gutes Teil. Prüfe zusätzlich, ob ein Eintrag zum Nockenwellengeber mit ansteht: beide zusammen deuten eher auf den gemeinsamen Leitungsweg als auf zwei Sensoren.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-006"
+          ]
+        },
+        "start-motorschutz": {
+          "title": "Die Motorsteuerung spritzt nicht ein",
+          "text": "Der Speicher nennt eine fehlende Startfreigabe oder eine Abschaltung. Der häufigste Fall ist eine nicht passende Kennung zwischen CAS und Motorsteuerung nach dem Tausch eines der beiden Geräte — dann hilft kein Bauteil, sondern der Angleich beider Geräte mit einer Software, die das kann. Steht stattdessen eine Schutzfunktion im Speicher, gehört ihre Ursache zuerst behoben, nicht der Eintrag gelöscht. Notiere vor jedem Eingriff die vollständige Geräteliste: sie ist später der einzige Beleg dafür, welcher Stand vor der Arbeit im Fahrzeug war.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-001"
+          ]
+        },
+        "start-ekp": {
+          "title": "Niederdruckseite — Pumpe oder ihre Anforderung",
+          "text": "Die Kraftstoffpumpe läuft bei Startanforderung nicht an. Kläre zuerst, ob die Anforderung ankommt: das Steuergerät der Pumpe bekommt sie über den Bus, nicht über einen Schalter. Fehlt sie, ist der Weg dorthin der Befund und nicht die Pumpe. Kommt sie an, prüfe Versorgung und Sicherung des Kreises über den Deckelaufdruck des konkreten Fahrzeugs und danach die Pumpe selbst. Ein getauschtes Pumpensteuergerät muss dem Fahrzeug bekannt gemacht werden, sonst bleibt das Bild dasselbe.",
+          "next_docs": [
+            "D4F-E90-009",
+            "D4F-E90-004"
+          ]
+        },
+        "start-hochdruck": {
+          "title": "Hochdruckseite baut beim Startversuch keinen Druck auf",
+          "text": "Niederdruck steht, Raildruck nicht. Beurteile in dieser Reihenfolge: Raildrucksensor und seine Leitung, das Mengenregelventil der Hochdruckpumpe, dann die Pumpe. Ein defekter Sensor meldet einen Druck, den es nicht gibt, und ein fehlender Druck kann eine Meldung sein statt ein Zustand — deshalb steht der Sensor vorn und nicht hinten. Beim N54 gehört vor jeder Entscheidung über den Tausch die Frage dazu, ob das Fahrzeug in einen Rückrufumfang für die Hochdruckpumpe fällt. Absolute Druckwerte sind hier nicht belegt; verglichen wird gegen den geführten Sollwert und gegen ein bekannt gutes Fahrzeug.",
+          "next_docs": [
+            "D4F-E90-002",
+            "D4F-E90-005"
+          ]
+        },
+        "start-zuendung": {
+          "title": "Kein Zündfunke",
+          "text": "Kraftstoff und Drehzahlsignal stehen, der Funke fehlt. Fällt er an allen Zylindern gleichzeitig aus, such nicht bei den Spulen: gemeinsame Versorgung, gemeinsame Masse und die Ansteuerung aus der Motorsteuerung erklären einen Totalausfall, sechs gleichzeitig defekte Spulen erklären ihn nicht. Fehlt er nur an einzelnen Zylindern, ist der Tauschtest gegen einen unauffälligen Zylinder der schnellste Weg und braucht keinen Sollwert: wandert der Ausfall mit, ist das Bauteil der Täter. Bei N43 und N53 treten Spulen- und Injektorprobleme oft im Verbund auf — beurteile den Gesamtzustand, bevor einzeln getauscht wird.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-mechanik": {
+          "title": "Kraftstoff, Zündung und Drehzahlsignal stehen — Steuertrieb und Verdichtung",
+          "text": "Alle drei Ebenen liefern einen Befund, und der Motor springt trotzdem nicht an. Jetzt geht es um die Mechanik: Verdichtung aller Zylinder gegeneinander, Stellung des Steuertriebs, Zustand der Steuerkette. Der Vergleich der Zylinder untereinander ersetzt dabei den Sollwert — mehrere gleich niedrige Werte deuten auf die Steuerzeit, ein einzelner Ausreißer auf den Zylinder. Hat es vorher aus dem Motor gerasselt, wird nicht weiter durchgedreht, sondern zuerst die Steuerzeit geprüft. Sichere vor dem Zerlegen den vollständigen Fehlerspeicher aller Steuergeräte, damit später vergleichbar bleibt, was vorher da war.",
+          "next_docs": [
+            "D4F-E90-005",
+            "D4F-E90-009"
+          ]
+        },
+        "start-vorgluehen": {
+          "title": "Vorglühanlage auffällig",
+          "text": "Der Speicher nennt Glühkreise. Zähl, wie viele: ein einzelner Kreis führt zur Kerze und ihrer Zuleitung, alle Kreise gleichzeitig führen zum Glühzeitsteuergerät, seiner Versorgung und dem Steckkontakt dorthin. Miss die Kerzen gegeneinander statt gegen einen Sollwert. Beachte, dass die Anlage auch nach dem Start weiterglüht: ein Fahrzeug, das anspringt und danach kalt rau läuft, kann dasselbe Problem haben. Wird das Glühzeitsteuergerät getauscht, gehört die Frage dazu, warum es ausgefallen ist — ein Dauersignal an die Kerzen zerstört das nächste genauso.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-diesel-kraftstoff": {
+          "title": "Kraftstoffseite am Diesel",
+          "text": "Der Raildruck baut sich beim Startversuch nicht auf. Arbeite von hinten nach vorn: Vorförderung im Tank, Filter, Leitungen und Verschraubungen, Rücklaufweg, dann erst die Hochdruckpumpe. Luft im System ist der Befund, der am häufigsten übersehen wird — er zeigt sich als langer Start nach längerem Stehen, bei dem der zweite Versuch besser gelingt als der erste. Eine neue Hochdruckpumpe hinter einem zugesetzten Filter oder einer undichten Leitung liefert dasselbe Bild wie die alte. Zahlenwerte für Nieder- und Hochdruck sind hier nicht belegt.",
+          "next_docs": [
+            "D4F-E90-010"
+          ]
+        },
+        "start-mechanik-diesel": {
+          "title": "Glühen und Kraftstoff in Ordnung — Steuerkette und Verdichtung",
+          "text": "Die Vorglühanlage ist unauffällig, der Raildruck folgt dem geführten Sollwert, und der Motor springt trotzdem nicht an. Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite; ein Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund. Ist er da, wird nicht weiter georgelt — jeder weitere Startversuch vergrößert einen möglichen Schaden. Prüfe die Steuerzeit und danach die Verdichtung im Vergleich der Zylinder untereinander. Die Häufigkeit dieses Bildes am N47 ist ein Erfahrungswert aus Werkstattberichten, keine Spezifikation.",
+          "next_docs": [
+            "D4F-E90-010",
+            "D4F-E90-005"
           ]
         }
       }
@@ -10782,8 +11525,8 @@
     }
   },
   "stats": {
-    "total_docs": 126,
-    "total_guides": 39,
+    "total_docs": 128,
+    "total_guides": 40,
     "per_model": {
       "e28": 7,
       "e30": 12,
@@ -10796,7 +11539,7 @@
       "e70": 7,
       "e87": 8,
       "e88": 6,
-      "e90": 8,
+      "e90": 10,
       "f-series": 3,
       "f10": 6,
       "f15": 7,

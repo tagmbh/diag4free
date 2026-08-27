@@ -233,7 +233,8 @@
       ],
       "details": [
         "D4F-E90-004",
-        "D4F-E90-007"
+        "D4F-E90-007",
+        "D4F-E90-009"
       ]
     },
     {
@@ -270,7 +271,8 @@
       "article": "batteriewechsel.md",
       "details": [
         "D4F-E90-001",
-        "D4F-E90-006"
+        "D4F-E90-006",
+        "D4F-E90-009"
       ],
       "obd": {
         "pids": [
@@ -315,6 +317,84 @@
           "ecu:DME"
         ]
       }
+    },
+    {
+      "id": "D4F-E90-009",
+      "type": "GUIDE",
+      "cat": "Startsystem",
+      "title": "Startsystem des E90 · CAS statt EWS, Startknopf statt Zündschloss, Batterie im Kofferraum",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
+      "summary": "Am E90 entscheidet ein Steuergerät, ob der Anlasser Strom bekommt, und der Strom kommt aus dem Kofferraum. Wer diese Kette nicht kennt, misst am falschen Ende. Das Dokument beschreibt Startfreigabe, Anlasseransteuerung und die zwei Messpunkte, an denen sich der Bordnetzteil beurteilen lässt.",
+      "points": [
+        "Das CAS ist am E90 das Startrelais. Es prüft den Schlüssel, gibt die Kraftstoffpumpe frei, schickt die Startfreigabe an DME beziehungsweise DDE und schaltet KL50 zum Magnetschalter des Anlassers. Ein defekter Anlasser ist die seltenste dieser vier Ursachen",
+        "Ohne erfüllte Startbedingung schaltet das CAS KL50 nicht: Schlüssel in der Aufnahme beziehungsweise bei Komfortzugang im Innenraum erkannt, Automatik in P oder N mit getretener Bremse, Handschalter mit getretener Kupplung. Das Fahrzeug ist dann gesund und dreht trotzdem nicht",
+        "CAS und Motorsteuerung tauschen eine fahrzeugindividuelle Kennung aus. Passt sie nach einem Tausch eines der beiden Geräte nicht, dreht der Anlasser, der Motor springt aber nicht an oder geht sofort wieder aus — das ist kein Kraftstoff- und kein Zündungsfehler",
+        "Die Batterie liegt im Kofferraum, der Fremdstart-Stützpunkt im Motorraum hängt an derselben Leitung. Damit gibt es zwei Messpunkte für dieselbe Spannung: die Differenz zwischen ihnen unter Startlast ist der Zustand der Leitung dazwischen",
+        "In der Plusleitung sitzt eine pyrotechnische Sicherheitsbatterieklemme. Ausgelöst oder mit beschädigtem Stecker trennt sie Anlasser und Generator ab: die Innenraumelektrik bleibt hell, der Anlasser bleibt stumm. Das sieht aus wie eine leere Batterie und ist keine",
+        "Am Minuspol sitzt der Batteriesensor. Eine nicht registrierte Batterie wird zu schwach geladen, und das Startverhalten verschlechtert sich über Wochen — vor jeder Startdiagnose prüfen, siehe D4F-E90-007"
+      ],
+      "pins": [
+        "Batterie Pluspol Kofferraum · Sicherheitsbatterieklemme · B+ zu Anlasser und Generator",
+        "Batterie Minuspol Kofferraum · Batteriesensor · Signalleitung zum Energiemanagement",
+        "Motorraum · Fremdstart-Stützpunkt Plus · Gegenmesspunkt zur Batterie im Kofferraum",
+        "CAS · KL50 · Ansteuerung Magnetschalter Anlasser",
+        "OBD2 Pin 16 · KL30 Dauerplus"
+      ],
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "startsystem.md",
+      "details": [
+        "D4F-E90-006",
+        "D4F-E90-007",
+        "D4F-E90-010"
+      ],
+      "obd": {
+        "pids": [
+          "0142"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
+      }
+    },
+    {
+      "id": "D4F-E90-010",
+      "type": "TEST",
+      "cat": "Startsystem",
+      "title": "Dieselstart am E90 · M57 und N47, Vorglühanlage und Kraftstoffversorgung",
+      "valid": "E90/E91/E92/E93 · 2005–2013 · M57, N47",
+      "summary": "Zugangssystem und Bordnetz teilen sich Diesel und Benziner, die Startbedingungen des Motors nicht. Statt einer Zündung gibt es eine Vorglühanlage, und die Kraftstoffseite reagiert empfindlich auf Luft. Das Dokument nennt, was am Diesel zusätzlich zu prüfen ist, wenn der Anlasser dreht.",
+      "points": [
+        "Die Glühkerzen hängen an einem eigenen Glühzeitsteuergerät, das die DDE anfordert. Daraus folgt die Leseregel: ein einzelner auffälliger Kreis deutet auf Kerze und Zuleitung, alle Kreise gleichzeitig auf das Glühzeitsteuergerät, seine Versorgung oder den Steckkontakt dorthin",
+        "Geglüht wird auch nach dem Start. Ein Motor, der anspringt und danach kalt rau läuft, kann ein Glühproblem haben, obwohl der Start selbst gelingt",
+        "Im Tank sitzt eine elektrische Vorförderung zur Hochdruckpumpe. Beim Startversuch zählt nicht die Höhe des Raildrucks, sondern ob er überhaupt aufgebaut wird — Ist-Wert gegen den von der DDE geführten Sollwert lesen. Absolutwerte für Nieder- und Hochdruck sind hier nicht belegt",
+        "Luft im Kraftstoffsystem zeigt sich als langer Start nach längerem Stehen, wobei der zweite Versuch besser gelingt als der erste. Undichte Verschraubungen, gealterte Leitungen und der Rücklaufweg sind die Kandidaten",
+        "Filter und Vorförderung gehören vor jeder Entscheidung über die Hochdruckpumpe beurteilt — eine neue Pumpe hinter einem zugesetzten Filter liefert dasselbe Bild wie die alte",
+        "Bei M57 und N47 liegt die Steuerkette auf der Getriebeseite. Rasseln aus dem hinteren Motorbereich vor dem Ausfall ist deshalb der wichtigste Vorbefund: danach wird nicht weiter georgelt, sondern die Steuerzeit geprüft. Häufigkeit als Erfahrungswert aus Werkstattberichten, nicht als Spezifikation"
+      ],
+      "pins": [
+        "Glühzeitsteuergerät · Versorgung und Steuerleitung zur DDE",
+        "Glühkerzen · je Zylinder ein Kreis, vergleichend gegeneinander messen",
+        "Kraftstofftank · elektrische Vorförderung zur Hochdruckpumpe"
+      ],
+      "engines": [
+        "M57",
+        "N47"
+      ],
+      "article": "diesel-start.md",
+      "details": [
+        "D4F-E90-009",
+        "D4F-E90-005"
+      ]
     }
   ]
 }
