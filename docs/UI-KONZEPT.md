@@ -80,7 +80,12 @@ etwas umschalten muss. Ein Eintrag in `D4F_GFX.fotos` ohne Datei daneben
 ist ein Befund der Stufe „hoch" in `scripts/audit.mjs`.
 
 Bei den Motorschemata gilt weiterhin, dass nur gezeichnet wird, was
-`content/engines.json` belegt. Ein generiertes „Foto" eines N54 wäre ein
+`content/engines.json` belegt. Seit dem Einsteiger-Feedback tragen sie
+zusätzlich eine **Legende**: `D4F_GFX.engineTeile()` leitet sie aus
+denselben Merkmalen ab, aus denen gezeichnet wird. Eine zweite,
+handgepflegte Liste wäre still auseinandergelaufen — so kann die Legende
+weder behaupten, was nicht im Bild steht, noch verschweigen, was drin ist.
+Die Abnahme prüft genau diese Deckung. Ein generiertes „Foto" eines N54 wäre ein
 erfundener Motor; die Zeichnung dagegen ist überprüfbar. Fotorealistische
 Motorbilder sind damit **nicht** abgeschlossen, sondern bewusst offen.
 
@@ -112,7 +117,7 @@ liegt jede neue Funktion in einer eigenen Datei mit klarem Vertrag.
 
 | Baustein | Dateien | Vertrag |
 |---|---|---|
-| Grafiken | `graphics.js`, `assets/fahrzeuge/` | `window.D4F_GFX.vehicleArt(body, era, seriesId)` — Foto über Zeichnung, `.vehicleSvg(…)` — nur Zeichnung, `.engineSvg(layout, aspiration, engineId)`, `.formen`, `.baureihen`, `.fotos` |
+| Grafiken | `graphics.js`, `assets/fahrzeuge/` | `window.D4F_GFX.vehicleArt(body, era, seriesId)` — Foto über Zeichnung, `.vehicleSvg(…)` — nur Zeichnung, `.engineSvg(layout, aspiration, engineId)`, `.engineTeile(…)` — Legende dazu, `.formen`, `.baureihen`, `.fotos` |
 | Glossar | `glossar.js`, `glossar.css`, `content/glossar.json` | `window.Glossar.markup(text)`, `.open(term)`, `.has(term)` |
 | Symptome | `symptome.js`, `symptome.css`, `content/symptome.json` | `window.Symptome.render(el, ctx)`, `.suggest(ids, ctx)` |
 | Rahmen | `app.js`, `index.html`, `style.css`, `mobile.css` | Projektlead |
@@ -139,6 +144,7 @@ Was die Abnahme inzwischen festhält, damit es nicht zurückfällt:
 - Fahrzeugkarten zeigen verschiedene Silhouetten
 - Jede Fahrzeugkarte trägt ein Foto, das wirklich lädt, und darunter
   weiterhin die Zeichnung
+- Die Legende zum Motorschema nennt genau das, was das Bild auch zeichnet
 - Browser-Zurück bleibt in der App, ein Neuladen im Pfad landet an
   derselben Frage
 - Tastaturfokus zeichnet einen eigenen Ring, nicht denselben wie Hover

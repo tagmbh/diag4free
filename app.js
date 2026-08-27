@@ -139,6 +139,15 @@
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   }[c]));
 
+  // Eigener Text, der Abkuerzungen enthalten darf. Erst entschaerfen, dann
+  // dem Glossar zeigen — nie umgekehrt, sonst wuerde das Escaping die
+  // Markierungen wieder zu sichtbarem Text machen. Fehlt der Baustein,
+  // bleibt schlicht der Text stehen; das Glossar ist keine Voraussetzung.
+  const glossarText = (t) => {
+    const roh = escapeHtml(t);
+    return window.Glossar ? Glossar.markup(roh) : roh;
+  };
+
   const iconSvg = (name) => {
     const icons = {
       empty: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6"/></svg>',
@@ -688,6 +697,13 @@
   const readyStepHtml = (model, scopedCount, guideCount, docCount) => {
     const spec = engineSpec(state.engine);
     const era = /19[89]/.test(model.years) ? 'classic' : 'modern';
+    // Legende zum Schema. Sie kommt aus graphics.js und damit aus denselben
+    // Merkmalen, aus denen gezeichnet wird — sie kann nicht behaupten, was
+    // nicht im Bild steht. Fehlt der Zeichner, bleibt die Liste leer und
+    // der Abschnitt verschwindet, statt eine leere Ueberschrift zu zeigen.
+    const teile = (spec && D4F_GFX.engineTeile)
+      ? D4F_GFX.engineTeile(spec.layout, spec.aspiration, spec.id || state.engine)
+      : [];
     const facts = spec ? [
       ['Bauform', spec.layout], ['Aufladung', spec.aspiration],
       ['Hubraum', litres(spec.displacement_cc)], ['Leistung', powerRange(spec)],
@@ -738,6 +754,11 @@
           <dl class="facts-grid">
             ${facts.map(([k, v]) => `<div><dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd></div>`).join('')}
           </dl>
+          ${teile.length ? `
+            <h3 class="facts-sub">Was auf dem Schema zu sehen ist</h3>
+            <ul class="teile-liste">${teile.map(t => `
+              <li><span class="teile-name">${glossarText(t.teil)}</span><span class="teile-was">${glossarText(t.was)}</span></li>`).join('')}
+            </ul>` : ''}
           ${(spec.id_marks || []).length ? `
             <h3 class="facts-sub">Im Motorraum erkennen</h3>
             <ul class="facts-list">${spec.id_marks.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul>` : ''}

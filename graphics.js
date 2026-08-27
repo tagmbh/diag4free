@@ -524,6 +524,112 @@ Limousine  : { x0:16.1, xt:15.1, ny:40.8, hx:38.9, hy:39.3, cx:63.5, cy:37, ax:8
     return RAHMEN(banks + chargerSvg + llkLl + trieb + KURBEL + (f.bal ? AUSGLEICH : ''));
   };
 
+  // -------- Legende zum Motorschema --------
+  // Das Schema zeigt seit je Nockenwellen, VANOS-Toepfe, DISA-Klappe,
+  // Lader und Steuertrieb — aber es sagt nicht, was man da sieht. Fuer den
+  // Profi reicht das Bild, fuer den Einsteiger ist es eine Wand.
+  //
+  // Diese Funktion leitet die Legende aus *denselben* Merkmalen ab, aus
+  // denen gezeichnet wird: `MOTOR[id]`, `parseLayout` und `ladeZahl`. Sie
+  // kann deshalb nicht behaupten, was nicht im Bild steht, und sie kann
+  // nichts verschweigen, was drin ist. Eine zweite, handgepflegte Liste
+  // waere genau die Sorte Doppelpflege, die still auseinanderlaeuft.
+  //
+  // `was` ist bewusst Alltagssprache und sagt, warum das Teil *jetzt*
+  // interessiert — nicht, wie es funktioniert. Wer die Abkuerzung nachlesen
+  // will, findet sie im Glossar; app.js schickt den Text durch
+  // Glossar.markup().
+  const ART_NAME = { R: 'Reihenmotor', V: 'V-Motor', B: 'Boxermotor' };
+
+  /**
+   * Was auf dem Motorschema zu sehen ist, als Liste.
+   * @param   {string} layout      wie bei engineSvg
+   * @param   {string} aspiration  wie bei engineSvg
+   * @param   {string} engineId    Motor-ID aus engines.json
+   * @returns {Array<{teil: string, was: string}>} leer, wenn nichts belegt ist
+   */
+  const engineTeile = (layout, aspiration, engineId = '') => {
+    const L = parseLayout(layout);
+    const chargers = ladeZahl(aspiration);
+    const f = MOTOR[String(engineId || '').toUpperCase()] || {};
+    const teile = [];
+    const dazu = (teil, was) => teile.push({ teil, was });
+
+    if (L) {
+      dazu(`${ART_NAME[L.kind]}, ${L.count} Zylinder`,
+        L.kind === 'R'
+          ? 'Alle Zylinder in einer Reihe. Im Schema die eine lange Bank.'
+          : L.kind === 'V'
+            ? 'Zwei Zylinderbaenke im Winkel. Vieles gibt es dadurch doppelt — zwei Nockenwellensaetze, zwei Abgaskruemmer, oft zwei Lambdasonden je Seite.'
+            : 'Zwei Baenke, flach gegenueber. Im Schema die beiden waagerechten Bloecke links und rechts der Kurbelwelle.');
+    }
+    if (f.vpc) {
+      dazu(`${f.vpc} Ventile je Zylinder`,
+        f.vpc === 4
+          ? 'Die vier Punkte in jeder Bohrung. Zwei Einlass, zwei Auslass.'
+          : 'Die zwei Punkte in jeder Bohrung. Ein Einlass, ein Auslass.');
+    }
+    if (f.cam) {
+      dazu(f.cam === 2 ? 'Zwei obenliegende Nockenwellen (DOHC)' : 'Eine obenliegende Nockenwelle (SOHC)',
+        f.cam === 2
+          ? 'Die zwei Laengslinien ueber der Bank. Eine steuert die Einlass-, eine die Auslassventile.'
+          : 'Die eine Laengslinie ueber der Bank. Sie steuert Einlass und Auslass zusammen.');
+    }
+    if (f.vanos) {
+      dazu(f.vanos >= 2 ? 'Doppel-VANOS' : 'VANOS',
+        f.vanos >= 2
+          ? 'Die beiden Toepfe vorn an den Nockenwellen. Sie verstellen die Steuerzeiten auf beiden Seiten — eine haeufige Fehlerquelle bei Leerlauf- und Leistungsklagen.'
+          : 'Der Topf vorn an der Einlassnockenwelle. Er verstellt die Steuerzeiten des Einlasses.');
+    }
+    if (f.vtr) {
+      dazu('Valvetronic',
+        'Der zusaetzliche Aufbau auf dem Ventildeckel. Der Motor regelt die Last ueber den Ventilhub statt ueber die Drosselklappe.');
+    }
+    if (f.disa) {
+      dazu('DISA',
+        'Die Klappe im Ansaugkanal. Sie schaltet die Saugrohrlaenge um; ihre Lagerung ist eine bekannte Schwachstelle.');
+    }
+    if (f.itb) {
+      dazu('Einzeldrosselklappen',
+        'Je Zylinder ein eigener Ansaugtrichter mit eigener Klappe — im Schema die einzelnen Stutzen statt eines gemeinsamen Sammlers.');
+    }
+    if (f.di) {
+      dazu('Direkteinspritzung',
+        'Der Anschluss an der Bankseite. Der Kraftstoff geht unter hohem Druck direkt in den Brennraum, nicht in den Ansaugkanal.');
+    }
+    if (chargers) {
+      const artName = /kompressor|supercharg/i.test(String(aspiration)) ? 'Kompressor' : (chargers > 1 ? 'Zwei Turbolader' : 'Turbolader');
+      dazu(artName + (f.ts ? ' (Twin-Scroll)' : ''),
+        f.hotv
+          ? 'Die Schnecke *innerhalb* des Zylinder-V. Diese Bauart heisst Hot-V; die Lader sitzen nicht aussen, sondern in der Mitte oben.'
+          : f.ts
+            ? 'Die Schnecke neben dem Block, mit zwei getrennten Abgaszufuehrungen — daran erkennbar, dass zwei Striche statt einem hineinlaufen.'
+            : 'Die Schnecke neben dem Block.');
+    }
+    if (f.llk === 'll') {
+      dazu('Ladeluftkuehler, Luft-Luft',
+        'Der Block ganz vorn mit der Leitung zum Motor. Er sitzt vor dem Fahrzeug im Fahrtwind.');
+    }
+    if (f.llk === 'wl') {
+      dazu('Ladeluftkuehler, Wasser-Luft',
+        'Kein Kuehler vorn im Fahrtwind: die Ladeluft wird ueber einen eigenen Wasserkreis gekuehlt, direkt am Saugrohr.');
+    }
+    if (f.st) {
+      const hinten = f.st === 'kette-hinten';
+      dazu(hinten ? 'Steuerkette, hinten' : (f.st === 'riemen' ? 'Zahnriemen' : 'Steuerkette'),
+        hinten
+          ? 'Im Schema auf der rechten Seite, also auf der Schwungradseite. Das entscheidet ueber den Aufwand: an die Kette kommt man nur mit ausgebautem Getriebe.'
+          : f.st === 'riemen'
+            ? 'Links am Block. Ein Riemen ist ein Verschleissteil mit Wechselintervall — anders als eine Kette.'
+            : 'Links am Block, auf der Stirnseite und damit zugaenglich.');
+    }
+    if (f.bal) {
+      dazu('Ausgleichswelle',
+        'Die zweite Laengslinie unter der Kurbelwelle. Sie nimmt die Vibrationen auf, die diese Zylinderzahl bauartbedingt erzeugt.');
+    }
+    return teile;
+  };
+
   // `formen` und `baureihen` werden von scripts/audit.mjs gelesen. Vorher
   // hat das Audit die Tabelle per Textmuster aus dieser Datei geholt — das
   // ist an einer Umbenennung zerbrochen, einmal sogar still und mit
@@ -568,7 +674,7 @@ Limousine  : { x0:16.1, xt:15.1, ny:40.8, hx:38.9, hy:39.3, cx:63.5, cy:37, ax:8
   };
 
   window.D4F_GFX = {
-    vehicleSvg, vehicleArt, engineSvg,
+    vehicleSvg, vehicleArt, engineSvg, engineTeile,
     formen: Object.keys(FORMEN),
     baureihen: Object.keys(SERIEN),
     fotos: MIT_FOTO.slice()
