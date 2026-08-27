@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T08:50:05.127Z",
+  "generated": "2026-08-27T08:52:07.045Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -232,6 +232,7 @@
               "N26",
               "N55",
               "N47",
+              "N57",
               "B47",
               "B38",
               "B48",
@@ -4143,6 +4144,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -4161,14 +4163,14 @@
       "cat": "Motoridentifikation",
       "title": "Motorzuordnung F30/F31/F34 · N-Motoren vor dem LCI, B-Motoren danach",
       "valid": "F30/F31/F34 · 2011–2019",
-      "summary": "Mit dem Facelift 2015 wechselt der 3er von den N-Motoren auf den Baukasten B38/B48/B58. Dabei ändern sich auch die Typbezeichnungen: aus 328i wird 330i, aus 335i wird 340i. Wer nach Schriftzug bestellt, bestellt an der Hälfte der Fahrzeuge falsch.",
+      "summary": "Mit dem Facelift 2015 wechseln die Benziner und die Vierzylinder-Diesel auf den Baukasten, der Sechszylinder-Diesel N57 läuft weiter. Dabei ändern sich Typbezeichnungen: aus 328i wird 330i, aus 335i wird 340i. Wer nach Schriftzug bestellt, bestellt an der Hälfte der Fahrzeuge falsch.",
       "points": [
         "Vor dem Facelift: 316i und 318i mit dem aufgeladenen 1.6er N13 aus der gemeinsam mit PSA entwickelten Motorenfamilie, 320i und 328i mit dem N20, 335i mit dem Sechszylinder N55",
         "Ab dem Facelift 2015: 318i mit dem Dreizylinder B38, 320i und 330i mit dem B48, 340i mit dem B58. Die früheren Bezeichnungen 316i, 328i und 335i entfallen",
-        "Schnellster Griff im Motorraum ist die Zahl der Zündspulen: drei bedeutet B38, vier bedeutet B48, N20 oder N13, sechs bedeutet B58 oder N55",
+        "Bei den Benzinern ist der schnellste Griff im Motorraum die Zahl der Zündspulen: drei bedeutet B38, vier bedeutet B48, N20 oder N13, sechs bedeutet B58 oder N55. Ein Diesel hat keine Zündspulen — dort zählst du Injektoren und Glühkerzen",
         "B58 gegen N55 trennen: beim B58 sitzt der Ladeluftkühler als Wasser-Luft-Kühler in der Ansaugbrücke und der Abgaskrümmer ist in den Zylinderkopf integriert. Der N55 hat einen separaten Krümmer und einen Luft-Luft-Ladeluftkühler",
         "N13 gegen N20 trennen: beide sind aufgeladene Vierzylinder, aber der N13 ist der 1.6er der Einstiegsmodelle mit anderem Grundmotor. Über den Motorcode am Block entscheiden, nicht über das Typschild",
-        "Diesel: bis 2015 der N47, danach der B47 als eigener Nachfolgemotor — keine Ausbaustufe des N47. Beim N47 sitzt der Steuerkettentrieb hinten zum Getriebe, metallisches Rasseln nach dem Kaltstart aus dem hinteren Motorbereich ist dort das Leitsymptom. Die Kettenlage des B47 ist widersprüchlich belegt, Einzelheiten in D4F-F30-007"
+        "Diesel: erst Zylinder zählen, dann die Generation bestimmen. Vier Zylinder heißt N47 bis 2015 und danach B47 als eigener Nachfolgemotor; sechs Zylinder heißt N57 in 330d und 335d, und der läuft über das Facelift hinweg weiter. Bei N47 und N57 sitzt der Steuerkettentrieb hinten zum Getriebe, metallisches Rasseln nach dem Kaltstart aus dem hinteren Motorbereich ist dort das Leitsymptom. Die Kettenlage des B47 ist widersprüchlich belegt, Einzelheiten in D4F-F30-007"
       ],
       "engines": [
         "N13",
@@ -4177,6 +4179,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -4210,6 +4213,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -4243,6 +4247,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -4274,6 +4279,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -4307,6 +4313,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -11200,6 +11207,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"
@@ -11367,6 +11375,7 @@
         "N55",
         "N47",
         "B47",
+        "N57",
         "B38",
         "B48",
         "B58"

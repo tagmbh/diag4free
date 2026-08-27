@@ -5,7 +5,7 @@
       "code": "GF-F30-01",
       "name": "Fahrzeug bestimmen vor Codierung und Programmierung",
       "desc": "Welches Zugangssystem, welcher Softwarestand, welche Datenbasis. Die Vorarbeit, ohne die jede Codierung am F30 ein Ratespiel ist.",
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "B38", "B48", "B58"],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
       "steps": [
         {
           "q": "Liegt die vollständige Fahrgestellnummer vor und lässt sich der Fahrzeugauftrag lesen?",
@@ -61,7 +61,7 @@
       "code": "GF-F30-02",
       "name": "Störungen nach Batteriewechsel am F30",
       "desc": "Nach dem Batteriewechsel melden mehrere Systeme gleichzeitig. Trennt Folgefehler und Registrierungsproblem vom echten Defekt.",
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "B38", "B48", "B58"],
+      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
       "steps": [
         {
           "q": "Wurde die neue Batterie nach dem Einbau registriert?",
