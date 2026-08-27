@@ -360,6 +360,62 @@ async function main() {
       await ctx.close();
     }
 
+    // --- engines.json: geliefertes Schema wird verstanden ---
+    {
+      console.log('\n▸ Motor-Steckbriefe');
+      const ctx = await browser.newContext({ ...devices['iPhone 13'], serviceWorkers: 'block' });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`engines: ${e.message}`));
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => localStorage.clear());
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1500);
+
+      const vorhanden = await page.evaluate(async () => {
+        try {
+          const r = await fetch('./content/engines.json');
+          if (!r.ok) return null;
+          const d = await r.json();
+          const liste = Array.isArray(d.engines) ? d.engines
+                      : Array.isArray(d) ? d : Object.keys(d).map(k => ({ id: k }));
+          return liste.length;
+        } catch { return null; }
+      });
+
+      if (vorhanden) {
+        // Eine Baureihe wählen, deren Motoren im Steckbrief-Bestand vorkommen.
+        // Das erste Fahrzeug der Liste trifft sonst zufällig einen Bestand
+        // ohne Überschneidung und der Test schlägt zu Unrecht an.
+        const passend = await page.evaluate(async () => {
+          const [idx, eng] = await Promise.all([
+            (await fetch('./content/index.json')).json(),
+            (await fetch('./content/engines.json')).json()
+          ]);
+          const liste = Array.isArray(eng.engines) ? eng.engines
+                      : Array.isArray(eng) ? eng : Object.keys(eng).map(k => ({ id: k }));
+          const bekannt = new Set(liste.map(e => e.id || e.code || e.name).filter(Boolean));
+          const m = idx.models.groups.flatMap(g => g.models)
+            .find(x => (x.engines || []).some(e => bekannt.has(e)));
+          return m ? m.id : null;
+        });
+        expect(!!passend, 'Baureihe mit bekannten Motoren gefunden',
+          'kein Modell überschneidet sich mit engines.json');
+        if (!passend) { await ctx.close(); throw new Error('abbruch'); }
+
+        await page.locator(`[data-pick-model="${passend}"]`).click();
+        await settle(page, 1000);
+        const karten = await page.locator('[data-engine]').count();
+        const gezeichnet = await page.locator('[data-engine] .eng-svg').count();
+        expect(karten > 0, 'Motorkarten vorhanden', 'keine');
+        expect(gezeichnet > 0, 'mindestens ein Motorschema gezeichnet',
+          `${karten} Karten, aber 0 Schemata — engines.json wurde nicht verstanden`);
+      } else {
+        ok('engines.json nicht vorhanden — Motorkarten bleiben textbasiert (erwartet)');
+      }
+      await ctx.close();
+    }
+
     // --- next_docs: nach der Diagnose weiterlesen ---
     {
       console.log('\n▸ Weiterführende Docs im Ergebnis');

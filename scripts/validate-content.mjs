@@ -198,7 +198,24 @@ async function validateEngines(engineIds) {
     return;
   }
   const f = 'content/engines.json';
-  const data = await readJson(p);
+  const roh = await readJson(p);
+
+  // Geliefert wird `{schema, note, engines:[…]}`; die erste Schema-Fassung
+  // sah eine Map vor. Beides akzeptieren, damit die Redaktion nicht umbaut.
+  let data = {};
+  const liste = Array.isArray(roh?.engines) ? roh.engines
+              : Array.isArray(roh) ? roh : null;
+  if (liste) {
+    for (const e of liste) {
+      const id = e?.id || e?.code || e?.name;
+      if (!id) { err(f, 'Motor ohne `id`, `code` oder `name`'); continue; }
+      if (data[id]) err(f, `doppelter Motor \`${id}\``);
+      data[id] = e;
+    }
+  } else {
+    data = roh || {};
+  }
+
   let n = 0;
   for (const [key, e] of Object.entries(data)) {
     n++;
@@ -207,15 +224,17 @@ async function validateEngines(engineIds) {
     else if (!LAYOUTS.includes(e.layout)) err(f, `\`${key}\`: \`layout\` \`${e.layout}\` ist keiner von ${LAYOUTS.join(', ')}`);
     if (!isStr(e.aspiration)) err(f, `\`${key}\`: \`aspiration\` fehlt`);
     else if (!ASPIRATIONS.includes(e.aspiration)) err(f, `\`${key}\`: \`aspiration\` \`${e.aspiration}\` ist keiner von ${ASPIRATIONS.join(', ')}`);
-    if (e.displacement_cc !== undefined && typeof e.displacement_cc !== 'number') {
-      err(f, `\`${key}\`: \`displacement_cc\` muss eine Zahl sein`);
+    for (const feld of ['displacement_cc', 'displacement_ccm']) {
+      if (e[feld] !== undefined && typeof e[feld] !== 'number') {
+        err(f, `\`${key}\`: \`${feld}\` muss eine Zahl sein`);
+      }
     }
     for (const v of e.power_variants || []) {
-      if (typeof v.ps !== 'number' && typeof v.kw !== 'number') {
+      if (typeof v.ps !== 'number' && typeof v.hp !== 'number' && typeof v.kw !== 'number') {
         err(f, `\`${key}\`: Leistungsvariante ohne \`ps\` oder \`kw\``);
       }
     }
-    for (const field of ['id_marks', 'weak_points', 'valvetrain']) {
+    for (const field of ['id_marks', 'identify', 'weak_points', 'valvetrain']) {
       if (e[field] !== undefined && !isArr(e[field])) err(f, `\`${key}\`: \`${field}\` muss ein Array sein`);
     }
   }

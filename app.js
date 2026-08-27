@@ -418,11 +418,44 @@
   // -------- Motor-Steckbriefe (optional) --------
   // engines.json ist bewusst optional: fehlt sie, bleiben die Motorkarten
   // textbasiert. Sobald die Datei liegt, erscheinen Schema und Fakten.
+  /**
+   * Normalisiert engines.json auf eine Map <motorId> → Steckbrief.
+   *
+   * Geliefert wird `{schema, note, engines:[…]}` mit einem Array; die erste
+   * Schema-Fassung sah eine Map vor. Beide werden akzeptiert, damit die
+   * Redaktion nicht umbauen muss. Ebenso die Feldvarianten:
+   * `displacement_ccm`/`_cc` und `identify`/`id_marks`.
+   */
+  const normalizeEngines = (raw) => {
+    if (!raw || typeof raw !== 'object') return {};
+    const liste = Array.isArray(raw.engines) ? raw.engines
+                : Array.isArray(raw) ? raw
+                : Object.entries(raw).map(([k, v]) => ({ id: k, ...v }));
+    const out = {};
+    for (const e of liste) {
+      if (!e || typeof e !== 'object') continue;
+      const id = e.id || e.code || e.name;
+      if (!id) continue;
+      out[id] = {
+        ...e,
+        name: e.name || id,
+        displacement_cc: typeof e.displacement_cc === 'number' ? e.displacement_cc
+                       : typeof e.displacement_ccm === 'number' ? e.displacement_ccm
+                       : undefined,
+        id_marks: e.id_marks || e.identify || [],
+        power_variants: (e.power_variants || []).map(v => ({
+          ...v, ps: typeof v.ps === 'number' ? v.ps : v.hp
+        }))
+      };
+    }
+    return out;
+  };
+
   const loadEngines = async () => {
     if (state.engines !== null) return state.engines;
     try {
       const resp = await fetch('./content/engines.json', { cache: 'no-cache' });
-      state.engines = resp.ok ? await resp.json() : {};
+      state.engines = resp.ok ? normalizeEngines(await resp.json()) : {};
     } catch { state.engines = {}; }
     return state.engines;
   };
@@ -640,20 +673,6 @@
     panel.querySelectorAll('[data-route]').forEach(b => b.addEventListener('click', () => {
       haptic(); setView(b.dataset.route);
     }));
-  };
-
-  const changeEngineDialog_LEGACY = () => {
-    const activeGroup = state.data.models.groups.find(g => g.models.some(m => m.id === state.series));
-    const activeModel = activeGroup.models.find(m => m.id === state.series);
-    const choice = prompt(
-      `Motor wählen für ${activeModel.name}\n\nVerfügbar: ${activeModel.engines.join(', ')}`,
-      state.engine
-    );
-    if (choice && activeModel.engines.includes(choice.toUpperCase())) {
-      state.engine = choice.toUpperCase();
-      updateContext();
-      render();
-    }
   };
 
   // -------- DOCS --------

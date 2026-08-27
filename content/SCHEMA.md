@@ -209,6 +209,39 @@ Wird **separat** gefetcht (nicht Teil von `index.json`), wie `software.json`.
 **Die Datei ist optional.** Fehlt sie oder fehlt ein Motor darin, fällt der
 Motor-Picker auf die schlichte Namensliste zurück — die App bleibt funktionsfähig.
 
+**Zwei Wurzelformen werden akzeptiert.** Kanonisch ist die gelieferte Form mit
+Schema-Kennung und Array; die erste Fassung dieses Dokuments sah eine Map vor
+und bleibt lesbar, damit vorhandene Dateien nicht umgebaut werden müssen.
+
+```json
+{
+  "schema": "diag4free/engines/v1",
+  "note": "…",
+  "engines": [
+    {
+      "id": "N52",
+      "layout": "R6",
+      "aspiration": "Sauger",
+      "displacement_ccm": 2996,
+      "power_variants": [{ "hp": 218, "kw": 160, "models": ["E88 120i"] }],
+      "identify": ["Ventildeckel aus Kunststoff mit integriertem Ölabscheider"],
+      "diagram": "assets/engines/n52.svg"
+    }
+  ]
+}
+```
+
+Feldvarianten, die die App und der Validator gleichwertig behandeln:
+
+| Kanonisch | Alias | Bedeutung |
+|-----------|-------|-----------|
+| `displacement_ccm` | `displacement_cc` | Hubraum in cm³ |
+| `identify` | `id_marks` | Erkennungsmerkmale im Motorraum |
+| `hp` in `power_variants` | `ps` | Leistung in PS |
+| `id` | `code`, `name` | Motor-Schlüssel (nur im Array-Format nötig) |
+
+Ältere Map-Form, weiterhin gültig:
+
 ```json
 {
   "N52": {
