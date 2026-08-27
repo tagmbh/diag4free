@@ -35,7 +35,7 @@ So bestimmst du den Kontakt am Fahrzeug, statt einer Tabelle zu glauben:
 
 Die Zuordnung am Fahrzeug schlägt jede Tabelle. Bei einer MSV90 gilt das erst recht — sie hat eine eigene Belegung.
 
-> **Sollwerte fehlen:** Zu den Signalpegeln an diesen Pins — MAF-Spannung über Last, Lambda-Signalhub, PWM-Tastverhältnis der Pumpe — liegt hier keine geprüfte Tabelle vor. Miss deshalb vergleichend: gegen den zweiten, baugleichen Kanal, oder gegen denselben Wert bei kaltem und warmem Motor. Ein Absolutwert ohne Quelle ist hier keine Prüfung.
+> **Sollwerte fehlen:** Zu den Signalpegeln an diesen Leitungen — MAF-Spannung über Last, Lambda-Signalhub, PWM-Tastverhältnis der Pumpe — liegt hier keine geprüfte Tabelle vor. Miss deshalb vergleichend: gegen den zweiten, baugleichen Kanal, oder gegen denselben Wert bei kaltem und warmem Motor. Ein Absolutwert ohne Quelle ist hier keine Prüfung.
 
 ## Weiter
 

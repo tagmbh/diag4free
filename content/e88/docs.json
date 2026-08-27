@@ -101,7 +101,7 @@
       "pins": [
         "MSV80-Steckerblock, nach einer Quelle: X60001 26 (grau) · X60002 26 · X60003 6 · X60004 6 · X60005 44 Pole — Polzahl am Fahrzeug nachzählen",
         "Jeder Stecker zählt eigenständig ab Pin 1 — eine Pinnummer ohne Steckerangabe zeigt auf nichts",
-        "Die früher hier genannten Pins 87, 45 und 22/23 gibt es an den genannten Steckern nicht; sie stammten aus einer durchlaufenden Zählung über den ganzen Block",
+        "Gestrichen: X60001 Pin 87, X60002 Pin 45, X60003 Pin 22/23 — diese Kontakte gibt es an diesen Steckern nicht, die Zahlen stammten aus einer durchlaufenden Zählung über den ganzen Block",
         "MAF, Lambdasonde, VANOS-Solenoide, Valvetronic-Motor, Kühlmittelpumpe: Pinnummern hier nicht belegt",
         "Zuordnung am Fahrzeug bestimmen: Stecker am Bauteil abziehen, Pole am DME-Stecker zählen, Ader durchklingeln"
       ],
