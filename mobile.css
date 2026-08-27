@@ -1066,3 +1066,51 @@ code, .measure-target, .pin-num, .doc-code {
 @media (max-width: 960px) {
   .result-next-item { min-height: 56px; padding: var(--space-3) var(--space-4); }
 }
+
+/* ============================================================
+   OBD-SCAN auf kleinen Geraeten
+   ============================================================ */
+
+@media (max-width: 560px) {
+  /* Drei Wortlabels nebeneinander passen bei 320px nicht. Die Ziffern
+     tragen den Fortschritt allein — der Text bleibt nur beim aktiven
+     Schritt stehen, wo er etwas erklaert. */
+  .scan-step-label { display: none; }
+  .scan-step.now .scan-step-label { display: inline; }
+  .scan-step { flex: 0 0 auto; }
+  .scan-step.now { flex: 1; }
+
+  .scan-entry { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
+  .scan-entry-sub { font-size: var(--text-xs); }
+
+  /* Zwei Kacheln nebeneinander bleiben lesbar, drei nicht. */
+  .live-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .live-tile { min-height: 84px; padding: var(--space-3); }
+
+  /* Code und Beschreibung untereinander — nebeneinander bricht der Text
+     nach zwei Zeichen um. */
+  .dtc-item { flex-direction: column; gap: var(--space-2); }
+
+  .scan-section-head { flex-direction: column; align-items: stretch; }
+  .scan-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .scan-actions .btn { width: 100%; }
+}
+
+@media (pointer: coarse) {
+  /* Trefferflaechen im Werkstattkontext: mit Handschuh oder oeligen
+     Fingern ist 44px die Untergrenze, nicht das Ziel. */
+  .scan-big      { min-height: 96px; }
+  .scan-entry    { min-height: 80px; }
+  .detail-link   { min-height: 52px; }
+  .scan-actions .btn { min-height: 48px; }
+}
+
+/* Querformat auf dem Handy: die Schrittanzeige frisst sonst die halbe
+   Hoehe, obwohl davon nur drei Ziffern uebrig bleiben. */
+@media (max-height: 480px) and (orientation: landscape) {
+  .scan-steps { margin-bottom: var(--space-3); }
+  .scan-step  { padding: var(--space-1) var(--space-2); }
+  .live-grid  { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .live-tile  { min-height: 72px; }
+  .live-val   { font-size: var(--text-lg); }
+}

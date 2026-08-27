@@ -19,9 +19,18 @@
         "OBD Pin 14 · CAN-Low",
         "OBD Pin 8 · DCAN (bis 03/2007)"
       ],
-      "engines": ["N43", "N46", "N52", "N53", "N54", "N55", "M57", "N47", "S65"],
-      "article": "ista-e90-setup.md",
-      "url": "https://www.bimmergeeks.net/"
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47",
+        "S65"
+      ],
+      "article": "ista-e90-setup.md"
     },
     {
       "id": "D4F-E90-002",
@@ -40,9 +49,10 @@
         "DME Stecker A · Pin 15 · Ladedrucksensor Signal",
         "DME Stecker A · Pin 32 · HPFP-Druckregelventil"
       ],
-      "engines": ["N54"],
-      "article": "dtc-n54.md",
-      "url": "https://www.n54tech.com/"
+      "engines": [
+        "N54"
+      ],
+      "article": "dtc-n54.md"
     },
     {
       "id": "D4F-E90-003",
@@ -58,9 +68,13 @@
         "Falscher I-Level → Bricking-Gefahr"
       ],
       "pins": [],
-      "engines": ["N52", "N53", "N54", "N55"],
-      "article": "esys-basics.md",
-      "url": "https://f30.bimmerpost.com/"
+      "engines": [
+        "N52",
+        "N53",
+        "N54",
+        "N55"
+      ],
+      "article": "esys-basics.md"
     }
   ]
 }

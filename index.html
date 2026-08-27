@@ -161,6 +161,11 @@
       <section class="view" data-view-panel="software" aria-labelledby="swTitle">
         <div class="view-inner" id="softwarePanel"><!-- populated --></div>
       </section>
+
+      <!-- OBD-Scan: eigene Diagnose, kein fremdes Werkzeug -->
+      <section class="view" data-view-panel="scan" aria-labelledby="scanTitle">
+        <div class="view-inner" id="scanPanel"><!-- populated --></div>
+      </section>
     </main>
   </div>
 
@@ -214,6 +219,7 @@
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 
   <script src="./graphics.js"></script>
+  <script src="./obd.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

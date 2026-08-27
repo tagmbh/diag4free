@@ -20,8 +20,12 @@
         "Pin 19 · TXD Motronic",
         "Pin 20 · RXD Motronic"
       ],
-      "engines": ["M20", "M40", "M42", "M50", "S14", "S38"],
-      "url": "https://www.bmw-e30.net/"
+      "engines": [
+        "M20",
+        "M40",
+        "M42",
+        "S14"
+      ]
     },
     {
       "id": "D4F-E30-002",
@@ -37,8 +41,10 @@
         "Löschen: nach Auslesen Batterie 5 min abklemmen"
       ],
       "pins": [],
-      "engines": ["M20", "M42"],
-      "url": "https://www.bmw-e30.net/"
+      "engines": [
+        "M20",
+        "M42"
+      ]
     }
   ]
 }

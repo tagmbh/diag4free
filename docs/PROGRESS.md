@@ -17,14 +17,16 @@ Die Bedien- und Aufnahme-Ebene ist fertig, getestet und live. Was fehlt, ist
 | Messplan mit Sollwert-Prüfung | fertig — wartet auf Daten |
 | Datenverträge (`content/SCHEMA.md`) | fertig |
 | Validator (`scripts/validate-content.mjs`) | fertig, in CI vor dem Deploy |
-| Abnahme (`tests/run.mjs`) | 191 Prüfungen ohne, 193 mit `engines.json` |
+| Eigener OBD-Scan (`obd.js`, `#/scan`) | fertig, getestet |
+| Abnahme (`tests/run.mjs`) | 216 Prüfungen |
 
 **Verifizieren nach jeder Änderung:**
 
 ```bash
 node scripts/validate-content.mjs      # Verträge, Exit 1 bei Verstoss
 node scripts/build-index.mjs --check   # Index aktuell? (ohne Build-Metadaten)
-node tests/run.mjs                     # UI auf 4 Viewports, beide Themes,
+CHROMIUM_PATH=/opt/pw-browsers/chromium \
+  node tests/run.mjs                   # UI auf 4 Viewports, beide Themes,
                                        # beide Orientierungen, Offline-Erstlauf
 ```
 
@@ -47,6 +49,71 @@ Alle in `main`, alle durch Tests abgesichert:
 10. `next_docs` wurde nirgends gerendert — Weg endete nach der Diagnose
 11. `changeEngineDialog_LEGACY` — toter `prompt()`, führte einen Folgeagenten
     zu dem Schluss, das Frontend liege nicht auf `main`
+
+## Offen — Priorität 0: echte Fahrzeug- und Motorbilder
+
+Die parametrischen Silhouetten aus `graphics.js` sind als Platzhalter
+gedacht gewesen und werden abgelöst: verlangt sind **fotorealistische
+3D-Renders** von Fahrzeug und Motor, keine Strichzeichnungen.
+
+**Blockiert, nicht offen.** Die Erzeugung funktioniert — ein Testrender
+(E46-Limousine, `nano_banana_pro`, 2 Credits) liegt im Higgsfield-Konto
+unter `d58db3b0-4ce7-464b-9198-8696b5d7b8a1`. Nur das Ergebnis lässt sich
+nicht abholen: `d8j0ntlcm91z4.cloudfront.net` wird von der Egress-Policy
+dieser Session mit 403 auf CONNECT abgewiesen. Umgehen ist nicht erlaubt.
+
+Drei Wege, einer davon muss entschieden werden:
+
+1. Den CDN-Host in der Netzwerkpolicy der Umgebung freigeben — dann läuft
+   Erzeugen, Optimieren und Committen vollständig in dieser Session.
+2. Ich erzeuge und gebe die URL-Liste heraus, jemand lädt sie herunter und
+   hängt sie als Zip an die Unterhaltung.
+3. Die lokale Cowork-Session erzeugt und committet — setzt voraus, dass
+   `tagmbh/diag4free` dort freigegeben wird, was ohnehin schon an der
+   E88-Lieferung hängt.
+
+Bis dahin bleibt `graphics.js` in Betrieb. Die Anzeige-Ebene ist so gebaut,
+dass ein Bildfeld in `models.json`/`engines.json` die Vektorgrafik ablösen
+kann, ohne dass sonst etwas angefasst werden muss.
+
+## Erledigt: eigene Diagnose statt fremder Werkzeuge
+
+Die Software-Seite verwies auf Download-Seiten für INPA, ISTA, NCS Expert
+und Tool32. Die Ziele existieren teils nicht mehr, und nach der neuen
+Quellenregel haben sie ohnehin nichts mehr verloren.
+
+An ihrer Stelle steht `obd.js` und die Route `#/scan`: Fehlerspeicher,
+Live-Werte, VIN und Motorkontrollleuchte direkt über **Web Serial**
+(USB-ELM327, K+DCAN) oder **Web Bluetooth** (BLE-Dongle). Kein Server, kein
+fremdes Programm, offline lauffähig.
+
+Die Grenze steht in der Oberfläche, statt verschwiegen zu werden: der Scan
+liest die genormte Antriebsebene nach SAE J1979. Komfort-, Karosserie- und
+Fahrwerkssteuergeräte sprechen BMW-eigene Protokolle und bleiben dem
+Werkstattwerkzeug vorbehalten. Auf iOS gibt es beide Browser-APIs nicht —
+auch das sagt die Ansicht, statt einen Knopf anzubieten, der nur eine
+Ausnahme wirft.
+
+Abgesichert durch 216 Prüfungen, darunter der verbundene Zustand mit
+Attrappe (Fehlercode-Liste, Live-Kacheln, Kontrast in beiden Themes).
+
+## Erledigt: keine Rückverlinkung mehr zum Ursprung
+
+Fünfzehn `url`-Felder und achtzehn `sources`-Einträge sind entfernt. Das
+Wissen bleibt — es ist ohnehin neu formuliert, und Fakten sind nicht
+schutzfähig. Was fällt, ist der Verweis auf fremde Sammlungen: keiner der
+fünfzehn Links war aus der App heraus noch erreichbar.
+
+An ihre Stelle tritt `details` — der Weg tiefer ins eigene Material. Wo
+nichts gesetzt ist, sucht die App Nachbarn gleicher Kategorie oder mit
+gemeinsamem Motor. Der Validator prüft die Regel jetzt andersherum: jeder
+Nicht-BMW-Host bricht ab, und gemeldet wird, wo ein Dokument gar keinen Weg
+tiefer hat (noch 4 von 21).
+
+Damit ist auch der bmwteka-Deep-Link-Plan hinfällig — bmwteka ist keine
+offizielle Quelle. `scripts/wds-lookup.mjs` bleibt als Nachschlagehilfe für
+die Redaktion liegen, seine Treffer werden aber nicht mehr verlinkt,
+sondern nur noch gelesen.
 
 ## Offen — Priorität 1: E88-Lieferung einspielen
 
@@ -158,10 +225,10 @@ oder N51"*). Ein Pfad-Treffer auf einen Motornamen belegt darum **nicht**,
 dass das Blatt für genau diesen Motor gilt. Das Skript liefert Kandidaten,
 die Auswahl bleibt Handarbeit pro Doc. Der Hinweis steht auch im Skript.
 
-**Nächster Schritt:** ein Agent nimmt sich die 13 Docs mit Baureihen-Deckung
-vor, öffnet je Kandidat den Link, und trägt nur die eindeutigen als `url`
-plus `sources`-Eintrag `{ "label": "BMW WDS (Referenz)" }` nach. Kein
-Dokumentname, keine Seitenzahl — Leak-Check vor dem Push.
+**Überholt.** Verlinkt wird nichts mehr — bmwteka ist keine offizielle
+Quelle. Der Baum bleibt eine Lesehilfe für die Redaktion: er sagt, welches
+WDS-Dokument zu einem Thema gehört, damit der Inhalt gezielt neu formuliert
+werden kann. In die App wandert nur der Text, nie der Verweis.
 
 ## Offen — angekündigt, aber noch nicht angekommen
 
@@ -288,6 +355,7 @@ die Zeit.
 Sichtbar gemacht, aber ohne Belege nicht zu füllen:
 
 - 14 geplante Artikel noch nicht geschrieben (Validator zählt sie auf)
-- 15 von 21 Docs ohne `sources`, obwohl Inhaltsregel 3 Attribution verlangt
+- 4 von 21 Docs ohne Weg tiefer — kein Artikel, keine `details`, kein
+  Nachbar gleicher Kategorie (`D4F-E30-001/002`, `D4F-E46-007`, `D4F-F-002`)
 - `measure.json` fehlt — und kommt aus den BMW-Schulungsheften grundsätzlich
   nicht: die enthalten keine Sollwerttabellen. Braucht eine andere Quelle.

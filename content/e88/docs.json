@@ -23,16 +23,29 @@
         "OBD2 Pin 16 · KL30 (dauerplus)",
         "OBD2 Pin 8 · Nicht verbunden (im Gegensatz zu älteren E-Modellen)"
       ],
-      "engines": ["N43", "N46", "N52", "N54", "N55", "N47"],
-      "article": "inpa-setup.md",
-      "sources": [
-        { "label": "BMW TIS SP-Daten E89", "note": "Steuergeräteliste, kompatibel E88" },
-        { "label": "bmwteka.com", "note": "K+DCAN-Adapter Konfiguration" },
-        { "label": "e90post 1M/135i Wiki", "note": "OBD2-Pinout ab CAS3" }
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
       ],
+      "article": "inpa-setup.md",
       "obd": {
-        "pids": ["0100", "0104", "0105", "010B", "010C", "010F", "0110"],
-        "requires": ["ecu:DME", "protocol:D-CAN"]
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F",
+          "0110"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
       }
     },
     {
@@ -51,12 +64,15 @@
         "EDC (Electronic Damper Control): nur mit Sport-Fahrwerk — nicht mit Standard verwechseln"
       ],
       "pins": [],
-      "engines": ["N43", "N46", "N52", "N54", "N55", "N47"],
-      "article": "topologie.md",
-      "sources": [
-        { "label": "BMW TIS", "note": "E88 Kommunikationsdiagramm" },
-        { "label": "bmwteka.com", "note": "1er-Bus-Übersicht" }
-      ]
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "article": "topologie.md"
     },
     {
       "id": "D4F-E88-010",
@@ -81,16 +97,24 @@
         "MSV80 X60002 Pin 45 · Valvetronic-Motor Ansteuerung",
         "MSV80 X60001 Pin 16 · Kühlmittelpumpe PWM"
       ],
-      "engines": ["N52"],
-      "article": "n52-diagnose-setup.md",
-      "sources": [
-        { "label": "BMW TIS", "note": "N52-Datenblätter, MSV80/MSV90 Steckerbelegung" },
-        { "label": "bmwteka.com", "note": "N52 Sensor-Übersicht" },
-        { "label": "e90post N52 Forum", "note": "Erfahrungsbasierte Fehlerbilder" }
+      "engines": [
+        "N52"
       ],
+      "article": "n52-diagnose-setup.md",
       "obd": {
-        "pids": ["0104", "0105", "010B", "010C", "010F", "0110", "0111"],
-        "requires": ["ecu:DME:MSV80|MSV90", "protocol:D-CAN"]
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F",
+          "0110",
+          "0111"
+        ],
+        "requires": [
+          "ecu:DME:MSV80|MSV90",
+          "protocol:D-CAN"
+        ]
       }
     },
     {
@@ -112,18 +136,28 @@
         "Valvetronic-Motor: Pin 1/2 Motor-Ansteuerung H-Brücke, Pin 3/4 Positionssensor",
         "VANOS-Solenoid: 2-poliger Stecker, ~7,5 Ω @ 20°C"
       ],
-      "engines": ["N52"],
-      "article": "n52-fehlerbilder.md",
-      "sources": [
-        { "label": "BMW TIS", "note": "N52 Reparaturanleitungen, Solldrehzahl-Kennfelder" },
-        { "label": "bmwteka.com", "note": "N52 Elektrische Wasserpumpe" },
-        { "label": "e90post N52 Forum", "note": "Statistik zu Ausfall-Kilometern" },
-        { "label": "Bentley E90 Service Manual", "note": "Prüfmethodik" }
+      "engines": [
+        "N52"
       ],
+      "article": "n52-fehlerbilder.md",
       "obd": {
-        "pids": ["0104", "0105", "010C"],
-        "dtc_related": ["2A82", "2A87", "052A", "052B", "052E", "1004", "1005"],
-        "requires": ["ecu:DME:MSV80|MSV90"]
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "dtc_related": [
+          "2A82",
+          "2A87",
+          "052A",
+          "052B",
+          "052E",
+          "1004",
+          "1005"
+        ],
+        "requires": [
+          "ecu:DME:MSV80|MSV90"
+        ]
       }
     },
     {
@@ -145,17 +179,27 @@
         "EGS-Stecker X17 · 40-polig, Mechatronic-Adapter",
         "Getriebe-Öltemperaturfühler intern in Mechatronic — kein separater Stecker"
       ],
-      "engines": ["N52"],
-      "article": "steptronic-ga6l45r.md",
-      "sources": [
-        { "label": "ZF GA6L45R Service", "note": "Ölwechsel-Prozedur" },
-        { "label": "BMW TIS", "note": "EGS-Adaptionsprozedur" },
-        { "label": "e90post Trans forum", "note": "Mechatronic-Sleeve Symptomatik" }
+      "engines": [
+        "N52"
       ],
+      "article": "steptronic-ga6l45r.md",
       "obd": {
-        "pids": ["0104", "0105", "010D"],
-        "dtc_related": ["P0729", "P0731", "P0732", "P0733", "P0734"],
-        "requires": ["ecu:EGS", "protocol:D-CAN"]
+        "pids": [
+          "0104",
+          "0105",
+          "010D"
+        ],
+        "dtc_related": [
+          "P0729",
+          "P0731",
+          "P0732",
+          "P0733",
+          "P0734"
+        ],
+        "requires": [
+          "ecu:EGS",
+          "protocol:D-CAN"
+        ]
       }
     },
     {
@@ -178,15 +222,19 @@
         "CTM-Stecker X6101 · Hydraulikpumpe Ansteuerung",
         "Sicherung F49 · 30 A · Verdeckhydraulik"
       ],
-      "engines": ["N43", "N46", "N52", "N54", "N55", "N47"],
-      "article": "verdeck-ctm.md",
-      "sources": [
-        { "label": "BMW TIS", "note": "E88 Verdecksteuerung Beschreibung" },
-        { "label": "1addicts.com E88 forum", "note": "Fehlerhäufigkeiten Verdeck" },
-        { "label": "bmwteka.com", "note": "CTM-Codierstellen" }
+      "engines": [
+        "N43",
+        "N46",
+        "N52",
+        "N54",
+        "N55",
+        "N47"
       ],
+      "article": "verdeck-ctm.md",
       "obd": {
-        "requires": ["ecu:CTM"]
+        "requires": [
+          "ecu:CTM"
+        ]
       }
     }
   ]

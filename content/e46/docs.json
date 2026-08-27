@@ -21,9 +21,15 @@
         "OBD2 Pin 4/5 · Masse",
         "OBD2 Pin 16 · KL30"
       ],
-      "engines": ["M52", "M54", "N42", "N46", "S54", "M43"],
-      "article": "inpa-setup.md",
-      "url": "https://www.bmwcoding.com/inpa-download"
+      "engines": [
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54",
+        "M43"
+      ],
+      "article": "inpa-setup.md"
     },
     {
       "id": "D4F-E46-002",
@@ -40,9 +46,14 @@
         "SG_CODIEREN nur nach vollständigem Backup"
       ],
       "pins": [],
-      "engines": ["M52", "M54", "N42", "N46", "S54"],
-      "article": "ncs-expert-basics.md",
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine"
+      "engines": [
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ],
+      "article": "ncs-expert-basics.md"
     },
     {
       "id": "D4F-E46-003",
@@ -63,9 +74,10 @@
         "DME X60002 Pin 1/16 · Lambda vor Kat B1/B2",
         "DME X60001 Pin 36 · VANOS Solenoid Einlass"
       ],
-      "engines": ["M54"],
-      "article": "dtc-dme-ms43.md",
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/mkl-motorsteuerung-motronic-ms43"
+      "engines": [
+        "M54"
+      ],
+      "article": "dtc-dme-ms43.md"
     },
     {
       "id": "D4F-E46-004",
@@ -87,8 +99,10 @@
         "EWS3 X6041 Pin 6 · K-Line zur DME",
         "EWS3 X6041 Pin 3 · KL15"
       ],
-      "engines": ["M54", "M52"],
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds"
+      "engines": [
+        "M54",
+        "M52"
+      ]
     },
     {
       "id": "D4F-E46-005",
@@ -105,9 +119,15 @@
         "EWS: KOMFORTSTART_MENGE = 3 (Startknopfsimulation mit Zündschlüssel)"
       ],
       "pins": [],
-      "engines": ["M43", "M52", "M54", "N42", "N46", "S54"],
-      "article": "ncs-expert-basics.md",
-      "url": "https://www.e46codes.com/"
+      "engines": [
+        "M43",
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ],
+      "article": "ncs-expert-basics.md"
     },
     {
       "id": "D4F-E46-006",
@@ -132,8 +152,9 @@
         "X60002 Pin 4 · Kurbelwellensensor Signal",
         "X60002 Pin 24 · Nockenwellensensor Einlass"
       ],
-      "engines": ["M54"],
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/wds/dme"
+      "engines": [
+        "M54"
+      ]
     },
     {
       "id": "D4F-E46-007",
@@ -151,8 +172,14 @@
         "AKMB (Airbag): mittig im Fahrgastraum unter der Konsole"
       ],
       "pins": [],
-      "engines": ["M43", "M52", "M54", "N42", "N46", "S54"],
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine"
+      "engines": [
+        "M43",
+        "M52",
+        "M54",
+        "N42",
+        "N46",
+        "S54"
+      ]
     },
     {
       "id": "D4F-E46-008",
@@ -172,9 +199,10 @@
         "DISA-Solenoid Pin 1 · KL15 (+12 V)",
         "DISA-Solenoid Pin 2 · DME-Ansteuerung (Masse-schaltend)"
       ],
-      "engines": ["M54"],
-      "article": "disa-m54.md",
-      "url": "https://www.newtis.info/tisv2/a/de/e46-3er-limousine/motor/m54"
+      "engines": [
+        "M54"
+      ],
+      "article": "disa-m54.md"
     }
   ]
 }

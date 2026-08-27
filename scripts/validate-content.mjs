@@ -24,7 +24,12 @@ const QUIET = process.argv.includes('--quiet');
 const errors = [];
 const warnings = [];
 const offeneArtikel = [];
-const ohneQuellen = [];
+const ohneTiefe = [];
+
+// Nur diese Hosts duerfen aus dem Content heraus verlinkt werden.
+// Alles andere ist eine fremde Sammlung — das Wissen gehoert uebernommen,
+// nicht verlinkt.
+const OFFIZIELL = ['static.bmw.com', 'bmw.com', 'bmw.de'];
 const err = (file, msg) => errors.push(`${file}: ${msg}`);
 const warn = (file, msg) => warnings.push(`${file}: ${msg}`);
 
@@ -120,18 +125,23 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
           }
         }
 
-        // Inhaltsregel 3: Fakten stammen aus Quellen und werden neu
-        // formuliert — die Attribution ist das, was das sauber macht.
-        // Fehlt sie, ist das ein Redaktionsstand, kein Vertragsbruch.
-        if (!isArr(d.sources) || d.sources.length === 0) {
-          ohneQuellen.push(d.id);
-        } else {
-          for (const q of d.sources) {
-            if (!isStr(q.label) && !isStr(q.url)) {
-              err(f, `\`${d.id}\`: Quelle ohne \`label\` und ohne \`url\``);
-            }
+        // Inhaltsregel 3, neu gefasst: Fakten werden neu formuliert und
+        // gehoeren damit uns. Ein Link zurueck auf eine fremde Sammlung ist
+        // keine Attribution, sondern eine Abhaengigkeit von einer Seite, die
+        // verschwinden kann — und bei nicht offiziellen Zielen ohnehin
+        // unerwuenscht. Nur BMW-eigene Ziele duerfen nach draussen zeigen.
+        for (const [feld, wert] of [['url', d.url], ...(isArr(d.sources) ? d.sources.map(q => ['sources', q.url]) : [])]) {
+          if (!isStr(wert)) continue;
+          if (!OFFIZIELL.some(h => wert.includes(h))) {
+            err(f, `\`${d.id}\`: \`${feld}\` zeigt auf ${wert} — externe Nicht-BMW-Quelle, nicht erlaubt`);
           }
         }
+
+        // Der Weg tiefer ins Material ersetzt den Weg nach draussen. Ein
+        // Dokument ohne Artikel, ohne gesetzte Details und ohne Nachbarn
+        // gleicher Kategorie ist eine Sackgasse.
+        const hatTiefe = isStr(d.article) || isArr(d.details) || isArr(d.next_docs);
+        if (!hatTiefe) ohneTiefe.push({ id: d.id, cat: d.cat, dir });
 
         if (d.article !== undefined) {
           if (!isStr(d.article) || !d.article.endsWith('.md')) {
@@ -307,9 +317,20 @@ async function main() {
     console.log('   (kein Vertragsbruch — die App zeigt dort einen Hinweis statt eines Fehlers)');
   }
 
-  if (ohneQuellen.length) {
-    console.log(`\n○  ${ohneQuellen.length} von ${docIds.size} Docs ohne \`sources\` (Inhaltsregel 3):`);
-    console.log(`   ${ohneQuellen.join(', ')}`);
+  if (ohneTiefe.length) {
+    // Nur melden, wo auch die automatische Nachbarschaft nicht greift —
+    // ein Dokument mit Geschwistern gleicher Kategorie hat einen Weg
+    // weiter, auch ohne dass ihn jemand von Hand gesetzt hat.
+    const proKategorie = new Map();
+    for (const d of ohneTiefe) {
+      const schluessel = `${d.dir}/${d.cat}`;
+      proKategorie.set(schluessel, (proKategorie.get(schluessel) || 0) + 1);
+    }
+    const echt = ohneTiefe.filter(d => proKategorie.get(`${d.dir}/${d.cat}`) === 1);
+    if (echt.length) {
+      console.log(`\n○  ${echt.length} von ${docIds.size} Docs ohne Weg tiefer (kein Artikel, keine \`details\`, kein Nachbar gleicher Kategorie):`);
+      console.log(`   ${echt.map(d => d.id).join(', ')}`);
+    }
   }
 
   if (warnings.length) {

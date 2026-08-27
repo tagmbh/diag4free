@@ -20,9 +20,14 @@
         "OBD2 Pin 11 · ENET-",
         "OBD2 Pin 12 · Aktivierung Ethernet (mit KL15)"
       ],
-      "engines": ["N20", "N55", "B47", "B58", "N63"],
-      "article": "esys-basics.md",
-      "url": "https://www.bimmerfest.com/threads/e-sys-guide.1177361/"
+      "engines": [
+        "N20",
+        "N55",
+        "B47",
+        "B58",
+        "N63"
+      ],
+      "article": "esys-basics.md"
     },
     {
       "id": "D4F-F-002",
@@ -39,8 +44,12 @@
         "FEM_BODY: NR_TFL_PWM = 100 → hellere Tagfahrlichter"
       ],
       "pins": [],
-      "engines": ["N20", "N55", "B47", "B58"],
-      "url": "https://www.bimmertech.net/blog/f30-coding"
+      "engines": [
+        "N20",
+        "N55",
+        "B47",
+        "B58"
+      ]
     }
   ]
 }

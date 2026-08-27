@@ -1693,3 +1693,315 @@
 .result-next-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .result-next-name { font-size: var(--text-sm); font-weight: 600; }
 .result-next-sub { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.45; }
+
+/* ============================================================
+   OBD-SCAN
+   Werkstattkontext: das Geraet liegt auf dem Beifahrersitz oder in
+   einer Hand, waehrend die andere am Motor ist. Deshalb grosse
+   Trefferflaechen, hoher Kontrast und Werte, die aus einem Meter
+   Abstand lesbar bleiben.
+   ============================================================ */
+
+/* -------- Loeschen ist die einzige nicht umkehrbare Aktion hier.
+   Sie bekommt eine eigene Farbe, damit sie nicht wie "Auslesen" aussieht. */
+.btn-danger {
+  background: var(--color-error);
+  color: #ffffff;
+  border-color: var(--color-error);
+}
+.btn-danger:hover  { background: color-mix(in oklab, var(--color-error) 85%, #000); }
+.btn-danger:active { transform: scale(0.98); }
+
+/* -------- Einstieg aus der Uebersicht -------- */
+.scan-entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-5);
+  min-height: 72px;
+  text-align: left;
+  background: var(--color-primary-tint);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: transform var(--transition-interactive), background var(--transition-interactive);
+}
+.scan-entry:hover  { background: color-mix(in oklab, var(--color-primary-tint) 80%, var(--color-primary)); }
+.scan-entry:active { transform: scale(0.99); }
+.scan-entry-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.scan-entry-icon svg { width: 24px; height: 24px; }
+.scan-entry-body  { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.scan-entry-title { font-size: var(--text-md); font-weight: 650; }
+.scan-entry-sub   { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.45; }
+.scan-entry-go    { margin-left: auto; font-size: var(--text-lg); color: var(--color-primary); }
+
+/* -------- Schrittanzeige --------
+   Ein stummer Spinner waehrend der Adapter-Initialisierung ist die
+   Stelle, an der jemand das Kabel wieder abzieht. Also zeigen, wo man
+   steht. */
+.scan-steps {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+}
+.scan-step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  min-width: 0;
+}
+.scan-step-num {
+  flex: none;
+  display: grid; place-items: center;
+  width: 24px; height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-sunken);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.scan-step-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scan-step.done { background: var(--color-success-tint); color: var(--color-success); }
+.scan-step.done .scan-step-num { background: var(--color-success); color: #fff; }
+.scan-step.now  { background: var(--color-primary-tint); color: var(--color-primary); font-weight: 600; }
+.scan-step.now .scan-step-num  { background: var(--color-primary); color: var(--color-on-primary); }
+
+/* -------- Verbindungswahl -------- */
+.scan-connect { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
+.scan-big {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: var(--space-4);
+  align-items: center;
+  min-height: 88px;
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: transform var(--transition-interactive), border-color var(--transition-interactive);
+}
+.scan-big:hover  { border-color: var(--color-primary); }
+.scan-big:active { transform: scale(0.99); }
+.scan-big-icon {
+  grid-row: 1 / 3;
+  display: grid; place-items: center;
+  width: 48px; height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+.scan-big-icon svg { width: 26px; height: 26px; }
+.scan-big-title { font-size: var(--text-md); font-weight: 650; }
+.scan-big-sub   { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* -------- Hinweise, Wartezustand, Fehler -------- */
+.scan-note {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.scan-note h2 { margin: 0 0 var(--space-3); font-size: var(--text-md); }
+.scan-note p  { margin: 0 0 var(--space-3); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text-muted); }
+.scan-note p:last-child { margin-bottom: 0; }
+.scan-note-quiet { background: var(--color-surface-2); }
+.scan-note-sub { font-size: var(--text-xs) !important; }
+
+.scan-busy {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+}
+.scan-spin {
+  flex: none;
+  width: 18px; height: 18px;
+  border: 2px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: scan-spin 800ms linear infinite;
+}
+@keyframes scan-spin { to { transform: rotate(360deg); } }
+
+.scan-error {
+  padding: var(--space-5);
+  background: var(--color-error-tint);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-lg);
+}
+.scan-error h2 { margin: 0 0 var(--space-2); font-size: var(--text-md); color: var(--color-error); }
+.scan-error p  { margin: 0 0 var(--space-4); font-size: var(--text-sm); line-height: 1.6; }
+
+/* -------- Verbundener Zustand -------- */
+.scan-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+}
+.scan-head-main { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; min-width: 0; font-size: var(--text-sm); }
+.scan-vin { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); }
+.scan-live-dot {
+  flex: none; width: 10px; height: 10px; border-radius: var(--radius-full);
+  background: var(--color-success);
+  animation: scan-pulse 2s ease-in-out infinite;
+}
+@keyframes scan-pulse { 50% { opacity: 0.35; } }
+
+/* Die Motorkontrollleuchte traegt die Aussage nicht ueber Farbe allein —
+   der Text daneben sagt dasselbe. */
+.scan-mil {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+}
+.scan-mil.on  { background: var(--color-warning-tint); color: var(--color-warning); font-weight: 600; }
+.scan-mil.off { background: var(--color-success-tint); color: var(--color-success); }
+.scan-mil-lamp { flex: none; width: 12px; height: 12px; border-radius: var(--radius-full); background: currentColor; }
+
+.scan-section { margin-bottom: var(--space-8); }
+.scan-section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3); flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+.scan-section-head h2 { margin: 0; font-size: var(--text-lg); }
+.scan-actions { display: flex; gap: var(--space-2); }
+.scan-empty { font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-4) 0; }
+
+/* -------- Fehlercodes -------- */
+.dtc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.dtc-group {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+.dtc-group:first-child { margin-top: 0; }
+.dtc-item {
+  display: flex; align-items: flex-start; gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-text-muted);
+  border-radius: var(--radius-md);
+}
+.dtc-gespeichert { border-left-color: var(--color-error); }
+.dtc-sporadisch  { border-left-color: var(--color-warning); }
+.dtc-dauerhaft   { border-left-color: var(--color-info); }
+.dtc-code {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.dtc-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.dtc-herkunft { font-size: var(--text-sm); font-weight: 600; }
+.dtc-hinweis  { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+/* -------- Live-Werte --------
+   Zahl vor Name: beim Blick aufs Display sucht man den Wert, nicht die
+   Beschriftung. Der Balken gibt die Groessenordnung ohne Lesen. */
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+.live-tile {
+  display: flex; flex-direction: column; gap: var(--space-1);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-height: 96px;
+}
+.live-name { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.3; }
+.live-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.live-bar {
+  margin-top: auto;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-sunken);
+  overflow: hidden;
+}
+.live-bar i {
+  display: block; height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* -------- Weiterfuehrende eigene Seiten (ersetzt die Quellenliste) -------- */
+.detail-links { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.detail-link {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: transform var(--transition-interactive), border-color var(--transition-interactive);
+}
+.detail-link:hover  { border-color: var(--color-primary); }
+.detail-link:active { transform: scale(0.99); }
+.detail-link-title { font-size: var(--text-sm); font-weight: 600; min-width: 0; }
+.detail-link-kind  { flex: none; font-size: var(--text-xs); color: var(--color-text-muted); }
+
+/* Bezugshinweis statt Download-Link bei den Werkzeugen */
+.sw-tool-bezug {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+  font-size: var(--text-xs);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* Wer Bewegung reduziert haben will, bekommt den Zustand trotzdem —
+   nur ohne Drehen und Pulsieren. */
+@media (prefers-reduced-motion: reduce) {
+  .scan-spin     { animation: none; border-top-color: var(--color-primary); }
+  .scan-live-dot { animation: none; }
+  .live-bar i    { transition: none; }
+}

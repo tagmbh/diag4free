@@ -23,7 +23,7 @@ const PORT = 8126;
 const BASE = process.env.BASE || `http://localhost:${PORT}`;
 const OWN_SERVER = !process.env.BASE;
 
-const ROUTES = ['#/overview', '#/docs', '#/troubleshoot', '#/measure', '#/library', '#/software', '#/model/e88'];
+const ROUTES = ['#/overview', '#/docs', '#/troubleshoot', '#/measure', '#/library', '#/software', '#/scan', '#/model/e88'];
 const VIEWPORTS = [
   ['iPhone SE', devices['iPhone SE']],
   ['iPhone 13', devices['iPhone 13']],
@@ -146,7 +146,13 @@ async function main() {
       await page.locator('[data-engine]').first().click();
       await settle(page, 600);
       expect(await page.locator('.cockpit').count() === 1, 'Cockpit nach Motorwahl', 'kein Cockpit');
-      expect(await page.locator('[data-route]').count() === 3, 'drei Wege ins Wissen', 'Routen fehlen');
+      // Eine feste Zahl war hier die falsche Zusicherung — sie brach, sobald
+      // ein Weg dazukam, ohne dass etwas kaputt war. Geprueft gehoert, dass
+      // die Wege da sind und der Scan darunter ist.
+      const wege = await page.locator('[data-route]').evaluateAll(
+        (els) => els.map(e => e.dataset.route));
+      expect(wege.length >= 3, 'Wege ins Wissen vorhanden', `nur ${wege.length} Route(n)`);
+      expect(wege.includes('scan'), 'Scan von der Uebersicht erreichbar', `Routen: ${wege.join(', ')}`);
 
       // --- Diagnose-Runner + Sitzung ---
       await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
@@ -610,7 +616,9 @@ async function main() {
       await ctx.route(CDN, r => r.abort());
       const page = await ctx.newPage();
       page.on('pageerror', e => errors.push(`Kontrast/${theme}: ${e.message}`));
-      for (const route of ROUTES.slice(0, 6)) {
+      // Alle Hash-Routen, nicht die ersten sechs: ein Index laesst jede
+      // neu dazukommende Ansicht stillschweigend ungeprueft.
+      for (const route of ROUTES.filter(r => !r.startsWith('#/model'))) {
         await page.goto(BASE + '/' + route, { waitUntil: 'domcontentloaded' });
         await settle(page, 700);
         // Aktive Zustände mitprüfen — Primary-Flächen tauchen erst dort auf
@@ -661,6 +669,116 @@ async function main() {
         expect(lage && lage.ok, `Diagnosefrage sichtbar (${label})`,
           lage ? `Frage bei ${lage.top}px, Antwortleiste bei ${lage.barTop}px` : 'Frage nicht gefunden');
       }
+      await ctx.close();
+    }
+
+    // --- OBD-Scan ---
+    // Der Scan haengt an Geraete-APIs, die es nicht ueberall gibt. Genau
+    // dieser Fall ist hier der Normalfall: der Testbrowser hat weder Web
+    // Serial noch Web Bluetooth. Er muss dann erklaeren statt einen Knopf
+    // anzubieten, der nur eine Ausnahme wirft.
+    {
+      console.log('\n▸ OBD-Scan');
+      const { ctx, page } = await newPage(browser, VIEWPORTS[0][1], errors, 'Scan');
+      await page.goto(BASE + '/#/scan', { waitUntil: 'domcontentloaded' });
+      await settle(page, 800);
+
+      const kann = await page.evaluate(() => window.OBD.support());
+      const inhalt = await page.locator('.view.active .view-inner').innerText();
+
+      expect(inhalt.trim().length > 60, 'Scan rendert Inhalt', 'Ansicht leer');
+
+      if (!kann.serial && !kann.bluetooth) {
+        expect(await page.locator('.scan-note').count() > 0,
+          'Scan erklaert fehlende Geraete-Unterstuetzung', 'kein Hinweis');
+        expect(await page.locator('[data-scan-connect]').count() === 0,
+          'kein toter Verbinden-Knopf ohne Geraete-API', 'Knopf trotz fehlender API');
+      } else {
+        expect(await page.locator('[data-scan-connect]').count() > 0,
+          'Verbinden-Knopf vorhanden', 'kein Knopf trotz API');
+      }
+
+      // Die Grenze der genormten OBD-Ebene muss dastehen — sonst sucht
+      // jemand hier vergeblich nach dem Verdeck-Steuergeraet.
+      const nenntGrenze = /Komfort|Karosserie|genormte/i.test(inhalt);
+      expect(nenntGrenze, 'Scan benennt seine Grenze', 'kein Hinweis auf die Protokollgrenze');
+
+      // Fehlercode-Dekodierung: die Umrechnung von zwei Bytes in P0133
+      // ist die eine Stelle, an der ein Vorzeichenfehler unbemerkt falsche
+      // Codes anzeigen wuerde.
+      const codes = await page.evaluate(() => [
+        window.OBD.decodeDtc(0x01, 0x33),
+        window.OBD.decodeDtc(0xC1, 0x23),
+        window.OBD.decodeDtc(0x43, 0x0A),
+        window.OBD.decodeDtc(0x80, 0x00)
+      ]);
+      expect(JSON.stringify(codes) === JSON.stringify(['P0133', 'U0123', 'C030A', 'B0000']),
+        'Fehlercodes korrekt dekodiert', `bekommen: ${codes.join(', ')}`);
+
+      // Der verbundene Zustand rendert Flaechen, die es im Ruhezustand
+      // nicht gibt: die getoenten Fehlercode-Zeilen und die Live-Kacheln.
+      // Genau dort bricht Kontrast. Ohne Adapter kommt man da nur hin,
+      // indem man den OBD-Layer durch eine Attrappe ersetzt.
+      await page.evaluate(() => {
+        const echt = window.OBD;
+        window.OBD = {
+          ...echt,
+          support: () => ({ secure: true, serial: true, bluetooth: false }),
+          connectSerial: async () => ({ art: 'serial', name: 'Attrappe' }),
+          init: async (melde) => { melde('Bereit'); },
+          readStatus: async () => ({ mil: true, anzahl: 3 }),
+          readVin: async () => 'WBAVA31090NL12345',
+          readDtcs: async () => ([
+            { code: 'P0133', art: 'gespeichert', hinweis: 'Bestätigter Fehler, MIL kann leuchten.', herkunft: 'Antrieb · genormt' },
+            { code: 'P1345', art: 'sporadisch',  hinweis: 'Einmal aufgetreten, noch nicht bestätigt.', herkunft: 'Antrieb · herstellerspezifisch' },
+            { code: 'U0100', art: 'dauerhaft',   hinweis: 'Löscht sich erst nach bestandener Eigenprüfung.', herkunft: 'Netzwerk · genormt' }
+          ]),
+          readSupportedPids: async () => ['0C', '05', '0D'],
+          livePoll: (pids, beiWert) => {
+            beiWert({ pid: '0C', name: 'Drehzahl', einheit: '1/min', wert: 820, min: 0, max: 8000 });
+            beiWert({ pid: '05', name: 'Kühlmitteltemperatur', einheit: '°C', wert: 91, min: -40, max: 215 });
+            beiWert({ pid: '0D', name: 'Geschwindigkeit', einheit: 'km/h', wert: 0, min: 0, max: 255 });
+            return () => {};
+          },
+          disconnect: async () => {}
+        };
+      });
+      // Kein goto: ein echter Seitenwechsel wuerde die Attrappe wieder
+      // durch den echten Layer ersetzen. Ein hashchange genuegt, um die
+      // Ansicht neu zeichnen zu lassen.
+      await page.evaluate(() => {
+        location.hash = '#/overview';
+        location.hash = '#/scan';
+      });
+      await settle(page, 400);
+
+      await page.locator('[data-scan-connect="serial"]').click();
+      await settle(page, 500);
+      expect(await page.locator('.scan-head').count() > 0, 'verbundener Zustand erreichbar', 'kein Kopfbereich');
+      expect(await page.locator('.scan-mil.on').count() > 0, 'Motorkontrollleuchte wird gemeldet', 'keine MIL-Anzeige');
+
+      await page.locator('[data-scan-read]').click();
+      await settle(page, 400);
+      expect(await page.locator('.dtc-item').count() === 3, 'Fehlercodes gelistet',
+        `${await page.locator('.dtc-item').count()} statt 3`);
+
+      await page.locator('[data-scan-live]').click();
+      await settle(page, 400);
+      expect(await page.locator('.live-tile').count() === 3, 'Live-Kacheln gezeichnet',
+        `${await page.locator('.live-tile').count()} statt 3`);
+
+      const scanVerstoesse = await page.evaluate(KONTRAST_SKRIPT);
+      expect(scanVerstoesse.length === 0, 'Kontrast im verbundenen Zustand', scanVerstoesse.join('\n      '));
+
+      // Trefferflaechen im Scan: die Verbindungsknoepfe und die
+      // Aktionsleiste sind das, was mit oeligen Fingern getroffen werden
+      // muss. Ein 33px-Knopf faellt sonst erst in der Werkstatt auf.
+      const scanKlein = await page.evaluate(() => [...document.querySelectorAll(
+          '#scanPanel a, #scanPanel button')]
+        .filter(el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44; })
+        .map(el => `${(el.className||'').toString().split(' ')[0]}:${Math.round(el.getBoundingClientRect().height)}px`));
+      expect(scanKlein.length === 0, 'Scan-Bedienelemente >= 44px', scanKlein.join(', '));
+
       await ctx.close();
     }
 
