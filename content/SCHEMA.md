@@ -335,7 +335,7 @@ siehe Inhaltsregeln in `HANDOFF.md`).
 ## `engines.json` — wird erzeugt, nicht bearbeitet
 
 43 Motoren sind zu viel für einen Bearbeiter, und mehrere gleichzeitig an
-derselben Datei heisst verlorene Arbeit. Deshalb liegen die Steckbriefe als
+derselben Datei heißt verlorene Arbeit. Deshalb liegen die Steckbriefe als
 Fragmente unter `content/_fragmente/` — je eine Datei pro Motorenfamilie —
 und werden zusammengeführt:
 
@@ -350,7 +350,7 @@ richtige Zahl Lader ableitet, `displacement_cc` eine Zahl, die
 Leistungsvarianten plausibel. Doppelte IDs über Fragmente hinweg fallen auf,
 ebenso Motoren ohne Fahrzeug und Fahrzeuge ohne Motor.
 
-Ausserdem lehnt es Anzugsmomente, Widerstands- und Druckangaben in
+Außerdem lehnt es Anzugsmomente, Widerstands- und Druckangaben in
 Steckbriefen ab. Ein solcher Wert gehört in eine Reparaturanleitung mit
 Herstellerbezug, nicht in eine Motorübersicht, wo seine Herkunft niemand
 nachvollziehen kann.

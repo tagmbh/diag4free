@@ -23,7 +23,7 @@ denselben Wert, oder es ist eine unstrittige Katalogangabe (Hubraum,
 Bauzeit, Zylinderzahl, Ventilzahl, Leistungsvarianten einer Baureihe).
 → Wird geschrieben.
 
-Unabhängig heisst: nicht zwei Seiten, die sichtbar voneinander abgeschrieben
+Unabhängig heißt: nicht zwei Seiten, die sichtbar voneinander abgeschrieben
 haben. Zwei Händlerlistings mit identischem Wortlaut sind **eine** Quelle.
 
 **Einfach belegt** — nur eine Quelle, oder mehrere die erkennbar
@@ -97,7 +97,7 @@ abgeschrieben haben. Ein Beleg aus Quellcode zählt als **eine** gute Quelle,
 nicht als Beweis. Zwei Projekte, die unabhängig voneinander dasselbe
 implementieren, sind dagegen ein starker Beleg.
 
-Praktisch heisst das: du liest **Suchergebnis-Zusammenfassungen, keine
+Praktisch heißt das: du liest **Suchergebnis-Zusammenfassungen, keine
 Primärseiten**. Das drückt die erreichbare Belegstufe und ist der Grund,
 warum manche Widersprüche offen bleiben müssen, obwohl die Antwort auf der
 Seite stünde.
@@ -120,7 +120,7 @@ Von oben nach unten abnehmend brauchbar:
 2. Technische Fachliteratur, Werkstatthandbücher (Bentley und
    Vergleichbares)
 3. Etablierte technische Wikis und Nachschlagewerke
-4. Grosse, fachlich moderierte Foren — brauchbar für Fehlerbilder und
+4. Große, fachlich moderierte Foren — brauchbar für Fehlerbilder und
    Häufigkeiten, **nicht** für Sollwerte
 5. Händler- und Teilelistings — brauchbar für Teilenummern und
    Verbaubarkeit, sonst nichts
@@ -165,5 +165,5 @@ Am Ende meldest du:
 4. **Jeden Widerspruch**, den du gefunden hast
 
 Punkt 2 bis 4 sind das eigentliche Ergebnis deiner Arbeit. Ein Bericht, der
-nur sagt „alles erledigt", ist wertlos — er heisst, dass du nicht genau
+nur sagt „alles erledigt", ist wertlos — er heißt, dass du nicht genau
 genug hingesehen hast.

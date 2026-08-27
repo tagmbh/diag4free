@@ -222,7 +222,7 @@ gegeneinanderhalten; bei Doppelbelegung gewinnt die belegte Fassung (die
 Lieferung hat Quellen), die eigene wird verworfen oder umnummeriert. Der
 Validator schlägt bei doppelten IDs ohnehin an.
 
-Zuerst prüfen, ob der Merge etwas ausserhalb `content/` zurückdreht.
+Zuerst prüfen, ob der Merge etwas außerhalb `content/` zurückdreht.
 `content/index.json` ist generiert — Konflikte dort sind unkritisch.
 
 ## Offen — Priorität 2: bmwteka-Spiegel auswerten
