@@ -63,13 +63,15 @@ direkt daneben.
 
 ## Grafiken
 
-Heute zeichnet `graphics.js` für jede Baureihe dieselbe Silhouette. Ein
-E30 sieht aus wie ein X5. Das ist schlechter als keine Grafik, weil es
-Unterscheidbarkeit vortäuscht.
+Ausgangslage war: `graphics.js` kannte fünf Karosserieformen und zeichnete
+pro Form eine Silhouette — alle Limousinen von 1981 bis 2019 teilten sich
+dieselbe. Das ist schlechter als keine Grafik, weil es Unterscheidbarkeit
+vortäuscht.
 
-Anforderung: Jede Baureihe ist an ihrer Silhouette erkennbar — Epoche,
-Karosserieform und Proportion müssen stimmen. Dasselbe für die
-Motorschemata.
+Anforderung, inzwischen umgesetzt: Jede Baureihe ist an ihrer Silhouette
+erkennbar — Epoche, Karosserieform und Proportion stimmen, gerechnet aus
+echten Fahrzeugmassen. Bei den Motorschemata gilt zusätzlich, dass nur
+gezeichnet wird, was `content/engines.json` belegt.
 
 > Fotorealistische Renderings bleiben das Ziel. Der Weg dorthin ist
 > derzeit blockiert (die Bild-CDN wird vom Egress-Proxy abgewiesen). Bis
@@ -117,3 +119,35 @@ darf eine Voraussetzung sein.
 Jede Änderung an der Oberfläche wird gegen `node tests/run.mjs` gefahren,
 auf Phone, Tablet und Desktop, mit blockiertem CDN. Neue Funktionen
 bringen ihre eigenen Prüfungen mit. Rot heißt: nicht fertig.
+
+In dieser Umgebung braucht der Lauf den vorinstallierten Browser:
+
+```bash
+CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome \
+  node tests/run.mjs
+```
+
+Was die Abnahme inzwischen festhält, damit es nicht zurückfällt:
+
+- Fahrzeugkarten zeigen verschiedene Silhouetten
+- Browser-Zurück bleibt in der App, ein Neuladen im Pfad landet an
+  derselben Frage
+- Tastaturfokus zeichnet einen eigenen Ring, nicht denselben wie Hover
+- Kein Bedienelement ohne Beschriftung, über alle Ansichten
+- Der Startzustand steht im HTML und verschwindet nach dem Laden
+- Die Einführung erscheint einmal und schiebt die erste Karte nicht unter
+  die Falz
+
+## Was aus dem ersten Durchgang gelernt ist
+
+Zwei Fehlerarten sind mehrfach aufgetreten und lohnen die Aufmerksamkeit:
+
+**Etwas ist da, aber unerreichbar.** Die Blätter-Knöpfe im Fuss der
+Schublade standen auf dem Telefon ausserhalb des Bildes — vorhanden,
+sichtbar im DOM, nicht zu treffen. Dieselbe Art Fehler wie die erste
+Fassung der Einführung, die die erste Fahrzeugkarte unter die Falz schob.
+Ein Element zu zeichnen heisst nicht, dass jemand es benutzen kann.
+
+**Ein Zustand sieht aus wie ein anderer.** Hover und Tastaturfokus teilten
+sich eine Regel. Wer mit der Tastatur arbeitet, konnte nicht sehen, wo er
+steht. Zwei verschiedene Zustände brauchen zwei verschiedene Bilder.

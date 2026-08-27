@@ -225,6 +225,26 @@ async function main() {
           'Browser-Zurueck bleibt in der App', `Hash ${await page.evaluate(() => location.hash)}`);
       }
 
+      // --- Jedes Bedienelement muss sagen, was es tut ---
+      // Ein Knopf, der nur ein Symbol traegt, ist fuer eine Sprachausgabe
+      // stumm. Geprueft wird ueber alle Ansichten, nicht nur die aktive.
+      for (const route of ['#/overview', '#/docs', '#/troubleshoot', '#/measure', '#/library', '#/scan']) {
+        await page.goto(BASE + '/' + route, { waitUntil: 'domcontentloaded' });
+        await settle(page, 900);
+        const stumm = await page.evaluate(() => {
+          const out = [];
+          for (const el of document.querySelectorAll('button, a[href], [role="button"]')) {
+            if (!el.offsetParent && el.offsetWidth === 0) continue;
+            const text = (el.innerText || '').trim();
+            const label = el.getAttribute('aria-label') || el.getAttribute('title') ||
+                          (el.getAttribute('aria-labelledby') ? 'x' : '');
+            if (!text && !label) out.push(el.className || el.tagName);
+          }
+          return [...new Set(out)];
+        });
+        expect(stumm.length === 0, `Bedienelemente beschriftet (${route})`, stumm.join(' | '));
+      }
+
       // --- Startzustand: nie eine leere Flaeche ---
       // Vor dem Laden von content/index.json stand hier nichts. Ueber eine
       // langsame Verbindung sieht das aus wie eine kaputte App.
