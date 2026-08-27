@@ -9,6 +9,14 @@
  *   node tests/run.mjs                 # startet selbst einen Server auf :8126
  *   BASE=http://localhost:8126 node tests/run.mjs   # gegen laufenden Server
  *
+ * Findet Playwright seinen Browser nicht ("Executable doesn't exist"), liegt
+ * das an einer Umgebung mit vorinstalliertem Chromium unter einem anderen
+ * Pfad als dem, den die installierte Playwright-Version erwartet. Dann den
+ * Pfad direkt setzen, statt einen zweiten Browser herunterzuladen:
+ *
+ *   CHROMIUM_PATH=$(find /opt/pw-browsers -name chrome -type f | head -1) \
+ *     node tests/run.mjs
+ *
  * CDN-Requests (Fonts, marked, Fuse) werden abgewiesen — so testen wir den
  * Offline-Erstlauf, also genau den Fall Werkstatt ohne Netz.
  */
