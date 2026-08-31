@@ -568,22 +568,33 @@ async function main() {
       }
 
       // --- Abdeckungstafel: die leeren Zeilen sind der Zweck ---
+      // Die Tafel steht im Cockpit, also erst nach Fahrzeug- und Motorwahl.
+      // Ein `if (tafel > 0)` stand hier zuerst und hat den ganzen Block
+      // stillschweigend uebersprungen -- die Abnahme meldete gruen, ohne je
+      // hingesehen zu haben. Kein Vorbehalt mehr: fehlt die Tafel, faellt der
+      // Test.
+      await page.evaluate(() => localStorage.clear());
       await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
       await settle(page, 1500);
+      await page.locator('[data-pick-model="e46"]').click();
+      await settle(page, 900);
+      await page.locator('[data-engine]').first().click();
+      await settle(page, 900);
       {
-        const tafel = await page.locator('.abdeckung').count();
-        if (tafel > 0) {
-          const zeilen = await page.locator('.abdeckung .abd-zeile').count();
-          const leer = await page.locator('.abdeckung .abd-zeile.leer').count();
-          expect(zeilen >= 15,
-            'Abdeckungstafel zeigt alle Gruppen', `nur ${zeilen} Zeilen`);
-          expect(leer > 0,
-            'Abdeckungstafel benennt auch die leeren Gruppen',
-            'keine leere Gruppe markiert — dann sagt die Tafel nichts ueber Luecken');
-          // Gefuellte Gruppen muessen anklickbar sein, leere nicht.
-          const klickbar = await page.locator('.abdeckung .abd-zeile:not(.leer) button.abd-btn').count();
-          expect(klickbar > 0, 'Gefuellte Gruppen fuehren in die Bibliothek', 'keine anklickbare Gruppe');
-        }
+        expect(await page.locator('.abdeckung').count() === 1,
+          'Abdeckungstafel steht im Cockpit', 'keine Tafel');
+        const zeilen = await page.locator('.abdeckung .abd-zeile').count();
+        const leer = await page.locator('.abdeckung .abd-zeile.leer').count();
+        expect(zeilen >= 15,
+          'Abdeckungstafel zeigt alle Gruppen', `nur ${zeilen} Zeilen`);
+        expect(leer > 0,
+          'Abdeckungstafel benennt auch die leeren Gruppen',
+          'keine leere Gruppe markiert — dann sagt die Tafel nichts ueber Luecken');
+        // Gefuellte Gruppen fuehren weiter, leere sind bewusst kein Angebot.
+        const klickbar = await page.locator('.abdeckung .abd-zeile:not(.leer) button.abd-btn').count();
+        expect(klickbar > 0, 'Gefuellte Gruppen fuehren in die Bibliothek', 'keine anklickbare Gruppe');
+        expect(await page.locator('.abdeckung .abd-zeile.leer button').count() === 0,
+          'Leere Gruppen sind nicht anklickbar', 'eine leere Gruppe sieht aus wie ein Angebot');
       }
 
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
