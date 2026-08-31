@@ -1494,6 +1494,77 @@
 .facts-list { margin: 0; padding-left: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); }
 .facts-list li { margin-bottom: var(--space-1); }
 
+/* --- Gliederung nach Gruppen ---
+   Die Nummer steht vorn und in Monospace: wer BMWs Hauptgruppen kennt,
+   liest sie wie eine Signatur und braucht den Namen gar nicht mehr. */
+.lib-switch { display: flex; gap: var(--space-2); margin-bottom: var(--space-4); }
+
+.grp-kopf {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-border);
+}
+.grp-nr {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 2.2em;
+}
+.grp-name { font-size: var(--text-md); font-weight: 700; }
+.grp-zahl { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-muted); }
+/* Die Kurzbeschreibung bricht auf eine eigene Zeile, sobald es eng wird —
+   sie ist Beiwerk und darf die Nummer nicht aus dem Blick schieben. */
+.grp-kurz { flex: 1 1 100%; font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* --- Abdeckungstafel je Baureihe --- */
+.abd-lead { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.abd-achse + .abd-achse { margin-top: var(--space-5); }
+.abd-achse-titel {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-2);
+}
+.abd-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--space-1) var(--space-3);
+}
+.abd-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+button.abd-btn { cursor: pointer; }
+button.abd-btn:hover { background: var(--color-primary-tint-2); }
+button.abd-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.abd-nr { font-family: var(--font-mono); font-weight: 700; color: var(--color-primary); min-width: 2.2em; }
+.abd-name { flex: 1; min-width: 0; }
+.abd-zahl { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-muted); }
+/* Leere Gruppen bleiben lesbar, aber treten zurueck — sie sind die Aussage,
+   duerfen aber nicht wie ein Angebot aussehen, das man antippen kann. */
+.abd-zeile.leer .abd-nr, .abd-zeile.leer .abd-name { opacity: 0.45; }
+.abd-fehlt { color: var(--color-text-muted); }
+
 /* Legende zum Motorschema.
    Zwei Spalten auf dem Desktop, damit Begriff und Erklaerung nebeneinander
    stehen und das Auge die Begriffe von oben nach unten abfahren kann; auf

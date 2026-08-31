@@ -4,6 +4,7 @@
     {
       "id": "D4F-E39-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E39 · Rundstecker, OBD-2 und Protokolle",
       "valid": "E39 · 1995–2003 · alle Motoren",
@@ -36,6 +37,7 @@
     {
       "id": "D4F-E39-002",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Motorsteuerungen der Baureihe E39",
       "valid": "E39 · M52 · M52TU · M54 · M62 · M62TU · S62",
@@ -64,6 +66,7 @@
     {
       "id": "D4F-E39-003",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Pinbelegung der Diagnoseanschlüsse E39",
       "valid": "E39 · 1995–2003 · Rundstecker und OBD-2",
@@ -106,6 +109,7 @@
     {
       "id": "D4F-E39-004",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E39",
       "valid": "E39 · Limousine · Touring",
@@ -133,6 +137,7 @@
     {
       "id": "D4F-E39-005",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Fehlercodes",
       "title": "Doppel-VANOS M52TU und M54 · Fehlerbilder und Prüfung",
       "valid": "E39 · M52TU ab 09/1998 · M54 ab 09/2000",
@@ -158,6 +163,7 @@
     {
       "id": "D4F-E39-006",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Reparatur",
       "title": "Nikasil beim V8 · Beleglage und Prüfverfahren",
       "valid": "E39 · M62 · frühe Baujahre",
@@ -182,6 +188,7 @@
     {
       "id": "D4F-E39-007",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Codierung am E39 · ZCS, Module und Vorgehen",
       "valid": "E39 · alle Baujahre mit K-Line-Codierung",
@@ -208,6 +215,7 @@
     {
       "id": "D4F-E39-008",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Startfreigabe E39 · EWS und DME",
       "valid": "E39 · EWS3 · EWS3D ab MJ 1999",

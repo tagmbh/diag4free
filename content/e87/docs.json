@@ -4,6 +4,7 @@
     {
       "id": "D4F-E87-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E81/E82/E87 · der Schnitt im März 2007",
       "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
@@ -56,6 +57,7 @@
     {
       "id": "D4F-E87-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Modell-Setup",
       "title": "Motorzuordnung E81/E82/E87 · welcher Motor, welche DME",
       "valid": "E81/E82/E87 · 2004–2013",
@@ -96,6 +98,7 @@
     {
       "id": "D4F-E87-003",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Vierzylinder · Identifikation",
       "title": "N45 gegen N46 gegen N43 · die drei Vierzylinder auseinanderhalten",
       "valid": "E81/E87 · N45, N46, N43",
@@ -122,6 +125,7 @@
     {
       "id": "D4F-E87-010",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "N43 · Fehlerbilder",
       "title": "N43 im E87 · Magerbetrieb, NOx-Sensor, Injektoren, Zündspulen",
       "valid": "E81/E87 · N43 · ab 2007",
@@ -158,6 +162,7 @@
     {
       "id": "D4F-E87-020",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N47 · Diesel",
       "title": "N47 im E81/E87 · Steuerkette auf der Getriebeseite",
       "valid": "E81/E82/E87 · N47 · ab 03/2007",
@@ -191,6 +196,7 @@
     {
       "id": "D4F-E87-030",
       "type": "GUIDE",
+      "gruppe": "51",
       "cat": "Karosserieelektrik",
       "title": "Heckklappe und Karosserieelektrik im Schrägheck",
       "valid": "E81/E87 · 2004–2013 · Schrägheck",
@@ -225,6 +231,7 @@
     {
       "id": "D4F-E87-040",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Karosserieelektrik",
       "title": "Nässeschäden an Steuergeräten · wo im E87 das Wasser hinläuft",
       "valid": "E81/E87 · 2004–2013",
@@ -254,6 +261,7 @@
     {
       "id": "D4F-E87-050",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Batterietausch am E87 registrieren",
       "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",

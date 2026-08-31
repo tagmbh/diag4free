@@ -4,6 +4,7 @@
     {
       "id": "D4F-F-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "E-Sys · F-Serie Codierung Grundlagen",
       "valid": "F-Serie · alle Baureihen",
@@ -39,6 +40,7 @@
     {
       "id": "D4F-F-002",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Nützliche F-Serien-Codierungen",
       "valid": "F10/F20/F30 · alle Motoren",
@@ -61,6 +63,7 @@
     {
       "id": "D4F-F-003",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "OBD-Buchse an der F-Serie · was Pin 8 hier bedeutet",
       "valid": "F-Serie · alle Baureihen",

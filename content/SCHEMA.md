@@ -37,7 +37,8 @@ Build-Skript `scripts/build-index.mjs` aggregiert alles zu `content/index.json`.
 |------|-----|:------:|--------------|
 | `id` | string | ✓ | Format `D4F-<MODEL>-<NNN>`, einmalig pro Modell |
 | `type` | enum | ✓ | `WDS` · `FUB` · `PIN` · `LOC` · `TEST` · `TOOL` · `GUIDE` |
-| `cat` | string | ✓ | Kategorie-Chip in der Doc-Ansicht |
+| `gruppe` | string | ✓ | Gliederungsgruppe, muss in `content/gruppen.json` stehen. Zweistellig = BMW-Hauptgruppe (`11` Motor, `61` Allgemeine Elektrik …), `D`-Präfix = eigene Werkstattgruppe |
+| `cat` | string | ✓ | Kategorie-Chip in der Doc-Ansicht. Freitext, feiner als `gruppe` — die Gliederung hängt an `gruppe`, nicht hieran |
 | `title` | string | ✓ | Titel — überschreibt niemals das mittels Umbruch |
 | `valid` | string | ✓ | Gültigkeitsbereich, z. B. „E88 · 2007–2013" |
 | `summary` | string | ✓ | 1–2 Sätze für Karten-Preview |

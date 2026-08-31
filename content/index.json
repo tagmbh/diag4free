@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T09:57:20.881Z",
+  "generated": "2026-08-31T23:49:19.963Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -277,6 +277,7 @@
     {
       "id": "D4F-E28-001",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Diagnosezugang E28 · 15-polig oder 20-polig",
       "valid": "E28 · 1981–1988",
@@ -311,6 +312,7 @@
     {
       "id": "D4F-E28-002",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorzuordnung E28 · M20, M30 und S38",
       "valid": "E28 · 1981–1988",
@@ -338,6 +340,7 @@
     {
       "id": "D4F-E28-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Fehlerspeicher am E28 · was ohne Diagnosegerät geht",
       "valid": "E28 · 1981–1988",
@@ -363,6 +366,7 @@
     {
       "id": "D4F-E28-004",
       "type": "GUIDE",
+      "gruppe": "00",
       "cat": "Wartung",
       "title": "Service-Intervall-Anzeige zurücksetzen",
       "valid": "E28 · 1981–1988",
@@ -389,6 +393,7 @@
     {
       "id": "D4F-E28-005",
       "type": "TEST",
+      "gruppe": "16",
       "cat": "Kraftstoff",
       "title": "Kraftstoffpumpenkreis prüfen · M20, M30 und S38",
       "valid": "E28 · 1981–1988",
@@ -415,6 +420,7 @@
     {
       "id": "D4F-E28-006",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Zündung",
       "title": "Zündkreis und Steuergeräteversorgung am E28",
       "valid": "E28 · 1981–1988",
@@ -440,6 +446,7 @@
     {
       "id": "D4F-E28-007",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Adapter und Software für den E28",
       "valid": "E28 · 1981–1988",
@@ -465,6 +472,7 @@
     {
       "id": "D4F-E30-001",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "20-poliger Runddiagnosestecker · Belegung ausmessen",
       "valid": "E30 · Rundstecker nach einer Quelle ab MJ 1988",
@@ -494,6 +502,7 @@
     {
       "id": "D4F-E30-002",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Blinkcode Motronic 1.3 · vierstellige Codes über das Fahrpedal",
       "valid": "E30 · Motronic 1.3, M20 und M40",
@@ -521,6 +530,7 @@
     {
       "id": "D4F-E30-003",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorzuordnung E30 · M20, M40, M42 und S14",
       "valid": "E30 · 1982–1994",
@@ -550,6 +560,7 @@
     {
       "id": "D4F-E30-004",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Motronic 1.1 · was die Lampe am frühen E30 hergibt",
       "valid": "E30 · frühe Fahrzeuge mit Motronic 1.1",
@@ -576,6 +587,7 @@
     {
       "id": "D4F-E30-005",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motormechanik",
       "title": "M40 · Nockenwelle und Zahnriemen beurteilen",
       "valid": "E30 · M40 in 316i und 318i",
@@ -601,6 +613,7 @@
     {
       "id": "D4F-E30-006",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Motorsteuerung",
       "title": "S14 · Diagnosewege am M3-Motor",
       "valid": "E30 · S14 in M3 und 320is",
@@ -627,6 +640,7 @@
     {
       "id": "D4F-E30-007",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnose ohne genormtes OBD · Werkzeug und Wege am E30",
       "valid": "E30 · alle Motoren, kein OBD-2",
@@ -656,6 +670,7 @@
     {
       "id": "D4F-E30-008",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Einbauorte am E30 · Steuergerät, Relais, Sicherungen, Diagnosestecker",
       "valid": "E30 · 1982–1994",
@@ -684,6 +699,7 @@
     {
       "id": "D4F-E30-009",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Zündung",
       "title": "Zündanlage M20 und M40 · Hochspannungsseite prüfen",
       "valid": "E30 · M20 und M40 mit Verteilerzündung",
@@ -709,6 +725,7 @@
     {
       "id": "D4F-E30-010",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Zündung",
       "title": "Hallgeber im Verteiler · Versorgung und Signal prüfen",
       "valid": "E30 · M20 und M40 mit Hallgeber im Verteiler",
@@ -734,6 +751,7 @@
     {
       "id": "D4F-E30-011",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Versorgung der Motronic · Klemme 15, Hauptrelais und Steuergerätemasse",
       "valid": "E30 · alle Motronic-Stände",
@@ -761,6 +779,7 @@
     {
       "id": "D4F-E30-012",
       "type": "WDS",
+      "gruppe": "61",
       "cat": "Verkabelung",
       "title": "Massepunkte und Kabelbaum am E30 · typische Bruchstellen",
       "valid": "E30 · 1982–1994",
@@ -788,6 +807,7 @@
     {
       "id": "D4F-E34-001",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Diagnosezugang E34 · Rundstecker und der Bruch 1996",
       "valid": "E34 · 1987–1996",
@@ -822,6 +842,7 @@
     {
       "id": "D4F-E34-002",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorzuordnung E34 · M20, M50, M60 und S38",
       "valid": "E34 · 1987–1996",
@@ -851,6 +872,7 @@
     {
       "id": "D4F-E34-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Blinkcode am E34 · welche Steuerung mitmacht",
       "valid": "E34 · 1987–1996",
@@ -878,6 +900,7 @@
     {
       "id": "D4F-E34-004",
       "type": "TEST",
+      "gruppe": "34",
       "cat": "Bremse und Fahrwerk",
       "title": "ABS- und ASC-Blinkcode ohne Diagnosegerät",
       "valid": "E34 · 1987–1996",
@@ -899,6 +922,7 @@
     {
       "id": "D4F-E34-005",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motormechanik",
       "title": "M50 gegen M50TU · VANOS erkennen und beurteilen",
       "valid": "E34 · M50, ab 09/1992 als M50TU",
@@ -923,6 +947,7 @@
     {
       "id": "D4F-E34-006",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motormechanik",
       "title": "M60 · Nikasil oder Alusil am Gussnummernfeld",
       "valid": "E34 · M60 ab 1992",
@@ -946,6 +971,7 @@
     {
       "id": "D4F-E34-007",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Startprobleme",
       "title": "M50 dreht ohne zu starten · Geber und Relais",
       "valid": "E34 · M50, M50TU",
@@ -970,6 +996,7 @@
     {
       "id": "D4F-E34-008",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Zweite Diagnoseleitung · Rundstecker und OBD-2 Pin 8",
       "valid": "E34 · 1987–1996",
@@ -997,6 +1024,7 @@
     {
       "id": "D4F-E36-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E36 · Runddose gegen OBD-2",
       "valid": "E36 · 1990–2000 · alle Motoren",
@@ -1036,6 +1064,7 @@
     {
       "id": "D4F-E36-002",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Runddiagnosestecker 20-polig · Belegung und Brücke 17/20",
       "valid": "E36 · 1990–2000 · Motorraum",
@@ -1074,6 +1103,7 @@
     {
       "id": "D4F-E36-003",
       "type": "FUB",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorsteuergeräte der Baureihe E36",
       "valid": "E36 · M43/M44/M50/M52/S50/S52",
@@ -1106,6 +1136,7 @@
     {
       "id": "D4F-E36-004",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Blinkcode auslesen ohne Diagnosegerät",
       "valid": "E36 · OBD-1-Fahrzeuge · nach einer Quelle 1992–1995",
@@ -1134,6 +1165,7 @@
     {
       "id": "D4F-E36-005",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Einbauorte Steuergeräte und Diagnosepunkte E36",
       "valid": "E36 · Limousine · Coupé · Touring · Compact",
@@ -1165,6 +1197,7 @@
     {
       "id": "D4F-E36-006",
       "type": "TEST",
+      "gruppe": "17",
       "cat": "Reparatur",
       "title": "Kühlsystem E36 · die Kunststoffteile",
       "valid": "E36 · alle Motoren · hohe Laufleistung",
@@ -1196,6 +1229,7 @@
     {
       "id": "D4F-E36-007",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Startfreigabe und Wegfahrsperre E36",
       "valid": "E36 · EWS I bis 12/1994 · EWS II ab 01/1995",
@@ -1230,6 +1264,7 @@
     {
       "id": "D4F-E36-008",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Reparatur",
       "title": "Unruhiger Leerlauf · Leerlaufregler und Falschluft",
       "valid": "E36 · M50/M52/S50/S52 · hohe Laufleistung",
@@ -1257,6 +1292,7 @@
     {
       "id": "D4F-E38-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E38 · Rundstecker, OBD-2 und DS2",
       "valid": "E38 · 1994–2001 · alle Motoren",
@@ -1290,6 +1326,7 @@
     {
       "id": "D4F-E38-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "Steuergeräte-Topologie E38 · D-Bus, K-Bus, I-Bus",
       "valid": "E38 · 1994–2001",
@@ -1318,6 +1355,7 @@
     {
       "id": "D4F-E38-003",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "M73 · Motor",
       "title": "M73 · zwei Motorsteuerungen, eine je Bank",
       "valid": "E38 750i/750iL · M73 und M73TU",
@@ -1343,6 +1381,7 @@
     {
       "id": "D4F-E38-004",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "M62 · Fehlerbilder",
       "title": "M62 im E38 · Gleitschienen, Kühlmittelrohr und die Nikasil-Frage",
       "valid": "E38 735i/740i · M62 und M62TU",
@@ -1367,6 +1406,7 @@
     {
       "id": "D4F-E38-005",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E38",
       "valid": "E38 · Limousine kurz und lang",
@@ -1392,6 +1432,7 @@
     {
       "id": "D4F-E38-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Ruhestrom am E38 · warum der Bus nicht einschläft",
       "valid": "E38 · 1994–2001",
@@ -1418,6 +1459,7 @@
     {
       "id": "D4F-E38-007",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Rundstecker und OBD-2 am E38 · was gesichert ist und was nicht",
       "valid": "E38 · 1994–2001",
@@ -1449,6 +1491,7 @@
     {
       "id": "D4F-E39-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E39 · Rundstecker, OBD-2 und Protokolle",
       "valid": "E39 · 1995–2003 · alle Motoren",
@@ -1482,6 +1525,7 @@
     {
       "id": "D4F-E39-002",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Motorsteuerungen der Baureihe E39",
       "valid": "E39 · M52 · M52TU · M54 · M62 · M62TU · S62",
@@ -1511,6 +1555,7 @@
     {
       "id": "D4F-E39-003",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Pinbelegung der Diagnoseanschlüsse E39",
       "valid": "E39 · 1995–2003 · Rundstecker und OBD-2",
@@ -1554,6 +1599,7 @@
     {
       "id": "D4F-E39-004",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E39",
       "valid": "E39 · Limousine · Touring",
@@ -1582,6 +1628,7 @@
     {
       "id": "D4F-E39-005",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Fehlercodes",
       "title": "Doppel-VANOS M52TU und M54 · Fehlerbilder und Prüfung",
       "valid": "E39 · M52TU ab 09/1998 · M54 ab 09/2000",
@@ -1608,6 +1655,7 @@
     {
       "id": "D4F-E39-006",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Reparatur",
       "title": "Nikasil beim V8 · Beleglage und Prüfverfahren",
       "valid": "E39 · M62 · frühe Baujahre",
@@ -1633,6 +1681,7 @@
     {
       "id": "D4F-E39-007",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Codierung am E39 · ZCS, Module und Vorgehen",
       "valid": "E39 · alle Baujahre mit K-Line-Codierung",
@@ -1660,6 +1709,7 @@
     {
       "id": "D4F-E39-008",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Startfreigabe E39 · EWS und DME",
       "valid": "E39 · EWS3 · EWS3D ab MJ 1999",
@@ -1690,6 +1740,7 @@
     {
       "id": "D4F-E46-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "INPA Setup für E46 (K+DCAN-Kabel)",
       "valid": "E46 · alle Motoren",
@@ -1728,6 +1779,7 @@
     {
       "id": "D4F-E46-002",
       "type": "TEST",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "NCS Expert · Grundlagen und E46-Profile",
       "valid": "E46 · Alle mit K-Line-Codierung",
@@ -1760,6 +1812,7 @@
     {
       "id": "D4F-E46-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Häufige DTCs · DME MS43 (M54)",
       "valid": "E46 · M54B22/B25/B30 · DME MS 43",
@@ -1791,6 +1844,7 @@
     {
       "id": "D4F-E46-004",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Stromlaufplan · Startsystem E46 M54",
       "valid": "E46 · M54 · EWS3",
@@ -1821,6 +1875,7 @@
     {
       "id": "D4F-E46-005",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Sinnvolle Codierungen für den E46",
       "valid": "E46 · alle Baujahre",
@@ -1852,6 +1907,7 @@
     {
       "id": "D4F-E46-006",
       "type": "PIN",
+      "gruppe": "13",
       "cat": "Verkabelung",
       "title": "DME-Steckerblock X60001–X60005 · MS43",
       "valid": "E46 · M54 · MS43",
@@ -1884,6 +1940,7 @@
     {
       "id": "D4F-E46-007",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E46 Limousine",
       "valid": "E46 · Limousine · Touring",
@@ -1915,6 +1972,7 @@
     {
       "id": "D4F-E46-008",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Reparatur",
       "title": "DISA-Ventil M54 · Prüfen und Erneuern",
       "valid": "E46 · M54B22/B25/B30",
@@ -1943,6 +2001,7 @@
     {
       "id": "D4F-E46-009",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "M56 SULEV · Abgrenzung zum M54 und Folgen für die Diagnose",
       "valid": "E46 · 325i/325Ci/325iT · US-Markt",
@@ -1970,6 +2029,7 @@
     {
       "id": "D4F-E60-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E60/E61 · Kabel, Protokoll und Software nach Baujahr",
       "valid": "E60/E61 · 2003–2010 · alle Motoren",
@@ -2021,6 +2081,7 @@
     {
       "id": "D4F-E60-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "E60-Steuergeräte-Topologie · welcher Bus trägt welches Gerät",
       "valid": "E60/E61 · 2003–2010",
@@ -2055,6 +2116,7 @@
     {
       "id": "D4F-E60-010",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N62 · Fehlerbilder",
       "title": "N62-V8 im E60 · Öl- und Kühlmittelverlust eingrenzen",
       "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
@@ -2090,6 +2152,7 @@
     {
       "id": "D4F-E60-020",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "M57 · Fehlerbilder",
       "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
       "valid": "E60/E61 · M57 (525d, 530d, 535d)",
@@ -2126,6 +2189,7 @@
     {
       "id": "D4F-E60-030",
       "type": "GUIDE",
+      "gruppe": "37",
       "cat": "Fahrwerk · Dynamic Drive",
       "title": "Dynamic Drive und Aktivlenkung · was ausfällt und was nur mitmeldet",
       "valid": "E60/E61 · mit aktiver Wankstabilisierung bzw. Aktivlenkung",
@@ -2156,6 +2220,7 @@
     {
       "id": "D4F-E60-040",
       "type": "TEST",
+      "gruppe": "65",
       "cat": "iDrive · MOST",
       "title": "MOST-Ring und iDrive · Ringbruch finden statt Steuergeräte tauschen",
       "valid": "E60/E61 · mit MOST-Ring (Radio, Navigation, Verstärker)",
@@ -2186,6 +2251,7 @@
     {
       "id": "D4F-E60-050",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "S85 · M5",
       "title": "S85-V10 im M5 · VANOS-Hochdruckpumpe, Pleuellager und SMG",
       "valid": "E60/E61 M5 · S85",
@@ -2221,6 +2287,7 @@
     {
       "id": "D4F-E60-060",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Bordnetz · Energie",
       "title": "Batteriewechsel am E60 registrieren · IBS, DME und Ladeverhalten",
       "valid": "E60/E61 · 2003–2010 · alle Motoren",
@@ -2254,6 +2321,7 @@
     {
       "id": "D4F-E70-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E70 · D-CAN und was daran anders ist",
       "valid": "E70/E71 · 2006–2013 · alle Motoren",
@@ -2290,6 +2358,7 @@
     {
       "id": "D4F-E70-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "Bus-Topologie E70 · PT-CAN, K-CAN, FlexRay und der Weg der Diagnose",
       "valid": "E70/E71 · 2006–2013",
@@ -2321,6 +2390,7 @@
     {
       "id": "D4F-E70-003",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "FlexRay und Adaptive Drive · Dämpfersatelliten am E70",
       "valid": "E70/E71 · nur mit Adaptive Drive",
@@ -2350,6 +2420,7 @@
     {
       "id": "D4F-E70-004",
       "type": "TEST",
+      "gruppe": "27",
       "cat": "Antrieb · xDrive",
       "title": "xDrive-Verteilergetriebe E70 · Steuergerät, Stellmotor, Kalibrierung",
       "valid": "E70/E71 · xDrive mit elektrisch gestelltem Verteilergetriebe",
@@ -2380,6 +2451,7 @@
     {
       "id": "D4F-E70-005",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "Luftfederung und Niveauregelung am E70",
       "valid": "E70/E71 · mit Niveauregelung Hinterachse oder Luftfederung",
@@ -2409,6 +2481,7 @@
     {
       "id": "D4F-E70-006",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E70 und die Wasserwege dorthin",
       "valid": "E70/E71 · 2006–2013",
@@ -2437,6 +2510,7 @@
     {
       "id": "D4F-E70-007",
       "type": "GUIDE",
+      "gruppe": "D5",
       "cat": "Methodik",
       "title": "Das falsche Steuergerät verdächtigen · die Hauptfehlerquelle am E70",
       "valid": "E70/E71 · 2006–2013",
@@ -2467,6 +2541,7 @@
     {
       "id": "D4F-E87-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E81/E82/E87 · der Schnitt im März 2007",
       "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
@@ -2520,6 +2595,7 @@
     {
       "id": "D4F-E87-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Modell-Setup",
       "title": "Motorzuordnung E81/E82/E87 · welcher Motor, welche DME",
       "valid": "E81/E82/E87 · 2004–2013",
@@ -2561,6 +2637,7 @@
     {
       "id": "D4F-E87-003",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Vierzylinder · Identifikation",
       "title": "N45 gegen N46 gegen N43 · die drei Vierzylinder auseinanderhalten",
       "valid": "E81/E87 · N45, N46, N43",
@@ -2588,6 +2665,7 @@
     {
       "id": "D4F-E87-010",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "N43 · Fehlerbilder",
       "title": "N43 im E87 · Magerbetrieb, NOx-Sensor, Injektoren, Zündspulen",
       "valid": "E81/E87 · N43 · ab 2007",
@@ -2625,6 +2703,7 @@
     {
       "id": "D4F-E87-020",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N47 · Diesel",
       "title": "N47 im E81/E87 · Steuerkette auf der Getriebeseite",
       "valid": "E81/E82/E87 · N47 · ab 03/2007",
@@ -2659,6 +2738,7 @@
     {
       "id": "D4F-E87-030",
       "type": "GUIDE",
+      "gruppe": "51",
       "cat": "Karosserieelektrik",
       "title": "Heckklappe und Karosserieelektrik im Schrägheck",
       "valid": "E81/E87 · 2004–2013 · Schrägheck",
@@ -2694,6 +2774,7 @@
     {
       "id": "D4F-E87-040",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Karosserieelektrik",
       "title": "Nässeschäden an Steuergeräten · wo im E87 das Wasser hinläuft",
       "valid": "E81/E87 · 2004–2013",
@@ -2724,6 +2805,7 @@
     {
       "id": "D4F-E87-050",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Batterietausch am E87 registrieren",
       "valid": "E81/E82/E87 · 2004–2013 · alle Motoren",
@@ -2766,6 +2848,7 @@
     {
       "id": "D4F-E88-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "INPA/ISTA-Setup für E88 (D-CAN)",
       "valid": "E88 · 2007–2013 · alle Motoren",
@@ -2818,6 +2901,7 @@
     {
       "id": "D4F-E88-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "E88-Steuergeräte-Topologie · welches SG spricht wie",
       "valid": "E88 · 2007–2013",
@@ -2850,6 +2934,7 @@
     {
       "id": "D4F-E88-010",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "N52 · Motor",
       "title": "N52B30 im E88 · Diagnose-Setup und Typen-Vielfalt",
       "valid": "E88 · N52B30 · 125i/128i",
@@ -2898,6 +2983,7 @@
     {
       "id": "D4F-E88-011",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N52 · Fehlerbilder",
       "title": "N52 typische Baustellen · elektrische Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse",
       "valid": "E88 · N52 (auch E9x/E60 übertragbar)",
@@ -2946,6 +3032,7 @@
     {
       "id": "D4F-E88-020",
       "type": "GUIDE",
+      "gruppe": "24",
       "cat": "Getriebe · Steptronic",
       "title": "Steptronic am N52 · Getriebe bestimmen, Ölstand, Adaption",
       "valid": "E88 · N52 mit Steptronic-Automatik",
@@ -2993,6 +3080,7 @@
     {
       "id": "D4F-E88-030",
       "type": "GUIDE",
+      "gruppe": "54",
       "cat": "Verdeck (CTM)",
       "title": "Cabrio-Verdeck E88 · CTM-Steuerung und typische Fehler",
       "valid": "E88 · alle · Soft-Top mit Hydraulik",
@@ -3033,6 +3121,7 @@
     {
       "id": "D4F-E90-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E90/E91/E92/E93 · der Schnitt im März 2007",
       "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
@@ -3089,6 +3178,7 @@
     {
       "id": "D4F-E90-002",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Fehlercodes",
       "title": "N54 · Häufige DTCs bei Ladedruckproblemen",
       "valid": "E90/E91/E92/E93 · N54B30",
@@ -3129,6 +3219,7 @@
     {
       "id": "D4F-E90-003",
       "type": "TEST",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "E-Sys mit E9x · nur ab CIC/JBBFE nutzbar",
       "valid": "E90 LCI · CIC oder Combox",
@@ -3157,6 +3248,7 @@
     {
       "id": "D4F-E90-004",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "E90-Bustopologie · welcher Bus trägt welches Gerät",
       "valid": "E90/E91/E92/E93 · 2005–2013",
@@ -3194,6 +3286,7 @@
     {
       "id": "D4F-E90-005",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Modell-Setup",
       "title": "Motorzuordnung E90/E91/E92/E93 · welcher Motor steckt drin",
       "valid": "E90/E91/E92/E93 · 2005–2013",
@@ -3237,6 +3330,7 @@
     {
       "id": "D4F-E90-006",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Steuergeräte · Einbauorte",
       "title": "Steuergeräte-Einbauorte im E90 · wo gesucht und wo gemessen wird",
       "valid": "E90/E91/E92/E93 · 2005–2013 · alle Karosserievarianten",
@@ -3275,6 +3369,7 @@
     {
       "id": "D4F-E90-007",
       "type": "TOOL",
+      "gruppe": "61",
       "cat": "Bordnetz · Energie",
       "title": "Batteriewechsel am E90 registrieren · IBS, DME und Ladeverhalten",
       "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
@@ -3322,6 +3417,7 @@
     {
       "id": "D4F-E90-008",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "S65 · M3",
       "title": "S65-V8 im M3 · Einzeldrosselklappen, Pleuellager, Abgrenzung zum N62",
       "valid": "E90/E92/E93 M3 · S65 · ab Herbst 2007",
@@ -3358,6 +3454,7 @@
     {
       "id": "D4F-E90-009",
       "type": "GUIDE",
+      "gruppe": "12",
       "cat": "Startsystem",
       "title": "Startsystem des E90 · CAS statt EWS, Startknopf statt Zündschloss, Batterie im Kofferraum",
       "valid": "E90/E91/E92/E93 · 2005–2013 · alle Motoren",
@@ -3407,6 +3504,7 @@
     {
       "id": "D4F-E90-010",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Startsystem",
       "title": "Dieselstart am E90 · M57 und N47, Vorglühanlage und Kraftstoffversorgung",
       "valid": "E90/E91/E92/E93 · 2005–2013 · M57, N47",
@@ -3438,6 +3536,7 @@
     {
       "id": "D4F-F-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "E-Sys · F-Serie Codierung Grundlagen",
       "valid": "F-Serie · alle Baureihen",
@@ -3474,6 +3573,7 @@
     {
       "id": "D4F-F-002",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Nützliche F-Serien-Codierungen",
       "valid": "F10/F20/F30 · alle Motoren",
@@ -3497,6 +3597,7 @@
     {
       "id": "D4F-F-003",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "OBD-Buchse an der F-Serie · was Pin 8 hier bedeutet",
       "valid": "F-Serie · alle Baureihen",
@@ -3525,6 +3626,7 @@
     {
       "id": "D4F-F10-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F10/F11 · ENET statt K-Line",
       "valid": "F10/F11 · 2010–2017 · alle Motoren",
@@ -3567,6 +3669,7 @@
     {
       "id": "D4F-F10-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "Motorzuordnung F10/F11 · vom Saugsechszylinder zum B-Motor",
       "valid": "F10/F11 · 2010–2017",
@@ -3599,6 +3702,7 @@
     {
       "id": "D4F-F10-003",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Steuergeräte",
       "title": "Zugangssystem und Bus-Topologie F10/F11 · CAS4, ZGW, FRM",
       "valid": "F10/F11 · 2010–2017",
@@ -3631,6 +3735,7 @@
     {
       "id": "D4F-F10-004",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "FlexRay-Fahrwerk am F10/F11 · ICM und die geregelten Systeme",
       "valid": "F10/F11 · 2010–2017 · Fahrzeuge mit geregeltem Fahrwerk",
@@ -3661,6 +3766,7 @@
     {
       "id": "D4F-F10-005",
       "type": "TEST",
+      "gruppe": "D3",
       "cat": "Softwarestand",
       "title": "I-Stufe am F10/F11 auslesen und einordnen",
       "valid": "F10/F11 · 2010–2017",
@@ -3694,6 +3800,7 @@
     {
       "id": "D4F-F10-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Batteriewechsel am F10/F11 · registrieren und codieren",
       "valid": "F10/F11 · 2010–2017 · alle Motoren",
@@ -3726,6 +3833,7 @@
     {
       "id": "D4F-F15-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F15/F16 — ENET statt K-Line",
       "valid": "F15/F16 · 2013–2018 · alle Motoren",
@@ -3762,6 +3870,7 @@
     {
       "id": "D4F-F15-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Identifikation",
       "title": "Motor- und Steuergerätezuordnung im F15/F16",
       "valid": "F15/F16 · 2013–2018",
@@ -3791,6 +3900,7 @@
     {
       "id": "D4F-F15-003",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "Luftfederung im F15 — Ausstattung erkennen und Fehler eingrenzen",
       "valid": "F15/F16 · nur Fahrzeuge mit Luftfederung",
@@ -3819,6 +3929,7 @@
     {
       "id": "D4F-F15-004",
       "type": "TEST",
+      "gruppe": "27",
       "cat": "Antrieb",
       "title": "xDrive-Verteilergetriebe: Stellmotor, Kalibrierung, Ölservice",
       "valid": "F15/F16 · Fahrzeuge mit xDrive",
@@ -3847,6 +3958,7 @@
     {
       "id": "D4F-F15-005",
       "type": "TEST",
+      "gruppe": "18",
       "cat": "Abgas",
       "title": "SCR- und AdBlue-Dosierung beim F15-Diesel",
       "valid": "F15/F16 · Sechszylinder-Diesel mit SCR",
@@ -3871,6 +3983,7 @@
     {
       "id": "D4F-F15-006",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Karosserie",
       "title": "Anhängerbetrieb im F15: Modul, Erkennung und Folgefunktionen",
       "valid": "F15/F16 · mit werkseitiger oder nachgerüsteter Anhängevorrichtung",
@@ -3897,6 +4010,7 @@
     {
       "id": "D4F-F15-007",
       "type": "TOOL",
+      "gruppe": "D5",
       "cat": "Sicherheit",
       "title": "xDrive40e: Hochvoltanteil vor jeder Diagnose klären",
       "valid": "F15 · Plug-in-Hybrid mit Vierzylinder-Benziner",
@@ -3920,6 +4034,7 @@
     {
       "id": "D4F-F22-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F20/F21/F22/F23 über ENET",
       "valid": "F20/F21/F22/F23 · 2011–2019 · alle Motoren",
@@ -3957,6 +4072,7 @@
     {
       "id": "D4F-F22-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Identifikation",
       "title": "Motorzuordnung F20 bis F23: von N13 und N20 zu B38 und B48",
       "valid": "F20/F21/F22/F23 · 2011–2019",
@@ -3986,6 +4102,7 @@
     {
       "id": "D4F-F22-003",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motor",
       "title": "N13: das Erbe der Kooperationsentwicklung eingrenzen",
       "valid": "F20/F21/F22/F23 · nur N13",
@@ -4011,6 +4128,7 @@
     {
       "id": "D4F-F22-004",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motor",
       "title": "Valvetronic im F2x: Ventilhubsteuerung eingrenzen",
       "valid": "F20/F21/F22/F23 · Benziner mit Valvetronic",
@@ -4038,6 +4156,7 @@
     {
       "id": "D4F-F22-005",
       "type": "TEST",
+      "gruppe": "32",
       "cat": "Lenkung",
       "title": "Elektrische Servolenkung im F2x: Ausfall eingrenzen",
       "valid": "F20/F21/F22/F23 · alle Motoren",
@@ -4066,6 +4185,7 @@
     {
       "id": "D4F-F22-006",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Aufladung",
       "title": "N55 im M235i: Ladedruckaufbau und Wastegate beurteilen",
       "valid": "F22/F23 · nur N55",
@@ -4090,6 +4210,7 @@
     {
       "id": "D4F-F22-007",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Steuergeräte-Topologie im F2x: was wo sitzt",
       "valid": "F20/F21/F22/F23 · alle Motoren",
@@ -4117,6 +4238,7 @@
     {
       "id": "D4F-F30-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F30/F31/F34 · ENET, Buchse und Softwarewahl",
       "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
@@ -4160,6 +4282,7 @@
     {
       "id": "D4F-F30-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "Motorzuordnung F30/F31/F34 · N-Motoren vor dem LCI, B-Motoren danach",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -4194,6 +4317,7 @@
     {
       "id": "D4F-F30-003",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Steuergeräte",
       "title": "CAS4 oder FEM · das Zugangssystem des F30 bestimmen",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -4228,6 +4352,7 @@
     {
       "id": "D4F-F30-004",
       "type": "TEST",
+      "gruppe": "D3",
       "cat": "Softwarestand",
       "title": "I-Stufe und Datenstand am F30 prüfen",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -4261,6 +4386,7 @@
     {
       "id": "D4F-F30-005",
       "type": "TEST",
+      "gruppe": "32",
       "cat": "Fahrwerk",
       "title": "Lenkungsmeldung am F30 einordnen · EPS, Bordnetz und Adaption",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -4294,6 +4420,7 @@
     {
       "id": "D4F-F30-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Batteriewechsel und Energiemanagement am F30",
       "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
@@ -4327,6 +4454,7 @@
     {
       "id": "D4F-F30-007",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "B47-Diesel im F30 · Abgrenzung zum N47 und was daraus für die Diagnose folgt",
       "valid": "F30/F31/F34 · Diesel ab 2015",

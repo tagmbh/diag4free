@@ -535,6 +535,57 @@ async function main() {
         }
       }
 
+      // --- Gliederung nach Gruppen ---
+      // Der Nutzer wollte die Struktur, die er aus dem Werkstatthandbuch
+      // kennt. Zwei Dinge muessen dafuer stimmen und sind je einzeln schon
+      // schiefgegangen: die Gruppe muss an jedem Dokument haengen, und die
+      // Bibliothek muss danach gliedern statt nur danach zu sortieren.
+      await page.goto(BASE + '/#/library', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      {
+        const kopfe = await page.$$eval('#libraryPanel .grp-kopf .grp-nr', ns => ns.map(n => n.textContent.trim()));
+        expect(kopfe.length >= 8,
+          'Bibliothek gliedert nach Gruppen', `nur ${kopfe.length} Gruppenkoepfe`);
+        // Eine Gruppennummer, die es in gruppen.json nicht gibt, waere ein
+        // Kopf ohne Inhalt -- genau das faellt hier auf.
+        const bekannt = await page.evaluate(async () => {
+          const r = await fetch('./content/gruppen.json');
+          return (await r.json()).gruppen.map(g => g.id);
+        });
+        const fremd = kopfe.filter(k => !bekannt.includes(k));
+        expect(fremd.length === 0,
+          'Jede Gruppe in der Bibliothek steht auch in gruppen.json', `fremd: ${fremd.join(', ')}`);
+
+        // Umschalten auf Baureihen darf die Liste nicht leeren
+        await page.click('[data-lib-nach="model"]');
+        await settle(page, 400);
+        const nachModell = await page.locator('#libraryPanel .doc-card').count();
+        expect(nachModell > 0, 'Umschalten auf Baureihe zeigt weiter Dokumente', 'Liste leer');
+        await page.click('[data-lib-nach="gruppe"]');
+        await settle(page, 400);
+        const zurueck = await page.locator('#libraryPanel .grp-nr').count();
+        expect(zurueck > 0, 'Zurueck auf Gruppe gliedert wieder', 'keine Gruppenkoepfe');
+      }
+
+      // --- Abdeckungstafel: die leeren Zeilen sind der Zweck ---
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1500);
+      {
+        const tafel = await page.locator('.abdeckung').count();
+        if (tafel > 0) {
+          const zeilen = await page.locator('.abdeckung .abd-zeile').count();
+          const leer = await page.locator('.abdeckung .abd-zeile.leer').count();
+          expect(zeilen >= 15,
+            'Abdeckungstafel zeigt alle Gruppen', `nur ${zeilen} Zeilen`);
+          expect(leer > 0,
+            'Abdeckungstafel benennt auch die leeren Gruppen',
+            'keine leere Gruppe markiert — dann sagt die Tafel nichts ueber Luecken');
+          // Gefuellte Gruppen muessen anklickbar sein, leere nicht.
+          const klickbar = await page.locator('.abdeckung .abd-zeile:not(.leer) button.abd-btn').count();
+          expect(klickbar > 0, 'Gefuellte Gruppen fuehren in die Bibliothek', 'keine anklickbare Gruppe');
+        }
+      }
+
       // --- Messplan: Sollwert-Urteil, Persistenz, Motorfilter ---
       await page.goto(BASE + '/#/measure', { waitUntil: 'domcontentloaded' });
       await settle(page, 1300);

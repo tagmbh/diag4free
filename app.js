@@ -122,6 +122,8 @@
     data: null,       // content/index.json
     software: null,   // content/software.json (lazy)
     engines: null,    // content/engines.json (lazy, optional)
+    gruppen: null,    // content/gruppen.json (lazy) — Gliederung der Bibliothek
+    libNach: 'gruppe',// Bibliothek gliedert nach 'gruppe' oder 'model'
     picked: false,    // hat der Nutzer Fahrzeug+Motor bewusst gewählt?
     vehEra: 'Alle',   // Filter im Fahrzeug-Schritt
     vehBody: 'Alle',
@@ -541,6 +543,28 @@
   };
   const engineSpec = (id) => (state.engines && state.engines[id]) || null;
 
+  // -------- Gliederung (content/gruppen.json) --------
+  // BMW gliedert alles am Fahrzeug nach zweistelligen Hauptgruppen — dieselben
+  // Ziffern, mit denen eine Teilenummer beginnt. Wer die kennt, findet sich
+  // ohne Einarbeitung zurecht; vorher trugen 128 Dokumente 48 frei getippte
+  // Kategorien, und das war keine Gliederung, sondern eine Liste.
+  // Die D-Gruppen sind unsere: fuer Diagnosezugang, Werkzeug und Codierung
+  // gibt es in TIS keine Hauptgruppe, und eine zu erfinden waere gelogen.
+  const loadGruppen = async () => {
+    if (state.gruppen !== null) return state.gruppen;
+    try {
+      const resp = await fetch('./content/gruppen.json', { cache: 'no-cache' });
+      state.gruppen = resp.ok ? (await resp.json()) : { gruppen: [], achsen: [] };
+    } catch { state.gruppen = { gruppen: [], achsen: [] }; }
+    return state.gruppen;
+  };
+  const gruppeSpec = (id) => (state.gruppen?.gruppen || []).find(g => g.id === id) || null;
+  const gruppeName = (id) => gruppeSpec(id)?.name || id || '—';
+  // Reihenfolge wie in gruppen.json: erst das Fahrzeug nach Hauptgruppen,
+  // danach die Werkstattgruppen. Unbekanntes haengt hinten an, statt zu
+  // verschwinden — ein Dokument ohne Gruppe waere sonst unauffindbar.
+  const gruppenReihe = () => (state.gruppen?.gruppen || []).map(g => g.id);
+
   const litres = (cc) => typeof cc === 'number' ? (cc / 1000).toFixed(1).replace('.', ',') + ' l' : null;
   const powerRange = (spec) => {
     const ps = (spec?.power_variants || []).map(v => v.ps).filter(n => typeof n === 'number');
@@ -693,6 +717,68 @@
 
   const bodyLabel = (b) => ({ Schraegheck: 'Schrägheck', Coupe: 'Coupé' }[b] || b || '—');
 
+  // Aus der Abdeckung in die Bibliothek: die Gruppe wird zum Suchbegriff,
+  // damit der Weg dorthin nicht in einer zweiten Filtermechanik endet.
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest?.('[data-gruppe]');
+    if (!b) return;
+    state.libNach = 'gruppe';
+    state.globalSearch = '';
+    setView('library');
+    loadGruppen().then(() => {
+      renderLibrary();
+      const ziel = document.querySelector(`#libraryPanel [data-grp="${b.dataset.gruppe}"]`);
+      ziel?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+  });
+
+  /**
+   * Was es zu dieser Baureihe je Gruppe gibt -- und was nicht.
+   * Gezeigt werden alle Gruppen, nicht nur die gefuellten: eine leere Zeile
+   * ist die Aussage, auf die es ankommt.
+   */
+  const gruppenUebersichtHtml = (model) => {
+    const alle = state.gruppen?.gruppen || [];
+    if (!alle.length) return '';
+    const meine = state.data.docs.filter(d => d.model === model.id);
+    const zahl = {};
+    for (const d of meine) zahl[d.gruppe] = (zahl[d.gruppe] || 0) + 1;
+    const voll = alle.filter(g => zahl[g.id]).length;
+
+    const achsen = (state.gruppen?.achsen || []).map(a => {
+      const drin = alle.filter(g => g.achse === a.id);
+      if (!drin.length) return '';
+      return `
+        <div class="abd-achse">
+          <h3 class="abd-achse-titel">${escapeHtml(a.name)}</h3>
+          <ul class="abd-liste">
+            ${drin.map(g => {
+              const n = zahl[g.id] || 0;
+              return `<li class="abd-zeile ${n ? '' : 'leer'}">
+                ${n ? `<button class="abd-btn" data-gruppe="${escapeHtml(g.id)}">
+                        <span class="abd-nr">${escapeHtml(g.id)}</span>
+                        <span class="abd-name">${escapeHtml(g.name)}</span>
+                        <span class="abd-zahl">${n}</span>
+                      </button>`
+                    : `<span class="abd-btn" aria-disabled="true">
+                        <span class="abd-nr">${escapeHtml(g.id)}</span>
+                        <span class="abd-name">${escapeHtml(g.name)}</span>
+                        <span class="abd-zahl abd-fehlt">—</span>
+                      </span>`}
+              </li>`;
+            }).join('')}
+          </ul>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="facts abdeckung">
+        <h2 class="facts-title">Was es zum ${escapeHtml(model.name)} gibt</h2>
+        <p class="abd-lead">${voll} von ${alle.length} Gruppen sind belegt. Ein Strich heißt: dazu steht hier noch nichts — nicht, dass es am Fahrzeug nichts gibt.</p>
+        ${achsen}
+      </div>`;
+  };
+
   // -------- Schritt 2: Motor antippen (Dialog) --------
   const readyStepHtml = (model, scopedCount, guideCount, docCount) => {
     const spec = engineSpec(state.engine);
@@ -747,6 +833,12 @@
            deshalb das Symptom sein, nicht der Pfad. Fehlt der Baustein,
            bleibt der Behaelter leer und die Seite unveraendert. -->
       <div id="symptomeHost" hidden></div>
+
+      <!-- Gruppenabdeckung. Der eigentliche Wert liegt in den *leeren*
+           Zeilen: sie sagen, wozu es zu diesem Fahrzeug noch nichts gibt.
+           Vorher war das nirgends ablesbar -- man sah, was da war, und
+           konnte nur raten, was fehlt. -->
+      ${gruppenUebersichtHtml(model)}
 
       ${facts.length ? `
         <div class="facts">
@@ -1431,9 +1523,19 @@
     const q = state.globalSearch.trim();
     const results = q ? searchDocs(q) : state.data.docs;
 
-    // group by model
-    const byModel = {};
-    for (const d of results) (byModel[d.model] = byModel[d.model] || []).push(d);
+    // Gliederung. Standard ist die Gruppe — das ist die Ordnung, die ein
+    // Schrauber aus dem Werkstatthandbuch kennt. Nach Baureihe bleibt als
+    // zweite Sicht, weil man manchmal wissen will, was es zu *diesem* Auto
+    // ueberhaupt gibt.
+    const nachGruppe = state.libNach === 'gruppe' && (state.gruppen?.gruppen || []).length > 0;
+    const eimer = {};
+    for (const d of results) {
+      const k = nachGruppe ? (d.gruppe || '—') : d.model;
+      (eimer[k] = eimer[k] || []).push(d);
+    }
+    const reihe = nachGruppe
+      ? [...gruppenReihe().filter(g => eimer[g]), ...Object.keys(eimer).filter(k => !gruppenReihe().includes(k))]
+      : Object.keys(eimer);
 
     panel.innerHTML = `
       <div class="page-header">
@@ -1451,6 +1553,11 @@
         <button class="btn btn-ghost" data-route="overview">Zurück zum Arbeitsbereich</button>
       </div>
 
+      <div class="lib-switch" role="group" aria-label="Gliederung der Bibliothek">
+        <button class="fchip ${state.libNach === 'gruppe' ? 'on' : ''}" data-lib-nach="gruppe" aria-pressed="${state.libNach === 'gruppe'}">Nach Gruppe</button>
+        <button class="fchip ${state.libNach === 'model' ? 'on' : ''}" data-lib-nach="model" aria-pressed="${state.libNach === 'model'}">Nach Baureihe</button>
+      </div>
+
       <div class="topbar-search" style="max-width:none;margin-bottom:var(--space-6);">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="search" data-global-search value="${escapeHtml(state.globalSearch)}" placeholder="Über alle Baureihen suchen (ID, Titel, DTC, Modul, Pin …)" aria-label="Bibliotheks-Suche" />
@@ -1458,15 +1565,22 @@
 
       ${results.length === 0 ? `
         <div class="empty">${iconSvg('empty')}<h3>Nichts gefunden</h3><p>Suchbegriff anpassen.</p></div>
-      ` : Object.entries(byModel).map(([modelId, docs]) => {
-        const model = state.data.models.groups.flatMap(g => g.models).find(m => m.id === modelId);
+      ` : reihe.map((schluessel) => {
+        const docs = eimer[schluessel];
+        const model = nachGruppe ? null
+          : state.data.models.groups.flatMap(g => g.models).find(m => m.id === schluessel);
+        const g = nachGruppe ? gruppeSpec(schluessel) : null;
+        const kopf = nachGruppe
+          ? `<span class="grp-nr" aria-hidden="true">${escapeHtml(schluessel)}</span>
+             <h2 class="grp-name">${escapeHtml(g?.name || 'Ohne Gruppe')}</h2>
+             <span class="grp-zahl">${docs.length} Doc(s)</span>
+             ${g?.kurz ? `<span class="grp-kurz">${escapeHtml(g.kurz)}</span>` : ''}`
+          : `<h2 class="grp-name">${escapeHtml(model?.name || schluessel)}</h2>
+             <span class="grp-zahl">${escapeHtml(model?.years || '')} · ${docs.length} Doc(s)</span>
+             <button class="btn btn-ghost" style="margin-left:auto;font-size:12px;" data-jump-model="${schluessel}">Zu dieser Baureihe wechseln →</button>`;
         return `
           <div style="margin-bottom:var(--space-6);">
-            <div style="display:flex;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-3);">
-              <h2 style="font-size:var(--text-md);font-weight:700;">${escapeHtml(model?.name || modelId)}</h2>
-              <span style="font-family:var(--font-mono);font-size:11px;color:var(--color-text-muted);">${escapeHtml(model?.years || '')} · ${docs.length} Doc(s)</span>
-              <button class="btn btn-ghost" style="margin-left:auto;font-size:12px;" data-jump-model="${modelId}">Zu dieser Baureihe wechseln →</button>
-            </div>
+            <div class="grp-kopf"${nachGruppe ? ` data-grp="${escapeHtml(schluessel)}"` : ''}>${kopf}</div>
             <div class="doc-list">
               ${docs.map(d => `
                 <button class="doc-card" data-doc="${escapeHtml(d.id)}" tabindex="0">
@@ -1486,6 +1600,9 @@
       }).join('')}
     `;
 
+    panel.querySelectorAll('[data-lib-nach]').forEach(b => {
+      b.addEventListener('click', () => { state.libNach = b.dataset.libNach; renderLibrary(); });
+    });
     const input = panel.querySelector('[data-global-search]');
     input?.addEventListener('input', (e) => {
       state.globalSearch = e.target.value;
@@ -2714,6 +2831,10 @@
     // Motor-Steckbriefe und Messplan nachladen; sind sie da, zeichnet sich
     // die App neu — fehlen sie, bleibt der bisherige Stand stehen.
     loadEngines().then(() => render());
+    // Die Gliederung wird ueberall gebraucht: in der Bibliothek und in der
+    // Abdeckungstafel der Uebersicht. Bis sie da ist, bleibt beides bei der
+    // bisherigen Darstellung stehen statt leer zu erscheinen.
+    loadGruppen().then(() => render());
     // Symptomkatalog nachladen; danach einmal neu zeichnen, damit die
     // Auswahl erscheint, sobald sie da ist.
     if (window.Symptome) window.Symptome.laden().then(() => zeichneSymptome());

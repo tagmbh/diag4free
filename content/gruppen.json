@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "note": "Gliederung der Wissensbasis. Zwei Achsen: BMWs Hauptgruppen-Schema für alles am Fahrzeug, eigene D-Gruppen für die Werkstattarbeit, für die es in TIS keine Hauptgruppe gibt. Die Nummern sind BMWs, die Gruppennamen sind unsere Formulierung. `beleg` sagt, wie sicher die Nummer ist: `bestaetigt` = in mehreren unabhängigen Katalogen und Werkstatthandbüchern unter dieser Nummer gefunden, `schema` = aus dem durchgängigen Hauptgruppen-Schema abgeleitet, aber nicht einzeln nachgeprüft.",
+  "achsen": [
+    {
+      "id": "fahrzeug",
+      "name": "Am Fahrzeug",
+      "note": "BMWs Hauptgruppen — dieselben zwei Ziffern, mit denen eine Teilenummer beginnt und nach denen ein Werkstatthandbuch gegliedert ist. Wer die kennt, findet sich hier ohne Einarbeitung zurecht."
+    },
+    {
+      "id": "werkstatt",
+      "name": "Diagnose und Werkstatt",
+      "note": "Wofür TIS keine Gruppe hat: Zugang zum Fahrzeug, Werkzeug, Codierung, Bestimmung. Bewusst mit D-Präfix, damit niemand eine BMW-Nummer vermutet, die es nicht gibt."
+    }
+  ],
+  "gruppen": [
+    { "id": "00", "achse": "fahrzeug", "name": "Wartung und Instandhaltung", "kurz": "Serviceumfänge, Intervalle, Rückstellungen", "beleg": "schema" },
+    { "id": "11", "achse": "fahrzeug", "name": "Motor", "kurz": "Mechanik: Steuertrieb, Kurbeltrieb, Zylinderkopf, Dichtungen", "beleg": "bestaetigt" },
+    { "id": "12", "achse": "fahrzeug", "name": "Motorelektrik", "kurz": "Zündung, Starten, Laden, Versorgung der Motorsteuerung", "beleg": "bestaetigt" },
+    { "id": "13", "achse": "fahrzeug", "name": "Gemischbildung und Motorsteuerung", "kurz": "DME und DDE, Einspritzung, Aufladung, Ansaugweg", "beleg": "bestaetigt" },
+    { "id": "16", "achse": "fahrzeug", "name": "Kraftstoffversorgung", "kurz": "Tank, Pumpe, Leitungen, Druck", "beleg": "bestaetigt" },
+    { "id": "17", "achse": "fahrzeug", "name": "Kühlung", "kurz": "Kühler, Thermostat, Wasserpumpe, Ausgleichsbehälter", "beleg": "bestaetigt" },
+    { "id": "18", "achse": "fahrzeug", "name": "Abgasanlage", "kurz": "Katalysator, Partikelfilter, SCR und AdBlue, Lambdasonden", "beleg": "bestaetigt" },
+    { "id": "24", "achse": "fahrzeug", "name": "Automatikgetriebe", "kurz": "Steptronic, Wandler, Ölstand und Adaption", "beleg": "bestaetigt" },
+    { "id": "27", "achse": "fahrzeug", "name": "Verteilergetriebe", "kurz": "xDrive: Stellmotor, Kalibrierung, Ölservice", "beleg": "schema" },
+    { "id": "32", "achse": "fahrzeug", "name": "Lenkung", "kurz": "Servolenkung, elektrische Lenkung, Aktivlenkung", "beleg": "schema" },
+    { "id": "34", "achse": "fahrzeug", "name": "Bremse", "kurz": "ABS, ASC und DSC, Hydraulik", "beleg": "schema" },
+    { "id": "37", "achse": "fahrzeug", "name": "Fahrwerk und Federung", "kurz": "Luftfederung, Niveauregelung, geregelte Dämpfer, Wankstabilisierung", "beleg": "schema" },
+    { "id": "51", "achse": "fahrzeug", "name": "Karosserieausstattung", "kurz": "Türen, Klappen, Schlösser, Dichtungen", "beleg": "schema" },
+    { "id": "54", "achse": "fahrzeug", "name": "Verdeck und Schiebedach", "kurz": "Cabrioverdeck, CTM, Schiebedach", "beleg": "schema" },
+    { "id": "61", "achse": "fahrzeug", "name": "Allgemeine Elektrik", "kurz": "Bordnetz, Bussysteme, Steuergeräte-Einbauorte, Masse und Kabelbaum, Batterie", "beleg": "bestaetigt" },
+    { "id": "65", "achse": "fahrzeug", "name": "Audio, Navigation, Elektroniksysteme", "kurz": "iDrive, MOST, Headunit", "beleg": "bestaetigt" },
+
+    { "id": "D1", "achse": "werkstatt", "name": "Diagnosezugang und Fehlerspeicher", "kurz": "Steckerbelegung, Blinkcodes, Fehlercodes auslesen", "beleg": "eigen" },
+    { "id": "D2", "achse": "werkstatt", "name": "Werkzeug und Software", "kurz": "Adapter, Kabel, Diagnoseprogramme und ihre Einrichtung", "beleg": "eigen" },
+    { "id": "D3", "achse": "werkstatt", "name": "Codierung und Softwarestand", "kurz": "Codierwege, I-Stufe, Datenstand", "beleg": "eigen" },
+    { "id": "D4", "achse": "werkstatt", "name": "Fahrzeug- und Motorbestimmung", "kurz": "Welcher Motor, welche Steuerung, welche Ausstattung steckt drin", "beleg": "eigen" },
+    { "id": "D5", "achse": "werkstatt", "name": "Vorgehen und Sicherheit", "kurz": "Wie man eingrenzt, und was vor dem ersten Handgriff geklärt sein muss", "beleg": "eigen" }
+  ]
+}

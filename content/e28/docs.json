@@ -4,6 +4,7 @@
     {
       "id": "D4F-E28-001",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Diagnosezugang E28 · 15-polig oder 20-polig",
       "valid": "E28 · 1981–1988",
@@ -22,13 +23,22 @@
         "Pin 11 · Anlasseransteuerung am 15-poligen Stecker, nach einer Quelle",
         "Pin 14 · Batterieversorgung am 15-poligen Stecker, nach einer Quelle"
       ],
-      "engines": ["M20", "M30", "S38"],
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
       "article": "diagnosezugang.md",
-      "details": ["D4F-E28-002", "D4F-E28-004", "D4F-E28-007"]
+      "details": [
+        "D4F-E28-002",
+        "D4F-E28-004",
+        "D4F-E28-007"
+      ]
     },
     {
       "id": "D4F-E28-002",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorzuordnung E28 · M20, M30 und S38",
       "valid": "E28 · 1981–1988",
@@ -41,13 +51,21 @@
         "Die Motornummer am Block, Ansaugseite über der Ölwannenkante, entscheidet die Zuordnung, nicht das Typenschild",
         "M30 hat Steuerkette, M20 Zahnriemen — gleiche Zündungsdiagnose, völlig andere Folgen bei Steuertriebschaden"
       ],
-      "engines": ["M20", "M30", "S38"],
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-E28-001", "D4F-E28-003"]
+      "details": [
+        "D4F-E28-001",
+        "D4F-E28-003"
+      ]
     },
     {
       "id": "D4F-E28-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Fehlerspeicher am E28 · was ohne Diagnosegerät geht",
       "valid": "E28 · 1981–1988",
@@ -59,13 +77,20 @@
         "Ohne Blinkcode bleiben zwei Wege: seriell über den Diagnosestecker oder reine Messdiagnose am Bauteil",
         "Blinkcode-Bedeutungen anderer Baureihen nicht übertragen — gleiche Ziffernfolge heißt nicht gleiche Ursache"
       ],
-      "engines": ["M20", "M30"],
+      "engines": [
+        "M20",
+        "M30"
+      ],
       "article": "fehlerspeicher-ohne-geraet.md",
-      "details": ["D4F-E28-001", "D4F-E28-002"]
+      "details": [
+        "D4F-E28-001",
+        "D4F-E28-002"
+      ]
     },
     {
       "id": "D4F-E28-004",
       "type": "GUIDE",
+      "gruppe": "00",
       "cat": "Wartung",
       "title": "Service-Intervall-Anzeige zurücksetzen",
       "valid": "E28 · 1981–1988",
@@ -78,13 +103,20 @@
         "Nach einer Quelle einen Vorwiderstand in die Brücke legen statt hart kurzzuschließen",
         "Nach dem Zellentausch bleibt die Anzeige stehen, bis sie einmal zurückgesetzt wird"
       ],
-      "engines": ["M20", "M30", "S38"],
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
       "article": "si-anzeige-ruecksetzen.md",
-      "details": ["D4F-E28-001"]
+      "details": [
+        "D4F-E28-001"
+      ]
     },
     {
       "id": "D4F-E28-005",
       "type": "TEST",
+      "gruppe": "16",
       "cat": "Kraftstoff",
       "title": "Kraftstoffpumpenkreis prüfen · M20, M30 und S38",
       "valid": "E28 · 1981–1988",
@@ -97,12 +129,20 @@
         "Viele E28 fördern zweistufig: eine Vorförderpumpe im Tank und die Hauptpumpe unter dem Fahrzeug. Ob eine Vorförderpumpe verbaut ist, hängt nach den vorliegenden Quellen am Baustand — nachsehen statt annehmen und beim Hörtest an beiden Stellen hören",
         "Ob die Pumpe bei Zündung ein kurz anläuft, hängt am Steuergerätestand; verlässlich ist erst der Test beim Cranken"
       ],
-      "engines": ["M20", "M30", "S38"],
-      "details": ["D4F-E28-002", "D4F-E28-006"]
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
+      "details": [
+        "D4F-E28-002",
+        "D4F-E28-006"
+      ]
     },
     {
       "id": "D4F-E28-006",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Zündung",
       "title": "Zündkreis und Steuergeräteversorgung am E28",
       "valid": "E28 · 1981–1988",
@@ -114,12 +154,20 @@
         "Massepunkte am Motor reinigen und nachziehen, bevor du Steuergeräte verdächtigst",
         "Sollwerte für Primär- und Sekundärwiderstand der Zündspule liegen hier nicht belegt vor — tauschweise gegen eine bekannt gute Spule prüfen"
       ],
-      "engines": ["M20", "M30", "S38"],
-      "details": ["D4F-E28-002", "D4F-E28-005"]
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
+      "details": [
+        "D4F-E28-002",
+        "D4F-E28-005"
+      ]
     },
     {
       "id": "D4F-E28-007",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Adapter und Software für den E28",
       "valid": "E28 · 1981–1988",
@@ -131,8 +179,15 @@
         "Vor dem ersten Anstecken den fertigen Adapter durchklingeln und die Zuordnung notieren",
         "Ein vertauschtes Datenpaar bleibt still, ein vertauschtes Plus kostet das Interface"
       ],
-      "engines": ["M20", "M30", "S38"],
-      "details": ["D4F-E28-001", "D4F-E28-003"]
+      "engines": [
+        "M20",
+        "M30",
+        "S38"
+      ],
+      "details": [
+        "D4F-E28-001",
+        "D4F-E28-003"
+      ]
     }
   ]
 }
