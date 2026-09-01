@@ -10,7 +10,14 @@ was eine Freigabe konkret einbringt. Freigegeben wird an der Netzrichtlinie
 der Umgebung — siehe
 <https://code.claude.com/docs/en/claude-code-on-the-web>.
 
-Stand der Prüfung: 27.08.2026, alle Einträge einzeln nachgemessen.
+Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
+
+> **Freigabe erteilt, Wirkung offen.** Am 01.09. wurde die Netzrichtlinie um
+> `bmwteka.com`, die Patent-Hosts und die Recherche-Hosts erweitert. In der
+> Session, in der das geschah, blieb alles bei `403` — ein laufender
+> Container liest seine Netzrichtlinie beim Start und nie wieder. Ob die
+> Freigabe trägt, entscheidet sich erst in einer **neuen Session**. Der
+> Prüfbefehl steht in `docs/PROGRESS.md` ganz oben.
 
 ## Kurz: was fehlt ohne Freigabe
 
@@ -20,6 +27,23 @@ Stand der Prüfung: 27.08.2026, alle Einträge einzeln nachgemessen.
 | MS43-Pinliste | Ausmessverfahren statt Pinnummern | die tatsächliche Belegung |
 | Motornummern-Position | eine offene Widersprüchlichkeit | geklärt |
 | E88-Sicherungsnummern | „Sicherung im Kasten X" ohne Nummer | Nummer und Ampere |
+
+## bmwteka.com — der Anlass für diese Liste
+
+```
+bmwteka.com
+```
+
+Ein Spiegel von BMWs TIS und WDS, und der Grund, warum diese Liste am
+01.09. noch einmal aufgemacht wurde: Er sollte als Vorbild für die
+Gliederung dienen. Der Host war gesperrt, die Struktur ist deshalb über
+die Websuche hergeleitet worden — BMWs Hauptgruppen-Schema ließ sich für
+mehrere Bereiche unabhängig bestätigen, und darauf steht jetzt
+`content/gruppen.json`.
+
+Was mit offenem Host möglich wird: die leeren Gruppen füllen. Dabei gilt
+Inhaltsregel 1 unverändert — **gelesen und neu formuliert, nie kopiert.**
+Ein Spiegel ist keine Lizenz.
 
 ## Bilder für die Motoren
 

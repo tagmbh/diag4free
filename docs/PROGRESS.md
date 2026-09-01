@@ -1,6 +1,6 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-09-01 · `main` = `0cce95b` + Gliederungsumbau (PR offen)
+> Stand: 2026-09-01 · `main` = `f8af795` · **nichts offen, kein PR hängt**
 > Live: https://diag4all.t-alpha.com
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
@@ -15,6 +15,8 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | #8 | 16 Fahrzeugfotos statt Strichzeichnungen |
 | #9 | `docs/GESPERRTE-HOSTS.md` — was eine Netzfreigabe je einbringt |
 | #10 | Legende zum Motorschema |
+| #11 | Handoff auf den tatsächlichen Stand |
+| #12 | Gliederung nach BMWs Hauptgruppen, Abdeckungstafel |
 
 | Bereich | Zustand |
 |---------|---------|
@@ -50,6 +52,33 @@ Der Browserpfad ist wichtig: In dieser Umgebung liegt Chromium vorinstalliert,
 aber unter einem anderen Pfad als die installierte Playwright-Version erwartet.
 Ohne `CHROMIUM_PATH` bricht der Lauf mit „Executable doesn't exist" ab — ein
 zweiter Download ist trotzdem nicht nötig.
+
+## Das Erste in der neuen Session
+
+Die Netzfreigabe für `bmwteka.com`, die Patent-Hosts und die vier
+Recherche-Hosts ist am 01.09. **erteilt** — aber in der Session, in der sie
+gesetzt wurde, war sie wirkungslos: Ein laufender Container liest seine
+Netzrichtlinie beim Start und nie wieder. Deshalb steht das hier ganz oben.
+
+```bash
+for h in bmwteka.com patents.google.com depatisnet.dpma.de \
+         ms4x.net newtis.info web.archive.org; do
+  echo "$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 https://$h/)  $h"
+done
+curl -s -o /dev/null -w '%{http_code}  registry.npmjs.org\n' https://registry.npmjs.org/
+```
+
+`200` bei npmjs und `000` bei den anderen heißt: der Proxy arbeitet, aber
+ohne die neuen Einträge. Dann steht **Network access** noch auf *Trusted*
+statt *Custom*, oder die Freigabe hängt an einer anderen Umgebung als der,
+in der die Session läuft. Das ist keine Sache zum Umgehen — melden.
+
+Sind sie offen, ist die Reihenfolge:
+
+1. **bmwteka auswerten** und Wissen in eigenen Worten übernehmen — nie 1:1.
+2. **Die leeren Gruppen füllen.** Welche das sind, steht unten und in der
+   Abdeckungstafel der App.
+3. **Motorbilder** — aber erst, wenn die Frage aus „Offen" beantwortet ist.
 
 ## Wiedereinstieg in einer neuen Session
 
@@ -136,6 +165,43 @@ done
    gesperrt sind — `ms4x.net`, `bmwrepairguide.com`, `newtis.info`,
    `archive.org`. Jeder schliesst eine Kategorie in einem Durchgang;
    `docs/GESPERRTE-HOSTS.md` nennt zu jedem, was er einbringt.
+
+## Wo der Bestand dünn ist — gemessen, nicht geschätzt
+
+Seit der Gliederung (PR #12) ist das ausrechenbar. Stand 01.09.:
+
+**Keine Baureihe deckt mehr als 7 der 21 Gruppen ab.** Die Spannweite ist
+eng — von 5 (E34, E38, E70, F10, F30) bis 7 (E30, E36, E46, E90, F15). Das
+heißt: Es gibt keine gut versorgte Baureihe, an der man sich orientieren
+könnte, und keine besonders schlechte, die man zuerst aufholen müsste.
+
+Systematisch fehlt dagegen viel — diese acht Gruppen sind in **15 von 16**
+Baureihen leer:
+
+| Gruppe | | in Baureihen leer |
+|---|---|---|
+| 00 | Wartung und Instandhaltung | 15 |
+| 16 | Kraftstoffversorgung | 15 |
+| 17 | Kühlung | 15 |
+| 18 | Abgasanlage | 15 |
+| 24 | Automatikgetriebe | 15 |
+| 34 | Bremse | 15 |
+| 51 | Karosserieausstattung | 15 |
+| 54 | Verdeck und Schiebedach | 15 |
+
+Daraus folgt eine klare Ansage für den nächsten Durchgang: **in die Breite,
+nicht in die Tiefe.** Der Bestand ist bei Elektrik, Motorsteuerung und
+Diagnosezugang belastbar und bei allem, was man anfasst statt misst, fast
+leer. Ein Fahrer mit undichtem Kühler oder einem Getriebe, das nicht
+schaltet, findet heute nichts.
+
+Zwei Einschränkungen, damit die Zahlen nicht überinterpretiert werden:
+
+- 54 (Verdeck) betrifft nur Cabrios — dort ist „leer in 15" kein Befund,
+  sondern die Bauart. Dasselbe gilt abgeschwächt für 27 (xDrive).
+- Die App ist eine **Diagnose**-Wissensbasis, keine Reparaturanleitung.
+  Ob 51 (Türen, Klappen, Schlösser) überhaupt hineingehört, ist eine
+  Entscheidung, keine Lücke.
 
 ## Offen — inhaltlich, ohne Entscheidung machbar
 
