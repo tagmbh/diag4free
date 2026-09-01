@@ -241,6 +241,138 @@
         "D4F-E39-004",
         "D4F-E39-002"
       ]
+    },
+    {
+      "id": "D4F-E39-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M52/M54 · Wasserpumpe, Thermostat, Ausgleichsbehälter",
+      "valid": "E39 · 1995–2003 · M52, M54, M62, S62",
+      "summary": "Der Kreis des E39 ist der Klassiker unter den Kunststoff-Kühlsystemen: Ausgleichsbehälter, Thermostatgehäuse und Kühlerkästen altern und geben nach. Beim Sechszylinder kommt das Pumpenrad dazu — es kann brechen, ohne Geräusch und ohne Leck, und der Motor überhitzt bei laufender Pumpe.",
+      "points": [
+        "Der gefährliche Fall zuerst: bricht das Pumpenrad, dreht die Welle weiter und die Pumpe klingt normal — es fehlt nur die Förderung. Erkennbar ist das nicht am Geräusch, sondern daran, dass der obere Kühlerschlauch trotz warmem Motor kalt bleibt",
+        "Ausgleichsbehälter und Deckel sind Verschleissteile und versagen oft ohne Vorwarnung. Bei jedem Kühlmittelverlust ohne sichtbares Leck stehen sie zuerst auf der Liste",
+        "Thermostat vergleichend prüfen: oberer Schlauch bleibt beim Kaltstart lange kalt, dann wird er zügig warm. Von Anfang an lauwarm heisst offen hängend — der Motor wird nicht richtig warm und die Heizung bleibt schwach",
+        "Viscolüfter im warmen Leerlauf beurteilen: er muss hörbar zupacken. Kalt leicht, warm spürbar schwer drehbar — der Vergleich trägt, eine belegte Drehzahlvorgabe liegt hier nicht vor",
+        "Nach jedem Öffnen entlüften, sonst steht Luft im Kopf: Fahrzeug vorn hoch, Heizung heiss, laufen lassen bis der obere Schlauch durchgängig warm ist",
+        "Kühlmittelverlust ohne Aussenleck plus weisser, süsslicher Auspuffdampf gehört in die Kopfdichtungsprüfung — nicht weiter am Kühler suchen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-006"
+      ]
+    },
+    {
+      "id": "D4F-E39-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E39 · Zwei Familien, Ölstand nach Prozedur",
+      "valid": "E39 · 1995–2003 · mit Automatik",
+      "summary": "Auch im E39 stehen Automatikgetriebe zweier Herstellerfamilien nebeneinander, mit unterschiedlicher Ölspezifikation. Dazu kommt, dass viele dieser Getriebe ab Werk als wartungsfrei galten — ein Anspruch, den die Werkstattpraxis nicht bestätigt hat.",
+      "points": [
+        "Getriebeschild lesen und die Familie bestimmen, bevor irgendetwas befüllt wird. Die Ölspezifikation folgt dem Getriebe; die falsche Sorte kostet das Getriebe",
+        "Der Begriff „Lebensdauerfüllung“ ist eine Werksangabe, kein Befund. In der Werkstattpraxis wird gewechselt; ein belegtes Intervall in Kilometern liegt hier nicht vor, der Ölzustand entscheidet",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst lesen — Magnetventile und Drehzahlfühler sind von aussen nicht beurteilbar",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Kalt gemessen ist jeder Wert falsch",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang gehört zur Wandlerüberbrückung, nicht zur Gangschaltung",
+        "Nach jedem Eingriff Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-003"
+      ]
+    },
+    {
+      "id": "D4F-E39-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E39 · Sensorik trennen, Geber prüfen, Entlüften",
+      "valid": "E39 · 1995–2003 · ABS, ASC, DSC",
+      "summary": "Der E39 fährt eine vollständige Fahrdynamikregelung. Die häufigsten Meldungen kommen dabei nicht aus der Bremse, sondern aus der Sensorik: Raddrehzahl, Lenkwinkel, Gierrate. Die Trennung dieser drei ist der eigentliche Diagnoseschritt.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst. Er trennt Raddrehzahl von Fahrdynamiksensorik — im Kombiinstrument sehen beide gleich aus",
+        "Lenkwinkelsensor nach jeder Arbeit an Lenkung, Spur oder Lenkrad neu abgleichen. Ein vergessener Abgleich erzeugt Dauermeldungen ohne defektes Bauteil",
+        "Den benannten Raddrehzahlgeber prüfen statt tauschen: Polrad, Geberspalt und Kabel erzeugen dasselbe Fehlerbild und sind zusammen der häufigere Fall",
+        "Kabel an den Radläufen auf Scheuerstellen absuchen — sporadische Fehler beim Einlenken oder Einfedern sind fast immer mechanisch am Kabel und nicht elektrisch im Geber",
+        "Regelungen ohne erkennbaren Anlass: die vier Raddrehzahlen im Livedatenstrom bei konstanter Geradeausfahrt vergleichen. Ein Rad, das abweicht, löst Eingriffe aus, ohne einen Fehler zu speichern",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; Luft in der Regeleinheit bekommt man mit Pedalpumpen nicht heraus"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-004",
+        "D4F-E39-003"
+      ]
+    },
+    {
+      "id": "D4F-E39-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E39 · Druck unter Last, Adaption, Entlüftung",
+      "valid": "E39 · 1995–2003 · alle Motoren",
+      "summary": "Im E39 melden Gemischfehler sich zuverlässig über die Adaptionswerte — sie sagen aber nur, dass Kraftstoff fehlt, nicht wo. Falschluft, Tankentlüftung und schwache Förderung erzeugen dasselbe Bild und werden getrennt.",
+      "points": [
+        "Adaptionswerte auslesen und bankweise vergleichen: gleichmässige Abweichung deutet auf die gemeinsame Versorgung, einseitige auf die betroffene Bank oder deren Ansaugweg",
+        "Druck über eine Lastfahrt mitschreiben. Der Einbruch kommt unter Last, eine Momentaufnahme im Stand findet ihn nicht",
+        "Falschluft ausschliessen, bevor an der Pumpe gearbeitet wird — Kurbelgehäuseentlüftung und Ansaugschläuche altern in diesen Baujahren und erzeugen dasselbe magere Bild",
+        "Tankentlüftungsventil prüfen: hängt es offen, läuft die Adaption weg, ohne dass der Kraftstoffkreis etwas dafür kann",
+        "Filter vor Pumpe tauschen — billiger und häufiger",
+        "Schlechter Start nach Standzeit bei normalem Warmstart heisst: der Kreis hält den Druck nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-008"
+      ]
+    },
+    {
+      "id": "D4F-E39-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E39 · Kat-Wirkungsgrad, Sekundärluft, Abgasleck",
+      "valid": "E39 · 1995–2003 · alle Motoren",
+      "summary": "Im E39 ist die Abgasüberwachung vollständig: Sonden vor und hinter dem Katalysator, dazu das Sekundärluftsystem. Die häufigste Fehlmassnahme ist der Katalysatortausch aufgrund eines Lecks, das zwei Meter davor sitzt.",
+      "points": [
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere im gleichen Takt mit, arbeitet der Katalysator nicht mehr — das ist die Aussage, auf die es ankommt",
+        "Bevor ein Katalysator getauscht wird: Abgasleck zwischen den Sonden ausschliessen. Ein Leck erzeugt dasselbe Bild und ist die billigere Reparatur — das ist der häufigste Fehlkauf in diesem Bereich",
+        "Sekundärluftsystem arbeitet nur in den ersten Minuten nach dem Kaltstart; die Prüfung gelingt nur am kalten Motor. Pumpe und Umschaltventil getrennt beurteilen",
+        "Bei zweiflutiger Anlage die Bänke vergleichen — was nur eine Bank betrifft, liegt nicht an der gemeinsamen Versorgung",
+        "Sondenheizungen getrennt von den Sonden prüfen: eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — Gegendruck, nicht Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-008"
+      ]
+    },
+    {
+      "id": "D4F-E39-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E39 · Serviceintervall, Zustandsprüfung, Alterungspunkte",
+      "valid": "E39 · 1995–2003",
+      "summary": "Beim E39 ist die Serviceintervallanzeige betriebsabhängig und wird über den Diagnoseanschluss zurückgestellt. Wichtiger als der Zähler sind bei diesen Baujahren die Positionen, die altern statt zu verschleissen — allen voran der Kühlkreis.",
+      "points": [
+        "Der Zähler bewertet den Betrieb; Kurzstrecke verkürzt das Intervall. Die Rückstellung über den Diagnoseanschluss ist eine Buchung, keine Wartung",
+        "Bei diesen Baujahren gehören die Kunststoffteile des Kühlkreises in jede Inspektion: Ausgleichsbehälter, Deckel und Schläuche altern nach Zeit, nicht nach Laufleistung",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht. Der gesunkene Siedepunkt zeigt sich erst bei warmer Bremse",
+        "Kurbelgehäuseentlüftung zur Sichtprüfung — versprödete Leitungen erzeugen magere Gemischfehler, die als Motorproblem gesucht werden",
+        "Bei unbekannter Historie über den Zustand bestimmen statt über die Anzeige: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen",
+        "Ölverbrauch bei diesen Motoren beobachten und dokumentieren statt einmalig zu messen — nur der Verlauf trennt normalen Verbrauch von einem beginnenden Schaden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-003",
+        "D4F-E39-005"
+      ]
     }
   ]
 }

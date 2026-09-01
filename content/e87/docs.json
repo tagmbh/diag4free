@@ -299,6 +299,137 @@
           "ecu:DME"
         ]
       }
+    },
+    {
+      "id": "D4F-E87-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N43/N45/N46/N52 · Geregelter Kreis im 1er",
+      "valid": "E87 · 2004–2013 · alle Motoren",
+      "summary": "Im E87 stehen Vierzylinder mit mechanischer und Sechszylinder mit elektrischer Wasserpumpe nebeneinander. Welcher Kreis vorliegt, entscheidet den ersten Handgriff: beim geregelten Kreis wird der Fehlerspeicher gelesen, beim mechanischen wird angefasst.",
+      "points": [
+        "Erst bestimmen, welche Pumpe verbaut ist — beim Sechszylinder mit elektrischer Pumpe meldet sich ein Ausfall im Fehlerspeicher der DME und führt zu Notlauf mit reduzierter Leistung",
+        "Beim mechanischen Kreis läuft die Eingrenzung über den Verlauf: Überhitzung im Stand deutet auf den Luftweg, Überhitzung bei Fahrt auf den Wasserweg",
+        "Thermostat vergleichend über den oberen Kühlerschlauch: lange kalt, dann zügig warm ist richtig. Von Anfang an lauwarm heisst offen hängend",
+        "Ausgleichsbehälter und Deckel altern wie in allen Baureihen dieser Jahre und stehen bei Kühlmittelverlust ohne sichtbares Leck zuerst auf der Liste",
+        "Nach jedem Öffnen entlüften. Beim geregelten Kreis lässt sich die Pumpe dafür über die Werkstattsoftware gezielt ansteuern"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-020",
+        "D4F-E87-010"
+      ]
+    },
+    {
+      "id": "D4F-E87-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E87 · Zwei Familien, Ölstand, Adaption",
+      "valid": "E87 · 2004–2013 · mit Steptronic",
+      "summary": "Im 1er stehen Sechsgang-Automatikgetriebe zweier Herstellerfamilien nebeneinander, mit unterschiedlicher Ölspezifikation. Welche verbaut ist, sagt das Getriebeschild — und nur das.",
+      "points": [
+        "Getriebeschild lesen und die Familie bestimmen, bevor Öl gekauft wird. Die Ölspezifikation folgt dem Getriebe; im Bestand dieses Projekts ist die Verwechslung schon einmal belegt korrigiert worden",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst, danach die Adaptionswerte ansehen",
+        "Harter, reproduzierbarer Ruck in einem bestimmten Gangwechsel: Steckverbindung der Mechatronik auf Ölfeuchtigkeit prüfen, bevor ein Steuergerät bestellt wird",
+        "Ölstand nach Prozedur bei betriebswarmem Öl über die Kontrollschraube, Fahrzeug eben, Motor läuft. Öltemperatur nur über das Getriebesteuergerät auslesbar",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-001",
+        "D4F-E87-002"
+      ]
+    },
+    {
+      "id": "D4F-E87-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E87 · Radlager-Encoderring, Lenkwinkel, sporadische Fehler",
+      "valid": "E87 · 2004–2013 · DSC",
+      "summary": "Im E87 sitzt das Geberrad der Raddrehzahlmessung als magnetischer Ring im Radlager. Die häufigste Ursache für einen „Sensorfehler“ ist deshalb kein Sensor, sondern Korrosion im Lager — und die erkennt man nur beim Ausbau.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst lesen; er benennt in der Regel das betroffene Rad",
+        "Vor dem Sensortausch die Bohrung ansehen: Rostaufbau am Radlager drückt den Sensor aus seiner Lage und erzeugt schwache oder unplausible Signale. Ein neuer Sensor ändert daran nichts",
+        "Kabel an den Radläufen auf Scheuerstellen absuchen — Fehler, die nur beim Einfedern oder Einlenken kommen, sind fast immer Kabelbrüche",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung, Spur oder Lenkrad neu abgleichen, sonst meldet die Regelung dauerhaft ohne defektes Bauteil",
+        "Nach dem Eingriff Speicher löschen, Probefahrt mit Geradeausfahrt und Kurven, dann erneut lesen — erst dann ist der Fehler beurteilt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-040",
+        "D4F-E87-001"
+      ]
+    },
+    {
+      "id": "D4F-E87-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E87 · Hochdruckseite bei N43/N54/N55",
+      "valid": "E87 · 2004–2013 · N43, N53, N54, N55",
+      "summary": "Die direkteinspritzenden Motoren im 1er haben eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor. Fehlerbilder aus beiden Stufen sehen im Speicher gleich aus — die Trennung gelingt nur über den Vergleich beider Drücke unter Last.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Fällt die Vorförderung mit steigender Drehzahl ab, ist die Tankpumpe die Ursache und die Hochdruckpumpe nur das Opfer",
+        "Hält die Vorförderung und der Systemdruck erreicht seine Vorgabe nicht, liegt der Fehler auf der Hochdruckseite",
+        "Kommen nach einem Pumpentausch dieselben Einträge in kurzer Zeit wieder, wurde die falsche Stufe getauscht — das ist ein Diagnosefehler, kein Teilefehler",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang überhaupt Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung",
+        "Der Raildrucksensor kann selbst die Ursache sein und einen Druck melden, den es nicht gibt. Sein Signal gegen den mitgemessenen Druck halten",
+        "Bei den Schichtlade-Motoren gehören Gemischfehler und Kraftstoffdruck zusammen betrachtet — eine magere Meldung ist hier nicht automatisch Falschluft"
+      ],
+      "engines": [
+        "N43",
+        "N54",
+        "N55"
+      ],
+      "details": [
+        "D4F-E87-010",
+        "D4F-E87-020"
+      ]
+    },
+    {
+      "id": "D4F-E87-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E87 · Schichtladung, NOx-Speicher, Partikelfilter",
+      "valid": "E87 · 2004–2013 · alle Motoren",
+      "summary": "Im 1er treffen drei Abgaskonzepte aufeinander: konventionelle Benziner, die schichtladenden Direkteinspritzer mit NOx-Speicherkatalysator und die Diesel mit Partikelfilter. Jedes hat eigene Regenerationsvorgänge, die man kennen muss, um Fehler zu deuten.",
+      "points": [
+        "Bei den schichtladenden Motoren gehört der NOx-Speicherkatalysator zum System und wird zyklisch regeneriert. Was wie ein sporadischer Gemischfehler aussieht, kann ein normaler Regenerationsvorgang sein",
+        "Gemischfehler bei diesen Motoren nicht ohne Blick auf den Kraftstoffdruck deuten — magere Meldungen kommen dort ebenso oft aus der Hochdruckseite wie aus Falschluft",
+        "Beim Diesel Beladung und Differenzdruck im Livedatenstrom ansehen und die Druckschläuche prüfen, bevor der Filter verurteilt wird",
+        "Häufig abgebrochene Regenerationen machen den Filter voller statt leerer — das ist ein eigener Befund und keine Folge",
+        "Abgasleck vor oder zwischen den Sonden erzeugt magere Meldungen ohne Fehler in der Gemischbildung; es wird vor jedem Bauteilurteil ausgeschlossen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-010",
+        "D4F-E87-020"
+      ]
+    },
+    {
+      "id": "D4F-E87-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E87 · Zustandsbasierter Service und Batterieregistrierung",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der 1er führt den zustandsbasierten Service mit einzeln geführten Umfängen. Die Regel, die dabei am häufigsten übersehen wird, betrifft nicht das Öl, sondern die Batterie: ein Wechsel muss angemeldet werden, sonst altert die neue vorzeitig.",
+      "points": [
+        "Serviceumfänge einzeln zurücksetzen. Pauschales Zurücksetzen löscht die Information, welche Position tatsächlich fällig war",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren — ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten Batterie",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab. Das sieht nach Elektrikfehler aus und ist keiner",
+        "Ölstand wird bei den neueren Motoren elektronisch bestimmt und braucht definierte Bedingungen — ein Wert kurz nach dem Start ist keine Messung",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-040",
+        "D4F-E87-001"
+      ]
     }
   ]
 }

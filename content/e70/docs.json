@@ -213,6 +213,135 @@
         "D4F-E70-001",
         "D4F-E70-002"
       ]
+    },
+    {
+      "id": "D4F-E70-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis X5 · Grosser Kreis, Zusatzkühler, Entlüften",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Der X5 trägt mehr Kreis als eine Limousine: Motorkühler, Getriebeölkühler und je nach Ausstattung weitere Wärmetauscher hängen zusammen. Das macht das Entlüften zum eigentlichen Arbeitsschritt und die Suche nach einem Leck unübersichtlich.",
+      "points": [
+        "Vor der Bauteilsuche den Systemdruck aufbauen und halten lassen. Fällt er ab, ohne dass aussen etwas tropft, geht die Suche nach innen — nicht weiter am Kühler",
+        "Bei den Motoren mit elektrischer Wasserpumpe zuerst den Fehlerspeicher der Motorsteuerung lesen: Pumpenausfall meldet sich dort und führt zu spürbarer Leistungsreduzierung",
+        "Kühlmittelverlust ohne Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen — Kunststoff unter Wärme und Druck ist im E70 dieselbe Schwachstelle wie in den Limousinen",
+        "Entlüften ist beim E70 nicht optional: der Kreis ist lang und hat hohe Punkte. Nach jedem Öffnen so lange laufen lassen, bis der obere Schlauch durchgängig warm ist und die Heizung dauerhaft heiss bleibt",
+        "Temperaturausschläge, die kommen und gehen und zu keinem Leck passen, sind fast immer Restluft — nicht als Thermostatfehler tauschen, bevor sauber entlüftet wurde"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
+      ]
+    },
+    {
+      "id": "D4F-E70-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E70 · Bestimmen, Ölstand, Zusammenspiel mit xDrive",
+      "valid": "E70 · 2006–2013 · mit Automatik",
+      "summary": "Im X5 hängt das Automatikgetriebe am Verteilergetriebe, und Fehlerbilder aus beiden Richtungen sehen sich ähnlich. Ruckeln und Rupfen müssen deshalb zuerst zugeordnet werden, bevor am Getriebe gearbeitet wird.",
+      "points": [
+        "Fehlerspeicher von Getriebe- und Verteilergetriebesteuergerät gemeinsam lesen. Rupfen beim Rangieren kommt häufiger aus dem Antriebsstrang als aus der Gangschaltung",
+        "Getriebe über das Schild bestimmen, danach die Ölspezifikation wählen — die Sorte folgt dem Getriebe, nicht dem Fahrzeug",
+        "Ölstand nur nach Prozedur bei betriebswarmem Öl über die Kontrollschraube, Fahrzeug eben. Die Öltemperatur kommt aus dem Getriebesteuergerät, nicht aus einem Aussenfühler",
+        "Adaptionswerte auslesen und beurteilen, bevor Bauteile getauscht werden — sie zeigen den Zustand der Kupplungspakete",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-004",
+        "D4F-E70-001"
+      ]
+    },
+    {
+      "id": "D4F-E70-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse E70 · DSC, Encoderring und elektromechanische Parkbremse",
+      "valid": "E70 · 2006–2013 · DSC, EMF",
+      "summary": "Der X5 hat neben der Fahrdynamikregelung eine elektromechanische Parkbremse. Sie hat eine Regel, die keine Empfehlung ist: vor jedem Belagwechsel hinten muss der Steller über die Werkstattsoftware in Servicestellung gefahren werden.",
+      "points": [
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt den Steller — das ist kein Risiko, sondern der übliche Ausgang",
+        "Nach dem Zusammenbau den Steller über dieselbe Funktion wieder zustellen und die Parkbremse mehrfach betätigen, bevor das Fahrzeug bewegt wird",
+        "Meldung „Parkbremse“ ohne mechanischen Befund: zuerst Fehlerspeicher des Parkbremsensteuergeräts lesen — Steller, Verkabelung und Schalter melden sich getrennt",
+        "Bei DSC-Meldungen gilt die Regel dieser Generation: der magnetische Encoderring sitzt im Radlager. Ein korrodiertes Lager erzeugt Sensorfehler, die kein Sensortausch behebt",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen; sporadische Fehler beim Einfedern sind fast immer Kabel",
+        "Generische OBD-Geräte kommen an Parkbremse und DSC nicht heran — für Servicestellung und Sensorabgleich ist die Werkstattsoftware Voraussetzung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ]
+    },
+    {
+      "id": "D4F-E70-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E70 · Zwei Stufen, Rücklaufmenge, Startdruck",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Im X5 stehen direkteinspritzende Benziner und Common-Rail-Diesel nebeneinander. Beide haben eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor, und bei beiden gilt: der Speicher meldet fehlenden Druck, nicht dessen Ursache.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt die Vorförderung ab, bricht alles dahinter mit ihr zusammen — das ist die Trennung, die den teuren Fehlkauf verhindert",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor, der zu viel zurückgibt, zieht den Raildruck herunter, obwohl Pumpe und Regler in Ordnung sind",
+        "Kommen nach einem Pumpentausch dieselben Einträge in kurzer Zeit wieder, wurde die falsche Stufe getauscht",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor etwas ausgebaut wird",
+        "Der Raildrucksensor kann selbst melden, was es nicht gibt: sein Signal gegen einen mitgemessenen Druck halten, bevor die Pumpe verdächtigt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ]
+    },
+    {
+      "id": "D4F-E70-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E70 · Partikelfilter, Differenzdruck, Regeneration",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Beim X5 dominiert der Diesel, und damit die Abgasnachbehandlung. Die häufigste Meldung betrifft den Partikelfilter — und in einem erheblichen Teil der Fälle ist nicht der Filter das Problem, sondern der Weg, auf dem sein Zustand gemessen wird.",
+      "points": [
+        "Beladung und Differenzdruck im Livedatenstrom ansehen, bevor irgendetwas ausgebaut wird. Der Wert im Ruhezustand und der Verlauf unter Last sagen zusammen mehr als jeder Einzelwert",
+        "Die Druckschläuche zum Sensor zuerst prüfen: sie setzen sich mit Russkondensat zu und melden dann Werte, die es nicht gibt. Ein voller Filter und ein verstopfter Schlauch sehen im Speicher gleich aus",
+        "Nach Werkstattarbeiten die Schlauchzuordnung prüfen — vertauschte Anschlüsse erzeugen unplausible Werte, teils mit negativem Vorzeichen",
+        "Häufig abgebrochene Regenerationen sind selbst der Befund: der Filter wird dabei voller statt leerer. Die Ursache liegt im Fahrprofil oder in einer Störung, die den Vorgang abbricht",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — ein hängendes Thermostat zeigt sich deshalb zuerst als Abgasproblem",
+        "Zugesetzter Filter erzeugt Abgasgegendruck und damit einen drehzahlabhängigen Leistungsverlust"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ]
+    },
+    {
+      "id": "D4F-E70-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E70 · Zustandsbasierter Service, Batterie, Parkbremse",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 kommen drei Dinge zusammen, die vor jeder Wartung geklärt sein müssen: der zustandsbasierte Service mit einzeln geführten Umfängen, die Anmeldepflicht beim Batteriewechsel und die elektromechanische Parkbremse, die vor dem Belagwechsel in Servicestellung gehört.",
+      "points": [
+        "Serviceumfänge werden einzeln geführt und einzeln zurückgesetzt — pauschales Zurücksetzen vernichtet die Information, welche Position fällig war",
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt den Steller",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren. Ohne Registrierung lädt das Fahrzeug nach dem Kennfeld der alten Batterie",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab, die nicht abgeschaltet gehören — das sieht nach Elektrikfehler aus und ist keiner",
+        "Ölstand wird elektronisch bestimmt und braucht definierte Bedingungen; ein Wert kurz nach dem Start ist keine Messung",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
+      ]
     }
   ]
 }

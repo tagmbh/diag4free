@@ -188,6 +188,90 @@
         "D4F-E28-001",
         "D4F-E28-003"
       ]
+    },
+    {
+      "id": "D4F-E28-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M30 · Thermostat, Viscolüfter, Kühler",
+      "valid": "E28 · 1981–1988 · alle Motoren",
+      "summary": "Riemengetriebene Wasserpumpe, Thermostat im Gehäuse am Kopf, Viscolüfter vor dem Kühler. Der Kreis ist rein mechanisch — es gibt kein Steuergerät, das den Fehler meldet. Eingegrenzt wird deshalb über Temperaturverlauf und Anfassen, nicht über den Fehlerspeicher.",
+      "points": [
+        "Erstes Bild lesen: Zeiger klettert im Stand und fällt bei Fahrtwind → Luftweg oder Viscolüfter. Zeiger klettert bei Fahrt und fällt im Stand → Durchflussproblem, also Thermostat oder Pumpe",
+        "Thermostat vergleichend prüfen: Motor kalt starten, oberen Kühlerschlauch in der Hand halten. Er muss lange kalt bleiben und dann zügig warm werden. Bleibt er von Anfang an lauwarm, hängt das Thermostat offen; bleibt er kalt während die Anzeige steigt, hängt es zu",
+        "Viscokupplung im warmen Leerlauf beurteilen: der Lüfter muss hörbar zupacken und sich kalt von Hand leicht, warm spürbar schwer drehen lassen. Eine Drehzahlvorgabe liegt hier nicht belegt vor — der Vergleich kalt gegen warm trägt die Aussage",
+        "Kühler von aussen abtasten, wenn er warm ist: kalte Felder heissen zugesetzte Rohre. Das ist ein Vergleich über die Fläche, kein Messwert",
+        "Ausgleichsbehälter und Deckel gehören zur Prüfung — ein Deckel, der den Druck nicht mehr hält, senkt den Siedepunkt und der Motor kocht bei Anzeige „normal“"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-004",
+        "D4F-E28-006"
+      ]
+    },
+    {
+      "id": "D4F-E28-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E28 · Bestimmen, Ölstand, Schaltverhalten",
+      "valid": "E28 · 1981–1988 · mit Automatik",
+      "summary": "Das Automatikgetriebe des E28 ist rein hydraulisch gesteuert — es gibt kein Steuergerät und keinen Fehlerspeicher. Die Diagnose läuft über Ölzustand, Ölstand und das Schaltverhalten unter definierter Last, in dieser Reihenfolge.",
+      "points": [
+        "Zuerst bestimmen, was verbaut ist: die Bezeichnung steht auf dem Getriebeschild. Ölsorte und Prozedur richten sich nach dem Getriebe, nicht nach dem Fahrzeug — das ist der teuerste Fehler in diesem Bereich",
+        "Ölzustand vor Ölstand beurteilen: helles Rot ist in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung. Ein Ölwechsel repariert die nicht, er macht sie nur sichtbar",
+        "Ölstand nur betriebswarm, Fahrzeug eben, Motor läuft und Wählhebel vorher durch alle Stellungen — kalt gemessen ist jeder Wert falsch",
+        "Schaltverhalten vergleichend beurteilen: Schaltpunkte bei gleichbleibender Teillast, dann bei Vollgas. Verschleppte oder harte Übergänge in beiden Fällen deuten auf Hydraulik, nur in einem Fall eher auf die Ansteuerung",
+        "Der Wandler kann rutschen, ohne dass ein Gang fehlt: Drehzahl steigt bei konstanter Geschwindigkeit ohne Schaltvorgang. Das ist ein Befund, kein Fahrgefühl"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-004",
+        "D4F-E28-002"
+      ]
+    },
+    {
+      "id": "D4F-E28-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse und ABS E28 · Hydraulik prüfen, Regelung beurteilen",
+      "valid": "E28 · 1981–1988 · mit und ohne ABS",
+      "summary": "Die frühe ABS-Anlage arbeitet mit einem eigenen Steuergerät, meldet aber nichts über einen Diagnosestecker im heutigen Sinn. Beurteilt wird über die Kontrollleuchte, die Raddrehzahlgeber und den Zustand der Hydraulik — in dieser Reihenfolge.",
+      "points": [
+        "Kontrollleuchte lesen lernen: sie muss beim Einschalten angehen und nach dem Anfahren erlöschen. Bleibt sie an, hat die Regelung abgeschaltet und die Bremse arbeitet ohne ABS weiter — fahrbar, aber ohne Regelung",
+        "Raddrehzahlgeber vergleichend prüfen: Widerstand aller vier Geber gegeneinander halten. Ein Geber, der deutlich aus der Reihe fällt, ist der Kandidat — eine belegte Sollwerttabelle liegt hier nicht vor, der Vergleich untereinander trägt die Aussage",
+        "Geberspalt und Polrad ansehen: Rost und Schmutz am Zahnkranz erzeugen dasselbe Bild wie ein defekter Geber, und zwar häufiger",
+        "Kabel zu den Gebern an den Radläufen auf Scheuerstellen prüfen — Brüche entstehen dort, wo das Kabel mitfedert, und zeigen sich nur in bestimmten Lenk- oder Federstellungen",
+        "Bremsflüssigkeit gehört zum Bereich: sie zieht Wasser und senkt damit den Siedepunkt. Das merkt man erst bei warmer Bremse, wenn das Pedal weich wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-001",
+        "D4F-E28-004"
+      ]
+    },
+    {
+      "id": "D4F-E28-104",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E28 · Lambdaregelung und Katalysator beurteilen",
+      "valid": "E28 · späte Baujahre mit Katalysator",
+      "summary": "In den späten E28 kommt der geregelte Katalysator mit Lambdasonde. Die Regelung ist einfach aufgebaut, und genau das macht sie gut prüfbar: das Sondensignal muss sich bewegen, und die Bewegung sagt mehr als jeder Standwert.",
+      "points": [
+        "Sondensignal im warmen Leerlauf beobachten: es muss zügig zwischen fett und mager pendeln. Ein Signal, das steht, ist der Befund — unabhängig davon, auf welchem Wert es steht",
+        "Ein träges oder stehendes Signal kann von der Sonde kommen oder von ihrer Heizung. Beide werden getrennt geprüft, bevor die Sonde bestellt wird",
+        "Abgasleck vor der Sonde erzeugt ein dauerhaft mageres Bild, ohne dass Gemischbildung oder Sonde etwas dafür können. Krümmer und Flansche zuerst absuchen",
+        "Falschluft im Ansaugtrakt erzeugt dasselbe magere Bild — die beiden werden über die Stelle unterschieden, an der die Luft eintritt, nicht über das Signal",
+        "Ein zugesetzter Katalysator zeigt sich als Leistungsverlust, der mit der Drehzahl zunimmt und nach Abkühlen kurzzeitig besser wird — das ist ein Gegendruckproblem und kein Gemischproblem"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-006",
+        "D4F-E28-005"
+      ]
     }
   ]
 }

@@ -209,6 +209,112 @@
       "details": [
         "D4F-E34-001"
       ]
+    },
+    {
+      "id": "D4F-E34-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M50/M60 · Eingrenzen ohne Fehlerspeicher",
+      "valid": "E34 · 1987–1996 · alle Motoren",
+      "summary": "Beim E34 laufen Reihensechszylinder und der M60-V8 im selben Fahrzeug, und sie kühlen unterschiedlich: der V8 hat zwei Zylinderbänke und damit zwei Wege, auf denen Luft stehen bleiben kann. Die Eingrenzung ist bei beiden dieselbe, das Entlüften nicht.",
+      "points": [
+        "Verlauf zuerst: steigt die Anzeige im Stand und fällt bei Fahrt, liegt es am Luftweg (Viscolüfter, Zarge, Kühlerfläche). Umgekehrt am Wasserweg (Thermostat, Pumpe, Verstopfung)",
+        "Ausgleichsbehälter und Deckel sind Verschleissteile — ein Deckel, der den Systemdruck nicht mehr hält, lässt das Kühlmittel früher sieden, ohne dass die Anzeige auffällig wird",
+        "M60: nach jedem Öffnen des Kreises gründlich entlüften. Eine Luftblase in einer der beiden Bänke erzeugt eine Überhitzung, die kommt und geht und keiner Undichtigkeit zuzuordnen ist",
+        "Thermostat vergleichend über den oberen Kühlerschlauch prüfen — lange kalt, dann zügig warm ist richtig; von Anfang an lauwarm heisst offen hängend",
+        "Weisser, süsslich riechender Auspuffdampf zusammen mit Kühlmittelverlust ohne Aussenleck gehört in die Kopfdichtungsprüfung, nicht in die Kühlerprüfung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-005",
+        "D4F-E34-006"
+      ]
+    },
+    {
+      "id": "D4F-E34-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E34 · Getriebe bestimmen, Öl, Adaption",
+      "valid": "E34 · 1987–1996 · mit Automatik",
+      "summary": "Der E34 fällt in die Zeit, in der die Automatik elektronisch wird: je nach Baujahr und Motor steht ein rein hydraulisch gesteuertes oder ein Getriebe mit eigenem Steuergerät im Wagen. Der Prüfweg unterscheidet sich grundlegend.",
+      "points": [
+        "Erst bestimmen: Getriebeschild lesen und feststellen, ob ein Getriebesteuergerät vorhanden ist. Gibt es eines, beginnt die Diagnose am Fehlerspeicher; gibt es keines, am Ölmessstab",
+        "ATF-Sorte richtet sich nach dem verbauten Getriebe, nicht nach der Baureihe. Bei Fahrzeugen dieses Alters ist ein Getriebetausch aus der Vergangenheit möglich — dem Schild glauben, nicht dem Typenschein",
+        "Ölzustand vor Ölstand: braun und verbrannt riechend heisst thermische Vorschädigung. Ein Ölwechsel darauf ist keine Reparatur",
+        "Ölstand betriebswarm, eben, Motor läuft, Wählhebel vorher durch alle Stellungen",
+        "Bei elektronischer Steuerung nach einem Eingriff die Adaption zurücksetzen und anschliessend gemischt fahren — sonst schaltet das Getriebe auf gelernte Werte, die nicht mehr passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-005",
+        "D4F-E34-002"
+      ]
+    },
+    {
+      "id": "D4F-E34-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E34 · Förderung, Filter, Druckhaltung",
+      "valid": "E34 · 1987–1996 · alle Motoren",
+      "summary": "Auch im E34 ist der Kraftstoffkreis ein Niederdrucksystem. Bei den grösseren Motoren arbeitet er näher an seiner Grenze, weshalb eine nachlassende Förderung dort früher auffällt — und zwar unter Last, nicht im Leerlauf.",
+      "points": [
+        "Ruckeln und Leistungseinbruch unter Last bei sauberem Leerlauf ist das Bild einer nachlassenden Förderung oder eines zugesetzten Filters — nicht eines Zündungsproblems",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen. Der Einbruch tritt unter Last auf und wird von einer Momentaufnahme nicht gefunden",
+        "Druckregler über den Unterdruckschlauch prüfen: der Druck muss sich beim Abziehen sichtbar ändern, und im Schlauch darf kein Kraftstoff stehen",
+        "Filter vor Pumpe tauschen — er ist billiger und häufiger die Ursache",
+        "Pumpenrelais und Versorgungsspannung mitprüfen: eine unterversorgte Pumpe fördert zu wenig, ohne defekt zu sein",
+        "Verliert das System über Nacht den Druck, zeigt sich das als schlechter Warmstart oder langes Orgeln nach Standzeit — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-007",
+        "D4F-E34-002"
+      ]
+    },
+    {
+      "id": "D4F-E34-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E34 · Sonde, Katalysator, Gegendruck",
+      "valid": "E34 · 1987–1996 · mit Katalysator",
+      "summary": "Im E34 wird die Abgasanlage bei den grösseren Motoren zweiflutig, und damit bekommt jede Bank ihre eigene Regelung. Das hilft bei der Diagnose: was nur eine Bank betrifft, kann nicht am gemeinsamen Kraftstoffkreis liegen.",
+      "points": [
+        "Bei zweiflutiger Anlage die Sondensignale beider Bänke nebeneinander beobachten. Weicht nur eine Bank ab, ist die gemeinsame Versorgung als Ursache praktisch ausgeschlossen",
+        "Sondensignal muss im warmen Leerlauf zügig pendeln — ein stehendes Signal ist der Befund, unabhängig vom Wert",
+        "Abgasleck vor der Sonde zuerst ausschliessen: es erzeugt ein dauerhaft mageres Bild ohne Fehler in der Gemischbildung",
+        "Sondenheizung getrennt prüfen; eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — Gegendruck, nicht Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-007",
+        "D4F-E34-005"
+      ]
+    },
+    {
+      "id": "D4F-E34-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E34 · Serviceanzeige und Zustandsbestimmung",
+      "valid": "E34 · 1987–1996",
+      "summary": "Wie beim E30 führt eine Anzeige im Kombiinstrument den Wartungsbedarf, und wie dort altert ihre Stromversorgung. Bei einem Fahrzeug dieses Alters ist der Zustand die verlässlichere Auskunft als die Anzeige.",
+      "points": [
+        "Die Anzeige bewertet den Betrieb, nicht nur die Kilometer — Kurzstreckenbetrieb fordert früher Service. Das ist gewollt",
+        "Alterung der Speicherversorgung im Instrument erzeugt springende oder dauerhafte Serviceanzeigen. Das ist ein Anzeigefehler und kein Wartungsbedarf",
+        "Bei unbekannter Historie über den Zustand bestimmen statt über die Anzeige: Ölzustand, Bremsflüssigkeit, Filter, Zustand der Zündkerzen",
+        "Bremsflüssigkeit ist zeitabhängig, nicht kilometerabhängig — sie zieht Wasser, auch wenn das Fahrzeug steht",
+        "Nach jeder Rückstellung festhalten, was tatsächlich ausgeführt wurde. Eine zurückgestellte Anzeige ohne Arbeit führt den nächsten Halter in die Irre"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-007"
+      ]
     }
   ]
 }

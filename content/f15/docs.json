@@ -194,6 +194,69 @@
         "D4F-F15-001",
         "D4F-F15-002"
       ]
+    },
+    {
+      "id": "D4F-F15-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F15 · Mehrere Kreise, Entlüften mit Software",
+      "valid": "F15 · 2013–2018 · alle Motoren",
+      "summary": "Der X5 der F-Generation trägt Motorkühlung, Ladeluftkühlung und Getriebeölkühlung in einem eng gepackten Vorderwagen. Der Kreis ist geregelt und meldet Abweichungen selbst; das Entlüften nach einem Eingriff läuft über die Werkstattsoftware, nicht über einen offenen Deckel.",
+      "points": [
+        "Fehlerspeicher über alle beteiligten Steuergeräte lesen — Motor, Getriebe und Abgasnachbehandlung melden getrennt, und erst zusammen ergeben die Einträge ein Bild",
+        "Temperaturmeldung mit Leistungsreduzierung deutet auf die geregelte Wasserpumpe. Das Notlaufverhalten ist Schutz, kein Folgeschaden — es macht den Fehler nur deutlich sichtbarer als früher",
+        "Kühlmittelverlust ohne Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen; der Kreis steht unter Druck und Risse zeigen sich oft nur betriebswarm",
+        "Entlüften nach jedem Öffnen über die Werkstattsoftware mit gezielt angesteuerter Pumpe. Der Kreis ist lang und hat hohe Punkte — Warmlaufen mit offenem Deckel reicht hier nicht zuverlässig",
+        "Wiederkehrende Temperaturausschläge ohne passenden Speichereintrag und ohne Leck sind fast immer Restluft, nicht ein defektes Thermostat"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-006",
+        "D4F-F15-005"
+      ]
+    },
+    {
+      "id": "D4F-F15-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F15 · Ölstand, Adaption, Antriebsstrang",
+      "valid": "F15 · 2013–2018 · mit Achtgang-Automatik",
+      "summary": "Im X5 hängt die Achtgang-Automatik am Verteilergetriebe. Rupfen und Ruckeln müssen deshalb zuerst zugeordnet werden — und der Ölstand wird über eine Kontrollschraube in einem engen Temperaturfenster geprüft, nicht am Messstab.",
+      "points": [
+        "Fehlerspeicher von Getriebe- und Verteilergetriebesteuergerät gemeinsam lesen, bevor am Getriebe gearbeitet wird. Rupfen beim Rangieren kommt häufig aus dem Antriebsstrang",
+        "Ölstand nur im vorgeschriebenen Temperaturfenster mit ausgelesener Getriebeöltemperatur prüfen — ohne Diagnosegerät ist die Prüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug dabei waagerecht stellen, nicht nur anheben. Schräglage verfälscht den Stand stärker als die meisten Messfehler",
+        "Bei vorhandenem Getriebeölkühler bleibt nach einem Wechsel Altöl im Kreis. Eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Adaption nach Eingriffen an Mechatronik oder Getriebe zurücksetzen, danach gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-004",
+        "D4F-F15-001"
+      ]
+    },
+    {
+      "id": "D4F-F15-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F15 · Common Rail und Direkteinspritzung",
+      "valid": "F15 · 2013–2018 · alle Motoren",
+      "summary": "Der X5 dieser Generation fährt überwiegend Common-Rail-Diesel und direkteinspritzende Benziner. Beide haben zwei Druckstufen, und bei beiden entscheidet der Vergleich der Drücke unter Last darüber, welches Bauteil überhaupt in Frage kommt.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben — sackt die Vorförderung ab, ist die Tankpumpe die Ursache und alles dahinter nur betroffen",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: zu hohe Rücklaufmenge an einem Injektor zieht den Raildruck herunter, ohne Pumpenfehler",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung beziehungsweise Vorglühen",
+        "Dieselben Einträge kurz nach einem Pumpentausch bedeuten, dass die falsche Stufe getauscht wurde",
+        "Raildrucksensor gegen einen unabhängig gemessenen Druck halten, bevor eine Pumpe bestellt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-005",
+        "D4F-F15-001"
+      ]
     }
   ]
 }

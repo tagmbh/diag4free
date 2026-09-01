@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T23:49:19.963Z",
+  "generated": "2026-09-01T02:12:56.687Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -470,6 +470,94 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M30 · Thermostat, Viscolüfter, Kühler",
+      "valid": "E28 · 1981–1988 · alle Motoren",
+      "summary": "Riemengetriebene Wasserpumpe, Thermostat im Gehäuse am Kopf, Viscolüfter vor dem Kühler. Der Kreis ist rein mechanisch — es gibt kein Steuergerät, das den Fehler meldet. Eingegrenzt wird deshalb über Temperaturverlauf und Anfassen, nicht über den Fehlerspeicher.",
+      "points": [
+        "Erstes Bild lesen: Zeiger klettert im Stand und fällt bei Fahrtwind → Luftweg oder Viscolüfter. Zeiger klettert bei Fahrt und fällt im Stand → Durchflussproblem, also Thermostat oder Pumpe",
+        "Thermostat vergleichend prüfen: Motor kalt starten, oberen Kühlerschlauch in der Hand halten. Er muss lange kalt bleiben und dann zügig warm werden. Bleibt er von Anfang an lauwarm, hängt das Thermostat offen; bleibt er kalt während die Anzeige steigt, hängt es zu",
+        "Viscokupplung im warmen Leerlauf beurteilen: der Lüfter muss hörbar zupacken und sich kalt von Hand leicht, warm spürbar schwer drehen lassen. Eine Drehzahlvorgabe liegt hier nicht belegt vor — der Vergleich kalt gegen warm trägt die Aussage",
+        "Kühler von aussen abtasten, wenn er warm ist: kalte Felder heissen zugesetzte Rohre. Das ist ein Vergleich über die Fläche, kein Messwert",
+        "Ausgleichsbehälter und Deckel gehören zur Prüfung — ein Deckel, der den Druck nicht mehr hält, senkt den Siedepunkt und der Motor kocht bei Anzeige „normal“"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-004",
+        "D4F-E28-006"
+      ],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E28 · Bestimmen, Ölstand, Schaltverhalten",
+      "valid": "E28 · 1981–1988 · mit Automatik",
+      "summary": "Das Automatikgetriebe des E28 ist rein hydraulisch gesteuert — es gibt kein Steuergerät und keinen Fehlerspeicher. Die Diagnose läuft über Ölzustand, Ölstand und das Schaltverhalten unter definierter Last, in dieser Reihenfolge.",
+      "points": [
+        "Zuerst bestimmen, was verbaut ist: die Bezeichnung steht auf dem Getriebeschild. Ölsorte und Prozedur richten sich nach dem Getriebe, nicht nach dem Fahrzeug — das ist der teuerste Fehler in diesem Bereich",
+        "Ölzustand vor Ölstand beurteilen: helles Rot ist in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung. Ein Ölwechsel repariert die nicht, er macht sie nur sichtbar",
+        "Ölstand nur betriebswarm, Fahrzeug eben, Motor läuft und Wählhebel vorher durch alle Stellungen — kalt gemessen ist jeder Wert falsch",
+        "Schaltverhalten vergleichend beurteilen: Schaltpunkte bei gleichbleibender Teillast, dann bei Vollgas. Verschleppte oder harte Übergänge in beiden Fällen deuten auf Hydraulik, nur in einem Fall eher auf die Ansteuerung",
+        "Der Wandler kann rutschen, ohne dass ein Gang fehlt: Drehzahl steigt bei konstanter Geschwindigkeit ohne Schaltvorgang. Das ist ein Befund, kein Fahrgefühl"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-004",
+        "D4F-E28-002"
+      ],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse und ABS E28 · Hydraulik prüfen, Regelung beurteilen",
+      "valid": "E28 · 1981–1988 · mit und ohne ABS",
+      "summary": "Die frühe ABS-Anlage arbeitet mit einem eigenen Steuergerät, meldet aber nichts über einen Diagnosestecker im heutigen Sinn. Beurteilt wird über die Kontrollleuchte, die Raddrehzahlgeber und den Zustand der Hydraulik — in dieser Reihenfolge.",
+      "points": [
+        "Kontrollleuchte lesen lernen: sie muss beim Einschalten angehen und nach dem Anfahren erlöschen. Bleibt sie an, hat die Regelung abgeschaltet und die Bremse arbeitet ohne ABS weiter — fahrbar, aber ohne Regelung",
+        "Raddrehzahlgeber vergleichend prüfen: Widerstand aller vier Geber gegeneinander halten. Ein Geber, der deutlich aus der Reihe fällt, ist der Kandidat — eine belegte Sollwerttabelle liegt hier nicht vor, der Vergleich untereinander trägt die Aussage",
+        "Geberspalt und Polrad ansehen: Rost und Schmutz am Zahnkranz erzeugen dasselbe Bild wie ein defekter Geber, und zwar häufiger",
+        "Kabel zu den Gebern an den Radläufen auf Scheuerstellen prüfen — Brüche entstehen dort, wo das Kabel mitfedert, und zeigen sich nur in bestimmten Lenk- oder Federstellungen",
+        "Bremsflüssigkeit gehört zum Bereich: sie zieht Wasser und senkt damit den Siedepunkt. Das merkt man erst bei warmer Bremse, wenn das Pedal weich wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-001",
+        "D4F-E28-004"
+      ],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-104",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E28 · Lambdaregelung und Katalysator beurteilen",
+      "valid": "E28 · späte Baujahre mit Katalysator",
+      "summary": "In den späten E28 kommt der geregelte Katalysator mit Lambdasonde. Die Regelung ist einfach aufgebaut, und genau das macht sie gut prüfbar: das Sondensignal muss sich bewegen, und die Bewegung sagt mehr als jeder Standwert.",
+      "points": [
+        "Sondensignal im warmen Leerlauf beobachten: es muss zügig zwischen fett und mager pendeln. Ein Signal, das steht, ist der Befund — unabhängig davon, auf welchem Wert es steht",
+        "Ein träges oder stehendes Signal kann von der Sonde kommen oder von ihrer Heizung. Beide werden getrennt geprüft, bevor die Sonde bestellt wird",
+        "Abgasleck vor der Sonde erzeugt ein dauerhaft mageres Bild, ohne dass Gemischbildung oder Sonde etwas dafür können. Krümmer und Flansche zuerst absuchen",
+        "Falschluft im Ansaugtrakt erzeugt dasselbe magere Bild — die beiden werden über die Stelle unterschieden, an der die Luft eintritt, nicht über das Signal",
+        "Ein zugesetzter Katalysator zeigt sich als Leistungsverlust, der mit der Drehzahl zunimmt und nach Abkühlen kurzzeitig besser wird — das ist ein Gegendruckproblem und kein Gemischproblem"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E28-006",
+        "D4F-E28-005"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -805,6 +893,139 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M40 · Thermostat, Viscolüfter, Ausgleichsbehälter",
+      "valid": "E30 · 1982–1994 · M20, M40, M42, S14",
+      "summary": "Der E30-Kreis altert an drei Stellen: Kunststoffkästen des Kühlers, Ausgleichsbehälter und die Schläuche. Dazu kommt beim M20 der Riementrieb der Wasserpumpe. Die Eingrenzung läuft über den Temperaturverlauf, weil der Kreis nichts in einen Fehlerspeicher schreibt.",
+      "points": [
+        "Kühlmittelverlust ohne sichtbare Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen — der Kunststoff wird spröde und reisst an den Nähten, oft erst unter Druck sichtbar",
+        "Überhitzung nur im Stand und im Stau deutet auf den Luftweg: Viscolüfter, Lüfterzarge, verlegter Kühler. Überhitzung nur bei Fahrt deutet auf den Wasserweg: Thermostat, Pumpe, verstopfter Kühler",
+        "Thermostat vergleichend: oberer Kühlerschlauch bleibt beim Kaltstart lange kalt und wird dann zügig warm. Lauwarm von Anfang an = hängt offen, Motor wird nicht warm und die Heizung bleibt schwach",
+        "M20: das Wasserpumpenrad und die Riemenspannung mit prüfen — eine rutschende Pumpe fördert zu wenig, ohne dass etwas undicht ist",
+        "Beim Befüllen entlüften, sonst steht Luft im Kopf und die Anzeige lügt: Fahrzeug vorn hoch, Heizung auf heiss, Deckel offen laufen lassen bis der obere Schlauch warm ist"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-005",
+        "D4F-E30-009"
+      ],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E30 · Bestimmen, ATF, Schaltverhalten",
+      "valid": "E30 · 1982–1994 · mit Automatik",
+      "summary": "Im E30 kommen über die Bauzeit verschiedene Automatikgetriebe vor, teils hydraulisch, in späteren Ständen elektronisch gesteuert. Welches vorliegt, entscheidet über Ölsorte und Prüfweg — deshalb steht die Bestimmung vor jedem Handgriff.",
+      "points": [
+        "Getriebeschild lesen und die Bauart bestimmen. ATF-Sorte und Ölstandsprozedur folgen dem Getriebe, nicht dem Fahrzeug — die falsche Sorte kostet das Getriebe",
+        "Ölzustand zuerst: helles Rot in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung, die kein Ölwechsel zurücknimmt",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Kalt gemessene Werte sind wertlos",
+        "Bei elektronisch gesteuerten Ständen den Fehlerspeicher des Getriebesteuergeräts mitlesen — dort stehen Magnetventile und Drehzahlfühler, die man von aussen nicht beurteilen kann",
+        "Schaltverhalten unter definierter Last vergleichen: gleichbleibende Teillast gegen Vollgas. Der Vergleich trennt Hydraulik von Ansteuerung besser als jede Einzelfahrt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-005",
+        "D4F-E30-003"
+      ],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse und ABS E30 · Kontrollleuchte, Geber, Hydraulik",
+      "valid": "E30 · 1982–1994 · mit und ohne ABS",
+      "summary": "Im E30 ist das ABS eigenständig und kaum über einen Fehlerspeicher zugänglich. Die Eingrenzung läuft über die Kontrollleuchte, den Vergleich der vier Raddrehzahlgeber und den Zustand von Polrädern und Leitungen.",
+      "points": [
+        "Kontrollleuchte beim Einschalten und nach dem Anfahren beobachten. Dauerhaft an heisst: Regelung abgeschaltet, Bremse arbeitet ohne ABS weiter",
+        "Die vier Raddrehzahlgeber gegeneinander messen statt gegen eine Tabelle — ein Geber, der aus der Reihe fällt, ist der Kandidat. Eine belegte Sollwertangabe liegt hier nicht vor",
+        "Polräder und Geberspalt ansehen: Rost am Zahnkranz erzeugt dasselbe Fehlerbild wie ein defekter Geber und ist der häufigere Fall",
+        "Geberkabel an den Radläufen auf Scheuerstellen prüfen. Ein Bruch, der nur in bestimmten Federstellungen auftritt, ist die klassische Ursache für sporadische Meldungen",
+        "Schwammiges Pedal erst nach der Hydraulik einordnen: Bremsflüssigkeit zieht Wasser, und der gesunkene Siedepunkt zeigt sich nur bei warmer Bremse"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-008",
+        "D4F-E30-001"
+      ],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E30 · Pumpe, Filter, Druck unter Last",
+      "valid": "E30 · 1982–1994 · alle Motoren",
+      "summary": "Der Kraftstoffkreis des E30 ist ein Niederdrucksystem mit elektrischer Pumpe, Filter und Druckregler am Verteilerrohr. Ein schwacher Kreis zeigt sich nicht im Leerlauf, sondern unter Last — deshalb wird unter Last geprüft und nicht am stehenden Fahrzeug.",
+      "points": [
+        "Symptombild einordnen: Ruckeln und Leistungseinbruch unter Last bei sauberem Leerlauf ist das typische Bild einer schwachen Förderung oder eines zugesetzten Filters",
+        "Druck mit einem Manometer im laufenden Betrieb mitlesen und über eine Lastfahrt beobachten, nicht nur im Stand messen. Ein Kreis, der im Leerlauf hält und unter Last einbricht, ist der Regelfall — eine Momentaufnahme findet ihn nicht",
+        "Druckregler prüfen, indem der Unterdruckschlauch abgezogen wird: der Druck muss sich dabei sichtbar ändern. Tut er das nicht, ist der Regler der Kandidat. Kraftstoff im Unterdruckschlauch ist ein eindeutiger Befund",
+        "Kraftstofffilter gehört bei jedem Druckproblem auf die Liste, bevor die Pumpe getauscht wird — er ist das billigere und häufigere Teil",
+        "Pumpenrelais und die Versorgung der Pumpe mitprüfen: eine Pumpe, die zu wenig Spannung bekommt, fördert zu wenig, ohne selbst defekt zu sein",
+        "Kaltstartprobleme, die nach Standzeit auftreten und nach kurzem Vorpumpen verschwinden, deuten auf ein System, das den Druck über Nacht nicht hält — Rückschlagventil in der Pumpe oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-006",
+        "D4F-E30-011"
+      ],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E30 · Lambdasonde, Katalysator, Abgasleck",
+      "valid": "E30 · 1982–1994 · mit Katalysator",
+      "summary": "Beim E30 hängt die Gemischregelung an einer einzelnen Sprungsonde. Ihr Signal ist die wichtigste Messgrösse der ganzen Anlage — und ein Abgasleck davor verfälscht sie so gründlich, dass die Suche in die falsche Richtung läuft.",
+      "points": [
+        "Sondensignal im warmen Leerlauf beobachten: es muss zügig pendeln. Ein stehendes Signal ist der Befund, gleich auf welchem Wert es steht",
+        "Abgasleck vor der Sonde zuerst ausschliessen — es zieht Falschluft ins Abgas und erzeugt ein dauerhaft mageres Bild, für das die Gemischbildung nichts kann",
+        "Sondenheizung getrennt von der Sonde prüfen: eine kalte Sonde regelt nicht, und das sieht wie eine defekte Sonde aus",
+        "Zugesetzter Katalysator: Leistungsverlust, der mit der Drehzahl zunimmt. Das ist Abgasgegendruck und kein Gemischfehler — die beiden werden nicht verwechselt",
+        "Falschluft im Ansaugtrakt erzeugt dasselbe magere Bild wie ein Abgasleck. Unterschieden wird über den Ort, nicht über das Signal"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-006",
+        "D4F-E30-011"
+      ],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E30 · Serviceanzeige, Rückstellung, Alterungsfallen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Der E30 zeigt den Wartungsbedarf über Leuchtdioden im Kombiinstrument an. Der Zähler wird nicht rein nach Kilometern geführt, und seine Stromversorgung im Instrument altert — beides führt zu Anzeigen, die nichts mit dem tatsächlichen Zustand zu tun haben.",
+      "points": [
+        "Die Anzeige zählt nicht nur Kilometer, sondern bewertet den Betrieb. Ein Fahrzeug mit viel Kurzstrecke fordert früher Service als eines mit gleicher Laufleistung auf der Landstrasse — das ist gewollt und kein Fehler",
+        "Die Speicherversorgung der Anzeige im Kombiinstrument altert. Ist sie am Ende, springt die Anzeige oder zeigt dauerhaft Servicebedarf — dann ist die Anzeige defekt, nicht das Wartungsintervall abgelaufen",
+        "Vor der Rückstellung immer die tatsächlich ausgeführten Arbeiten festhalten. Eine zurückgestellte Anzeige ohne durchgeführte Wartung ist die häufigste Ursache für übersehene Intervalle beim nächsten Halter",
+        "Bremsflüssigkeit gehört zu den zeitabhängigen Positionen, nicht zu den kilometerabhängigen — sie zieht Wasser und senkt damit den Siedepunkt, unabhängig davon, ob gefahren wird",
+        "Bei einem Fahrzeug unbekannter Historie das Intervall nicht der Anzeige entnehmen, sondern über den Zustand bestimmen: Ölzustand, Farbe der Bremsflüssigkeit, Zustand der Filter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-008",
+        "D4F-E30-003"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1018,6 +1239,117 @@
       ],
       "details": [
         "D4F-E34-001"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M50/M60 · Eingrenzen ohne Fehlerspeicher",
+      "valid": "E34 · 1987–1996 · alle Motoren",
+      "summary": "Beim E34 laufen Reihensechszylinder und der M60-V8 im selben Fahrzeug, und sie kühlen unterschiedlich: der V8 hat zwei Zylinderbänke und damit zwei Wege, auf denen Luft stehen bleiben kann. Die Eingrenzung ist bei beiden dieselbe, das Entlüften nicht.",
+      "points": [
+        "Verlauf zuerst: steigt die Anzeige im Stand und fällt bei Fahrt, liegt es am Luftweg (Viscolüfter, Zarge, Kühlerfläche). Umgekehrt am Wasserweg (Thermostat, Pumpe, Verstopfung)",
+        "Ausgleichsbehälter und Deckel sind Verschleissteile — ein Deckel, der den Systemdruck nicht mehr hält, lässt das Kühlmittel früher sieden, ohne dass die Anzeige auffällig wird",
+        "M60: nach jedem Öffnen des Kreises gründlich entlüften. Eine Luftblase in einer der beiden Bänke erzeugt eine Überhitzung, die kommt und geht und keiner Undichtigkeit zuzuordnen ist",
+        "Thermostat vergleichend über den oberen Kühlerschlauch prüfen — lange kalt, dann zügig warm ist richtig; von Anfang an lauwarm heisst offen hängend",
+        "Weisser, süsslich riechender Auspuffdampf zusammen mit Kühlmittelverlust ohne Aussenleck gehört in die Kopfdichtungsprüfung, nicht in die Kühlerprüfung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-005",
+        "D4F-E34-006"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E34 · Getriebe bestimmen, Öl, Adaption",
+      "valid": "E34 · 1987–1996 · mit Automatik",
+      "summary": "Der E34 fällt in die Zeit, in der die Automatik elektronisch wird: je nach Baujahr und Motor steht ein rein hydraulisch gesteuertes oder ein Getriebe mit eigenem Steuergerät im Wagen. Der Prüfweg unterscheidet sich grundlegend.",
+      "points": [
+        "Erst bestimmen: Getriebeschild lesen und feststellen, ob ein Getriebesteuergerät vorhanden ist. Gibt es eines, beginnt die Diagnose am Fehlerspeicher; gibt es keines, am Ölmessstab",
+        "ATF-Sorte richtet sich nach dem verbauten Getriebe, nicht nach der Baureihe. Bei Fahrzeugen dieses Alters ist ein Getriebetausch aus der Vergangenheit möglich — dem Schild glauben, nicht dem Typenschein",
+        "Ölzustand vor Ölstand: braun und verbrannt riechend heisst thermische Vorschädigung. Ein Ölwechsel darauf ist keine Reparatur",
+        "Ölstand betriebswarm, eben, Motor läuft, Wählhebel vorher durch alle Stellungen",
+        "Bei elektronischer Steuerung nach einem Eingriff die Adaption zurücksetzen und anschliessend gemischt fahren — sonst schaltet das Getriebe auf gelernte Werte, die nicht mehr passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-005",
+        "D4F-E34-002"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E34 · Förderung, Filter, Druckhaltung",
+      "valid": "E34 · 1987–1996 · alle Motoren",
+      "summary": "Auch im E34 ist der Kraftstoffkreis ein Niederdrucksystem. Bei den grösseren Motoren arbeitet er näher an seiner Grenze, weshalb eine nachlassende Förderung dort früher auffällt — und zwar unter Last, nicht im Leerlauf.",
+      "points": [
+        "Ruckeln und Leistungseinbruch unter Last bei sauberem Leerlauf ist das Bild einer nachlassenden Förderung oder eines zugesetzten Filters — nicht eines Zündungsproblems",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen. Der Einbruch tritt unter Last auf und wird von einer Momentaufnahme nicht gefunden",
+        "Druckregler über den Unterdruckschlauch prüfen: der Druck muss sich beim Abziehen sichtbar ändern, und im Schlauch darf kein Kraftstoff stehen",
+        "Filter vor Pumpe tauschen — er ist billiger und häufiger die Ursache",
+        "Pumpenrelais und Versorgungsspannung mitprüfen: eine unterversorgte Pumpe fördert zu wenig, ohne defekt zu sein",
+        "Verliert das System über Nacht den Druck, zeigt sich das als schlechter Warmstart oder langes Orgeln nach Standzeit — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-007",
+        "D4F-E34-002"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E34 · Sonde, Katalysator, Gegendruck",
+      "valid": "E34 · 1987–1996 · mit Katalysator",
+      "summary": "Im E34 wird die Abgasanlage bei den grösseren Motoren zweiflutig, und damit bekommt jede Bank ihre eigene Regelung. Das hilft bei der Diagnose: was nur eine Bank betrifft, kann nicht am gemeinsamen Kraftstoffkreis liegen.",
+      "points": [
+        "Bei zweiflutiger Anlage die Sondensignale beider Bänke nebeneinander beobachten. Weicht nur eine Bank ab, ist die gemeinsame Versorgung als Ursache praktisch ausgeschlossen",
+        "Sondensignal muss im warmen Leerlauf zügig pendeln — ein stehendes Signal ist der Befund, unabhängig vom Wert",
+        "Abgasleck vor der Sonde zuerst ausschliessen: es erzeugt ein dauerhaft mageres Bild ohne Fehler in der Gemischbildung",
+        "Sondenheizung getrennt prüfen; eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — Gegendruck, nicht Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-007",
+        "D4F-E34-005"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E34 · Serviceanzeige und Zustandsbestimmung",
+      "valid": "E34 · 1987–1996",
+      "summary": "Wie beim E30 führt eine Anzeige im Kombiinstrument den Wartungsbedarf, und wie dort altert ihre Stromversorgung. Bei einem Fahrzeug dieses Alters ist der Zustand die verlässlichere Auskunft als die Anzeige.",
+      "points": [
+        "Die Anzeige bewertet den Betrieb, nicht nur die Kilometer — Kurzstreckenbetrieb fordert früher Service. Das ist gewollt",
+        "Alterung der Speicherversorgung im Instrument erzeugt springende oder dauerhafte Serviceanzeigen. Das ist ein Anzeigefehler und kein Wartungsbedarf",
+        "Bei unbekannter Historie über den Zustand bestimmen statt über die Anzeige: Ölzustand, Bremsflüssigkeit, Filter, Zustand der Zündkerzen",
+        "Bremsflüssigkeit ist zeitabhängig, nicht kilometerabhängig — sie zieht Wasser, auch wenn das Fahrzeug steht",
+        "Nach jeder Rückstellung festhalten, was tatsächlich ausgeführt wurde. Eine zurückgestellte Anzeige ohne Arbeit führt den nächsten Halter in die Irre"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E34-002",
+        "D4F-E34-007"
       ],
       "model": "e34"
     },
@@ -1290,6 +1622,118 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E36 · Zwei Familien, zwei Ölsorten",
+      "valid": "E36 · 1990–2000 · mit Automatik",
+      "summary": "Im E36 kommen Automatikgetriebe aus zwei Herstellerfamilien vor. Sie sehen von aussen ähnlich aus, verlangen aber unterschiedliches ATF. Wer nach Fahrzeug statt nach Getriebe befüllt, trifft mit einiger Wahrscheinlichkeit daneben.",
+      "points": [
+        "Bestimmung zuerst und aus dem Getriebeschild, nicht aus der Fahrzeugpapieren: die Ölspezifikation folgt der Getriebefamilie. Diese Verwechslung ist im Projekt schon einmal belegt aufgetreten und hat eine Korrektur nötig gemacht",
+        "Fehlerspeicher des Getriebesteuergeräts lesen — Magnetventile, Drehzahlfühler und der Wandlerkupplungskreis melden sich dort und sind von aussen nicht beurteilbar",
+        "Ölzustand vor Ölstand: helles Rot in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Eine belegte Füllmenge in Litern liegt hier nicht vor — der Stand ergibt sich aus der Prozedur",
+        "Nach jedem Eingriff Adaption zurücksetzen und gemischt mit Zug und Schub einfahren, sonst bleiben gelernte Werte stehen, die nicht mehr passen",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung, nicht auf die Gangschaltung — das trennt zwei ganz verschiedene Reparaturen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-003"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "ABS und ASC E36 · Fehlerspeicher, Geber, Regelverhalten",
+      "valid": "E36 · 1990–2000 · ABS, ASC",
+      "summary": "Mit dem E36 wird die Bremsregelung erstmals brauchbar über den Diagnosestecker auslesbar. Das verschiebt den ersten Handgriff: nicht mehr messen, sondern lesen — und erst danach den Geber prüfen, den der Speicher benennt.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst auslesen. Er benennt in der Regel das Rad, und das erspart das Durchmessen aller vier Kreise",
+        "Der benannte Geber wird trotzdem geprüft und nicht sofort getauscht: Polrad, Geberspalt und Kabel erzeugen dasselbe Bild wie ein defekter Geber",
+        "Kabel an den Radläufen auf Scheuerstellen und Bruch prüfen — sporadische Meldungen, die nur beim Einlenken oder Einfedern kommen, sind fast immer Kabel und nicht Sensor",
+        "Bei ASC-Eingriffen ohne erkennbaren Grund die Geber untereinander vergleichen: ein Rad, das eine leicht abweichende Drehzahl meldet, löst Regelungen aus, ohne einen Fehler zu speichern",
+        "Nach jedem Eingriff am Hydraulikkreis entlüften und dabei die Prozedur der Anlage einhalten — ein Aggregat mit Luft in der Regeleinheit lässt sich nicht durch Pedalpumpen retten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-002",
+        "D4F-E36-005"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E36 · Druck unter Last, Regler, Tankentlüftung",
+      "valid": "E36 · 1990–2000 · alle Motoren",
+      "summary": "Beim E36 kommt zur reinen Versorgung die Tankentlüftung dazu, die über ein Ventil in den Ansaugtrakt spült. Sie erzeugt Gemischfehler, die wie ein Versorgungsproblem aussehen — die beiden werden zuerst getrennt.",
+      "points": [
+        "Fehlerspeicher lesen: Gemischadaption im mageren Bereich kann von zu wenig Kraftstoffdruck kommen, aber ebenso von Falschluft oder einem hängenden Tankentlüftungsventil. Der Speicher sagt „zu mager“, nicht warum",
+        "Druck über eine Lastfahrt mitschreiben. Ein Kreis, der im Leerlauf hält und unter Last einbricht, ist der Regelfall — im Stand fällt er nicht auf",
+        "Tankentlüftungsventil prüfen, bevor an der Pumpe gearbeitet wird: hängt es offen, zieht der Motor unkontrolliert Dämpfe und die Adaption läuft weg",
+        "Druckregler über den Unterdruckschlauch prüfen — Druckänderung beim Abziehen muss sichtbar sein, Kraftstoff im Schlauch ist ein eindeutiger Befund",
+        "Filter vor Pumpe tauschen; er ist das häufigere und billigere Teil",
+        "Kaltstart nach Standzeit schlecht, danach normal: das System hält den Druck nicht — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-002"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E36 · Zwei Sonden, Kat-Wirkungsgrad, Sekundärluft",
+      "valid": "E36 · 1990–2000 · mit Katalysator",
+      "summary": "Mit der zweiten Sonde hinter dem Katalysator kann die Steuerung erstmals den Katalysator selbst beurteilen. Dazu kommt bei vielen Ständen das Sekundärluftsystem, das nur nach dem Kaltstart arbeitet und deshalb schwer zu erwischen ist.",
+      "points": [
+        "Die Sonde vor dem Katalysator muss pendeln, die dahinter soll ruhig liegen. Pendelt die hintere im gleichen Takt mit, arbeitet der Katalysator nicht mehr — das ist die eigentliche Aussage der zweiten Sonde",
+        "Bevor ein Katalysator als verbraucht gilt: Abgasleck zwischen den beiden Sonden ausschliessen. Es erzeugt genau dasselbe Bild und ist die billigere Reparatur",
+        "Sekundärluftsystem arbeitet nur in den ersten Minuten nach dem Kaltstart. Wer es prüfen will, muss den Motor kalt erwischen — später ist keine Aussage möglich",
+        "Sondenheizungen getrennt von den Sonden prüfen: eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — das ist Gegendruck und wird nicht mit einem Gemischfehler verwechselt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-002"
+      ],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E36 · Serviceintervallanzeige, Rückstellung, Prüfpunkte",
+      "valid": "E36 · 1990–2000",
+      "summary": "Der E36 führt die Serviceintervallanzeige über einen Zähler, der den Betrieb bewertet statt nur Kilometer zu zählen. Die Rückstellung erfolgt über den Diagnoseanschluss — und sie ist eine Buchung, keine Wartung.",
+      "points": [
+        "Der Zähler bewertet den Betrieb: Kurzstrecke und Kaltstarts verkürzen das Intervall gegenüber gleicher Laufleistung auf der Landstrasse",
+        "Rückstellung läuft über den Diagnoseanschluss. Sie dokumentiert eine ausgeführte Wartung — wer ohne Arbeit zurückstellt, verschiebt das Problem auf den nächsten Halter",
+        "Bremsflüssigkeit ist eine zeitabhängige Position und läuft unabhängig von der Laufleistung. Ihr Zustand zeigt sich erst bei warmer Bremse als weiches Pedal",
+        "Bei unbekannter Historie den Zustand bestimmen statt der Anzeige zu glauben: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen, Zustand der Kühlmittelschläuche",
+        "Die Kurbelgehäuseentlüftung gehört bei diesen Baujahren zur Sichtprüfung — sie versprödet und erzeugt dann Gemischfehler, die als Motorproblem gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-002",
+        "D4F-E36-001"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -1484,6 +1928,138 @@
         "M73"
       ],
       "details": [
+        "D4F-E38-001"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M62/M73 · Zwei Bänke, zwei Luftwege",
+      "valid": "E38 · 1994–2001 · M52, M62, M73",
+      "summary": "Im E38 stehen Reihensechszylinder, V8 und V12 nebeneinander. Gemeinsam ist ihnen der Kunststoffanteil im Kreis, der mit den Jahren spröde wird; unterschiedlich ist, wie viel Luft nach einem Eingriff im Kopf stehen bleibt. Bei V8 und V12 ist das Entlüften der eigentliche Arbeitsschritt.",
+      "points": [
+        "Kühlmittelverlust zuerst am Ausgleichsbehälter, seinem Deckel und den Kunststoffflanschen suchen — sie reissen mit dem Alter und tropfen oft nur unter Betriebsdruck",
+        "Bei V8 und V12 nach jedem Öffnen des Kreises konsequent entlüften: Luft in einer Bank erzeugt Temperaturausschläge, die keiner Undichtigkeit zuzuordnen sind und beim nächsten Kaltstart wieder verschwinden",
+        "Verlauf trennt die Richtung: Überhitzung im Stand → Luftweg (Lüfter, Zarge, Kühlerfläche). Überhitzung bei Fahrt → Wasserweg (Thermostat, Pumpe, Verstopfung)",
+        "Heizung, die trotz warmem Motor kalt bleibt, gehört in dieselbe Prüfung — sie zeigt Luft im Kreis oder zu wenig Durchfluss an, nicht ein Problem der Bedienung",
+        "Vor dem Tausch eines Bauteils den Systemdruck halten lassen und beobachten, wo er abfällt. Das trennt Leck von Durchfluss, bevor Teile gekauft werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-004",
+        "D4F-E38-003"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E38 · Bestimmen, Öl, Adaption, Wandler",
+      "valid": "E38 · 1994–2001 · mit Automatik",
+      "summary": "Der E38 fährt durchweg elektronisch gesteuerte Automatikgetriebe mit eigenem Steuergerät. Damit beginnt die Diagnose am Fehlerspeicher — und der Ölstand wird nicht geschätzt, sondern nach Prozedur bei betriebswarmem Öl bestimmt.",
+      "points": [
+        "Getriebe über das Schild bestimmen. ATF-Sorte und Prozedur folgen dem Getriebe, nicht dem Fahrzeug — bei Autos dieses Alters ist ein Tausch aus der Vergangenheit einzukalkulieren",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst: Magnetventile, Drehzahlfühler und Wandlerkupplung melden sich dort, bevor man am Öl etwas sieht",
+        "Ölzustand beurteilen, dann Ölstand — betriebswarm, eben, Motor läuft, Wählhebel vorher durch alle Stellungen",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung. Das ist eine andere Reparatur als ein harter Gangwechsel und wird nicht damit verwechselt",
+        "Nach Eingriffen an Getriebe oder Steuerung die Adaption zurücksetzen und gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-007"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E38 · Fehlerspeicher, Raddrehzahl, Lenkwinkel",
+      "valid": "E38 · 1994–2001 · ABS, ASC, DSC",
+      "summary": "Im E38 kommt zur Raddrehzahl die Fahrdynamikregelung dazu: Lenkwinkel-, Gierraten- und Querbeschleunigungssensor gehören ab hier zum Bremsensystem. Ein Fehler dort erzeugt Meldungen, die nach Bremse aussehen, aber keine sind.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst lesen — er trennt Raddrehzahlfehler von Fehlern der Fahrdynamiksensorik, und beide sehen im Kombiinstrument gleich aus",
+        "Lenkwinkelsensor: nach Arbeiten an Lenkung, Spur oder Lenkrad muss der Nullpunkt neu gesetzt werden. Wird das vergessen, meldet die Regelung dauerhaft und keine Bremskomponente ist schuld",
+        "Raddrehzahlgeber, den der Speicher benennt, vor dem Tausch prüfen: Polrad, Geberspalt und Kabel erzeugen dasselbe Bild",
+        "Geberkabel an den Radläufen auf Scheuerstellen prüfen — sporadische Fehler beim Einlenken oder Einfedern sind fast immer Kabelbrüche",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit lässt sich nicht durch Pedalpumpen allein füllen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-002",
+        "D4F-E38-007"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E38 · Zwei Bänke, Druck, Gemischadaption",
+      "valid": "E38 · 1994–2001 · M52, M62, M73",
+      "summary": "Bei V8 und V12 wird die Kraftstoffversorgung bankweise geregelt und bankweise überwacht. Das ist ein Vorteil: meldet nur eine Bank ein mageres Gemisch, scheidet die gemeinsame Versorgung als Ursache praktisch aus.",
+      "points": [
+        "Gemischadaption bankweise auslesen und vergleichen. Weichen beide Bänke gleich ab, liegt es an der gemeinsamen Versorgung; weicht nur eine ab, an dieser Bank — das halbiert die Suche sofort",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen; der Einbruch tritt unter Last auf",
+        "Tankentlüftungsventil prüfen, bevor an der Pumpe gearbeitet wird — hängt es offen, laufen beide Bänke gemeinsam aus dem Ruder",
+        "Filter vor Pumpe tauschen; er ist häufiger die Ursache und deutlich billiger",
+        "Schlechter Start nach Standzeit bei normalem Warmstart: das System hält den Druck nicht — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-004"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E38 · Bankvergleich, Kat-Wirkungsgrad, Sekundärluft",
+      "valid": "E38 · 1994–2001 · alle Motoren",
+      "summary": "Bei V8 und V12 hat jede Bank ihre eigene Abgasanlage mit eigenen Sonden. Der Vergleich der beiden Bänke ist deshalb das schärfste Werkzeug im ganzen Bereich — er halbiert die Suche, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Sondensignale beider Bänke nebeneinander beobachten. Was nur eine Bank betrifft, kann nicht am gemeinsamen Kraftstoffkreis oder an der Tankentlüftung liegen",
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere mit, arbeitet der Katalysator dieser Bank nicht mehr",
+        "Vor jedem Katalysatorurteil das Abgasleck zwischen den Sonden ausschliessen — es erzeugt dasselbe Bild und ist deutlich billiger zu beheben",
+        "Sekundärluftsystem arbeitet nur nach dem Kaltstart. Die Prüfung gelingt nur am kalten Motor",
+        "Sondenheizungen getrennt prüfen; eine kalte Sonde regelt nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-004"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E38 · Serviceintervall, Rückstellung, Prüfpunkte",
+      "valid": "E38 · 1994–2001",
+      "summary": "Der E38 führt die Serviceintervallanzeige über einen betriebsabhängigen Zähler und wird über den Diagnoseanschluss zurückgestellt. Bei einer Oberklasse-Limousine dieses Alters entscheidet der Zustand über den Umfang, nicht der Zähler.",
+      "points": [
+        "Der Zähler bewertet den Betrieb, nicht nur Kilometer — Kurzstrecke verkürzt das Intervall gegenüber gleicher Laufleistung auf der Autobahn",
+        "Rückstellung über den Diagnoseanschluss ist eine Buchung. Ohne ausgeführte Arbeit führt sie den nächsten Halter in die Irre",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht",
+        "Bei unbekannter Historie den Zustand bestimmen: Ölzustand, Bremsflüssigkeit, Filter, Kühlmittelschläuche und die Kunststoffteile des Kühlkreises, die in diesen Baujahren versprödet sind",
+        "Die Kurbelgehäuseentlüftung gehört zur Sichtprüfung — versprödete Leitungen erzeugen Gemischfehler, die als Motorproblem gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-007",
         "D4F-E38-001"
       ],
       "model": "e38"
@@ -1734,6 +2310,144 @@
       "details": [
         "D4F-E39-004",
         "D4F-E39-002"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M52/M54 · Wasserpumpe, Thermostat, Ausgleichsbehälter",
+      "valid": "E39 · 1995–2003 · M52, M54, M62, S62",
+      "summary": "Der Kreis des E39 ist der Klassiker unter den Kunststoff-Kühlsystemen: Ausgleichsbehälter, Thermostatgehäuse und Kühlerkästen altern und geben nach. Beim Sechszylinder kommt das Pumpenrad dazu — es kann brechen, ohne Geräusch und ohne Leck, und der Motor überhitzt bei laufender Pumpe.",
+      "points": [
+        "Der gefährliche Fall zuerst: bricht das Pumpenrad, dreht die Welle weiter und die Pumpe klingt normal — es fehlt nur die Förderung. Erkennbar ist das nicht am Geräusch, sondern daran, dass der obere Kühlerschlauch trotz warmem Motor kalt bleibt",
+        "Ausgleichsbehälter und Deckel sind Verschleissteile und versagen oft ohne Vorwarnung. Bei jedem Kühlmittelverlust ohne sichtbares Leck stehen sie zuerst auf der Liste",
+        "Thermostat vergleichend prüfen: oberer Schlauch bleibt beim Kaltstart lange kalt, dann wird er zügig warm. Von Anfang an lauwarm heisst offen hängend — der Motor wird nicht richtig warm und die Heizung bleibt schwach",
+        "Viscolüfter im warmen Leerlauf beurteilen: er muss hörbar zupacken. Kalt leicht, warm spürbar schwer drehbar — der Vergleich trägt, eine belegte Drehzahlvorgabe liegt hier nicht vor",
+        "Nach jedem Öffnen entlüften, sonst steht Luft im Kopf: Fahrzeug vorn hoch, Heizung heiss, laufen lassen bis der obere Schlauch durchgängig warm ist",
+        "Kühlmittelverlust ohne Aussenleck plus weisser, süsslicher Auspuffdampf gehört in die Kopfdichtungsprüfung — nicht weiter am Kühler suchen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-006"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E39 · Zwei Familien, Ölstand nach Prozedur",
+      "valid": "E39 · 1995–2003 · mit Automatik",
+      "summary": "Auch im E39 stehen Automatikgetriebe zweier Herstellerfamilien nebeneinander, mit unterschiedlicher Ölspezifikation. Dazu kommt, dass viele dieser Getriebe ab Werk als wartungsfrei galten — ein Anspruch, den die Werkstattpraxis nicht bestätigt hat.",
+      "points": [
+        "Getriebeschild lesen und die Familie bestimmen, bevor irgendetwas befüllt wird. Die Ölspezifikation folgt dem Getriebe; die falsche Sorte kostet das Getriebe",
+        "Der Begriff „Lebensdauerfüllung“ ist eine Werksangabe, kein Befund. In der Werkstattpraxis wird gewechselt; ein belegtes Intervall in Kilometern liegt hier nicht vor, der Ölzustand entscheidet",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst lesen — Magnetventile und Drehzahlfühler sind von aussen nicht beurteilbar",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Kalt gemessen ist jeder Wert falsch",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang gehört zur Wandlerüberbrückung, nicht zur Gangschaltung",
+        "Nach jedem Eingriff Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-003"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E39 · Sensorik trennen, Geber prüfen, Entlüften",
+      "valid": "E39 · 1995–2003 · ABS, ASC, DSC",
+      "summary": "Der E39 fährt eine vollständige Fahrdynamikregelung. Die häufigsten Meldungen kommen dabei nicht aus der Bremse, sondern aus der Sensorik: Raddrehzahl, Lenkwinkel, Gierrate. Die Trennung dieser drei ist der eigentliche Diagnoseschritt.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst. Er trennt Raddrehzahl von Fahrdynamiksensorik — im Kombiinstrument sehen beide gleich aus",
+        "Lenkwinkelsensor nach jeder Arbeit an Lenkung, Spur oder Lenkrad neu abgleichen. Ein vergessener Abgleich erzeugt Dauermeldungen ohne defektes Bauteil",
+        "Den benannten Raddrehzahlgeber prüfen statt tauschen: Polrad, Geberspalt und Kabel erzeugen dasselbe Fehlerbild und sind zusammen der häufigere Fall",
+        "Kabel an den Radläufen auf Scheuerstellen absuchen — sporadische Fehler beim Einlenken oder Einfedern sind fast immer mechanisch am Kabel und nicht elektrisch im Geber",
+        "Regelungen ohne erkennbaren Anlass: die vier Raddrehzahlen im Livedatenstrom bei konstanter Geradeausfahrt vergleichen. Ein Rad, das abweicht, löst Eingriffe aus, ohne einen Fehler zu speichern",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; Luft in der Regeleinheit bekommt man mit Pedalpumpen nicht heraus"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-004",
+        "D4F-E39-003"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E39 · Druck unter Last, Adaption, Entlüftung",
+      "valid": "E39 · 1995–2003 · alle Motoren",
+      "summary": "Im E39 melden Gemischfehler sich zuverlässig über die Adaptionswerte — sie sagen aber nur, dass Kraftstoff fehlt, nicht wo. Falschluft, Tankentlüftung und schwache Förderung erzeugen dasselbe Bild und werden getrennt.",
+      "points": [
+        "Adaptionswerte auslesen und bankweise vergleichen: gleichmässige Abweichung deutet auf die gemeinsame Versorgung, einseitige auf die betroffene Bank oder deren Ansaugweg",
+        "Druck über eine Lastfahrt mitschreiben. Der Einbruch kommt unter Last, eine Momentaufnahme im Stand findet ihn nicht",
+        "Falschluft ausschliessen, bevor an der Pumpe gearbeitet wird — Kurbelgehäuseentlüftung und Ansaugschläuche altern in diesen Baujahren und erzeugen dasselbe magere Bild",
+        "Tankentlüftungsventil prüfen: hängt es offen, läuft die Adaption weg, ohne dass der Kraftstoffkreis etwas dafür kann",
+        "Filter vor Pumpe tauschen — billiger und häufiger",
+        "Schlechter Start nach Standzeit bei normalem Warmstart heisst: der Kreis hält den Druck nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-008"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E39 · Kat-Wirkungsgrad, Sekundärluft, Abgasleck",
+      "valid": "E39 · 1995–2003 · alle Motoren",
+      "summary": "Im E39 ist die Abgasüberwachung vollständig: Sonden vor und hinter dem Katalysator, dazu das Sekundärluftsystem. Die häufigste Fehlmassnahme ist der Katalysatortausch aufgrund eines Lecks, das zwei Meter davor sitzt.",
+      "points": [
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere im gleichen Takt mit, arbeitet der Katalysator nicht mehr — das ist die Aussage, auf die es ankommt",
+        "Bevor ein Katalysator getauscht wird: Abgasleck zwischen den Sonden ausschliessen. Ein Leck erzeugt dasselbe Bild und ist die billigere Reparatur — das ist der häufigste Fehlkauf in diesem Bereich",
+        "Sekundärluftsystem arbeitet nur in den ersten Minuten nach dem Kaltstart; die Prüfung gelingt nur am kalten Motor. Pumpe und Umschaltventil getrennt beurteilen",
+        "Bei zweiflutiger Anlage die Bänke vergleichen — was nur eine Bank betrifft, liegt nicht an der gemeinsamen Versorgung",
+        "Sondenheizungen getrennt von den Sonden prüfen: eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — Gegendruck, nicht Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-005",
+        "D4F-E39-008"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E39 · Serviceintervall, Zustandsprüfung, Alterungspunkte",
+      "valid": "E39 · 1995–2003",
+      "summary": "Beim E39 ist die Serviceintervallanzeige betriebsabhängig und wird über den Diagnoseanschluss zurückgestellt. Wichtiger als der Zähler sind bei diesen Baujahren die Positionen, die altern statt zu verschleissen — allen voran der Kühlkreis.",
+      "points": [
+        "Der Zähler bewertet den Betrieb; Kurzstrecke verkürzt das Intervall. Die Rückstellung über den Diagnoseanschluss ist eine Buchung, keine Wartung",
+        "Bei diesen Baujahren gehören die Kunststoffteile des Kühlkreises in jede Inspektion: Ausgleichsbehälter, Deckel und Schläuche altern nach Zeit, nicht nach Laufleistung",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht. Der gesunkene Siedepunkt zeigt sich erst bei warmer Bremse",
+        "Kurbelgehäuseentlüftung zur Sichtprüfung — versprödete Leitungen erzeugen magere Gemischfehler, die als Motorproblem gesucht werden",
+        "Bei unbekannter Historie über den Zustand bestimmen statt über die Anzeige: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen",
+        "Ölverbrauch bei diesen Motoren beobachten und dokumentieren statt einmalig zu messen — nur der Verlauf trennt normalen Verbrauch von einem beginnenden Schaden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E39-003",
+        "D4F-E39-005"
       ],
       "model": "e39"
     },
@@ -2023,6 +2737,145 @@
         "D4F-E46-003",
         "D4F-E46-001",
         "D4F-E46-008"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M52/M54/N42 · Der Kunststoffkreis und seine Schwachstellen",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Der E46-Kreis besteht in weiten Teilen aus Kunststoff, der unter der Wärme im Motorraum altert. Ausgleichsbehälter, Thermostatgehäuse und Kühlerkästen geben mit den Jahren nach; beim Sechszylinder kommt das Pumpenrad dazu. Die Eingrenzung trennt zuerst Leck von Durchfluss.",
+      "points": [
+        "Kühlmittelverlust ohne Pfütze: Ausgleichsbehälter, Deckel und die Kunststoffflansche stehen zuerst auf der Liste — sie reissen mit dem Alter und tropfen oft nur unter Betriebsdruck, also warm und unter Last",
+        "Gebrochenes Pumpenrad am Sechszylinder erkennt man nicht am Geräusch: die Welle dreht weiter, es fehlt nur die Förderung. Kennzeichen ist ein oberer Kühlerschlauch, der trotz warmem Motor kalt bleibt",
+        "Thermostat vergleichend: lange kalt beim Kaltstart, dann zügig warm ist richtig. Von Anfang an lauwarm heisst offen hängend — Motor wird nicht warm, Heizung schwach, Verbrauch steigt",
+        "Elektrischer Zusatzlüfter und Viscolüfter arbeiten zusammen. Überhitzung nur im Stand und im Stau schiebt den Verdacht auf den Luftweg, Überhitzung nur bei Fahrt auf den Wasserweg",
+        "Nach jedem Öffnen entlüften: Fahrzeug vorn hoch, Heizung heiss, Deckel offen laufen lassen bis der obere Schlauch durchgängig warm ist. Luft im Kopf lässt die Anzeige springen und täuscht ein Bauteil vor",
+        "Weisser, süsslicher Auspuffdampf bei Kühlmittelverlust ohne Aussenleck: Kopfdichtung prüfen, nicht weiter am Kühler suchen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008",
+        "D4F-E46-004"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E46 · Getriebe bestimmen, ATF, Adaption",
+      "valid": "E46 · 1998–2006 · mit Automatik",
+      "summary": "Im E46 kommen Automatikgetriebe aus zwei Herstellerfamilien vor, die unterschiedliches ATF verlangen. Die Bestimmung über das Getriebeschild ist deshalb kein Formalschritt, sondern der erste und wichtigste Handgriff im ganzen Bereich.",
+      "points": [
+        "Getriebeschild lesen, Familie bestimmen, dann erst die Ölspezifikation nachschlagen. Im Bestand dieses Projekts ist genau diese Verwechslung schon einmal belegt korrigiert worden",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst: Magnetventile, Drehzahlfühler und Wandlerkupplung melden sich dort",
+        "Ölzustand vor Ölstand beurteilen — braun und verbrannt riechend heisst thermische Vorschädigung, die ein Ölwechsel nicht zurücknimmt",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Die Kontrollschraube ist der Massstab, nicht eine Literangabe",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung und nicht auf die Gangschaltung",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt einfahren, sonst schaltet das Getriebe nach gelernten Werten, die nicht mehr passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-009",
+        "D4F-E46-005"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E46 · Raddrehzahl, Lenkwinkel, Regelung ohne Anlass",
+      "valid": "E46 · 1998–2006 · ABS, ASC, DSC",
+      "summary": "Beim E46 sind die häufigsten Bremsmeldungen Sensorfehler, nicht Bremsenfehler. Die Kunst liegt darin, Raddrehzahl, Lenkwinkel und Fahrdynamiksensorik auseinanderzuhalten — im Kombiinstrument sehen sie identisch aus.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst auslesen; er benennt das Rad oder den Sensor und erspart das Durchmessen aller Kreise",
+        "Den benannten Raddrehzahlgeber prüfen, nicht sofort tauschen: Polrad mit Rostansatz, falscher Geberspalt und Kabelbruch erzeugen dasselbe Bild und sind zusammen häufiger als ein defekter Geber",
+        "Kabel an den Radläufen absuchen. Fehler, die nur beim Einlenken oder Einfedern auftreten, sind fast immer Kabelbrüche an der mitfedernden Strecke",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung, Spur oder Lenkrad neu abgleichen — sonst meldet die Regelung dauerhaft, ohne dass ein Bauteil defekt ist",
+        "DSC-Eingriffe ohne Anlass: die vier Raddrehzahlen im Livedatenstrom bei konstanter Geradeausfahrt gegeneinander halten",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften — Luft in der Regeleinheit lässt sich nicht durch Pedalpumpen entfernen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-007"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E46 · Rücklauflos, Druck, Gemischadaption",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Im E46 wird die Kraftstoffversorgung über die Bauzeit auf ein System ohne Rücklauf umgestellt, bei dem die Regelung im Tank sitzt. Welche Bauart vorliegt, ändert den Prüfweg — deshalb wird sie zuerst bestimmt.",
+      "points": [
+        "Erst bestimmen, ob ein Rücklauf zum Tank vorhanden ist. Bei rücklauflosem System sitzt die Druckregelung im Tank, und der Druckregler am Verteilerrohr, den man zu prüfen versucht, existiert dort nicht",
+        "Adaptionswerte auslesen: „zu mager“ sagt, dass Kraftstoff fehlt, nicht warum. Falschluft, Tankentlüftung und schwache Förderung erzeugen dasselbe Bild",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen — der Einbruch kommt unter Last",
+        "Falschluft ausschliessen, bevor an der Pumpe gearbeitet wird: die Kurbelgehäuseentlüftung ist in diesen Baujahren ein bekannter Kandidat und erzeugt genau dieses magere Bild",
+        "Tankentlüftungsventil prüfen — hängt es offen, läuft die Adaption weg ohne Fehler im Kraftstoffkreis",
+        "Schlechter Start nach Standzeit, normaler Warmstart: der Kreis hält den Druck nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E46 · Katalysator, Sekundärluft, Abgasleck trennen",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Der E46 meldet Katalysator- und Sekundärluftfehler häufig, und beide werden regelmässig mit teuren Teilen beantwortet, obwohl die Ursache anderswo sitzt. Die Trennung von Leck, Sonde und Katalysator ist hier der ganze Diagnoseschritt.",
+      "points": [
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere mit, arbeitet der Katalysator nicht mehr",
+        "Vor jedem Katalysatorurteil das Abgasleck zwischen den Sonden ausschliessen — es erzeugt dasselbe Bild und ist die billigere Reparatur. Das ist der häufigste Fehlkauf im Bereich",
+        "Sekundärluftfehler: Pumpe, Umschaltventil und der Weg dahin werden getrennt beurteilt. Das System arbeitet nur in den ersten Minuten nach dem Kaltstart, später ist keine Aussage möglich",
+        "Ein hängendes Umschaltventil kann Abgas in die Pumpe lassen und sie so zerstören — nach einem Pumpenausfall gehört das Ventil mit auf die Liste, sonst wiederholt sich der Schaden",
+        "Sondenheizungen getrennt von den Sonden prüfen; eine kalte Sonde regelt nicht",
+        "Zugesetzter Katalysator: drehzahlabhängiger Leistungsverlust, also Gegendruck und kein Gemischfehler"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E46 · Serviceintervall, Rückstellung, Alterungspunkte",
+      "valid": "E46 · 1998–2006",
+      "summary": "Der E46 führt ein betriebsabhängiges Serviceintervall, das über den Diagnoseanschluss zurückgestellt wird. Bei einem Fahrzeug dieses Alters sind die zeitabhängigen Positionen wichtiger als die kilometerabhängigen — der Kühlkreis steht dabei ganz oben.",
+      "points": [
+        "Rückstellung über den Diagnoseanschluss ist eine Buchung der ausgeführten Arbeit. Zurückstellen ohne Arbeit verschiebt das Problem auf den nächsten Halter",
+        "Der Kühlkreis gehört in jede Inspektion: Ausgleichsbehälter, Deckel und die Kunststoffflansche altern nach Zeit. Ein Riss darin ist im E46 die häufigste Ursache für einen Motorschaden, der vermeidbar gewesen wäre",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht",
+        "Kurbelgehäuseentlüftung zur Sichtprüfung — sie versprödet und erzeugt dann magere Gemischfehler, die lange als Motorproblem gesucht werden",
+        "Ölverbrauch über mehrere Intervalle dokumentieren statt einmalig zu messen; nur der Verlauf trägt eine Aussage",
+        "Bei unbekannter Historie den Zustand bestimmen: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen, Zustand der Kühlmittelschläuche"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-009",
+        "D4F-E46-003"
       ],
       "model": "e46"
     },
@@ -2319,6 +3172,149 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N52 · Elektrische Wasserpumpe und Kennfeldthermostat",
+      "valid": "E60 · 2003–2010 · N52, N54, N62 (elektrische Pumpe)",
+      "summary": "Mit dem N52 wird der Kühlkreis geregelt statt mitgedreht: die Wasserpumpe ist elektrisch und wird von der DME angesteuert, das Thermostat ist kennfeldgeregelt. Damit wird der Kreis erstmals im Fehlerspeicher sichtbar — und muss dort auch zuerst gelesen werden.",
+      "points": [
+        "Erster Griff ist der Fehlerspeicher der DME, nicht der Schraubenschlüssel: die elektrische Pumpe meldet sich mit eigenen Speichereinträgen, und bei erkanntem Ausfall geht der Motor in einen Notlauf mit deutlich reduzierter Leistung",
+        "Meldung „Motortemperatur“ im Kombi zusammen mit trägem Gaspedal ist das typische Bild eines Pumpenausfalls — nicht als Motorschaden deuten, bevor der Speicher gelesen ist",
+        "Die Ansteuerung ist ein PWM-Signal von der DME. Über den Stellgliedtest der Werkstattsoftware lässt sich die Pumpe gezielt ansprechen — läuft sie dabei hörbar an, liegt der Fehler eher in der Regelung als in der Pumpe",
+        "Kennfeldthermostat: die DME kann die Öffnung vorgeben. Ein Motor, der nicht auf Temperatur kommt, ist hier ebenso ein Speichereintrag wie ein mechanisch offenes Thermostat beim älteren Motor",
+        "Der Kreis bleibt trotz Elektronik ein Kreis: Ausgleichsbehälter, Deckel und Schläuche altern wie zuvor und werden vor dem Tausch der Pumpe geprüft",
+        "Nach jedem Öffnen entlüften — die elektrische Pumpe lässt sich dafür über die Werkstattsoftware gezielt laufen lassen, was den Vorgang deutlich zuverlässiger macht als beim mechanischen Kreis"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N62"
+      ],
+      "details": [
+        "D4F-E60-010",
+        "D4F-E60-020",
+        "D4F-E60-050"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Sechsgang-Automatik E60 · Ölstand, Adaption, Mechatronik",
+      "valid": "E60 · 2003–2010 · mit Steptronic",
+      "summary": "Mit der Sechsgang-Automatik wandert die Steuerung in die Mechatronik im Getriebe. Das verschiebt die typischen Fehler: nicht mehr der Gang fehlt, sondern die Ansteuerung wird unsauber — und der häufigste Weg dorthin ist Öl an einer Stelle, an der keines sein sollte.",
+      "points": [
+        "Getriebe über das Schild bestimmen und danach die Ölspezifikation wählen — auch in dieser Generation stehen Getriebe zweier Herstellerfamilien nebeneinander",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst lesen, dann die Adaptionswerte ansehen. Sie zeigen den Zustand der Kupplungspakete deutlicher als jede Probefahrt",
+        "Harter Ruck in einem bestimmten Gangwechsel, der reproduzierbar bleibt: Steckverbindung der Mechatronik auf Ölfeuchtigkeit prüfen, bevor ein Steuergerät bestellt wird",
+        "Ölstand nur nach Prozedur bei betriebswarmem Öl, Fahrzeug eben, über die Kontrollschraube — die Öltemperatur ist nur über das Getriebesteuergerät auslesbar, der Fühler sitzt intern",
+        "„Lebensdauerfüllung“ ist eine Werksangabe. Gewechselt wird nach Ölzustand; ein belegtes Kilometerintervall liegt hier nicht vor",
+        "Nach Eingriffen an Mechatronik oder Getriebe Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-060"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E60 · Encoderring im Radlager, Sensorik, Entlüften",
+      "valid": "E60 · 2003–2010 · DSC",
+      "summary": "Ab dieser Generation sitzt das Geberrad nicht mehr aussen als Zahnkranz, sondern als magnetischer Encoderring im Radlager. Das ändert die Diagnose grundlegend: ein Fehler am „Sensor“ ist hier oft ein Fehler am Radlager.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst; er benennt in der Regel das Rad",
+        "Bevor ein Sensor bestellt wird: der magnetische Encoderring sitzt im Radlager. Ist das Lager korrodiert oder hat Spiel, meldet der Sensor Unsinn, obwohl er heil ist — ein Sensortausch behebt das nicht",
+        "Beim Ausbau des Sensors in die Bohrung sehen: Rostaufbau am Lager drückt den Sensor aus seiner Lage und erzeugt schwache oder unplausible Signale",
+        "Nach dem Tausch eines Sensors oder Lagers kann ein Abgleich erforderlich sein — nach dem Eingriff Fehlerspeicher löschen und eine Probefahrt mit Geradeausfahrt und Kurven fahren, dann erneut lesen",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen: sporadische Fehler beim Einfedern sind fast immer Kabelbrüche",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit braucht dafür die Ansteuerung über die Werkstattsoftware"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-002",
+        "D4F-E60-030"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E60 · Vorförderung gegen Systemdruck trennen",
+      "valid": "E60 · 2003–2010 · alle Motoren",
+      "summary": "Mit der Direkteinspritzung bekommt der Kraftstoffkreis zwei Stufen: eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor. Der Fehlerspeicher meldet fehlenden Druck — welche der beiden Stufen ihn verloren hat, sagt er nicht.",
+      "points": [
+        "Die entscheidende Trennung: Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt der Vorförderdruck mit steigender Drehzahl ab, ist die Tankpumpe am Ende und alles dahinter bricht mit ihr zusammen",
+        "Hält der Vorförderdruck und der Systemdruck erreicht seine Vorgabe nicht, liegt es an der Hochdruckseite. Ohne diese beiden Verläufe nebeneinander ist jede Diagnose geraten",
+        "Ein getauschtes Bauteil, nach dem dieselben Einträge in kurzer Zeit wiederkommen, ist das Zeichen dafür, dass die falsche Stufe getauscht wurde — nicht dafür, dass das Ersatzteil schlecht war",
+        "Beim Diesel gehört die Rücklaufmenge der Injektoren zur selben Prüfung: ein Injektor mit zu hoher Rücklaufmenge zieht den Raildruck herunter, ohne dass Pumpe oder Regler defekt sind",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang überhaupt Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor irgendetwas ausgebaut wird",
+        "Der Raildrucksensor kann selbst die Ursache sein: er meldet dann einen Druck, den es so nicht gibt. Sein Signal gegen den mitgemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-020",
+        "D4F-E60-010"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E60 · Breitbandsonde, Katalysator, Diesel-Nachbehandlung",
+      "valid": "E60 · 2003–2010 · alle Motoren",
+      "summary": "Im E60 stehen Benziner mit Breitbandsonde und Diesel mit Partikelfilter nebeneinander. Die Breitbandsonde pendelt nicht mehr — wer sie wie eine Sprungsonde beurteilt, hält ein gesundes Signal für einen Fehler.",
+      "points": [
+        "Breitbandsonde nicht wie eine Sprungsonde lesen: sie liefert ein stetiges Signal statt eines Pendelns. Ein ruhiges Signal ist hier normal und kein Befund",
+        "Katalysatorurteil weiterhin über die Sonde dahinter — und erst, nachdem ein Abgasleck zwischen den Sonden ausgeschlossen ist",
+        "Beim Diesel gehört der Partikelfilter dazu: Beladung und Differenzdruck im Livedatenstrom ansehen, bevor an der Mechanik gearbeitet wird",
+        "Ein Fehler am Differenzdrucksensor sieht aus wie ein voller Filter. Die Druckschläuche zuerst prüfen — sie setzen sich mit Russkondensat zu und melden dann Werte, die es nicht gibt",
+        "Häufig abgebrochene Regenerationen sind ein Befund für sich: der Filter wird dabei voller statt leerer, und die Ursache liegt im Fahrprofil oder in einer Störung, die die Regeneration abbricht",
+        "Abgasgegendruck durch einen zugesetzten Filter oder Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-020",
+        "D4F-E60-010"
+      ],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E60 · Zustandsbasierter Service und Batterieregistrierung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Mit dem E60 löst der zustandsbasierte Service das feste Intervall ab: einzelne Positionen werden getrennt geführt und getrennt zurückgesetzt. Dazu kommt eine Regel, die neu ist und regelmässig übersehen wird — ein Batteriewechsel muss angemeldet werden.",
+      "points": [
+        "Die Serviceumfänge werden einzeln geführt und einzeln zurückgesetzt. Wer pauschal alles zurücksetzt, verliert die Information, welche Position tatsächlich fällig war",
+        "Nach jedem Batteriewechsel die neue Batterie im System registrieren — Kapazität und Bauart gehören dazu. Ohne Registrierung lädt das Fahrzeug nach dem Kennfeld der alten Batterie, was die neue vorzeitig altern lässt",
+        "Wird eine Batterie anderer Bauart eingebaut, muss auch die Bauart angemeldet werden, nicht nur der Tausch. Das Ladeverhalten unterscheidet sich zwischen den Bauarten deutlich",
+        "Der Batteriesensor an der Masseklemme gehört zur Prüfung: meldet er falsch, arbeitet das Energiemanagement mit falschen Annahmen und schaltet Verbraucher ab, die nicht abgeschaltet gehören",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter",
+        "Ölstand wird bei den neueren Motoren elektronisch bestimmt. Die Messung braucht definierte Bedingungen — ein Wert, der bei laufendem Motor kurz nach dem Start abgelesen wird, ist keine Messung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-060",
+        "D4F-E60-002"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2535,6 +3531,141 @@
       "details": [
         "D4F-E70-001",
         "D4F-E70-002"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis X5 · Grosser Kreis, Zusatzkühler, Entlüften",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Der X5 trägt mehr Kreis als eine Limousine: Motorkühler, Getriebeölkühler und je nach Ausstattung weitere Wärmetauscher hängen zusammen. Das macht das Entlüften zum eigentlichen Arbeitsschritt und die Suche nach einem Leck unübersichtlich.",
+      "points": [
+        "Vor der Bauteilsuche den Systemdruck aufbauen und halten lassen. Fällt er ab, ohne dass aussen etwas tropft, geht die Suche nach innen — nicht weiter am Kühler",
+        "Bei den Motoren mit elektrischer Wasserpumpe zuerst den Fehlerspeicher der Motorsteuerung lesen: Pumpenausfall meldet sich dort und führt zu spürbarer Leistungsreduzierung",
+        "Kühlmittelverlust ohne Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen — Kunststoff unter Wärme und Druck ist im E70 dieselbe Schwachstelle wie in den Limousinen",
+        "Entlüften ist beim E70 nicht optional: der Kreis ist lang und hat hohe Punkte. Nach jedem Öffnen so lange laufen lassen, bis der obere Schlauch durchgängig warm ist und die Heizung dauerhaft heiss bleibt",
+        "Temperaturausschläge, die kommen und gehen und zu keinem Leck passen, sind fast immer Restluft — nicht als Thermostatfehler tauschen, bevor sauber entlüftet wurde"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E70 · Bestimmen, Ölstand, Zusammenspiel mit xDrive",
+      "valid": "E70 · 2006–2013 · mit Automatik",
+      "summary": "Im X5 hängt das Automatikgetriebe am Verteilergetriebe, und Fehlerbilder aus beiden Richtungen sehen sich ähnlich. Ruckeln und Rupfen müssen deshalb zuerst zugeordnet werden, bevor am Getriebe gearbeitet wird.",
+      "points": [
+        "Fehlerspeicher von Getriebe- und Verteilergetriebesteuergerät gemeinsam lesen. Rupfen beim Rangieren kommt häufiger aus dem Antriebsstrang als aus der Gangschaltung",
+        "Getriebe über das Schild bestimmen, danach die Ölspezifikation wählen — die Sorte folgt dem Getriebe, nicht dem Fahrzeug",
+        "Ölstand nur nach Prozedur bei betriebswarmem Öl über die Kontrollschraube, Fahrzeug eben. Die Öltemperatur kommt aus dem Getriebesteuergerät, nicht aus einem Aussenfühler",
+        "Adaptionswerte auslesen und beurteilen, bevor Bauteile getauscht werden — sie zeigen den Zustand der Kupplungspakete",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-004",
+        "D4F-E70-001"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse E70 · DSC, Encoderring und elektromechanische Parkbremse",
+      "valid": "E70 · 2006–2013 · DSC, EMF",
+      "summary": "Der X5 hat neben der Fahrdynamikregelung eine elektromechanische Parkbremse. Sie hat eine Regel, die keine Empfehlung ist: vor jedem Belagwechsel hinten muss der Steller über die Werkstattsoftware in Servicestellung gefahren werden.",
+      "points": [
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt den Steller — das ist kein Risiko, sondern der übliche Ausgang",
+        "Nach dem Zusammenbau den Steller über dieselbe Funktion wieder zustellen und die Parkbremse mehrfach betätigen, bevor das Fahrzeug bewegt wird",
+        "Meldung „Parkbremse“ ohne mechanischen Befund: zuerst Fehlerspeicher des Parkbremsensteuergeräts lesen — Steller, Verkabelung und Schalter melden sich getrennt",
+        "Bei DSC-Meldungen gilt die Regel dieser Generation: der magnetische Encoderring sitzt im Radlager. Ein korrodiertes Lager erzeugt Sensorfehler, die kein Sensortausch behebt",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen; sporadische Fehler beim Einfedern sind fast immer Kabel",
+        "Generische OBD-Geräte kommen an Parkbremse und DSC nicht heran — für Servicestellung und Sensorabgleich ist die Werkstattsoftware Voraussetzung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E70 · Zwei Stufen, Rücklaufmenge, Startdruck",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Im X5 stehen direkteinspritzende Benziner und Common-Rail-Diesel nebeneinander. Beide haben eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor, und bei beiden gilt: der Speicher meldet fehlenden Druck, nicht dessen Ursache.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt die Vorförderung ab, bricht alles dahinter mit ihr zusammen — das ist die Trennung, die den teuren Fehlkauf verhindert",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor, der zu viel zurückgibt, zieht den Raildruck herunter, obwohl Pumpe und Regler in Ordnung sind",
+        "Kommen nach einem Pumpentausch dieselben Einträge in kurzer Zeit wieder, wurde die falsche Stufe getauscht",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor etwas ausgebaut wird",
+        "Der Raildrucksensor kann selbst melden, was es nicht gibt: sein Signal gegen einen mitgemessenen Druck halten, bevor die Pumpe verdächtigt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E70 · Partikelfilter, Differenzdruck, Regeneration",
+      "valid": "E70 · 2006–2013 · alle Motoren",
+      "summary": "Beim X5 dominiert der Diesel, und damit die Abgasnachbehandlung. Die häufigste Meldung betrifft den Partikelfilter — und in einem erheblichen Teil der Fälle ist nicht der Filter das Problem, sondern der Weg, auf dem sein Zustand gemessen wird.",
+      "points": [
+        "Beladung und Differenzdruck im Livedatenstrom ansehen, bevor irgendetwas ausgebaut wird. Der Wert im Ruhezustand und der Verlauf unter Last sagen zusammen mehr als jeder Einzelwert",
+        "Die Druckschläuche zum Sensor zuerst prüfen: sie setzen sich mit Russkondensat zu und melden dann Werte, die es nicht gibt. Ein voller Filter und ein verstopfter Schlauch sehen im Speicher gleich aus",
+        "Nach Werkstattarbeiten die Schlauchzuordnung prüfen — vertauschte Anschlüsse erzeugen unplausible Werte, teils mit negativem Vorzeichen",
+        "Häufig abgebrochene Regenerationen sind selbst der Befund: der Filter wird dabei voller statt leerer. Die Ursache liegt im Fahrprofil oder in einer Störung, die den Vorgang abbricht",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — ein hängendes Thermostat zeigt sich deshalb zuerst als Abgasproblem",
+        "Zugesetzter Filter erzeugt Abgasgegendruck und damit einen drehzahlabhängigen Leistungsverlust"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-001",
+        "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E70 · Zustandsbasierter Service, Batterie, Parkbremse",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 kommen drei Dinge zusammen, die vor jeder Wartung geklärt sein müssen: der zustandsbasierte Service mit einzeln geführten Umfängen, die Anmeldepflicht beim Batteriewechsel und die elektromechanische Parkbremse, die vor dem Belagwechsel in Servicestellung gehört.",
+      "points": [
+        "Serviceumfänge werden einzeln geführt und einzeln zurückgesetzt — pauschales Zurücksetzen vernichtet die Information, welche Position fällig war",
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt den Steller",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren. Ohne Registrierung lädt das Fahrzeug nach dem Kennfeld der alten Batterie",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab, die nicht abgeschaltet gehören — das sieht nach Elektrikfehler aus und ist keiner",
+        "Ölstand wird elektronisch bestimmt und braucht definierte Bedingungen; ein Wert kurz nach dem Start ist keine Messung",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E70-002",
+        "D4F-E70-007"
       ],
       "model": "e70"
     },
@@ -2846,6 +3977,143 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N43/N45/N46/N52 · Geregelter Kreis im 1er",
+      "valid": "E87 · 2004–2013 · alle Motoren",
+      "summary": "Im E87 stehen Vierzylinder mit mechanischer und Sechszylinder mit elektrischer Wasserpumpe nebeneinander. Welcher Kreis vorliegt, entscheidet den ersten Handgriff: beim geregelten Kreis wird der Fehlerspeicher gelesen, beim mechanischen wird angefasst.",
+      "points": [
+        "Erst bestimmen, welche Pumpe verbaut ist — beim Sechszylinder mit elektrischer Pumpe meldet sich ein Ausfall im Fehlerspeicher der DME und führt zu Notlauf mit reduzierter Leistung",
+        "Beim mechanischen Kreis läuft die Eingrenzung über den Verlauf: Überhitzung im Stand deutet auf den Luftweg, Überhitzung bei Fahrt auf den Wasserweg",
+        "Thermostat vergleichend über den oberen Kühlerschlauch: lange kalt, dann zügig warm ist richtig. Von Anfang an lauwarm heisst offen hängend",
+        "Ausgleichsbehälter und Deckel altern wie in allen Baureihen dieser Jahre und stehen bei Kühlmittelverlust ohne sichtbares Leck zuerst auf der Liste",
+        "Nach jedem Öffnen entlüften. Beim geregelten Kreis lässt sich die Pumpe dafür über die Werkstattsoftware gezielt ansteuern"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-020",
+        "D4F-E87-010"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E87 · Zwei Familien, Ölstand, Adaption",
+      "valid": "E87 · 2004–2013 · mit Steptronic",
+      "summary": "Im 1er stehen Sechsgang-Automatikgetriebe zweier Herstellerfamilien nebeneinander, mit unterschiedlicher Ölspezifikation. Welche verbaut ist, sagt das Getriebeschild — und nur das.",
+      "points": [
+        "Getriebeschild lesen und die Familie bestimmen, bevor Öl gekauft wird. Die Ölspezifikation folgt dem Getriebe; im Bestand dieses Projekts ist die Verwechslung schon einmal belegt korrigiert worden",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst, danach die Adaptionswerte ansehen",
+        "Harter, reproduzierbarer Ruck in einem bestimmten Gangwechsel: Steckverbindung der Mechatronik auf Ölfeuchtigkeit prüfen, bevor ein Steuergerät bestellt wird",
+        "Ölstand nach Prozedur bei betriebswarmem Öl über die Kontrollschraube, Fahrzeug eben, Motor läuft. Öltemperatur nur über das Getriebesteuergerät auslesbar",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-001",
+        "D4F-E87-002"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E87 · Radlager-Encoderring, Lenkwinkel, sporadische Fehler",
+      "valid": "E87 · 2004–2013 · DSC",
+      "summary": "Im E87 sitzt das Geberrad der Raddrehzahlmessung als magnetischer Ring im Radlager. Die häufigste Ursache für einen „Sensorfehler“ ist deshalb kein Sensor, sondern Korrosion im Lager — und die erkennt man nur beim Ausbau.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst lesen; er benennt in der Regel das betroffene Rad",
+        "Vor dem Sensortausch die Bohrung ansehen: Rostaufbau am Radlager drückt den Sensor aus seiner Lage und erzeugt schwache oder unplausible Signale. Ein neuer Sensor ändert daran nichts",
+        "Kabel an den Radläufen auf Scheuerstellen absuchen — Fehler, die nur beim Einfedern oder Einlenken kommen, sind fast immer Kabelbrüche",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung, Spur oder Lenkrad neu abgleichen, sonst meldet die Regelung dauerhaft ohne defektes Bauteil",
+        "Nach dem Eingriff Speicher löschen, Probefahrt mit Geradeausfahrt und Kurven, dann erneut lesen — erst dann ist der Fehler beurteilt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-040",
+        "D4F-E87-001"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E87 · Hochdruckseite bei N43/N54/N55",
+      "valid": "E87 · 2004–2013 · N43, N53, N54, N55",
+      "summary": "Die direkteinspritzenden Motoren im 1er haben eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor. Fehlerbilder aus beiden Stufen sehen im Speicher gleich aus — die Trennung gelingt nur über den Vergleich beider Drücke unter Last.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Fällt die Vorförderung mit steigender Drehzahl ab, ist die Tankpumpe die Ursache und die Hochdruckpumpe nur das Opfer",
+        "Hält die Vorförderung und der Systemdruck erreicht seine Vorgabe nicht, liegt der Fehler auf der Hochdruckseite",
+        "Kommen nach einem Pumpentausch dieselben Einträge in kurzer Zeit wieder, wurde die falsche Stufe getauscht — das ist ein Diagnosefehler, kein Teilefehler",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang überhaupt Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung",
+        "Der Raildrucksensor kann selbst die Ursache sein und einen Druck melden, den es nicht gibt. Sein Signal gegen den mitgemessenen Druck halten",
+        "Bei den Schichtlade-Motoren gehören Gemischfehler und Kraftstoffdruck zusammen betrachtet — eine magere Meldung ist hier nicht automatisch Falschluft"
+      ],
+      "engines": [
+        "N43",
+        "N54",
+        "N55"
+      ],
+      "details": [
+        "D4F-E87-010",
+        "D4F-E87-020"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E87 · Schichtladung, NOx-Speicher, Partikelfilter",
+      "valid": "E87 · 2004–2013 · alle Motoren",
+      "summary": "Im 1er treffen drei Abgaskonzepte aufeinander: konventionelle Benziner, die schichtladenden Direkteinspritzer mit NOx-Speicherkatalysator und die Diesel mit Partikelfilter. Jedes hat eigene Regenerationsvorgänge, die man kennen muss, um Fehler zu deuten.",
+      "points": [
+        "Bei den schichtladenden Motoren gehört der NOx-Speicherkatalysator zum System und wird zyklisch regeneriert. Was wie ein sporadischer Gemischfehler aussieht, kann ein normaler Regenerationsvorgang sein",
+        "Gemischfehler bei diesen Motoren nicht ohne Blick auf den Kraftstoffdruck deuten — magere Meldungen kommen dort ebenso oft aus der Hochdruckseite wie aus Falschluft",
+        "Beim Diesel Beladung und Differenzdruck im Livedatenstrom ansehen und die Druckschläuche prüfen, bevor der Filter verurteilt wird",
+        "Häufig abgebrochene Regenerationen machen den Filter voller statt leerer — das ist ein eigener Befund und keine Folge",
+        "Abgasleck vor oder zwischen den Sonden erzeugt magere Meldungen ohne Fehler in der Gemischbildung; es wird vor jedem Bauteilurteil ausgeschlossen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-010",
+        "D4F-E87-020"
+      ],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E87 · Zustandsbasierter Service und Batterieregistrierung",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der 1er führt den zustandsbasierten Service mit einzeln geführten Umfängen. Die Regel, die dabei am häufigsten übersehen wird, betrifft nicht das Öl, sondern die Batterie: ein Wechsel muss angemeldet werden, sonst altert die neue vorzeitig.",
+      "points": [
+        "Serviceumfänge einzeln zurücksetzen. Pauschales Zurücksetzen löscht die Information, welche Position tatsächlich fällig war",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren — ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten Batterie",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab. Das sieht nach Elektrikfehler aus und ist keiner",
+        "Ölstand wird bei den neueren Motoren elektronisch bestimmt und braucht definierte Bedingungen — ein Wert kurz nach dem Start ist keine Messung",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E87-040",
+        "D4F-E87-001"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3116,6 +4384,122 @@
           "ecu:CTM"
         ]
       },
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis E88 · Elektrische Pumpe, Zusatzlüfter, Entlüften",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Das Cabrio teilt den Kühlkreis mit dem 1er-Schrägheck: Sechszylinder mit elektrischer, geregelter Wasserpumpe, Vierzylinder je nach Motor mechanisch. Der erste Handgriff hängt davon ab, welcher der beiden Kreise vorliegt.",
+      "points": [
+        "Beim geregelten Kreis zuerst den Fehlerspeicher der DME lesen — die elektrische Pumpe schreibt eigene Einträge, und der Motor geht bei erkanntem Ausfall in einen Notlauf mit deutlich reduzierter Leistung",
+        "Meldung „Motortemperatur“ zusammen mit trägem Gaspedal ist das Bild eines Pumpenausfalls, nicht eines Motorschadens",
+        "Beim mechanischen Kreis grenzt der Verlauf ein: Überhitzung im Stand → Luftweg (Zusatzlüfter, Kühlerfläche), Überhitzung bei Fahrt → Wasserweg (Thermostat, Pumpe)",
+        "Ausgleichsbehälter und Deckel sind auch hier die häufigste Ursache für Kühlmittelverlust ohne sichtbare Pfütze",
+        "Nach jedem Öffnen entlüften, beim geregelten Kreis mit gezielt angesteuerter Pumpe. Restluft erzeugt Temperaturausschläge, die zu keinem Bauteil passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-002"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E88 · Raddrehzahl im Radlager, Lenkwinkel, Entlüften",
+      "valid": "E88 · 2007–2013 · DSC",
+      "summary": "Das Cabrio teilt die Bremsregelung mit dem 1er-Schrägheck. Der magnetische Encoderring sitzt im Radlager, weshalb Meldungen über Raddrehzahlsensoren zuerst am Lager zu prüfen sind und nicht am Sensor.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst — er benennt das betroffene Rad und erspart das Durchmessen",
+        "Vor dem Sensortausch in die Bohrung sehen: Korrosion am Radlager drückt den Sensor aus der Lage. Der Sensor ist dann nicht die Ursache, sondern der Melder",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen; sporadische Fehler beim Einfedern oder Einlenken sind fast immer mechanisch am Kabel",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung oder Spur neu abgleichen — ein vergessener Abgleich erzeugt Dauermeldungen ohne Bauteilfehler",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit braucht dafür die Ansteuerung über die Werkstattsoftware"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-001"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E88 · Zwei Stufen trennen, Startdruck",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Auch im Cabrio haben die direkteinspritzenden Motoren zwei Druckstufen. Der Fehlerspeicher meldet, dass Druck gefehlt hat — welche Stufe ihn verloren hat, zeigt erst der Vergleich beider Drücke über eine Lastfahrt.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam unter Last mitschreiben. Sackt die Vorförderung ab, bricht die Hochdruckseite mit ihr zusammen — dann ist die Tankpumpe die Ursache",
+        "Hält die Vorförderung und der Systemdruck bleibt unter der Vorgabe, liegt der Fehler auf der Hochdruckseite",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen: die falsche Stufe wurde getauscht",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung",
+        "Raildrucksensor mitverdächtigen: er kann einen Druck melden, den es nicht gibt. Sein Signal gegen einen mitgemessenen Druck halten"
+      ],
+      "engines": [
+        "N43",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-010"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E88 · Sonden, Katalysator, Regeneration",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Das Cabrio teilt die Abgaskonzepte mit dem 1er-Schrägheck. Entscheidend für die Diagnose ist, welches vorliegt — ein zyklischer Regenerationsvorgang sieht im Livedatenstrom aus wie ein sporadischer Fehler und ist keiner.",
+      "points": [
+        "Erst bestimmen, welches Abgaskonzept vorliegt: konventioneller Katalysator, NOx-Speicher bei Schichtladung oder Partikelfilter beim Diesel. Sie werden völlig unterschiedlich beurteilt",
+        "Bei Schichtladung sind zyklische Regenerationen normal. Was dabei kurzzeitig nach Gemischfehler aussieht, ist der Vorgang selbst",
+        "Magere Meldungen bei den Direkteinspritzern nicht ohne Blick auf den Kraftstoffdruck deuten — die Hochdruckseite erzeugt dasselbe Bild wie Falschluft",
+        "Abgasleck vor oder zwischen den Sonden vor jedem Bauteilurteil ausschliessen; es ist die billigere Reparatur und der häufigere Fall",
+        "Beim Diesel Beladung und Differenzdruck ansehen und zuerst die Druckschläuche prüfen, bevor der Filter verurteilt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-010"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E88 · Serviceumfänge, Batterie, Verdeckpflege",
+      "valid": "E88 · 2007–2013",
+      "summary": "Das Cabrio teilt den zustandsbasierten Service mit dem 1er-Schrägheck und bringt eine eigene Position mit: das Verdeck und seine Abläufe gehören in jede Inspektion, weil ein verstopfter Ablauf Wasser dorthin führt, wo Steuergeräte sitzen.",
+      "points": [
+        "Serviceumfänge einzeln zurücksetzen — pauschales Zurücksetzen löscht die Information, welche Position fällig war",
+        "Verdeckabläufe zur Inspektion prüfen und freimachen. Ein verstopfter Ablauf führt Wasser in den Innenraum, und dort sitzen Steuergeräte — der Folgeschaden ist elektrisch und wird lange nicht dem Verdeck zugeschrieben",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren; ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab, die nicht abgeschaltet gehören",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter",
+        "Dichtungen und Führungen des Verdecks pflegen statt erst bei Ausfall zu behandeln — schwergängige Mechanik erzeugt Endlagenfehler, die als Steuergerätefehler gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-030",
+        "D4F-E88-002"
+      ],
       "model": "e88"
     },
     {
@@ -3534,6 +4918,157 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N52/N53/N54 · Elektrische Wasserpumpe im E90",
+      "valid": "E90 · 2004–2013 · N52, N53, N54, N55",
+      "summary": "Der E90 ist die Baureihe, in der die elektrische Wasserpumpe zum Regelfall wird. Sie hat eine begrenzte Lebensdauer, meldet ihren Ausfall aber selbst — und genau deshalb beginnt die Fehlersuche hier am Diagnosestecker und nicht am Kühler.",
+      "points": [
+        "Erster Griff: Fehlerspeicher der DME. Die elektrische Pumpe schreibt eigene Einträge, und bei erkanntem Ausfall reduziert die Steuerung die Motorleistung deutlich — träges Gaspedal plus Temperaturmeldung ist das typische Bild",
+        "Der Ausfall kündigt sich oft durch schwankende Kühlmitteltemperatur an, bevor eine Meldung kommt. Wer die Temperatur im Livedatenstrom über eine Fahrt beobachtet, sieht das früher als das Kombiinstrument es meldet",
+        "Ansteuerung ist ein PWM-Signal der DME. Über den Stellgliedtest lässt sich die Pumpe gezielt ansprechen: läuft sie hörbar an, liegt der Fehler eher in Regelung oder Versorgung als in der Pumpe",
+        "Kennfeldthermostat: ein Motor, der nicht auf Temperatur kommt, ist hier ein Speichereintrag und keine reine Mechanikfrage",
+        "Der Rest des Kreises altert wie gehabt — Ausgleichsbehälter, Deckel und Schläuche werden geprüft, bevor die Pumpe getauscht wird",
+        "Nach jedem Öffnen entlüften und die Pumpe dafür über die Werkstattsoftware laufen lassen; das ist zuverlässiger als jedes Warmlaufen mit offenem Deckel"
+      ],
+      "engines": [
+        "N52",
+        "N53",
+        "N54",
+        "N55"
+      ],
+      "details": [
+        "D4F-E90-008",
+        "D4F-E90-002",
+        "D4F-E90-009"
+      ],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Steptronic E90 · Getriebe bestimmen, Öl, Adaption, Mechatronik",
+      "valid": "E90 · 2004–2013 · mit Steptronic",
+      "summary": "Der E90 fährt Sechsgang-Automatikgetriebe aus zwei Herstellerfamilien. Sie unterscheiden sich in der Ölspezifikation, und die Steuerung sitzt bei beiden als Mechatronik im Getriebe — was den häufigsten Fehler von der Mechanik zur Steckverbindung verschiebt.",
+      "points": [
+        "Getriebeschild lesen und die Familie bestimmen, bevor Öl gewählt wird. Die Spezifikation folgt dem Getriebe, nicht dem Fahrzeug — diese Verwechslung ist im Bestand dieses Projekts belegt aufgetreten",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst, dann die Adaptionswerte. Sie zeigen den Zustand der Kupplungspakete deutlicher als eine Probefahrt",
+        "Reproduzierbar harter Ruck in einem bestimmten Gangwechsel: Steckverbindung der Mechatronik auf Ölfeuchtigkeit prüfen, bevor ein Steuergerät bestellt wird",
+        "Ölstand nur nach Prozedur bei betriebswarmem Öl über die Kontrollschraube, Fahrzeug eben, Motor läuft. Die Öltemperatur ist nur über das Steuergerät auslesbar",
+        "„Lebensdauerfüllung“ ist eine Werksangabe und kein Befund — gewechselt wird nach Ölzustand",
+        "Nach Eingriffen Adaption zurücksetzen und anschliessend gemischt mit Zug und Schub fahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E90-001",
+        "D4F-E90-005"
+      ],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E90 · Encoderring im Radlager, Regelung ohne Anlass",
+      "valid": "E90 · 2004–2013 · DSC",
+      "summary": "Der E90 meldet Raddrehzahlfehler häufig, und die Ursache liegt selten im Sensor: das Geberrad ist ein magnetischer Ring im Radlager, und Korrosion dort erzeugt genau dieses Bild. Die Reihenfolge der Prüfung entscheidet über die Kosten.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst — er benennt in der Regel das Rad",
+        "Vor dem Sensortausch den Sensor ausbauen und in die Bohrung sehen: Rostaufbau am Radlager drückt den Sensor aus seiner Lage und erzeugt schwache oder unplausible Signale. Ein neuer Sensor behebt das nicht",
+        "Kabel an den Radläufen auf Scheuerstellen absuchen — Fehler, die nur beim Einlenken oder Einfedern auftreten, sind fast immer Kabelbrüche an der mitfedernden Strecke",
+        "DSC-Eingriffe ohne erkennbaren Anlass: die vier Raddrehzahlen im Livedatenstrom bei konstanter Geradeausfahrt gegeneinander halten. Ein abweichendes Rad regelt, ohne einen Fehler zu speichern",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung, Spur oder Lenkrad neu abgleichen",
+        "Nach dem Eingriff Speicher löschen, Probefahrt mit Geradeaus und Kurven, dann erneut lesen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E90-004",
+        "D4F-E90-001"
+      ],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E90 · Hochdruckpumpe gegen Tankpumpe trennen",
+      "valid": "E90 · 2004–2013 · N43, N53, N54, N55, M57, N47",
+      "summary": "Der E90 ist die Baureihe, in der die Hochdruckpumpe zum bekanntesten Ersatzteil des Kraftstoffkreises wurde — und zugleich zum am häufigsten unnötig getauschten. Der Grund ist immer derselbe: die Einträge melden fehlenden Druck, nicht dessen Quelle.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben, am besten in einem Zug unter voller Last. Sackt die Vorförderung mit steigender Drehzahl ab, ist die Tankpumpe am Ende und die Hochdruckpumpe nur das Opfer",
+        "Hält die Vorförderung und der Systemdruck erreicht seine Vorgabe nicht, liegt der Fehler auf der Hochdruckseite. Ohne beide Verläufe nebeneinander ist die Zuordnung geraten",
+        "Dieselben Einträge kurz nach einem Pumpentausch heissen nicht „schlechtes Ersatzteil“, sondern „falsche Stufe getauscht“",
+        "Gemischfehler und Druckfehler zusammen betrachten: eine magere Meldung kann von fehlendem Kraftstoffdruck kommen und muss nicht Falschluft sein",
+        "Beim Diesel gehört die Rücklaufmenge der Injektoren dazu — ein Injektor mit zu hoher Rücklaufmenge zieht den Raildruck herunter, ohne dass die Pumpe defekt ist",
+        "Der Raildrucksensor kann selbst melden, was es nicht gibt. Sein Signal gegen den mitgemessenen Druck halten, bevor eine Pumpe bestellt wird"
+      ],
+      "engines": [
+        "N43",
+        "N53",
+        "N54",
+        "N55",
+        "M57",
+        "N47"
+      ],
+      "details": [
+        "D4F-E90-002",
+        "D4F-E90-008"
+      ],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E90 · NOx-Speicher, Partikelfilter, Sondenbeurteilung",
+      "valid": "E90 · 2004–2013 · alle Motoren",
+      "summary": "Der E90 vereint alle Abgaskonzepte seiner Zeit: konventionelle Katalysatoren, NOx-Speicher bei den schichtladenden Motoren und Partikelfilter beim Diesel. Ein Fehler wird erst dann richtig gedeutet, wenn feststeht, welches System darunter arbeitet.",
+      "points": [
+        "Zuerst bestimmen, welches Abgaskonzept der Motor hat — die Beurteilung eines Signals hängt vollständig davon ab",
+        "Breitbandsonden liefern ein stetiges Signal statt eines Pendelns. Wer sie wie eine Sprungsonde liest, hält ein gesundes Signal für einen Fehler",
+        "Bei Schichtladung sind zyklische Regenerationen des NOx-Speichers normal; sie sehen im Livedatenstrom kurzzeitig wie Gemischfehler aus",
+        "Beim Diesel Beladung und Differenzdruck ansehen und zuerst die Druckschläuche prüfen — Russkondensat setzt sie zu, und ein verstopfter Schlauch sieht aus wie ein voller Filter",
+        "Häufig abgebrochene Regenerationen machen den Filter voller statt leerer. Ein Motor, der nicht auf Temperatur kommt, kann gar nicht regenerieren",
+        "Abgasleck vor oder zwischen den Sonden vor jedem Katalysatorurteil ausschliessen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E90-002",
+        "D4F-E90-008"
+      ],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E90 · Zustandsbasierter Service, Batterie anmelden",
+      "valid": "E90 · 2004–2013",
+      "summary": "Der E90 führt jede Servicerposition einzeln und rechnet sie aus dem tatsächlichen Betrieb hoch. Die wichtigste Regel dieser Generation steht aber nicht im Serviceplan: eine neue Batterie muss angemeldet werden, sonst lädt das Fahrzeug sie falsch.",
+      "points": [
+        "Serviceumfänge einzeln zurücksetzen. Wer pauschal alles zurücksetzt, verliert die Information, welche Position tatsächlich fällig war",
+        "Nach jedem Batteriewechsel Kapazität und Bauart registrieren. Ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten Batterie — die neue altert dadurch vorzeitig, ohne dass ein Fehler gespeichert wird",
+        "Wird die Bauart gewechselt, muss auch sie angemeldet werden; das Ladeverhalten unterscheidet sich zwischen den Bauarten deutlich",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, arbeitet das Energiemanagement mit falschen Annahmen und schaltet Verbraucher ab. Das sieht nach Elektrikfehler aus und ist keiner",
+        "Ölstand wird bei den neueren Motoren elektronisch bestimmt und braucht definierte Bedingungen — ein Wert kurz nach dem Start ist keine Messung",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E90-004",
+        "D4F-E90-005"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3620,6 +5155,52 @@
       "engines": [],
       "details": [
         "D4F-F-001"
+      ],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-101",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F-Generation · Elektromechanische Parkbremse und DSC",
+      "valid": "F10, F15, F22, F30 · mit EMF",
+      "summary": "In der F-Generation ist die Parkbremse elektromechanisch. Daraus folgt eine Regel, die vor jedem Belagwechsel hinten steht und keine Empfehlung ist: der Steller muss über die Werkstattsoftware in Servicestellung, sonst wird er beim Zurückdrücken beschädigt.",
+      "points": [
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt den Steller — das ist der Regelfall, nicht das Risiko",
+        "Nach dem Zusammenbau den Steller wieder zustellen und die Parkbremse mehrfach betätigen, bevor das Fahrzeug bewegt wird",
+        "Generische OBD-Geräte erreichen die Servicestellung nicht. Für diesen Arbeitsschritt ist die Werkstattsoftware oder ein Servicegerät mit ausdrücklicher Unterstützung dieser Funktion Voraussetzung",
+        "Meldung „Parkbremse“ ohne mechanischen Befund: Fehlerspeicher des zuständigen Steuergeräts lesen — Steller, Verkabelung und Schalter melden sich getrennt",
+        "Bei DSC-Meldungen gilt weiter: das Geberrad ist ein magnetischer Ring im Radlager. Korrosion dort erzeugt Sensorfehler, die kein Sensortausch behebt",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen; sporadische Fehler beim Einfedern sind fast immer Kabel und nicht Sensor"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F-001",
+        "D4F-F-003"
+      ],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-102",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F-Generation · Serviceumfänge, Batterie, elektronischer Ölstand",
+      "valid": "F10, F15, F22, F30",
+      "summary": "In der F-Generation gibt es für viele Motoren keinen Ölmessstab mehr, die Parkbremse ist elektromechanisch und die Batterie muss angemeldet werden. Drei Dinge, die eine Wartung ohne Diagnosezugang unvollständig machen.",
+      "points": [
+        "Ölstand wird elektronisch bestimmt und ist an Bedingungen gebunden — Betriebstemperatur, ebener Stand und eine Mindestlaufzeit. Ein Wert kurz nach dem Start ist keine Messung, sondern eine Zahl",
+        "Vor jedem Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren; mechanisches Zurückdrücken beschädigt den Steller",
+        "Nach jedem Batteriewechsel Kapazität und Bauart registrieren. Ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten Batterie, und die neue altert vorzeitig — ohne dass ein Fehler gespeichert wird",
+        "Serviceumfänge werden einzeln geführt und einzeln zurückgesetzt. Pauschales Zurücksetzen löscht die Information, welche Position fällig war",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter",
+        "Beim Diesel gehört das Fahrprofil zur Wartungsfrage: überwiegend Kurzstrecke verhindert vollständige Regenerationen des Partikelfilters, und das ist keine Störung, sondern eine Nutzungsfolge"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F-001",
+        "D4F-F-003"
       ],
       "model": "f-series"
     },
@@ -3831,6 +5412,96 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F10 · Geregelter Kreis, Ladeluft und Getriebekühlung",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 hängen mehrere Kreise zusammen: Motorkühlung, Ladeluftkühlung und die Getriebeölkühlung teilen sich den Bauraum vorn. Die Motorsteuerung regelt Pumpe und Thermostat und meldet Abweichungen — die Fehlersuche beginnt deshalb am Fehlerspeicher.",
+      "points": [
+        "Fehlerspeicher zuerst und über alle beteiligten Steuergeräte, nicht nur die Motorsteuerung: Kühlkreis, Ladeluftweg und Getriebe melden getrennt, und der Zusammenhang wird erst über mehrere Speicher sichtbar",
+        "Bei Meldung „Motortemperatur“ mit spürbarem Leistungsverlust ist die geregelte Wasserpumpe der erste Verdacht — das Notlaufverhalten ist gewollt und schützt den Motor",
+        "Kühlmittelverlust ohne sichtbare Pfütze: Ausgleichsbehälter, Deckel und die Kunststoffflansche prüfen. Der Behälter steht unter Druck und reisst oft nur betriebswarm sichtbar",
+        "Bei den Motoren mit indirekter Ladeluftkühlung gehört deren Kreis zur Prüfung dazu: Ladelufttemperatur im Livedatenstrom über eine Lastfahrt beobachten und mit der Aussentemperatur vergleichen",
+        "Nach jedem Öffnen mit der Werkstattsoftware entlüften — der Kreis hat mehrere hohe Punkte, und Restluft erzeugt Temperaturausschläge ohne Bauteilfehler"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-006"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F10 · Ölstand im Temperaturfenster, Adaption",
+      "valid": "F10 · 2010–2017 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik der F-Generation prüft ihren Ölstand nicht am Messstab, sondern über eine Kontrollschraube in einem engen Temperaturfenster. Wer ausserhalb dieses Fensters misst, füllt zuverlässig falsch — und zwar in beide Richtungen.",
+      "points": [
+        "Ölstand nur im vorgeschriebenen Temperaturfenster prüfen, mit ausgelesener Getriebeöltemperatur. Wird zu heiss gemessen, ist der Stand scheinbar zu hoch; zu kalt gemessen scheinbar zu niedrig — beides führt zur falschen Korrektur",
+        "Die Öltemperatur kommt aus dem Getriebesteuergerät. Ohne Diagnosegerät ist eine Ölstandsprüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug muss dabei eben stehen — auf der Hebebühne waagerecht, nicht nur angehoben. Eine Schräglage verfälscht den Stand mehr als die meisten Messfehler",
+        "Bei vorhandenem Getriebeölkühler ist der Kreis grösser als die Wechselmenge; nach einem Wechsel bleibt Altöl im System. Eine belegte Wechsel- und Trockenmenge liegt hier nicht vor — die Prozedur entscheidet, nicht eine Literzahl",
+        "Adaptionswerte auslesen und beurteilen, bevor getauscht wird. Zurückgesetzt wird nach Eingriffen an Mechatronik oder Getriebe, nicht routinemässig beim Ölwechsel",
+        "Nach dem Zurücksetzen gemischt mit Zug und Schub einfahren, damit das Getriebe neu lernt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-002"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F10 · Zwei Stufen, Diesel-Rücklaufmenge",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 arbeiten Benziner mit Direkteinspritzung und Diesel mit Common Rail nach demselben Grundmuster: eine Vorförderpumpe im Tank, eine Hochdruckpumpe am Motor. Die Diagnose trennt zuerst die beiden Stufen und erst danach die Bauteile.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt die Vorförderung ab, bricht die Hochdruckseite mit ihr zusammen — dann ist die Tankpumpe die Ursache",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor, der zu viel zurückgibt, zieht den Raildruck herunter, obwohl Pumpe und Regler in Ordnung sind",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen, dass die falsche Stufe getauscht wurde",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor etwas ausgebaut wird",
+        "Raildrucksensor mitverdächtigen: sein Signal gegen einen unabhängig mitgemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-002"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F10 · Partikelfilter, AdBlue, Differenzdruck",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 wird die Abgasnachbehandlung beim Diesel mehrstufig: Partikelfilter und je nach Ausführung eine SCR-Stufe mit Harnstoffeinspritzung. Die Stufen melden getrennt, und eine Meldung der einen wird regelmässig der anderen zugeschrieben.",
+      "points": [
+        "Fehlerspeicher vollständig lesen und die Stufen auseinanderhalten: Partikelfilter und SCR-Stufe haben eigene Sensorik und eigene Einträge. Eine Meldung der einen ist kein Urteil über die andere",
+        "Beim Partikelfilter Beladung und Differenzdruck im Livedatenstrom ansehen, und zuerst die Druckschläuche prüfen — Russkondensat setzt sie zu, und das sieht aus wie ein voller Filter",
+        "Nach Werkstattarbeiten die Schlauchzuordnung am Differenzdrucksensor prüfen; vertauschte Anschlüsse erzeugen unplausible Werte",
+        "Bei der SCR-Stufe zuerst Füllstand, Qualität und die Beheizung des Vorratsbehälters klären, bevor Dosierventil oder NOx-Sensor verdächtigt werden — eingefrorene oder verunreinigte Flüssigkeit erzeugt dieselben Meldungen",
+        "Häufig abgebrochene Regenerationen sind ein eigener Befund: der Filter wird dabei voller statt leerer",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — das Thermostat gehört damit in die Abgasdiagnose"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-003"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4028,6 +5699,72 @@
       "details": [
         "D4F-F15-001",
         "D4F-F15-002"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F15 · Mehrere Kreise, Entlüften mit Software",
+      "valid": "F15 · 2013–2018 · alle Motoren",
+      "summary": "Der X5 der F-Generation trägt Motorkühlung, Ladeluftkühlung und Getriebeölkühlung in einem eng gepackten Vorderwagen. Der Kreis ist geregelt und meldet Abweichungen selbst; das Entlüften nach einem Eingriff läuft über die Werkstattsoftware, nicht über einen offenen Deckel.",
+      "points": [
+        "Fehlerspeicher über alle beteiligten Steuergeräte lesen — Motor, Getriebe und Abgasnachbehandlung melden getrennt, und erst zusammen ergeben die Einträge ein Bild",
+        "Temperaturmeldung mit Leistungsreduzierung deutet auf die geregelte Wasserpumpe. Das Notlaufverhalten ist Schutz, kein Folgeschaden — es macht den Fehler nur deutlich sichtbarer als früher",
+        "Kühlmittelverlust ohne Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen; der Kreis steht unter Druck und Risse zeigen sich oft nur betriebswarm",
+        "Entlüften nach jedem Öffnen über die Werkstattsoftware mit gezielt angesteuerter Pumpe. Der Kreis ist lang und hat hohe Punkte — Warmlaufen mit offenem Deckel reicht hier nicht zuverlässig",
+        "Wiederkehrende Temperaturausschläge ohne passenden Speichereintrag und ohne Leck sind fast immer Restluft, nicht ein defektes Thermostat"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-006",
+        "D4F-F15-005"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F15 · Ölstand, Adaption, Antriebsstrang",
+      "valid": "F15 · 2013–2018 · mit Achtgang-Automatik",
+      "summary": "Im X5 hängt die Achtgang-Automatik am Verteilergetriebe. Rupfen und Ruckeln müssen deshalb zuerst zugeordnet werden — und der Ölstand wird über eine Kontrollschraube in einem engen Temperaturfenster geprüft, nicht am Messstab.",
+      "points": [
+        "Fehlerspeicher von Getriebe- und Verteilergetriebesteuergerät gemeinsam lesen, bevor am Getriebe gearbeitet wird. Rupfen beim Rangieren kommt häufig aus dem Antriebsstrang",
+        "Ölstand nur im vorgeschriebenen Temperaturfenster mit ausgelesener Getriebeöltemperatur prüfen — ohne Diagnosegerät ist die Prüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug dabei waagerecht stellen, nicht nur anheben. Schräglage verfälscht den Stand stärker als die meisten Messfehler",
+        "Bei vorhandenem Getriebeölkühler bleibt nach einem Wechsel Altöl im Kreis. Eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Adaption nach Eingriffen an Mechatronik oder Getriebe zurücksetzen, danach gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-004",
+        "D4F-F15-001"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F15 · Common Rail und Direkteinspritzung",
+      "valid": "F15 · 2013–2018 · alle Motoren",
+      "summary": "Der X5 dieser Generation fährt überwiegend Common-Rail-Diesel und direkteinspritzende Benziner. Beide haben zwei Druckstufen, und bei beiden entscheidet der Vergleich der Drücke unter Last darüber, welches Bauteil überhaupt in Frage kommt.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben — sackt die Vorförderung ab, ist die Tankpumpe die Ursache und alles dahinter nur betroffen",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: zu hohe Rücklaufmenge an einem Injektor zieht den Raildruck herunter, ohne Pumpenfehler",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung beziehungsweise Vorglühen",
+        "Dieselben Einträge kurz nach einem Pumpentausch bedeuten, dass die falsche Stufe getauscht wurde",
+        "Raildrucksensor gegen einen unabhängig gemessenen Druck halten, bevor eine Pumpe bestellt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F15-005",
+        "D4F-F15-001"
       ],
       "model": "f15"
     },
@@ -4232,6 +5969,94 @@
       "details": [
         "D4F-F22-001",
         "D4F-F22-005"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N13/N20/B48 · Geregelte Pumpe und Ladeluftweg",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Vierzylinder der F-Generation haben einen geregelten Kühlkreis mit elektrischer Wasserpumpe und dazu einen eigenen Kreis für die Ladeluftkühlung. Beide melden sich im Fehlerspeicher — die Eingrenzung beginnt dort und nicht am Kühler.",
+      "points": [
+        "Fehlerspeicher der Motorsteuerung zuerst: die geregelte Wasserpumpe schreibt eigene Einträge, und ein erkannter Ausfall führt zu spürbarer Leistungsreduzierung samt Temperaturmeldung",
+        "Kühlmitteltemperatur im Livedatenstrom über eine Fahrt beobachten. Schwankungen zeigen einen beginnenden Pumpen- oder Thermostatfehler früher an als das Kombiinstrument",
+        "Bei indirekter Ladeluftkühlung gehört deren Kreis zur Prüfung: Ladelufttemperatur unter Last mitschreiben und gegen die Aussentemperatur halten — der Vergleich trägt die Aussage, eine belegte Sollwerttabelle liegt hier nicht vor",
+        "Ausgleichsbehälter und Deckel prüfen, bevor ein Bauteil getauscht wird. Kühlmittelverlust ohne Pfütze hat hier seine häufigste Ursache",
+        "Nach jedem Öffnen mit der Werkstattsoftware entlüften und die Pumpe dabei gezielt ansteuern"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-004",
+        "D4F-F22-006"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F22 · Ölstand im Temperaturfenster",
+      "valid": "F22 · 2011–2019 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik hat keinen Messstab. Der Ölstand wird über eine Kontrollschraube bei ausgelesener Getriebeöltemperatur in einem engen Fenster geprüft — das macht ein Diagnosegerät zur Voraussetzung für einen Ölwechsel.",
+      "points": [
+        "Ölstand nur im vorgeschriebenen Temperaturfenster prüfen und die Getriebeöltemperatur dabei auslesen. Zu heiss gemessen ergibt scheinbar zu viel, zu kalt scheinbar zu wenig",
+        "Fahrzeug waagerecht stellen, nicht nur anheben — Schräglage verfälscht den Stand deutlich",
+        "Fehlerspeicher des Getriebesteuergeräts vor jeder mechanischen Massnahme lesen; Schaltprobleme melden sich dort, bevor sie sich fahren lassen",
+        "Adaptionswerte auslesen und beurteilen. Zurückgesetzt wird nach Eingriffen an Mechatronik oder Getriebe, nicht routinemässig",
+        "Nach dem Zurücksetzen gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-002"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F22 · Direkteinspritzung, Druck unter Last",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Motoren im F22 spritzen direkt ein und haben deshalb zwei Druckstufen. Der Fehlerspeicher meldet einen Druckverlust, ohne die Stufe zu nennen — die Zuordnung gelingt nur über den Vergleich beider Drücke unter Last.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Fällt die Vorförderung mit steigender Drehzahl ab, ist die Tankpumpe die Ursache",
+        "Hält die Vorförderung und der Systemdruck erreicht seine Vorgabe nicht, liegt der Fehler auf der Hochdruckseite",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen: falsche Stufe getauscht, nicht schlechtes Ersatzteil",
+        "Gemischfehler und Druckfehler zusammen betrachten — eine magere Meldung muss nicht Falschluft sein",
+        "Raildrucksensor mitverdächtigen und sein Signal gegen einen unabhängig gemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-006",
+        "D4F-F22-004"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F22 · Breitbandsonde, Katalysator, Partikelfilter",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Motoren im F22 arbeiten mit Breitbandsonde und aufgeladener Direkteinspritzung; spätere Benziner bekommen zusätzlich einen Partikelfilter. Das ändert die Beurteilung des Abgasgegendrucks — er ist beim Benziner nicht mehr automatisch ein Katalysatorthema.",
+      "points": [
+        "Breitbandsonde liefert ein stetiges Signal, kein Pendeln. Ein ruhiges Signal ist normal und kein Befund",
+        "Bei Benzinern mit Partikelfilter gehört dessen Beladung in die Beurteilung eines Leistungsverlusts — Gegendruck ist hier nicht mehr allein ein Katalysatorthema",
+        "Abgasleck vor oder zwischen den Sonden vor jedem Bauteilurteil ausschliessen; es erzeugt magere Meldungen ohne Fehler in der Gemischbildung",
+        "Magere Meldungen nicht ohne Blick auf den Kraftstoffdruck deuten — bei Direkteinspritzung erzeugt die Hochdruckseite dasselbe Bild wie Falschluft",
+        "Ein zugesetztes Bauteil im Abgasweg zeigt sich als drehzahlabhängiger Leistungsverlust; das trennt Gegendruck von Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-006",
+        "D4F-F22-004"
       ],
       "model": "f22"
     },
@@ -4474,6 +6299,98 @@
       "details": [
         "D4F-F30-002",
         "D4F-F30-001"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F30 · Benziner und Diesel im geregelten Kreis",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Im F30 ist der Kühlkreis durchgängig geregelt: elektrische Wasserpumpe, kennfeldgeführtes Thermostat, dazu bei den Turbomotoren ein eigener Kreis für die Ladeluftkühlung. Der Diesel bringt zusätzlich die Abgasnachbehandlung ins Spiel, die auf Betriebstemperatur angewiesen ist.",
+      "points": [
+        "Fehlerspeicher zuerst — die geregelte Pumpe meldet ihren Ausfall selbst, und die Steuerung reduziert daraufhin die Leistung. Träges Gaspedal plus Temperaturmeldung ist dieses Bild und kein Motorschaden",
+        "Beim Diesel hat ein Motor, der nicht auf Temperatur kommt, Folgen über die Kühlung hinaus: die Regeneration des Partikelfilters braucht Betriebstemperatur. Ein hängendes Thermostat zeigt sich deshalb oft zuerst als Abgasproblem",
+        "Kühlmitteltemperatur im Livedatenstrom über eine Fahrt mitschreiben und den Aufwärmverlauf beurteilen — zu langsam warm ist ein Befund, auch ohne Speichereintrag",
+        "Ladeluftkühlkreis mitprüfen, wo vorhanden: Ladelufttemperatur unter Last gegen die Aussentemperatur halten",
+        "Ausgleichsbehälter und Deckel stehen bei Kühlmittelverlust ohne sichtbares Leck zuerst auf der Liste",
+        "Nach jedem Öffnen über die Werkstattsoftware entlüften, Pumpe dabei gezielt ansteuern — Restluft erzeugt Ausschläge, die zu keinem Bauteil passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-006"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F30 · Ölstand, Adaption, Schaltverhalten",
+      "valid": "F30 · 2011–2019 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik im F30 schaltet häufig und weich, was beginnende Fehler lange verdeckt. Sichtbar werden sie in den Adaptionswerten und im Fehlerspeicher — und der Ölstand ist ohne Diagnosegerät nicht prüfbar.",
+      "points": [
+        "Ölstand nur über die Kontrollschraube im vorgeschriebenen Temperaturfenster, mit ausgelesener Getriebeöltemperatur. Ohne Diagnosegerät ist die Prüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug waagerecht stellen — auf der Bühne heisst das ausgerichtet, nicht nur angehoben",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst, dann die Adaptionswerte ansehen. Sie zeigen beginnenden Verschleiss, bevor er sich fahren lässt",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang gehört zur Wandlerüberbrückung und nicht zur Gangschaltung — das trennt zwei verschiedene Reparaturen",
+        "Bei vorhandenem Getriebeölkühler bleibt nach einem Wechsel Altöl im Kreis; eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Adaption nach Eingriffen zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-004"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F30 · Benziner und Diesel, zwei Stufen",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Im F30 gilt für Benziner und Diesel dasselbe Muster: Vorförderpumpe im Tank, Hochdruckpumpe am Motor, und ein Fehlerspeicher, der fehlenden Druck meldet, ohne die Stufe zu benennen. Beim Diesel kommt die Rücklaufmenge der Injektoren dazu.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben — das ist die Trennung, ohne die jede Zuordnung geraten ist",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor mit zu hoher Rücklaufmenge zieht den Raildruck herunter, obwohl die Pumpe fördert",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung beziehungsweise Vorglühen",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen, dass die falsche Stufe getauscht wurde",
+        "Raildrucksensor gegen einen unabhängig gemessenen Druck halten, bevor eine Pumpe bestellt wird",
+        "Gemischfehler beim Benziner nicht vorschnell als Falschluft deuten — fehlender Kraftstoffdruck erzeugt dasselbe Bild"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-002"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F30 · Partikelfilter, Regeneration, Differenzdruck",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Der F30 ist die Baureihe, in der der Partikelfilter zum Alltagsthema wird — bei den Dieseln durchgehend, bei späteren Benzinern ebenfalls. Die häufigste Fehlmassnahme ist der Filtertausch aufgrund eines Sensorwegs, der zugesetzt ist.",
+      "points": [
+        "Beladung und Differenzdruck im Livedatenstrom ansehen, im Ruhezustand und im Verlauf unter Last. Ein Einzelwert allein trägt hier keine Aussage",
+        "Die Druckschläuche zum Sensor zuerst prüfen — Russkondensat setzt sie zu, und ein verstopfter Schlauch sieht im Speicher aus wie ein voller Filter",
+        "Nach Werkstattarbeiten die Schlauchzuordnung prüfen: vertauschte Anschlüsse erzeugen unplausible Werte, teils mit negativem Vorzeichen",
+        "Bei manchen Ständen wird der Differenzdruck rechnerisch aus einem einzelnen Absolutdrucksensor gebildet statt aus zwei Anschlüssen — am Fahrzeug prüfen, welche Bauart vorliegt, sonst sucht man einen Schlauch, den es nicht gibt",
+        "Häufig abgebrochene Regenerationen machen den Filter voller statt leerer; das ist ein eigener Befund und keine Folgeerscheinung",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — ein hängendes Thermostat zeigt sich zuerst als Abgasproblem"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-002"
       ],
       "model": "f30"
     }
@@ -11662,26 +13579,26 @@
     }
   },
   "stats": {
-    "total_docs": 128,
+    "total_docs": 212,
     "total_guides": 40,
     "per_model": {
-      "e28": 7,
-      "e30": 12,
-      "e34": 8,
-      "e36": 8,
-      "e38": 7,
-      "e39": 8,
-      "e46": 9,
-      "e60": 8,
-      "e70": 7,
-      "e87": 8,
-      "e88": 6,
-      "e90": 10,
-      "f-series": 3,
-      "f10": 6,
-      "f15": 7,
-      "f22": 7,
-      "f30": 7
+      "e28": 11,
+      "e30": 18,
+      "e34": 13,
+      "e36": 13,
+      "e38": 13,
+      "e39": 14,
+      "e46": 15,
+      "e60": 14,
+      "e70": 13,
+      "e87": 14,
+      "e88": 11,
+      "e90": 16,
+      "f-series": 5,
+      "f10": 10,
+      "f15": 10,
+      "f22": 11,
+      "f30": 11
     }
   }
 }

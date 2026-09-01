@@ -267,6 +267,117 @@
           "ecu:CTM"
         ]
       }
+    },
+    {
+      "id": "D4F-E88-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis E88 · Elektrische Pumpe, Zusatzlüfter, Entlüften",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Das Cabrio teilt den Kühlkreis mit dem 1er-Schrägheck: Sechszylinder mit elektrischer, geregelter Wasserpumpe, Vierzylinder je nach Motor mechanisch. Der erste Handgriff hängt davon ab, welcher der beiden Kreise vorliegt.",
+      "points": [
+        "Beim geregelten Kreis zuerst den Fehlerspeicher der DME lesen — die elektrische Pumpe schreibt eigene Einträge, und der Motor geht bei erkanntem Ausfall in einen Notlauf mit deutlich reduzierter Leistung",
+        "Meldung „Motortemperatur“ zusammen mit trägem Gaspedal ist das Bild eines Pumpenausfalls, nicht eines Motorschadens",
+        "Beim mechanischen Kreis grenzt der Verlauf ein: Überhitzung im Stand → Luftweg (Zusatzlüfter, Kühlerfläche), Überhitzung bei Fahrt → Wasserweg (Thermostat, Pumpe)",
+        "Ausgleichsbehälter und Deckel sind auch hier die häufigste Ursache für Kühlmittelverlust ohne sichtbare Pfütze",
+        "Nach jedem Öffnen entlüften, beim geregelten Kreis mit gezielt angesteuerter Pumpe. Restluft erzeugt Temperaturausschläge, die zu keinem Bauteil passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-002"
+      ]
+    },
+    {
+      "id": "D4F-E88-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E88 · Raddrehzahl im Radlager, Lenkwinkel, Entlüften",
+      "valid": "E88 · 2007–2013 · DSC",
+      "summary": "Das Cabrio teilt die Bremsregelung mit dem 1er-Schrägheck. Der magnetische Encoderring sitzt im Radlager, weshalb Meldungen über Raddrehzahlsensoren zuerst am Lager zu prüfen sind und nicht am Sensor.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst — er benennt das betroffene Rad und erspart das Durchmessen",
+        "Vor dem Sensortausch in die Bohrung sehen: Korrosion am Radlager drückt den Sensor aus der Lage. Der Sensor ist dann nicht die Ursache, sondern der Melder",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen; sporadische Fehler beim Einfedern oder Einlenken sind fast immer mechanisch am Kabel",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung oder Spur neu abgleichen — ein vergessener Abgleich erzeugt Dauermeldungen ohne Bauteilfehler",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit braucht dafür die Ansteuerung über die Werkstattsoftware"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-002",
+        "D4F-E88-001"
+      ]
+    },
+    {
+      "id": "D4F-E88-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E88 · Zwei Stufen trennen, Startdruck",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Auch im Cabrio haben die direkteinspritzenden Motoren zwei Druckstufen. Der Fehlerspeicher meldet, dass Druck gefehlt hat — welche Stufe ihn verloren hat, zeigt erst der Vergleich beider Drücke über eine Lastfahrt.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam unter Last mitschreiben. Sackt die Vorförderung ab, bricht die Hochdruckseite mit ihr zusammen — dann ist die Tankpumpe die Ursache",
+        "Hält die Vorförderung und der Systemdruck bleibt unter der Vorgabe, liegt der Fehler auf der Hochdruckseite",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen: die falsche Stufe wurde getauscht",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung",
+        "Raildrucksensor mitverdächtigen: er kann einen Druck melden, den es nicht gibt. Sein Signal gegen einen mitgemessenen Druck halten"
+      ],
+      "engines": [
+        "N43",
+        "N54",
+        "N55",
+        "N47"
+      ],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-010"
+      ]
+    },
+    {
+      "id": "D4F-E88-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E88 · Sonden, Katalysator, Regeneration",
+      "valid": "E88 · 2007–2013 · alle Motoren",
+      "summary": "Das Cabrio teilt die Abgaskonzepte mit dem 1er-Schrägheck. Entscheidend für die Diagnose ist, welches vorliegt — ein zyklischer Regenerationsvorgang sieht im Livedatenstrom aus wie ein sporadischer Fehler und ist keiner.",
+      "points": [
+        "Erst bestimmen, welches Abgaskonzept vorliegt: konventioneller Katalysator, NOx-Speicher bei Schichtladung oder Partikelfilter beim Diesel. Sie werden völlig unterschiedlich beurteilt",
+        "Bei Schichtladung sind zyklische Regenerationen normal. Was dabei kurzzeitig nach Gemischfehler aussieht, ist der Vorgang selbst",
+        "Magere Meldungen bei den Direkteinspritzern nicht ohne Blick auf den Kraftstoffdruck deuten — die Hochdruckseite erzeugt dasselbe Bild wie Falschluft",
+        "Abgasleck vor oder zwischen den Sonden vor jedem Bauteilurteil ausschliessen; es ist die billigere Reparatur und der häufigere Fall",
+        "Beim Diesel Beladung und Differenzdruck ansehen und zuerst die Druckschläuche prüfen, bevor der Filter verurteilt wird"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-011",
+        "D4F-E88-010"
+      ]
+    },
+    {
+      "id": "D4F-E88-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E88 · Serviceumfänge, Batterie, Verdeckpflege",
+      "valid": "E88 · 2007–2013",
+      "summary": "Das Cabrio teilt den zustandsbasierten Service mit dem 1er-Schrägheck und bringt eine eigene Position mit: das Verdeck und seine Abläufe gehören in jede Inspektion, weil ein verstopfter Ablauf Wasser dorthin führt, wo Steuergeräte sitzen.",
+      "points": [
+        "Serviceumfänge einzeln zurücksetzen — pauschales Zurücksetzen löscht die Information, welche Position fällig war",
+        "Verdeckabläufe zur Inspektion prüfen und freimachen. Ein verstopfter Ablauf führt Wasser in den Innenraum, und dort sitzen Steuergeräte — der Folgeschaden ist elektrisch und wird lange nicht dem Verdeck zugeschrieben",
+        "Nach jedem Batteriewechsel die neue Batterie mit Kapazität und Bauart registrieren; ohne Anmeldung lädt das Fahrzeug nach dem Kennfeld der alten",
+        "Batteriesensor an der Masseklemme prüfen: meldet er falsch, schaltet das Energiemanagement Verbraucher ab, die nicht abgeschaltet gehören",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter",
+        "Dichtungen und Führungen des Verdecks pflegen statt erst bei Ausfall zu behandeln — schwergängige Mechanik erzeugt Endlagenfehler, die als Steuergerätefehler gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E88-030",
+        "D4F-E88-002"
+      ]
     }
   ]
 }

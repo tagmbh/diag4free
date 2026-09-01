@@ -12,12 +12,32 @@ der Umgebung — siehe
 
 Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
 
-> **Freigabe erteilt, Wirkung offen.** Am 01.09. wurde die Netzrichtlinie um
-> `bmwteka.com`, die Patent-Hosts und die Recherche-Hosts erweitert. In der
-> Session, in der das geschah, blieb alles bei `403` — ein laufender
-> Container liest seine Netzrichtlinie beim Start und nie wieder. Ob die
-> Freigabe trägt, entscheidet sich erst in einer **neuen Session**. Der
-> Prüfbefehl steht in `docs/PROGRESS.md` ganz oben.
+> **Freigabe erteilt, in neuer Session nachgemessen: greift nicht.** Am 01.09.
+> wurde die Netzrichtlinie um `bmwteka.com`, die Patent-Hosts und die
+> Recherche-Hosts erweitert. Die damalige Vermutung war, ein laufender
+> Container lese seine Richtlinie nur beim Start — die Freigabe müsse also in
+> einer **neuen** Session tragen. Diese Prüfung ist jetzt gelaufen, in einer
+> frischen Session, und die Vermutung hat sich **nicht** bestätigt:
+>
+> ```
+> 000  bmwteka.com          000  ms4x.net            000  commons.wikimedia.org
+> 000  patents.google.com   000  newtis.info         200  registry.npmjs.org
+> 000  depatisnet.dpma.de   000  web.archive.org
+> 000  worldwide.espacenet.com   000  data.epo.org   000  bmwrepairguide.com
+> ```
+>
+> Dass `registry.npmjs.org` mit `200` antwortet, zeigt: der Proxy arbeitet, es
+> fehlen nur die Einträge. Der Proxy selbst protokolliert den Grund und lässt
+> keinen Deutungsspielraum — `curl -sS "$HTTPS_PROXY/__agentproxy/status"`
+> nennt zu jedem Host `connect_rejected` mit dem Klartext *„gateway answered
+> 403 to CONNECT (policy denial or upstream failure)“*.
+>
+> Damit ist es **keine Frage der Session mehr**, sondern der Richtlinie: die
+> Freigabe hängt an einer anderen Umgebung als der, in der diese Session
+> läuft, oder **Network access** steht dort weiterhin auf *Trusted* statt
+> *Custom*. Das ist zu melden, nicht zu umgehen. Wer als Nächstes einsteigt,
+> braucht die Prüfung nicht zu wiederholen, bevor an der Netzrichtlinie der
+> **richtigen** Umgebung etwas geändert wurde.
 
 ## Kurz: was fehlt ohne Freigabe
 

@@ -280,6 +280,139 @@
         "D4F-E46-001",
         "D4F-E46-008"
       ]
+    },
+    {
+      "id": "D4F-E46-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M52/M54/N42 · Der Kunststoffkreis und seine Schwachstellen",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Der E46-Kreis besteht in weiten Teilen aus Kunststoff, der unter der Wärme im Motorraum altert. Ausgleichsbehälter, Thermostatgehäuse und Kühlerkästen geben mit den Jahren nach; beim Sechszylinder kommt das Pumpenrad dazu. Die Eingrenzung trennt zuerst Leck von Durchfluss.",
+      "points": [
+        "Kühlmittelverlust ohne Pfütze: Ausgleichsbehälter, Deckel und die Kunststoffflansche stehen zuerst auf der Liste — sie reissen mit dem Alter und tropfen oft nur unter Betriebsdruck, also warm und unter Last",
+        "Gebrochenes Pumpenrad am Sechszylinder erkennt man nicht am Geräusch: die Welle dreht weiter, es fehlt nur die Förderung. Kennzeichen ist ein oberer Kühlerschlauch, der trotz warmem Motor kalt bleibt",
+        "Thermostat vergleichend: lange kalt beim Kaltstart, dann zügig warm ist richtig. Von Anfang an lauwarm heisst offen hängend — Motor wird nicht warm, Heizung schwach, Verbrauch steigt",
+        "Elektrischer Zusatzlüfter und Viscolüfter arbeiten zusammen. Überhitzung nur im Stand und im Stau schiebt den Verdacht auf den Luftweg, Überhitzung nur bei Fahrt auf den Wasserweg",
+        "Nach jedem Öffnen entlüften: Fahrzeug vorn hoch, Heizung heiss, Deckel offen laufen lassen bis der obere Schlauch durchgängig warm ist. Luft im Kopf lässt die Anzeige springen und täuscht ein Bauteil vor",
+        "Weisser, süsslicher Auspuffdampf bei Kühlmittelverlust ohne Aussenleck: Kopfdichtung prüfen, nicht weiter am Kühler suchen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008",
+        "D4F-E46-004"
+      ]
+    },
+    {
+      "id": "D4F-E46-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E46 · Getriebe bestimmen, ATF, Adaption",
+      "valid": "E46 · 1998–2006 · mit Automatik",
+      "summary": "Im E46 kommen Automatikgetriebe aus zwei Herstellerfamilien vor, die unterschiedliches ATF verlangen. Die Bestimmung über das Getriebeschild ist deshalb kein Formalschritt, sondern der erste und wichtigste Handgriff im ganzen Bereich.",
+      "points": [
+        "Getriebeschild lesen, Familie bestimmen, dann erst die Ölspezifikation nachschlagen. Im Bestand dieses Projekts ist genau diese Verwechslung schon einmal belegt korrigiert worden",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst: Magnetventile, Drehzahlfühler und Wandlerkupplung melden sich dort",
+        "Ölzustand vor Ölstand beurteilen — braun und verbrannt riechend heisst thermische Vorschädigung, die ein Ölwechsel nicht zurücknimmt",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Die Kontrollschraube ist der Massstab, nicht eine Literangabe",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung und nicht auf die Gangschaltung",
+        "Nach Eingriffen Adaption zurücksetzen und gemischt einfahren, sonst schaltet das Getriebe nach gelernten Werten, die nicht mehr passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-009",
+        "D4F-E46-005"
+      ]
+    },
+    {
+      "id": "D4F-E46-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E46 · Raddrehzahl, Lenkwinkel, Regelung ohne Anlass",
+      "valid": "E46 · 1998–2006 · ABS, ASC, DSC",
+      "summary": "Beim E46 sind die häufigsten Bremsmeldungen Sensorfehler, nicht Bremsenfehler. Die Kunst liegt darin, Raddrehzahl, Lenkwinkel und Fahrdynamiksensorik auseinanderzuhalten — im Kombiinstrument sehen sie identisch aus.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst auslesen; er benennt das Rad oder den Sensor und erspart das Durchmessen aller Kreise",
+        "Den benannten Raddrehzahlgeber prüfen, nicht sofort tauschen: Polrad mit Rostansatz, falscher Geberspalt und Kabelbruch erzeugen dasselbe Bild und sind zusammen häufiger als ein defekter Geber",
+        "Kabel an den Radläufen absuchen. Fehler, die nur beim Einlenken oder Einfedern auftreten, sind fast immer Kabelbrüche an der mitfedernden Strecke",
+        "Lenkwinkelsensor nach Arbeiten an Lenkung, Spur oder Lenkrad neu abgleichen — sonst meldet die Regelung dauerhaft, ohne dass ein Bauteil defekt ist",
+        "DSC-Eingriffe ohne Anlass: die vier Raddrehzahlen im Livedatenstrom bei konstanter Geradeausfahrt gegeneinander halten",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften — Luft in der Regeleinheit lässt sich nicht durch Pedalpumpen entfernen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-003",
+        "D4F-E46-007"
+      ]
+    },
+    {
+      "id": "D4F-E46-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E46 · Rücklauflos, Druck, Gemischadaption",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Im E46 wird die Kraftstoffversorgung über die Bauzeit auf ein System ohne Rücklauf umgestellt, bei dem die Regelung im Tank sitzt. Welche Bauart vorliegt, ändert den Prüfweg — deshalb wird sie zuerst bestimmt.",
+      "points": [
+        "Erst bestimmen, ob ein Rücklauf zum Tank vorhanden ist. Bei rücklauflosem System sitzt die Druckregelung im Tank, und der Druckregler am Verteilerrohr, den man zu prüfen versucht, existiert dort nicht",
+        "Adaptionswerte auslesen: „zu mager“ sagt, dass Kraftstoff fehlt, nicht warum. Falschluft, Tankentlüftung und schwache Förderung erzeugen dasselbe Bild",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen — der Einbruch kommt unter Last",
+        "Falschluft ausschliessen, bevor an der Pumpe gearbeitet wird: die Kurbelgehäuseentlüftung ist in diesen Baujahren ein bekannter Kandidat und erzeugt genau dieses magere Bild",
+        "Tankentlüftungsventil prüfen — hängt es offen, läuft die Adaption weg ohne Fehler im Kraftstoffkreis",
+        "Schlechter Start nach Standzeit, normaler Warmstart: der Kreis hält den Druck nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008"
+      ]
+    },
+    {
+      "id": "D4F-E46-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E46 · Katalysator, Sekundärluft, Abgasleck trennen",
+      "valid": "E46 · 1998–2006 · alle Motoren",
+      "summary": "Der E46 meldet Katalysator- und Sekundärluftfehler häufig, und beide werden regelmässig mit teuren Teilen beantwortet, obwohl die Ursache anderswo sitzt. Die Trennung von Leck, Sonde und Katalysator ist hier der ganze Diagnoseschritt.",
+      "points": [
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere mit, arbeitet der Katalysator nicht mehr",
+        "Vor jedem Katalysatorurteil das Abgasleck zwischen den Sonden ausschliessen — es erzeugt dasselbe Bild und ist die billigere Reparatur. Das ist der häufigste Fehlkauf im Bereich",
+        "Sekundärluftfehler: Pumpe, Umschaltventil und der Weg dahin werden getrennt beurteilt. Das System arbeitet nur in den ersten Minuten nach dem Kaltstart, später ist keine Aussage möglich",
+        "Ein hängendes Umschaltventil kann Abgas in die Pumpe lassen und sie so zerstören — nach einem Pumpenausfall gehört das Ventil mit auf die Liste, sonst wiederholt sich der Schaden",
+        "Sondenheizungen getrennt von den Sonden prüfen; eine kalte Sonde regelt nicht",
+        "Zugesetzter Katalysator: drehzahlabhängiger Leistungsverlust, also Gegendruck und kein Gemischfehler"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-006",
+        "D4F-E46-008"
+      ]
+    },
+    {
+      "id": "D4F-E46-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E46 · Serviceintervall, Rückstellung, Alterungspunkte",
+      "valid": "E46 · 1998–2006",
+      "summary": "Der E46 führt ein betriebsabhängiges Serviceintervall, das über den Diagnoseanschluss zurückgestellt wird. Bei einem Fahrzeug dieses Alters sind die zeitabhängigen Positionen wichtiger als die kilometerabhängigen — der Kühlkreis steht dabei ganz oben.",
+      "points": [
+        "Rückstellung über den Diagnoseanschluss ist eine Buchung der ausgeführten Arbeit. Zurückstellen ohne Arbeit verschiebt das Problem auf den nächsten Halter",
+        "Der Kühlkreis gehört in jede Inspektion: Ausgleichsbehälter, Deckel und die Kunststoffflansche altern nach Zeit. Ein Riss darin ist im E46 die häufigste Ursache für einen Motorschaden, der vermeidbar gewesen wäre",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht",
+        "Kurbelgehäuseentlüftung zur Sichtprüfung — sie versprödet und erzeugt dann magere Gemischfehler, die lange als Motorproblem gesucht werden",
+        "Ölverbrauch über mehrere Intervalle dokumentieren statt einmalig zu messen; nur der Verlauf trägt eine Aussage",
+        "Bei unbekannter Historie den Zustand bestimmen: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen, Zustand der Kühlmittelschläuche"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E46-009",
+        "D4F-E46-003"
+      ]
     }
   ]
 }
