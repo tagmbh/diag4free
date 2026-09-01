@@ -32,8 +32,8 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Fahrzeugfotos (`assets/fahrzeuge/`) | 16 freigestellte Seitenprofile, zusammen ~120 kB |
 | Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
-| Gliederung (`content/gruppen.json`) | 21 Gruppen auf 2 Achsen, jedes Doc zugeordnet |
-| Gruppenabdeckung | **9–13** der 21 Gruppen je Baureihe; 4 der 6 Lücken in allen 16 belegt, Wartung und Bremse fehlen in der F-Serie |
+| Gliederung (`content/gruppen.json`) | 34 Gruppen auf 2 Achsen, jedes Doc zugeordnet; alle 29 Fahrzeuggruppen gegen BMWs Schema belegt (`docs/HAUPTGRUPPEN.md`) |
+| Gruppenabdeckung | **9–13** der 34 Gruppen je Baureihe — 178 von 544 Zellen = **33 %**. Der Nenner ist am 01.09. von 21 auf 34 gestiegen, weil 13 fehlende Hauptgruppen dazukamen; kein Dokument ging verloren |
 | Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
