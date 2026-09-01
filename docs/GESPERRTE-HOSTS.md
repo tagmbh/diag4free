@@ -26,11 +26,19 @@ Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
 > 000  worldwide.espacenet.com   000  data.epo.org   000  bmwrepairguide.com
 > ```
 >
-> Dass `registry.npmjs.org` mit `200` antwortet, zeigt: der Proxy arbeitet, es
-> fehlen nur die Einträge. Der Proxy selbst protokolliert den Grund und lässt
-> keinen Deutungsspielraum — `curl -sS "$HTTPS_PROXY/__agentproxy/status"`
-> nennt zu jedem Host `connect_rejected` mit dem Klartext *„gateway answered
-> 403 to CONNECT (policy denial or upstream failure)“*.
+> `registry.npmjs.org` mit `200` ist **kein** Gegenbeweis und taugt nicht als
+> Kontrollprobe: Der Host steht in `noProxy` und läuft am Egress-Proxy vorbei.
+> Wer damit argumentiert, misst die falsche Sache.
+>
+> Der Beleg ist der Proxy selbst. Er protokolliert den Grund und lässt keinen
+> Deutungsspielraum — `curl -sS "$HTTPS_PROXY/__agentproxy/status"` führt den
+> abgewiesenen Host unter `recentRelayFailures` als `connect_rejected` mit dem
+> Klartext *„gateway answered 403 to CONNECT (policy denial or upstream
+> failure)"*. Das ist die Prüfung, die zählt.
+>
+> Zweiter Punkt, unabhängig von der Sperre: `bmwteka.com/de/tis` gibt seine
+> Inhalte erst nach Anmeldung heraus. Eine Freigabe des Hosts allein reicht
+> also nicht — und fremde Zugangsdaten sind kein gangbarer Weg.
 >
 > Damit ist es **keine Frage der Session mehr**, sondern der Richtlinie: die
 > Freigabe hängt an einer anderen Umgebung als der, in der diese Session
