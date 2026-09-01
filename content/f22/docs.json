@@ -4,6 +4,7 @@
     {
       "id": "D4F-F22-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F20/F21/F22/F23 über ENET",
       "valid": "F20/F21/F22/F23 · 2011–2019 · alle Motoren",
@@ -24,13 +25,23 @@
         "OBD2 Pin 16 · KL30 Dauerplus",
         "OBD2 Pin 4/5 · Masse"
       ],
-      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
       "article": "enet-zugang.md",
-      "details": ["D4F-F22-002", "D4F-F22-007"]
+      "details": [
+        "D4F-F22-002",
+        "D4F-F22-007"
+      ]
     },
     {
       "id": "D4F-F22-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Identifikation",
       "title": "Motorzuordnung F20 bis F23: von N13 und N20 zu B38 und B48",
       "valid": "F20/F21/F22/F23 · 2011–2019",
@@ -43,13 +54,23 @@
         "Bei der Teilebestellung immer die vollständige Kennung nehmen, nicht nur die Familie",
         "Steuergerätebezeichnung der Motorsteuerung als Gegencheck zur mechanischen Ansprache notieren"
       ],
-      "engines": ["N13", "N20", "N55", "B38", "B48"],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-F22-003", "D4F-F22-001"]
+      "details": [
+        "D4F-F22-003",
+        "D4F-F22-001"
+      ]
     },
     {
       "id": "D4F-F22-003",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motor",
       "title": "N13: das Erbe der Kooperationsentwicklung eingrenzen",
       "valid": "F20/F21/F22/F23 · nur N13",
@@ -62,13 +83,19 @@
         "Anbauteile weichen von den übrigen N-Motoren ab — Teile nie nach Ähnlichkeit bestellen",
         "Erfahrungswert zur Laufleistung: Kettenauffälligkeiten treten in Berichten früh auf, teils deutlich unter 100 tkm"
       ],
-      "engines": ["N13"],
+      "engines": [
+        "N13"
+      ],
       "article": "n13-schwachstellen.md",
-      "details": ["D4F-F22-002", "D4F-F22-004"]
+      "details": [
+        "D4F-F22-002",
+        "D4F-F22-004"
+      ]
     },
     {
       "id": "D4F-F22-004",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motor",
       "title": "Valvetronic im F2x: Ventilhubsteuerung eingrenzen",
       "valid": "F20/F21/F22/F23 · Benziner mit Valvetronic",
@@ -80,12 +107,22 @@
         "Nach Arbeiten an der Ventilhubsteuerung die Adaption durchführen, sonst bleibt der Notlauf",
         "Schwergängigkeit der Exzenterwelle bringt auch einen neuen Stellmotor um — Mechanik mitbewerten"
       ],
-      "engines": ["N13", "N20", "N55", "B38", "B48"],
-      "details": ["D4F-F22-003", "D4F-F22-006"]
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-003",
+        "D4F-F22-006"
+      ]
     },
     {
       "id": "D4F-F22-005",
       "type": "TEST",
+      "gruppe": "32",
       "cat": "Lenkung",
       "title": "Elektrische Servolenkung im F2x: Ausfall eingrenzen",
       "valid": "F20/F21/F22/F23 · alle Motoren",
@@ -98,12 +135,22 @@
         "Softwarestand der Lenkung prüfen, bevor über einen Bauteiltausch entschieden wird",
         "Bei gelbem Lenkradsymbol bleibt meist eine Restunterstützung aktiv — das Fahrzeug bewegt sich, ist aber nicht in Ordnung"
       ],
-      "engines": ["N13", "N20", "N55", "B38", "B48"],
-      "details": ["D4F-F22-001", "D4F-F22-007"]
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-007"
+      ]
     },
     {
       "id": "D4F-F22-006",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Aufladung",
       "title": "N55 im M235i: Ladedruckaufbau und Wastegate beurteilen",
       "valid": "F22/F23 · nur N55",
@@ -115,13 +162,19 @@
         "Position des Wastegate-Aktors im Stellgliedtest beobachten und auf Schwankungen achten",
         "Vergleiche über Baureihen hinweg vermeiden — dieselbe Motorenfamilie ist im F22 anders abgestimmt als im großen Fahrzeug"
       ],
-      "engines": ["N55"],
+      "engines": [
+        "N55"
+      ],
       "article": "n55-ladedruck.md",
-      "details": ["D4F-F22-004", "D4F-F22-002"]
+      "details": [
+        "D4F-F22-004",
+        "D4F-F22-002"
+      ]
     },
     {
       "id": "D4F-F22-007",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Steuergeräte-Topologie im F2x: was wo sitzt",
       "valid": "F20/F21/F22/F23 · alle Motoren",
@@ -133,8 +186,17 @@
         "Ein fehlendes Steuergerät in der Liste ist häufiger eine nicht vorhandene Ausstattung als ein Ausfall",
         "Bei Arbeiten am Karosseriemodul immer mit angeschlossenem Werkstattladegerät arbeiten"
       ],
-      "engines": ["N13", "N20", "N55", "B38", "B48"],
-      "details": ["D4F-F22-001", "D4F-F22-005"]
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-005"
+      ]
     }
   ]
 }

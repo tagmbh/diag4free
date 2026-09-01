@@ -4,6 +4,7 @@
     {
       "id": "D4F-E34-001",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Diagnosezugang E34 · Rundstecker und der Bruch 1996",
       "valid": "E34 · 1987–1996",
@@ -37,6 +38,7 @@
     {
       "id": "D4F-E34-002",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "Motorzuordnung E34 · M20, M50, M60 und S38",
       "valid": "E34 · 1987–1996",
@@ -65,6 +67,7 @@
     {
       "id": "D4F-E34-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Blinkcode am E34 · welche Steuerung mitmacht",
       "valid": "E34 · 1987–1996",
@@ -91,6 +94,7 @@
     {
       "id": "D4F-E34-004",
       "type": "TEST",
+      "gruppe": "34",
       "cat": "Bremse und Fahrwerk",
       "title": "ABS- und ASC-Blinkcode ohne Diagnosegerät",
       "valid": "E34 · 1987–1996",
@@ -111,6 +115,7 @@
     {
       "id": "D4F-E34-005",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motormechanik",
       "title": "M50 gegen M50TU · VANOS erkennen und beurteilen",
       "valid": "E34 · M50, ab 09/1992 als M50TU",
@@ -134,6 +139,7 @@
     {
       "id": "D4F-E34-006",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "Motormechanik",
       "title": "M60 · Nikasil oder Alusil am Gussnummernfeld",
       "valid": "E34 · M60 ab 1992",
@@ -156,6 +162,7 @@
     {
       "id": "D4F-E34-007",
       "type": "TEST",
+      "gruppe": "12",
       "cat": "Startprobleme",
       "title": "M50 dreht ohne zu starten · Geber und Relais",
       "valid": "E34 · M50, M50TU",
@@ -179,6 +186,7 @@
     {
       "id": "D4F-E34-008",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Zweite Diagnoseleitung · Rundstecker und OBD-2 Pin 8",
       "valid": "E34 · 1987–1996",

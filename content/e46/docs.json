@@ -4,6 +4,7 @@
     {
       "id": "D4F-E46-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "INPA Setup für E46 (K+DCAN-Kabel)",
       "valid": "E46 · alle Motoren",
@@ -41,6 +42,7 @@
     {
       "id": "D4F-E46-002",
       "type": "TEST",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "NCS Expert · Grundlagen und E46-Profile",
       "valid": "E46 · Alle mit K-Line-Codierung",
@@ -72,6 +74,7 @@
     {
       "id": "D4F-E46-003",
       "type": "TEST",
+      "gruppe": "D1",
       "cat": "Fehlercodes",
       "title": "Häufige DTCs · DME MS43 (M54)",
       "valid": "E46 · M54B22/B25/B30 · DME MS 43",
@@ -102,6 +105,7 @@
     {
       "id": "D4F-E46-004",
       "type": "WDS",
+      "gruppe": "12",
       "cat": "Verkabelung",
       "title": "Stromlaufplan · Startsystem E46 M54",
       "valid": "E46 · M54 · EWS3",
@@ -131,6 +135,7 @@
     {
       "id": "D4F-E46-005",
       "type": "FUB",
+      "gruppe": "D3",
       "cat": "Codierung",
       "title": "Sinnvolle Codierungen für den E46",
       "valid": "E46 · alle Baujahre",
@@ -161,6 +166,7 @@
     {
       "id": "D4F-E46-006",
       "type": "PIN",
+      "gruppe": "13",
       "cat": "Verkabelung",
       "title": "DME-Steckerblock X60001–X60005 · MS43",
       "valid": "E46 · M54 · MS43",
@@ -192,6 +198,7 @@
     {
       "id": "D4F-E46-007",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E46 Limousine",
       "valid": "E46 · Limousine · Touring",
@@ -222,6 +229,7 @@
     {
       "id": "D4F-E46-008",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "Reparatur",
       "title": "DISA-Ventil M54 · Prüfen und Erneuern",
       "valid": "E46 · M54B22/B25/B30",
@@ -249,6 +257,7 @@
     {
       "id": "D4F-E46-009",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "M56 SULEV · Abgrenzung zum M54 und Folgen für die Diagnose",
       "valid": "E46 · 325i/325Ci/325iT · US-Markt",

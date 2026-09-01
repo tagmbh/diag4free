@@ -4,6 +4,7 @@
     {
       "id": "D4F-E38-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E38 · Rundstecker, OBD-2 und DS2",
       "valid": "E38 · 1994–2001 · alle Motoren",
@@ -36,6 +37,7 @@
     {
       "id": "D4F-E38-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "Steuergeräte-Topologie E38 · D-Bus, K-Bus, I-Bus",
       "valid": "E38 · 1994–2001",
@@ -63,6 +65,7 @@
     {
       "id": "D4F-E38-003",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "M73 · Motor",
       "title": "M73 · zwei Motorsteuerungen, eine je Bank",
       "valid": "E38 750i/750iL · M73 und M73TU",
@@ -87,6 +90,7 @@
     {
       "id": "D4F-E38-004",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "M62 · Fehlerbilder",
       "title": "M62 im E38 · Gleitschienen, Kühlmittelrohr und die Nikasil-Frage",
       "valid": "E38 735i/740i · M62 und M62TU",
@@ -110,6 +114,7 @@
     {
       "id": "D4F-E38-005",
       "type": "LOC",
+      "gruppe": "61",
       "cat": "Einbauorte",
       "title": "Steuergeräte-Einbauorte E38",
       "valid": "E38 · Limousine kurz und lang",
@@ -134,6 +139,7 @@
     {
       "id": "D4F-E38-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Ruhestrom am E38 · warum der Bus nicht einschläft",
       "valid": "E38 · 1994–2001",
@@ -159,6 +165,7 @@
     {
       "id": "D4F-E38-007",
       "type": "PIN",
+      "gruppe": "D1",
       "cat": "Verkabelung",
       "title": "Rundstecker und OBD-2 am E38 · was gesichert ist und was nicht",
       "valid": "E38 · 1994–2001",

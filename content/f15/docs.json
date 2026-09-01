@@ -4,6 +4,7 @@
     {
       "id": "D4F-F15-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F15/F16 — ENET statt K-Line",
       "valid": "F15/F16 · 2013–2018 · alle Motoren",
@@ -39,6 +40,7 @@
     {
       "id": "D4F-F15-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Identifikation",
       "title": "Motor- und Steuergerätezuordnung im F15/F16",
       "valid": "F15/F16 · 2013–2018",
@@ -67,6 +69,7 @@
     {
       "id": "D4F-F15-003",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "Luftfederung im F15 — Ausstattung erkennen und Fehler eingrenzen",
       "valid": "F15/F16 · nur Fahrzeuge mit Luftfederung",
@@ -94,6 +97,7 @@
     {
       "id": "D4F-F15-004",
       "type": "TEST",
+      "gruppe": "27",
       "cat": "Antrieb",
       "title": "xDrive-Verteilergetriebe: Stellmotor, Kalibrierung, Ölservice",
       "valid": "F15/F16 · Fahrzeuge mit xDrive",
@@ -121,6 +125,7 @@
     {
       "id": "D4F-F15-005",
       "type": "TEST",
+      "gruppe": "18",
       "cat": "Abgas",
       "title": "SCR- und AdBlue-Dosierung beim F15-Diesel",
       "valid": "F15/F16 · Sechszylinder-Diesel mit SCR",
@@ -144,6 +149,7 @@
     {
       "id": "D4F-F15-006",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Karosserie",
       "title": "Anhängerbetrieb im F15: Modul, Erkennung und Folgefunktionen",
       "valid": "F15/F16 · mit werkseitiger oder nachgerüsteter Anhängevorrichtung",
@@ -169,6 +175,7 @@
     {
       "id": "D4F-F15-007",
       "type": "TOOL",
+      "gruppe": "D5",
       "cat": "Sicherheit",
       "title": "xDrive40e: Hochvoltanteil vor jeder Diagnose klären",
       "valid": "F15 · Plug-in-Hybrid mit Vierzylinder-Benziner",

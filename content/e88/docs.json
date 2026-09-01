@@ -4,6 +4,7 @@
     {
       "id": "D4F-E88-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "INPA/ISTA-Setup für E88 (D-CAN)",
       "valid": "E88 · 2007–2013 · alle Motoren",
@@ -55,6 +56,7 @@
     {
       "id": "D4F-E88-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "E88-Steuergeräte-Topologie · welches SG spricht wie",
       "valid": "E88 · 2007–2013",
@@ -86,6 +88,7 @@
     {
       "id": "D4F-E88-010",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "N52 · Motor",
       "title": "N52B30 im E88 · Diagnose-Setup und Typen-Vielfalt",
       "valid": "E88 · N52B30 · 125i/128i",
@@ -133,6 +136,7 @@
     {
       "id": "D4F-E88-011",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N52 · Fehlerbilder",
       "title": "N52 typische Baustellen · elektrische Wasserpumpe, Valvetronic, VANOS, Ölfiltergehäuse",
       "valid": "E88 · N52 (auch E9x/E60 übertragbar)",
@@ -180,6 +184,7 @@
     {
       "id": "D4F-E88-020",
       "type": "GUIDE",
+      "gruppe": "24",
       "cat": "Getriebe · Steptronic",
       "title": "Steptronic am N52 · Getriebe bestimmen, Ölstand, Adaption",
       "valid": "E88 · N52 mit Steptronic-Automatik",
@@ -226,6 +231,7 @@
     {
       "id": "D4F-E88-030",
       "type": "GUIDE",
+      "gruppe": "54",
       "cat": "Verdeck (CTM)",
       "title": "Cabrio-Verdeck E88 · CTM-Steuerung und typische Fehler",
       "valid": "E88 · alle · Soft-Top mit Hydraulik",

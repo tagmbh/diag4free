@@ -4,6 +4,7 @@
     {
       "id": "D4F-F30-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F30/F31/F34 · ENET, Buchse und Softwarewahl",
       "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
@@ -24,13 +25,29 @@
         "OBD2 Pin 8 · herstellerfrei, kein genormtes Signal · an der F-Serie Aktivierungsleitung über Widerstand auf Pin 16",
         "OBD2 Pin 4/5 · Masse · Pin 16 · KL30 Dauerplus"
       ],
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
       "article": "diagnosezugang.md",
-      "details": ["D4F-F-003", "D4F-F30-003", "D4F-F30-004"]
+      "details": [
+        "D4F-F-003",
+        "D4F-F30-003",
+        "D4F-F30-004"
+      ]
     },
     {
       "id": "D4F-F30-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "Motorzuordnung F30/F31/F34 · N-Motoren vor dem LCI, B-Motoren danach",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -43,13 +60,28 @@
         "N13 gegen N20 trennen: beide sind aufgeladene Vierzylinder, aber der N13 ist der 1.6er der Einstiegsmodelle mit anderem Grundmotor. Über den Motorcode am Block entscheiden, nicht über das Typschild",
         "Diesel: erst Zylinder zählen, dann die Generation bestimmen. Vier Zylinder heißt N47 bis 2015 und danach B47 als eigener Nachfolgemotor; sechs Zylinder heißt N57 in 330d und 335d, und der läuft über das Facelift hinweg weiter. Bei N47 und N57 sitzt der Steuerkettentrieb hinten zum Getriebe, metallisches Rasseln nach dem Kaltstart aus dem hinteren Motorbereich ist dort das Leitsymptom. Die Kettenlage des B47 ist widersprüchlich belegt, Einzelheiten in D4F-F30-007"
       ],
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
       "article": "motorzuordnung.md",
-      "details": ["D4F-F30-001", "D4F-F30-007"]
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-007"
+      ]
     },
     {
       "id": "D4F-F30-003",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Steuergeräte",
       "title": "CAS4 oder FEM · das Zugangssystem des F30 bestimmen",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -62,13 +94,28 @@
         "Ein Gebrauchtteil bringt Fahrzeugauftrag und Softwarestand des Spenderfahrzeugs mit. Vor dem Einbau beides lesen und mit dem eigenen Fahrzeug vergleichen",
         "Vor jedem Tausch am Zugangssystem Fahrzeugauftrag und Ist-Verbauliste sichern. Ohne den Ausgangszustand fehlt hinterher der Bezugspunkt"
       ],
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
       "article": "cas4-oder-fem.md",
-      "details": ["D4F-F30-001", "D4F-F30-004"]
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-004"
+      ]
     },
     {
       "id": "D4F-F30-004",
       "type": "TEST",
+      "gruppe": "D3",
       "cat": "Softwarestand",
       "title": "I-Stufe und Datenstand am F30 prüfen",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -81,12 +128,27 @@
         "Hier steht bewusst keine Versionsnummer für Programmier- oder Diagnosedaten. Solche Angaben altern im Monatsrhythmus und werden zwischen Baureihen falsch abgeschrieben. Maßgeblich ist, was am Fahrzeug steht",
         "Vor der Programmierung Fahrzeugauftrag und Ist-Verbauliste sichern und ein Werkstattladegerät anschließen. Beides ist der Rückweg, wenn ein Vorgang abbricht"
       ],
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
-      "details": ["D4F-F30-001", "D4F-F30-003"]
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-003"
+      ]
     },
     {
       "id": "D4F-F30-005",
       "type": "TEST",
+      "gruppe": "32",
       "cat": "Fahrwerk",
       "title": "Lenkungsmeldung am F30 einordnen · EPS, Bordnetz und Adaption",
       "valid": "F30/F31/F34 · 2011–2019",
@@ -99,13 +161,27 @@
         "Ein Lenkgetriebe wird nach reproduzierbarem Verhalten getauscht, nicht nach einem einzelnen Eintrag. Löschen, Probefahrt mit Lenkeinschlag in beide Richtungen, erneut lesen",
         "Sollwerte für Ströme und Momente der Lenkung stehen in keiner hier verfügbaren Quelle. Deshalb vergleichend arbeiten: gleiches Fahrzeug, gleiche Bedingungen, gegebenenfalls ein zweites Fahrzeug derselben Ausstattung"
       ],
-      "engines": ["N13", "N20", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
       "article": "eps-lenkung.md",
-      "details": ["D4F-F30-006", "D4F-F30-003"]
+      "details": [
+        "D4F-F30-006",
+        "D4F-F30-003"
+      ]
     },
     {
       "id": "D4F-F30-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Batteriewechsel und Energiemanagement am F30",
       "valid": "F30/F31/F34 · 2011–2019 · alle Motoren",
@@ -118,12 +194,27 @@
         "Nach dem Wechsel Fehlerspeicher aller Steuergeräte lesen, notieren und erst dann löschen. Der Spannungseinbruch beim Abklemmen hinterlässt Einträge in Modulen, die mit der Batterie nichts zu tun haben",
         "Eine geladene Batterie zeigt in Ruhe rund 12.6 V, gemessen nach mehreren Stunden Standzeit direkt an den Polen. Bei jedem Schreibvorgang am Fahrzeug ein Werkstattladegerät anschließen, keinen Erhaltungslader"
       ],
-      "engines": ["N13", "N20", "N26", "N55", "N47", "B47", "N57", "B38", "B48", "B58"],
-      "details": ["D4F-F30-005", "D4F-F30-003"]
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N55",
+        "N47",
+        "B47",
+        "N57",
+        "B38",
+        "B48",
+        "B58"
+      ],
+      "details": [
+        "D4F-F30-005",
+        "D4F-F30-003"
+      ]
     },
     {
       "id": "D4F-F30-007",
       "type": "TEST",
+      "gruppe": "D4",
       "cat": "Motorsteuerung",
       "title": "B47-Diesel im F30 · Abgrenzung zum N47 und was daraus für die Diagnose folgt",
       "valid": "F30/F31/F34 · Diesel ab 2015",
@@ -136,9 +227,14 @@
         "AGR-Kühler ist der bekannteste Punkt: Kühlmittel verschwindet ohne Pfütze unter dem Fahrzeug, in Berichten begleitet von Abgas- oder Brandgeruch. BMW ruft dafür seit 2018 zurück, betroffen sind N47, N57 und B47. Vor jeder Arbeit am AGR-Modul den Rückrufstand über die Fahrgestellnummer prüfen",
         "Steuerkettenlage widersprüchlich belegt: ein Teil der Quellen lässt die Kette auf der Getriebeseite und nennt den Kettentrieb überarbeitet, ein anderer setzt sie nach vorn. Der Widerspruch verläuft quer durch alle Quellenkategorien, eine Mehrheit lässt sich daraus nicht bilden. Das entscheidet über den Getriebeausbau und damit über die Arbeitszeit. Vor der Kalkulation am Fahrzeug nachsehen, Kaltstartrasseln in jedem Fall abklären"
       ],
-      "engines": ["B47"],
+      "engines": [
+        "B47"
+      ],
       "article": "b47-diesel.md",
-      "details": ["D4F-F30-002", "D4F-F30-001"]
+      "details": [
+        "D4F-F30-002",
+        "D4F-F30-001"
+      ]
     }
   ]
 }

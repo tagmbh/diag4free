@@ -55,6 +55,24 @@ const LAYOUTS = ['R3', 'R4', 'R5', 'R6', 'V8', 'V10', 'V12', 'B4', 'B6'];
 const ASPIRATIONS = ['Sauger', 'Saugmotor', 'Turbo', 'Bi-Turbo', 'Kompressor'];
 const DOC_TYPES = ['WDS', 'FUB', 'PIN', 'LOC', 'TEST', 'TOOL', 'GUIDE'];
 
+// Die Gruppentabelle wird gelesen, nicht nachgebaut: content/gruppen.json ist
+// die einzige Stelle, an der eine Gruppe entsteht. Fehlt die Datei, bricht die
+// Pruefung ab statt jede Gruppe durchzuwinken -- ein stiller Durchlauf waere
+// hier schlimmer als ein lauter Abbruch.
+const GRUPPEN = await (async () => {
+  const pfad = join(CONTENT, 'gruppen.json');
+  if (!await exists(pfad)) {
+    console.error('Abbruch: content/gruppen.json fehlt -- ohne sie ist keine Gruppe pruefbar.');
+    process.exit(2);
+  }
+  const { gruppen = [] } = await readJson(pfad);
+  if (!gruppen.length) {
+    console.error('Abbruch: content/gruppen.json nennt keine Gruppen.');
+    process.exit(2);
+  }
+  return new Set(gruppen.map(g => g.id));
+})();
+
 async function validateModels() {
   const f = 'content/models.json';
   const data = await readJson(join(CONTENT, 'models.json'));
@@ -110,8 +128,14 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
         if (!isStr(d.id)) { err(f, 'Doc ohne `id`'); continue; }
         if (docIds.has(d.id)) err(f, `doppelte Doc-ID \`${d.id}\``);
         docIds.add(d.id);
-        for (const req of ['type', 'cat', 'title', 'valid', 'summary']) {
+        for (const req of ['type', 'gruppe', 'cat', 'title', 'valid', 'summary']) {
           if (!isStr(d[req])) err(f, `\`${d.id}\`: Pflichtfeld \`${req}\` fehlt`);
+        }
+        // Die Gruppe ist der Weg, auf dem das Dokument gefunden wird. Eine
+        // Gruppe, die es in gruppen.json nicht gibt, macht es unsichtbar --
+        // dieselbe Klasse Fehler wie ein Verzeichnis, das keine Baureihe ist.
+        if (d.gruppe && !GRUPPEN.has(d.gruppe)) {
+          err(f, `\`${d.id}\`: Gruppe \`${d.gruppe}\` steht nicht in content/gruppen.json`);
         }
         if (d.type && !DOC_TYPES.includes(d.type)) {
           err(f, `\`${d.id}\`: \`type\` \`${d.type}\` ist keiner von ${DOC_TYPES.join(', ')}`);

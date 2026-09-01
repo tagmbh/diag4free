@@ -4,6 +4,7 @@
     {
       "id": "D4F-E60-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang E60/E61 · Kabel, Protokoll und Software nach Baujahr",
       "valid": "E60/E61 · 2003–2010 · alle Motoren",
@@ -24,17 +25,37 @@
         "OBD2 Pin 16 · KL30 Dauerplus",
         "OBD2 Pin 8 · herstellerfrei, kein genormtes Signal · Belegung am E60 strittig — siehe Werkstattpunkte"
       ],
-      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
       "article": "diagnosezugang.md",
-      "details": ["D4F-E60-002"],
+      "details": [
+        "D4F-E60-002"
+      ],
       "obd": {
-        "pids": ["0100", "0104", "0105", "010B", "010C", "010F"],
-        "requires": ["ecu:DME", "protocol:D-CAN"]
+        "pids": [
+          "0100",
+          "0104",
+          "0105",
+          "010B",
+          "010C",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DME",
+          "protocol:D-CAN"
+        ]
       }
     },
     {
       "id": "D4F-E60-002",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Modell-Setup",
       "title": "E60-Steuergeräte-Topologie · welcher Bus trägt welches Gerät",
       "valid": "E60/E61 · 2003–2010",
@@ -51,13 +72,24 @@
         "OBD2 Pin 6/14 · D-CAN — Diagnoseleitung am Gateway",
         "OBD2 Pin 7 · K-Line — Diagnoseleitung bis 03/2007"
       ],
-      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
       "article": "topologie.md",
-      "details": ["D4F-E60-001", "D4F-E60-040"]
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-040"
+      ]
     },
     {
       "id": "D4F-E60-010",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "N62 · Fehlerbilder",
       "title": "N62-V8 im E60 · Öl- und Kühlmittelverlust eingrenzen",
       "valid": "E60/E61 · N62 (545i, 550i und Verwandte)",
@@ -71,17 +103,28 @@
         "Sollwerte fehlen: Anzugsmomente der Ventildeckel und des Trägers sind hier nicht belegt. Sie gehören aus der Herstellervorgabe geholt — Aluminium verzeiht ein geschätztes Moment nicht"
       ],
       "pins": [],
-      "engines": ["N62"],
+      "engines": [
+        "N62"
+      ],
       "article": "n62-fehlerbilder.md",
-      "details": ["D4F-E60-002"],
+      "details": [
+        "D4F-E60-002"
+      ],
       "obd": {
-        "pids": ["0104", "0105", "010C"],
-        "requires": ["ecu:DME"]
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
       }
     },
     {
       "id": "D4F-E60-020",
       "type": "TEST",
+      "gruppe": "13",
       "cat": "M57 · Fehlerbilder",
       "title": "M57-Diesel im E60 · Drallklappen, Abgasrückführung und Ladedruck",
       "valid": "E60/E61 · M57 (525d, 530d, 535d)",
@@ -95,16 +138,29 @@
         "Sollwerte fehlen: konkrete Ladedruck- und Unterdruckwerte sind hier nicht belegt. Vergleichend arbeiten — Soll- gegen Ist-Ladedruck im Steuergerät gegenhalten statt gegen eine Zahl von außen"
       ],
       "pins": [],
-      "engines": ["M57"],
-      "details": ["D4F-E60-001", "D4F-E60-002"],
+      "engines": [
+        "M57"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ],
       "obd": {
-        "pids": ["0104", "0105", "010B", "010F"],
-        "requires": ["ecu:DDE"]
+        "pids": [
+          "0104",
+          "0105",
+          "010B",
+          "010F"
+        ],
+        "requires": [
+          "ecu:DDE"
+        ]
       }
     },
     {
       "id": "D4F-E60-030",
       "type": "GUIDE",
+      "gruppe": "37",
       "cat": "Fahrwerk · Dynamic Drive",
       "title": "Dynamic Drive und Aktivlenkung · was ausfällt und was nur mitmeldet",
       "valid": "E60/E61 · mit aktiver Wankstabilisierung bzw. Aktivlenkung",
@@ -118,13 +174,23 @@
         "Aktivlenkung meldet sich mit eigener Warnung. Steht sie zusammen mit einer Dynamic-Drive-Meldung an, zuerst die gemeinsame Ursache prüfen: Servokreis, Bordspannung, PT-CAN"
       ],
       "pins": [],
-      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
       "article": "dynamic-drive.md",
-      "details": ["D4F-E60-002"]
+      "details": [
+        "D4F-E60-002"
+      ]
     },
     {
       "id": "D4F-E60-040",
       "type": "TEST",
+      "gruppe": "65",
       "cat": "iDrive · MOST",
       "title": "MOST-Ring und iDrive · Ringbruch finden statt Steuergeräte tauschen",
       "valid": "E60/E61 · mit MOST-Ring (Radio, Navigation, Verstärker)",
@@ -138,13 +204,23 @@
         "Sporadischer Ausfall zusammen mit erhöhter Ruhestromaufnahme deutet darauf hin, dass ein Gerät den Ring nicht schlafen lässt. Dann ist die Ruhestrommessung der schnellere Weg als der Bauteiltausch"
       ],
       "pins": [],
-      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
       "article": "most-idrive.md",
-      "details": ["D4F-E60-002"]
+      "details": [
+        "D4F-E60-002"
+      ]
     },
     {
       "id": "D4F-E60-050",
       "type": "TEST",
+      "gruppe": "11",
       "cat": "S85 · M5",
       "title": "S85-V10 im M5 · VANOS-Hochdruckpumpe, Pleuellager und SMG",
       "valid": "E60/E61 M5 · S85",
@@ -158,16 +234,28 @@
         "Vor jeder Diagnose am M5 den Ladezustand der Batterie sichern. Der S85 und das SMG reagieren auf zu niedrige Bordspannung mit Einträgen, die wie Bauteilfehler aussehen"
       ],
       "pins": [],
-      "engines": ["S85"],
-      "details": ["D4F-E60-001", "D4F-E60-002"],
+      "engines": [
+        "S85"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ],
       "obd": {
-        "pids": ["0104", "0105", "010C"],
-        "requires": ["ecu:DME"]
+        "pids": [
+          "0104",
+          "0105",
+          "010C"
+        ],
+        "requires": [
+          "ecu:DME"
+        ]
       }
     },
     {
       "id": "D4F-E60-060",
       "type": "GUIDE",
+      "gruppe": "61",
       "cat": "Bordnetz · Energie",
       "title": "Batteriewechsel am E60 registrieren · IBS, DME und Ladeverhalten",
       "valid": "E60/E61 · 2003–2010 · alle Motoren",
@@ -184,8 +272,18 @@
         "Batteriesensor am Minuspol · Massepunkt Kofferraum",
         "OBD2 Pin 16 · KL30 Dauerplus"
       ],
-      "engines": ["M54", "M57", "N52", "N54", "N62", "S85"],
-      "details": ["D4F-E60-001", "D4F-E60-002"]
+      "engines": [
+        "M54",
+        "M57",
+        "N52",
+        "N54",
+        "N62",
+        "S85"
+      ],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-002"
+      ]
     }
   ]
 }

@@ -41,6 +41,35 @@ Symptome dorthin geführt.
 Diagnosepfad an der Stelle, an der sie gebraucht werden, und in der
 Bibliothek für den, der gezielt sucht.
 
+## Wie der Bestand gegliedert ist
+
+Vorher trugen 128 Dokumente **48 frei getippte Kategorien** — von
+„Diagnose-Tools" mit 19 Einträgen bis „S85 · M5" mit einem. Das ist keine
+Gliederung, sondern eine Liste mit Etiketten: Es gab keinen Weg zu sehen,
+was zu einer Baureihe da ist und was fehlt.
+
+Die Ordnung kommt jetzt aus `content/gruppen.json`, auf **zwei Achsen**:
+
+- **Am Fahrzeug** — BMWs zweistellige Hauptgruppen, dieselben Ziffern, mit
+  denen eine Teilenummer beginnt und nach denen ein Werkstatthandbuch
+  gegliedert ist. Wer sie kennt, findet sich ohne Einarbeitung zurecht.
+- **Diagnose und Werkstatt** — eigene Gruppen mit `D`-Präfix für
+  Diagnosezugang, Werkzeug, Codierung und Bestimmung. Dafür gibt es in TIS
+  keine Hauptgruppe; eine zu erfinden wäre gelogen, und das Präfix sagt,
+  dass hier keine BMW-Nummer steht.
+
+Jede Gruppe trägt ein `beleg`-Feld: `bestaetigt`, `schema` oder `eigen` —
+dieselbe Beweisdisziplin wie bei den Inhalten.
+
+`gruppe` ist Pflichtfeld und wird gegen `gruppen.json` geprüft. `cat` bleibt
+als feinerer Freitext-Chip, trägt aber keine Navigation mehr.
+
+**Die Abdeckungstafel** in der Übersicht zeigt *alle* Gruppen, auch die
+leeren. Darin liegt ihr Wert: Ein Strich sagt, dass zu diesem Fahrzeug in
+dieser Gruppe nichts steht — nicht, dass es am Fahrzeug nichts gibt. Leere
+Gruppen sind bewusst nicht anklickbar, sonst sähe eine Lücke aus wie ein
+Angebot.
+
 ## Übersicht gegen Bibliothek
 
 Heute ist unklar, was wofür da ist. Klare Trennung:
@@ -145,6 +174,10 @@ Was die Abnahme inzwischen festhält, damit es nicht zurückfällt:
 - Jede Fahrzeugkarte trägt ein Foto, das wirklich lädt, und darunter
   weiterhin die Zeichnung
 - Die Legende zum Motorschema nennt genau das, was das Bild auch zeichnet
+- Die Bibliothek gliedert nach Gruppen, und jede Gruppe steht auch in
+  `gruppen.json`
+- Die Abdeckungstafel steht im Cockpit, benennt die leeren Gruppen und
+  macht sie nicht anklickbar
 - Browser-Zurück bleibt in der App, ein Neuladen im Pfad landet an
   derselben Frage
 - Tastaturfokus zeichnet einen eigenen Ring, nicht denselben wie Hover
@@ -162,6 +195,13 @@ Schublade standen auf dem Telefon ausserhalb des Bildes — vorhanden,
 sichtbar im DOM, nicht zu treffen. Dieselbe Art Fehler wie die erste
 Fassung der Einführung, die die erste Fahrzeugkarte unter die Falz schob.
 Ein Element zu zeichnen heisst nicht, dass jemand es benutzen kann.
+
+**Ein Vorbehalt im Test verschluckt die Prüfung.** Der erste Test der
+Abdeckungstafel stand unter `if (tafel > 0)`. Die Tafel steht im Cockpit,
+der Test ging auf die leere Übersicht — vier Prüfungen liefen nie, und die
+Abnahme meldete trotzdem grün. Ein Test, der sich selbst überspringen kann,
+ist schlimmer als keiner: Er behauptet Deckung, die es nicht gibt. Dieselbe
+Fehlerklasse wie die beiden folgenden, nur auf der Prüfseite.
 
 **Ein Zustand sieht aus wie ein anderer.** Hover und Tastaturfokus teilten
 sich eine Regel. Wer mit der Tastatur arbeitet, konnte nicht sehen, wo er

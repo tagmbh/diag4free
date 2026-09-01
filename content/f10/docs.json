@@ -4,6 +4,7 @@
     {
       "id": "D4F-F10-001",
       "type": "TOOL",
+      "gruppe": "D2",
       "cat": "Diagnose-Tools",
       "title": "Diagnosezugang F10/F11 · ENET statt K-Line",
       "valid": "F10/F11 · 2010–2017 · alle Motoren",
@@ -45,6 +46,7 @@
     {
       "id": "D4F-F10-002",
       "type": "GUIDE",
+      "gruppe": "D4",
       "cat": "Motoridentifikation",
       "title": "Motorzuordnung F10/F11 · vom Saugsechszylinder zum B-Motor",
       "valid": "F10/F11 · 2010–2017",
@@ -76,6 +78,7 @@
     {
       "id": "D4F-F10-003",
       "type": "FUB",
+      "gruppe": "61",
       "cat": "Steuergeräte",
       "title": "Zugangssystem und Bus-Topologie F10/F11 · CAS4, ZGW, FRM",
       "valid": "F10/F11 · 2010–2017",
@@ -107,6 +110,7 @@
     {
       "id": "D4F-F10-004",
       "type": "TEST",
+      "gruppe": "37",
       "cat": "Fahrwerk",
       "title": "FlexRay-Fahrwerk am F10/F11 · ICM und die geregelten Systeme",
       "valid": "F10/F11 · 2010–2017 · Fahrzeuge mit geregeltem Fahrwerk",
@@ -136,6 +140,7 @@
     {
       "id": "D4F-F10-005",
       "type": "TEST",
+      "gruppe": "D3",
       "cat": "Softwarestand",
       "title": "I-Stufe am F10/F11 auslesen und einordnen",
       "valid": "F10/F11 · 2010–2017",
@@ -168,6 +173,7 @@
     {
       "id": "D4F-F10-006",
       "type": "TEST",
+      "gruppe": "61",
       "cat": "Bordnetz",
       "title": "Batteriewechsel am F10/F11 · registrieren und codieren",
       "valid": "F10/F11 · 2010–2017 · alle Motoren",
