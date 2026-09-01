@@ -1,6 +1,6 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-08-27 · `main` = `f1e39d3` · **nichts offen, kein PR hängt**
+> Stand: 2026-09-01 · `main` = `0cce95b` + Gliederungsumbau (PR offen)
 > Live: https://diag4all.t-alpha.com
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
@@ -30,7 +30,8 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Fahrzeugfotos (`assets/fahrzeuge/`) | 16 freigestellte Seitenprofile, zusammen ~120 kB |
 | Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
-| Abnahme (`tests/run.mjs`) | **435 Prüfungen**, alle grün |
+| Gliederung (`content/gruppen.json`) | 21 Gruppen auf 2 Achsen, jedes Doc zugeordnet |
+| Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
 **Verifizieren nach jeder Änderung:**
@@ -205,6 +206,28 @@ Der Text sagt, **warum das Teil jetzt interessiert**, nicht wie es
 funktioniert. Beim N47 also: die Kette sitzt hinten, an sie kommt man nur mit
 ausgebautem Getriebe. Jeder Begriff laeuft durch `Glossar.markup()` und ist
 damit einen Klick von seiner Erklaerung entfernt, ohne den Profi aufzuhalten.
+
+## Gliederung nach Hauptgruppen (01.09.)
+
+bmwteka.com sollte als Vorbild analysiert werden, ist aber vom Egress-Proxy
+gesperrt — wie alle externen Hosts ausser der Websuche. Die Analyse kam
+deshalb aus der Suche, die BMWs Hauptgruppen-Schema fuer mehrere Bereiche
+unabhaengig bestaetigt hat (11/12/13/16/17/18, 21/23/24/25/31, 61/62/63/64/65).
+
+Der Befund im eigenen Bestand war deutlicher als erwartet: 128 Dokumente
+trugen 48 verschiedene `cat`-Werte. Das ist keine Gliederung. Jetzt liegt
+jedes Dokument in einer von 21 Gruppen, auf zwei Achsen — BMWs Hauptgruppen
+fuer alles am Fahrzeug, eigene D-Gruppen fuer die Werkstattarbeit, fuer die
+es in TIS keine Hauptgruppe gibt.
+
+Die Zuordnung ist je Dokument geprueft, nicht je Kategorie durchgewunken:
+"Verkabelung" enthielt Diagnosestecker, Kabelbaum und Startfreigabe.
+
+**Was daraus folgt und noch offen ist:** Die Abdeckungstafel macht jetzt
+sichtbar, welche Gruppen je Baureihe leer sind. Damit ist die Frage "was
+fehlt uns noch" zum ersten Mal beantwortbar, statt geschaetzt zu werden.
+Der naechste Durchgang sollte sich die leeren Gruppen der meistgefahrenen
+Baureihen vornehmen — welche das sind, zeigt die Tafel.
 
 ## Gefundene und behobene Fehler (Verlauf)
 
