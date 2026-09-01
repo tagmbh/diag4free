@@ -585,8 +585,16 @@ async function main() {
           'Abdeckungstafel steht im Cockpit', 'keine Tafel');
         const zeilen = await page.locator('.abdeckung .abd-zeile').count();
         const leer = await page.locator('.abdeckung .abd-zeile.leer').count();
-        expect(zeilen >= 15,
-          'Abdeckungstafel zeigt alle Gruppen', `nur ${zeilen} Zeilen`);
+        // Gegen gruppen.json gezaehlt, nicht gegen eine gerundete Untergrenze:
+        // ein `>= 15` waere bei 21 wie bei 34 Gruppen gruen geblieben und haette
+        // verschwiegen, dass die Tafel dreizehn Gruppen unterschlaegt.
+        const sollGruppen = await page.evaluate(async () => {
+          const r = await fetch('./content/gruppen.json');
+          return (await r.json()).gruppen.length;
+        });
+        expect(zeilen === sollGruppen,
+          'Abdeckungstafel zeigt jede Gruppe aus gruppen.json',
+          `${zeilen} Zeilen, aber ${sollGruppen} Gruppen`);
         expect(leer > 0,
           'Abdeckungstafel benennt auch die leeren Gruppen',
           'keine leere Gruppe markiert — dann sagt die Tafel nichts ueber Luecken');
