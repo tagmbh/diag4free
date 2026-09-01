@@ -318,6 +318,28 @@
         "D4F-E38-007",
         "D4F-E38-001"
       ]
+    },
+    {
+      "id": "D4F-E38-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E38 · Doppelgelenk-Federbeinachse, Zugstrebe, Niveaubefunde",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat eine Doppelgelenk-Federbeinachse: zwei Lenker je Seite statt einem. Das verteilt die Kräfte — und die Fehlersuche, weil ein Poltern jetzt zwei Kandidaten hat statt einem.",
+      "points": [
+        "Zwei Lenker je Seite: Querlenker und Zugstrebe. Ein Poltern gehört beiden zugeordnet, bevor getauscht wird — der Hebeltest am Rad trennt sie",
+        "Das Lager der Zugstrebe ist bei dieser Achsbauart der übliche erste Befund bei Lenkungsunruhe unter Last",
+        "Traggelenke sind an dieser Achse teils nicht einzeln ersetzbar, sondern nur mit dem Lenker. Das gehört in die Kostenschätzung, bevor der Kunde zusagt",
+        "Knacken beim Lenken im Stand: Federbeinstützlager",
+        "Beim Fahrzeug mit Niveauregelung hinten gehören Befunde der Aufbaulage dorthin, nicht an die Vorderachse",
+        "Achsvermessung nach jedem Eingriff — an der Doppelgelenkachse wirkt sich ein Lenkertausch stärker auf die Spur aus als an der einfachen Federbeinachse"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-103"
+      ]
     }
   ]
 }

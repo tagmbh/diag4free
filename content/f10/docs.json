@@ -341,6 +341,29 @@
         "D4F-F10-101",
         "D4F-F10-106"
       ]
+    },
+    {
+      "id": "D4F-F10-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F10 · Aluminiumlenker, Aktivlenkung, Adaptivdämpfer",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 ist die Achse selbst unauffälliger als das, was daran hängt: Adaptivdämpfer und Integral-Aktivlenkung erzeugen Befunde, die im Fehlerspeicher stehen und nicht am Hebel spürbar sind.",
+      "points": [
+        "Bei Fahrzeugen mit geregelten Dämpfern gehört der Fehlerspeicher vor den Hebeltest. Ein defekter Dämpfersteller meldet sich elektrisch, nicht mechanisch",
+        "Integral-Aktivlenkung: ungleichmäßiges Lenkverhalten zuerst gegen die Lenkungsbaugruppe prüfen, nicht gegen die Achse",
+        "Aluminiumlenker mit Stahlschrauben: Kontaktkorrosion und festsitzende Verbindungen einplanen",
+        "Traggelenke überwiegend nur mit dem Lenker ersetzbar — das entscheidet über den Preis und gehört vor die Zusage",
+        "Koppelstangen des Stabilisators als billiger erster Ausschluss bei Klappern",
+        "Achsvermessung nach jedem Eingriff, bei Aktivlenkung zusätzlich Lenkwinkelabgleich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-103",
+        "D4F-F10-106"
+      ]
     }
   ]
 }

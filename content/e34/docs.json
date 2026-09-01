@@ -315,6 +315,28 @@
         "D4F-E34-002",
         "D4F-E34-007"
       ]
+    },
+    {
+      "id": "D4F-E34-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E34 · Federbein, Querlenker, Lenkungsdämpfer",
+      "valid": "E34 · 1987–1997",
+      "summary": "Die Vorderachse des E34 folgt dem Aufbau des E30 in größerem Maßstab. Die Befunde ähneln sich, die Teile sind schwerer belastet — und ein Lenkungsdämpfer kommt dazu, der Symptome verdecken kann.",
+      "points": [
+        "Querlenkerlager und Traggelenk bleiben die ersten Kandidaten bei Poltern und unruhigem Geradeauslauf",
+        "Der Lenkungsdämpfer maskiert beginnendes Spiel in der Lenkung. Ein weiches, aber wanderndes Lenkgefühl gehört deshalb gegen Spurstangen und Lenkgetriebe geprüft, nicht gegen den Dämpfer allein",
+        "Beim Touring liegt hinten eine Niveauregelung an — Befunde der Aufbaulage gehören dorthin und nicht an die Vorderachse. Die Baugruppe wird getrennt geführt",
+        "Knacken beim Einschlagen im Stand: Federbeinstützlager vor Spurstange",
+        "Stabilisatorlager und Koppelstangen als Ursache für Klappern nur in Kurven",
+        "Achsvermessung nach jedem Eingriff an Lenker, Gelenk oder Spurstange"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-004"
+      ]
     }
   ]
 }

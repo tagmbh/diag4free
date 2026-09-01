@@ -342,6 +342,28 @@
         "D4F-E70-002",
         "D4F-E70-007"
       ]
+    },
+    {
+      "id": "D4F-E70-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E70 · Doppelquerlenker, Luftfederung, xDrive",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 kommen zur Achse zwei Baugruppen dazu, die es in der Limousine nicht gibt: die Luftfederung und der Allradantrieb. Beide erzeugen Befunde, die nach Vorderachse klingen und keine sind.",
+      "points": [
+        "Ein Fahrzeug, das über Nacht absinkt, hat eine Undichtigkeit in der Luftfederung — kein Achsproblem. Bälge, Leitungen und Kompressor getrennt prüfen",
+        "xDrive: Ruckeln beim Rangieren kommt vom Verteilergetriebe, nicht von der Vorderachse. Die Unterscheidung spart einen ganzen Zerlegevorgang",
+        "Die Antriebswellen vorn sind beim Allrad eine zusätzliche Geräuschquelle. Ein Knacken beim Einschlagen unter Last deutet auf das Gleichlaufgelenk, nicht auf das Traggelenk",
+        "Die Lenker sind überwiegend Aluminium: Kontaktkorrosion an Stahlverbindungen und Gelenke, die nur mit dem Lenker kommen",
+        "Fahrzeuggewicht: Lager und Gelenke verschleißen schneller als in der Limousine. Ein Befund bei geringer Laufleistung ist hier weniger überraschend",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-103"
+      ]
     }
   ]
 }

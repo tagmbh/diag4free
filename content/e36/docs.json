@@ -367,6 +367,28 @@
         "D4F-E36-002",
         "D4F-E36-001"
       ]
+    },
+    {
+      "id": "D4F-E36-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E36 · Querlenkerlager, Traggelenk, Domlager",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist das Querlenkerlager das Bauteil, das die meisten Fahrwerksklagen erklärt. Der zweite Kandidat ist das Domlager oben — beides wird regelmäßig übersehen, weil der Befund nach Bremse klingt.",
+      "points": [
+        "Rubbeln beim Bremsen ist am E36 nicht automatisch die Bremsscheibe. Ausgeschlagene Querlenkerlager erzeugen dasselbe Bild und werden nach dem Scheibentausch wieder auffällig",
+        "Traggelenk zusammen mit dem Querlenkerlager beurteilen — sie sitzen am selben Lenker",
+        "Domlager oben: Knacken beim Lenken im Stand und beim Überfahren von Kanten. Am eingebauten Federbein durch Drehen am Rad bei angehobenem Fahrzeug tastbar",
+        "Koppelstangen des Stabilisators sind ein häufiges Klappergeräusch und billig auszuschließen",
+        "Beim Compact und beim Cabrio ist die Karosseriesteifigkeit geringer; Geräusche aus dem Aufbau werden dort leicht der Achse zugeschrieben",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-103"
+      ]
     }
   ]
 }

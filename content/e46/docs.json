@@ -413,6 +413,28 @@
         "D4F-E46-009",
         "D4F-E46-003"
       ]
+    },
+    {
+      "id": "D4F-E46-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E46 · Querlenkerlager, Traggelenk, Lenkungsunruhe",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 sind Querlenkerlager und Traggelenk die beiden Teile, die fast jeden Fahrwerksbefund erklären. Beide sitzen am selben Lenker, und beide werden regelmäßig einzeln getauscht, obwohl der Ausbau derselbe ist.",
+      "points": [
+        "Poltern über Querfugen und unruhiger Geradeauslauf: zuerst Querlenkerlager, dann Traggelenk. Der Hebeltest am aufgebockten Rad trennt sie",
+        "Beim Traggelenk ist entscheidend, ob es einzeln ersetzbar ist oder nur mit dem Lenker — das unterscheidet sich nach Ausführung und entscheidet über den Preis",
+        "Rubbeln beim Bremsen: Fahrwerksspiel erzeugt dasselbe Bild wie eine verzogene Scheibe. Wer nur die Scheibe tauscht, sieht den Kunden wieder",
+        "Knacken beim Lenken im Stand: Federbeinstützlager vor Spurstangenkopf",
+        "Koppelstangen des Stabilisators als billiger Ausschluss für Klappern in Kurven",
+        "Achsvermessung nach jedem Eingriff an Lenker, Gelenk oder Spurstange"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-103"
+      ]
     }
   ]
 }

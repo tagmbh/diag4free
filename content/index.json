@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T22:42:25.795Z",
+  "generated": "2026-09-01T23:49:00.437Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -558,6 +558,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E28 · Federbein, Querlenker, Spurstangen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat eine Federbeinachse mit einem Querlenker je Seite. Nach vierzig Jahren ist fast jedes Gummilager an der Grenze — die Frage ist selten, ob etwas ausgeschlagen ist, sondern welches Teil den Befund erklärt.",
+      "points": [
+        "Poltern über Querfugen kommt am E28 fast immer aus dem Querlenkerlager oder dem Traggelenk. Beides ist am aufgebockten Fahrzeug mit Hebel am Rad prüfbar, bevor irgendetwas zerlegt wird",
+        "Lenkungsspiel getrennt beurteilen: Spurstangenkopf, Axialgelenk und Lenkgetriebe erzeugen dasselbe Gefühl am Lenkrad, aber unterschiedliche Reparaturen",
+        "Das Federbeinstützlager oben altert lautlos. Ein Knacken beim Einschlagen im Stand deutet dorthin, nicht auf die Lenkung",
+        "Der Stabilisator und seine Gummilager sind bei diesem Alter Verschleißteile — ein Klappern nur in Kurven ist typisch dafür",
+        "Nach jedem Eingriff an Lenker, Traggelenk oder Spurstange gehört das Fahrzeug auf die Achsvermessung. Ohne sie ist der Reifenverschleiß die nächste Rechnung",
+        "Vorsicht bei alten Federn: Gebrochene Windungen sitzen oft unten und sind eingebaut kaum sichtbar. Beim Radwechsel mitprüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-103"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1026,6 +1049,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E30 · Querlenkerlager, Traggelenk, Federbeinstützlager",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sitzt der häufigste Fahrwerksbefund im Querlenkerlager. Es ist billig, es ist gut zugänglich, und es erklärt einen großen Teil der Geräusche, für die andere Teile getauscht werden.",
+      "points": [
+        "Das Querlenkerlager ist der Klassiker: Poltern über Querfugen, unruhiger Geradeauslauf, bei starkem Verschleiß Rubbeln beim Bremsen. Vor jedem anderen Verdacht prüfen",
+        "Traggelenk und Querlenkerlager sitzen am selben Lenker und werden vernünftigerweise zusammen erneuert — der Ausbau ist derselbe",
+        "Knacken beim Lenken im Stand: zuerst das Federbeinstützlager, dann die Spurstangen. Nicht umgekehrt",
+        "Ein Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage, dann eine Bremsscheibenfrage, erst danach eine Fahrwerksfrage",
+        "Stabilisatorlager und Koppelstangen erzeugen ein Klappern, das nur in Kurven und beim einseitigen Einfedern auftritt",
+        "Achsvermessung nach jedem Eingriff. Der E30 reagiert sichtbar auf Spurabweichung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-103"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1350,6 +1396,29 @@
       "details": [
         "D4F-E34-002",
         "D4F-E34-007"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E34 · Federbein, Querlenker, Lenkungsdämpfer",
+      "valid": "E34 · 1987–1997",
+      "summary": "Die Vorderachse des E34 folgt dem Aufbau des E30 in größerem Maßstab. Die Befunde ähneln sich, die Teile sind schwerer belastet — und ein Lenkungsdämpfer kommt dazu, der Symptome verdecken kann.",
+      "points": [
+        "Querlenkerlager und Traggelenk bleiben die ersten Kandidaten bei Poltern und unruhigem Geradeauslauf",
+        "Der Lenkungsdämpfer maskiert beginnendes Spiel in der Lenkung. Ein weiches, aber wanderndes Lenkgefühl gehört deshalb gegen Spurstangen und Lenkgetriebe geprüft, nicht gegen den Dämpfer allein",
+        "Beim Touring liegt hinten eine Niveauregelung an — Befunde der Aufbaulage gehören dorthin und nicht an die Vorderachse. Die Baugruppe wird getrennt geführt",
+        "Knacken beim Einschlagen im Stand: Federbeinstützlager vor Spurstange",
+        "Stabilisatorlager und Koppelstangen als Ursache für Klappern nur in Kurven",
+        "Achsvermessung nach jedem Eingriff an Lenker, Gelenk oder Spurstange"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-004"
       ],
       "model": "e34"
     },
@@ -1734,6 +1803,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E36 · Querlenkerlager, Traggelenk, Domlager",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist das Querlenkerlager das Bauteil, das die meisten Fahrwerksklagen erklärt. Der zweite Kandidat ist das Domlager oben — beides wird regelmäßig übersehen, weil der Befund nach Bremse klingt.",
+      "points": [
+        "Rubbeln beim Bremsen ist am E36 nicht automatisch die Bremsscheibe. Ausgeschlagene Querlenkerlager erzeugen dasselbe Bild und werden nach dem Scheibentausch wieder auffällig",
+        "Traggelenk zusammen mit dem Querlenkerlager beurteilen — sie sitzen am selben Lenker",
+        "Domlager oben: Knacken beim Lenken im Stand und beim Überfahren von Kanten. Am eingebauten Federbein durch Drehen am Rad bei angehobenem Fahrzeug tastbar",
+        "Koppelstangen des Stabilisators sind ein häufiges Klappergeräusch und billig auszuschließen",
+        "Beim Compact und beim Cabrio ist die Karosseriesteifigkeit geringer; Geräusche aus dem Aufbau werden dort leicht der Achse zugeschrieben",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-103"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2061,6 +2153,29 @@
       "details": [
         "D4F-E38-007",
         "D4F-E38-001"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E38 · Doppelgelenk-Federbeinachse, Zugstrebe, Niveaubefunde",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat eine Doppelgelenk-Federbeinachse: zwei Lenker je Seite statt einem. Das verteilt die Kräfte — und die Fehlersuche, weil ein Poltern jetzt zwei Kandidaten hat statt einem.",
+      "points": [
+        "Zwei Lenker je Seite: Querlenker und Zugstrebe. Ein Poltern gehört beiden zugeordnet, bevor getauscht wird — der Hebeltest am Rad trennt sie",
+        "Das Lager der Zugstrebe ist bei dieser Achsbauart der übliche erste Befund bei Lenkungsunruhe unter Last",
+        "Traggelenke sind an dieser Achse teils nicht einzeln ersetzbar, sondern nur mit dem Lenker. Das gehört in die Kostenschätzung, bevor der Kunde zusagt",
+        "Knacken beim Lenken im Stand: Federbeinstützlager",
+        "Beim Fahrzeug mit Niveauregelung hinten gehören Befunde der Aufbaulage dorthin, nicht an die Vorderachse",
+        "Achsvermessung nach jedem Eingriff — an der Doppelgelenkachse wirkt sich ein Lenkertausch stärker auf die Spur aus als an der einfachen Federbeinachse"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-103"
       ],
       "model": "e38"
     },
@@ -2448,6 +2563,29 @@
       "details": [
         "D4F-E39-003",
         "D4F-E39-005"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E39 · Zugstrebe mit Hydrolager, Lenkungsschlagen beim Bremsen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Der E39 hat einen Befund, der die Baureihe prägt: Die obere Zugstrebe trägt ein hydraulisch gefülltes Lager. Wenn es ausläuft, schlägt die Lenkung beim Bremsen — und die Bremsscheibe wird zu Unrecht verdächtigt.",
+      "points": [
+        "Lenkradschlagen beim Bremsen ist am E39 zuerst die Zugstrebe, nicht die Bremsscheibe. Das Hydrolager verliert seine Füllung, das Rad bekommt Längsspiel, und beim Bremsen wird daraus ein Schlagen",
+        "Das Lager ist von außen oft unauffällig. Eine gerissene Manschette oder Ölspuren an der Strebe sind der sichtbare Beleg — fehlen sie, schließt das den Befund nicht aus",
+        "Beide Seiten zusammen erneuern, auch wenn nur eine auffällig ist: die zweite folgt erfahrungsgemäß kurz darauf, und der Arbeitsweg ist derselbe",
+        "Nicht alle Ausführungen haben Hydrolager — bei den M-Modellen sind Gummilager verbaut. Vor der Teilebestellung am Fahrzeug prüfen; dieser Punkt ist einfach belegt und nicht gesichert",
+        "Querlenker und Traggelenk bleiben die zweite Kandidatengruppe für Poltern über Querfugen",
+        "Nach dem Tausch der Zugstreben ist die Achsvermessung erforderlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-103"
       ],
       "model": "e39"
     },
@@ -2876,6 +3014,29 @@
       "details": [
         "D4F-E46-009",
         "D4F-E46-003"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E46 · Querlenkerlager, Traggelenk, Lenkungsunruhe",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 sind Querlenkerlager und Traggelenk die beiden Teile, die fast jeden Fahrwerksbefund erklären. Beide sitzen am selben Lenker, und beide werden regelmäßig einzeln getauscht, obwohl der Ausbau derselbe ist.",
+      "points": [
+        "Poltern über Querfugen und unruhiger Geradeauslauf: zuerst Querlenkerlager, dann Traggelenk. Der Hebeltest am aufgebockten Rad trennt sie",
+        "Beim Traggelenk ist entscheidend, ob es einzeln ersetzbar ist oder nur mit dem Lenker — das unterscheidet sich nach Ausführung und entscheidet über den Preis",
+        "Rubbeln beim Bremsen: Fahrwerksspiel erzeugt dasselbe Bild wie eine verzogene Scheibe. Wer nur die Scheibe tauscht, sieht den Kunden wieder",
+        "Knacken beim Lenken im Stand: Federbeinstützlager vor Spurstangenkopf",
+        "Koppelstangen des Stabilisators als billiger Ausschluss für Klappern in Kurven",
+        "Achsvermessung nach jedem Eingriff an Lenker, Gelenk oder Spurstange"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-103"
       ],
       "model": "e46"
     },
@@ -3315,6 +3476,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E60 · Aluminium-Doppelgelenkachse, Korrosion, Aktivlenkung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Der E60 hat eine Doppelgelenkachse aus Aluminium. Das ändert die Fehlersuche an zwei Stellen: Korrosion an den Verbindungen zu Stahlteilen, und bei Fahrzeugen mit Aktivlenkung eine zusätzliche Baugruppe, die Lenkungsbefunde erklärt.",
+      "points": [
+        "Aluminiumlenker mit Stahlschrauben: Kontaktkorrosion an den Verbindungsstellen ist hier ein eigener Befund. Festsitzende Schrauben gehören in die Zeitplanung, nicht in die Überraschung",
+        "Traggelenke sind an der Aluminiumachse überwiegend nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch — das gehört vor der Zusage geklärt",
+        "Bei Fahrzeugen mit Aktivlenkung gehört ein unruhiges oder ungleichmäßiges Lenkverhalten zuerst gegen die Lenkungsbaugruppe geprüft, bevor die Achse zerlegt wird",
+        "Poltern über Querfugen: Zugstrebenlager und Querlenkerlager als erste Kandidaten, beide über den Hebeltest trennbar",
+        "Koppelstangen für Klappern in Kurven",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusätzlich den Lenkwinkelabgleich nicht vergessen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-103"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3666,6 +3850,29 @@
       "details": [
         "D4F-E70-002",
         "D4F-E70-007"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E70 · Doppelquerlenker, Luftfederung, xDrive",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 kommen zur Achse zwei Baugruppen dazu, die es in der Limousine nicht gibt: die Luftfederung und der Allradantrieb. Beide erzeugen Befunde, die nach Vorderachse klingen und keine sind.",
+      "points": [
+        "Ein Fahrzeug, das über Nacht absinkt, hat eine Undichtigkeit in der Luftfederung — kein Achsproblem. Bälge, Leitungen und Kompressor getrennt prüfen",
+        "xDrive: Ruckeln beim Rangieren kommt vom Verteilergetriebe, nicht von der Vorderachse. Die Unterscheidung spart einen ganzen Zerlegevorgang",
+        "Die Antriebswellen vorn sind beim Allrad eine zusätzliche Geräuschquelle. Ein Knacken beim Einschlagen unter Last deutet auf das Gleichlaufgelenk, nicht auf das Traggelenk",
+        "Die Lenker sind überwiegend Aluminium: Kontaktkorrosion an Stahlverbindungen und Gelenke, die nur mit dem Lenker kommen",
+        "Fahrzeuggewicht: Lager und Gelenke verschleißen schneller als in der Limousine. Ein Befund bei geringer Laufleistung ist hier weniger überraschend",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-103"
       ],
       "model": "e70"
     },
@@ -4114,6 +4321,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E87 · Aluminium-Doppelgelenkachse, Koppelstangen, Domlager",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der E87 teilt die Aluminium-Doppelgelenkachse mit dem E90. Die häufigsten Klagen sind harmlos und billig — sie werden nur oft für teure Befunde gehalten.",
+      "points": [
+        "Klappern über kurze Wellen ist am E87 überdurchschnittlich oft die Koppelstange des Stabilisators. Sie ist billig, schnell geprüft und gehört an den Anfang der Liste",
+        "Knacken beim Lenken im Stand: Federbeinstützlager. Am angehobenen Fahrzeug beim Drehen des Rades tastbar",
+        "Zugstrebenlager und Querlenkerlager als Kandidaten für Poltern; der Hebeltest am Rad trennt sie",
+        "Traggelenke sind an dieser Achse überwiegend nicht einzeln ersetzbar — Lenkertausch einplanen",
+        "Aluminiumlenker mit Stahlschrauben: mit festsitzenden Verbindungen rechnen",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-103"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4499,6 +4729,29 @@
       "details": [
         "D4F-E88-030",
         "D4F-E88-002"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E88 · Doppelgelenkachse im Cabrio, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Achse des E88 entspricht der des E87. Der Unterschied liegt im Aufbau: Ohne festes Dach kommen Geräusche aus der Karosserie dazu, die regelmäßig der Vorderachse angelastet werden.",
+      "points": [
+        "Erste Frage beim Cabrio: kommt das Geräusch aus der Achse oder aus dem Aufbau? Ein Knarzen, das sich beim Verwinden auf unebenem Untergrund ändert und beim Überfahren einer Kante gerade nicht, gehört zum Aufbau",
+        "Koppelstangen des Stabilisators als erster billiger Ausschluss für Klappern",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Zugstrebe und Querlenker über den Hebeltest am angehobenen Rad trennen",
+        "Traggelenke überwiegend nur mit dem Lenker ersetzbar",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-103"
       ],
       "model": "e88"
     },
@@ -5069,6 +5322,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E90 · Aluminium-Doppelgelenkachse, Lenkungsknacken, xDrive",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 hat eine Doppelgelenkachse aus Aluminium. Zwei Befunde tauchen überdurchschnittlich oft auf: Knacken aus der Lenksäule, das nicht aus der Achse kommt, und Gelenke, die nur mit dem ganzen Lenker zu haben sind.",
+      "points": [
+        "Knacken beim Lenken, das sich im Stand und bei langsamer Fahrt gleich anfühlt, kommt beim E90 häufig aus der Lenksäule und nicht aus dem Fahrwerk. Vor dem Zerlegen der Achse dort hinhören",
+        "Traggelenke sind an dieser Achse überwiegend nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch",
+        "Zugstrebenlager und Querlenkerlager über den Hebeltest trennen, bevor getauscht wird",
+        "Koppelstangen als billiger Ausschluss für Klappern in Kurven",
+        "Bei xDrive kommen Antriebswellen und Verteilergetriebe als Geräuschquellen dazu — Ruckeln beim Rangieren gehört dorthin",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-103"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5558,6 +5834,30 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F10 · Aluminiumlenker, Aktivlenkung, Adaptivdämpfer",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 ist die Achse selbst unauffälliger als das, was daran hängt: Adaptivdämpfer und Integral-Aktivlenkung erzeugen Befunde, die im Fehlerspeicher stehen und nicht am Hebel spürbar sind.",
+      "points": [
+        "Bei Fahrzeugen mit geregelten Dämpfern gehört der Fehlerspeicher vor den Hebeltest. Ein defekter Dämpfersteller meldet sich elektrisch, nicht mechanisch",
+        "Integral-Aktivlenkung: ungleichmäßiges Lenkverhalten zuerst gegen die Lenkungsbaugruppe prüfen, nicht gegen die Achse",
+        "Aluminiumlenker mit Stahlschrauben: Kontaktkorrosion und festsitzende Verbindungen einplanen",
+        "Traggelenke überwiegend nur mit dem Lenker ersetzbar — das entscheidet über den Preis und gehört vor die Zusage",
+        "Koppelstangen des Stabilisators als billiger erster Ausschluss bei Klappern",
+        "Achsvermessung nach jedem Eingriff, bei Aktivlenkung zusätzlich Lenkwinkelabgleich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-103",
+        "D4F-F10-106"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5873,6 +6173,30 @@
       "engines": [],
       "details": [
         "D4F-F15-101",
+        "D4F-F15-106"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F15 · Doppelquerlenker, Luftfederung hinten, xDrive",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 gilt dieselbe Abgrenzung wie am E70, nur schärfer: Luftfederung und Allrad erzeugen die Mehrzahl der Befunde, die als Vorderachsproblem angemeldet werden.",
+      "points": [
+        "Absinken über Nacht ist die Luftfederung, kein Achsbefund. Bälge, Leitungen und Kompressor getrennt prüfen, bevor die Achse angefasst wird",
+        "xDrive: Ruckeln beim Rangieren gehört zum Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Antriebswellen vorn: Knacken beim Einschlagen unter Last ist das Gleichlaufgelenk, nicht das Traggelenk",
+        "Aluminiumlenker mit Stahlschrauben und Gelenke, die nur mit dem Lenker kommen — beides gehört in die Kostenschätzung",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-103",
         "D4F-F15-106"
       ],
       "model": "f15"
@@ -6219,6 +6543,30 @@
       "engines": [],
       "details": [
         "D4F-F22-101",
+        "D4F-F22-106"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F22 · Federbeinachse, Koppelstangen, M-Fahrwerk",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Vorderachse des F22 folgt der des F30. Der Unterschied liegt in der Ausstattung: Sport- und M-Fahrwerke sind straffer abgestimmt, und dieselbe Abnutzung fällt dort früher auf.",
+      "points": [
+        "Koppelstangen des Stabilisators sind der erste und billigste Ausschluss bei Klappern über kurze Wellen",
+        "Beim straffen Fahrwerk werden Lagerbefunde früher hörbar als beim Komfortfahrwerk. Ein Geräusch bei geringer Laufleistung ist hier kein Widerspruch",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Elektromechanische Lenkung: Lenkwinkelabgleich nach jedem Eingriff an Achse, Spur oder Lenkung, sonst regelt die DSC ohne Fahrsituation",
+        "Querlenkerlager über den Hebeltest am angehobenen Rad beurteilen",
+        "Aluminiumlenker mit Stahlschrauben: festsitzende Verbindungen einplanen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-103",
         "D4F-F22-106"
       ],
       "model": "f22"
@@ -6610,6 +6958,30 @@
       "engines": [],
       "details": [
         "D4F-F30-101",
+        "D4F-F30-106"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F30 · Federbeinachse in Aluminium, Koppelstangen, Lenkwinkel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Vorderachse des F30 ist konstruktiv unspektakulär. Was sie besonders macht, ist die elektromechanische Lenkung dahinter: Nach jedem Eingriff muss der Lenkwinkel abgeglichen werden, sonst regelt die DSC ohne Fahrsituation.",
+      "points": [
+        "Elektromechanische Lenkung: Nach Arbeiten an Achse, Spur oder Lenkung ist der Lenkwinkelabgleich Pflicht, nicht Kür. Ohne ihn kommen DSC-Eingriffe ohne Anlass",
+        "Koppelstangen des Stabilisators sind der häufigste und billigste Befund bei Klappern über kurze Wellen",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Querlenkerlager über den Hebeltest am angehobenen Rad beurteilen",
+        "Aluminiumlenker mit Stahlschrauben: mit festsitzenden Verbindungen rechnen",
+        "Bei xDrive kommen Antriebswellen vorn als Geräuschquelle dazu; Knacken beim Einschlagen unter Last deutet aufs Gleichlaufgelenk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-103",
         "D4F-F30-106"
       ],
       "model": "f30"
@@ -13799,26 +14171,26 @@
     }
   },
   "stats": {
-    "total_docs": 220,
+    "total_docs": 236,
     "total_guides": 40,
     "per_model": {
-      "e28": 11,
-      "e30": 18,
-      "e34": 13,
-      "e36": 13,
-      "e38": 13,
-      "e39": 14,
-      "e46": 15,
-      "e60": 14,
-      "e70": 13,
-      "e87": 14,
-      "e88": 11,
-      "e90": 16,
+      "e28": 12,
+      "e30": 19,
+      "e34": 14,
+      "e36": 14,
+      "e38": 14,
+      "e39": 15,
+      "e46": 16,
+      "e60": 15,
+      "e70": 14,
+      "e87": 15,
+      "e88": 12,
+      "e90": 17,
       "f-series": 5,
-      "f10": 12,
-      "f15": 12,
-      "f22": 13,
-      "f30": 13
+      "f10": 13,
+      "f15": 13,
+      "f22": 14,
+      "f30": 14
     }
   }
 }

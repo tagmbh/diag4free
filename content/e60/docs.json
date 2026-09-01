@@ -421,6 +421,28 @@
         "D4F-E60-060",
         "D4F-E60-002"
       ]
+    },
+    {
+      "id": "D4F-E60-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E60 · Aluminium-Doppelgelenkachse, Korrosion, Aktivlenkung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Der E60 hat eine Doppelgelenkachse aus Aluminium. Das ändert die Fehlersuche an zwei Stellen: Korrosion an den Verbindungen zu Stahlteilen, und bei Fahrzeugen mit Aktivlenkung eine zusätzliche Baugruppe, die Lenkungsbefunde erklärt.",
+      "points": [
+        "Aluminiumlenker mit Stahlschrauben: Kontaktkorrosion an den Verbindungsstellen ist hier ein eigener Befund. Festsitzende Schrauben gehören in die Zeitplanung, nicht in die Überraschung",
+        "Traggelenke sind an der Aluminiumachse überwiegend nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch — das gehört vor der Zusage geklärt",
+        "Bei Fahrzeugen mit Aktivlenkung gehört ein unruhiges oder ungleichmäßiges Lenkverhalten zuerst gegen die Lenkungsbaugruppe geprüft, bevor die Achse zerlegt wird",
+        "Poltern über Querfugen: Zugstrebenlager und Querlenkerlager als erste Kandidaten, beide über den Hebeltest trennbar",
+        "Koppelstangen für Klappern in Kurven",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusätzlich den Lenkwinkelabgleich nicht vergessen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-103"
+      ]
     }
   ]
 }

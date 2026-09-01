@@ -272,6 +272,28 @@
         "D4F-E28-006",
         "D4F-E28-005"
       ]
+    },
+    {
+      "id": "D4F-E28-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E28 · Federbein, Querlenker, Spurstangen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat eine Federbeinachse mit einem Querlenker je Seite. Nach vierzig Jahren ist fast jedes Gummilager an der Grenze — die Frage ist selten, ob etwas ausgeschlagen ist, sondern welches Teil den Befund erklärt.",
+      "points": [
+        "Poltern über Querfugen kommt am E28 fast immer aus dem Querlenkerlager oder dem Traggelenk. Beides ist am aufgebockten Fahrzeug mit Hebel am Rad prüfbar, bevor irgendetwas zerlegt wird",
+        "Lenkungsspiel getrennt beurteilen: Spurstangenkopf, Axialgelenk und Lenkgetriebe erzeugen dasselbe Gefühl am Lenkrad, aber unterschiedliche Reparaturen",
+        "Das Federbeinstützlager oben altert lautlos. Ein Knacken beim Einschlagen im Stand deutet dorthin, nicht auf die Lenkung",
+        "Der Stabilisator und seine Gummilager sind bei diesem Alter Verschleißteile — ein Klappern nur in Kurven ist typisch dafür",
+        "Nach jedem Eingriff an Lenker, Traggelenk oder Spurstange gehört das Fahrzeug auf die Achsvermessung. Ohne sie ist der Reifenverschleiß die nächste Rechnung",
+        "Vorsicht bei alten Federn: Gebrochene Windungen sitzen oft unten und sind eingebaut kaum sichtbar. Beim Radwechsel mitprüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-103"
+      ]
     }
   ]
 }

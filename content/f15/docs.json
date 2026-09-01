@@ -308,6 +308,29 @@
         "D4F-F15-101",
         "D4F-F15-106"
       ]
+    },
+    {
+      "id": "D4F-F15-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F15 · Doppelquerlenker, Luftfederung hinten, xDrive",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 gilt dieselbe Abgrenzung wie am E70, nur schärfer: Luftfederung und Allrad erzeugen die Mehrzahl der Befunde, die als Vorderachsproblem angemeldet werden.",
+      "points": [
+        "Absinken über Nacht ist die Luftfederung, kein Achsbefund. Bälge, Leitungen und Kompressor getrennt prüfen, bevor die Achse angefasst wird",
+        "xDrive: Ruckeln beim Rangieren gehört zum Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Antriebswellen vorn: Knacken beim Einschlagen unter Last ist das Gleichlaufgelenk, nicht das Traggelenk",
+        "Aluminiumlenker mit Stahlschrauben und Gelenke, die nur mit dem Lenker kommen — beides gehört in die Kostenschätzung",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-103",
+        "D4F-F15-106"
+      ]
     }
   ]
 }
