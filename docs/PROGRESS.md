@@ -33,7 +33,7 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
 | Gliederung (`content/gruppen.json`) | 21 Gruppen auf 2 Achsen, jedes Doc zugeordnet |
-| Gruppenabdeckung | 10–14 der 21 Gruppen je Baureihe; die 6 echten Lücken in **allen** 16 belegt |
+| Gruppenabdeckung | **9–13** der 21 Gruppen je Baureihe; 4 der 6 Lücken in allen 16 belegt, Wartung und Bremse fehlen in der F-Serie |
 | Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
@@ -177,19 +177,38 @@ done
 
 ## Wo der Bestand dünn ist — gemessen, nicht geschätzt
 
-**Stand nach dem Durchgang vom 01.09. (zweiter):** Die acht Gruppen, die
-zuvor in 15 von 16 Baureihen leer waren, sind auf sechs Gruppen
-zusammengeschmolzen — und diese sechs sind jetzt **in jeder Baureihe
-belegt**:
+**Stand nach dem Durchgang vom 01.09. (zweiter), nachgemessen:** Von den
+acht Gruppen, die zuvor in 15 von 16 Baureihen leer waren, sind **vier
+vollständig** geschlossen und **zwei fast**:
 
 | Gruppe | | vorher leer in | jetzt leer in |
 |---|---|---|---|
-| 00 | Wartung und Instandhaltung | 15 | **0** |
 | 16 | Kraftstoffversorgung | 15 | **0** |
 | 17 | Kühlung | 15 | **0** |
 | 18 | Abgasanlage | 15 | **0** |
 | 24 | Automatikgetriebe | 15 | **0** |
-| 34 | Bremse | 15 | **0** |
+| 00 | Wartung und Instandhaltung | 15 | **4** — F10, F30, F15, F22 |
+| 34 | Bremse | 15 | **4** — F10, F30, F15, F22 |
+
+> Der Durchgang meldete diese Tabelle zunächst durchgängig mit `0` und die
+> Abdeckung mit „10–14". Beim Gegenrechnen stimmte beides nicht: es sind
+> **9–13**, und die gesamte F-Serie hat weder Wartung noch Bremse. Genau die
+> Fehlerklasse, die dieses Dokument schon zweimal festhält — eine Zahl
+> fortgeschrieben statt nachgezählt. Nachrechnen geht so:
+>
+> ```bash
+> python3 -c "
+> import json
+> idx=json.load(open('content/index.json'))
+> mods=[m for g in json.load(open('content/models.json'))['groups'] for m in g['models']]
+> for g in ('00','34'):
+>     print(g, [m['id'] for m in mods if g not in {d['gruppe'] for d in idx['docs'] if d['model']==m['id']}])"
+> ```
+>
+> **Das ist die nächste konkrete Aufgabe:** acht Dokumente — Wartung und
+> Bremse für F10, F30, F15 und F22. Die F-Serie fährt Bremsverschleiss
+> elektronisch und Serviceumfänge über CBS; beides ist ohne Netzfreigabe
+> über `WebSearch` beschreibbar, solange die Belegregel gilt.
 
 Die beiden übrigen aus der alten Achterliste bleiben bewusst stehen, und
 zwar aus den Gründen, die schon damals danebenstanden:
