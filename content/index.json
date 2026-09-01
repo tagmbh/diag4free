@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T20:37:10.037Z",
+  "generated": "2026-09-01T22:42:25.795Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -5502,6 +5502,62 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F10 · Elektronischer Ölstand, Batterie anmelden, Kettenspanner N20",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 hängen drei Wartungsschritte am Diagnosezugang: der Ölstand wird gerechnet statt gemessen, die Batterie muss angemeldet werden, und der Parkbremssteller muss vor Arbeiten hinten in Servicestellung. Wer ohne Zugang arbeitet, macht eine unvollständige Wartung, ohne dass ein Fehler gespeichert wird.",
+      "points": [
+        "Der Ölstand wird elektronisch bestimmt und ist an Bedingungen geknüpft: Betriebstemperatur, ebener Stand, Mindestlaufzeit. Ein Wert kurz nach dem Start ist eine Zahl, keine Messung",
+        "Batterie nach jedem Wechsel mit Kapazität und Bauart anmelden. Ohne Anmeldung lädt das Fahrzeug weiter nach dem Kennfeld der alten Batterie — die neue altert vorzeitig, ohne Fehlereintrag",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt ihn",
+        "Serviceumfänge (CBS) werden einzeln geführt und einzeln zurückgesetzt. Pauschales Zurücksetzen löscht, welche Position tatsächlich fällig war",
+        "N20 und N26: Kettentrieb und Spanner sind eine bekannte Schwachstelle. Ein Rasseln in den ersten Sekunden nach Kaltstart gehört abgeklärt, bevor es lauter wird — kurze Ölwechselintervalle sind hier die billigere Vorsorge",
+        "N57 und B47: Kurzstreckenbetrieb verhindert vollständige Regenerationen des Partikelfilters. Das ist eine Nutzungsfolge, keine Störung — sie gehört ins Wartungsgespräch, nicht in die Fehlersuche"
+      ],
+      "pins": [],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "B47"
+      ],
+      "details": [
+        "D4F-F10-101",
+        "D4F-F10-102"
+      ],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F10 · Encoderring im Radlager, elektromechanische Parkbremse, Regelung ohne Anlass",
+      "valid": "F10, F11 · mit EMF",
+      "summary": "Zwei Eigenheiten prägen die Bremsendiagnose am F10: Das Geberrad für die Raddrehzahl sitzt als magnetischer Ring im Radlager, und die Parkbremse ist elektromechanisch. Beides führt regelmäßig zu Teiletausch, der nichts behebt.",
+      "points": [
+        "Der Encoderring ist Teil des Radlagers, nicht ein separates Zahnrad. Korrosion oder ein beschädigter Ring erzeugt Sensorfehler, die kein Sensortausch behebt — das Lager muss getauscht werden",
+        "Sporadische Aussetzer, die beim Einfedern oder in der Kurve auftreten, sind fast immer die Zuleitung am Radlauf. Kabel auf Scheuerstellen und gebrochene Litzen prüfen, bevor Bauteile getauscht werden",
+        "Vor Belagwechsel hinten den Parkbremssteller in Servicestellung fahren; danach zustellen und die Parkbremse mehrfach betätigen, bevor das Fahrzeug bewegt wird",
+        "Generische OBD-Geräte erreichen die Servicestellung nicht. Ohne Werkstattsoftware oder ein Gerät mit ausdrücklicher Unterstützung dieser Funktion ist der Arbeitsschritt nicht durchführbar",
+        "Meldung „Parkbremse\" ohne mechanischen Befund: Steller, Verkabelung und Schalter melden sich getrennt — den Fehlerspeicher lesen statt zu raten",
+        "Bei Fahrzeugen mit Integral-Aktivlenkung wirkt die Hinterachslenkung auf das Regelverhalten. Ein DSC-Befund ohne Bremsbefund gehört dort zuerst gegen die Lenkungsseite geprüft"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-101",
+        "D4F-F10-106"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5765,6 +5821,59 @@
       "details": [
         "D4F-F15-005",
         "D4F-F15-001"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F15 · Verteilergetriebe, Luftfederung, Ölstand und Batterie",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 kommen zur Wartung der F-Generation zwei Baugruppen dazu, die andere Baureihen nicht haben: das Verteilergetriebe des xDrive und die Luftfederung an der Hinterachse. Beide altern still und melden sich erst spät.",
+      "points": [
+        "xDrive: Das Verteilergetriebe führt einen eigenen Ölservice, der im Serviceumfang nicht immer sichtbar geführt wird. Er gehört zur Wartungsplanung, auch wenn die Anzeige schweigt",
+        "Ruckeln beim Rangieren und beim engen Wenden ist am xDrive der klassische Frühbefund am Verteilergetriebe — nicht am Getriebe und nicht an der Bremse",
+        "Luftfederung hinten: Bälge und Kompressor altern zeit- statt laufleistungsabhängig. Ein Fahrzeug, das über Nacht hinten absinkt, hat eine Undichtigkeit, keine Elektronikstörung",
+        "Der Ölstand wird elektronisch bestimmt und braucht Betriebstemperatur, ebenen Stand und Mindestlaufzeit. Beim Dieselmotor findet sich je nach Ausführung zusätzlich ein mechanischer Peilstab an der rechten Blockseite — dieser Punkt ist einfach belegt, nicht gesichert, und vor der Wartung am konkreten Fahrzeug zu prüfen",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen Belag- und Scheibenstandzeiten deutlich gegenüber der Limousine. Der rechnerische Serviceumfang bildet das ab — eine Sichtprüfung ersetzt er nicht"
+      ],
+      "pins": [],
+      "engines": [
+        "N20",
+        "N55",
+        "N57",
+        "N63"
+      ],
+      "details": [
+        "D4F-F15-101",
+        "D4F-F15-102"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F15 · DSC mit xDrive und Luftfederung, Encoderring, Parkbremse",
+      "valid": "F15, F16 · mit EMF",
+      "summary": "Am F15 hat die DSC mehr Zulieferer als in der Limousine: Neben den Raddrehzahlgebern reden das Verteilergetriebe und die Niveauregelung mit. Ein DSC-Eintrag ist hier deshalb seltener ein Bremsenbefund als anderswo.",
+      "points": [
+        "Das Geberrad der Raddrehzahl sitzt als magnetischer Ring im Radlager. Bleibt der Fehler nach dem Sensortausch, ist es der Ring — und der kommt mit dem Lager",
+        "xDrive: Ein DSC-Eintrag zusammen mit Ruckeln beim Rangieren deutet auf das Verteilergetriebe, nicht auf die Bremse. Die Reihenfolge der Prüfung entscheidet hier über den Aufwand",
+        "Nach Arbeiten am Verteilergetriebe oder am Stellmotor ist die Kalibrierung erforderlich, sonst bleibt der Eintrag stehen",
+        "Luftfederung: Die Niveaugeber liefern die Aufbaulage. Ein defekter Geber oder ein hängender Aufbau erzeugt Regelverhalten, das nach Bremsenfehler aussieht",
+        "Vor Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren, danach zustellen und mehrfach betätigen",
+        "Sporadische Fehler beim Einfedern: zuerst die Zuleitung am Radlauf prüfen, nicht den Sensor tauschen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-101",
+        "D4F-F15-106"
       ],
       "model": "f15"
     },
@@ -6057,6 +6166,60 @@
       "details": [
         "D4F-F22-006",
         "D4F-F22-004"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F22 · Kettentrieb N13 und N20, Ventilverkokung, Batterie anmelden",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 ist überwiegend ein Benziner mit Direkteinspritzung. Daraus folgen zwei Wartungspunkte, die in keinem Serviceumfang stehen: der Kettentrieb der kleinen Turbomotoren und die Verkokung der Einlassventile.",
+      "points": [
+        "N13: Kettentrieb und Spanner sind die bekannte Schwachstelle. Rasseln in den ersten Sekunden nach Kaltstart ist der Frühbefund und gehört abgeklärt, solange es noch billig ist",
+        "N20 und N26: derselbe Prüfschritt, dieselbe Ursache am Spanner. Die Kette liegt vorn und ist zugänglich — das ist der Unterschied zum N47 der Dieselbaureihen",
+        "Direkteinspritzung ohne Saugrohreinspritzung: Die Einlassventile bekommen keinen Kraftstoff zum Spülen. Verkokung ist damit eine Alterserscheinung, keine Störung — sie zeigt sich als Leerlaufunruhe und Leistungsverlust, lange bevor ein Fehler gespeichert wird",
+        "Batterie nach jedem Wechsel mit Kapazität und Bauart anmelden, sonst lädt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren",
+        "Serviceumfänge einzeln zurücksetzen; pauschales Zurücksetzen löscht die Information, welche Position fällig war"
+      ],
+      "pins": [],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-101",
+        "D4F-F22-102"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F22 · Encoderring im Radlager, EMF, Regelung ohne Anlass",
+      "valid": "F20, F21, F22, F23 · mit EMF",
+      "summary": "Die Bremsendiagnose am F22 folgt dem Muster der F-Generation: Der Drehzahlgeber liest einen magnetischen Ring im Radlager, und die Parkbremse ist elektromechanisch. Wer beides kennt, spart sich den häufigsten Fehlkauf.",
+      "points": [
+        "Das Geberrad ist ein magnetischer Ring im Radlager. Ein Sensorfehler, der den Sensortausch überlebt, ist der Ring — Tausch nur zusammen mit dem Lager",
+        "Vor Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren; mechanisches Zurückdrücken beschädigt ihn",
+        "Nach dem Zusammenbau zustellen und die Parkbremse mehrfach betätigen, bevor gefahren wird",
+        "Sporadische Raddrehzahlfehler beim Einfedern sind fast immer die Zuleitung am Radlauf",
+        "DSC-Eingriffe ohne Fahrsituation nach Fahrwerks- oder Lenkungsarbeiten: Lenkwinkelsensor abgleichen",
+        "Bei den M-Ausführungen mit größerer Bremsanlage ändert sich die Diagnose nicht, wohl aber die Belagstandzeit — der Sichtprüfung ist das anzumerken"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-101",
+        "D4F-F22-106"
       ],
       "model": "f22"
     },
@@ -6391,6 +6554,63 @@
       "details": [
         "D4F-F30-003",
         "D4F-F30-002"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F30 · Steuerkette N47, elektronischer Ölstand, Batterie anmelden",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Am F30 steht ein Wartungspunkt über allen anderen: Beim N47 liegt die Steuerkette auf der Getriebeseite. Ein Kettenschaden ist dort kein Bauteilwechsel, sondern eine Motordemontage — und die einzige wirksame Vorsorge ist die Wartung selbst.",
+      "points": [
+        "N47: Die Steuerkette sitzt hinten, getriebeseitig. Für den Zugang müssen Getriebe und Motor getrennt werden; der Aufwand liegt bei mehreren Arbeitstagen und übersteigt bei älteren Fahrzeugen regelmäßig den Fahrzeugwert",
+        "Deshalb gilt beim N47 die Kaltstartprobe als Wartungsschritt: Ein Rasseln in den ersten Sekunden nach dem Start ist die Ansage vor dem Schaden. Wer es hört, hat noch eine Wahl; wer wartet, nicht mehr",
+        "Kürzere Ölwechselintervalle als der rechnerische Serviceumfang sind beim N47 die einzige Vorsorge, die die Werkstatt anbieten kann — der Kettentrieb hängt am Öldruck, und der ist im Kaltstart am schlechtesten",
+        "Der Ölstand wird elektronisch bestimmt: Betriebstemperatur, ebener Stand und Mindestlaufzeit gehören zur Messung. Ohne diese Bedingungen ist der Wert nicht belastbar",
+        "Batterie nach jedem Wechsel mit Kapazität und Bauart anmelden, sonst lädt das Fahrzeug nach dem Kennfeld der alten Batterie",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren"
+      ],
+      "pins": [],
+      "engines": [
+        "N13",
+        "N20",
+        "N26",
+        "N47",
+        "N55",
+        "N57",
+        "B47",
+        "B48"
+      ],
+      "details": [
+        "D4F-F30-101",
+        "D4F-F30-102"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F30 · Radlager-Encoderring, EMF-Servicestellung, Lenkwinkelabgleich",
+      "valid": "F30, F31 · mit EMF",
+      "summary": "Die Bremsendiagnose am F30 scheitert meist an zwei Stellen: am Geberring, der im Radlager sitzt und beim Sensortausch übersehen wird, und an der elektromechanischen Parkbremse, die vor dem Belagwechsel angesteuert werden muss.",
+      "points": [
+        "Das Geberrad für die Raddrehzahl ist ein magnetischer Ring im Radlager. Ein Sensorfehler, der nach dem Sensortausch bleibt, ist der Ring — und der geht nur mit dem Lager",
+        "Vor Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Zurückdrücken von Hand beschädigt den Steller; das ist der Regelfall, nicht das Risiko",
+        "Nach dem Zusammenbau zustellen und die Parkbremse mehrfach betätigen, bevor gefahren wird",
+        "Sporadische Raddrehzahlfehler beim Einfedern: zuerst die Zuleitung am Radlauf auf Scheuerstellen prüfen",
+        "Nach Arbeiten an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation",
+        "Bremsflüssigkeit ist zeitabhängig zu wechseln, unabhängig von Belagzustand und Laufleistung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-101",
+        "D4F-F30-106"
       ],
       "model": "f30"
     }
@@ -13579,7 +13799,7 @@
     }
   },
   "stats": {
-    "total_docs": 212,
+    "total_docs": 220,
     "total_guides": 40,
     "per_model": {
       "e28": 11,
@@ -13595,10 +13815,10 @@
       "e88": 11,
       "e90": 16,
       "f-series": 5,
-      "f10": 10,
-      "f15": 10,
-      "f22": 11,
-      "f30": 11
+      "f10": 12,
+      "f15": 12,
+      "f22": 13,
+      "f30": 13
     }
   }
 }

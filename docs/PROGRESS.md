@@ -21,7 +21,7 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Bereich | Zustand |
 |---------|---------|
 | Baureihen | 16 in 4 Gruppen, alle mit eigenem Inhalt |
-| Dokumente | 212 (Ausgangslage war 21 in 8 Baureihen; 128 vor dem Breiten-Durchgang) |
+| Dokumente | 220 (Ausgangslage war 21 in 8 Baureihen; 128 vor dem Breiten-Durchgang) |
 | Motor-Steckbriefe | 43 |
 | Artikel | 81 |
 | Diagnosepfade | 40 |
@@ -33,7 +33,7 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
 | Gliederung (`content/gruppen.json`) | 34 Gruppen auf 2 Achsen, jedes Doc zugeordnet; alle 29 Fahrzeuggruppen gegen BMWs Schema belegt (`docs/HAUPTGRUPPEN.md`) |
-| Gruppenabdeckung | **9–13** der 34 Gruppen je Baureihe — 178 von 544 Zellen = **33 %**. Der Nenner ist am 01.09. von 21 auf 34 gestiegen, weil 13 fehlende Hauptgruppen dazukamen; kein Dokument ging verloren |
+| Gruppenabdeckung | **10–13** der 34 Gruppen je Baureihe — 186 von 544 Zellen = **34 %**. Der Nenner stieg am 01.09. von 21 auf 34, weil 13 fehlende Hauptgruppen dazukamen; kein Dokument ging verloren. Gruppen 00 und 34 sind jetzt in allen 16 Baureihen belegt |
 | Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
