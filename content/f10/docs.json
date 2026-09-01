@@ -287,6 +287,60 @@
         "D4F-F10-001",
         "D4F-F10-003"
       ]
+    },
+    {
+      "id": "D4F-F10-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F10 · Elektronischer Ölstand, Batterie anmelden, Kettenspanner N20",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 hängen drei Wartungsschritte am Diagnosezugang: der Ölstand wird gerechnet statt gemessen, die Batterie muss angemeldet werden, und der Parkbremssteller muss vor Arbeiten hinten in Servicestellung. Wer ohne Zugang arbeitet, macht eine unvollständige Wartung, ohne dass ein Fehler gespeichert wird.",
+      "points": [
+        "Der Ölstand wird elektronisch bestimmt und ist an Bedingungen geknüpft: Betriebstemperatur, ebener Stand, Mindestlaufzeit. Ein Wert kurz nach dem Start ist eine Zahl, keine Messung",
+        "Batterie nach jedem Wechsel mit Kapazität und Bauart anmelden. Ohne Anmeldung lädt das Fahrzeug weiter nach dem Kennfeld der alten Batterie — die neue altert vorzeitig, ohne Fehlereintrag",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren. Mechanisches Zurückdrücken beschädigt ihn",
+        "Serviceumfänge (CBS) werden einzeln geführt und einzeln zurückgesetzt. Pauschales Zurücksetzen löscht, welche Position tatsächlich fällig war",
+        "N20 und N26: Kettentrieb und Spanner sind eine bekannte Schwachstelle. Ein Rasseln in den ersten Sekunden nach Kaltstart gehört abgeklärt, bevor es lauter wird — kurze Ölwechselintervalle sind hier die billigere Vorsorge",
+        "N57 und B47: Kurzstreckenbetrieb verhindert vollständige Regenerationen des Partikelfilters. Das ist eine Nutzungsfolge, keine Störung — sie gehört ins Wartungsgespräch, nicht in die Fehlersuche"
+      ],
+      "pins": [],
+      "engines": [
+        "N20",
+        "N26",
+        "N52",
+        "N53",
+        "N55",
+        "N57",
+        "B47"
+      ],
+      "details": [
+        "D4F-F10-101",
+        "D4F-F10-102"
+      ]
+    },
+    {
+      "id": "D4F-F10-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F10 · Encoderring im Radlager, elektromechanische Parkbremse, Regelung ohne Anlass",
+      "valid": "F10, F11 · mit EMF",
+      "summary": "Zwei Eigenheiten prägen die Bremsendiagnose am F10: Das Geberrad für die Raddrehzahl sitzt als magnetischer Ring im Radlager, und die Parkbremse ist elektromechanisch. Beides führt regelmäßig zu Teiletausch, der nichts behebt.",
+      "points": [
+        "Der Encoderring ist Teil des Radlagers, nicht ein separates Zahnrad. Korrosion oder ein beschädigter Ring erzeugt Sensorfehler, die kein Sensortausch behebt — das Lager muss getauscht werden",
+        "Sporadische Aussetzer, die beim Einfedern oder in der Kurve auftreten, sind fast immer die Zuleitung am Radlauf. Kabel auf Scheuerstellen und gebrochene Litzen prüfen, bevor Bauteile getauscht werden",
+        "Vor Belagwechsel hinten den Parkbremssteller in Servicestellung fahren; danach zustellen und die Parkbremse mehrfach betätigen, bevor das Fahrzeug bewegt wird",
+        "Generische OBD-Geräte erreichen die Servicestellung nicht. Ohne Werkstattsoftware oder ein Gerät mit ausdrücklicher Unterstützung dieser Funktion ist der Arbeitsschritt nicht durchführbar",
+        "Meldung „Parkbremse\" ohne mechanischen Befund: Steller, Verkabelung und Schalter melden sich getrennt — den Fehlerspeicher lesen statt zu raten",
+        "Bei Fahrzeugen mit Integral-Aktivlenkung wirkt die Hinterachslenkung auf das Regelverhalten. Ein DSC-Befund ohne Bremsbefund gehört dort zuerst gegen die Lenkungsseite geprüft"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-101",
+        "D4F-F10-106"
+      ]
     }
   ]
 }

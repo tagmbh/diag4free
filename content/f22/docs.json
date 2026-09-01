@@ -281,6 +281,58 @@
         "D4F-F22-006",
         "D4F-F22-004"
       ]
+    },
+    {
+      "id": "D4F-F22-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung F22 · Kettentrieb N13 und N20, Ventilverkokung, Batterie anmelden",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 ist überwiegend ein Benziner mit Direkteinspritzung. Daraus folgen zwei Wartungspunkte, die in keinem Serviceumfang stehen: der Kettentrieb der kleinen Turbomotoren und die Verkokung der Einlassventile.",
+      "points": [
+        "N13: Kettentrieb und Spanner sind die bekannte Schwachstelle. Rasseln in den ersten Sekunden nach Kaltstart ist der Frühbefund und gehört abgeklärt, solange es noch billig ist",
+        "N20 und N26: derselbe Prüfschritt, dieselbe Ursache am Spanner. Die Kette liegt vorn und ist zugänglich — das ist der Unterschied zum N47 der Dieselbaureihen",
+        "Direkteinspritzung ohne Saugrohreinspritzung: Die Einlassventile bekommen keinen Kraftstoff zum Spülen. Verkokung ist damit eine Alterserscheinung, keine Störung — sie zeigt sich als Leerlaufunruhe und Leistungsverlust, lange bevor ein Fehler gespeichert wird",
+        "Batterie nach jedem Wechsel mit Kapazität und Bauart anmelden, sonst lädt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren",
+        "Serviceumfänge einzeln zurücksetzen; pauschales Zurücksetzen löscht die Information, welche Position fällig war"
+      ],
+      "pins": [],
+      "engines": [
+        "N13",
+        "N20",
+        "N55",
+        "B38",
+        "B48"
+      ],
+      "details": [
+        "D4F-F22-101",
+        "D4F-F22-102"
+      ]
+    },
+    {
+      "id": "D4F-F22-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse F22 · Encoderring im Radlager, EMF, Regelung ohne Anlass",
+      "valid": "F20, F21, F22, F23 · mit EMF",
+      "summary": "Die Bremsendiagnose am F22 folgt dem Muster der F-Generation: Der Drehzahlgeber liest einen magnetischen Ring im Radlager, und die Parkbremse ist elektromechanisch. Wer beides kennt, spart sich den häufigsten Fehlkauf.",
+      "points": [
+        "Das Geberrad ist ein magnetischer Ring im Radlager. Ein Sensorfehler, der den Sensortausch überlebt, ist der Ring — Tausch nur zusammen mit dem Lager",
+        "Vor Belagwechsel hinten den Parkbremssteller über die Werkstattsoftware in Servicestellung fahren; mechanisches Zurückdrücken beschädigt ihn",
+        "Nach dem Zusammenbau zustellen und die Parkbremse mehrfach betätigen, bevor gefahren wird",
+        "Sporadische Raddrehzahlfehler beim Einfedern sind fast immer die Zuleitung am Radlauf",
+        "DSC-Eingriffe ohne Fahrsituation nach Fahrwerks- oder Lenkungsarbeiten: Lenkwinkelsensor abgleichen",
+        "Bei den M-Ausführungen mit größerer Bremsanlage ändert sich die Diagnose nicht, wohl aber die Belagstandzeit — der Sichtprüfung ist das anzumerken"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-101",
+        "D4F-F22-106"
+      ]
     }
   ]
 }
