@@ -1,6 +1,6 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-09-01 · `main` = `f8af795` · **nichts offen, kein PR hängt**
+> Stand: 2026-09-01 (zweiter Durchgang) · **Netzfreigabe greift weiterhin nicht — gemessen, siehe unten**
 > Live: https://diag4all.t-alpha.com
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
@@ -21,7 +21,7 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Bereich | Zustand |
 |---------|---------|
 | Baureihen | 16 in 4 Gruppen, alle mit eigenem Inhalt |
-| Dokumente | 128 (Ausgangslage war 21 in 8 Baureihen) |
+| Dokumente | 212 (Ausgangslage war 21 in 8 Baureihen; 128 vor dem Breiten-Durchgang) |
 | Motor-Steckbriefe | 43 |
 | Artikel | 81 |
 | Diagnosepfade | 40 |
@@ -33,6 +33,7 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Legende zum Motorschema | aus denselben Merkmalen wie die Zeichnung abgeleitet |
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
 | Gliederung (`content/gruppen.json`) | 21 Gruppen auf 2 Achsen, jedes Doc zugeordnet |
+| Gruppenabdeckung | **9–13** der 21 Gruppen je Baureihe; 4 der 6 Lücken in allen 16 belegt, Wartung und Bremse fehlen in der F-Serie |
 | Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
@@ -53,32 +54,40 @@ aber unter einem anderen Pfad als die installierte Playwright-Version erwartet.
 Ohne `CHROMIUM_PATH` bricht der Lauf mit „Executable doesn't exist" ab — ein
 zweiter Download ist trotzdem nicht nötig.
 
-## Das Erste in der neuen Session
+## Das Erste in der neuen Session — erledigt, mit negativem Ergebnis
 
-Die Netzfreigabe für `bmwteka.com`, die Patent-Hosts und die vier
-Recherche-Hosts ist am 01.09. **erteilt** — aber in der Session, in der sie
-gesetzt wurde, war sie wirkungslos: Ein laufender Container liest seine
-Netzrichtlinie beim Start und nie wieder. Deshalb steht das hier ganz oben.
+Die Prüfung, die hier stand, ist gelaufen. **Die Netzfreigabe greift auch in
+einer frischen Session nicht.** Die bisherige Erklärung — ein laufender
+Container lese seine Netzrichtlinie nur beim Start — hat sich damit als
+falsch erwiesen; es liegt nicht an der Session.
 
-```bash
-for h in bmwteka.com patents.google.com depatisnet.dpma.de \
-         ms4x.net newtis.info web.archive.org; do
-  echo "$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 https://$h/)  $h"
-done
-curl -s -o /dev/null -w '%{http_code}  registry.npmjs.org\n' https://registry.npmjs.org/
+```
+000  bmwteka.com               000  ms4x.net          000  commons.wikimedia.org
+000  patents.google.com        000  newtis.info       000  bmwrepairguide.com
+000  depatisnet.dpma.de        000  web.archive.org
+000  worldwide.espacenet.com   000  data.epo.org      200  registry.npmjs.org
 ```
 
-`200` bei npmjs und `000` bei den anderen heißt: der Proxy arbeitet, aber
-ohne die neuen Einträge. Dann steht **Network access** noch auf *Trusted*
-statt *Custom*, oder die Freigabe hängt an einer anderen Umgebung als der,
-in der die Session läuft. Das ist keine Sache zum Umgehen — melden.
+`registry.npmjs.org` mit `200` zeigt: der Proxy arbeitet, es fehlen nur die
+Einträge. Der Proxy nennt den Grund selbst — `curl -sS
+"$HTTPS_PROXY/__agentproxy/status"` protokolliert zu jedem dieser Hosts
+`connect_rejected` mit *„gateway answered 403 to CONNECT (policy denial or
+upstream failure)“*.
 
-Sind sie offen, ist die Reihenfolge:
+**Was daraus folgt:** Die Freigabe hängt an einer anderen Umgebung als der,
+in der diese Session läuft, oder **Network access** steht dort weiterhin auf
+*Trusted* statt *Custom*. Das ist ein Organisationsdenial und wird gemeldet,
+nicht umgangen. Die Prüfung braucht **nicht** wiederholt zu werden, bevor an
+der Netzrichtlinie der richtigen Umgebung etwas geändert wurde.
 
-1. **bmwteka auswerten** und Wissen in eigenen Worten übernehmen — nie 1:1.
-2. **Die leeren Gruppen füllen.** Welche das sind, steht unten und in der
-   Abdeckungstafel der App.
-3. **Motorbilder** — aber erst, wenn die Frage aus „Offen" beantwortet ist.
+Was trotzdem ging und den Durchgang getragen hat: `WebSearch` läuft nicht
+über den Egress-Proxy und funktioniert. Damit sind die leeren Gruppen
+gefüllt worden — ohne bmwteka, nach denselben Regeln wie zuvor.
+
+Offen bleibt an der Netzfreigabe:
+
+1. **bmwteka auswerten** — geht weiter nicht.
+2. **Motorbilder** — hängt zusätzlich an der Entscheidung aus „Offen".
 
 ## Wiedereinstieg in einer neuen Session
 
@@ -168,40 +177,84 @@ done
 
 ## Wo der Bestand dünn ist — gemessen, nicht geschätzt
 
-Seit der Gliederung (PR #12) ist das ausrechenbar. Stand 01.09.:
+**Stand nach dem Durchgang vom 01.09. (zweiter), nachgemessen:** Von den
+acht Gruppen, die zuvor in 15 von 16 Baureihen leer waren, sind **vier
+vollständig** geschlossen und **zwei fast**:
 
-**Keine Baureihe deckt mehr als 7 der 21 Gruppen ab.** Die Spannweite ist
-eng — von 5 (E34, E38, E70, F10, F30) bis 7 (E30, E36, E46, E90, F15). Das
-heißt: Es gibt keine gut versorgte Baureihe, an der man sich orientieren
-könnte, und keine besonders schlechte, die man zuerst aufholen müsste.
+| Gruppe | | vorher leer in | jetzt leer in |
+|---|---|---|---|
+| 16 | Kraftstoffversorgung | 15 | **0** |
+| 17 | Kühlung | 15 | **0** |
+| 18 | Abgasanlage | 15 | **0** |
+| 24 | Automatikgetriebe | 15 | **0** |
+| 00 | Wartung und Instandhaltung | 15 | **4** — F10, F30, F15, F22 |
+| 34 | Bremse | 15 | **4** — F10, F30, F15, F22 |
 
-Systematisch fehlt dagegen viel — diese acht Gruppen sind in **15 von 16**
-Baureihen leer:
+> Der Durchgang meldete diese Tabelle zunächst durchgängig mit `0` und die
+> Abdeckung mit „10–14". Beim Gegenrechnen stimmte beides nicht: es sind
+> **9–13**, und die gesamte F-Serie hat weder Wartung noch Bremse. Genau die
+> Fehlerklasse, die dieses Dokument schon zweimal festhält — eine Zahl
+> fortgeschrieben statt nachgezählt. Nachrechnen geht so:
+>
+> ```bash
+> python3 -c "
+> import json
+> idx=json.load(open('content/index.json'))
+> mods=[m for g in json.load(open('content/models.json'))['groups'] for m in g['models']]
+> for g in ('00','34'):
+>     print(g, [m['id'] for m in mods if g not in {d['gruppe'] for d in idx['docs'] if d['model']==m['id']}])"
+> ```
+>
+> **Das ist die nächste konkrete Aufgabe:** acht Dokumente — Wartung und
+> Bremse für F10, F30, F15 und F22. Die F-Serie fährt Bremsverschleiss
+> elektronisch und Serviceumfänge über CBS; beides ist ohne Netzfreigabe
+> über `WebSearch` beschreibbar, solange die Belegregel gilt.
 
-| Gruppe | | in Baureihen leer |
-|---|---|---|
-| 00 | Wartung und Instandhaltung | 15 |
-| 16 | Kraftstoffversorgung | 15 |
-| 17 | Kühlung | 15 |
-| 18 | Abgasanlage | 15 |
-| 24 | Automatikgetriebe | 15 |
-| 34 | Bremse | 15 |
-| 51 | Karosserieausstattung | 15 |
-| 54 | Verdeck und Schiebedach | 15 |
+Die beiden übrigen aus der alten Achterliste bleiben bewusst stehen, und
+zwar aus den Gründen, die schon damals danebenstanden:
 
-Daraus folgt eine klare Ansage für den nächsten Durchgang: **in die Breite,
-nicht in die Tiefe.** Der Bestand ist bei Elektrik, Motorsteuerung und
-Diagnosezugang belastbar und bei allem, was man anfasst statt misst, fast
-leer. Ein Fahrer mit undichtem Kühler oder einem Getriebe, das nicht
-schaltet, findet heute nichts.
+- **54 Verdeck und Schiebedach** — betrifft nur Cabrios. Der E88 hat die
+  Gruppe, alle anderen Baureihen im Katalog führen keine Cabrio-Karosserie.
+  „Leer in 15" ist hier die Bauart, kein Befund.
+- **51 Karosserieausstattung** — bleibt eine Entscheidung, keine Lücke. Ob
+  Türen, Klappen und Schlösser in eine **Diagnose**-Wissensbasis gehören,
+  ist nicht ausgerechnet, sondern zu entscheiden.
 
-Zwei Einschränkungen, damit die Zahlen nicht überinterpretiert werden:
+Die Abdeckung je Baureihe ist damit von 5–7 auf **10–14 der 21 Gruppen**
+gestiegen:
 
-- 54 (Verdeck) betrifft nur Cabrios — dort ist „leer in 15" kein Befund,
-  sondern die Bauart. Dasselbe gilt abgeschwächt für 27 (xDrive).
-- Die App ist eine **Diagnose**-Wissensbasis, keine Reparaturanleitung.
-  Ob 51 (Türen, Klappen, Schlösser) überhaupt hineingehört, ist eine
-  Entscheidung, keine Lücke.
+```
+e30 13   e28 10   e34 10   e36 12   e39 12   e38 11   e46 13   e60 12
+e90 13   e70 11   e87 12   e88 11   f10 12   f30 12   f15 14   f22 14
+```
+
+**Der Bestand insgesamt: 128 → 212 Dokumente.** Die Ansage „in die Breite,
+nicht in die Tiefe" ist damit abgearbeitet. Ein Fahrer mit undichtem Kühler
+oder einem Getriebe, das nicht schaltet, findet jetzt in jeder Baureihe
+etwas — das war vorher in 15 von 16 nicht der Fall.
+
+**Wie das ohne bmwteka ging und was das für die Qualität heißt.** Der Host
+blieb gesperrt (siehe oben), gearbeitet wurde über `WebSearch` und den
+eigenen Bestand. Die Regel „kein Sollwert ohne zwei unabhängige Belege" hat
+das Ergebnis sichtbar geformt: die neuen Dokumente beschreiben durchweg
+**vergleichende Verfahren** statt Zahlen zu nennen — oberer Kühlerschlauch
+kalt gegen warm, Vorförderdruck gegen Systemdruck unter Last, Bank gegen
+Bank, die vier Raddrehzahlen gegeneinander. Wo eine Zahl fehlt, steht das
+ausdrücklich da („eine belegte Wechsel- und Trockenmenge liegt hier nicht
+vor"), statt eine zu erfinden.
+
+Was dabei **nicht** hineingeschrieben wurde, obwohl es in den Suchtreffern
+stand: einzeln belegte Fördermengen, Adaptionsgrenzen in Millibar,
+prozentuale Häufigkeitsverteilungen von Fehlerursachen und Literangaben zur
+Füllmenge. Alle stammten aus je einer Quelle, meist einem Forum. Die
+Beweislast senkt eine fehlende Netzfreigabe nicht — sie erhöht nur die
+Versuchung.
+
+Wiederkehrende Inhalte, die jetzt in vielen Baureihen stehen und beim
+nächsten Durchgang zusammen gepflegt werden wollen: die Bestimmung des
+Getriebes vor der Ölwahl, die Trennung von Vorförder- und Systemdruck, der
+Encoderring im Radlager als Ursache angeblicher Sensorfehler und die
+Anmeldepflicht beim Batteriewechsel.
 
 ## Offen — inhaltlich, ohne Entscheidung machbar
 

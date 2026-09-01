@@ -284,6 +284,143 @@
         "D4F-E60-001",
         "D4F-E60-002"
       ]
+    },
+    {
+      "id": "D4F-E60-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N52 · Elektrische Wasserpumpe und Kennfeldthermostat",
+      "valid": "E60 · 2003–2010 · N52, N54, N62 (elektrische Pumpe)",
+      "summary": "Mit dem N52 wird der Kühlkreis geregelt statt mitgedreht: die Wasserpumpe ist elektrisch und wird von der DME angesteuert, das Thermostat ist kennfeldgeregelt. Damit wird der Kreis erstmals im Fehlerspeicher sichtbar — und muss dort auch zuerst gelesen werden.",
+      "points": [
+        "Erster Griff ist der Fehlerspeicher der DME, nicht der Schraubenschlüssel: die elektrische Pumpe meldet sich mit eigenen Speichereinträgen, und bei erkanntem Ausfall geht der Motor in einen Notlauf mit deutlich reduzierter Leistung",
+        "Meldung „Motortemperatur“ im Kombi zusammen mit trägem Gaspedal ist das typische Bild eines Pumpenausfalls — nicht als Motorschaden deuten, bevor der Speicher gelesen ist",
+        "Die Ansteuerung ist ein PWM-Signal von der DME. Über den Stellgliedtest der Werkstattsoftware lässt sich die Pumpe gezielt ansprechen — läuft sie dabei hörbar an, liegt der Fehler eher in der Regelung als in der Pumpe",
+        "Kennfeldthermostat: die DME kann die Öffnung vorgeben. Ein Motor, der nicht auf Temperatur kommt, ist hier ebenso ein Speichereintrag wie ein mechanisch offenes Thermostat beim älteren Motor",
+        "Der Kreis bleibt trotz Elektronik ein Kreis: Ausgleichsbehälter, Deckel und Schläuche altern wie zuvor und werden vor dem Tausch der Pumpe geprüft",
+        "Nach jedem Öffnen entlüften — die elektrische Pumpe lässt sich dafür über die Werkstattsoftware gezielt laufen lassen, was den Vorgang deutlich zuverlässiger macht als beim mechanischen Kreis"
+      ],
+      "engines": [
+        "N52",
+        "N54",
+        "N62"
+      ],
+      "details": [
+        "D4F-E60-010",
+        "D4F-E60-020",
+        "D4F-E60-050"
+      ]
+    },
+    {
+      "id": "D4F-E60-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Sechsgang-Automatik E60 · Ölstand, Adaption, Mechatronik",
+      "valid": "E60 · 2003–2010 · mit Steptronic",
+      "summary": "Mit der Sechsgang-Automatik wandert die Steuerung in die Mechatronik im Getriebe. Das verschiebt die typischen Fehler: nicht mehr der Gang fehlt, sondern die Ansteuerung wird unsauber — und der häufigste Weg dorthin ist Öl an einer Stelle, an der keines sein sollte.",
+      "points": [
+        "Getriebe über das Schild bestimmen und danach die Ölspezifikation wählen — auch in dieser Generation stehen Getriebe zweier Herstellerfamilien nebeneinander",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst lesen, dann die Adaptionswerte ansehen. Sie zeigen den Zustand der Kupplungspakete deutlicher als jede Probefahrt",
+        "Harter Ruck in einem bestimmten Gangwechsel, der reproduzierbar bleibt: Steckverbindung der Mechatronik auf Ölfeuchtigkeit prüfen, bevor ein Steuergerät bestellt wird",
+        "Ölstand nur nach Prozedur bei betriebswarmem Öl, Fahrzeug eben, über die Kontrollschraube — die Öltemperatur ist nur über das Getriebesteuergerät auslesbar, der Fühler sitzt intern",
+        "„Lebensdauerfüllung“ ist eine Werksangabe. Gewechselt wird nach Ölzustand; ein belegtes Kilometerintervall liegt hier nicht vor",
+        "Nach Eingriffen an Mechatronik oder Getriebe Adaption zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-001",
+        "D4F-E60-060"
+      ]
+    },
+    {
+      "id": "D4F-E60-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E60 · Encoderring im Radlager, Sensorik, Entlüften",
+      "valid": "E60 · 2003–2010 · DSC",
+      "summary": "Ab dieser Generation sitzt das Geberrad nicht mehr aussen als Zahnkranz, sondern als magnetischer Encoderring im Radlager. Das ändert die Diagnose grundlegend: ein Fehler am „Sensor“ ist hier oft ein Fehler am Radlager.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst; er benennt in der Regel das Rad",
+        "Bevor ein Sensor bestellt wird: der magnetische Encoderring sitzt im Radlager. Ist das Lager korrodiert oder hat Spiel, meldet der Sensor Unsinn, obwohl er heil ist — ein Sensortausch behebt das nicht",
+        "Beim Ausbau des Sensors in die Bohrung sehen: Rostaufbau am Lager drückt den Sensor aus seiner Lage und erzeugt schwache oder unplausible Signale",
+        "Nach dem Tausch eines Sensors oder Lagers kann ein Abgleich erforderlich sein — nach dem Eingriff Fehlerspeicher löschen und eine Probefahrt mit Geradeausfahrt und Kurven fahren, dann erneut lesen",
+        "Kabel an den Radläufen auf Scheuerstellen prüfen: sporadische Fehler beim Einfedern sind fast immer Kabelbrüche",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit braucht dafür die Ansteuerung über die Werkstattsoftware"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-002",
+        "D4F-E60-030"
+      ]
+    },
+    {
+      "id": "D4F-E60-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E60 · Vorförderung gegen Systemdruck trennen",
+      "valid": "E60 · 2003–2010 · alle Motoren",
+      "summary": "Mit der Direkteinspritzung bekommt der Kraftstoffkreis zwei Stufen: eine Vorförderpumpe im Tank und eine Hochdruckpumpe am Motor. Der Fehlerspeicher meldet fehlenden Druck — welche der beiden Stufen ihn verloren hat, sagt er nicht.",
+      "points": [
+        "Die entscheidende Trennung: Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt der Vorförderdruck mit steigender Drehzahl ab, ist die Tankpumpe am Ende und alles dahinter bricht mit ihr zusammen",
+        "Hält der Vorförderdruck und der Systemdruck erreicht seine Vorgabe nicht, liegt es an der Hochdruckseite. Ohne diese beiden Verläufe nebeneinander ist jede Diagnose geraten",
+        "Ein getauschtes Bauteil, nach dem dieselben Einträge in kurzer Zeit wiederkommen, ist das Zeichen dafür, dass die falsche Stufe getauscht wurde — nicht dafür, dass das Ersatzteil schlecht war",
+        "Beim Diesel gehört die Rücklaufmenge der Injektoren zur selben Prüfung: ein Injektor mit zu hoher Rücklaufmenge zieht den Raildruck herunter, ohne dass Pumpe oder Regler defekt sind",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang überhaupt Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor irgendetwas ausgebaut wird",
+        "Der Raildrucksensor kann selbst die Ursache sein: er meldet dann einen Druck, den es so nicht gibt. Sein Signal gegen den mitgemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-020",
+        "D4F-E60-010"
+      ]
+    },
+    {
+      "id": "D4F-E60-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E60 · Breitbandsonde, Katalysator, Diesel-Nachbehandlung",
+      "valid": "E60 · 2003–2010 · alle Motoren",
+      "summary": "Im E60 stehen Benziner mit Breitbandsonde und Diesel mit Partikelfilter nebeneinander. Die Breitbandsonde pendelt nicht mehr — wer sie wie eine Sprungsonde beurteilt, hält ein gesundes Signal für einen Fehler.",
+      "points": [
+        "Breitbandsonde nicht wie eine Sprungsonde lesen: sie liefert ein stetiges Signal statt eines Pendelns. Ein ruhiges Signal ist hier normal und kein Befund",
+        "Katalysatorurteil weiterhin über die Sonde dahinter — und erst, nachdem ein Abgasleck zwischen den Sonden ausgeschlossen ist",
+        "Beim Diesel gehört der Partikelfilter dazu: Beladung und Differenzdruck im Livedatenstrom ansehen, bevor an der Mechanik gearbeitet wird",
+        "Ein Fehler am Differenzdrucksensor sieht aus wie ein voller Filter. Die Druckschläuche zuerst prüfen — sie setzen sich mit Russkondensat zu und melden dann Werte, die es nicht gibt",
+        "Häufig abgebrochene Regenerationen sind ein Befund für sich: der Filter wird dabei voller statt leerer, und die Ursache liegt im Fahrprofil oder in einer Störung, die die Regeneration abbricht",
+        "Abgasgegendruck durch einen zugesetzten Filter oder Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-020",
+        "D4F-E60-010"
+      ]
+    },
+    {
+      "id": "D4F-E60-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E60 · Zustandsbasierter Service und Batterieregistrierung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Mit dem E60 löst der zustandsbasierte Service das feste Intervall ab: einzelne Positionen werden getrennt geführt und getrennt zurückgesetzt. Dazu kommt eine Regel, die neu ist und regelmässig übersehen wird — ein Batteriewechsel muss angemeldet werden.",
+      "points": [
+        "Die Serviceumfänge werden einzeln geführt und einzeln zurückgesetzt. Wer pauschal alles zurücksetzt, verliert die Information, welche Position tatsächlich fällig war",
+        "Nach jedem Batteriewechsel die neue Batterie im System registrieren — Kapazität und Bauart gehören dazu. Ohne Registrierung lädt das Fahrzeug nach dem Kennfeld der alten Batterie, was die neue vorzeitig altern lässt",
+        "Wird eine Batterie anderer Bauart eingebaut, muss auch die Bauart angemeldet werden, nicht nur der Tausch. Das Ladeverhalten unterscheidet sich zwischen den Bauarten deutlich",
+        "Der Batteriesensor an der Masseklemme gehört zur Prüfung: meldet er falsch, arbeitet das Energiemanagement mit falschen Annahmen und schaltet Verbraucher ab, die nicht abgeschaltet gehören",
+        "Bremsflüssigkeit bleibt zeitabhängig und läuft unabhängig vom Fahrbetrieb weiter",
+        "Ölstand wird bei den neueren Motoren elektronisch bestimmt. Die Messung braucht definierte Bedingungen — ein Wert, der bei laufendem Motor kurz nach dem Start abgelesen wird, ist keine Messung"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E60-060",
+        "D4F-E60-002"
+      ]
     }
   ]
 }

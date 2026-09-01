@@ -197,6 +197,90 @@
         "D4F-F22-001",
         "D4F-F22-005"
       ]
+    },
+    {
+      "id": "D4F-F22-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis N13/N20/B48 · Geregelte Pumpe und Ladeluftweg",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Vierzylinder der F-Generation haben einen geregelten Kühlkreis mit elektrischer Wasserpumpe und dazu einen eigenen Kreis für die Ladeluftkühlung. Beide melden sich im Fehlerspeicher — die Eingrenzung beginnt dort und nicht am Kühler.",
+      "points": [
+        "Fehlerspeicher der Motorsteuerung zuerst: die geregelte Wasserpumpe schreibt eigene Einträge, und ein erkannter Ausfall führt zu spürbarer Leistungsreduzierung samt Temperaturmeldung",
+        "Kühlmitteltemperatur im Livedatenstrom über eine Fahrt beobachten. Schwankungen zeigen einen beginnenden Pumpen- oder Thermostatfehler früher an als das Kombiinstrument",
+        "Bei indirekter Ladeluftkühlung gehört deren Kreis zur Prüfung: Ladelufttemperatur unter Last mitschreiben und gegen die Aussentemperatur halten — der Vergleich trägt die Aussage, eine belegte Sollwerttabelle liegt hier nicht vor",
+        "Ausgleichsbehälter und Deckel prüfen, bevor ein Bauteil getauscht wird. Kühlmittelverlust ohne Pfütze hat hier seine häufigste Ursache",
+        "Nach jedem Öffnen mit der Werkstattsoftware entlüften und die Pumpe dabei gezielt ansteuern"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-004",
+        "D4F-F22-006"
+      ]
+    },
+    {
+      "id": "D4F-F22-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F22 · Ölstand im Temperaturfenster",
+      "valid": "F22 · 2011–2019 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik hat keinen Messstab. Der Ölstand wird über eine Kontrollschraube bei ausgelesener Getriebeöltemperatur in einem engen Fenster geprüft — das macht ein Diagnosegerät zur Voraussetzung für einen Ölwechsel.",
+      "points": [
+        "Ölstand nur im vorgeschriebenen Temperaturfenster prüfen und die Getriebeöltemperatur dabei auslesen. Zu heiss gemessen ergibt scheinbar zu viel, zu kalt scheinbar zu wenig",
+        "Fahrzeug waagerecht stellen, nicht nur anheben — Schräglage verfälscht den Stand deutlich",
+        "Fehlerspeicher des Getriebesteuergeräts vor jeder mechanischen Massnahme lesen; Schaltprobleme melden sich dort, bevor sie sich fahren lassen",
+        "Adaptionswerte auslesen und beurteilen. Zurückgesetzt wird nach Eingriffen an Mechatronik oder Getriebe, nicht routinemässig",
+        "Nach dem Zurücksetzen gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-001",
+        "D4F-F22-002"
+      ]
+    },
+    {
+      "id": "D4F-F22-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F22 · Direkteinspritzung, Druck unter Last",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Motoren im F22 spritzen direkt ein und haben deshalb zwei Druckstufen. Der Fehlerspeicher meldet einen Druckverlust, ohne die Stufe zu nennen — die Zuordnung gelingt nur über den Vergleich beider Drücke unter Last.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Fällt die Vorförderung mit steigender Drehzahl ab, ist die Tankpumpe die Ursache",
+        "Hält die Vorförderung und der Systemdruck erreicht seine Vorgabe nicht, liegt der Fehler auf der Hochdruckseite",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen: falsche Stufe getauscht, nicht schlechtes Ersatzteil",
+        "Gemischfehler und Druckfehler zusammen betrachten — eine magere Meldung muss nicht Falschluft sein",
+        "Raildrucksensor mitverdächtigen und sein Signal gegen einen unabhängig gemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-006",
+        "D4F-F22-004"
+      ]
+    },
+    {
+      "id": "D4F-F22-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F22 · Breitbandsonde, Katalysator, Partikelfilter",
+      "valid": "F22 · 2011–2019 · alle Motoren",
+      "summary": "Die Motoren im F22 arbeiten mit Breitbandsonde und aufgeladener Direkteinspritzung; spätere Benziner bekommen zusätzlich einen Partikelfilter. Das ändert die Beurteilung des Abgasgegendrucks — er ist beim Benziner nicht mehr automatisch ein Katalysatorthema.",
+      "points": [
+        "Breitbandsonde liefert ein stetiges Signal, kein Pendeln. Ein ruhiges Signal ist normal und kein Befund",
+        "Bei Benzinern mit Partikelfilter gehört dessen Beladung in die Beurteilung eines Leistungsverlusts — Gegendruck ist hier nicht mehr allein ein Katalysatorthema",
+        "Abgasleck vor oder zwischen den Sonden vor jedem Bauteilurteil ausschliessen; es erzeugt magere Meldungen ohne Fehler in der Gemischbildung",
+        "Magere Meldungen nicht ohne Blick auf den Kraftstoffdruck deuten — bei Direkteinspritzung erzeugt die Hochdruckseite dasselbe Bild wie Falschluft",
+        "Ein zugesetztes Bauteil im Abgasweg zeigt sich als drehzahlabhängiger Leistungsverlust; das trennt Gegendruck von Gemisch"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F22-006",
+        "D4F-F22-004"
+      ]
     }
   ]
 }

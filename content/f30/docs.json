@@ -235,6 +235,94 @@
         "D4F-F30-002",
         "D4F-F30-001"
       ]
+    },
+    {
+      "id": "D4F-F30-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F30 · Benziner und Diesel im geregelten Kreis",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Im F30 ist der Kühlkreis durchgängig geregelt: elektrische Wasserpumpe, kennfeldgeführtes Thermostat, dazu bei den Turbomotoren ein eigener Kreis für die Ladeluftkühlung. Der Diesel bringt zusätzlich die Abgasnachbehandlung ins Spiel, die auf Betriebstemperatur angewiesen ist.",
+      "points": [
+        "Fehlerspeicher zuerst — die geregelte Pumpe meldet ihren Ausfall selbst, und die Steuerung reduziert daraufhin die Leistung. Träges Gaspedal plus Temperaturmeldung ist dieses Bild und kein Motorschaden",
+        "Beim Diesel hat ein Motor, der nicht auf Temperatur kommt, Folgen über die Kühlung hinaus: die Regeneration des Partikelfilters braucht Betriebstemperatur. Ein hängendes Thermostat zeigt sich deshalb oft zuerst als Abgasproblem",
+        "Kühlmitteltemperatur im Livedatenstrom über eine Fahrt mitschreiben und den Aufwärmverlauf beurteilen — zu langsam warm ist ein Befund, auch ohne Speichereintrag",
+        "Ladeluftkühlkreis mitprüfen, wo vorhanden: Ladelufttemperatur unter Last gegen die Aussentemperatur halten",
+        "Ausgleichsbehälter und Deckel stehen bei Kühlmittelverlust ohne sichtbares Leck zuerst auf der Liste",
+        "Nach jedem Öffnen über die Werkstattsoftware entlüften, Pumpe dabei gezielt ansteuern — Restluft erzeugt Ausschläge, die zu keinem Bauteil passen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-006"
+      ]
+    },
+    {
+      "id": "D4F-F30-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F30 · Ölstand, Adaption, Schaltverhalten",
+      "valid": "F30 · 2011–2019 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik im F30 schaltet häufig und weich, was beginnende Fehler lange verdeckt. Sichtbar werden sie in den Adaptionswerten und im Fehlerspeicher — und der Ölstand ist ohne Diagnosegerät nicht prüfbar.",
+      "points": [
+        "Ölstand nur über die Kontrollschraube im vorgeschriebenen Temperaturfenster, mit ausgelesener Getriebeöltemperatur. Ohne Diagnosegerät ist die Prüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug waagerecht stellen — auf der Bühne heisst das ausgerichtet, nicht nur angehoben",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst, dann die Adaptionswerte ansehen. Sie zeigen beginnenden Verschleiss, bevor er sich fahren lässt",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang gehört zur Wandlerüberbrückung und nicht zur Gangschaltung — das trennt zwei verschiedene Reparaturen",
+        "Bei vorhandenem Getriebeölkühler bleibt nach einem Wechsel Altöl im Kreis; eine belegte Wechsel- und Trockenmenge liegt hier nicht vor",
+        "Adaption nach Eingriffen zurücksetzen und gemischt mit Zug und Schub einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-001",
+        "D4F-F30-004"
+      ]
+    },
+    {
+      "id": "D4F-F30-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F30 · Benziner und Diesel, zwei Stufen",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Im F30 gilt für Benziner und Diesel dasselbe Muster: Vorförderpumpe im Tank, Hochdruckpumpe am Motor, und ein Fehlerspeicher, der fehlenden Druck meldet, ohne die Stufe zu benennen. Beim Diesel kommt die Rücklaufmenge der Injektoren dazu.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben — das ist die Trennung, ohne die jede Zuordnung geraten ist",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor mit zu hoher Rücklaufmenge zieht den Raildruck herunter, obwohl die Pumpe fördert",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird; das trennt Kraftstoff von Zündung beziehungsweise Vorglühen",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen, dass die falsche Stufe getauscht wurde",
+        "Raildrucksensor gegen einen unabhängig gemessenen Druck halten, bevor eine Pumpe bestellt wird",
+        "Gemischfehler beim Benziner nicht vorschnell als Falschluft deuten — fehlender Kraftstoffdruck erzeugt dasselbe Bild"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-002"
+      ]
+    },
+    {
+      "id": "D4F-F30-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F30 · Partikelfilter, Regeneration, Differenzdruck",
+      "valid": "F30 · 2011–2019 · alle Motoren",
+      "summary": "Der F30 ist die Baureihe, in der der Partikelfilter zum Alltagsthema wird — bei den Dieseln durchgehend, bei späteren Benzinern ebenfalls. Die häufigste Fehlmassnahme ist der Filtertausch aufgrund eines Sensorwegs, der zugesetzt ist.",
+      "points": [
+        "Beladung und Differenzdruck im Livedatenstrom ansehen, im Ruhezustand und im Verlauf unter Last. Ein Einzelwert allein trägt hier keine Aussage",
+        "Die Druckschläuche zum Sensor zuerst prüfen — Russkondensat setzt sie zu, und ein verstopfter Schlauch sieht im Speicher aus wie ein voller Filter",
+        "Nach Werkstattarbeiten die Schlauchzuordnung prüfen: vertauschte Anschlüsse erzeugen unplausible Werte, teils mit negativem Vorzeichen",
+        "Bei manchen Ständen wird der Differenzdruck rechnerisch aus einem einzelnen Absolutdrucksensor gebildet statt aus zwei Anschlüssen — am Fahrzeug prüfen, welche Bauart vorliegt, sonst sucht man einen Schlauch, den es nicht gibt",
+        "Häufig abgebrochene Regenerationen machen den Filter voller statt leerer; das ist ein eigener Befund und keine Folgeerscheinung",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — ein hängendes Thermostat zeigt sich zuerst als Abgasproblem"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F30-003",
+        "D4F-F30-002"
+      ]
     }
   ]
 }

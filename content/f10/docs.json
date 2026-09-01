@@ -201,6 +201,92 @@
         "D4F-F10-003",
         "D4F-F10-005"
       ]
+    },
+    {
+      "id": "D4F-F10-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis F10 · Geregelter Kreis, Ladeluft und Getriebekühlung",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 hängen mehrere Kreise zusammen: Motorkühlung, Ladeluftkühlung und die Getriebeölkühlung teilen sich den Bauraum vorn. Die Motorsteuerung regelt Pumpe und Thermostat und meldet Abweichungen — die Fehlersuche beginnt deshalb am Fehlerspeicher.",
+      "points": [
+        "Fehlerspeicher zuerst und über alle beteiligten Steuergeräte, nicht nur die Motorsteuerung: Kühlkreis, Ladeluftweg und Getriebe melden getrennt, und der Zusammenhang wird erst über mehrere Speicher sichtbar",
+        "Bei Meldung „Motortemperatur“ mit spürbarem Leistungsverlust ist die geregelte Wasserpumpe der erste Verdacht — das Notlaufverhalten ist gewollt und schützt den Motor",
+        "Kühlmittelverlust ohne sichtbare Pfütze: Ausgleichsbehälter, Deckel und die Kunststoffflansche prüfen. Der Behälter steht unter Druck und reisst oft nur betriebswarm sichtbar",
+        "Bei den Motoren mit indirekter Ladeluftkühlung gehört deren Kreis zur Prüfung dazu: Ladelufttemperatur im Livedatenstrom über eine Lastfahrt beobachten und mit der Aussentemperatur vergleichen",
+        "Nach jedem Öffnen mit der Werkstattsoftware entlüften — der Kreis hat mehrere hohe Punkte, und Restluft erzeugt Temperaturausschläge ohne Bauteilfehler"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-003",
+        "D4F-F10-006"
+      ]
+    },
+    {
+      "id": "D4F-F10-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Achtgang-Automatik F10 · Ölstand im Temperaturfenster, Adaption",
+      "valid": "F10 · 2010–2017 · mit Achtgang-Automatik",
+      "summary": "Die Achtgang-Automatik der F-Generation prüft ihren Ölstand nicht am Messstab, sondern über eine Kontrollschraube in einem engen Temperaturfenster. Wer ausserhalb dieses Fensters misst, füllt zuverlässig falsch — und zwar in beide Richtungen.",
+      "points": [
+        "Ölstand nur im vorgeschriebenen Temperaturfenster prüfen, mit ausgelesener Getriebeöltemperatur. Wird zu heiss gemessen, ist der Stand scheinbar zu hoch; zu kalt gemessen scheinbar zu niedrig — beides führt zur falschen Korrektur",
+        "Die Öltemperatur kommt aus dem Getriebesteuergerät. Ohne Diagnosegerät ist eine Ölstandsprüfung an diesem Getriebe nicht sinnvoll durchführbar",
+        "Fahrzeug muss dabei eben stehen — auf der Hebebühne waagerecht, nicht nur angehoben. Eine Schräglage verfälscht den Stand mehr als die meisten Messfehler",
+        "Bei vorhandenem Getriebeölkühler ist der Kreis grösser als die Wechselmenge; nach einem Wechsel bleibt Altöl im System. Eine belegte Wechsel- und Trockenmenge liegt hier nicht vor — die Prozedur entscheidet, nicht eine Literzahl",
+        "Adaptionswerte auslesen und beurteilen, bevor getauscht wird. Zurückgesetzt wird nach Eingriffen an Mechatronik oder Getriebe, nicht routinemässig beim Ölwechsel",
+        "Nach dem Zurücksetzen gemischt mit Zug und Schub einfahren, damit das Getriebe neu lernt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-002"
+      ]
+    },
+    {
+      "id": "D4F-F10-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung F10 · Zwei Stufen, Diesel-Rücklaufmenge",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 arbeiten Benziner mit Direkteinspritzung und Diesel mit Common Rail nach demselben Grundmuster: eine Vorförderpumpe im Tank, eine Hochdruckpumpe am Motor. Die Diagnose trennt zuerst die beiden Stufen und erst danach die Bauteile.",
+      "points": [
+        "Vorförderdruck und Systemdruck gemeinsam über eine Lastfahrt mitschreiben. Sackt die Vorförderung ab, bricht die Hochdruckseite mit ihr zusammen — dann ist die Tankpumpe die Ursache",
+        "Beim Diesel die Rücklaufmenge der Injektoren messen: ein Injektor, der zu viel zurückgibt, zieht den Raildruck herunter, obwohl Pumpe und Regler in Ordnung sind",
+        "Wiederkehrende Einträge kurz nach einem Pumpentausch heissen, dass die falsche Stufe getauscht wurde",
+        "Bei Startproblemen zuerst prüfen, ob im Startvorgang Systemdruck aufgebaut wird — das trennt Kraftstoff von Zündung, bevor etwas ausgebaut wird",
+        "Raildrucksensor mitverdächtigen: sein Signal gegen einen unabhängig mitgemessenen Druck halten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-002"
+      ]
+    },
+    {
+      "id": "D4F-F10-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage F10 · Partikelfilter, AdBlue, Differenzdruck",
+      "valid": "F10 · 2010–2017 · alle Motoren",
+      "summary": "Im F10 wird die Abgasnachbehandlung beim Diesel mehrstufig: Partikelfilter und je nach Ausführung eine SCR-Stufe mit Harnstoffeinspritzung. Die Stufen melden getrennt, und eine Meldung der einen wird regelmässig der anderen zugeschrieben.",
+      "points": [
+        "Fehlerspeicher vollständig lesen und die Stufen auseinanderhalten: Partikelfilter und SCR-Stufe haben eigene Sensorik und eigene Einträge. Eine Meldung der einen ist kein Urteil über die andere",
+        "Beim Partikelfilter Beladung und Differenzdruck im Livedatenstrom ansehen, und zuerst die Druckschläuche prüfen — Russkondensat setzt sie zu, und das sieht aus wie ein voller Filter",
+        "Nach Werkstattarbeiten die Schlauchzuordnung am Differenzdrucksensor prüfen; vertauschte Anschlüsse erzeugen unplausible Werte",
+        "Bei der SCR-Stufe zuerst Füllstand, Qualität und die Beheizung des Vorratsbehälters klären, bevor Dosierventil oder NOx-Sensor verdächtigt werden — eingefrorene oder verunreinigte Flüssigkeit erzeugt dieselben Meldungen",
+        "Häufig abgebrochene Regenerationen sind ein eigener Befund: der Filter wird dabei voller statt leerer",
+        "Ein Motor, der nicht auf Betriebstemperatur kommt, kann nicht regenerieren — das Thermostat gehört damit in die Abgasdiagnose"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-F10-001",
+        "D4F-F10-003"
+      ]
     }
   ]
 }

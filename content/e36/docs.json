@@ -260,6 +260,113 @@
         "D4F-E36-003",
         "D4F-E36-006"
       ]
+    },
+    {
+      "id": "D4F-E36-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E36 · Zwei Familien, zwei Ölsorten",
+      "valid": "E36 · 1990–2000 · mit Automatik",
+      "summary": "Im E36 kommen Automatikgetriebe aus zwei Herstellerfamilien vor. Sie sehen von aussen ähnlich aus, verlangen aber unterschiedliches ATF. Wer nach Fahrzeug statt nach Getriebe befüllt, trifft mit einiger Wahrscheinlichkeit daneben.",
+      "points": [
+        "Bestimmung zuerst und aus dem Getriebeschild, nicht aus der Fahrzeugpapieren: die Ölspezifikation folgt der Getriebefamilie. Diese Verwechslung ist im Projekt schon einmal belegt aufgetreten und hat eine Korrektur nötig gemacht",
+        "Fehlerspeicher des Getriebesteuergeräts lesen — Magnetventile, Drehzahlfühler und der Wandlerkupplungskreis melden sich dort und sind von aussen nicht beurteilbar",
+        "Ölzustand vor Ölstand: helles Rot in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Eine belegte Füllmenge in Litern liegt hier nicht vor — der Stand ergibt sich aus der Prozedur",
+        "Nach jedem Eingriff Adaption zurücksetzen und gemischt mit Zug und Schub einfahren, sonst bleiben gelernte Werte stehen, die nicht mehr passen",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung, nicht auf die Gangschaltung — das trennt zwei ganz verschiedene Reparaturen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-003"
+      ]
+    },
+    {
+      "id": "D4F-E36-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "ABS und ASC E36 · Fehlerspeicher, Geber, Regelverhalten",
+      "valid": "E36 · 1990–2000 · ABS, ASC",
+      "summary": "Mit dem E36 wird die Bremsregelung erstmals brauchbar über den Diagnosestecker auslesbar. Das verschiebt den ersten Handgriff: nicht mehr messen, sondern lesen — und erst danach den Geber prüfen, den der Speicher benennt.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst auslesen. Er benennt in der Regel das Rad, und das erspart das Durchmessen aller vier Kreise",
+        "Der benannte Geber wird trotzdem geprüft und nicht sofort getauscht: Polrad, Geberspalt und Kabel erzeugen dasselbe Bild wie ein defekter Geber",
+        "Kabel an den Radläufen auf Scheuerstellen und Bruch prüfen — sporadische Meldungen, die nur beim Einlenken oder Einfedern kommen, sind fast immer Kabel und nicht Sensor",
+        "Bei ASC-Eingriffen ohne erkennbaren Grund die Geber untereinander vergleichen: ein Rad, das eine leicht abweichende Drehzahl meldet, löst Regelungen aus, ohne einen Fehler zu speichern",
+        "Nach jedem Eingriff am Hydraulikkreis entlüften und dabei die Prozedur der Anlage einhalten — ein Aggregat mit Luft in der Regeleinheit lässt sich nicht durch Pedalpumpen retten"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-002",
+        "D4F-E36-005"
+      ]
+    },
+    {
+      "id": "D4F-E36-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E36 · Druck unter Last, Regler, Tankentlüftung",
+      "valid": "E36 · 1990–2000 · alle Motoren",
+      "summary": "Beim E36 kommt zur reinen Versorgung die Tankentlüftung dazu, die über ein Ventil in den Ansaugtrakt spült. Sie erzeugt Gemischfehler, die wie ein Versorgungsproblem aussehen — die beiden werden zuerst getrennt.",
+      "points": [
+        "Fehlerspeicher lesen: Gemischadaption im mageren Bereich kann von zu wenig Kraftstoffdruck kommen, aber ebenso von Falschluft oder einem hängenden Tankentlüftungsventil. Der Speicher sagt „zu mager“, nicht warum",
+        "Druck über eine Lastfahrt mitschreiben. Ein Kreis, der im Leerlauf hält und unter Last einbricht, ist der Regelfall — im Stand fällt er nicht auf",
+        "Tankentlüftungsventil prüfen, bevor an der Pumpe gearbeitet wird: hängt es offen, zieht der Motor unkontrolliert Dämpfe und die Adaption läuft weg",
+        "Druckregler über den Unterdruckschlauch prüfen — Druckänderung beim Abziehen muss sichtbar sein, Kraftstoff im Schlauch ist ein eindeutiger Befund",
+        "Filter vor Pumpe tauschen; er ist das häufigere und billigere Teil",
+        "Kaltstart nach Standzeit schlecht, danach normal: das System hält den Druck nicht — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-002"
+      ]
+    },
+    {
+      "id": "D4F-E36-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E36 · Zwei Sonden, Kat-Wirkungsgrad, Sekundärluft",
+      "valid": "E36 · 1990–2000 · mit Katalysator",
+      "summary": "Mit der zweiten Sonde hinter dem Katalysator kann die Steuerung erstmals den Katalysator selbst beurteilen. Dazu kommt bei vielen Ständen das Sekundärluftsystem, das nur nach dem Kaltstart arbeitet und deshalb schwer zu erwischen ist.",
+      "points": [
+        "Die Sonde vor dem Katalysator muss pendeln, die dahinter soll ruhig liegen. Pendelt die hintere im gleichen Takt mit, arbeitet der Katalysator nicht mehr — das ist die eigentliche Aussage der zweiten Sonde",
+        "Bevor ein Katalysator als verbraucht gilt: Abgasleck zwischen den beiden Sonden ausschliessen. Es erzeugt genau dasselbe Bild und ist die billigere Reparatur",
+        "Sekundärluftsystem arbeitet nur in den ersten Minuten nach dem Kaltstart. Wer es prüfen will, muss den Motor kalt erwischen — später ist keine Aussage möglich",
+        "Sondenheizungen getrennt von den Sonden prüfen: eine kalte Sonde regelt nicht und sieht aus wie eine defekte",
+        "Zugesetzter Katalysator zeigt sich als drehzahlabhängiger Leistungsverlust — das ist Gegendruck und wird nicht mit einem Gemischfehler verwechselt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-008",
+        "D4F-E36-002"
+      ]
+    },
+    {
+      "id": "D4F-E36-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E36 · Serviceintervallanzeige, Rückstellung, Prüfpunkte",
+      "valid": "E36 · 1990–2000",
+      "summary": "Der E36 führt die Serviceintervallanzeige über einen Zähler, der den Betrieb bewertet statt nur Kilometer zu zählen. Die Rückstellung erfolgt über den Diagnoseanschluss — und sie ist eine Buchung, keine Wartung.",
+      "points": [
+        "Der Zähler bewertet den Betrieb: Kurzstrecke und Kaltstarts verkürzen das Intervall gegenüber gleicher Laufleistung auf der Landstrasse",
+        "Rückstellung läuft über den Diagnoseanschluss. Sie dokumentiert eine ausgeführte Wartung — wer ohne Arbeit zurückstellt, verschiebt das Problem auf den nächsten Halter",
+        "Bremsflüssigkeit ist eine zeitabhängige Position und läuft unabhängig von der Laufleistung. Ihr Zustand zeigt sich erst bei warmer Bremse als weiches Pedal",
+        "Bei unbekannter Historie den Zustand bestimmen statt der Anzeige zu glauben: Ölzustand, Bremsflüssigkeit, Filter, Zündkerzen, Zustand der Kühlmittelschläuche",
+        "Die Kurbelgehäuseentlüftung gehört bei diesen Baujahren zur Sichtprüfung — sie versprödet und erzeugt dann Gemischfehler, die als Motorproblem gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E36-002",
+        "D4F-E36-001"
+      ]
     }
   ]
 }

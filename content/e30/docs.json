@@ -323,6 +323,133 @@
         "D4F-E30-011",
         "D4F-E30-008"
       ]
+    },
+    {
+      "id": "D4F-E30-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M20/M40 · Thermostat, Viscolüfter, Ausgleichsbehälter",
+      "valid": "E30 · 1982–1994 · M20, M40, M42, S14",
+      "summary": "Der E30-Kreis altert an drei Stellen: Kunststoffkästen des Kühlers, Ausgleichsbehälter und die Schläuche. Dazu kommt beim M20 der Riementrieb der Wasserpumpe. Die Eingrenzung läuft über den Temperaturverlauf, weil der Kreis nichts in einen Fehlerspeicher schreibt.",
+      "points": [
+        "Kühlmittelverlust ohne sichtbare Pfütze zuerst am Ausgleichsbehälter und seinem Deckel suchen — der Kunststoff wird spröde und reisst an den Nähten, oft erst unter Druck sichtbar",
+        "Überhitzung nur im Stand und im Stau deutet auf den Luftweg: Viscolüfter, Lüfterzarge, verlegter Kühler. Überhitzung nur bei Fahrt deutet auf den Wasserweg: Thermostat, Pumpe, verstopfter Kühler",
+        "Thermostat vergleichend: oberer Kühlerschlauch bleibt beim Kaltstart lange kalt und wird dann zügig warm. Lauwarm von Anfang an = hängt offen, Motor wird nicht warm und die Heizung bleibt schwach",
+        "M20: das Wasserpumpenrad und die Riemenspannung mit prüfen — eine rutschende Pumpe fördert zu wenig, ohne dass etwas undicht ist",
+        "Beim Befüllen entlüften, sonst steht Luft im Kopf und die Anzeige lügt: Fahrzeug vorn hoch, Heizung auf heiss, Deckel offen laufen lassen bis der obere Schlauch warm ist"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-005",
+        "D4F-E30-009"
+      ]
+    },
+    {
+      "id": "D4F-E30-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E30 · Bestimmen, ATF, Schaltverhalten",
+      "valid": "E30 · 1982–1994 · mit Automatik",
+      "summary": "Im E30 kommen über die Bauzeit verschiedene Automatikgetriebe vor, teils hydraulisch, in späteren Ständen elektronisch gesteuert. Welches vorliegt, entscheidet über Ölsorte und Prüfweg — deshalb steht die Bestimmung vor jedem Handgriff.",
+      "points": [
+        "Getriebeschild lesen und die Bauart bestimmen. ATF-Sorte und Ölstandsprozedur folgen dem Getriebe, nicht dem Fahrzeug — die falsche Sorte kostet das Getriebe",
+        "Ölzustand zuerst: helles Rot in Ordnung, braun und verbrannt riechend heisst thermische Vorschädigung, die kein Ölwechsel zurücknimmt",
+        "Ölstand betriebswarm, Fahrzeug eben, Motor läuft, Wählhebel vorher durch alle Stellungen. Kalt gemessene Werte sind wertlos",
+        "Bei elektronisch gesteuerten Ständen den Fehlerspeicher des Getriebesteuergeräts mitlesen — dort stehen Magnetventile und Drehzahlfühler, die man von aussen nicht beurteilen kann",
+        "Schaltverhalten unter definierter Last vergleichen: gleichbleibende Teillast gegen Vollgas. Der Vergleich trennt Hydraulik von Ansteuerung besser als jede Einzelfahrt"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-005",
+        "D4F-E30-003"
+      ]
+    },
+    {
+      "id": "D4F-E30-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "Bremse und ABS E30 · Kontrollleuchte, Geber, Hydraulik",
+      "valid": "E30 · 1982–1994 · mit und ohne ABS",
+      "summary": "Im E30 ist das ABS eigenständig und kaum über einen Fehlerspeicher zugänglich. Die Eingrenzung läuft über die Kontrollleuchte, den Vergleich der vier Raddrehzahlgeber und den Zustand von Polrädern und Leitungen.",
+      "points": [
+        "Kontrollleuchte beim Einschalten und nach dem Anfahren beobachten. Dauerhaft an heisst: Regelung abgeschaltet, Bremse arbeitet ohne ABS weiter",
+        "Die vier Raddrehzahlgeber gegeneinander messen statt gegen eine Tabelle — ein Geber, der aus der Reihe fällt, ist der Kandidat. Eine belegte Sollwertangabe liegt hier nicht vor",
+        "Polräder und Geberspalt ansehen: Rost am Zahnkranz erzeugt dasselbe Fehlerbild wie ein defekter Geber und ist der häufigere Fall",
+        "Geberkabel an den Radläufen auf Scheuerstellen prüfen. Ein Bruch, der nur in bestimmten Federstellungen auftritt, ist die klassische Ursache für sporadische Meldungen",
+        "Schwammiges Pedal erst nach der Hydraulik einordnen: Bremsflüssigkeit zieht Wasser, und der gesunkene Siedepunkt zeigt sich nur bei warmer Bremse"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-008",
+        "D4F-E30-001"
+      ]
+    },
+    {
+      "id": "D4F-E30-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E30 · Pumpe, Filter, Druck unter Last",
+      "valid": "E30 · 1982–1994 · alle Motoren",
+      "summary": "Der Kraftstoffkreis des E30 ist ein Niederdrucksystem mit elektrischer Pumpe, Filter und Druckregler am Verteilerrohr. Ein schwacher Kreis zeigt sich nicht im Leerlauf, sondern unter Last — deshalb wird unter Last geprüft und nicht am stehenden Fahrzeug.",
+      "points": [
+        "Symptombild einordnen: Ruckeln und Leistungseinbruch unter Last bei sauberem Leerlauf ist das typische Bild einer schwachen Förderung oder eines zugesetzten Filters",
+        "Druck mit einem Manometer im laufenden Betrieb mitlesen und über eine Lastfahrt beobachten, nicht nur im Stand messen. Ein Kreis, der im Leerlauf hält und unter Last einbricht, ist der Regelfall — eine Momentaufnahme findet ihn nicht",
+        "Druckregler prüfen, indem der Unterdruckschlauch abgezogen wird: der Druck muss sich dabei sichtbar ändern. Tut er das nicht, ist der Regler der Kandidat. Kraftstoff im Unterdruckschlauch ist ein eindeutiger Befund",
+        "Kraftstofffilter gehört bei jedem Druckproblem auf die Liste, bevor die Pumpe getauscht wird — er ist das billigere und häufigere Teil",
+        "Pumpenrelais und die Versorgung der Pumpe mitprüfen: eine Pumpe, die zu wenig Spannung bekommt, fördert zu wenig, ohne selbst defekt zu sein",
+        "Kaltstartprobleme, die nach Standzeit auftreten und nach kurzem Vorpumpen verschwinden, deuten auf ein System, das den Druck über Nacht nicht hält — Rückschlagventil in der Pumpe oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-006",
+        "D4F-E30-011"
+      ]
+    },
+    {
+      "id": "D4F-E30-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E30 · Lambdasonde, Katalysator, Abgasleck",
+      "valid": "E30 · 1982–1994 · mit Katalysator",
+      "summary": "Beim E30 hängt die Gemischregelung an einer einzelnen Sprungsonde. Ihr Signal ist die wichtigste Messgrösse der ganzen Anlage — und ein Abgasleck davor verfälscht sie so gründlich, dass die Suche in die falsche Richtung läuft.",
+      "points": [
+        "Sondensignal im warmen Leerlauf beobachten: es muss zügig pendeln. Ein stehendes Signal ist der Befund, gleich auf welchem Wert es steht",
+        "Abgasleck vor der Sonde zuerst ausschliessen — es zieht Falschluft ins Abgas und erzeugt ein dauerhaft mageres Bild, für das die Gemischbildung nichts kann",
+        "Sondenheizung getrennt von der Sonde prüfen: eine kalte Sonde regelt nicht, und das sieht wie eine defekte Sonde aus",
+        "Zugesetzter Katalysator: Leistungsverlust, der mit der Drehzahl zunimmt. Das ist Abgasgegendruck und kein Gemischfehler — die beiden werden nicht verwechselt",
+        "Falschluft im Ansaugtrakt erzeugt dasselbe magere Bild wie ein Abgasleck. Unterschieden wird über den Ort, nicht über das Signal"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-006",
+        "D4F-E30-011"
+      ]
+    },
+    {
+      "id": "D4F-E30-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E30 · Serviceanzeige, Rückstellung, Alterungsfallen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Der E30 zeigt den Wartungsbedarf über Leuchtdioden im Kombiinstrument an. Der Zähler wird nicht rein nach Kilometern geführt, und seine Stromversorgung im Instrument altert — beides führt zu Anzeigen, die nichts mit dem tatsächlichen Zustand zu tun haben.",
+      "points": [
+        "Die Anzeige zählt nicht nur Kilometer, sondern bewertet den Betrieb. Ein Fahrzeug mit viel Kurzstrecke fordert früher Service als eines mit gleicher Laufleistung auf der Landstrasse — das ist gewollt und kein Fehler",
+        "Die Speicherversorgung der Anzeige im Kombiinstrument altert. Ist sie am Ende, springt die Anzeige oder zeigt dauerhaft Servicebedarf — dann ist die Anzeige defekt, nicht das Wartungsintervall abgelaufen",
+        "Vor der Rückstellung immer die tatsächlich ausgeführten Arbeiten festhalten. Eine zurückgestellte Anzeige ohne durchgeführte Wartung ist die häufigste Ursache für übersehene Intervalle beim nächsten Halter",
+        "Bremsflüssigkeit gehört zu den zeitabhängigen Positionen, nicht zu den kilometerabhängigen — sie zieht Wasser und senkt damit den Siedepunkt, unabhängig davon, ob gefahren wird",
+        "Bei einem Fahrzeug unbekannter Historie das Intervall nicht der Anzeige entnehmen, sondern über den Zustand bestimmen: Ölzustand, Farbe der Bremsflüssigkeit, Zustand der Filter"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E30-008",
+        "D4F-E30-003"
+      ]
     }
   ]
 }

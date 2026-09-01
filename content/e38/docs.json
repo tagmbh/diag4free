@@ -192,6 +192,132 @@
       "details": [
         "D4F-E38-001"
       ]
+    },
+    {
+      "id": "D4F-E38-101",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kühlung",
+      "title": "Kühlkreis M62/M73 · Zwei Bänke, zwei Luftwege",
+      "valid": "E38 · 1994–2001 · M52, M62, M73",
+      "summary": "Im E38 stehen Reihensechszylinder, V8 und V12 nebeneinander. Gemeinsam ist ihnen der Kunststoffanteil im Kreis, der mit den Jahren spröde wird; unterschiedlich ist, wie viel Luft nach einem Eingriff im Kopf stehen bleibt. Bei V8 und V12 ist das Entlüften der eigentliche Arbeitsschritt.",
+      "points": [
+        "Kühlmittelverlust zuerst am Ausgleichsbehälter, seinem Deckel und den Kunststoffflanschen suchen — sie reissen mit dem Alter und tropfen oft nur unter Betriebsdruck",
+        "Bei V8 und V12 nach jedem Öffnen des Kreises konsequent entlüften: Luft in einer Bank erzeugt Temperaturausschläge, die keiner Undichtigkeit zuzuordnen sind und beim nächsten Kaltstart wieder verschwinden",
+        "Verlauf trennt die Richtung: Überhitzung im Stand → Luftweg (Lüfter, Zarge, Kühlerfläche). Überhitzung bei Fahrt → Wasserweg (Thermostat, Pumpe, Verstopfung)",
+        "Heizung, die trotz warmem Motor kalt bleibt, gehört in dieselbe Prüfung — sie zeigt Luft im Kreis oder zu wenig Durchfluss an, nicht ein Problem der Bedienung",
+        "Vor dem Tausch eines Bauteils den Systemdruck halten lassen und beobachten, wo er abfällt. Das trennt Leck von Durchfluss, bevor Teile gekauft werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-004",
+        "D4F-E38-003"
+      ]
+    },
+    {
+      "id": "D4F-E38-102",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Automatikgetriebe",
+      "title": "Automatikgetriebe E38 · Bestimmen, Öl, Adaption, Wandler",
+      "valid": "E38 · 1994–2001 · mit Automatik",
+      "summary": "Der E38 fährt durchweg elektronisch gesteuerte Automatikgetriebe mit eigenem Steuergerät. Damit beginnt die Diagnose am Fehlerspeicher — und der Ölstand wird nicht geschätzt, sondern nach Prozedur bei betriebswarmem Öl bestimmt.",
+      "points": [
+        "Getriebe über das Schild bestimmen. ATF-Sorte und Prozedur folgen dem Getriebe, nicht dem Fahrzeug — bei Autos dieses Alters ist ein Tausch aus der Vergangenheit einzukalkulieren",
+        "Fehlerspeicher des Getriebesteuergeräts zuerst: Magnetventile, Drehzahlfühler und Wandlerkupplung melden sich dort, bevor man am Öl etwas sieht",
+        "Ölzustand beurteilen, dann Ölstand — betriebswarm, eben, Motor läuft, Wählhebel vorher durch alle Stellungen",
+        "Ruckeln bei konstanter Geschwindigkeit ohne Schaltvorgang deutet auf die Wandlerüberbrückung. Das ist eine andere Reparatur als ein harter Gangwechsel und wird nicht damit verwechselt",
+        "Nach Eingriffen an Getriebe oder Steuerung die Adaption zurücksetzen und gemischt einfahren"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-007"
+      ]
+    },
+    {
+      "id": "D4F-E38-103",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse · ABS/DSC",
+      "title": "DSC E38 · Fehlerspeicher, Raddrehzahl, Lenkwinkel",
+      "valid": "E38 · 1994–2001 · ABS, ASC, DSC",
+      "summary": "Im E38 kommt zur Raddrehzahl die Fahrdynamikregelung dazu: Lenkwinkel-, Gierraten- und Querbeschleunigungssensor gehören ab hier zum Bremsensystem. Ein Fehler dort erzeugt Meldungen, die nach Bremse aussehen, aber keine sind.",
+      "points": [
+        "Fehlerspeicher des Bremsensteuergeräts zuerst lesen — er trennt Raddrehzahlfehler von Fehlern der Fahrdynamiksensorik, und beide sehen im Kombiinstrument gleich aus",
+        "Lenkwinkelsensor: nach Arbeiten an Lenkung, Spur oder Lenkrad muss der Nullpunkt neu gesetzt werden. Wird das vergessen, meldet die Regelung dauerhaft und keine Bremskomponente ist schuld",
+        "Raddrehzahlgeber, den der Speicher benennt, vor dem Tausch prüfen: Polrad, Geberspalt und Kabel erzeugen dasselbe Bild",
+        "Geberkabel an den Radläufen auf Scheuerstellen prüfen — sporadische Fehler beim Einlenken oder Einfedern sind fast immer Kabelbrüche",
+        "Nach Eingriffen am Hydraulikkreis nach Prozedur entlüften; die Regeleinheit lässt sich nicht durch Pedalpumpen allein füllen"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-002",
+        "D4F-E38-007"
+      ]
+    },
+    {
+      "id": "D4F-E38-104",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoffversorgung",
+      "title": "Kraftstoffversorgung E38 · Zwei Bänke, Druck, Gemischadaption",
+      "valid": "E38 · 1994–2001 · M52, M62, M73",
+      "summary": "Bei V8 und V12 wird die Kraftstoffversorgung bankweise geregelt und bankweise überwacht. Das ist ein Vorteil: meldet nur eine Bank ein mageres Gemisch, scheidet die gemeinsame Versorgung als Ursache praktisch aus.",
+      "points": [
+        "Gemischadaption bankweise auslesen und vergleichen. Weichen beide Bänke gleich ab, liegt es an der gemeinsamen Versorgung; weicht nur eine ab, an dieser Bank — das halbiert die Suche sofort",
+        "Druck über eine Lastfahrt mitschreiben statt im Stand einmal messen; der Einbruch tritt unter Last auf",
+        "Tankentlüftungsventil prüfen, bevor an der Pumpe gearbeitet wird — hängt es offen, laufen beide Bänke gemeinsam aus dem Ruder",
+        "Filter vor Pumpe tauschen; er ist häufiger die Ursache und deutlich billiger",
+        "Schlechter Start nach Standzeit bei normalem Warmstart: das System hält den Druck nicht — Rückschlagventil oder undichte Einspritzventile"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-004"
+      ]
+    },
+    {
+      "id": "D4F-E38-105",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgasanlage",
+      "title": "Abgasanlage E38 · Bankvergleich, Kat-Wirkungsgrad, Sekundärluft",
+      "valid": "E38 · 1994–2001 · alle Motoren",
+      "summary": "Bei V8 und V12 hat jede Bank ihre eigene Abgasanlage mit eigenen Sonden. Der Vergleich der beiden Bänke ist deshalb das schärfste Werkzeug im ganzen Bereich — er halbiert die Suche, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Sondensignale beider Bänke nebeneinander beobachten. Was nur eine Bank betrifft, kann nicht am gemeinsamen Kraftstoffkreis oder an der Tankentlüftung liegen",
+        "Vordere Sonde muss pendeln, hintere soll ruhig liegen. Pendelt die hintere mit, arbeitet der Katalysator dieser Bank nicht mehr",
+        "Vor jedem Katalysatorurteil das Abgasleck zwischen den Sonden ausschliessen — es erzeugt dasselbe Bild und ist deutlich billiger zu beheben",
+        "Sekundärluftsystem arbeitet nur nach dem Kaltstart. Die Prüfung gelingt nur am kalten Motor",
+        "Sondenheizungen getrennt prüfen; eine kalte Sonde regelt nicht"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-003",
+        "D4F-E38-004"
+      ]
+    },
+    {
+      "id": "D4F-E38-106",
+      "type": "GUIDE",
+      "gruppe": "00",
+      "cat": "Wartung",
+      "title": "Wartung E38 · Serviceintervall, Rückstellung, Prüfpunkte",
+      "valid": "E38 · 1994–2001",
+      "summary": "Der E38 führt die Serviceintervallanzeige über einen betriebsabhängigen Zähler und wird über den Diagnoseanschluss zurückgestellt. Bei einer Oberklasse-Limousine dieses Alters entscheidet der Zustand über den Umfang, nicht der Zähler.",
+      "points": [
+        "Der Zähler bewertet den Betrieb, nicht nur Kilometer — Kurzstrecke verkürzt das Intervall gegenüber gleicher Laufleistung auf der Autobahn",
+        "Rückstellung über den Diagnoseanschluss ist eine Buchung. Ohne ausgeführte Arbeit führt sie den nächsten Halter in die Irre",
+        "Bremsflüssigkeit ist zeitabhängig und läuft weiter, auch wenn das Fahrzeug steht",
+        "Bei unbekannter Historie den Zustand bestimmen: Ölzustand, Bremsflüssigkeit, Filter, Kühlmittelschläuche und die Kunststoffteile des Kühlkreises, die in diesen Baujahren versprödet sind",
+        "Die Kurbelgehäuseentlüftung gehört zur Sichtprüfung — versprödete Leitungen erzeugen Gemischfehler, die als Motorproblem gesucht werden"
+      ],
+      "engines": [],
+      "details": [
+        "D4F-E38-007",
+        "D4F-E38-001"
+      ]
     }
   ]
 }
