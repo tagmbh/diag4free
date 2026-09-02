@@ -577,6 +577,28 @@
       "details": [
         "D4F-F30-114"
       ]
+    },
+    {
+      "id": "D4F-F30-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F30 · Start-Stopp, Motorlager, Schaltspiel unter Last",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 arbeiten Start-Stopp und kleine, hoch belastete Turbomotoren auf dieselben Lager. Das verschiebt den Zeitpunkt, zu dem sie auffallen, nach vorn.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge; die Lager verschleißen dadurch schneller",
+        "Spürbares Rucken beim Wiederanlauf, das früher nicht da war: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-115"
+      ]
     }
   ]
 }

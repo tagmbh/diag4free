@@ -514,6 +514,28 @@
       "details": [
         "D4F-E38-114"
       ]
+    },
+    {
+      "id": "D4F-E38-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E38 · Hydrolager, Komfortanspruch, Getriebelager",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 ist auf Laufruhe gebaut. Genau deshalb fällt ein nachlassendes Aggregatelager hier früher und deutlicher auf als in kleineren Baureihen — die Klage lautet oft nur, irgendetwas sei rauer geworden.",
+      "points": [
+        "Diffuse Rauheit, die dem Fahrer als Komfortverlust auffällt, bevor sie als Geräusch benennbar ist: hydraulisch gedämpfte Motorlager. Beim komfortorientierten Fahrzeug ist das der Frühbefund",
+        "Ölspuren am Lager oder darunter belegen den Verlust der Füllung; ihr Fehlen schließt ihn nicht aus",
+        "Vibration im Leerlauf, die unter Last zunimmt: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern — beim Achtzylinder trägt das verbleibende alte Lager danach deutlich mehr"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-115"
+      ]
     }
   ]
 }

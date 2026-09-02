@@ -503,6 +503,28 @@
       "details": [
         "D4F-F15-114"
       ]
+    },
+    {
+      "id": "D4F-F15-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F15 · Motorlager, xDrive-Verwechslung, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 gilt dieselbe Trennung wie am E70, unter höherer Last: Ruckeln beim Rangieren ist das Verteilergetriebe, drehzahlabhängige Vibration im Stand sind die Lager.",
+      "points": [
+        "Ruckeln beim Rangieren: Verteilergetriebe. Drehzahlabhängige Vibration im Stand: Aggregatelager. Die Situation trennt sie zuverlässig",
+        "Fahrzeuggewicht und Anhängebetrieb verschleißen die Lager deutlich schneller",
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge zusätzlich",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-115"
+      ]
     }
   ]
 }

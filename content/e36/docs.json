@@ -563,6 +563,28 @@
       "details": [
         "D4F-E36-114"
       ]
+    },
+    {
+      "id": "D4F-E36-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E36 · Motorlager, Getriebelager, Abgrenzung nach vorn",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 lohnt sich die Aggregatelager-Prüfung als erster Schritt bei fast jedem diffusen Vibrations- oder Polterbefund. Sie kostet fünf Minuten und schließt mehrere teure Verdächtige aus.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last oder beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25 kommt hier an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz; Bewegungsprobe mit vorsichtigem Anheben",
+        "Beim Cabrio und Compact überträgt der weichere Aufbau die Restvibration deutlicher — dieselbe Lagerabnutzung fällt dort früher auf",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-115"
+      ]
     }
   ]
 }

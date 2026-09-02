@@ -628,6 +628,28 @@
       "details": [
         "D4F-E87-114"
       ]
+    },
+    {
+      "id": "D4F-E87-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E87 · Motorlager, Getriebelager, leichter Aufbau",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der E87 ist leicht gebaut, und das macht ihn empfindlich: Dieselbe Lagerabnutzung ist hier früher spürbar als in der Limousine — was gut ist, weil sie früher gefunden wird.",
+      "points": [
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager. Beim leichten Aufbau früher spürbar",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-115"
+      ]
     }
   ]
 }

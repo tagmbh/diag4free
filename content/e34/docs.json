@@ -511,6 +511,28 @@
       "details": [
         "D4F-E34-114"
       ]
+    },
+    {
+      "id": "D4F-E34-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E34 · Hydrolager, Getriebelager, Vibrationsbild",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 sind die Motorlager hydraulisch gedämpft. Läuft die Füllung aus, verliert das Lager seine Dämpfung, ohne dass es äußerlich zerstört aussieht.",
+      "points": [
+        "Hydraulisch gedämpfte Motorlager verlieren ihre Füllung. Ölspuren am Lager oder darunter sind der sichtbare Beleg — fehlen sie, schließt das den Befund nicht aus",
+        "Vibration im Leerlauf, die unter Last zunimmt: Motorlager, auch wenn das Gummi unbeschädigt aussieht",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-115"
+      ]
     }
   ]
 }

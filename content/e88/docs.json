@@ -576,6 +576,28 @@
       "details": [
         "D4F-E88-114"
       ]
+    },
+    {
+      "id": "D4F-E88-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E88 · Motorlager im Cabrio, Aufbaubewegung abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio überlagern sich zwei Quellen: die Aggregatelager und der weichere Aufbau. Die Unterscheidung entscheidet, ob überhaupt etwas zu reparieren ist.",
+      "points": [
+        "Erste Frage: Vibration oder Aufbaubewegung? Drehzahlabhängige Vibration im Stand gehört zu den Lagern; Knarzen und Zittern, das sich beim Verwinden auf unebener Strecke ändert, zum Aufbau",
+        "Vibration im Leerlauf, stärker beim Einlegen: Motorlager",
+        "Das Mehrgewicht der Verdeckmechanik belastet die Lager stärker als beim Schrägheck",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-115"
+      ]
     }
   ]
 }

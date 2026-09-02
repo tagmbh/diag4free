@@ -540,6 +540,28 @@
       "details": [
         "D4F-F10-114"
       ]
+    },
+    {
+      "id": "D4F-F10-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F10 · Motorlager, Regelung abgrenzen, Start-Stopp",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation kommt eine Belastung dazu, die es früher nicht gab: Start-Stopp lässt den Motor vielfach häufiger anlaufen und ausschwingen — und das arbeitet auf die Lager.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge deutlich. Aggregatelager verschleißen dadurch schneller; ein Befund bei geringerer Laufleistung ist hier kein Widerspruch",
+        "Unruhe, die sich mit der Fahrsituation ändert und im Fehlerspeicher steht: Adaptivdämpfer oder Aktivlenkung, nicht die Lager. Lager melden sich nicht elektrisch",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Spürbares Rucken beim Wiederanlauf der Start-Stopp-Automatik ist ein Lagerbefund, wenn es früher nicht so war",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-115"
+      ]
     }
   ]
 }
