@@ -607,6 +607,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-126",
+      "type": "GUIDE",
+      "gruppe": "61",
+      "cat": "Bordnetz",
+      "title": "Fahrzeugelektrik E28 · Masse, Sicherungen, Steckverbindungen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat ein ueberschaubares Bordnetz ohne Bussysteme. Fast jeder Elektrikbefund an diesem Fahrzeug endet an einer von drei Stellen: an einer Masse, einer Sicherung oder einem Stecker.",
+      "points": [
+        "Mehrere Verbraucher gleichzeitig auffaellig: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache und kostet nichts ausser hinsehen",
+        "Sicherungen sichtpruefen reicht nicht. Ein Haarriss im Draht oder ein korrodierter Halter unterbricht, ohne dass die Sicherung durchgebrannt aussieht -- unter Last messen",
+        "Steckverbindungen oeffnen und ansehen, bevor gemessen wird. Bei diesem Alter ist Gruenspan wahrscheinlicher als ein defektes Bauteil",
+        "Spannungsabfall messen statt Durchgang: Eine Leitung kann Durchgang haben und unter Last dennoch zu viel verlieren. Der Abfall ist der Befund, nicht der Durchgang",
+        "Nachgeruestetes und Zusatzverbraucher auf die Verdachtsliste, wenn ein Fehler nicht zum Serienstand passt -- Anhaengerkupplungen und Nachruestradios sind haeufige Eingriffe ins Bordnetz",
+        "Vor dem Abklemmen der Batterie klaeren, was danach eingestellt oder angelernt werden muss"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

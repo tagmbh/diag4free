@@ -650,6 +650,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-126",
+      "type": "GUIDE",
+      "gruppe": "61",
+      "cat": "Bordnetz",
+      "title": "Fahrzeugelektrik E34 · Masse, Sicherungen, Steckverbindungen",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 steht am Uebergang: erste Steuergeraete an einem noch konventionellen Bordnetz. Fast jeder Elektrikbefund an diesem Fahrzeug endet an einer von drei Stellen: an einer Masse, einer Sicherung oder einem Stecker.",
+      "points": [
+        "Mehrere Verbraucher gleichzeitig auffaellig: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache und kostet nichts ausser hinsehen",
+        "Sicherungen sichtpruefen reicht nicht. Ein Haarriss im Draht oder ein korrodierter Halter unterbricht, ohne dass die Sicherung durchgebrannt aussieht -- unter Last messen",
+        "Steckverbindungen oeffnen und ansehen, bevor gemessen wird. Bei diesem Alter ist Gruenspan wahrscheinlicher als ein defektes Bauteil",
+        "Spannungsabfall messen statt Durchgang: Eine Leitung kann Durchgang haben und unter Last dennoch zu viel verlieren. Der Abfall ist der Befund, nicht der Durchgang",
+        "Nachgeruestetes und Zusatzverbraucher auf die Verdachtsliste, wenn ein Fehler nicht zum Serienstand passt -- Anhaengerkupplungen und Nachruestradios sind haeufige Eingriffe ins Bordnetz",
+        "Vor dem Abklemmen der Batterie klaeren, was danach eingestellt oder angelernt werden muss"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E34-127",
+      "type": "GUIDE",
+      "gruppe": "D2",
+      "cat": "Diagnose-Tools",
+      "title": "Werkzeug am E34 · Was der Rundstecker braucht und was OBD nicht kann",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 faellt in den Uebergang zwischen zwei Diagnosewelten. Welches Werkzeug passt, haengt am Baujahr — und ein generisches OBD-Geraet ist bei den fruehen Fahrzeugen schlicht der falsche Stecker.",
+      "points": [
+        "Zuerst klaeren, welcher Anschluss verbaut ist. Der 20-polige Rundstecker im Motorraum und die spaetere genormte Buchse gehoeren zu verschiedenen Werkzeugwelten",
+        "Ein generisches OBD-Geraet passt an den fruehen E34 nicht -- weder mechanisch noch inhaltlich. Wer damit nichts findet, hat nicht gemessen, sondern den falschen Stecker benutzt",
+        "Am Rundstecker geht der Blinkcode ohne Geraet. Das ist bei diesem Fahrzeug kein Notbehelf, sondern der vorgesehene Weg",
+        "Fuer die spaeteren Fahrzeuge dieser Baureihe braucht es ein Werkzeug, das die herstellereigenen Protokolle spricht; die genormte Buchse allein sagt nichts ueber den erreichbaren Inhalt",
+        "Adapterkabel mit Chipsatz-Angabe waehlen. Ein Kabel, das am neueren Fahrzeug funktioniert, muss am aelteren nicht funktionieren",
+        "Vor dem Anschliessen die Bordspannung pruefen -- bei einem Fahrzeug dieses Alters ist eine schwache Batterie die haeufigste Ursache fuer eine scheiternde Verbindung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
