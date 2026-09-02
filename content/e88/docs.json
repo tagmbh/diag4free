@@ -512,6 +512,26 @@
       "details": [
         "D4F-E88-108"
       ]
+    },
+    {
+      "id": "D4F-E88-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E88 · Zweimassenschwungrad, Mehrgewicht des Cabrios",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Die Kupplung entspricht der des E87. Der Unterschied liegt im Gewicht: Verdeckmechanik und Verstärkungen belasten die Kupplung stärker, und Verschleißbefunde kommen früher.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Das Mehrgewicht des Cabrios belastet Belag und Schwungrad stärker als beim Schrägheck — ein Befund bei geringerer Laufleistung ist hier kein Widerspruch",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

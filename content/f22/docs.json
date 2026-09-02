@@ -468,6 +468,26 @@
       "details": [
         "D4F-F22-108"
       ]
+    },
+    {
+      "id": "D4F-F22-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F22 · Zweimassenschwungrad, Kupplungspedalsensor, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019 · Handschaltung",
+      "summary": "Der F22 ist eine der Baureihen, in denen der Handschalter noch verbreitet ist. Entsprechend häufig ist die Kupplung Thema — mit einem elektrischen Nebendarsteller, der oft übersehen wird.",
+      "points": [
+        "Start-Stopp ohne Funktion bei intakter Kupplung: Kupplungspedalsensor. Ein Signalfehler dort verhindert die Funktion, ohne dass mechanisch etwas defekt ist",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Bei den drehmomentstarken M-Ausführungen zeigt sich Belagverschleiß früher — Test im höchsten Gang aus niedriger Drehzahl",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

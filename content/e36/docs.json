@@ -499,6 +499,26 @@
       "details": [
         "D4F-E36-108"
       ]
+    },
+    {
+      "id": "D4F-E36-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E36 · Zweimassenschwungrad prüfen, Hydraulik, Rutschen erkennen",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 lohnt sich die Reihenfolge: Erst der Schwungradtest im Leerlauf, dann die Hydraulik, erst zuletzt der Ausbau. Zwei von drei Befunden lassen sich am stehenden Fahrzeug klären.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch entsteht beim Treten des Pedals",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl beschleunigen. Steigt die Drehzahl schneller als die Geschwindigkeit, ist der Belag durch",
+        "Rupfen beim Anfahren: verölter Belag. Ölspuren im Gehäuse deuten auf Simmerring an Kurbelwelle oder Getriebeeingang — der Belag ist die Folge, nicht die Ursache",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -476,6 +476,26 @@
       "details": [
         "D4F-F10-108"
       ]
+    },
+    {
+      "id": "D4F-F10-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F10 · Zweimassenschwungrad, Getriebe zuerst bestimmen",
+      "valid": "F10, F11 · 2010–2017 · Handschaltung",
+      "summary": "In der F-Generation ist die Wandlerautomatik der Regelfall. Beim Handschalter gilt derselbe Minutentest wie seit dem E34 — aber erst, nachdem das Getriebe bestimmt ist.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Beim Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes, nicht hierher",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

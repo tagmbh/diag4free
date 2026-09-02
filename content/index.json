@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T01:29:20.228Z",
+  "generated": "2026-09-02T01:50:40.679Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -696,6 +696,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E28 · Hydraulik, Ausrücklager, Schwungrad",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Beim E28 ist die Kupplung hydraulisch betätigt und mechanisch einfach. Die häufigste Klage — der Kupplungspunkt wandert — hat deshalb meist keine mechanische Ursache, sondern eine hydraulische.",
+      "points": [
+        "Wandernder oder tiefer Kupplungspunkt bei intakter Kupplung: Geber- oder Nehmerzylinder. Beide leckt man selten nach außen, sondern innen — der Pedalweg verrät es",
+        "Flüssigkeitsstand fällt ohne sichtbares Leck: der Nehmerzylinder gibt nach innen ab. Der Fußraum bleibt trocken, der Behälter wird trotzdem leer",
+        "Rupfen beim Anfahren: Belag verölt oder Kupplungsscheibe verzogen. Ölspuren im Kupplungsgehäuse deuten auf undichten Simmerring an Kurbelwelle oder Getriebeeingang",
+        "Rutschen unter Last bei hoher Drehzahl: Belag verschlissen. Im Zweifel im höchsten Gang aus niedriger Drehzahl beschleunigen — steigt die Drehzahl schneller als die Geschwindigkeit, rutscht sie",
+        "Rasseln oder Rasselgeräusch, das beim Treten des Pedals verschwindet: Ausrücklager. Es verschwindet nicht beim Treten, sondern beginnt dann — die Unterscheidung ist entscheidend",
+        "Beim Ausbau die Führungshülse und den Simmerring mitprüfen; sie sind später nur mit demselben Aufwand erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1302,6 +1323,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E30 · Ausrücklager, Hydraulik, Rupfen",
+      "valid": "E30 · 1982–1994 · Handschaltung",
+      "summary": "Am E30 lassen sich drei Kupplungsbefunde ohne Zerlegen unterscheiden — vorausgesetzt, man weiß, wann das Geräusch kommt und wann es geht.",
+      "points": [
+        "Geräusch bei getretenem Pedal, weg bei losgelassenem: Ausrücklager. Genau andersherum als der Schwungradbefund",
+        "Rupfen beim Anfahren: verölter Belag oder verzogene Scheibe. Ölspuren im Kupplungsgehäuse deuten auf Simmerring an Kurbelwelle oder Getriebeeingang",
+        "Rutschen unter Last: Belag verschlissen. Test im höchsten Gang aus niedriger Drehzahl — steigt die Drehzahl schneller als die Geschwindigkeit, rutscht sie",
+        "Wandernder Kupplungspunkt und fallender Flüssigkeitsstand ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Beim Ausbau Führungshülse, Simmerring und Ausrücklager zusammen erneuern — sie sind später nur mit demselben Aufwand erreichbar",
+        "Pilotlager in der Kurbelwelle mitprüfen; ein rauhes Pilotlager erzeugt Geräusch bei stehendem Fahrzeug und getretener Kupplung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1765,6 +1807,27 @@
       "details": [
         "D4F-E34-108"
       ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E34 · Zweimassenschwungrad, Ausrücklager, Hydraulik",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Mit dem Zweimassenschwungrad kommt ein Bauteil dazu, das man ohne Ausbau prüfen kann. Der Test dauert eine Minute und entscheidet über einen erheblichen Teil der Rechnung.",
+      "points": [
+        "Prüfung ohne Werkzeug: warmer Motor im Leerlauf, am Getriebe hören, dann die Kupplung voll durchtreten. Verschwindet das Rasseln oder wird es deutlich leiser, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Genau umgekehrt beim Ausrücklager: Das Geräusch beginnt beim Treten des Pedals. Wer diese Richtung beachtet, verwechselt die beiden nicht",
+        "Vibration beim Anfahren und Ruckeln bei niedriger Drehzahl gehören ebenfalls zum Schwungradbild",
+        "Rutschen unter Last: Belag verschlissen. Test im höchsten Gang aus niedriger Drehzahl",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Beim Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen — später nur mit demselben Aufwand erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e34"
     },
     {
@@ -2286,6 +2349,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E36 · Zweimassenschwungrad prüfen, Hydraulik, Rutschen erkennen",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 lohnt sich die Reihenfolge: Erst der Schwungradtest im Leerlauf, dann die Hydraulik, erst zuletzt der Ausbau. Zwei von drei Befunden lassen sich am stehenden Fahrzeug klären.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch entsteht beim Treten des Pedals",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl beschleunigen. Steigt die Drehzahl schneller als die Geschwindigkeit, ist der Belag durch",
+        "Rupfen beim Anfahren: verölter Belag. Ölspuren im Gehäuse deuten auf Simmerring an Kurbelwelle oder Getriebeeingang — der Belag ist die Folge, nicht die Ursache",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2752,6 +2836,27 @@
       "details": [
         "D4F-E38-108"
       ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E38 · Handschaltung selten, Zweimassenschwungrad, Hydraulik",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend ein Automatikfahrzeug; Handschalter gibt es, sie sind aber die Ausnahme. Wer einen vor sich hat, prüft wie bei den kleineren Baureihen — mit einem Motor, der mehr Drehmoment einträgt.",
+      "points": [
+        "Erst klären, ob überhaupt ein Schaltgetriebe verbaut ist. Bei einem Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes, nicht hierher",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch entsteht beim Treten",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl. Bei den drehmomentstarken Motoren zeigt sich Verschleiß früher",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Teileverfügbarkeit vorher klären — bei seltenen Ausführungen ist das der längere Teil der Reparatur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e38"
     },
     {
@@ -3278,6 +3383,27 @@
         "D4F-E39-107",
         "D4F-E39-108"
       ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E39 · Zweimassenschwungrad, Hydraulik, Ölspuren im Gehäuse",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 ist der Schwungradbefund der häufigste dieser Gruppe — und der einzige, für den ein Minutentest im Leerlauf reicht, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet oder verringert sich das Rasseln deutlich, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Weiterfahren mit defektem Schwungrad ist nicht nur Komfortverlust — die ungleichmäßigen Momente belasten den Antriebsstrang und erzeugen Folgekosten, die den Ursprungsschaden übersteigen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals, nicht umgekehrt",
+        "Rupfen beim Anfahren mit Ölspuren im Gehäuse: Simmerring an Kurbelwelle oder Getriebeeingang. Der Belag ist die Folge",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e39"
     },
     {
@@ -3846,6 +3972,27 @@
       "details": [
         "D4F-E46-108"
       ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E46 · Zweimassenschwungrad, Nehmerzylinder, Ausbau planen",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist die Kupplungsarbeit teuer, weil das Getriebe herunter muss. Deshalb entscheidet die Vorprüfung, ob sie überhaupt nötig ist — und was in einem Zug mitgemacht wird.",
+      "points": [
+        "Schwungradtest vor jedem Ausbau: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab. Der Behälter wird leer, der Fußraum bleibt trocken",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen, bevor das Getriebe herunterkommt",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen — sie sind später nur mit demselben Aufwand erreichbar",
+        "Ölspuren im Kupplungsgehäuse benennen die Ursache: Simmerring an Kurbelwelle oder Getriebeeingang. Ohne dessen Erneuerung verölt der neue Belag wieder"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e46"
     },
     {
@@ -4424,6 +4571,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E60 · Zweimassenschwungrad, Hydraulik, Abgrenzung zum Wandler",
+      "valid": "E60 · 2003–2010 · Handschaltung",
+      "summary": "Beim E60 ist die erste Frage, welches Getriebe verbaut ist. Danach gilt derselbe Minutentest wie bei den älteren Baureihen — und dieselbe Regel, alles in einem Zug mitzumachen.",
+      "points": [
+        "Zuerst klären: Schaltgetriebe oder Wandlerautomatik. Beim Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4916,6 +5084,27 @@
       "details": [
         "D4F-E70-108"
       ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E70 · Handschaltung als Ausnahme, sonst Wandler",
+      "valid": "E70 · 2006–2013 · Handschaltung nur in seltenen Ausführungen",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Ein Handschalter existiert, ist aber so selten, dass die erste Handlung die Bestimmung des Getriebes ist — sonst sucht man an einer Kupplung, die es nicht gibt.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Bei der Wandlerautomatik gibt es keine Kupplung in diesem Sinn; Ruckeln, Vibration und Schaltbefunde gehören in die Gruppe des Automatikgetriebes",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe — weder Kupplung noch Automatikgetriebe",
+        "Beim seltenen Handschalter gilt der Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e70"
     },
     {
@@ -5503,6 +5692,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E87 · Zweimassenschwungrad, Nehmerzylinder, Rutschen erkennen",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter, und die Kupplung ist entsprechend oft Thema. Zwei der drei üblichen Befunde lassen sich am stehenden Fahrzeug klären.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab; der Behälter wird leer, der Fußraum bleibt trocken",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl beschleunigen",
+        "Rupfen mit Ölspuren im Gehäuse: Simmerring an Kurbelwelle oder Getriebeeingang; ohne dessen Erneuerung verölt der neue Belag wieder",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6029,6 +6239,27 @@
       "details": [
         "D4F-E88-108"
       ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E88 · Zweimassenschwungrad, Mehrgewicht des Cabrios",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Die Kupplung entspricht der des E87. Der Unterschied liegt im Gewicht: Verdeckmechanik und Verstärkungen belasten die Kupplung stärker, und Verschleißbefunde kommen früher.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Das Mehrgewicht des Cabrios belastet Belag und Schwungrad stärker als beim Schrägheck — ein Befund bei geringerer Laufleistung ist hier kein Widerspruch",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e88"
     },
     {
@@ -6738,6 +6969,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E90 · Zweimassenschwungrad, Hydraulik, Ausbau planen",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist die Kupplung ein häufiges Thema und der Ausbau aufwendig. Die Vorprüfung entscheidet deshalb über Umfang und Preis, bevor das Getriebe herunterkommt.",
+      "points": [
+        "Schwungradtest vor jedem Ausbau: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals — die umgekehrte Richtung",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Ölspuren im Kupplungsgehäuse benennen die Ursache: Simmerring an Kurbelwelle oder Getriebeeingang",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7368,6 +7620,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F10 · Zweimassenschwungrad, Getriebe zuerst bestimmen",
+      "valid": "F10, F11 · 2010–2017 · Handschaltung",
+      "summary": "In der F-Generation ist die Wandlerautomatik der Regelfall. Beim Handschalter gilt derselbe Minutentest wie seit dem E34 — aber erst, nachdem das Getriebe bestimmt ist.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Beim Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes, nicht hierher",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7825,6 +8098,27 @@
       "engines": [],
       "details": [
         "D4F-F15-108"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F15 · Entfällt — kein Schaltgetriebe, der Wandler ist die Entsprechung",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 wurde ab Werk nur mit Wandlerautomatik ausgeliefert. Eine Kupplung im Sinn dieser Gruppe gibt es an diesem Fahrzeug nicht. Dieser Eintrag steht hier, damit die Suche nicht ins Leere läuft, sondern zur richtigen Baugruppe führt.",
+      "points": [
+        "Es gibt keine Fahrkupplung. Ruckeln, Vibration beim Anfahren und Schaltbefunde gehören zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als den beiden ersten Prüfschritten",
+        "Ruckeln beim Rangieren und beim engen Wenden ist das Verteilergetriebe des xDrive, weder Kupplung noch Automatikgetriebe. Diese Unterscheidung steht am Anfang",
+        "Ein Rasseln im Leerlauf, das beim Einlegen einer Fahrstufe verschwindet, gehört an der Wandlerautomatik zum Wandler und seiner Überbrückungskupplung — nicht zu einem Zweimassenschwungrad",
+        "Wer an einem umgebauten Fahrzeug tatsächlich ein Schaltgetriebe vorfindet, arbeitet nach dem Verfahren der Schaltergenerationen: Schwungradtest im Leerlauf, dann Hydraulik, dann Ausbau"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107"
       ],
       "model": "f15"
     },
@@ -8313,6 +8607,27 @@
       "details": [
         "D4F-F22-108"
       ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F22 · Zweimassenschwungrad, Kupplungspedalsensor, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019 · Handschaltung",
+      "summary": "Der F22 ist eine der Baureihen, in denen der Handschalter noch verbreitet ist. Entsprechend häufig ist die Kupplung Thema — mit einem elektrischen Nebendarsteller, der oft übersehen wird.",
+      "points": [
+        "Start-Stopp ohne Funktion bei intakter Kupplung: Kupplungspedalsensor. Ein Signalfehler dort verhindert die Funktion, ohne dass mechanisch etwas defekt ist",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Bei den drehmomentstarken M-Ausführungen zeigt sich Belagverschleiß früher — Test im höchsten Gang aus niedriger Drehzahl",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f22"
     },
     {
@@ -8845,6 +9160,27 @@
       "details": [
         "D4F-F30-108"
       ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F30 · Zweimassenschwungrad, Start-Stopp, Getriebe bestimmen",
+      "valid": "F30, F31 · 2011–2019 · Handschaltung",
+      "summary": "Beim F30 arbeitet die Kupplung mit der Start-Stopp-Automatik zusammen. Das erzeugt einen Befund, der wie ein Kupplungsdefekt aussieht und ein Signalproblem ist.",
+      "points": [
+        "Start-Stopp arbeitet nicht mehr oder unerwartet: Der Kupplungspedalsensor meldet die Pedalstellung. Ein Signalfehler dort verhindert die Funktion, ohne dass die Kupplung defekt ist",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Häufiges Start-Stopp belastet das Zweimassenschwungrad zusätzlich — Befunde bei geringerer Laufleistung sind hier kein Widerspruch",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f30"
     }
   ],
@@ -16032,26 +16368,26 @@
     }
   },
   "stats": {
-    "total_docs": 316,
+    "total_docs": 332,
     "total_guides": 40,
     "per_model": {
-      "e28": 17,
-      "e30": 24,
-      "e34": 19,
-      "e36": 19,
-      "e38": 19,
-      "e39": 20,
-      "e46": 21,
-      "e60": 20,
-      "e70": 19,
-      "e87": 20,
-      "e88": 17,
-      "e90": 22,
+      "e28": 18,
+      "e30": 25,
+      "e34": 20,
+      "e36": 20,
+      "e38": 20,
+      "e39": 21,
+      "e46": 22,
+      "e60": 21,
+      "e70": 20,
+      "e87": 21,
+      "e88": 18,
+      "e90": 23,
       "f-series": 5,
-      "f10": 18,
-      "f15": 18,
-      "f22": 19,
-      "f30": 19
+      "f10": 19,
+      "f15": 19,
+      "f22": 20,
+      "f30": 20
     }
   }
 }

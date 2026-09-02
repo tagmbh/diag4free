@@ -404,6 +404,26 @@
       "details": [
         "D4F-E28-108"
       ]
+    },
+    {
+      "id": "D4F-E28-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E28 · Hydraulik, Ausrücklager, Schwungrad",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Beim E28 ist die Kupplung hydraulisch betätigt und mechanisch einfach. Die häufigste Klage — der Kupplungspunkt wandert — hat deshalb meist keine mechanische Ursache, sondern eine hydraulische.",
+      "points": [
+        "Wandernder oder tiefer Kupplungspunkt bei intakter Kupplung: Geber- oder Nehmerzylinder. Beide leckt man selten nach außen, sondern innen — der Pedalweg verrät es",
+        "Flüssigkeitsstand fällt ohne sichtbares Leck: der Nehmerzylinder gibt nach innen ab. Der Fußraum bleibt trocken, der Behälter wird trotzdem leer",
+        "Rupfen beim Anfahren: Belag verölt oder Kupplungsscheibe verzogen. Ölspuren im Kupplungsgehäuse deuten auf undichten Simmerring an Kurbelwelle oder Getriebeeingang",
+        "Rutschen unter Last bei hoher Drehzahl: Belag verschlissen. Im Zweifel im höchsten Gang aus niedriger Drehzahl beschleunigen — steigt die Drehzahl schneller als die Geschwindigkeit, rutscht sie",
+        "Rasseln oder Rasselgeräusch, das beim Treten des Pedals verschwindet: Ausrücklager. Es verschwindet nicht beim Treten, sondern beginnt dann — die Unterscheidung ist entscheidend",
+        "Beim Ausbau die Führungshülse und den Simmerring mitprüfen; sie sind später nur mit demselben Aufwand erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

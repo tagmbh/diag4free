@@ -443,6 +443,26 @@
       "details": [
         "D4F-F15-108"
       ]
+    },
+    {
+      "id": "D4F-F15-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F15 · Entfällt — kein Schaltgetriebe, der Wandler ist die Entsprechung",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 wurde ab Werk nur mit Wandlerautomatik ausgeliefert. Eine Kupplung im Sinn dieser Gruppe gibt es an diesem Fahrzeug nicht. Dieser Eintrag steht hier, damit die Suche nicht ins Leere läuft, sondern zur richtigen Baugruppe führt.",
+      "points": [
+        "Es gibt keine Fahrkupplung. Ruckeln, Vibration beim Anfahren und Schaltbefunde gehören zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als den beiden ersten Prüfschritten",
+        "Ruckeln beim Rangieren und beim engen Wenden ist das Verteilergetriebe des xDrive, weder Kupplung noch Automatikgetriebe. Diese Unterscheidung steht am Anfang",
+        "Ein Rasseln im Leerlauf, das beim Einlegen einer Fahrstufe verschwindet, gehört an der Wandlerautomatik zum Wandler und seiner Überbrückungskupplung — nicht zu einem Zweimassenschwungrad",
+        "Wer an einem umgebauten Fahrzeug tatsächlich ein Schaltgetriebe vorfindet, arbeitet nach dem Verfahren der Schaltergenerationen: Schwungradtest im Leerlauf, dann Hydraulik, dann Ausbau"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107"
+      ]
     }
   ]
 }
