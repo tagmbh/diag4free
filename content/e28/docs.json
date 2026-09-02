@@ -360,6 +360,28 @@
       "details": [
         "D4F-E28-109"
       ]
+    },
+    {
+      "id": "D4F-E28-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E28 · Fensterheber, Spiegel, Türkontakte",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 sind die elektrischen Antriebe direkt geschaltet: Schalter, Kabel, Motor. Das macht die Fehlersuche einfach — vorausgesetzt, man prüft zuerst die Stelle, an der sich alles bewegt.",
+      "points": [
+        "Ein Antrieb ohne Funktion, ein anderer geht: Die Leitung im Türübergang ist der erste Verdacht. Dort bricht die Litze im Faltenbalg durch jahrzehntelanges Öffnen",
+        "Fensterheber langsam oder ruckelnd: Führung und Scherenmechanik sind oft trockengelaufen. Ein Motor, der schwer arbeitet, ist meist nicht der Defekt, sondern das Opfer",
+        "Alle Antriebe einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür, nicht drei einzelne Defekte",
+        "Schalter sind bei diesem Alter selbst ein Verschleißteil — Kontaktprobleme im Schalter erzeugen dasselbe Bild wie ein defekter Motor",
+        "Spiegelverstellung nur in einer Richtung: der Schalter oder eine Leitung, nicht der Spiegelmotor",
+        "Vor jedem Bauteiltausch die Steckverbindung öffnen und ansehen — Korrosion ist hier wahrscheinlicher als ein defektes Bauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-110"
+      ]
     }
   ]
 }

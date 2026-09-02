@@ -403,6 +403,28 @@
       "details": [
         "D4F-E34-109"
       ]
+    },
+    {
+      "id": "D4F-E34-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E34 · Fensterheber, Sitzverstellung, Türübergang",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 hat mehr Antriebe als seine Vorgänger, aber dieselben Schwachstellen. Der Unterschied: Bei der Sitzverstellung kommt eine eigene Mechanik dazu, die gern für Elektrik gehalten wird.",
+      "points": [
+        "Sitzverstellung ohne Funktion in einer Richtung: Spindel oder Gestänge blockiert. Ein Motor, der summt und nichts bewegt, hat ein mechanisches Problem",
+        "Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Mechanik vor dem Motor",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür, kein Steuergerätefehler",
+        "Beim Touring gehören Heckklappe und ihre Leitungsführung zur selben Kategorie — auch dort bricht die Litze im Übergang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-110"
+      ]
     }
   ]
 }

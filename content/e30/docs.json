@@ -538,6 +538,28 @@
       "details": [
         "D4F-E30-109"
       ]
+    },
+    {
+      "id": "D4F-E30-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E30 · Türübergang, Fensterhebermechanik, Zentralverriegelung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 wandert der häufigste Befund nicht im Motor, sondern im Kabel dorthin. Der Türübergang ist die Stelle, die sich zehntausendmal gebogen hat.",
+      "points": [
+        "Ein Antrieb einer Tür tot, andere Türen in Ordnung: gebrochene Litze im Türübergang. Die Leitung im gebogenen Zustand durchmessen, nicht im geöffneten",
+        "Fensterheber ruckelt oder bleibt stehen: zuerst Führung und Mechanik. Ein schwergängiges Fenster überlastet den Motor, statt von ihm verursacht zu werden",
+        "Zentralverriegelung einzelner Türen ohne Funktion: Stellelement in der Tür. Sie fallen einzeln aus und sind kein Steuergerätefehler",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Beim Cabrio kommt Feuchtigkeit über die Verdeckentwässerung an Steckverbindungen — nasse Stecker sind eine eigene Fehlerquelle",
+        "Schalterkontakte prüfen, bevor ein Motor getauscht wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-110"
+      ]
     }
   ]
 }

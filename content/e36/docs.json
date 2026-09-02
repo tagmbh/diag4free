@@ -455,6 +455,28 @@
       "details": [
         "D4F-E36-109"
       ]
+    },
+    {
+      "id": "D4F-E36-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E36 · Fensterhebermechanik, Türübergang, Spiegel",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist die häufigste Klage der Fensterheber, der nicht mehr will — und die häufigste Fehldiagnose der Motor. In den meisten Fällen ist die Mechanik davor die Ursache.",
+      "points": [
+        "Fensterheber langsam, ruckelnd oder stehenbleibend: zuerst Führung, Umlenkung und Seil. Der Motor ist hier meist überlastet, nicht defekt",
+        "Antrieb einer Tür ohne Funktion: gebrochene Litze im Türübergang. Im gebogenen Zustand messen, sonst findet man nichts",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür, nicht mehrere Einzeldefekte",
+        "Spiegelverstellung nur in eine Richtung: Schalter oder Leitung vor Spiegelmotor",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür",
+        "Beim Cabrio zusätzlich Verdeckantrieb und dessen Entwässerung als eigene Baugruppe beachten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-110"
+      ]
     }
   ]
 }

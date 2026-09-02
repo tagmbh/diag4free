@@ -640,6 +640,28 @@
       "details": [
         "D4F-E90-109"
       ]
+    },
+    {
+      "id": "D4F-E90-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E90 · Fußraummodul, Fensterheber, A-Säulen-Ablauf",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 gehört dieser Befund untrennbar zum Licht: Wenn Fensterheber und Beleuchtung zusammen ausfallen, ist es das Fußraummodul — und die Ursache steht oft ein Stockwerk höher, im Ablauf der A-Säule.",
+      "points": [
+        "Fensterheber tot zusammen mit Tagfahrlicht dauerhaft an und Blinker ohne Funktion: das ist das Fußraummodul. Mehrere Funktionen zugleich sind die Diagnose",
+        "Der bekannte Weg dorthin ist Wasser über den Ablauf an der A-Säule. Bei feuchtem Fußraum den Ablauf freimachen, sonst kommt der Schaden zurück",
+        "Das Modul antwortet nicht auf generische OBD-Anfragen — ein leerer Fehlerspeicher dort bedeutet nichts",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Einzelner Antrieb tot bei intaktem Modul: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig; Instandsetzung des vorhandenen Moduls ist der Alternativweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-110"
+      ]
     }
   ]
 }

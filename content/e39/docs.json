@@ -461,6 +461,28 @@
       "details": [
         "D4F-E39-109"
       ]
+    },
+    {
+      "id": "D4F-E39-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E39 · Fensterheber anlernen, Türmodule, Sitzverstellung",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 gibt es einen Befund, der wie ein Defekt aussieht und keiner ist: Nach einer Batterietrennung verlieren die Fensterheber ihre Endlagen und laufen nicht mehr automatisch durch.",
+      "points": [
+        "Fenster fährt nicht mehr automatisch durch, aber manuell schon: Endlagen anlernen. Das ist kein Defekt, sondern eine Folge der Spannungsunterbrechung",
+        "Ein Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Mechanik vor dem Motor",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz, Ausfall betrifft nur diesen Sitz",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür, kein zentraler Fehler"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-110"
+      ]
     }
   ]
 }
