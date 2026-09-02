@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T08:50:47.266Z",
+  "generated": "2026-09-02T09:05:08.221Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1266,6 +1266,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-143",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E28 · Druck, Funke oder Luft",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E28 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-144",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E28 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E28 · 1981–1988",
+      "summary": "Drei Beschwerden, drei Adressen. Am E28 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2379,6 +2421,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E30 · Druck, Funke oder Luft",
+      "valid": "E30 · 1982–1994",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E30 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E30 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E30 · 1982–1994",
+      "summary": "Drei Beschwerden, drei Adressen. Am E30 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3408,6 +3492,48 @@
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Ein Blinker, der zu schnell taktet, meldet einen Ausfall auf derselben Seite. Das ist eine Anzeige und kein Relaisfehler",
         "Korrosion an den Kontakten der Heckleuchten ist bei diesem Alter der Normalfall. Sie gehoert gereinigt, bevor Leuchtmittel getauscht werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-143",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E34 · Druck, Funke oder Luft",
+      "valid": "E34 · 1987–1996",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E34 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-144",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E34 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E34 · 1987–1996",
+      "summary": "Drei Beschwerden, drei Adressen. Am E34 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -4461,6 +4587,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-140",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E36 · Druck, Funke oder Luft",
+      "valid": "E36 · 1990–2000",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E36 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-141",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E36 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E36 · 1990–2000",
+      "summary": "Drei Beschwerden, drei Adressen. Am E36 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5474,6 +5642,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-140",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E38 · Druck, Funke oder Luft",
+      "valid": "E38 · 1994–2001",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E38 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-141",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E38 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E38 · 1994–2001",
+      "summary": "Drei Beschwerden, drei Adressen. Am E38 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -6530,6 +6740,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-141",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E39 · Druck, Funke oder Luft",
+      "valid": "E39 · 1995–2004",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E39 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-142",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E39 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E39 · 1995–2004",
+      "summary": "Drei Beschwerden, drei Adressen. Am E39 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -7607,6 +7859,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-137",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E46 · Druck, Funke oder Luft",
+      "valid": "E46 · 1998–2006",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E46 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Der Tankinhalt ist ein Diagnosewert. Aussetzer nur bei wenig Inhalt oder nur in Kurven deuten auf die Ansaugung im Tank und nicht auf eine schwache Pumpe",
+        "Ein Kraftstofffilter faellt unter Last auf und nicht im Leerlauf. Ein Fahrzeug, das im Ort laeuft und auf der Autobahn einbricht, passt zu diesem Bild"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-138",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E46 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E46 · 1998–2006",
+      "summary": "Drei Beschwerden, drei Adressen. Am E46 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -8720,6 +9014,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-138",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E60 · Druck, Funke oder Luft",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E60 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-139",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E60 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E60 · 2003–2010",
+      "summary": "Drei Beschwerden, drei Adressen. Am E60 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9762,6 +10098,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-140",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E70 · Druck, Funke oder Luft",
+      "valid": "E70 · 2006–2013",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E70 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-141",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E70 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 wird praktisch ausschliesslich mit Wandlerautomatik gefahren. Diese Seite steht hier, damit niemand eine Kupplung sucht, die es nicht gibt -- und weiss, wohin der Befund gehoert.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Kupplung, die rutschen oder rupfen koennte. Was sich so anfuehlt, gehoert zum Wandler oder zu seiner Ueberbrueckung -- siehe Gruppe 24",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung. Das ist der naechste Verwandte des Kupplungsrupfens und hat eine andere Adresse",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Die vier Reifen zuerst vergleichen, das kostet nichts",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel"
       ],
       "pins": [],
       "engines": [],
@@ -10907,6 +11285,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E87 · Druck, Funke oder Luft",
+      "valid": "E87 · 2004–2011",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E87 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E87 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E87 · 2004–2011",
+      "summary": "Drei Beschwerden, drei Adressen. Am E87 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11981,6 +12401,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E88 · Druck, Funke oder Luft",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E88 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E88 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E88 · 2007–2013",
+      "summary": "Drei Beschwerden, drei Adressen. Am E88 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -13200,6 +13662,48 @@
         "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-138",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten E90 · Druck, Funke oder Luft",
+      "valid": "E90 · 2004–2013",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am E90 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-139",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E90 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "E90 · 2004–2013",
+      "summary": "Drei Beschwerden, drei Adressen. Am E90 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -14454,6 +14958,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten F10 · Druck, Funke oder Luft",
+      "valid": "F10 · 2010–2017",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am F10 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F10 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "F10 · 2010–2017",
+      "summary": "Drei Beschwerden, drei Adressen. Am F10 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -15435,6 +15981,48 @@
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
         "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten F15 · Druck, Funke oder Luft",
+      "valid": "F15 · 2013–2018",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am F15 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F15 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "F15 · 2013–2018",
+      "summary": "Der F15 wird praktisch ausschliesslich mit Wandlerautomatik gefahren. Diese Seite steht hier, damit niemand eine Kupplung sucht, die es nicht gibt -- und weiss, wohin der Befund gehoert.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Kupplung, die rutschen oder rupfen koennte. Was sich so anfuehlt, gehoert zum Wandler oder zu seiner Ueberbrueckung -- siehe Gruppe 24",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung. Das ist der naechste Verwandte des Kupplungsrupfens und hat eine andere Adresse",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Die vier Reifen zuerst vergleichen, das kostet nichts",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel"
       ],
       "pins": [],
       "engines": [],
@@ -16455,6 +17043,48 @@
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
         "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten F22 · Druck, Funke oder Luft",
+      "valid": "F22 · 2013–2021",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am F22 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F22 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "F22 · 2013–2021",
+      "summary": "Drei Beschwerden, drei Adressen. Am F22 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -17541,6 +18171,48 @@
         "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
         "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
         "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-140",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten F30 · Druck, Funke oder Luft",
+      "valid": "F30 · 2011–2019",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am F30 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-141",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F30 · Rutschen, Rupfen, Trennen unterscheiden",
+      "valid": "F30 · 2011–2019",
+      "summary": "Drei Beschwerden, drei Adressen. Am F30 entscheidet die richtige Zuordnung darueber, ob das Getriebe heraus muss oder ob eine Stunde an der Hydraulik reicht.",
+      "points": [
+        "Rutschen wird im hohen Gang bei niedriger Drehzahl unter Vollgas geprueft: Steigt die Drehzahl, ohne dass das Fahrzeug schneller wird, rutscht sie. Das ist eine Minute Arbeit und ein eindeutiger Befund",
+        "Kratzt der Gang beim Einlegen im Stand, trennt die Kupplung nicht vollstaendig. Die Ursache liegt haeufiger in der Hydraulik oder in einer klemmenden Scheibe als im Belag",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
+        "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
+        "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
       ],
       "pins": [],
       "engines": [],
@@ -24732,26 +25404,26 @@
     }
   },
   "stats": {
-    "total_docs": 726,
+    "total_docs": 758,
     "total_guides": 40,
     "per_model": {
-      "e28": 44,
-      "e30": 48,
-      "e34": 46,
-      "e36": 44,
-      "e38": 45,
-      "e39": 45,
-      "e46": 45,
-      "e60": 45,
-      "e70": 45,
-      "e87": 46,
-      "e88": 43,
-      "e90": 46,
+      "e28": 46,
+      "e30": 50,
+      "e34": 48,
+      "e36": 46,
+      "e38": 47,
+      "e39": 47,
+      "e46": 47,
+      "e60": 47,
+      "e70": 47,
+      "e87": 48,
+      "e88": 45,
+      "e90": 48,
       "f-series": 8,
-      "f10": 44,
-      "f15": 43,
-      "f22": 44,
-      "f30": 45
+      "f10": 46,
+      "f15": 45,
+      "f22": 46,
+      "f30": 47
     }
   }
 }
