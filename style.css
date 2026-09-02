@@ -1402,6 +1402,43 @@
   -webkit-mask-image: linear-gradient(to bottom, #000 0 87%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0 87%, transparent 100%);
 }
+/* Motorbild — Symbolbild ueber Schema.
+   Gleiche Regel wie beim Fahrzeug: das Bild liegt absolut ueber dem
+   gerechneten Schema und verdeckt es; faellt es aus, raeumt onerror
+   Bild und Beschriftung zusammen weg und das Schema steht wieder da.
+   Das Bild zeigt die Bauform, nicht das Exemplar — deshalb steht
+   "Symbolbild" sichtbar daran, und deshalb wird es beschnitten (cover)
+   statt eingepasst: der Render hat einen Studiohintergrund, der als
+   Rahmen im Rahmen haesslich waere. */
+.eng-art { position: relative; display: block; width: 100%; }
+.eng-photo-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: #d9d9d9;
+}
+.eng-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.eng-photo-tag {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(20, 20, 20, 0.62);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
 .pick-art-empty {
   display: grid;
   place-items: center;
@@ -1571,6 +1608,12 @@ button.abd-btn:focus-visible { outline: 3px solid var(--color-primary); outline-
    schmalen Geraeten untereinander, weil eine 40-Prozent-Spalte dort nur
    noch Silbentrennung ist. Kein Aufzaehlungspunkt: der Begriff ist die
    Marke. */
+.teile-schema {
+  max-width: 320px;
+  margin: 0 auto var(--space-3);
+  color: var(--color-primary);
+}
+.teile-schema svg { width: 100%; height: auto; }
 .teile-liste { margin: 0; padding: 0; list-style: none; font-size: var(--text-sm); }
 .teile-liste li {
   display: grid;

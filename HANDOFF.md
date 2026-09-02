@@ -10,7 +10,7 @@
 - `node scripts/build-index.mjs` baut `content/index.json` aus `content/<modell>/{docs,guides}.json`
   (`content/software.json` ist **nicht** Teil des Index-Builds, wird separat gefetcht)
 - Deployment: Push auf `main` → GitHub Actions → GitHub Pages → Custom Domain `diag4all.t-alpha.com` (~45 s)
-- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.10.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
+- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.50.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos und Motor-Symbolbilder liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
 - State/Persistenz: `localStorage` (`diag4free.prefs.v1` für Baureihe/Motor/Theme/Checks, `diag4free.vin.v1` für VIN-Cache)
 - Hash-Routing: `#/overview`, `#/docs`, `#/guide/<id>`, `#/measure`, `#/library`, `#/software`, `#/model/<id>`
 - Sichtbarkeits-Sync der Views passiert zentral in `render()` (nicht nur in `setView`) — wichtig für Deep-Links
@@ -157,8 +157,9 @@ hat den Test früher einmal still und mit falschem Ergebnis mitgerissen.
 | `vehicleArt(body, era, seriesId)` | Foto über Zeichnung — der Normalfall im UI |
 | `vehicleSvg(body, era, seriesId)` | nur die gerechnete Silhouette |
 | `engineSvg(layout, aspiration, engineId)` | Motorschema |
+| `engineArt(layout, aspiration, engineId)` | Symbolbild über Schema — der Normalfall im UI. Bild-ID wird aus `layout`/`aspiration` berechnet (`engineBildId`), nie gepflegt |
 | `engineTeile(layout, aspiration, engineId)` | Legende dazu, aus denselben Merkmalen abgeleitet |
-| `.formen` `.baureihen` `.fotos` | was der Zeichner kennt — vom Audit geprüft |
+| `.formen` `.baureihen` `.fotos` `.motorbilder` | was der Zeichner kennt — vom Audit geprüft |
 
 Zwei Regeln, die hier teuer erkauft sind:
 

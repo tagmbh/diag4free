@@ -673,10 +673,68 @@ Limousine  : { x0:16.1, xt:15.1, ny:40.8, hx:38.9, hy:39.3, cx:63.5, cy:37, ax:8
       + `onerror="this.remove()">${svg}</span>`;
   };
 
+  // -------- Symbolbild ueber dem Motorschema --------
+  // Zehn Renders, einer je Bauform und Aufladung — nicht je Motor. Ein
+  // Bild, das "N54" hiesse und keiner waere, waere eine kleine Unwahrheit
+  // an einer Stelle, an der die Wissensbasis von Genauigkeit lebt. Ein
+  // Bild "Reihensechszylinder mit Bi-Turbo" ist wahr. Deshalb traegt die
+  // Datei die Bauform im Namen und nie eine Motorkennung, und deshalb
+  // steht sichtbar "Symbolbild" daran.
+  // Welches Bild zu welchem Motor gehoert, wird aus `layout` und
+  // `aspiration` in content/engines.json BERECHNET — eine zweite Liste
+  // Motor→Bild gaebe es sonst zu pflegen, und sie liefe still auseinander.
+  // Ein Eintrag hier ohne Datei unter assets/motoren/ faellt in
+  // scripts/audit.mjs auf.
+  const MOTOR_BILDER = [
+    'r3-turbo', 'r4-saug', 'r4-turbo',
+    'r6-saug', 'r6-turbo', 'r6-biturbo',
+    'v8-saug', 'v8-biturbo', 'v10-saug', 'v12-saug'
+  ];
+
+  /**
+   * Bild-ID aus Bauform und Aufladung, z. B. ('R6', 'Bi-Turbo') → 'r6-biturbo'.
+   * Leer, wenn es fuer die Kombination kein Symbolbild gibt — dann bleibt
+   * es beim gerechneten Schema.
+   */
+  const engineBildId = (layout, aspiration) => {
+    const L = parseLayout(layout);
+    if (!L) return '';
+    const n = ladeZahl(aspiration);
+    const art = n === 0 ? 'saug'
+      : n >= 2 ? 'biturbo'
+        : (/kompressor|supercharg/i.test(String(aspiration)) ? 'kompressor' : 'turbo');
+    const form = L.kind === 'R' ? 'r' : L.kind === 'V' ? 'v' : 'b';
+    const id = `${form}${L.count}-${art}`;
+    return MOTOR_BILDER.includes(id) ? id : '';
+  };
+
+  /**
+   * Motorbild fuer Karten und Cockpit: Symbolbild ueber dem Schema.
+   * Das Schema bleibt darunter im Markup und traegt die belegten Merkmale;
+   * das Bild traegt keinen diagnostischen Anspruch. Faellt es aus, raeumt
+   * `onerror` Bild und Beschriftung zusammen weg und das Schema steht da.
+   * @param {string} layout      wie bei engineSvg
+   * @param {string} aspiration  wie bei engineSvg
+   * @param {string} engineId    wie bei engineSvg
+   */
+  const engineArt = (layout, aspiration, engineId = '') => {
+    const svg = engineSvg(layout, aspiration, engineId);
+    const id = engineBildId(layout, aspiration);
+    if (!id) return svg;
+    return `<span class="eng-art">`
+      + `<span class="eng-photo-wrap">`
+      + `<img class="eng-photo" src="assets/motoren/${id}.webp" alt="" `
+      + `width="320" height="240" decoding="async" `
+      + `onerror="this.parentNode.remove()">`
+      + `<span class="eng-photo-tag">Symbolbild</span>`
+      + `</span>${svg}</span>`;
+  };
+
   window.D4F_GFX = {
-    vehicleSvg, vehicleArt, engineSvg, engineTeile,
+    vehicleSvg, vehicleArt, engineSvg, engineArt, engineBildId, engineTeile,
     formen: Object.keys(FORMEN),
     baureihen: Object.keys(SERIEN),
-    fotos: MIT_FOTO.slice()
+    fotos: MIT_FOTO.slice(),
+    motorbilder: MOTOR_BILDER.slice()
   };
 })();

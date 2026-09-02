@@ -57,6 +57,29 @@ for (const id of FOTOS_GFX) {
   }
 }
 
+// Vierter Teil: die Motor-Symbolbilder. Wer in graphics.js als
+// `motorbilder` gelistet ist, wird ueber dem Schema eingeblendet. Fehlt
+// die Datei, sieht man auch hier nichts — onerror raeumt auf — und genau
+// deshalb muss es hier auffallen. Umgekehrt: eine Datei, die kein Eintrag
+// nennt, laedt niemand; sie liegt nur im Repository herum.
+const MOTORBILDER_GFX = Array.isArray(GFX.motorbilder) ? GFX.motorbilder : [];
+for (const id of MOTORBILDER_GFX) {
+  if (!/^[rvb]\d{1,2}-(saug|turbo|biturbo|kompressor)$/.test(id)) {
+    melde('graphics.js', id, 'hoch', 'Motorbild-ID traegt nicht Bauform und Aufladung — Motorkennungen sind als Dateiname ausgeschlossen');
+  }
+  if (!await gibt(join('assets', 'motoren', `${id}.webp`))) {
+    melde('graphics.js', id, 'hoch', `als Motorbild gelistet, aber assets/motoren/${id}.webp fehlt`);
+  }
+}
+if (await gibt(join('assets', 'motoren'))) {
+  for (const f of await readdir(join('assets', 'motoren'))) {
+    const id = f.replace(/\.webp$/, '');
+    if (f.endsWith('.webp') && !MOTORBILDER_GFX.includes(id)) {
+      melde('assets/motoren', f, 'mittel', 'Datei liegt vor, aber graphics.js nennt sie nicht — wird nie geladen');
+    }
+  }
+}
+
 const models = await lies(join(CONTENT, 'models.json'));
 const genutzt = new Set();
 const alleModelle = [];
@@ -236,6 +259,17 @@ let steckbriefe = new Set();
 if (await gibt(join(CONTENT, 'engines.json'))) {
   const roh = await lies(join(CONTENT, 'engines.json'));
   for (const e of (roh.engines || roh || [])) if (e?.id) steckbriefe.add(e.id);
+  // Die Zuordnung Bild→Motor wird aus layout/aspiration berechnet, nicht
+  // gepflegt. Ein Motor, fuer dessen Kombination kein Bild vorliegt, ist
+  // kein Fehler — das Schema steht dann allein — aber er soll auffallen,
+  // sonst merkt niemand, dass ein neuer Motor ohne Bild hereinkam.
+  if (typeof GFX.engineBildId === 'function') {
+    for (const e of (roh.engines || roh || [])) {
+      if (e?.id && !GFX.engineBildId(e.layout, e.aspiration)) {
+        melde('content/engines.json', e.id, 'niedrig', `kein Symbolbild fuer ${e.layout} · ${e.aspiration} — nur Schema`);
+      }
+    }
+  }
 }
 abdeckung.push(['Motoren mit Steckbrief', steckbriefe.size, genutzt.size,
   [...genutzt].filter(m => !steckbriefe.has(m)).sort()]);

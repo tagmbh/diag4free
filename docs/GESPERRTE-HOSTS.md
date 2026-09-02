@@ -142,7 +142,7 @@ ist — ein Bild, das im Hof ohne Netz nicht kommt, ist kein Bild.
 Wer diese beiden Hosts freigibt, bekommt also nichts, was eingecheckt werden
 dürfte. Die Freigabe lohnt nur, wenn jemand Belege *nachlesen* will.
 
-### 4. Selbst erzeugte Renders — gemacht, aber nicht abholbar
+### 4. Selbst erzeugte Renders — eingebaut am 02.09.2026
 
 ```
 d8j0ntlcm91z4.cloudfront.net
@@ -153,18 +153,53 @@ Motor-Renders erzeugt worden — einer je Kombination aus Bauform und
 Aufladung, nicht je Motor. Die Begründung dafür steht unten; sie ist
 inhaltlicher Natur und nicht technischer.
 
-Die Bilder liegen fertig im Higgsfield-Konto. In das Repository gelangen
-sie trotzdem nicht: Der Auslieferungs-Host ist gesperrt. Der Beleg steht im
-Proxy selbst, nicht in einer Vermutung —
+Beim ersten Versuch war der Auslieferungs-Host gesperrt (zehn
+`connect_rejected` im Proxy-Log, genau die zehn Downloads). Wege daran
+vorbei wurden nicht gegangen, aus demselben Grund wie bei `bmwteka.com`.
+Nach der Freigabe des Hosts in der Umgebung wurden die Bilder geholt und
+**vor dem Einchecken einzeln angesehen und nachgezählt**. Das hat sich
+gelohnt: Fünf der zehn Renders zeigten nicht, was ihr Name sagt —
+
+| Datei | zeigte | statt |
+|---|---|---|
+| `r6-turbo` | fünf Zündspulen, fünf Krümmerrohre | sechs |
+| `r6-biturbo` | drei Lader | zwei |
+| `v8-biturbo` | sechs Nockengehäuse je Bank | vier |
+| `v10-saug` | sechs Ansaugtrichter je Bank | fünf |
+| `v12-saug` | sieben Zylinder je Bank | sechs |
+
+Ein sechstes (`r6-saug`) hatte eine frei schwebende Kappe. Diese sechs
+wurden mit ausdrücklichen Zählvorgaben im Prompt neu erzeugt und wieder
+nachgezählt, bis Spulen, Rohre und Lader stimmten. Ein Bildgenerator kann
+nicht zählen; wer seine Bilder ungezählt einbaut, baut Unwahrheiten ein.
+
+Eingebaut sind sie so: `engineArt()` in `graphics.js` legt das Bild über
+das gerechnete `engineSvg()`-Schema, berechnet die Bild-ID aus `layout`
+und `aspiration` (keine zweite Liste), kennzeichnet sichtbar als
+Symbolbild, und `onerror` räumt Bild samt Kennzeichnung weg, wenn es
+nicht lädt. Die Dateien liegen unter `assets/motoren/<bauform>-<aufladung>.webp`
+(320 × 240, je 6–9 kB, zusammen 96 kB), einzeln im Vorrat des Service Workers.
+`scripts/audit.mjs` meldet Einträge ohne Datei und Dateien ohne Eintrag.
+
+**Prompts zum Nachziehen.** Die ersten vier (`r3-turbo`, `r4-saug`,
+`r4-turbo`, `v8-saug`) stammen aus `recraft_v4_1`, die sechs ersetzten aus
+`nano_banana_pro`, alle 4:3. Das Muster, das die Zählung eingehalten hat:
 
 ```
-$ curl -sS "$HTTPS_PROXY/__agentproxy/status"
-10 connect_rejected  d8j0ntlcm91z4.cloudfront.net:443
+Photorealistic studio product photograph of a <Aufladung> <Bauform> car
+engine, seen from <Ansicht>, complete engine assembly standing free on a
+plain light grey seamless background. Exactly <n> ignition coils in one
+straight row on the valve cover, count them: <n>. Exactly <k>
+turbocharger(s) <Lage>. Not <n−1>, not <n+1>, exactly <n>. Clean
+workshop-grade detail, even soft studio lighting, no logos, no badges,
+no text, no people, nothing floating, every part attached.
 ```
 
-Zehn abgewiesene CONNECT-Versuche, genau die zehn Downloads. Es gibt
-Wege daran vorbei; sie werden hier nicht gegangen, aus demselben Grund,
-aus dem sie bei `bmwteka.com` nicht gegangen wurden.
+Bei V-Motoren „per bank“ zählen lassen und eine hohe Dreiviertelansicht
+wählen, sonst verdeckt eine Bank die andere und die Zählung ist nicht
+prüfbar. Beim V10 hat erst die zweite Fassung gestimmt, in der Trichter
+**und** Spulen je Bank vorgegeben waren — die erste hatte fünf Trichter
+über vier Spulen.
 
 **Warum zehn und nicht dreiundvierzig.** Ein Render, der „N54" heißt und
 kein N54 ist, ist eine kleine Unwahrheit an einer Stelle, an der die ganze
@@ -185,7 +220,7 @@ Aufnahme für:
 | `v10-saug` | V10, Saugmotor | S85 |
 | `v12-saug` | V12, Saugmotor | M73 |
 
-**Bedingungen fürs Einpflegen**, wenn der Host freigegeben wird:
+**Bedingungen fürs Einpflegen** — alle vier eingehalten:
 
 1. Jedes Bild wird sichtbar als **Symbolbild** gekennzeichnet. Es zeigt die
    Bauform, nicht das Exemplar.
@@ -194,12 +229,13 @@ Aufnahme für:
    Merkmale aus `content/engines.json`; das Bild trägt keinen einzigen
    diagnostischen Anspruch.
 3. Kein Render bekommt eine Motorkennung als Dateinamen.
-4. Vor dem Einchecken werden die Bilder angesehen. Bis heute hat sie in
-   dieser Sitzung niemand gesehen — sie ließen sich nicht herunterladen.
+4. Vor dem Einchecken werden die Bilder angesehen — und nachgezählt,
+   siehe oben.
 
-Solange das nicht geht, bleibt es beim gerechneten Schema, und das ist
-kein Notbehelf: Es ergibt sich aus den Daten, es kann nichts behaupten,
-was nicht in `engines.json` steht, und es zeichnet in `currentColor`.
+Das gerechnete Schema bleibt der Träger der Fakten, und das ist kein
+Notbehelf: Es ergibt sich aus den Daten, es kann nichts behaupten, was
+nicht in `engines.json` steht, und es zeichnet in `currentColor`. Das
+Bild darüber ist Anschauung, sonst nichts.
 
 ## Inhaltliche Lücken
 
