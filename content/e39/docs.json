@@ -506,6 +506,26 @@
         "D4F-E39-107",
         "D4F-E39-108"
       ]
+    },
+    {
+      "id": "D4F-E39-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E39 · Zweimassenschwungrad, Hydraulik, Ölspuren im Gehäuse",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 ist der Schwungradbefund der häufigste dieser Gruppe — und der einzige, für den ein Minutentest im Leerlauf reicht, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet oder verringert sich das Rasseln deutlich, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Weiterfahren mit defektem Schwungrad ist nicht nur Komfortverlust — die ungleichmäßigen Momente belasten den Antriebsstrang und erzeugen Folgekosten, die den Ursprungsschaden übersteigen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals, nicht umgekehrt",
+        "Rupfen beim Anfahren mit Ölspuren im Gehäuse: Simmerring an Kurbelwelle oder Getriebeeingang. Der Belag ist die Folge",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -547,6 +547,26 @@
       "details": [
         "D4F-E46-108"
       ]
+    },
+    {
+      "id": "D4F-E46-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E46 · Zweimassenschwungrad, Nehmerzylinder, Ausbau planen",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist die Kupplungsarbeit teuer, weil das Getriebe herunter muss. Deshalb entscheidet die Vorprüfung, ob sie überhaupt nötig ist — und was in einem Zug mitgemacht wird.",
+      "points": [
+        "Schwungradtest vor jedem Ausbau: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab. Der Behälter wird leer, der Fußraum bleibt trocken",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen, bevor das Getriebe herunterkommt",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen — sie sind später nur mit demselben Aufwand erreichbar",
+        "Ölspuren im Kupplungsgehäuse benennen die Ursache: Simmerring an Kurbelwelle oder Getriebeeingang. Ohne dessen Erneuerung verölt der neue Belag wieder"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

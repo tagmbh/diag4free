@@ -684,6 +684,26 @@
       "details": [
         "D4F-E90-108"
       ]
+    },
+    {
+      "id": "D4F-E90-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E90 · Zweimassenschwungrad, Hydraulik, Ausbau planen",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist die Kupplung ein häufiges Thema und der Ausbau aufwendig. Die Vorprüfung entscheidet deshalb über Umfang und Preis, bevor das Getriebe herunterkommt.",
+      "points": [
+        "Schwungradtest vor jedem Ausbau: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals — die umgekehrte Richtung",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Ölspuren im Kupplungsgehäuse benennen die Ursache: Simmerring an Kurbelwelle oder Getriebeeingang",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

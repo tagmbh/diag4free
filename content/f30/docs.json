@@ -513,6 +513,26 @@
       "details": [
         "D4F-F30-108"
       ]
+    },
+    {
+      "id": "D4F-F30-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F30 · Zweimassenschwungrad, Start-Stopp, Getriebe bestimmen",
+      "valid": "F30, F31 · 2011–2019 · Handschaltung",
+      "summary": "Beim F30 arbeitet die Kupplung mit der Start-Stopp-Automatik zusammen. Das erzeugt einen Befund, der wie ein Kupplungsdefekt aussieht und ein Signalproblem ist.",
+      "points": [
+        "Start-Stopp arbeitet nicht mehr oder unerwartet: Der Kupplungspedalsensor meldet die Pedalstellung. Ein Signalfehler dort verhindert die Funktion, ohne dass die Kupplung defekt ist",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Häufiges Start-Stopp belastet das Zweimassenschwungrad zusätzlich — Befunde bei geringerer Laufleistung sind hier kein Widerspruch",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

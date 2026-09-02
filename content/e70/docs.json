@@ -476,6 +476,26 @@
       "details": [
         "D4F-E70-108"
       ]
+    },
+    {
+      "id": "D4F-E70-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E70 · Handschaltung als Ausnahme, sonst Wandler",
+      "valid": "E70 · 2006–2013 · Handschaltung nur in seltenen Ausführungen",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Ein Handschalter existiert, ist aber so selten, dass die erste Handlung die Bestimmung des Getriebes ist — sonst sucht man an einer Kupplung, die es nicht gibt.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Bei der Wandlerautomatik gibt es keine Kupplung in diesem Sinn; Ruckeln, Vibration und Schaltbefunde gehören in die Gruppe des Automatikgetriebes",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe — weder Kupplung noch Automatikgetriebe",
+        "Beim seltenen Handschalter gilt der Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeit fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

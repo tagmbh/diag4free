@@ -555,6 +555,26 @@
       "details": [
         "D4F-E60-108"
       ]
+    },
+    {
+      "id": "D4F-E60-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E60 · Zweimassenschwungrad, Hydraulik, Abgrenzung zum Wandler",
+      "valid": "E60 · 2003–2010 · Handschaltung",
+      "summary": "Beim E60 ist die erste Frage, welches Getriebe verbaut ist. Danach gilt derselbe Minutentest wie bei den älteren Baureihen — und dieselbe Regel, alles in einem Zug mitzumachen.",
+      "points": [
+        "Zuerst klären: Schaltgetriebe oder Wandlerautomatik. Beim Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn verschlissen",
+        "Ausrücklager: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl prüfen",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

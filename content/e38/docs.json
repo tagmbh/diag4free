@@ -450,6 +450,26 @@
       "details": [
         "D4F-E38-108"
       ]
+    },
+    {
+      "id": "D4F-E38-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E38 · Handschaltung selten, Zweimassenschwungrad, Hydraulik",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend ein Automatikfahrzeug; Handschalter gibt es, sie sind aber die Ausnahme. Wer einen vor sich hat, prüft wie bei den kleineren Baureihen — mit einem Motor, der mehr Drehmoment einträgt.",
+      "points": [
+        "Erst klären, ob überhaupt ein Schaltgetriebe verbaut ist. Bei einem Wandlerfahrzeug gehören Ruckeln und Vibration in die Gruppe des Automatikgetriebes, nicht hierher",
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch entsteht beim Treten",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl. Bei den drehmomentstarken Motoren zeigt sich Verschleiß früher",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Teileverfügbarkeit vorher klären — bei seltenen Ausführungen ist das der längere Teil der Reparatur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

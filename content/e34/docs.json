@@ -447,6 +447,26 @@
       "details": [
         "D4F-E34-108"
       ]
+    },
+    {
+      "id": "D4F-E34-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E34 · Zweimassenschwungrad, Ausrücklager, Hydraulik",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Mit dem Zweimassenschwungrad kommt ein Bauteil dazu, das man ohne Ausbau prüfen kann. Der Test dauert eine Minute und entscheidet über einen erheblichen Teil der Rechnung.",
+      "points": [
+        "Prüfung ohne Werkzeug: warmer Motor im Leerlauf, am Getriebe hören, dann die Kupplung voll durchtreten. Verschwindet das Rasseln oder wird es deutlich leiser, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Genau umgekehrt beim Ausrücklager: Das Geräusch beginnt beim Treten des Pedals. Wer diese Richtung beachtet, verwechselt die beiden nicht",
+        "Vibration beim Anfahren und Ruckeln bei niedriger Drehzahl gehören ebenfalls zum Schwungradbild",
+        "Rutschen unter Last: Belag verschlissen. Test im höchsten Gang aus niedriger Drehzahl",
+        "Wandernder Kupplungspunkt, Flüssigkeitsstand fällt ohne sichtbares Leck: Nehmerzylinder gibt nach innen ab",
+        "Beim Ausbau Ausrücklager, Führungshülse und Simmerringe mitmachen — später nur mit demselben Aufwand erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

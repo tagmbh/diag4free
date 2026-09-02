@@ -564,6 +564,26 @@
       "details": [
         "D4F-E87-108"
       ]
+    },
+    {
+      "id": "D4F-E87-113",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung E87 · Zweimassenschwungrad, Nehmerzylinder, Rutschen erkennen",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter, und die Kupplung ist entsprechend oft Thema. Zwei der drei üblichen Befunde lassen sich am stehenden Fahrzeug klären.",
+      "points": [
+        "Schwungradtest: warmer Motor im Leerlauf, am Getriebe hören, Kupplung voll durchtreten. Verschwindet das Rasseln, sind die Federn im Zweimassenschwungrad verschlissen",
+        "Ausrücklager macht das Gegenteil: Geräusch beginnt beim Treten des Pedals",
+        "Wandernder Kupplungspunkt bei intakter Kupplung: Nehmerzylinder gibt nach innen ab; der Behälter wird leer, der Fußraum bleibt trocken",
+        "Rutschen unter Last: im höchsten Gang aus niedriger Drehzahl beschleunigen",
+        "Rupfen mit Ölspuren im Gehäuse: Simmerring an Kurbelwelle oder Getriebeeingang; ohne dessen Erneuerung verölt der neue Belag wieder",
+        "Bei jedem Ausbau Ausrücklager, Führungshülse, Pilotlager und Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
