@@ -644,6 +644,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung F10 · Elektromechanisch, Spannung und Fehlerspeicher zuerst",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation ist die Lenkung elektromechanisch, beim F10 teils mit lenkender Hinterachse. Damit entfallen Fluessigkeit, Riemen und Pumpe als Kandidaten — dafuer kommen Bordspannung und Fehlerspeicher zuerst.",
+      "points": [
+        "Keine Hydraulik: Fluessigkeitsstand, Riemen und Pumpe entfallen als Kandidaten. Wer danach sucht, sucht an einem Bauteil, das es nicht gibt",
+        "Unterstuetzung faellt aus oder laesst nach: zuerst Bordspannung und Fehlerspeicher. Unterspannung legt die elektrische Lenkung still, ohne dass mechanisch etwas fehlt -- nach einem Batteriewechsel ohne Anmeldung ist das ein bekannter Weg dorthin",
+        "Integral-Aktivlenkung: Die Hinterachse lenkt mit. Ein unruhiges Fahrverhalten gehoert zuerst gegen diese Baugruppe und ihren Fehlerspeicher, nicht gegen die Vorderachse",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen -- sonst regelt die DSC ohne Fahrsituation, und der Befund wird als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -662,6 +662,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E36 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E36 · 1989–2002",
+      "summary": "Der E36 hat eine hydraulische Servolenkung. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
