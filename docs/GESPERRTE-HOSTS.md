@@ -52,6 +52,7 @@ Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
 | Bereich | Ohne Freigabe | Mit Freigabe |
 |---|---|---|
 | Motorbilder | gerechnete Schemata aus `engines.json` | belegte Schnittzeichnungen und Fotos |
+| Eigene Renders | zehn erzeugte Symbolbilder, die im Konto liegen bleiben | dieselben zehn, eingecheckt |
 | MS43-Pinliste | Ausmessverfahren statt Pinnummern | die tatsächliche Belegung |
 | Motornummern-Position | eine offene Widersprüchlichkeit | geklärt |
 | E88-Sicherungsnummern | „Sicherung im Kasten X" ohne Nummer | Nummer und Ampere |
@@ -140,6 +141,65 @@ ist — ein Bild, das im Hof ohne Netz nicht kommt, ist kein Bild.
 
 Wer diese beiden Hosts freigibt, bekommt also nichts, was eingecheckt werden
 dürfte. Die Freigabe lohnt nur, wenn jemand Belege *nachlesen* will.
+
+### 4. Selbst erzeugte Renders — gemacht, aber nicht abholbar
+
+```
+d8j0ntlcm91z4.cloudfront.net
+```
+
+Am 02.09.2026 sind über den Higgsfield-MCP zehn photorealistische
+Motor-Renders erzeugt worden — einer je Kombination aus Bauform und
+Aufladung, nicht je Motor. Die Begründung dafür steht unten; sie ist
+inhaltlicher Natur und nicht technischer.
+
+Die Bilder liegen fertig im Higgsfield-Konto. In das Repository gelangen
+sie trotzdem nicht: Der Auslieferungs-Host ist gesperrt. Der Beleg steht im
+Proxy selbst, nicht in einer Vermutung —
+
+```
+$ curl -sS "$HTTPS_PROXY/__agentproxy/status"
+10 connect_rejected  d8j0ntlcm91z4.cloudfront.net:443
+```
+
+Zehn abgewiesene CONNECT-Versuche, genau die zehn Downloads. Es gibt
+Wege daran vorbei; sie werden hier nicht gegangen, aus demselben Grund,
+aus dem sie bei `bmwteka.com` nicht gegangen wurden.
+
+**Warum zehn und nicht dreiundvierzig.** Ein Render, der „N54" heißt und
+kein N54 ist, ist eine kleine Unwahrheit an einer Stelle, an der die ganze
+Wissensbasis von Genauigkeit lebt. Ein Render, der „Symbolbild ·
+Reihensechszylinder mit Bi-Turbo" heißt, ist wahr. Deshalb je eine
+Aufnahme für:
+
+| Datei | zeigt | betrifft |
+|---|---|---|
+| `r3-turbo` | Reihendreizylinder, Turbo | B38 |
+| `r4-saug` | Reihenvierzylinder, Saugmotor | M40 M42 M43 M44 N42 N43 N45 N46 S14 |
+| `r4-turbo` | Reihenvierzylinder, Turbo | B47 B48 N13 N20 N26 N47 |
+| `r6-saug` | Reihensechszylinder, Saugmotor | M20 M30 M50 M52 M54 M56 N52 N53 S38 S50 S52 S54 |
+| `r6-turbo` | Reihensechszylinder, Turbo | B57 B58 M57 N55 N57 |
+| `r6-biturbo` | Reihensechszylinder, Bi-Turbo | N54 |
+| `v8-saug` | V8, Saugmotor | M60 M62 N62 S62 S65 |
+| `v8-biturbo` | V8, Bi-Turbo | N63 S63 |
+| `v10-saug` | V10, Saugmotor | S85 |
+| `v12-saug` | V12, Saugmotor | M73 |
+
+**Bedingungen fürs Einpflegen**, wenn der Host freigegeben wird:
+
+1. Jedes Bild wird sichtbar als **Symbolbild** gekennzeichnet. Es zeigt die
+   Bauform, nicht das Exemplar.
+2. Das gerechnete Schema bleibt darunter liegen — so wie das Foto bei den
+   Fahrzeugen die Silhouette nicht ersetzt. Das Schema trägt die belegten
+   Merkmale aus `content/engines.json`; das Bild trägt keinen einzigen
+   diagnostischen Anspruch.
+3. Kein Render bekommt eine Motorkennung als Dateinamen.
+4. Vor dem Einchecken werden die Bilder angesehen. Bis heute hat sie in
+   dieser Sitzung niemand gesehen — sie ließen sich nicht herunterladen.
+
+Solange das nicht geht, bleibt es beim gerechneten Schema, und das ist
+kein Notbehelf: Es ergibt sich aus den Daten, es kann nichts behaupten,
+was nicht in `engines.json` steht, und es zeichnet in `currentColor`.
 
 ## Inhaltliche Lücken
 
