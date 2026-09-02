@@ -665,6 +665,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F15 - Elektrische Heckklappe und Zugang",
+      "valid": "F15 - 2013-2018",
+      "summary": "Am F15 ist die Heckklappe elektrisch und kennt Freigaben, Endlagen und Einklemmschutz. Ein Ausfall ist haeufiger eine fehlende Freigabe als ein defekter Antrieb.",
+      "points": [
+        "Zuerst klaeren, ob die Klappe ueberhaupt freigegeben ist. Ohne Freigabe faehrt kein Antrieb, und alle Messungen am Antrieb sind vergeblich",
+        "Nach Spannungsverlust oder Arbeiten an der Klappe koennen die Endlagen fehlen. Dann faehrt sie unvollstaendig oder stoppt -- erst anlernen, dann urteilen",
+        "Ein ansprechender Einklemmschutz ist ein Befund und keine Stoerung. Er meldet, dass Widerstand da war -- also erst die Mechanik freigaengig machen",
+        "Die beruehrungslose Betaetigung braucht ein sauberes Signal. Bleibt sie aus, waehrend Taster und Schluessel funktionieren, liegt es an der Erkennung und nicht am Antrieb",
+        "Den Leitungsuebergang in die Klappe in Bewegung pruefen, nicht im Stillstand",
+        "Eine elektrisch angetriebene Klappe nie gegen ihre Sperre bewegen. Der Schaden entsteht dabei erst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

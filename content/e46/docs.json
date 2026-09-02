@@ -732,6 +732,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-122",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E46 - Fensterheber, Tuerschloss, Wassereintritt",
+      "valid": "E46 - 1998-2006",
+      "summary": "Am E46 bricht beim Fensterheber nicht der Motor, sondern das Fuehrungsteil daran. Diese Gruppe ordnet Fensterheber, Schloss und Wassereintritt und nennt jeweils das Bauteil, das wirklich ausfaellt.",
+      "points": [
+        "Faellt die Scheibe in die Tuer, ist die Fuehrung gebrochen. Der Motor laeuft dabei weiter -- wer nach Motorgeraeusch urteilt, kommt zum falschen Teil",
+        "Vor dem Zerlegen die Scheibe sichern. Eine lose Scheibe in der Tuer geht beim Ausbau der Verkleidung kaputt, und dann ist aus einem Fuehrungsschaden ein Scheibenschaden geworden",
+        "Beim Touring kommen Heckklappe und separat oeffnende Heckscheibe hinzu. Faellt nur eine der beiden aus, ist das ein Schloss- oder Schalterbefund, kein Leitungsbefund",
+        "Wassereintritt am E46 zuerst an Tuerfolie und Ablaufwegen beurteilen. Der nasse Teppich liegt nicht an der Stelle, an der das Wasser hereinkommt",
+        "Kofferraumboden und Reserveradmulde trocken beurteilen. Steht dort Wasser, sind die Ablaeufe zu -- und der Rost darunter ist Folge, nicht Ursache",
+        "Tuerschloss vor der Elektrik pruefen. Schwergaengigkeit erzeugt Eintraege, die den Blick auf das Steuergeraet lenken, obwohl das Problem mechanisch ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

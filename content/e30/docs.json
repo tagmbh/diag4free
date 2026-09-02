@@ -785,6 +785,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E30 - Rost, Dichtungen, Anbauteile",
+      "valid": "E30 - 1982-1994",
+      "summary": "Der E30 verliert Substanz an Stellen, die von aussen intakt aussehen. Diese Gruppe ordnet, wo zuerst zu schauen ist und warum die Sichtpruefung von aussen zu spaet kommt.",
+      "points": [
+        "Rost am E30 waechst hinter Verkleidungen und Radhausschalen. Was von aussen blueht, ist das Ende des Verlaufs, nicht der Anfang -- die Beurteilung gehoert hinter die Schale, nicht auf den Lack",
+        "Kritisch sind der Uebergang von A-Saeule zu Schweller, die hinteren Radlaeufe innen und aussen, das Batteriefach und der Wasserkasten unter der Windschutzscheibe",
+        "Der Wasserkasten ist ein Ablauf, kein Behaelter. Ist er zu, steht das Wasser an der Stirnwand und laeuft in den Innenraum -- ein nasser Beifahrerfussraum am E30 ist zuerst ein Ablaufproblem",
+        "Hinterachsaufnahmen am Schweller sind sicherheitsrelevant. Hier entscheidet nicht die Optik, sondern ob das Blech traegt -- im Zweifel abklopfen und von unten beurteilen",
+        "Der Dichtungskanal an der Windschutzscheibe sammelt Wasser. Rost arbeitet dort unter der Scheibendichtung weiter, lange bevor er sichtbar wird",
+        "Tuerdichtungen und Schachtabdichtung vor jeder Innenraum-Fehlersuche pruefen. Feuchtigkeit im Wagen erklaert mehr elektrische Fehler als jedes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

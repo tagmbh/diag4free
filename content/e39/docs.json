@@ -711,6 +711,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E39 - Heckklappe, Schloesser, Fensterheber",
+      "valid": "E39 - 1995-2004",
+      "summary": "Beim E39 ist der Uebergang zur Heckklappe die haeufigste Ursache fuer Fehler, die wie Schloss- oder Motorschaeden aussehen. Diese Gruppe stellt die Reihenfolge richtig.",
+      "points": [
+        "Die Leitungen zur Heckklappe biegen sich bei jedem Oeffnen. Sie brechen im Faltenbalg zwischen Karosserie und Klappe -- am Stellmotor zu messen heisst, am falschen Ende zu messen",
+        "Der Bruch ist oft nicht sichtbar. Die Isolierung haelt, der Leiter darunter ist ab -- deshalb pruefen, waehrend die Klappe bewegt wird, und nicht im Stillstand",
+        "Beim Touring kommen Heckscheibe und Klappe als getrennte Funktionen hinzu. Welche der beiden ausfaellt, grenzt den Fehler bereits auf Schloss oder Ansteuerung ein",
+        "Stellmotor und Mikroschalter trennen: Bewegt sich die Verriegelung sichtbar und die Tuer oeffnet nicht, ist der Schalter der Befund",
+        "Fensterheber am E39 an den Fuehrungsteilen beurteilen, nicht am Motor. Der Antrieb ueberlebt in der Regel die Mechanik, die er antreibt",
+        "Nasser Fussraum vor jeder Elektroniksuche klaeren. Wasser in der Fahrzeugelektrik erzeugt Fehlerbilder, die ohne die Ursache nicht reproduzierbar sind"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

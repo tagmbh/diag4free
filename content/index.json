@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T05:50:20.671Z",
+  "generated": "2026-09-02T05:56:05.265Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -930,6 +930,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-127",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E28 - Zentralverriegelung, Schloesser, Dichtungen",
+      "valid": "E28 - 1981-1987",
+      "summary": "Beim E28 arbeitet die Zentralverriegelung pneumatisch. Wer sie wie eine elektrische behandelt, tauscht Bauteile, die nichts koennen dafuer. Diese Gruppe ordnet Schloesser, Betaetigung und Dichtungen.",
+      "points": [
+        "Die Betaetigung erfolgt ueber Unterdruck, nicht ueber Stellmotoren. Ein Element, das nicht mehr zieht, ist meist undicht und nicht verschlissen -- die Suche gehoert an Leitung und Faltenbalg, nicht an die Elektrik",
+        "Undichtigkeit zeigt sich zuerst am Verhalten der letzten Tuer: Wenn drei Tueren folgen und die vierte nachhinkt, fehlt Vorrat. Faellt alles gleichzeitig aus, liegt es an Pumpe oder Hauptleitung",
+        "Tuerschloesser mechanisch pruefen, bevor die Betaetigung verdaechtigt wird. Ein schwergaengiges Schloss ueberfordert jede Betaetigungsart und bleibt nach dem Tausch der Betaetigung genau so schwergaengig",
+        "Die Tuerdichtungen sind beim E28 keine Kosmetik. Eine harte, gesetzte Dichtung laesst Wasser in den Schweller laufen, und der Schaden zeigt sich erst als Rost, nicht als nasse Tuer",
+        "Wasserablaeufe in Tuer und Schweller freimachen, solange sie frei zu machen sind. Verstopft laufen sie nicht ueber, sondern stehen -- und stehendes Wasser frisst von innen nach aussen",
+        "Fensterschaechte und Schachtabdichtung mitnehmen, wenn die Tuerverkleidung ohnehin ab ist. Der zweite Ausbau kostet mehr als das Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1749,6 +1770,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E30 - Rost, Dichtungen, Anbauteile",
+      "valid": "E30 - 1982-1994",
+      "summary": "Der E30 verliert Substanz an Stellen, die von aussen intakt aussehen. Diese Gruppe ordnet, wo zuerst zu schauen ist und warum die Sichtpruefung von aussen zu spaet kommt.",
+      "points": [
+        "Rost am E30 waechst hinter Verkleidungen und Radhausschalen. Was von aussen blueht, ist das Ende des Verlaufs, nicht der Anfang -- die Beurteilung gehoert hinter die Schale, nicht auf den Lack",
+        "Kritisch sind der Uebergang von A-Saeule zu Schweller, die hinteren Radlaeufe innen und aussen, das Batteriefach und der Wasserkasten unter der Windschutzscheibe",
+        "Der Wasserkasten ist ein Ablauf, kein Behaelter. Ist er zu, steht das Wasser an der Stirnwand und laeuft in den Innenraum -- ein nasser Beifahrerfussraum am E30 ist zuerst ein Ablaufproblem",
+        "Hinterachsaufnahmen am Schweller sind sicherheitsrelevant. Hier entscheidet nicht die Optik, sondern ob das Blech traegt -- im Zweifel abklopfen und von unten beurteilen",
+        "Der Dichtungskanal an der Windschutzscheibe sammelt Wasser. Rost arbeitet dort unter der Scheibendichtung weiter, lange bevor er sichtbar wird",
+        "Tuerdichtungen und Schachtabdichtung vor jeder Innenraum-Fehlersuche pruefen. Feuchtigkeit im Wagen erklaert mehr elektrische Fehler als jedes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2463,6 +2505,27 @@
         "Fuer die spaeteren Fahrzeuge dieser Baureihe braucht es ein Werkzeug, das die herstellereigenen Protokolle spricht; die genormte Buchse allein sagt nichts ueber den erreichbaren Inhalt",
         "Adapterkabel mit Chipsatz-Angabe waehlen. Ein Kabel, das am neueren Fahrzeug funktioniert, muss am aelteren nicht funktionieren",
         "Vor dem Anschliessen die Bordspannung pruefen -- bei einem Fahrzeug dieses Alters ist eine schwache Batterie die haeufigste Ursache fuer eine scheiternde Verbindung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-128",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E34 - Pneumatische Zentralverriegelung und Schloesser",
+      "valid": "E34 - 1987-1996",
+      "summary": "Auch der E34 verriegelt pneumatisch. Der Fehler liegt fast immer in der Dichtheit des Systems, nicht in der Kraft eines einzelnen Elements. Diese Gruppe trennt die beiden Faelle.",
+      "points": [
+        "Erst das Verhalten aufnehmen, dann messen: Faellt eine Tuer aus oder alle, sofort oder verzoegert, beim Verriegeln oder beim Entriegeln. Diese vier Fragen grenzen das System bereits ein",
+        "Ein Leck kostet Vorrat. Typisch ist, dass zuletzt betaetigte Tueren nicht mehr vollstaendig folgen -- das ist kein Verschleiss der Elemente, sondern fehlender Unterdruck",
+        "Die Verbindung zwischen Karosserie und Heckklappe ist die am staerksten belastete Stelle. Was sich bei jedem Oeffnen biegt, ermuedet dort zuerst",
+        "Vor dem Teiletausch das Element vom System trennen und einzeln beurteilen. Sonst wird ein intaktes Teil wegen eines undichten Nachbarn getauscht",
+        "Tuerschloss und Betaetigung sind zwei Fehlerquellen. Bewegt sich der Verriegelungsstift sauber und die Tuer oeffnet trotzdem nicht, liegt es an der Mechanik im Schloss",
+        "Schachtabdichtung und Wasserablauf in der Tuer mitpruefen. Wasser in der Tuer erreicht Schloss und Betaetigung, bevor es im Fussraum ankommt"
       ],
       "pins": [],
       "engines": [],
@@ -3201,6 +3264,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E36 - Fensterheber, Schloesser, Wasserfuehrung",
+      "valid": "E36 - 1990-2000",
+      "summary": "Am E36 faellt der Fensterheber nicht ploetzlich aus, er kuendigt sich an. Diese Gruppe ordnet Fensterheber, Tuerschloss und Wasserfuehrung so, dass die Ankuendigung nicht uebersehen wird.",
+      "points": [
+        "Ein fransender Bowdenzug arbeitet lauter, bevor er reisst. Wer das Geraeusch beim Heben abtut, tauscht spaeter mit heruntergefallener Scheibe -- und das ist die teurere Reihenfolge",
+        "Motor und Mechanik getrennt beurteilen: Laeuft der Motor hoerbar an, ohne dass sich die Scheibe bewegt, ist die Fuehrung defekt und nicht der Antrieb",
+        "Die Tuerfolie ist Teil der Wasserfuehrung. Loest sich der Kleber, laeuft Wasser nicht mehr in den Ablauf, sondern in den Fussraum -- und dort steht es unter dem Teppich, nicht darauf",
+        "Wassereintritt zuerst an der Eintrittsstelle suchen, nicht am nassen Fleck. Wasser wandert entlang von Kabelbaeumen und Blechfalzen und tritt weit vom Ursprung wieder aus",
+        "Tuerschloss und Mikroschalter unterscheiden: Innenlicht, das nicht ausgeht, oder eine ZV, die eine Tuer nicht meldet, ist ein Schalterbefund und kein Schlossbefund",
+        "Nasse Bodenbleche und Kofferraummulde am E36 immer trocken beurteilen. Feuchtigkeit taeuscht bei der Rostbewertung eine bessere Substanz vor, als vorhanden ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3920,6 +4004,27 @@
         "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
         "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
         "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E38 - Tuermodule, Komfortfunktionen, Schloesser",
+      "valid": "E38 - 1994-2001",
+      "summary": "Ab dem E38 sitzt ein Teil der Tuerlogik in der Tuer selbst. Das aendert, wo ein Fehler zu suchen ist: pro Tuer statt zentral. Diese Gruppe ordnet Schloesser, Fenster und Komfortfunktionen.",
+      "points": [
+        "Faellt genau eine Tuer mit allen Funktionen aus, betrifft der Fehler die Versorgung oder das Steuergeraet dieser Tuer. Faellt eine Funktion an allen Tueren aus, liegt er zentral -- das ist die erste Weiche",
+        "Der Uebergang vom Holm in die Tuer ist der mechanisch belastete Punkt. Leitungsbruch dort erklaert wechselnde, von der Tuerstellung abhaengige Fehler besser als jedes Steuergeraet",
+        "Wechselnde Fehler beim Oeffnen und Schliessen nie ohne Wackelprobe bewerten. Ein Fehler, der sich durch Bewegen der Tuer aufrufen laesst, ist mechanisch und nicht elektronisch",
+        "Fensterheber mit Komfortbetaetigung koennen nach Spannungsverlust die Endlagen verlieren. Bevor Teile getauscht werden, gehoert die Initialisierung nachgeholt",
+        "Tuerschloss mechanisch pruefen, bevor der Fehlerspeicher entscheidet. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Elektrik unveraendert wiederkommen",
+        "Spannungsabfall an der Tuerleitung messen, nicht Durchgang. Eine Leitung mit Durchgang kann unter Last zu viel verlieren -- siehe Gruppe 61"
       ],
       "pins": [],
       "engines": [],
@@ -4661,6 +4766,27 @@
         "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
         "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
         "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E39 - Heckklappe, Schloesser, Fensterheber",
+      "valid": "E39 - 1995-2004",
+      "summary": "Beim E39 ist der Uebergang zur Heckklappe die haeufigste Ursache fuer Fehler, die wie Schloss- oder Motorschaeden aussehen. Diese Gruppe stellt die Reihenfolge richtig.",
+      "points": [
+        "Die Leitungen zur Heckklappe biegen sich bei jedem Oeffnen. Sie brechen im Faltenbalg zwischen Karosserie und Klappe -- am Stellmotor zu messen heisst, am falschen Ende zu messen",
+        "Der Bruch ist oft nicht sichtbar. Die Isolierung haelt, der Leiter darunter ist ab -- deshalb pruefen, waehrend die Klappe bewegt wird, und nicht im Stillstand",
+        "Beim Touring kommen Heckscheibe und Klappe als getrennte Funktionen hinzu. Welche der beiden ausfaellt, grenzt den Fehler bereits auf Schloss oder Ansteuerung ein",
+        "Stellmotor und Mikroschalter trennen: Bewegt sich die Verriegelung sichtbar und die Tuer oeffnet nicht, ist der Schalter der Befund",
+        "Fensterheber am E39 an den Fuehrungsteilen beurteilen, nicht am Motor. Der Antrieb ueberlebt in der Regel die Mechanik, die er antreibt",
+        "Nasser Fussraum vor jeder Elektroniksuche klaeren. Wasser in der Fahrzeugelektrik erzeugt Fehlerbilder, die ohne die Ursache nicht reproduzierbar sind"
       ],
       "pins": [],
       "engines": [],
@@ -5423,6 +5549,27 @@
         "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
         "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-122",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E46 - Fensterheber, Tuerschloss, Wassereintritt",
+      "valid": "E46 - 1998-2006",
+      "summary": "Am E46 bricht beim Fensterheber nicht der Motor, sondern das Fuehrungsteil daran. Diese Gruppe ordnet Fensterheber, Schloss und Wassereintritt und nennt jeweils das Bauteil, das wirklich ausfaellt.",
+      "points": [
+        "Faellt die Scheibe in die Tuer, ist die Fuehrung gebrochen. Der Motor laeuft dabei weiter -- wer nach Motorgeraeusch urteilt, kommt zum falschen Teil",
+        "Vor dem Zerlegen die Scheibe sichern. Eine lose Scheibe in der Tuer geht beim Ausbau der Verkleidung kaputt, und dann ist aus einem Fuehrungsschaden ein Scheibenschaden geworden",
+        "Beim Touring kommen Heckklappe und separat oeffnende Heckscheibe hinzu. Faellt nur eine der beiden aus, ist das ein Schloss- oder Schalterbefund, kein Leitungsbefund",
+        "Wassereintritt am E46 zuerst an Tuerfolie und Ablaufwegen beurteilen. Der nasse Teppich liegt nicht an der Stelle, an der das Wasser hereinkommt",
+        "Kofferraumboden und Reserveradmulde trocken beurteilen. Steht dort Wasser, sind die Ablaeufe zu -- und der Rost darunter ist Folge, nicht Ursache",
+        "Tuerschloss vor der Elektrik pruefen. Schwergaengigkeit erzeugt Eintraege, die den Blick auf das Steuergeraet lenken, obwohl das Problem mechanisch ist"
       ],
       "pins": [],
       "engines": [],
@@ -6284,6 +6431,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E60 - Komfortzugang, Tuergriffe, Heckklappe",
+      "valid": "E60 - 2003-2010",
+      "summary": "Beim E60 kann ein nasser Tuergriff die gesamte Schliesslogik blockieren. Diese Gruppe ordnet Komfortzugang, Schloesser und Heckklappe so, dass der Griff nicht zuletzt geprueft wird.",
+      "points": [
+        "Ein Griffsensor mit Feuchtigkeit meldet dauerhaft Beruehrung. Die Logik wertet das als anstehende Anforderung und sperrt -- der Fehler sieht dann aus wie ein Schloss- oder Schluesselproblem",
+        "Bei Stoerungen im Komfortzugang jeden Griff einzeln abfragen, bevor Schluessel oder Steuergeraet verdaechtigt werden. Ein einzelner Griff erklaert das Gesamtbild",
+        "Der Leitungsuebergang zur Heckklappe ist auch beim E60 der belastete Punkt. Pruefen, waehrend die Klappe bewegt wird",
+        "Stellmotor und Mikroschalter am Heckklappenschloss trennen. Hoert man die Verriegelung arbeiten und die Klappe bleibt zu, ist der Schalter der Befund",
+        "Fehlerspeicher vor dem Zerlegen auslesen, aber nicht als Urteil nehmen. Ein Eintrag benennt die Funktion, die nicht kam, nicht das Bauteil, das fehlt -- siehe Gruppe D1",
+        "Wassereintritt im Fussraum klaeren, bevor Steuergeraete beurteilt werden. Nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7032,6 +7200,27 @@
         "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
         "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
         "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E70 - Geteilte Heckklappe, Antrieb, Schloesser",
+      "valid": "E70 - 2006-2013",
+      "summary": "Der E70 hat eine zweiteilige Heckklappe mit eigenem Antrieb. Welcher Teil nicht kommt, grenzt den Fehler bereits ein. Diese Gruppe ordnet Klappe, Schloesser und Anlernen.",
+      "points": [
+        "Ober- und Unterteil getrennt beurteilen. Faellt nur der obere Teil aus, betrifft es Antrieb oder Schloss oben -- ein gemeinsamer Ausfall deutet auf Versorgung oder Freigabe",
+        "Nach Arbeiten am Antrieb oder nach Spannungsverlust koennen die Endlagen fehlen. Dann faehrt die Klappe unvollstaendig oder gar nicht, ohne dass ein Bauteil defekt ist -- erst anlernen, dann urteilen",
+        "Einen elektrischen Antrieb nie gegen seine Sperre bewegen. Was sich von Hand ziehen laesst, muss nicht von Hand gezogen werden duerfen",
+        "Der Leitungsuebergang in die Klappe ist mechanisch belastet und in Bewegung zu pruefen, nicht im Stillstand",
+        "Tuerschloesser mechanisch vor elektrisch beurteilen. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Ansteuerung wiederkommen",
+        "Ablaufwege in Tueren und Karosserie freimachen. Beim E70 endet stehendes Wasser regelmaessig dort, wo Steuergeraete und Steckverbindungen sitzen"
       ],
       "pins": [],
       "engines": [],
@@ -7883,6 +8072,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E87 - Tueren, Fensterheber, Wasserfuehrung",
+      "valid": "E87 - 2004-2011",
+      "summary": "Am E87 sind Fensterheber, Schloss und Wasserfuehrung eng benachbart. Ein Wasserproblem in der Tuer zeigt sich zuerst als elektrischer Fehler. Diese Gruppe ordnet die Reihenfolge.",
+      "points": [
+        "Fensterheber an der Fuehrung beurteilen, nicht am Motor. Hoerbar arbeitender Antrieb bei stehender Scheibe ist ein Mechanikbefund",
+        "Die Tuerfolie fuehrt Wasser am Innenraum vorbei. Ist der Kleber gerissen, laeuft es in den Fussraum -- das ist Ursache, nicht Folge",
+        "Nach Spannungsverlust koennen Fensterheber ihre Endlagen verlieren. Vor dem Teiletausch die Initialisierung nachholen",
+        "Tuerschloss und Mikroschalter trennen: Ein Innenlicht, das nicht ausgeht, oder eine Tuer, die nicht als geschlossen gilt, ist ein Schalterbefund",
+        "Ablaufwege in Tuer und Karosserie freimachen, bevor die Verkleidung wieder montiert wird. Der zweite Ausbau kostet mehr als der Aufwand jetzt",
+        "Nasse Steckverbindungen vor jeder Steuergeraetebewertung trocknen und erneut pruefen. Sonst wird ein Wasserfehler als Elektronikfehler abgelegt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8663,6 +8873,27 @@
         "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
         "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
         "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E88 - Rahmenlose Scheiben und Kurzhub",
+      "valid": "E88 - 2008-2013",
+      "summary": "Der E88 hat rahmenlose Seitenscheiben. Sie senken sich beim Oeffnen der Tuer kurz ab. Bleibt das aus, ist meist der Tuerkontakt der Verdaechtige und nicht die Scheibe.",
+      "points": [
+        "Der Kurzhub beim Oeffnen entlastet die Dichtung. Bleibt er aus, laeuft die Scheibe gegen die Dichtung -- das ist kein Fensterheberschaden, sondern eine fehlende Freigabe",
+        "Erst pruefen, ob die Tuer als geoeffnet erkannt wird. Ohne dieses Signal gibt es keinen Kurzhub, und alle weiteren Messungen am Fensterheber gehen ins Leere",
+        "Nach Arbeiten an Tuer oder Scheibe die Endlagen neu anlernen. Ohne Anlernen sitzt die Scheibe in der Dichtung falsch, und die Dichtung nimmt Schaden",
+        "Undichtigkeit an rahmenlosen Scheiben zuerst als Einstellungsfrage behandeln. Eine Dichtung ist selten die Ursache, wenn die Scheibe zu tief oder zu flach anliegt",
+        "Windgeraeusche und Wassereintritt getrennt aufnehmen. Sie haben am rahmenlosen Fenster oft dieselbe Ursache, aber nicht immer dieselbe Abhilfe",
+        "Tuerschloss mechanisch beurteilen, bevor Elektrik verdaechtigt wird. Schwergaengigkeit erzeugt Eintraege, die den Blick verschieben"
       ],
       "pins": [],
       "engines": [],
@@ -9595,6 +9826,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-124",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E90 - Tuerschloss, Stellmotor, Mikroschalter",
+      "valid": "E90 - 2004-2013",
+      "summary": "Am E90 sind Stellmotor und Mikroschalter zwei verschiedene Befunde mit sehr aehnlichem Bild. Diese Gruppe trennt sie und ordnet Heckklappe und Komfortzugang dazu.",
+      "points": [
+        "Bewegt sich der Verriegelungsstift sauber auf und ab und die Tuer laesst sich trotzdem nicht oeffnen, ist der Mikroschalter der Befund und nicht der Stellmotor",
+        "Bewegt sich der Stift gar nicht und ist die Versorgung in Ordnung, gehoert der Verdacht auf den Antrieb im Schloss",
+        "Beim Touring oeffnet die Heckscheibe getrennt. Faellt nur eine der beiden Funktionen aus, grenzt das den Fehler auf Schloss oder Schalter ein statt auf die Leitung",
+        "Stoerungen im Komfortzugang griffweise pruefen. Ein einzelner feuchter Griff kann die Schliesslogik blockieren und wie ein Schluesselproblem wirken",
+        "Fehlerspeicher gehoert an den Anfang, aber nicht ans Ende. Er nennt die Funktion, die ausblieb -- welches Bauteil sie schuldig blieb, entscheidet die Messung",
+        "Spannungsabfall an der Tuerleitung messen statt Durchgang. Der Abfall unter Last ist der Befund -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9728,6 +9980,27 @@
         "D4F-F-001",
         "D4F-F-003"
       ],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-103",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F-Baureihen - Was sich gegenueber den E-Baureihen aendert",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen sind Schliessen, Fenster und Heckklappe Funktionen mit Freigaben, Endlagen und Sensorik. Der Ausfall ist damit haeufiger eine fehlende Bedingung als ein defektes Bauteil.",
+      "points": [
+        "Vor jedem Teiletausch pruefen, ob die Funktion ueberhaupt freigegeben war. Ohne Freigabe bewegt sich kein Antrieb, und das ist kein Defekt",
+        "Endlagen sind lernbare Werte und gehen bei Spannungsverlust verloren. Anlernen steht vor dem Urteil, nicht danach",
+        "Beruehrungssensorik in Tuergriffen reagiert auf Feuchtigkeit. Ein einzelner nasser Griff kann die gesamte Schliesslogik blockieren",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung der Elektronik",
+        "Wasser bleibt die haeufigste Ursache fuer wechselnde elektrische Fehler an der Karosserie. Der Weg des Wassers gehoert geklaert, bevor Steuergeraete beurteilt werden",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61. Der Abfall ist der Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f-series"
     },
     {
@@ -10464,6 +10737,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-124",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F10 - Wassereintritt, Tuergriffe, Heckklappe",
+      "valid": "F10 - 2010-2017",
+      "summary": "Am F10 ist der nasse Fussraum kein Einzelfall, sondern ein wiederkehrendes Bild mit wenigen Ursachen. Diese Gruppe ordnet Wasserfuehrung, Tuergriffe und elektrische Heckklappe.",
+      "points": [
+        "Der nasse Fleck liegt nicht an der Eintrittsstelle. Wasser laeuft entlang von Kabelbaeumen und Blechfalzen und tritt weit entfernt wieder aus -- deshalb den Weg suchen, nicht die Pfuetze",
+        "Die Tuerfolie ist Teil der Abdichtung. Loest sich ihr Kleber, laeuft Wasser aus der Tuer in den Innenraum statt in den Ablauf",
+        "Ablaeufe an der Wasserfuehrung vor der Windschutzscheibe pruefen. Sind sie zu, steht Wasser dort, wo Steuergeraete und Steckverbindungen sitzen",
+        "Ein Griffsensor mit Wasser meldet dauerhaft Beruehrung und stoert den Komfortzugang. Bei Schliessproblemen die Griffe einzeln abfragen, bevor der Schluessel verdaechtigt wird",
+        "Die elektrische Heckklappe faellt entweder wegen fehlender Freigabe oder wegen fehlender Endlagen aus. Vor dem Teiletausch anlernen und Freigabe pruefen",
+        "Nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden. Ein Eintrag ohne Ursache ist bei Feuchtigkeit die Regel, nicht die Ausnahme"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11151,6 +11445,27 @@
         "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
         "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Aufwand und Risiko steigen in dieser Reihenfolge",
         "Nach Batteriewechsel anmelden und nach Modultausch anpassen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F15 - Elektrische Heckklappe und Zugang",
+      "valid": "F15 - 2013-2018",
+      "summary": "Am F15 ist die Heckklappe elektrisch und kennt Freigaben, Endlagen und Einklemmschutz. Ein Ausfall ist haeufiger eine fehlende Freigabe als ein defekter Antrieb.",
+      "points": [
+        "Zuerst klaeren, ob die Klappe ueberhaupt freigegeben ist. Ohne Freigabe faehrt kein Antrieb, und alle Messungen am Antrieb sind vergeblich",
+        "Nach Spannungsverlust oder Arbeiten an der Klappe koennen die Endlagen fehlen. Dann faehrt sie unvollstaendig oder stoppt -- erst anlernen, dann urteilen",
+        "Ein ansprechender Einklemmschutz ist ein Befund und keine Stoerung. Er meldet, dass Widerstand da war -- also erst die Mechanik freigaengig machen",
+        "Die beruehrungslose Betaetigung braucht ein sauberes Signal. Bleibt sie aus, waehrend Taster und Schluessel funktionieren, liegt es an der Erkennung und nicht am Antrieb",
+        "Den Leitungsuebergang in die Klappe in Bewegung pruefen, nicht im Stillstand",
+        "Eine elektrisch angetriebene Klappe nie gegen ihre Sperre bewegen. Der Schaden entsteht dabei erst"
       ],
       "pins": [],
       "engines": [],
@@ -11877,6 +12192,27 @@
         "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
         "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Aufwand und Risiko steigen in dieser Reihenfolge",
         "Nach Batteriewechsel anmelden und nach Modultausch anpassen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F22 - Rahmenlose Tueren und Abdichtung",
+      "valid": "F22 - 2013-2021",
+      "summary": "Der F22 hat rahmenlose Seitenscheiben mit Kurzhub beim Oeffnen. Windgeraeusch und Wassereintritt sind dort meist eine Frage der Scheibenlage, nicht der Dichtung.",
+      "points": [
+        "Bleibt der Kurzhub beim Oeffnen aus, laeuft die Scheibe gegen die Dichtung. Zuerst pruefen, ob die Tuer als geoeffnet erkannt wird -- ohne dieses Signal gibt es keinen Kurzhub",
+        "Nach Arbeiten an Scheibe oder Fensterheber die Endlagen anlernen. Ohne Anlernen sitzt die Scheibe falsch und beschaedigt die Dichtung",
+        "Windgeraeusch zuerst als Lagefehler behandeln, nicht als Dichtungsverschleiss. Eine neue Dichtung an falsch sitzender Scheibe pfeift genau so",
+        "Wassereintritt am Weg suchen, nicht am nassen Fleck. Wasser wandert entlang von Falzen und Kabelbaeumen",
+        "Tuerschloss mechanisch vor elektrisch beurteilen. Schwergaengigkeit erzeugt Eintraege, die nach dem Tausch der Elektrik wiederkommen",
+        "Ablaeufe in Tuer und Karosserie freimachen, solange die Verkleidung ab ist"
       ],
       "pins": [],
       "engines": [],
@@ -12627,6 +12963,27 @@
         "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
         "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-124",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F30 - Heckklappe, Tuergriffe, Wasserfuehrung",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 verbergen sich Schliess- und Klappenfehler haeufig hinter Feuchtigkeit und fehlenden Freigaben. Diese Gruppe ordnet Heckklappe, Griffe und Wasserfuehrung.",
+      "points": [
+        "Beim Touring ist die Heckklappe elektrisch. Bleibt sie stehen oder faehrt unvollstaendig, fehlen meist Endlagen oder Freigabe -- nicht Kraft",
+        "Ein ansprechender Einklemmschutz meldet Widerstand. Erst die Mechanik freigaengig machen, dann die Elektrik beurteilen",
+        "Ein feuchter Tuergriff stoert den Komfortzugang und sieht aus wie ein Schluesselproblem. Die Griffe einzeln abfragen, bevor Schluessel oder Steuergeraet verdaechtigt werden",
+        "Die Tuerfolie gehoert zur Abdichtung. Geloester Kleber fuehrt Wasser in den Fussraum statt in den Ablauf",
+        "Ablaeufe an der Wasserfuehrung vor der Windschutzscheibe freimachen. Stehendes Wasser dort erreicht Steuergeraete und Steckverbindungen",
+        "Fehlerspeicher als Einstieg nutzen, nicht als Urteil. Er nennt die ausgebliebene Funktion -- siehe Gruppe D1"
       ],
       "pins": [],
       "engines": [],
@@ -19818,26 +20175,26 @@
     }
   },
   "stats": {
-    "total_docs": 492,
+    "total_docs": 509,
     "total_guides": 40,
     "per_model": {
-      "e28": 28,
-      "e30": 34,
-      "e34": 31,
-      "e36": 29,
-      "e38": 31,
-      "e39": 30,
-      "e46": 30,
-      "e60": 33,
-      "e70": 31,
-      "e87": 32,
-      "e88": 29,
-      "e90": 32,
-      "f-series": 5,
-      "f10": 29,
-      "f15": 29,
-      "f22": 30,
-      "f30": 29
+      "e28": 29,
+      "e30": 35,
+      "e34": 32,
+      "e36": 30,
+      "e38": 32,
+      "e39": 31,
+      "e46": 31,
+      "e60": 34,
+      "e70": 32,
+      "e87": 33,
+      "e88": 30,
+      "e90": 33,
+      "f-series": 6,
+      "f10": 30,
+      "f15": 30,
+      "f22": 31,
+      "f30": 30
     }
   }
 }

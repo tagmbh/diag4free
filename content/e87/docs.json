@@ -812,6 +812,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E87 - Tueren, Fensterheber, Wasserfuehrung",
+      "valid": "E87 - 2004-2011",
+      "summary": "Am E87 sind Fensterheber, Schloss und Wasserfuehrung eng benachbart. Ein Wasserproblem in der Tuer zeigt sich zuerst als elektrischer Fehler. Diese Gruppe ordnet die Reihenfolge.",
+      "points": [
+        "Fensterheber an der Fuehrung beurteilen, nicht am Motor. Hoerbar arbeitender Antrieb bei stehender Scheibe ist ein Mechanikbefund",
+        "Die Tuerfolie fuehrt Wasser am Innenraum vorbei. Ist der Kleber gerissen, laeuft es in den Fussraum -- das ist Ursache, nicht Folge",
+        "Nach Spannungsverlust koennen Fensterheber ihre Endlagen verlieren. Vor dem Teiletausch die Initialisierung nachholen",
+        "Tuerschloss und Mikroschalter trennen: Ein Innenlicht, das nicht ausgeht, oder eine Tuer, die nicht als geschlossen gilt, ist ein Schalterbefund",
+        "Ablaufwege in Tuer und Karosserie freimachen, bevor die Verkleidung wieder montiert wird. Der zweite Ausbau kostet mehr als der Aufwand jetzt",
+        "Nasse Steckverbindungen vor jeder Steuergeraetebewertung trocknen und erneut pruefen. Sonst wird ein Wasserfehler als Elektronikfehler abgelegt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

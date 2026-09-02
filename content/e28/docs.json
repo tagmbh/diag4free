@@ -627,6 +627,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-127",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E28 - Zentralverriegelung, Schloesser, Dichtungen",
+      "valid": "E28 - 1981-1987",
+      "summary": "Beim E28 arbeitet die Zentralverriegelung pneumatisch. Wer sie wie eine elektrische behandelt, tauscht Bauteile, die nichts koennen dafuer. Diese Gruppe ordnet Schloesser, Betaetigung und Dichtungen.",
+      "points": [
+        "Die Betaetigung erfolgt ueber Unterdruck, nicht ueber Stellmotoren. Ein Element, das nicht mehr zieht, ist meist undicht und nicht verschlissen -- die Suche gehoert an Leitung und Faltenbalg, nicht an die Elektrik",
+        "Undichtigkeit zeigt sich zuerst am Verhalten der letzten Tuer: Wenn drei Tueren folgen und die vierte nachhinkt, fehlt Vorrat. Faellt alles gleichzeitig aus, liegt es an Pumpe oder Hauptleitung",
+        "Tuerschloesser mechanisch pruefen, bevor die Betaetigung verdaechtigt wird. Ein schwergaengiges Schloss ueberfordert jede Betaetigungsart und bleibt nach dem Tausch der Betaetigung genau so schwergaengig",
+        "Die Tuerdichtungen sind beim E28 keine Kosmetik. Eine harte, gesetzte Dichtung laesst Wasser in den Schweller laufen, und der Schaden zeigt sich erst als Rost, nicht als nasse Tuer",
+        "Wasserablaeufe in Tuer und Schweller freimachen, solange sie frei zu machen sind. Verstopft laufen sie nicht ueber, sondern stehen -- und stehendes Wasser frisst von innen nach aussen",
+        "Fensterschaechte und Schachtabdichtung mitnehmen, wenn die Tuerverkleidung ohnehin ab ist. Der zweite Ausbau kostet mehr als das Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

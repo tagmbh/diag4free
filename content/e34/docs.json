@@ -690,6 +690,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-128",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E34 - Pneumatische Zentralverriegelung und Schloesser",
+      "valid": "E34 - 1987-1996",
+      "summary": "Auch der E34 verriegelt pneumatisch. Der Fehler liegt fast immer in der Dichtheit des Systems, nicht in der Kraft eines einzelnen Elements. Diese Gruppe trennt die beiden Faelle.",
+      "points": [
+        "Erst das Verhalten aufnehmen, dann messen: Faellt eine Tuer aus oder alle, sofort oder verzoegert, beim Verriegeln oder beim Entriegeln. Diese vier Fragen grenzen das System bereits ein",
+        "Ein Leck kostet Vorrat. Typisch ist, dass zuletzt betaetigte Tueren nicht mehr vollstaendig folgen -- das ist kein Verschleiss der Elemente, sondern fehlender Unterdruck",
+        "Die Verbindung zwischen Karosserie und Heckklappe ist die am staerksten belastete Stelle. Was sich bei jedem Oeffnen biegt, ermuedet dort zuerst",
+        "Vor dem Teiletausch das Element vom System trennen und einzeln beurteilen. Sonst wird ein intaktes Teil wegen eines undichten Nachbarn getauscht",
+        "Tuerschloss und Betaetigung sind zwei Fehlerquellen. Bewegt sich der Verriegelungsstift sauber und die Tuer oeffnet trotzdem nicht, liegt es an der Mechanik im Schloss",
+        "Schachtabdichtung und Wasserablauf in der Tuer mitpruefen. Wasser in der Tuer erreicht Schloss und Betaetigung, bevor es im Fussraum ankommt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
