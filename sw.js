@@ -6,7 +6,7 @@
      - Navigation: network-first mit App-Shell-Fallback (SPA)
 */
 
-const VERSION = 'd4f-v0.49.0';
+const VERSION = 'd4f-v0.50.0';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const VENDOR_CACHE = `${VERSION}-vendor`;
@@ -45,9 +45,18 @@ const VENDOR_ORIGINS = [
 // Vorrat kippen und die App offline unbrauchbar machen. Diese hier
 // duerfen einzeln fehlschlagen — dann zeichnet graphics.js die Silhouette.
 const BILD_ASSETS = [
-  'e28', 'e30', 'e34', 'e36', 'e38', 'e39', 'e46', 'e60', 'e70',
-  'e87', 'e88', 'e90', 'f10', 'f15', 'f22', 'f30'
-].map(id => `./assets/fahrzeuge/${id}.webp`);
+  ...[
+    'e28', 'e30', 'e34', 'e36', 'e38', 'e39', 'e46', 'e60', 'e70',
+    'e87', 'e88', 'e90', 'f10', 'f15', 'f22', 'f30'
+  ].map(id => `./assets/fahrzeuge/${id}.webp`),
+  // Motor-Symbolbilder, eines je Bauform und Aufladung. Gleiche Regel:
+  // einzeln vorgehalten, darf einzeln fehlen — dann steht das Schema.
+  ...[
+    'r3-turbo', 'r4-saug', 'r4-turbo',
+    'r6-saug', 'r6-turbo', 'r6-biturbo',
+    'v8-saug', 'v8-biturbo', 'v10-saug', 'v12-saug'
+  ].map(id => `./assets/motoren/${id}.webp`)
+];
 
 self.addEventListener('install', event => {
   event.waitUntil(

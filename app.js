@@ -219,7 +219,7 @@
                   ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ')
                   : 'Steckbrief folgt';
                 return `<button class="pick-card ${e === state.engine ? 'on' : ''}" data-engine="${escapeHtml(e)}" aria-label="${escapeHtml(e)}${spec ? ', ' + escapeHtml(sub) : ''}">
-                  <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
+                  <div class="pick-art">${spec ? D4F_GFX.engineArt(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
                   <div class="pick-body">
                     <span class="pick-name">${escapeHtml(e)}</span>
                     <span class="pick-sub">${escapeHtml(sub)}</span>
@@ -808,7 +808,7 @@
         </button>
 
         <button class="cockpit-eng" data-change-engine aria-label="Anderen Motor wählen">
-          <div class="pick-art">${spec ? D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
+          <div class="pick-art">${spec ? D4F_GFX.engineArt(spec.layout, spec.aspiration, spec.id || state.engine) : '<div class="pick-art-empty">?</div>'}</div>
           <div class="cockpit-eng-body">
             <span class="pick-name">${escapeHtml(state.engine)}</span>
             <span class="pick-sub">${spec ? [spec.layout, spec.aspiration, litres(spec.displacement_cc), powerRange(spec)].filter(Boolean).join(' · ') : 'Steckbrief folgt'}</span>
@@ -848,6 +848,11 @@
           </dl>
           ${teile.length ? `
             <h3 class="facts-sub">Was auf dem Schema zu sehen ist</h3>
+            <!-- Das Schema steht hier noch einmal frei, ohne Symbolbild
+                 darueber: die Legende benennt Punkte und Linien, und die
+                 muss man sehen koennen, waehrend man liest. Oben im
+                 Cockpit liegt das Bild ueber dem Schema; hier nicht. -->
+            <div class="teile-schema">${D4F_GFX.engineSvg(spec.layout, spec.aspiration, spec.id || state.engine)}</div>
             <ul class="teile-liste">${teile.map(t => `
               <li><span class="teile-name">${glossarText(t.teil)}</span><span class="teile-was">${glossarText(t.was)}</span></li>`).join('')}
             </ul>` : ''}

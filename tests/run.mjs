@@ -867,6 +867,34 @@ async function main() {
         expect(karten > 0, 'Motorkarten vorhanden', 'keine');
         expect(gezeichnet > 0, 'mindestens ein Motorschema gezeichnet',
           `${karten} Karten, aber 0 Schemata — engines.json wurde nicht verstanden`);
+
+        // --- Motor-Symbolbilder: ueber dem Schema, nicht statt des Schemas ---
+        // Dieselben zwei Dinge wie bei den Fahrzeugfotos: das Bild muss im
+        // Markup stehen UND wirklich ankommen (naturalWidth, nicht Anzahl —
+        // ein 404 raeumt sich per onerror selbst weg und faellt sonst nicht
+        // auf). Dazu die Kennzeichnung: jedes Bild traegt sichtbar
+        // "Symbolbild", weil es die Bauform zeigt und nicht das Exemplar.
+        const motorFotos = await page.$$eval('[data-engine] .eng-photo',
+          ns => ns.map(n => ({ src: n.getAttribute('src'), breite: n.naturalWidth })));
+        expect(motorFotos.length > 0,
+          'Motorkarten tragen ein Symbolbild', 'kein .eng-photo im Markup');
+        const motorKaputt = motorFotos.filter(f => !f.breite).map(f => f.src);
+        expect(motorKaputt.length === 0,
+          'Alle Motor-Symbolbilder laden wirklich', `nicht geladen: ${motorKaputt.join(', ')}`);
+        const ohneKennung = await page.$$eval('[data-engine] .eng-photo-wrap',
+          ns => ns.filter(n => !/Symbolbild/.test(n.textContent || '')).length);
+        expect(ohneKennung === 0,
+          'Jedes Symbolbild ist als solches gekennzeichnet', `${ohneKennung} ohne Kennzeichnung`);
+        const mitEngSvg = await page.$$eval('[data-engine] .eng-art .eng-svg', ns => ns.length);
+        expect(mitEngSvg >= motorFotos.length,
+          'Unter jedem Symbolbild liegt weiterhin das Schema',
+          `${motorFotos.length} Bilder, aber nur ${mitEngSvg} Schemata`);
+        // Kein Dateiname darf eine Motorkennung tragen — das Bild zeigt die
+        // Bauform, nicht den Motor. Die Regel steht in graphics.js; hier
+        // wird gegen das gepruefte Markup gehalten.
+        const mitKennung = motorFotos.filter(f => !/assets\/motoren\/[rvb]\d{1,2}-(saug|turbo|biturbo|kompressor)\.webp$/.test(f.src)).map(f => f.src);
+        expect(mitKennung.length === 0,
+          'Motorbilder heissen nach Bauform, nicht nach Motor', `abweichend: ${mitKennung.join(', ')}`);
       } else {
         ok('engines.json nicht vorhanden — Motorkarten bleiben textbasiert (erwartet)');
       }
