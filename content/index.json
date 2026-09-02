@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T03:57:44.309Z",
+  "generated": "2026-09-02T04:19:33.900Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -867,6 +867,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E28 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat eine hydraulische Servolenkung mit Riemenantrieb. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1644,6 +1665,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E30 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Der E30 hat eine hydraulische Servolenkung; bei den kleinen Motorisierungen kommt auch eine unservierte Ausfuehrung vor. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2274,6 +2316,27 @@
         "Vor Arbeiten am Kraftstoffsystem den Druck abbauen und auf heisse Abgasteile achten. Beides ist kein Formalismus",
         "Vor dem Abklemmen der Batterie klaeren, was danach angelernt oder eingestellt werden muss -- Uhr, Radio, Fensterheber und Anpassungen der Motorsteuerung",
         "Ein Befund, der sich nicht reproduzieren laesst, wird nicht durch Bauteiltausch geloest. Erst die Bedingung finden, unter der er auftritt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E34 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 hat eine hydraulische Servolenkung, teils mit geschwindigkeitsabhaengiger Unterstuetzung. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
       ],
       "pins": [],
       "engines": [],
@@ -2970,6 +3033,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E36 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E36 · 1989–2002",
+      "summary": "Der E36 hat eine hydraulische Servolenkung. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3605,6 +3689,27 @@
         "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
         "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E38 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat eine hydraulische Servolenkung mit hohem Komfortanspruch. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
       ],
       "pins": [],
       "engines": [],
@@ -4304,6 +4409,27 @@
         "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
         "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E39 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E39 · 1995–2004",
+      "summary": "Der E39 hat eine hydraulische Servolenkung. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
       ],
       "pins": [],
       "engines": [],
@@ -5045,6 +5171,27 @@
         "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
         "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E46 · Hydraulik, Spiel zuordnen, Achsvermessung",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 hat eine hydraulische Servolenkung. Die haeufigste Klage — Spiel am Lenkrad — hat vier moegliche Orte, und die Unterscheidung entscheidet ueber den Preis.",
+      "points": [
+        "Schwergaengig in beide Richtungen: zuerst Fluessigkeitsstand und Riemen, dann die Pumpe. Ein rutschender Riemen erzeugt dasselbe Bild wie eine schwache Pumpe und kostet einen Bruchteil",
+        "Schwergaengig nur in eine Richtung oder nur bei bestimmten Stellungen: das Lenkgetriebe selbst, nicht die Pumpe",
+        "Heulen beim Lenken, das mit der Drehzahl geht: Pumpe oder Luft im System. Schaeumende Fluessigkeit im Behaelter belegt die Luft",
+        "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
       ],
       "pins": [],
       "engines": [],
@@ -5801,6 +5948,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E60 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 kann eine Aktivlenkung verbaut sein, die den Lenkwinkel selbst veraendert. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei Aktivlenkung gehoert ein ungleichmaessiges oder unruhiges Lenkverhalten zuerst gegen diese Baugruppe und ihren Fehlerspeicher geprueft, bevor die Achse zerlegt wird",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6444,6 +6612,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E70 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 arbeitet die Servolenkung an einem schweren Fahrzeug und ist entsprechend belastet. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei Aktivlenkung gehoert unruhiges Lenkverhalten zuerst gegen diese Baugruppe; beim Allradfahrzeug kommen zusaetzlich die Antriebswellen als Geraeuschquelle beim Einschlagen unter Last dazu",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
       ],
       "pins": [],
       "engines": [],
@@ -7211,6 +7400,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E87 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Beim E87 kommt je nach Baujahr und Ausfuehrung eine elektrische Servolenkung vor. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei elektrischer Servolenkung ist ein Ausfall zuerst ein Versorgungs- und Fehlerspeicherthema: Unterspannung legt sie still, ohne dass mechanisch etwas fehlt",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7907,6 +8117,27 @@
         "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
         "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
         "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E88 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Beim E88 gilt dieselbe Lenkung wie beim E87, in einem Fahrzeug mit weicherem Aufbau. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei elektrischer Servolenkung ist ein Ausfall zuerst ein Versorgungs- und Fehlerspeicherthema; beim Cabrio ueberlagert die Aufbaubewegung zusaetzlich das Lenkgefuehl",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
       ],
       "pins": [],
       "engines": [],
@@ -8797,6 +9028,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E90 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E90 · 2005–2013",
+      "summary": "Beim E90 kann eine Aktivlenkung verbaut sein; ohne sie ist die Lenkung hydraulisch. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Knacken beim Lenken, das sich im Stand und bei langsamer Fahrt gleich anfuehlt, kommt beim E90 haeufig aus der Lenksaeule und nicht aus dem Fahrwerk",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9603,6 +9855,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung F10 · Elektromechanisch, Spannung und Fehlerspeicher zuerst",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation ist die Lenkung elektromechanisch, beim F10 teils mit lenkender Hinterachse. Damit entfallen Fluessigkeit, Riemen und Pumpe als Kandidaten — dafuer kommen Bordspannung und Fehlerspeicher zuerst.",
+      "points": [
+        "Keine Hydraulik: Fluessigkeitsstand, Riemen und Pumpe entfallen als Kandidaten. Wer danach sucht, sucht an einem Bauteil, das es nicht gibt",
+        "Unterstuetzung faellt aus oder laesst nach: zuerst Bordspannung und Fehlerspeicher. Unterspannung legt die elektrische Lenkung still, ohne dass mechanisch etwas fehlt -- nach einem Batteriewechsel ohne Anmeldung ist das ein bekannter Weg dorthin",
+        "Integral-Aktivlenkung: Die Hinterachse lenkt mit. Ein unruhiges Fahrverhalten gehoert zuerst gegen diese Baugruppe und ihren Fehlerspeicher, nicht gegen die Vorderachse",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen -- sonst regelt die DSC ohne Fahrsituation, und der Befund wird als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10206,6 +10479,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung F15 · Elektromechanisch, Spannung und Fehlerspeicher zuerst",
+      "valid": "F15 · 2013–2018",
+      "summary": "Beim F15 ist die Lenkung elektromechanisch und arbeitet an einem schweren Fahrzeug. Damit aendert sich die Fehlersuche grundlegend: Es gibt keine Fluessigkeit, keinen Riemen und keine Pumpe — dafuer einen Fehlerspeicher und eine Spannungsversorgung, die beide zuerst kommen.",
+      "points": [
+        "Keine Hydraulik: Fluessigkeitsstand, Riemen und Pumpe entfallen als Kandidaten. Wer danach sucht, sucht an einem Bauteil, das es nicht gibt",
+        "Unterstuetzung faellt aus oder laesst nach: zuerst Bordspannung und Fehlerspeicher. Unterspannung legt die elektrische Lenkung still, ohne dass mechanisch etwas fehlt -- nach einem Batteriewechsel ohne Anmeldung ist das ein bekannter Weg dorthin",
+        "Beim Allradfahrzeug kommen die Antriebswellen als Geraeuschquelle dazu: Knacken beim Einschlagen unter Last ist das Gleichlaufgelenk, nicht die Lenkung",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen -- sonst regelt die DSC ohne Fahrsituation, und der Befund wird als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff"
       ],
       "pins": [],
       "engines": [],
@@ -18768,24 +19062,24 @@
     }
   },
   "stats": {
-    "total_docs": 442,
+    "total_docs": 456,
     "total_guides": 40,
     "per_model": {
-      "e28": 25,
-      "e30": 32,
-      "e34": 27,
-      "e36": 27,
-      "e38": 27,
-      "e39": 28,
-      "e46": 29,
-      "e60": 28,
-      "e70": 26,
-      "e87": 28,
-      "e88": 25,
-      "e90": 30,
+      "e28": 26,
+      "e30": 33,
+      "e34": 28,
+      "e36": 28,
+      "e38": 28,
+      "e39": 29,
+      "e46": 30,
+      "e60": 29,
+      "e70": 27,
+      "e87": 29,
+      "e88": 26,
+      "e90": 31,
       "f-series": 5,
-      "f10": 26,
-      "f15": 25,
+      "f10": 27,
+      "f15": 26,
       "f22": 27,
       "f30": 27
     }

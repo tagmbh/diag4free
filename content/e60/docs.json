@@ -721,6 +721,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E60 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 kann eine Aktivlenkung verbaut sein, die den Lenkwinkel selbst veraendert. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei Aktivlenkung gehoert ein ungleichmaessiges oder unruhiges Lenkverhalten zuerst gegen diese Baugruppe und ihren Fehlerspeicher geprueft, bevor die Achse zerlegt wird",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

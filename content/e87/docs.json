@@ -732,6 +732,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-121",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Lenkung E87 · Bauart bestimmen, Spiel zuordnen, Lenkwinkel abgleichen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Beim E87 kommt je nach Baujahr und Ausfuehrung eine elektrische Servolenkung vor. Die erste Frage ist deshalb, welche Bauart vorliegt — davon haengt ab, ob gemessen oder ausgelesen wird.",
+      "points": [
+        "Zuerst die Bauart bestimmen: hydraulisch, elektrisch oder mit Aktivlenkung. Eine hydraulische Lenkung wird gemessen, eine elektrische ausgelesen",
+        "Bei elektrischer Servolenkung ist ein Ausfall zuerst ein Versorgungs- und Fehlerspeicherthema: Unterspannung legt sie still, ohne dass mechanisch etwas fehlt",
+        "Bei hydraulischer Lenkung: schwergaengig in beide Richtungen heisst Fluessigkeit, Riemen, Pumpe -- in dieser Reihenfolge. Nur in eine Richtung heisst Lenkgetriebe",
+        "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
+        "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
+        "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
