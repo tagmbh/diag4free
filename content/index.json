@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T23:49:00.437Z",
+  "generated": "2026-09-02T00:06:46.150Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -581,6 +581,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E28 · Schräglenker, Achsträgerlager, Hinterachsgetriebe",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat eine Schräglenkerachse. Sie ist robust und einfach, aber ihre Gummilager sind nach vier Jahrzehnten das, was den Wagen beim Lastwechsel unruhig macht — lange bevor jemand sie verdächtigt.",
+      "points": [
+        "Unruhe beim Lastwechsel und beim Beschleunigen aus der Kurve: zuerst die Schräglenkerlager, dann die Lager des Achsträgers",
+        "Die Schräglenkerlager sind eingebaut kaum zu beurteilen. Aussagekräftig ist der Hebeltest mit belastetem und entlastetem Rad — ein Unterschied im Spiel ist der Befund",
+        "Am Hinterachsgetriebe die Wellendichtringe prüfen: Ölspuren am Flansch und an der Einspritzstelle des Deckels sind die üblichen Undichtigkeiten",
+        "Ölstand im Hinterachsgetriebe ist ein Wartungspunkt, den bei diesem Alter niemand mehr dokumentiert hat. Nachsehen kostet nichts",
+        "Ein Heulen, das sich mit der Geschwindigkeit und nicht mit der Drehzahl ändert, kommt aus Radlager oder Achsgetriebe — die Unterscheidung gelingt über die Lastabhängigkeit: Achsgetriebe ändert sich unter Zug und Schub, Radlager nicht",
+        "Nach Arbeiten an Lenkern oder Achsträger gehört auch die Hinterachse auf die Vermessung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-107"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1072,6 +1095,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E30 · Schräglenkerlager, Achsträgeraufnahme, Differentialdichtungen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind die Schräglenkerlager der Befund, der am häufigsten übersehen wird. Sie erzeugen ein unruhiges Heck, das gern der Vorderachse oder der Lenkung angelastet wird.",
+      "points": [
+        "Wanderndes Heck beim Lastwechsel: Schräglenkerlager vor allem anderen. Der Hebeltest am belasteten Rad zeigt es",
+        "Die Aufnahmen des Achsträgers an der Karosserie bei älteren Fahrzeugen mitprüfen — Korrosion und Verformung an dieser Stelle sind kein Fahrwerksbefund mehr, sondern ein Karosseriebefund",
+        "Hinterachsgetriebe: Wellendichtringe am Flansch und am Deckel sind die üblichen Leckstellen",
+        "Heulen lastabhängig prüfen — verändert es sich zwischen Zug und Schub, ist es das Achsgetriebe, sonst eher das Radlager",
+        "Beim Cabrio ist der Aufbau weicher; Geräusche aus der Karosserie werden dort leicht der Achse zugeschrieben",
+        "Achsvermessung hinten nach jedem Eingriff — der E30 zeigt Spurabweichung im Reifenbild deutlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-107"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1419,6 +1465,29 @@
       "engines": [],
       "details": [
         "D4F-E34-004"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E34 · Schräglenker, Niveauregelung beim Touring, Achsgetriebe",
+      "valid": "E34 · 1987–1997",
+      "summary": "Die Hinterachse des E34 folgt dem E30 in größerem Maßstab. Der Unterschied liegt beim Touring: Dort hängt eine Niveauregelung dran, deren Befunde regelmäßig als Fahrwerksverschleiß angemeldet werden.",
+      "points": [
+        "Touring mit Niveauregelung: Ein Fahrzeug, das hinten steht oder absackt, hat zuerst ein Niveauproblem. Speicher, Leitungen und Regelventil gehören geprüft, bevor Lenker getauscht werden",
+        "Schräglenkerlager als erster Kandidat für unruhiges Heck beim Lastwechsel",
+        "Achsträgerlager getrennt beurteilen — sie erzeugen ein ähnliches, aber dumpferes Verhalten",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-107"
       ],
       "model": "e34"
     },
@@ -1826,6 +1895,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E36 · Zentrallenkerachse, Achsträgerlager, Achsaufnahme",
+      "valid": "E36 · 1989–2002",
+      "summary": "Mit dem E36 kommt die Zentrallenkerachse. Sie fährt besser als der Schräglenker und stellt eine neue Frage: Die Lager des Achsträgers tragen jetzt mehr, und wenn sie ausschlagen, arbeitet die Achse gegen die Karosserie.",
+      "points": [
+        "Ausgeschlagene Achsträgerlager (Tonnenlager) lassen die Achse beim Lastwechsel kippen. Das ist nicht nur ein Komfortbefund — die Kippbewegung belastet die Aufnahmen an der Karosserie",
+        "Deshalb bei jedem Achsbefund die Aufnahmen an der Karosserie mitbesichtigen, nicht nur die Lager. Ein Riss dort ist ein anderer Reparaturumfang als ein Lagertausch",
+        "Unruhiges Heck beim Beschleunigen aus der Kurve: Achsträgerlager vor Lenkerlagern",
+        "Hinterachsgetriebe: Wellendichtringe am Flansch und Deckel auf Ölspuren prüfen",
+        "Heulen lastabhängig prüfen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff — an der Zentrallenkerachse wirkt sich ein Lagertausch auf die Spur aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-107"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2176,6 +2268,29 @@
       "engines": [],
       "details": [
         "D4F-E38-103"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E38 · Integralachse, Achsträgerlager, Niveaubefunde abgrenzen",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat eine Integralhinterachse mit mehreren Lenkern je Seite. Das macht sie komfortabel und die Fehlersuche mehrstufig: Ein Poltern hat hier mehr Kandidaten als an jeder älteren Achse.",
+      "points": [
+        "Mehrere Lenker je Seite: Ein Befund gehört zugeordnet, bevor getauscht wird. Der Hebeltest an belastetem und entlastetem Rad trennt Lenkerlager von Achsträgerlager",
+        "Achsträgerlager als Ursache für dumpfes Poltern und unruhiges Heck beim Lastwechsel",
+        "Bei Fahrzeugen mit Niveauregelung hinten zuerst die Aufbaulage klären — ein absackendes Heck ist kein Lagerbefund",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen; die Antriebswellen und ihre Gelenke sind eine eigene Geräuschquelle",
+        "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-107"
       ],
       "model": "e38"
     },
@@ -2586,6 +2701,29 @@
       "engines": [],
       "details": [
         "D4F-E39-103"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E39 · Integralachse in Aluminium, Lenkerlager, Touring mit Niveau",
+      "valid": "E39 · 1995–2004",
+      "summary": "Die Hinterachse des E39 ist eine Integralachse mit Aluminiumlenkern. Der häufigste Befund ist unspektakulär und teuer zugleich: Die Lenkerlager schlagen aus, und die Gelenke sind vielfach nur mit dem Lenker zu haben.",
+      "points": [
+        "Aluminiumlenker: Gelenke und Lager sind vielfach nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch — das gehört in die Kostenschätzung vor die Zusage",
+        "Achsträgerlager getrennt vom Lenkerlager beurteilen; beide erzeugen unruhiges Heck, aber unterschiedlichen Reparaturumfang",
+        "Touring mit Niveauregelung: Absacken hinten ist ein Niveaubefund, kein Lagerbefund. Erst die Aufbaulage klären",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Heulen lastabhängig zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
       ],
       "model": "e39"
     },
@@ -3036,6 +3174,30 @@
       "pins": [],
       "engines": [],
       "details": [
+        "D4F-E46-103"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E46 · Risse an der Achsträgeraufnahme, Tonnenlager, Baudatum 03/2000",
+      "valid": "E46 · 1997–2006 · alle Karosserieformen",
+      "summary": "Der E46 hat den Befund, den keine andere Baureihe in dieser Schärfe kennt: Die Aufnahme des Hinterachsträgers kann an der Karosserie reißen. Es ist kein Fahrwerks-, sondern ein Karosseriebefund — und er entscheidet über den Wert des Fahrzeugs.",
+      "points": [
+        "Fahrzeuge vor Baudatum 03/2000 sind gefährdet, vor allem die linke hintere Aufnahme. Danach wurde die Stelle überarbeitet. Das Baudatum ist damit der erste Prüfschritt, nicht der letzte",
+        "Die Ursache liegt davor: Ausgeschlagene Tonnenlager lassen die Achse beim Lastwechsel kippen, und diese Kippbewegung reißt die Aufnahme. Wer nur den Riss schweißt und die Lager stehen lässt, sieht ihn wieder",
+        "Der Befund betrifft alle Karosserieformen — Limousine, Touring, Coupé, Compact. Er ist kein Sportwagenproblem",
+        "Prüfen heißt hinsehen: Von unten, bei entlasteter Achse, an allen vier Aufnahmen. Ein Riss beginnt als Haarriss am Blechübergang und ist im eingebauten Zustand sichtbar, wenn man weiß, wo",
+        "Ein Fund an dieser Stelle ändert die Reparaturplanung grundlegend: Verstärkung und Schweißarbeit statt Lagertausch. Das gehört dem Kunden gesagt, bevor die Achse zerlegt ist",
+        "Erst danach die üblichen Kandidaten: Lenkerlager, Radlager, Wellendichtringe am Achsgetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-107",
         "D4F-E46-103"
       ],
       "model": "e46"
@@ -3499,6 +3661,30 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E60 · Aluminium-Mehrlenkerachse, Radlager mit Encoderring, xDrive",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Hinterachse des E60 verbindet zwei Welten: Aluminiumlenker mit Gelenken, die nur komplett kommen, und ein Radlager, in dem der Geberring der Raddrehzahl steckt. Letzteres macht aus einem Fahrwerksteil ein Diagnoseteil.",
+      "points": [
+        "Der Geberring für die Raddrehzahl sitzt im Radlager. Ein DSC-Fehler, der den Sensortausch überlebt, ist der Ring — und der geht nur mit dem Lager",
+        "Aluminiumlenker: Gelenke überwiegend nicht einzeln ersetzbar, Lenkertausch einplanen. Kontaktkorrosion an Stahlschrauben kommt dazu",
+        "Achsträgerlager getrennt von den Lenkerlagern beurteilen — der Hebeltest an belastetem und entlastetem Rad trennt sie",
+        "Bei xDrive kommt die Kraftverteilung dazu: Ruckeln beim Rangieren gehört zum Verteilergetriebe, nicht zur Hinterachse",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-107",
+        "D4F-E60-103"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3872,6 +4058,30 @@
       "pins": [],
       "engines": [],
       "details": [
+        "D4F-E70-103"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E70 · Luftfederung, Antriebswellen, Radlager mit Encoderring",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 ist die Hinterachse selten allein schuld. Luftfederung und Allrad erzeugen die Mehrzahl der Befunde, die dort angemeldet werden — und beide sind billiger zu prüfen als die Achse zu zerlegen.",
+      "points": [
+        "Absacken über Nacht ist die Luftfederung. Bälge, Leitungen und Kompressor prüfen, bevor die Achse angefasst wird",
+        "Ein Fahrzeug, das die Aufbaulage nicht hält oder ungleichmäßig steht, hat einen Niveaubefund — auch wenn es sich beim Fahren nach Fahrwerk anfühlt",
+        "Der Geberring der Raddrehzahl sitzt im Radlager; ein DSC-Fehler nach Sensortausch ist der Ring",
+        "Antriebswellen und ihre Gelenke sind eine eigene Geräuschquelle — Knacken unter Last gehört dorthin, nicht zum Lenkerlager",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern deutlich; ein Befund bei geringer Laufleistung ist hier kein Widerspruch",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-107",
         "D4F-E70-103"
       ],
       "model": "e70"
@@ -4344,6 +4554,30 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E87 · Leichtbau-Mehrlenkerachse, Radlager, Achsträgerlager",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die Hinterachse des E87 ist eine Mehrlenkerachse in Leichtbauweise. Die Befunde sind die der Baureihenfamilie — nur fällt hier früher auf, wenn ein Lager nachgibt, weil das Fahrzeug leichter ist.",
+      "points": [
+        "Der Geberring der Raddrehzahl sitzt im Radlager. Bleibt der Fehler nach dem Sensortausch, ist es der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest an belastetem und entlastetem Rad trennen",
+        "Gelenke der Aluminiumlenker vielfach nur mit dem Lenker ersetzbar — vorher klären, nicht nachher",
+        "Ein Heulen lastabhängig zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu unterscheiden",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-107",
+        "D4F-E87-103"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4751,6 +4985,30 @@
       "pins": [],
       "engines": [],
       "details": [
+        "D4F-E88-103"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E88 · Mehrlenkerachse im Cabrio, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Achse entspricht der des E87. Was den E88 unterscheidet, ist der offene Aufbau: Ein großer Teil der als Hinterachse gemeldeten Geräusche kommt aus der Karosserie.",
+      "points": [
+        "Erste Frage: Achse oder Aufbau? Ein Knarzen, das sich beim Verwinden auf unebenem Untergrund ändert und beim Überfahren einer einzelnen Kante gerade nicht, gehört zum Aufbau",
+        "Das zusätzliche Gewicht der Verdeckmechanik belastet die Hinterachse stärker als beim E87 — Lagerbefunde treten früher auf",
+        "Der Geberring der Raddrehzahl sitzt im Radlager; DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest trennen",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-107",
         "D4F-E88-103"
       ],
       "model": "e88"
@@ -5345,6 +5603,30 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E90 · Mehrlenkerachse in Aluminium, Encoderring, xDrive",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 erbt die Achsbauweise des E60 im kleineren Maßstab. Der wichtigste Merksatz ist derselbe: Der Geberring der Raddrehzahl steckt im Radlager, und das macht aus einem DSC-Fehler eine Fahrwerksreparatur.",
+      "points": [
+        "Geberring im Radlager: Ein DSC-Fehler, der nach dem Sensortausch bleibt, ist der Ring. Tausch nur mit dem Lager",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen; Kontaktkorrosion an Stahlschrauben einplanen",
+        "Achsträgerlager getrennt von den Lenkerlagern beurteilen",
+        "Bei xDrive gehören Ruckeln beim Rangieren und ungleichmäßiger Vortrieb zum Verteilergetriebe, nicht zur Hinterachse",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-107",
+        "D4F-E90-103"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5858,6 +6140,30 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F10 · Aluminium-Mehrlenkerachse, Integrallenkung, Adaptivdämpfer",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 hängt an der Hinterachse mehr Elektronik als Mechanik: Bei Fahrzeugen mit Integral-Aktivlenkung lenkt sie mit, bei Fahrzeugen mit Adaptivdämpfern regelt sie mit. Beides meldet sich im Fehlerspeicher, nicht am Hebel.",
+      "points": [
+        "Integral-Aktivlenkung: Die Hinterachse lenkt mit. Ein unruhiges oder ungleichmäßiges Fahrverhalten gehört zuerst gegen diese Baugruppe und ihren Fehlerspeicher geprüft, nicht gegen die Lager",
+        "Adaptivdämpfer: Ein defekter Steller meldet sich elektrisch. Fehlerspeicher vor Hebeltest",
+        "Geberring der Raddrehzahl im Radlager — DSC-Fehler nach Sensortausch ist der Ring",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen; festsitzende Stahlschrauben einplanen",
+        "Beim Touring mit Niveauregelung hinten zuerst die Aufbaulage klären",
+        "Achsvermessung hinten nach jedem Eingriff; bei Aktivlenkung zusätzlich der Lenkwinkelabgleich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-107",
+        "D4F-F10-103"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6198,6 +6504,30 @@
       "details": [
         "D4F-F15-103",
         "D4F-F15-106"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F15 · Luftfederung als Regelfall, xDrive, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 ist die Luftfederung hinten der Normalfall, nicht die Ausnahme. Damit verschiebt sich die Fehlersuche: Was nach Achse klingt, ist meist Niveau — und was nach Niveau klingt, ist manchmal der Allrad.",
+      "points": [
+        "Absacken über Nacht oder ungleichmäßige Aufbaulage: Luftfederung. Bälge, Leitungen, Kompressor und Niveaugeber getrennt prüfen, bevor die Achse zerlegt wird",
+        "Ein defekter Niveaugeber erzeugt Regelverhalten, das nach Fahrwerks- oder Bremsenfehler aussieht",
+        "xDrive: Ruckeln beim Rangieren gehört zum Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Geberring der Raddrehzahl im Radlager — DSC-Fehler nach Sensortausch ist der Ring",
+        "Anhängebetrieb und Fahrzeuggewicht verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107",
+        "D4F-F15-103"
       ],
       "model": "f15"
     },
@@ -6568,6 +6898,30 @@
       "details": [
         "D4F-F22-103",
         "D4F-F22-106"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F22 · Mehrlenkerachse, M-Fahrwerk, Lenkwinkelabgleich",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Hinterachse des F22 entspricht der des F30. Der Unterschied ist die Abstimmung: Beim Sport- und M-Fahrwerk wird dieselbe Abnutzung früher hörbar, und das führt zu Befunden bei Laufleistungen, die niemand erwartet.",
+      "points": [
+        "Beim straffen Fahrwerk melden sich Lagerbefunde früher als beim Komfortfahrwerk. Ein Geräusch bei geringer Laufleistung ist hier kein Widerspruch, sondern die Abstimmung",
+        "Lenkwinkelabgleich nach jedem Eingriff an Achse oder Spur, sonst regelt die DSC ohne Fahrsituation",
+        "Geberring der Raddrehzahl im Radlager: DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest trennen",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-107",
+        "D4F-F22-103"
       ],
       "model": "f22"
     },
@@ -6983,6 +7337,30 @@
       "details": [
         "D4F-F30-103",
         "D4F-F30-106"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F30 · Mehrlenkerachse, Lenkwinkelabgleich, xDrive",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Hinterachse des F30 ist mechanisch unauffällig. Was sie mit der Diagnose verbindet, ist die Regelung davor: Nach jedem Eingriff muss der Lenkwinkel abgeglichen werden, sonst greift die DSC ohne Fahrsituation ein.",
+      "points": [
+        "Nach Arbeiten an Achse oder Spur ist der Lenkwinkelabgleich Pflicht — ohne ihn kommen DSC-Eingriffe ohne Anlass, und die werden als Bremsenfehler gemeldet",
+        "Geberring der Raddrehzahl im Radlager: DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest an belastetem und entlastetem Rad trennen",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-107",
+        "D4F-F30-103"
       ],
       "model": "f30"
     }
@@ -14171,26 +14549,26 @@
     }
   },
   "stats": {
-    "total_docs": 236,
+    "total_docs": 252,
     "total_guides": 40,
     "per_model": {
-      "e28": 12,
-      "e30": 19,
-      "e34": 14,
-      "e36": 14,
-      "e38": 14,
-      "e39": 15,
-      "e46": 16,
-      "e60": 15,
-      "e70": 14,
-      "e87": 15,
-      "e88": 12,
-      "e90": 17,
+      "e28": 13,
+      "e30": 20,
+      "e34": 15,
+      "e36": 15,
+      "e38": 15,
+      "e39": 16,
+      "e46": 17,
+      "e60": 16,
+      "e70": 15,
+      "e87": 16,
+      "e88": 13,
+      "e90": 18,
       "f-series": 5,
-      "f10": 13,
-      "f15": 13,
-      "f22": 14,
-      "f30": 14
+      "f10": 14,
+      "f15": 14,
+      "f22": 15,
+      "f30": 15
     }
   }
 }

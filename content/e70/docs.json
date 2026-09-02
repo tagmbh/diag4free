@@ -364,6 +364,29 @@
       "details": [
         "D4F-E70-103"
       ]
+    },
+    {
+      "id": "D4F-E70-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E70 · Luftfederung, Antriebswellen, Radlager mit Encoderring",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 ist die Hinterachse selten allein schuld. Luftfederung und Allrad erzeugen die Mehrzahl der Befunde, die dort angemeldet werden — und beide sind billiger zu prüfen als die Achse zu zerlegen.",
+      "points": [
+        "Absacken über Nacht ist die Luftfederung. Bälge, Leitungen und Kompressor prüfen, bevor die Achse angefasst wird",
+        "Ein Fahrzeug, das die Aufbaulage nicht hält oder ungleichmäßig steht, hat einen Niveaubefund — auch wenn es sich beim Fahren nach Fahrwerk anfühlt",
+        "Der Geberring der Raddrehzahl sitzt im Radlager; ein DSC-Fehler nach Sensortausch ist der Ring",
+        "Antriebswellen und ihre Gelenke sind eine eigene Geräuschquelle — Knacken unter Last gehört dorthin, nicht zum Lenkerlager",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern deutlich; ein Befund bei geringer Laufleistung ist hier kein Widerspruch",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-107",
+        "D4F-E70-103"
+      ]
     }
   ]
 }

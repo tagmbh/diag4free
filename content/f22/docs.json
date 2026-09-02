@@ -356,6 +356,29 @@
         "D4F-F22-103",
         "D4F-F22-106"
       ]
+    },
+    {
+      "id": "D4F-F22-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F22 · Mehrlenkerachse, M-Fahrwerk, Lenkwinkelabgleich",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Hinterachse des F22 entspricht der des F30. Der Unterschied ist die Abstimmung: Beim Sport- und M-Fahrwerk wird dieselbe Abnutzung früher hörbar, und das führt zu Befunden bei Laufleistungen, die niemand erwartet.",
+      "points": [
+        "Beim straffen Fahrwerk melden sich Lagerbefunde früher als beim Komfortfahrwerk. Ein Geräusch bei geringer Laufleistung ist hier kein Widerspruch, sondern die Abstimmung",
+        "Lenkwinkelabgleich nach jedem Eingriff an Achse oder Spur, sonst regelt die DSC ohne Fahrsituation",
+        "Geberring der Raddrehzahl im Radlager: DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest trennen",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-107",
+        "D4F-F22-103"
+      ]
     }
   ]
 }

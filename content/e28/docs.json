@@ -294,6 +294,28 @@
       "details": [
         "D4F-E28-103"
       ]
+    },
+    {
+      "id": "D4F-E28-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E28 · Schräglenker, Achsträgerlager, Hinterachsgetriebe",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat eine Schräglenkerachse. Sie ist robust und einfach, aber ihre Gummilager sind nach vier Jahrzehnten das, was den Wagen beim Lastwechsel unruhig macht — lange bevor jemand sie verdächtigt.",
+      "points": [
+        "Unruhe beim Lastwechsel und beim Beschleunigen aus der Kurve: zuerst die Schräglenkerlager, dann die Lager des Achsträgers",
+        "Die Schräglenkerlager sind eingebaut kaum zu beurteilen. Aussagekräftig ist der Hebeltest mit belastetem und entlastetem Rad — ein Unterschied im Spiel ist der Befund",
+        "Am Hinterachsgetriebe die Wellendichtringe prüfen: Ölspuren am Flansch und an der Einspritzstelle des Deckels sind die üblichen Undichtigkeiten",
+        "Ölstand im Hinterachsgetriebe ist ein Wartungspunkt, den bei diesem Alter niemand mehr dokumentiert hat. Nachsehen kostet nichts",
+        "Ein Heulen, das sich mit der Geschwindigkeit und nicht mit der Drehzahl ändert, kommt aus Radlager oder Achsgetriebe — die Unterscheidung gelingt über die Lastabhängigkeit: Achsgetriebe ändert sich unter Zug und Schub, Radlager nicht",
+        "Nach Arbeiten an Lenkern oder Achsträger gehört auch die Hinterachse auf die Vermessung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-107"
+      ]
     }
   ]
 }

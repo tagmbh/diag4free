@@ -572,6 +572,29 @@
       "details": [
         "D4F-E90-103"
       ]
+    },
+    {
+      "id": "D4F-E90-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E90 · Mehrlenkerachse in Aluminium, Encoderring, xDrive",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 erbt die Achsbauweise des E60 im kleineren Maßstab. Der wichtigste Merksatz ist derselbe: Der Geberring der Raddrehzahl steckt im Radlager, und das macht aus einem DSC-Fehler eine Fahrwerksreparatur.",
+      "points": [
+        "Geberring im Radlager: Ein DSC-Fehler, der nach dem Sensortausch bleibt, ist der Ring. Tausch nur mit dem Lager",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen; Kontaktkorrosion an Stahlschrauben einplanen",
+        "Achsträgerlager getrennt von den Lenkerlagern beurteilen",
+        "Bei xDrive gehören Ruckeln beim Rangieren und ungleichmäßiger Vortrieb zum Verteilergetriebe, nicht zur Hinterachse",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-107",
+        "D4F-E90-103"
+      ]
     }
   ]
 }

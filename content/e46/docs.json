@@ -435,6 +435,29 @@
       "details": [
         "D4F-E46-103"
       ]
+    },
+    {
+      "id": "D4F-E46-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E46 · Risse an der Achsträgeraufnahme, Tonnenlager, Baudatum 03/2000",
+      "valid": "E46 · 1997–2006 · alle Karosserieformen",
+      "summary": "Der E46 hat den Befund, den keine andere Baureihe in dieser Schärfe kennt: Die Aufnahme des Hinterachsträgers kann an der Karosserie reißen. Es ist kein Fahrwerks-, sondern ein Karosseriebefund — und er entscheidet über den Wert des Fahrzeugs.",
+      "points": [
+        "Fahrzeuge vor Baudatum 03/2000 sind gefährdet, vor allem die linke hintere Aufnahme. Danach wurde die Stelle überarbeitet. Das Baudatum ist damit der erste Prüfschritt, nicht der letzte",
+        "Die Ursache liegt davor: Ausgeschlagene Tonnenlager lassen die Achse beim Lastwechsel kippen, und diese Kippbewegung reißt die Aufnahme. Wer nur den Riss schweißt und die Lager stehen lässt, sieht ihn wieder",
+        "Der Befund betrifft alle Karosserieformen — Limousine, Touring, Coupé, Compact. Er ist kein Sportwagenproblem",
+        "Prüfen heißt hinsehen: Von unten, bei entlasteter Achse, an allen vier Aufnahmen. Ein Riss beginnt als Haarriss am Blechübergang und ist im eingebauten Zustand sichtbar, wenn man weiß, wo",
+        "Ein Fund an dieser Stelle ändert die Reparaturplanung grundlegend: Verstärkung und Schweißarbeit statt Lagertausch. Das gehört dem Kunden gesagt, bevor die Achse zerlegt ist",
+        "Erst danach die üblichen Kandidaten: Lenkerlager, Radlager, Wellendichtringe am Achsgetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-107",
+        "D4F-E46-103"
+      ]
     }
   ]
 }

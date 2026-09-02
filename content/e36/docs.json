@@ -389,6 +389,28 @@
       "details": [
         "D4F-E36-103"
       ]
+    },
+    {
+      "id": "D4F-E36-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E36 · Zentrallenkerachse, Achsträgerlager, Achsaufnahme",
+      "valid": "E36 · 1989–2002",
+      "summary": "Mit dem E36 kommt die Zentrallenkerachse. Sie fährt besser als der Schräglenker und stellt eine neue Frage: Die Lager des Achsträgers tragen jetzt mehr, und wenn sie ausschlagen, arbeitet die Achse gegen die Karosserie.",
+      "points": [
+        "Ausgeschlagene Achsträgerlager (Tonnenlager) lassen die Achse beim Lastwechsel kippen. Das ist nicht nur ein Komfortbefund — die Kippbewegung belastet die Aufnahmen an der Karosserie",
+        "Deshalb bei jedem Achsbefund die Aufnahmen an der Karosserie mitbesichtigen, nicht nur die Lager. Ein Riss dort ist ein anderer Reparaturumfang als ein Lagertausch",
+        "Unruhiges Heck beim Beschleunigen aus der Kurve: Achsträgerlager vor Lenkerlagern",
+        "Hinterachsgetriebe: Wellendichtringe am Flansch und Deckel auf Ölspuren prüfen",
+        "Heulen lastabhängig prüfen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff — an der Zentrallenkerachse wirkt sich ein Lagertausch auf die Spur aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-107"
+      ]
     }
   ]
 }

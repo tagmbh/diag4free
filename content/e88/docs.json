@@ -400,6 +400,29 @@
       "details": [
         "D4F-E88-103"
       ]
+    },
+    {
+      "id": "D4F-E88-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E88 · Mehrlenkerachse im Cabrio, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Achse entspricht der des E87. Was den E88 unterscheidet, ist der offene Aufbau: Ein großer Teil der als Hinterachse gemeldeten Geräusche kommt aus der Karosserie.",
+      "points": [
+        "Erste Frage: Achse oder Aufbau? Ein Knarzen, das sich beim Verwinden auf unebenem Untergrund ändert und beim Überfahren einer einzelnen Kante gerade nicht, gehört zum Aufbau",
+        "Das zusätzliche Gewicht der Verdeckmechanik belastet die Hinterachse stärker als beim E87 — Lagerbefunde treten früher auf",
+        "Der Geberring der Raddrehzahl sitzt im Radlager; DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest trennen",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-107",
+        "D4F-E88-103"
+      ]
     }
   ]
 }

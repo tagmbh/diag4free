@@ -340,6 +340,28 @@
       "details": [
         "D4F-E38-103"
       ]
+    },
+    {
+      "id": "D4F-E38-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E38 · Integralachse, Achsträgerlager, Niveaubefunde abgrenzen",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat eine Integralhinterachse mit mehreren Lenkern je Seite. Das macht sie komfortabel und die Fehlersuche mehrstufig: Ein Poltern hat hier mehr Kandidaten als an jeder älteren Achse.",
+      "points": [
+        "Mehrere Lenker je Seite: Ein Befund gehört zugeordnet, bevor getauscht wird. Der Hebeltest an belastetem und entlastetem Rad trennt Lenkerlager von Achsträgerlager",
+        "Achsträgerlager als Ursache für dumpfes Poltern und unruhiges Heck beim Lastwechsel",
+        "Bei Fahrzeugen mit Niveauregelung hinten zuerst die Aufbaulage klären — ein absackendes Heck ist kein Lagerbefund",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen; die Antriebswellen und ihre Gelenke sind eine eigene Geräuschquelle",
+        "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-107"
+      ]
     }
   ]
 }
