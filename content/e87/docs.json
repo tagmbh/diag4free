@@ -672,6 +672,46 @@
       "details": [
         "D4F-E87-103"
       ]
+    },
+    {
+      "id": "D4F-E87-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E87 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "E87 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E87-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E87 · Freisprechen, Antennen, Telematik",
+      "valid": "E87 · 2004–2013",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
