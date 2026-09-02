@@ -1110,6 +1110,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-149",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Lagerung",
+      "title": "Aggregatelager E34 · Erkennen, ohne etwas auszubauen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ein muerbes Aggregatelager wird am E34 regelmaessig dem Motor oder dem Getriebe angelastet. Diese Seite nennt die Proben, die es ohne Demontage nachweisen.",
+      "points": [
+        "Der aussagekraeftigste Test kostet nichts: Leerlauf im Stand, dann eine Last anlegen -- Gang einlegen und mit der Bremse halten. Nimmt die Vibration im Innenraum deutlich zu, sind die Aggregatelager der Befund und nicht der Motorlauf",
+        "Ein Klopfen beim Lastwechsel heisst, dass sich das Aggregat zu weit bewegt. Das ist ein Lagerbefund und keine Getriebe- oder Antriebswellensache, auch wenn es von dort zu kommen scheint",
+        "Ein ausgelaufenes Hydrolager erkennt man an der Oelspur an seiner Unterseite. Ohne Fluessigkeit ist es hart und leitet jede Schwingung weiter -- es sieht dabei aeusserlich intakt aus",
+        "Risse allein sind kein Befund -- gealtertes Gummi reisst oberflaechlich. Der Befund ist Abloesung vom Metall, ein sichtbar abgesacktes Aggregat oder ausgelaufene Fluessigkeit",
+        "Ein wanderndes Schaltgestaenge beim Lastwechsel und Rupfen beim Anfahren sind Folgen desselben Befunds -- siehe Gruppe 25 und Gruppe 21. Wer sie einzeln behandelt, behandelt dreimal dasselbe",
+        "Motor- und Getriebelager gehoeren zusammen beurteilt und zusammen ersetzt. Ein neues Lager neben einem muerben nimmt die Last auf, die das alte nicht mehr traegt, und haelt entsprechend kurz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E34-150",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Antriebe",
+      "title": "Stellantriebe E34 · Antrieb, Ansteuerung, Mechanik trennen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Am E34 wird ein Stellantrieb getauscht, der nichts dafuer kann, sobald die drei Ebenen nicht getrennt werden. Diese Seite trennt sie.",
+      "points": [
+        "Ein Stellmotor, der nicht laeuft, hat drei moegliche Gruende: keine Freigabe, keine Versorgung, oder er steht mechanisch fest. In dieser Reihenfolge geprueft, spart man sich den Tausch",
+        "Zuerst die Mechanik spannungsfrei von Hand bewegen. Was sich schwer bewegen laesst, ueberfordert jeden Antrieb -- und ist nach dem Motortausch genauso schwergaengig",
+        "Ohne Steuergeraet gibt es keine Freigabe, die fehlen koennte. Was hier bleibt, sind Versorgung, Masse und Mechanik -- einzeln und in dieser Reihenfolge",
+        "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
+        "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
+        "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
