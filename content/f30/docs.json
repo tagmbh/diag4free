@@ -469,6 +469,28 @@
       "details": [
         "D4F-F30-109"
       ]
+    },
+    {
+      "id": "D4F-F30-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F30 · Türmodule, Anlernen, Codierabhängigkeit",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Am F30 ist ein elektrischer Antrieb selten allein. Er hängt an einem Modul, einem Codierstand und einer Endlage — und alle drei können die Funktion verhindern, ohne defekt zu sein.",
+      "points": [
+        "Fehlerspeicher zuerst; die Antriebe melden sich einzeln",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen. Kein Defekt",
+        "Nachgerüstete Funktionen brauchen die passende Codierung. Ohne sie bleibt der Antrieb stumm, obwohl er in Ordnung ist",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Gebrochene Litze im Türübergang im gebogenen Zustand messen",
+        "Beim Touring gehört die elektrische Heckklappe mit eigenem Anlernvorgang dazu"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-110"
+      ]
     }
   ]
 }

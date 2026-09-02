@@ -406,6 +406,28 @@
       "details": [
         "D4F-E38-109"
       ]
+    },
+    {
+      "id": "D4F-E38-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E38 · Komfortsteuergerät, Sitzmodule, Türübergang",
+      "valid": "E38 · 1993–2001",
+      "summary": "Mit dem E38 kommen Steuergeräte zwischen Schalter und Motor. Damit ändert sich die Reihenfolge: Ein Antrieb, der nicht läuft, kann auch einen fehlenden Befehl haben statt eines Defekts.",
+      "points": [
+        "Ein Antrieb ohne Funktion: erst prüfen, ob der Befehl ankommt. Zwischen Schalter und Motor sitzt jetzt ein Steuergerät",
+        "Sitzverstellung mit Speicherfunktion hat ein eigenes Modul je Sitz. Ein Ausfall dort betrifft nur diesen Sitz und ist kein Fahrzeugfehler",
+        "Antrieb einer Tür tot bei funktionierenden anderen: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Mechanik vor Motor. Nach Batterietrennung ist bei manchen Ausführungen ein Anlernen der Endlagen nötig, sonst arbeitet der Komfortlauf nicht",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Spiegelverstellung und -anklappung sind getrennte Funktionen mit getrennten Antrieben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-110"
+      ]
     }
   ]
 }

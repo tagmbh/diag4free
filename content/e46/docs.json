@@ -503,6 +503,28 @@
       "details": [
         "D4F-E46-109"
       ]
+    },
+    {
+      "id": "D4F-E46-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E46 · Fensterheber anlernen, Türübergang, Mikroschalter",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 verbindet zwei häufige Befunde: Fensterheber, die nach Spannungsverlust angelernt werden müssen, und Türkontakte, die dem Fahrzeug eine offene Tür melden, die zu ist.",
+      "points": [
+        "Fenster fährt nicht automatisch durch: Endlagen anlernen. Kein Defekt, sondern Folge einer Spannungsunterbrechung",
+        "Fahrzeug meldet offene Tür bei geschlossener Tür: Mikroschalter im Schloss. Das erzeugt Folgefehler bis hin zu Verriegelung und Innenlicht — der Ursprung ist ein Schalter",
+        "Ein Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Seilmechanik vor dem Motor",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement im Schloss, das mit dem Mikroschalter eine Einheit bilden kann"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-110"
+      ]
     }
   ]
 }

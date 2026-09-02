@@ -399,6 +399,28 @@
       "details": [
         "D4F-F15-109"
       ]
+    },
+    {
+      "id": "D4F-F15-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F15 · Heckklappe, Türmodule, Sitzverstellung",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 ist die elektrische Heckklappe Serienteil und der häufigste Anlass dieser Gruppe. Sie hat einen eigenen Antrieb, einen Einklemmschutz und einen Anlernvorgang.",
+      "points": [
+        "Heckklappe bleibt stehen, fährt zurück oder öffnet nicht vollständig: Endlagen und Einklemmschutz. Nach jedem Eingriff an der Klappe ist ein Anlernen erforderlich",
+        "Öffnen per Fußbewegung ohne Funktion: die zugehörige Sensorik am Heck, nicht der Klappenantrieb",
+        "Fehlerspeicher zuerst; Türmodule und Klappensteuerung melden namentlich",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-110"
+      ]
     }
   ]
 }

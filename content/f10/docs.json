@@ -432,6 +432,28 @@
       "details": [
         "D4F-F10-109"
       ]
+    },
+    {
+      "id": "D4F-F10-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F10 · Türmodule, Heckklappe, Komfortzugang",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation sind die Antriebe vollständig gesteuert und untereinander abhängig. Was nach mehreren Defekten aussieht, ist meist ein Modul oder eine Versorgung.",
+      "points": [
+        "Fehlerspeicher zuerst; Türmodule und Klappensteuerung melden ihre Fehler namentlich",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung — nicht mehrere Motoren",
+        "Elektrische Heckklappe beim Touring: Nach Arbeiten daran ist ein Anlernen der Endlagen und des Einklemmschutzes nötig",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Komfortzugang und schlüsselloses Öffnen bringen zusätzliche Sensorik an Türgriffen mit; ein Griff ohne Funktion ist dort und nicht am Schloss zu suchen",
+        "Gebrochene Litze im Türübergang bleibt Kandidat — sie unterbricht Bus und Versorgung gleichermaßen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-110"
+      ]
     }
   ]
 }

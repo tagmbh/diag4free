@@ -432,6 +432,28 @@
       "details": [
         "D4F-E70-109"
       ]
+    },
+    {
+      "id": "D4F-E70-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E70 · Heckklappe, Türmodule, Anlernen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 kommt die elektrische Heckklappe dazu — mit eigenem Antrieb, eigenen Sensoren und einem Anlernvorgang, den man kennen muss, bevor man etwas ausbaut.",
+      "points": [
+        "Heckklappe bleibt stehen oder fährt zurück: Einklemmschutz und Endlagen. Nach Arbeiten an der Klappe ist ein Anlernen erforderlich, sonst arbeitet sie nicht zuverlässig",
+        "Fehlerspeicher zuerst — Türmodule und Klappensteuerung melden ihre Fehler namentlich",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Mehrere Antriebe gleichzeitig tot: Modul oder Versorgung, nicht mehrere Motoren",
+        "Gebrochene Litze im Übergang zu Tür oder Heckklappe im gebogenen Zustand messen",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-110"
+      ]
     }
   ]
 }

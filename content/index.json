@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T00:49:09.802Z",
+  "generated": "2026-09-02T01:09:11.802Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -650,6 +650,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E28 · Fensterheber, Spiegel, Türkontakte",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 sind die elektrischen Antriebe direkt geschaltet: Schalter, Kabel, Motor. Das macht die Fehlersuche einfach — vorausgesetzt, man prüft zuerst die Stelle, an der sich alles bewegt.",
+      "points": [
+        "Ein Antrieb ohne Funktion, ein anderer geht: Die Leitung im Türübergang ist der erste Verdacht. Dort bricht die Litze im Faltenbalg durch jahrzehntelanges Öffnen",
+        "Fensterheber langsam oder ruckelnd: Führung und Scherenmechanik sind oft trockengelaufen. Ein Motor, der schwer arbeitet, ist meist nicht der Defekt, sondern das Opfer",
+        "Alle Antriebe einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür, nicht drei einzelne Defekte",
+        "Schalter sind bei diesem Alter selbst ein Verschleißteil — Kontaktprobleme im Schalter erzeugen dasselbe Bild wie ein defekter Motor",
+        "Spiegelverstellung nur in einer Richtung: der Schalter oder eine Leitung, nicht der Spiegelmotor",
+        "Vor jedem Bauteiltausch die Steckverbindung öffnen und ansehen — Korrosion ist hier wahrscheinlicher als ein defektes Bauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-110"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1210,6 +1233,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E30 · Türübergang, Fensterhebermechanik, Zentralverriegelung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 wandert der häufigste Befund nicht im Motor, sondern im Kabel dorthin. Der Türübergang ist die Stelle, die sich zehntausendmal gebogen hat.",
+      "points": [
+        "Ein Antrieb einer Tür tot, andere Türen in Ordnung: gebrochene Litze im Türübergang. Die Leitung im gebogenen Zustand durchmessen, nicht im geöffneten",
+        "Fensterheber ruckelt oder bleibt stehen: zuerst Führung und Mechanik. Ein schwergängiges Fenster überlastet den Motor, statt von ihm verursacht zu werden",
+        "Zentralverriegelung einzelner Türen ohne Funktion: Stellelement in der Tür. Sie fallen einzeln aus und sind kein Steuergerätefehler",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Beim Cabrio kommt Feuchtigkeit über die Verdeckentwässerung an Steckverbindungen — nasse Stecker sind eine eigene Fehlerquelle",
+        "Schalterkontakte prüfen, bevor ein Motor getauscht wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-110"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1626,6 +1672,29 @@
       "engines": [],
       "details": [
         "D4F-E34-109"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E34 · Fensterheber, Sitzverstellung, Türübergang",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 hat mehr Antriebe als seine Vorgänger, aber dieselben Schwachstellen. Der Unterschied: Bei der Sitzverstellung kommt eine eigene Mechanik dazu, die gern für Elektrik gehalten wird.",
+      "points": [
+        "Sitzverstellung ohne Funktion in einer Richtung: Spindel oder Gestänge blockiert. Ein Motor, der summt und nichts bewegt, hat ein mechanisches Problem",
+        "Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Mechanik vor dem Motor",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür, kein Steuergerätefehler",
+        "Beim Touring gehören Heckklappe und ihre Leitungsführung zur selben Kategorie — auch dort bricht die Litze im Übergang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-110"
       ],
       "model": "e34"
     },
@@ -2102,6 +2171,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E36 · Fensterhebermechanik, Türübergang, Spiegel",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist die häufigste Klage der Fensterheber, der nicht mehr will — und die häufigste Fehldiagnose der Motor. In den meisten Fällen ist die Mechanik davor die Ursache.",
+      "points": [
+        "Fensterheber langsam, ruckelnd oder stehenbleibend: zuerst Führung, Umlenkung und Seil. Der Motor ist hier meist überlastet, nicht defekt",
+        "Antrieb einer Tür ohne Funktion: gebrochene Litze im Türübergang. Im gebogenen Zustand messen, sonst findet man nichts",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür, nicht mehrere Einzeldefekte",
+        "Spiegelverstellung nur in eine Richtung: Schalter oder Leitung vor Spiegelmotor",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür",
+        "Beim Cabrio zusätzlich Verdeckantrieb und dessen Entwässerung als eigene Baugruppe beachten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-110"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2521,6 +2613,29 @@
       "engines": [],
       "details": [
         "D4F-E38-109"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E38 · Komfortsteuergerät, Sitzmodule, Türübergang",
+      "valid": "E38 · 1993–2001",
+      "summary": "Mit dem E38 kommen Steuergeräte zwischen Schalter und Motor. Damit ändert sich die Reihenfolge: Ein Antrieb, der nicht läuft, kann auch einen fehlenden Befehl haben statt eines Defekts.",
+      "points": [
+        "Ein Antrieb ohne Funktion: erst prüfen, ob der Befehl ankommt. Zwischen Schalter und Motor sitzt jetzt ein Steuergerät",
+        "Sitzverstellung mit Speicherfunktion hat ein eigenes Modul je Sitz. Ein Ausfall dort betrifft nur diesen Sitz und ist kein Fahrzeugfehler",
+        "Antrieb einer Tür tot bei funktionierenden anderen: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Mechanik vor Motor. Nach Batterietrennung ist bei manchen Ausführungen ein Anlernen der Endlagen nötig, sonst arbeitet der Komfortlauf nicht",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Spiegelverstellung und -anklappung sind getrennte Funktionen mit getrennten Antrieben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-110"
       ],
       "model": "e38"
     },
@@ -3000,6 +3115,29 @@
       "engines": [],
       "details": [
         "D4F-E39-109"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E39 · Fensterheber anlernen, Türmodule, Sitzverstellung",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 gibt es einen Befund, der wie ein Defekt aussieht und keiner ist: Nach einer Batterietrennung verlieren die Fensterheber ihre Endlagen und laufen nicht mehr automatisch durch.",
+      "points": [
+        "Fenster fährt nicht mehr automatisch durch, aber manuell schon: Endlagen anlernen. Das ist kein Defekt, sondern eine Folge der Spannungsunterbrechung",
+        "Ein Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Mechanik vor dem Motor",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz, Ausfall betrifft nur diesen Sitz",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement in der Tür, kein zentraler Fehler"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-110"
       ],
       "model": "e39"
     },
@@ -3522,6 +3660,29 @@
       "engines": [],
       "details": [
         "D4F-E46-109"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E46 · Fensterheber anlernen, Türübergang, Mikroschalter",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 verbindet zwei häufige Befunde: Fensterheber, die nach Spannungsverlust angelernt werden müssen, und Türkontakte, die dem Fahrzeug eine offene Tür melden, die zu ist.",
+      "points": [
+        "Fenster fährt nicht automatisch durch: Endlagen anlernen. Kein Defekt, sondern Folge einer Spannungsunterbrechung",
+        "Fahrzeug meldet offene Tür bei geschlossener Tür: Mikroschalter im Schloss. Das erzeugt Folgefehler bis hin zu Verriegelung und Innenlicht — der Ursprung ist ein Schalter",
+        "Ein Antrieb einer Tür tot: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Fensterheber schwergängig: Führung und Seilmechanik vor dem Motor",
+        "Alle Funktionen einer Tür tot: gemeinsame Versorgung oder Masse dieser Tür",
+        "Zentralverriegelung einzelner Türen: Stellelement im Schloss, das mit dem Mikroschalter eine Einheit bilden kann"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-110"
       ],
       "model": "e46"
     },
@@ -4055,6 +4216,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E60 · Türmodule am Bus, Anlernen, Sitzmodule",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 hängen die Antriebe an Modulen und am Bus. Die erste Handlung ist deshalb nicht das Messgerät, sondern der Fehlerspeicher — sonst zerlegt man eine Tür, in der nichts defekt ist.",
+      "points": [
+        "Fehlerspeicher zuerst: Türmodule melden fehlende Rückmeldungen und Endlagenfehler namentlich",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen, kein Defekt",
+        "Ein Bus- oder Versorgungsfehler kann mehrere Antriebe gleichzeitig stilllegen. Mehrere tote Funktionen sind ein Modulverdacht, kein Motorverdacht",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz",
+        "Gebrochene Litze im Türübergang bleibt auch hier ein Kandidat — sie unterbricht Bus und Versorgung gleichermaßen",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-110"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4500,6 +4684,29 @@
       "engines": [],
       "details": [
         "D4F-E70-109"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E70 · Heckklappe, Türmodule, Anlernen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 kommt die elektrische Heckklappe dazu — mit eigenem Antrieb, eigenen Sensoren und einem Anlernvorgang, den man kennen muss, bevor man etwas ausbaut.",
+      "points": [
+        "Heckklappe bleibt stehen oder fährt zurück: Einklemmschutz und Endlagen. Nach Arbeiten an der Klappe ist ein Anlernen erforderlich, sonst arbeitet sie nicht zuverlässig",
+        "Fehlerspeicher zuerst — Türmodule und Klappensteuerung melden ihre Fehler namentlich",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Mehrere Antriebe gleichzeitig tot: Modul oder Versorgung, nicht mehrere Motoren",
+        "Gebrochene Litze im Übergang zu Tür oder Heckklappe im gebogenen Zustand messen",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-110"
       ],
       "model": "e70"
     },
@@ -5042,6 +5249,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E87 · Fußraummodul, Fensterheber, Anlernen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 laufen Fensterheber und Beleuchtung über dasselbe Modul. Deshalb gehört ein scheinbar zusammenhangloser Doppelausfall hierher — und nicht in zwei getrennte Fehlersuchen.",
+      "points": [
+        "Fensterheber und Beleuchtung gleichzeitig ohne Funktion: das ist das Fußraummodul, nicht zwei Defekte. Der Zusammenhang ist die Diagnose",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar — ein leerer Fehlerspeicher dort sagt nichts",
+        "Wassereintritt über verstopfte Abläufe erreicht das Modul im Fußraum. Bei feuchtem Teppich zuerst die Abläufe freimachen, sonst wiederholt sich der Schaden",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen, kein Defekt",
+        "Einzelner Antrieb tot bei intaktem Modul: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-110"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5521,6 +5751,29 @@
       "engines": [],
       "details": [
         "D4F-E88-109"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E88 · Verdeckantrieb, Fensterheber, Entwässerung",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im E88 kommt der Verdeckantrieb dazu, und er stellt eine Bedingung: Die Fenster gehören zum Verdeckablauf. Ein Fensterheber, der seine Endlagen verloren hat, blockiert das ganze Verdeck.",
+      "points": [
+        "Verdeck fährt nicht: zuerst prüfen, ob alle Fenster ihre Endlagen kennen. Der Ablauf bezieht die Fenster ein und bricht ab, wenn eine Position unbekannt ist",
+        "Nach Spannungsunterbrechung die Endlagen der Fensterheber anlernen — das ist häufig der ganze Befund",
+        "Verdeckhydraulik und -antrieb melden sich im Fehlerspeicher; Notbetätigung nur nach Kenntnis des Ablaufs verwenden",
+        "Feuchtigkeit im Fußraum über Verdeck- und Wasserkastenentwässerung erreicht das Fußraummodul — Abläufe freimachen, bevor ein Modulschaden angenommen wird",
+        "Fensterheber und Beleuchtung gemeinsam tot: Fußraummodul, nicht zwei Defekte",
+        "Einzelner Antrieb tot: gebrochene Litze im Türübergang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-110"
       ],
       "model": "e88"
     },
@@ -6185,6 +6438,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E90 · Fußraummodul, Fensterheber, A-Säulen-Ablauf",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 gehört dieser Befund untrennbar zum Licht: Wenn Fensterheber und Beleuchtung zusammen ausfallen, ist es das Fußraummodul — und die Ursache steht oft ein Stockwerk höher, im Ablauf der A-Säule.",
+      "points": [
+        "Fensterheber tot zusammen mit Tagfahrlicht dauerhaft an und Blinker ohne Funktion: das ist das Fußraummodul. Mehrere Funktionen zugleich sind die Diagnose",
+        "Der bekannte Weg dorthin ist Wasser über den Ablauf an der A-Säule. Bei feuchtem Fußraum den Ablauf freimachen, sonst kommt der Schaden zurück",
+        "Das Modul antwortet nicht auf generische OBD-Anfragen — ein leerer Fehlerspeicher dort bedeutet nichts",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Einzelner Antrieb tot bei intaktem Modul: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig; Instandsetzung des vorhandenen Moduls ist der Alternativweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-110"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6769,6 +7045,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F10 · Türmodule, Heckklappe, Komfortzugang",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation sind die Antriebe vollständig gesteuert und untereinander abhängig. Was nach mehreren Defekten aussieht, ist meist ein Modul oder eine Versorgung.",
+      "points": [
+        "Fehlerspeicher zuerst; Türmodule und Klappensteuerung melden ihre Fehler namentlich",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung — nicht mehrere Motoren",
+        "Elektrische Heckklappe beim Touring: Nach Arbeiten daran ist ein Anlernen der Endlagen und des Einklemmschutzes nötig",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Komfortzugang und schlüsselloses Öffnen bringen zusätzliche Sensorik an Türgriffen mit; ein Griff ohne Funktion ist dort und nicht am Schloss zu suchen",
+        "Gebrochene Litze im Türübergang bleibt Kandidat — sie unterbricht Bus und Versorgung gleichermaßen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-110"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7180,6 +7479,29 @@
       "engines": [],
       "details": [
         "D4F-F15-109"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F15 · Heckklappe, Türmodule, Sitzverstellung",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 ist die elektrische Heckklappe Serienteil und der häufigste Anlass dieser Gruppe. Sie hat einen eigenen Antrieb, einen Einklemmschutz und einen Anlernvorgang.",
+      "points": [
+        "Heckklappe bleibt stehen, fährt zurück oder öffnet nicht vollständig: Endlagen und Einklemmschutz. Nach jedem Eingriff an der Klappe ist ein Anlernen erforderlich",
+        "Öffnen per Fußbewegung ohne Funktion: die zugehörige Sensorik am Heck, nicht der Klappenantrieb",
+        "Fehlerspeicher zuerst; Türmodule und Klappensteuerung melden namentlich",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-110"
       ],
       "model": "f15"
     },
@@ -7621,6 +7943,29 @@
       "engines": [],
       "details": [
         "D4F-F22-109"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F22 · Türmodule, Anlernen, Komfortfunktionen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Antriebe des F22 folgen dem F30. Was hier häufiger vorkommt, ist die Nachrüstung von Komfortfunktionen — und die scheitert öfter am Codierstand als an der Technik.",
+      "points": [
+        "Nachgerüstete Komfortfunktion ohne Wirkung: zuerst den Codierstand prüfen, nicht den Antrieb. Ein nicht freigeschaltetes Bauteil verhält sich wie ein defektes",
+        "Fehlerspeicher zuerst; die Antriebe melden sich einzeln",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Gebrochene Litze im Türübergang im gebogenen Zustand messen",
+        "Beim Cabrio gehört der Verdeckablauf dazu: Er bezieht die Fenster ein und bricht ab, wenn eine Endlage unbekannt ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-110"
       ],
       "model": "f22"
     },
@@ -8107,6 +8452,29 @@
       "engines": [],
       "details": [
         "D4F-F30-109"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F30 · Türmodule, Anlernen, Codierabhängigkeit",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Am F30 ist ein elektrischer Antrieb selten allein. Er hängt an einem Modul, einem Codierstand und einer Endlage — und alle drei können die Funktion verhindern, ohne defekt zu sein.",
+      "points": [
+        "Fehlerspeicher zuerst; die Antriebe melden sich einzeln",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen. Kein Defekt",
+        "Nachgerüstete Funktionen brauchen die passende Codierung. Ohne sie bleibt der Antrieb stumm, obwohl er in Ordnung ist",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Gebrochene Litze im Türübergang im gebogenen Zustand messen",
+        "Beim Touring gehört die elektrische Heckklappe mit eigenem Anlernvorgang dazu"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-110"
       ],
       "model": "f30"
     }
@@ -15295,26 +15663,26 @@
     }
   },
   "stats": {
-    "total_docs": 284,
+    "total_docs": 300,
     "total_guides": 40,
     "per_model": {
-      "e28": 15,
-      "e30": 22,
-      "e34": 17,
-      "e36": 17,
-      "e38": 17,
-      "e39": 18,
-      "e46": 19,
-      "e60": 18,
-      "e70": 17,
-      "e87": 18,
-      "e88": 15,
-      "e90": 20,
+      "e28": 16,
+      "e30": 23,
+      "e34": 18,
+      "e36": 18,
+      "e38": 18,
+      "e39": 19,
+      "e46": 20,
+      "e60": 19,
+      "e70": 18,
+      "e87": 19,
+      "e88": 16,
+      "e90": 21,
       "f-series": 5,
-      "f10": 16,
-      "f15": 16,
-      "f22": 17,
-      "f30": 17
+      "f10": 17,
+      "f15": 17,
+      "f22": 18,
+      "f30": 18
     }
   }
 }

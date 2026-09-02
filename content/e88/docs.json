@@ -468,6 +468,28 @@
       "details": [
         "D4F-E88-109"
       ]
+    },
+    {
+      "id": "D4F-E88-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E88 · Verdeckantrieb, Fensterheber, Entwässerung",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im E88 kommt der Verdeckantrieb dazu, und er stellt eine Bedingung: Die Fenster gehören zum Verdeckablauf. Ein Fensterheber, der seine Endlagen verloren hat, blockiert das ganze Verdeck.",
+      "points": [
+        "Verdeck fährt nicht: zuerst prüfen, ob alle Fenster ihre Endlagen kennen. Der Ablauf bezieht die Fenster ein und bricht ab, wenn eine Position unbekannt ist",
+        "Nach Spannungsunterbrechung die Endlagen der Fensterheber anlernen — das ist häufig der ganze Befund",
+        "Verdeckhydraulik und -antrieb melden sich im Fehlerspeicher; Notbetätigung nur nach Kenntnis des Ablaufs verwenden",
+        "Feuchtigkeit im Fußraum über Verdeck- und Wasserkastenentwässerung erreicht das Fußraummodul — Abläufe freimachen, bevor ein Modulschaden angenommen wird",
+        "Fensterheber und Beleuchtung gemeinsam tot: Fußraummodul, nicht zwei Defekte",
+        "Einzelner Antrieb tot: gebrochene Litze im Türübergang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-110"
+      ]
     }
   ]
 }

@@ -511,6 +511,28 @@
       "details": [
         "D4F-E60-109"
       ]
+    },
+    {
+      "id": "D4F-E60-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E60 · Türmodule am Bus, Anlernen, Sitzmodule",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 hängen die Antriebe an Modulen und am Bus. Die erste Handlung ist deshalb nicht das Messgerät, sondern der Fehlerspeicher — sonst zerlegt man eine Tür, in der nichts defekt ist.",
+      "points": [
+        "Fehlerspeicher zuerst: Türmodule melden fehlende Rückmeldungen und Endlagenfehler namentlich",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen, kein Defekt",
+        "Ein Bus- oder Versorgungsfehler kann mehrere Antriebe gleichzeitig stilllegen. Mehrere tote Funktionen sind ein Modulverdacht, kein Motorverdacht",
+        "Sitzverstellung mit Speicher: eigenes Modul je Sitz",
+        "Gebrochene Litze im Türübergang bleibt auch hier ein Kandidat — sie unterbricht Bus und Versorgung gleichermaßen",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-110"
+      ]
     }
   ]
 }

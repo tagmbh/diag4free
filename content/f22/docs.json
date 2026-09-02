@@ -424,6 +424,28 @@
       "details": [
         "D4F-F22-109"
       ]
+    },
+    {
+      "id": "D4F-F22-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe F22 · Türmodule, Anlernen, Komfortfunktionen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Antriebe des F22 folgen dem F30. Was hier häufiger vorkommt, ist die Nachrüstung von Komfortfunktionen — und die scheitert öfter am Codierstand als an der Technik.",
+      "points": [
+        "Nachgerüstete Komfortfunktion ohne Wirkung: zuerst den Codierstand prüfen, nicht den Antrieb. Ein nicht freigeschaltetes Bauteil verhält sich wie ein defektes",
+        "Fehlerspeicher zuerst; die Antriebe melden sich einzeln",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen",
+        "Mehrere Antriebe gleichzeitig tot: Modul, Bus oder Versorgung",
+        "Gebrochene Litze im Türübergang im gebogenen Zustand messen",
+        "Beim Cabrio gehört der Verdeckablauf dazu: Er bezieht die Fenster ein und bricht ab, wenn eine Endlage unbekannt ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-110"
+      ]
     }
   ]
 }

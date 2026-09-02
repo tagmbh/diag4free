@@ -520,6 +520,28 @@
       "details": [
         "D4F-E87-109"
       ]
+    },
+    {
+      "id": "D4F-E87-111",
+      "type": "GUIDE",
+      "gruppe": "67",
+      "cat": "Elektrische Antriebe",
+      "title": "Elektrische Antriebe E87 · Fußraummodul, Fensterheber, Anlernen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 laufen Fensterheber und Beleuchtung über dasselbe Modul. Deshalb gehört ein scheinbar zusammenhangloser Doppelausfall hierher — und nicht in zwei getrennte Fehlersuchen.",
+      "points": [
+        "Fensterheber und Beleuchtung gleichzeitig ohne Funktion: das ist das Fußraummodul, nicht zwei Defekte. Der Zusammenhang ist die Diagnose",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar — ein leerer Fehlerspeicher dort sagt nichts",
+        "Wassereintritt über verstopfte Abläufe erreicht das Modul im Fußraum. Bei feuchtem Teppich zuerst die Abläufe freimachen, sonst wiederholt sich der Schaden",
+        "Fenster ohne Automatiklauf nach Spannungsunterbrechung: Endlagen anlernen, kein Defekt",
+        "Einzelner Antrieb tot bei intaktem Modul: gebrochene Litze im Türübergang, im gebogenen Zustand messen",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-110"
+      ]
     }
   ]
 }
