@@ -945,6 +945,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-139",
+      "type": "GUIDE",
+      "gruppe": "16",
+      "cat": "Kraftstoff",
+      "title": "Startverhalten F15 · Druck, Funke oder Luft",
+      "valid": "F15 · 2013–2018",
+      "summary": "Die Bauteile der Kraftstoffversorgung stehen im ersten Dokument. Hier geht es um das Fehlerbild: was ein schlechter Start am F15 ueber die Ursache verraet, bevor gemessen wird.",
+      "points": [
+        "Ein Startproblem hat drei moegliche Adressen: Es fehlt Druck, Funke oder Luft. Vor jeder Messung festlegen, welche der drei geprueft wird -- sonst misst man abwechselnd alles und schliesst nichts aus",
+        "Warmstart und Kaltstart trennen. Schlechter Warmstart deutet auf fehlende Druckhaltung oder Dampfblasen, schlechter Kaltstart auf Gemischbildung. Die Bedingung ist der Befund",
+        "Die Druckhaltung nach dem Abstellen pruefen. Faellt der Druck sofort ab, ist eine Stelle undicht -- Ventil, Einspritzventil oder Pumpe. Genau das erzeugt den schlechten Warmstart",
+        "Der Druck wird beim Starten und unter Last beurteilt, nicht im warmen Leerlauf. Dort ist der Bedarf so gering, dass fast jede schwache Foerderung noch reicht",
+        "Bei Direkteinspritzung gibt es zwei Druecke. Ein Startproblem ohne Trennung von Nieder- und Hochdruckseite ist nicht diagnostizierbar -- siehe Gruppe 13",
+        "Kraftstoffleitungen werden nicht unter Druck geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F15-140",
+      "type": "GUIDE",
+      "gruppe": "21",
+      "cat": "Kupplung",
+      "title": "Kupplung F15 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "F15 · 2013–2018",
+      "summary": "Der F15 wird praktisch ausschliesslich mit Wandlerautomatik gefahren. Diese Seite steht hier, damit niemand eine Kupplung sucht, die es nicht gibt -- und weiss, wohin der Befund gehoert.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Kupplung, die rutschen oder rupfen koennte. Was sich so anfuehlt, gehoert zum Wandler oder zu seiner Ueberbrueckung -- siehe Gruppe 24",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung. Das ist der naechste Verwandte des Kupplungsrupfens und hat eine andere Adresse",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Die vier Reifen zuerst vergleichen, das kostet nichts",
+        "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
