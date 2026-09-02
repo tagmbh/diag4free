@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T04:19:33.900Z",
+  "generated": "2026-09-02T04:41:24.120Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -3717,6 +3717,27 @@
       "model": "e38"
     },
     {
+      "id": "D4F-E38-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E38 · Laden, Masse, Startfreigabe",
+      "valid": "E38 · 1993–2001",
+      "summary": "Beim E38 haengen viele Steuergeraete an einem Bordnetz, das aelter ist als sie. Deshalb beginnt fast jede Fehlersuche dieser Gruppe an derselben Stelle: bei Versorgung und Masse.",
+      "points": [
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Startet nicht, dreht aber: Startfreigabe, Kraftstoff und Zuendung trennen, bevor Bauteile getauscht werden. Dreht nicht: Batterie, Anlasser, Versorgung",
+        "Vor jedem Bauteiltausch die Steckverbindung oeffnen und ansehen. Gruenspan und aufgeweitete Kontakte erklaeren mehr als jede Messung am Bauteil selbst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
       "id": "D4F-E39-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5969,6 +5990,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E60 · Batterie anmelden, Ruhestrom, Ladung unter Last",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 wird die Batterie vom Fahrzeug verwaltet. Damit ist ein Batteriewechsel kein reiner Bauteiltausch mehr — und eine nicht angemeldete Batterie ist eine Fehlerquelle, die sich erst Monate spaeter meldet.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem Kennfeld der alten Batterie; die neue altert vorzeitig, ohne dass ein Fehler gespeichert wird",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Unterspannung erzeugt Eintraege in vielen Steuergeraeten gleichzeitig. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie -- deshalb steht die Spannungspruefung vor der Diagnose, nicht danach"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6633,6 +6675,27 @@
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
         "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
         "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E70 · Batterie anmelden, Ruhestrom, Ladung",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 haengen besonders viele Steuergeraete am Bordnetz, und das Fahrzeug steht oft lange. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie man Batterie, Ladung und Ruhestrom tatsaechlich prueft.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
       ],
       "pins": [],
       "engines": [],
@@ -7421,6 +7484,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E87 · Batterie anmelden, Ruhestrom, Ladung",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 ist die Batterie klein und das Fahrzeug elektronisch voll ausgestattet. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie man Batterie, Ladung und Ruhestrom tatsaechlich prueft.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8138,6 +8222,27 @@
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
         "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen. Ein nicht abgeglichener Lenkwinkel erzeugt DSC-Eingriffe ohne Fahrsituation -- das wird dann als Bremsenfehler gemeldet",
         "Achsvermessung nach jedem Eingriff; bei Aktivlenkung zusaetzlich deren eigene Anpassung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E88 · Batterie anmelden, Ruhestrom, Ladung",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 kommt die Verdeckmechanik als zusaetzlicher Verbraucher dazu. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie man Batterie, Ladung und Ruhestrom tatsaechlich prueft.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
       ],
       "pins": [],
       "engines": [],
@@ -9876,6 +9981,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F10 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation kommt Start-Stopp dazu, und damit eine Batterie, die deutlich mehr Zyklen leistet. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Start-Stopp arbeitet nicht mehr: Das ist zuerst ein Batterie- und Ladezustandsthema. Das Fahrzeug schaltet die Funktion ab, wenn es die Batterie schont -- das ist kein Defekt, sondern die Funktion",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10500,6 +10626,27 @@
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule",
         "Nach jedem Eingriff an Lenkung, Spur oder Fahrwerk den Lenkwinkelsensor abgleichen -- sonst regelt die DSC ohne Fahrsituation, und der Befund wird als Bremsenfehler gemeldet",
         "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F15 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F15 · 2013–2018",
+      "summary": "Beim F15 arbeitet ein grosses Bordnetz an einem Fahrzeug, das oft steht. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Beim schweren Fahrzeug mit vielen Verbrauchern ist die Batterie ein Verschleissteil mit begrenzter Zyklenzahl. Ein Ausfall nach wenigen Jahren ist kein Widerspruch",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
       ],
       "pins": [],
       "engines": [],
@@ -11163,6 +11310,27 @@
         "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
         "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
         "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F22 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 kommen kleine Batterie, Start-Stopp und viele Nachruestungen zusammen. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Nachgeruestete Verbraucher sind hier eine haeufige Ruhestromquelle. Bei einem unerklaerlichen Entladen gehoert die Nachruestung auf die Verdachtsliste, bevor die Batterie getauscht wird",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
       ],
       "pins": [],
       "engines": [],
@@ -11871,6 +12039,27 @@
         "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
         "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
         "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F30 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim F30 gehoert Start-Stopp zum Serienbild, und die Batterie ist entsprechend beansprucht. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Start-Stopp arbeitet nicht mehr: zuerst Batterie und Ladezustand, dann der Kupplungspedalsensor beim Handschalter. Erst danach die Elektronik",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
       ],
       "pins": [],
       "engines": [],
@@ -19062,26 +19251,26 @@
     }
   },
   "stats": {
-    "total_docs": 456,
+    "total_docs": 465,
     "total_guides": 40,
     "per_model": {
       "e28": 26,
       "e30": 33,
       "e34": 28,
       "e36": 28,
-      "e38": 28,
+      "e38": 29,
       "e39": 29,
       "e46": 30,
-      "e60": 29,
-      "e70": 27,
-      "e87": 29,
-      "e88": 26,
+      "e60": 30,
+      "e70": 28,
+      "e87": 30,
+      "e88": 27,
       "e90": 31,
       "f-series": 5,
-      "f10": 27,
-      "f15": 26,
-      "f22": 27,
-      "f30": 27
+      "f10": 28,
+      "f15": 27,
+      "f22": 28,
+      "f30": 28
     }
   }
 }

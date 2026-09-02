@@ -698,6 +698,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E88 · Batterie anmelden, Ruhestrom, Ladung",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 kommt die Verdeckmechanik als zusaetzlicher Verbraucher dazu. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie man Batterie, Ladung und Ruhestrom tatsaechlich prueft.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld weiter",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

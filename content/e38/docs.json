@@ -635,6 +635,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E38 · Laden, Masse, Startfreigabe",
+      "valid": "E38 · 1993–2001",
+      "summary": "Beim E38 haengen viele Steuergeraete an einem Bordnetz, das aelter ist als sie. Deshalb beginnt fast jede Fehlersuche dieser Gruppe an derselben Stelle: bei Versorgung und Masse.",
+      "points": [
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Startet nicht, dreht aber: Startfreigabe, Kraftstoff und Zuendung trennen, bevor Bauteile getauscht werden. Dreht nicht: Batterie, Anlasser, Versorgung",
+        "Vor jedem Bauteiltausch die Steckverbindung oeffnen und ansehen. Gruenspan und aufgeweitete Kontakte erklaeren mehr als jede Messung am Bauteil selbst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -681,6 +681,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F30 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim F30 gehoert Start-Stopp zum Serienbild, und die Batterie ist entsprechend beansprucht. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Start-Stopp arbeitet nicht mehr: zuerst Batterie und Ladezustand, dann der Kupplungspedalsensor beim Handschalter. Erst danach die Elektronik",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
