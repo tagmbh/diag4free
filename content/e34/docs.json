@@ -730,6 +730,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-130",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E34 - Radio, Verstaerker, Antennenanlage",
+      "valid": "E34 - 1987-1996",
+      "summary": "Beim E34 kommt ein separater Verstaerker hinzu. Damit gibt es zwei Stellen, an denen der Ton verloren gehen kann -- und die Unterscheidung entscheidet ueber den ganzen Aufwand.",
+      "points": [
+        "Radio und Verstaerker getrennt beurteilen. Kommt Signal am Verstaerker an und nichts heraus, ist der Verstaerker der Befund und nicht das Radio",
+        "Einseitiger Ausfall zeigt auf Leitung, Lautsprecher oder einen Kanal des Verstaerkers -- nicht auf das Radio",
+        "Brummen und Rauschen zuerst als Massebefund behandeln, bevor Geraete getauscht werden",
+        "Leitungsbruch in der Tuertuelle in Bewegung pruefen. Im Stillstand hat die gebrochene Ader oft noch Kontakt",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Stecker -- siehe Gruppe 51. Kratzen auf einer Seite hat dort haeufiger seine Ursache als im Geraet",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

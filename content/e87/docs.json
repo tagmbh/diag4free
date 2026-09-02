@@ -852,6 +852,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E87 - Ring, Bedienung, Kodierung",
+      "valid": "E87 - 2004-2011",
+      "summary": "Beim E87 taeuscht ein einzelnes Geraet am Datenring einen Totalausfall vor. Wer nach dem defekten Geraet sucht, sucht falsch -- gesucht wird das Geraet, das nicht antwortet.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bedienteil und Rechner trennen: Lebt das Bild und reagiert die Bedienung nicht, liegt der Befund am Bedienteil und nicht am Rechner",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie. Ruhestrom gehoert hier gesucht, bevor die Batterie getauscht wird",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes oder nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Einseitiger Tonausfall bleibt ein Leitungs- oder Lautsprecherbefund und hat mit dem Ring nichts zu tun"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

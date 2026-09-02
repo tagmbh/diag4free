@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T06:28:01.094Z",
+  "generated": "2026-09-02T06:41:54.400Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -972,6 +972,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-129",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E28 - Radio, Antenne, Lautsprecher ohne Bus",
+      "valid": "E28 - 1981-1987",
+      "summary": "Beim E28 gibt es keinen Datenbus im Audiobereich. Radio, Antenne und Lautsprecher sind einzeln verdrahtet -- damit ist jeder Fehler eine Frage von Versorgung, Leitung oder Masse.",
+      "points": [
+        "Ohne Bus gibt es keine Systemdiagnose. Was hier zaehlt, sind Versorgung, Masse und Leitung -- in dieser Reihenfolge und einzeln geprueft",
+        "Ein einseitiger Ausfall ist ein Leitungs- oder Lautsprecherbefund. Fallen beide Seiten aus, liegt es an Versorgung oder Geraet",
+        "Kratzen und Verzerren auf einer Seite kommt haeufig von Feuchtigkeit in der Tuer. Der Lautsprecher ist dann Folge und nicht Ursache -- siehe Gruppe 51",
+        "Masse ist bei Fahrzeugen dieses Alters der haeufigste Befund. Eine korrodierte Massestelle erzeugt Brummen, das wie ein Geraetefehler klingt",
+        "Spannungsabfall unter Last messen statt Durchgang. Eine Leitung mit Durchgang kann unter Last zu viel verlieren -- siehe Gruppe 61",
+        "Bei elektrischer Antenne Mechanik und Motor trennen: Ein schwergaengiger Mast ueberfordert den Antrieb, und nach dem Motortausch bleibt er schwergaengig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1833,6 +1854,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E30 - Radio, Antennenantrieb, Leitungen",
+      "valid": "E30 - 1982-1994",
+      "summary": "Am E30 sind Audiofehler fast immer Leitungs-, Masse- oder Feuchtigkeitsbefunde. Ein Geraet ist selten schuld, wenn nur eine Seite ausfaellt.",
+      "points": [
+        "Einseitiger Ausfall heisst Leitung oder Lautsprecher. Beidseitiger Ausfall heisst Versorgung oder Geraet -- das ist die erste Weiche",
+        "Die Leitungen brechen in der Tuertuelle, weil sie sich bei jedem Oeffnen biegen. Geprueft wird, waehrend die Tuer bewegt wird, nicht im Stillstand",
+        "Brummen und Rauschen zuerst als Massebefund behandeln. Korrodierte Massestellen sind am E30 haeufiger als defekte Geraete",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Steckverbindungen. Kratzen auf einer Seite ist dann ein Wasserbefund -- siehe Gruppe 51",
+        "Beim Antennenantrieb erst die Mechanik freigaengig machen. Ein schwergaengiger Mast laesst den Antrieb abschalten, und das sieht aus wie ein Motorschaden",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2589,6 +2631,27 @@
         "Ein Dach, das mitten in der Bewegung stoppt, meldet meist Widerstand. Erst Fuehrung und Dichtung freigaengig machen, dann den Antrieb beurteilen",
         "Handbetaetigung als Pruefmittel nutzen: Geht das Dach von Hand schwer, ist die Mechanik der Befund und nicht der Motor",
         "Nie mit Draht in den Ablauf. Der durchstossene Schlauch fuehrt das Wasser danach in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-130",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E34 - Radio, Verstaerker, Antennenanlage",
+      "valid": "E34 - 1987-1996",
+      "summary": "Beim E34 kommt ein separater Verstaerker hinzu. Damit gibt es zwei Stellen, an denen der Ton verloren gehen kann -- und die Unterscheidung entscheidet ueber den ganzen Aufwand.",
+      "points": [
+        "Radio und Verstaerker getrennt beurteilen. Kommt Signal am Verstaerker an und nichts heraus, ist der Verstaerker der Befund und nicht das Radio",
+        "Einseitiger Ausfall zeigt auf Leitung, Lautsprecher oder einen Kanal des Verstaerkers -- nicht auf das Radio",
+        "Brummen und Rauschen zuerst als Massebefund behandeln, bevor Geraete getauscht werden",
+        "Leitungsbruch in der Tuertuelle in Bewegung pruefen. Im Stillstand hat die gebrochene Ader oft noch Kontakt",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Stecker -- siehe Gruppe 51. Kratzen auf einer Seite hat dort haeufiger seine Ursache als im Geraet",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61"
       ],
       "pins": [],
       "engines": [],
@@ -3369,6 +3432,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E36 - Lautsprecherleitungen, Verstaerker, Masse",
+      "valid": "E36 - 1990-2000",
+      "summary": "Am E36 sitzt die haeufigste Ursache fuer einseitigen Tonausfall nicht im Geraet, sondern in der Tuertuelle. Die Ader bricht dort, wo sie sich bei jedem Oeffnen biegt.",
+      "points": [
+        "Die Leitung bricht in der Tuertuelle unter intakter Isolierung. Geprueft wird, waehrend die Tuer bewegt wird -- im Stillstand hat sie oft noch Kontakt",
+        "Einseitiger Ausfall heisst Leitung, Lautsprecher oder ein Kanal. Beidseitiger Ausfall heisst Versorgung oder Geraet",
+        "Bei Anlagen mit separatem Verstaerker zuerst pruefen, ob Signal ankommt. Sonst wird das Radio fuer einen Verstaerkerfehler getauscht",
+        "Brummen zuerst als Massebefund behandeln. Eine schlechte Masse klingt wie ein defektes Geraet",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Steckverbindungen -- siehe Gruppe 51",
+        "Ein nachgeruestetes Geraet, das nicht funktioniert, ist am E36 ein Verkabelungsthema und kein Freischaltungsthema"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4130,6 +4214,27 @@
         "Die Ablaeufe unten an der Austrittsstelle pruefen. Sie enden weit vom Dach entfernt, und dort sitzt die Verstopfung",
         "Der Schlauch loest sich am Anschluss haeufiger, als er verstopft. Frei heisst nicht angeschlossen",
         "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Bordmonitor und Navigation E38 - Bild, Rechner, Unterspannung",
+      "valid": "E38 - 1994-2001",
+      "summary": "Beim E38 kommen Bordmonitor, Videomodul und Navigationsrechner zusammen. Fehlt das Bild, ist die Frage nicht welches Geraet defekt ist, sondern welches Geraet das Bild aufbaut.",
+      "points": [
+        "Bild und Inhalt trennen: Das Videomodul baut die Darstellung auf. Fehlt das Bild vollstaendig, gehoert der Verdacht dorthin und nicht auf den Navigationsrechner",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein Fehlerbild, das nach einer entladenen Batterie oder einem Fremdstart begann, ist bis zum Beweis des Gegenteils ein Softwareschaden und kein Bauteilschaden",
+        "Radio, Verstaerker und Monitor sind getrennte Baugruppen. Welche ausfaellt, grenzt den Befund ein, bevor irgendetwas ausgebaut wird",
+        "Vor jedem Teiletausch Spannung stabil halten und die Versorgung des Geraetes pruefen. Ein unterversorgtes Geraet verhaelt sich wie ein defektes",
+        "Ein nachgeruestetes Geraet, das nicht arbeitet, ist ohne Kodierung nicht defekt -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -4913,6 +5018,27 @@
         "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum",
         "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
         "Ein Dach, das stoppt, meldet Widerstand. Fuehrungen freigaengig machen, dann den Antrieb beurteilen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio und Navigation E39 - Radiomodul, Endstufe, Bordmonitor",
+      "valid": "E39 - 1995-2004",
+      "summary": "Am E39 stammen einseitiger Lautsprecherausfall, Pfeifen und Brummen typischerweise aus dem Radiomodul selbst -- nicht aus dem Lautsprecher, der sie hoerbar macht.",
+      "points": [
+        "Einseitiger Ausfall, Pfeifen, Brummen oder eine Lautstaerkeregelung ohne Wirkung sind am E39 typische Modulbefunde. Der Lautsprecher macht sie hoerbar, verursacht sie aber nicht",
+        "Vor dem Lautsprechertausch die Seite kreuzweise pruefen. Wandert der Fehler mit dem Kanal, liegt er vor dem Lautsprecher",
+        "Bild und Inhalt trennen: Fehlt die Darstellung vollstaendig, gehoert der Verdacht auf das Bildaufbereitende und nicht auf die Navigation",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Leitungsbruch in der Tuertuelle in Bewegung pruefen, bevor ein Lautsprecher als defekt gilt",
+        "Feuchtigkeit im Fussraum erreicht Steckverbindungen und Geraete -- siehe Gruppe 51. Wechselnde Fehler nach Regen sind kein Zufall"
       ],
       "pins": [],
       "engines": [],
@@ -5717,6 +5843,27 @@
         "Nie mit Draht stochern. Danach laeuft das Wasser in den Hohlraum, und aus dem Ablaufproblem wird ein Rostproblem",
         "Beim Cabrio Hydraulik und Verriegelung trennen: Arbeitet die Pumpe hoerbar, ohne dass sich etwas bewegt, liegt der Befund bei Verriegelung oder Schalter und nicht am Druck",
         "Ein Verdeck, das mitten in der Bewegung stoppt, meldet eine nicht erreichte Stellung. Das ist ein Schalterbefund, kein Hydraulikbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-124",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio und Bordmonitor E46 - Leitungen, Module, Feuchtigkeit",
+      "valid": "E46 - 1998-2006",
+      "summary": "Am E46 sitzt die haeufigste Ursache fuer einseitigen Tonausfall in der Tuertuelle, nicht im Geraet. Und was nach Geraetefehler klingt, ist oft Masse oder Feuchtigkeit.",
+      "points": [
+        "Die Lautsprecherleitung bricht in der Tuertuelle unter intakter Isolierung. Geprueft wird, waehrend die Tuer bewegt wird -- im Stillstand hat die gebrochene Ader oft noch Kontakt",
+        "Einseitiger Ausfall heisst Leitung, Lautsprecher oder ein Kanal. Beidseitiger Ausfall heisst Versorgung oder Geraet -- das ist die erste Weiche",
+        "Vor dem Lautsprechertausch kreuzweise pruefen. Wandert der Fehler mit dem Kanal, liegt er vor dem Lautsprecher",
+        "Feuchtigkeit aus der Tuer erreicht Lautsprecher und Steckverbindungen. Kratzen auf einer Seite ist dann ein Wasserbefund -- siehe Gruppe 51",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -7417,6 +7564,27 @@
       "model": "e70"
     },
     {
+      "id": "D4F-E70-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E70 - Ring, Ruhestrom, Nachruestung",
+      "valid": "E70 - 2006-2013",
+      "summary": "Am E70 haengen Radio, Navigation und Telefon an einem gemeinsamen Datenring. Ein einziges Geraet kann den Eindruck erzeugen, es sei alles ausgefallen.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall zuerst fragen, welches Geraet nicht mehr antwortet, statt welches Geraet defekt ist. Das ist ein anderer Sucheinstieg und der schnellere",
+        "Ein Geraet am Ring, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ein Ruhestromproblem ohne erkennbare Ursache gehoert hier gesucht",
+        "Ein nachgeruestetes oder getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Bedienteil und Rechner sind getrennte Geraete. Reagiert die Bedienung nicht, waehrend das Bild lebt, ist das ein Bedienteilbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
       "id": "D4F-E87-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8303,6 +8471,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E87 - Ring, Bedienung, Kodierung",
+      "valid": "E87 - 2004-2011",
+      "summary": "Beim E87 taeuscht ein einzelnes Geraet am Datenring einen Totalausfall vor. Wer nach dem defekten Geraet sucht, sucht falsch -- gesucht wird das Geraet, das nicht antwortet.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bedienteil und Rechner trennen: Lebt das Bild und reagiert die Bedienung nicht, liegt der Befund am Bedienteil und nicht am Rechner",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie. Ruhestrom gehoert hier gesucht, bevor die Batterie getauscht wird",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes oder nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Einseitiger Tonausfall bleibt ein Leitungs- oder Lautsprecherbefund und hat mit dem Ring nichts zu tun"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9104,6 +9293,27 @@
         "Undichtigkeit an rahmenlosen Scheiben zuerst als Einstellungsfrage behandeln. Eine Dichtung ist selten die Ursache, wenn die Scheibe zu tief oder zu flach anliegt",
         "Windgeraeusche und Wassereintritt getrennt aufnehmen. Sie haben am rahmenlosen Fenster oft dieselbe Ursache, aber nicht immer dieselbe Abhilfe",
         "Tuerschloss mechanisch beurteilen, bevor Elektrik verdaechtigt wird. Schwergaengigkeit erzeugt Eintraege, die den Blick verschieben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E88 - Ring, Lautsprecher, Feuchtigkeit",
+      "valid": "E88 - 2008-2013",
+      "summary": "Am E88 gilt dieselbe Ringlogik wie in der Baureihe -- dazu kommt, dass ein offenes Fahrzeug seine Lautsprecher und Steckverbindungen haeufiger nass sieht.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall fragen, welches Geraet nicht antwortet, statt welches defekt ist",
+        "Einseitiges Kratzen zuerst als Feuchtigkeitsbefund behandeln. Im offenen Fahrzeug erreicht Wasser Lautsprecher und Stecker leichter -- siehe Gruppe 51",
+        "Bedienteil und Rechner trennen: Bild ohne Reaktion ist ein Bedienteilbefund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -10078,6 +10288,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E90 - Datenring, Ruhestrom, Bedienteil",
+      "valid": "E90 - 2004-2013",
+      "summary": "Beim E90 ist der Totalausfall des Infotainments meist ein Ringbefund und kein Geraeteschaden. Die richtige Frage lautet, welches Geraet nicht mehr antwortet.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall die Geraete am Ring einzeln abfragen, statt das sichtbarste zu tauschen. Das gesuchte Geraet ist meist nicht das, dessen Funktion fehlt",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ruhestrom gehoert deshalb hier gesucht und nicht an der Batterie",
+        "Bedienteil und Rechner sind getrennt. Lebt das Bild und reagiert die Bedienung nicht, ist das Bedienteil der Befund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10249,6 +10480,27 @@
         "Rollo und Glasdeckel sind getrennte Antriebe. Welcher ausfaellt, ist bereits die halbe Diagnose",
         "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt dort, wo der Ablauf endet, und nicht dort, wo er anfaengt",
         "Nie mit Draht in den Ablauf. Der durchstossene Schlauch macht aus einem Ablaufproblem ein Rostproblem"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-105",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F-Baureihen - Ring, Ruhestrom, Kodierung",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen ist Infotainment ein Verbund am gemeinsamen Datenring. Der Totalausfall ist die Regel, wenn ein einzelnes Geraet haengt -- und sagt nichts darueber, welches es ist.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Die erste Weiche lautet: eine Funktion tot oder alle. Alle heisst Ring, eine heisst Geraet oder Leitung",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ruhestrom gehoert an den Ring und nicht an die Batterie",
+        "Bedienteil, Rechner und Anzeige sind getrennte Geraete. Bild ohne Reaktion ist ein Bedienteilbefund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes oder nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -11031,6 +11283,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F10 - Ring, Kodierung, Ruhestrom",
+      "valid": "F10 - 2010-2017",
+      "summary": "Am F10 haengen Radio, Navigation, Telefon und Bedienung an einem gemeinsamen Ring. Ein einzelnes Geraet erzeugt das Bild eines Totalausfalls.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall zuerst klaeren, welches Geraet nicht antwortet. Das ist der schnellere Einstieg als die Frage nach dem defekten Geraet",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie. Ruhestrom gehoert hier gesucht, bevor an der Batterie etwas getauscht wird",
+        "Bedienteil, Rechner und Anzeige sind getrennte Geraete. Welches ausfaellt, grenzt den Befund ein, bevor etwas ausgebaut wird",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein nachgeruestetes oder getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11760,6 +12033,27 @@
         "Rollo und Glasdeckel sind zwei Antriebe. Faellt nur einer aus, ist der Befund bereits eingegrenzt",
         "Nach Spannungsverlust die Endlagen anlernen. Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung",
         "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F15 - Ring, Anzeige, Bedienung",
+      "valid": "F15 - 2013-2018",
+      "summary": "Beim F15 ist die Anzeige nur das Ende der Kette. Fehlt das Bild, ist die Frage, welches Geraet in der Kette nicht liefert -- nicht, ob die Anzeige defekt ist.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Anzeige und Rechner trennen. Eine dunkle Anzeige beweist nichts ueber den Rechner, der sie speisen soll",
+        "Reagiert die Bedienung nicht, waehrend das Bild lebt, ist das Bedienteil der Befund",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht -- Ruhestrom gehoert hier gesucht",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -12528,6 +12822,27 @@
         "Ablaeufe unten an der Austrittsstelle freimachen. Oben ist der Ablauf meist frei",
         "Ein ansprechender Einklemmschutz meldet Widerstand -- erst die Mechanik freigaengig machen",
         "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F22 - Ring, Bedienteil, Lautsprecher",
+      "valid": "F22 - 2013-2021",
+      "summary": "Am F22 trennt sich der Befund an einer einfachen Frage: Faellt eine Funktion aus oder alle? Alle heisst Ring, eine heisst Geraet oder Leitung.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Faellt genau eine Funktion aus, ist es das zustaendige Geraet oder seine Leitung. Fallen alle aus, ist es der Ring -- diese Weiche steht vor jeder Messung",
+        "Bedienteil und Rechner trennen: Bild ohne Reaktion ist ein Bedienteilbefund",
+        "Einseitiger Tonausfall bleibt ein Leitungs- oder Lautsprecherbefund und hat mit dem Ring nichts zu tun",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -13320,6 +13635,27 @@
         "Beim Panoramadach sind Rollo und Glasdeckel zwei Antriebe. Welcher ausfaellt, grenzt den Befund ein",
         "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
         "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F30 - Ring, Ruhestrom, Nachruestung",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 erzeugt ein einzelnes haengendes Geraet am Datenring das Bild eines Totalausfalls -- und ein Geraet, das nicht einschlaeft, leert ueber Nacht die Batterie.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall fragen, welches Geraet nicht antwortet, statt welches defekt ist. Das gesuchte Geraet ist selten das mit der fehlenden Funktion",
+        "Ruhestrom gehoert hier gesucht. Eine leere Batterie am Morgen ist am F30 haeufiger ein wachgebliebenes Geraet als eine muede Batterie",
+        "Bedienteil, Rechner und Anzeige trennen. Welches ausfaellt, grenzt den Befund ein",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -20511,26 +20847,26 @@
     }
   },
   "stats": {
-    "total_docs": 525,
+    "total_docs": 541,
     "total_guides": 40,
     "per_model": {
-      "e28": 30,
-      "e30": 36,
-      "e34": 33,
-      "e36": 31,
-      "e38": 33,
-      "e39": 32,
-      "e46": 32,
+      "e28": 31,
+      "e30": 37,
+      "e34": 34,
+      "e36": 32,
+      "e38": 34,
+      "e39": 33,
+      "e46": 33,
       "e60": 35,
-      "e70": 33,
-      "e87": 34,
-      "e88": 30,
-      "e90": 34,
-      "f-series": 7,
-      "f10": 31,
-      "f15": 31,
-      "f22": 32,
-      "f30": 31
+      "e70": 34,
+      "e87": 35,
+      "e88": 31,
+      "e90": 35,
+      "f-series": 8,
+      "f10": 32,
+      "f15": 32,
+      "f22": 33,
+      "f30": 32
     }
   }
 }

@@ -751,6 +751,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio und Navigation E39 - Radiomodul, Endstufe, Bordmonitor",
+      "valid": "E39 - 1995-2004",
+      "summary": "Am E39 stammen einseitiger Lautsprecherausfall, Pfeifen und Brummen typischerweise aus dem Radiomodul selbst -- nicht aus dem Lautsprecher, der sie hoerbar macht.",
+      "points": [
+        "Einseitiger Ausfall, Pfeifen, Brummen oder eine Lautstaerkeregelung ohne Wirkung sind am E39 typische Modulbefunde. Der Lautsprecher macht sie hoerbar, verursacht sie aber nicht",
+        "Vor dem Lautsprechertausch die Seite kreuzweise pruefen. Wandert der Fehler mit dem Kanal, liegt er vor dem Lautsprecher",
+        "Bild und Inhalt trennen: Fehlt die Darstellung vollstaendig, gehoert der Verdacht auf das Bildaufbereitende und nicht auf die Navigation",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Leitungsbruch in der Tuertuelle in Bewegung pruefen, bevor ein Lautsprecher als defekt gilt",
+        "Feuchtigkeit im Fussraum erreicht Steckverbindungen und Geraete -- siehe Gruppe 51. Wechselnde Fehler nach Regen sind kein Zufall"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

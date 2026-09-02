@@ -761,6 +761,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F30 - Ring, Ruhestrom, Nachruestung",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 erzeugt ein einzelnes haengendes Geraet am Datenring das Bild eines Totalausfalls -- und ein Geraet, das nicht einschlaeft, leert ueber Nacht die Batterie.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall fragen, welches Geraet nicht antwortet, statt welches defekt ist. Das gesuchte Geraet ist selten das mit der fehlenden Funktion",
+        "Ruhestrom gehoert hier gesucht. Eine leere Batterie am Morgen ist am F30 haeufiger ein wachgebliebenes Geraet als eine muede Batterie",
+        "Bedienteil, Rechner und Anzeige trennen. Welches ausfaellt, grenzt den Befund ein",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -742,6 +742,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E36 - Lautsprecherleitungen, Verstaerker, Masse",
+      "valid": "E36 - 1990-2000",
+      "summary": "Am E36 sitzt die haeufigste Ursache fuer einseitigen Tonausfall nicht im Geraet, sondern in der Tuertuelle. Die Ader bricht dort, wo sie sich bei jedem Oeffnen biegt.",
+      "points": [
+        "Die Leitung bricht in der Tuertuelle unter intakter Isolierung. Geprueft wird, waehrend die Tuer bewegt wird -- im Stillstand hat sie oft noch Kontakt",
+        "Einseitiger Ausfall heisst Leitung, Lautsprecher oder ein Kanal. Beidseitiger Ausfall heisst Versorgung oder Geraet",
+        "Bei Anlagen mit separatem Verstaerker zuerst pruefen, ob Signal ankommt. Sonst wird das Radio fuer einen Verstaerkerfehler getauscht",
+        "Brummen zuerst als Massebefund behandeln. Eine schlechte Masse klingt wie ein defektes Geraet",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Steckverbindungen -- siehe Gruppe 51",
+        "Ein nachgeruestetes Geraet, das nicht funktioniert, ist am E36 ein Verkabelungsthema und kein Freischaltungsthema"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

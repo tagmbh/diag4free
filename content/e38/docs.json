@@ -735,6 +735,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Bordmonitor und Navigation E38 - Bild, Rechner, Unterspannung",
+      "valid": "E38 - 1994-2001",
+      "summary": "Beim E38 kommen Bordmonitor, Videomodul und Navigationsrechner zusammen. Fehlt das Bild, ist die Frage nicht welches Geraet defekt ist, sondern welches Geraet das Bild aufbaut.",
+      "points": [
+        "Bild und Inhalt trennen: Das Videomodul baut die Darstellung auf. Fehlt das Bild vollstaendig, gehoert der Verdacht dorthin und nicht auf den Navigationsrechner",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein Fehlerbild, das nach einer entladenen Batterie oder einem Fremdstart begann, ist bis zum Beweis des Gegenteils ein Softwareschaden und kein Bauteilschaden",
+        "Radio, Verstaerker und Monitor sind getrennte Baugruppen. Welche ausfaellt, grenzt den Befund ein, bevor irgendetwas ausgebaut wird",
+        "Vor jedem Teiletausch Spannung stabil halten und die Versorgung des Geraetes pruefen. Ein unterversorgtes Geraet verhaelt sich wie ein defektes",
+        "Ein nachgeruestetes Geraet, das nicht arbeitet, ist ohne Kodierung nicht defekt -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

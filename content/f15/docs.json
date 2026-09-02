@@ -705,6 +705,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F15 - Ring, Anzeige, Bedienung",
+      "valid": "F15 - 2013-2018",
+      "summary": "Beim F15 ist die Anzeige nur das Ende der Kette. Fehlt das Bild, ist die Frage, welches Geraet in der Kette nicht liefert -- nicht, ob die Anzeige defekt ist.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Anzeige und Rechner trennen. Eine dunkle Anzeige beweist nichts ueber den Rechner, der sie speisen soll",
+        "Reagiert die Bedienung nicht, waehrend das Bild lebt, ist das Bedienteil der Befund",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht -- Ruhestrom gehoert hier gesucht",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

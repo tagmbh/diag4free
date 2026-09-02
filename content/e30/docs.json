@@ -825,6 +825,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-127",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E30 - Radio, Antennenantrieb, Leitungen",
+      "valid": "E30 - 1982-1994",
+      "summary": "Am E30 sind Audiofehler fast immer Leitungs-, Masse- oder Feuchtigkeitsbefunde. Ein Geraet ist selten schuld, wenn nur eine Seite ausfaellt.",
+      "points": [
+        "Einseitiger Ausfall heisst Leitung oder Lautsprecher. Beidseitiger Ausfall heisst Versorgung oder Geraet -- das ist die erste Weiche",
+        "Die Leitungen brechen in der Tuertuelle, weil sie sich bei jedem Oeffnen biegen. Geprueft wird, waehrend die Tuer bewegt wird, nicht im Stillstand",
+        "Brummen und Rauschen zuerst als Massebefund behandeln. Korrodierte Massestellen sind am E30 haeufiger als defekte Geraete",
+        "Feuchtigkeit in der Tuer erreicht Lautsprecher und Steckverbindungen. Kratzen auf einer Seite ist dann ein Wasserbefund -- siehe Gruppe 51",
+        "Beim Antennenantrieb erst die Mechanik freigaengig machen. Ein schwergaengiger Mast laesst den Antrieb abschalten, und das sieht aus wie ein Motorschaden",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
