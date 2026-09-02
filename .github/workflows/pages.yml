@@ -32,6 +32,20 @@ jobs:
       - name: Build content index
         run: node scripts/build-index.mjs
 
+      - name: Inhaltsqualität prüfen
+        # Vorher lief das Audit nur in der Abnahme, die das Deployment nicht
+        # blockiert — ein roter Befund ging trotzdem live.
+        run: node scripts/audit.mjs --ci
+
+      - name: Service-Worker-Version mit Commit stempeln
+        # Die von Hand gepflegte VERSION bleibt lesbar; der Commit dahinter
+        # sorgt dafuer, dass jeder Deploy den Vorrat erneuert — auch wenn
+        # jemand app.js aendert und den Bump vergisst. Ohne das blieb die
+        # alte app.js bei installierten Clients unbegrenzt liegen.
+        run: |
+          sed -i "s/^const VERSION = '\([^']*\)';/const VERSION = '\1-${GITHUB_SHA:0:7}';/" sw.js
+          grep -m1 "^const VERSION" sw.js
+
       - name: Generate PWA icons if missing
         run: |
           if [ ! -f assets/icons/icon-192.png ]; then

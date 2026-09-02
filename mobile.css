@@ -290,7 +290,11 @@ code, .measure-target, .pin-num, .doc-code {
    STANDALONE (PWA installiert) — echte App-Anmutung
    ============================================================ */
 @media (display-mode: standalone) {
-  /* iOS-Statusbar-Bereich abfangen */
+  /* iOS-Statusbar-Bereich abfangen. Die Rasterzeile muss mitwachsen:
+     vorher blieb sie bei 56 px, die Leiste bekam die Statusbar als
+     Polster obendrauf, und ihre Knoepfe ragten unter die Statusbar und
+     ueber den Inhalt. */
+  :root { --topbar-h: calc(56px + max(0px, env(safe-area-inset-top))); }
   .topbar { padding-top: max(0px, env(safe-area-inset-top)); }
   /* Install-Button nicht mehr anzeigen */
   #installBtn { display: none !important; }

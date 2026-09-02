@@ -210,7 +210,7 @@ window.OBD = (() => {
 
   // Ein Befehl, eine Antwort. Ohne Zeitgrenze bliebe ein stummer
   // Adapter für immer hängen — deshalb gewinnt hier immer die Uhr.
-  const send = (befehl, msFrist = 5000) => new Promise((auf, ab) => {
+  const sendeEinzeln = (befehl, msFrist) => new Promise((auf, ab) => {
     if (!transport) return ab(new Error('Nicht verbunden.'));
     puffer = '';
     const uhr = setTimeout(() => {
@@ -220,6 +220,17 @@ window.OBD = (() => {
     warteAuflösung = (antwort) => { clearTimeout(uhr); auf(antwort); };
     transport.schreib(befehl + CR).catch((e) => { clearTimeout(uhr); warteAuflösung = null; ab(e); });
   });
+
+  // Der ELM327 kennt nur einen Befehl zur Zeit. Laufen Live-Abfrage und
+  // Fehlerspeicher-Lesen gleichzeitig, überschrieb der zweite Befehl
+  // vorher den Warteplatz des ersten — beide bekamen dann nichts, ohne
+  // Fehlermeldung. Deshalb stehen die Befehle jetzt in einer Reihe.
+  let reihe = Promise.resolve();
+  const send = (befehl, msFrist = 5000) => {
+    const lauf = reihe.then(() => sendeEinzeln(befehl, msFrist));
+    reihe = lauf.catch(() => {});
+    return lauf;
+  };
 
   // Antwortzeilen säubern. Der Adapter spiegelt je nach Einstellung
   // den Befehl, meldet Suchvorgänge und bricht CAN-Antworten über
@@ -246,27 +257,60 @@ window.OBD = (() => {
     return null;
   };
 
-  // Datenbytes aus einer Antwort ziehen. Mehrzeilige CAN-Antworten
-  // tragen vorn einen Zeilenindex ("0:", "1:") plus Längenangabe —
-  // beides gehört nicht zu den Nutzdaten.
-  const bytesAus = (roh) => {
-    const zs = zeilen(roh);
-    const daten = [];
-    for (const z of zs) {
-      if (/^[0-9A-F]{3}$/i.test(z)) continue;              // Längenkopf
-      const ohneIndex = z.replace(/^[0-9A-F]:\s*/i, '');
-      const teile = ohneIndex.split(/\s+/).filter(t => /^[0-9A-F]{2}$/i.test(t));
-      daten.push(...teile.map(t => parseInt(t, 16)));
+  // Eine Antwort in Nachrichten zerlegen. Eine Zeile ist eine Nachricht —
+  // ausser bei langen CAN-Antworten: die kündigt der Adapter mit einer
+  // dreistelligen Längenangabe an und bricht sie dann mit Zeilenindex
+  // ("0:", "1:") um; das letzte Stück ist mit Nullen aufgefüllt, die
+  // Längenangabe sagt, wo die Nutzdaten enden. Antworten mehrerer
+  // Steuergeräte kommen als getrennte Zeilen — und müssen getrennt
+  // bleiben: vorher wurden alle Bytes aneinandergehängt, und das "43"
+  // des zweiten Steuergeräts wurde als Fehlercode gelesen.
+  const nachrichten = (roh) => {
+    const fertig = [];
+    let offen = null;                                       // { laenge, bytes }
+    const abschliessen = () => {
+      if (offen) fertig.push(offen.bytes.slice(0, offen.laenge));
+      offen = null;
+    };
+    for (const z of zeilen(roh)) {
+      if (/^[0-9A-F]{3}$/i.test(z)) {                        // Längenkopf
+        abschliessen();
+        offen = { laenge: parseInt(z, 16), bytes: [] };
+        continue;
+      }
+      const idx = /^([0-9A-F]):\s*(.*)$/i.exec(z);
+      const teile = (idx ? idx[2] : z).split(/\s+/)
+        .filter(t => /^[0-9A-F]{2}$/i.test(t))
+        .map(t => parseInt(t, 16));
+      if (!teile.length) continue;
+      if (idx) {
+        if (!offen) offen = { laenge: Infinity, bytes: [] };
+        offen.bytes.push(...teile);
+        continue;
+      }
+      abschliessen();
+      fertig.push(teile);
     }
-    return daten;
+    abschliessen();
+    return fertig;
   };
+
+  // Alle Datenbytes flach — für Abfragen, bei denen die erste Antwort
+  // genügt (Live-Wert, Status, PID-Maske).
+  const bytesAus = (roh) => nachrichten(roh).flat();
 
   // ============================================================
   // ADAPTER VORBEREITEN
   // Echo aus, Zeilenumbrüche aus, Leerzeichen an (erleichtert das
   // Zerlegen), Protokoll automatisch suchen lassen.
   // ============================================================
+  // Welches Protokoll der Bus spricht, entscheidet, wie Fehlercodes zu
+  // lesen sind: auf CAN steht nach dem Antwortkopf die Anzahl der Codes,
+  // auf K-Leitung (ISO 9141, KWP) nicht. 'can' | 'k' | null (unbekannt).
+  let protokoll = null;
+
   const init = async (melde = () => {}) => {
+    protokoll = null;
     const schritte = [
       ['ATZ',  'Adapter zurücksetzen',  9000],
       ['ATE0', 'Echo abschalten',       3000],
@@ -279,6 +323,16 @@ window.OBD = (() => {
       melde(was);
       await send(befehl, frist);
     }
+    // Das Protokoll steht erst nach der ersten echten Anfrage fest — die
+    // Suche läuft beim ersten Befehl an den Bus, nicht bei ATSP0. Danach
+    // nennt ATDPN die Nummer: 1–5 sind K-Leitung, 6–9 und A–C sind CAN,
+    // ein vorangestelltes "A" heisst nur "automatisch gefunden".
+    melde('Protokoll bestimmen');
+    try { await send('0100', 12000); } catch { /* ohne Zündung: bleibt unbekannt */ }
+    try {
+      const m = /([1-9A-C])\s*$/i.exec(await send('ATDPN', 3000));
+      protokoll = m ? (/[6-9A-C]/i.test(m[1]) ? 'can' : 'k') : null;
+    } catch { protokoll = null; }
     melde('Bereit');
   };
 
@@ -302,21 +356,26 @@ window.OBD = (() => {
       try { roh = await send(topf.dienst, 8000); } catch { continue; }
       if (alsFehler(roh)) continue;
 
-      const bytes = bytesAus(roh);
-      // Antwortkopf abschneiden, danach paarweise lesen.
-      const start = bytes.indexOf(topf.antwort);
-      if (start < 0) continue;
-      let i = start + 1;
-      // Nach dem Kopf steht bei CAN die Anzahl der Codes — ist die
-      // erste Zahl kleiner als die Paarzahl, war es eine Anzahl.
-      const übrig = bytes.length - i;
-      if (übrig % 2 === 1) i += 1;
-      for (; i + 1 < bytes.length; i += 2) {
-        const hi = bytes[i], lo = bytes[i + 1];
-        if (hi === 0 && lo === 0) continue;               // Füllbytes
-        const code = decodeDtc(hi, lo);
-        if (gefunden.some(g => g.code === code && g.art === topf.art)) continue;
-        gefunden.push({ code, art: topf.art, hinweis: topf.hinweis, herkunft: dtcHerkunft(code) });
+      // Jede Nachricht für sich: ein Steuergerät, ein Antwortkopf.
+      for (const n of nachrichten(roh)) {
+        const start = n.indexOf(topf.antwort);
+        if (start < 0) continue;
+        let i = start + 1;
+        // Auf CAN folgt dem Kopf die Anzahl der Codes. Ist das Protokoll
+        // unbekannt, verrät es die Länge: eine K-Leitungs-Antwort ist
+        // Kopf plus drei Paare, also gerade viele Bytes nach dem Kopf;
+        // auf CAN sind es Anzahl plus Paare, also ungerade viele.
+        const rest = n.length - i;
+        const mitAnzahl = protokoll === 'can' || (protokoll === null && rest % 2 === 1);
+        let paare = Infinity;
+        if (mitAnzahl) { paare = n[i]; i += 1; }
+        for (let k = 0; k < paare && i + 1 < n.length; k++, i += 2) {
+          const hi = n[i], lo = n[i + 1];
+          if (hi === 0 && lo === 0) continue;             // Füllbytes
+          const code = decodeDtc(hi, lo);
+          if (gefunden.some(g => g.code === code && g.art === topf.art)) continue;
+          gefunden.push({ code, art: topf.art, hinweis: topf.hinweis, herkunft: dtcHerkunft(code) });
+        }
       }
     }
     return gefunden;
@@ -353,30 +412,35 @@ window.OBD = (() => {
   };
 
   // Welche PIDs das Fahrzeug überhaupt unterstützt, sagt es selbst:
-  // PID 00 liefert eine Bitmaske für 01–20. Danach zu fragen erspart
-  // zwanzig Anfragen ins Leere.
-  const readSupportedPids = async () => {
+  // PID 00 liefert eine Bitmaske für 01–20, PID 20 eine für 21–40, PID 40
+  // eine für 41–60. Danach zu fragen erspart zwanzig Anfragen ins Leere.
+  // Vorher wurden die PIDs oberhalb 20 blind angehängt — jede kostete
+  // dann bei jedem Durchlauf eine Anfrage, die mit NO DATA endete.
+  const maskeLesen = async (basis) => {
+    const pidHex = basis.toString(16).toUpperCase().padStart(2, '0');
     let roh;
-    try { roh = await send('0100', 4000); } catch { return Object.keys(PIDS); }
-    if (alsFehler(roh)) return Object.keys(PIDS);
-
+    try { roh = await send('01' + pidHex, 4000); } catch { return null; }
+    if (alsFehler(roh)) return null;
     const bytes = bytesAus(roh);
     const start = bytes.indexOf(0x41);
-    if (start < 0 || bytes[start + 1] !== 0x00) return Object.keys(PIDS);
+    if (start < 0 || bytes[start + 1] !== basis) return null;
     const maske = bytes.slice(start + 2, start + 6);
-    if (maske.length < 4) return Object.keys(PIDS);
+    return maske.length < 4 ? null : maske;
+  };
 
+  const readSupportedPids = async () => {
     const unterstützt = [];
-    for (let bit = 0; bit < 32; bit++) {
-      const gesetzt = (maske[Math.floor(bit / 8)] >> (7 - (bit % 8))) & 1;
-      if (!gesetzt) continue;
-      const pid = (bit + 1).toString(16).toUpperCase().padStart(2, '0');
-      if (PIDS[pid]) unterstützt.push(pid);
-    }
-    // PIDs oberhalb 20 stehen in weiteren Masken; die fragen wir nicht
-    // ab, sondern probieren sie einmal direkt.
-    for (const pid of ['21', '2F', '33', '42', '46', '5C']) {
-      if (PIDS[pid]) unterstützt.push(pid);
+    for (const basis of [0x00, 0x20, 0x40]) {
+      const maske = await maskeLesen(basis);
+      if (!maske) break;
+      for (let bit = 0; bit < 32; bit++) {
+        const gesetzt = (maske[Math.floor(bit / 8)] >> (7 - (bit % 8))) & 1;
+        if (!gesetzt) continue;
+        const pid = (basis + bit + 1).toString(16).toUpperCase().padStart(2, '0');
+        if (PIDS[pid]) unterstützt.push(pid);
+      }
+      // Das letzte Bit jeder Maske sagt, ob es die nächste gibt.
+      if (!(maske[3] & 0x01)) break;
     }
     return unterstützt.length ? unterstützt : Object.keys(PIDS);
   };
@@ -406,13 +470,19 @@ window.OBD = (() => {
     try { roh = await send('0902', 6000); } catch { return null; }
     if (alsFehler(roh)) return null;
 
-    const bytes = bytesAus(roh);
-    const start = bytes.indexOf(0x49);
-    if (start < 0) return null;
-    const text = bytes.slice(start + 2)
-      .filter(b => b >= 0x30 && b <= 0x5a)
-      .map(b => String.fromCharCode(b))
-      .join('');
+    // Auf CAN eine lange Nachricht: 49 02, Anzahl, 17 Zeichen. Auf der
+    // K-Leitung fünf kurze: 49 02, laufende Nummer, je vier Zeichen, die
+    // erste mit Nullen aufgefüllt. In beiden Fällen: Kopf und ein
+    // Zählbyte weg, den Rest aneinanderhängen.
+    let text = '';
+    for (const n of nachrichten(roh)) {
+      const start = n.indexOf(0x49);
+      if (start < 0 || n[start + 1] !== 0x02) continue;
+      text += n.slice(start + 3)
+        .filter(b => b >= 0x30 && b <= 0x5a)
+        .map(b => String.fromCharCode(b))
+        .join('');
+    }
     const treffer = text.match(/[A-HJ-NPR-Z0-9]{17}/);
     return treffer ? treffer[0] : null;
   };
@@ -436,6 +506,7 @@ window.OBD = (() => {
       transport = null;
       puffer = '';
       warteAuflösung = null;
+      protokoll = null;
     }
   };
 
@@ -445,6 +516,7 @@ window.OBD = (() => {
     init, send,
     readStatus, readDtcs, clearDtcs,
     readPid, readSupportedPids, livePoll, readVin,
-    decodeDtc, PIDS
+    decodeDtc, PIDS,
+    protokoll: () => protokoll
   };
 })();

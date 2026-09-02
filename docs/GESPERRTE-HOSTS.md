@@ -12,6 +12,16 @@ der Umgebung — siehe
 
 Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
 
+> **Nachtrag 02.09.2026, andere Umgebung.** In einer Claude-Code-Sitzung auf
+> dem lokalen Mac (nicht in der Cloud-Sandbox) antworten alle Hosts dieser
+> Liste: `bmwteka.com` 307, `patents.google.com` 200, `web.archive.org` 200,
+> `commons.wikimedia.org` 301, `ms4x.net` 301, `depatisnet.dpma.de` 301,
+> `newtis.info` und `worldwide.espacenet.com` 403 (Bot-Schutz, kein Proxy),
+> `d8j0ntlcm91z4.cloudfront.net` liefert die Objekte mit 200. Die Sperre unten
+> ist also eine Eigenschaft der Sandbox-Richtlinie, nicht der Hosts. Die
+> Regeln beim Einpflegen (unten) gelten unverändert — Erreichbarkeit ist
+> keine Lizenz.
+
 > **Freigabe erteilt, in neuer Session nachgemessen: greift nicht.** Am 01.09.
 > wurde die Netzrichtlinie um `bmwteka.com`, die Patent-Hosts und die
 > Recherche-Hosts erweitert. Die damalige Vermutung war, ein laufender
@@ -52,7 +62,7 @@ Stand der Prüfung: 01.09.2026, alle Einträge einzeln nachgemessen.
 | Bereich | Ohne Freigabe | Mit Freigabe |
 |---|---|---|
 | Motorbilder | gerechnete Schemata aus `engines.json` | belegte Schnittzeichnungen und Fotos |
-| Eigene Renders | zehn erzeugte Symbolbilder, die im Konto liegen bleiben | dieselben zehn, eingecheckt |
+| Eigene Renders | — | eingecheckt am 02.09.2026 (Abschnitt 4) |
 | MS43-Pinliste | Ausmessverfahren statt Pinnummern | die tatsächliche Belegung |
 | Motornummern-Position | eine offene Widersprüchlichkeit | geklärt |
 | E88-Sicherungsnummern | „Sicherung im Kasten X" ohne Nummer | Nummer und Ampere |

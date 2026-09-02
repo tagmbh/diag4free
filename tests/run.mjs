@@ -87,7 +87,91 @@ const KONTRAST_SKRIPT = `(() => {
   return [...new Set(out)];
 })()`;
 
+// -------- OBD-Attrappe --------
+// Ein ELM327 hinter navigator.serial, ohne Browser und ohne Fahrzeug. Die
+// Antworten je Befehl sind skriptbar — so lassen sich genau die Formate
+// pruefen, die im Feld vorkommen und im Buero nicht: mehrzeilige
+// CAN-Antworten mit Laengenkopf und Fuellbytes, zwei antwortende
+// Steuergeraete, K-Leitungs-Antworten ohne Zaehlbyte. Jeder dieser Faelle
+// hat vorher Phantomcodes geliefert, ohne dass etwas rot wurde.
+import { readFileSync } from 'node:fs';
+const OBD_QUELLE = readFileSync(join(ROOT, 'obd.js'), 'utf8');
+const obdAttrappe = (antworten) => {
+  let liefere = null;
+  const readable = new ReadableStream({ start(c) { liefere = (t) => c.enqueue(new TextEncoder().encode(t)); } });
+  const writable = new WritableStream({ write(chunk) {
+    const befehl = new TextDecoder().decode(chunk).replace(/\r$/, '');
+    const antwort = antworten(befehl);
+    setTimeout(() => liefere((antwort ?? (befehl.startsWith('AT') ? 'OK' : 'NO DATA')) + '\r\r>'), 2);
+  } });
+  const port = { open: async () => {}, close: async () => {}, readable, writable };
+  const fenster = { isSecureContext: true };
+  const nav = { serial: { requestPort: async () => port } };
+  return new Function('window', 'navigator', OBD_QUELLE + '\nreturn window.OBD;')(fenster, nav);
+};
+
+async function obdProtokollPruefen() {
+  console.log('\n▸ OBD-Protokoll (Attrappe, ohne Browser)');
+  const fall = async (name, antworten, aktion, soll) => {
+    let ist;
+    try {
+      const OBD = obdAttrappe(antworten);
+      await OBD.connectSerial();
+      await OBD.init();
+      ist = await aktion(OBD);
+      await OBD.disconnect();
+    } catch (e) { ist = `Ausnahme: ${e.message}`; }
+    expect(JSON.stringify(ist) === JSON.stringify(soll), name,
+      `erwartet ${JSON.stringify(soll)}, bekommen ${JSON.stringify(ist)}`);
+  };
+  const codes = (o) => o.readDtcs().then(x => x.map(d => d.code));
+  const bei = (cmd, antwort, sonst = {}) => (c) => c === cmd ? antwort : (sonst[c] ?? null);
+
+  await fall('CAN: zwei Codes in einem Rahmen',
+    bei('03', '43 02 01 33 02 44', { ATDPN: 'A6' }), codes, ['P0133', 'P0244']);
+  await fall('CAN: drei Codes ueber zwei Rahmen mit Laengenkopf und Fuellbytes',
+    bei('03', '008\r0: 43 03 01 33 02 44\r1: 01 35 00 00 00 00 00', { ATDPN: 'A6' }), codes, ['P0133', 'P0244', 'P0135']);
+  await fall('CAN: zwei Steuergeraete antworten getrennt',
+    bei('03', '43 01 01 33 00 00 00 00\r43 01 02 44 00 00 00 00', { ATDPN: 'A6' }), codes, ['P0133', 'P0244']);
+  await fall('CAN: kein Code',
+    bei('03', '43 00', { ATDPN: 'A6' }), codes, []);
+  await fall('K-Leitung: vier Codes ueber zwei Nachrichten, ohne Zaehlbyte',
+    bei('03', '43 01 33 02 44 01 35\r43 04 20 00 00 00 00', { ATDPN: '3' }), codes, ['P0133', 'P0244', 'P0135', 'P0420']);
+  await fall('Protokoll unbekannt: CAN-Form wird an der Laenge erkannt',
+    bei('03', '43 02 01 33 02 44'), codes, ['P0133', 'P0244']);
+  await fall('Protokoll unbekannt: K-Leitungs-Form wird an der Laenge erkannt',
+    bei('03', '43 01 33 02 44 00 00'), codes, ['P0133', 'P0244']);
+  await fall('Protokoll wird aus ATDPN gelesen',
+    bei('ATDPN', 'A6'), (o) => o.protokoll(), 'can');
+  await fall('VIN ueber CAN in drei Rahmen',
+    bei('0902', '014\r0: 49 02 01 57 42 41\r1: 44 41 33 31 30 30 30\r2: 4C 31 32 33 34 35 36'), (o) => o.readVin(), 'WBADA31000L123456');
+  await fall('VIN ueber K-Leitung in fuenf Nachrichten',
+    bei('0902', '49 02 01 00 00 00 57\r49 02 02 42 41 44 41\r49 02 03 33 31 30 30\r49 02 04 30 4C 31 32\r49 02 05 33 34 35 36'), (o) => o.readVin(), 'WBADA31000L123456');
+  await fall('Drehzahl nach J1979',
+    bei('010C', '41 0C 1A F8'), (o) => o.readPid('0C').then(w => w && w.wert), 1726);
+  await fall('Status: MIL an, drei Codes',
+    bei('0101', '41 01 83 07 65 04'), (o) => o.readStatus(), { mil: true, anzahl: 3 });
+  // PID-Masken: 00 sagt, dass 0C und 0D da sind und dass Maske 20 folgt;
+  // 20 sagt, dass 2F da ist, und dass keine weitere Maske folgt.
+  await fall('Unterstuetzte PIDs aus den Masken 00 und 20, ohne blinde Anfragen',
+    (c) => c === '0100' ? '41 00 00 18 00 01' : c === '0120' ? '41 20 00 02 00 00' : c === '0140' ? 'SOLLTE NICHT GEFRAGT WERDEN' : null,
+    (o) => o.readSupportedPids(), ['0C', '0D', '2F']);
+  await fall('NO DATA ist kein Code',
+    bei('03', 'NO DATA'), codes, []);
+  await fall('Zwei Befehle gleichzeitig: beide bekommen ihre Antwort',
+    (c) => c === '010C' ? '41 0C 1A F8' : c === '0101' ? '41 01 83 07 65 04' : null,
+    async (o) => { const [a, b] = await Promise.all([o.readPid('0C'), o.readStatus()]); return [a && a.wert, b && b.anzahl]; },
+    [1726, 3]);
+}
+
 async function main() {
+  await obdProtokollPruefen();
+  // NUR_OBD=1 bricht hier ab — fuer die Arbeit am Protokoll, ohne neun
+  // Minuten Browserlauf.
+  if (process.env.NUR_OBD) {
+    console.log(`\n${failures ? '✖' : '✓'}  ${checks - failures}/${checks} Prüfungen bestanden`);
+    process.exit(failures ? 1 : 0);
+  }
   let server;
   if (OWN_SERVER) {
     server = spawn('python3', ['-m', 'http.server', String(PORT)], { cwd: ROOT, stdio: 'ignore' });
@@ -898,6 +982,175 @@ async function main() {
       } else {
         ok('engines.json nicht vorhanden — Motorkarten bleiben textbasiert (erwartet)');
       }
+      await ctx.close();
+    }
+
+    // --- Diagnose-Runner: Spur, Sitzung, Deep-Link, Motorfilter ---
+    // Jede Pruefung hier steht fuer einen Fehler, der im Bugcheck vom
+    // 02.09.2026 gefunden wurde. Sie sind absichtlich eng: nicht "der Runner
+    // geht", sondern "genau dieser Weg fuehrt nicht mehr ins Leere".
+    {
+      console.log('\n▸ Diagnose-Runner: Spur, Sitzung, Deep-Link, Motorfilter');
+      const ctx = await browser.newContext({ ...devices['iPhone 13'], serviceWorkers: 'block' });
+      await ctx.route(CDN, r => r.abort());
+      const page = await ctx.newPage();
+      page.on('pageerror', e => errors.push(`runner: ${e.message}`));
+      const hash = () => page.evaluate(() => location.hash);
+
+      // Kaputte Einstellungen: `null` ist gueltiges JSON und war ein Startabbruch.
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => {
+        localStorage.clear();
+        localStorage.setItem('diag4free.prefs.v1', 'null');
+        localStorage.setItem('diag4free.checks.v2', '"x"');
+      });
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      expect(await page.locator('[data-pick-model]').count() > 0,
+        'Start trotz `null` in den Einstellungen', 'kein Fahrzeugwaehler gerendert');
+
+      // Deep-Link auf die Baureihe ist eine Wahl — Cockpit, nicht Waehler.
+      await page.goto(BASE + '/#/model/e39', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      expect(await page.locator('.cockpit').count() === 1,
+        'Deep-Link #/model/e39 landet im Cockpit', 'Fahrzeugwaehler statt Cockpit');
+
+      // Einen Weg mit zwei Antworten finden, die beide auf Schritte zeigen.
+      const weg = await page.evaluate(async () => {
+        const d = await (await fetch('./content/index.json')).json();
+        const prefs = JSON.parse(localStorage.getItem('diag4free.prefs.v1') || '{}');
+        for (const g of Object.values(d.guides)) {
+          if (g.model !== prefs.series) continue;
+          if (g.engines && g.engines.length && !g.engines.includes(prefs.engine)) continue;
+          let i = 0; const antworten = [];
+          for (let k = 0; k < 2; k++) {
+            const st = g.steps[i]; if (!st) break;
+            const a = ['yes', 'no'].find(x => typeof st[x] === 'number');
+            if (a === undefined) break;
+            antworten.push(a); i = st[a];
+          }
+          if (antworten.length === 2 && g.steps[i]) return { id: g.id, antworten };
+        }
+        return null;
+      });
+      expect(!!weg, 'Pfad mit zwei Schritt-Antworten gefunden', 'kein passender Pfad in der Baureihe');
+      if (weg) {
+        await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+        await settle(page, 1000);
+        await page.locator(`[data-select-guide="${weg.id}"]`).click();
+        await settle(page, 500);
+        const h0 = await hash();
+        await page.locator(`[data-answer="${weg.antworten[0]}"]`).click();
+        await settle(page, 500);
+        const h1 = await hash();
+        await page.locator(`[data-answer="${weg.antworten[1]}"]`).click();
+        await settle(page, 500);
+        const h2 = await hash();
+        expect(h0 !== h1 && h1 !== h2, 'Jede Antwort hat ihren eigenen Hash', `${h0} ${h1} ${h2}`);
+        expect(await page.locator('[data-trail]').count() === 2,
+          'Spur zeigt zwei beantwortete Schritte', `${await page.locator('[data-trail]').count()} Eintraege`);
+        // Sprung in der Spur auf den zweiten Schritt, dann "Zurueck":
+        // vorher fuehrte "Zurueck" danach nach VORN.
+        await page.locator('[data-trail="1"]').click();
+        await settle(page, 600);
+        expect(await hash() === h1, 'Sprung in der Spur landet auf dem zweiten Schritt', `Hash ${await hash()}, erwartet ${h1}`);
+        expect(await page.locator('[data-trail]').count() === 1,
+          'Spur hat nach dem Sprung einen Eintrag', `${await page.locator('[data-trail]').count()}`);
+        await page.locator('[data-step-back]').click();
+        await settle(page, 600);
+        expect(await hash() === h0, 'Zurueck nach dem Sprung fuehrt zum ersten Schritt', `Hash ${await hash()}, erwartet ${h0}`);
+        expect(await page.locator('[data-trail]').count() === 0,
+          'Spur ist am ersten Schritt leer', `${await page.locator('[data-trail]').count()}`);
+
+        // Sitzung mit einem Schritt, den es nicht gibt: kein "Weitermachen"
+        // ins Leere, die Liste steht da.
+        // Erst den laufenden Pfad verlassen und neu laden — solange er im
+        // Speicher steht, schreibt die App ihre eigene Sitzung darueber.
+        await page.locator('[data-back-to-guides]').click();
+        await settle(page, 400);
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1000);
+        await page.evaluate((gid) => {
+          const p = JSON.parse(localStorage.getItem('diag4free.prefs.v1'));
+          localStorage.setItem('diag4free.session.v1', JSON.stringify({ series: p.series, engine: p.engine, guide: gid, step: 99, history: [0, 1], result: null, ts: Date.now() }));
+        }, weg.id);
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1200);
+        expect(await page.locator('[data-resume-session]').count() === 0,
+          'Nicht wiederaufnehmbare Sitzung wird nicht angeboten', 'Weitermachen-Karte steht da');
+        expect(await page.locator('[data-select-guide]').count() > 0,
+          'Pfadliste steht trotzdem', 'keine Pfade');
+      }
+
+      // Bis zu einem Ergebnis laufen, dann "Andere Diagnose": der Hash muss mit.
+      const zumErgebnis = await page.evaluate(async () => {
+        const d = await (await fetch('./content/index.json')).json();
+        const prefs = JSON.parse(localStorage.getItem('diag4free.prefs.v1') || '{}');
+        for (const g of Object.values(d.guides)) {
+          if (g.model !== prefs.series) continue;
+          if (g.engines && g.engines.length && !g.engines.includes(prefs.engine)) continue;
+          // Breitensuche bis Tiefe 4
+          let front = [{ i: 0, weg: [] }];
+          for (let t = 0; t < 4; t++) {
+            const next = [];
+            for (const { i, weg } of front) {
+              const st = g.steps[i]; if (!st) continue;
+              for (const a of ['yes', 'no']) {
+                if (typeof st[a] === 'string') return { id: g.id, antworten: [...weg, a] };
+                if (typeof st[a] === 'number') next.push({ i: st[a], weg: [...weg, a] });
+              }
+            }
+            front = next;
+          }
+        }
+        return null;
+      });
+      expect(!!zumErgebnis, 'Pfad mit erreichbarem Ergebnis gefunden', 'keiner in Tiefe 4');
+      if (zumErgebnis) {
+        await page.evaluate(() => localStorage.removeItem('diag4free.session.v1'));
+        await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await settle(page, 1200);
+        await page.locator(`[data-select-guide="${zumErgebnis.id}"]`).click();
+        await settle(page, 500);
+        for (const a of zumErgebnis.antworten) {
+          await page.locator(`[data-answer="${a}"]`).click();
+          await settle(page, 450);
+        }
+        expect(/\/ergebnis\//.test(await hash()), 'Ergebnis erreicht', `Hash ${await hash()}`);
+        await page.locator('[data-back-to-guides]').click();
+        await settle(page, 500);
+        expect(await hash() === '#/troubleshoot', '"Andere Diagnose" zieht den Hash mit', `Hash ${await hash()}`);
+      }
+
+      // Motorfilter: der M43 im E46 hat keinen eigenen Pfad — die Liste sagt
+      // das und zeigt die Pfade der anderen Motoren gekennzeichnet.
+      await page.goto(BASE + '/#/overview', { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => localStorage.clear());
+      await page.reload({ waitUntil: 'domcontentloaded' });
+      await settle(page, 1300);
+      await page.locator('[data-pick-model="e46"]').click();
+      await settle(page, 600);
+      await page.locator('[data-engine="M43"]').click();
+      await settle(page, 600);
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1000);
+      expect(await page.locator('.guide-hint').count() === 1,
+        'M43 ohne eigenen Pfad: Hinweis steht da', 'kein Hinweis');
+      expect(await page.locator('.guide-option-fremd').count() > 0,
+        'Pfade anderer Motoren bleiben erreichbar, gekennzeichnet', 'keine gekennzeichneten Pfade');
+      await page.goto(BASE + '/#/model/e46', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1000);
+      await page.locator('[data-change-engine]').click();
+      await settle(page, 500);
+      await page.locator('[data-engine="M54"]').click();
+      await settle(page, 600);
+      await page.goto(BASE + '/#/troubleshoot', { waitUntil: 'domcontentloaded' });
+      await settle(page, 1000);
+      expect(await page.locator('.guide-option:not(.guide-option-fremd)').count() > 0,
+        'M54: eigene Pfade stehen oben', 'keine passenden Pfade');
+      expect(await page.locator('.guide-hint').count() === 0,
+        'M54: kein Hinweis auf fehlende Pfade', 'Hinweis trotz passender Pfade');
       await ctx.close();
     }
 
