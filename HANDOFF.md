@@ -1,7 +1,115 @@
 # diag4free — Handoff & Backlog
 
-> Stand: 2026-08-27 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
+> Stand: 2026-09-02 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
 > Dieses Dokument ist das Übergabe-Dokument für die Weiterentwicklung (z. B. via Claude Code).
+> **Wer eine neue Sitzung beginnt, liest zuerst den nächsten Abschnitt.**
+
+## ⇥ Für die nächste Sitzung: das eine offene Stück
+
+Die Wissensbasis ist inhaltlich abgeschlossen (918 Dokumente, 544 von 544
+Zellen, 30 von 34 Gruppen mit zwei Ebenen). Offen ist genau **eine** Sache,
+und sie hängt nicht am Inhalt, sondern an der Netzfreigabe.
+
+### Was vorliegt
+
+Am 02.09.2026 wurden über den Higgsfield-MCP **zehn photorealistische
+Motor-Renders** erzeugt — einer je Kombination aus Bauform und Aufladung,
+nicht je Motor. Sie liegen fertig im Higgsfield-Konto. Der Grund für zehn
+statt dreiundvierzig: Ein Bild, das „N54" heißt und kein N54 ist, wäre eine
+kleine Unwahrheit an einer Stelle, an der die ganze Wissensbasis von
+Genauigkeit lebt. Ein Bild, das „Symbolbild · Reihensechszylinder mit
+Bi-Turbo" heißt, ist wahr.
+
+### Was blockiert hat
+
+Der Auslieferungs-Host war in der Sitzung vom 02.09. gesperrt. Belegt, nicht
+vermutet:
+
+```
+$ curl -sS "$HTTPS_PROXY/__agentproxy/status"
+connect_rejected  d8j0ntlcm91z4.cloudfront.net:443
+connect_rejected  www.google.com:443
+```
+
+Auch `www.google.com` fiel — die Sitzung erreichte **überhaupt keinen**
+externen Host. Der Container lief seit dem 26.08. und hielt die Netzregeln
+vom Start; eine später hinterlegte Freigabe griff dort nicht mehr. Deshalb
+diese Übergabe: **eine neue Sitzung holt sich die Policy beim Start.**
+
+### Schritt 1 — prüfen, ob die Freigabe greift
+
+```bash
+curl -sS -o /dev/null -m 15 -w "%{http_code}\n" https://www.google.com/
+```
+
+`000` heißt: immer noch dicht, dann bitte nichts weiter versuchen und die
+Umgebungseinstellung klären (Network access auf *Custom*, Host exakt
+`d8j0ntlcm91z4.cloudfront.net`). Jede andere Antwort heißt: Weg ist offen.
+
+### Schritt 2 — die zehn Renders holen
+
+Basis-URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3EiC0aoxhHycf13LKgNjWmwzNul/`
+
+| Zieldatei | Objekt |
+|---|---|
+| `r3-turbo` | `hf_20260902_110009_dd66325d-a3dc-4971-84b7-2892efccf2f1.png` |
+| `r4-saug` | `hf_20260902_110009_fa264c24-5b9e-48b0-ae0c-b8ab905e6797.png` |
+| `r4-turbo` | `hf_20260902_110009_8321b8fd-17da-4a52-a067-cea997cb1b5e.png` |
+| `r6-saug` | `hf_20260902_110009_6e72f902-9f7c-4991-98e9-15d262e5277d.png` |
+| `r6-turbo` | `hf_20260902_110009_1a910a70-c577-4dac-b296-0cc2d585e827.png` |
+| `r6-biturbo` | `hf_20260902_110010_9f346a02-ba56-4a64-bbd2-8c844049cbdb.png` |
+| `v8-saug` | `hf_20260902_110009_72e185bc-0f3b-4407-bf88-05e28a77e481.png` |
+| `v8-biturbo` | `hf_20260902_110009_07a9aa29-6ebd-4527-a70f-570ec24f382f.png` |
+| `v10-saug` | `hf_20260902_110009_ba428c5f-f262-4833-ace1-f37086eb2164.png` |
+| `v12-saug` | `hf_20260902_110010_16849ec2-73da-4ac8-a1c5-e1028aac9c3d.png` |
+
+Sind die Objekte weg, ist das kein Drama: dieselben zehn Prompts stehen in
+`docs/GESPERRTE-HOSTS.md`, Abschnitt 4, und lassen sich neu erzeugen.
+
+### Schritt 3 — welcher Motor welches Bild bekommt
+
+| Bild | Motoren |
+|---|---|
+| `r3-turbo` | B38 |
+| `r4-saug` | M40 M42 M43 M44 N42 N43 N45 N46 S14 |
+| `r4-turbo` | B47 B48 N13 N20 N26 N47 |
+| `r6-saug` | M20 M30 M50 M52 M54 M56 N52 N53 S38 S50 S52 S54 |
+| `r6-turbo` | B57 B58 M57 N55 N57 |
+| `r6-biturbo` | N54 |
+| `v8-saug` | M60 M62 N62 S62 S65 |
+| `v8-biturbo` | N63 S63 |
+| `v10-saug` | S85 |
+| `v12-saug` | M73 |
+
+Die Zuordnung ergibt sich aus `layout` und `aspiration` in
+`content/engines.json` — sie gehört **berechnet**, nicht als zweite Liste
+gepflegt, sonst läuft sie auseinander.
+
+### Schritt 4 — einbauen, mit vier Bedingungen
+
+1. **Vorher ansehen.** In der Sitzung vom 02.09. hat sie niemand gesehen;
+   sie ließen sich nicht laden. Ungesehenes wird nicht in ein öffentliches
+   Repository verteilt.
+2. **Sichtbar als Symbolbild kennzeichnen.** Es zeigt die Bauform, nicht
+   das Exemplar.
+3. **Das gerechnete Schema bleibt darunter liegen** — genau wie bei den
+   Fahrzeugen das Foto die Silhouette nicht ersetzt. Das Schema trägt die
+   belegten Merkmale aus `engines.json`; das Bild trägt keinen einzigen
+   diagnostischen Anspruch.
+4. **Keine Motorkennung als Dateiname.** `r6-biturbo.webp`, nicht
+   `n54.webp`.
+
+Technisch analog zu `vehicleArt()` in `graphics.js`: eine Funktion
+`engineArt()`, die das Bild über `engineSvg()` legt, mit `onerror` das Bild
+entfernt und darunter die Zeichnung stehen lässt. Dazu die Assets in
+`sw.js` unter `BILD_ASSETS` einzeln vorhalten (nicht `addAll`), eine
+Audit-Regel gegen Einträge ohne Datei, und ein Test analog zu
+„Unter jedem Foto liegt weiterhin die Zeichnung".
+
+### Was danach offen bleibt
+
+`bmwteka.com` — und selbst mit Freigabe gibt `/de/tis` seine Inhalte erst
+nach Anmeldung heraus. Fremde Zugangsdaten sind kein gangbarer Weg.
 
 ## Architektur-Kurzüberblick
 
@@ -10,7 +118,7 @@
 - `node scripts/build-index.mjs` baut `content/index.json` aus `content/<modell>/{docs,guides}.json`
   (`content/software.json` ist **nicht** Teil des Index-Builds, wird separat gefetcht)
 - Deployment: Push auf `main` → GitHub Actions → GitHub Pages → Custom Domain `diag4all.t-alpha.com` (~45 s)
-- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.10.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
+- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.49.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
 - State/Persistenz: `localStorage` (`diag4free.prefs.v1` für Baureihe/Motor/Theme/Checks, `diag4free.vin.v1` für VIN-Cache)
 - Hash-Routing: `#/overview`, `#/docs`, `#/guide/<id>`, `#/measure`, `#/library`, `#/software`, `#/model/<id>`
 - Sichtbarkeits-Sync der Views passiert zentral in `render()` (nicht nur in `setView`) — wichtig für Deep-Links
@@ -111,10 +219,13 @@ Umgesetzt in `content/engines.json` (43 Steckbriefe) und `graphics.js`:
   Glossaranschluss
 
 Die Empfehlung von damals — erst 2D/SVG, keine fremden 3D-Modelle
-ungeklaerter Lizenz — gilt unveraendert und hat sich bewaehrt. Was noch
-offen ist, ist **nicht** die Darstellung, sondern die Frage, ob es
-fotorealistische Motorbilder geben soll und woher sie kaemen; das steht in
-`docs/PROGRESS.md` unter „Offen — braucht eine Entscheidung".
+ungeklaerter Lizenz — gilt unveraendert und hat sich bewaehrt.
+
+Die Frage nach fotorealistischen Motorbildern ist am 02.09.2026
+**entschieden**: eigene Renders, als Symbolbild je Bauform, ueber dem
+gerechneten Schema. Erzeugt sind sie; eingebaut noch nicht, weil der
+Auslieferungs-Host gesperrt war. Der vollstaendige Ablauf steht oben unter
+„Fuer die naechste Sitzung".
 
 ### 2. E88 — erledigt (Stand 27.08.2026)
 
