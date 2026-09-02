@@ -832,6 +832,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E87 - Ablaeufe, Mechanik, Anlernen",
+      "valid": "E87 - 2004-2011",
+      "summary": "Am E87 fuehrt der stehende Dachablauf das Wasser dorthin, wo Steuergeraete und Steckverbindungen sitzen. Der Befund sieht dann elektrisch aus und ist es nicht.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Innenraum ist ein Ablaufbefund",
+        "Ablaeufe unten an der Austrittsstelle freimachen. Der Schlauch loest sich am Anschluss haeufiger, als er verstopft",
+        "Wechselnde elektrische Fehler nach Regen zuerst als Wasserproblem behandeln. Ein Eintrag ohne Ursache ist bei Feuchtigkeit die Regel",
+        "Ein Dach, das stoppt und zurueckfaehrt, meldet Widerstand -- Fuehrungen freigaengig machen, dann den Antrieb beurteilen",
+        "Nach Spannungsverlust die Endlagen anlernen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -716,6 +716,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach F22 - Ablaeufe, Anlernen, Geraeusche",
+      "valid": "F22 - 2013-2021",
+      "summary": "Am F22 wird ein Dachgeraeusch gern der Dichtung angelastet. Haeufiger ist es die Lage des Deckels -- und der nasse Innenraum bleibt ein Ablaufbefund.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Wasser innen heisst stehender Ablauf, nicht muerbe Dichtung",
+        "Windgeraeusch zuerst als Lagefehler des Deckels behandeln. Eine neue Dichtung an falsch sitzendem Deckel pfeift genau so",
+        "Nach Arbeiten am Dach oder nach Spannungsverlust die Endlagen anlernen",
+        "Ablaeufe unten an der Austrittsstelle freimachen. Oben ist der Ablauf meist frei",
+        "Ein ansprechender Einklemmschutz meldet Widerstand -- erst die Mechanik freigaengig machen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

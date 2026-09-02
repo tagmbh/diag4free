@@ -744,6 +744,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach E70 - Regenrinne, Ablaeufe, Rollo",
+      "valid": "E70 - 2006-2013",
+      "summary": "Das Panoramadach des E70 ist eine grosse Regenrinne mit vier Ablaeufen. Deren Enden liegen weit vom Dach entfernt. Wer oben sucht, findet die Verstopfung nicht.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- beim Panoramadach gilt das in groesserem Massstab, weil die Flaeche groesser ist",
+        "Die Ablaeufe enden unten an der Karosserie, nicht am Dach. Geprueft wird an der Austrittsstelle; oben ist der Ablauf fast immer frei",
+        "Vier Ablaeufe getrennt beurteilen. Faellt nur eine Ecke aus, grenzt das die Stelle ein, bevor der Himmel herunterkommt",
+        "Nicht mit Draht stochern. Ein durchstossener Schlauch fuehrt das Wasser danach in den Hohlraum",
+        "Rollo und Glasdeckel sind zwei Antriebe. Welcher nicht kommt, sagt bereits, wo zu suchen ist",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

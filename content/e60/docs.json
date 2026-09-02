@@ -841,6 +841,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E60 - Ablaeufe, Initialisierung, Einklemmschutz",
+      "valid": "E60 - 2003-2010",
+      "summary": "Am E60 sind Dachfehler haeufiger fehlende Endlagen als defekte Antriebe -- und der nasse Innenraum ist ein Ablaufbefund. Diese Gruppe ordnet beides.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel oder Fussraum ist ein Ablaufbefund",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen anlernen. Ohne Anlernen faehrt das Dach unvollstaendig, ohne defekt zu sein",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand und keine Stoerung. Erst die Mechanik freigaengig machen",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt selten am Dachrahmen",
+        "Steht Wasser im Innenraum, gehoert es geklaert, bevor Steuergeraete beurteilt werden -- nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch entlaesst das Wasser in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

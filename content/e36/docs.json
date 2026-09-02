@@ -722,6 +722,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach und Verdeck E36 - Ablaeufe, Mechanik, Verdeckschalter",
+      "valid": "E36 - 1990-2000",
+      "summary": "Beim E36 kommen zwei getrennte Themen zusammen: der Dachablauf, der still steht, und beim Cabrio die Verdeckverriegelung, deren Schalter meldet, was der Hydraulik fehlt.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Fussraum am E36 ist zuerst ein Ablaufbefund",
+        "Die Ablaeufe laufen durch die Saeulen nach unten. Die Verstopfung sitzt haeufiger am unteren Ende als oben am Dach -- dort gehoert geprueft",
+        "Nicht mit Draht stochern. Ein beschaedigter Schlauch leitet das Wasser danach in den Hohlraum",
+        "Beim Cabrio bleibt ein Verdeck meist wegen eines Schalters stehen, nicht wegen fehlenden Drucks. Ein Verdeck, das mitten in der Bewegung stoppt, meldet eine nicht erreichte Stellung",
+        "Hydraulik und Verriegelung getrennt beurteilen: Arbeitet die Pumpe hoerbar, ohne dass sich etwas bewegt, gehoert der Verdacht auf Verriegelung oder Schalter",
+        "Nach einer Notentriegelung den Ausgangszustand sauber wiederherstellen, bevor erneut elektrisch betaetigt wird. Sonst wird aus einer Stoerung ein Schaden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

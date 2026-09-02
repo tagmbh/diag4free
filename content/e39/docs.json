@@ -731,6 +731,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E39 - Ablaeufe, Antrieb, Anlernen",
+      "valid": "E39 - 1995-2004",
+      "summary": "Beim E39 landet Wasser aus dem Dachablauf regelmaessig dort, wo Steuergeraete sitzen. Deshalb ist der Ablauf hier nicht nur eine Komfortfrage. Diese Gruppe ordnet Ablauf, Antrieb und Anlernen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der Ablauf ist die Funktion, nicht die Dichtung",
+        "Steht der Ablauf, sucht sich das Wasser einen Weg nach innen -- und der endet am E39 haeufig an Steckverbindungen und Steuergeraeten. Ein Elektronikfehler ohne Ursache ist dann kein Zufall",
+        "Ablaeufe unten an der Austrittsstelle pruefen, nicht am Dachrahmen. Der Schlauch loest sich am Anschluss haeufiger, als er verstopft",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
+        "Ein Dach, das stoppt, meldet Widerstand. Fuehrungen freigaengig machen, dann den Antrieb beurteilen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -710,6 +710,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-129",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E34 - Ablaeufe, Antrieb, Handbetaetigung",
+      "valid": "E34 - 1987-1996",
+      "summary": "Am E34 sind Dachfehler fast immer entweder ein stehender Ablauf oder eine schwergaengige Mechanik. Beides sieht nach etwas anderem aus. Diese Gruppe trennt die Faelle.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Wer die Dichtung tauscht, hat den Ablauf nicht geprueft",
+        "Die vier Ablaeufe getrennt beurteilen. Faellt nur eine Seite oder nur vorn aus, grenzt das die Stelle ein, bevor irgendetwas zerlegt wird",
+        "Der Schlauch loest sich haeufig am Anschluss statt zu verstopfen. Dann ist er frei und trotzdem falsch -- das Wasser laeuft neben den Ablauf in die Saeule",
+        "Ein Dach, das mitten in der Bewegung stoppt, meldet meist Widerstand. Erst Fuehrung und Dichtung freigaengig machen, dann den Antrieb beurteilen",
+        "Handbetaetigung als Pruefmittel nutzen: Geht das Dach von Hand schwer, ist die Mechanik der Befund und nicht der Motor",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch fuehrt das Wasser danach in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

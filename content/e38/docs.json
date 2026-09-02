@@ -715,6 +715,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E38 - Ablaeufe, Endlagen, Initialisierung",
+      "valid": "E38 - 1994-2001",
+      "summary": "Am E38 kann ein Dach nach Spannungsverlust seine Endlagen verlieren. Dann faehrt es unvollstaendig, ohne dass ein Bauteil defekt ist. Erst anlernen, dann urteilen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel ist ein Ablaufbefund",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen neu anlernen. Ein unvollstaendig fahrendes Dach ist danach oft wieder in Ordnung",
+        "Ein Dach, das stoppt und zurueckfaehrt, meldet Widerstand. Die Mechanik gehoert freigaengig gemacht, bevor der Antrieb beurteilt wird",
+        "Die Ablaeufe unten an der Austrittsstelle pruefen. Sie enden weit vom Dach entfernt, und dort sitzt die Verstopfung",
+        "Der Schlauch loest sich am Anschluss haeufiger, als er verstopft. Frei heisst nicht angeschlossen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

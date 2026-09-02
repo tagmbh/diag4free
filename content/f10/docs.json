@@ -724,6 +724,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach F10 - Ablaeufe, Endlagen, Einklemmschutz",
+      "valid": "F10 - 2010-2017",
+      "summary": "Am F10 ist ein Dach, das nicht vollstaendig faehrt, meist ein Anlernproblem und kein Antriebsschaden. Der nasse Innenraum bleibt ein Ablaufbefund.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der Ablauf ist die Funktion, die versagt, nicht die Dichtung",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen anlernen. Vorher ist ein unvollstaendig fahrendes Dach kein Defekt",
+        "Ein ansprechender Einklemmschutz meldet Widerstand. Erst Fuehrung und Dichtung freigaengig machen, dann die Elektrik beurteilen",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Am Dachrahmen ist der Ablauf meist frei",
+        "Wasser im Innenraum klaeren, bevor Steuergeraete beurteilt werden. Nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

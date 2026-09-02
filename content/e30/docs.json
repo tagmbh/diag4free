@@ -805,6 +805,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E30 - Wasserfuehrung und Rost in der Rinne",
+      "valid": "E30 - 1982-1994",
+      "summary": "Beim E30 fuehrt ein stehender Dachablauf nicht nur zu nassem Innenraum, sondern zu Rost an Stellen, die erst Jahre spaeter sichtbar werden. Diese Gruppe ordnet Ablauf, Rinne und Mechanik.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Fussraum ist die Folge eines stehenden Ablaufs, nicht einer undichten Dichtung",
+        "Die Rinne ist beim E30 haeufig selbst durchgerostet. Ein freier Schlauch beweist dann nichts -- das Wasser verlaesst die Rinne, bevor es den Ablauf erreicht",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Sie enden fern vom Dach, und dort sitzt die Verstopfung haeufiger als oben",
+        "Nicht mit Draht stochern. Ein beschaedigter Schlauch entlaesst das Wasser danach in den Hohlraum, und der Schaden zeigt sich erst als Rost",
+        "Bei stehendem Wasser im Innenraum immer auch den Wasserkasten vor der Windschutzscheibe pruefen -- er ist die zweite haeufige Quelle und wird oft dem Dach zugeschrieben",
+        "Fuehrungen abschmieren und Mechanik freigaengig machen, bevor Antrieb oder Schalter beurteilt werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

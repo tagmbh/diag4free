@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T05:56:05.265Z",
+  "generated": "2026-09-02T06:28:01.094Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -951,6 +951,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-128",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E28 - Ablaeufe, Fuehrungen, Notbetaetigung",
+      "valid": "E28 - 1981-1987",
+      "summary": "Am E28 ist der nasse Himmel kein Dichtungsschaden. Das Dach hat eine Regenrinne, und wenn deren Ablauf steht, laeuft das Wasser nach innen. Diese Gruppe ordnet Ablauf, Mechanik und Notbetaetigung.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel ist deshalb ein Ablaufbefund und kein Dichtungsbefund",
+        "Die Ablaeufe enden weit vom Dach entfernt. Die Suche endet unten an der Austrittsstelle, nicht oben am Dachrahmen -- wer nur am Dach schaut, findet die Verstopfung nicht",
+        "Bei Fahrzeugen dieses Alters ist die Rinne selbst oft durchgerostet. Dann ist der Ablauf frei und das Wasser laeuft trotzdem hinein",
+        "Nie mit Draht stochern. Ein durchstossener Schlauch leitet das Wasser danach in die Karosserie statt daneben -- aus einem Ablaufproblem wird ein Rostproblem",
+        "Fuehrungen und Mechanik freigaengig halten, bevor der Antrieb verdaechtigt wird. Ein schwergaengiges Dach laesst den Antrieb abschalten, und das sieht aus wie ein Antriebsschaden",
+        "Die Notbetaetigung gehoert zur Diagnose: Laesst sich das Dach von Hand sauber bewegen, ist die Mechanik in Ordnung und der Befund liegt beim Antrieb"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1791,6 +1812,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E30 - Wasserfuehrung und Rost in der Rinne",
+      "valid": "E30 - 1982-1994",
+      "summary": "Beim E30 fuehrt ein stehender Dachablauf nicht nur zu nassem Innenraum, sondern zu Rost an Stellen, die erst Jahre spaeter sichtbar werden. Diese Gruppe ordnet Ablauf, Rinne und Mechanik.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Fussraum ist die Folge eines stehenden Ablaufs, nicht einer undichten Dichtung",
+        "Die Rinne ist beim E30 haeufig selbst durchgerostet. Ein freier Schlauch beweist dann nichts -- das Wasser verlaesst die Rinne, bevor es den Ablauf erreicht",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Sie enden fern vom Dach, und dort sitzt die Verstopfung haeufiger als oben",
+        "Nicht mit Draht stochern. Ein beschaedigter Schlauch entlaesst das Wasser danach in den Hohlraum, und der Schaden zeigt sich erst als Rost",
+        "Bei stehendem Wasser im Innenraum immer auch den Wasserkasten vor der Windschutzscheibe pruefen -- er ist die zweite haeufige Quelle und wird oft dem Dach zugeschrieben",
+        "Fuehrungen abschmieren und Mechanik freigaengig machen, bevor Antrieb oder Schalter beurteilt werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2526,6 +2568,27 @@
         "Vor dem Teiletausch das Element vom System trennen und einzeln beurteilen. Sonst wird ein intaktes Teil wegen eines undichten Nachbarn getauscht",
         "Tuerschloss und Betaetigung sind zwei Fehlerquellen. Bewegt sich der Verriegelungsstift sauber und die Tuer oeffnet trotzdem nicht, liegt es an der Mechanik im Schloss",
         "Schachtabdichtung und Wasserablauf in der Tuer mitpruefen. Wasser in der Tuer erreicht Schloss und Betaetigung, bevor es im Fussraum ankommt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-129",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E34 - Ablaeufe, Antrieb, Handbetaetigung",
+      "valid": "E34 - 1987-1996",
+      "summary": "Am E34 sind Dachfehler fast immer entweder ein stehender Ablauf oder eine schwergaengige Mechanik. Beides sieht nach etwas anderem aus. Diese Gruppe trennt die Faelle.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Wer die Dichtung tauscht, hat den Ablauf nicht geprueft",
+        "Die vier Ablaeufe getrennt beurteilen. Faellt nur eine Seite oder nur vorn aus, grenzt das die Stelle ein, bevor irgendetwas zerlegt wird",
+        "Der Schlauch loest sich haeufig am Anschluss statt zu verstopfen. Dann ist er frei und trotzdem falsch -- das Wasser laeuft neben den Ablauf in die Saeule",
+        "Ein Dach, das mitten in der Bewegung stoppt, meldet meist Widerstand. Erst Fuehrung und Dichtung freigaengig machen, dann den Antrieb beurteilen",
+        "Handbetaetigung als Pruefmittel nutzen: Geht das Dach von Hand schwer, ist die Mechanik der Befund und nicht der Motor",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch fuehrt das Wasser danach in die Karosserie"
       ],
       "pins": [],
       "engines": [],
@@ -3285,6 +3348,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach und Verdeck E36 - Ablaeufe, Mechanik, Verdeckschalter",
+      "valid": "E36 - 1990-2000",
+      "summary": "Beim E36 kommen zwei getrennte Themen zusammen: der Dachablauf, der still steht, und beim Cabrio die Verdeckverriegelung, deren Schalter meldet, was der Hydraulik fehlt.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Fussraum am E36 ist zuerst ein Ablaufbefund",
+        "Die Ablaeufe laufen durch die Saeulen nach unten. Die Verstopfung sitzt haeufiger am unteren Ende als oben am Dach -- dort gehoert geprueft",
+        "Nicht mit Draht stochern. Ein beschaedigter Schlauch leitet das Wasser danach in den Hohlraum",
+        "Beim Cabrio bleibt ein Verdeck meist wegen eines Schalters stehen, nicht wegen fehlenden Drucks. Ein Verdeck, das mitten in der Bewegung stoppt, meldet eine nicht erreichte Stellung",
+        "Hydraulik und Verriegelung getrennt beurteilen: Arbeitet die Pumpe hoerbar, ohne dass sich etwas bewegt, gehoert der Verdacht auf Verriegelung oder Schalter",
+        "Nach einer Notentriegelung den Ausgangszustand sauber wiederherstellen, bevor erneut elektrisch betaetigt wird. Sonst wird aus einer Stoerung ein Schaden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4025,6 +4109,27 @@
         "Fensterheber mit Komfortbetaetigung koennen nach Spannungsverlust die Endlagen verlieren. Bevor Teile getauscht werden, gehoert die Initialisierung nachgeholt",
         "Tuerschloss mechanisch pruefen, bevor der Fehlerspeicher entscheidet. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Elektrik unveraendert wiederkommen",
         "Spannungsabfall an der Tuerleitung messen, nicht Durchgang. Eine Leitung mit Durchgang kann unter Last zu viel verlieren -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E38 - Ablaeufe, Endlagen, Initialisierung",
+      "valid": "E38 - 1994-2001",
+      "summary": "Am E38 kann ein Dach nach Spannungsverlust seine Endlagen verlieren. Dann faehrt es unvollstaendig, ohne dass ein Bauteil defekt ist. Erst anlernen, dann urteilen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel ist ein Ablaufbefund",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen neu anlernen. Ein unvollstaendig fahrendes Dach ist danach oft wieder in Ordnung",
+        "Ein Dach, das stoppt und zurueckfaehrt, meldet Widerstand. Die Mechanik gehoert freigaengig gemacht, bevor der Antrieb beurteilt wird",
+        "Die Ablaeufe unten an der Austrittsstelle pruefen. Sie enden weit vom Dach entfernt, und dort sitzt die Verstopfung",
+        "Der Schlauch loest sich am Anschluss haeufiger, als er verstopft. Frei heisst nicht angeschlossen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
       ],
       "pins": [],
       "engines": [],
@@ -4787,6 +4892,27 @@
         "Stellmotor und Mikroschalter trennen: Bewegt sich die Verriegelung sichtbar und die Tuer oeffnet nicht, ist der Schalter der Befund",
         "Fensterheber am E39 an den Fuehrungsteilen beurteilen, nicht am Motor. Der Antrieb ueberlebt in der Regel die Mechanik, die er antreibt",
         "Nasser Fussraum vor jeder Elektroniksuche klaeren. Wasser in der Fahrzeugelektrik erzeugt Fehlerbilder, die ohne die Ursache nicht reproduzierbar sind"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E39 - Ablaeufe, Antrieb, Anlernen",
+      "valid": "E39 - 1995-2004",
+      "summary": "Beim E39 landet Wasser aus dem Dachablauf regelmaessig dort, wo Steuergeraete sitzen. Deshalb ist der Ablauf hier nicht nur eine Komfortfrage. Diese Gruppe ordnet Ablauf, Antrieb und Anlernen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der Ablauf ist die Funktion, nicht die Dichtung",
+        "Steht der Ablauf, sucht sich das Wasser einen Weg nach innen -- und der endet am E39 haeufig an Steckverbindungen und Steuergeraeten. Ein Elektronikfehler ohne Ursache ist dann kein Zufall",
+        "Ablaeufe unten an der Austrittsstelle pruefen, nicht am Dachrahmen. Der Schlauch loest sich am Anschluss haeufiger, als er verstopft",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
+        "Ein Dach, das stoppt, meldet Widerstand. Fuehrungen freigaengig machen, dann den Antrieb beurteilen"
       ],
       "pins": [],
       "engines": [],
@@ -5570,6 +5696,27 @@
         "Wassereintritt am E46 zuerst an Tuerfolie und Ablaufwegen beurteilen. Der nasse Teppich liegt nicht an der Stelle, an der das Wasser hereinkommt",
         "Kofferraumboden und Reserveradmulde trocken beurteilen. Steht dort Wasser, sind die Ablaeufe zu -- und der Rost darunter ist Folge, nicht Ursache",
         "Tuerschloss vor der Elektrik pruefen. Schwergaengigkeit erzeugt Eintraege, die den Blick auf das Steuergeraet lenken, obwohl das Problem mechanisch ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-123",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach und Verdeck E46 - Ablaeufe, Folgeschaeden, Verdeck",
+      "valid": "E46 - 1998-2006",
+      "summary": "Am E46 ist der stehende Dachablauf eine der haeufigsten Ursachen fuer nassen Innenraum -- und der Schaden zeigt sich als Rost und Elektronikfehler, lange bevor jemand ans Dach denkt.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Wer die Dichtung tauscht, hat den Ablauf nicht geprueft",
+        "Der nasse Fleck liegt nicht unter der Eintrittsstelle. Wasser laeuft in der Saeule nach unten und tritt im Fussraum oder im Kofferraum wieder aus",
+        "Ablaeufe unten an der Austrittsstelle freimachen. Der Schlauch loest sich am Anschluss haeufiger, als er verstopft -- frei heisst nicht angeschlossen",
+        "Nie mit Draht stochern. Danach laeuft das Wasser in den Hohlraum, und aus dem Ablaufproblem wird ein Rostproblem",
+        "Beim Cabrio Hydraulik und Verriegelung trennen: Arbeitet die Pumpe hoerbar, ohne dass sich etwas bewegt, liegt der Befund bei Verriegelung oder Schalter und nicht am Druck",
+        "Ein Verdeck, das mitten in der Bewegung stoppt, meldet eine nicht erreichte Stellung. Das ist ein Schalterbefund, kein Hydraulikbefund"
       ],
       "pins": [],
       "engines": [],
@@ -6452,6 +6599,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E60 - Ablaeufe, Initialisierung, Einklemmschutz",
+      "valid": "E60 - 2003-2010",
+      "summary": "Am E60 sind Dachfehler haeufiger fehlende Endlagen als defekte Antriebe -- und der nasse Innenraum ist ein Ablaufbefund. Diese Gruppe ordnet beides.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel oder Fussraum ist ein Ablaufbefund",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen anlernen. Ohne Anlernen faehrt das Dach unvollstaendig, ohne defekt zu sein",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand und keine Stoerung. Erst die Mechanik freigaengig machen",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt selten am Dachrahmen",
+        "Steht Wasser im Innenraum, gehoert es geklaert, bevor Steuergeraete beurteilt werden -- nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch entlaesst das Wasser in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7221,6 +7389,27 @@
         "Der Leitungsuebergang in die Klappe ist mechanisch belastet und in Bewegung zu pruefen, nicht im Stillstand",
         "Tuerschloesser mechanisch vor elektrisch beurteilen. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Ansteuerung wiederkommen",
         "Ablaufwege in Tueren und Karosserie freimachen. Beim E70 endet stehendes Wasser regelmaessig dort, wo Steuergeraete und Steckverbindungen sitzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-127",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach E70 - Regenrinne, Ablaeufe, Rollo",
+      "valid": "E70 - 2006-2013",
+      "summary": "Das Panoramadach des E70 ist eine grosse Regenrinne mit vier Ablaeufen. Deren Enden liegen weit vom Dach entfernt. Wer oben sucht, findet die Verstopfung nicht.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- beim Panoramadach gilt das in groesserem Massstab, weil die Flaeche groesser ist",
+        "Die Ablaeufe enden unten an der Karosserie, nicht am Dach. Geprueft wird an der Austrittsstelle; oben ist der Ablauf fast immer frei",
+        "Vier Ablaeufe getrennt beurteilen. Faellt nur eine Ecke aus, grenzt das die Stelle ein, bevor der Himmel herunterkommt",
+        "Nicht mit Draht stochern. Ein durchstossener Schlauch fuehrt das Wasser danach in den Hohlraum",
+        "Rollo und Glasdeckel sind zwei Antriebe. Welcher nicht kommt, sagt bereits, wo zu suchen ist",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt"
       ],
       "pins": [],
       "engines": [],
@@ -8086,6 +8275,27 @@
         "Tuerschloss und Mikroschalter trennen: Ein Innenlicht, das nicht ausgeht, oder eine Tuer, die nicht als geschlossen gilt, ist ein Schalterbefund",
         "Ablaufwege in Tuer und Karosserie freimachen, bevor die Verkleidung wieder montiert wird. Der zweite Ausbau kostet mehr als der Aufwand jetzt",
         "Nasse Steckverbindungen vor jeder Steuergeraetebewertung trocknen und erneut pruefen. Sonst wird ein Wasserfehler als Elektronikfehler abgelegt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E87 - Ablaeufe, Mechanik, Anlernen",
+      "valid": "E87 - 2004-2011",
+      "summary": "Am E87 fuehrt der stehende Dachablauf das Wasser dorthin, wo Steuergeraete und Steckverbindungen sitzen. Der Befund sieht dann elektrisch aus und ist es nicht.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Innenraum ist ein Ablaufbefund",
+        "Ablaeufe unten an der Austrittsstelle freimachen. Der Schlauch loest sich am Anschluss haeufiger, als er verstopft",
+        "Wechselnde elektrische Fehler nach Regen zuerst als Wasserproblem behandeln. Ein Eintrag ohne Ursache ist bei Feuchtigkeit die Regel",
+        "Ein Dach, das stoppt und zurueckfaehrt, meldet Widerstand -- Fuehrungen freigaengig machen, dann den Antrieb beurteilen",
+        "Nach Spannungsverlust die Endlagen anlernen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
       ],
       "pins": [],
       "engines": [],
@@ -9847,6 +10057,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach und Schiebedach E90 - Ablaeufe am Schweller",
+      "valid": "E90 - 2004-2013",
+      "summary": "Beim E90 und E91 enden die vorderen Dachablaeufe unten an der Karosserie, weit hinter dem Dach. Genau dort sitzt die Verstopfung -- und genau dort schaut kaum jemand.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Tropft es aus dem Himmel, steht der Ablauf",
+        "Die vorderen Ablaeufe enden unten am Schweller hinter dem Radkasten. Die Enden lassen sich dort abziehen und reinigen -- am Dachrahmen ist der Ablauf meist frei",
+        "Vier Ablaeufe getrennt beurteilen. Eine nasse Ecke sagt mehr als ein nasser Teppich",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch entlaesst das Wasser in den Hohlraum, und der Schaden zeigt sich Jahre spaeter als Rost",
+        "Beim Panoramadach sind Rollo und Glasdeckel zwei Antriebe. Welcher ausfaellt, grenzt den Befund ein",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor das Dach als defekt gilt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9997,6 +10228,27 @@
         "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung der Elektronik",
         "Wasser bleibt die haeufigste Ursache fuer wechselnde elektrische Fehler an der Karosserie. Der Weg des Wassers gehoert geklaert, bevor Steuergeraete beurteilt werden",
         "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61. Der Abfall ist der Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f-series"
+    },
+    {
+      "id": "D4F-F-104",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dachsysteme F-Baureihen - Was sich gegenueber den E-Baureihen aendert",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen sind Dach und Rollo Funktionen mit Endlagen, Freigaben und Einklemmschutz. Die Wasserfuehrung dagegen ist unveraendert eine Rinne mit vier Ablaeufen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- das gilt in jeder Baureihe und aendert sich mit der Elektronik nicht",
+        "Endlagen sind lernbare Werte und gehen bei Spannungsverlust verloren. Anlernen steht vor dem Urteil, nicht danach",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand. Erst die Mechanik freigaengig machen, dann die Elektrik beurteilen",
+        "Rollo und Glasdeckel sind getrennte Antriebe. Welcher ausfaellt, ist bereits die halbe Diagnose",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt dort, wo der Ablauf endet, und nicht dort, wo er anfaengt",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch macht aus einem Ablaufproblem ein Rostproblem"
       ],
       "pins": [],
       "engines": [],
@@ -10758,6 +11010,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach F10 - Ablaeufe, Endlagen, Einklemmschutz",
+      "valid": "F10 - 2010-2017",
+      "summary": "Am F10 ist ein Dach, das nicht vollstaendig faehrt, meist ein Anlernproblem und kein Antriebsschaden. Der nasse Innenraum bleibt ein Ablaufbefund.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der Ablauf ist die Funktion, die versagt, nicht die Dichtung",
+        "Nach Spannungsverlust oder Arbeiten am Dach die Endlagen anlernen. Vorher ist ein unvollstaendig fahrendes Dach kein Defekt",
+        "Ein ansprechender Einklemmschutz meldet Widerstand. Erst Fuehrung und Dichtung freigaengig machen, dann die Elektrik beurteilen",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Am Dachrahmen ist der Ablauf meist frei",
+        "Wasser im Innenraum klaeren, bevor Steuergeraete beurteilt werden. Nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11466,6 +11739,27 @@
         "Die beruehrungslose Betaetigung braucht ein sauberes Signal. Bleibt sie aus, waehrend Taster und Schluessel funktionieren, liegt es an der Erkennung und nicht am Antrieb",
         "Den Leitungsuebergang in die Klappe in Bewegung pruefen, nicht im Stillstand",
         "Eine elektrisch angetriebene Klappe nie gegen ihre Sperre bewegen. Der Schaden entsteht dabei erst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach F15 - Grosse Rinne, vier Ablaeufe, Rollo",
+      "valid": "F15 - 2013-2018",
+      "summary": "Das Panoramadach des F15 sammelt viel Wasser und leitet es ueber vier Ablaeufe ab. Steht einer davon, kommt das Wasser innen an -- nicht durch die Dichtung, sondern ueber die Rinne.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- je groesser die Flaeche, desto mehr haengt am Ablauf",
+        "Vier Ablaeufe getrennt beurteilen. Eine nasse Ecke benennt die Stelle, ein nasser Teppich nicht",
+        "Die Ablaeufe enden unten an der Karosserie. Geprueft wird dort, nicht am Dachrahmen",
+        "Rollo und Glasdeckel sind zwei Antriebe. Faellt nur einer aus, ist der Befund bereits eingegrenzt",
+        "Nach Spannungsverlust die Endlagen anlernen. Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
       ],
       "pins": [],
       "engines": [],
@@ -12213,6 +12507,27 @@
         "Wassereintritt am Weg suchen, nicht am nassen Fleck. Wasser wandert entlang von Falzen und Kabelbaeumen",
         "Tuerschloss mechanisch vor elektrisch beurteilen. Schwergaengigkeit erzeugt Eintraege, die nach dem Tausch der Elektrik wiederkommen",
         "Ablaeufe in Tuer und Karosserie freimachen, solange die Verkleidung ab ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach F22 - Ablaeufe, Anlernen, Geraeusche",
+      "valid": "F22 - 2013-2021",
+      "summary": "Am F22 wird ein Dachgeraeusch gern der Dichtung angelastet. Haeufiger ist es die Lage des Deckels -- und der nasse Innenraum bleibt ein Ablaufbefund.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Wasser innen heisst stehender Ablauf, nicht muerbe Dichtung",
+        "Windgeraeusch zuerst als Lagefehler des Deckels behandeln. Eine neue Dichtung an falsch sitzendem Deckel pfeift genau so",
+        "Nach Arbeiten am Dach oder nach Spannungsverlust die Endlagen anlernen",
+        "Ablaeufe unten an der Austrittsstelle freimachen. Oben ist der Ablauf meist frei",
+        "Ein ansprechender Einklemmschutz meldet Widerstand -- erst die Mechanik freigaengig machen",
+        "Nie mit Draht in den Ablauf. Danach laeuft das Wasser in die Karosserie statt daneben"
       ],
       "pins": [],
       "engines": [],
@@ -12984,6 +13299,27 @@
         "Die Tuerfolie gehoert zur Abdichtung. Geloester Kleber fuehrt Wasser in den Fussraum statt in den Ablauf",
         "Ablaeufe an der Wasserfuehrung vor der Windschutzscheibe freimachen. Stehendes Wasser dort erreicht Steuergeraete und Steckverbindungen",
         "Fehlerspeicher als Einstieg nutzen, nicht als Urteil. Er nennt die ausgebliebene Funktion -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach und Panoramadach F30 - Ablaeufe und Anlernen",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 endet der Dachablauf unten an der Karosserie, weit vom Dach entfernt. Wer den nassen Teppich am Dach sucht, sucht am falschen Ende.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Teppich ist die Folge eines stehenden Ablaufs",
+        "Die Ablaeufe unten an der Austrittsstelle pruefen und reinigen. Am Dachrahmen ist der Ablauf fast immer frei",
+        "Der Schlauch loest sich am Anschluss haeufiger, als er verstopft. Frei heisst nicht angeschlossen",
+        "Beim Panoramadach sind Rollo und Glasdeckel zwei Antriebe. Welcher ausfaellt, grenzt den Befund ein",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
       ],
       "pins": [],
       "engines": [],
@@ -20175,26 +20511,26 @@
     }
   },
   "stats": {
-    "total_docs": 509,
+    "total_docs": 525,
     "total_guides": 40,
     "per_model": {
-      "e28": 29,
-      "e30": 35,
-      "e34": 32,
-      "e36": 30,
-      "e38": 32,
-      "e39": 31,
-      "e46": 31,
-      "e60": 34,
-      "e70": 32,
-      "e87": 33,
+      "e28": 30,
+      "e30": 36,
+      "e34": 33,
+      "e36": 31,
+      "e38": 33,
+      "e39": 32,
+      "e46": 32,
+      "e60": 35,
+      "e70": 33,
+      "e87": 34,
       "e88": 30,
-      "e90": 33,
-      "f-series": 6,
-      "f10": 30,
-      "f15": 30,
-      "f22": 31,
-      "f30": 30
+      "e90": 34,
+      "f-series": 7,
+      "f10": 31,
+      "f15": 31,
+      "f22": 32,
+      "f30": 31
     }
   }
 }
