@@ -1081,6 +1081,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch F30 · Wo es sitzt und wann es auftritt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am F30 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F30-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg F30 · Spiel richtig zuordnen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Bevor am F30 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

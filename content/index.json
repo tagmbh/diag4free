@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T09:05:08.221Z",
+  "generated": "2026-09-02T09:19:36.951Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1308,6 +1308,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-145",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E28 · Wo es sitzt und wann es auftritt",
+      "valid": "E28 · 1981–1988",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E28 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-146",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E28 · Spiel richtig zuordnen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Bevor am E28 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2463,6 +2505,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E30 · Wo es sitzt und wann es auftritt",
+      "valid": "E30 · 1982–1994",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E30 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E30 · Spiel richtig zuordnen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Bevor am E30 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3534,6 +3618,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-145",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E34 · Wo es sitzt und wann es auftritt",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E34 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-146",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E34 · Spiel richtig zuordnen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Bevor am E34 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -4629,6 +4755,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E36 · Wo es sitzt und wann es auftritt",
+      "valid": "E36 · 1990–2000",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E36 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E36 · Spiel richtig zuordnen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Bevor am E36 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5684,6 +5852,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E38 · Wo es sitzt und wann es auftritt",
+      "valid": "E38 · 1994–2001",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E38 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E38 · Spiel richtig zuordnen",
+      "valid": "E38 · 1994–2001",
+      "summary": "Bevor am E38 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -6782,6 +6992,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-143",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E39 · Wo es sitzt und wann es auftritt",
+      "valid": "E39 · 1995–2004",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E39 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-144",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E39 · Spiel richtig zuordnen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Bevor am E39 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -7901,6 +8153,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-139",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E46 · Wo es sitzt und wann es auftritt",
+      "valid": "E46 · 1998–2006",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E46 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-140",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E46 · Spiel richtig zuordnen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Bevor am E46 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -9056,6 +9350,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-140",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E60 · Wo es sitzt und wann es auftritt",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E60 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-141",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E60 · Spiel richtig zuordnen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Bevor am E60 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10140,6 +10476,48 @@
         "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
         "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E70 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 faehrt praktisch ausschliesslich mit Wandlerautomatik. Diese Seite steht hier, damit ein Geraeusch nicht einem Schaltgetriebe angelastet wird, das gar nicht verbaut ist.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Synchronringe und keine Vorgelegewelle. Ein Geraeusch aus dem Antriebsstrang gehoert zum Wandler, zur Gelenkwelle oder zur Achse",
+        "Geraeusch, das mit der Fahrgeschwindigkeit steigt und nicht mit der Drehzahl, gehoert nicht zum Getriebe -- siehe Gruppe 26 und Gruppe 33",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Zuerst die vier Reifen vergleichen",
+        "Schaltverhalten der Automatik gehoert in Gruppe 24, einschliesslich Adaption und Wandlerueberbrueckung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Waehlhebel E70 · Abgrenzung: keine Schaltmechanik",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 gibt der Waehlhebel eine Anforderung weiter, er bewegt keine Schaltstange. Damit fallen die typischen Schaltwegbefunde weg -- und andere treten an ihre Stelle.",
+      "points": [
+        "Der Waehlhebel uebertraegt ein Signal und keine Kraft. Spiel am Hebel ist damit kein Hinweis auf Verschleiss im Getriebe",
+        "Reagiert die Anforderung nicht, ist das ein Signal- oder Freigabebefund und kein mechanischer -- siehe Gruppe D1",
+        "Schaltverhalten und Notprogramm der Automatik gehoeren in Gruppe 24",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute -- siehe Gruppe D4",
+        "Ein Waehlhebel, der nach Arbeiten am Getriebe nicht mehr stimmt, gehoert eingestellt oder angelernt, bevor ein Bauteil verdaechtigt wird"
       ],
       "pins": [],
       "engines": [],
@@ -11327,6 +11705,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E87 · Wo es sitzt und wann es auftritt",
+      "valid": "E87 · 2004–2011",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E87 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E87 · Spiel richtig zuordnen",
+      "valid": "E87 · 2004–2011",
+      "summary": "Bevor am E87 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -12443,6 +12863,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E88 · Wo es sitzt und wann es auftritt",
+      "valid": "E88 · 2007–2013",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E88 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E88 · Spiel richtig zuordnen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Bevor am E88 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -13704,6 +14166,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-140",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E90 · Wo es sitzt und wann es auftritt",
+      "valid": "E90 · 2004–2013",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am E90 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-141",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg E90 · Spiel richtig zuordnen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Bevor am E90 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -15000,6 +15504,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch F10 · Wo es sitzt und wann es auftritt",
+      "valid": "F10 · 2010–2017",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am F10 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg F10 · Spiel richtig zuordnen",
+      "valid": "F10 · 2010–2017",
+      "summary": "Bevor am F10 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -16023,6 +16569,48 @@
         "Rupfen beim Anfahren deutet auf Oel auf der Reibflaeche oder auf ausgeschlagene Aggregatelager. Eine Oelspur im Kupplungsgehaeuse ist der Beleg -- ohne sie gehoert der Verdacht auf die Lagerung",
         "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch F15 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "F15 · 2013–2018",
+      "summary": "Der F15 faehrt praktisch ausschliesslich mit Wandlerautomatik. Diese Seite steht hier, damit ein Geraeusch nicht einem Schaltgetriebe angelastet wird, das gar nicht verbaut ist.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Synchronringe und keine Vorgelegewelle. Ein Geraeusch aus dem Antriebsstrang gehoert zum Wandler, zur Gelenkwelle oder zur Achse",
+        "Geraeusch, das mit der Fahrgeschwindigkeit steigt und nicht mit der Drehzahl, gehoert nicht zum Getriebe -- siehe Gruppe 26 und Gruppe 33",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Zuerst die vier Reifen vergleichen",
+        "Schaltverhalten der Automatik gehoert in Gruppe 24, einschliesslich Adaption und Wandlerueberbrueckung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Waehlhebel F15 · Abgrenzung: keine Schaltmechanik",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am F15 gibt der Waehlhebel eine Anforderung weiter, er bewegt keine Schaltstange. Damit fallen die typischen Schaltwegbefunde weg -- und andere treten an ihre Stelle.",
+      "points": [
+        "Der Waehlhebel uebertraegt ein Signal und keine Kraft. Spiel am Hebel ist damit kein Hinweis auf Verschleiss im Getriebe",
+        "Reagiert die Anforderung nicht, ist das ein Signal- oder Freigabebefund und kein mechanischer -- siehe Gruppe D1",
+        "Schaltverhalten und Notprogramm der Automatik gehoeren in Gruppe 24",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute -- siehe Gruppe D4",
+        "Ein Waehlhebel, der nach Arbeiten am Getriebe nicht mehr stimmt, gehoert eingestellt oder angelernt, bevor ein Bauteil verdaechtigt wird"
       ],
       "pins": [],
       "engines": [],
@@ -17085,6 +17673,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-141",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch F22 · Wo es sitzt und wann es auftritt",
+      "valid": "F22 · 2013–2021",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am F22 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-142",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg F22 · Spiel richtig zuordnen",
+      "valid": "F22 · 2013–2021",
+      "summary": "Bevor am F22 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -18213,6 +18843,48 @@
         "Geraeusch bei getretenem Pedal gehoert zum Ausruecklager. Geraeusch im Leerlauf bei losgelassenem Pedal gehoert zur Getriebeeingangswelle. Diese Unterscheidung kostet nichts und entscheidet viel",
         "Ein Rasseln im Leerlauf, das beim Treten der Kupplung verschwindet, deutet auf das Zweimassenschwungrad. Es verschwindet nicht durch eine neue Kupplungsscheibe",
         "Vor jeder Getriebearbeit die Hydraulik ausschliessen. Ein Pedal ohne Widerstand ist ein Geber-, Nehmer- oder Luftbefund -- der billigste Teil des Systems und der erste, der geprueft gehoert"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch F30 · Wo es sitzt und wann es auftritt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Ein Getriebe meldet sich fast immer unter einer bestimmten Bedingung. Am F30 sagt genau diese Bedingung, welches Bauteil gemeint ist -- und ob das Getriebe ueberhaupt heraus muss.",
+      "points": [
+        "Ein Geraeusch, das nur bei getretener Kupplung auftritt, sitzt nicht im Getriebe -- das ist das Ausruecklager, siehe Gruppe 21. Eines, das im Leerlauf bei losgelassener Kupplung da ist und beim Treten verschwindet, sitzt an der Eingangswelle",
+        "Ein Geraeusch in genau einem Gang gehoert zum Radpaar dieses Gangs. Ein Geraeusch, das in allen Gaengen ausser einem auftritt, deutet auf die Vorgelegewelle -- der stille Gang ist der, der direkt durchgeleitet wird",
+        "Kratzt es nur in einem bestimmten Gang, ist der Synchronring dieses Gangs faellig. Kratzt es in allen Gaengen, trennt die Kupplung nicht -- siehe Gruppe 21. Das sind zwei sehr verschiedene Rechnungen",
+        "Springt das Getriebe aus dem Gang, unter Zug und unter Schub getrennt pruefen. Nur unter Schub deutet auf Rastierung oder Schaltgabel, unter beidem auf Lagerspiel -- die Schaltung ist es selten",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung",
+        "Vor jedem Getriebeausbau die Schaltung ausschliessen -- siehe Gruppe 25. Buchsen sind billig, ein ausgebautes Getriebe ist es nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltweg F30 · Spiel richtig zuordnen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Bevor am F30 ein Getriebe ausgebaut wird, gehoert der Schaltweg beurteilt. Das dauert Minuten und erklaert einen grossen Teil der Beschwerden ueber schlechtes Schalten.",
+      "points": [
+        "Die einfachste Pruefung: Gang einlegen und den Hebel loslassen. Wandert er zurueck oder zur Seite, ist Spiel in Lagerung oder Buchsen -- das braucht keine Buehne und keine Demontage",
+        "Spiel quer zur Schaltrichtung im Leerlauf zeigt auf die Fuehrung, Spiel in Schaltrichtung auf die Lagerung. Beide fuehlen sich nach ausgeleiertem Getriebe an und sind keines",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
+        "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
+        "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
       ],
       "pins": [],
       "engines": [],
@@ -25404,26 +26076,26 @@
     }
   },
   "stats": {
-    "total_docs": 758,
+    "total_docs": 790,
     "total_guides": 40,
     "per_model": {
-      "e28": 46,
-      "e30": 50,
-      "e34": 48,
-      "e36": 46,
-      "e38": 47,
-      "e39": 47,
-      "e46": 47,
-      "e60": 47,
-      "e70": 47,
-      "e87": 48,
-      "e88": 45,
-      "e90": 48,
+      "e28": 48,
+      "e30": 52,
+      "e34": 50,
+      "e36": 48,
+      "e38": 49,
+      "e39": 49,
+      "e46": 49,
+      "e60": 49,
+      "e70": 49,
+      "e87": 50,
+      "e88": 47,
+      "e90": 50,
       "f-series": 8,
-      "f10": 46,
-      "f15": 45,
-      "f22": 46,
-      "f30": 47
+      "f10": 48,
+      "f15": 47,
+      "f22": 48,
+      "f30": 49
     }
   }
 }
