@@ -472,6 +472,28 @@
       "details": [
         "D4F-E30-103"
       ]
+    },
+    {
+      "id": "D4F-E30-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E30 · Schräglenkerlager, Achsträgeraufnahme, Differentialdichtungen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind die Schräglenkerlager der Befund, der am häufigsten übersehen wird. Sie erzeugen ein unruhiges Heck, das gern der Vorderachse oder der Lenkung angelastet wird.",
+      "points": [
+        "Wanderndes Heck beim Lastwechsel: Schräglenkerlager vor allem anderen. Der Hebeltest am belasteten Rad zeigt es",
+        "Die Aufnahmen des Achsträgers an der Karosserie bei älteren Fahrzeugen mitprüfen — Korrosion und Verformung an dieser Stelle sind kein Fahrwerksbefund mehr, sondern ein Karosseriebefund",
+        "Hinterachsgetriebe: Wellendichtringe am Flansch und am Deckel sind die üblichen Leckstellen",
+        "Heulen lastabhängig prüfen — verändert es sich zwischen Zug und Schub, ist es das Achsgetriebe, sonst eher das Radlager",
+        "Beim Cabrio ist der Aufbau weicher; Geräusche aus der Karosserie werden dort leicht der Achse zugeschrieben",
+        "Achsvermessung hinten nach jedem Eingriff — der E30 zeigt Spurabweichung im Reifenbild deutlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-107"
+      ]
     }
   ]
 }

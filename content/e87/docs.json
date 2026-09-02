@@ -452,6 +452,29 @@
       "details": [
         "D4F-E87-103"
       ]
+    },
+    {
+      "id": "D4F-E87-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E87 · Leichtbau-Mehrlenkerachse, Radlager, Achsträgerlager",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die Hinterachse des E87 ist eine Mehrlenkerachse in Leichtbauweise. Die Befunde sind die der Baureihenfamilie — nur fällt hier früher auf, wenn ein Lager nachgibt, weil das Fahrzeug leichter ist.",
+      "points": [
+        "Der Geberring der Raddrehzahl sitzt im Radlager. Bleibt der Fehler nach dem Sensortausch, ist es der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest an belastetem und entlastetem Rad trennen",
+        "Gelenke der Aluminiumlenker vielfach nur mit dem Lenker ersetzbar — vorher klären, nicht nachher",
+        "Ein Heulen lastabhängig zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu unterscheiden",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-107",
+        "D4F-E87-103"
+      ]
     }
   ]
 }

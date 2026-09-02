@@ -364,6 +364,29 @@
         "D4F-F10-103",
         "D4F-F10-106"
       ]
+    },
+    {
+      "id": "D4F-F10-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F10 · Aluminium-Mehrlenkerachse, Integrallenkung, Adaptivdämpfer",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 hängt an der Hinterachse mehr Elektronik als Mechanik: Bei Fahrzeugen mit Integral-Aktivlenkung lenkt sie mit, bei Fahrzeugen mit Adaptivdämpfern regelt sie mit. Beides meldet sich im Fehlerspeicher, nicht am Hebel.",
+      "points": [
+        "Integral-Aktivlenkung: Die Hinterachse lenkt mit. Ein unruhiges oder ungleichmäßiges Fahrverhalten gehört zuerst gegen diese Baugruppe und ihren Fehlerspeicher geprüft, nicht gegen die Lager",
+        "Adaptivdämpfer: Ein defekter Steller meldet sich elektrisch. Fehlerspeicher vor Hebeltest",
+        "Geberring der Raddrehzahl im Radlager — DSC-Fehler nach Sensortausch ist der Ring",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen; festsitzende Stahlschrauben einplanen",
+        "Beim Touring mit Niveauregelung hinten zuerst die Aufbaulage klären",
+        "Achsvermessung hinten nach jedem Eingriff; bei Aktivlenkung zusätzlich der Lenkwinkelabgleich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-107",
+        "D4F-F10-103"
+      ]
     }
   ]
 }

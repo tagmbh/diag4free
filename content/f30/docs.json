@@ -401,6 +401,29 @@
         "D4F-F30-103",
         "D4F-F30-106"
       ]
+    },
+    {
+      "id": "D4F-F30-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F30 · Mehrlenkerachse, Lenkwinkelabgleich, xDrive",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Hinterachse des F30 ist mechanisch unauffällig. Was sie mit der Diagnose verbindet, ist die Regelung davor: Nach jedem Eingriff muss der Lenkwinkel abgeglichen werden, sonst greift die DSC ohne Fahrsituation ein.",
+      "points": [
+        "Nach Arbeiten an Achse oder Spur ist der Lenkwinkelabgleich Pflicht — ohne ihn kommen DSC-Eingriffe ohne Anlass, und die werden als Bremsenfehler gemeldet",
+        "Geberring der Raddrehzahl im Radlager: DSC-Fehler nach Sensortausch ist der Ring",
+        "Achsträgerlager und Lenkerlager über den Hebeltest an belastetem und entlastetem Rad trennen",
+        "Aluminiumlenker mit Gelenken, die vielfach nur komplett kommen",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-107",
+        "D4F-F30-103"
+      ]
     }
   ]
 }

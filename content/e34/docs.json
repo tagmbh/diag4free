@@ -337,6 +337,28 @@
       "details": [
         "D4F-E34-004"
       ]
+    },
+    {
+      "id": "D4F-E34-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E34 · Schräglenker, Niveauregelung beim Touring, Achsgetriebe",
+      "valid": "E34 · 1987–1997",
+      "summary": "Die Hinterachse des E34 folgt dem E30 in größerem Maßstab. Der Unterschied liegt beim Touring: Dort hängt eine Niveauregelung dran, deren Befunde regelmäßig als Fahrwerksverschleiß angemeldet werden.",
+      "points": [
+        "Touring mit Niveauregelung: Ein Fahrzeug, das hinten steht oder absackt, hat zuerst ein Niveauproblem. Speicher, Leitungen und Regelventil gehören geprüft, bevor Lenker getauscht werden",
+        "Schräglenkerlager als erster Kandidat für unruhiges Heck beim Lastwechsel",
+        "Achsträgerlager getrennt beurteilen — sie erzeugen ein ähnliches, aber dumpferes Verhalten",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-107"
+      ]
     }
   ]
 }

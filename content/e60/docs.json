@@ -443,6 +443,29 @@
       "details": [
         "D4F-E60-103"
       ]
+    },
+    {
+      "id": "D4F-E60-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E60 · Aluminium-Mehrlenkerachse, Radlager mit Encoderring, xDrive",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Hinterachse des E60 verbindet zwei Welten: Aluminiumlenker mit Gelenken, die nur komplett kommen, und ein Radlager, in dem der Geberring der Raddrehzahl steckt. Letzteres macht aus einem Fahrwerksteil ein Diagnoseteil.",
+      "points": [
+        "Der Geberring für die Raddrehzahl sitzt im Radlager. Ein DSC-Fehler, der den Sensortausch überlebt, ist der Ring — und der geht nur mit dem Lager",
+        "Aluminiumlenker: Gelenke überwiegend nicht einzeln ersetzbar, Lenkertausch einplanen. Kontaktkorrosion an Stahlschrauben kommt dazu",
+        "Achsträgerlager getrennt von den Lenkerlagern beurteilen — der Hebeltest an belastetem und entlastetem Rad trennt sie",
+        "Bei xDrive kommt die Kraftverteilung dazu: Ruckeln beim Rangieren gehört zum Verteilergetriebe, nicht zur Hinterachse",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-107",
+        "D4F-E60-103"
+      ]
     }
   ]
 }

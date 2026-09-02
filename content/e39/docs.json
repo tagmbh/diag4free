@@ -395,6 +395,28 @@
       "details": [
         "D4F-E39-103"
       ]
+    },
+    {
+      "id": "D4F-E39-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse E39 · Integralachse in Aluminium, Lenkerlager, Touring mit Niveau",
+      "valid": "E39 · 1995–2004",
+      "summary": "Die Hinterachse des E39 ist eine Integralachse mit Aluminiumlenkern. Der häufigste Befund ist unspektakulär und teuer zugleich: Die Lenkerlager schlagen aus, und die Gelenke sind vielfach nur mit dem Lenker zu haben.",
+      "points": [
+        "Aluminiumlenker: Gelenke und Lager sind vielfach nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch — das gehört in die Kostenschätzung vor die Zusage",
+        "Achsträgerlager getrennt vom Lenkerlager beurteilen; beide erzeugen unruhiges Heck, aber unterschiedlichen Reparaturumfang",
+        "Touring mit Niveauregelung: Absacken hinten ist ein Niveaubefund, kein Lagerbefund. Erst die Aufbaulage klären",
+        "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
+        "Heulen lastabhängig zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
+      ]
     }
   ]
 }

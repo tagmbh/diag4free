@@ -331,6 +331,29 @@
         "D4F-F15-103",
         "D4F-F15-106"
       ]
+    },
+    {
+      "id": "D4F-F15-108",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Hinterachse",
+      "title": "Hinterachse F15 · Luftfederung als Regelfall, xDrive, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 ist die Luftfederung hinten der Normalfall, nicht die Ausnahme. Damit verschiebt sich die Fehlersuche: Was nach Achse klingt, ist meist Niveau — und was nach Niveau klingt, ist manchmal der Allrad.",
+      "points": [
+        "Absacken über Nacht oder ungleichmäßige Aufbaulage: Luftfederung. Bälge, Leitungen, Kompressor und Niveaugeber getrennt prüfen, bevor die Achse zerlegt wird",
+        "Ein defekter Niveaugeber erzeugt Regelverhalten, das nach Fahrwerks- oder Bremsenfehler aussieht",
+        "xDrive: Ruckeln beim Rangieren gehört zum Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Geberring der Raddrehzahl im Radlager — DSC-Fehler nach Sensortausch ist der Ring",
+        "Anhängebetrieb und Fahrzeuggewicht verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107",
+        "D4F-F15-103"
+      ]
     }
   ]
 }
