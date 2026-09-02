@@ -945,6 +945,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E30 · Kreis, Freigabe, Kondensator",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 scheitert die Kuehlleistung selten am Kompressor und oft an Fuellung, Freigabe oder Luftdurchsatz. Diese drei gehoeren in dieser Reihenfolge geprueft.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Die Kompressorkupplung wird elektrisch geschaltet und ist von Hand pruefbar: Zieht sie hoerbar an, ist die Freigabe da. Zieht sie nicht, liegt es an Freigabe, Versorgung oder Spule -- nicht am Kreis",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E30-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E30 · Verhalten, Oelzustand, Einstellung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Beim E30 entscheidet die Lastvorgabe an das Getriebe ueber die Schaltpunkte. Ein Getriebe, das falsch schaltet, ist deshalb nicht zwangslaeufig verschlissen.",
+      "points": [
+        "Schaltpunkte haengen an der Lastvorgabe. Bevor das Getriebe verdaechtigt wird, gehoert diese Verbindung geprueft",
+        "Oelzustand ansehen und riechen: dunkel und verbrannt ist ein Befund, hell und klar keiner",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Ein Wandler ohne Ueberbrueckung schlupft konstruktionsbedingt. Ein leicht erhoehter Drehzahlsprung beim Anfahren ist damit kein Befund -- er gehoert zum Prinzip",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe, das nur kalt auffaellt, arbeitet mit zaehem Oel. Beurteilt wird betriebswarm, nicht nach dem Start"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

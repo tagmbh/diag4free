@@ -884,6 +884,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F10 · Druecke lesen statt schaetzen",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 sind die Druecke im Kreis als Messwert verfuegbar. Das verschiebt die Diagnose von der Vermutung zur Ablesung -- wenn man beide Seiten liest.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F10-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F10 · Adaption und Wandlerueberbrueckung",
+      "valid": "F10 · 2010–2017",
+      "summary": "Mit acht Gaengen faellt jede Unregelmaessigkeit haeufiger auf, weil oefter geschaltet wird. Das macht die Adaption wichtiger, nicht unwichtiger.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -1053,6 +1053,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-132",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E90 · Freigabe, Luefter, Verdampferablauf",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommen die drei haeufigsten Beschwerden aus drei verschiedenen Ecken: Freigabe, Luftdurchsatz und Ablauf. Keine davon ist zuerst der Kompressor.",
+      "points": [
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Nasser Fussraum bei laufender Anlage ist ein Ablaufbefund am Verdampfer und kein Kaeltemittelbefund",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E90-133",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Steptronic E90 · Adaption, Mechatronik, Motorursachen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommen Getriebemeldungen haeufig aus der Mechatronik und ihrem Steckverbinder. Ein neues Steuergeraet loest einen Dichtungsbefund nicht.",
+      "points": [
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

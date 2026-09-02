@@ -827,6 +827,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-137",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E28 · Kaeltekreis und Kompressorkupplung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Bedienung der Anlage steht im ersten Dokument. Hier geht es um den Kreis selbst -- und um die Frage, ob der Kompressor ueberhaupt eine Freigabe bekommt.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Die Kompressorkupplung wird elektrisch geschaltet und ist von Hand pruefbar: Zieht sie hoerbar an, ist die Freigabe da. Zieht sie nicht, liegt es an Freigabe, Versorgung oder Spule -- nicht am Kreis",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E28-138",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E28 · Schaltverhalten lesen statt Oel wechseln",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 ist die Steuerung hydraulisch. Damit gibt es weder Adaption noch Fehlerspeicher -- die Beurteilung laeuft ueber das Verhalten und ueber den Oelzustand.",
+      "points": [
+        "Ohne elektronische Steuerung gibt es keine Adaption, die man zuruecksetzen koennte. Was auffaellt, faellt mechanisch oder hydraulisch auf",
+        "Oelzustand ansehen und riechen: dunkel und verbrannt ist ein Befund, hell und klar ist keiner. Das ist hier die aussagekraeftigste Pruefung ohne Geraet",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Ein Wandler ohne Ueberbrueckung schlupft konstruktionsbedingt. Ein leicht erhoehter Drehzahlsprung beim Anfahren ist damit kein Befund -- er gehoert zum Prinzip",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Schaltpunkte haengen an Last und Gaszug beziehungsweise Unterdruckdose. Ein zu frueh oder zu spaet schaltendes Getriebe ist hier oft ein Einstellthema"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
