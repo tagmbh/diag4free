@@ -792,6 +792,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E87 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 betrifft Codierung vor allem Beleuchtung, Komfort und Nachruestungen. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Beleuchtungsumbauten erzeugen ohne passende Codierung Ausfallmeldungen, obwohl das Licht brennt -- das ist kein Defekt, sondern ein Codierstand",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -684,6 +684,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E70 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind besonders viele Module beteiligt, und jedes hat seinen eigenen Stand. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Bei dieser Zahl von Modulen gehoert der Ausgangsstand aller beteiligten Geraete gesichert, nicht nur des einen, an dem gearbeitet wird",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
