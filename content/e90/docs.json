@@ -1093,6 +1093,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-134",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E90 · Ansteuerung statt Drehzahl",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 laeuft die Pumpe unabhaengig vom Motor. Ein Ausfall zeigt sich deshalb anders als bei einer riemengetriebenen Pumpe -- und wird oft zu spaet erkannt.",
+      "points": [
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E90-135",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E90 · Konzept bestimmen, dann messen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Im E90 arbeiten Schichtladung, Speicherkatalysator und Partikelfilter je nach Motor nebeneinander. Ohne Motorbestimmung misst man ins Blaue.",
+      "points": [
+        "Zuerst das Abgaskonzept des verbauten Motors feststellen -- siehe Gruppe D4. Die Konzepte haben unterschiedliche Fehlerbilder und unterschiedliche Pruefwege",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

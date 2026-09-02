@@ -931,6 +931,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-137",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E39 · Verlustweg klaeren, bevor getauscht wird",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 ist die erste Frage nicht, welches Teil undicht ist, sondern ob das Kuehlmittel ueberhaupt nach aussen geht.",
+      "points": [
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Oel im Kuehlwasser und Kuehlwasser im Oel sind zwei verschiedene Befunde mit verschiedenen Ursachen. Sie gehoeren getrennt festgestellt, bevor irgendetwas geoeffnet wird",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E39-138",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E39 · Dichtheit, Sonden, Ursache",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 werden Katalysatoren regelmaessig getauscht, ohne dass die Ursache angefasst wird. Der zweite haelt dann genauso lange wie der erste.",
+      "points": [
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Erhoehter Oelverbrauch und Zuendaussetzer sind die haeufigsten Kat-Killer. Beide gehoeren geklaert, bevor ein neuer eingebaut wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

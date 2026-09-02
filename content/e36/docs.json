@@ -922,6 +922,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E36 · Druck halten, Luft loswerden",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 sind die tragenden Teile des Kreises aus Kunststoff. Damit werden Druck und Alterung zu eigenen Groessen der Diagnose.",
+      "points": [
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E36-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E36 · Sonden trennen, Sekundaerluft abgrenzen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 kommen zwei Sonden und eine Sekundaerluftfunktion zusammen. Fehler daraus sehen sich aehnlich und haben verschiedene Adressen.",
+      "points": [
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Sekundaerluftfehler zeigt sich nur im Kaltlauf und verschwindet danach. Wer betriebswarm prueft, findet ihn nicht",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

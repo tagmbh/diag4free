@@ -867,6 +867,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-139",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E28 · Luftweg oder Durchsatz",
+      "valid": "E28 · 1981–1988",
+      "summary": "Bevor am E28 ein Bauteil getauscht wird, gehoert die Bedingung festgestellt, unter der es zu heiss wird. Sie halbiert die Suche.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Die Viscokupplung des Luefters wird warm geprueft, nicht kalt. Kalt darf sie leicht durchdrehen -- warm muss sie spuerbar mitnehmen, sonst fehlt die Luft genau dann, wenn sie gebraucht wird",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E28-140",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasleck und Messung E28 · Warum Dichtheit vor jeder Bewertung kommt",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 kann ein undichter Kruemmer jede Aussage ueber das Gemisch wertlos machen. Deshalb steht die Dichtheitspruefung vor jeder Bewertung.",
+      "points": [
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Abgasleck ist am kalten Motor am besten hoerbar, bevor sich das Material ausdehnt und die Stelle zudrueckt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

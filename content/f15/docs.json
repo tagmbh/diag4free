@@ -865,6 +865,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F15 · Mehrere Kreise, Last, Anhaengebetrieb",
+      "valid": "F15 · 2013–2018",
+      "summary": "Unter Last und im Anhaengebetrieb arbeiten am F15 mehrere Kreise an ihrer Grenze. Welcher zuerst meldet, ist der Befund.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Ladeluft oder Getriebe. Im Anhaengebetrieb meldet sich haeufig nicht der Motorkreis zuerst",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F15-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasnachbehandlung F15 · Last, Regeneration, Dosierung",
+      "valid": "F15 · 2013–2018",
+      "summary": "Im schweren Fahrzeug mit haeufiger Last arbeitet die Nachbehandlung mehr. Das verschiebt nicht die Diagnose, aber die Haeufigkeit.",
+      "points": [
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Filter und Dosierung getrennt beurteilen -- eine Meldung zur Dosierung sagt nichts ueber die Filterbeladung",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -895,6 +895,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E38 · Grosser Kreis, zwei Baenke",
+      "valid": "E38 · 1994–2001",
+      "summary": "Im grossen Motorraum ist der Weg des Kuehlmittels laenger und die Luftfuehrung enger. Beides verschiebt die Wahrscheinlichkeiten.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Oel im Kuehlwasser und Kuehlwasser im Oel sind zwei verschiedene Befunde mit verschiedenen Ursachen. Sie gehoeren getrennt festgestellt, bevor irgendetwas geoeffnet wird",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E38-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E38 · Bankvergleich als Werkzeug",
+      "valid": "E38 · 1994–2001",
+      "summary": "Beim Achtzylinder hat man zwei Baenke und damit einen eingebauten Vergleich. Wer ihn nutzt, spart die halbe Fehlersuche.",
+      "points": [
+        "Die beiden Baenke gegeneinander stellen. Weicht nur eine ab, ist der Fehler dort und nicht in der gemeinsamen Versorgung -- das grenzt sofort ein",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
