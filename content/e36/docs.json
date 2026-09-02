@@ -411,6 +411,28 @@
       "details": [
         "D4F-E36-107"
       ]
+    },
+    {
+      "id": "D4F-E36-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E36 · Endstufe, Klappenantriebe, Mikrofilter",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 gilt eine Faustregel, die viel Zeit spart: Ein Gebläse, das nur noch auf der höchsten Stufe läuft, ist die Endstufe — und ein Klicken hinterm Armaturenbrett ist ein Stellmotor. Zusammen erklären sie den größten Teil der Klagen.",
+      "points": [
+        "Gebläse ohne untere Stufen: Endstufe beziehungsweise Vorwiderstand je nach Ausführung. Der Motor selbst ist selten die Ursache",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Luftklappe, der seine Endlage sucht",
+        "Schwacher Luftaustritt bei laufendem Gebläse: zuerst den Innenraumfilter prüfen. Er wird bei alten Fahrzeugen oft seit Jahren nicht gewechselt",
+        "Nur eine Seite temperiert: festsitzende Klappe oder fehlendes Signal am Antrieb",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Kondensatablauf freimachen, bevor Feuchtigkeit im Fußraum als Dichtungsfrage behandelt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-107"
+      ]
     }
   ]
 }

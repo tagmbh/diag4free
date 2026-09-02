@@ -423,6 +423,29 @@
         "D4F-E88-107",
         "D4F-E88-103"
       ]
+    },
+    {
+      "id": "D4F-E88-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E88 · Klimaanlage im Cabrio, Entwässerung, Zusatzlüfter",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio arbeitet dieselbe Anlage unter schwereren Bedingungen: mehr Sonneneinstrahlung, mehr Wassereintrag, mehr Wege für Feuchtigkeit. Die Abgrenzung zur Verdeckentwässerung ist deshalb der erste Schritt.",
+      "points": [
+        "Wasser im Innenraum: Verdeckentwässerung, Wasserkasten und Kondensatablauf sind drei verschiedene Wege. Alle drei prüfen, bevor eine Dichtung verdächtigt wird",
+        "Bei offenem Verdeck arbeitet die Anlage dauerhaft an der Grenze; eine schwache Kühlleistung ist dort zuerst eine Füllmengen- und Kondensatorfrage",
+        "Fehlerspeicher des Klimasteuergeräts vor mechanischem Verdacht auslesen",
+        "Gebläse ohne Regelung: Gebläseregler",
+        "Kompressor läuft nicht an: Kältemitteldruck zuerst",
+        "Kondensator auf Verschmutzung und Beschädigung prüfen — er sitzt vorn und bekommt alles ab"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-107",
+        "D4F-E88-108"
+      ]
     }
   ]
 }

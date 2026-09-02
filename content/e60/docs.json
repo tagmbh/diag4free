@@ -466,6 +466,29 @@
         "D4F-E60-107",
         "D4F-E60-103"
       ]
+    },
+    {
+      "id": "D4F-E60-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E60 · IHKA am Bus, Stellmotoren im Fehlerspeicher, Zusatzlüfter",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 hängt die Klimaanlage am Bussystem. Das ändert die erste Handlung: Nicht messen, sondern auslesen — Stellmotoren, Fühler und Kompressoransteuerung melden sich namentlich.",
+      "points": [
+        "Fehlerspeicher zuerst. Das Klimasteuergerät meldet Stellmotoren, Temperaturfühler und die Kompressorfreigabe einzeln",
+        "Ein Bus- oder Spannungsfehler kann die Klimaanlage stilllegen, ohne dass an ihr etwas defekt ist. Vor dem Bauteiltausch die Versorgung und den Bus prüfen",
+        "Gebläse ohne Regelung: Gebläseregler beziehungsweise Endstufe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Kompressor läuft nicht an: Kältemitteldruck vor allem anderen — ohne Druck gibt das Steuergerät nicht frei, und das ist kein Fehler, sondern Schutz",
+        "Kondensatablauf und Wasserkasten bei Feuchtigkeit im Innenraum, bevor Dichtungen verdächtigt werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-107",
+        "D4F-E60-108"
+      ]
     }
   ]
 }

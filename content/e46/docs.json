@@ -458,6 +458,29 @@
         "D4F-E46-107",
         "D4F-E46-103"
       ]
+    },
+    {
+      "id": "D4F-E46-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E46 · Gebläseendstufe, Klappenantriebe, Wasser im Fußraum",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 hat zwei Befunde, die zusammen fast jede Klimaklage erklären: die Gebläseendstufe und die Stellmotoren der Luftklappen. Beide sind bekannt, beide sind ersetzbar — und beide werden regelmäßig als Steuergerätefehler behandelt.",
+      "points": [
+        "Gebläse läuft nur auf höchster Stufe oder gar nicht mehr regelbar: Endstufe. Das ist am E46 der häufigste Einzelbefund der Gruppe",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe. Er sucht eine Endlage, die er nicht mehr erreicht — kein Elektronikfehler",
+        "Nur eine Seite temperiert: Klappe fest oder Antrieb ohne Signal. Erst mechanisch prüfen, dann elektrisch",
+        "Wasser im Beifahrerfußraum ist am E46 zuerst der verstopfte Kondensatablauf, danach die Wasserkastenentwässerung. Beides ist Reinigungsarbeit, keine Dichtungsarbeit",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen, bevor das Gebläse verdächtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-107",
+        "D4F-E46-108"
+      ]
     }
   ]
 }

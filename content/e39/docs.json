@@ -417,6 +417,28 @@
       "details": [
         "D4F-E39-107"
       ]
+    },
+    {
+      "id": "D4F-E39-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E39 · Endstufe, Stellmotoren, Fehlerspeicher der IHKA",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 lohnt es sich, das Klimasteuergerät zuerst zu fragen. Es kennt seine Stellmotoren und Fühler namentlich — und spart damit die Suche hinter einem Armaturenbrett, das man nicht gern zweimal öffnet.",
+      "points": [
+        "Fehlerspeicher des Klimasteuergeräts vor jedem mechanischen Verdacht auslesen; Stellmotoren und Fühler melden sich einzeln",
+        "Gebläse ohne stufenlose Regelung: Endstufe. Sie sitzt im Luftstrom und ist ein Verschleißteil",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor sucht seine Endlage",
+        "Kühlt im Stand nicht, bei Fahrt schon: Zusatzlüfter und Kondensator prüfen",
+        "Kompressor läuft nicht an: erst Kältemitteldruck, dann Kupplung und Ansteuerung",
+        "Feuchtigkeit im Fußraum: Kondensatablauf freimachen, bevor Dichtungen verdächtigt werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
+      ]
     }
   ]
 }

@@ -362,6 +362,28 @@
       "details": [
         "D4F-E38-107"
       ]
+    },
+    {
+      "id": "D4F-E38-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E38 · IHKA mit Nachlaufkühlung, Endstufe, Zusatzlüfter",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat die aufwendigste Klimaautomatik seiner Zeit, und das verschiebt die Fehlersuche: Vieles steht im Fehlerspeicher des Klimasteuergeräts, bevor es der Fahrer bemerkt. Auslesen kommt vor Zerlegen.",
+      "points": [
+        "Das Klimasteuergerät führt einen eigenen Fehlerspeicher. Stellmotoren und Fühler melden sich dort einzeln — das ist der schnellste Einstieg",
+        "Gebläse ohne Regelung: Endstufe. Sie sitzt im Luftstrom und fällt durch Wärme aus",
+        "Kühlt nur bei Fahrt, nicht im Stand: Zusatzlüfter oder Kondensator. Der Druck steigt im Stand, weil keine Luft durch den Kondensator geht",
+        "Nur eine Seite temperiert: Klappenantrieb oder festsitzende Klappe — bei diesem System seitenweise getrennt ansteuerbar",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht; der Druckschalter sperrt bei zu wenig Füllung",
+        "Geruch beim Einschalten: Verdampfer und Kondensatablauf. Ein stehender Ablauf hält den Verdampfer nass"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-107"
+      ]
     }
   ]
 }

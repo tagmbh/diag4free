@@ -595,6 +595,29 @@
         "D4F-E90-107",
         "D4F-E90-103"
       ]
+    },
+    {
+      "id": "D4F-E90-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E90 · IHKA, Stellmotoren, Wasserkasten und Ablauf",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 ist die Klimaanlage elektronisch gut zugänglich und mechanisch schlecht. Genau deshalb entscheidet die Reihenfolge: erst der Fehlerspeicher, dann das Armaturenbrett.",
+      "points": [
+        "Fehlerspeicher zuerst — Stellmotoren und Fühler melden sich einzeln und ersparen die Suche von Hand",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor sucht seine Endlage",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf, bevor Dichtungen verdächtigt werden",
+        "Gebläse ohne Regelung: Gebläseregler beziehungsweise Endstufe",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht — ohne Druck keine Freigabe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-107",
+        "D4F-E90-108"
+      ]
     }
   ]
 }

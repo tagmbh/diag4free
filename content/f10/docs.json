@@ -387,6 +387,29 @@
         "D4F-F10-107",
         "D4F-F10-103"
       ]
+    },
+    {
+      "id": "D4F-F10-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F10 · Elektronisch geregelte Anlage, Kältemittelart prüfen",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist die Klimaanlage vollständig in die Fahrzeugelektronik eingebunden — und irgendwann in dieser Zeit wechselt das Kältemittel. Welches im Fahrzeug ist, entscheidet das Schild, nicht das Baujahr.",
+      "points": [
+        "Vor jedem Eingriff am Kältekreis die Kältemittelart am Schild im Motorraum ablesen. Kältemittel, Öl und Servicegerät gehören zusammen und dürfen nicht gemischt werden — das Baujahr ist dafür keine verlässliche Auskunft",
+        "Fehlerspeicher zuerst: Stellmotoren, Fühler und die Kompressorfreigabe melden sich einzeln",
+        "Ein Bus- oder Versorgungsfehler kann die Anlage stilllegen, ohne dass an ihr etwas defekt ist",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht. Ohne Druck gibt das Steuergerät nicht frei, und das ist Schutz, kein Fehler",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor jeder Dichtungssuche"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-107",
+        "D4F-F10-108"
+      ]
     }
   ]
 }
