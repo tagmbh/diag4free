@@ -410,6 +410,28 @@
         "D4F-E70-107",
         "D4F-E70-108"
       ]
+    },
+    {
+      "id": "D4F-E70-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E70 · Fußraummodul, adaptives Licht, Anhängermodul",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 kommt zur üblichen Lichtsteuerung der Anhängerbetrieb dazu. Ein Lichtfehler, der nur mit Anhänger auftritt, hat einen eigenen Ort — und der ist nicht die Leuchte.",
+      "points": [
+        "Fehler nur bei angehängtem Anhänger: Anhängermodul und dessen Verkabelung, nicht die Fahrzeugleuchten",
+        "Das Fußraummodul steuert die Beleuchtung zentral und ist über generische OBD-Geräte nicht erreichbar",
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Modul",
+        "Adaptives Kurvenlicht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen. Beim Fahrzeug mit Luftfederung liefert die Niveauregelung die Aufbaulage mit",
+        "Nasser Fußraum: Abläufe freimachen, bevor ein Modulschaden angenommen wird — die Reihenfolge entscheidet, ob der Schaden wiederkommt",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-109"
+      ]
     }
   ]
 }

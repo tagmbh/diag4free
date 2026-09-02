@@ -439,6 +439,28 @@
       "details": [
         "D4F-E39-107"
       ]
+    },
+    {
+      "id": "D4F-E39-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E39 · Lichtmodul, Rückleuchtenplatine, Xenon getrennt beurteilen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 laufen die Glühlampenkreise über das Lichtmodul, das Xenon aber nicht. Diese Trennung erklärt die meisten Fehldiagnosen: Wer alles beim Lichtmodul sucht, sucht beim Xenon am falschen Ort.",
+      "points": [
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Lichtmodul. Ein einseitiger Ausfall ist dort und nicht im Modul zu suchen",
+        "Wiederkehrende Ausfälle im Heck: Kontakte der Rückleuchtenplatine. Ein Lampenwechsel behebt das nicht dauerhaft",
+        "Meldung bei brennender Lampe: die Überwachung misst Strom — Kontaktwiderstand oder falsche Lampenleistung genügen",
+        "Automatische Leuchtweitenregelung: Niveaugeber, Stellmotor und Ansteuerung getrennt prüfen",
+        "Mehrere Leuchten gemeinsam: Massepunkt vor Bauteil",
+        "Vor Arbeiten am Xenon-Scheinwerfer stromlos machen — Zündspannung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-109"
+      ]
     }
   ]
 }

@@ -447,6 +447,28 @@
         "D4F-F30-107",
         "D4F-F30-108"
       ]
+    },
+    {
+      "id": "D4F-F30-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F30 · LED-Einheiten, Fehlerspeicher zuerst, Codierabhängigkeit",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Am F30 ist Beleuchtung Software mit angeschlossenen Leuchtmitteln. Wer sie wie eine Glühlampenanlage behandelt, sucht an der falschen Stelle — und wer umbaut, ohne zu codieren, erzeugt Fehler, wo keine waren.",
+      "points": [
+        "Fehlerspeicher zuerst; die Lichtfunktionen melden sich einzeln",
+        "LED-Einheiten sind vielfach nicht einzeln ersetzbar — ein Ausfall bedeutet die komplette Einheit",
+        "Nachrüstung oder Wechsel der Leuchtmittelart braucht die passende Codierung. Ohne sie meldet das Fahrzeug Ausfälle, obwohl das Licht brennt",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel eines Scheinwerfers prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-109"
+      ]
     }
   ]
 }

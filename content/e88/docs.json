@@ -446,6 +446,28 @@
         "D4F-E88-107",
         "D4F-E88-108"
       ]
+    },
+    {
+      "id": "D4F-E88-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E88 · Fußraummodul im Cabrio, Entwässerung, Heckleuchten",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio gilt dasselbe Modul unter schlechteren Bedingungen: Es gibt mehr Wege, auf denen Wasser in den Innenraum kommt, und der Fußraum ist der Ort, an dem es Schaden anrichtet.",
+      "points": [
+        "Feuchtigkeit im Fußraum ist beim E88 zuerst eine Frage der Verdeck- und Wasserkastenentwässerung. Beide freimachen, bevor ein Modulschaden angenommen wird",
+        "Fallen Beleuchtung und weitere Komfortfunktionen gemeinsam aus, ist das Fußraummodul der Kandidat",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar",
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Modul",
+        "Heckleuchten und ihre Stecker sitzen im Bereich, in dem Wasser aus der Verdeckentwässerung entlangläuft — Stecker vor Bauteil prüfen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-109"
+      ]
     }
   ]
 }

@@ -384,6 +384,28 @@
       "details": [
         "D4F-E38-107"
       ]
+    },
+    {
+      "id": "D4F-E38-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E38 · Lichtmodul, Xenon mit eigenem Vorschaltgerät, Leuchtweite",
+      "valid": "E38 · 1993–2001",
+      "summary": "Mit dem E38 zieht ein Lichtsteuergerät ein — und mit dem Xenon eine zweite, davon unabhängige Elektronik. Die beiden auseinanderzuhalten ist der wichtigste Schritt dieser Gruppe.",
+      "points": [
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät. Es fällt einzeln aus, und das Lichtmodul überwacht es nicht wie eine Glühlampe",
+        "Ein Xenon-Scheinwerfer ohne Funktion: Brenner, Vorschaltgerät und Zündeinheit sind drei Bauteile, nicht eines. Die Reihenfolge der Prüfung entscheidet über die Kosten",
+        "Lichtmodul-Fehlermeldungen zu Glühlampen zuerst gegen Fassung und Kontakt prüfen — die Meldung beurteilt Strom",
+        "Automatische Leuchtweitenregelung: Niveaugeber an der Achse, Stellmotoren am Scheinwerfer und die Ansteuerung sind getrennte Kandidaten",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt",
+        "Vorsicht bei Xenon: Zündspannung. Vor Arbeiten am Scheinwerfer Licht ausschalten und stromlos machen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-109"
+      ]
     }
   ]
 }

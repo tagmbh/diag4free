@@ -481,6 +481,28 @@
         "D4F-E46-107",
         "D4F-E46-108"
       ]
+    },
+    {
+      "id": "D4F-E46-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E46 · Lichtmodul, Fassungen im Heck, Xenon mit eigener Elektronik",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 verbindet ein überwachendes Lichtmodul mit Rückleuchtenfassungen, die gern schlechten Kontakt machen. Zusammen erzeugen sie Meldungen, für die reihenweise funktionierende Lampen getauscht werden.",
+      "points": [
+        "Ausfallmeldung bei brennender Lampe: Übergangswiderstand in der Fassung. Kontaktflächen ansehen, bevor eine Lampe gekauft wird",
+        "Wiederkehrender Ausfall derselben Position: Fassung oder Platinenkontakt im Heck",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät und wird vom Lichtmodul nicht wie eine Glühlampe überwacht. Einseitiger Ausfall gehört dorthin",
+        "Beim Xenon sind Brenner, Vorschaltgerät und Zündeinheit drei getrennte Bauteile — der Reihe nach prüfen, nicht raten",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Überwachungskreis Strom misst. Das ist kein Fehler des Fahrzeugs"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-109"
+      ]
     }
   ]
 }
