@@ -784,6 +784,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-129",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Motorbestimmung im E70 · Warum ein X5-Befund ohne Motor nichts wert ist",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im E70 stehen Reihensechszylinder, V8 und Diesel nebeneinander. Ein Befund, der sich auf den X5 beruft statt auf den Motor, ist deshalb nicht uebertragbar.",
+      "points": [
+        "Vor jeder Motorbeurteilung die Motorkennung feststellen. Was am Block steht, gilt — nicht was in der Anzeige oder im Papier steht, siehe Gruppe D4",
+        "Saug-Sechszylinder, aufgeladener Sechszylinder, V8 und Diesel haben unterschiedliche Schwachstellen. Eine Aussage zum X5 ohne Motorangabe ist keine Aussage",
+        "Oelverlust und Oelverbrauch trennen. Ein Motor, der Oel verliert, und einer, der Oel verbrennt, sind zwei Befunde — ohne Trennung wird eine Dichtung getauscht, die nichts dafuer kann",
+        "Oelstand nur nach den vorgesehenen Bedingungen beurteilen: ebener Boden, betriebswarm, nach Wartezeit. Ein Wert unter anderen Bedingungen ist kein Wert",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand, das Geraeusch beschreibt ihn nur",
+        "Ein Kaltstartgeraeusch, das nach Sekunden verschwindet, ist Oeldruck. Eines, das bleibt, ist Mechanik — die Unterscheidung entscheidet ueber den Umfang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E70-130",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Nieder- und Hochdruckseite trennen · Startprobleme am Direkteinspritzer",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim Direkteinspritzer gibt es zwei Kraftstoffdrücke mit ganz unterschiedlicher Grössenordnung. Ohne diese Trennung ist ein Startproblem nicht diagnostizierbar.",
+      "points": [
+        "Zuerst klaeren, ob die Niederdruckseite liefert. Fehlt dort schon der Druck, ist jede Aussage ueber die Hochdruckseite wertlos",
+        "Hochdruck wird erst beim Starten aufgebaut. Ein Wert im Stillstand sagt darueber nichts — gemessen wird waehrend des Startvorgangs und unter Last",
+        "Ein Druck, der aufgebaut wird und sofort wieder faellt, deutet auf eine undichte Stelle oder ein undichtes Ventil, nicht auf eine schwache Pumpe",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung — siehe Gruppe D5",
+        "Ein Eintrag zum Kraftstoffdruck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "Vor jeder Bewertung die Motorkennung feststellen: Im E70 stehen Saug-, Turbo- und Dieselmotoren nebeneinander, siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

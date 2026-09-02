@@ -818,6 +818,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-128",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Einspritzventile zuordnen und abgleichen · Warum das neue Teil sich wie ein defektes verhaelt",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 lässt sich ein auffälliges Einspritzventil dem Zylinder zuordnen, bevor irgendetwas ausgebaut wird. Und nach dem Tausch ist der Abgleich kein Zubehör, sondern Teil des Einbaus.",
+      "points": [
+        "Zylinderindividuelle Laufunruhe ansehen, bevor ausgebaut wird. Sie benennt den Zylinder — das grenzt mehr ein als jede Sichtpruefung",
+        "Ein auffaelliger Zylinder ist noch kein auffaelliges Einspritzventil. Zuendung und Kompression gehoeren am selben Zylinder mitgeprueft, sonst wird das falsche Teil getauscht",
+        "Ein getauschtes Einspritzventil ohne hinterlegten Abgleich verhaelt sich wie ein defektes. Der Abgleich gehoert zum Einbau, nicht zur Nacharbeit — siehe Gruppe D3",
+        "Beim Tausch nur eines Ventils bleibt der Satz uneinheitlich. Wer die Zuordnung nicht dokumentiert, macht die naechste Diagnose unmoeglich",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Ein Eintrag benennt den Zylinder und das Ergebnis, nicht das schuldige Bauteil, siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

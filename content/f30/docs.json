@@ -801,6 +801,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-128",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Steuerkette beim N20 · Wo das Geraeusch herkommt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim Vierzylinder-Turbo dieser Baureihe sitzt der Steuertrieb an der Getriebeseite des Motors. Wer das Geraeusch vorn sucht, sucht am falschen Ende des Motors.",
+      "points": [
+        "Der Steuertrieb liegt hinten am Motor, zum Getriebe hin. Das erklaert sowohl die Ortung des Geraeusches als auch den Aufwand einer Instandsetzung",
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist Oeldruck am Spanner. Ein Rasseln, das bleibt, ist der Steuertrieb selbst",
+        "Das Geraeusch am kalten Motor aufnehmen. Betriebswarm verschwindet das Bild und die Pruefung waere wertlos",
+        "Oelstand und Oelwechselintervall vor jeder Beurteilung pruefen. Ein Steuertrieb, der zu lange mit altem Oel gelaufen ist, ist ein Wartungsbefund",
+        "Ein Kettenthema aeussert sich frueh als Geraeusch und spaet als Fehlerspeichereintrag zur Nockenwellenposition. Die Reihenfolge nicht abwarten",
+        "Druckverlustpruefung vor jeder Motoraussage — sie misst den Zustand, alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F30-129",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Direkteinspritzung und Einlassventile · Was der Kraftstoff nicht mehr spuelt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Bei Direkteinspritzung gelangt kein Kraftstoff mehr an die Einlassventile. Was sich dort ablagert, bleibt liegen — und das erklärt Fehlerbilder, die sonst der Zündung angelastet werden.",
+      "points": [
+        "Der Kraftstoff wird direkt in den Brennraum eingespritzt und wäscht die Einlassventile nicht mehr. Ablagerungen dort sind bauartbedingt und kein Wartungsversaeumnis des Fahrers",
+        "Ungleichmaessiger Lauf und schlechtes Ansprechen ohne Zuendbefund gehoeren deshalb auch hier geprueft, bevor Zuendspulen getauscht werden",
+        "Zylinderindividuelle Laufunruhe zuerst lesen: Sie benennt den Zylinder und trennt ein Einzelthema von einem Gesamtthema",
+        "Die Kurbelgehaeuseentlueftung fuehrt Oeldampf in den Ansaugtrakt. Ihr Zustand gehoert zur Beurteilung der Ablagerungen dazu",
+        "Ein Eintrag benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

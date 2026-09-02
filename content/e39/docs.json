@@ -791,6 +791,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-130",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Gemischadaption lesen · Was die Korrekturwerte verraten",
+      "valid": "E39 · 1995–2003",
+      "summary": "Am E39 steht der Befund nicht im Momentanwert, sondern in der Adaption. Sie sagt, in welche Richtung und wie weit die Regelung schon korrigiert hat, bevor der Fahrer etwas merkt.",
+      "points": [
+        "Adaptionswerte vor jedem Teiletausch lesen. Eine Korrektur in Richtung fett deutet auf zu wenig gemessene Luft, eine in Richtung mager auf Falschluft oder zu wenig Kraftstoff",
+        "Werte im Leerlauf und im Teillastbereich getrennt betrachten. Weicht nur der Leerlauf ab, ist die undichte Stelle klein; weicht beides ab, ist sie gross oder liegt im Messweg",
+        "Falschluft ist die haeufigste Ursache: Kurbelgehaeuseentlueftung, Ansaugschlaeuche, Dichtungen. Die Regelung gleicht sie aus, bis sie am Anschlag steht — dann erst kommt der Eintrag",
+        "Ein Eintrag Gemisch zu mager benennt das Ergebnis, nicht das Bauteil. Das undichte Teil steht dort nicht drin, siehe Gruppe D1",
+        "Nach jeder Reparatur die Adaption zuruecksetzen und neu einfahren. Sonst arbeitet die alte Korrektur gegen die neue Dichtheit",
+        "Nur eine Aenderung, dann pruefen. Wer mehreres zugleich macht, weiss nicht, was gewirkt hat"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

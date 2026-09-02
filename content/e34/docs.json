@@ -770,6 +770,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-132",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Luftmassenmesser beurteilen · Die Probe mit dem gezogenen Stecker",
+      "valid": "E34 · 1987–1996",
+      "summary": "Im E34 haengt die Gemischbildung an einem Messwert. Ist er falsch, arbeitet die Regelung sauber am falschen Ziel — und es gibt eine Probe, die das in Minuten zeigt.",
+      "points": [
+        "Bei abgezogenem Luftmassenmesser rechnet die Steuerung mit einem Ersatzwert. Laeuft der Motor danach spuerbar besser, war der Messwert falsch und nicht das Gemisch",
+        "Die Probe ersetzt keine Messung, aber sie richtet die Suche aus. Wer sie auslaesst, tauscht haeufiger, als noetig waere",
+        "Falschluft davor abarbeiten: Ansaugschlaeuche, Dichtungen und Kurbelgehaeuseentlueftung. Eine undichte Stelle hinter dem Messgeraet macht jeden Messwert wertlos",
+        "Ein verschmutztes oder gealtertes Messelement liefert zu wenig Signal. Das Fahrzeug laeuft dann mager und die Regelung korrigiert, bis sie am Anschlag ist",
+        "Adaptionswerte vor dem Teiletausch ansehen: Sie sagen, in welche Richtung und wie weit die Regelung schon korrigiert hat. Das ist der Befund, die Momentaufnahme nicht",
+        "Nach dem Tausch die Adaption zuruecksetzen. Ohne Ruecksetzen arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
