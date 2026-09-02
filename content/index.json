@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T09:19:36.951Z",
+  "generated": "2026-09-02T09:33:25.067Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1350,6 +1350,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-147",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E28 · Tempo oder Drehzahl",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E28 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-148",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E28 · Unwucht, Schlag, Zustand",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2547,6 +2589,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E30 · Tempo oder Drehzahl",
+      "valid": "E30 · 1982–1994",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E30 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E30 · Unwucht, Schlag, Zustand",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3660,6 +3744,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-147",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E34 · Tempo oder Drehzahl",
+      "valid": "E34 · 1987–1996",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E34 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-148",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E34 · Unwucht, Schlag, Zustand",
+      "valid": "E34 · 1987–1996",
+      "summary": "Am E34 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -4797,6 +4923,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-144",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E36 · Tempo oder Drehzahl",
+      "valid": "E36 · 1990–2000",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E36 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-145",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E36 · Unwucht, Schlag, Zustand",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5894,6 +6062,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-144",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E38 · Tempo oder Drehzahl",
+      "valid": "E38 · 1994–2001",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E38 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-145",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E38 · Unwucht, Schlag, Zustand",
+      "valid": "E38 · 1994–2001",
+      "summary": "Am E38 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -7034,6 +7244,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-145",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E39 · Tempo oder Drehzahl",
+      "valid": "E39 · 1995–2004",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E39 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-146",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E39 · Unwucht, Schlag, Zustand",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -8195,6 +8447,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-141",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E46 · Tempo oder Drehzahl",
+      "valid": "E46 · 1998–2006",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E46 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-142",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E46 · Unwucht, Schlag, Zustand",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -9392,6 +9686,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-142",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E60 · Tempo oder Drehzahl",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E60 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-143",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E60 · Unwucht, Schlag, Zustand",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10518,6 +10854,48 @@
         "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
         "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute -- siehe Gruppe D4",
         "Ein Waehlhebel, der nach Arbeiten am Getriebe nicht mehr stimmt, gehoert eingestellt oder angelernt, bevor ein Bauteil verdaechtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-144",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E70 · Tempo oder Drehzahl",
+      "valid": "E70 · 2006–2013",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E70 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-145",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E70 · Unwucht, Schlag, Zustand",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte"
       ],
       "pins": [],
       "engines": [],
@@ -11747,6 +12125,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E87 · Tempo oder Drehzahl",
+      "valid": "E87 · 2004–2011",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E87 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E87 · Unwucht, Schlag, Zustand",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -12905,6 +13325,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E88 · Tempo oder Drehzahl",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E88 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E88 · Unwucht, Schlag, Zustand",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -14208,6 +14670,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-142",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration E90 · Tempo oder Drehzahl",
+      "valid": "E90 · 2004–2013",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am E90 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-143",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen E90 · Unwucht, Schlag, Zustand",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -15546,6 +16050,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration F10 · Tempo oder Drehzahl",
+      "valid": "F10 · 2010–2017",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am F10 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen F10 · Unwucht, Schlag, Zustand",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -16611,6 +17157,48 @@
         "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
         "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute -- siehe Gruppe D4",
         "Ein Waehlhebel, der nach Arbeiten am Getriebe nicht mehr stimmt, gehoert eingestellt oder angelernt, bevor ein Bauteil verdaechtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration F15 · Tempo oder Drehzahl",
+      "valid": "F15 · 2013–2018",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am F15 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen F15 · Unwucht, Schlag, Zustand",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am F15 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte"
       ],
       "pins": [],
       "engines": [],
@@ -17715,6 +18303,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-143",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration F22 · Tempo oder Drehzahl",
+      "valid": "F22 · 2013–2021",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am F22 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-144",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen F22 · Unwucht, Schlag, Zustand",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -18885,6 +19515,48 @@
         "Schwergaengig nur in eine Richtung zeigt auf Buchse oder Fuehrung. Schwergaengig in alle Richtungen zeigt auf Getriebe oder Kupplung -- diese Weiche steht vor jeder Demontage",
         "Nach Arbeiten an der Schaltung das ganze Schaltbild im Stand durchgehen, mit getretener Kupplung und in beide Endlagen. Ein Gang, der nicht mehr sauber kommt, faellt so sofort auf",
         "Die Schaltung ist der billigste Teil des Antriebsstrangs und der erste, der geprueft gehoert. Sie erklaert mehr Beschwerden ueber schlechtes Schalten als das Getriebe dahinter"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-144",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Antrieb",
+      "title": "Vibration F30 · Tempo oder Drehzahl",
+      "valid": "F30 · 2011–2019",
+      "summary": "Die Bauteile der Gelenkwelle stehen im ersten Dokument. Hier steht die Trennung, die vor jeder Arbeit am F30 kommt -- und die haeufig gar nicht gemacht wird.",
+      "points": [
+        "Die erste Frage lautet: haengt die Vibration an der Geschwindigkeit oder an der Drehzahl. Am Tempo haengt der rotierende Strang und das Rad, an der Drehzahl der Motor -- im Leerlauf hochdrehen trennt die beiden in einer Minute",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Mittellager oder Gelenkscheibe. Beide sind von unten sichtbar zu beurteilen, ohne dass etwas ausgebaut wird",
+        "Die Gelenkscheibe reisst an den Bohrungen, nicht in der Mitte. Genau dort gehoert hingesehen -- eine Scheibe mit sauberer Oberflaeche kann an den Augen schon durch sein",
+        "Ein ausgeschlagenes Zentrierlager erzeugt eine Vibration, die mit dem Tempo waechst und keine Unwucht ist. Auswuchten hilft dagegen nicht, und der Reifenhaendler findet nichts",
+        "Vor dem Ausbau der Welle die Lage markieren und genau so wieder einbauen. Sie ist als Einheit ausgewuchtet -- verdreht montiert erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Fehlende Wuchtgewichte an der Welle sind sichtbar: An der blanken Stelle sieht man, wo eines sass. Das ist ein Befund und keine Vermutung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-145",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Raeder",
+      "title": "Rad und Reifen F30 · Unwucht, Schlag, Zustand",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 wird jede Vibration zuerst dem Rad angelastet und dann ausgewuchtet. Diese Seite sagt, wann das richtig ist und wann es nichts bringt.",
+      "points": [
+        "Eine Vibration, die bei einer bestimmten Geschwindigkeit kommt und darueber wieder verschwindet, ist eine Unwucht. Eine, die ab einem Tempo bleibt und mit dem Tempo waechst, ist es nicht",
+        "Auswuchten beseitigt keinen Hoehen- oder Seitenschlag. Vor dem Wuchten den Rundlauf pruefen, sonst wuchtet man eine Unrundheit aus und wundert sich ueber das Ergebnis",
+        "Rost auf der Nabenauflage stellt das Rad schief. Die Auflage gehoert vor der Montage blank gemacht -- dieselbe Regel wie bei der Bremsscheibe und aus demselben Grund",
+        "Das Alter steht am Reifen. Ein alter Reifen mit viel Profil ist trotzdem hart und bremst schlechter -- Profiltiefe allein ist keine Zustandsaussage",
+        "Radschrauben ueber Kreuz und nach Vorgabe anziehen, danach kontrollieren. Ein ungleichmaessig angezogenes Rad zieht die Nabe krumm und erzeugt genau das Ruckeln, das man beheben wollte",
+        "Alle vier Reifen gehoeren in Groesse, Typ und Profiltiefe zusammen. Bei Allrad ist das keine Empfehlung, sondern Voraussetzung -- siehe Gruppe 27"
       ],
       "pins": [],
       "engines": [],
@@ -26076,26 +26748,26 @@
     }
   },
   "stats": {
-    "total_docs": 790,
+    "total_docs": 822,
     "total_guides": 40,
     "per_model": {
-      "e28": 48,
-      "e30": 52,
-      "e34": 50,
-      "e36": 48,
-      "e38": 49,
-      "e39": 49,
-      "e46": 49,
-      "e60": 49,
-      "e70": 49,
-      "e87": 50,
-      "e88": 47,
-      "e90": 50,
+      "e28": 50,
+      "e30": 54,
+      "e34": 52,
+      "e36": 50,
+      "e38": 51,
+      "e39": 51,
+      "e46": 51,
+      "e60": 51,
+      "e70": 51,
+      "e87": 52,
+      "e88": 49,
+      "e90": 52,
       "f-series": 8,
-      "f10": 48,
-      "f15": 47,
-      "f22": 48,
-      "f30": 49
+      "f10": 50,
+      "f15": 49,
+      "f22": 50,
+      "f30": 51
     }
   }
 }
