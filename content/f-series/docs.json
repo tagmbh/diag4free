@@ -131,6 +131,26 @@
         "D4F-F-001",
         "D4F-F-003"
       ]
+    },
+    {
+      "id": "D4F-F-103",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F-Baureihen - Was sich gegenueber den E-Baureihen aendert",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen sind Schliessen, Fenster und Heckklappe Funktionen mit Freigaben, Endlagen und Sensorik. Der Ausfall ist damit haeufiger eine fehlende Bedingung als ein defektes Bauteil.",
+      "points": [
+        "Vor jedem Teiletausch pruefen, ob die Funktion ueberhaupt freigegeben war. Ohne Freigabe bewegt sich kein Antrieb, und das ist kein Defekt",
+        "Endlagen sind lernbare Werte und gehen bei Spannungsverlust verloren. Anlernen steht vor dem Urteil, nicht danach",
+        "Beruehrungssensorik in Tuergriffen reagiert auf Feuchtigkeit. Ein einzelner nasser Griff kann die gesamte Schliesslogik blockieren",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung der Elektronik",
+        "Wasser bleibt die haeufigste Ursache fuer wechselnde elektrische Fehler an der Karosserie. Der Weg des Wassers gehoert geklaert, bevor Steuergeraete beurteilt werden",
+        "Spannungsabfall unter Last messen statt Durchgang -- siehe Gruppe 61. Der Abfall ist der Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

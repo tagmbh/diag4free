@@ -696,6 +696,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F22 - Rahmenlose Tueren und Abdichtung",
+      "valid": "F22 - 2013-2021",
+      "summary": "Der F22 hat rahmenlose Seitenscheiben mit Kurzhub beim Oeffnen. Windgeraeusch und Wassereintritt sind dort meist eine Frage der Scheibenlage, nicht der Dichtung.",
+      "points": [
+        "Bleibt der Kurzhub beim Oeffnen aus, laeuft die Scheibe gegen die Dichtung. Zuerst pruefen, ob die Tuer als geoeffnet erkannt wird -- ohne dieses Signal gibt es keinen Kurzhub",
+        "Nach Arbeiten an Scheibe oder Fensterheber die Endlagen anlernen. Ohne Anlernen sitzt die Scheibe falsch und beschaedigt die Dichtung",
+        "Windgeraeusch zuerst als Lagefehler behandeln, nicht als Dichtungsverschleiss. Eine neue Dichtung an falsch sitzender Scheibe pfeift genau so",
+        "Wassereintritt am Weg suchen, nicht am nassen Fleck. Wasser wandert entlang von Falzen und Kabelbaeumen",
+        "Tuerschloss mechanisch vor elektrisch beurteilen. Schwergaengigkeit erzeugt Eintraege, die nach dem Tausch der Elektrik wiederkommen",
+        "Ablaeufe in Tuer und Karosserie freimachen, solange die Verkleidung ab ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

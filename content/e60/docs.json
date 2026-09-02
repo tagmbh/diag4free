@@ -821,6 +821,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E60 - Komfortzugang, Tuergriffe, Heckklappe",
+      "valid": "E60 - 2003-2010",
+      "summary": "Beim E60 kann ein nasser Tuergriff die gesamte Schliesslogik blockieren. Diese Gruppe ordnet Komfortzugang, Schloesser und Heckklappe so, dass der Griff nicht zuletzt geprueft wird.",
+      "points": [
+        "Ein Griffsensor mit Feuchtigkeit meldet dauerhaft Beruehrung. Die Logik wertet das als anstehende Anforderung und sperrt -- der Fehler sieht dann aus wie ein Schloss- oder Schluesselproblem",
+        "Bei Stoerungen im Komfortzugang jeden Griff einzeln abfragen, bevor Schluessel oder Steuergeraet verdaechtigt werden. Ein einzelner Griff erklaert das Gesamtbild",
+        "Der Leitungsuebergang zur Heckklappe ist auch beim E60 der belastete Punkt. Pruefen, waehrend die Klappe bewegt wird",
+        "Stellmotor und Mikroschalter am Heckklappenschloss trennen. Hoert man die Verriegelung arbeiten und die Klappe bleibt zu, ist der Schalter der Befund",
+        "Fehlerspeicher vor dem Zerlegen auslesen, aber nicht als Urteil nehmen. Ein Eintrag benennt die Funktion, die nicht kam, nicht das Bauteil, das fehlt -- siehe Gruppe D1",
+        "Wassereintritt im Fussraum klaeren, bevor Steuergeraete beurteilt werden. Nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

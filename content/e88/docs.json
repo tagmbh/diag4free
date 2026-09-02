@@ -758,6 +758,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E88 - Rahmenlose Scheiben und Kurzhub",
+      "valid": "E88 - 2008-2013",
+      "summary": "Der E88 hat rahmenlose Seitenscheiben. Sie senken sich beim Oeffnen der Tuer kurz ab. Bleibt das aus, ist meist der Tuerkontakt der Verdaechtige und nicht die Scheibe.",
+      "points": [
+        "Der Kurzhub beim Oeffnen entlastet die Dichtung. Bleibt er aus, laeuft die Scheibe gegen die Dichtung -- das ist kein Fensterheberschaden, sondern eine fehlende Freigabe",
+        "Erst pruefen, ob die Tuer als geoeffnet erkannt wird. Ohne dieses Signal gibt es keinen Kurzhub, und alle weiteren Messungen am Fensterheber gehen ins Leere",
+        "Nach Arbeiten an Tuer oder Scheibe die Endlagen neu anlernen. Ohne Anlernen sitzt die Scheibe in der Dichtung falsch, und die Dichtung nimmt Schaden",
+        "Undichtigkeit an rahmenlosen Scheiben zuerst als Einstellungsfrage behandeln. Eine Dichtung ist selten die Ursache, wenn die Scheibe zu tief oder zu flach anliegt",
+        "Windgeraeusche und Wassereintritt getrennt aufnehmen. Sie haben am rahmenlosen Fenster oft dieselbe Ursache, aber nicht immer dieselbe Abhilfe",
+        "Tuerschloss mechanisch beurteilen, bevor Elektrik verdaechtigt wird. Schwergaengigkeit erzeugt Eintraege, die den Blick verschieben"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -893,6 +893,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-124",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E90 - Tuerschloss, Stellmotor, Mikroschalter",
+      "valid": "E90 - 2004-2013",
+      "summary": "Am E90 sind Stellmotor und Mikroschalter zwei verschiedene Befunde mit sehr aehnlichem Bild. Diese Gruppe trennt sie und ordnet Heckklappe und Komfortzugang dazu.",
+      "points": [
+        "Bewegt sich der Verriegelungsstift sauber auf und ab und die Tuer laesst sich trotzdem nicht oeffnen, ist der Mikroschalter der Befund und nicht der Stellmotor",
+        "Bewegt sich der Stift gar nicht und ist die Versorgung in Ordnung, gehoert der Verdacht auf den Antrieb im Schloss",
+        "Beim Touring oeffnet die Heckscheibe getrennt. Faellt nur eine der beiden Funktionen aus, grenzt das den Fehler auf Schloss oder Schalter ein statt auf die Leitung",
+        "Stoerungen im Komfortzugang griffweise pruefen. Ein einzelner feuchter Griff kann die Schliesslogik blockieren und wie ein Schluesselproblem wirken",
+        "Fehlerspeicher gehoert an den Anfang, aber nicht ans Ende. Er nennt die Funktion, die ausblieb -- welches Bauteil sie schuldig blieb, entscheidet die Messung",
+        "Spannungsabfall an der Tuerleitung messen statt Durchgang. Der Abfall unter Last ist der Befund -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -702,6 +702,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-125",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E36 - Fensterheber, Schloesser, Wasserfuehrung",
+      "valid": "E36 - 1990-2000",
+      "summary": "Am E36 faellt der Fensterheber nicht ploetzlich aus, er kuendigt sich an. Diese Gruppe ordnet Fensterheber, Tuerschloss und Wasserfuehrung so, dass die Ankuendigung nicht uebersehen wird.",
+      "points": [
+        "Ein fransender Bowdenzug arbeitet lauter, bevor er reisst. Wer das Geraeusch beim Heben abtut, tauscht spaeter mit heruntergefallener Scheibe -- und das ist die teurere Reihenfolge",
+        "Motor und Mechanik getrennt beurteilen: Laeuft der Motor hoerbar an, ohne dass sich die Scheibe bewegt, ist die Fuehrung defekt und nicht der Antrieb",
+        "Die Tuerfolie ist Teil der Wasserfuehrung. Loest sich der Kleber, laeuft Wasser nicht mehr in den Ablauf, sondern in den Fussraum -- und dort steht es unter dem Teppich, nicht darauf",
+        "Wassereintritt zuerst an der Eintrittsstelle suchen, nicht am nassen Fleck. Wasser wandert entlang von Kabelbaeumen und Blechfalzen und tritt weit vom Ursprung wieder aus",
+        "Tuerschloss und Mikroschalter unterscheiden: Innenlicht, das nicht ausgeht, oder eine ZV, die eine Tuer nicht meldet, ist ein Schalterbefund und kein Schlossbefund",
+        "Nasse Bodenbleche und Kofferraummulde am E36 immer trocken beurteilen. Feuchtigkeit taeuscht bei der Rostbewertung eine bessere Substanz vor, als vorhanden ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

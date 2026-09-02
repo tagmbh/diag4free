@@ -695,6 +695,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E38 - Tuermodule, Komfortfunktionen, Schloesser",
+      "valid": "E38 - 1994-2001",
+      "summary": "Ab dem E38 sitzt ein Teil der Tuerlogik in der Tuer selbst. Das aendert, wo ein Fehler zu suchen ist: pro Tuer statt zentral. Diese Gruppe ordnet Schloesser, Fenster und Komfortfunktionen.",
+      "points": [
+        "Faellt genau eine Tuer mit allen Funktionen aus, betrifft der Fehler die Versorgung oder das Steuergeraet dieser Tuer. Faellt eine Funktion an allen Tueren aus, liegt er zentral -- das ist die erste Weiche",
+        "Der Uebergang vom Holm in die Tuer ist der mechanisch belastete Punkt. Leitungsbruch dort erklaert wechselnde, von der Tuerstellung abhaengige Fehler besser als jedes Steuergeraet",
+        "Wechselnde Fehler beim Oeffnen und Schliessen nie ohne Wackelprobe bewerten. Ein Fehler, der sich durch Bewegen der Tuer aufrufen laesst, ist mechanisch und nicht elektronisch",
+        "Fensterheber mit Komfortbetaetigung koennen nach Spannungsverlust die Endlagen verlieren. Bevor Teile getauscht werden, gehoert die Initialisierung nachgeholt",
+        "Tuerschloss mechanisch pruefen, bevor der Fehlerspeicher entscheidet. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Elektrik unveraendert wiederkommen",
+        "Spannungsabfall an der Tuerleitung messen, nicht Durchgang. Eine Leitung mit Durchgang kann unter Last zu viel verlieren -- siehe Gruppe 61"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

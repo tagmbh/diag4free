@@ -724,6 +724,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-126",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung E70 - Geteilte Heckklappe, Antrieb, Schloesser",
+      "valid": "E70 - 2006-2013",
+      "summary": "Der E70 hat eine zweiteilige Heckklappe mit eigenem Antrieb. Welcher Teil nicht kommt, grenzt den Fehler bereits ein. Diese Gruppe ordnet Klappe, Schloesser und Anlernen.",
+      "points": [
+        "Ober- und Unterteil getrennt beurteilen. Faellt nur der obere Teil aus, betrifft es Antrieb oder Schloss oben -- ein gemeinsamer Ausfall deutet auf Versorgung oder Freigabe",
+        "Nach Arbeiten am Antrieb oder nach Spannungsverlust koennen die Endlagen fehlen. Dann faehrt die Klappe unvollstaendig oder gar nicht, ohne dass ein Bauteil defekt ist -- erst anlernen, dann urteilen",
+        "Einen elektrischen Antrieb nie gegen seine Sperre bewegen. Was sich von Hand ziehen laesst, muss nicht von Hand gezogen werden duerfen",
+        "Der Leitungsuebergang in die Klappe ist mechanisch belastet und in Bewegung zu pruefen, nicht im Stillstand",
+        "Tuerschloesser mechanisch vor elektrisch beurteilen. Ein schwergaengiges Schloss erzeugt Eintraege, die nach dem Tausch der Ansteuerung wiederkommen",
+        "Ablaufwege in Tueren und Karosserie freimachen. Beim E70 endet stehendes Wasser regelmaessig dort, wo Steuergeraete und Steckverbindungen sitzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

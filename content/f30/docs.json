@@ -721,6 +721,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-124",
+      "type": "GUIDE",
+      "gruppe": "51",
+      "cat": "Karosserie",
+      "title": "Karosserieausstattung F30 - Heckklappe, Tuergriffe, Wasserfuehrung",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 verbergen sich Schliess- und Klappenfehler haeufig hinter Feuchtigkeit und fehlenden Freigaben. Diese Gruppe ordnet Heckklappe, Griffe und Wasserfuehrung.",
+      "points": [
+        "Beim Touring ist die Heckklappe elektrisch. Bleibt sie stehen oder faehrt unvollstaendig, fehlen meist Endlagen oder Freigabe -- nicht Kraft",
+        "Ein ansprechender Einklemmschutz meldet Widerstand. Erst die Mechanik freigaengig machen, dann die Elektrik beurteilen",
+        "Ein feuchter Tuergriff stoert den Komfortzugang und sieht aus wie ein Schluesselproblem. Die Griffe einzeln abfragen, bevor Schluessel oder Steuergeraet verdaechtigt werden",
+        "Die Tuerfolie gehoert zur Abdichtung. Geloester Kleber fuehrt Wasser in den Fussraum statt in den Ablauf",
+        "Ablaeufe an der Wasserfuehrung vor der Windschutzscheibe freimachen. Stehendes Wasser dort erreicht Steuergeraete und Steckverbindungen",
+        "Fehlerspeicher als Einstieg nutzen, nicht als Urteil. Er nennt die ausgebliebene Funktion -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
