@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T03:14:27.107Z",
+  "generated": "2026-09-02T03:35:37.323Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -807,6 +807,45 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E28 · Entfaellt — wo die Antwort steht",
+      "valid": "E28 · 1981–1988",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E28 · Nachruestungen statt Werksausstattung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1524,6 +1563,45 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E30 · Entfaellt — wo die Antwort steht",
+      "valid": "E30 · 1982–1994",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E30 · Nachruestungen statt Werksausstattung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2094,6 +2172,45 @@
         "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
         "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
         "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E34 · Entfaellt — wo die Antwort steht",
+      "valid": "E34 · 1987–1997",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E34 · Nachruestungen statt Werksausstattung",
+      "valid": "E34 · 1987–1997",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
       ],
       "pins": [],
       "engines": [],
@@ -2730,6 +2847,45 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E36 · Entfaellt — wo die Antwort steht",
+      "valid": "E36 · 1989–2002",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E36 · Nachruestungen statt Werksausstattung",
+      "valid": "E36 · 1989–2002",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3309,6 +3465,45 @@
       "details": [
         "D4F-E38-103"
       ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E38 · Entfaellt — wo die Antwort steht",
+      "valid": "E38 · 1993–2001",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E38 · Nachruestungen statt Werksausstattung",
+      "valid": "E38 · 1993–2001",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e38"
     },
     {
@@ -3948,6 +4143,45 @@
       "details": [
         "D4F-E39-107"
       ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E39 · Entfaellt — wo die Antwort steht",
+      "valid": "E39 · 1995–2004",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E39 · Nachruestungen statt Werksausstattung",
+      "valid": "E39 · 1995–2004",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e39"
     },
     {
@@ -4629,6 +4863,45 @@
       "details": [
         "D4F-E46-108"
       ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E46 · Entfaellt — wo die Antwort steht",
+      "valid": "E46 · 1997–2006",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E46 · Nachruestungen statt Werksausstattung",
+      "valid": "E46 · 1997–2006",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e46"
     },
     {
@@ -5320,6 +5593,46 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E60 · Entfaellt — wo die Antwort steht",
+      "valid": "E60 · 2003–2010",
+      "summary": "In dieser Baureihe nicht gefuehrt. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E60 · Freisprechen, Antennen, Telematik",
+      "valid": "E60 · 2003–2010",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5925,6 +6238,48 @@
       "details": [
         "D4F-E70-103"
       ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E70 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "E70 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E70 · Freisprechen, Antennen, Telematik",
+      "valid": "E70 · 2006–2013",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e70"
     },
     {
@@ -6625,6 +6980,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E87 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "E87 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E87 · Freisprechen, Antennen, Telematik",
+      "valid": "E87 · 2004–2013",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7264,6 +7661,46 @@
       "details": [
         "D4F-E88-103"
       ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E88 · Entfaellt — wo die Antwort steht",
+      "valid": "E88 · 2007–2013",
+      "summary": "In dieser Baureihe nicht gefuehrt. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E88 · Freisprechen, Antennen, Telematik",
+      "valid": "E88 · 2007–2013",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e88"
     },
     {
@@ -8087,6 +8524,48 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E90 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "E90 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E90 · Freisprechen, Antennen, Telematik",
+      "valid": "E90 · 2005–2013",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8830,6 +9309,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe F10 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "F10 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme F10 · Freisprechen, Antennen, Telematik",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9397,6 +9918,46 @@
       "details": [
         "D4F-F15-103"
       ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe F15 · Entfaellt — wo die Antwort steht",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "In dieser Baureihe nicht gefuehrt. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme F15 · Freisprechen, Antennen, Telematik",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f15"
     },
     {
@@ -9997,6 +10558,48 @@
       "details": [
         "D4F-F22-103"
       ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe F22 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "F20, F21, F22, F23 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme F22 · Freisprechen, Antennen, Telematik",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f22"
     },
     {
@@ -10642,6 +11245,48 @@
       "details": [
         "D4F-F30-103"
       ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe F30 · Getriebe bestimmen, Adaption, Oelservice",
+      "valid": "F30, F31 · nur Ausfuehrungen mit DKG",
+      "summary": "Ein Doppelkupplungsgetriebe kommt in dieser Baureihe nur in bestimmten Ausfuehrungen vor. Wo es verbaut ist, gilt eine eigene Diagnoselogik: zwei echte Kupplungen, eine Mechatronik und ein Verhalten, das im Kriechbetrieb bauartbedingt rauer ist als beim Wandler.",
+      "points": [
+        "Erst klaeren, welches Getriebe verbaut ist. Ein Doppelkupplungsgetriebe ist kein Wandlerautomat: Es hat zwei echte Kupplungen und keine hydraulische Ueberbrueckung, und es verhaelt sich im Kriechbetrieb anders",
+        "Ruckeln beim Anfahren und beim Rangieren gehoert bei diesem Getriebe zur Bauart, solange es gleichmaessig ist. Erst ungleichmaessiges Rucken, Schlagen oder Verzoegerung beim Einkuppeln ist ein Befund",
+        "Nach Arbeiten am Getriebe und nach Softwarestaenden ist eine Kupplungsadaption erforderlich. Ohne sie bleibt das Anfahrverhalten schlecht, obwohl mechanisch nichts fehlt",
+        "Oelservice ist bei diesem Getriebe kein Lebensdauerthema. Sorte und Menge sind vorgeschrieben und duerfen nicht geraten werden -- falsches Oel schaedigt die Mechatronik",
+        "Notlauf mit begrenzten Gaengen: Fehlerspeicher lesen, bevor mechanisch gesucht wird. Die Mechatronik meldet Kupplung, Aktorik und Druck getrennt",
+        "Ueberhitzungsmeldung nach laengerem Rangieren oder am Berg ist ein Schutzverhalten. Tritt sie im normalen Fahrbetrieb auf, ist sie ein Befund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme F30 · Freisprechen, Antennen, Telematik",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Diese Gruppe umfasst Freisprechen, Antennen und Telematik. Der haeufigste Befund darin ist kein Defekt, sondern ein Codierstand -- und der zweithaeufigste eine Netzabschaltung, gegen die keine Reparatur hilft.",
+      "points": [
+        "Erst klaeren, welche Ausstattung tatsaechlich verbaut und freigeschaltet ist. Ein nicht codiertes Bauteil verhaelt sich wie ein defektes -- das ist in dieser Gruppe der haeufigste Befund",
+        "Freisprechen ohne Funktion: Mikrofon, Steuergeraet und Kopplung sind drei getrennte Kandidaten. Wird das Telefon gekoppelt, aber nicht gehoert, ist es das Mikrofon oder seine Leitung, nicht die Kopplung",
+        "Antennen sitzen verteilt und haben eigene Leitungen und Verstaerker. Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage",
+        "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
+        "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
+        "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "f30"
     }
   ],
@@ -17829,26 +18474,26 @@
     }
   },
   "stats": {
-    "total_docs": 396,
+    "total_docs": 428,
     "total_guides": 40,
     "per_model": {
-      "e28": 22,
-      "e30": 29,
-      "e34": 24,
-      "e36": 24,
-      "e38": 24,
-      "e39": 25,
-      "e46": 26,
-      "e60": 25,
-      "e70": 24,
-      "e87": 25,
-      "e88": 22,
-      "e90": 27,
+      "e28": 24,
+      "e30": 31,
+      "e34": 26,
+      "e36": 26,
+      "e38": 26,
+      "e39": 27,
+      "e46": 28,
+      "e60": 27,
+      "e70": 26,
+      "e87": 27,
+      "e88": 24,
+      "e90": 29,
       "f-series": 5,
-      "f10": 23,
-      "f15": 23,
-      "f22": 24,
-      "f30": 24
+      "f10": 25,
+      "f15": 25,
+      "f22": 26,
+      "f30": 26
     }
   }
 }

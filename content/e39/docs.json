@@ -614,6 +614,43 @@
       "details": [
         "D4F-E39-107"
       ]
+    },
+    {
+      "id": "D4F-E39-118",
+      "type": "GUIDE",
+      "gruppe": "28",
+      "cat": "Doppelkupplungsgetriebe",
+      "title": "Doppelkupplungsgetriebe E39 · Entfaellt — wo die Antwort steht",
+      "valid": "E39 · 1995–2004",
+      "summary": "Zu dieser Zeit gab es diese Bauart im Serienfahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe fuehrt statt ins Leere.",
+      "points": [
+        "Es gibt kein Doppelkupplungsgetriebe. Wer eines vermutet, hat entweder ein Fahrzeug mit Wandlerautomatik oder eines mit Schaltgetriebe vor sich -- die Getriebebestimmung steht am Anfang",
+        "Bei Wandlerautomatik: Ruckeln, Verzoegerung und Schaltbefunde gehoeren zu Gruppe 24, mit Oelstand und Adaption als ersten Pruefschritten",
+        "Bei Handschaltung: Der Schwungradtest im Leerlauf steht in Gruppe 21, die Abgrenzung von Schaltweg und Getriebe in Gruppe 23 und 25",
+        "Ruckeln beim Rangieren an einem Allradfahrzeug gehoert zum Verteilergetriebe und ist keine Getriebefrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E39-119",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Kommunikationssysteme E39 · Nachruestungen statt Werksausstattung",
+      "valid": "E39 · 1995–2004",
+      "summary": "Werksseitige Telematik gibt es in dieser Baureihe nicht oder nur in Ansaetzen. Was hier verbaut ist, stammt in aller Regel aus einer Nachruestung -- und das aendert die Fehlersuche grundlegend.",
+      "points": [
+        "Zuerst feststellen, ob die Anlage ab Werk oder nachgeruestet ist. Bei einer Nachruestung gibt es keine Werksunterlage, keine Codierung und oft keine dokumentierte Verkabelung",
+        "Nachgeruestete Anlagen haengen haeufig an einer eigenen Stromversorgung und einer eigenen Masse. Ein Ausfall gehoert dort zuerst geprueft, nicht am Fahrzeugbordnetz",
+        "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
+        "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
+        "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
