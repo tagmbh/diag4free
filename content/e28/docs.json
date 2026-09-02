@@ -707,6 +707,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-131",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "M20 und M30 · Steuertrieb unterscheiden, bevor beurteilt wird",
+      "valid": "E28 · 1981–1988",
+      "summary": "Im E28 stehen zwei grundverschiedene Steuertriebe nebeneinander: der M20 mit Zahnriemen, der M30 mit Kette. Wer beide gleich behandelt, liegt bei einem von beiden zwangsläufig falsch.",
+      "points": [
+        "Erst feststellen, welcher Motor verbaut ist, dann urteilen. Zahnriemen und Kette haben nichts gemeinsam ausser der Aufgabe",
+        "Am M20 ist der Steuertrieb ein Verschleissteil mit Intervall. Ohne belegbaren Wechselnachweis gilt er als faellig — beim Kauf ist das die erste Frage, nicht die letzte",
+        "Ein gerissener Zahnriemen am M20 laesst Ventile und Kolben zusammentreffen. Deshalb wird hier nach Zeit gewechselt und nicht nach Geraeusch",
+        "Am M30 ist der Steuertrieb auf Lebensdauer ausgelegt, verschleisst aber ueber Gleitschienen und Spanner. Beurteilt wird er am Geraeusch und am Spanner, nicht am Intervall",
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist ein Oeldruckthema am Spanner. Ein Rasseln, das bleibt, ist die Gleitschiene — diese Unterscheidung entscheidet ueber den Umfang",
+        "Bevor irgendetwas zerlegt wird, Druckverlust oder Kompression messen. Das misst den Zustand; alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E28-132",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Gemischbildung am E28 · Warum Falschluft hier sichtbar wird",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Regelung des E28 hat wenig Spielraum. Sie kann Falschluft nicht wegregeln — sie zeigt sie. Das macht die Fehlersuche einfacher, als sie an jüngeren Fahrzeugen ist.",
+      "points": [
+        "Falschluft steht am Anfang jeder Gemischsuche. Schlaeuche, Dichtungen am Ansaugtrakt und die Kurbelgehaeuseentlueftung sind die Stellen, nicht das Steuergeraet",
+        "Der Luftmengenmesser arbeitet mechanisch ueber eine Stauklappe. Sie muss sich gleichmaessig und ohne Haken bewegen lassen — das ist von Hand pruefbar und kostet nichts",
+        "Leerlaufdrehzahl und Gemisch werden hier eingestellt und nicht codiert. Wer nach einer Software sucht, sucht etwas, das es nicht gibt",
+        "Ein unruhiger Leerlauf, der sich mit einer aufgesprühten Pruefsubstanz aendert, hat seine Ursache dort, wo sie aufgetragen wurde. Das ist der Beleg, den man vor dem Teiletausch braucht",
+        "Masse und Versorgung der Sensorik vor dem Verdacht auf das Steuergeraet pruefen. Spannungsabfall unter Last messen statt Durchgang, siehe Gruppe 61",
+        "Nach jeder Aenderung nur eine Groesse zugleich verstellen und dann pruefen. Wer mehreres gleichzeitig aendert, weiss hinterher nicht, was gewirkt hat"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

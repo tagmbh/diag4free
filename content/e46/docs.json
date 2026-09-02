@@ -812,6 +812,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-126",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Kurbelgehaeuseentlueftung M54 und N4x · Oelverlust im Winter",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 ist Oelverlust in der kalten Jahreszeit zuerst ein Entlueftungsbefund und kein Dichtungsschaden. Wer die Reihenfolge umdreht, tauscht Dichtungen, die nichts dafuer koennen.",
+      "points": [
+        "Bei Kaelte friert Kondensat in der Entlueftung. Der Unterdruck im Kurbelgehaeuse steigt, und das Oel wird durch Dichtungen und Simmerringe nach aussen gedrueckt",
+        "Der Befund ist damit die Entlueftung, der Oelverlust ihre Folge. Eine neue Dichtung an unveraenderter Entlueftung ist nach dem naechsten Winter wieder undicht",
+        "Heller Schlamm am Oeleinfuelldeckel gehoert zum selben Bild: Kondensat, das nicht abgefuehrt wird. Er allein ist kein Beweis fuer einen Kopfschaden",
+        "Vor jeder Kopfdichtungs-Vermutung Druckverlust messen und den Kuehlkreis getrennt beurteilen. Sonst wird aus einem Entlueftungsthema eine Motorrevision",
+        "Bei N42 und N46 kommt die Ventilhubverstellung als eigene Fehlerquelle dazu. Sie erzeugt unruhigen Leerlauf und Notlauf, nicht Oelverlust — die beiden Bilder gehoeren getrennt",
+        "Oelverbrauch und Oelverlust sind zwei Befunde. Ohne diese Trennung sucht man an der falschen Stelle"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

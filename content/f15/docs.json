@@ -725,6 +725,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-128",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Kurbelgehaeuseentlueftung im Ventildeckel · Folgen fuer die Suche",
+      "valid": "F15 · 2013–2018",
+      "summary": "Bei den Vierzylindern und Reihensechszylindern dieser Baureihe sitzt die Entlueftung im Ventildeckel. Ein Entlueftungsschaden ist damit kein eigenes Bauteil, sondern ein Deckelthema.",
+      "points": [
+        "Wer nach einem separaten Entlueftungsventil sucht, sucht ein Bauteil, das dort nicht einzeln existiert. Das aendert den Umfang der Reparatur grundlegend",
+        "Steigender Unterdruck im Kurbelgehaeuse drueckt Oel durch Dichtungen nach aussen. Der Oelverlust ist die Folge, die Entlueftung der Befund",
+        "Heller Schlamm am Oeleinfuelldeckel gehoert zum selben Bild und ist allein kein Beweis fuer einen Kopfschaden",
+        "Oelverlust und Oelverbrauch trennen, bevor irgendetwas geoeffnet wird",
+        "Oelstand nur unter den vorgesehenen Bedingungen beurteilen: ebener Boden, betriebswarm, nach Wartezeit",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand; das Geraeusch beschreibt ihn nur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F15-129",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Hochdruckpumpe oder Einspritzventil · Zwei Ursachen, ein Druckbild",
+      "valid": "F15 · 2013–2018",
+      "summary": "Ein einbrechender Hochdruck unter Last hat zwei mögliche Ursachen, die dasselbe Bild erzeugen: zu wenig gefördert oder zu viel verloren. Die Unterscheidung entscheidet über den Aufwand.",
+      "points": [
+        "Zu wenig Foerderung und ein undichtes Ventil erzeugen denselben Druckabfall. Die Frage ist nicht, ob der Druck faellt, sondern warum",
+        "Faellt der Druck auch ohne Einspritzung ab, verliert das System an einer Stelle. Haelt er ohne Einspritzung und faellt unter Last, ist die Foerderung zu schwach",
+        "Zylinderindividuelle Laufunruhe mit ansehen: Ein einzelner auffaelliger Zylinder deutet auf ein Ventil, ein gleichmaessiges Bild auf die Foerderung",
+        "Die Niederdruckseite vorher abhaken. Ohne Vordruck ist jede Aussage zur Hochdruckseite wertlos",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Ein getauschtes Einspritzventil ohne hinterlegten Abgleich verhaelt sich wie ein defektes, siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

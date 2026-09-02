@@ -764,6 +764,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-127",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Oelstand ohne Peilstab · Was der elektronische Wert taugt",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 gibt es keinen Peilstab mehr. Der Oelstand kommt aus einer Messung, und die ist nur unter definierten Bedingungen gueltig — sonst misst man die Schraeglage.",
+      "points": [
+        "Die Messung braucht ebenen Boden, betriebswarmen Motor und eine Wartezeit. Ein Wert ohne diese Bedingungen ist kein Wert, sondern eine Momentaufnahme",
+        "Zwei Messungen unter gleichen Bedingungen sagen mehr als eine. Ein Oelverbrauch wird ueber Strecke belegt, nicht ueber ein Ablesen",
+        "Oelverlust und Oelverbrauch trennen: Der eine hinterlaesst Spuren, der andere nicht. Ohne diese Trennung wird an der falschen Stelle gesucht",
+        "Nachfuellen nur in kleinen Schritten und erneut messen. Ueberfuellung erzeugt eigene Schaeden und ist schwerer zu korrigieren als Unterfuellung",
+        "Ein Kaltstartgeraeusch, das nach Sekunden verschwindet, ist Oeldruck. Eines, das bleibt, ist Mechanik",
+        "Druckverlustpruefung vor jeder Motoraussage — sie misst den Zustand, alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F10-128",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Kraftstoffdruck unter Last aufzeichnen · Warum der Standwert taeuscht",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 zeigt sich ein Druckproblem dort, wo der Bedarf hoch ist. Im Stand baut fast jedes System noch Druck auf — die Aufzeichnung unter Last trennt gut von knapp.",
+      "points": [
+        "Soll und Ist des Kraftstoffdrucks im Fahrbetrieb gegeneinander aufzeichnen, nicht im Stand beurteilen. Der Standwert ist fast immer unauffaellig",
+        "Bricht der Druck erst unter Last ein, ist die Foerderung zu schwach oder eine Stelle undicht. Bleibt er unter Last stabil, liegt der Fehler woanders",
+        "Nieder- und Hochdruckseite getrennt betrachten. Ohne diese Trennung ist der Befund nicht zuzuordnen",
+        "Ein Eintrag zum Gemisch oder zum Druck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Nach jeder Reparatur die Adaption zuruecksetzen, sonst arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

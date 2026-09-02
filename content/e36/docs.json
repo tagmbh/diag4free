@@ -782,6 +782,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-129",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Steuerkette der M4x und M5x · Geraeusch richtig einordnen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 wird jedes Rasseln aus dem Steuertrieb schnell zum Kettenschaden erklaert. Die Unterscheidung ist einfach und entscheidet ueber den ganzen Reparaturumfang.",
+      "points": [
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist Oeldruck am Kettenspanner. Ein Rasseln, das bleibt oder mit der Drehzahl wandert, ist die Gleitschiene",
+        "Das Geraeusch am kalten Motor aufnehmen, nicht am warmen. Betriebswarm ist der Spanner gefuellt und das Bild verschwindet — die Pruefung waere dann wertlos",
+        "Oelstand und Oelzustand vor jeder Beurteilung pruefen. Ein Spannerthema bei zu niedrigem Oelstand ist kein Bauteilbefund",
+        "Bruchstuecke einer Gleitschiene finden sich in der Oelwanne, bevor sie am Geraeusch auffallen. Wer den Verdacht hat, sucht dort",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand, das Geraeusch beschreibt ihn nur",
+        "Kuehlmittelverlust ohne sichtbare Pfuetze gehoert getrennt beurteilt und nicht dem Steuertrieb zugeschlagen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

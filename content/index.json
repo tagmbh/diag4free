@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T06:55:10.671Z",
+  "generated": "2026-09-02T07:08:34.614Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1007,6 +1007,48 @@
         "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
         "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-131",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "M20 und M30 · Steuertrieb unterscheiden, bevor beurteilt wird",
+      "valid": "E28 · 1981–1988",
+      "summary": "Im E28 stehen zwei grundverschiedene Steuertriebe nebeneinander: der M20 mit Zahnriemen, der M30 mit Kette. Wer beide gleich behandelt, liegt bei einem von beiden zwangsläufig falsch.",
+      "points": [
+        "Erst feststellen, welcher Motor verbaut ist, dann urteilen. Zahnriemen und Kette haben nichts gemeinsam ausser der Aufgabe",
+        "Am M20 ist der Steuertrieb ein Verschleissteil mit Intervall. Ohne belegbaren Wechselnachweis gilt er als faellig — beim Kauf ist das die erste Frage, nicht die letzte",
+        "Ein gerissener Zahnriemen am M20 laesst Ventile und Kolben zusammentreffen. Deshalb wird hier nach Zeit gewechselt und nicht nach Geraeusch",
+        "Am M30 ist der Steuertrieb auf Lebensdauer ausgelegt, verschleisst aber ueber Gleitschienen und Spanner. Beurteilt wird er am Geraeusch und am Spanner, nicht am Intervall",
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist ein Oeldruckthema am Spanner. Ein Rasseln, das bleibt, ist die Gleitschiene — diese Unterscheidung entscheidet ueber den Umfang",
+        "Bevor irgendetwas zerlegt wird, Druckverlust oder Kompression messen. Das misst den Zustand; alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-132",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Gemischbildung am E28 · Warum Falschluft hier sichtbar wird",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Regelung des E28 hat wenig Spielraum. Sie kann Falschluft nicht wegregeln — sie zeigt sie. Das macht die Fehlersuche einfacher, als sie an jüngeren Fahrzeugen ist.",
+      "points": [
+        "Falschluft steht am Anfang jeder Gemischsuche. Schlaeuche, Dichtungen am Ansaugtrakt und die Kurbelgehaeuseentlueftung sind die Stellen, nicht das Steuergeraet",
+        "Der Luftmengenmesser arbeitet mechanisch ueber eine Stauklappe. Sie muss sich gleichmaessig und ohne Haken bewegen lassen — das ist von Hand pruefbar und kostet nichts",
+        "Leerlaufdrehzahl und Gemisch werden hier eingestellt und nicht codiert. Wer nach einer Software sucht, sucht etwas, das es nicht gibt",
+        "Ein unruhiger Leerlauf, der sich mit einer aufgesprühten Pruefsubstanz aendert, hat seine Ursache dort, wo sie aufgetragen wurde. Das ist der Beleg, den man vor dem Teiletausch braucht",
+        "Masse und Versorgung der Sensorik vor dem Verdacht auf das Steuergeraet pruefen. Spannungsabfall unter Last messen statt Durchgang, siehe Gruppe 61",
+        "Nach jeder Aenderung nur eine Groesse zugleich verstellen und dann pruefen. Wer mehreres gleichzeitig aendert, weiss hinterher nicht, was gewirkt hat"
       ],
       "pins": [],
       "engines": [],
@@ -2722,6 +2764,27 @@
       "model": "e34"
     },
     {
+      "id": "D4F-E34-132",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Luftmassenmesser beurteilen · Die Probe mit dem gezogenen Stecker",
+      "valid": "E34 · 1987–1996",
+      "summary": "Im E34 haengt die Gemischbildung an einem Messwert. Ist er falsch, arbeitet die Regelung sauber am falschen Ziel — und es gibt eine Probe, die das in Minuten zeigt.",
+      "points": [
+        "Bei abgezogenem Luftmassenmesser rechnet die Steuerung mit einem Ersatzwert. Laeuft der Motor danach spuerbar besser, war der Messwert falsch und nicht das Gemisch",
+        "Die Probe ersetzt keine Messung, aber sie richtet die Suche aus. Wer sie auslaesst, tauscht haeufiger, als noetig waere",
+        "Falschluft davor abarbeiten: Ansaugschlaeuche, Dichtungen und Kurbelgehaeuseentlueftung. Eine undichte Stelle hinter dem Messgeraet macht jeden Messwert wertlos",
+        "Ein verschmutztes oder gealtertes Messelement liefert zu wenig Signal. Das Fahrzeug laeuft dann mager und die Regelung korrigiert, bis sie am Anschlag ist",
+        "Adaptionswerte vor dem Teiletausch ansehen: Sie sagen, in welche Richtung und wie weit die Regelung schon korrigiert hat. Das ist der Befund, die Momentaufnahme nicht",
+        "Nach dem Tausch die Adaption zuruecksetzen. Ohne Ruecksetzen arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
       "id": "D4F-E36-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3530,6 +3593,27 @@
         "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
         "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-129",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Steuerkette der M4x und M5x · Geraeusch richtig einordnen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 wird jedes Rasseln aus dem Steuertrieb schnell zum Kettenschaden erklaert. Die Unterscheidung ist einfach und entscheidet ueber den ganzen Reparaturumfang.",
+      "points": [
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist Oeldruck am Kettenspanner. Ein Rasseln, das bleibt oder mit der Drehzahl wandert, ist die Gleitschiene",
+        "Das Geraeusch am kalten Motor aufnehmen, nicht am warmen. Betriebswarm ist der Spanner gefuellt und das Bild verschwindet — die Pruefung waere dann wertlos",
+        "Oelstand und Oelzustand vor jeder Beurteilung pruefen. Ein Spannerthema bei zu niedrigem Oelstand ist kein Bauteilbefund",
+        "Bruchstuecke einer Gleitschiene finden sich in der Oelwanne, bevor sie am Geraeusch auffallen. Wer den Verdacht hat, sucht dort",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand, das Geraeusch beschreibt ihn nur",
+        "Kuehlmittelverlust ohne sichtbare Pfuetze gehoert getrennt beurteilt und nicht dem Steuertrieb zugeschlagen"
       ],
       "pins": [],
       "engines": [],
@@ -5172,6 +5256,27 @@
       "model": "e39"
     },
     {
+      "id": "D4F-E39-130",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Gemischadaption lesen · Was die Korrekturwerte verraten",
+      "valid": "E39 · 1995–2003",
+      "summary": "Am E39 steht der Befund nicht im Momentanwert, sondern in der Adaption. Sie sagt, in welche Richtung und wie weit die Regelung schon korrigiert hat, bevor der Fahrer etwas merkt.",
+      "points": [
+        "Adaptionswerte vor jedem Teiletausch lesen. Eine Korrektur in Richtung fett deutet auf zu wenig gemessene Luft, eine in Richtung mager auf Falschluft oder zu wenig Kraftstoff",
+        "Werte im Leerlauf und im Teillastbereich getrennt betrachten. Weicht nur der Leerlauf ab, ist die undichte Stelle klein; weicht beides ab, ist sie gross oder liegt im Messweg",
+        "Falschluft ist die haeufigste Ursache: Kurbelgehaeuseentlueftung, Ansaugschlaeuche, Dichtungen. Die Regelung gleicht sie aus, bis sie am Anschlag steht — dann erst kommt der Eintrag",
+        "Ein Eintrag Gemisch zu mager benennt das Ergebnis, nicht das Bauteil. Das undichte Teil steht dort nicht drin, siehe Gruppe D1",
+        "Nach jeder Reparatur die Adaption zuruecksetzen und neu einfahren. Sonst arbeitet die alte Korrektur gegen die neue Dichtheit",
+        "Nur eine Aenderung, dann pruefen. Wer mehreres zugleich macht, weiss nicht, was gewirkt hat"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
       "id": "D4F-E46-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6011,6 +6116,27 @@
         "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
         "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-126",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Kurbelgehaeuseentlueftung M54 und N4x · Oelverlust im Winter",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 ist Oelverlust in der kalten Jahreszeit zuerst ein Entlueftungsbefund und kein Dichtungsschaden. Wer die Reihenfolge umdreht, tauscht Dichtungen, die nichts dafuer koennen.",
+      "points": [
+        "Bei Kaelte friert Kondensat in der Entlueftung. Der Unterdruck im Kurbelgehaeuse steigt, und das Oel wird durch Dichtungen und Simmerringe nach aussen gedrueckt",
+        "Der Befund ist damit die Entlueftung, der Oelverlust ihre Folge. Eine neue Dichtung an unveraenderter Entlueftung ist nach dem naechsten Winter wieder undicht",
+        "Heller Schlamm am Oeleinfuelldeckel gehoert zum selben Bild: Kondensat, das nicht abgefuehrt wird. Er allein ist kein Beweis fuer einen Kopfschaden",
+        "Vor jeder Kopfdichtungs-Vermutung Druckverlust messen und den Kuehlkreis getrennt beurteilen. Sonst wird aus einem Entlueftungsthema eine Motorrevision",
+        "Bei N42 und N46 kommt die Ventilhubverstellung als eigene Fehlerquelle dazu. Sie erzeugt unruhigen Leerlauf und Notlauf, nicht Oelverlust — die beiden Bilder gehoeren getrennt",
+        "Oelverbrauch und Oelverlust sind zwei Befunde. Ohne diese Trennung sucht man an der falschen Stelle"
       ],
       "pins": [],
       "engines": [],
@@ -7725,6 +7851,48 @@
         "Ein nachgeruestetes oder getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
         "Bedienteil und Rechner sind getrennte Geraete. Reagiert die Bedienung nicht, waehrend das Bild lebt, ist das ein Bedienteilbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-129",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Motorbestimmung im E70 · Warum ein X5-Befund ohne Motor nichts wert ist",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im E70 stehen Reihensechszylinder, V8 und Diesel nebeneinander. Ein Befund, der sich auf den X5 beruft statt auf den Motor, ist deshalb nicht uebertragbar.",
+      "points": [
+        "Vor jeder Motorbeurteilung die Motorkennung feststellen. Was am Block steht, gilt — nicht was in der Anzeige oder im Papier steht, siehe Gruppe D4",
+        "Saug-Sechszylinder, aufgeladener Sechszylinder, V8 und Diesel haben unterschiedliche Schwachstellen. Eine Aussage zum X5 ohne Motorangabe ist keine Aussage",
+        "Oelverlust und Oelverbrauch trennen. Ein Motor, der Oel verliert, und einer, der Oel verbrennt, sind zwei Befunde — ohne Trennung wird eine Dichtung getauscht, die nichts dafuer kann",
+        "Oelstand nur nach den vorgesehenen Bedingungen beurteilen: ebener Boden, betriebswarm, nach Wartezeit. Ein Wert unter anderen Bedingungen ist kein Wert",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand, das Geraeusch beschreibt ihn nur",
+        "Ein Kaltstartgeraeusch, das nach Sekunden verschwindet, ist Oeldruck. Eines, das bleibt, ist Mechanik — die Unterscheidung entscheidet ueber den Umfang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-130",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Nieder- und Hochdruckseite trennen · Startprobleme am Direkteinspritzer",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim Direkteinspritzer gibt es zwei Kraftstoffdrücke mit ganz unterschiedlicher Grössenordnung. Ohne diese Trennung ist ein Startproblem nicht diagnostizierbar.",
+      "points": [
+        "Zuerst klaeren, ob die Niederdruckseite liefert. Fehlt dort schon der Druck, ist jede Aussage ueber die Hochdruckseite wertlos",
+        "Hochdruck wird erst beim Starten aufgebaut. Ein Wert im Stillstand sagt darueber nichts — gemessen wird waehrend des Startvorgangs und unter Last",
+        "Ein Druck, der aufgebaut wird und sofort wieder faellt, deutet auf eine undichte Stelle oder ein undichtes Ventil, nicht auf eine schwache Pumpe",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung — siehe Gruppe D5",
+        "Ein Eintrag zum Kraftstoffdruck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "Vor jeder Bewertung die Motorkennung feststellen: Im E70 stehen Saug-, Turbo- und Dieselmotoren nebeneinander, siehe Gruppe D4"
       ],
       "pins": [],
       "engines": [],
@@ -9503,6 +9671,27 @@
         "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
         "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-128",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Einspritzventile zuordnen und abgleichen · Warum das neue Teil sich wie ein defektes verhaelt",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 lässt sich ein auffälliges Einspritzventil dem Zylinder zuordnen, bevor irgendetwas ausgebaut wird. Und nach dem Tausch ist der Abgleich kein Zubehör, sondern Teil des Einbaus.",
+      "points": [
+        "Zylinderindividuelle Laufunruhe ansehen, bevor ausgebaut wird. Sie benennt den Zylinder — das grenzt mehr ein als jede Sichtpruefung",
+        "Ein auffaelliger Zylinder ist noch kein auffaelliges Einspritzventil. Zuendung und Kompression gehoeren am selben Zylinder mitgeprueft, sonst wird das falsche Teil getauscht",
+        "Ein getauschtes Einspritzventil ohne hinterlegten Abgleich verhaelt sich wie ein defektes. Der Abgleich gehoert zum Einbau, nicht zur Nacharbeit — siehe Gruppe D3",
+        "Beim Tausch nur eines Ventils bleibt der Satz uneinheitlich. Wer die Zuordnung nicht dokumentiert, macht die naechste Diagnose unmoeglich",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Ein Eintrag benennt den Zylinder und das Ergebnis, nicht das schuldige Bauteil, siehe Gruppe D1"
       ],
       "pins": [],
       "engines": [],
@@ -11514,6 +11703,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-127",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Oelstand ohne Peilstab · Was der elektronische Wert taugt",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 gibt es keinen Peilstab mehr. Der Oelstand kommt aus einer Messung, und die ist nur unter definierten Bedingungen gueltig — sonst misst man die Schraeglage.",
+      "points": [
+        "Die Messung braucht ebenen Boden, betriebswarmen Motor und eine Wartezeit. Ein Wert ohne diese Bedingungen ist kein Wert, sondern eine Momentaufnahme",
+        "Zwei Messungen unter gleichen Bedingungen sagen mehr als eine. Ein Oelverbrauch wird ueber Strecke belegt, nicht ueber ein Ablesen",
+        "Oelverlust und Oelverbrauch trennen: Der eine hinterlaesst Spuren, der andere nicht. Ohne diese Trennung wird an der falschen Stelle gesucht",
+        "Nachfuellen nur in kleinen Schritten und erneut messen. Ueberfuellung erzeugt eigene Schaeden und ist schwerer zu korrigieren als Unterfuellung",
+        "Ein Kaltstartgeraeusch, das nach Sekunden verschwindet, ist Oeldruck. Eines, das bleibt, ist Mechanik",
+        "Druckverlustpruefung vor jeder Motoraussage — sie misst den Zustand, alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-128",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Kraftstoffdruck unter Last aufzeichnen · Warum der Standwert taeuscht",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 zeigt sich ein Druckproblem dort, wo der Bedarf hoch ist. Im Stand baut fast jedes System noch Druck auf — die Aufzeichnung unter Last trennt gut von knapp.",
+      "points": [
+        "Soll und Ist des Kraftstoffdrucks im Fahrbetrieb gegeneinander aufzeichnen, nicht im Stand beurteilen. Der Standwert ist fast immer unauffaellig",
+        "Bricht der Druck erst unter Last ein, ist die Foerderung zu schwach oder eine Stelle undicht. Bleibt er unter Last stabil, liegt der Fehler woanders",
+        "Nieder- und Hochdruckseite getrennt betrachten. Ohne diese Trennung ist der Befund nicht zuzuordnen",
+        "Ein Eintrag zum Gemisch oder zum Druck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Nach jeder Reparatur die Adaption zuruecksetzen, sonst arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -12264,6 +12495,48 @@
         "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht -- Ruhestrom gehoert hier gesucht",
         "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
         "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-128",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Kurbelgehaeuseentlueftung im Ventildeckel · Folgen fuer die Suche",
+      "valid": "F15 · 2013–2018",
+      "summary": "Bei den Vierzylindern und Reihensechszylindern dieser Baureihe sitzt die Entlueftung im Ventildeckel. Ein Entlueftungsschaden ist damit kein eigenes Bauteil, sondern ein Deckelthema.",
+      "points": [
+        "Wer nach einem separaten Entlueftungsventil sucht, sucht ein Bauteil, das dort nicht einzeln existiert. Das aendert den Umfang der Reparatur grundlegend",
+        "Steigender Unterdruck im Kurbelgehaeuse drueckt Oel durch Dichtungen nach aussen. Der Oelverlust ist die Folge, die Entlueftung der Befund",
+        "Heller Schlamm am Oeleinfuelldeckel gehoert zum selben Bild und ist allein kein Beweis fuer einen Kopfschaden",
+        "Oelverlust und Oelverbrauch trennen, bevor irgendetwas geoeffnet wird",
+        "Oelstand nur unter den vorgesehenen Bedingungen beurteilen: ebener Boden, betriebswarm, nach Wartezeit",
+        "Druckverlustpruefung vor jeder Motoraussage. Sie misst den Zustand; das Geraeusch beschreibt ihn nur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-129",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Hochdruckpumpe oder Einspritzventil · Zwei Ursachen, ein Druckbild",
+      "valid": "F15 · 2013–2018",
+      "summary": "Ein einbrechender Hochdruck unter Last hat zwei mögliche Ursachen, die dasselbe Bild erzeugen: zu wenig gefördert oder zu viel verloren. Die Unterscheidung entscheidet über den Aufwand.",
+      "points": [
+        "Zu wenig Foerderung und ein undichtes Ventil erzeugen denselben Druckabfall. Die Frage ist nicht, ob der Druck faellt, sondern warum",
+        "Faellt der Druck auch ohne Einspritzung ab, verliert das System an einer Stelle. Haelt er ohne Einspritzung und faellt unter Last, ist die Foerderung zu schwach",
+        "Zylinderindividuelle Laufunruhe mit ansehen: Ein einzelner auffaelliger Zylinder deutet auf ein Ventil, ein gleichmaessiges Bild auf die Foerderung",
+        "Die Niederdruckseite vorher abhaken. Ohne Vordruck ist jede Aussage zur Hochdruckseite wertlos",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
+        "Ein getauschtes Einspritzventil ohne hinterlegten Abgleich verhaelt sich wie ein defektes, siehe Gruppe D3"
       ],
       "pins": [],
       "engines": [],
@@ -13908,6 +14181,48 @@
         "Einseitig veraendertes Fahrverhalten oder Klopfen auf einer Achsseite zeigt auf genau einen Daempfer. Das ist ein Befund und keine Fahrwerksbeurteilung",
         "Ein undichter Daempfer verliert seine Verstellbarkeit. Oel am Daempfer ist damit nicht nur ein Verschleissbild, sondern erklaert die fehlende Regelung",
         "Ein Eintrag benennt die ausgebliebene Funktion, nicht das schuldige Bauteil -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-128",
+      "type": "GUIDE",
+      "gruppe": "11",
+      "cat": "Motor",
+      "title": "Steuerkette beim N20 · Wo das Geraeusch herkommt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim Vierzylinder-Turbo dieser Baureihe sitzt der Steuertrieb an der Getriebeseite des Motors. Wer das Geraeusch vorn sucht, sucht am falschen Ende des Motors.",
+      "points": [
+        "Der Steuertrieb liegt hinten am Motor, zum Getriebe hin. Das erklaert sowohl die Ortung des Geraeusches als auch den Aufwand einer Instandsetzung",
+        "Ein Rasseln beim Kaltstart, das nach wenigen Sekunden verschwindet, ist Oeldruck am Spanner. Ein Rasseln, das bleibt, ist der Steuertrieb selbst",
+        "Das Geraeusch am kalten Motor aufnehmen. Betriebswarm verschwindet das Bild und die Pruefung waere wertlos",
+        "Oelstand und Oelwechselintervall vor jeder Beurteilung pruefen. Ein Steuertrieb, der zu lange mit altem Oel gelaufen ist, ist ein Wartungsbefund",
+        "Ein Kettenthema aeussert sich frueh als Geraeusch und spaet als Fehlerspeichereintrag zur Nockenwellenposition. Die Reihenfolge nicht abwarten",
+        "Druckverlustpruefung vor jeder Motoraussage — sie misst den Zustand, alles andere ist Indiz"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-129",
+      "type": "GUIDE",
+      "gruppe": "13",
+      "cat": "Gemisch",
+      "title": "Direkteinspritzung und Einlassventile · Was der Kraftstoff nicht mehr spuelt",
+      "valid": "F30 · 2011–2019",
+      "summary": "Bei Direkteinspritzung gelangt kein Kraftstoff mehr an die Einlassventile. Was sich dort ablagert, bleibt liegen — und das erklärt Fehlerbilder, die sonst der Zündung angelastet werden.",
+      "points": [
+        "Der Kraftstoff wird direkt in den Brennraum eingespritzt und wäscht die Einlassventile nicht mehr. Ablagerungen dort sind bauartbedingt und kein Wartungsversaeumnis des Fahrers",
+        "Ungleichmaessiger Lauf und schlechtes Ansprechen ohne Zuendbefund gehoeren deshalb auch hier geprueft, bevor Zuendspulen getauscht werden",
+        "Zylinderindividuelle Laufunruhe zuerst lesen: Sie benennt den Zylinder und trennt ein Einzelthema von einem Gesamtthema",
+        "Die Kurbelgehaeuseentlueftung fuehrt Oeldampf in den Ansaugtrakt. Ihr Zustand gehoert zur Beurteilung der Ablagerungen dazu",
+        "Ein Eintrag benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
+        "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5"
       ],
       "pins": [],
       "engines": [],
@@ -21099,26 +21414,26 @@
     }
   },
   "stats": {
-    "total_docs": 553,
+    "total_docs": 568,
     "total_guides": 40,
     "per_model": {
-      "e28": 32,
+      "e28": 34,
       "e30": 38,
-      "e34": 35,
-      "e36": 33,
+      "e34": 36,
+      "e36": 34,
       "e38": 35,
-      "e39": 34,
-      "e46": 34,
+      "e39": 35,
+      "e46": 35,
       "e60": 35,
-      "e70": 34,
+      "e70": 36,
       "e87": 36,
-      "e88": 32,
+      "e88": 33,
       "e90": 36,
       "f-series": 8,
-      "f10": 32,
-      "f15": 32,
+      "f10": 34,
+      "f15": 34,
       "f22": 34,
-      "f30": 33
+      "f30": 35
     }
   }
 }
