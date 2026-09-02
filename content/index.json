@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T07:08:34.614Z",
+  "generated": "2026-09-02T07:23:04.479Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1056,6 +1056,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-133",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E28 · Abgrenzung: hier gibt es keines",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E28, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1959,6 +1980,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Allradantrieb 325iX · Viskokupplung verstehen, bevor sie beurteilt wird",
+      "valid": "E30 · 1982–1994",
+      "summary": "Der frueh angebotene Allradantrieb arbeitet permanent und gleicht ueber Viskokupplungen aus. Die wirken ueber Drehzahldifferenz und mit Verzoegerung -- das erklaert fast jede Beschwerde ueber sie.",
+      "points": [
+        "Eine Viskokupplung reagiert auf Drehzahldifferenz und immer mit Verzoegerung. Sie ist eine Anfahrhilfe und keine Sperre -- wer eine Sperrwirkung erwartet, beurteilt das falsche Bauteil",
+        "Nach hoher Laufleistung ist die Wirkung oft praktisch verschwunden, ohne dass etwas gebrochen waere. Das ist Verschleiss und kein Defekt -- und keine Fehlerspeicherfrage",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Ein Getriebeoel aus dem Regal ist hier kein Ersatz, und falsches Oel ist eine haeufige Ursache fuer nachlassende Wirkung",
+        "Vor Arbeiten am Differential: Die Zerlegung verlangt Einstellarbeiten, die ohne Vorrichtung nicht sauber gelingen. Wer sie ueberspringt, verkuerzt die Lebensdauer"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2778,6 +2820,27 @@
         "Ein verschmutztes oder gealtertes Messelement liefert zu wenig Signal. Das Fahrzeug laeuft dann mager und die Regelung korrigiert, bis sie am Anschlag ist",
         "Adaptionswerte vor dem Teiletausch ansehen: Sie sagen, in welche Richtung und wie weit die Regelung schon korrigiert hat. Das ist der Befund, die Momentaufnahme nicht",
         "Nach dem Tausch die Adaption zuruecksetzen. Ohne Ruecksetzen arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-133",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Allradantrieb 525iX · Viskokupplung verstehen, bevor sie beurteilt wird",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der frueh angebotene Allradantrieb arbeitet permanent und gleicht ueber Viskokupplungen aus. Die wirken ueber Drehzahldifferenz und mit Verzoegerung -- das erklaert fast jede Beschwerde ueber sie.",
+      "points": [
+        "Eine Viskokupplung reagiert auf Drehzahldifferenz und immer mit Verzoegerung. Sie ist eine Anfahrhilfe und keine Sperre -- wer eine Sperrwirkung erwartet, beurteilt das falsche Bauteil",
+        "Nach hoher Laufleistung ist die Wirkung oft praktisch verschwunden, ohne dass etwas gebrochen waere. Das ist Verschleiss und kein Defekt -- und keine Fehlerspeicherfrage",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Ein Getriebeoel aus dem Regal ist hier kein Ersatz, und falsches Oel ist eine haeufige Ursache fuer nachlassende Wirkung",
+        "Vor Arbeiten am Differential: Die Zerlegung verlangt Einstellarbeiten, die ohne Vorrichtung nicht sauber gelingen. Wer sie ueberspringt, verkuerzt die Lebensdauer"
       ],
       "pins": [],
       "engines": [],
@@ -3621,6 +3684,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-130",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E36 · Abgrenzung: hier gibt es keines",
+      "valid": "E36 · 1990–2000",
+      "summary": "Der E36 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E36, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4424,6 +4508,27 @@
         "Einseitig veraendertes Fahrverhalten oder Klopfen auf einer Achsseite zeigt auf genau einen Daempfer. Das ist ein Befund und keine Fahrwerksbeurteilung",
         "Ein Leck in der Niveauhaltung zeigt sich als Absenken ueber Nacht. Geprueft wird am stehenden Wagen, nicht auf der Probefahrt",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung -- sonst misst man die Zuladung und nicht das System"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-130",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E38 · Abgrenzung: hier gibt es keines",
+      "valid": "E38 · 1994–2001",
+      "summary": "Der E38 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E38, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
       ],
       "pins": [],
       "engines": [],
@@ -5270,6 +5375,27 @@
         "Ein Eintrag Gemisch zu mager benennt das Ergebnis, nicht das Bauteil. Das undichte Teil steht dort nicht drin, siehe Gruppe D1",
         "Nach jeder Reparatur die Adaption zuruecksetzen und neu einfahren. Sonst arbeitet die alte Korrektur gegen die neue Dichtheit",
         "Nur eine Aenderung, dann pruefen. Wer mehreres zugleich macht, weiss nicht, was gewirkt hat"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-131",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E39 · Abgrenzung: hier gibt es keines",
+      "valid": "E39 · 1995–2003",
+      "summary": "Der E39 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E39, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
       ],
       "pins": [],
       "engines": [],
@@ -6137,6 +6263,27 @@
         "Vor jeder Kopfdichtungs-Vermutung Druckverlust messen und den Kuehlkreis getrennt beurteilen. Sonst wird aus einem Entlueftungsthema eine Motorrevision",
         "Bei N42 und N46 kommt die Ventilhubverstellung als eigene Fehlerquelle dazu. Sie erzeugt unruhigen Leerlauf und Notlauf, nicht Oelverlust — die beiden Bilder gehoeren getrennt",
         "Oelverbrauch und Oelverlust sind zwei Befunde. Ohne diese Trennung sucht man an der falschen Stelle"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-127",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Allradantrieb im E46 · Ruckeln beim Rangieren richtig zuordnen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Beim Allrad-E46 wird ein Ruckeln im Langsamen schnell dem Verteilergetriebe angelastet. Die haeufigere Ursache steht auf den Felgen und kostet nichts, sie zu pruefen.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Erst wenn die Bereifung sauber ist, ist ein Ruckeln ein Befund am Antriebsstrang. Vorher ist es ein Reifenbefund",
+        "Antriebswellen, Gelenke und Mittellager gehoeren mitgeprueft. Sie erzeugen aehnliche Bilder und sind billiger auszuschliessen als das Verteilergetriebe",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Falsches oder gealtertes Oel ist eine reale Ursache und keine Randnotiz",
+        "Ein Eintrag zu DSC oder Antriebsschlupf benennt das Ergebnis, nicht das Bauteil -- siehe Gruppe D1"
       ],
       "pins": [],
       "engines": [],
@@ -7033,6 +7180,27 @@
         "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt selten am Dachrahmen",
         "Steht Wasser im Innenraum, gehoert es geklaert, bevor Steuergeraete beurteilt werden -- nasse Steckverbindungen erzeugen Fehler, die nach dem Trocknen verschwinden",
         "Nie mit Draht in den Ablauf. Der durchstossene Schlauch entlaesst das Wasser in die Karosserie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-128",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im E60 · Geregelte Lamellenkupplung und ihre Fehlerbilder",
+      "valid": "E60 · 2003–2010",
+      "summary": "Im xDrive verteilt eine elektronisch geregelte Lamellenkupplung das Moment nach Lenkwinkel, Schlupf und Fahrdynamikanforderung. Faellt die Regelung aus, meldet sich zuerst die Fahrdynamik.",
+      "points": [
+        "Die Kupplung wird ueber einen Stellmotor verstellt. Ein verschlissenes Zahnrad darin fuehrt zu ungenauer Regelung -- das ist ein anderer Befund als eine verschlissene Lamelle",
+        "Warnungen zu DSC oder Fahrstabilitaet gehoeren mit dem Allrad zusammen gelesen. Sie kommen haeufig aus demselben Befund und nicht aus drei",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Nach dem Oelwechsel gehoert die Adaption erneuert, sonst arbeitet die alte Korrektur gegen das frische Oel",
+        "Nach Oelwechsel und Adaption braucht das Fahrzeug Fahrstrecke, bevor beurteilt wird. Ein Urteil nach den ersten Metern ist keines"
       ],
       "pins": [],
       "engines": [],
@@ -8828,6 +8996,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E87 · Abgrenzung: hier gibt es keines",
+      "valid": "E87 · 2004–2011",
+      "summary": "Der E87 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E87, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9692,6 +9881,27 @@
         "Beim Tausch nur eines Ventils bleibt der Satz uneinheitlich. Wer die Zuordnung nicht dokumentiert, macht die naechste Diagnose unmoeglich",
         "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
         "Ein Eintrag benennt den Zylinder und das Ergebnis, nicht das schuldige Bauteil, siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E88 · Abgrenzung: hier gibt es keines",
+      "valid": "E88 · 2007–2013",
+      "summary": "Der E88 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E88, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
       ],
       "pins": [],
       "engines": [],
@@ -10701,6 +10911,27 @@
         "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
         "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
         "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-128",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im E90 · Stellmotor, Lamellen und der Blick auf die Reifen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 mit xDrive erzeugen drei sehr verschiedene Ursachen dasselbe Ruckeln: ungleiche Reifen, gealtertes Oel und ein verschlissener Stellmotor. Die Reihenfolge der Pruefung entscheidet ueber die Kosten.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Danach Oel und Adaption. Gealtertes oder falsches Oel in der Lamellenkupplung erzeugt genau dieses Bild und ist die guenstigste der verbleibenden Ursachen",
+        "Erst zuletzt der Stellmotor. Ein verschlissenes Zahnrad darin regelt ungenau -- der Befund ist dann elektromechanisch und nicht hydraulisch",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Leuchten fuer DSC und Fahrstabilitaet zusammen mit dem Allradbefund lesen, nicht getrennt -- siehe Gruppe D1",
+        "Nach Oelwechsel und Adaption Fahrstrecke geben, bevor beurteilt wird"
       ],
       "pins": [],
       "engines": [],
@@ -11738,6 +11969,27 @@
         "Ein Eintrag zum Gemisch oder zum Druck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
         "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
         "Nach jeder Reparatur die Adaption zuruecksetzen, sonst arbeitet die alte Korrektur gegen das neue Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im F10 · Adaption nach jedem Eingriff",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 ist die Momentverteilung geregelt und adaptiv. Nach jedem Eingriff am Verteilergetriebe gehoert die Adaption erneuert -- sonst arbeitet eine alte Korrektur gegen den neuen Zustand.",
+      "points": [
+        "Nach Oelwechsel oder Arbeiten am Verteilergetriebe die Adaption erneuern. Das ist Teil der Arbeit und keine Nacharbeit",
+        "Danach Fahrstrecke geben, bevor beurteilt wird. Ein Ruckeln, das nach den ersten Metern noch da ist, ist noch kein Befund",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel -- kein Getriebeoel aus dem Regal",
+        "Ein Eintrag benennt das Ergebnis, nicht das Bauteil. Welche Baugruppe schuldig blieb, entscheidet die Pruefung -- siehe Gruppe D1"
       ],
       "pins": [],
       "engines": [],
@@ -13354,6 +13606,27 @@
       "model": "f22"
     },
     {
+      "id": "D4F-F22-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im F22 · Was zuerst geprueft wird und was zuletzt",
+      "valid": "F22 · 2013–2021",
+      "summary": "Auch am F22 gilt die Reihenfolge: erst die Reifen, dann Oel und Adaption, zuletzt die Mechanik. Wer sie umdreht, zahlt fuer eine Diagnose, die eine Profiltiefenmessung erledigt haette.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Danach Oel und Adaption. Beides ist guenstiger zu erneuern als jede Baugruppe darunter",
+        "Zuletzt Stellmotor und Lamellen. Ein verschlissenes Zahnrad im Stellmotor regelt ungenau; verschlissene Lamellen uebertragen ungleichmaessig -- zwei Befunde mit einem Bild",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Warnungen zur Fahrstabilitaet mit dem Allradbefund zusammen lesen, nicht als drei getrennte Fehler",
+        "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben, bevor beurteilt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
       "id": "D4F-F30-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -14223,6 +14496,27 @@
         "Die Kurbelgehaeuseentlueftung fuehrt Oeldampf in den Ansaugtrakt. Ihr Zustand gehoert zur Beurteilung der Ablagerungen dazu",
         "Ein Eintrag benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
         "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-130",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im F30 · Ruckeln im Langsamen einordnen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 mit xDrive meldet sich ein Problem beim Rangieren und beim Abbiegen, nicht bei Tempo. Das ist kein Zufall, sondern folgt daraus, wie das Moment verteilt wird.",
+      "points": [
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Bei enger Kurve und niedrigem Tempo sind die Drehzahlunterschiede zwischen den Achsen am groessten. Genau dort faellt jede Ungenauigkeit auf",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Oel und Adaption vor der Mechanik. Gealtertes Oel in der Lamellenkupplung erzeugt dasselbe Bild wie Verschleiss",
+        "Ein verschlissenes Zahnrad im Stellmotor fuehrt zu ungenauer Regelung. Das ist ein eigener Befund und nicht dasselbe wie verschlissene Lamellen",
+        "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben -- ein Urteil nach den ersten Metern ist keines"
       ],
       "pins": [],
       "engines": [],
@@ -21414,26 +21708,26 @@
     }
   },
   "stats": {
-    "total_docs": 568,
+    "total_docs": 582,
     "total_guides": 40,
     "per_model": {
-      "e28": 34,
-      "e30": 38,
-      "e34": 36,
-      "e36": 34,
-      "e38": 35,
-      "e39": 35,
-      "e46": 35,
-      "e60": 35,
+      "e28": 35,
+      "e30": 39,
+      "e34": 37,
+      "e36": 35,
+      "e38": 36,
+      "e39": 36,
+      "e46": 36,
+      "e60": 36,
       "e70": 36,
-      "e87": 36,
-      "e88": 33,
-      "e90": 36,
+      "e87": 37,
+      "e88": 34,
+      "e90": 37,
       "f-series": 8,
-      "f10": 34,
+      "f10": 35,
       "f15": 34,
-      "f22": 34,
-      "f30": 35
+      "f22": 35,
+      "f30": 36
     }
   }
 }

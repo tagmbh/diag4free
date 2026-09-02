@@ -776,6 +776,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-129",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im F22 · Was zuerst geprueft wird und was zuletzt",
+      "valid": "F22 · 2013–2021",
+      "summary": "Auch am F22 gilt die Reihenfolge: erst die Reifen, dann Oel und Adaption, zuletzt die Mechanik. Wer sie umdreht, zahlt fuer eine Diagnose, die eine Profiltiefenmessung erledigt haette.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Danach Oel und Adaption. Beides ist guenstiger zu erneuern als jede Baugruppe darunter",
+        "Zuletzt Stellmotor und Lamellen. Ein verschlissenes Zahnrad im Stellmotor regelt ungenau; verschlissene Lamellen uebertragen ungleichmaessig -- zwei Befunde mit einem Bild",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Warnungen zur Fahrstabilitaet mit dem Allradbefund zusammen lesen, nicht als drei getrennte Fehler",
+        "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben, bevor beurteilt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

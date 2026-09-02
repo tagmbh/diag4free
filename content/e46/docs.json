@@ -832,6 +832,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-127",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Allradantrieb im E46 · Ruckeln beim Rangieren richtig zuordnen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Beim Allrad-E46 wird ein Ruckeln im Langsamen schnell dem Verteilergetriebe angelastet. Die haeufigere Ursache steht auf den Felgen und kostet nichts, sie zu pruefen.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Erst wenn die Bereifung sauber ist, ist ein Ruckeln ein Befund am Antriebsstrang. Vorher ist es ein Reifenbefund",
+        "Antriebswellen, Gelenke und Mittellager gehoeren mitgeprueft. Sie erzeugen aehnliche Bilder und sind billiger auszuschliessen als das Verteilergetriebe",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Falsches oder gealtertes Oel ist eine reale Ursache und keine Randnotiz",
+        "Ein Eintrag zu DSC oder Antriebsschlupf benennt das Ergebnis, nicht das Bauteil -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

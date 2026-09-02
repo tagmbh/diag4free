@@ -841,6 +841,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-130",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im F30 · Ruckeln im Langsamen einordnen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 mit xDrive meldet sich ein Problem beim Rangieren und beim Abbiegen, nicht bei Tempo. Das ist kein Zufall, sondern folgt daraus, wie das Moment verteilt wird.",
+      "points": [
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Bei enger Kurve und niedrigem Tempo sind die Drehzahlunterschiede zwischen den Achsen am groessten. Genau dort faellt jede Ungenauigkeit auf",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Oel und Adaption vor der Mechanik. Gealtertes Oel in der Lamellenkupplung erzeugt dasselbe Bild wie Verschleiss",
+        "Ein verschlissenes Zahnrad im Stellmotor fuehrt zu ungenauer Regelung. Das ist ein eigener Befund und nicht dasselbe wie verschlissene Lamellen",
+        "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben -- ein Urteil nach den ersten Metern ist keines"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
