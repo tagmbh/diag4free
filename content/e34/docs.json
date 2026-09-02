@@ -1190,6 +1190,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-153",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Klang und Wiedergabe E34 · Vor der Messung kommt das Ohr",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der Datenring und die Geraete stehen im ersten Dokument. Hier geht es um den Ton selbst -- und um die Pruefungen, die am E34 vor jedem Messgeraet kommen.",
+      "points": [
+        "Vor jeder Messung Lautstaerke, Balance und Fader pruefen. Ein verstellter Fader erklaert mehr Beschwerden ueber tote Lautsprecher, als jedem lieb ist -- und kostet null Minuten",
+        "Eine Quelle tot und die anderen in Ordnung heisst Quelle. Alle Quellen tot heisst Wiedergabe. Diese Weiche steht vor jeder weiteren Pruefung und braucht kein Geraet",
+        "Ein einseitiger Ausfall ist ein Kanalbefund und kein Ringbefund. Kreuzweise pruefen: Wandert der Fehler mit dem Kanal, liegt er vor dem Lautsprecher",
+        "Verzerrung nur bei hoher Lautstaerke ist entweder ein Lautsprecher am Ende oder eine Uebersteuerung durch eine Nachruestung. Bei kleiner Lautstaerke sauber heisst: das Geraet ist es nicht",
+        "Eine nachgeruestete Endstufe ohne saubere Masse brummt mit der Drehzahl. Das ist eine Masseschleife und kein Radiodefekt -- die Masse gehoert an einen Punkt, nicht an zwei",
+        "Kratzen auf einer Seite zuerst als Feuchtigkeitsbefund behandeln. Wasser erreicht Lautsprecher und Stecker in der Tuer, bevor es im Fussraum ankommt -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E34-154",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Vorgehen",
+      "title": "Arbeitsweise E34 · Ausgangszustand, Reihenfolge, Uebergabe",
+      "valid": "E34 · 1987–1996",
+      "summary": "Sicherheit und Vorgehen stehen im ersten Dokument. Hier steht, was eine Reparatur nachvollziehbar macht -- und was sie beim E34 wie bei jedem anderen Fahrzeug rueckgaengig machbar haelt.",
+      "points": [
+        "Vor jeder Arbeit den Ausgangszustand festhalten: was eingestellt war, was codiert war, was schon defekt war. Ohne diesen Stand gibt es keinen Rueckweg, und der wird oefter gebraucht als gedacht",
+        "Eine Aenderung, dann pruefen. Wer mehreres zugleich macht und danach ein Fehlverhalten sieht, weiss nicht, welche der Aenderungen es war -- und muss alles zurueckbauen",
+        "Was man nicht selbst gemessen hat, ist nicht belegt. Angaben des Vorbesitzers oder der Vorwerkstatt sind Hinweise und keine Befunde -- sie grenzen ein, sie beweisen nichts",
+        "Der teuerste Fehler entsteht beim Zerlegen. Steckverbinder nie am Kabel loesen, Schrauben nach Laenge und Ort ablegen, Clips kalt nicht mit Gewalt -- was dabei bricht, stand vorher nicht auf der Rechnung",
+        "Ein Fahrzeug wird nicht mit einem unbenannten offenen Befund zurueckgegeben. Was nicht behoben wurde, gehoert genannt -- auch und gerade, wenn es nicht der Auftrag war",
+        "Nichts wird unter Druck, Spannung oder Federkraft geoeffnet: heisser Kuehlkreis, Kraftstoff-Hochdruck, Gasentladung, gespannte Federn. Diese vier stehen vor jeder Eile"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
