@@ -792,6 +792,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-125",
+      "type": "GUIDE",
+      "gruppe": "37",
+      "cat": "Fahrwerk",
+      "title": "Gekoppelte Federung E46 - Abgrenzung: was hier nicht geregelt wird",
+      "valid": "E46 - 1998-2006",
+      "summary": "Der E46 federt in aller Regel ungeregelt. Diese Seite steht hier, damit niemand ein Regelsystem sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Regelsystem gibt es keine Regelung, die ausfallen koennte. Ein E46, der zu tief steht oder schlecht federt, hat ein mechanisches Problem und kein elektronisches",
+        "Ein durchhaengendes Heck ist hier ein Feder- oder Daempferbefund. Er gehoert in Gruppe 33 Hinterachse, nicht hierher",
+        "Unruhiges oder hartes Federn vorn gehoert in Gruppe 31 Vorderachse. Auch das ist mechanisch zu beurteilen",
+        "Wo einzelne Fahrzeuge nachgeruestet oder umgebaut wurden, gilt das Verbaute und nicht die Baureihe. Was am Fahrzeug ist, entscheidet -- siehe Gruppe D4",
+        "Ein nachgeruestetes Regelsystem ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ohne definierte Ausgangslage beurteilt man die Zuladung und nicht das Fahrwerk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
