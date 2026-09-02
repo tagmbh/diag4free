@@ -651,6 +651,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E39 · Den Fehlerspeicher lesen, nicht nur auslesen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 ist der Fehlerspeicher gut gefuellt und selten eindeutig. Die Reihenfolge des Lesens entscheidet ueber die Diagnose. Diese Gruppe beschreibt das Vorgehen: was ein Eintrag bedeutet, was er nicht bedeutet, und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Ein Fehlercode nennt einen Kreis, kein Bauteil. 'Lambdasonde' heisst: im Kreis der Lambdasonde stimmt etwas nicht -- Sonde, Leitung, Stecker oder das, was sie misst",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Geraet fuer Geraet zu arbeiten erzeugt die falsche Reihenfolge",
+        "Vor jedem Bauteiltausch Versorgung, Masse und Stecker dieses Bauteils pruefen. Eine fehlende Sicherung sieht aus wie ein totes Bauteil",
+        "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -590,6 +590,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E34 · Alter vor Defekt, Masse vor Bauteil, Sicherheit",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 kommen erste Steuergeraete zusammen, aber das Bordnetz ist aelter als sie. Die Reihenfolge bleibt: erst Versorgung, dann Elektronik. Diese Gruppe beschreibt das Vorgehen, nicht das Bauteil — und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Alter vor Defekt: Bei einem Fahrzeug dieses Baujahres ist ein Uebergangswiderstand wahrscheinlicher als ein defektes Bauteil. Stecker oeffnen und ansehen kostet nichts und erklaert das meiste",
+        "Masse vor Bauteil: Mehrere Verbraucher gleichzeitig auffaellig heisst gemeinsamer Massepunkt. Ein gemeinsamer Ausfall hat eine gemeinsame Ursache",
+        "Batteriespannung und Ladung vor jeder elektrischen Fehlersuche pruefen. Eine schwache Batterie erzeugt Befunde, die es nicht gibt",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen und auf heisse Abgasteile achten. Beides ist kein Formalismus",
+        "Vor dem Abklemmen der Batterie klaeren, was danach angelernt oder eingestellt werden muss -- Uhr, Radio, Fensterheber und Anpassungen der Motorsteuerung",
+        "Ein Befund, der sich nicht reproduzieren laesst, wird nicht durch Bauteiltausch geloest. Erst die Bedingung finden, unter der er auftritt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
