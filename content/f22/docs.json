@@ -656,6 +656,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F22 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 sind Nachruestungen haeufig, und sie erscheinen im Speicher als etwas anderes. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Nachgeruestete Bauteile ohne Codierung erzeugen Eintraege, die nach Defekt aussehen. Vor dem Bauteiltausch klaeren, ob das Teil ueberhaupt freigeschaltet ist",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

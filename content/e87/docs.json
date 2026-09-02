@@ -772,6 +772,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E87 · Was die Buchse hergibt und was nicht",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 haengen Beleuchtung, Fensterheber und Komfort an einem Modul hinter der Buchse. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Fallen mehrere Funktionen gemeinsam aus, ist das Modul der Kandidat -- und es ist ueber generische Geraete nicht erreichbar",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

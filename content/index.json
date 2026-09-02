@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T04:41:24.120Z",
+  "generated": "2026-09-02T05:03:02.741Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -6011,6 +6011,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E60 · Was die Buchse hergibt und was nicht",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 sitzt hinter der genormten Buchse ein Fahrzeug voller eigener Busse. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Der Zugang ist genormt, das Fahrzeug dahinter nicht. Was ueber die Buchse erreichbar ist, haengt am Werkzeug -- nicht am Stecker",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6696,6 +6717,27 @@
         "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
         "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
         "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E70 · Was die Buchse hergibt und was nicht",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind so viele Steuergeraete verbunden, dass ein einzelner Fehler in Dutzenden Speichern auftaucht. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Bei dieser Zahl von Geraeten entscheidet die Reihenfolge des Lesens ueber die Diagnose. Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen -- sein Schweigen ist der Befund",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
       ],
       "pins": [],
       "engines": [],
@@ -7505,6 +7547,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E87 · Was die Buchse hergibt und was nicht",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 haengen Beleuchtung, Fensterheber und Komfort an einem Modul hinter der Buchse. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Fallen mehrere Funktionen gemeinsam aus, ist das Modul der Kandidat -- und es ist ueber generische Geraete nicht erreichbar",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8243,6 +8306,27 @@
         "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
         "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
         "Ein Fahrzeug, das nach zwei Wochen Standzeit nicht anspringt, hat entweder einen Ruhestromverbraucher oder eine Batterie am Ende. Die Messung trennt die beiden -- die Vermutung nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E88 · Was die Buchse hergibt und was nicht",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 gilt derselbe Zugang wie beim E87, in einem Fahrzeug mit mehr Wasserwegen. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Bei feuchtem Fussraum gehoert die Abflusspruefung vor die Fehlersuche: Ein nasses Modul erzeugt Eintraege, die nach Elektronikdefekt aussehen",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
       ],
       "pins": [],
       "engines": [],
@@ -9154,6 +9238,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang E90 · Was die Buchse hergibt und was nicht",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 liegen Motor-, Komfort- und Karosseriewelt auf getrennten Bussen hinter derselben Buchse. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und wo die genormte Schnittstelle aufhoert.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Das Fussraummodul ist das bekannteste Beispiel: Es antwortet nicht auf generische Anfragen. Wer dort einen leeren Speicher sieht, hat nichts geprueft",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10002,6 +10107,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F10 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation kommen weitere Bussysteme dazu, und der Abstand zwischen genormtem Zugang und Fahrzeugwirklichkeit wird groesser. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Ein Codierstand kann eine Funktion stilllegen, ohne einen Fehler zu erzeugen. Wer nur den Speicher liest, sieht davon nichts",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10647,6 +10773,27 @@
         "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
         "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
         "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F15 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F15 · 2013–2018",
+      "summary": "Beim F15 kommt zu den ueblichen Bussen der Antriebsstrang des Allrads mit eigenen Geraeten. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Ruckeln beim Rangieren steht selten als solches im Speicher. Der Fehlerspeicher ergaenzt die Fahrprobe, er ersetzt sie nicht",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
       ],
       "pins": [],
       "engines": [],
@@ -11331,6 +11478,27 @@
         "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
         "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
         "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F22 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 sind Nachruestungen haeufig, und sie erscheinen im Speicher als etwas anderes. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Nachgeruestete Bauteile ohne Codierung erzeugen Eintraege, die nach Defekt aussehen. Vor dem Bauteiltausch klaeren, ob das Teil ueberhaupt freigeschaltet ist",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
       ],
       "pins": [],
       "engines": [],
@@ -12060,6 +12228,27 @@
         "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
         "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
         "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F30 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim F30 haengt fast jede Funktion an einem Steuergeraet, und der Zugang dazu ist gestaffelt. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Ein Codierstand kann eine Funktion stilllegen, ohne einen Fehler zu erzeugen -- das ist der haeufigste Befund, den ein reines Auslesen nicht findet",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
       ],
       "pins": [],
       "engines": [],
@@ -19251,7 +19440,7 @@
     }
   },
   "stats": {
-    "total_docs": 465,
+    "total_docs": 474,
     "total_guides": 40,
     "per_model": {
       "e28": 26,
@@ -19261,16 +19450,16 @@
       "e38": 29,
       "e39": 29,
       "e46": 30,
-      "e60": 30,
-      "e70": 28,
-      "e87": 30,
-      "e88": 27,
-      "e90": 31,
+      "e60": 31,
+      "e70": 29,
+      "e87": 31,
+      "e88": 28,
+      "e90": 32,
       "f-series": 5,
-      "f10": 28,
-      "f15": 27,
-      "f22": 28,
-      "f30": 28
+      "f10": 29,
+      "f15": 28,
+      "f22": 29,
+      "f30": 29
     }
   }
 }
