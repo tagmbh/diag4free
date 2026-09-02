@@ -611,6 +611,28 @@
       "details": [
         "D4F-E46-114"
       ]
+    },
+    {
+      "id": "D4F-E46-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E46 · Motorlager, Getriebelager, diffuse Befunde",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 stehen die Aggregatelager am Anfang jeder Vibrations- und Poltersuche. Sie sind billig zu prüfen und erklären einen großen Teil dessen, was sonst der Achse angelastet wird.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last oder beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Hier kommt der Verweis aus Gruppe 25 an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung, Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe: Motor bei angehobenem Fahrzeug vorsichtig anheben — ein intaktes Lager gibt kaum nach",
+        "Bei bekannten Achsträgerbefunden dieser Baureihe zuerst die Hinterachsaufnahmen besichtigen; ein Riss dort erzeugt ebenfalls Poltern und ist ein anderer Reparaturumfang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-115"
+      ]
     }
   ]
 }

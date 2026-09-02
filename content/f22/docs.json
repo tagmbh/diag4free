@@ -532,6 +532,28 @@
       "details": [
         "D4F-F22-114"
       ]
+    },
+    {
+      "id": "D4F-F22-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F22 · Start-Stopp, M-Ausführungen, Schaltspiel",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 verbindet leichten Aufbau, Start-Stopp und teils erhebliches Drehmoment. Alle drei arbeiten auf dieselben Lager, und alle drei lassen sie früher auffallen.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge; die Lager verschleißen schneller",
+        "Bei den drehmomentstarken Ausführungen ist die Belastung deutlich höher — Befunde bei geringer Laufleistung sind kein Widerspruch",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Beim Cabrio Aufbaubewegung von Lagervibration trennen: drehzahlabhängig ist das Lager, verwindungsabhängig der Aufbau",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-115"
+      ]
     }
   ]
 }

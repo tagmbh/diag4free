@@ -748,6 +748,28 @@
       "details": [
         "D4F-E90-114"
       ]
+    },
+    {
+      "id": "D4F-E90-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E90 · Motorlager, Getriebelager, erster Ausschluss",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 gehören die Aggregatelager an den Anfang jeder Vibrationssuche — sie sind schnell geprüft und erklären mehr, als ihre Größe vermuten lässt.",
+      "points": [
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Hier kommt der Verweis aus Gruppe 25 an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe und nicht hierher"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-115"
+      ]
     }
   ]
 }

@@ -570,6 +570,28 @@
       "details": [
         "D4F-E39-114"
       ]
+    },
+    {
+      "id": "D4F-E39-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E39 · Hydrolager, Vibration, Abgrenzung zur Vorderachse",
+      "valid": "E39 · 1995–2004",
+      "summary": "Beim E39 gibt es zwei Vibrationsquellen, die verwechselt werden: die Aggregatelager und die Zugstrebe der Vorderachse. Sie unterscheiden sich in der Situation, in der sie auftreten.",
+      "points": [
+        "Vibration im Stand und im Leerlauf, drehzahlabhängig: Aggregatelager. Schlagen beim Bremsen dagegen ist die Zugstrebe der Vorderachse — die Situation trennt die beiden",
+        "Hydraulisch gedämpfte Motorlager verlieren ihre Füllung; Ölspuren am Lager sind der sichtbare Beleg",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-115"
+      ]
     }
   ]
 }

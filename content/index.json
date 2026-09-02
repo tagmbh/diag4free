@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T02:32:00.888Z",
+  "generated": "2026-09-02T02:53:09.793Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -763,6 +763,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E28 · Motorlager, Getriebelager, Vibration im Leerlauf",
+      "valid": "E28 · 1981–1988",
+      "summary": "Motor- und Getriebelager melden sich fast nie als das, was sie sind. Sie erzeugen Vibration, Poltern und Schaltspiel — und werden deshalb der Kupplung, dem Auspuff oder dem Getriebe angelastet.",
+      "points": [
+        "Vibration im Leerlauf, die beim Einlegen einer Fahrstufe oder unter Last zunimmt: Motorlager. Ein Lager, das durchhängt, überträgt jede Verbrennung in den Aufbau",
+        "Schaltspiel, das nur beim Lastwechsel auftritt: Getriebelager. Der Antriebsstrang wandert, der Schalthebel geht mit — das ist kein Schaltungs- und kein Getriebebefund",
+        "Poltern beim Anfahren und beim Gaswegnehmen: Aggregatelager, bevor man an Auspuffaufhängung oder Gelenkwelle denkt",
+        "Sichtprüfung: Risse im Gummi, ausgelaufene Füllung bei hydraulischen Lagern, sichtbarer Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe: Bei angehobenem Fahrzeug den Motor mit einer Stange vorsichtig anheben. Ein intaktes Lager gibt kaum nach, ein durchgeschlagenes deutlich",
+        "Lager paarweise erneuern — sie sind gleich alt, und das verbleibende alte trägt danach mehr"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-115"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1436,6 +1459,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E30 · Motorlager, Getriebelager, falsche Verdächtige",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind durchgeschlagene Motorlager ein Standardbefund — und der Grund für eine ganze Reihe von Reparaturen, die nichts geholfen haben.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last: Motorlager. Sie sind der erste Verdacht, nicht der letzte",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Der Strang wandert, der Hebel geht mit — kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern; das verbleibende alte Lager trägt danach mehr und folgt bald"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-115"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1965,6 +2011,29 @@
       "engines": [],
       "details": [
         "D4F-E34-114"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E34 · Hydrolager, Getriebelager, Vibrationsbild",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 sind die Motorlager hydraulisch gedämpft. Läuft die Füllung aus, verliert das Lager seine Dämpfung, ohne dass es äußerlich zerstört aussieht.",
+      "points": [
+        "Hydraulisch gedämpfte Motorlager verlieren ihre Füllung. Ölspuren am Lager oder darunter sind der sichtbare Beleg — fehlen sie, schließt das den Befund nicht aus",
+        "Vibration im Leerlauf, die unter Last zunimmt: Motorlager, auch wenn das Gummi unbeschädigt aussieht",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-115"
       ],
       "model": "e34"
     },
@@ -2554,6 +2623,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E36 · Motorlager, Getriebelager, Abgrenzung nach vorn",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 lohnt sich die Aggregatelager-Prüfung als erster Schritt bei fast jedem diffusen Vibrations- oder Polterbefund. Sie kostet fünf Minuten und schließt mehrere teure Verdächtige aus.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last oder beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25 kommt hier an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz; Bewegungsprobe mit vorsichtigem Anheben",
+        "Beim Cabrio und Compact überträgt der weichere Aufbau die Restvibration deutlicher — dieselbe Lagerabnutzung fällt dort früher auf",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-115"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3086,6 +3178,29 @@
       "engines": [],
       "details": [
         "D4F-E38-114"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E38 · Hydrolager, Komfortanspruch, Getriebelager",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 ist auf Laufruhe gebaut. Genau deshalb fällt ein nachlassendes Aggregatelager hier früher und deutlicher auf als in kleineren Baureihen — die Klage lautet oft nur, irgendetwas sei rauer geworden.",
+      "points": [
+        "Diffuse Rauheit, die dem Fahrer als Komfortverlust auffällt, bevor sie als Geräusch benennbar ist: hydraulisch gedämpfte Motorlager. Beim komfortorientierten Fahrzeug ist das der Frühbefund",
+        "Ölspuren am Lager oder darunter belegen den Verlust der Füllung; ihr Fehlen schließt ihn nicht aus",
+        "Vibration im Leerlauf, die unter Last zunimmt: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern — beim Achtzylinder trägt das verbleibende alte Lager danach deutlich mehr"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-115"
       ],
       "model": "e38"
     },
@@ -3679,6 +3794,29 @@
       "engines": [],
       "details": [
         "D4F-E39-114"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E39 · Hydrolager, Vibration, Abgrenzung zur Vorderachse",
+      "valid": "E39 · 1995–2004",
+      "summary": "Beim E39 gibt es zwei Vibrationsquellen, die verwechselt werden: die Aggregatelager und die Zugstrebe der Vorderachse. Sie unterscheiden sich in der Situation, in der sie auftreten.",
+      "points": [
+        "Vibration im Stand und im Leerlauf, drehzahlabhängig: Aggregatelager. Schlagen beim Bremsen dagegen ist die Zugstrebe der Vorderachse — die Situation trennt die beiden",
+        "Hydraulisch gedämpfte Motorlager verlieren ihre Füllung; Ölspuren am Lager sind der sichtbare Beleg",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager, kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-115"
       ],
       "model": "e39"
     },
@@ -4314,6 +4452,29 @@
       "engines": [],
       "details": [
         "D4F-E46-114"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E46 · Motorlager, Getriebelager, diffuse Befunde",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 stehen die Aggregatelager am Anfang jeder Vibrations- und Poltersuche. Sie sind billig zu prüfen und erklären einen großen Teil dessen, was sonst der Achse angelastet wird.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last oder beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Hier kommt der Verweis aus Gruppe 25 an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung, Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe: Motor bei angehobenem Fahrzeug vorsichtig anheben — ein intaktes Lager gibt kaum nach",
+        "Bei bekannten Achsträgerbefunden dieser Baureihe zuerst die Hinterachsaufnahmen besichtigen; ein Riss dort erzeugt ebenfalls Poltern und ist ein anderer Reparaturumfang"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-115"
       ],
       "model": "e46"
     },
@@ -4960,6 +5121,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E60 · Motorlager, Getriebelager, Abgrenzung zur Regelung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 kommt eine neue Verwechslungsmöglichkeit dazu: Adaptivdämpfer und Aktivlenkung erzeugen Unruhe, die nach Aggregatelager klingt. Der Fehlerspeicher trennt sie.",
+      "points": [
+        "Unruhe, die sich mit der Fahrsituation ändert und im Fehlerspeicher steht, gehört zur Regelung — Dämpfer oder Aktivlenkung. Aggregatelager melden sich nicht elektrisch",
+        "Vibration im Leerlauf, drehzahlabhängig, stärker beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager",
+        "Hydraulisch gedämpfte Lager verlieren ihre Füllung; Ölspuren am Lager sind der sichtbare Beleg",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-115"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5518,6 +5702,29 @@
       "engines": [],
       "details": [
         "D4F-E70-114"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E70 · Motorlager, Getriebelager, xDrive-Verwechslung",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 wird fast jedes Ruckeln zuerst dem Verteilergetriebe zugeschrieben. Bei drehzahlabhängiger Vibration im Stand ist das falsch — dort sind es die Aggregatelager.",
+      "points": [
+        "Ruckeln beim Rangieren: Verteilergetriebe. Drehzahlabhängige Vibration im Stand und im Leerlauf: Aggregatelager. Die Situation trennt die beiden zuverlässig",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Beim schweren Fahrzeug mit Anhängebetrieb verschleißen Aggregatelager schneller — ein Befund bei geringer Laufleistung ist kein Widerspruch",
+        "Hydraulisch gedämpfte Lager verlieren ihre Füllung; Ölspuren sind der sichtbare Beleg",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-115"
       ],
       "model": "e70"
     },
@@ -6173,6 +6380,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E87 · Motorlager, Getriebelager, leichter Aufbau",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der E87 ist leicht gebaut, und das macht ihn empfindlich: Dieselbe Lagerabnutzung ist hier früher spürbar als in der Limousine — was gut ist, weil sie früher gefunden wird.",
+      "points": [
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager. Beim leichten Aufbau früher spürbar",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-115"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6765,6 +6995,29 @@
       "engines": [],
       "details": [
         "D4F-E88-114"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E88 · Motorlager im Cabrio, Aufbaubewegung abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio überlagern sich zwei Quellen: die Aggregatelager und der weichere Aufbau. Die Unterscheidung entscheidet, ob überhaupt etwas zu reparieren ist.",
+      "points": [
+        "Erste Frage: Vibration oder Aufbaubewegung? Drehzahlabhängige Vibration im Stand gehört zu den Lagern; Knarzen und Zittern, das sich beim Verwinden auf unebener Strecke ändert, zum Aufbau",
+        "Vibration im Leerlauf, stärker beim Einlegen: Motorlager",
+        "Das Mehrgewicht der Verdeckmechanik belastet die Lager stärker als beim Schrägheck",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-115"
       ],
       "model": "e88"
     },
@@ -7542,6 +7795,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E90 · Motorlager, Getriebelager, erster Ausschluss",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 gehören die Aggregatelager an den Anfang jeder Vibrationssuche — sie sind schnell geprüft und erklären mehr, als ihre Größe vermuten lässt.",
+      "points": [
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Hier kommt der Verweis aus Gruppe 25 an",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung, Gelenkwelle oder Hinterachse verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe und nicht hierher"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-115"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8239,6 +8515,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F10 · Motorlager, Regelung abgrenzen, Start-Stopp",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation kommt eine Belastung dazu, die es früher nicht gab: Start-Stopp lässt den Motor vielfach häufiger anlaufen und ausschwingen — und das arbeitet auf die Lager.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge deutlich. Aggregatelager verschleißen dadurch schneller; ein Befund bei geringerer Laufleistung ist hier kein Widerspruch",
+        "Unruhe, die sich mit der Fahrsituation ändert und im Fehlerspeicher steht: Adaptivdämpfer oder Aktivlenkung, nicht die Lager. Lager melden sich nicht elektrisch",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Spürbares Rucken beim Wiederanlauf der Start-Stopp-Automatik ist ein Lagerbefund, wenn es früher nicht so war",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-115"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8759,6 +9058,29 @@
       "engines": [],
       "details": [
         "D4F-F15-114"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F15 · Motorlager, xDrive-Verwechslung, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 gilt dieselbe Trennung wie am E70, unter höherer Last: Ruckeln beim Rangieren ist das Verteilergetriebe, drehzahlabhängige Vibration im Stand sind die Lager.",
+      "points": [
+        "Ruckeln beim Rangieren: Verteilergetriebe. Drehzahlabhängige Vibration im Stand: Aggregatelager. Die Situation trennt sie zuverlässig",
+        "Fahrzeuggewicht und Anhängebetrieb verschleißen die Lager deutlich schneller",
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge zusätzlich",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-115"
       ],
       "model": "f15"
     },
@@ -9313,6 +9635,29 @@
       "engines": [],
       "details": [
         "D4F-F22-114"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F22 · Start-Stopp, M-Ausführungen, Schaltspiel",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 verbindet leichten Aufbau, Start-Stopp und teils erhebliches Drehmoment. Alle drei arbeiten auf dieselben Lager, und alle drei lassen sie früher auffallen.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge; die Lager verschleißen schneller",
+        "Bei den drehmomentstarken Ausführungen ist die Belastung deutlich höher — Befunde bei geringer Laufleistung sind kein Widerspruch",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Beim Cabrio Aufbaubewegung von Lagervibration trennen: drehzahlabhängig ist das Lager, verwindungsabhängig der Aufbau",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-115"
       ],
       "model": "f22"
     },
@@ -9912,6 +10257,29 @@
       "engines": [],
       "details": [
         "D4F-F30-114"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager F30 · Start-Stopp, Motorlager, Schaltspiel unter Last",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 arbeiten Start-Stopp und kleine, hoch belastete Turbomotoren auf dieselben Lager. Das verschiebt den Zeitpunkt, zu dem sie auffallen, nach vorn.",
+      "points": [
+        "Start-Stopp erhöht die Zahl der Anlauf- und Auslaufvorgänge; die Lager verschleißen dadurch schneller",
+        "Spürbares Rucken beim Wiederanlauf, das früher nicht da war: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager — der Verweis aus Gruppe 25",
+        "Vibration im Leerlauf, stärker beim Einlegen oder unter Last: Motorlager",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-115"
       ],
       "model": "f30"
     }
@@ -17100,26 +17468,26 @@
     }
   },
   "stats": {
-    "total_docs": 364,
+    "total_docs": 380,
     "total_guides": 40,
     "per_model": {
-      "e28": 20,
-      "e30": 27,
-      "e34": 22,
-      "e36": 22,
-      "e38": 22,
-      "e39": 23,
-      "e46": 24,
-      "e60": 23,
-      "e70": 22,
-      "e87": 23,
-      "e88": 20,
-      "e90": 25,
+      "e28": 21,
+      "e30": 28,
+      "e34": 23,
+      "e36": 23,
+      "e38": 23,
+      "e39": 24,
+      "e46": 25,
+      "e60": 24,
+      "e70": 23,
+      "e87": 24,
+      "e88": 21,
+      "e90": 26,
       "f-series": 5,
-      "f10": 21,
-      "f15": 21,
-      "f22": 22,
-      "f30": 22
+      "f10": 22,
+      "f15": 22,
+      "f22": 23,
+      "f30": 23
     }
   }
 }

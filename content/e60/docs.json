@@ -619,6 +619,28 @@
       "details": [
         "D4F-E60-114"
       ]
+    },
+    {
+      "id": "D4F-E60-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E60 · Motorlager, Getriebelager, Abgrenzung zur Regelung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 kommt eine neue Verwechslungsmöglichkeit dazu: Adaptivdämpfer und Aktivlenkung erzeugen Unruhe, die nach Aggregatelager klingt. Der Fehlerspeicher trennt sie.",
+      "points": [
+        "Unruhe, die sich mit der Fahrsituation ändert und im Fehlerspeicher steht, gehört zur Regelung — Dämpfer oder Aktivlenkung. Aggregatelager melden sich nicht elektrisch",
+        "Vibration im Leerlauf, drehzahlabhängig, stärker beim Einlegen: Motorlager",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager",
+        "Hydraulisch gedämpfte Lager verlieren ihre Füllung; Ölspuren am Lager sind der sichtbare Beleg",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-115"
+      ]
     }
   ]
 }

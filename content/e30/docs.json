@@ -646,6 +646,28 @@
       "details": [
         "D4F-E30-114"
       ]
+    },
+    {
+      "id": "D4F-E30-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E30 · Motorlager, Getriebelager, falsche Verdächtige",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind durchgeschlagene Motorlager ein Standardbefund — und der Grund für eine ganze Reihe von Reparaturen, die nichts geholfen haben.",
+      "points": [
+        "Vibration im Leerlauf, stärker unter Last: Motorlager. Sie sind der erste Verdacht, nicht der letzte",
+        "Schaltspiel nur beim Lastwechsel: Getriebelager. Der Strang wandert, der Hebel geht mit — kein Schaltungsbefund",
+        "Poltern beim Anfahren, bevor Auspuffaufhängung und Gelenkwelle verdächtigt werden",
+        "Sichtprüfung auf Risse, ausgelaufene Füllung und Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern; das verbleibende alte Lager trägt danach mehr und folgt bald"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-115"
+      ]
     }
   ]
 }

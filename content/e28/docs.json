@@ -468,6 +468,28 @@
       "details": [
         "D4F-E28-114"
       ]
+    },
+    {
+      "id": "D4F-E28-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E28 · Motorlager, Getriebelager, Vibration im Leerlauf",
+      "valid": "E28 · 1981–1988",
+      "summary": "Motor- und Getriebelager melden sich fast nie als das, was sie sind. Sie erzeugen Vibration, Poltern und Schaltspiel — und werden deshalb der Kupplung, dem Auspuff oder dem Getriebe angelastet.",
+      "points": [
+        "Vibration im Leerlauf, die beim Einlegen einer Fahrstufe oder unter Last zunimmt: Motorlager. Ein Lager, das durchhängt, überträgt jede Verbrennung in den Aufbau",
+        "Schaltspiel, das nur beim Lastwechsel auftritt: Getriebelager. Der Antriebsstrang wandert, der Schalthebel geht mit — das ist kein Schaltungs- und kein Getriebebefund",
+        "Poltern beim Anfahren und beim Gaswegnehmen: Aggregatelager, bevor man an Auspuffaufhängung oder Gelenkwelle denkt",
+        "Sichtprüfung: Risse im Gummi, ausgelaufene Füllung bei hydraulischen Lagern, sichtbarer Versatz zwischen Kern und Außenring",
+        "Bewegungsprobe: Bei angehobenem Fahrzeug den Motor mit einer Stange vorsichtig anheben. Ein intaktes Lager gibt kaum nach, ein durchgeschlagenes deutlich",
+        "Lager paarweise erneuern — sie sind gleich alt, und das verbleibende alte trägt danach mehr"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-115"
+      ]
     }
   ]
 }

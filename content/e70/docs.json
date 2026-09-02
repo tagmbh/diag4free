@@ -540,6 +540,28 @@
       "details": [
         "D4F-E70-114"
       ]
+    },
+    {
+      "id": "D4F-E70-116",
+      "type": "GUIDE",
+      "gruppe": "22",
+      "cat": "Aggregatelager",
+      "title": "Aggregatelager E70 · Motorlager, Getriebelager, xDrive-Verwechslung",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 wird fast jedes Ruckeln zuerst dem Verteilergetriebe zugeschrieben. Bei drehzahlabhängiger Vibration im Stand ist das falsch — dort sind es die Aggregatelager.",
+      "points": [
+        "Ruckeln beim Rangieren: Verteilergetriebe. Drehzahlabhängige Vibration im Stand und im Leerlauf: Aggregatelager. Die Situation trennt die beiden zuverlässig",
+        "Vibration im Leerlauf, stärker beim Einlegen einer Fahrstufe: Motorlager",
+        "Beim schweren Fahrzeug mit Anhängebetrieb verschleißen Aggregatelager schneller — ein Befund bei geringer Laufleistung ist kein Widerspruch",
+        "Hydraulisch gedämpfte Lager verlieren ihre Füllung; Ölspuren sind der sichtbare Beleg",
+        "Bewegungsprobe mit vorsichtigem Anheben des Motors bei angehobenem Fahrzeug",
+        "Paarweise erneuern"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-115"
+      ]
     }
   ]
 }
