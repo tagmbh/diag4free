@@ -483,6 +483,29 @@
       "details": [
         "D4F-E39-110"
       ]
+    },
+    {
+      "id": "D4F-E39-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E39 · Mittellager, Hardyscheibe, Abgrenzung zur Zugstrebe",
+      "valid": "E39 · 1995–2004",
+      "summary": "Beim E39 gibt es eine Verwechslung, die Geld kostet: Das Schlagen beim Bremsen kommt von der Zugstrebe vorn, nicht von der Gelenkwelle. Beide erzeugen Unruhe, aber in unterschiedlichen Situationen.",
+      "points": [
+        "Schlagen beim Bremsen: das ist die Zugstrebe an der Vorderachse, nicht die Gelenkwelle. Die Gelenkwelle meldet sich unter Last und mit der Geschwindigkeit, nicht beim Verzögern",
+        "Mittellager: am angehobenen Fahrzeug drehen und am Lager fühlen; ausgehärtetes Gummi und Rauheit sind tastbar",
+        "Hardyscheibe von unten sichtprüfen — Schlag beim Anfahren und Lastwechsel",
+        "Vor dem Trennen anzeichnen; die Welle ist als Einheit gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Beim Touring mit Niveauregelung ändert die Aufbaulage den Wellenwinkel"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107",
+        "D4F-E39-108"
+      ]
     }
   ]
 }

@@ -477,6 +477,28 @@
       "details": [
         "D4F-E36-110"
       ]
+    },
+    {
+      "id": "D4F-E36-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E36 · Hardyscheibe, Mittellager, Unwucht nach Reparatur",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist der häufigste Fehler nicht am Bauteil, sondern in der Werkstatt: Eine korrekt reparierte Welle vibriert, weil sie beim Zusammenbau verdreht wurde.",
+      "points": [
+        "Vor dem Trennen der Welle die Lage der Teile zueinander anzeichnen. Die Welle ist als Einheit gewuchtet; verdreht zusammengesetzt erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Hardyscheibe: Risse und ausgerissene Bohrungen von unten sichtbar. Schlag beim Anfahren ist ihr typisches Bild",
+        "Mittellager: am angehobenen Fahrzeug drehen und fühlen, Rauheit ist tastbar",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang. Zuerst Räder und Auswuchtung ausschließen",
+        "Heulen mit Lastwechsel gehört zum Achsgetriebe, nicht zur Welle",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-108"
+      ]
     }
   ]
 }

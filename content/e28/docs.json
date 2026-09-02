@@ -382,6 +382,28 @@
       "details": [
         "D4F-E28-110"
       ]
+    },
+    {
+      "id": "D4F-E28-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E28 · Mittellager, Hardyscheibe, Vibration zuordnen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Gelenkwelle liegt zwischen Getriebe und Hinterachse. Genau deshalb wird sie oft zu Unrecht verdächtigt: Beide Nachbarn erzeugen ähnliche Vibrationen und ganz andere Rechnungen.",
+      "points": [
+        "Vibration, die mit der Fahrgeschwindigkeit steigt und beim Auskuppeln bleibt, kommt aus dem rotierenden Strang — also Gelenkwelle, Räder oder Hinterachse, nicht aus dem Motor",
+        "Die Hardyscheibe ist Gummi und altert. Risse und ausgerissene Bohrungen sind von unten sichtbar — das ist die erste und billigste Sichtprüfung dieser Gruppe",
+        "Mittellager: Gummi ausgehärtet oder Lager rau. Bei angehobenem Fahrzeug die Welle von Hand drehen und dabei am Lager fühlen; Rauheit ist tastbar",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Hardyscheibe oder ausgeschlagene Verzahnung, nicht auf das Lager",
+        "Die zweiteilige Welle ist gewuchtet. Markierungen vor dem Trennen anzeichnen und beim Zusammenbau einhalten, sonst entsteht die Unwucht bei der Reparatur",
+        "Nach jedem Eingriff eine Probefahrt über den ganzen Geschwindigkeitsbereich — Unwucht zeigt sich oft nur in einem schmalen Bereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-108"
+      ]
     }
   ]
 }

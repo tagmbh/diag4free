@@ -662,6 +662,28 @@
       "details": [
         "D4F-E90-110"
       ]
+    },
+    {
+      "id": "D4F-E90-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E90 · Mittellager, Hardyscheibe, xDrive mit zweiter Welle",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 hängt die Antwort an der Ausstattung: Mit Hinterradantrieb gibt es eine Welle, mit xDrive zwei — und beim xDrive ist der häufigste Befund gar keine Welle.",
+      "points": [
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn. Beide prüfen, nicht nur die hintere",
+        "Ruckeln beim Rangieren am xDrive: Verteilergetriebe, nicht Gelenkwelle",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-108"
+      ]
     }
   ]
 }

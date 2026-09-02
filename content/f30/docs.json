@@ -491,6 +491,28 @@
       "details": [
         "D4F-F30-110"
       ]
+    },
+    {
+      "id": "D4F-F30-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F30 · Mittellager, xDrive, Probefahrt statt Ausbau",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 lohnt sich die Reihenfolge besonders: Räder, Auswuchtung und Verteilergetriebe kosten eine Probefahrt, die Gelenkwelle einen Ausbau.",
+      "points": [
+        "Vibration mit der Geschwindigkeit: zuerst Räder und Auswuchtung ausschließen. Das ist eine Probefahrt, kein Hebebühnentag",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn; Ruckeln beim Rangieren gehört zum Verteilergetriebe",
+        "Hardyscheibe beziehungsweise Gelenkscheibe von unten sichtprüfen",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-108"
+      ]
     }
   ]
 }
