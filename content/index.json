@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T07:56:50.339Z",
+  "generated": "2026-09-02T08:08:32.893Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1098,6 +1098,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-135",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E28 · Geraeusch orten statt Teile tauschen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E28 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-136",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E28 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E28 · 1981–1988",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E28, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2043,6 +2085,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E30 · Geraeusch orten statt Teile tauschen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E30 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E30 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E30 · 1982–1994",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E30, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2904,6 +2988,48 @@
         "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
         "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-135",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E34 · Geraeusch orten statt Teile tauschen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E34 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-136",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E34 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E34 · 1987–1996",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E34, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -3789,6 +3915,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-132",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E36 · Geraeusch orten statt Teile tauschen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E36 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-133",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E36 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E36 · 1990–2000",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E36, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4634,6 +4802,48 @@
         "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-132",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E38 · Geraeusch orten statt Teile tauschen",
+      "valid": "E38 · 1994–2001",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E38 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-133",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E38 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E38 · 1994–2001",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E38, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -5522,6 +5732,48 @@
         "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-133",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E39 · Geraeusch orten statt Teile tauschen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E39 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-134",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E39 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E39 · 1995–2004",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E39, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -6431,6 +6683,48 @@
         "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
         "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-129",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E46 · Geraeusch orten statt Teile tauschen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E46 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-130",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E46 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E46 · 1998–2006",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E46, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -7376,6 +7670,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-130",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E60 · Geraeusch orten statt Teile tauschen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E60 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-131",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E60 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E60 · 2003–2010",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E60, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8250,6 +8586,48 @@
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes",
         "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
         "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-132",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E70 · Geraeusch orten statt Teile tauschen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E70 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-133",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E70 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E70 · 2006–2013",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E70, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -9227,6 +9605,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E87 · Geraeusch orten statt Teile tauschen",
+      "valid": "E87 · 2004–2011",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E87 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E87 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E87 · 2004–2011",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E87, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10133,6 +10553,48 @@
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
         "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E88 · Geraeusch orten statt Teile tauschen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E88 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E88 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E88 · 2007–2013",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E88, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -11184,6 +11646,48 @@
         "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-130",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E90 · Geraeusch orten statt Teile tauschen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E90 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-131",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E90 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E90 · 2004–2013",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E90, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -12270,6 +12774,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse F10 · Geraeusch orten statt Teile tauschen",
+      "valid": "F10 · 2010–2017",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim F10 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse F10 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "F10 · 2010–2017",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim F10, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -13083,6 +13629,48 @@
         "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
         "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
         "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse F15 · Geraeusch orten statt Teile tauschen",
+      "valid": "F15 · 2013–2018",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim F15 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse F15 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "F15 · 2013–2018",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim F15, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -13935,6 +14523,48 @@
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-131",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse F22 · Geraeusch orten statt Teile tauschen",
+      "valid": "F22 · 2013–2021",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim F22 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-132",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse F22 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "F22 · 2013–2021",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim F22, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -14853,6 +15483,48 @@
         "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
         "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
         "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-132",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse F30 · Geraeusch orten statt Teile tauschen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim F30 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-133",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse F30 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "F30 · 2011–2019",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim F30, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
       ],
       "pins": [],
       "engines": [],
@@ -22044,26 +22716,26 @@
     }
   },
   "stats": {
-    "total_docs": 598,
+    "total_docs": 630,
     "total_guides": 40,
     "per_model": {
-      "e28": 36,
-      "e30": 40,
-      "e34": 38,
-      "e36": 36,
-      "e38": 37,
-      "e39": 37,
-      "e46": 37,
-      "e60": 37,
-      "e70": 37,
-      "e87": 38,
-      "e88": 35,
-      "e90": 38,
+      "e28": 38,
+      "e30": 42,
+      "e34": 40,
+      "e36": 38,
+      "e38": 39,
+      "e39": 39,
+      "e46": 39,
+      "e60": 39,
+      "e70": 39,
+      "e87": 40,
+      "e88": 37,
+      "e90": 40,
       "f-series": 8,
-      "f10": 36,
-      "f15": 35,
-      "f22": 36,
-      "f30": 37
+      "f10": 38,
+      "f15": 37,
+      "f22": 38,
+      "f30": 39
     }
   }
 }
