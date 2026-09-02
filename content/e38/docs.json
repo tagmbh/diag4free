@@ -655,6 +655,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E38 · Fahrzeugkodierung sichern, Module einzeln, Rueckweg",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 ist die erste Baureihe, in der Codierung breit vorkommt — und die erste, in der ein falscher Schreibvorgang mehr kostet als er bringt.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Die Fahrzeugkodierung beschreibt die Ausstattung. Sie wird als Ganzes gelesen und wirkt auf mehrere Module -- eine Aenderung dort ist keine lokale Aenderung",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Nach Steuergeraetetausch ist die fahrzeugbezogene Codierung erforderlich. Ein Geraet aus einem anderen Fahrzeug bringt dessen Ausstattung mit",
+        "Ein nicht codiertes Bauteil verhaelt sich wie ein defektes. Bevor ein neues bestellt wird: pruefen, ob das vorhandene ueberhaupt freigeschaltet ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

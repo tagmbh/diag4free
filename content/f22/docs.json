@@ -676,6 +676,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung F22 · Gesamtstand sichern, Nachruestungen freischalten",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 sind Nachruestungen haeufig, und sie scheitern oefter am Codierstand als an der Technik. Diese Gruppe beschreibt das Vorgehen: was gesichert wird, in welcher Reihenfolge geaendert wird, und wo der Unterschied zwischen Codieren und Programmieren liegt.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachruestung ohne Freischaltung ist der haeufigste Befund dieser Baureihe in dieser Gruppe. Vor dem Bauteiltausch klaeren, ob das Teil ueberhaupt aktiviert ist",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Aufwand und Risiko steigen in dieser Reihenfolge",
+        "Nach Batteriewechsel anmelden und nach Modultausch anpassen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

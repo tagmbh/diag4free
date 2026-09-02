@@ -781,6 +781,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E60 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 haengt fast jede Komfortfunktion an einem Codierstand. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nach jedem Modultausch ist die fahrzeugbezogene Anpassung noetig -- ein gebrauchtes Geraet bringt die Ausstattung seines Vorbesitzers mit und meldet Fehler fuer Dinge, die es hier nicht gibt",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

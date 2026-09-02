@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T05:03:02.741Z",
+  "generated": "2026-09-02T05:25:23.100Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -888,6 +888,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E28 · Was hier codierbar ist und was Einstellung heisst",
+      "valid": "E28 · 1981–1988",
+      "summary": "%s. Was an diesem Fahrzeug veraendert wird, ist meist eine mechanische oder elektrische Einstellung — kein Softwarestand. Diese Unterscheidung spart die Suche nach einem Menue, das es nicht gibt.",
+      "points": [
+        "Einstellung statt Codierung: Zuendzeitpunkt, Leerlauf, Gemisch und Schalterstellungen werden an diesem Fahrzeug mechanisch oder ueber Potentiometer eingestellt -- nicht ueber Software",
+        "Wo eine Codierung vorkommt, betrifft sie einzelne Module und Ausstattungsmerkmale, nicht das Fahrzeug als Ganzes",
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
+        "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
+        "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1686,6 +1707,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E30 · Was hier codierbar ist und was Einstellung heisst",
+      "valid": "E30 · 1982–1994",
+      "summary": "%s. Was an diesem Fahrzeug veraendert wird, ist meist eine mechanische oder elektrische Einstellung — kein Softwarestand. Diese Unterscheidung spart die Suche nach einem Menue, das es nicht gibt.",
+      "points": [
+        "Einstellung statt Codierung: Zuendzeitpunkt, Leerlauf, Gemisch und Schalterstellungen werden an diesem Fahrzeug mechanisch oder ueber Potentiometer eingestellt -- nicht ueber Software",
+        "Wo eine Codierung vorkommt, betrifft sie einzelne Module und Ausstattungsmerkmale, nicht das Fahrzeug als Ganzes",
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
+        "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
+        "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2337,6 +2379,27 @@
         "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
         "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E34 · Was hier codierbar ist und was Einstellung heisst",
+      "valid": "E34 · 1987–1997",
+      "summary": "%s. Was an diesem Fahrzeug veraendert wird, ist meist eine mechanische oder elektrische Einstellung — kein Softwarestand. Diese Unterscheidung spart die Suche nach einem Menue, das es nicht gibt.",
+      "points": [
+        "Einstellung statt Codierung: Zuendzeitpunkt, Leerlauf, Gemisch und Schalterstellungen werden an diesem Fahrzeug mechanisch oder ueber Potentiometer eingestellt -- nicht ueber Software",
+        "Wo eine Codierung vorkommt, betrifft sie einzelne Module und Ausstattungsmerkmale, nicht das Fahrzeug als Ganzes",
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
+        "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
+        "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
       ],
       "pins": [],
       "engines": [],
@@ -3054,6 +3117,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E36 · Was hier codierbar ist und was Einstellung heisst",
+      "valid": "E36 · 1989–2002",
+      "summary": "%s. Was an diesem Fahrzeug veraendert wird, ist meist eine mechanische oder elektrische Einstellung — kein Softwarestand. Diese Unterscheidung spart die Suche nach einem Menue, das es nicht gibt.",
+      "points": [
+        "Einstellung statt Codierung: Zuendzeitpunkt, Leerlauf, Gemisch und Schalterstellungen werden an diesem Fahrzeug mechanisch oder ueber Potentiometer eingestellt -- nicht ueber Software",
+        "Wo eine Codierung vorkommt, betrifft sie einzelne Module und Ausstattungsmerkmale, nicht das Fahrzeug als Ganzes",
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
+        "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
+        "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3731,6 +3815,27 @@
         "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
         "Startet nicht, dreht aber: Startfreigabe, Kraftstoff und Zuendung trennen, bevor Bauteile getauscht werden. Dreht nicht: Batterie, Anlasser, Versorgung",
         "Vor jedem Bauteiltausch die Steckverbindung oeffnen und ansehen. Gruenspan und aufgeweitete Kontakte erklaeren mehr als jede Messung am Bauteil selbst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E38 · Fahrzeugkodierung sichern, Module einzeln, Rueckweg",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 ist die erste Baureihe, in der Codierung breit vorkommt — und die erste, in der ein falscher Schreibvorgang mehr kostet als er bringt.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Die Fahrzeugkodierung beschreibt die Ausstattung. Sie wird als Ganzes gelesen und wirkt auf mehrere Module -- eine Aenderung dort ist keine lokale Aenderung",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Nach Steuergeraetetausch ist die fahrzeugbezogene Codierung erforderlich. Ein Geraet aus einem anderen Fahrzeug bringt dessen Ausstattung mit",
+        "Ein nicht codiertes Bauteil verhaelt sich wie ein defektes. Bevor ein neues bestellt wird: pruefen, ob das vorhandene ueberhaupt freigeschaltet ist"
       ],
       "pins": [],
       "engines": [],
@@ -6032,6 +6137,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E60 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 haengt fast jede Komfortfunktion an einem Codierstand. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nach jedem Modultausch ist die fahrzeugbezogene Anpassung noetig -- ein gebrauchtes Geraet bringt die Ausstattung seines Vorbesitzers mit und meldet Fehler fuer Dinge, die es hier nicht gibt",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6738,6 +6864,27 @@
         "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
         "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E70 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind besonders viele Module beteiligt, und jedes hat seinen eigenen Stand. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Bei dieser Zahl von Modulen gehoert der Ausgangsstand aller beteiligten Geraete gesichert, nicht nur des einen, an dem gearbeitet wird",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
       ],
       "pins": [],
       "engines": [],
@@ -7568,6 +7715,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E87 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 betrifft Codierung vor allem Beleuchtung, Komfort und Nachruestungen. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Beleuchtungsumbauten erzeugen ohne passende Codierung Ausfallmeldungen, obwohl das Licht brennt -- das ist kein Defekt, sondern ein Codierstand",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8327,6 +8495,27 @@
         "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
         "Vor jedem Geraetetausch Versorgung, Masse und Stecker dieses Geraets pruefen. Eine fehlende Sicherung sieht im Speicher aus wie ein totes Steuergeraet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E88 · Ist-Stand sichern, eine Aenderung, dann pruefen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 kommt die Verdecksteuerung als eigener codierbarer Bereich dazu. Der Satz aus den anderen Gruppen — ein nicht codiertes Bauteil verhaelt sich wie ein defektes — bekommt hier seine Anleitung.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Aenderungen an Verdeckfunktionen greifen in einen Ablauf ein, der Fenster und Verriegelung einbezieht. Hier gilt besonders: eine Aenderung, dann pruefen",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
       ],
       "pins": [],
       "engines": [],
@@ -10801,6 +10990,27 @@
       "model": "f15"
     },
     {
+      "id": "D4F-F15-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung F15 · Gesamtstand sichern, Nachruestungen freischalten",
+      "valid": "F15 · 2013–2018",
+      "summary": "Beim F15 haengen Fahrwerk, Allrad und Komfort an aufeinander abgestimmten Staenden. Diese Gruppe beschreibt das Vorgehen: was gesichert wird, in welcher Reihenfolge geaendert wird, und wo der Unterschied zwischen Codieren und Programmieren liegt.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Vor dem Aendern den Gesamtstand des Fahrzeugs festhalten. Module sind aufeinander abgestimmt -- ein einzeln aktualisiertes Geraet kann mit den uebrigen nicht mehr zusammenarbeiten",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Aufwand und Risiko steigen in dieser Reihenfolge",
+        "Nach Batteriewechsel anmelden und nach Modultausch anpassen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
       "id": "D4F-F22-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11499,6 +11709,27 @@
         "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
         "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
         "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung F22 · Gesamtstand sichern, Nachruestungen freischalten",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 sind Nachruestungen haeufig, und sie scheitern oefter am Codierstand als an der Technik. Diese Gruppe beschreibt das Vorgehen: was gesichert wird, in welcher Reihenfolge geaendert wird, und wo der Unterschied zwischen Codieren und Programmieren liegt.",
+      "points": [
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachruestung ohne Freischaltung ist der haeufigste Befund dieser Baureihe in dieser Gruppe. Vor dem Bauteiltausch klaeren, ob das Teil ueberhaupt aktiviert ist",
+        "Nur eine Aenderung auf einmal, danach pruefen. Wer mehrere Werte zugleich schreibt und ein Fehlverhalten sieht, weiss nicht, welcher es war",
+        "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
+        "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Aufwand und Risiko steigen in dieser Reihenfolge",
+        "Nach Batteriewechsel anmelden und nach Modultausch anpassen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
       ],
       "pins": [],
       "engines": [],
@@ -19440,25 +19671,25 @@
     }
   },
   "stats": {
-    "total_docs": 474,
+    "total_docs": 485,
     "total_guides": 40,
     "per_model": {
-      "e28": 26,
-      "e30": 33,
-      "e34": 28,
-      "e36": 28,
-      "e38": 29,
+      "e28": 27,
+      "e30": 34,
+      "e34": 29,
+      "e36": 29,
+      "e38": 30,
       "e39": 29,
       "e46": 30,
-      "e60": 31,
-      "e70": 29,
-      "e87": 31,
-      "e88": 28,
+      "e60": 32,
+      "e70": 30,
+      "e87": 32,
+      "e88": 29,
       "e90": 32,
       "f-series": 5,
       "f10": 29,
-      "f15": 28,
-      "f22": 29,
+      "f15": 29,
+      "f22": 30,
       "f30": 29
     }
   }

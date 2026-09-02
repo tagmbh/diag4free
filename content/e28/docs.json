@@ -587,6 +587,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-124",
+      "type": "GUIDE",
+      "gruppe": "D3",
+      "cat": "Codierung",
+      "title": "Codierung E28 · Was hier codierbar ist und was Einstellung heisst",
+      "valid": "E28 · 1981–1988",
+      "summary": "%s. Was an diesem Fahrzeug veraendert wird, ist meist eine mechanische oder elektrische Einstellung — kein Softwarestand. Diese Unterscheidung spart die Suche nach einem Menue, das es nicht gibt.",
+      "points": [
+        "Einstellung statt Codierung: Zuendzeitpunkt, Leerlauf, Gemisch und Schalterstellungen werden an diesem Fahrzeug mechanisch oder ueber Potentiometer eingestellt -- nicht ueber Software",
+        "Wo eine Codierung vorkommt, betrifft sie einzelne Module und Ausstattungsmerkmale, nicht das Fahrzeug als Ganzes",
+        "Vor jedem Schreibvorgang die Ist-Kodierung auslesen und sichern. Ohne gesicherten Ausgangsstand gibt es keinen Rueckweg -- das ist der einzige Schritt dieser Gruppe, der nicht verhandelbar ist",
+        "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
+        "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
+        "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
