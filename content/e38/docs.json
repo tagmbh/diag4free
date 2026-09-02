@@ -755,6 +755,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-129",
+      "type": "GUIDE",
+      "gruppe": "37",
+      "cat": "Fahrwerk",
+      "title": "Gekoppelte Federung E38 - Geregelte Daempfung und Niveauhaltung",
+      "valid": "E38 - 1994-2001",
+      "summary": "Am E38 arbeiten geregelte Daempfung und Niveauhaltung, wo verbaut, unabhaengig voneinander. Welche der beiden auffaellt, entscheidet ueber die ganze Suche.",
+      "points": [
+        "Erst trennen, was auffaellt: Hoehe oder Daempfung. Ein Fahrzeug, das zu tief steht, hat ein anderes Problem als eines, das zu hart oder zu weich federt",
+        "Ein geregeltes Fahrwerk faellt selten ganz aus -- es geht in einen festen Ersatzwert. Der betroffene Daempfer bleibt dann dauerhaft hart oder dauerhaft weich, unabhaengig vom gewaehlten Modus. Das ist die Meldung des Systems, nicht sein Schaden",
+        "Elektrisch oder mechanisch -- diese Unterscheidung entscheidet ueber den ganzen Umfang: Stecker, Leitung und Ansteuerung auf der einen Seite, verschlissenes Ventil im Daempfer auf der anderen",
+        "Einseitig veraendertes Fahrverhalten oder Klopfen auf einer Achsseite zeigt auf genau einen Daempfer. Das ist ein Befund und keine Fahrwerksbeurteilung",
+        "Ein Leck in der Niveauhaltung zeigt sich als Absenken ueber Nacht. Geprueft wird am stehenden Wagen, nicht auf der Probefahrt",
+        "Vor jeder Beurteilung ebener Boden und definierte Beladung -- sonst misst man die Zuladung und nicht das System"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

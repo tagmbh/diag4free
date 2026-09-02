@@ -756,6 +756,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-128",
+      "type": "GUIDE",
+      "gruppe": "37",
+      "cat": "Fahrwerk",
+      "title": "Gekoppelte Federung F22 - Geregelte Daempfung",
+      "valid": "F22 - 2013-2021",
+      "summary": "Am F22 verstellt die geregelte Daempfung die Kennlinie ueber den Fahrerlebnisschalter. Faellt ein Daempfer aus der Regelung, bleibt er auf einem festen Wert -- und genau das ist die Meldung.",
+      "points": [
+        "Ein geregeltes Fahrwerk faellt selten ganz aus -- es geht in einen festen Ersatzwert. Der betroffene Daempfer bleibt dann dauerhaft hart oder dauerhaft weich, unabhaengig vom gewaehlten Modus. Das ist die Meldung des Systems, nicht sein Schaden",
+        "Erste Pruefung ist eine Fahrprobe mit bewusstem Moduswechsel. Aendert sich nichts, ist die Regelung nicht wirksam -- das grenzt mehr ein als jeder Blick auf das Bauteil",
+        "Elektrisch oder mechanisch -- diese Unterscheidung entscheidet ueber den ganzen Umfang: Stecker, Leitung und Ansteuerung auf der einen Seite, verschlissenes Ventil im Daempfer auf der anderen",
+        "Einseitig veraendertes Fahrverhalten oder Klopfen auf einer Achsseite zeigt auf genau einen Daempfer. Das ist ein Befund und keine Fahrwerksbeurteilung",
+        "Ein Eintrag im Fehlerspeicher benennt die Funktion, die ausblieb, nicht das Bauteil, das fehlt -- siehe Gruppe D1",
+        "Ein getauschter Daempfer ohne passende Kodierung verhaelt sich wie ein defekter -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

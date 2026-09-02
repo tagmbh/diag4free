@@ -750,6 +750,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-131",
+      "type": "GUIDE",
+      "gruppe": "37",
+      "cat": "Fahrwerk",
+      "title": "Gekoppelte Federung E34 - Niveauregulierung und geregelte Daempfung",
+      "valid": "E34 - 1987-1996",
+      "summary": "Beim E34 Touring haelt eine Niveauregulierung das Heck auf Hoehe. Faellt sie aus, wird die Hinterachse hart -- und das wird regelmaessig fuer verschlissene Daempfer gehalten.",
+      "points": [
+        "Zuerst klaeren, ob das System ueberhaupt Druck aufbaut. Laeuft der Kompressor und hebt das Fahrzeug nicht, liegt es an Ventilen oder einem Leck -- laeuft er gar nicht, an Versorgung oder Ansteuerung",
+        "Ein Leck zeigt sich als Absenken ueber Nacht, nicht im Fahrbetrieb. Die Beurteilung gehoert deshalb an den stehenden Wagen am Morgen",
+        "Vor jeder Beurteilung ebener Boden und definierte Beladung. Ein Niveaubefund ohne definierte Ausgangslage ist kein Befund",
+        "Ein hartes Heck bei ausgefallener Regelung ist die Folge, nicht die Ursache. Wer hier Daempfer tauscht, tauscht am falschen Ende",
+        "Ein geregeltes Fahrwerk faellt selten ganz aus -- es geht in einen festen Ersatzwert. Der betroffene Daempfer bleibt dann dauerhaft hart oder dauerhaft weich, unabhaengig vom gewaehlten Modus. Das ist die Meldung des Systems, nicht sein Schaden",
+        "Bei Umbau auf konventionelle Federn bleibt die Regelung im Fehler, solange sie nicht stillgelegt ist -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

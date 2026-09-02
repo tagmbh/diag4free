@@ -781,6 +781,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-127",
+      "type": "GUIDE",
+      "gruppe": "37",
+      "cat": "Fahrwerk",
+      "title": "Gekoppelte Federung F30 - Geregelte Daempfung und Fahrerlebnisschalter",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 sind die Kennlinien der geregelten Daempfung fest und werden ueber den Fahrerlebnisschalter gewaehlt. Bleibt die Wirkung aus, ist das die erste und wichtigste Feststellung.",
+      "points": [
+        "Fahrprobe mit bewusstem Moduswechsel steht am Anfang. Aendert sich das Verhalten nicht, ist die Regelung unwirksam -- ohne diese Feststellung misst man ins Blaue",
+        "Ein geregeltes Fahrwerk faellt selten ganz aus -- es geht in einen festen Ersatzwert. Der betroffene Daempfer bleibt dann dauerhaft hart oder dauerhaft weich, unabhaengig vom gewaehlten Modus. Das ist die Meldung des Systems, nicht sein Schaden",
+        "Elektrisch oder mechanisch -- diese Unterscheidung entscheidet ueber den ganzen Umfang: Stecker, Leitung und Ansteuerung auf der einen Seite, verschlissenes Ventil im Daempfer auf der anderen",
+        "Einseitig veraendertes Fahrverhalten oder Klopfen auf einer Achsseite zeigt auf genau einen Daempfer. Das ist ein Befund und keine Fahrwerksbeurteilung",
+        "Ein undichter Daempfer verliert seine Verstellbarkeit. Oel am Daempfer ist damit nicht nur ein Verschleissbild, sondern erklaert die fehlende Regelung",
+        "Ein Eintrag benennt die ausgebliebene Funktion, nicht das schuldige Bauteil -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
