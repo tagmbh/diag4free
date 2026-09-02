@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T08:08:32.893Z",
+  "generated": "2026-09-02T08:22:07.368Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1140,6 +1140,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-137",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E28 · Kaeltekreis und Kompressorkupplung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Bedienung der Anlage steht im ersten Dokument. Hier geht es um den Kreis selbst -- und um die Frage, ob der Kompressor ueberhaupt eine Freigabe bekommt.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Die Kompressorkupplung wird elektrisch geschaltet und ist von Hand pruefbar: Zieht sie hoerbar an, ist die Freigabe da. Zieht sie nicht, liegt es an Freigabe, Versorgung oder Spule -- nicht am Kreis",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-138",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E28 · Schaltverhalten lesen statt Oel wechseln",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 ist die Steuerung hydraulisch. Damit gibt es weder Adaption noch Fehlerspeicher -- die Beurteilung laeuft ueber das Verhalten und ueber den Oelzustand.",
+      "points": [
+        "Ohne elektronische Steuerung gibt es keine Adaption, die man zuruecksetzen koennte. Was auffaellt, faellt mechanisch oder hydraulisch auf",
+        "Oelzustand ansehen und riechen: dunkel und verbrannt ist ein Befund, hell und klar ist keiner. Das ist hier die aussagekraeftigste Pruefung ohne Geraet",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Ein Wandler ohne Ueberbrueckung schlupft konstruktionsbedingt. Ein leicht erhoehter Drehzahlsprung beim Anfahren ist damit kein Befund -- er gehoert zum Prinzip",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Schaltpunkte haengen an Last und Gaszug beziehungsweise Unterdruckdose. Ein zu frueh oder zu spaet schaltendes Getriebe ist hier oft ein Einstellthema"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2127,6 +2169,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E30 · Kreis, Freigabe, Kondensator",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 scheitert die Kuehlleistung selten am Kompressor und oft an Fuellung, Freigabe oder Luftdurchsatz. Diese drei gehoeren in dieser Reihenfolge geprueft.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Die Kompressorkupplung wird elektrisch geschaltet und ist von Hand pruefbar: Zieht sie hoerbar an, ist die Freigabe da. Zieht sie nicht, liegt es an Freigabe, Versorgung oder Spule -- nicht am Kreis",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E30 · Verhalten, Oelzustand, Einstellung",
+      "valid": "E30 · 1982–1994",
+      "summary": "Beim E30 entscheidet die Lastvorgabe an das Getriebe ueber die Schaltpunkte. Ein Getriebe, das falsch schaltet, ist deshalb nicht zwangslaeufig verschlissen.",
+      "points": [
+        "Schaltpunkte haengen an der Lastvorgabe. Bevor das Getriebe verdaechtigt wird, gehoert diese Verbindung geprueft",
+        "Oelzustand ansehen und riechen: dunkel und verbrannt ist ein Befund, hell und klar keiner",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Ein Wandler ohne Ueberbrueckung schlupft konstruktionsbedingt. Ein leicht erhoehter Drehzahlsprung beim Anfahren ist damit kein Befund -- er gehoert zum Prinzip",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe, das nur kalt auffaellt, arbeitet mit zaehem Oel. Beurteilt wird betriebswarm, nicht nach dem Start"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3030,6 +3114,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-137",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E34 · Fuellung, Zusatzluefter, Leistungsbeurteilung",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ein haeufiges Bild am E34: Die Anlage kuehlt bei Fahrt und versagt im Stand. Das ist kein sporadischer Fehler, sondern ein Hinweis mit klarer Adresse.",
+      "points": [
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-138",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E34 · Adaption, Wandler, Motor abgrenzen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Mit der elektronischen Steuerung kommt die Adaption -- und damit ein Verhalten, das nach Verschleiss aussieht und keiner ist.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Oelzustand ansehen und riechen. Dunkel und verbrannt ist ein Befund, hell und klar keiner"
       ],
       "pins": [],
       "engines": [],
@@ -3957,6 +4083,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E36 · Kreis, Luftdurchsatz, Heizseite trennen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 werden Klimabefunde und Heizungsbefunde staendig vermischt. Sie haben verschiedene Ursachen und verschiedene Kosten.",
+      "points": [
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E36 · Adaption, Notprogramm, Motorursachen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 ist die haeufigste Fehldiagnose ein Getriebe, das fuer einen Motorfehler bestraft wird. Die Abgrenzung steht vor jeder Oeldiskussion.",
+      "points": [
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4844,6 +5012,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E38 · Zusatzluefter, Kondensator, Fuellung",
+      "valid": "E38 · 1994–2001",
+      "summary": "Die Anlage im E38 arbeitet gegen ein grosses Volumen. Fehlt Luft am Kondensator oder Druck im Kreis, faellt das frueher auf als in kleineren Fahrzeugen.",
+      "points": [
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E38 · Wandlerueberbrueckung und Adaption",
+      "valid": "E38 · 1994–2001",
+      "summary": "Rubbeln bei gleichmaessiger Fahrt wird am E38 regelmaessig als Getriebeschaden gedeutet. Es ist meist etwas anderes und deutlich guenstigeres.",
+      "points": [
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
       ],
       "pins": [],
       "engines": [],
@@ -5774,6 +5984,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-135",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E39 · Leistung messen statt Bauteile tauschen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Bevor am E39 irgendetwas am Kreis geoeffnet wird, gehoert die Leistung unter definierten Bedingungen festgestellt. Sonst diskutiert man ueber Eindruecke.",
+      "points": [
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-136",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E39 · Verhalten einordnen, Oelweg pruefen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 lohnt es, vor jeder Oelfrage zwei Dinge zu klaeren: ob der Motor sauber laeuft und ob das Getriebe ueberhaupt frei schalten darf.",
+      "points": [
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -6725,6 +6977,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-131",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E46 · Kreis, Kondensator, Wasserwege trennen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 fuehren zwei ganz verschiedene Beschwerden zum selben Verdacht: schlechte Kuehlung und nasser Fussraum. Nur eine davon betrifft den Kaeltekreis.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Nasser Fussraum bei laufender Klimaanlage ist ein Ablaufbefund am Verdampfer, kein Kaeltemittelbefund. Der Ablauf gehoert freigemacht, nicht der Kreis geoeffnet",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-132",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E46 · Adaption, Motorursachen, Steckverbinder",
+      "valid": "E46 · 1998–2006",
+      "summary": "Beim E46 sind die drei haeufigsten Ursachen fuer auffaelliges Schalten nicht im Getriebe: Adaption, Motorlauf und ein Stecker.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -7712,6 +8006,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-132",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E60 · Freigabe ueber den Bus, Luefter, Fuellung",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dieser Generation entscheidet nicht mehr allein ein Druckschalter ueber die Freigabe. Damit hat ein nicht laufender Kompressor mehr moegliche Gruende als frueher.",
+      "points": [
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Die Freigabe kommt aus dem Verbund. Ein Kompressor, der nicht anlaeuft, kann eine fehlende Freigabe haben statt eines Defekts -- das ist zuerst zu klaeren",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-133",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Sechsgang-Automatik E60 · Mechatronik, Stecker, Adaption",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 laeuft fast jede Getriebemeldung ueber die Mechatronik. Bevor sie ersetzt wird, gehoert geklaert, ob sie ueberhaupt der Ursprung ist.",
+      "points": [
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8628,6 +8964,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E70 · Grosses Volumen, Fondbereich, Luefterleistung",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 arbeitet die Anlage gegen ein grosses Volumen und mehrere Zonen. Eine Beschwerde nur im Fond ist deshalb ein anderer Befund als eine Beschwerde ueberall.",
+      "points": [
+        "Zuerst klaeren, ob die Beschwerde alle Zonen betrifft oder nur eine. Nur eine Zone heisst Klappe oder Ansteuerung, alle Zonen heissen Kreis oder Luftdurchsatz",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E70 · Antriebsstrang mitdenken",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im Allradfahrzeug hat ein Ruckeln mehr moegliche Quellen als das Getriebe. Diese Trennung steht vor jeder Getriebearbeit.",
+      "points": [
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen und nicht vom Automatikgetriebe -- siehe Gruppe 27. Die Bereifung gehoert dabei zuerst geprueft",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -9647,6 +10025,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E87 · Kreis, Luftweg, Ablauf",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 liegen Kaeltekreis, Luftweg und Wasserablauf dicht beieinander. Die erste Aufgabe ist, die drei auseinanderzuhalten.",
+      "points": [
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Nasser Fussraum bei laufender Anlage ist ein Ablaufbefund am Verdampfer und kein Kaeltemittelbefund",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E87 · Adaption, Motorlauf, Notprogramm",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 faellt ein Getriebe selten ohne Vorwarnung aus. Was vorher auffaellt, ist meist Adaption oder Motorlauf -- beides guenstiger als jede Getriebearbeit.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -10595,6 +11015,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E88 · Offenes Fahrzeug, Kreis, Ablauf",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im offenen Fahrzeug wird die Anlage anders belastet und der Wasserweg anders beansprucht. Beides erzeugt eigene, verwechselbare Bilder.",
+      "points": [
+        "Bei offenem Verdeck arbeitet die Anlage gegen die Umgebung. Eine Leistungsbeurteilung ist nur geschlossen sinnvoll",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Nasser Fussraum ist ein Ablaufbefund am Verdampfer, solange das Verdeck dicht ist -- beides gehoert getrennt geprueft",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E88 · Verhalten beurteilen, Ursachen trennen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Auch im Cabrio gilt: Ein auffaellig schaltendes Getriebe ist zuerst ein Adaptions- und Motorthema, bevor es ein mechanisches wird.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -11688,6 +12150,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-132",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E90 · Freigabe, Luefter, Verdampferablauf",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommen die drei haeufigsten Beschwerden aus drei verschiedenen Ecken: Freigabe, Luftdurchsatz und Ablauf. Keine davon ist zuerst der Kompressor.",
+      "points": [
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Nasser Fussraum bei laufender Anlage ist ein Ablaufbefund am Verdampfer und kein Kaeltemittelbefund",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-133",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Steptronic E90 · Adaption, Mechatronik, Motorursachen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommen Getriebemeldungen haeufig aus der Mechatronik und ihrem Steckverbinder. Ein neues Steuergeraet loest einen Dichtungsbefund nicht.",
+      "points": [
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -12816,6 +13320,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F10 · Druecke lesen statt schaetzen",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 sind die Druecke im Kreis als Messwert verfuegbar. Das verschiebt die Diagnose von der Vermutung zur Ablesung -- wenn man beide Seiten liest.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F10 · Adaption und Wandlerueberbrueckung",
+      "valid": "F10 · 2010–2017",
+      "summary": "Mit acht Gaengen faellt jede Unregelmaessigkeit haeufiger auf, weil oefter geschaltet wird. Das macht die Adaption wichtiger, nicht unwichtiger.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -13671,6 +14217,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F15 · Mehrere Zonen, Druecke, Luefterleistung",
+      "valid": "F15 · 2013–2018",
+      "summary": "Im grossen Fahrzeug mit mehreren Zonen sagt die Frage, wo es nicht kuehlt, mehr als jede Messung am Kreis.",
+      "points": [
+        "Zuerst klaeren, ob alle Zonen betroffen sind oder eine. Eine Zone heisst Klappe oder Ansteuerung, alle heissen Kreis oder Luftdurchsatz",
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F15 · Getriebe und Antriebsstrang trennen",
+      "valid": "F15 · 2013–2018",
+      "summary": "Im schweren Allradfahrzeug hat ein Ruckeln mehrere moegliche Quellen. Wer sie nicht trennt, arbeitet am teuersten Bauteil zuerst.",
+      "points": [
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Zuerst die vier Reifen vergleichen, das kostet nichts",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -14565,6 +15153,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F22 · Druecke, Freigabe, Ablauf",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 laesst sich der Kreis auslesen, statt ihn zu vermuten. Und die haeufigste Beschwerde ist trotzdem keine Kreisbeschwerde.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Nasser Fussraum bei laufender Anlage ist ein Ablaufbefund am Verdampfer und kein Kaeltemittelbefund",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F22 · Adaption, Fahrmodus, Motorlauf",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 aendert der Fahrmodus das Schaltverhalten deutlich. Eine Beschwerde ohne Angabe des Modus ist deshalb keine brauchbare Beschreibung.",
+      "points": [
+        "Vor jeder Bewertung den Fahrmodus festhalten. Dasselbe Getriebe schaltet in verschiedenen Modi bewusst verschieden -- ohne diese Angabe vergleicht man Unvergleichbares",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
       ],
       "pins": [],
       "engines": [],
@@ -15525,6 +16155,48 @@
         "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
         "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
         "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F30 · Druecke lesen, Luefter, Heizseite trennen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 gehoeren Hoch- und Niederdruck zusammen gelesen. Und wenn die Anlage kuehlt, aber nicht waermt, ist es kein Klimabefund.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F30 · Modus, Adaption, Motorursachen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 wird auffaelliges Schalten haeufig gemeldet und selten am Getriebe verursacht. Modus, Adaption und Motorlauf erklaeren die meisten Faelle.",
+      "points": [
+        "Vor jeder Bewertung den Fahrmodus festhalten -- dasselbe Getriebe schaltet in verschiedenen Modi bewusst verschieden",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
       ],
       "pins": [],
       "engines": [],
@@ -22716,26 +23388,26 @@
     }
   },
   "stats": {
-    "total_docs": 630,
+    "total_docs": 662,
     "total_guides": 40,
     "per_model": {
-      "e28": 38,
-      "e30": 42,
-      "e34": 40,
-      "e36": 38,
-      "e38": 39,
-      "e39": 39,
-      "e46": 39,
-      "e60": 39,
-      "e70": 39,
-      "e87": 40,
-      "e88": 37,
-      "e90": 40,
+      "e28": 40,
+      "e30": 44,
+      "e34": 42,
+      "e36": 40,
+      "e38": 41,
+      "e39": 41,
+      "e46": 41,
+      "e60": 41,
+      "e70": 41,
+      "e87": 42,
+      "e88": 39,
+      "e90": 42,
       "f-series": 8,
-      "f10": 38,
-      "f15": 37,
-      "f22": 38,
-      "f30": 39
+      "f10": 40,
+      "f15": 39,
+      "f22": 40,
+      "f30": 41
     }
   }
 }

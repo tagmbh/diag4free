@@ -921,6 +921,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F30 · Druecke lesen, Luefter, Heizseite trennen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 gehoeren Hoch- und Niederdruck zusammen gelesen. Und wenn die Anlage kuehlt, aber nicht waermt, ist es kein Klimabefund.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F30-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F30 · Modus, Adaption, Motorursachen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 wird auffaelliges Schalten haeufig gemeldet und selten am Getriebe verursacht. Modus, Adaption und Motorlauf erklaeren die meisten Faelle.",
+      "points": [
+        "Vor jeder Bewertung den Fahrmodus festhalten -- dasselbe Getriebe schaltet in verschiedenen Modi bewusst verschieden",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

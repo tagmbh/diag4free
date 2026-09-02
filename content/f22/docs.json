@@ -856,6 +856,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-133",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage F22 · Druecke, Freigabe, Ablauf",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 laesst sich der Kreis auslesen, statt ihn zu vermuten. Und die haeufigste Beschwerde ist trotzdem keine Kreisbeschwerde.",
+      "points": [
+        "Die Druecke im Kreis sind hier als Messwert auslesbar. Hoch- und Niederdruck gehoeren zusammen gelesen: Erst das Verhaeltnis der beiden sagt etwas ueber Fuellung und Durchsatz",
+        "Der Kompressor, der nicht einschaltet, ist meist nicht defekt: Bei zu geringem Druck sperrt die Freigabe. Das ist eine Schutzfunktion und kein Kompressorschaden",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Nasser Fussraum bei laufender Anlage ist ein Ablaufbefund am Verdampfer und kein Kaeltemittelbefund",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F22-134",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Achtgang-Automatik F22 · Adaption, Fahrmodus, Motorlauf",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 aendert der Fahrmodus das Schaltverhalten deutlich. Eine Beschwerde ohne Angabe des Modus ist deshalb keine brauchbare Beschreibung.",
+      "points": [
+        "Vor jeder Bewertung den Fahrmodus festhalten. Dasselbe Getriebe schaltet in verschiedenen Modi bewusst verschieden -- ohne diese Angabe vergleicht man Unvergleichbares",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

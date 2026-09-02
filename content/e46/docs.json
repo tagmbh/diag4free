@@ -912,6 +912,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-131",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E46 · Kreis, Kondensator, Wasserwege trennen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 fuehren zwei ganz verschiedene Beschwerden zum selben Verdacht: schlechte Kuehlung und nasser Fussraum. Nur eine davon betrifft den Kaeltekreis.",
+      "points": [
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Nasser Fussraum bei laufender Klimaanlage ist ein Ablaufbefund am Verdampfer, kein Kaeltemittelbefund. Der Ablauf gehoert freigemacht, nicht der Kreis geoeffnet",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Wenig Luft aus den Duesen bei laufendem Geblaese ist zuerst ein Filterbefund. Ein zugesetzter Filter sieht aus wie ein schwaches Geblaese und kostet einen Bruchteil",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E46-132",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E46 · Adaption, Motorursachen, Steckverbinder",
+      "valid": "E46 · 1998–2006",
+      "summary": "Beim E46 sind die drei haeufigsten Ursachen fuer auffaelliges Schalten nicht im Getriebe: Adaption, Motorlauf und ein Stecker.",
+      "points": [
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

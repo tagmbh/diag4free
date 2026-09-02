@@ -884,6 +884,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-134",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Klima",
+      "title": "Klimaanlage E70 · Grosses Volumen, Fondbereich, Luefterleistung",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 arbeitet die Anlage gegen ein grosses Volumen und mehrere Zonen. Eine Beschwerde nur im Fond ist deshalb ein anderer Befund als eine Beschwerde ueberall.",
+      "points": [
+        "Zuerst klaeren, ob die Beschwerde alle Zonen betrifft oder nur eine. Nur eine Zone heisst Klappe oder Ansteuerung, alle Zonen heissen Kreis oder Luftdurchsatz",
+        "Laeuft der Zusatzluefter nicht, steigt der Druck und die Anlage schaltet ab. Wieder eine Schutzfunktion -- geprueft gehoert der Luefter, bevor der Kreis beurteilt wird",
+        "Kuehlt die Anlage bei Fahrt gut und im Stand schlecht, fehlt Luft am Kondensator. Der sitzt vor dem Kuehler und setzt sich mit Laub und Insekten zu -- das ist der Befund, nicht der Kompressor",
+        "Ein Kaeltekreis ist geschlossen. Fehlt Kaeltemittel, ist es ausgetreten -- Nachfuellen ohne Leckortung behandelt das Symptom und verschiebt denselben Ausfall um eine Saison",
+        "Kuehlt die Anlage, waermt aber nicht, ist das kein Klimabefund. Dann gehoert der Blick auf Kuehlmittelstand, Waermetauscher und Ventil -- die Regelung kann nichts verteilen, was nicht ankommt",
+        "Leistung wird unter definierten Bedingungen beurteilt: mittlere Duese, feste Geblaesestufe, Umluft, Motor warm. Ohne diese Vorgaben misst man das Wetter und nicht die Anlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E70-135",
+      "type": "GUIDE",
+      "gruppe": "24",
+      "cat": "Getriebe",
+      "title": "Automatikgetriebe E70 · Antriebsstrang mitdenken",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im Allradfahrzeug hat ein Ruckeln mehr moegliche Quellen als das Getriebe. Diese Trennung steht vor jeder Getriebearbeit.",
+      "points": [
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen und nicht vom Automatikgetriebe -- siehe Gruppe 27. Die Bereifung gehoert dabei zuerst geprueft",
+        "Ruckeln beim Schalten gehoert nicht sofort dem Getriebe angelastet. Erst die Adaption zuruecksetzen und neu einfahren -- ein Getriebe, das auf einen alten Fahrstil oder ein altes Oel adaptiert ist, schaltet auffaellig, ohne defekt zu sein",
+        "Motorseitige Ursachen zuerst ausschliessen. Ein Zuendaussetzer unter Last fuehlt sich beim Schalten an wie ein Getriebefehler -- und wird auch regelmaessig dafuer gehalten",
+        "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
+        "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
+        "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
