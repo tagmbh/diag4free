@@ -454,6 +454,28 @@
       "details": [
         "D4F-E70-110"
       ]
+    },
+    {
+      "id": "D4F-E70-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E70 · xDrive mit zwei Wellen, Antriebswellen, Verteilergetriebe",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 hat Allrad ab Werk: eine Gelenkwelle nach hinten, eine nach vorn und vier Antriebswellen. Die erste Aufgabe ist deshalb, den Ort einzugrenzen, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Zwei Gelenkwellen: nach hinten und zum Vorderachsgetriebe. Ein Befund kann in beiden liegen",
+        "Ruckeln beim Rangieren und beim engen Wenden: Verteilergetriebe, nicht Gelenkwelle. Das ist der häufigste Verwechslungsfall bei diesem Fahrzeug",
+        "Knacken beim Einschlagen unter Last: Gleichlaufgelenk einer Antriebswelle, nicht die Gelenkwelle",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen; Manschetten der Gelenke auf Risse und Fettaustritt prüfen",
+        "Vor dem Trennen anzeichnen; die Wellen sind gewuchtet",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern und Gelenken deutlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-108"
+      ]
     }
   ]
 }

@@ -533,6 +533,28 @@
       "details": [
         "D4F-E60-110"
       ]
+    },
+    {
+      "id": "D4F-E60-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E60 · Mittellager, xDrive mit zweiter Welle nach vorn",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 mit xDrive gibt es eine zweite Gelenkwelle nach vorn. Wer nur nach hinten sucht, übersieht die Hälfte des Antriebsstrangs.",
+      "points": [
+        "xDrive: Neben der Welle nach hinten läuft eine zweite zum Vorderachsgetriebe. Ein Befund kann in beiden liegen — beide prüfen, nicht nur die hintere",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe, nicht die Gelenkwelle. Diese Unterscheidung steht am Anfang, nicht am Ende",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Vor dem Trennen anzeichnen; die Welle ist als Einheit gewuchtet",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang. Räder und Auswuchtung zuerst ausschließen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-108"
+      ]
     }
   ]
 }

@@ -446,6 +446,28 @@
       "details": [
         "D4F-F22-110"
       ]
+    },
+    {
+      "id": "D4F-F22-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F22 · Kurze Welle, Auswuchtung, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Welle des F22 ist kurz und robust. Auffällig wird sie vor allem dort, wo mehr Drehmoment anliegt — und bei straffem Fahrwerk wird jede Unwucht früher spürbar.",
+      "points": [
+        "Vibration mit der Geschwindigkeit: zuerst Räder und Auswuchtung ausschließen. Beim straffen Fahrwerk fällt eine kleine Unwucht früher auf als beim Komfortfahrwerk",
+        "Hardyscheibe beziehungsweise Gelenkscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-108"
+      ]
     }
   ]
 }

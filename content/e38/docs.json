@@ -428,6 +428,28 @@
       "details": [
         "D4F-E38-110"
       ]
+    },
+    {
+      "id": "D4F-E38-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E38 · Dreiteilige Welle, zwei Mittellager, Anzeichnen",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der lange Radstand des E38 verlangt eine mehrteilige Welle mit mehr als einem Lager. Das verdoppelt die Kandidaten und macht das Anzeichnen vor dem Trennen zur Pflicht.",
+      "points": [
+        "Mehrere Lager: Jedes einzeln am angehobenen Fahrzeug drehen und fühlen. Ein raues Lager unter zweien erklärt den Befund allein",
+        "Vor jedem Trennen alle Verbindungen zueinander anzeichnen — bei mehrteiligen Wellen ist die Verwechslungsgefahr größer und die Unwucht die Folge",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang, nicht Motor. Räder und Auswuchtung zuerst ausschließen",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-108"
+      ]
     }
   ]
 }

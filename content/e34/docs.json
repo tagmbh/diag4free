@@ -425,6 +425,28 @@
       "details": [
         "D4F-E34-110"
       ]
+    },
+    {
+      "id": "D4F-E34-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E34 · Mittellager, Hardyscheibe, Abgrenzung zur Hinterachse",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 ist die Welle länger und das Mittellager entsprechend belasteter. Die Abgrenzung nach hinten ist hier besonders wichtig, weil Achsgetriebe und Radlager dieselbe Ecke beschallen.",
+      "points": [
+        "Mittellager: Gummi ausgehärtet, Lager rau. Am angehobenen Fahrzeug drehen und fühlen",
+        "Hardyscheibe von unten sichtprüfen — Risse und ausgerissene Bohrungen",
+        "Heulen zwischen Zug und Schub vergleichen: ändert es sich, ist es das Achsgetriebe; bleibt es gleich, eher das Radlager. Beides ist nicht die Gelenkwelle",
+        "Vibration, die beim Auskuppeln bleibt: rotierender Strang. Vor dem Ausbau die Räder als Ursache ausschließen — Auswuchtung ist billiger",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Beim Touring mit Niveauregelung ändert die Aufbaulage den Wellenwinkel — ein hängendes Heck belastet die Gelenke zusätzlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-108"
+      ]
     }
   ]
 }

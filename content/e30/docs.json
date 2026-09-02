@@ -560,6 +560,28 @@
       "details": [
         "D4F-E30-110"
       ]
+    },
+    {
+      "id": "D4F-E30-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E30 · Hardyscheibe, Mittellager, Anzeichnen vor dem Trennen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind Hardyscheibe und Mittellager Verschleißteile, die sich früh melden. Wer die beiden Geräusche unterscheiden kann, spart sich den Ausbau der ganzen Welle.",
+      "points": [
+        "Schlag beim Anfahren und beim Lastwechsel: Hardyscheibe. Risse und ausgerissene Bohrungen sind von unten sichtbar",
+        "Brummen oder Vibration, die mit der Geschwindigkeit steigt: Mittellager. Bei angehobenem Fahrzeug die Welle drehen und am Lager fühlen",
+        "Vibration bleibt beim Auskuppeln bestehen: der rotierende Strang, nicht der Motor",
+        "Vor dem Trennen der Welle die Lage zueinander anzeichnen. Falsch zusammengesetzt entsteht die Unwucht erst durch die Reparatur",
+        "Ein Heulen, das sich zwischen Zug und Schub ändert, gehört zum Hinterachsgetriebe und nicht zur Gelenkwelle",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-108"
+      ]
     }
   ]
 }

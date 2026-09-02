@@ -421,6 +421,28 @@
       "details": [
         "D4F-F15-110"
       ]
+    },
+    {
+      "id": "D4F-F15-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F15 · Zwei Wellen, Verteilergetriebe, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 gilt dieselbe Eingrenzung wie beim E70, nur unter höherer Last: zwei Gelenkwellen, vier Antriebswellen, und ein Verteilergetriebe, das die meisten Befunde erklärt.",
+      "points": [
+        "Ruckeln beim Rangieren und beim engen Wenden: Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Zwei Gelenkwellen — nach hinten und zum Vorderachsgetriebe. Beide prüfen",
+        "Knacken beim Einschlagen unter Last: Gleichlaufgelenk einer Antriebswelle",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen; Manschetten auf Risse und Fettaustritt prüfen",
+        "Anhängebetrieb und Fahrzeuggewicht verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Vor dem Trennen anzeichnen; die Wellen sind gewuchtet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-108"
+      ]
     }
   ]
 }

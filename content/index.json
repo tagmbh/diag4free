@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T01:09:11.802Z",
+  "generated": "2026-09-02T01:29:20.228Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -673,6 +673,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E28 · Mittellager, Hardyscheibe, Vibration zuordnen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Gelenkwelle liegt zwischen Getriebe und Hinterachse. Genau deshalb wird sie oft zu Unrecht verdächtigt: Beide Nachbarn erzeugen ähnliche Vibrationen und ganz andere Rechnungen.",
+      "points": [
+        "Vibration, die mit der Fahrgeschwindigkeit steigt und beim Auskuppeln bleibt, kommt aus dem rotierenden Strang — also Gelenkwelle, Räder oder Hinterachse, nicht aus dem Motor",
+        "Die Hardyscheibe ist Gummi und altert. Risse und ausgerissene Bohrungen sind von unten sichtbar — das ist die erste und billigste Sichtprüfung dieser Gruppe",
+        "Mittellager: Gummi ausgehärtet oder Lager rau. Bei angehobenem Fahrzeug die Welle von Hand drehen und dabei am Lager fühlen; Rauheit ist tastbar",
+        "Ein Schlag beim Anfahren und beim Lastwechsel deutet auf Hardyscheibe oder ausgeschlagene Verzahnung, nicht auf das Lager",
+        "Die zweiteilige Welle ist gewuchtet. Markierungen vor dem Trennen anzeichnen und beim Zusammenbau einhalten, sonst entsteht die Unwucht bei der Reparatur",
+        "Nach jedem Eingriff eine Probefahrt über den ganzen Geschwindigkeitsbereich — Unwucht zeigt sich oft nur in einem schmalen Bereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-108"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1256,6 +1279,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E30 · Hardyscheibe, Mittellager, Anzeichnen vor dem Trennen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind Hardyscheibe und Mittellager Verschleißteile, die sich früh melden. Wer die beiden Geräusche unterscheiden kann, spart sich den Ausbau der ganzen Welle.",
+      "points": [
+        "Schlag beim Anfahren und beim Lastwechsel: Hardyscheibe. Risse und ausgerissene Bohrungen sind von unten sichtbar",
+        "Brummen oder Vibration, die mit der Geschwindigkeit steigt: Mittellager. Bei angehobenem Fahrzeug die Welle drehen und am Lager fühlen",
+        "Vibration bleibt beim Auskuppeln bestehen: der rotierende Strang, nicht der Motor",
+        "Vor dem Trennen der Welle die Lage zueinander anzeichnen. Falsch zusammengesetzt entsteht die Unwucht erst durch die Reparatur",
+        "Ein Heulen, das sich zwischen Zug und Schub ändert, gehört zum Hinterachsgetriebe und nicht zur Gelenkwelle",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-108"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1695,6 +1741,29 @@
       "engines": [],
       "details": [
         "D4F-E34-110"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E34 · Mittellager, Hardyscheibe, Abgrenzung zur Hinterachse",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 ist die Welle länger und das Mittellager entsprechend belasteter. Die Abgrenzung nach hinten ist hier besonders wichtig, weil Achsgetriebe und Radlager dieselbe Ecke beschallen.",
+      "points": [
+        "Mittellager: Gummi ausgehärtet, Lager rau. Am angehobenen Fahrzeug drehen und fühlen",
+        "Hardyscheibe von unten sichtprüfen — Risse und ausgerissene Bohrungen",
+        "Heulen zwischen Zug und Schub vergleichen: ändert es sich, ist es das Achsgetriebe; bleibt es gleich, eher das Radlager. Beides ist nicht die Gelenkwelle",
+        "Vibration, die beim Auskuppeln bleibt: rotierender Strang. Vor dem Ausbau die Räder als Ursache ausschließen — Auswuchtung ist billiger",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Beim Touring mit Niveauregelung ändert die Aufbaulage den Wellenwinkel — ein hängendes Heck belastet die Gelenke zusätzlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-108"
       ],
       "model": "e34"
     },
@@ -2194,6 +2263,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E36 · Hardyscheibe, Mittellager, Unwucht nach Reparatur",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist der häufigste Fehler nicht am Bauteil, sondern in der Werkstatt: Eine korrekt reparierte Welle vibriert, weil sie beim Zusammenbau verdreht wurde.",
+      "points": [
+        "Vor dem Trennen der Welle die Lage der Teile zueinander anzeichnen. Die Welle ist als Einheit gewuchtet; verdreht zusammengesetzt erzeugt sie eine Unwucht, die vorher nicht da war",
+        "Hardyscheibe: Risse und ausgerissene Bohrungen von unten sichtbar. Schlag beim Anfahren ist ihr typisches Bild",
+        "Mittellager: am angehobenen Fahrzeug drehen und fühlen, Rauheit ist tastbar",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang. Zuerst Räder und Auswuchtung ausschließen",
+        "Heulen mit Lastwechsel gehört zum Achsgetriebe, nicht zur Welle",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-108"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2636,6 +2728,29 @@
       "engines": [],
       "details": [
         "D4F-E38-110"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E38 · Dreiteilige Welle, zwei Mittellager, Anzeichnen",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der lange Radstand des E38 verlangt eine mehrteilige Welle mit mehr als einem Lager. Das verdoppelt die Kandidaten und macht das Anzeichnen vor dem Trennen zur Pflicht.",
+      "points": [
+        "Mehrere Lager: Jedes einzeln am angehobenen Fahrzeug drehen und fühlen. Ein raues Lager unter zweien erklärt den Befund allein",
+        "Vor jedem Trennen alle Verbindungen zueinander anzeichnen — bei mehrteiligen Wellen ist die Verwechslungsgefahr größer und die Unwucht die Folge",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang, nicht Motor. Räder und Auswuchtung zuerst ausschließen",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Nach dem Eingriff Probefahrt über den ganzen Geschwindigkeitsbereich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-108"
       ],
       "model": "e38"
     },
@@ -3138,6 +3253,30 @@
       "engines": [],
       "details": [
         "D4F-E39-110"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E39 · Mittellager, Hardyscheibe, Abgrenzung zur Zugstrebe",
+      "valid": "E39 · 1995–2004",
+      "summary": "Beim E39 gibt es eine Verwechslung, die Geld kostet: Das Schlagen beim Bremsen kommt von der Zugstrebe vorn, nicht von der Gelenkwelle. Beide erzeugen Unruhe, aber in unterschiedlichen Situationen.",
+      "points": [
+        "Schlagen beim Bremsen: das ist die Zugstrebe an der Vorderachse, nicht die Gelenkwelle. Die Gelenkwelle meldet sich unter Last und mit der Geschwindigkeit, nicht beim Verzögern",
+        "Mittellager: am angehobenen Fahrzeug drehen und am Lager fühlen; ausgehärtetes Gummi und Rauheit sind tastbar",
+        "Hardyscheibe von unten sichtprüfen — Schlag beim Anfahren und Lastwechsel",
+        "Vor dem Trennen anzeichnen; die Welle ist als Einheit gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Beim Touring mit Niveauregelung ändert die Aufbaulage den Wellenwinkel"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107",
+        "D4F-E39-108"
       ],
       "model": "e39"
     },
@@ -3683,6 +3822,29 @@
       "engines": [],
       "details": [
         "D4F-E46-110"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E46 · Mittellager, Hardyscheibe, Zusammenhang mit dem Achsträger",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 gehört diese Gruppe mit der Hinterachse zusammen gedacht: Wenn der Achsträger arbeitet, arbeitet die Gelenkwelle mit — und ihre Gelenke verschleißen schneller, als sie sollten.",
+      "points": [
+        "Ausgeschlagene Achsträgerlager lassen die Hinterachse kippen. Die Gelenkwelle macht diese Bewegung mit; ein wiederkehrender Wellenbefund gehört deshalb gegen die Achslager geprüft",
+        "Bei jedem Befund an der Welle die Aufnahmen des Hinterachsträgers mitbesichtigen — ein Riss dort ist ein anderer Reparaturumfang",
+        "Hardyscheibe: Risse und ausgerissene Bohrungen von unten sichtbar; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-108"
       ],
       "model": "e46"
     },
@@ -4239,6 +4401,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E60 · Mittellager, xDrive mit zweiter Welle nach vorn",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 mit xDrive gibt es eine zweite Gelenkwelle nach vorn. Wer nur nach hinten sucht, übersieht die Hälfte des Antriebsstrangs.",
+      "points": [
+        "xDrive: Neben der Welle nach hinten läuft eine zweite zum Vorderachsgetriebe. Ein Befund kann in beiden liegen — beide prüfen, nicht nur die hintere",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe, nicht die Gelenkwelle. Diese Unterscheidung steht am Anfang, nicht am Ende",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Vor dem Trennen anzeichnen; die Welle ist als Einheit gewuchtet",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang. Räder und Auswuchtung zuerst ausschließen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-108"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4707,6 +4892,29 @@
       "engines": [],
       "details": [
         "D4F-E70-110"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E70 · xDrive mit zwei Wellen, Antriebswellen, Verteilergetriebe",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 hat Allrad ab Werk: eine Gelenkwelle nach hinten, eine nach vorn und vier Antriebswellen. Die erste Aufgabe ist deshalb, den Ort einzugrenzen, bevor irgendetwas ausgebaut wird.",
+      "points": [
+        "Zwei Gelenkwellen: nach hinten und zum Vorderachsgetriebe. Ein Befund kann in beiden liegen",
+        "Ruckeln beim Rangieren und beim engen Wenden: Verteilergetriebe, nicht Gelenkwelle. Das ist der häufigste Verwechslungsfall bei diesem Fahrzeug",
+        "Knacken beim Einschlagen unter Last: Gleichlaufgelenk einer Antriebswelle, nicht die Gelenkwelle",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen; Manschetten der Gelenke auf Risse und Fettaustritt prüfen",
+        "Vor dem Trennen anzeichnen; die Wellen sind gewuchtet",
+        "Fahrzeuggewicht und Anhängebetrieb verkürzen die Standzeit von Lagern und Gelenken deutlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-108"
       ],
       "model": "e70"
     },
@@ -5272,6 +5480,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E87 · Mittellager, Hardyscheibe, kurze Welle",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die kurze Welle des E87 ist unauffälliger als die der großen Baureihen. Wenn sie sich meldet, ist die Zuordnung dafür umso wichtiger — die Nachbarn klingen ähnlich.",
+      "points": [
+        "Vibration mit der Geschwindigkeit, die beim Auskuppeln bleibt: rotierender Strang. Räder und Auswuchtung sind der billigere erste Ausschluss",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Manschetten der Gelenke auf Risse und Fettaustritt prüfen — eine gerissene Manschette ist ein Frühbefund, kein Nebenbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-108"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5774,6 +6005,29 @@
       "engines": [],
       "details": [
         "D4F-E88-110"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E88 · Mittellager, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Welle entspricht der des E87. Im Cabrio kommt die übliche Zusatzaufgabe dazu: Ein Teil der gemeldeten Geräusche stammt aus dem Aufbau und nicht aus dem Antriebsstrang.",
+      "points": [
+        "Erste Frage: Antriebsstrang oder Aufbau? Ein Geräusch, das drehzahl- oder geschwindigkeitsabhängig ist, gehört zum Strang; eines, das sich beim Verwinden ändert, zum Aufbau",
+        "Vibration bleibt beim Auskuppeln: rotierender Strang. Räder und Auswuchtung zuerst ausschließen",
+        "Hardyscheibe von unten sichtprüfen; Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Manschetten der Gelenke auf Risse und Fettaustritt prüfen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-108"
       ],
       "model": "e88"
     },
@@ -6461,6 +6715,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E90 · Mittellager, Hardyscheibe, xDrive mit zweiter Welle",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 hängt die Antwort an der Ausstattung: Mit Hinterradantrieb gibt es eine Welle, mit xDrive zwei — und beim xDrive ist der häufigste Befund gar keine Welle.",
+      "points": [
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn. Beide prüfen, nicht nur die hintere",
+        "Ruckeln beim Rangieren am xDrive: Verteilergetriebe, nicht Gelenkwelle",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-108"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7068,6 +7345,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F10 · Mittellager, xDrive, Abgrenzung zur Aktivlenkung",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 ist die Gelenkwelle mechanisch unauffällig — und wird trotzdem verdächtigt, weil Aktivlenkung und geregelte Dämpfer Unruhe erzeugen, die nach Antriebsstrang klingt.",
+      "points": [
+        "Unruhe, die sich mit der Fahrsituation und nicht mit der Geschwindigkeit ändert, gehört zur Regelung — Aktivlenkung oder Dämpfer — und nicht zur Welle. Fehlerspeicher vor Ausbau",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn; beide prüfen",
+        "Ruckeln beim Rangieren am xDrive: Verteilergetriebe",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Manschetten der Gelenke auf Risse und Fettaustritt prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-108"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7502,6 +7802,29 @@
       "engines": [],
       "details": [
         "D4F-F15-110"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F15 · Zwei Wellen, Verteilergetriebe, Anhängebetrieb",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 gilt dieselbe Eingrenzung wie beim E70, nur unter höherer Last: zwei Gelenkwellen, vier Antriebswellen, und ein Verteilergetriebe, das die meisten Befunde erklärt.",
+      "points": [
+        "Ruckeln beim Rangieren und beim engen Wenden: Verteilergetriebe. Diese Unterscheidung am Anfang spart den größten Teil der Arbeit",
+        "Zwei Gelenkwellen — nach hinten und zum Vorderachsgetriebe. Beide prüfen",
+        "Knacken beim Einschlagen unter Last: Gleichlaufgelenk einer Antriebswelle",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen; Manschetten auf Risse und Fettaustritt prüfen",
+        "Anhängebetrieb und Fahrzeuggewicht verkürzen die Standzeit von Lagern und Gelenken deutlich",
+        "Vor dem Trennen anzeichnen; die Wellen sind gewuchtet"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-108"
       ],
       "model": "f15"
     },
@@ -7966,6 +8289,29 @@
       "engines": [],
       "details": [
         "D4F-F22-110"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F22 · Kurze Welle, Auswuchtung, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Welle des F22 ist kurz und robust. Auffällig wird sie vor allem dort, wo mehr Drehmoment anliegt — und bei straffem Fahrwerk wird jede Unwucht früher spürbar.",
+      "points": [
+        "Vibration mit der Geschwindigkeit: zuerst Räder und Auswuchtung ausschließen. Beim straffen Fahrwerk fällt eine kleine Unwucht früher auf als beim Komfortfahrwerk",
+        "Hardyscheibe beziehungsweise Gelenkscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-108"
       ],
       "model": "f22"
     },
@@ -8475,6 +8821,29 @@
       "engines": [],
       "details": [
         "D4F-F30-110"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F30 · Mittellager, xDrive, Probefahrt statt Ausbau",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 lohnt sich die Reihenfolge besonders: Räder, Auswuchtung und Verteilergetriebe kosten eine Probefahrt, die Gelenkwelle einen Ausbau.",
+      "points": [
+        "Vibration mit der Geschwindigkeit: zuerst Räder und Auswuchtung ausschließen. Das ist eine Probefahrt, kein Hebebühnentag",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn; Ruckeln beim Rangieren gehört zum Verteilergetriebe",
+        "Hardyscheibe beziehungsweise Gelenkscheibe von unten sichtprüfen",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-108"
       ],
       "model": "f30"
     }
@@ -15663,26 +16032,26 @@
     }
   },
   "stats": {
-    "total_docs": 300,
+    "total_docs": 316,
     "total_guides": 40,
     "per_model": {
-      "e28": 16,
-      "e30": 23,
-      "e34": 18,
-      "e36": 18,
-      "e38": 18,
-      "e39": 19,
-      "e46": 20,
-      "e60": 19,
-      "e70": 18,
-      "e87": 19,
-      "e88": 16,
-      "e90": 21,
+      "e28": 17,
+      "e30": 24,
+      "e34": 19,
+      "e36": 19,
+      "e38": 19,
+      "e39": 20,
+      "e46": 21,
+      "e60": 20,
+      "e70": 19,
+      "e87": 20,
+      "e88": 17,
+      "e90": 22,
       "f-series": 5,
-      "f10": 17,
-      "f15": 17,
-      "f22": 18,
-      "f30": 18
+      "f10": 18,
+      "f15": 18,
+      "f22": 19,
+      "f30": 19
     }
   }
 }

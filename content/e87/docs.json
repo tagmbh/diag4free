@@ -542,6 +542,28 @@
       "details": [
         "D4F-E87-110"
       ]
+    },
+    {
+      "id": "D4F-E87-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E87 · Mittellager, Hardyscheibe, kurze Welle",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die kurze Welle des E87 ist unauffälliger als die der großen Baureihen. Wenn sie sich meldet, ist die Zuordnung dafür umso wichtiger — die Nachbarn klingen ähnlich.",
+      "points": [
+        "Vibration mit der Geschwindigkeit, die beim Auskuppeln bleibt: rotierender Strang. Räder und Auswuchtung sind der billigere erste Ausschluss",
+        "Hardyscheibe von unten sichtprüfen; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Manschetten der Gelenke auf Risse und Fettaustritt prüfen — eine gerissene Manschette ist ein Frühbefund, kein Nebenbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-108"
+      ]
     }
   ]
 }

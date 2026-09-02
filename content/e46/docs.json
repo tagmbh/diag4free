@@ -525,6 +525,28 @@
       "details": [
         "D4F-E46-110"
       ]
+    },
+    {
+      "id": "D4F-E46-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle E46 · Mittellager, Hardyscheibe, Zusammenhang mit dem Achsträger",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 gehört diese Gruppe mit der Hinterachse zusammen gedacht: Wenn der Achsträger arbeitet, arbeitet die Gelenkwelle mit — und ihre Gelenke verschleißen schneller, als sie sollten.",
+      "points": [
+        "Ausgeschlagene Achsträgerlager lassen die Hinterachse kippen. Die Gelenkwelle macht diese Bewegung mit; ein wiederkehrender Wellenbefund gehört deshalb gegen die Achslager geprüft",
+        "Bei jedem Befund an der Welle die Aufnahmen des Hinterachsträgers mitbesichtigen — ein Riss dort ist ein anderer Reparaturumfang",
+        "Hardyscheibe: Risse und ausgerissene Bohrungen von unten sichtbar; Schlag beim Anfahren ist ihr Bild",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Heulen zwischen Zug und Schub vergleichen, um das Achsgetriebe abzugrenzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-108"
+      ]
     }
   ]
 }

@@ -454,6 +454,28 @@
       "details": [
         "D4F-F10-110"
       ]
+    },
+    {
+      "id": "D4F-F10-112",
+      "type": "GUIDE",
+      "gruppe": "26",
+      "cat": "Gelenkwelle",
+      "title": "Gelenkwelle F10 · Mittellager, xDrive, Abgrenzung zur Aktivlenkung",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "Am F10 ist die Gelenkwelle mechanisch unauffällig — und wird trotzdem verdächtigt, weil Aktivlenkung und geregelte Dämpfer Unruhe erzeugen, die nach Antriebsstrang klingt.",
+      "points": [
+        "Unruhe, die sich mit der Fahrsituation und nicht mit der Geschwindigkeit ändert, gehört zur Regelung — Aktivlenkung oder Dämpfer — und nicht zur Welle. Fehlerspeicher vor Ausbau",
+        "Mit xDrive läuft eine zweite Gelenkwelle nach vorn; beide prüfen",
+        "Ruckeln beim Rangieren am xDrive: Verteilergetriebe",
+        "Mittellager am angehobenen Fahrzeug drehen und fühlen",
+        "Vor dem Trennen anzeichnen; die Welle ist gewuchtet",
+        "Manschetten der Gelenke auf Risse und Fettaustritt prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-108"
+      ]
     }
   ]
 }
