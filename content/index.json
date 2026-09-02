@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T05:25:23.100Z",
+  "generated": "2026-09-02T05:50:20.671Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -902,6 +902,27 @@
         "Nachgeruestete Bauteile arbeiten hier ohne Freischaltung, weil es keine gibt. Ein nicht funktionierendes Nachruestteil ist an diesem Fahrzeug ein Verkabelungs- oder Versorgungsthema",
         "Ein Steuergeraet aus einem anderen Fahrzeug kann ein anderes Kennfeld haben. Bei Tausch die Motorvariante und den Getriebetyp abgleichen, bevor gefahren wird",
         "Vor jeder Veraenderung den Ausgangszustand dokumentieren -- auch eine mechanische Einstellung braucht einen Rueckweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-126",
+      "type": "GUIDE",
+      "gruppe": "61",
+      "cat": "Bordnetz",
+      "title": "Fahrzeugelektrik E28 · Masse, Sicherungen, Steckverbindungen",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 hat ein ueberschaubares Bordnetz ohne Bussysteme. Fast jeder Elektrikbefund an diesem Fahrzeug endet an einer von drei Stellen: an einer Masse, einer Sicherung oder einem Stecker.",
+      "points": [
+        "Mehrere Verbraucher gleichzeitig auffaellig: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache und kostet nichts ausser hinsehen",
+        "Sicherungen sichtpruefen reicht nicht. Ein Haarriss im Draht oder ein korrodierter Halter unterbricht, ohne dass die Sicherung durchgebrannt aussieht -- unter Last messen",
+        "Steckverbindungen oeffnen und ansehen, bevor gemessen wird. Bei diesem Alter ist Gruenspan wahrscheinlicher als ein defektes Bauteil",
+        "Spannungsabfall messen statt Durchgang: Eine Leitung kann Durchgang haben und unter Last dennoch zu viel verlieren. Der Abfall ist der Befund, nicht der Durchgang",
+        "Nachgeruestetes und Zusatzverbraucher auf die Verdachtsliste, wenn ein Fehler nicht zum Serienstand passt -- Anhaengerkupplungen und Nachruestradios sind haeufige Eingriffe ins Bordnetz",
+        "Vor dem Abklemmen der Batterie klaeren, was danach eingestellt oder angelernt werden muss"
       ],
       "pins": [],
       "engines": [],
@@ -2407,6 +2428,48 @@
       "model": "e34"
     },
     {
+      "id": "D4F-E34-126",
+      "type": "GUIDE",
+      "gruppe": "61",
+      "cat": "Bordnetz",
+      "title": "Fahrzeugelektrik E34 · Masse, Sicherungen, Steckverbindungen",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 steht am Uebergang: erste Steuergeraete an einem noch konventionellen Bordnetz. Fast jeder Elektrikbefund an diesem Fahrzeug endet an einer von drei Stellen: an einer Masse, einer Sicherung oder einem Stecker.",
+      "points": [
+        "Mehrere Verbraucher gleichzeitig auffaellig: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache und kostet nichts ausser hinsehen",
+        "Sicherungen sichtpruefen reicht nicht. Ein Haarriss im Draht oder ein korrodierter Halter unterbricht, ohne dass die Sicherung durchgebrannt aussieht -- unter Last messen",
+        "Steckverbindungen oeffnen und ansehen, bevor gemessen wird. Bei diesem Alter ist Gruenspan wahrscheinlicher als ein defektes Bauteil",
+        "Spannungsabfall messen statt Durchgang: Eine Leitung kann Durchgang haben und unter Last dennoch zu viel verlieren. Der Abfall ist der Befund, nicht der Durchgang",
+        "Nachgeruestetes und Zusatzverbraucher auf die Verdachtsliste, wenn ein Fehler nicht zum Serienstand passt -- Anhaengerkupplungen und Nachruestradios sind haeufige Eingriffe ins Bordnetz",
+        "Vor dem Abklemmen der Batterie klaeren, was danach eingestellt oder angelernt werden muss"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-127",
+      "type": "GUIDE",
+      "gruppe": "D2",
+      "cat": "Diagnose-Tools",
+      "title": "Werkzeug am E34 · Was der Rundstecker braucht und was OBD nicht kann",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 faellt in den Uebergang zwischen zwei Diagnosewelten. Welches Werkzeug passt, haengt am Baujahr — und ein generisches OBD-Geraet ist bei den fruehen Fahrzeugen schlicht der falsche Stecker.",
+      "points": [
+        "Zuerst klaeren, welcher Anschluss verbaut ist. Der 20-polige Rundstecker im Motorraum und die spaetere genormte Buchse gehoeren zu verschiedenen Werkzeugwelten",
+        "Ein generisches OBD-Geraet passt an den fruehen E34 nicht -- weder mechanisch noch inhaltlich. Wer damit nichts findet, hat nicht gemessen, sondern den falschen Stecker benutzt",
+        "Am Rundstecker geht der Blinkcode ohne Geraet. Das ist bei diesem Fahrzeug kein Notbehelf, sondern der vorgesehene Weg",
+        "Fuer die spaeteren Fahrzeuge dieser Baureihe braucht es ein Werkzeug, das die herstellereigenen Protokolle spricht; die genormte Buchse allein sagt nichts ueber den erreichbaren Inhalt",
+        "Adapterkabel mit Chipsatz-Angabe waehlen. Ein Kabel, das am neueren Fahrzeug funktioniert, muss am aelteren nicht funktionieren",
+        "Vor dem Anschliessen die Bordspannung pruefen -- bei einem Fahrzeug dieses Alters ist eine schwache Batterie die haeufigste Ursache fuer eine scheiternde Verbindung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
       "id": "D4F-E36-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3843,6 +3906,27 @@
       "model": "e38"
     },
     {
+      "id": "D4F-E38-125",
+      "type": "GUIDE",
+      "gruppe": "D4",
+      "cat": "Bestimmung",
+      "title": "Fahrzeug- und Motorbestimmung E38 · Was gilt und was nur danebensteht",
+      "valid": "E38 · 1993–2001",
+      "summary": "Beim E38 gibt es innerhalb der Bauzeit mehrere Umstellungen, die sich am Fahrzeug nicht ansehen lassen. Diese Gruppe klaert, woran man sich haelt — und woran nicht.",
+      "points": [
+        "Die Fahrgestellnummer ist die einzige verlaessliche Auskunft. Modellbezeichnung, Typschild und Papiere koennen von Umbauten, Importen und Vorbesitzern abweichen -- die Nummer nicht",
+        "Motornummer und Motorkennung getrennt betrachten: Die Kennung sagt, welche Bauart verbaut ist, die Nummer, welches Exemplar. Fuer Ersatzteile zaehlt oft die Kennung, fuer die Historie die Nummer",
+        "Bei einem Motortausch stimmt die Kennung im Papier nicht mehr mit dem Motor ueberein. Was am Block steht, gilt -- nicht was im Papier steht",
+        "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
+        "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
+        "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
       "id": "D4F-E39-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4556,6 +4640,27 @@
         "Fluessigkeitsverlust: Die uebliche Reihenfolge ist Hochdruckschlauch, Lenkgetriebe-Simmerringe, Pumpe. Oelspuren wandern nach unten -- die hoechste feuchte Stelle ist die Quelle",
         "Spiel am Lenkrad getrennt zuordnen: Spurstangenkopf, Axialgelenk, Lenkgetriebe und Lenksaeule erzeugen dasselbe Gefuehl und verschiedene Rechnungen",
         "Nach jedem Eingriff an Lenkung, Spurstangen oder Fahrwerk gehoert das Fahrzeug auf die Achsvermessung -- sonst ist der Reifenverschleiss die naechste Rechnung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-125",
+      "type": "GUIDE",
+      "gruppe": "D4",
+      "cat": "Bestimmung",
+      "title": "Fahrzeug- und Motorbestimmung E39 · Was gilt und was nur danebensteht",
+      "valid": "E39 · 1995–2004",
+      "summary": "Beim E39 unterscheiden sich Steuerungen und Ausstattungen innerhalb derselben Modellbezeichnung erheblich. Diese Gruppe klaert, woran man sich haelt — und woran nicht.",
+      "points": [
+        "Die Fahrgestellnummer ist die einzige verlaessliche Auskunft. Modellbezeichnung, Typschild und Papiere koennen von Umbauten, Importen und Vorbesitzern abweichen -- die Nummer nicht",
+        "Motornummer und Motorkennung getrennt betrachten: Die Kennung sagt, welche Bauart verbaut ist, die Nummer, welches Exemplar. Fuer Ersatzteile zaehlt oft die Kennung, fuer die Historie die Nummer",
+        "Bei einem Motortausch stimmt die Kennung im Papier nicht mehr mit dem Motor ueberein. Was am Block steht, gilt -- nicht was im Papier steht",
+        "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
+        "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
+        "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
       ],
       "pins": [],
       "engines": [],
@@ -6158,6 +6263,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-125",
+      "type": "GUIDE",
+      "gruppe": "D4",
+      "cat": "Bestimmung",
+      "title": "Fahrzeug- und Motorbestimmung E60 · Was gilt und was nur danebensteht",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 entscheidet der Ausstattungsstand ueber halbe Fahrzeugbereiche -- Aktivlenkung, Adaptivdaempfer, Allrad. Diese Gruppe klaert, woran man sich haelt — und woran nicht.",
+      "points": [
+        "Die Fahrgestellnummer ist die einzige verlaessliche Auskunft. Modellbezeichnung, Typschild und Papiere koennen von Umbauten, Importen und Vorbesitzern abweichen -- die Nummer nicht",
+        "Motornummer und Motorkennung getrennt betrachten: Die Kennung sagt, welche Bauart verbaut ist, die Nummer, welches Exemplar. Fuer Ersatzteile zaehlt oft die Kennung, fuer die Historie die Nummer",
+        "Bei einem Motortausch stimmt die Kennung im Papier nicht mehr mit dem Motor ueberein. Was am Block steht, gilt -- nicht was im Papier steht",
+        "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
+        "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
+        "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6885,6 +7011,27 @@
         "Waehrend des Schreibens muss die Spannung stabil bleiben. Ein Abbruch mitten im Vorgang hinterlaesst ein Steuergeraet in unbestimmtem Zustand; ein Ladegeraet ist hier keine Vorsichtsmassnahme, sondern Voraussetzung",
         "Ein nicht freigeschaltetes Bauteil verhaelt sich wie ein defektes. Vor jedem Bauteiltausch pruefen, ob das vorhandene ueberhaupt codiert ist",
         "Codieren, Anpassen und Programmieren sind drei verschiedene Dinge: Codieren aendert Ausstattungsmerkmale, Anpassen bezieht ein Geraet auf dieses Fahrzeug, Programmieren tauscht die Software. Der Aufwand und das Risiko steigen in dieser Reihenfolge"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-125",
+      "type": "GUIDE",
+      "gruppe": "D4",
+      "cat": "Bestimmung",
+      "title": "Fahrzeug- und Motorbestimmung E70 · Was gilt und was nur danebensteht",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 gibt es Motorvarianten, Getriebe und Fahrwerksausstattungen in Kombinationen, die die Modellbezeichnung nicht hergibt. Diese Gruppe klaert, woran man sich haelt — und woran nicht.",
+      "points": [
+        "Die Fahrgestellnummer ist die einzige verlaessliche Auskunft. Modellbezeichnung, Typschild und Papiere koennen von Umbauten, Importen und Vorbesitzern abweichen -- die Nummer nicht",
+        "Motornummer und Motorkennung getrennt betrachten: Die Kennung sagt, welche Bauart verbaut ist, die Nummer, welches Exemplar. Fuer Ersatzteile zaehlt oft die Kennung, fuer die Historie die Nummer",
+        "Bei einem Motortausch stimmt die Kennung im Papier nicht mehr mit dem Motor ueberein. Was am Block steht, gilt -- nicht was im Papier steht",
+        "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
+        "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
+        "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
       ],
       "pins": [],
       "engines": [],
@@ -19671,18 +19818,18 @@
     }
   },
   "stats": {
-    "total_docs": 485,
+    "total_docs": 492,
     "total_guides": 40,
     "per_model": {
-      "e28": 27,
+      "e28": 28,
       "e30": 34,
-      "e34": 29,
+      "e34": 31,
       "e36": 29,
-      "e38": 30,
-      "e39": 29,
+      "e38": 31,
+      "e39": 30,
       "e46": 30,
-      "e60": 32,
-      "e70": 30,
+      "e60": 33,
+      "e70": 31,
       "e87": 32,
       "e88": 29,
       "e90": 32,

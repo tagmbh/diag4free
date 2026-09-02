@@ -801,6 +801,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-125",
+      "type": "GUIDE",
+      "gruppe": "D4",
+      "cat": "Bestimmung",
+      "title": "Fahrzeug- und Motorbestimmung E60 · Was gilt und was nur danebensteht",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 entscheidet der Ausstattungsstand ueber halbe Fahrzeugbereiche -- Aktivlenkung, Adaptivdaempfer, Allrad. Diese Gruppe klaert, woran man sich haelt — und woran nicht.",
+      "points": [
+        "Die Fahrgestellnummer ist die einzige verlaessliche Auskunft. Modellbezeichnung, Typschild und Papiere koennen von Umbauten, Importen und Vorbesitzern abweichen -- die Nummer nicht",
+        "Motornummer und Motorkennung getrennt betrachten: Die Kennung sagt, welche Bauart verbaut ist, die Nummer, welches Exemplar. Fuer Ersatzteile zaehlt oft die Kennung, fuer die Historie die Nummer",
+        "Bei einem Motortausch stimmt die Kennung im Papier nicht mehr mit dem Motor ueberein. Was am Block steht, gilt -- nicht was im Papier steht",
+        "Ausstattungsmerkmale ueber die Fahrzeugkodierung pruefen, nicht ueber Sichtpruefung. Nachgeruestetes ist codiert oder nicht; Werksausstattung steht im Datensatz",
+        "Vor jeder Teilebestellung Baudatum abgleichen. Innerhalb einer Baureihe gibt es Umstellungen mitten in der Bauzeit, und ein Teil vom falschen Stand passt nicht",
+        "Bei Unstimmigkeit zwischen Fahrzeug und Unterlage die Unstimmigkeit dokumentieren, statt sie aufzuloesen. Ein spaeterer Bearbeiter muss wissen, dass sie besteht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
