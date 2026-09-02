@@ -1044,6 +1044,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-142",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Getriebe",
+      "title": "Getriebegeraeusch E70 · Abgrenzung: was hier stattdessen gilt",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 faehrt praktisch ausschliesslich mit Wandlerautomatik. Diese Seite steht hier, damit ein Geraeusch nicht einem Schaltgetriebe angelastet wird, das gar nicht verbaut ist.",
+      "points": [
+        "Ohne Schaltgetriebe gibt es keine Synchronringe und keine Vorgelegewelle. Ein Geraeusch aus dem Antriebsstrang gehoert zum Wandler, zur Gelenkwelle oder zur Achse",
+        "Geraeusch, das mit der Fahrgeschwindigkeit steigt und nicht mit der Drehzahl, gehoert nicht zum Getriebe -- siehe Gruppe 26 und Gruppe 33",
+        "Ruckeln im Langsamen kann vom Verteilergetriebe kommen -- siehe Gruppe 27. Zuerst die vier Reifen vergleichen",
+        "Schaltverhalten der Automatik gehoert in Gruppe 24, einschliesslich Adaption und Wandlerueberbrueckung",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4",
+        "Kalt schwer schaltbar und warm in Ordnung ist zuerst eine Oelfrage. Die falsche Sorte macht genau dieses Bild, und ein Oelwechsel ist billiger als jede Zerlegung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E70-143",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Waehlhebel E70 · Abgrenzung: keine Schaltmechanik",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 gibt der Waehlhebel eine Anforderung weiter, er bewegt keine Schaltstange. Damit fallen die typischen Schaltwegbefunde weg -- und andere treten an ihre Stelle.",
+      "points": [
+        "Der Waehlhebel uebertraegt ein Signal und keine Kraft. Spiel am Hebel ist damit kein Hinweis auf Verschleiss im Getriebe",
+        "Reagiert die Anforderung nicht, ist das ein Signal- oder Freigabebefund und kein mechanischer -- siehe Gruppe D1",
+        "Schaltverhalten und Notprogramm der Automatik gehoeren in Gruppe 24",
+        "Wandert der Hebel beim Lastwechsel, folgt er der Motorbewegung. Dann sind die Aggregatelager der Befund und nicht die Schaltung -- siehe Gruppe 22",
+        "Wo ein einzelnes Fahrzeug mit Schaltgetriebe unterwegs ist, gilt das Verbaute -- siehe Gruppe D4",
+        "Ein Waehlhebel, der nach Arbeiten am Getriebe nicht mehr stimmt, gehoert eingestellt oder angelernt, bevor ein Bauteil verdaechtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
