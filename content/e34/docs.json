@@ -830,6 +830,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-135",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Fahrwerk",
+      "title": "Vorderachse E34 · Geraeusch orten statt Teile tauschen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Das Bauteilverzeichnis der Vorderachse steht anderswo. Hier steht das Verfahren: wie man beim E34 von einem Geraeusch zur Baugruppe kommt, ohne der Reihe nach zu tauschen.",
+      "points": [
+        "Zuerst die Bedingung aufnehmen, unter der es auftritt: beim Ueberfahren einer Kante, beim Lenken im Stand, beim Lastwechsel oder nur in der Kurve. Die Bedingung benennt die Baugruppe -- das Geraeusch allein nicht",
+        "Knacken beim Lenken im Stand kommt vom Stuetzlager oder vom Gelenk, nicht vom Querlenkerlager. Querlenkerlager melden sich beim Fahren ueber Unebenheiten, nicht im Stillstand",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Die Koppelstange ist der haeufigste Erstverdacht beim Poltern. Sie laesst sich ausbauen und einzeln auf Spiel pruefen -- das ist der billigste belastbare Test dieser Achse",
+        "Ein Gummilager wird nicht nach Rissen beurteilt. Feine Risse hat fast jedes gealterte Lager. Der Befund ist Abloesung vom Metall oder ein sichtbar gewandertes Lager",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E34-136",
+      "type": "GUIDE",
+      "gruppe": "33",
+      "cat": "Fahrwerk",
+      "title": "Hinterachse E34 · Vom Fahrverhalten zur Baugruppe",
+      "valid": "E34 · 1987–1996",
+      "summary": "Hinten meldet sich ein Fehler seltener als Geraeusch und oefter als Verhalten. Diese Seite ordnet beim E34, welches Verhalten auf welche Baugruppe zeigt.",
+      "points": [
+        "Ein Fahrzeug, das beim Lastwechsel nachlenkt, hat Spiel in Achstraeger- oder Lenkerlagern. Das ist kein Reifen- und kein Spurbefund, auch wenn es sich so anfuehlt",
+        "Radlagergeraeusch aendert sich mit der Querbeschleunigung. Wird es in der Linkskurve lauter, ist das rechte Rad staerker belastet -- dann sitzt das Lager rechts. Umgekehrt genauso",
+        "Differentialgeraeusch haengt an der Last, Radlagergeraeusch an der Geschwindigkeit. Im Schubbetrieb vom Zug in den Schub wechseln: aendert sich der Ton, ist es das Achsgetriebe",
+        "Bei Oelspur am Achsgetriebe zuerst die Entlueftung pruefen. Ist sie zu, drueckt der Druck das Oel an den Dichtringen heraus -- ein neuer Simmerring an verstopfter Entlueftung ist wieder undicht",
+        "Spiel wird belastet geprueft, nicht gewackelt: Rad in 12 und 6 Uhr, dann in 9 und 3 Uhr mit dem Hebel bewegen, waehrend ein Zweiter am Bauteil fuehlt. Wer nur ruettelt, findet nur grobes Spiel",
+        "Nach jedem Eingriff an Lenkern oder Gelenken gehoert die Achse vermessen und der Lenkwinkel abgeglichen. Ohne das ist die Reparatur nicht fertig -- siehe Gruppe 32"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
