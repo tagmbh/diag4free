@@ -741,6 +741,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik E60 · Batterie anmelden, Ruhestrom, Ladung unter Last",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 wird die Batterie vom Fahrzeug verwaltet. Damit ist ein Batteriewechsel kein reiner Bauteiltausch mehr — und eine nicht angemeldete Batterie ist eine Fehlerquelle, die sich erst Monate spaeter meldet.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem Kennfeld der alten Batterie; die neue altert vorzeitig, ohne dass ein Fehler gespeichert wird",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Massepunkte am Motor und zur Karosserie sind die stillste Fehlerquelle dieser Gruppe. Ein Uebergangswiderstand dort erzeugt Befunde in mehreren Steuergeraeten gleichzeitig",
+        "Unterspannung erzeugt Eintraege in vielen Steuergeraeten gleichzeitig. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie -- deshalb steht die Spannungspruefung vor der Diagnose, nicht danach"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -605,6 +605,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-122",
+      "type": "GUIDE",
+      "gruppe": "12",
+      "cat": "Motorelektrik",
+      "title": "Motorelektrik F15 · Batterie anmelden, Start-Stopp, Ruhestrom",
+      "valid": "F15 · 2013–2018",
+      "summary": "Beim F15 arbeitet ein grosses Bordnetz an einem Fahrzeug, das oft steht. Die Regel aus dem Vorgehen — Spannung vor Diagnose — wird hier ausgefuellt: wie Batterie, Ladung und Ruhestrom tatsaechlich geprueft werden.",
+      "points": [
+        "Nach jedem Batteriewechsel Kapazitaet und Bauart anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die neue Batterie altert vorzeitig",
+        "Beim schweren Fahrzeug mit vielen Verbrauchern ist die Batterie ein Verschleissteil mit begrenzter Zyklenzahl. Ein Ausfall nach wenigen Jahren ist kein Widerspruch",
+        "Ruhestrom messen, nicht schaetzen: Zuendung aus, Fahrzeug verriegelt, dann die Wartezeit abwarten, bis alle Steuergeraete schlafen. Wer zu frueh misst, misst wache Module und findet einen Verbraucher, den es nicht gibt",
+        "Batterie unter Last beurteilen, nicht an der Ruhespannung. Eine Batterie kann im Stand gut aussehen und unter Startlast einbrechen -- und der Einbruch ist es, der die Steuergeraete stoert",
+        "Ladespannung bei laufendem Motor und eingeschalteten Verbrauchern pruefen. Faellt sie unter Last ab, ist es Lichtmaschine, Regler oder die Leitung dorthin -- nicht die Batterie",
+        "Unterspannung erzeugt Eintraege ueber alle Module hinweg. Wer bei schwacher Batterie ausliest, diagnostiziert die Batterie"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
