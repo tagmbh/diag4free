@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T09:47:46.400Z",
+  "generated": "2026-09-02T10:01:53.838Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1434,6 +1434,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-151",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E28 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E28 · 1981–1988",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-152",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E28 · Vier Adressen, eine Reihenfolge",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2715,6 +2757,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E30 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E30 · 1982–1994",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E30 · Vier Adressen, eine Reihenfolge",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3912,6 +3996,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-151",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E34 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-152",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E34 · Vier Adressen, eine Reihenfolge",
+      "valid": "E34 · 1987–1996",
+      "summary": "Am E34 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
       ],
       "pins": [],
       "engines": [],
@@ -5133,6 +5259,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-148",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E36 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E36 · 1990–2000",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-149",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E36 · Vier Adressen, eine Reihenfolge",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6314,6 +6482,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-148",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E38 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E38 · 1994–2001",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-149",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E38 · Vier Adressen, eine Reihenfolge",
+      "valid": "E38 · 1994–2001",
+      "summary": "Am E38 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
       ],
       "pins": [],
       "engines": [],
@@ -7538,6 +7748,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-149",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E39 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E39 · 1995–2004",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-150",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E39 · Vier Adressen, eine Reihenfolge",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
       ],
       "pins": [],
       "engines": [],
@@ -8783,6 +9035,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-145",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E46 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E46 · 1998–2006",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-146",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E46 · Vier Adressen, eine Reihenfolge",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
       ],
       "pins": [],
       "engines": [],
@@ -10064,6 +10358,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-146",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E60 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-147",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E60 · Vier Adressen, eine Reihenfolge",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11274,6 +11610,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-148",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E70 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E70 · 2006–2013",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-149",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E70 · Vier Adressen, eine Reihenfolge",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -12587,6 +12965,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E87 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E87 · 2004–2011",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E87 · Vier Adressen, eine Reihenfolge",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -13829,6 +14249,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E88 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E88 · 2007–2013",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Verdeck wird auf Spannung eingestellt. Falten im geschlossenen Zustand sind ein Einstellbefund und kein Materialschaden -- ein neues Verdeck faltet an derselben Stelle",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Das Verdeck vor dem Einlagern trocken schliessen. Feucht zusammengelegt schimmelt der Stoff, und das ist nicht mehr zu reinigen",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E88 · Vier Adressen, eine Reihenfolge",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -15216,6 +15678,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-146",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E90 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E90 · 2004–2013",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-147",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E90 · Vier Adressen, eine Reihenfolge",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -16638,6 +17142,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach F10 · Einstellung, Dichtung, Geraeusch",
+      "valid": "F10 · 2010–2017",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang F10 · Vier Adressen, eine Reihenfolge",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -17787,6 +18333,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach F15 · Einstellung, Dichtung, Geraeusch",
+      "valid": "F15 · 2013–2018",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang F15 · Vier Adressen, eine Reihenfolge",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am F15 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -18975,6 +19563,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach F22 · Einstellung, Dichtung, Geraeusch",
+      "valid": "F22 · 2013–2021",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang F22 · Vier Adressen, eine Reihenfolge",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -20229,6 +20859,48 @@
         "Ein blockierter Antrieb wird von der Steuerung abgeschaltet. Das ist eine Schutzfunktion und kein Defekt -- nach dem Beseitigen der Blockade laeuft er wieder",
         "Nach Spannungsverlust oder Arbeiten am Bauteil gehoeren die Endlagen angelernt. Vorher ist ein unvollstaendig laufender Antrieb kein Befund",
         "Feuchtigkeit im Steckverbinder erzeugt Fehler, die nach dem Trocknen verschwinden und spaeter wiederkommen. Ein Eintrag ohne Ursache ist bei Naesse die Regel -- siehe Gruppe 51"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-148",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach F30 · Einstellung, Dichtung, Geraeusch",
+      "valid": "F30 · 2011–2019",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-149",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang F30 · Vier Adressen, eine Reihenfolge",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
       ],
       "pins": [],
       "engines": [],
@@ -27420,26 +28092,26 @@
     }
   },
   "stats": {
-    "total_docs": 854,
+    "total_docs": 886,
     "total_guides": 40,
     "per_model": {
-      "e28": 52,
-      "e30": 56,
-      "e34": 54,
-      "e36": 52,
-      "e38": 53,
-      "e39": 53,
-      "e46": 53,
-      "e60": 53,
-      "e70": 53,
-      "e87": 54,
-      "e88": 51,
-      "e90": 54,
+      "e28": 54,
+      "e30": 58,
+      "e34": 56,
+      "e36": 54,
+      "e38": 55,
+      "e39": 55,
+      "e46": 55,
+      "e60": 55,
+      "e70": 55,
+      "e87": 56,
+      "e88": 53,
+      "e90": 56,
       "f-series": 8,
-      "f10": 52,
-      "f15": 51,
-      "f22": 52,
-      "f30": 53
+      "f10": 54,
+      "f15": 53,
+      "f22": 54,
+      "f30": 55
     }
   }
 }
