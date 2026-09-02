@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T02:53:09.793Z",
+  "generated": "2026-09-02T03:14:27.107Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -786,6 +786,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E28 · Auswuchten, Radbolzen, Reifenalter",
+      "valid": "E28 · 1981–1988",
+      "summary": "Diese Baureihe hat in aller Regel keine elektronische Reifendrucküberwachung. Damit ist die Gruppe rein mechanisch — und die häufigste Klage, ein zitterndes Lenkrad, hat eine klare Prüfreihenfolge.",
+      "points": [
+        "Radbolzen nach Herstellervorgabe anziehen und nach kurzer Fahrstrecke nachziehen. Den Wert nie schaetzen -- zu fest verzieht die Bremsscheibe, zu locker loest sich das Rad",
+        "Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage. Erst wenn das Auswuchten nichts bringt, lohnt der Blick auf Bremsscheibe und Fahrwerk",
+        "Unwucht, die nach dem Auswuchten wiederkommt: Reifen mit Hoehen- oder Seitenschlag, verzogene Felge oder Schmutz auf der Nabenauflage",
+        "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
+        "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
+        "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1482,6 +1503,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E30 · Auswuchten, Radbolzen, Reifenalter",
+      "valid": "E30 · 1982–1994",
+      "summary": "Diese Baureihe hat in aller Regel keine elektronische Reifendrucküberwachung. Damit ist die Gruppe rein mechanisch — und die häufigste Klage, ein zitterndes Lenkrad, hat eine klare Prüfreihenfolge.",
+      "points": [
+        "Radbolzen nach Herstellervorgabe anziehen und nach kurzer Fahrstrecke nachziehen. Den Wert nie schaetzen -- zu fest verzieht die Bremsscheibe, zu locker loest sich das Rad",
+        "Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage. Erst wenn das Auswuchten nichts bringt, lohnt der Blick auf Bremsscheibe und Fahrwerk",
+        "Unwucht, die nach dem Auswuchten wiederkommt: Reifen mit Hoehen- oder Seitenschlag, verzogene Felge oder Schmutz auf der Nabenauflage",
+        "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
+        "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
+        "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2035,6 +2077,27 @@
       "details": [
         "D4F-E34-115"
       ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E34 · Auswuchten, Radbolzen, Reifenalter",
+      "valid": "E34 · 1987–1997",
+      "summary": "Diese Baureihe hat in aller Regel keine elektronische Reifendrucküberwachung. Damit ist die Gruppe rein mechanisch — und die häufigste Klage, ein zitterndes Lenkrad, hat eine klare Prüfreihenfolge.",
+      "points": [
+        "Radbolzen nach Herstellervorgabe anziehen und nach kurzer Fahrstrecke nachziehen. Den Wert nie schaetzen -- zu fest verzieht die Bremsscheibe, zu locker loest sich das Rad",
+        "Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage. Erst wenn das Auswuchten nichts bringt, lohnt der Blick auf Bremsscheibe und Fahrwerk",
+        "Unwucht, die nach dem Auswuchten wiederkommt: Reifen mit Hoehen- oder Seitenschlag, verzogene Felge oder Schmutz auf der Nabenauflage",
+        "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
+        "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
+        "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
       "model": "e34"
     },
     {
@@ -2646,6 +2709,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E36 · Auswuchten, Radbolzen, Reifenalter",
+      "valid": "E36 · 1989–2002",
+      "summary": "Diese Baureihe hat in aller Regel keine elektronische Reifendrucküberwachung. Damit ist die Gruppe rein mechanisch — und die häufigste Klage, ein zitterndes Lenkrad, hat eine klare Prüfreihenfolge.",
+      "points": [
+        "Radbolzen nach Herstellervorgabe anziehen und nach kurzer Fahrstrecke nachziehen. Den Wert nie schaetzen -- zu fest verzieht die Bremsscheibe, zu locker loest sich das Rad",
+        "Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage. Erst wenn das Auswuchten nichts bringt, lohnt der Blick auf Bremsscheibe und Fahrwerk",
+        "Unwucht, die nach dem Auswuchten wiederkommt: Reifen mit Hoehen- oder Seitenschlag, verzogene Felge oder Schmutz auf der Nabenauflage",
+        "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
+        "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
+        "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3201,6 +3285,29 @@
       "engines": [],
       "details": [
         "D4F-E38-115"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E38 · Druckkontrolle als Sonderausstattung, Auswuchten",
+      "valid": "E38 · 1993–2001",
+      "summary": "Beim E38 kann eine Reifendruckkontrolle mit Sensoren verbaut sein, muss aber nicht. Die erste Frage ist deshalb, was das Fahrzeug tatsächlich hat — davon hängt ab, ob ein Radsatz Sensoren braucht.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Mit Sensoren im Rad: Ein zweiter Radsatz braucht eigene Sensoren, und sie muessen dem Fahrzeug bekannt gemacht werden",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-103"
       ],
       "model": "e38"
     },
@@ -3817,6 +3924,29 @@
       "engines": [],
       "details": [
         "D4F-E39-115"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E39 · System bestimmen, Auswuchten, Lenkradzittern abgrenzen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 fällt Lenkradzittern in zwei Zuständigkeiten: Auswuchtung und Zugstrebe. Diese Gruppe klärt die erste — und sagt, wann man aufhören sollte, an den Rädern zu suchen.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Lenkradzittern beim Bremsen ist am E39 die Zugstrebe der Vorderachse, nicht die Auswuchtung. Zittern bei gleichmaessiger Fahrt dagegen gehoert hierher",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
       ],
       "model": "e39"
     },
@@ -4475,6 +4605,29 @@
       "engines": [],
       "details": [
         "D4F-E46-115"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E46 · System bestimmen, Auswuchten, Reifenverschleiß deuten",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 ist ungleichmäßiger Reifenverschleiß ein Hinweis auf die Achse — und bei dieser Baureihe lohnt es sich, dem nachzugehen, bevor neue Reifen gekauft werden.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Ungleichmaessiger Verschleiss ist ein Achsbefund. Beim E46 gehoeren dazu die bekannten Achstraegeraufnahmen hinten -- ein Riss dort verstellt die Geometrie dauerhaft",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-108"
       ],
       "model": "e46"
     },
@@ -5144,6 +5297,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E60 · Reifenpannenanzeige, Radsatzwechsel, Auswuchten",
+      "valid": "E60 · 2003–2010",
+      "summary": "Beim E60 ist die Rückstellung nach jedem Radwechsel und jeder Druckkorrektur Pflicht. Wird sie vergessen, meldet das Fahrzeug später einen Druckverlust, den es nie gab.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Zweiter Radsatz: Bei einem System mit Sensoren braucht er eigene, dem Fahrzeug bekannte Sensoren. Ohne Sensoren genuegt die Ruecksetzung nach dem Wechsel",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-103"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5725,6 +5901,29 @@
       "engines": [],
       "details": [
         "D4F-E70-115"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E70 · Reifendruck, schwere Räder, Anhängebetrieb",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 arbeiten große, schwere Räder an einem schweren Fahrzeug. Das verschärft alles, was in dieser Gruppe steht — Unwucht, Bolzenanzug und Druck.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Beim schweren Fahrzeug wirkt eine kleine Unwucht deutlich staerker. Auswuchten ist hier kein Komfortthema, sondern eine Verschleissfrage fuer Radlager und Fahrwerk",
+        "Anhaengebetrieb und Beladung aendern den vorgeschriebenen Druck. Die Tabelle am Fahrzeug nennt die Werte -- sie gehoert gelesen, nicht geschaetzt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-103"
       ],
       "model": "e70"
     },
@@ -6403,6 +6602,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E87 · Reifenpannenanzeige, Rückstellung, Auswuchten",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 ist die vergessene Rückstellung nach dem Radwechsel der häufigste Grund für eine Warnung ohne Anlass.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Warnung ohne Druckverlust nach einem Radwechsel: die Ruecksetzung fehlt. Kein Defekt",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-103"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7018,6 +7240,29 @@
       "engines": [],
       "details": [
         "D4F-E88-115"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E88 · Reifenpannenanzeige, Cabrio-Gewicht, Auswuchten",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Gruppe entspricht der des E87. Das Mehrgewicht des Cabrios wirkt auf Reifen und Radlager — und macht Unwucht früher spürbar.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Das Mehrgewicht der Verdeckmechanik belastet Reifen und Radlager staerker; Unwucht faellt frueher auf",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-103"
       ],
       "model": "e88"
     },
@@ -7818,6 +8063,30 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E90 · Reifenpannenanzeige zurücksetzen, Encoderring beachten",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 hängt die Reifenpannenanzeige an denselben Raddrehzahlgebern wie die DSC. Wer das weiß, deutet einen Doppelbefund richtig.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Reifenpannenanzeige und DSC gleichzeitig gestoert: Das ist ein Raddrehzahlbefund, nicht zwei Fehler. Der Geberring sitzt im Radlager und geht nur mit ihm",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-103",
+        "D4F-E90-108"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8538,6 +8807,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F10 · Druckkontrolle mit Sensoren, zweiter Radsatz",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist die Druckkontrolle mit Sensoren der Regelfall. Damit wird der zweite Radsatz zu einem eigenen Thema — und die Sensoren zu einem Verschleißteil mit Ablaufdatum.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Sensoren im Rad haben eine eingebaute Batterie, die nicht getauscht werden kann. Ein Sensor, der nach Jahren ausfaellt, ist kein Defekt, sondern das Ende seiner Lebensdauer",
+        "Zweiter Radsatz braucht eigene Sensoren, die dem Fahrzeug bekannt gemacht werden. Ohne das meldet das Fahrzeug nach jedem Wechsel einen Fehler"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-103"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9081,6 +9373,29 @@
       "engines": [],
       "details": [
         "D4F-F15-115"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F15 · Druckkontrolle, schwere Räder, Beladung",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Am F15 kommen große Räder, hohes Gewicht und wechselnde Beladung zusammen. Der vorgeschriebene Druck ist deshalb keine feste Zahl, sondern hängt am Beladungszustand.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Beladung und Anhaengebetrieb aendern den vorgeschriebenen Druck. Die Tabelle am Fahrzeug nennt die Werte -- sie gehoert gelesen, nicht geschaetzt",
+        "Sensoren im Rad haben eine eingebaute Batterie ohne Wechselmoeglichkeit; ein zweiter Radsatz braucht eigene"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-103"
       ],
       "model": "f15"
     },
@@ -9658,6 +9973,29 @@
       "engines": [],
       "details": [
         "D4F-F22-115"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F22 · Druckkontrolle, Mischbereifung, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Beim F22 kommt eine Besonderheit dazu, die zu Fehldeutungen führt: Bei Mischbereifung sind vorn und hinten unterschiedliche Größen und Drücke vorgesehen.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Mischbereifung: Vorne und hinten koennen unterschiedliche Groessen und Druecke vorgeschrieben sein. Ein Radtausch von vorn nach hinten ist dann nicht zulaessig",
+        "Sensoren im Rad haben eine eingebaute Batterie ohne Wechselmoeglichkeit; ein zweiter Radsatz braucht eigene"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-103"
       ],
       "model": "f22"
     },
@@ -10280,6 +10618,29 @@
       "engines": [],
       "details": [
         "D4F-F30-115"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F30 · Druckkontrolle, Sensorlebensdauer, Radsatzwechsel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 ist die Druckkontrolle mit Sensoren die Regel. Der häufigste Befund ist deshalb kein Reifen- und kein Radbefund, sondern eine leere Sensorbatterie.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Sensoren im Rad haben eine eingebaute Batterie, die nicht getauscht werden kann. Ausfall nach Jahren ist Lebensdauer, kein Defekt",
+        "Zweiter Radsatz braucht eigene, dem Fahrzeug bekannte Sensoren"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-103"
       ],
       "model": "f30"
     }
@@ -17468,26 +17829,26 @@
     }
   },
   "stats": {
-    "total_docs": 380,
+    "total_docs": 396,
     "total_guides": 40,
     "per_model": {
-      "e28": 21,
-      "e30": 28,
-      "e34": 23,
-      "e36": 23,
-      "e38": 23,
-      "e39": 24,
-      "e46": 25,
-      "e60": 24,
-      "e70": 23,
-      "e87": 24,
-      "e88": 21,
-      "e90": 26,
+      "e28": 22,
+      "e30": 29,
+      "e34": 24,
+      "e36": 24,
+      "e38": 24,
+      "e39": 25,
+      "e46": 26,
+      "e60": 25,
+      "e70": 24,
+      "e87": 25,
+      "e88": 22,
+      "e90": 27,
       "f-series": 5,
-      "f10": 22,
-      "f15": 22,
-      "f22": 23,
-      "f30": 23
+      "f10": 23,
+      "f15": 23,
+      "f22": 24,
+      "f30": 24
     }
   }
 }

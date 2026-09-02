@@ -592,6 +592,28 @@
       "details": [
         "D4F-E39-115"
       ]
+    },
+    {
+      "id": "D4F-E39-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E39 · System bestimmen, Auswuchten, Lenkradzittern abgrenzen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 fällt Lenkradzittern in zwei Zuständigkeiten: Auswuchtung und Zugstrebe. Diese Gruppe klärt die erste — und sagt, wann man aufhören sollte, an den Rädern zu suchen.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Lenkradzittern beim Bremsen ist am E39 die Zugstrebe der Vorderachse, nicht die Auswuchtung. Zittern bei gleichmaessiger Fahrt dagegen gehoert hierher",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
+      ]
     }
   ]
 }

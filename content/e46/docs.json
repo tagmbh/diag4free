@@ -633,6 +633,28 @@
       "details": [
         "D4F-E46-115"
       ]
+    },
+    {
+      "id": "D4F-E46-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E46 · System bestimmen, Auswuchten, Reifenverschleiß deuten",
+      "valid": "E46 · 1997–2006",
+      "summary": "Am E46 ist ungleichmäßiger Reifenverschleiß ein Hinweis auf die Achse — und bei dieser Baureihe lohnt es sich, dem nachzugehen, bevor neue Reifen gekauft werden.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Ungleichmaessiger Verschleiss ist ein Achsbefund. Beim E46 gehoeren dazu die bekannten Achstraegeraufnahmen hinten -- ein Riss dort verstellt die Geometrie dauerhaft",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-108"
+      ]
     }
   ]
 }

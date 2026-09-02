@@ -599,6 +599,28 @@
       "details": [
         "D4F-F30-115"
       ]
+    },
+    {
+      "id": "D4F-F30-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F30 · Druckkontrolle, Sensorlebensdauer, Radsatzwechsel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 ist die Druckkontrolle mit Sensoren die Regel. Der häufigste Befund ist deshalb kein Reifen- und kein Radbefund, sondern eine leere Sensorbatterie.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Sensoren im Rad haben eine eingebaute Batterie, die nicht getauscht werden kann. Ausfall nach Jahren ist Lebensdauer, kein Defekt",
+        "Zweiter Radsatz braucht eigene, dem Fahrzeug bekannte Sensoren"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-103"
+      ]
     }
   ]
 }
