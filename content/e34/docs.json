@@ -1150,6 +1150,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-151",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E34 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Deckel wird nach Vorgabe buendig eingestellt. Steht er an einer Ecke ueber, pfeift er und dichtet schlechter -- das ist eine Einstellungsfrage und keine Dichtungsfrage",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Fuehrungen und Gleitstuecke werden gefettet, nicht geoelt. Oel zieht Staub an und macht sie mit der Zeit schwergaengiger, als sie vorher waren",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E34-152",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E34 · Vier Adressen, eine Reihenfolge",
+      "valid": "E34 · 1987–1996",
+      "summary": "Am E34 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein Werksautotelefon aus dieser Zeit findet kein Netz mehr, weil es das Netz nicht mehr gibt. Das ist kein Defekt und durch keine Reparatur zu beheben -- die Ausstattung ist funktionslos geworden",
+        "Ein Antennenanschluss, der nur bei Naesse stoert, ist korrodiert. Der Empfang wird dann wetterabhaengig, und das ist ein Befund und keine Eigenart"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

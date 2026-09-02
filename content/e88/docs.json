@@ -1198,6 +1198,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-147",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dach E88 · Einstellung, Dichtung, Geraeusch",
+      "valid": "E88 · 2007–2013",
+      "summary": "Ablaeufe und Anlernen stehen im ersten Dokument. Hier geht es um das, was danach kommt: die Einstellung, die Dichtung und die Frage, ob ein Geraeusch ueberhaupt ein Dichtungsproblem ist.",
+      "points": [
+        "Ein Verdeck wird auf Spannung eingestellt. Falten im geschlossenen Zustand sind ein Einstellbefund und kein Materialschaden -- ein neues Verdeck faltet an derselben Stelle",
+        "Windgeraeusch und Wassereintritt getrennt aufnehmen. Ein Dach kann pfeifen und trotzdem dicht sein, und es kann dicht wirken und trotzdem Wasser durchlassen -- zwei Befunde, zwei Wege",
+        "Die Dichtung wird gepflegt und nicht getauscht. Eine ausgetrocknete Dichtung reisst beim Oeffnen im Winter, und dann ist aus Pflege ein Ersatzteil geworden",
+        "Ein festgefrorenes Dach nicht mit Gewalt oeffnen. Was dabei reisst, ist die Dichtung, und der Antrieb nimmt es ebenfalls uebel",
+        "Das Verdeck vor dem Einlagern trocken schliessen. Feucht zusammengelegt schimmelt der Stoff, und das ist nicht mehr zu reinigen",
+        "Ein Dach, das nie bewegt wird, wird schwergaengig. Es einmal im Monat ganz zu oeffnen und zu schliessen ist die billigste Wartung dieser Gruppe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E88-148",
+      "type": "GUIDE",
+      "gruppe": "84",
+      "cat": "Kommunikation",
+      "title": "Freisprechen und Empfang E88 · Vier Adressen, eine Reihenfolge",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 wird ein Telefonproblem regelmaessig dem Fahrzeug angelastet. Diese Seite trennt die vier moeglichen Adressen und nennt die Gegenprobe, die nichts kostet.",
+      "points": [
+        "Ein Freisprechproblem hat vier moegliche Adressen: das Telefon, die Kopplung, das Fahrzeuggeraet und Mikrofon oder Antenne. Vor jeder Arbeit festlegen, welche geprueft wird",
+        "Die Gegenprobe mit einem zweiten Telefon trennt Fahrzeug und Endgeraet in fuenf Minuten und kostet nichts. Sie steht vor jeder Messung und vor jedem Softwarestand",
+        "Wer schlecht verstanden wird, hat ein Mikrofonproblem. Wer schlecht hoert, ein Wiedergabeproblem. Zwei Richtungen, zwei Adressen -- die Beschwerde gehoert genau so aufgenommen",
+        "Gestoerter Empfang nach einem Scheibentausch ist ein Anschlussbefund am Antennenverstaerker und kein Empfangsproblem. Das gehoert zuerst geprueft, bevor irgendetwas anderes vermutet wird",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Bei Stoerungen im Verbund zuerst klaeren, ob nur diese Funktion ausfaellt oder mehrere -- mehrere heissen Ring und nicht Telefon, siehe Gruppe 65"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
