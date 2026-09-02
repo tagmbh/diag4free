@@ -410,6 +410,28 @@
         "D4F-F10-107",
         "D4F-F10-108"
       ]
+    },
+    {
+      "id": "D4F-F10-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F10 · Zentrale Lichtsteuerung, LED und Xenon, Anhängerbetrieb",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist Beleuchtung vollständig gesteuert und teilweise LED. Das ändert zwei Dinge: Der Fehlerspeicher wird zur ersten Adresse, und ein defektes Leuchtmittel ist oft kein Wechselteil mehr.",
+      "points": [
+        "Fehlerspeicher zuerst — die Lichtfunktionen melden sich einzeln und namentlich, statt sich messen zu lassen",
+        "LED-Einheiten sind vielfach nicht einzeln ersetzbar. Ein Ausfall bedeutet dann Scheinwerfer oder Leuchte komplett; das gehört in die Kostenschätzung vor die Zusage",
+        "Xenon-Ausführungen behalten je Scheinwerfer ein eigenes Vorschaltgerät",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen; nach Fahrwerksarbeiten Lenkwinkelabgleich",
+        "Fehler nur mit Anhänger: Anhängermodul und dessen Verkabelung",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-109"
+      ]
     }
   ]
 }

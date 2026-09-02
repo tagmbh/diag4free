@@ -498,6 +498,28 @@
         "D4F-E87-107",
         "D4F-E87-108"
       ]
+    },
+    {
+      "id": "D4F-E87-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E87 · Fußraummodul, Wassereintritt, Xenon getrennt",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 ist das Fußraummodul der Dreh- und Angelpunkt der Beleuchtung — und zugleich die Stelle, an der Wasser den größten Schaden anrichtet. Beides gehört zusammen gedacht.",
+      "points": [
+        "Fallen Beleuchtung und weitere Komfortfunktionen gemeinsam aus, ist das Modul der Kandidat, nicht die Leuchte",
+        "Wassereintritt über verstopfte Abläufe erreicht das Modul im Fußraum und schädigt es schleichend. Bei feuchtem Teppich ist die Abflussreinigung der erste Schritt — sonst wiederholt sich der Schaden",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar; für seine Fehler ist passende Software nötig",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät und wird vom Modul nicht wie eine Glühlampe überwacht",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig — ein Modul aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-109"
+      ]
     }
   ]
 }

@@ -402,6 +402,28 @@
         "D4F-F22-107",
         "D4F-F22-108"
       ]
+    },
+    {
+      "id": "D4F-F22-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F22 · LED-Einheiten, Codierung nach Umbau, Fehlerspeicher",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Lichtanlage des F22 folgt der des F30. Was hier häufiger vorkommt, ist der nachträgliche Umbau — und der ist der häufigste Grund für Fehlermeldungen ohne Defekt.",
+      "points": [
+        "Nachgerüstete oder getauschte Leuchtmittelart ohne passende Codierung: Das Fahrzeug meldet Ausfall, obwohl das Licht brennt. Das ist kein Defekt, sondern ein Codierstand",
+        "Fehlerspeicher zuerst; die Lichtfunktionen melden sich einzeln",
+        "LED-Einheiten vielfach nicht einzeln ersetzbar — Ausfall bedeutet die komplette Einheit",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-109"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T00:27:59.023Z",
+  "generated": "2026-09-02T00:49:09.802Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -627,6 +627,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E28 · Massepunkte, Rückleuchtenplatine, Check Control",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 ist Licht reine Elektrik ohne Steuergerät. Fast jeder Befund endet an einem von zwei Orten: an einem korrodierten Massepunkt oder an den Kontakten der Rückleuchtenplatine.",
+      "points": [
+        "Mehrere Leuchten gleichzeitig ausgefallen oder zu dunkel: das ist ein Massepunkt, keine Lampe. Die gemeinsame Masse ist die einzige Erklärung für einen gemeinsamen Ausfall",
+        "Rückleuchten: die Kontakte der Trägerplatine oxidieren. Eine Lampe, die nach dem Wechsel wieder ausfällt, hat ein Kontaktproblem, kein Lampenproblem",
+        "Check Control meldet Ausfall bei funktionierender Lampe: der Überwachungskreis misst den Strom. Eine Lampe mit falscher Leistung oder ein schlechter Kontakt genügt für die Meldung",
+        "Blinker schlägt zu schnell: eine Lampe des Kreises ist ausgefallen oder hat zu geringe Leistung — das ist die Funktion des Relais, nicht sein Defekt",
+        "Vor jedem Bauteiltausch die Steckverbindung öffnen und ansehen. Bei diesem Alter ist Korrosion wahrscheinlicher als ein defektes Bauteil",
+        "Scheinwerfereinstellung nach jedem Wechsel eines Scheinwerfers prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-109"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1164,6 +1187,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E30 · Rückleuchtenkontakte, Masse, Blinkerrelais",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 kommt die Mehrzahl der Lichtklagen aus Kontakten und Masse, nicht aus Lampen. Wer das weiß, tauscht keine Glühlampe, die nichts kann.",
+      "points": [
+        "Lampe fällt nach dem Wechsel erneut aus: Kontakt der Rückleuchtenplatine oder korrodierte Fassung. Kontaktflächen ansehen, nicht die Lampe",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache",
+        "Blinker schlägt zu schnell: Ausfall im selben Kreis. Das Relais meldet korrekt, es ist nicht defekt",
+        "Check Control zeigt Ausfall bei brennender Lampe: Der Kreis misst Strom — falsche Lampenleistung oder Übergangswiderstand reichen aus",
+        "Beim Cabrio kommt Feuchtigkeit über die Verdeckentwässerung an Steckverbindungen im Heck; nasse Stecker sind dort eine eigene Fehlerquelle",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-109"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1557,6 +1603,29 @@
       "engines": [],
       "details": [
         "D4F-E34-107"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E34 · Check Control, Rückleuchtenplatine, Leuchtweitenregelung",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 überwacht seine Beleuchtung und meldet Ausfälle selbst. Das ist hilfreich, solange man weiß, dass die Meldung einen Strom misst und keine Lampe sieht.",
+      "points": [
+        "Check-Control-Meldung bei brennender Lampe: Der Kreis beurteilt Strom. Eine Lampe mit abweichender Leistung oder ein Übergangswiderstand erzeugt die Meldung",
+        "Rückleuchtenplatine: oxidierte Kontakte sind die häufigste Ursache wiederkehrender Ausfälle",
+        "Mehrere Leuchten gleichzeitig: Massepunkt prüfen, nicht Lampen tauschen",
+        "Leuchtweitenregelung ohne Wirkung: Stellmotor, Schalter und Verkabelung getrennt prüfen; der Motor sitzt am Scheinwerfer und fällt einzeln aus",
+        "Blinker zu schnell: Ausfall im selben Kreis — die Funktion arbeitet richtig",
+        "Scheinwerfereinstellung nach jedem Eingriff prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-109"
       ],
       "model": "e34"
     },
@@ -2010,6 +2079,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E36 · Fassungen, Masse, Nebelscheinwerfer",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist die Lichtanlage konventionell, und die Fehler sitzen dort, wo Feuchtigkeit hinkommt: in Fassungen, Steckern und an den Nebelscheinwerfern ganz vorn.",
+      "points": [
+        "Wiederkehrender Ausfall derselben Lampe: Fassung und Kontakt, nicht die Lampe",
+        "Nebelscheinwerfer sitzen tief und bekommen Wasser und Salz ab — Stecker und Gehäuse sind dort die erste Verdachtsstelle",
+        "Mehrere Leuchten gemeinsam ausgefallen: gemeinsamer Massepunkt",
+        "Check-Control-Meldung bei brennender Lampe: Strommessung, nicht Sichtprüfung. Abweichende Lampenleistung genügt",
+        "Blinker zu schnell: Ausfall im selben Kreis",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen; beim Compact und Cabrio abweichende Scheinwerferaufnahmen beachten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-109"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2406,6 +2498,29 @@
       "engines": [],
       "details": [
         "D4F-E38-107"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E38 · Lichtmodul, Xenon mit eigenem Vorschaltgerät, Leuchtweite",
+      "valid": "E38 · 1993–2001",
+      "summary": "Mit dem E38 zieht ein Lichtsteuergerät ein — und mit dem Xenon eine zweite, davon unabhängige Elektronik. Die beiden auseinanderzuhalten ist der wichtigste Schritt dieser Gruppe.",
+      "points": [
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät. Es fällt einzeln aus, und das Lichtmodul überwacht es nicht wie eine Glühlampe",
+        "Ein Xenon-Scheinwerfer ohne Funktion: Brenner, Vorschaltgerät und Zündeinheit sind drei Bauteile, nicht eines. Die Reihenfolge der Prüfung entscheidet über die Kosten",
+        "Lichtmodul-Fehlermeldungen zu Glühlampen zuerst gegen Fassung und Kontakt prüfen — die Meldung beurteilt Strom",
+        "Automatische Leuchtweitenregelung: Niveaugeber an der Achse, Stellmotoren am Scheinwerfer und die Ansteuerung sind getrennte Kandidaten",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt",
+        "Vorsicht bei Xenon: Zündspannung. Vor Arbeiten am Scheinwerfer Licht ausschalten und stromlos machen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-109"
       ],
       "model": "e38"
     },
@@ -2862,6 +2977,29 @@
       "engines": [],
       "details": [
         "D4F-E39-107"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E39 · Lichtmodul, Rückleuchtenplatine, Xenon getrennt beurteilen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 laufen die Glühlampenkreise über das Lichtmodul, das Xenon aber nicht. Diese Trennung erklärt die meisten Fehldiagnosen: Wer alles beim Lichtmodul sucht, sucht beim Xenon am falschen Ort.",
+      "points": [
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Lichtmodul. Ein einseitiger Ausfall ist dort und nicht im Modul zu suchen",
+        "Wiederkehrende Ausfälle im Heck: Kontakte der Rückleuchtenplatine. Ein Lampenwechsel behebt das nicht dauerhaft",
+        "Meldung bei brennender Lampe: die Überwachung misst Strom — Kontaktwiderstand oder falsche Lampenleistung genügen",
+        "Automatische Leuchtweitenregelung: Niveaugeber, Stellmotor und Ansteuerung getrennt prüfen",
+        "Mehrere Leuchten gemeinsam: Massepunkt vor Bauteil",
+        "Vor Arbeiten am Xenon-Scheinwerfer stromlos machen — Zündspannung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-109"
       ],
       "model": "e39"
     },
@@ -3361,6 +3499,29 @@
       "details": [
         "D4F-E46-107",
         "D4F-E46-108"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E46 · Lichtmodul, Fassungen im Heck, Xenon mit eigener Elektronik",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 verbindet ein überwachendes Lichtmodul mit Rückleuchtenfassungen, die gern schlechten Kontakt machen. Zusammen erzeugen sie Meldungen, für die reihenweise funktionierende Lampen getauscht werden.",
+      "points": [
+        "Ausfallmeldung bei brennender Lampe: Übergangswiderstand in der Fassung. Kontaktflächen ansehen, bevor eine Lampe gekauft wird",
+        "Wiederkehrender Ausfall derselben Position: Fassung oder Platinenkontakt im Heck",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät und wird vom Lichtmodul nicht wie eine Glühlampe überwacht. Einseitiger Ausfall gehört dorthin",
+        "Beim Xenon sind Brenner, Vorschaltgerät und Zündeinheit drei getrennte Bauteile — der Reihe nach prüfen, nicht raten",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Überwachungskreis Strom misst. Das ist kein Fehler des Fahrzeugs"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-109"
       ],
       "model": "e46"
     },
@@ -3871,6 +4032,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E60 · Fußraummodul, adaptives Licht, Xenon getrennt",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 sitzt die Lichtsteuerung im Fußraummodul. Damit verschiebt sich die Diagnose: Das Modul ist über generische Geräte nicht erreichbar, und Xenon überwacht es ohnehin nicht.",
+      "points": [
+        "Das Fußraummodul steuert die Beleuchtung zentral. Es antwortet nicht auf generische OBD-Anfragen — für Fehler aus diesem Modul ist eine Software nötig, die es ansprechen kann",
+        "Es überwacht Glühlampenkreise. Xenon hat je Scheinwerfer sein eigenes Vorschaltgerät und fällt unabhängig davon aus",
+        "Adaptives Kurvenlicht ohne Funktion: Stellmotor am Scheinwerfer, Lenkwinkel und Niveaugeber sind getrennte Kandidaten. Nach Fahrwerks- oder Lenkungsarbeiten zuerst den Lenkwinkelabgleich prüfen",
+        "Fällt Beleuchtung zusammen mit anderen Komfortfunktionen aus, deutet das auf das Modul selbst und nicht auf die Leuchten",
+        "Wassereintritt über verstopfte Abläufe ist ein bekannter Weg zu Modulschäden im Fußraum. Bei nassem Teppich zuerst die Abläufe freimachen",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-109"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4293,6 +4477,29 @@
       "details": [
         "D4F-E70-107",
         "D4F-E70-108"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E70 · Fußraummodul, adaptives Licht, Anhängermodul",
+      "valid": "E70 · 2006–2013",
+      "summary": "Beim E70 kommt zur üblichen Lichtsteuerung der Anhängerbetrieb dazu. Ein Lichtfehler, der nur mit Anhänger auftritt, hat einen eigenen Ort — und der ist nicht die Leuchte.",
+      "points": [
+        "Fehler nur bei angehängtem Anhänger: Anhängermodul und dessen Verkabelung, nicht die Fahrzeugleuchten",
+        "Das Fußraummodul steuert die Beleuchtung zentral und ist über generische OBD-Geräte nicht erreichbar",
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Modul",
+        "Adaptives Kurvenlicht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen. Beim Fahrzeug mit Luftfederung liefert die Niveauregelung die Aufbaulage mit",
+        "Nasser Fußraum: Abläufe freimachen, bevor ein Modulschaden angenommen wird — die Reihenfolge entscheidet, ob der Schaden wiederkommt",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-109"
       ],
       "model": "e70"
     },
@@ -4812,6 +5019,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E87 · Fußraummodul, Wassereintritt, Xenon getrennt",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 ist das Fußraummodul der Dreh- und Angelpunkt der Beleuchtung — und zugleich die Stelle, an der Wasser den größten Schaden anrichtet. Beides gehört zusammen gedacht.",
+      "points": [
+        "Fallen Beleuchtung und weitere Komfortfunktionen gemeinsam aus, ist das Modul der Kandidat, nicht die Leuchte",
+        "Wassereintritt über verstopfte Abläufe erreicht das Modul im Fußraum und schädigt es schleichend. Bei feuchtem Teppich ist die Abflussreinigung der erste Schritt — sonst wiederholt sich der Schaden",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar; für seine Fehler ist passende Software nötig",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät und wird vom Modul nicht wie eine Glühlampe überwacht",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst",
+        "Nach Modultausch ist eine fahrzeugbezogene Anpassung nötig — ein Modul aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-109"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5268,6 +5498,29 @@
       "details": [
         "D4F-E88-107",
         "D4F-E88-108"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E88 · Fußraummodul im Cabrio, Entwässerung, Heckleuchten",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio gilt dasselbe Modul unter schlechteren Bedingungen: Es gibt mehr Wege, auf denen Wasser in den Innenraum kommt, und der Fußraum ist der Ort, an dem es Schaden anrichtet.",
+      "points": [
+        "Feuchtigkeit im Fußraum ist beim E88 zuerst eine Frage der Verdeck- und Wasserkastenentwässerung. Beide freimachen, bevor ein Modulschaden angenommen wird",
+        "Fallen Beleuchtung und weitere Komfortfunktionen gemeinsam aus, ist das Fußraummodul der Kandidat",
+        "Das Modul ist über generische OBD-Geräte nicht erreichbar",
+        "Xenon: eigenes Vorschaltgerät je Scheinwerfer, unabhängig vom Modul",
+        "Heckleuchten und ihre Stecker sitzen im Bereich, in dem Wasser aus der Verdeckentwässerung entlangläuft — Stecker vor Bauteil prüfen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-109"
       ],
       "model": "e88"
     },
@@ -5909,6 +6162,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E90 · Fußraummodul, Wasser über den A-Säulen-Ablauf, Xenon getrennt",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 hat den bekanntesten Lichtbefund seiner Generation: Das Fußraummodul fällt aus, und mit ihm mehrere Funktionen gleichzeitig. Die Ursache liegt oft nicht im Modul, sondern in einem verstopften Ablauf darüber.",
+      "points": [
+        "Typisches Bild: Tagfahrlicht dauerhaft an, Blinker ohne Funktion, Fensterheber tot — mehrere Funktionen zugleich. Das ist das Modul, nicht die Leuchte",
+        "Ein bekannter Weg dorthin ist Wasser über den Ablauf an der A-Säule, das die Platine über Jahre angreift. Bei feuchtem Fußraum den Ablauf freimachen, sonst kommt der Schaden zurück",
+        "Das Modul antwortet nicht auf generische OBD-Anfragen — für seine Fehler ist eine Software nötig, die es erreicht. Ein leerer Fehlerspeicher im generischen Gerät bedeutet hier nichts",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät. Ein einseitiger Xenon-Ausfall ist kein Modulbefund",
+        "Adaptives Kurvenlicht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig; eine Instandsetzung des vorhandenen Moduls ist der Alternativweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-109"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6470,6 +6746,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F10 · Zentrale Lichtsteuerung, LED und Xenon, Anhängerbetrieb",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist Beleuchtung vollständig gesteuert und teilweise LED. Das ändert zwei Dinge: Der Fehlerspeicher wird zur ersten Adresse, und ein defektes Leuchtmittel ist oft kein Wechselteil mehr.",
+      "points": [
+        "Fehlerspeicher zuerst — die Lichtfunktionen melden sich einzeln und namentlich, statt sich messen zu lassen",
+        "LED-Einheiten sind vielfach nicht einzeln ersetzbar. Ein Ausfall bedeutet dann Scheinwerfer oder Leuchte komplett; das gehört in die Kostenschätzung vor die Zusage",
+        "Xenon-Ausführungen behalten je Scheinwerfer ein eigenes Vorschaltgerät",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen; nach Fahrwerksarbeiten Lenkwinkelabgleich",
+        "Fehler nur mit Anhänger: Anhängermodul und dessen Verkabelung",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-109"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6858,6 +7157,29 @@
       "details": [
         "D4F-F15-107",
         "D4F-F15-108"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F15 · LED-Scheinwerfer, Anhängerbetrieb, adaptives Licht",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 kommen LED-Scheinwerfer, adaptives Licht und Anhängerbetrieb zusammen. Jedes davon hat einen eigenen Ort im Fehlerspeicher — und keiner davon ist die Glühlampe.",
+      "points": [
+        "Fehlerspeicher zuerst; bei dieser Zahl von Lichtfunktionen ist Messen von Hand unwirtschaftlich",
+        "LED-Einheiten vielfach nicht einzeln ersetzbar: Ausfall bedeutet die komplette Einheit. Das entscheidet über die Größenordnung der Reparatur",
+        "Fehler nur mit Anhänger: Anhängermodul und dessen Verkabelung, nicht die Fahrzeugleuchten",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen. Beim Fahrzeug mit Luftfederung liefert die Niveauregelung die Aufbaulage",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-109"
       ],
       "model": "f15"
     },
@@ -7276,6 +7598,29 @@
       "details": [
         "D4F-F22-107",
         "D4F-F22-108"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F22 · LED-Einheiten, Codierung nach Umbau, Fehlerspeicher",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Lichtanlage des F22 folgt der des F30. Was hier häufiger vorkommt, ist der nachträgliche Umbau — und der ist der häufigste Grund für Fehlermeldungen ohne Defekt.",
+      "points": [
+        "Nachgerüstete oder getauschte Leuchtmittelart ohne passende Codierung: Das Fahrzeug meldet Ausfall, obwohl das Licht brennt. Das ist kein Defekt, sondern ein Codierstand",
+        "Fehlerspeicher zuerst; die Lichtfunktionen melden sich einzeln",
+        "LED-Einheiten vielfach nicht einzeln ersetzbar — Ausfall bedeutet die komplette Einheit",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-109"
       ],
       "model": "f22"
     },
@@ -7739,6 +8084,29 @@
       "details": [
         "D4F-F30-107",
         "D4F-F30-108"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F30 · LED-Einheiten, Fehlerspeicher zuerst, Codierabhängigkeit",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Am F30 ist Beleuchtung Software mit angeschlossenen Leuchtmitteln. Wer sie wie eine Glühlampenanlage behandelt, sucht an der falschen Stelle — und wer umbaut, ohne zu codieren, erzeugt Fehler, wo keine waren.",
+      "points": [
+        "Fehlerspeicher zuerst; die Lichtfunktionen melden sich einzeln",
+        "LED-Einheiten sind vielfach nicht einzeln ersetzbar — ein Ausfall bedeutet die komplette Einheit",
+        "Nachrüstung oder Wechsel der Leuchtmittelart braucht die passende Codierung. Ohne sie meldet das Fahrzeug Ausfälle, obwohl das Licht brennt",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel eines Scheinwerfers prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-109"
       ],
       "model": "f30"
     }
@@ -14927,26 +15295,26 @@
     }
   },
   "stats": {
-    "total_docs": 268,
+    "total_docs": 284,
     "total_guides": 40,
     "per_model": {
-      "e28": 14,
-      "e30": 21,
-      "e34": 16,
-      "e36": 16,
-      "e38": 16,
-      "e39": 17,
-      "e46": 18,
-      "e60": 17,
-      "e70": 16,
-      "e87": 17,
-      "e88": 14,
-      "e90": 19,
+      "e28": 15,
+      "e30": 22,
+      "e34": 17,
+      "e36": 17,
+      "e38": 17,
+      "e39": 18,
+      "e46": 19,
+      "e60": 18,
+      "e70": 17,
+      "e87": 18,
+      "e88": 15,
+      "e90": 20,
       "f-series": 5,
-      "f10": 15,
-      "f15": 15,
-      "f22": 16,
-      "f30": 16
+      "f10": 16,
+      "f15": 16,
+      "f22": 17,
+      "f30": 17
     }
   }
 }

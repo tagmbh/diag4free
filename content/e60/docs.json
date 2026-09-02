@@ -489,6 +489,28 @@
         "D4F-E60-107",
         "D4F-E60-108"
       ]
+    },
+    {
+      "id": "D4F-E60-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E60 · Fußraummodul, adaptives Licht, Xenon getrennt",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 sitzt die Lichtsteuerung im Fußraummodul. Damit verschiebt sich die Diagnose: Das Modul ist über generische Geräte nicht erreichbar, und Xenon überwacht es ohnehin nicht.",
+      "points": [
+        "Das Fußraummodul steuert die Beleuchtung zentral. Es antwortet nicht auf generische OBD-Anfragen — für Fehler aus diesem Modul ist eine Software nötig, die es ansprechen kann",
+        "Es überwacht Glühlampenkreise. Xenon hat je Scheinwerfer sein eigenes Vorschaltgerät und fällt unabhängig davon aus",
+        "Adaptives Kurvenlicht ohne Funktion: Stellmotor am Scheinwerfer, Lenkwinkel und Niveaugeber sind getrennte Kandidaten. Nach Fahrwerks- oder Lenkungsarbeiten zuerst den Lenkwinkelabgleich prüfen",
+        "Fällt Beleuchtung zusammen mit anderen Komfortfunktionen aus, deutet das auf das Modul selbst und nicht auf die Leuchten",
+        "Wassereintritt über verstopfte Abläufe ist ein bekannter Weg zu Modulschäden im Fußraum. Bei nassem Teppich zuerst die Abläufe freimachen",
+        "Umbau auf LED erzeugt Ausfallmeldungen, weil der Kreis Strom misst"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-109"
+      ]
     }
   ]
 }

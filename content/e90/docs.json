@@ -618,6 +618,28 @@
         "D4F-E90-107",
         "D4F-E90-108"
       ]
+    },
+    {
+      "id": "D4F-E90-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E90 · Fußraummodul, Wasser über den A-Säulen-Ablauf, Xenon getrennt",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 hat den bekanntesten Lichtbefund seiner Generation: Das Fußraummodul fällt aus, und mit ihm mehrere Funktionen gleichzeitig. Die Ursache liegt oft nicht im Modul, sondern in einem verstopften Ablauf darüber.",
+      "points": [
+        "Typisches Bild: Tagfahrlicht dauerhaft an, Blinker ohne Funktion, Fensterheber tot — mehrere Funktionen zugleich. Das ist das Modul, nicht die Leuchte",
+        "Ein bekannter Weg dorthin ist Wasser über den Ablauf an der A-Säule, das die Platine über Jahre angreift. Bei feuchtem Fußraum den Ablauf freimachen, sonst kommt der Schaden zurück",
+        "Das Modul antwortet nicht auf generische OBD-Anfragen — für seine Fehler ist eine Software nötig, die es erreicht. Ein leerer Fehlerspeicher im generischen Gerät bedeutet hier nichts",
+        "Xenon hat je Scheinwerfer ein eigenes Vorschaltgerät. Ein einseitiger Xenon-Ausfall ist kein Modulbefund",
+        "Adaptives Kurvenlicht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen",
+        "Nach Modultausch ist die fahrzeugbezogene Anpassung nötig; eine Instandsetzung des vorhandenen Moduls ist der Alternativweg"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-109"
+      ]
     }
   ]
 }

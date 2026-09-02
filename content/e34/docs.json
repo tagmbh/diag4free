@@ -381,6 +381,28 @@
       "details": [
         "D4F-E34-107"
       ]
+    },
+    {
+      "id": "D4F-E34-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E34 · Check Control, Rückleuchtenplatine, Leuchtweitenregelung",
+      "valid": "E34 · 1987–1997",
+      "summary": "Der E34 überwacht seine Beleuchtung und meldet Ausfälle selbst. Das ist hilfreich, solange man weiß, dass die Meldung einen Strom misst und keine Lampe sieht.",
+      "points": [
+        "Check-Control-Meldung bei brennender Lampe: Der Kreis beurteilt Strom. Eine Lampe mit abweichender Leistung oder ein Übergangswiderstand erzeugt die Meldung",
+        "Rückleuchtenplatine: oxidierte Kontakte sind die häufigste Ursache wiederkehrender Ausfälle",
+        "Mehrere Leuchten gleichzeitig: Massepunkt prüfen, nicht Lampen tauschen",
+        "Leuchtweitenregelung ohne Wirkung: Stellmotor, Schalter und Verkabelung getrennt prüfen; der Motor sitzt am Scheinwerfer und fällt einzeln aus",
+        "Blinker zu schnell: Ausfall im selben Kreis — die Funktion arbeitet richtig",
+        "Scheinwerfereinstellung nach jedem Eingriff prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-109"
+      ]
     }
   ]
 }

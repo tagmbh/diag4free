@@ -338,6 +338,28 @@
       "details": [
         "D4F-E28-103"
       ]
+    },
+    {
+      "id": "D4F-E28-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E28 · Massepunkte, Rückleuchtenplatine, Check Control",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 ist Licht reine Elektrik ohne Steuergerät. Fast jeder Befund endet an einem von zwei Orten: an einem korrodierten Massepunkt oder an den Kontakten der Rückleuchtenplatine.",
+      "points": [
+        "Mehrere Leuchten gleichzeitig ausgefallen oder zu dunkel: das ist ein Massepunkt, keine Lampe. Die gemeinsame Masse ist die einzige Erklärung für einen gemeinsamen Ausfall",
+        "Rückleuchten: die Kontakte der Trägerplatine oxidieren. Eine Lampe, die nach dem Wechsel wieder ausfällt, hat ein Kontaktproblem, kein Lampenproblem",
+        "Check Control meldet Ausfall bei funktionierender Lampe: der Überwachungskreis misst den Strom. Eine Lampe mit falscher Leistung oder ein schlechter Kontakt genügt für die Meldung",
+        "Blinker schlägt zu schnell: eine Lampe des Kreises ist ausgefallen oder hat zu geringe Leistung — das ist die Funktion des Relais, nicht sein Defekt",
+        "Vor jedem Bauteiltausch die Steckverbindung öffnen und ansehen. Bei diesem Alter ist Korrosion wahrscheinlicher als ein defektes Bauteil",
+        "Scheinwerfereinstellung nach jedem Wechsel eines Scheinwerfers prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-109"
+      ]
     }
   ]
 }

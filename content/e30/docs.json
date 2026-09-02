@@ -516,6 +516,28 @@
       "details": [
         "D4F-E30-107"
       ]
+    },
+    {
+      "id": "D4F-E30-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E30 · Rückleuchtenkontakte, Masse, Blinkerrelais",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 kommt die Mehrzahl der Lichtklagen aus Kontakten und Masse, nicht aus Lampen. Wer das weiß, tauscht keine Glühlampe, die nichts kann.",
+      "points": [
+        "Lampe fällt nach dem Wechsel erneut aus: Kontakt der Rückleuchtenplatine oder korrodierte Fassung. Kontaktflächen ansehen, nicht die Lampe",
+        "Mehrere Leuchten gemeinsam betroffen: gemeinsamer Massepunkt. Das ist der schnellste Weg zur Ursache",
+        "Blinker schlägt zu schnell: Ausfall im selben Kreis. Das Relais meldet korrekt, es ist nicht defekt",
+        "Check Control zeigt Ausfall bei brennender Lampe: Der Kreis misst Strom — falsche Lampenleistung oder Übergangswiderstand reichen aus",
+        "Beim Cabrio kommt Feuchtigkeit über die Verdeckentwässerung an Steckverbindungen im Heck; nasse Stecker sind dort eine eigene Fehlerquelle",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-109"
+      ]
     }
   ]
 }

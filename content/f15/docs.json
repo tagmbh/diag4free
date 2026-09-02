@@ -377,6 +377,28 @@
         "D4F-F15-107",
         "D4F-F15-108"
       ]
+    },
+    {
+      "id": "D4F-F15-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten F15 · LED-Scheinwerfer, Anhängerbetrieb, adaptives Licht",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 kommen LED-Scheinwerfer, adaptives Licht und Anhängerbetrieb zusammen. Jedes davon hat einen eigenen Ort im Fehlerspeicher — und keiner davon ist die Glühlampe.",
+      "points": [
+        "Fehlerspeicher zuerst; bei dieser Zahl von Lichtfunktionen ist Messen von Hand unwirtschaftlich",
+        "LED-Einheiten vielfach nicht einzeln ersetzbar: Ausfall bedeutet die komplette Einheit. Das entscheidet über die Größenordnung der Reparatur",
+        "Fehler nur mit Anhänger: Anhängermodul und dessen Verkabelung, nicht die Fahrzeugleuchten",
+        "Adaptives Licht: Stellmotor, Lenkwinkel und Niveaugeber getrennt prüfen. Beim Fahrzeug mit Luftfederung liefert die Niveauregelung die Aufbaulage",
+        "Ein Versorgungs- oder Busfehler kann Lichtfunktionen stilllegen, ohne dass an der Beleuchtung etwas defekt ist",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-109"
+      ]
     }
   ]
 }

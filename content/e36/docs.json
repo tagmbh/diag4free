@@ -433,6 +433,28 @@
       "details": [
         "D4F-E36-107"
       ]
+    },
+    {
+      "id": "D4F-E36-110",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Beleuchtung",
+      "title": "Leuchten E36 · Fassungen, Masse, Nebelscheinwerfer",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 ist die Lichtanlage konventionell, und die Fehler sitzen dort, wo Feuchtigkeit hinkommt: in Fassungen, Steckern und an den Nebelscheinwerfern ganz vorn.",
+      "points": [
+        "Wiederkehrender Ausfall derselben Lampe: Fassung und Kontakt, nicht die Lampe",
+        "Nebelscheinwerfer sitzen tief und bekommen Wasser und Salz ab — Stecker und Gehäuse sind dort die erste Verdachtsstelle",
+        "Mehrere Leuchten gemeinsam ausgefallen: gemeinsamer Massepunkt",
+        "Check-Control-Meldung bei brennender Lampe: Strommessung, nicht Sichtprüfung. Abweichende Lampenleistung genügt",
+        "Blinker zu schnell: Ausfall im selben Kreis",
+        "Scheinwerfereinstellung nach jedem Wechsel prüfen; beim Compact und Cabrio abweichende Scheinwerferaufnahmen beachten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-109"
+      ]
     }
   ]
 }
