@@ -998,6 +998,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E88 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E88 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E88-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E88 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

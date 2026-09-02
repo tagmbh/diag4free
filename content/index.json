@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T08:36:29.229Z",
+  "generated": "2026-09-02T08:50:47.266Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1224,6 +1224,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-141",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E28 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E28 · 1981–1988",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E28 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Ohne Fahrdynamikregelung gibt es keinen Lenkwinkel abzugleichen. Was hier zaehlt, ist die mechanische Geradeausstellung des Lenkrads und die gleichmaessige Verstellung beider Spurstangen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-142",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E28 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Ein Blinker, der zu schnell taktet, meldet einen Ausfall auf derselben Seite. Das ist eine Anzeige und kein Relaisfehler",
+        "Korrosion an den Kontakten der Heckleuchten ist bei diesem Alter der Normalfall. Sie gehoert gereinigt, bevor Leuchtmittel getauscht werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2295,6 +2337,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E30 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E30 · 1982–1994",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E30 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Ohne Fahrdynamikregelung gibt es keinen Lenkwinkel abzugleichen. Was hier zaehlt, ist die mechanische Geradeausstellung des Lenkrads und die gleichmaessige Verstellung beider Spurstangen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E30 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Ein Blinker, der zu schnell taktet, meldet einen Ausfall auf derselben Seite. Das ist eine Anzeige und kein Relaisfehler",
+        "Korrosion an den Kontakten der Heckleuchten ist bei diesem Alter der Normalfall. Sie gehoert gereinigt, bevor Leuchtmittel getauscht werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3282,6 +3366,48 @@
         "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
         "Ein Leistungsmangel, der mit steigender Drehzahl zunimmt, passt zum Gegendruck. Einer, der bei niedriger Drehzahl beginnt, passt nicht dazu"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-141",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E34 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E34 · 1987–1996",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E34 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-142",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E34 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E34 · 1987–1996",
+      "summary": "Am E34 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Ein Blinker, der zu schnell taktet, meldet einen Ausfall auf derselben Seite. Das ist eine Anzeige und kein Relaisfehler",
+        "Korrosion an den Kontakten der Heckleuchten ist bei diesem Alter der Normalfall. Sie gehoert gereinigt, bevor Leuchtmittel getauscht werden"
       ],
       "pins": [],
       "engines": [],
@@ -4293,6 +4419,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-138",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E36 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E36 · 1990–2000",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E36 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-139",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E36 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Ein Blinker, der zu schnell taktet, meldet einen Ausfall auf derselben Seite. Das ist eine Anzeige und kein Relaisfehler",
+        "Korrosion an den Kontakten der Heckleuchten ist bei diesem Alter der Normalfall. Sie gehoert gereinigt, bevor Leuchtmittel getauscht werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5264,6 +5432,48 @@
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-138",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E38 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E38 · 1994–2001",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E38 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-139",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E38 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E38 · 1994–2001",
+      "summary": "Am E38 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -6278,6 +6488,48 @@
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
         "Erhoehter Oelverbrauch und Zuendaussetzer sind die haeufigsten Kat-Killer. Beide gehoeren geklaert, bevor ein neuer eingebaut wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-139",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E39 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E39 · 1995–2004",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E39 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-140",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E39 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -7313,6 +7565,48 @@
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-135",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E46 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E46 · 1998–2006",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E46 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-136",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E46 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -8384,6 +8678,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-136",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E60 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E60 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-137",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E60 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9384,6 +9720,48 @@
         "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-138",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E70 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E70 · 2006–2013",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E70 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-139",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E70 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -10487,6 +10865,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E87 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E87 · 2004–2011",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E87 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E87 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11519,6 +11939,48 @@
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
         "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E88 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E88 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E88 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -12696,6 +13158,48 @@
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
         "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
         "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-136",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung E90 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "E90 · 2004–2013",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am E90 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-137",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten E90 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "An einer Gasentladungsanlage wird nichts unter Spannung gesteckt oder getrennt. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil",
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "Verfaerbte oder angeschmorte Fassungen sind Ursache und nicht Folge. Eine neue Lampe in einer verbrannten Fassung haelt kurz und faellt genauso wieder aus"
       ],
       "pins": [],
       "engines": [],
@@ -13908,6 +14412,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung F10 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "F10 · 2010–2017",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am F10 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten F10 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Nach einem Umbau auf andere Leuchteinheiten ist die Kodierung Teil der Arbeit. Ein nicht codiertes Leuchtmittel verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -14847,6 +15393,48 @@
         "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung F15 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "F15 · 2013–2018",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am F15 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten F15 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am F15 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Nach einem Umbau auf andere Leuchteinheiten ist die Kodierung Teil der Arbeit. Ein nicht codiertes Leuchtmittel verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
       ],
       "pins": [],
       "engines": [],
@@ -15825,6 +16413,48 @@
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
         "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
         "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-137",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung F22 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "F22 · 2013–2021",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am F22 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-138",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten F22 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Nach einem Umbau auf andere Leuchteinheiten ist die Kodierung Teil der Arbeit. Ein nicht codiertes Leuchtmittel verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
       ],
       "pins": [],
       "engines": [],
@@ -16869,6 +17499,48 @@
         "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
         "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
         "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-138",
+      "type": "GUIDE",
+      "gruppe": "32",
+      "cat": "Lenkung",
+      "title": "Achsvermessung F30 · Reifenbild lesen, richtig vorbereiten",
+      "valid": "F30 · 2011–2019",
+      "summary": "Die Bauteile der Lenkung stehen im ersten Dokument. Hier geht es um die Vermessung selbst -- was das Reifenbild verraet und woran eine Vermessung am F30 scheitert, bevor sie beginnt.",
+      "points": [
+        "Das Reifenbild ist ein Messwert, den man umsonst bekommt. Einseitig abgefahren innen oder aussen zeigt auf Sturz und Spur, ein saegezahnartiges Bild auf die Spur -- das grenzt ein, bevor das Fahrzeug auf der Buehne steht",
+        "Vor jeder Vermessung Luftdruck, Spiel und Beladung in Ordnung bringen. Eine Vermessung an einem Fahrzeug mit Spiel in den Gelenken misst das Spiel und nicht die Achse",
+        "Zieht das Fahrzeug, zuerst die Vorderreifen seitenweise tauschen und erneut fahren. Ein Reifen kann selbst eine Zugkraft erzeugen, die keine Vermessung findet -- wandert das Ziehen mit, war es der Reifen",
+        "Steht das Lenkrad nach einer Vermessung schief, wurden die Spurstangen ungleich verstellt. Das ist ein Einstellfehler und kein Achsschaden -- die Gesamtspur kann dabei sogar stimmen",
+        "Sollwerte gelten nur bei der vorgeschriebenen Beladung und Fahrzeughoehe. Eine Vermessung ohne diese Bedingungen liefert Zahlen, die zu nichts passen",
+        "Nach jeder Vermessung und jedem Eingriff an der Lenkung gehoert der Lenkwinkel abgeglichen. Ohne Abgleich arbeitet die Fahrdynamikregelung mit einer falschen Geradeausstellung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-139",
+      "type": "GUIDE",
+      "gruppe": "63",
+      "cat": "Licht",
+      "title": "Leuchten F30 · Warum sie ausfaellt und warum es gemeldet wird",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30 sind der Ausfall einer Leuchte und die Meldung darueber zwei verschiedene Dinge. Diese Seite trennt sie und nennt die Ursachen, die haeufiger sind als das Leuchtmittel selbst.",
+      "points": [
+        "Wo der Lampenstrom ueberwacht wird, meldet eine nachgeruestete LED-Lampe einen Ausfall, obwohl sie leuchtet: Sie zieht zu wenig Strom. Das ist eine Folge des Umbaus und kein Defekt",
+        "Nach einem Umbau auf andere Leuchteinheiten ist die Kodierung Teil der Arbeit. Ein nicht codiertes Leuchtmittel verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Leuchtmittel, das dunkel brennt oder beim Blinken mitleuchtet, hat fast immer einen Massefehler. Der Strom sucht sich seinen Rueckweg ueber die Nachbarlampe -- das ist der klassische Befund, kein Zufall",
+        "Scheinwerfer sind belueftet, leichter Beschlag nach Temperaturwechsel ist normal. Stehendes Wasser oder Beschlag, der nicht mehr weggeht, ist dagegen ein Befund",
+        "LED-Einheiten sind in der Regel nicht einzeln zu ersetzen. Ein einzelner ausgefallener Punkt ist damit eine Kostenfrage und keine Reparaturfrage -- das gehoert vor dem Ausbau geklaert",
+        "Zuendet ein Brenner kurz und geht aus, sind Brenner und Vorschaltgeraet die beiden Verdaechtigen. Kreuzweise auf die andere Seite tauschen: Wandert der Fehler mit, ist es das getauschte Teil"
       ],
       "pins": [],
       "engines": [],
@@ -24060,26 +24732,26 @@
     }
   },
   "stats": {
-    "total_docs": 694,
+    "total_docs": 726,
     "total_guides": 40,
     "per_model": {
-      "e28": 42,
-      "e30": 46,
-      "e34": 44,
-      "e36": 42,
-      "e38": 43,
-      "e39": 43,
-      "e46": 43,
-      "e60": 43,
-      "e70": 43,
-      "e87": 44,
-      "e88": 41,
-      "e90": 44,
+      "e28": 44,
+      "e30": 48,
+      "e34": 46,
+      "e36": 44,
+      "e38": 45,
+      "e39": 45,
+      "e46": 45,
+      "e60": 45,
+      "e70": 45,
+      "e87": 46,
+      "e88": 43,
+      "e90": 46,
       "f-series": 8,
-      "f10": 42,
-      "f15": 41,
-      "f22": 42,
-      "f30": 43
+      "f10": 44,
+      "f15": 43,
+      "f22": 44,
+      "f30": 45
     }
   }
 }
