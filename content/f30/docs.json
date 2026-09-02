@@ -701,6 +701,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-123",
+      "type": "GUIDE",
+      "gruppe": "D1",
+      "cat": "Diagnosezugang",
+      "title": "Diagnosezugang F30 · Grenze der Schnittstelle, Codierstand mitlesen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim F30 haengt fast jede Funktion an einem Steuergeraet, und der Zugang dazu ist gestaffelt. Diese Gruppe beantwortet, wie man an das Fahrzeug kommt — und warum ein leerer Speicher hier weniger aussagt als frueher.",
+      "points": [
+        "Nicht jedes Steuergeraet antwortet auf generische OBD-Anfragen. Die genormte Schnittstelle deckt die abgasrelevanten Systeme ab; Komfort-, Karosserie- und Fahrwerksmodule haengen an fahrzeugeigenen Bussen dahinter. Ein leerer Fehlerspeicher im generischen Geraet belegt deshalb keine Fehlerfreiheit, sondern die Grenze des Werkzeugs",
+        "Ein Codierstand kann eine Funktion stilllegen, ohne einen Fehler zu erzeugen -- das ist der haeufigste Befund, den ein reines Auslesen nicht findet",
+        "Vor dem Auslesen die Bordspannung pruefen. Unterspannung erzeugt Eintraege in vielen Geraeten gleichzeitig -- wer bei schwacher Batterie ausliest, protokolliert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt oder einen definierten Zyklus -- nur wiederkehrende Eintraege sind aktuell, alles andere ist Historie",
+        "Nach Batteriewechsel anmelden und nach Arbeiten an Achse oder Lenkung den Lenkwinkel abgleichen -- beides erzeugt sonst Eintraege, die wie Defekte aussehen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
