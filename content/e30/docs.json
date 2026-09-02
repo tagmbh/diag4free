@@ -494,6 +494,28 @@
       "details": [
         "D4F-E30-107"
       ]
+    },
+    {
+      "id": "D4F-E30-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E30 · Heizungsventil, Vorwiderstand, Kondensatablauf",
+      "valid": "E30 · 1982–1994",
+      "summary": "Die Heizung des E30 ist einfach aufgebaut, und genau deshalb lohnt sich die Reihenfolge: Fast jede Klage lässt sich mit drei Handgriffen einem Bauteil zuordnen, bevor das Armaturenbrett aufgeht.",
+      "points": [
+        "Es wird nicht warm: Heizungsventil und seine Ansteuerung vor dem Wärmetauscher prüfen. Ungleich warme Schläuche deuten auf Verstopfung, gleich heiße auf ein Luftführungsproblem",
+        "Gebläse läuft nur auf der höchsten Stufe: Vorwiderstand. Ein häufiger, billiger und gern falsch diagnostizierter Befund",
+        "Verstopfter Kondensatablauf setzt Wasser in den Beifahrerfußraum. Vor jeder Dichtungssuche den Ablauf freimachen",
+        "Kompressor läuft nicht an: zuerst Kältemitteldruck, denn der Druckschalter sperrt die Kupplung bei zu wenig Füllung",
+        "Welches Kältemittel im System ist, sagt das Schild — nicht das Baujahr. Bei umgerüsteten Anlagen ist die Ölsorte entscheidend und darf nicht gemischt werden",
+        "Beim Cabrio kommt Wasser auch über die Verdeckentwässerung in den Innenraum; das gehört nicht zur Klimaanlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-107"
+      ]
     }
   ]
 }

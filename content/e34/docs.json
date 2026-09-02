@@ -359,6 +359,28 @@
       "details": [
         "D4F-E34-107"
       ]
+    },
+    {
+      "id": "D4F-E34-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E34 · IHKA, Endstufe, Stellmotoren der Klappen",
+      "valid": "E34 · 1987–1997",
+      "summary": "Mit der geregelten Klimaautomatik kommen zwei Bauteile dazu, die den größten Teil der Befunde ausmachen: die Gebläseendstufe und die Stellmotoren der Luftklappen. Beide melden sich hörbar, bevor sie ausfallen.",
+      "points": [
+        "Gebläse regelt nicht mehr stufenlos oder läuft nur voll: Endstufe. Sie ersetzt beim geregelten System den einfachen Vorwiderstand",
+        "Klicken oder Knacken hinter dem Armaturenbrett, oft im Takt: ein Stellmotor, der seine Endlage nicht findet. Das ist kein Elektronikfehler, sondern ein Antrieb",
+        "Nur eine Seite wird warm oder kalt: eine Klappe steht fest oder ihr Antrieb hat kein Signal. Erst die Klappe, dann die Ansteuerung",
+        "Kompressor läuft nicht an: zuerst Kältemitteldruck prüfen — der Druckschalter sperrt bei zu wenig Füllung",
+        "Kondensatablauf freimachen, bevor Feuchtigkeit im Innenraum als Dichtungsproblem behandelt wird",
+        "Welches Kältemittel drin ist, sagt das Schild im Motorraum, nicht das Baujahr"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-107"
+      ]
     }
   ]
 }

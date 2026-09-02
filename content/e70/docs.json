@@ -387,6 +387,29 @@
         "D4F-E70-107",
         "D4F-E70-103"
       ]
+    },
+    {
+      "id": "D4F-E70-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E70 · Mehrzonenanlage, Fondbedienung, Zusatzlüfter",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind es mehr Zonen, mehr Klappen und mehr Stellmotoren als in der Limousine. Das macht die Anlage komfortabler und die Fehlersuche länger — es sei denn, man liest zuerst aus.",
+      "points": [
+        "Fehlerspeicher zuerst: Bei einer Mehrzonenanlage ist die Zuordnung eines Stellmotors von Hand mühsam und im Speicher trivial",
+        "Eine Zone temperiert nicht: Klappe oder Antrieb dieser Zone. Der Rest der Anlage ist damit nicht verdächtig",
+        "Fondanlage getrennt prüfen — sie hat eigene Klappen und eigene Ansteuerung",
+        "Kühlt im Stand nicht: elektrischer Lüfter und Kondensator. Beim großen Fahrzeug mit Anhängebetrieb ist der Kondensator zusätzlich verschmutzungsgefährdet",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht; ohne Druck keine Freigabe",
+        "Kondensatablauf bei Feuchtigkeit im Innenraum freimachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-107",
+        "D4F-E70-108"
+      ]
     }
   ]
 }

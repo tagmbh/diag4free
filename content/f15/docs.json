@@ -354,6 +354,29 @@
         "D4F-F15-107",
         "D4F-F15-103"
       ]
+    },
+    {
+      "id": "D4F-F15-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F15 · Mehrzonenanlage, Fondbereich, Kältemittelart",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 kommen mehr Zonen, ein eigener Fondbereich und ein großes Kältemittelvolumen zusammen. Das macht Lecksuche und Füllmenge zu eigenen Themen — und die Kältemittelart zur ersten Frage.",
+      "points": [
+        "Kältemittelart am Schild ablesen, bevor ein Gerät angeschlossen wird. Sorten und Öle dürfen nicht gemischt werden; das Baujahr entscheidet das nicht",
+        "Mehrzonenanlage: Eine Zone ohne Temperierung grenzt den Fehler auf deren Klappe und Antrieb ein — der Rest der Anlage bleibt unverdächtig",
+        "Fondbereich hat eigene Klappen, eigene Ansteuerung und eigene Leitungen. Ein Leck im hinteren Kreis ist von vorn nicht sichtbar",
+        "Fehlerspeicher zuerst; bei dieser Zahl von Stellmotoren ist die Zuordnung von Hand unwirtschaftlich",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Kondensator bei Gelände- und Anhängebetrieb auf Verschmutzung prüfen — sie kostet zuerst die Kühlleistung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107",
+        "D4F-F15-108"
+      ]
     }
   ]
 }

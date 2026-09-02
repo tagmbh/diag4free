@@ -475,6 +475,29 @@
         "D4F-E87-107",
         "D4F-E87-103"
       ]
+    },
+    {
+      "id": "D4F-E87-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E87 · Gebläseregler, Stellmotoren, Wasserkasten",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die Anlage des E87 folgt der Baureihenfamilie. Was hier besonders auffällt, ist die Entwässerung: Der Wasserkasten setzt sich zu, und das Ergebnis sieht nach Klimaanlage aus, ist aber Laub.",
+      "points": [
+        "Feuchtigkeit im Innenraum: zuerst Wasserkasten und Kondensatablauf reinigen. Erst wenn beide frei sind, ist eine Dichtung ein sinnvoller Verdacht",
+        "Fehlerspeicher des Klimasteuergeräts vor mechanischem Verdacht auslesen",
+        "Gebläse ohne Regelung: Gebläseregler",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe",
+        "Kompressor läuft nicht an: Kältemitteldruck zuerst, denn ohne Druck gibt das Steuergerät nicht frei",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-107",
+        "D4F-E87-108"
+      ]
     }
   ]
 }

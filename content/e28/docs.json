@@ -316,6 +316,28 @@
       "details": [
         "D4F-E28-107"
       ]
+    },
+    {
+      "id": "D4F-E28-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E28 · Heizungsventil, Gebläse, Kältemittelumstellung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 ist die Heizung mechanisch geregelt und die Klimaanlage, wo vorhanden, ein nachgerüstetes oder ab Werk einfaches System. Die häufigste Klage — es wird nicht warm — hat zwei billige Ursachen und eine teure.",
+      "points": [
+        "Wird es nicht warm, obwohl der Motor Temperatur hat: zuerst das Heizungsventil, dann den Bowdenzug oder das Gestänge dahinter. Beides ist billiger als der Wärmetauscher",
+        "Ein verstopfter Wärmetauscher zeigt sich daran, dass beide Schläuche unterschiedlich warm sind. Sind beide gleich heiß, liegt der Fehler in der Luftführung, nicht im Wasserkreis",
+        "Gebläse ohne unterste Stufen, oberste läuft: das ist der Vorwiderstand, nicht der Motor",
+        "Bei Fahrzeugen dieses Alters ist die Anlage in aller Regel auf ein anderes Kältemittel umgestellt worden. Welches drin ist, sagt das Schild im Motorraum — nicht das Baujahr. Öle und Geräte dürfen nicht gemischt werden",
+        "Der Kondensatablauf verstopft und setzt Wasser in den Fußraum. Feuchtigkeit dort ist zuerst eine Ablauffrage, nicht eine Dichtungsfrage",
+        "Ohne Kältemitteldruck schaltet der Kompressor nicht zu. Ein nicht anlaufender Kompressor ist deshalb zuerst eine Füllmengenfrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-103"
+      ]
     }
   ]
 }

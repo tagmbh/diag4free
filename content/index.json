@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T00:06:46.150Z",
+  "generated": "2026-09-02T00:27:59.023Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -604,6 +604,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E28 · Heizungsventil, Gebläse, Kältemittelumstellung",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 ist die Heizung mechanisch geregelt und die Klimaanlage, wo vorhanden, ein nachgerüstetes oder ab Werk einfaches System. Die häufigste Klage — es wird nicht warm — hat zwei billige Ursachen und eine teure.",
+      "points": [
+        "Wird es nicht warm, obwohl der Motor Temperatur hat: zuerst das Heizungsventil, dann den Bowdenzug oder das Gestänge dahinter. Beides ist billiger als der Wärmetauscher",
+        "Ein verstopfter Wärmetauscher zeigt sich daran, dass beide Schläuche unterschiedlich warm sind. Sind beide gleich heiß, liegt der Fehler in der Luftführung, nicht im Wasserkreis",
+        "Gebläse ohne unterste Stufen, oberste läuft: das ist der Vorwiderstand, nicht der Motor",
+        "Bei Fahrzeugen dieses Alters ist die Anlage in aller Regel auf ein anderes Kältemittel umgestellt worden. Welches drin ist, sagt das Schild im Motorraum — nicht das Baujahr. Öle und Geräte dürfen nicht gemischt werden",
+        "Der Kondensatablauf verstopft und setzt Wasser in den Fußraum. Feuchtigkeit dort ist zuerst eine Ablauffrage, nicht eine Dichtungsfrage",
+        "Ohne Kältemitteldruck schaltet der Kompressor nicht zu. Ein nicht anlaufender Kompressor ist deshalb zuerst eine Füllmengenfrage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-103"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1118,6 +1141,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E30 · Heizungsventil, Vorwiderstand, Kondensatablauf",
+      "valid": "E30 · 1982–1994",
+      "summary": "Die Heizung des E30 ist einfach aufgebaut, und genau deshalb lohnt sich die Reihenfolge: Fast jede Klage lässt sich mit drei Handgriffen einem Bauteil zuordnen, bevor das Armaturenbrett aufgeht.",
+      "points": [
+        "Es wird nicht warm: Heizungsventil und seine Ansteuerung vor dem Wärmetauscher prüfen. Ungleich warme Schläuche deuten auf Verstopfung, gleich heiße auf ein Luftführungsproblem",
+        "Gebläse läuft nur auf der höchsten Stufe: Vorwiderstand. Ein häufiger, billiger und gern falsch diagnostizierter Befund",
+        "Verstopfter Kondensatablauf setzt Wasser in den Beifahrerfußraum. Vor jeder Dichtungssuche den Ablauf freimachen",
+        "Kompressor läuft nicht an: zuerst Kältemitteldruck, denn der Druckschalter sperrt die Kupplung bei zu wenig Füllung",
+        "Welches Kältemittel im System ist, sagt das Schild — nicht das Baujahr. Bei umgerüsteten Anlagen ist die Ölsorte entscheidend und darf nicht gemischt werden",
+        "Beim Cabrio kommt Wasser auch über die Verdeckentwässerung in den Innenraum; das gehört nicht zur Klimaanlage"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-107"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1483,6 +1529,29 @@
         "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
         "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
         "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-107"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E34 · IHKA, Endstufe, Stellmotoren der Klappen",
+      "valid": "E34 · 1987–1997",
+      "summary": "Mit der geregelten Klimaautomatik kommen zwei Bauteile dazu, die den größten Teil der Befunde ausmachen: die Gebläseendstufe und die Stellmotoren der Luftklappen. Beide melden sich hörbar, bevor sie ausfallen.",
+      "points": [
+        "Gebläse regelt nicht mehr stufenlos oder läuft nur voll: Endstufe. Sie ersetzt beim geregelten System den einfachen Vorwiderstand",
+        "Klicken oder Knacken hinter dem Armaturenbrett, oft im Takt: ein Stellmotor, der seine Endlage nicht findet. Das ist kein Elektronikfehler, sondern ein Antrieb",
+        "Nur eine Seite wird warm oder kalt: eine Klappe steht fest oder ihr Antrieb hat kein Signal. Erst die Klappe, dann die Ansteuerung",
+        "Kompressor läuft nicht an: zuerst Kältemitteldruck prüfen — der Druckschalter sperrt bei zu wenig Füllung",
+        "Kondensatablauf freimachen, bevor Feuchtigkeit im Innenraum als Dichtungsproblem behandelt wird",
+        "Welches Kältemittel drin ist, sagt das Schild im Motorraum, nicht das Baujahr"
       ],
       "pins": [],
       "engines": [],
@@ -1918,6 +1987,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E36 · Endstufe, Klappenantriebe, Mikrofilter",
+      "valid": "E36 · 1989–2002",
+      "summary": "Am E36 gilt eine Faustregel, die viel Zeit spart: Ein Gebläse, das nur noch auf der höchsten Stufe läuft, ist die Endstufe — und ein Klicken hinterm Armaturenbrett ist ein Stellmotor. Zusammen erklären sie den größten Teil der Klagen.",
+      "points": [
+        "Gebläse ohne untere Stufen: Endstufe beziehungsweise Vorwiderstand je nach Ausführung. Der Motor selbst ist selten die Ursache",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Luftklappe, der seine Endlage sucht",
+        "Schwacher Luftaustritt bei laufendem Gebläse: zuerst den Innenraumfilter prüfen. Er wird bei alten Fahrzeugen oft seit Jahren nicht gewechselt",
+        "Nur eine Seite temperiert: festsitzende Klappe oder fehlendes Signal am Antrieb",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Kondensatablauf freimachen, bevor Feuchtigkeit im Fußraum als Dichtungsfrage behandelt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-107"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2286,6 +2378,29 @@
         "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen; die Antriebswellen und ihre Gelenke sind eine eigene Geräuschquelle",
         "Heulen zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
         "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-107"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E38 · IHKA mit Nachlaufkühlung, Endstufe, Zusatzlüfter",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat die aufwendigste Klimaautomatik seiner Zeit, und das verschiebt die Fehlersuche: Vieles steht im Fehlerspeicher des Klimasteuergeräts, bevor es der Fahrer bemerkt. Auslesen kommt vor Zerlegen.",
+      "points": [
+        "Das Klimasteuergerät führt einen eigenen Fehlerspeicher. Stellmotoren und Fühler melden sich dort einzeln — das ist der schnellste Einstieg",
+        "Gebläse ohne Regelung: Endstufe. Sie sitzt im Luftstrom und fällt durch Wärme aus",
+        "Kühlt nur bei Fahrt, nicht im Stand: Zusatzlüfter oder Kondensator. Der Druck steigt im Stand, weil keine Luft durch den Kondensator geht",
+        "Nur eine Seite temperiert: Klappenantrieb oder festsitzende Klappe — bei diesem System seitenweise getrennt ansteuerbar",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht; der Druckschalter sperrt bei zu wenig Füllung",
+        "Geruch beim Einschalten: Verdampfer und Kondensatablauf. Ein stehender Ablauf hält den Verdampfer nass"
       ],
       "pins": [],
       "engines": [],
@@ -2719,6 +2834,29 @@
         "Wellendichtringe am Hinterachsgetriebe auf Ölspuren prüfen",
         "Heulen lastabhängig zwischen Zug und Schub vergleichen, um Achsgetriebe und Radlager zu trennen",
         "Achsvermessung hinten nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-107"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E39 · Endstufe, Stellmotoren, Fehlerspeicher der IHKA",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 lohnt es sich, das Klimasteuergerät zuerst zu fragen. Es kennt seine Stellmotoren und Fühler namentlich — und spart damit die Suche hinter einem Armaturenbrett, das man nicht gern zweimal öffnet.",
+      "points": [
+        "Fehlerspeicher des Klimasteuergeräts vor jedem mechanischen Verdacht auslesen; Stellmotoren und Fühler melden sich einzeln",
+        "Gebläse ohne stufenlose Regelung: Endstufe. Sie sitzt im Luftstrom und ist ein Verschleißteil",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor sucht seine Endlage",
+        "Kühlt im Stand nicht, bei Fahrt schon: Zusatzlüfter und Kondensator prüfen",
+        "Kompressor läuft nicht an: erst Kältemitteldruck, dann Kupplung und Ansteuerung",
+        "Feuchtigkeit im Fußraum: Kondensatablauf freimachen, bevor Dichtungen verdächtigt werden"
       ],
       "pins": [],
       "engines": [],
@@ -3199,6 +3337,30 @@
       "details": [
         "D4F-E46-107",
         "D4F-E46-103"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E46 · Gebläseendstufe, Klappenantriebe, Wasser im Fußraum",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 hat zwei Befunde, die zusammen fast jede Klimaklage erklären: die Gebläseendstufe und die Stellmotoren der Luftklappen. Beide sind bekannt, beide sind ersetzbar — und beide werden regelmäßig als Steuergerätefehler behandelt.",
+      "points": [
+        "Gebläse läuft nur auf höchster Stufe oder gar nicht mehr regelbar: Endstufe. Das ist am E46 der häufigste Einzelbefund der Gruppe",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe. Er sucht eine Endlage, die er nicht mehr erreicht — kein Elektronikfehler",
+        "Nur eine Seite temperiert: Klappe fest oder Antrieb ohne Signal. Erst mechanisch prüfen, dann elektrisch",
+        "Wasser im Beifahrerfußraum ist am E46 zuerst der verstopfte Kondensatablauf, danach die Wasserkastenentwässerung. Beides ist Reinigungsarbeit, keine Dichtungsarbeit",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen, bevor das Gebläse verdächtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-107",
+        "D4F-E46-108"
       ],
       "model": "e46"
     },
@@ -3685,6 +3847,30 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E60 · IHKA am Bus, Stellmotoren im Fehlerspeicher, Zusatzlüfter",
+      "valid": "E60 · 2003–2010",
+      "summary": "Ab dem E60 hängt die Klimaanlage am Bussystem. Das ändert die erste Handlung: Nicht messen, sondern auslesen — Stellmotoren, Fühler und Kompressoransteuerung melden sich namentlich.",
+      "points": [
+        "Fehlerspeicher zuerst. Das Klimasteuergerät meldet Stellmotoren, Temperaturfühler und die Kompressorfreigabe einzeln",
+        "Ein Bus- oder Spannungsfehler kann die Klimaanlage stilllegen, ohne dass an ihr etwas defekt ist. Vor dem Bauteiltausch die Versorgung und den Bus prüfen",
+        "Gebläse ohne Regelung: Gebläseregler beziehungsweise Endstufe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Kompressor läuft nicht an: Kältemitteldruck vor allem anderen — ohne Druck gibt das Steuergerät nicht frei, und das ist kein Fehler, sondern Schutz",
+        "Kondensatablauf und Wasserkasten bei Feuchtigkeit im Innenraum, bevor Dichtungen verdächtigt werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-107",
+        "D4F-E60-108"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4083,6 +4269,30 @@
       "details": [
         "D4F-E70-107",
         "D4F-E70-103"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E70 · Mehrzonenanlage, Fondbedienung, Zusatzlüfter",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am E70 sind es mehr Zonen, mehr Klappen und mehr Stellmotoren als in der Limousine. Das macht die Anlage komfortabler und die Fehlersuche länger — es sei denn, man liest zuerst aus.",
+      "points": [
+        "Fehlerspeicher zuerst: Bei einer Mehrzonenanlage ist die Zuordnung eines Stellmotors von Hand mühsam und im Speicher trivial",
+        "Eine Zone temperiert nicht: Klappe oder Antrieb dieser Zone. Der Rest der Anlage ist damit nicht verdächtig",
+        "Fondanlage getrennt prüfen — sie hat eigene Klappen und eigene Ansteuerung",
+        "Kühlt im Stand nicht: elektrischer Lüfter und Kondensator. Beim großen Fahrzeug mit Anhängebetrieb ist der Kondensator zusätzlich verschmutzungsgefährdet",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht; ohne Druck keine Freigabe",
+        "Kondensatablauf bei Feuchtigkeit im Innenraum freimachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-107",
+        "D4F-E70-108"
       ],
       "model": "e70"
     },
@@ -4578,6 +4788,30 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E87 · Gebläseregler, Stellmotoren, Wasserkasten",
+      "valid": "E87 · 2004–2013",
+      "summary": "Die Anlage des E87 folgt der Baureihenfamilie. Was hier besonders auffällt, ist die Entwässerung: Der Wasserkasten setzt sich zu, und das Ergebnis sieht nach Klimaanlage aus, ist aber Laub.",
+      "points": [
+        "Feuchtigkeit im Innenraum: zuerst Wasserkasten und Kondensatablauf reinigen. Erst wenn beide frei sind, ist eine Dichtung ein sinnvoller Verdacht",
+        "Fehlerspeicher des Klimasteuergeräts vor mechanischem Verdacht auslesen",
+        "Gebläse ohne Regelung: Gebläseregler",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe",
+        "Kompressor läuft nicht an: Kältemitteldruck zuerst, denn ohne Druck gibt das Steuergerät nicht frei",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-107",
+        "D4F-E87-108"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5010,6 +5244,30 @@
       "details": [
         "D4F-E88-107",
         "D4F-E88-103"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E88 · Klimaanlage im Cabrio, Entwässerung, Zusatzlüfter",
+      "valid": "E88 · 2007–2013",
+      "summary": "Im Cabrio arbeitet dieselbe Anlage unter schwereren Bedingungen: mehr Sonneneinstrahlung, mehr Wassereintrag, mehr Wege für Feuchtigkeit. Die Abgrenzung zur Verdeckentwässerung ist deshalb der erste Schritt.",
+      "points": [
+        "Wasser im Innenraum: Verdeckentwässerung, Wasserkasten und Kondensatablauf sind drei verschiedene Wege. Alle drei prüfen, bevor eine Dichtung verdächtigt wird",
+        "Bei offenem Verdeck arbeitet die Anlage dauerhaft an der Grenze; eine schwache Kühlleistung ist dort zuerst eine Füllmengen- und Kondensatorfrage",
+        "Fehlerspeicher des Klimasteuergeräts vor mechanischem Verdacht auslesen",
+        "Gebläse ohne Regelung: Gebläseregler",
+        "Kompressor läuft nicht an: Kältemitteldruck zuerst",
+        "Kondensator auf Verschmutzung und Beschädigung prüfen — er sitzt vorn und bekommt alles ab"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-107",
+        "D4F-E88-108"
       ],
       "model": "e88"
     },
@@ -5627,6 +5885,30 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima E90 · IHKA, Stellmotoren, Wasserkasten und Ablauf",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 ist die Klimaanlage elektronisch gut zugänglich und mechanisch schlecht. Genau deshalb entscheidet die Reihenfolge: erst der Fehlerspeicher, dann das Armaturenbrett.",
+      "points": [
+        "Fehlerspeicher zuerst — Stellmotoren und Fühler melden sich einzeln und ersparen die Suche von Hand",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor sucht seine Endlage",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf, bevor Dichtungen verdächtigt werden",
+        "Gebläse ohne Regelung: Gebläseregler beziehungsweise Endstufe",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht — ohne Druck keine Freigabe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-107",
+        "D4F-E90-108"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6164,6 +6446,30 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F10 · Elektronisch geregelte Anlage, Kältemittelart prüfen",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist die Klimaanlage vollständig in die Fahrzeugelektronik eingebunden — und irgendwann in dieser Zeit wechselt das Kältemittel. Welches im Fahrzeug ist, entscheidet das Schild, nicht das Baujahr.",
+      "points": [
+        "Vor jedem Eingriff am Kältekreis die Kältemittelart am Schild im Motorraum ablesen. Kältemittel, Öl und Servicegerät gehören zusammen und dürfen nicht gemischt werden — das Baujahr ist dafür keine verlässliche Auskunft",
+        "Fehlerspeicher zuerst: Stellmotoren, Fühler und die Kompressorfreigabe melden sich einzeln",
+        "Ein Bus- oder Versorgungsfehler kann die Anlage stilllegen, ohne dass an ihr etwas defekt ist",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht. Ohne Druck gibt das Steuergerät nicht frei, und das ist Schutz, kein Fehler",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor jeder Dichtungssuche"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-107",
+        "D4F-F10-108"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6528,6 +6834,30 @@
       "details": [
         "D4F-F15-107",
         "D4F-F15-103"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F15 · Mehrzonenanlage, Fondbereich, Kältemittelart",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Beim F15 kommen mehr Zonen, ein eigener Fondbereich und ein großes Kältemittelvolumen zusammen. Das macht Lecksuche und Füllmenge zu eigenen Themen — und die Kältemittelart zur ersten Frage.",
+      "points": [
+        "Kältemittelart am Schild ablesen, bevor ein Gerät angeschlossen wird. Sorten und Öle dürfen nicht gemischt werden; das Baujahr entscheidet das nicht",
+        "Mehrzonenanlage: Eine Zone ohne Temperierung grenzt den Fehler auf deren Klappe und Antrieb ein — der Rest der Anlage bleibt unverdächtig",
+        "Fondbereich hat eigene Klappen, eigene Ansteuerung und eigene Leitungen. Ein Leck im hinteren Kreis ist von vorn nicht sichtbar",
+        "Fehlerspeicher zuerst; bei dieser Zahl von Stellmotoren ist die Zuordnung von Hand unwirtschaftlich",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Kondensator bei Gelände- und Anhängebetrieb auf Verschmutzung prüfen — sie kostet zuerst die Kühlleistung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-107",
+        "D4F-F15-108"
       ],
       "model": "f15"
     },
@@ -6922,6 +7252,30 @@
       "details": [
         "D4F-F22-107",
         "D4F-F22-103"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F22 · Kältemittelart, Stellmotoren, Kondensatablauf",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Anlage des F22 entspricht der des F30. Der praktische Unterschied liegt im Bauraum: Alles sitzt enger, und deshalb lohnt sich die elektronische Eingrenzung hier noch mehr als anderswo.",
+      "points": [
+        "Fehlerspeicher zuerst — der Bauraum bestraft jedes Zerlegen auf Verdacht",
+        "Kältemittelart am Schild im Motorraum ablesen, bevor ein Servicegerät angeschlossen wird; Sorten und Öle nicht mischen",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor der Dichtungssuche",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-107",
+        "D4F-F22-108"
       ],
       "model": "f22"
     },
@@ -7361,6 +7715,30 @@
       "details": [
         "D4F-F30-107",
         "D4F-F30-103"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F30 · Kältemittelart, Fehlerspeicher, Standlüftung",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Anlage des F30 ist elektronisch geregelt und diagnostisch gut erreichbar. Der Fallstrick liegt vor der Diagnose: beim Kältemittel, das in dieser Baureihenzeit wechselt.",
+      "points": [
+        "Kältemittelart am Schild im Motorraum ablesen, bevor ein Servicegerät angeschlossen wird. Das Baujahr ist keine verlässliche Auskunft, und die Sorten dürfen nicht gemischt werden",
+        "Fehlerspeicher zuerst: Stellmotoren, Fühler und Kompressorfreigabe melden sich einzeln",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht — ohne Druck keine Freigabe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor der Dichtungssuche",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen, bevor das Gebläse verdächtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-107",
+        "D4F-F30-108"
       ],
       "model": "f30"
     }
@@ -14549,26 +14927,26 @@
     }
   },
   "stats": {
-    "total_docs": 252,
+    "total_docs": 268,
     "total_guides": 40,
     "per_model": {
-      "e28": 13,
-      "e30": 20,
-      "e34": 15,
-      "e36": 15,
-      "e38": 15,
-      "e39": 16,
-      "e46": 17,
-      "e60": 16,
-      "e70": 15,
-      "e87": 16,
-      "e88": 13,
-      "e90": 18,
+      "e28": 14,
+      "e30": 21,
+      "e34": 16,
+      "e36": 16,
+      "e38": 16,
+      "e39": 17,
+      "e46": 18,
+      "e60": 17,
+      "e70": 16,
+      "e87": 17,
+      "e88": 14,
+      "e90": 19,
       "f-series": 5,
-      "f10": 14,
-      "f15": 14,
-      "f22": 15,
-      "f30": 15
+      "f10": 15,
+      "f15": 15,
+      "f22": 16,
+      "f30": 16
     }
   }
 }

@@ -424,6 +424,29 @@
         "D4F-F30-107",
         "D4F-F30-103"
       ]
+    },
+    {
+      "id": "D4F-F30-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F30 · Kältemittelart, Fehlerspeicher, Standlüftung",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Anlage des F30 ist elektronisch geregelt und diagnostisch gut erreichbar. Der Fallstrick liegt vor der Diagnose: beim Kältemittel, das in dieser Baureihenzeit wechselt.",
+      "points": [
+        "Kältemittelart am Schild im Motorraum ablesen, bevor ein Servicegerät angeschlossen wird. Das Baujahr ist keine verlässliche Auskunft, und die Sorten dürfen nicht gemischt werden",
+        "Fehlerspeicher zuerst: Stellmotoren, Fühler und Kompressorfreigabe melden sich einzeln",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht — ohne Druck keine Freigabe",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor der Dichtungssuche",
+        "Innenraumfilter bei schwachem Luftaustritt prüfen, bevor das Gebläse verdächtigt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-107",
+        "D4F-F30-108"
+      ]
     }
   ]
 }

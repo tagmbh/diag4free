@@ -379,6 +379,29 @@
         "D4F-F22-107",
         "D4F-F22-103"
       ]
+    },
+    {
+      "id": "D4F-F22-109",
+      "type": "GUIDE",
+      "gruppe": "64",
+      "cat": "Heizung und Klima",
+      "title": "Heizung und Klima F22 · Kältemittelart, Stellmotoren, Kondensatablauf",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Anlage des F22 entspricht der des F30. Der praktische Unterschied liegt im Bauraum: Alles sitzt enger, und deshalb lohnt sich die elektronische Eingrenzung hier noch mehr als anderswo.",
+      "points": [
+        "Fehlerspeicher zuerst — der Bauraum bestraft jedes Zerlegen auf Verdacht",
+        "Kältemittelart am Schild im Motorraum ablesen, bevor ein Servicegerät angeschlossen wird; Sorten und Öle nicht mischen",
+        "Taktendes Klicken hinter dem Armaturenbrett: Stellmotor einer Klappe",
+        "Kompressor läuft nicht an: Kältemitteldruck vor Kompressorverdacht",
+        "Feuchtigkeit im Innenraum: Wasserkasten und Kondensatablauf vor der Dichtungssuche",
+        "Kühlt bei Fahrt, nicht im Stand: elektrischer Lüfter und Kondensator"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-107",
+        "D4F-F22-108"
+      ]
     }
   ]
 }
