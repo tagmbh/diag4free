@@ -510,6 +510,28 @@
       "details": [
         "D4F-F22-113"
       ]
+    },
+    {
+      "id": "D4F-F22-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F22 · Schaltbock, M-Ausführungen, Wählhebel abgrenzen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 ist eine der letzten Baureihen mit verbreitetem Handschalter — und damit eine der wenigen, in denen diese Gruppe noch regelmäßig gebraucht wird.",
+      "points": [
+        "Beim Handschalter: Gänge legen sauber ein, der Weg ist unpräzise — das ist die Schaltung, nicht das Getriebe",
+        "Beim Automatikfahrzeug ist der Wählhebel ein Signalgeber; nicht angenommene Fahrstufen gehören zur Gruppe des Automatikgetriebes",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager. Bei den drehmomentstarken Ausführungen tritt das früher auf",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-114"
+      ]
     }
   ]
 }

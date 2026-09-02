@@ -597,6 +597,28 @@
       "details": [
         "D4F-E60-113"
       ]
+    },
+    {
+      "id": "D4F-E60-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E60 · Schaltbock, Getriebe bestimmen, Wählhebel abgrenzen",
+      "valid": "E60 · 2003–2010 · Handschaltung",
+      "summary": "Beim E60 ist die erste Frage, ob überhaupt geschaltet oder gewählt wird. Danach gilt dieselbe Abgrenzung wie seit dem E30.",
+      "points": [
+        "Zuerst das Getriebe bestimmen: Beim Wandlerfahrzeug geht es um einen Wählhebel, nicht um eine Schaltung — Befunde dort gehören zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter: Gänge legen sauber ein, der Weg ist schwammig — das ist die Schaltung",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-114"
+      ]
     }
   ]
 }

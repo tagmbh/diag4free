@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T02:11:19.658Z",
+  "generated": "2026-09-02T02:32:00.888Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -740,6 +740,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E28 · Schaltbock, Lagerbuchsen, Schaltstange",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Wenn die Gänge sauber einlegen, der Weg dorthin aber schwammig ist, sitzt der Fehler in der Schaltung — nicht im Getriebe. Am E28 ist das eine Handvoll Gummi- und Kunststoffteile, die nach vier Jahrzehnten ausgeschlagen sind.",
+      "points": [
+        "Der Befund, der hierher gehört: Gänge legen sauber ein, aber der Hebel wandert, hat Spiel oder findet die Gasse nicht mehr sicher. Das ist Mechanik, kein Synchronschaden",
+        "Lagerbuchsen und Kugelpfannen am Schaltbock sind Verschleißteile aus Kunststoff. Sie sind einzeln und günstig, und sie machen den größten Teil des Spiels aus",
+        "Die Führung der Schaltstange am Getriebe mitprüfen — dort sitzt ein weiteres Lager, das gern übersehen wird",
+        "Vor dem Zerlegen das Spiel am Hebel und am Getriebeeingang getrennt bewerten: Ist der Hebel lose, aber die Schaltstange am Getriebe fest, liegt alles davor",
+        "Verschlissene Motor- oder Getriebelager lassen den Antriebsstrang wandern und erzeugen dasselbe Bild. Bei starkem Spiel die Aufhängung mitprüfen",
+        "Nach dem Zusammenbau die Gassen im Stand durchschalten, bevor gefahren wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-114"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1390,6 +1413,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E30 · Schaltbock, Kunststoffbuchsen, Motorlager als Ursache",
+      "valid": "E30 · 1982–1994 · Handschaltung",
+      "summary": "Am E30 ist ein schwammiger Schalthebel selten ein Getriebeproblem und oft ein Zwei-Euro-Teil. Der Ausschluss lohnt sich, bevor jemand über einen Getriebeausbau nachdenkt.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel hat Spiel: das ist die Schaltung. Kunststoffbuchsen und Kugelpfanne am Schaltbock sind die üblichen Kandidaten",
+        "Führungslager der Schaltstange am Getriebe mitprüfen — es wird regelmäßig übersehen",
+        "Ausgeschlagene Motor- und Getriebelager lassen den Strang wandern; der Hebel bewegt sich dann beim Lastwechsel mit. Ein Schaltspiel, das nur unter Last auftritt, hat dort seine Ursache",
+        "Spiel getrennt bewerten: am Hebel und an der Schaltstange direkt am Getriebe. Der Unterschied benennt den Ort",
+        "Alle Kunststoffteile der Schaltung zusammen erneuern — sie sind billig und der Ausbau ist derselbe",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-114"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1896,6 +1942,29 @@
       "engines": [],
       "details": [
         "D4F-E34-113"
+      ],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E34 · Schaltbock, Führungslager, Lastwechselspiel",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Beim E34 ist die Schaltung länger und hat mehr Gelenke als beim kleineren Fahrzeug. Entsprechend addiert sich das Spiel — und entsprechend lohnt es sich, es Stück für Stück zuzuordnen.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung, nicht Getriebe",
+        "Spiel addiert sich über mehrere Lagerstellen. Am Hebel und an der Schaltstange getrennt bewerten, um den Anteil zu erkennen",
+        "Schaltspiel, das nur beim Lastwechsel auftritt: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Kunststoffbuchsen und Kugelpfanne am Schaltbock zusammen erneuern",
+        "Führungslager der Schaltstange am Getriebe mitprüfen",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-114"
       ],
       "model": "e34"
     },
@@ -2462,6 +2531,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E36 · Schaltbock, Buchsen, Abgrenzung zum Getriebe",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 ist die Schaltung der häufigste Grund für ein schlechtes Schaltgefühl — und der billigste. Ein kompletter Satz Kunststoffteile kostet einen Bruchteil eines Getriebeausbaus.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel schwammig oder wandernd: Schaltung. Das ist der Befund, der aus Gruppe 23 hierher verwiesen wird",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern — einzeln zu tauschen lohnt den Ausbau nicht",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager als Ursache prüfen",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten, um den Ort einzugrenzen",
+        "Beim Cabrio und Compact die weichere Karosserie beachten: Bewegung des Aufbaus überträgt sich auf das Schaltgefühl",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-114"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2971,6 +3063,29 @@
       "engines": [],
       "details": [
         "D4F-E38-113"
+      ],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E38 · Handschaltung selten, Schaltbock, Lagerspiel",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend Automatik. Beim seltenen Handschalter gilt dasselbe Verfahren wie bei den kleineren Baureihen, mit längerem Gestänge und entsprechend mehr Lagerstellen.",
+      "points": [
+        "Erst klären, ob ein Schaltgetriebe verbaut ist. Beim Wandlerfahrzeug gehören Wählhebel- und Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung, nicht Getriebe",
+        "Langes Gestänge, viele Lagerstellen — das Spiel addiert sich. Getrennt am Hebel und an der Schaltstange bewerten",
+        "Kunststoffbuchsen und Kugelpfanne zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-114"
       ],
       "model": "e38"
     },
@@ -3541,6 +3656,29 @@
       "engines": [],
       "details": [
         "D4F-E39-113"
+      ],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E39 · Schaltbock, Führungslager, Lastwechselspiel",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 ist der schwammige Hebel ein bekanntes Bild und fast immer die Schaltung. Der Getriebeausbau, den er auslöst, ist in den meisten Fällen unnötig.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel hat Spiel: Schaltung. Vor jedem Getriebeverdacht prüfen",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Spiel getrennt am Hebel und an der Schaltstange bewerten, um den Ort einzugrenzen",
+        "Bei Fahrzeugen mit hoher Laufleistung sind alle Kunststoffteile gleich alt — einzeln zu tauschen lohnt den Ausbau nicht",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-114"
       ],
       "model": "e39"
     },
@@ -4153,6 +4291,29 @@
       "engines": [],
       "details": [
         "D4F-E46-113"
+      ],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E46 · Schaltbock, Buchsen, der vermeidbare Getriebeausbau",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist die Schaltung das Bauteil, das den teuersten Irrtum dieser Baureihe verhindert: Ein schwammiger Hebel führt regelmäßig zu einem Getriebeausbau, der nichts behebt.",
+      "points": [
+        "Der entscheidende Befund: Gänge legen sauber ein, aber der Weg dorthin ist unpräzise. Das ist die Schaltung, und sie ist ungleich billiger als das Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager als Ursache prüfen",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten — der Unterschied benennt den Ort",
+        "Kratzen beim Einlegen trotz präzisem Schaltweg gehört dagegen ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-114"
       ],
       "model": "e46"
     },
@@ -4776,6 +4937,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E60 · Schaltbock, Getriebe bestimmen, Wählhebel abgrenzen",
+      "valid": "E60 · 2003–2010 · Handschaltung",
+      "summary": "Beim E60 ist die erste Frage, ob überhaupt geschaltet oder gewählt wird. Danach gilt dieselbe Abgrenzung wie seit dem E30.",
+      "points": [
+        "Zuerst das Getriebe bestimmen: Beim Wandlerfahrzeug geht es um einen Wählhebel, nicht um eine Schaltung — Befunde dort gehören zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter: Gänge legen sauber ein, der Weg ist schwammig — das ist die Schaltung",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-114"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5311,6 +5495,29 @@
       "engines": [],
       "details": [
         "D4F-E70-113"
+      ],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E70 · Wählhebel statt Schaltung, seltene Handschalter",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Was dort bewegt wird, ist ein Wählhebel — und dessen Befunde gehören in eine andere Gruppe als die mechanische Schaltung.",
+      "points": [
+        "Beim Automatikfahrzeug geht es um einen Wählhebel. Stellungsmeldung, Sperren und Verriegelung gehören zur Gruppe des Automatikgetriebes und zur Fahrzeugelektrik, nicht hierher",
+        "Fahrstufe wird nicht angenommen oder falsch angezeigt: das ist ein Signal- oder Verriegelungsthema, kein Gestänge",
+        "Beim seltenen Handschalter gilt das übliche Verfahren: Gänge legen sauber ein, Weg schwammig — Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen und Kugelpfanne zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-114"
       ],
       "model": "e70"
     },
@@ -5943,6 +6150,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E87 · Schaltbock, Buchsen, Lastwechselspiel",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter, und die Schaltung ist entsprechend oft der Grund für ein schlechtes Schaltgefühl. Sie ist auch der billigste.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist unpräzise: Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Kratzen beim Einlegen trotz präzisem Weg gehört ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-114"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6512,6 +6742,29 @@
       "engines": [],
       "details": [
         "D4F-E88-113"
+      ],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E88 · Schaltbock, Aufbaubewegung im Cabrio",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Die Schaltung entspricht der des E87. Im Cabrio kommt eine Ursache dazu, die man kennen muss: Der weichere Aufbau bewegt sich, und das Schaltgefühl bewegt sich mit.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist unpräzise: Schaltung, nicht Getriebe",
+        "Beim Cabrio überträgt sich Aufbaubewegung auf das Schaltgefühl. Ein Spiel, das nur auf unebener Strecke auftritt, kann von dort kommen",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-114"
       ],
       "model": "e88"
     },
@@ -7266,6 +7519,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E90 · Schaltbock, Buchsen, der vermeidbare Ausbau",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist der Getriebeausbau aufwendig und die Schaltung der häufigste Grund für die Klage, die ihn auslöst. Diese Gruppe ist der Ausschluss, der davor steht.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung. Vor jedem Getriebeverdacht prüfen — das ist der Verweis aus Gruppe 23",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Kratzen beim Einlegen trotz präzisem Weg gehört ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-114"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7940,6 +8216,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F10 · Wählhebel oder Schaltung, Getriebe zuerst bestimmen",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist der Wählhebel der Regelfall. Er ist ein Signalgeber, kein Gestänge — und das ändert die Fehlersuche vollständig.",
+      "points": [
+        "Beim Automatikfahrzeug ist der Wählhebel ein Signalgeber. Eine nicht angenommene Fahrstufe ist ein Signal-, Verriegelungs- oder Codierthema und gehört zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter gilt das übliche Verfahren: Gänge legen sauber ein, Weg schwammig — Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-114"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8439,6 +8738,27 @@
       "engines": [],
       "details": [
         "D4F-F15-113"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F15 · Wählhebel statt Schaltung — wo die Antwort steht",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 hat kein Schaltgestänge. Was dort bewegt wird, ist ein Wählhebel, der ein Signal sendet — seine Befunde stehen in anderen Gruppen. Dieser Eintrag führt dorthin.",
+      "points": [
+        "Es gibt keine mechanische Schaltung. Der Wählhebel ist ein Signalgeber ohne Gestänge zum Getriebe",
+        "Fahrstufe wird nicht angenommen, nicht angezeigt oder der Hebel bleibt gesperrt: das ist ein Signal-, Verriegelungs- oder Versorgungsthema — Gruppe 24 für das Getriebe, Gruppe 61 für Bordnetz und Bus",
+        "Ruckeln oder Verzögerung beim Fahrstufenwechsel gehört zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als ersten Prüfschritten",
+        "Ein Spiel am Hebel selbst ist ein Bauteilbefund am Wählhebelmodul und hat keine Wirkung auf die Gangwahl, weil kein Gestänge dahinterliegt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-114"
       ],
       "model": "f15"
     },
@@ -8970,6 +9290,29 @@
       "engines": [],
       "details": [
         "D4F-F22-113"
+      ],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F22 · Schaltbock, M-Ausführungen, Wählhebel abgrenzen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Der F22 ist eine der letzten Baureihen mit verbreitetem Handschalter — und damit eine der wenigen, in denen diese Gruppe noch regelmäßig gebraucht wird.",
+      "points": [
+        "Beim Handschalter: Gänge legen sauber ein, der Weg ist unpräzise — das ist die Schaltung, nicht das Getriebe",
+        "Beim Automatikfahrzeug ist der Wählhebel ein Signalgeber; nicht angenommene Fahrstufen gehören zur Gruppe des Automatikgetriebes",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager. Bei den drehmomentstarken Ausführungen tritt das früher auf",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-114"
       ],
       "model": "f22"
     },
@@ -9546,6 +9889,29 @@
       "engines": [],
       "details": [
         "D4F-F30-113"
+      ],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F30 · Schaltbock, Wählhebel abgrenzen, Lastwechselspiel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 gibt es beides: Handschalter mit klassischer Schaltmechanik und Wählhebel als Signalgeber. Die Zuordnung entscheidet, in welcher Gruppe die Antwort steht.",
+      "points": [
+        "Zuerst bestimmen, was verbaut ist. Der Wählhebel des Automatikfahrzeugs ist ein Signalgeber — nicht angenommene Fahrstufen gehören zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter: Gänge legen sauber ein, Weg schwammig — das ist die Schaltung",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-114"
       ],
       "model": "f30"
     }
@@ -16734,26 +17100,26 @@
     }
   },
   "stats": {
-    "total_docs": 348,
+    "total_docs": 364,
     "total_guides": 40,
     "per_model": {
-      "e28": 19,
-      "e30": 26,
-      "e34": 21,
-      "e36": 21,
-      "e38": 21,
-      "e39": 22,
-      "e46": 23,
-      "e60": 22,
-      "e70": 21,
-      "e87": 22,
-      "e88": 19,
-      "e90": 24,
+      "e28": 20,
+      "e30": 27,
+      "e34": 22,
+      "e36": 22,
+      "e38": 22,
+      "e39": 23,
+      "e46": 24,
+      "e60": 23,
+      "e70": 22,
+      "e87": 23,
+      "e88": 20,
+      "e90": 25,
       "f-series": 5,
-      "f10": 20,
-      "f15": 20,
-      "f22": 21,
-      "f30": 21
+      "f10": 21,
+      "f15": 21,
+      "f22": 22,
+      "f30": 22
     }
   }
 }

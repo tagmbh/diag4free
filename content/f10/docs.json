@@ -518,6 +518,28 @@
       "details": [
         "D4F-F10-113"
       ]
+    },
+    {
+      "id": "D4F-F10-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F10 · Wählhebel oder Schaltung, Getriebe zuerst bestimmen",
+      "valid": "F10, F11 · 2010–2017",
+      "summary": "In der F-Generation ist der Wählhebel der Regelfall. Er ist ein Signalgeber, kein Gestänge — und das ändert die Fehlersuche vollständig.",
+      "points": [
+        "Beim Automatikfahrzeug ist der Wählhebel ein Signalgeber. Eine nicht angenommene Fahrstufe ist ein Signal-, Verriegelungs- oder Codierthema und gehört zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter gilt das übliche Verfahren: Gänge legen sauber ein, Weg schwammig — Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-114"
+      ]
     }
   ]
 }

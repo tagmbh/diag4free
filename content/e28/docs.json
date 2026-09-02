@@ -446,6 +446,28 @@
       "details": [
         "D4F-E28-113"
       ]
+    },
+    {
+      "id": "D4F-E28-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E28 · Schaltbock, Lagerbuchsen, Schaltstange",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Wenn die Gänge sauber einlegen, der Weg dorthin aber schwammig ist, sitzt der Fehler in der Schaltung — nicht im Getriebe. Am E28 ist das eine Handvoll Gummi- und Kunststoffteile, die nach vier Jahrzehnten ausgeschlagen sind.",
+      "points": [
+        "Der Befund, der hierher gehört: Gänge legen sauber ein, aber der Hebel wandert, hat Spiel oder findet die Gasse nicht mehr sicher. Das ist Mechanik, kein Synchronschaden",
+        "Lagerbuchsen und Kugelpfannen am Schaltbock sind Verschleißteile aus Kunststoff. Sie sind einzeln und günstig, und sie machen den größten Teil des Spiels aus",
+        "Die Führung der Schaltstange am Getriebe mitprüfen — dort sitzt ein weiteres Lager, das gern übersehen wird",
+        "Vor dem Zerlegen das Spiel am Hebel und am Getriebeeingang getrennt bewerten: Ist der Hebel lose, aber die Schaltstange am Getriebe fest, liegt alles davor",
+        "Verschlissene Motor- oder Getriebelager lassen den Antriebsstrang wandern und erzeugen dasselbe Bild. Bei starkem Spiel die Aufhängung mitprüfen",
+        "Nach dem Zusammenbau die Gassen im Stand durchschalten, bevor gefahren wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-114"
+      ]
     }
   ]
 }

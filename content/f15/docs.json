@@ -483,6 +483,26 @@
       "details": [
         "D4F-F15-113"
       ]
+    },
+    {
+      "id": "D4F-F15-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F15 · Wählhebel statt Schaltung — wo die Antwort steht",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 hat kein Schaltgestänge. Was dort bewegt wird, ist ein Wählhebel, der ein Signal sendet — seine Befunde stehen in anderen Gruppen. Dieser Eintrag führt dorthin.",
+      "points": [
+        "Es gibt keine mechanische Schaltung. Der Wählhebel ist ein Signalgeber ohne Gestänge zum Getriebe",
+        "Fahrstufe wird nicht angenommen, nicht angezeigt oder der Hebel bleibt gesperrt: das ist ein Signal-, Verriegelungs- oder Versorgungsthema — Gruppe 24 für das Getriebe, Gruppe 61 für Bordnetz und Bus",
+        "Ruckeln oder Verzögerung beim Fahrstufenwechsel gehört zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als ersten Prüfschritten",
+        "Ein Spiel am Hebel selbst ist ein Bauteilbefund am Wählhebelmodul und hat keine Wirkung auf die Gangwahl, weil kein Gestänge dahinterliegt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-114"
+      ]
     }
   ]
 }

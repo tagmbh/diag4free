@@ -589,6 +589,28 @@
       "details": [
         "D4F-E46-113"
       ]
+    },
+    {
+      "id": "D4F-E46-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E46 · Schaltbock, Buchsen, der vermeidbare Getriebeausbau",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist die Schaltung das Bauteil, das den teuersten Irrtum dieser Baureihe verhindert: Ein schwammiger Hebel führt regelmäßig zu einem Getriebeausbau, der nichts behebt.",
+      "points": [
+        "Der entscheidende Befund: Gänge legen sauber ein, aber der Weg dorthin ist unpräzise. Das ist die Schaltung, und sie ist ungleich billiger als das Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager als Ursache prüfen",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten — der Unterschied benennt den Ort",
+        "Kratzen beim Einlegen trotz präzisem Schaltweg gehört dagegen ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-114"
+      ]
     }
   ]
 }

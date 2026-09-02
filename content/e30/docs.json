@@ -624,6 +624,28 @@
       "details": [
         "D4F-E30-113"
       ]
+    },
+    {
+      "id": "D4F-E30-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E30 · Schaltbock, Kunststoffbuchsen, Motorlager als Ursache",
+      "valid": "E30 · 1982–1994 · Handschaltung",
+      "summary": "Am E30 ist ein schwammiger Schalthebel selten ein Getriebeproblem und oft ein Zwei-Euro-Teil. Der Ausschluss lohnt sich, bevor jemand über einen Getriebeausbau nachdenkt.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel hat Spiel: das ist die Schaltung. Kunststoffbuchsen und Kugelpfanne am Schaltbock sind die üblichen Kandidaten",
+        "Führungslager der Schaltstange am Getriebe mitprüfen — es wird regelmäßig übersehen",
+        "Ausgeschlagene Motor- und Getriebelager lassen den Strang wandern; der Hebel bewegt sich dann beim Lastwechsel mit. Ein Schaltspiel, das nur unter Last auftritt, hat dort seine Ursache",
+        "Spiel getrennt bewerten: am Hebel und an der Schaltstange direkt am Getriebe. Der Unterschied benennt den Ort",
+        "Alle Kunststoffteile der Schaltung zusammen erneuern — sie sind billig und der Ausbau ist derselbe",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-114"
+      ]
     }
   ]
 }

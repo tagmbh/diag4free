@@ -541,6 +541,28 @@
       "details": [
         "D4F-E36-113"
       ]
+    },
+    {
+      "id": "D4F-E36-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E36 · Schaltbock, Buchsen, Abgrenzung zum Getriebe",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 ist die Schaltung der häufigste Grund für ein schlechtes Schaltgefühl — und der billigste. Ein kompletter Satz Kunststoffteile kostet einen Bruchteil eines Getriebeausbaus.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel schwammig oder wandernd: Schaltung. Das ist der Befund, der aus Gruppe 23 hierher verwiesen wird",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern — einzeln zu tauschen lohnt den Ausbau nicht",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager als Ursache prüfen",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten, um den Ort einzugrenzen",
+        "Beim Cabrio und Compact die weichere Karosserie beachten: Bewegung des Aufbaus überträgt sich auf das Schaltgefühl",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-114"
+      ]
     }
   ]
 }

@@ -518,6 +518,28 @@
       "details": [
         "D4F-E70-113"
       ]
+    },
+    {
+      "id": "D4F-E70-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E70 · Wählhebel statt Schaltung, seltene Handschalter",
+      "valid": "E70 · 2006–2013",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Was dort bewegt wird, ist ein Wählhebel — und dessen Befunde gehören in eine andere Gruppe als die mechanische Schaltung.",
+      "points": [
+        "Beim Automatikfahrzeug geht es um einen Wählhebel. Stellungsmeldung, Sperren und Verriegelung gehören zur Gruppe des Automatikgetriebes und zur Fahrzeugelektrik, nicht hierher",
+        "Fahrstufe wird nicht angenommen oder falsch angezeigt: das ist ein Signal- oder Verriegelungsthema, kein Gestänge",
+        "Beim seltenen Handschalter gilt das übliche Verfahren: Gänge legen sauber ein, Weg schwammig — Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen und Kugelpfanne zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-114"
+      ]
     }
   ]
 }

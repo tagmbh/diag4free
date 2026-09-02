@@ -492,6 +492,28 @@
       "details": [
         "D4F-E38-113"
       ]
+    },
+    {
+      "id": "D4F-E38-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E38 · Handschaltung selten, Schaltbock, Lagerspiel",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend Automatik. Beim seltenen Handschalter gilt dasselbe Verfahren wie bei den kleineren Baureihen, mit längerem Gestänge und entsprechend mehr Lagerstellen.",
+      "points": [
+        "Erst klären, ob ein Schaltgetriebe verbaut ist. Beim Wandlerfahrzeug gehören Wählhebel- und Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung, nicht Getriebe",
+        "Langes Gestänge, viele Lagerstellen — das Spiel addiert sich. Getrennt am Hebel und an der Schaltstange bewerten",
+        "Kunststoffbuchsen und Kugelpfanne zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-114"
+      ]
     }
   ]
 }
