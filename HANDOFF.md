@@ -1,6 +1,6 @@
 # diag4free — Handoff & Backlog
 
-> Stand: 2026-08-27 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
+> Stand: 2026-09-02 · Live: https://diag4all.t-alpha.com · Repo: github.com/tagmbh/diag4free (PUBLIC)
 > Dieses Dokument ist das Übergabe-Dokument für die Weiterentwicklung (z. B. via Claude Code).
 
 ## Architektur-Kurzüberblick
@@ -10,7 +10,7 @@
 - `node scripts/build-index.mjs` baut `content/index.json` aus `content/<modell>/{docs,guides}.json`
   (`content/software.json` ist **nicht** Teil des Index-Builds, wird separat gefetcht)
 - Deployment: Push auf `main` → GitHub Actions → GitHub Pages → Custom Domain `diag4all.t-alpha.com` (~45 s)
-- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.50.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos und Motor-Symbolbilder liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
+- Service Worker: `sw.js`, Versionskonstante `VERSION` (aktuell `d4f-v0.51.0`) — **bei jedem Release bumpen**, sonst bleibt alter Cache aktiv. Die Fahrzeugfotos und Motor-Symbolbilder liegen in `BILD_ASSETS` und werden **einzeln** vorgehalten, nicht über `addAll` — das ist alles-oder-nichts und würde die App bei einem fehlenden Bild offline unbrauchbar machen
 - State/Persistenz: `localStorage` (`diag4free.prefs.v1` für Baureihe/Motor/Theme/Checks, `diag4free.vin.v1` für VIN-Cache)
 - Hash-Routing: `#/overview`, `#/docs`, `#/guide/<id>`, `#/measure`, `#/library`, `#/software`, `#/model/<id>`
 - Sichtbarkeits-Sync der Views passiert zentral in `render()` (nicht nur in `setView`) — wichtig für Deep-Links
@@ -20,6 +20,40 @@
 1. Fakten aus Quellen (bmwteka, WDS, Bentley, Foren) werden **von Grund auf neu formuliert** — nie 1:1 kopieren.
 2. Repo ist **öffentlich**: kein urheberrechtlich geschütztes Material einchecken. Nur verlinken, nichts hosten (gilt auch für BMW-Update-Dateien: Links zeigen auf BMW-CDN).
 3. Quellenattribution in Docs/Guides (`sources`-Feld) und im UI-Footer beibehalten.
+
+## Gerade abgeschlossen (v0.51.0, 02.09.2026)
+
+- **Motor-Symbolbilder**: zehn Renders, einer je Bauform und Aufladung, über
+  dem gerechneten Schema (`engineArt()`), sichtbar als Symbolbild gekennzeichnet,
+  Zuordnung aus `layout`/`aspiration` berechnet. Fünf der zehn Erstfassungen
+  hatten falsche Zylinder- oder Laderzahlen und wurden neu gerechnet — siehe
+  `docs/GESPERRTE-HOSTS.md`, Abschnitt 4.
+- **OBD-Layer repariert** (`obd.js`): mehrzeilige CAN-Antworten mit Längenkopf
+  und Füllbytes, Antworten mehrerer Steuergeräte und K-Leitungs-Antworten ohne
+  Zählbyte lieferten Phantomcodes; die VIN über K-Leitung kam nie; zwei
+  gleichzeitige Befehle (Live-Werte plus Fehlerspeicher) gingen beide stumm
+  verloren. Jetzt: Befehlswarteschlange, Nachrichten statt flacher Bytes,
+  Protokoll aus `ATDPN`, PID-Masken 00/20/40 statt blinder Anfragen. Abgesichert
+  durch eine ELM327-Attrappe in `tests/run.mjs` (`NUR_OBD=1 node tests/run.mjs`
+  läuft nur diesen Teil, in Sekunden).
+- **Bugcheck Diagnose-Runner**: Sprung in der Schrittspur ließ „Zurück“ nach
+  vorn springen; nicht wiederaufnehmbare Sitzung lief in einer Schleife;
+  Artikel eines Dokuments landete beim schnellen Blättern im nächsten; Wake Lock
+  blieb hängen; Pfadliste ignorierte den Motorfilter; Deep-Link `#/model/<id>`
+  und VIN-„Übernehmen“ landeten im Fahrzeugwähler; `null` in localStorage brach
+  den Start; J/N-Tasten antworteten unter offener Schublade. Alles behoben, je
+  mit Prüfung.
+- **Service Worker**: registrierte sich oft gar nicht (Load-Listener nach dem
+  Load-Ereignis gesetzt); der Content-Cache wurde bei jedem Versionswechsel
+  gelöscht, die App stand dann offline ohne Index; CDN-Antworten waren ohne
+  `crossorigin` undurchsichtig und landeten nie im Vorrat. Jetzt: sofortige
+  Registrierung, Content-Vorrat beim Install, `cache: 'reload'` für die Shell,
+  und die CI stempelt den Commit an `VERSION` — der Bump von Hand bleibt die
+  lesbare Release-Nummer, der Stempel erneuert den Vorrat bei jedem Deploy.
+- **Kleineres**: Safe-Area in der installierten App (Topbar-Zeile wächst mit),
+  Sprunglink `#main` ist keine Route mehr, Maskable-Icon mit Sicherheitszone,
+  Validator prüft Dateiform und Feldtypen, Index-Build überspringt `_`-Verzeichnisse,
+  Audit läuft jetzt auch vor dem Deploy.
 
 ## Gerade abgeschlossen (v0.3.0)
 
@@ -179,4 +213,10 @@ Abnahmekriterien) steht in `docs/SUBAGENT-PLAN.md`.
 - Nach Push Live-Check: `curl -s https://diag4all.t-alpha.com/content/index.json` (Version/Stats vergleichen), ~45 s warten
 - JSON-Fallstrick: deutsche Anführungszeichen konsequent als „ (U+201E) / " (U+201C) — ASCII-`"` im Fließtext bricht JSON
 - Tests: Playwright headless gegen `python3 -m http.server 8126`; Service Worker im Test-Kontext blocken
-  (`browser.newContext({ serviceWorkers: 'block' })`), sonst greift der alte Cache
+  (`browser.newContext({ serviceWorkers: 'block' })`), sonst greift der alte Cache.
+  Der Lauf startet seinen eigenen Server auf :8126 — ein fremder Server auf dem Port muss vorher weg.
+  `CHROMIUM_PATH` ist nur in der Linux-Sandbox nötig; auf dem Mac genügt `npm ci`, Chromium liegt im
+  Playwright-Cache. `NUR_OBD=1` läuft nur die ELM327-Attrappe, ohne Browser.
+- Release: `sw.js` `VERSION` und `package.json` gemeinsam heben, Abschnitt „Gerade abgeschlossen“ hier,
+  Verlauf in `docs/PROGRESS.md`, Git-Tag `vX.Y.Z` auf den Merge-Commit. Die CI hängt den Commit an
+  `VERSION` — vergessene Bumps kosten keinen veralteten Vorrat mehr, nur die Lesbarkeit.

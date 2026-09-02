@@ -122,10 +122,22 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
     if (await exists(docsPath)) {
       const f = `content/${dir}/docs.json`;
       const raw = await readJson(docsPath);
-      const docs = isArr(raw) ? raw : raw.docs;
+      // Nur die Form `{ docs: [...] }`. Ein nacktes Array liess der Validator
+      // frueher durch — der Index-Build versteht es aber nicht und liess das
+      // Verzeichnis still leer.
+      if (isArr(raw)) err(f, 'Datei ist ein nacktes Array — erwartet wird `{ "docs": [...] }`');
+      const docs = raw.docs;
       if (!isArr(docs)) err(f, '`docs` fehlt oder ist kein Array');
       else for (const d of docs) {
         if (!isStr(d.id)) { err(f, 'Doc ohne `id`'); continue; }
+        // Die App nimmt diese Felder als Listen von Zeichenketten und ruft
+        // .map/.includes darauf auf — ein String statt Array wirft beim
+        // Oeffnen der Schublade.
+        for (const feld of ['engines', 'points', 'pins']) {
+          if (d[feld] !== undefined && !(isArr(d[feld]) && d[feld].every(isStr))) {
+            err(f, `Doc \`${d.id}\`: \`${feld}\` muss ein Array aus Zeichenketten sein`);
+          }
+        }
         if (docIds.has(d.id)) err(f, `doppelte Doc-ID \`${d.id}\``);
         docIds.add(d.id);
         for (const req of ['type', 'gruppe', 'cat', 'title', 'valid', 'summary']) {
@@ -200,7 +212,8 @@ async function validateModelContent(modelIds, groupIds, enginesOf) {
     if (await exists(guidesPath)) {
       const f = `content/${dir}/guides.json`;
       const raw = await readJson(guidesPath);
-      const guides = raw.guides || raw;
+      if (!raw.guides || typeof raw.guides !== 'object') err(f, '`guides` fehlt — erwartet wird `{ "guides": {...}, "results": {...} }`');
+      const guides = raw.guides || {};
       const results = raw.results || {};
 
       // `next_docs` führt nach der Diagnose weiter. Ein Verweis ins Leere

@@ -1,6 +1,6 @@
 {
   "name": "diag4free",
-  "version": "0.5.0",
+  "version": "0.51.0",
   "private": true,
   "description": "BMW Werkstatt-Wissensbasis — statisches PWA ohne Build-Schritt",
   "type": "module",

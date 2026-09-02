@@ -1008,6 +1008,28 @@
   margin-bottom: var(--space-5);
 }
 .guide-option {
+/* Pfade fuer andere Motoren derselben Baureihe: sichtbar, aber nachrangig. */
+.guide-section-title {
+  margin: var(--space-5) 0 var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.guide-hint {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.guide-option-fremd { opacity: 0.78; }
+.guide-option-fremd:hover, .guide-option-fremd:focus-visible { opacity: 1; }
+.guide-engines {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);

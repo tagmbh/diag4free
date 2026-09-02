@@ -1,6 +1,6 @@
 # diag4free — Arbeitsstand
 
-> Stand: 2026-09-01 (zweiter Durchgang) · **Netzfreigabe greift weiterhin nicht — gemessen, siehe unten**
+> Stand: 2026-09-02 (v0.51.0) · Motorbilder eingebaut, OBD-Layer und Runner nach Bugcheck repariert · Netzfreigabe: siehe `GESPERRTE-HOSTS.md`
 > Live: https://diag4all.t-alpha.com
 > Zweck: Nach einem Kontext-Reset hier einsteigen. `HANDOFF.md` bleibt das
 > Architektur- und Regelwerk, dieses Dokument ist der Verlauf und die offene Liste.
@@ -34,7 +34,9 @@ Vier Durchgänge sind gemerged und liegen auf `main`:
 | Browser-Historie / Zurück-Knopf | umgebaut, geprüft |
 | Gliederung (`content/gruppen.json`) | 34 Gruppen auf 2 Achsen, jedes Doc zugeordnet; alle 29 Fahrzeuggruppen gegen BMWs Schema belegt (`docs/HAUPTGRUPPEN.md`) |
 | Gruppenabdeckung | **10–13** der 34 Gruppen je Baureihe — 186 von 544 Zellen = **34 %**. Der Nenner stieg am 01.09. von 21 auf 34, weil 13 fehlende Hauptgruppen dazukamen; kein Dokument ging verloren. Gruppen 00 und 34 sind jetzt in allen 16 Baureihen belegt |
-| Abnahme (`tests/run.mjs`) | **471 Prüfungen**, alle grün |
+| Motor-Symbolbilder (`assets/motoren/`) | 10, eines je Bauform und Aufladung, 96 kB zusammen; jedes nachgezählt |
+| OBD-Layer (`obd.js`) | ELM327-Attrappe mit 15 Protokollfällen in der Abnahme |
+| Abnahme (`tests/run.mjs`) | **509 Prüfungen**, alle grün |
 | Audit (`scripts/audit.mjs`) | 0 Befunde |
 
 **Verifizieren nach jeder Änderung:**
@@ -365,6 +367,40 @@ Alle in `main`, alle durch Tests abgesichert:
 11. `changeEngineDialog_LEGACY` — toter `prompt()`, führte einen Folgeagenten
     zu dem Schluss, das Frontend liege nicht auf `main`
 
+Bugcheck vom 02.09.2026 (v0.51.0), drei Prüfer parallel über `obd.js`, den
+Diagnose-Runner und die Infrastruktur, jeder Befund am Code nachvollzogen:
+
+12. `obd.js`: mehrzeilige CAN-Antworten (Längenkopf, Füllbytes) lieferten
+    Phantomcodes — aus drei echten wurden vier falsche
+13. `obd.js`: zwei antwortende Steuergeräte — das zweite „43“ wurde als Code gelesen
+14. `obd.js`: K-Leitung mit mehr als drei Codes — Zählbyte-Heuristik griff falsch
+15. `obd.js`: VIN über K-Leitung immer `null` (Kopfbytes als Zeichen mitgezählt)
+16. `obd.js`: zwei gleichzeitige Befehle überschrieben sich, beide ohne Antwort
+17. `obd.js`: PIDs oberhalb 20 blind angefragt statt aus den Masken gelesen
+18. Runner: Sprung in der Schrittspur schob einen Historieneintrag — „Zurück“
+    führte danach nach vorn
+19. Runner: Sitzung mit nicht existierendem Schritt bot „Weitermachen“ in einer Schleife an
+20. Runner: Pfadliste ignorierte den Motorfilter (M43 bekam „M54 startet nicht“)
+21. Runner: „Neu starten“/„Andere Diagnose“ im Ergebnis zogen den Hash nicht mit
+22. Runner: J/N und gehaltene Tasten antworteten unter offener Schublade oder Dialog
+23. Schublade: Artikel eines Dokuments landete beim schnellen Blättern im nächsten
+24. Wake Lock blieb nach Verlassen der Diagnose hängen
+25. Deep-Link `#/model/<id>` und VIN-„Übernehmen“ landeten im Fahrzeugwähler
+26. `null` oder Zahl in `localStorage` brach den Start ab
+27. VIN-Dialog ließ je Öffnen einen Escape-Horcher zurück
+28. Baureihenwechsel ließ den Pfad-Hash der alten Baureihe stehen
+29. Service Worker registrierte sich nicht, wenn `load` schon vorbei war
+30. Content-Cache wurde bei jedem Versionswechsel gelöscht — offline ohne Index
+31. Vier Content-Dateien im Shell-Cache, den die Content-Route nie liest
+32. CDN-Antworten ohne `crossorigin` undurchsichtig, landeten nie im Vorrat
+33. Shell-Vorrat konnte aus dem HTTP-Cache mit alter `app.js` gefüllt werden;
+    vergessene Bumps hielten alte Clients unbegrenzt — jetzt Commit-Stempel in der CI
+34. Installierte App auf iPhone mit Notch: Topbar-Zeile blieb 56 px, Knöpfe ragten heraus
+35. Sprunglink `#main` wurde als Route behandelt, schloss die Schublade
+36. Validator ließ nacktes Array und falsche Feldtypen durch, Build verstand sie nicht
+37. Maskable-Icon war das normale Icon ohne Sicherheitszone
+38. Audit lief nicht vor dem Deploy
+
 ## Was der Durchgang vom 27.08. ergeben hat
 
 Vollständige Prüfung jedes Eintrags, jeder Grafik, jedes Links — dann sechs
@@ -433,13 +469,17 @@ Codieren. Das ist Absicht und teuer erarbeitet: eine benannte Lücke ist
 brauchbar, eine erfundene Zahl ist gefährlich. Wer die Werte hat, trägt sie
 nach; wer sie nicht hat, misst vergleichend.
 
-## Offen — Priorität 0: echte Fahrzeug- und Motorbilder
+## Erledigt (02.09.2026): echte Fahrzeug- und Motorbilder
 
-Die parametrischen Silhouetten aus `graphics.js` sind als Platzhalter
-gedacht gewesen und werden abgelöst: verlangt sind **fotorealistische
-3D-Renders** von Fahrzeug und Motor, keine Strichzeichnungen.
+Die Fahrzeugfotos kamen mit #8, die Motor-Symbolbilder mit #55. Der
+CDN-Host war in der Sitzung vom 02.09. erreichbar; die zehn Renders wurden
+geholt, einzeln nachgezählt, sechs davon neu gerechnet, dann eingebaut —
+Protokoll in `docs/GESPERRTE-HOSTS.md`, Abschnitt 4. Das Schema bleibt
+darunter und trägt weiter die belegten Merkmale.
 
-**Blockiert, nicht offen.** Die Erzeugung funktioniert — ein Testrender
+Der Absatz darunter ist der Stand davor und bleibt als Begründung stehen.
+
+**War blockiert, nicht offen.** Die Erzeugung funktioniert — ein Testrender
 (E46-Limousine, `nano_banana_pro`, 2 Credits) liegt im Higgsfield-Konto
 unter `d58db3b0-4ce7-464b-9198-8696b5d7b8a1`. Nur das Ergebnis lässt sich
 nicht abholen: `d8j0ntlcm91z4.cloudfront.net` wird von der Egress-Policy

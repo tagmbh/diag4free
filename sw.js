@@ -6,7 +6,7 @@
      - Navigation: network-first mit App-Shell-Fallback (SPA)
 */
 
-const VERSION = 'd4f-v0.50.0';
+const VERSION = 'd4f-v0.51.0';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const VENDOR_CACHE = `${VERSION}-vendor`;
@@ -17,10 +17,6 @@ const SHELL_ASSETS = [
   './base.css',
   './style.css',
   './mobile.css',
-  './content/software.json',
-  './content/symptome.json',
-  './content/gruppen.json',
-  './content/glossar.json',
   './app.js',
   './graphics.js',
   './obd.js',
@@ -33,9 +29,27 @@ const SHELL_ASSETS = [
   './assets/icons/favicon.svg'
 ];
 
+// Inhalte, die die App zum Start braucht. Sie liegen im Content-Cache —
+// dort, wo die Content-Route auch nachsieht. Vorher standen vier davon im
+// Shell-Cache, den die Content-Route nie liest, und index.json in gar
+// keinem: Nach jedem Versionswechsel war die App offline ohne Index, bis
+// jemand einmal online neu geladen hatte. Einzeln, mit Fangnetz — eine
+// fehlende Datei darf den Vorrat nicht kippen.
+const CONTENT_ASSETS = [
+  './content/index.json',
+  './content/models.json',
+  './content/engines.json',
+  './content/measure.json',
+  './content/software.json',
+  './content/symptome.json',
+  './content/gruppen.json',
+  './content/glossar.json'
+];
+
 const VENDOR_ORIGINS = [
   'https://cdn.jsdelivr.net',
   'https://api.fontshare.com',
+  'https://cdn.fontshare.com',
   'https://fonts.googleapis.com',
   'https://fonts.gstatic.com'
 ];
@@ -58,15 +72,20 @@ const BILD_ASSETS = [
   ].map(id => `./assets/motoren/${id}.webp`)
 ];
 
+// `cache: 'reload'` holt frisch vom Server statt aus dem HTTP-Cache des
+// Browsers — sonst kann ein neuer Vorrat mit einer alten app.js gefuellt
+// werden, die der Browser noch fuer zehn Minuten vorhaelt.
+const frisch = (u) => new Request(u, { cache: 'reload' });
+
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(SHELL_CACHE)
-      .then(async cache => {
-        await cache.addAll(SHELL_ASSETS);
-        await Promise.all(BILD_ASSETS.map(u => cache.add(u).catch(() => {})));
-      })
-      .then(() => self.skipWaiting())
-  );
+  event.waitUntil((async () => {
+    const shell = await caches.open(SHELL_CACHE);
+    await shell.addAll(SHELL_ASSETS.map(frisch));
+    await Promise.all(BILD_ASSETS.map(u => shell.add(u).catch(() => {})));
+    const content = await caches.open(CONTENT_CACHE);
+    await Promise.all(CONTENT_ASSETS.map(u => content.add(frisch(u)).catch(() => {})));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', event => {

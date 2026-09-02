@@ -38,7 +38,9 @@ async function main() {
   const entries = await readdir(CONTENT_DIR, { withFileTypes: true });
   // Sortiert, damit die Ausgabe unabhängig von der Dateisystem-Reihenfolge
   // reproduzierbar ist — sonst unterscheidet sich der Build je nach Maschine.
-  const modelDirs = entries.filter(e => e.isDirectory()).map(e => e.name).sort();
+  // Unterstrich vorn heisst Arbeitsmaterial (siehe validate-content.mjs) —
+  // der Validator ueberspringt es, also darf der Build es nicht ausliefern.
+  const modelDirs = entries.filter(e => e.isDirectory() && !e.name.startsWith('_')).map(e => e.name).sort();
 
   const docs = [];
   const guides = {};

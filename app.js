@@ -13,7 +13,10 @@
   const loadPrefs = () => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : {};
+      const p = raw ? JSON.parse(raw) : {};
+      // Ein gespeichertes `null` oder eine Zahl ist gueltiges JSON, aber
+      // kein Objekt — Object.keys() darauf brach frueher den Start ab.
+      return p && typeof p === 'object' && !Array.isArray(p) ? p : {};
     } catch { return {}; }
   };
   const savePrefs = () => {
@@ -52,7 +55,14 @@
       const s = JSON.parse(raw);
       // Nur Sitzungen der aktiven Baureihe anbieten — keine Baureihenmischung
       if (!s || s.series !== state.series || !s.guide) return null;
-      if (!findGuide(s.guide, s.series)) return null;
+      const g = findGuide(s.guide, s.series);
+      if (!g) return null;
+      // Ein Schritt, den es nicht (mehr) gibt — etwa nach einer Kuerzung des
+      // Pfads im Content — liesse sich nicht wiederaufnehmen. Vorher bot die
+      // Karte "Weitermachen" trotzdem an, und der Weg endete jedes Mal wieder
+      // in der Liste: eine Schleife ohne Ausgang.
+      if (!Number.isInteger(s.step) || s.step < 0 || s.step >= g.steps.length) return null;
+      if (s.result && !(g._results && g._results[s.result])) return null;
       return s;
     } catch { return null; }
   };
@@ -87,12 +97,19 @@
   // Während einer laufenden Fehlersuche darf der Bildschirm nicht zugehen:
   // Hände sind am Fahrzeug, nicht am Display.
   let wakeLock = null;
+  // Wird gerade gebraucht? Waehrend das Anfordern laeuft, kann der Nutzer
+  // die Diagnose schon verlassen haben — dann darf der Lock, der danach
+  // eintrifft, nicht liegen bleiben. Vorher blieb genau so einer haengen.
+  const wakeLockNoetig = () =>
+    (state.view === 'troubleshoot' && !!state.guide && !state.result) || !!scan.stopLive;
   const requestWakeLock = async () => {
     if (wakeLock || !('wakeLock' in navigator)) return;
     try {
-      wakeLock = await navigator.wakeLock.request('screen');
-      wakeLock.addEventListener('release', () => { wakeLock = null; });
-    } catch { wakeLock = null; }
+      const lock = await navigator.wakeLock.request('screen');
+      if (wakeLock || !wakeLockNoetig()) { lock.release().catch(() => {}); return; }
+      wakeLock = lock;
+      lock.addEventListener('release', () => { if (wakeLock === lock) wakeLock = null; });
+    } catch { /* verweigert, z. B. bei leerem Akku — dann ohne */ }
   };
   const releaseWakeLock = () => {
     try { wakeLock?.release(); } catch { /* ignore */ }
@@ -180,6 +197,9 @@
     updateContext();
     renderSidebarModels();
     savePrefs();
+    // Der Hash nennt sonst weiter den Pfad der vorigen Baureihe — ein
+    // Neuladen startete ihn dann in der neuen, falls der Name dort existiert.
+    updateHash('replace');
     render();
   };
 
@@ -377,6 +397,9 @@
     try {
       if (parts.length === 0) { state.view = 'overview'; return; }
       const [head, ...rest] = parts;
+      // "#main" ist der Sprunglink fuer Tastaturnutzer, keine Route. Ihn wie
+      // eine zu behandeln, schloss eine offene Schublade und zeichnete alles neu.
+      if (head === 'main') return;
 
       const willDoc = head === 'docs' && rest[0];
       // Schublade schliessen, sobald der Hash kein Dokument mehr nennt.
@@ -385,6 +408,9 @@
       if (VIEW_HASH[head]) state.view = head;
 
       if (head === 'model' && rest[0]) {
+        // Ein Deep-Link auf die Baureihe ist eine bewusste Wahl — sonst
+        // landete er im Fahrzeugwaehler statt bei der Baureihe.
+        state.picked = true;
         setSeries(rest[0]);
         state.view = 'overview';
       }
@@ -407,8 +433,10 @@
               // Rueckwaerts durch die Historie: die Spur mitfuehren, damit
               // die Schrittanzeige nicht Fragen als beantwortet fuehrt, zu
               // denen der Nutzer gerade zurueckgegangen ist.
-              const letzte = state.history[state.history.length - 1];
-              if (letzte === ziel) state.history.pop();
+              // Auch ueber mehrere Schritte (Sprung in der Spur): alles
+              // hinter dem Ziel ist wieder unbeantwortet.
+              const k = state.history.lastIndexOf(ziel);
+              if (k >= 0) state.history.length = k;
               state.step = ziel;
             }
           }
@@ -1026,6 +1054,24 @@
   const renderTroubleshoot = () => {
     const panel = $('#troubleshootPanel');
     const guides = currentGuides();
+    // Pfade tragen einen Motorfilter (`engines`). Vorher stand die Liste
+    // ungefiltert da: der M43-Fahrer bekam "M54 startet nicht" angeboten,
+    // mit den Sollwerten des M54. Jetzt zuerst die passenden, darunter
+    // getrennt und gekennzeichnet die der anderen Motoren — verschwinden
+    // sollen sie nicht, die Messwege sind oft dieselben.
+    const passend = guides.filter(g => !(g.engines && g.engines.length) || g.engines.includes(state.engine));
+    const andere = guides.filter(g => !passend.includes(g));
+    const guideListe = (liste, fremd = false) => `
+      <div class="guide-select">
+        ${liste.map(g => `
+          <button class="guide-option${fremd ? ' guide-option-fremd' : ''}" data-select-guide="${escapeHtml(g.id)}">
+            <span class="guide-code">${escapeHtml(g.code)}</span>
+            <span class="guide-name">${escapeHtml(g.name)}</span>
+            <span class="guide-desc">${escapeHtml(g.desc)}</span>
+            ${fremd && g.engines && g.engines.length ? `<span class="guide-engines">Für ${escapeHtml(g.engines.join(' · '))}</span>` : ''}
+          </button>
+        `).join('')}
+      </div>`;
 
     if (!state.guide) {
       releaseWakeLock();
@@ -1045,7 +1091,7 @@
               <span class="resume-time">${escapeHtml(relativeTime(session.ts))}</span>
             </div>
             <div class="resume-name">${escapeHtml(sessionGuide.name)}</div>
-            <div class="resume-progress">${session.result ? 'Ergebnis erreicht' : `Schritt ${session.step + 1} von ${sessionGuide.steps.length}`}</div>
+            <div class="resume-progress">${session.result ? 'Ergebnis erreicht' : `Schritt ${Number(session.step) + 1} von ${sessionGuide.steps.length}`}</div>
             <div class="resume-actions">
               <button class="btn btn-primary" data-resume-session>Weitermachen</button>
               <button class="btn btn-ghost" data-discard-session>Verwerfen</button>
@@ -1059,15 +1105,13 @@
             <p>Weitere Guides folgen. Bis dahin die Tech-Docs oder Bibliothek nutzen.</p>
           </div>
         ` : `
-          <div class="guide-select">
-            ${guides.map(g => `
-              <button class="guide-option" data-select-guide="${escapeHtml(g.id)}">
-                <span class="guide-code">${escapeHtml(g.code)}</span>
-                <span class="guide-name">${escapeHtml(g.name)}</span>
-                <span class="guide-desc">${escapeHtml(g.desc)}</span>
-              </button>
-            `).join('')}
-          </div>
+          ${passend.length ? guideListe(passend) : `
+            <p class="guide-hint">Für den ${escapeHtml(state.engine)} gibt es noch keinen eigenen Pfad.
+               Die folgenden gelten für andere Motoren dieser Baureihe — die Messwege
+               sind oft übertragbar, die Sollwerte nicht.</p>`}
+          ${andere.length && passend.length ? `
+            <h3 class="guide-section-title">Für andere Motoren dieser Baureihe</h3>` : ''}
+          ${andere.length ? guideListe(andere, true) : ''}
         `}
       `;
       panel.querySelector('[data-resume-session]')?.addEventListener('click', () => {
@@ -1093,7 +1137,7 @@
     }
 
     const g = findGuide(state.guide);
-    if (!g) { state.guide = null; renderTroubleshoot(); return; }
+    if (!g) { state.guide = null; clearSession(); renderTroubleshoot(); return; }
 
     // Result view
     if (state.result) {
@@ -1140,12 +1184,14 @@
       `;
       saveSession();
       releaseWakeLock();
+      // Beide Knoepfe muessen den Hash mitziehen — sonst stand nach einem
+      // Neuladen das Ergebnis wieder da, das man gerade verlassen hatte.
       panel.querySelector('[data-reset-guide]').addEventListener('click', () => {
-        state.step = 0; state.history = []; state.result = null; saveSession(); renderTroubleshoot();
+        state.step = 0; state.history = []; state.result = null; saveSession(); updateHash('push'); renderTroubleshoot();
       });
       panel.querySelector('[data-back-to-guides]').addEventListener('click', () => {
         state.guide = null; state.step = 0; state.history = []; state.result = null;
-        clearSession(); updateResumeDot(); renderTroubleshoot();
+        clearSession(); updateResumeDot(); updateHash('push'); renderTroubleshoot();
       });
       panel.querySelector('[data-print]').addEventListener('click', () => window.print());
       panel.querySelectorAll('[data-open-doc]').forEach(b =>
@@ -1156,7 +1202,7 @@
 
     // Step view
     const step = g.steps[state.step];
-    if (!step) { state.guide = null; renderTroubleshoot(); return; }
+    if (!step) { state.guide = null; clearSession(); renderTroubleshoot(); return; }
     const total = g.steps.length;
     const progress = Math.round(((state.step) / total) * 100);
     const refDoc = step.doc ? state.data.docs.find(d => d.id === step.doc) : null;
@@ -1243,10 +1289,16 @@
     panel.querySelectorAll('[data-trail]').forEach(btn => btn.addEventListener('click', () => {
       const i = Number(btn.dataset.trail);
       if (!Number.isInteger(i) || i < 0 || i >= state.history.length) return;
+      // Stammen die Eintraege von uns, geht es ueber die Historie zurueck —
+      // dann fuehren Browser-Zurueck und "Zurueck" danach dorthin, wo man
+      // erwartet. Vorher wurde ein neuer Eintrag geschoben, und "Zurueck"
+      // sprang nach VORN, auf den Schritt, den man gerade verlassen hatte.
+      const n = state.history.length - i;
+      if (eigeneEintraege >= n) { eigeneEintraege -= n; history.go(-n); return; }
       state.step = state.history[i];
       state.history = state.history.slice(0, i);
       state.result = null;
-      updateHash('push');
+      updateHash('replace');
       renderTroubleshoot();
     }));
 
@@ -1291,8 +1343,10 @@
   // Solange nicht, greift die eingebaute Liste unten — die App bleibt nutzbar.
   const CHECKS_KEY = 'diag4free.checks.v2';
   const loadChecks = () => {
-    try { return JSON.parse(localStorage.getItem(CHECKS_KEY)) || {}; }
-    catch { return {}; }
+    try {
+      const c = JSON.parse(localStorage.getItem(CHECKS_KEY));
+      return c && typeof c === 'object' && !Array.isArray(c) ? c : {};
+    } catch { return {}; }
   };
   const saveChecks = () => {
     try { localStorage.setItem(CHECKS_KEY, JSON.stringify(state.checks)); } catch { /* ignore */ }
@@ -1669,10 +1723,15 @@
   // `still: true` heisst: der Aufruf kommt aus dem Hash, es wird kein
   // neuer Historieneintrag erzeugt — sonst wuerde jede Rueckwaertsnavigation
   // sofort wieder einen nachschieben.
+  let drawerLauf = 0;
   const openDocDrawer = async (docId, opt = {}) => {
     const doc = state.data.docs.find(d => d.id === docId);
     if (!doc) return;
     state.drawer = { docId };
+    // Wer beim Blaettern schneller ist als das Netz, bekam den Artikel des
+    // vorigen Dokuments in das naechste geschrieben. Jeder Aufruf traegt
+    // deshalb eine Nummer; nur der juengste darf noch schreiben.
+    const meinLauf = ++drawerLauf;
     if (!opt.still) updateHash('push');
     lastTrigger = document.activeElement;
 
@@ -1795,6 +1854,7 @@
       const mount = $('#articleMount');
       try {
         const resp = await fetch(`./content/${doc.model}/${doc.article}`);
+        if (meinLauf !== drawerLauf) return;
         if (resp.status === 404) {
           if (mount) mount.innerHTML =
             '<p class="article-pending">Zu diesem Dokument ist ein ausführlicher Artikel vorgesehen, aber noch nicht geschrieben.</p>';
@@ -1802,6 +1862,7 @@
         }
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const md = await resp.text();
+        if (meinLauf !== drawerLauf) return;
         // Eigener Renderer statt marked vom CDN. Vorher fiel die Anzeige
         // ohne Netz auf rohen Text zurück — Rautezeichen und
         // Pipe-Tabellen statt eines Artikels. In der Werkstatt ohne Netz
@@ -1809,9 +1870,12 @@
         // Fachbegriffe im Artikel anklickbar machen. Fehlt der Baustein,
         // steht der Artikel unveraendert da — er ist keine Voraussetzung.
         const html = D4F_MD.parse(md, { ohneTitel: true });
-        $('#articleContent').innerHTML = window.Glossar ? Glossar.markup(html) : html;
+        const ziel = $('#articleContent');
+        if (ziel) ziel.innerHTML = window.Glossar ? Glossar.markup(html) : html;
       } catch (e) {
-        $('#articleContent').innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
+        if (meinLauf !== drawerLauf) return;
+        const ziel = $('#articleContent');
+        if (ziel) ziel.innerHTML = '<p style="color:var(--color-text-muted);">Artikel konnte nicht geladen werden.</p>';
       }
     }
   };
@@ -2056,13 +2120,13 @@
   // Live-Werte. Der Bildschirm darf dabei nicht ausgehen — beim Messen am
   // laufenden Motor hat man die Haende nicht frei.
   const scanLiveStarten = async () => {
-    if (scan.stopLive) { scan.stopLive(); scan.stopLive = null; scanNeu(); return; }
-    requestWakeLock?.();
+    if (scan.stopLive) { scan.stopLive(); scan.stopLive = null; releaseWakeLock(); scanNeu(); return; }
     const pids = await OBD.readSupportedPids();
     scan.stopLive = OBD.livePoll(pids, (w) => {
       scan.werte.set(w.pid, w);
       scanLiveZeichnen();
     });
+    requestWakeLock();
     scanNeu();
   };
 
@@ -2483,7 +2547,12 @@
   };
 
   const vinCacheKey = 'diag4free.vin.v1';
-  const loadVinCache = () => { try { return JSON.parse(localStorage.getItem(vinCacheKey)) || {}; } catch { return {}; } };
+  const loadVinCache = () => {
+    try {
+      const c = JSON.parse(localStorage.getItem(vinCacheKey));
+      return c && typeof c === 'object' && !Array.isArray(c) ? c : {};
+    } catch { return {}; }
+  };
   const saveVinCache = (c) => { try { localStorage.setItem(vinCacheKey, JSON.stringify(c)); } catch {} };
 
   const openVinDialog = () => {
@@ -2505,10 +2574,12 @@
         </div>
       </div>`;
     document.body.appendChild(dlg);
-    const close = () => dlg.remove();
+    // Der Escape-Horcher haengt am Dokument und muss bei jedem Schliessen
+    // weg, nicht nur bei Escape selbst — sonst bleibt je Oeffnen einer haengen.
+    const esc = (e) => { if (e.key === 'Escape') close(); };
+    const close = () => { dlg.remove(); document.removeEventListener('keydown', esc); };
     dlg.querySelector('[data-close-dialog]').addEventListener('click', close);
     dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
-    const esc = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
     document.addEventListener('keydown', esc);
 
     const input = dlg.querySelector('#vinInput');
@@ -2586,6 +2657,7 @@
       dlg.querySelectorAll('[data-vin-apply]').forEach(b => {
         b.addEventListener('click', () => {
           const engine = b.dataset.vinEngine || undefined;
+          state.picked = true;
           setSeries(b.dataset.vinApply, engine);
           setView('overview');
           close();
@@ -2604,9 +2676,14 @@
     if (!('serviceWorker' in navigator)) return;
     // only register on http/https, not file://
     if (!/^https?:/.test(location.protocol)) return;
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(err => console.warn('SW-Registrierung fehlgeschlagen', err));
-    });
+    // `load` ist meist schon vorbei, wenn wir hier ankommen — der Aufruf
+    // wartet auf den Content-Index, das Ereignis nicht. Ein Horcher auf ein
+    // vergangenes Ereignis feuert nie: der Service Worker wurde dann auf
+    // diesem Besuch gar nicht registriert, und offline gab es nichts.
+    const los = () => navigator.serviceWorker.register('./sw.js')
+      .catch(err => console.warn('SW-Registrierung fehlgeschlagen', err));
+    if (document.readyState === 'complete') los();
+    else window.addEventListener('load', los);
   };
 
   const setupInstallPrompt = () => {
@@ -2696,8 +2773,15 @@
         return;
       }
 
-      // Ab hier nur noch im laufenden Diagnosepfad.
+      // Ab hier nur noch im laufenden Diagnosepfad — und nur, wenn nichts
+      // darueber liegt. Mit offener Schublade oder offenem Dialog beantwortete
+      // ein J beim Lesen die Frage darunter; eine gehaltene Taste beantwortete
+      // gleich mehrere.
       if (state.view !== 'troubleshoot' || !state.guide || state.result) return;
+      if (e.repeat || state.drawer) return;
+      if (document.querySelector('.dialog-backdrop')) return;
+      const glossar = document.querySelector('.gl-dialog');
+      if (glossar && glossar.getClientRects().length) return;
       const ja = $('[data-answer="yes"]');
       const nein = $('[data-answer="no"]');
       if (!ja || !nein) return;
@@ -2741,13 +2825,24 @@
       openDocDrawer(id);
     });
 
+    // Diese Spruenge erzeugen einen Historieneintrag wie updateHash('push')
+    // — und muessen ihn auch zaehlen, sonst weiss `zurueck` nichts davon.
+    const springe = (ziel) => {
+      if (location.hash === ziel) return;
+      eigeneEintraege++;
+      location.hash = ziel;
+    };
     document.addEventListener('d4f:symptom-pfad', (e) => {
       const id = e.detail && e.detail.guide;
-      if (id) location.hash = `#/guide/${id}`;
+      if (id) springe(`#/guide/${id}`);
     });
     document.addEventListener('d4f:symptom-doc', (e) => {
       const id = e.detail && e.detail.doc;
-      if (id) location.hash = `#/docs/${id}`;
+      if (id) springe(`#/docs/${id}`);
+    });
+    document.addEventListener('d4f:doc', (e) => {
+      const id = e.detail && e.detail.id;
+      if (id && location.hash !== `#/docs/${id}`) eigeneEintraege++;
     });
 
     window.addEventListener('popstate', () => { applyHash(); render(); });
