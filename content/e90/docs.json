@@ -550,6 +550,28 @@
         "D4F-E90-004",
         "D4F-E90-005"
       ]
+    },
+    {
+      "id": "D4F-E90-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E90 · Aluminium-Doppelgelenkachse, Lenkungsknacken, xDrive",
+      "valid": "E90 · 2005–2013",
+      "summary": "Der E90 hat eine Doppelgelenkachse aus Aluminium. Zwei Befunde tauchen überdurchschnittlich oft auf: Knacken aus der Lenksäule, das nicht aus der Achse kommt, und Gelenke, die nur mit dem ganzen Lenker zu haben sind.",
+      "points": [
+        "Knacken beim Lenken, das sich im Stand und bei langsamer Fahrt gleich anfühlt, kommt beim E90 häufig aus der Lenksäule und nicht aus dem Fahrwerk. Vor dem Zerlegen der Achse dort hinhören",
+        "Traggelenke sind an dieser Achse überwiegend nicht einzeln ersetzbar. Ein ausgeschlagenes Gelenk heißt Lenkertausch",
+        "Zugstrebenlager und Querlenkerlager über den Hebeltest trennen, bevor getauscht wird",
+        "Koppelstangen als billiger Ausschluss für Klappern in Kurven",
+        "Bei xDrive kommen Antriebswellen und Verteilergetriebe als Geräuschquellen dazu — Ruckeln beim Rangieren gehört dorthin",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-103"
+      ]
     }
   ]
 }

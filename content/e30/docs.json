@@ -450,6 +450,28 @@
         "D4F-E30-008",
         "D4F-E30-003"
       ]
+    },
+    {
+      "id": "D4F-E30-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E30 · Querlenkerlager, Traggelenk, Federbeinstützlager",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 sitzt der häufigste Fahrwerksbefund im Querlenkerlager. Es ist billig, es ist gut zugänglich, und es erklärt einen großen Teil der Geräusche, für die andere Teile getauscht werden.",
+      "points": [
+        "Das Querlenkerlager ist der Klassiker: Poltern über Querfugen, unruhiger Geradeauslauf, bei starkem Verschleiß Rubbeln beim Bremsen. Vor jedem anderen Verdacht prüfen",
+        "Traggelenk und Querlenkerlager sitzen am selben Lenker und werden vernünftigerweise zusammen erneuert — der Ausbau ist derselbe",
+        "Knacken beim Lenken im Stand: zuerst das Federbeinstützlager, dann die Spurstangen. Nicht umgekehrt",
+        "Ein Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage, dann eine Bremsscheibenfrage, erst danach eine Fahrwerksfrage",
+        "Stabilisatorlager und Koppelstangen erzeugen ein Klappern, das nur in Kurven und beim einseitigen Einfedern auftritt",
+        "Achsvermessung nach jedem Eingriff. Der E30 reagiert sichtbar auf Spurabweichung"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-103"
+      ]
     }
   ]
 }

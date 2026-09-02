@@ -333,6 +333,29 @@
         "D4F-F22-101",
         "D4F-F22-106"
       ]
+    },
+    {
+      "id": "D4F-F22-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F22 · Federbeinachse, Koppelstangen, M-Fahrwerk",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Die Vorderachse des F22 folgt der des F30. Der Unterschied liegt in der Ausstattung: Sport- und M-Fahrwerke sind straffer abgestimmt, und dieselbe Abnutzung fällt dort früher auf.",
+      "points": [
+        "Koppelstangen des Stabilisators sind der erste und billigste Ausschluss bei Klappern über kurze Wellen",
+        "Beim straffen Fahrwerk werden Lagerbefunde früher hörbar als beim Komfortfahrwerk. Ein Geräusch bei geringer Laufleistung ist hier kein Widerspruch",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Elektromechanische Lenkung: Lenkwinkelabgleich nach jedem Eingriff an Achse, Spur oder Lenkung, sonst regelt die DSC ohne Fahrsituation",
+        "Querlenkerlager über den Hebeltest am angehobenen Rad beurteilen",
+        "Aluminiumlenker mit Stahlschrauben: festsitzende Verbindungen einplanen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-103",
+        "D4F-F22-106"
+      ]
     }
   ]
 }

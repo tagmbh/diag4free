@@ -373,6 +373,28 @@
         "D4F-E39-003",
         "D4F-E39-005"
       ]
+    },
+    {
+      "id": "D4F-E39-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E39 · Zugstrebe mit Hydrolager, Lenkungsschlagen beim Bremsen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Der E39 hat einen Befund, der die Baureihe prägt: Die obere Zugstrebe trägt ein hydraulisch gefülltes Lager. Wenn es ausläuft, schlägt die Lenkung beim Bremsen — und die Bremsscheibe wird zu Unrecht verdächtigt.",
+      "points": [
+        "Lenkradschlagen beim Bremsen ist am E39 zuerst die Zugstrebe, nicht die Bremsscheibe. Das Hydrolager verliert seine Füllung, das Rad bekommt Längsspiel, und beim Bremsen wird daraus ein Schlagen",
+        "Das Lager ist von außen oft unauffällig. Eine gerissene Manschette oder Ölspuren an der Strebe sind der sichtbare Beleg — fehlen sie, schließt das den Befund nicht aus",
+        "Beide Seiten zusammen erneuern, auch wenn nur eine auffällig ist: die zweite folgt erfahrungsgemäß kurz darauf, und der Arbeitsweg ist derselbe",
+        "Nicht alle Ausführungen haben Hydrolager — bei den M-Modellen sind Gummilager verbaut. Vor der Teilebestellung am Fahrzeug prüfen; dieser Punkt ist einfach belegt und nicht gesichert",
+        "Querlenker und Traggelenk bleiben die zweite Kandidatengruppe für Poltern über Querfugen",
+        "Nach dem Tausch der Zugstreben ist die Achsvermessung erforderlich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-103"
+      ]
     }
   ]
 }

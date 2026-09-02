@@ -378,6 +378,29 @@
         "D4F-F30-101",
         "D4F-F30-106"
       ]
+    },
+    {
+      "id": "D4F-F30-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse F30 · Federbeinachse in Aluminium, Koppelstangen, Lenkwinkel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Die Vorderachse des F30 ist konstruktiv unspektakulär. Was sie besonders macht, ist die elektromechanische Lenkung dahinter: Nach jedem Eingriff muss der Lenkwinkel abgeglichen werden, sonst regelt die DSC ohne Fahrsituation.",
+      "points": [
+        "Elektromechanische Lenkung: Nach Arbeiten an Achse, Spur oder Lenkung ist der Lenkwinkelabgleich Pflicht, nicht Kür. Ohne ihn kommen DSC-Eingriffe ohne Anlass",
+        "Koppelstangen des Stabilisators sind der häufigste und billigste Befund bei Klappern über kurze Wellen",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Querlenkerlager über den Hebeltest am angehobenen Rad beurteilen",
+        "Aluminiumlenker mit Stahlschrauben: mit festsitzenden Verbindungen rechnen",
+        "Bei xDrive kommen Antriebswellen vorn als Geräuschquelle dazu; Knacken beim Einschlagen unter Last deutet aufs Gleichlaufgelenk"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-103",
+        "D4F-F30-106"
+      ]
     }
   ]
 }

@@ -378,6 +378,28 @@
         "D4F-E88-030",
         "D4F-E88-002"
       ]
+    },
+    {
+      "id": "D4F-E88-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E88 · Doppelgelenkachse im Cabrio, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013",
+      "summary": "Die Achse des E88 entspricht der des E87. Der Unterschied liegt im Aufbau: Ohne festes Dach kommen Geräusche aus der Karosserie dazu, die regelmäßig der Vorderachse angelastet werden.",
+      "points": [
+        "Erste Frage beim Cabrio: kommt das Geräusch aus der Achse oder aus dem Aufbau? Ein Knarzen, das sich beim Verwinden auf unebenem Untergrund ändert und beim Überfahren einer Kante gerade nicht, gehört zum Aufbau",
+        "Koppelstangen des Stabilisators als erster billiger Ausschluss für Klappern",
+        "Federbeinstützlager bei Knacken im Stand beim Lenken",
+        "Zugstrebe und Querlenker über den Hebeltest am angehobenen Rad trennen",
+        "Traggelenke überwiegend nur mit dem Lenker ersetzbar",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-103"
+      ]
     }
   ]
 }

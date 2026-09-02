@@ -430,6 +430,28 @@
         "D4F-E87-040",
         "D4F-E87-001"
       ]
+    },
+    {
+      "id": "D4F-E87-107",
+      "type": "GUIDE",
+      "gruppe": "31",
+      "cat": "Vorderachse",
+      "title": "Vorderachse E87 · Aluminium-Doppelgelenkachse, Koppelstangen, Domlager",
+      "valid": "E87 · 2004–2013",
+      "summary": "Der E87 teilt die Aluminium-Doppelgelenkachse mit dem E90. Die häufigsten Klagen sind harmlos und billig — sie werden nur oft für teure Befunde gehalten.",
+      "points": [
+        "Klappern über kurze Wellen ist am E87 überdurchschnittlich oft die Koppelstange des Stabilisators. Sie ist billig, schnell geprüft und gehört an den Anfang der Liste",
+        "Knacken beim Lenken im Stand: Federbeinstützlager. Am angehobenen Fahrzeug beim Drehen des Rades tastbar",
+        "Zugstrebenlager und Querlenkerlager als Kandidaten für Poltern; der Hebeltest am Rad trennt sie",
+        "Traggelenke sind an dieser Achse überwiegend nicht einzeln ersetzbar — Lenkertausch einplanen",
+        "Aluminiumlenker mit Stahlschrauben: mit festsitzenden Verbindungen rechnen",
+        "Achsvermessung nach jedem Eingriff"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-103"
+      ]
     }
   ]
 }
