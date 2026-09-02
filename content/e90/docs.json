@@ -993,6 +993,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-129",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E90 · Rubbeln, Nabenauflage, Verschleisssensor",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommt Rubbeln nach einem Bremsenservice haeufig vor -- und die Ursache liegt fast immer in der Vorbereitung des Einbaus, nicht im Teil.",
+      "points": [
+        "Nabenauflage metallisch blank saeubern, bevor die neue Scheibe montiert wird. Rost darunter stellt sie schief",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

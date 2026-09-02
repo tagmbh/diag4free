@@ -852,6 +852,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-128",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E46 · Verschleisssensor richtig einordnen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Der Verschleisssensor des E46 wird regelmaessig ueberschaetzt. Er ist ein Kontakt, kein Messgeraet -- und er sitzt nicht an jedem Rad.",
+      "points": [
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Nach einem Belagwechsel gehoert der Sensor erneuert, wenn er ausgeloest hat. Ein ausgeloester Sensor meldet danach nichts mehr",
+        "Belagstaerke an allen vier Raedern selbst ansehen. Der Sensor ersetzt diese Sichtpruefung nicht, er verzoegert sie nur",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

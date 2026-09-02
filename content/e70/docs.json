@@ -824,6 +824,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E70 · Schweres Fahrzeug, Belagbild, Fluessigkeit",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am schweren Fahrzeug wird jeder Fehler in der Bremsmechanik schneller sichtbar. Das macht das Belagbild zum brauchbarsten Befund, den man ohne Geraet bekommt.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Bei Anhaengerbetrieb oder haeufiger Beladung altert die Bremsfluessigkeit thermisch schneller. Das ist ein Grund, sie frueher zu erneuern, nicht spaeter",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

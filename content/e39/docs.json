@@ -831,6 +831,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-132",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E39 · Nabenauflage, Sattel, Schlauch",
+      "valid": "E39 · 1995–2004",
+      "summary": "Ein wiederkehrendes Rubbeln nach einem Scheibenwechsel hat am E39 meist eine sehr banale Ursache, die beim Einbau entsteht und nicht im Betrieb.",
+      "points": [
+        "Vor dem Scheibenwechsel die Nabenauflage metallisch blank saeubern. Rost unter der Scheibe stellt sie schief, und das Ergebnis ist Rubbeln ab dem ersten Tag",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Ein aufgequollener Bremsschlauch haelt den Druck fest. Die betroffene Seite bleibt warm und zieht -- geprueft wird ueber den Temperaturvergleich, nicht ueber den Sattel",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

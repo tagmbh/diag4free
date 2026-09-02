@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T07:23:04.479Z",
+  "generated": "2026-09-02T07:56:50.339Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1077,6 +1077,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-134",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E28 · Standschaeden, Sattel, Feststellbremse",
+      "valid": "E28 · 1981–1988",
+      "summary": "Ein Fahrzeug dieses Alters steht meist mehr, als es faehrt. Damit werden Korrosion auf der Bremsflaeche und traege Kolben zum Normalfall statt zur Ausnahme.",
+      "points": [
+        "Nach langer Standzeit sitzt Rost auf der Bremsflaeche und Kolben und Bolzen sind traege. Das ist der Ausgangszustand, nicht der Schaden -- beurteilt wird nach einigen bewussten Bremsungen",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2001,6 +2022,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E30 · Sattel, Scheiben, Feststellbremse",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 entscheidet die Beweglichkeit des Sattels ueber den Belagverschleiss. Ein fester Fuehrungsbolzen frisst einen Belag auf, waehrend der gegenueberliegende neu aussieht.",
+      "points": [
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Bremsleitungen an den Verschraubungen und am Uebergang zum Schlauch beurteilen. Aussen blueht Rost frueher als er innen gefaehrlich wird, aber beides gehoert angesehen",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2841,6 +2883,27 @@
         "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
         "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Ein Getriebeoel aus dem Regal ist hier kein Ersatz, und falsches Oel ist eine haeufige Ursache fuer nachlassende Wirkung",
         "Vor Arbeiten am Differential: Die Zerlegung verlangt Einstellarbeiten, die ohne Vorrichtung nicht sauber gelingen. Wer sie ueberspringt, verkuerzt die Lebensdauer"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-134",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E34 · Fuehrung, Belagbild, Schlauch",
+      "valid": "E34 · 1987–1996",
+      "summary": "Das Belagbild am E34 sagt mehr als jede Sichtpruefung der Scheibe. Wer es liest, findet die Ursache, statt nur den Verschleiss zu ersetzen.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ein aufgequollener Bremsschlauch wirkt wie ein Ventil: Druck kommt an, laesst aber nicht mehr ab. Die betroffene Seite bleibt warm und zieht -- das ist ein Schlauchbefund",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -3705,6 +3768,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E36 · Belagbild, Rubbeln, Feststellbremse",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 werden zwei verschiedene Beschwerden staendig verwechselt: Rubbeln beim Bremsen und Vibrieren beim Fahren. Nur eine davon gehoert zur Bremse.",
+      "points": [
+        "Rubbeln nur beim Bremsen gehoert zur Bremse. Vibrieren unabhaengig von der Bremse gehoert zu Rad, Reifen oder Fahrwerk -- diese Trennung steht vor jeder Messung",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -4529,6 +4613,27 @@
         "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
         "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
         "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E38 · Scheibendicke messen statt Schlag",
+      "valid": "E38 · 1994–2001",
+      "summary": "Am schweren Fahrzeug faellt ein Dickenunterschied frueher auf als anderswo. Die richtige Messung dafuer ist die Dicke an mehreren Stellen, nicht der Schlag der Scheibe.",
+      "points": [
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Gemessen wird rundum an mehreren Punkten desselben Radius. Ein einzelner Wert sagt nichts ueber einen Unterschied aus",
+        "Vor dem Scheibenwechsel die Nabenauflage saeubern. Eine neue Scheibe auf verrosteter Auflage steht schief und erzeugt genau das Bild, das man beheben wollte",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -5396,6 +5501,27 @@
         "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
         "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
         "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-132",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E39 · Nabenauflage, Sattel, Schlauch",
+      "valid": "E39 · 1995–2004",
+      "summary": "Ein wiederkehrendes Rubbeln nach einem Scheibenwechsel hat am E39 meist eine sehr banale Ursache, die beim Einbau entsteht und nicht im Betrieb.",
+      "points": [
+        "Vor dem Scheibenwechsel die Nabenauflage metallisch blank saeubern. Rost unter der Scheibe stellt sie schief, und das Ergebnis ist Rubbeln ab dem ersten Tag",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Ein aufgequollener Bremsschlauch haelt den Druck fest. Die betroffene Seite bleibt warm und zieht -- geprueft wird ueber den Temperaturvergleich, nicht ueber den Sattel",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -6284,6 +6410,27 @@
         "Antriebswellen, Gelenke und Mittellager gehoeren mitgeprueft. Sie erzeugen aehnliche Bilder und sind billiger auszuschliessen als das Verteilergetriebe",
         "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Falsches oder gealtertes Oel ist eine reale Ursache und keine Randnotiz",
         "Ein Eintrag zu DSC oder Antriebsschlupf benennt das Ergebnis, nicht das Bauteil -- siehe Gruppe D1"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-128",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E46 · Verschleisssensor richtig einordnen",
+      "valid": "E46 · 1998–2006",
+      "summary": "Der Verschleisssensor des E46 wird regelmaessig ueberschaetzt. Er ist ein Kontakt, kein Messgeraet -- und er sitzt nicht an jedem Rad.",
+      "points": [
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Nach einem Belagwechsel gehoert der Sensor erneuert, wenn er ausgeloest hat. Ein ausgeloester Sensor meldet danach nichts mehr",
+        "Belagstaerke an allen vier Raedern selbst ansehen. Der Sensor ersetzt diese Sichtpruefung nicht, er verzoegert sie nur",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -7208,6 +7355,27 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-129",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E60 · Belagbild, Nabenauflage, Fluessigkeit",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 verbergen sich die meisten Bremsbeschwerden hinter zwei Dingen, die beim Einbau entstehen: der Nabenauflage und der Beweglichkeit des Sattels.",
+      "points": [
+        "Nabenauflage vor dem Scheibenwechsel blank saeubern. Rost darunter stellt die Scheibe schief und erzeugt Rubbeln ab dem ersten Tag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8061,6 +8229,27 @@
         "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung — siehe Gruppe D5",
         "Ein Eintrag zum Kraftstoffdruck benennt das Ergebnis, nicht das Bauteil, siehe Gruppe D1",
         "Vor jeder Bewertung die Motorkennung feststellen: Im E70 stehen Saug-, Turbo- und Dieselmotoren nebeneinander, siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E70 · Schweres Fahrzeug, Belagbild, Fluessigkeit",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am schweren Fahrzeug wird jeder Fehler in der Bremsmechanik schneller sichtbar. Das macht das Belagbild zum brauchbarsten Befund, den man ohne Geraet bekommt.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Bei Anhaengerbetrieb oder haeufiger Beladung altert die Bremsfluessigkeit thermisch schneller. Das ist ein Grund, sie frueher zu erneuern, nicht spaeter",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
       ],
       "pins": [],
       "engines": [],
@@ -9017,6 +9206,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E87 · Sattelfuehrung und Belagbild",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 laesst sich fast jede Bremsbeschwerde am ausgebauten Belag ablesen. Das kostet zehn Minuten und ersetzt eine Reihe von Vermutungen.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9902,6 +10112,27 @@
         "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
         "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
         "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E88 · Standzeit, Sattel, Fluessigkeit",
+      "valid": "E88 · 2007–2013",
+      "summary": "Ein offenes Fahrzeug steht im Winter haeufiger, als es faehrt. Genau daraus entstehen die typischen Bremsbefunde dieser Baureihe.",
+      "points": [
+        "Nach laengerer Standzeit sitzt Flugrost auf der Scheibe und der Kolben ist traege. Beurteilt wird nach einigen bewussten Bremsungen und nicht davor",
+        "Ein Fahrzeug, das wenig faehrt, hat trotzdem alte Bremsfluessigkeit. Der Zustand haengt an der Zeit, nicht an der Strecke",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag"
       ],
       "pins": [],
       "engines": [],
@@ -10932,6 +11163,27 @@
         "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
         "Leuchten fuer DSC und Fahrstabilitaet zusammen mit dem Allradbefund lesen, nicht getrennt -- siehe Gruppe D1",
         "Nach Oelwechsel und Adaption Fahrstrecke geben, bevor beurteilt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-129",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E90 · Rubbeln, Nabenauflage, Verschleisssensor",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 kommt Rubbeln nach einem Bremsenservice haeufig vor -- und die Ursache liegt fast immer in der Vorbereitung des Einbaus, nicht im Teil.",
+      "points": [
+        "Nabenauflage metallisch blank saeubern, bevor die neue Scheibe montiert wird. Rost darunter stellt sie schief",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -11997,6 +12249,27 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik F10 · Belagbild, Nabenauflage, Fluessigkeit",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 lohnt der Blick auf den ausgebauten Belag mehr als jede Vermutung ueber Scheibe oder Sattel. Er benennt die Seite und die Richtung des Fehlers.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Nabenauflage vor dem Scheibenwechsel blank saeubern -- Rost darunter erzeugt Rubbeln ab dem ersten Tag",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -12789,6 +13062,27 @@
         "Die Niederdruckseite vorher abhaken. Ohne Vordruck ist jede Aussage zur Hochdruckseite wertlos",
         "An der Hochdruckseite wird nichts geoeffnet, solange Druck ansteht — siehe Gruppe D5",
         "Ein getauschtes Einspritzventil ohne hinterlegten Abgleich verhaelt sich wie ein defektes, siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik F15 · Last, Belagbild, Fluessigkeit",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am schweren Fahrzeug mit haeufiger Zuladung altert die Bremse thermisch schneller. Das aendert nicht die Diagnose, aber den Zeitpunkt, zu dem sie faellig wird.",
+      "points": [
+        "Haeufige Zuladung und Anhaengerbetrieb belasten die Bremsfluessigkeit thermisch. Frueher erneuern ist hier begruendet und keine Vorsicht",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
       ],
       "pins": [],
       "engines": [],
@@ -13620,6 +13914,27 @@
         "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
         "Warnungen zur Fahrstabilitaet mit dem Allradbefund zusammen lesen, nicht als drei getrennte Fehler",
         "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben, bevor beurteilt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik F22 · Belagbild, Rubbeln, Fluessigkeit",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 werden Rubbeln beim Bremsen und Vibrieren beim Fahren regelmaessig in einen Topf geworfen. Sie haben nichts miteinander zu tun.",
+      "points": [
+        "Rubbeln nur beim Bremsen gehoert zur Bremse. Vibrieren unabhaengig von der Bremse gehoert zu Rad, Reifen oder Fahrwerk",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -14517,6 +14832,27 @@
         "Oel und Adaption vor der Mechanik. Gealtertes Oel in der Lamellenkupplung erzeugt dasselbe Bild wie Verschleiss",
         "Ein verschlissenes Zahnrad im Stellmotor fuehrt zu ungenauer Regelung. Das ist ein eigener Befund und nicht dasselbe wie verschlissene Lamellen",
         "Nach jedem Eingriff Adaption erneuern und Fahrstrecke geben -- ein Urteil nach den ersten Metern ist keines"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik F30 · Nabenauflage, Belagbild, Fluessigkeit",
+      "valid": "F30 · 2011–2019",
+      "summary": "Die haeufigste Bremsbeschwerde am F30 nach einem Service entsteht beim Einbau: eine neue Scheibe auf einer nicht gesaeuberten Nabe steht schief.",
+      "points": [
+        "Nabenauflage metallisch blank saeubern, bevor die Scheibe montiert wird. Sonst rubbelt es ab dem ersten Tag, und das neue Teil ist unschuldig",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
       ],
       "pins": [],
       "engines": [],
@@ -21708,26 +22044,26 @@
     }
   },
   "stats": {
-    "total_docs": 582,
+    "total_docs": 598,
     "total_guides": 40,
     "per_model": {
-      "e28": 35,
-      "e30": 39,
-      "e34": 37,
-      "e36": 35,
-      "e38": 36,
-      "e39": 36,
-      "e46": 36,
-      "e60": 36,
-      "e70": 36,
-      "e87": 37,
-      "e88": 34,
-      "e90": 37,
+      "e28": 36,
+      "e30": 40,
+      "e34": 38,
+      "e36": 36,
+      "e38": 37,
+      "e39": 37,
+      "e46": 37,
+      "e60": 37,
+      "e70": 37,
+      "e87": 38,
+      "e88": 35,
+      "e90": 38,
       "f-series": 8,
-      "f10": 35,
-      "f15": 34,
-      "f22": 35,
-      "f30": 36
+      "f10": 36,
+      "f15": 35,
+      "f22": 36,
+      "f30": 37
     }
   }
 }

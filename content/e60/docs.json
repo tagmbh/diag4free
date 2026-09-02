@@ -881,6 +881,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-129",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E60 · Belagbild, Nabenauflage, Fluessigkeit",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 verbergen sich die meisten Bremsbeschwerden hinter zwei Dingen, die beim Einbau entstehen: der Nabenauflage und der Beweglichkeit des Sattels.",
+      "points": [
+        "Nabenauflage vor dem Scheibenwechsel blank saeubern. Rost darunter stellt die Scheibe schief und erzeugt Rubbeln ab dem ersten Tag",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
