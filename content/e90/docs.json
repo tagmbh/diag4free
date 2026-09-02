@@ -726,6 +726,28 @@
       "details": [
         "D4F-E90-113"
       ]
+    },
+    {
+      "id": "D4F-E90-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E90 · Schaltbock, Buchsen, der vermeidbare Ausbau",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist der Getriebeausbau aufwendig und die Schaltung der häufigste Grund für die Klage, die ihn auslöst. Diese Gruppe ist der Ausschluss, der davor steht.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung. Vor jedem Getriebeverdacht prüfen — das ist der Verweis aus Gruppe 23",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Kratzen beim Einlegen trotz präzisem Weg gehört ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-114"
+      ]
     }
   ]
 }

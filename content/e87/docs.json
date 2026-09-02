@@ -606,6 +606,28 @@
       "details": [
         "D4F-E87-113"
       ]
+    },
+    {
+      "id": "D4F-E87-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E87 · Schaltbock, Buchsen, Lastwechselspiel",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter, und die Schaltung ist entsprechend oft der Grund für ein schlechtes Schaltgefühl. Sie ist auch der billigste.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist unpräzise: Schaltung, nicht Getriebe",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Kratzen beim Einlegen trotz präzisem Weg gehört ins Getriebe: dort zuerst der Ölwechsel",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-114"
+      ]
     }
   ]
 }

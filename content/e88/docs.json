@@ -554,6 +554,28 @@
       "details": [
         "D4F-E88-113"
       ]
+    },
+    {
+      "id": "D4F-E88-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E88 · Schaltbock, Aufbaubewegung im Cabrio",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Die Schaltung entspricht der des E87. Im Cabrio kommt eine Ursache dazu, die man kennen muss: Der weichere Aufbau bewegt sich, und das Schaltgefühl bewegt sich mit.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist unpräzise: Schaltung, nicht Getriebe",
+        "Beim Cabrio überträgt sich Aufbaubewegung auf das Schaltgefühl. Ein Spiel, das nur auf unebener Strecke auftritt, kann von dort kommen",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-114"
+      ]
     }
   ]
 }

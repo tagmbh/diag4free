@@ -548,6 +548,28 @@
       "details": [
         "D4F-E39-113"
       ]
+    },
+    {
+      "id": "D4F-E39-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E39 · Schaltbock, Führungslager, Lastwechselspiel",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 ist der schwammige Hebel ein bekanntes Bild und fast immer die Schaltung. Der Getriebeausbau, den er auslöst, ist in den meisten Fällen unnötig.",
+      "points": [
+        "Gänge legen sauber ein, der Hebel hat Spiel: Schaltung. Vor jedem Getriebeverdacht prüfen",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager der Schaltstange zusammen erneuern",
+        "Schaltspiel nur beim Lastwechsel: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Spiel getrennt am Hebel und an der Schaltstange bewerten, um den Ort einzugrenzen",
+        "Bei Fahrzeugen mit hoher Laufleistung sind alle Kunststoffteile gleich alt — einzeln zu tauschen lohnt den Ausbau nicht",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-114"
+      ]
     }
   ]
 }

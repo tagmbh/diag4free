@@ -555,6 +555,28 @@
       "details": [
         "D4F-F30-113"
       ]
+    },
+    {
+      "id": "D4F-F30-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung F30 · Schaltbock, Wählhebel abgrenzen, Lastwechselspiel",
+      "valid": "F30, F31 · 2011–2019",
+      "summary": "Beim F30 gibt es beides: Handschalter mit klassischer Schaltmechanik und Wählhebel als Signalgeber. Die Zuordnung entscheidet, in welcher Gruppe die Antwort steht.",
+      "points": [
+        "Zuerst bestimmen, was verbaut ist. Der Wählhebel des Automatikfahrzeugs ist ein Signalgeber — nicht angenommene Fahrstufen gehören zur Gruppe des Automatikgetriebes",
+        "Beim Handschalter: Gänge legen sauber ein, Weg schwammig — das ist die Schaltung",
+        "Kunststoffbuchsen, Kugelpfanne und Führungslager zusammen erneuern",
+        "Schaltspiel nur unter Last: Motor- und Getriebelager",
+        "Spiel am Hebel und an der Schaltstange getrennt bewerten",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-114"
+      ]
     }
   ]
 }

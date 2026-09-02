@@ -489,6 +489,28 @@
       "details": [
         "D4F-E34-113"
       ]
+    },
+    {
+      "id": "D4F-E34-115",
+      "type": "GUIDE",
+      "gruppe": "25",
+      "cat": "Schaltung",
+      "title": "Schaltung E34 · Schaltbock, Führungslager, Lastwechselspiel",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Beim E34 ist die Schaltung länger und hat mehr Gelenke als beim kleineren Fahrzeug. Entsprechend addiert sich das Spiel — und entsprechend lohnt es sich, es Stück für Stück zuzuordnen.",
+      "points": [
+        "Gänge legen sauber ein, der Weg ist schwammig: Schaltung, nicht Getriebe",
+        "Spiel addiert sich über mehrere Lagerstellen. Am Hebel und an der Schaltstange getrennt bewerten, um den Anteil zu erkennen",
+        "Schaltspiel, das nur beim Lastwechsel auftritt: Motor- und Getriebelager. Der Strang wandert, der Hebel geht mit",
+        "Kunststoffbuchsen und Kugelpfanne am Schaltbock zusammen erneuern",
+        "Führungslager der Schaltstange am Getriebe mitprüfen",
+        "Nach dem Zusammenbau alle Gassen im Stand durchschalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-114"
+      ]
     }
   ]
 }
