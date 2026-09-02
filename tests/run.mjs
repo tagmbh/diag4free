@@ -595,9 +595,39 @@ async function main() {
         expect(zeilen === sollGruppen,
           'Abdeckungstafel zeigt jede Gruppe aus gruppen.json',
           `${zeilen} Zeilen, aber ${sollGruppen} Gruppen`);
-        expect(leer > 0,
-          'Abdeckungstafel benennt auch die leeren Gruppen',
-          'keine leere Gruppe markiert — dann sagt die Tafel nichts ueber Luecken');
+        // Hier stand `leer > 0`. Das war die Behauptung, es MUESSE Luecken
+        // geben -- eine Annahme ueber den Inhalt, kein Test der Tafel. Als die
+        // letzte Luecke geschlossen war, fiel der Test, obwohl die Tafel
+        // richtig arbeitete. Geprueft gehoert die Zusage der Tafel: was sie als
+        // leer markiert, ist genau das, was im Content fehlt -- und das gilt
+        // auch bei null Luecken.
+        // Gezaehlt wird nicht, sondern verglichen: je Gruppe die angezeigte
+        // Zahl gegen die tatsaechliche Zahl der Dokumente im Content. Das
+        // deckt auch den Fall ab, in dem die Tafel die richtige Anzahl leerer
+        // Zeilen zeigt, aber die falsche Gruppe markiert.
+        const abweichungen = await page.evaluate(async () => {
+          const d = await fetch('./content/e46/docs.json').then(r => r.json());
+          const ist = {};
+          for (const x of (d.docs || [])) {
+            const k = String(x.gruppe);
+            ist[k] = (ist[k] || 0) + 1;
+          }
+          const raus = [];
+          for (const li of document.querySelectorAll('.abdeckung .abd-zeile')) {
+            const id = li.querySelector('.abd-nr')?.textContent?.trim() || '?';
+            const roh = li.querySelector('.abd-zahl')?.textContent?.trim() || '';
+            const gezeigt = roh === '\u2014' ? 0 : Number(roh);
+            const soll = ist[id] || 0;
+            const alsLeer = li.classList.contains('leer');
+            if (gezeigt !== soll || alsLeer !== (soll === 0)) {
+              raus.push(`${id}: Tafel ${gezeigt}${alsLeer ? ' (leer)' : ''}, Content ${soll}`);
+            }
+          }
+          return raus;
+        });
+        expect(abweichungen.length === 0,
+          'Abdeckungstafel stimmt je Gruppe mit dem Content ueberein',
+          abweichungen.join(' | '));
         // Gefuellte Gruppen fuehren weiter, leere sind bewusst kein Angebot.
         const klickbar = await page.locator('.abdeckung .abd-zeile:not(.leer) button.abd-btn').count();
         expect(klickbar > 0, 'Gefuellte Gruppen fuehren in die Bibliothek', 'keine anklickbare Gruppe');
