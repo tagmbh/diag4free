@@ -790,6 +790,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-133",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Allradantrieb 525iX · Viskokupplung verstehen, bevor sie beurteilt wird",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der frueh angebotene Allradantrieb arbeitet permanent und gleicht ueber Viskokupplungen aus. Die wirken ueber Drehzahldifferenz und mit Verzoegerung -- das erklaert fast jede Beschwerde ueber sie.",
+      "points": [
+        "Eine Viskokupplung reagiert auf Drehzahldifferenz und immer mit Verzoegerung. Sie ist eine Anfahrhilfe und keine Sperre -- wer eine Sperrwirkung erwartet, beurteilt das falsche Bauteil",
+        "Nach hoher Laufleistung ist die Wirkung oft praktisch verschwunden, ohne dass etwas gebrochen waere. Das ist Verschleiss und kein Defekt -- und keine Fehlerspeicherfrage",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Ein Getriebeoel aus dem Regal ist hier kein Ersatz, und falsches Oel ist eine haeufige Ursache fuer nachlassende Wirkung",
+        "Vor Arbeiten am Differential: Die Zerlegung verlangt Einstellarbeiten, die ohne Vorrichtung nicht sauber gelingen. Wer sie ueberspringt, verkuerzt die Lebensdauer"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

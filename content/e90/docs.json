@@ -973,6 +973,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-128",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im E90 · Stellmotor, Lamellen und der Blick auf die Reifen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 mit xDrive erzeugen drei sehr verschiedene Ursachen dasselbe Ruckeln: ungleiche Reifen, gealtertes Oel und ein verschlissener Stellmotor. Die Reihenfolge der Pruefung entscheidet ueber die Kosten.",
+      "points": [
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Danach Oel und Adaption. Gealtertes oder falsches Oel in der Lamellenkupplung erzeugt genau dieses Bild und ist die guenstigste der verbleibenden Ursachen",
+        "Erst zuletzt der Stellmotor. Ein verschlissenes Zahnrad darin regelt ungenau -- der Befund ist dann elektromechanisch und nicht hydraulisch",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Leuchten fuer DSC und Fahrstabilitaet zusammen mit dem Allradbefund lesen, nicht getrennt -- siehe Gruppe D1",
+        "Nach Oelwechsel und Adaption Fahrstrecke geben, bevor beurteilt wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

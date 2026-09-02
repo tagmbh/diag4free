@@ -747,6 +747,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-133",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "Verteilergetriebe E28 · Abgrenzung: hier gibt es keines",
+      "valid": "E28 · 1981–1988",
+      "summary": "Der E28 wurde ohne Allradantrieb angeboten. Diese Seite steht hier, damit niemand ein Verteilergetriebe sucht, das es nicht gibt -- und weiss, wohin der Befund stattdessen gehoert.",
+      "points": [
+        "Ohne Allradantrieb gibt es kein Verteilergetriebe und keine Momentverteilung, die versagen koennte. Ein E28, der beim Rangieren ruckelt, hat eine andere Ursache",
+        "Ruckeln beim Anfahren gehoert zur Kupplung, Gruppe 21, oder zum Wandler in Gruppe 24 -- je nachdem, was verbaut ist",
+        "Schlagen oder Vibrieren im Antriebsstrang gehoert zur Gelenkwelle mit Mittellager, Gruppe 26",
+        "Geraeusche und Spiel an der angetriebenen Achse gehoeren in Gruppe 33 Hinterachse",
+        "Ungleiche Reifen erzeugen auch am Hecktriebler Symptome, nur andere. Die Pruefung der vier Reifen bleibt trotzdem der billigste erste Schritt",
+        "Wo ein einzelnes Fahrzeug umgebaut wurde, gilt das Verbaute und nicht die Baureihe -- siehe Gruppe D4"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

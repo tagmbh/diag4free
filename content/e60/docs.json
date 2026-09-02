@@ -861,6 +861,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E60-128",
+      "type": "GUIDE",
+      "gruppe": "27",
+      "cat": "Antrieb",
+      "title": "xDrive im E60 · Geregelte Lamellenkupplung und ihre Fehlerbilder",
+      "valid": "E60 · 2003–2010",
+      "summary": "Im xDrive verteilt eine elektronisch geregelte Lamellenkupplung das Moment nach Lenkwinkel, Schlupf und Fahrdynamikanforderung. Faellt die Regelung aus, meldet sich zuerst die Fahrdynamik.",
+      "points": [
+        "Die Kupplung wird ueber einen Stellmotor verstellt. Ein verschlissenes Zahnrad darin fuehrt zu ungenauer Regelung -- das ist ein anderer Befund als eine verschlissene Lamelle",
+        "Warnungen zu DSC oder Fahrstabilitaet gehoeren mit dem Allrad zusammen gelesen. Sie kommen haeufig aus demselben Befund und nicht aus drei",
+        "Vor jeder Verteilergetriebe-Diagnose die vier Reifen vergleichen: gleiche Groesse, gleicher Typ, aehnliche Profiltiefe. Ungleiche Abrollumfaenge erzwingen dauernden Ausgleich im Antriebsstrang und erzeugen genau das Bild, das man dem Getriebe anlastet",
+        "Allradsymptome zeigen sich langsam, nicht schnell: beim Rangieren, beim Abbiegen, beim Anfahren. Wer auf der Autobahn nichts merkt, hat nichts ausgeschlossen",
+        "Das Verteilergetriebe hat ein eigenes, vorgeschriebenes Oel. Nach dem Oelwechsel gehoert die Adaption erneuert, sonst arbeitet die alte Korrektur gegen das frische Oel",
+        "Nach Oelwechsel und Adaption braucht das Fahrzeug Fahrstrecke, bevor beurteilt wird. Ein Urteil nach den ersten Metern ist keines"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
