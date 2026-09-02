@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T08:22:07.368Z",
+  "generated": "2026-09-02T08:36:29.229Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -1182,6 +1182,48 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-139",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E28 · Luftweg oder Durchsatz",
+      "valid": "E28 · 1981–1988",
+      "summary": "Bevor am E28 ein Bauteil getauscht wird, gehoert die Bedingung festgestellt, unter der es zu heiss wird. Sie halbiert die Suche.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Die Viscokupplung des Luefters wird warm geprueft, nicht kalt. Kalt darf sie leicht durchdrehen -- warm muss sie spuerbar mitnehmen, sonst fehlt die Luft genau dann, wenn sie gebraucht wird",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
+      "id": "D4F-E28-140",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasleck und Messung E28 · Warum Dichtheit vor jeder Bewertung kommt",
+      "valid": "E28 · 1981–1988",
+      "summary": "Am E28 kann ein undichter Kruemmer jede Aussage ueber das Gemisch wertlos machen. Deshalb steht die Dichtheitspruefung vor jeder Bewertung.",
+      "points": [
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Abgasleck ist am kalten Motor am besten hoerbar, bevor sich das Material ausdehnt und die Stelle zudrueckt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2211,6 +2253,48 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E30 · Bedingung feststellen, dann messen",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 erklaeren zwei Bedingungen fast jede Ueberhitzung: fehlende Luft im Stand oder fehlender Durchsatz unter Last. Was von beidem zutrifft, sagt der Fahrer.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Die Viscokupplung des Luefters wird warm geprueft, nicht kalt. Kalt darf sie leicht durchdrehen -- warm muss sie spuerbar mitnehmen, sonst fehlt die Luft genau dann, wenn sie gebraucht wird",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
+      "id": "D4F-E30-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasleck und Katalysator E30 · Ursache vor Bauteil",
+      "valid": "E30 · 1982–1994",
+      "summary": "Ein Katalysator am E30 wird selten von allein schlecht. Was ihn zerstoert, kommt vom Motor -- und bleibt nach dem Tausch bestehen.",
+      "points": [
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Abgasleck am kalten Motor abhoeren, bevor sich das Material ausdehnt und die Stelle zudrueckt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -3156,6 +3240,48 @@
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
         "Oelzustand ansehen und riechen. Dunkel und verbrannt ist ein Befund, hell und klar keiner"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-139",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E34 · Luft, Durchsatz, Druck",
+      "valid": "E34 · 1987–1996",
+      "summary": "Der Kuehlkreis des E34 verzeiht wenig. Diese Seite ordnet die drei Groessen, die ihn tragen: Luft, Durchsatz und Druck.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Die Viscokupplung des Luefters wird warm geprueft, nicht kalt. Kalt darf sie leicht durchdrehen -- warm muss sie spuerbar mitnehmen, sonst fehlt die Luft genau dann, wenn sie gebraucht wird",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-140",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasleck und Gegendruck E34 · Unter Last beurteilen",
+      "valid": "E34 · 1987–1996",
+      "summary": "Ein zugesetzter Katalysator faellt am E34 nicht im Leerlauf auf, sondern unter Last. Wer im Stand prueft, findet ihn nicht.",
+      "points": [
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein Leistungsmangel, der mit steigender Drehzahl zunimmt, passt zum Gegendruck. Einer, der bei niedriger Drehzahl beginnt, passt nicht dazu"
       ],
       "pins": [],
       "engines": [],
@@ -4125,6 +4251,48 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E36 · Druck halten, Luft loswerden",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 sind die tragenden Teile des Kreises aus Kunststoff. Damit werden Druck und Alterung zu eigenen Groessen der Diagnose.",
+      "points": [
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
+      "id": "D4F-E36-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E36 · Sonden trennen, Sekundaerluft abgrenzen",
+      "valid": "E36 · 1990–2000",
+      "summary": "Am E36 kommen zwei Sonden und eine Sekundaerluftfunktion zusammen. Fehler daraus sehen sich aehnlich und haben verschiedene Adressen.",
+      "points": [
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Sekundaerluftfehler zeigt sich nur im Kaltlauf und verschwindet danach. Wer betriebswarm prueft, findet ihn nicht",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5054,6 +5222,48 @@
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten",
         "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E38 · Grosser Kreis, zwei Baenke",
+      "valid": "E38 · 1994–2001",
+      "summary": "Im grossen Motorraum ist der Weg des Kuehlmittels laenger und die Luftfuehrung enger. Beides verschiebt die Wahrscheinlichkeiten.",
+      "points": [
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Oel im Kuehlwasser und Kuehlwasser im Oel sind zwei verschiedene Befunde mit verschiedenen Ursachen. Sie gehoeren getrennt festgestellt, bevor irgendetwas geoeffnet wird",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E38 · Bankvergleich als Werkzeug",
+      "valid": "E38 · 1994–2001",
+      "summary": "Beim Achtzylinder hat man zwei Baenke und damit einen eingebauten Vergleich. Wer ihn nutzt, spart die halbe Fehlersuche.",
+      "points": [
+        "Die beiden Baenke gegeneinander stellen. Weicht nur eine ab, ist der Fehler dort und nicht in der gemeinsamen Versorgung -- das grenzt sofort ein",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
       ],
       "pins": [],
       "engines": [],
@@ -6026,6 +6236,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-137",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E39 · Verlustweg klaeren, bevor getauscht wird",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 ist die erste Frage nicht, welches Teil undicht ist, sondern ob das Kuehlmittel ueberhaupt nach aussen geht.",
+      "points": [
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Oel im Kuehlwasser und Kuehlwasser im Oel sind zwei verschiedene Befunde mit verschiedenen Ursachen. Sie gehoeren getrennt festgestellt, bevor irgendetwas geoeffnet wird",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-138",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E39 · Dichtheit, Sonden, Ursache",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 werden Katalysatoren regelmaessig getauscht, ohne dass die Ursache angefasst wird. Der zweite haelt dann genauso lange wie der erste.",
+      "points": [
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Erhoehter Oelverbrauch und Zuendaussetzer sind die haeufigsten Kat-Killer. Beide gehoeren geklaert, bevor ein neuer eingebaut wird"
       ],
       "pins": [],
       "engines": [],
@@ -7019,6 +7271,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-133",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E46 · Kunststoffkreis unter Druck",
+      "valid": "E46 · 1998–2006",
+      "summary": "Der Kreis des E46 haelt seinen Druck ueber Kunststoffteile, die altern. Das macht die Druckpruefung zur wichtigsten Einzelpruefung dieser Gruppe.",
+      "points": [
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Luft im Kreis erzeugt Ueberhitzung bei voellig intakten Bauteilen. Nach jedem Oeffnen gehoert entlueftet, und zwar nach der vorgesehenen Prozedur statt nach Gefuehl",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-134",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E46 · Sekundaerluft und Kaltlauf",
+      "valid": "E46 · 1998–2006",
+      "summary": "Am E46 taucht ein grosser Teil der Abgasfehler nur im Kaltlauf auf. Das macht den Pruefzeitpunkt wichtiger als das Pruefgeraet.",
+      "points": [
+        "Sekundaerluftfehler zeigen sich nur im Kaltlauf. Nach dem Warmlaufen ist die Funktion abgeschaltet und der Fehler nicht reproduzierbar",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
       ],
       "pins": [],
       "engines": [],
@@ -8048,6 +8342,48 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-134",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E60 · Geregelter Kreis, elektrische Pumpe",
+      "valid": "E60 · 2003–2010",
+      "summary": "Mit elektrischer Pumpe und Kennfeldthermostat wird der Kreis geregelt. Ein Ausfall ist damit haeufiger eine Ansteuerungsfrage als eine mechanische.",
+      "points": [
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-135",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E60 · Breitbandsonde richtig einordnen",
+      "valid": "E60 · 2003–2010",
+      "summary": "Die Breitbandsonde liefert einen anderen Messwert als eine Sprungsonde. Wer sie wie eine Sprungsonde liest, kommt zu falschen Schluessen.",
+      "points": [
+        "Eine Breitbandsonde liefert einen fortlaufenden Wert und nicht das Springen einer Sprungsonde. Ein ruhiger Verlauf ist hier normal und kein Hinweis auf eine traege Sonde",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9006,6 +9342,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E70 · Mehrere Kreise sauber trennen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 gibt es mehr als einen Kreis. Welcher zu heiss wird, entscheidet ueber die ganze Suche -- und die Frage wird oft gar nicht gestellt.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Getriebe oder Ladeluft. Eine Temperaturmeldung ohne diese Zuordnung ist keine Diagnose",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Partikelfilter E70 · Regeneration und ihre Folgen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am Diesel entscheidet nicht der Filter ueber den Aerger, sondern die Regeneration. Und die haengt daran, wie das Fahrzeug bewegt wird.",
+      "points": [
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Ein steigender Oelstand am Diesel ist ein Befund und kein Messfehler: abgebrochene Regenerationen tragen Kraftstoff ins Oel ein",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
       ],
       "pins": [],
       "engines": [],
@@ -10067,6 +10445,48 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E87 · Geregelte Pumpe, Entlueften nach Prozedur",
+      "valid": "E87 · 2004–2011",
+      "summary": "Am E87 ist die Pumpe elektrisch angesteuert. Damit haengt die Foerderung nicht mehr an der Motordrehzahl, und die Fehlersuche verschiebt sich.",
+      "points": [
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
+      "id": "D4F-E87-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E87 · Kaltlauf, Speicher, Regeneration",
+      "valid": "E87 · 2004–2011",
+      "summary": "Im E87 stehen sehr verschiedene Abgaskonzepte nebeneinander. Vor jeder Bewertung gehoert festgestellt, welches im Fahrzeug arbeitet.",
+      "points": [
+        "Zuerst feststellen, welches Abgaskonzept verbaut ist -- siehe Gruppe D4. Eine Aussage zum 1er ohne Motorangabe ist keine Aussage",
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11057,6 +11477,48 @@
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E88 · Elektrische Pumpe, Luft im Kreis",
+      "valid": "E88 · 2007–2013",
+      "summary": "Auch im Cabrio gilt: Der geregelte Kreis verzeiht keine Luft. Was nach Bauteilschaden aussieht, ist oft eine unvollstaendige Entlueftung.",
+      "points": [
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E88 · Ursache vor Bauteil",
+      "valid": "E88 · 2007–2013",
+      "summary": "Auch am E88 gilt: Was den Katalysator zerstoert, kommt vom Motor. Ein Tausch ohne Ursache ist ein Termin auf Wiedervorlage.",
+      "points": [
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
       ],
       "pins": [],
       "engines": [],
@@ -12192,6 +12654,48 @@
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-134",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E90 · Ansteuerung statt Drehzahl",
+      "valid": "E90 · 2004–2013",
+      "summary": "Am E90 laeuft die Pumpe unabhaengig vom Motor. Ein Ausfall zeigt sich deshalb anders als bei einer riemengetriebenen Pumpe -- und wird oft zu spaet erkannt.",
+      "points": [
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein Motor, der nicht warm wird, hat ein offen haengendes Thermostat. Das ist kein harmloser Befund: zu kalt bedeutet mehr Verschleiss und mehr Verbrauch, dauerhaft",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
+      "id": "D4F-E90-135",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E90 · Konzept bestimmen, dann messen",
+      "valid": "E90 · 2004–2013",
+      "summary": "Im E90 arbeiten Schichtladung, Speicherkatalysator und Partikelfilter je nach Motor nebeneinander. Ohne Motorbestimmung misst man ins Blaue.",
+      "points": [
+        "Zuerst das Abgaskonzept des verbauten Motors feststellen -- siehe Gruppe D4. Die Konzepte haben unterschiedliche Fehlerbilder und unterschiedliche Pruefwege",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
       ],
       "pins": [],
       "engines": [],
@@ -13362,6 +13866,48 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F10 · Welcher Kreis, welche Bedingung",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 arbeiten Motorkreis, Ladeluft- und Getriebekuehlung nebeneinander. Die erste Frage lautet deshalb nicht warum, sondern welcher.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Ladeluft oder Getriebe. Ohne diese Zuordnung misst man am falschen Kreis",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasnachbehandlung F10 · Dosierung, Filter, Druck",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10-Diesel arbeiten Partikelfilter und Reduktionsmitteldosierung zusammen. Eine Meldung aus dem einen System wird regelmaessig dem anderen angelastet.",
+      "points": [
+        "Filter und Dosierung getrennt beurteilen. Eine Meldung zur Dosierung sagt nichts ueber die Beladung des Filters und umgekehrt",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -14259,6 +14805,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F15 · Mehrere Kreise, Last, Anhaengebetrieb",
+      "valid": "F15 · 2013–2018",
+      "summary": "Unter Last und im Anhaengebetrieb arbeiten am F15 mehrere Kreise an ihrer Grenze. Welcher zuerst meldet, ist der Befund.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Ladeluft oder Getriebe. Im Anhaengebetrieb meldet sich haeufig nicht der Motorkreis zuerst",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasnachbehandlung F15 · Last, Regeneration, Dosierung",
+      "valid": "F15 · 2013–2018",
+      "summary": "Im schweren Fahrzeug mit haeufiger Last arbeitet die Nachbehandlung mehr. Das verschiebt nicht die Diagnose, aber die Haeufigkeit.",
+      "points": [
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Filter und Dosierung getrennt beurteilen -- eine Meldung zur Dosierung sagt nichts ueber die Filterbeladung",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
       ],
       "pins": [],
       "engines": [],
@@ -15195,6 +15783,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Der Oelstand gilt nur auf ebener Flaeche und im vorgeschriebenen Temperaturfenster. Ein Wert ausserhalb ist kein Wert -- weder zu viel noch zu wenig laesst sich daraus ableiten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F22 · Geregelte Pumpe und Ladeluftweg",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 haengen Motorkreis und Ladeluftweg zusammen. Ein Leistungsmangel bei Hitze ist deshalb nicht zwangslaeufig ein Motorbefund.",
+      "points": [
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage F22 · Breitbandsonde, Ursache, Gegendruck",
+      "valid": "F22 · 2013–2021",
+      "summary": "Am F22 ist die Sonde ein fortlaufend messendes Bauteil. Und der Katalysator dahinter faellt weiterhin an dem aus, was der Motor ihm schickt.",
+      "points": [
+        "Eine Breitbandsonde liefert einen fortlaufenden Wert. Ein ruhiger Verlauf ist normal und kein Hinweis auf Traegheit",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil"
       ],
       "pins": [],
       "engines": [],
@@ -16197,6 +16827,48 @@
         "Rubbeln bei gleichmaessiger Fahrt unter leichter Last ist typischerweise die Wandlerueberbrueckung und nicht eine Kupplung im Getriebe. Die beiden fuehlen sich aehnlich an und kosten sehr unterschiedlich viel",
         "Ein Getriebe im Notprogramm bleibt in einem Gang und meldet das. Das ist eine Meldung ueber eine erkannte Abweichung und kein Schaden an der Mechanik",
         "Oel kriecht am Kabelbaum entlang bis in den Stecker. Ein Getriebefehler mit Oel im Steckverbinder ist ein Dichtungsbefund, und ein neues Steuergeraet loest ihn nicht"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F30 · Kreis zuordnen, dann messen",
+      "valid": "F30 · 2011–2019",
+      "summary": "Benziner und Diesel teilen sich am F30 das Prinzip, nicht die Schwachstellen. Was beide gemeinsam haben, ist die Empfindlichkeit gegen Luft im Kreis.",
+      "points": [
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasnachbehandlung F30 · Regeneration im Alltag",
+      "valid": "F30 · 2011–2019",
+      "summary": "Am F30-Diesel entscheidet das Fahrprofil ueber die Haltbarkeit der Nachbehandlung. Das ist keine Bevormundung, sondern eine technische Bedingung.",
+      "points": [
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Ein steigender Oelstand ist ein Befund: abgebrochene Regenerationen tragen Kraftstoff ins Motoroel ein",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
       ],
       "pins": [],
       "engines": [],
@@ -23388,26 +24060,26 @@
     }
   },
   "stats": {
-    "total_docs": 662,
+    "total_docs": 694,
     "total_guides": 40,
     "per_model": {
-      "e28": 40,
-      "e30": 44,
-      "e34": 42,
-      "e36": 40,
-      "e38": 41,
-      "e39": 41,
-      "e46": 41,
-      "e60": 41,
-      "e70": 41,
-      "e87": 42,
-      "e88": 39,
-      "e90": 42,
+      "e28": 42,
+      "e30": 46,
+      "e34": 44,
+      "e36": 42,
+      "e38": 43,
+      "e39": 43,
+      "e46": 43,
+      "e60": 43,
+      "e70": 43,
+      "e87": 44,
+      "e88": 41,
+      "e90": 44,
       "f-series": 8,
-      "f10": 40,
-      "f15": 39,
-      "f22": 40,
-      "f30": 41
+      "f10": 42,
+      "f15": 41,
+      "f22": 42,
+      "f30": 43
     }
   }
 }

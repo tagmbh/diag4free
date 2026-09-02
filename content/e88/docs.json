@@ -958,6 +958,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E88 · Elektrische Pumpe, Luft im Kreis",
+      "valid": "E88 · 2007–2013",
+      "summary": "Auch im Cabrio gilt: Der geregelte Kreis verzeiht keine Luft. Was nach Bauteilschaden aussieht, ist oft eine unvollstaendige Entlueftung.",
+      "points": [
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E88-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasanlage E88 · Ursache vor Bauteil",
+      "valid": "E88 · 2007–2013",
+      "summary": "Auch am E88 gilt: Was den Katalysator zerstoert, kommt vom Motor. Ein Tausch ohne Ursache ist ein Termin auf Wiedervorlage.",
+      "points": [
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Die Sonde vor dem Katalysator regelt, die dahinter kontrolliert. Wer sie verwechselt, tauscht das falsche Teil und aendert nichts am Fehlerbild",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Rasseln im kalten Zustand, das mit der Erwaermung verschwindet, kommt vom Hitzeschild und nicht vom Katalysator. Das ist eine Blechbefestigung, kein Abgasbauteil",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

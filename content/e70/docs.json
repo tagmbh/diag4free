@@ -924,6 +924,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-136",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung E70 · Mehrere Kreise sauber trennen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Im X5 gibt es mehr als einen Kreis. Welcher zu heiss wird, entscheidet ueber die ganze Suche -- und die Frage wird oft gar nicht gestellt.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Getriebe oder Ladeluft. Eine Temperaturmeldung ohne diese Zuordnung ist keine Diagnose",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Kuehlmittel geht nach aussen oder nach innen verloren. Keine Pfuetze heisst nicht dicht -- es kann auch heissen, dass es verbrannt wird. Ohne diese Trennung sucht man an der falschen Stelle",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-E70-137",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Partikelfilter E70 · Regeneration und ihre Folgen",
+      "valid": "E70 · 2006–2013",
+      "summary": "Am Diesel entscheidet nicht der Filter ueber den Aerger, sondern die Regeneration. Und die haengt daran, wie das Fahrzeug bewegt wird.",
+      "points": [
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Ein steigender Oelstand am Diesel ist ein Befund und kein Messfehler: abgebrochene Regenerationen tragen Kraftstoff ins Oel ein",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

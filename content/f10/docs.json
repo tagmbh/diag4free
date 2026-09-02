@@ -924,6 +924,46 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-135",
+      "type": "GUIDE",
+      "gruppe": "17",
+      "cat": "Kuehlung",
+      "title": "Ueberhitzung F10 · Welcher Kreis, welche Bedingung",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10 arbeiten Motorkreis, Ladeluft- und Getriebekuehlung nebeneinander. Die erste Frage lautet deshalb nicht warum, sondern welcher.",
+      "points": [
+        "Zuerst klaeren, welcher Kreis auffaellt: Motor, Ladeluft oder Getriebe. Ohne diese Zuordnung misst man am falschen Kreis",
+        "Ein geregelter Kreis wird nach Prozedur entlueftet, nicht durch Laufenlassen. Ohne die vorgesehene Entlueftung bleibt Luft im System, und die erzeugt Ueberhitzung bei intakten Bauteilen",
+        "Bei elektrisch angetriebener Pumpe ist Foerderung eine Frage der Ansteuerung, nicht der Drehzahl. Ein Ausfall zeigt sich damit unabhaengig vom Motorlauf und gehoert im Datensatz nachgesehen",
+        "Die wichtigste Weiche zuerst: Ueberhitzung nur im Stand zeigt auf den Luftweg -- Luefter oder verschmutzter Kuehler von aussen. Ueberhitzung nur unter Last zeigt auf den Durchsatz -- Pumpe, Thermostat oder Kuehler von innen",
+        "Der Verschlussdeckel haelt den Druck, und der Druck haelt den Siedepunkt oben. Ein muerber Deckel laesst den Kreis bei ganz normaler Temperatur kochen -- das billigste Bauteil mit der groessten Wirkung",
+        "Ein heisser Kreis wird nicht geoeffnet. Das ist keine Vorsichtsmassnahme, sondern die Voraussetzung -- siehe Gruppe D5"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
+    },
+    {
+      "id": "D4F-F10-136",
+      "type": "GUIDE",
+      "gruppe": "18",
+      "cat": "Abgas",
+      "title": "Abgasnachbehandlung F10 · Dosierung, Filter, Druck",
+      "valid": "F10 · 2010–2017",
+      "summary": "Am F10-Diesel arbeiten Partikelfilter und Reduktionsmitteldosierung zusammen. Eine Meldung aus dem einen System wird regelmaessig dem anderen angelastet.",
+      "points": [
+        "Filter und Dosierung getrennt beurteilen. Eine Meldung zur Dosierung sagt nichts ueber die Beladung des Filters und umgekehrt",
+        "Der Differenzdruck ueber dem Filter wird unter Last beurteilt und nicht im Stand. Im Leerlauf ist er auch bei einem vollen Filter unauffaellig",
+        "Eine Regeneration braucht Fahrbedingungen. Wird sie regelmaessig abgebrochen, sammelt sich Kraftstoff im Motoroel -- der steigende Oelstand ist dann ein Befund und keine Nachlaessigkeit beim Nachfuellen",
+        "Ein Abgasleck vor der Sonde verfaelscht jede Gemischmessung: Falschluft im Abgas laesst das Gemisch mager erscheinen, und die Regelung fettet dagegen an. Ein Wirkungsgradbefund ohne Dichtheitspruefung ist wertlos",
+        "Ein Katalysator stirbt selten von selbst. Er stirbt an dem, was der Motor ihm schickt: Oel, unverbrannter Kraftstoff, Fehlzuendungen. Ein Tausch ohne Ursache wiederholt sich",
+        "Ein zugesetzter Katalysator macht sich als Leistungsmangel unter Last bemerkbar, nicht im Leerlauf. Beurteilt wird deshalb unter Last, nicht im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
