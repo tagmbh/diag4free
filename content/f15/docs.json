@@ -463,6 +463,26 @@
       "details": [
         "D4F-F15-107"
       ]
+    },
+    {
+      "id": "D4F-F15-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F15 · Entfällt — nur Wandlerautomatik ab Werk",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 wurde ab Werk nur mit Wandlerautomatik ausgeliefert. Ein Schaltgetriebe gibt es an diesem Fahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe führt statt ins Leere.",
+      "points": [
+        "Es gibt kein Schaltgetriebe. Schaltbefunde, Ruckeln und Verzögerungen beim Gangwechsel gehören zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als den beiden ersten Prüfschritten",
+        "Ruckeln beim Rangieren und beim engen Wenden ist das Verteilergetriebe des xDrive und keine Getriebefrage",
+        "Ein Heulen, das sich mit der Fahrgeschwindigkeit und nicht mit der Fahrstufe ändert, gehört zum Achsgetriebe oder zu den Radlagern — Gruppe 33",
+        "Wer an einem umgebauten Fahrzeug tatsächlich ein Schaltgetriebe vorfindet, arbeitet nach dem Verfahren der Schaltergenerationen: Schaltweg vor Getriebe, dann Ölwechsel, erst dann Ausbau"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-113"
+      ]
     }
   ]
 }

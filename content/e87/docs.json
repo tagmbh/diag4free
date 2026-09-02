@@ -584,6 +584,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E87-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E87 · Ölservice, Schaltweg, Simmerringe",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter. Entsprechend oft kommt die Frage, ob das Getriebe defekt ist — und entsprechend oft lautet die Antwort: nein, die Schaltmechanik.",
+      "points": [
+        "Schwammiger, unpräziser Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe. Der billigste Ausschluss dieser Gruppe",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse, Ausrück- und Pilotlager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-113"
+      ]
     }
   ]
 }

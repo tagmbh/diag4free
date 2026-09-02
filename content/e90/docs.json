@@ -704,6 +704,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E90 · Schaltweg vor Getriebe, Ölservice, Simmerringe",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist der Getriebeausbau aufwendig und die Schaltmechanik der häufigste Grund für ein schlechtes Schaltgefühl. Die Reihenfolge entscheidet über die Rechnung.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik. Vor jedem Getriebeverdacht prüfen",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse, Ausrück- und Pilotlager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-113"
+      ]
     }
   ]
 }

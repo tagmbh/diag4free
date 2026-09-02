@@ -488,6 +488,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F22-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F22 · Schaltweg, Ölservice, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019 · Handschaltung",
+      "summary": "Der F22 ist eine der letzten Baureihen mit verbreitetem Handschalter. Bei den drehmomentstarken Ausführungen zeigt sich Verschleiß früher — die Prüfreihenfolge bleibt dieselbe.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte; Sorte nie raten",
+        "Bei den drehmomentstarken M-Ausführungen zeigen sich Synchron- und Lagerbefunde früher",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-113"
+      ]
     }
   ]
 }

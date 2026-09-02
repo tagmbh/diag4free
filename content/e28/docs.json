@@ -424,6 +424,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E28 · Ölservice, Synchronringe, Undichtigkeiten",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Das Getriebe des E28 ist robust und wartungsarm — was dazu geführt hat, dass sein Öl bei vielen Fahrzeugen noch nie gewechselt wurde. Ein hakender zweiter Gang ist deshalb oft kein Synchronbefund.",
+      "points": [
+        "Hakt ein Gang nur im kalten Zustand und wird warm besser, ist das ein Öl- und Synchronthema, kein Getriebeschaden. Der Ölwechsel ist der billigste erste Versuch",
+        "Getriebeöl: Sorte und Menge sind vorgeschrieben und dürfen nicht geraten werden. Bei fehlender Unterlage lieber nachschlagen als ein beliebiges Öl einfüllen — falsches Öl verschlechtert das Schaltverhalten dauerhaft",
+        "Der zweite Gang ist der übliche erste Verschleißkandidat, weil er beim Herunterschalten am meisten arbeitet",
+        "Ölaustritt am Getriebeeingang: Simmerring. Er ist nur bei abgenommenem Getriebe erreichbar — bei jeder Kupplungsarbeit mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring zum Gelenkwellenflansch, ohne Getriebeausbau erreichbar",
+        "Heulen, das sich mit dem Gang ändert, kommt aus dem Getriebe; Heulen, das nur mit der Geschwindigkeit geht, aus Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-113"
+      ]
     }
   ]
 }
