@@ -833,6 +833,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E90 · Quelle vom Opfer trennen, Spannung zuerst",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 ist der klassische Doppelbefund -- Licht und Fensterheber zugleich tot -- kein Zufall, sondern ein Modul. Der teuerste Fehler dieser Generation ist nicht die Fehlmessung, sondern der Tausch eines Geraets, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege in Dutzenden Geraeten -- wer bei schwacher Batterie ausliest, diagnostiziert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen. Sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
+        "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
+        "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

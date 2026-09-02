@@ -624,6 +624,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen F10 · Codierstand vor Bauteil, Spannung vor Diagnose",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation ist fast jede Funktion an ein Steuergeraet und einen Codierstand gebunden. Diese Gruppe beschreibt das Vorgehen und die Reihenfolge, in der Fragen geklaert sein muessen, bevor etwas ausgebaut wird.",
+      "points": [
+        "Codierstand vor Bauteil: Ein nicht freigeschaltetes oder falsch codiertes Bauteil verhaelt sich wie ein defektes. Bei Nachruestungen und nach Geraetetausch ist das der erste Verdacht",
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege ueber alle Module hinweg",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Ein Geraetename in vielen fremden Speichern ist die Quelle, nicht das Opfer",
+        "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
+        "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

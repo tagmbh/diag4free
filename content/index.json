@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T03:35:37.323Z",
+  "generated": "2026-09-02T03:57:44.309Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -846,6 +846,27 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E28 · Alter vor Defekt, Masse vor Bauteil, Sicherheit",
+      "valid": "E28 · 1981–1988",
+      "summary": "Beim E28 ist der Diagnoseanschluss nicht der Einstieg, sondern der zweite Schritt: Zuerst gehoert das Bordnetz geprueft, sonst misst man Korrosion statt Motorsteuerung. Diese Gruppe beschreibt das Vorgehen, nicht das Bauteil — und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Alter vor Defekt: Bei einem Fahrzeug dieses Baujahres ist ein Uebergangswiderstand wahrscheinlicher als ein defektes Bauteil. Stecker oeffnen und ansehen kostet nichts und erklaert das meiste",
+        "Masse vor Bauteil: Mehrere Verbraucher gleichzeitig auffaellig heisst gemeinsamer Massepunkt. Ein gemeinsamer Ausfall hat eine gemeinsame Ursache",
+        "Batteriespannung und Ladung vor jeder elektrischen Fehlersuche pruefen. Eine schwache Batterie erzeugt Befunde, die es nicht gibt",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen und auf heisse Abgasteile achten. Beides ist kein Formalismus",
+        "Vor dem Abklemmen der Batterie klaeren, was danach angelernt oder eingestellt werden muss -- Uhr, Radio, Fensterheber und Anpassungen der Motorsteuerung",
+        "Ein Befund, der sich nicht reproduzieren laesst, wird nicht durch Bauteiltausch geloest. Erst die Bedingung finden, unter der er auftritt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1602,6 +1623,27 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E30 · Alter vor Defekt, Masse vor Bauteil, Sicherheit",
+      "valid": "E30 · 1982–1994",
+      "summary": "Beim E30 sind die meisten Elektrikbefunde Kontaktbefunde. Wer das im Kopf hat, spart sich einen grossen Teil der Bauteiltausche. Diese Gruppe beschreibt das Vorgehen, nicht das Bauteil — und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Alter vor Defekt: Bei einem Fahrzeug dieses Baujahres ist ein Uebergangswiderstand wahrscheinlicher als ein defektes Bauteil. Stecker oeffnen und ansehen kostet nichts und erklaert das meiste",
+        "Masse vor Bauteil: Mehrere Verbraucher gleichzeitig auffaellig heisst gemeinsamer Massepunkt. Ein gemeinsamer Ausfall hat eine gemeinsame Ursache",
+        "Batteriespannung und Ladung vor jeder elektrischen Fehlersuche pruefen. Eine schwache Batterie erzeugt Befunde, die es nicht gibt",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen und auf heisse Abgasteile achten. Beides ist kein Formalismus",
+        "Vor dem Abklemmen der Batterie klaeren, was danach angelernt oder eingestellt werden muss -- Uhr, Radio, Fensterheber und Anpassungen der Motorsteuerung",
+        "Ein Befund, der sich nicht reproduzieren laesst, wird nicht durch Bauteiltausch geloest. Erst die Bedingung finden, unter der er auftritt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -2211,6 +2253,27 @@
         "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
         "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
         "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E34 · Alter vor Defekt, Masse vor Bauteil, Sicherheit",
+      "valid": "E34 · 1987–1997",
+      "summary": "Beim E34 kommen erste Steuergeraete zusammen, aber das Bordnetz ist aelter als sie. Die Reihenfolge bleibt: erst Versorgung, dann Elektronik. Diese Gruppe beschreibt das Vorgehen, nicht das Bauteil — und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Alter vor Defekt: Bei einem Fahrzeug dieses Baujahres ist ein Uebergangswiderstand wahrscheinlicher als ein defektes Bauteil. Stecker oeffnen und ansehen kostet nichts und erklaert das meiste",
+        "Masse vor Bauteil: Mehrere Verbraucher gleichzeitig auffaellig heisst gemeinsamer Massepunkt. Ein gemeinsamer Ausfall hat eine gemeinsame Ursache",
+        "Batteriespannung und Ladung vor jeder elektrischen Fehlersuche pruefen. Eine schwache Batterie erzeugt Befunde, die es nicht gibt",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen und auf heisse Abgasteile achten. Beides ist kein Formalismus",
+        "Vor dem Abklemmen der Batterie klaeren, was danach angelernt oder eingestellt werden muss -- Uhr, Radio, Fensterheber und Anpassungen der Motorsteuerung",
+        "Ein Befund, der sich nicht reproduzieren laesst, wird nicht durch Bauteiltausch geloest. Erst die Bedingung finden, unter der er auftritt"
       ],
       "pins": [],
       "engines": [],
@@ -2886,6 +2949,27 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E36 · Den Fehlerspeicher lesen, nicht nur auslesen",
+      "valid": "E36 · 1989–2002",
+      "summary": "Mit dem E36 kommt der Fehlerspeicher als Werkzeug -- und mit ihm der Irrtum, sein Inhalt sei die Diagnose. Diese Gruppe beschreibt das Vorgehen: was ein Eintrag bedeutet, was er nicht bedeutet, und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Ein Fehlercode nennt einen Kreis, kein Bauteil. 'Lambdasonde' heisst: im Kreis der Lambdasonde stimmt etwas nicht -- Sonde, Leitung, Stecker oder das, was sie misst",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Geraet fuer Geraet zu arbeiten erzeugt die falsche Reihenfolge",
+        "Vor jedem Bauteiltausch Versorgung, Masse und Stecker dieses Bauteils pruefen. Eine fehlende Sicherung sieht aus wie ein totes Bauteil",
+        "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -3500,6 +3584,27 @@
         "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
         "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
         "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E38 · Den Fehlerspeicher lesen, nicht nur auslesen",
+      "valid": "E38 · 1993–2001",
+      "summary": "Der E38 hat mehr Steuergeraete als jedes Fahrzeug vor ihm. Damit beginnt die Frage, welches Geraet Quelle ist und welches nur mitmeldet. Diese Gruppe beschreibt das Vorgehen: was ein Eintrag bedeutet, was er nicht bedeutet, und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Ein Fehlercode nennt einen Kreis, kein Bauteil. 'Lambdasonde' heisst: im Kreis der Lambdasonde stimmt etwas nicht -- Sonde, Leitung, Stecker oder das, was sie misst",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Geraet fuer Geraet zu arbeiten erzeugt die falsche Reihenfolge",
+        "Vor jedem Bauteiltausch Versorgung, Masse und Stecker dieses Bauteils pruefen. Eine fehlende Sicherung sieht aus wie ein totes Bauteil",
+        "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
       ],
       "pins": [],
       "engines": [],
@@ -4178,6 +4283,27 @@
         "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
         "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
         "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E39 · Den Fehlerspeicher lesen, nicht nur auslesen",
+      "valid": "E39 · 1995–2004",
+      "summary": "Am E39 ist der Fehlerspeicher gut gefuellt und selten eindeutig. Die Reihenfolge des Lesens entscheidet ueber die Diagnose. Diese Gruppe beschreibt das Vorgehen: was ein Eintrag bedeutet, was er nicht bedeutet, und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Ein Fehlercode nennt einen Kreis, kein Bauteil. 'Lambdasonde' heisst: im Kreis der Lambdasonde stimmt etwas nicht -- Sonde, Leitung, Stecker oder das, was sie misst",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Geraet fuer Geraet zu arbeiten erzeugt die falsche Reihenfolge",
+        "Vor jedem Bauteiltausch Versorgung, Masse und Stecker dieses Bauteils pruefen. Eine fehlende Sicherung sieht aus wie ein totes Bauteil",
+        "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
       ],
       "pins": [],
       "engines": [],
@@ -4898,6 +5024,27 @@
         "Schlechter Empfang bei intaktem Geraet ist zuerst eine Antennen- und Steckerfrage; nachgeruestete Antennen sind haeufig behelfsmaessig angeschlossen",
         "Ein Eingriff einer Nachruestung ins Bordnetz kann Folgefehler an anderen Systemen erzeugen. Bei unerklaerlichen Elektrikbefunden gehoert sie auf die Verdachtsliste",
         "Werkseitige Telefonvorbereitungen spaeter Baujahre koennen vorhanden sein -- dann gelten Codierstand und Steuergeraeteanpassung wie in den spaeteren Baureihen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E46 · Den Fehlerspeicher lesen, nicht nur auslesen",
+      "valid": "E46 · 1997–2006",
+      "summary": "Der E46 ist die Baureihe, an der die meisten das Auslesen lernen -- und an der der haeufigste Anfaengerfehler entsteht: den Code als Bauteilnamen zu lesen. Diese Gruppe beschreibt das Vorgehen: was ein Eintrag bedeutet, was er nicht bedeutet, und was vor dem ersten Handgriff geklaert sein muss.",
+      "points": [
+        "Ein Fehlercode nennt einen Kreis, kein Bauteil. 'Lambdasonde' heisst: im Kreis der Lambdasonde stimmt etwas nicht -- Sonde, Leitung, Stecker oder das, was sie misst",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Geraet fuer Geraet zu arbeiten erzeugt die falsche Reihenfolge",
+        "Vor jedem Bauteiltausch Versorgung, Masse und Stecker dieses Bauteils pruefen. Eine fehlende Sicherung sieht aus wie ein totes Bauteil",
+        "Batteriespannung vor der Diagnose pruefen: Unterspannung erzeugt Eintraege in mehreren Geraeten gleichzeitig, die nach dem Laden verschwinden",
+        "Loeschen erst, wenn der Stand gesichert ist. Danach eine definierte Fahrt -- nur wiederkehrende Eintraege sind aktuell",
+        "Vor Arbeiten am Kraftstoffsystem den Druck abbauen; bei Airbag-Arbeiten Zuendung aus und Wartezeit einhalten"
       ],
       "pins": [],
       "engines": [],
@@ -5626,6 +5773,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e60"
+    },
+    {
+      "id": "D4F-E60-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E60 · Quelle vom Opfer trennen, Spannung zuerst",
+      "valid": "E60 · 2003–2010",
+      "summary": "Am E60 haengt alles an Bussystemen. Ein einzelner Fehler taucht dadurch in vielen fremden Speichern auf. Der teuerste Fehler dieser Generation ist nicht die Fehlmessung, sondern der Tausch eines Geraets, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege in Dutzenden Geraeten -- wer bei schwacher Batterie ausliest, diagnostiziert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen. Sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
+        "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
+        "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
       ],
       "pins": [],
       "engines": [],
@@ -7022,6 +7190,27 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E87 · Quelle vom Opfer trennen, Spannung zuerst",
+      "valid": "E87 · 2004–2013",
+      "summary": "Am E87 sind Beleuchtung, Fensterheber und Komfort in einem Modul zusammengefasst. Mehrere tote Funktionen sind deshalb oft ein Befund. Der teuerste Fehler dieser Generation ist nicht die Fehlmessung, sondern der Tausch eines Geraets, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege in Dutzenden Geraeten -- wer bei schwacher Batterie ausliest, diagnostiziert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen. Sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
+        "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
+        "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7697,6 +7886,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E88 · Quelle vom Opfer trennen, Spannung zuerst",
+      "valid": "E88 · 2007–2013",
+      "summary": "Am E88 kommt zum Modulverbund die Feuchtigkeit: Ein nasser Fussraum ist die Ursache und nicht die Folge. Der teuerste Fehler dieser Generation ist nicht die Fehlmessung, sondern der Tausch eines Geraets, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege in Dutzenden Geraeten -- wer bei schwacher Batterie ausliest, diagnostiziert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen. Sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
+        "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
+        "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
       ],
       "pins": [],
       "engines": [],
@@ -8566,6 +8776,27 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen E90 · Quelle vom Opfer trennen, Spannung zuerst",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 ist der klassische Doppelbefund -- Licht und Fensterheber zugleich tot -- kein Zufall, sondern ein Modul. Der teuerste Fehler dieser Generation ist nicht die Fehlmessung, sondern der Tausch eines Geraets, das nur Folgefehler gemeldet hat.",
+      "points": [
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege in Dutzenden Geraeten -- wer bei schwacher Batterie ausliest, diagnostiziert die Batterie",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Taucht ein Geraetename in vielen fremden Speichern auf, ist es die Quelle und nicht das Opfer",
+        "Ein Geraet, das selbst nicht antwortet, kann keinen Fehler eintragen. Sein Schweigen ist der Befund, nicht sein leerer Speicher",
+        "Vor jedem Geraetetausch Versorgung, Masse und Stecker pruefen. Und klaeren, ob das Ersatzgeraet fahrzeugbezogen angepasst werden muss -- gebrauchte Geraete sind hier kein Tauschteil im Vorbeigehen",
+        "Nach Batteriewechsel anmelden. Ohne Anmeldung laedt das Fahrzeug nach dem alten Kennfeld, und die Folgefehler kommen spaeter",
+        "Feuchtigkeit im Fussraum ist bei dieser Generation ein Diagnosebefund: Abluefe freimachen, bevor ein Modulschaden angenommen wird"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -9344,6 +9575,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f10"
+    },
+    {
+      "id": "D4F-F10-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen F10 · Codierstand vor Bauteil, Spannung vor Diagnose",
+      "valid": "F10 · 2010–2017",
+      "summary": "In der F-Generation ist fast jede Funktion an ein Steuergeraet und einen Codierstand gebunden. Diese Gruppe beschreibt das Vorgehen und die Reihenfolge, in der Fragen geklaert sein muessen, bevor etwas ausgebaut wird.",
+      "points": [
+        "Codierstand vor Bauteil: Ein nicht freigeschaltetes oder falsch codiertes Bauteil verhaelt sich wie ein defektes. Bei Nachruestungen und nach Geraetetausch ist das der erste Verdacht",
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege ueber alle Module hinweg",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Ein Geraetename in vielen fremden Speichern ist die Quelle, nicht das Opfer",
+        "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
+        "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
       ],
       "pins": [],
       "engines": [],
@@ -10603,6 +10855,27 @@
       "model": "f22"
     },
     {
+      "id": "D4F-F22-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen F22 · Codierstand vor Bauteil, Spannung vor Diagnose",
+      "valid": "F22 · 2011–2019",
+      "summary": "Beim F22 kommen viele Nachruestungen vor, und die scheitern oefter am Codierstand als an der Technik. Diese Gruppe beschreibt das Vorgehen und die Reihenfolge, in der Fragen geklaert sein muessen, bevor etwas ausgebaut wird.",
+      "points": [
+        "Codierstand vor Bauteil: Ein nicht freigeschaltetes oder falsch codiertes Bauteil verhaelt sich wie ein defektes. Bei Nachruestungen und nach Geraetetausch ist das der erste Verdacht",
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege ueber alle Module hinweg",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Ein Geraetename in vielen fremden Speichern ist die Quelle, nicht das Opfer",
+        "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
+        "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f22"
+    },
+    {
       "id": "D4F-F30-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -11283,6 +11556,27 @@
         "Telematik- und Notruffunktionen haben eine eigene Stromversorgung mit eigener Batterie. Eine Meldung dazu ist ein Bauteilbefund, kein Bordnetzbefund",
         "Nach einem Steuergeraetetausch ist eine fahrzeugbezogene Anpassung noetig; ein Geraet aus einem anderen Fahrzeug arbeitet nicht ohne Weiteres",
         "Abschaltung von Mobilfunknetzen aelterer Generation legt Telematikdienste still, ohne dass am Fahrzeug etwas defekt ist. Das ist keine Reparatur, sondern eine Tatsache -- und sie gehoert dem Kunden gesagt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-120",
+      "type": "GUIDE",
+      "gruppe": "D5",
+      "cat": "Methodik",
+      "title": "Vorgehen F30 · Codierstand vor Bauteil, Spannung vor Diagnose",
+      "valid": "F30 · 2011–2019",
+      "summary": "Beim F30 verhaelt sich ein nicht freigeschaltetes Bauteil wie ein defektes -- das ist der haeufigste vermeidbare Bauteiltausch. Diese Gruppe beschreibt das Vorgehen und die Reihenfolge, in der Fragen geklaert sein muessen, bevor etwas ausgebaut wird.",
+      "points": [
+        "Codierstand vor Bauteil: Ein nicht freigeschaltetes oder falsch codiertes Bauteil verhaelt sich wie ein defektes. Bei Nachruestungen und nach Geraetetausch ist das der erste Verdacht",
+        "Batteriespannung und Ladezustand vor jeder Diagnose. Unterspannung erzeugt Eintraege ueber alle Module hinweg",
+        "Alle Speicher gemeinsam auslesen, dann lesen. Ein Geraetename in vielen fremden Speichern ist die Quelle, nicht das Opfer",
+        "Nicht jedes Geraet antwortet auf generische Anfragen. Ein leerer Fehlerspeicher im generischen Geraet ist kein Beleg fuer Fehlerfreiheit -- er ist ein Beleg fuer die Grenze des Werkzeugs",
+        "Nach Batteriewechsel anmelden; nach Arbeiten an Achse, Spur oder Lenkung den Lenkwinkel abgleichen, sonst regelt die DSC ohne Fahrsituation",
+        "Vor Arbeiten an der Hinterachsbremse den Parkbremssteller in Servicestellung fahren -- mechanisches Zurueckdruecken beschaedigt ihn"
       ],
       "pins": [],
       "engines": [],
@@ -18474,26 +18768,26 @@
     }
   },
   "stats": {
-    "total_docs": 428,
+    "total_docs": 442,
     "total_guides": 40,
     "per_model": {
-      "e28": 24,
-      "e30": 31,
-      "e34": 26,
-      "e36": 26,
-      "e38": 26,
-      "e39": 27,
-      "e46": 28,
-      "e60": 27,
+      "e28": 25,
+      "e30": 32,
+      "e34": 27,
+      "e36": 27,
+      "e38": 27,
+      "e39": 28,
+      "e46": 29,
+      "e60": 28,
       "e70": 26,
-      "e87": 27,
-      "e88": 24,
-      "e90": 29,
+      "e87": 28,
+      "e88": 25,
+      "e90": 30,
       "f-series": 5,
-      "f10": 25,
+      "f10": 26,
       "f15": 25,
-      "f22": 26,
-      "f30": 26
+      "f22": 27,
+      "f30": 27
     }
   }
 }
