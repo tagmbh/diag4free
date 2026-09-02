@@ -171,6 +171,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F-105",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F-Baureihen - Ring, Ruhestrom, Kodierung",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen ist Infotainment ein Verbund am gemeinsamen Datenring. Der Totalausfall ist die Regel, wenn ein einzelnes Geraet haengt -- und sagt nichts darueber, welches es ist.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Die erste Weiche lautet: eine Funktion tot oder alle. Alle heisst Ring, eine heisst Geraet oder Leitung",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ruhestrom gehoert an den Ring und nicht an die Batterie",
+        "Bedienteil, Rechner und Anzeige sind getrennte Geraete. Bild ohne Reaktion ist ein Bedienteilbefund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes oder nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

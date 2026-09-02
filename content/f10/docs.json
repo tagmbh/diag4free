@@ -744,6 +744,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment F10 - Ring, Kodierung, Ruhestrom",
+      "valid": "F10 - 2010-2017",
+      "summary": "Am F10 haengen Radio, Navigation, Telefon und Bedienung an einem gemeinsamen Ring. Ein einzelnes Geraet erzeugt das Bild eines Totalausfalls.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall zuerst klaeren, welches Geraet nicht antwortet. Das ist der schnellere Einstieg als die Frage nach dem defekten Geraet",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie. Ruhestrom gehoert hier gesucht, bevor an der Batterie etwas getauscht wird",
+        "Bedienteil, Rechner und Anzeige sind getrennte Geraete. Welches ausfaellt, grenzt den Befund ein, bevor etwas ausgebaut wird",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein nachgeruestetes oder getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

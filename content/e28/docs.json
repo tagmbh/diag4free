@@ -667,6 +667,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-129",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio E28 - Radio, Antenne, Lautsprecher ohne Bus",
+      "valid": "E28 - 1981-1987",
+      "summary": "Beim E28 gibt es keinen Datenbus im Audiobereich. Radio, Antenne und Lautsprecher sind einzeln verdrahtet -- damit ist jeder Fehler eine Frage von Versorgung, Leitung oder Masse.",
+      "points": [
+        "Ohne Bus gibt es keine Systemdiagnose. Was hier zaehlt, sind Versorgung, Masse und Leitung -- in dieser Reihenfolge und einzeln geprueft",
+        "Ein einseitiger Ausfall ist ein Leitungs- oder Lautsprecherbefund. Fallen beide Seiten aus, liegt es an Versorgung oder Geraet",
+        "Kratzen und Verzerren auf einer Seite kommt haeufig von Feuchtigkeit in der Tuer. Der Lautsprecher ist dann Folge und nicht Ursache -- siehe Gruppe 51",
+        "Masse ist bei Fahrzeugen dieses Alters der haeufigste Befund. Eine korrodierte Massestelle erzeugt Brummen, das wie ein Geraetefehler klingt",
+        "Spannungsabfall unter Last messen statt Durchgang. Eine Leitung mit Durchgang kann unter Last zu viel verlieren -- siehe Gruppe 61",
+        "Bei elektrischer Antenne Mechanik und Motor trennen: Ein schwergaengiger Mast ueberfordert den Antrieb, und nach dem Motortausch bleibt er schwergaengig"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

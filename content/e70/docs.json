@@ -764,6 +764,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-128",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E70 - Ring, Ruhestrom, Nachruestung",
+      "valid": "E70 - 2006-2013",
+      "summary": "Am E70 haengen Radio, Navigation und Telefon an einem gemeinsamen Datenring. Ein einziges Geraet kann den Eindruck erzeugen, es sei alles ausgefallen.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall zuerst fragen, welches Geraet nicht mehr antwortet, statt welches Geraet defekt ist. Das ist ein anderer Sucheinstieg und der schnellere",
+        "Ein Geraet am Ring, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ein Ruhestromproblem ohne erkennbare Ursache gehoert hier gesucht",
+        "Ein nachgeruestetes oder getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Bedienteil und Rechner sind getrennte Geraete. Reagiert die Bedienung nicht, waehrend das Bild lebt, ist das ein Bedienteilbefund"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

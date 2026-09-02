@@ -772,6 +772,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-124",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Audio und Bordmonitor E46 - Leitungen, Module, Feuchtigkeit",
+      "valid": "E46 - 1998-2006",
+      "summary": "Am E46 sitzt die haeufigste Ursache fuer einseitigen Tonausfall in der Tuertuelle, nicht im Geraet. Und was nach Geraetefehler klingt, ist oft Masse oder Feuchtigkeit.",
+      "points": [
+        "Die Lautsprecherleitung bricht in der Tuertuelle unter intakter Isolierung. Geprueft wird, waehrend die Tuer bewegt wird -- im Stillstand hat die gebrochene Ader oft noch Kontakt",
+        "Einseitiger Ausfall heisst Leitung, Lautsprecher oder ein Kanal. Beidseitiger Ausfall heisst Versorgung oder Geraet -- das ist die erste Weiche",
+        "Vor dem Lautsprechertausch kreuzweise pruefen. Wandert der Fehler mit dem Kanal, liegt er vor dem Lautsprecher",
+        "Feuchtigkeit aus der Tuer erreicht Lautsprecher und Steckverbindungen. Kratzen auf einer Seite ist dann ein Wasserbefund -- siehe Gruppe 51",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens",
+        "Ein nachgeruestetes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

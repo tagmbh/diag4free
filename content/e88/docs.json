@@ -778,6 +778,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E88 - Ring, Lautsprecher, Feuchtigkeit",
+      "valid": "E88 - 2008-2013",
+      "summary": "Am E88 gilt dieselbe Ringlogik wie in der Baureihe -- dazu kommt, dass ein offenes Fahrzeug seine Lautsprecher und Steckverbindungen haeufiger nass sieht.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall fragen, welches Geraet nicht antwortet, statt welches defekt ist",
+        "Einseitiges Kratzen zuerst als Feuchtigkeitsbefund behandeln. Im offenen Fahrzeug erreicht Wasser Lautsprecher und Stecker leichter -- siehe Gruppe 51",
+        "Bedienteil und Rechner trennen: Bild ohne Reaktion ist ein Bedienteilbefund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

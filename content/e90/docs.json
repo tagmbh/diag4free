@@ -933,6 +933,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-126",
+      "type": "GUIDE",
+      "gruppe": "65",
+      "cat": "Infotainment",
+      "title": "Infotainment E90 - Datenring, Ruhestrom, Bedienteil",
+      "valid": "E90 - 2004-2013",
+      "summary": "Beim E90 ist der Totalausfall des Infotainments meist ein Ringbefund und kein Geraeteschaden. Die richtige Frage lautet, welches Geraet nicht mehr antwortet.",
+      "points": [
+        "Der Datenring ist eine Reihenschaltung: Schlaeft ein einziges Geraet nicht ein oder haengt es am Ring, faellt scheinbar alles aus. Das Bild sagt alles tot, der Befund ist ein Geraet",
+        "Bei Totalausfall die Geraete am Ring einzeln abfragen, statt das sichtbarste zu tauschen. Das gesuchte Geraet ist meist nicht das, dessen Funktion fehlt",
+        "Ein Geraet, das nicht einschlaeft, entlaedt die Batterie ueber Nacht. Ruhestrom gehoert deshalb hier gesucht und nicht an der Batterie",
+        "Bedienteil und Rechner sind getrennt. Lebt das Bild und reagiert die Bedienung nicht, ist das Bedienteil der Befund",
+        "Ein Rechner nimmt Unterspannung uebel. Wer mit leerer Batterie startet oder fremdstartet, riskiert einen Softwareschaden statt eines Bauteilschadens -- vor jedem Eingriff Spannung stabil halten",
+        "Ein getauschtes Geraet ohne Kodierung verhaelt sich wie ein defektes -- siehe Gruppe D3"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
