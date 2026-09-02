@@ -858,6 +858,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E88 · Standzeit, Sattel, Fluessigkeit",
+      "valid": "E88 · 2007–2013",
+      "summary": "Ein offenes Fahrzeug steht im Winter haeufiger, als es faehrt. Genau daraus entstehen die typischen Bremsbefunde dieser Baureihe.",
+      "points": [
+        "Nach laengerer Standzeit sitzt Flugrost auf der Scheibe und der Kolben ist traege. Beurteilt wird nach einigen bewussten Bremsungen und nicht davor",
+        "Ein Fahrzeug, das wenig faehrt, hat trotzdem alte Bremsfluessigkeit. Der Zustand haengt an der Zeit, nicht an der Strecke",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Der Verschleisssensor ist ein Kontakt und kein Messwert. Er meldet erst, wenn der Belag ihn erreicht, und sagt nichts ueber die andere Achse und nichts ueber die Scheibe",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

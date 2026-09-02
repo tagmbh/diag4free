@@ -767,6 +767,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-134",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E28 · Standschaeden, Sattel, Feststellbremse",
+      "valid": "E28 · 1981–1988",
+      "summary": "Ein Fahrzeug dieses Alters steht meist mehr, als es faehrt. Damit werden Korrosion auf der Bremsflaeche und traege Kolben zum Normalfall statt zur Ausnahme.",
+      "points": [
+        "Nach langer Standzeit sitzt Rost auf der Bremsflaeche und Kolben und Bolzen sind traege. Das ist der Ausgangszustand, nicht der Schaden -- beurteilt wird nach einigen bewussten Bremsungen",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

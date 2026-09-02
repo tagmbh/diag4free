@@ -885,6 +885,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E30 · Sattel, Scheiben, Feststellbremse",
+      "valid": "E30 · 1982–1994",
+      "summary": "Am E30 entscheidet die Beweglichkeit des Sattels ueber den Belagverschleiss. Ein fester Fuehrungsbolzen frisst einen Belag auf, waehrend der gegenueberliegende neu aussieht.",
+      "points": [
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Bremsleitungen an den Verschraubungen und am Uebergang zum Schlauch beurteilen. Aussen blueht Rost frueher als er innen gefaehrlich wird, aber beides gehoert angesehen",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

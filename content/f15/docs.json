@@ -765,6 +765,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-130",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik F15 · Last, Belagbild, Fluessigkeit",
+      "valid": "F15 · 2013–2018",
+      "summary": "Am schweren Fahrzeug mit haeufiger Zuladung altert die Bremse thermisch schneller. Das aendert nicht die Diagnose, aber den Zeitpunkt, zu dem sie faellig wird.",
+      "points": [
+        "Haeufige Zuladung und Anhaengerbetrieb belasten die Bremsfluessigkeit thermisch. Frueher erneuern ist hier begruendet und keine Vorsicht",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

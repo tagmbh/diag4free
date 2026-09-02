@@ -795,6 +795,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-131",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E38 · Scheibendicke messen statt Schlag",
+      "valid": "E38 · 1994–2001",
+      "summary": "Am schweren Fahrzeug faellt ein Dickenunterschied frueher auf als anderswo. Die richtige Messung dafuer ist die Dicke an mehreren Stellen, nicht der Schlag der Scheibe.",
+      "points": [
+        "Rubbeln beim Bremsen ist fast nie eine verzogene Scheibe. Der Befund ist ein Dickenunterschied ueber den Umfang -- gemessen wird die Dicke an mehreren Stellen, nicht der Schlag",
+        "Gemessen wird rundum an mehreren Punkten desselben Radius. Ein einzelner Wert sagt nichts ueber einen Unterschied aus",
+        "Vor dem Scheibenwechsel die Nabenauflage saeubern. Eine neue Scheibe auf verrosteter Auflage steht schief und erzeugt genau das Bild, das man beheben wollte",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

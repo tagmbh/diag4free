@@ -810,6 +810,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-134",
+      "type": "GUIDE",
+      "gruppe": "34",
+      "cat": "Bremse",
+      "title": "Bremsmechanik E34 · Fuehrung, Belagbild, Schlauch",
+      "valid": "E34 · 1987–1996",
+      "summary": "Das Belagbild am E34 sagt mehr als jede Sichtpruefung der Scheibe. Wer es liest, findet die Ursache, statt nur den Verschleiss zu ersetzen.",
+      "points": [
+        "Ungleicher Belagverschleiss ist ein Befund und kein Zufall: innen gegen aussen zeigt auf den Sattel, links gegen rechts auf Hydraulik oder Fuehrung",
+        "Fuehrungsbolzen pruefen, bevor Belaege getauscht werden. Ein fester Bolzen verschleisst einen Belag einseitig, und die neuen stehen nach kurzer Zeit wieder ungleich",
+        "Ein aufgequollener Bremsschlauch wirkt wie ein Ventil: Druck kommt an, laesst aber nicht mehr ab. Die betroffene Seite bleibt warm und zieht -- das ist ein Schlauchbefund",
+        "Zieht das Fahrzeug beim Bremsen, ist meist eine Seite traege. Nach der Fahrt die Felgentemperaturen vergleichen -- vorsichtig, sie sind heiss -- das grenzt schneller ein als jede Messung im Stand",
+        "Die Feststellbremse arbeitet als kleine Trommel im Topf der Scheibe, nicht auf der Bremsflaeche. Wer sie nur nachstellt, stellt Verschleiss weg, statt ihn zu beheben",
+        "Bremsfluessigkeit zieht Wasser aus der Luft, und mit dem Wasser faellt der Siedepunkt. Ihr Zustand haengt an der Zeit, nicht an der Laufleistung -- ein wenig gefahrenes Fahrzeug ist hier kein gutes"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
