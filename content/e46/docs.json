@@ -567,6 +567,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E46-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E46 · Ölservice, Synchronringe, alles in einem Zug",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist der Getriebeausbau der teure Teil. Deshalb entscheidet die Vorprüfung, ob er nötig ist — und wenn ja, was in demselben Arbeitsgang mitgemacht wird.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe. Das ist der häufigste vermeidbare Ausbau",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: zuerst Ölwechsel mit vorgeschriebener Sorte",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Bei abgenommenem Getriebe immer mitmachen: Simmerring am Eingang, Simmerring an der Kurbelwelle, Führungshülse, Ausrücklager und Pilotlager",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-113"
+      ]
     }
   ]
 }

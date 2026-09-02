@@ -496,6 +496,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F10-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F10 · Getriebe bestimmen, Ölservice, Schaltweg",
+      "valid": "F10, F11 · 2010–2017 · Handschaltung",
+      "summary": "In der F-Generation ist die Wandlerautomatik der Regelfall. Beim Handschalter gelten dieselben Prüfungen wie seit dem E36 — nach der Getriebebestimmung.",
+      "points": [
+        "Zuerst das Getriebe bestimmen; beim Wandlerfahrzeug gehören Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte. Sorte nie raten",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Bei xDrive kommt das Verteilergetriebe als eigene Geräuschquelle dazu — Ruckeln beim Rangieren gehört dorthin"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-113"
+      ]
     }
   ]
 }

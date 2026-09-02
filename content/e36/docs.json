@@ -519,6 +519,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E36-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E36 · Ölwechsel, Synchronringe, Schaltweg abgrenzen",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 wird der Getriebeschaden oft dort vermutet, wo nur die Schaltmechanik ausgeschlagen ist. Die Unterscheidung kostet nichts und spart einen Getriebeausbau.",
+      "points": [
+        "Schwammiger, unpräziser Schaltweg mit sauber einlegenden Gängen: das ist die Schaltmechanik, nicht das Getriebe. Sie wird getrennt geführt und ist ungleich billiger",
+        "Kratzen beim Einlegen trotz sauberem Schaltweg: Synchronring. Zuerst Ölwechsel mit vorgeschriebener Sorte versuchen",
+        "Zweiter Gang zuerst auffällig",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar",
+        "Bei jeder Kupplungsarbeit die Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-113"
+      ]
     }
   ]
 }

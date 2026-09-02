@@ -526,6 +526,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E39-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E39 · Ölservice, Lagergeräusche, Simmerring am Eingang",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 hängt die Getriebearbeit eng an der Kupplung: Was am Eingang undicht ist, erreicht man nur mit abgenommenem Getriebe — also in einem Zug mit der Kupplung oder gar nicht.",
+      "points": [
+        "Ölspuren im Kupplungsgehäuse: Simmerring am Getriebeeingang oder an der Kurbelwelle. Beide nur bei abgenommenem Getriebe erreichbar — bei Kupplungsarbeit mitmachen, sonst verölt der neue Belag",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar",
+        "Heulen mit dem Gang: Getriebe. Nur mit der Geschwindigkeit: Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-113"
+      ]
     }
   ]
 }

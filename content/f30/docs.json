@@ -533,6 +533,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F30 · Ölservice, Schaltweg, xDrive abgrenzen",
+      "valid": "F30, F31 · 2011–2019 · Handschaltung",
+      "summary": "Beim F30 ist der Handschalter noch verbreitet. Die Fehlersuche folgt derselben Reihenfolge wie in den älteren Baureihen — mit dem Verteilergetriebe als zusätzlichem Kandidaten.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch; Sorte nie raten",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe, nicht zum Schaltgetriebe",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-113"
+      ]
     }
   ]
 }

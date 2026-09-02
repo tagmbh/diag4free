@@ -467,6 +467,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E34-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E34 · Ölservice, Lagergeräusche, Ausrücksystem abgrenzen",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Beim E34 lohnt sich die Abgrenzung nach vorn: Ein Geräusch, das beim Treten der Kupplung verschwindet oder erscheint, gehört nicht ins Getriebe.",
+      "points": [
+        "Geräusch verschwindet beim Treten der Kupplung: Getriebeeingangslager. Es entsteht beim Treten: Ausrücklager. Diese eine Frage trennt zwei Baugruppen",
+        "Kalt hakender Gang: zuerst Ölwechsel mit vorgeschriebener Sorte",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch. Am Eingang: Simmerring, nur bei abgenommenem Getriebe erreichbar",
+        "Heulen mit dem Gang gehört ins Getriebe; Heulen nur mit der Geschwindigkeit ins Achsgetriebe oder Radlager",
+        "Getriebeöl nie raten — falsche Sorte verschlechtert das Schaltverhalten dauerhaft"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-113"
+      ]
     }
   ]
 }

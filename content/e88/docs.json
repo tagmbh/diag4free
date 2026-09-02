@@ -532,6 +532,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E88-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E88 · Ölservice, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Das Getriebe entspricht dem des E87. Im Cabrio kommt die übliche Zusatzfrage dazu: Kommt das Geräusch aus dem Antriebsstrang oder aus dem Aufbau?",
+      "points": [
+        "Erste Frage: Antriebsstrang oder Aufbau? Ein Geräusch, das sich mit Gang und Drehzahl ändert, gehört zum Strang; eines, das sich beim Verwinden ändert, zur Karosserie",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Das Mehrgewicht des Cabrios belastet den Antriebsstrang stärker als beim Schrägheck"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-113"
+      ]
     }
   ]
 }

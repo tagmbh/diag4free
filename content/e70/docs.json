@@ -496,6 +496,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E70-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E70 · Handschaltung als Ausnahme, sonst Automatik",
+      "valid": "E70 · 2006–2013 · Handschaltung nur in seltenen Ausführungen",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Die erste Handlung ist deshalb die Getriebebestimmung — sonst sucht man in einer Baugruppe, die das Fahrzeug nicht hat.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Bei der Wandlerautomatik gehören Schaltbefunde, Ruckeln und Verzögerungen in die Gruppe des Automatikgetriebes",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe — weder Schalt- noch Automatikgetriebe",
+        "Beim seltenen Handschalter: schwammiger Schaltweg bei sauber einlegenden Gängen ist die Schaltmechanik",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-113"
+      ]
     }
   ]
 }

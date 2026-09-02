@@ -602,6 +602,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E30-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E30 · Ölwechsel, zweiter Gang, Simmerringe",
+      "valid": "E30 · 1982–1994 · Handschaltung",
+      "summary": "Am E30 sind Getriebebefunde meist ein Verschleißbild, das mit dem Öl beginnt. Der aufwendige Weg lohnt sich erst, wenn der billige nichts gebracht hat.",
+      "points": [
+        "Kalt hakender Gang, der warm besser wird: zuerst Ölwechsel mit vorgeschriebener Sorte. Das ist der billigste Versuch und hilft öfter, als man denkt",
+        "Zweiter Gang zuerst auffällig — er arbeitet beim Herunterschalten am meisten",
+        "Getriebeöl nie raten: falsche Sorte verschlechtert das Schaltverhalten dauerhaft",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar. Am Eingang: Simmerring, nur bei abgenommenem Getriebe",
+        "Bei jeder Kupplungsarbeit die Simmerringe mitmachen — sie sind später nur mit demselben Aufwand erreichbar",
+        "Heulen mit dem Gang: Getriebe. Heulen nur mit der Geschwindigkeit: Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-113"
+      ]
     }
   ]
 }

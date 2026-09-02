@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T01:50:40.679Z",
+  "generated": "2026-09-02T02:11:19.658Z",
   "version": "dev",
   "models": {
     "groups": [
@@ -717,6 +717,29 @@
       "model": "e28"
     },
     {
+      "id": "D4F-E28-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E28 · Ölservice, Synchronringe, Undichtigkeiten",
+      "valid": "E28 · 1981–1988 · Handschaltung",
+      "summary": "Das Getriebe des E28 ist robust und wartungsarm — was dazu geführt hat, dass sein Öl bei vielen Fahrzeugen noch nie gewechselt wurde. Ein hakender zweiter Gang ist deshalb oft kein Synchronbefund.",
+      "points": [
+        "Hakt ein Gang nur im kalten Zustand und wird warm besser, ist das ein Öl- und Synchronthema, kein Getriebeschaden. Der Ölwechsel ist der billigste erste Versuch",
+        "Getriebeöl: Sorte und Menge sind vorgeschrieben und dürfen nicht geraten werden. Bei fehlender Unterlage lieber nachschlagen als ein beliebiges Öl einfüllen — falsches Öl verschlechtert das Schaltverhalten dauerhaft",
+        "Der zweite Gang ist der übliche erste Verschleißkandidat, weil er beim Herunterschalten am meisten arbeitet",
+        "Ölaustritt am Getriebeeingang: Simmerring. Er ist nur bei abgenommenem Getriebe erreichbar — bei jeder Kupplungsarbeit mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring zum Gelenkwellenflansch, ohne Getriebeausbau erreichbar",
+        "Heulen, das sich mit dem Gang ändert, kommt aus dem Getriebe; Heulen, das nur mit der Geschwindigkeit geht, aus Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E28-113"
+      ],
+      "model": "e28"
+    },
+    {
       "id": "D4F-E30-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1344,6 +1367,29 @@
       "model": "e30"
     },
     {
+      "id": "D4F-E30-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E30 · Ölwechsel, zweiter Gang, Simmerringe",
+      "valid": "E30 · 1982–1994 · Handschaltung",
+      "summary": "Am E30 sind Getriebebefunde meist ein Verschleißbild, das mit dem Öl beginnt. Der aufwendige Weg lohnt sich erst, wenn der billige nichts gebracht hat.",
+      "points": [
+        "Kalt hakender Gang, der warm besser wird: zuerst Ölwechsel mit vorgeschriebener Sorte. Das ist der billigste Versuch und hilft öfter, als man denkt",
+        "Zweiter Gang zuerst auffällig — er arbeitet beim Herunterschalten am meisten",
+        "Getriebeöl nie raten: falsche Sorte verschlechtert das Schaltverhalten dauerhaft",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar. Am Eingang: Simmerring, nur bei abgenommenem Getriebe",
+        "Bei jeder Kupplungsarbeit die Simmerringe mitmachen — sie sind später nur mit demselben Aufwand erreichbar",
+        "Heulen mit dem Gang: Getriebe. Heulen nur mit der Geschwindigkeit: Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E30-113"
+      ],
+      "model": "e30"
+    },
+    {
       "id": "D4F-E34-001",
       "type": "PIN",
       "gruppe": "D1",
@@ -1828,6 +1874,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e34"
+    },
+    {
+      "id": "D4F-E34-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E34 · Ölservice, Lagergeräusche, Ausrücksystem abgrenzen",
+      "valid": "E34 · 1987–1997 · Handschaltung",
+      "summary": "Beim E34 lohnt sich die Abgrenzung nach vorn: Ein Geräusch, das beim Treten der Kupplung verschwindet oder erscheint, gehört nicht ins Getriebe.",
+      "points": [
+        "Geräusch verschwindet beim Treten der Kupplung: Getriebeeingangslager. Es entsteht beim Treten: Ausrücklager. Diese eine Frage trennt zwei Baugruppen",
+        "Kalt hakender Gang: zuerst Ölwechsel mit vorgeschriebener Sorte",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch. Am Eingang: Simmerring, nur bei abgenommenem Getriebe erreichbar",
+        "Heulen mit dem Gang gehört ins Getriebe; Heulen nur mit der Geschwindigkeit ins Achsgetriebe oder Radlager",
+        "Getriebeöl nie raten — falsche Sorte verschlechtert das Schaltverhalten dauerhaft"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E34-113"
+      ],
       "model": "e34"
     },
     {
@@ -2370,6 +2439,29 @@
       "model": "e36"
     },
     {
+      "id": "D4F-E36-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E36 · Ölwechsel, Synchronringe, Schaltweg abgrenzen",
+      "valid": "E36 · 1989–2002 · Handschaltung",
+      "summary": "Am E36 wird der Getriebeschaden oft dort vermutet, wo nur die Schaltmechanik ausgeschlagen ist. Die Unterscheidung kostet nichts und spart einen Getriebeausbau.",
+      "points": [
+        "Schwammiger, unpräziser Schaltweg mit sauber einlegenden Gängen: das ist die Schaltmechanik, nicht das Getriebe. Sie wird getrennt geführt und ist ungleich billiger",
+        "Kratzen beim Einlegen trotz sauberem Schaltweg: Synchronring. Zuerst Ölwechsel mit vorgeschriebener Sorte versuchen",
+        "Zweiter Gang zuerst auffällig",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar",
+        "Bei jeder Kupplungsarbeit die Simmerringe mitmachen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E36-113"
+      ],
+      "model": "e36"
+    },
+    {
       "id": "D4F-E38-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -2857,6 +2949,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e38"
+    },
+    {
+      "id": "D4F-E38-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E38 · Handschaltung selten, Ölservice, Abgrenzung zum Wandler",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend Automatik. Wer einen Handschalter vor sich hat, arbeitet wie bei den kleineren Baureihen — mit dem Vorbehalt, dass Teile schwerer zu bekommen sind.",
+      "points": [
+        "Erst klären, ob überhaupt ein Schaltgetriebe verbaut ist. Beim Wandlerfahrzeug gehören Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch. Am Eingang nur bei abgenommenem Getriebe",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären — das ist oft der längere Teil der Reparatur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-113"
+      ],
       "model": "e38"
     },
     {
@@ -3404,6 +3519,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e39"
+    },
+    {
+      "id": "D4F-E39-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E39 · Ölservice, Lagergeräusche, Simmerring am Eingang",
+      "valid": "E39 · 1995–2004 · Handschaltung",
+      "summary": "Beim E39 hängt die Getriebearbeit eng an der Kupplung: Was am Eingang undicht ist, erreicht man nur mit abgenommenem Getriebe — also in einem Zug mit der Kupplung oder gar nicht.",
+      "points": [
+        "Ölspuren im Kupplungsgehäuse: Simmerring am Getriebeeingang oder an der Kurbelwelle. Beide nur bei abgenommenem Getriebe erreichbar — bei Kupplungsarbeit mitmachen, sonst verölt der neue Belag",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar",
+        "Heulen mit dem Gang: Getriebe. Nur mit der Geschwindigkeit: Achsgetriebe oder Radlager"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E39-113"
+      ],
       "model": "e39"
     },
     {
@@ -3993,6 +4131,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e46"
+    },
+    {
+      "id": "D4F-E46-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E46 · Ölservice, Synchronringe, alles in einem Zug",
+      "valid": "E46 · 1997–2006 · Handschaltung",
+      "summary": "Am E46 ist der Getriebeausbau der teure Teil. Deshalb entscheidet die Vorprüfung, ob er nötig ist — und wenn ja, was in demselben Arbeitsgang mitgemacht wird.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe. Das ist der häufigste vermeidbare Ausbau",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: zuerst Ölwechsel mit vorgeschriebener Sorte",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Bei abgenommenem Getriebe immer mitmachen: Simmerring am Eingang, Simmerring an der Kurbelwelle, Führungshülse, Ausrücklager und Pilotlager",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E46-113"
+      ],
       "model": "e46"
     },
     {
@@ -4592,6 +4753,29 @@
       "model": "e60"
     },
     {
+      "id": "D4F-E60-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E60 · Getriebe bestimmen, Ölservice, Schaltweg abgrenzen",
+      "valid": "E60 · 2003–2010 · Handschaltung",
+      "summary": "Beim E60 steht die Getriebebestimmung am Anfang. Danach gelten dieselben zwei Fragen wie bei den älteren Baureihen — Schaltweg oder Getriebe, Eingangslager oder Ausrücklager.",
+      "points": [
+        "Zuerst klären: Schaltgetriebe oder Wandlerautomatik. Beim Wandlerfahrzeug gehören Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E60-113"
+      ],
+      "model": "e60"
+    },
+    {
       "id": "D4F-E70-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -5105,6 +5289,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e70"
+    },
+    {
+      "id": "D4F-E70-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E70 · Handschaltung als Ausnahme, sonst Automatik",
+      "valid": "E70 · 2006–2013 · Handschaltung nur in seltenen Ausführungen",
+      "summary": "Der E70 ist praktisch immer ein Automatikfahrzeug. Die erste Handlung ist deshalb die Getriebebestimmung — sonst sucht man in einer Baugruppe, die das Fahrzeug nicht hat.",
+      "points": [
+        "Zuerst das Getriebe bestimmen. Bei der Wandlerautomatik gehören Schaltbefunde, Ruckeln und Verzögerungen in die Gruppe des Automatikgetriebes",
+        "Ruckeln beim Rangieren ist am xDrive das Verteilergetriebe — weder Schalt- noch Automatikgetriebe",
+        "Beim seltenen Handschalter: schwammiger Schaltweg bei sauber einlegenden Gängen ist die Schaltmechanik",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E70-113"
+      ],
       "model": "e70"
     },
     {
@@ -5713,6 +5920,29 @@
       "model": "e87"
     },
     {
+      "id": "D4F-E87-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E87 · Ölservice, Schaltweg, Simmerringe",
+      "valid": "E87 · 2004–2013 · Handschaltung",
+      "summary": "Der E87 ist häufig ein Handschalter. Entsprechend oft kommt die Frage, ob das Getriebe defekt ist — und entsprechend oft lautet die Antwort: nein, die Schaltmechanik.",
+      "points": [
+        "Schwammiger, unpräziser Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe. Der billigste Ausschluss dieser Gruppe",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse, Ausrück- und Pilotlager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E87-113"
+      ],
+      "model": "e87"
+    },
+    {
       "id": "D4F-E88-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -6260,6 +6490,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "e88"
+    },
+    {
+      "id": "D4F-E88-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E88 · Ölservice, Aufbaugeräusche abgrenzen",
+      "valid": "E88 · 2007–2013 · Handschaltung",
+      "summary": "Das Getriebe entspricht dem des E87. Im Cabrio kommt die übliche Zusatzfrage dazu: Kommt das Geräusch aus dem Antriebsstrang oder aus dem Aufbau?",
+      "points": [
+        "Erste Frage: Antriebsstrang oder Aufbau? Ein Geräusch, das sich mit Gang und Drehzahl ändert, gehört zum Strang; eines, das sich beim Verwinden ändert, zur Karosserie",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Das Mehrgewicht des Cabrios belastet den Antriebsstrang stärker als beim Schrägheck"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E88-113"
+      ],
       "model": "e88"
     },
     {
@@ -6990,6 +7243,29 @@
       "model": "e90"
     },
     {
+      "id": "D4F-E90-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E90 · Schaltweg vor Getriebe, Ölservice, Simmerringe",
+      "valid": "E90 · 2005–2013 · Handschaltung",
+      "summary": "Am E90 ist der Getriebeausbau aufwendig und die Schaltmechanik der häufigste Grund für ein schlechtes Schaltgefühl. Die Reihenfolge entscheidet über die Rechnung.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik. Vor jedem Getriebeverdacht prüfen",
+        "Kratzen beim Einlegen, kalt schlimmer als warm: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Zweiter Gang als erster Verschleißkandidat",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse, Ausrück- und Pilotlager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-113"
+      ],
+      "model": "e90"
+    },
+    {
       "id": "D4F-F-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -7641,6 +7917,29 @@
       "model": "f10"
     },
     {
+      "id": "D4F-F10-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F10 · Getriebe bestimmen, Ölservice, Schaltweg",
+      "valid": "F10, F11 · 2010–2017 · Handschaltung",
+      "summary": "In der F-Generation ist die Wandlerautomatik der Regelfall. Beim Handschalter gelten dieselben Prüfungen wie seit dem E36 — nach der Getriebebestimmung.",
+      "points": [
+        "Zuerst das Getriebe bestimmen; beim Wandlerfahrzeug gehören Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte. Sorte nie raten",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Bei xDrive kommt das Verteilergetriebe als eigene Geräuschquelle dazu — Ruckeln beim Rangieren gehört dorthin"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F10-113"
+      ],
+      "model": "f10"
+    },
+    {
       "id": "D4F-F15-001",
       "type": "TOOL",
       "gruppe": "D2",
@@ -8119,6 +8418,27 @@
       "engines": [],
       "details": [
         "D4F-F15-107"
+      ],
+      "model": "f15"
+    },
+    {
+      "id": "D4F-F15-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F15 · Entfällt — nur Wandlerautomatik ab Werk",
+      "valid": "F15, F16 · 2013–2018",
+      "summary": "Der F15 wurde ab Werk nur mit Wandlerautomatik ausgeliefert. Ein Schaltgetriebe gibt es an diesem Fahrzeug nicht. Dieser Eintrag steht hier, damit die Suche zur richtigen Baugruppe führt statt ins Leere.",
+      "points": [
+        "Es gibt kein Schaltgetriebe. Schaltbefunde, Ruckeln und Verzögerungen beim Gangwechsel gehören zur Wandlerautomatik — Gruppe 24, mit Ölstand und Adaption als den beiden ersten Prüfschritten",
+        "Ruckeln beim Rangieren und beim engen Wenden ist das Verteilergetriebe des xDrive und keine Getriebefrage",
+        "Ein Heulen, das sich mit der Fahrgeschwindigkeit und nicht mit der Fahrstufe ändert, gehört zum Achsgetriebe oder zu den Radlagern — Gruppe 33",
+        "Wer an einem umgebauten Fahrzeug tatsächlich ein Schaltgetriebe vorfindet, arbeitet nach dem Verfahren der Schaltergenerationen: Schaltweg vor Getriebe, dann Ölwechsel, erst dann Ausbau"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F15-113"
       ],
       "model": "f15"
     },
@@ -8628,6 +8948,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "f22"
+    },
+    {
+      "id": "D4F-F22-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F22 · Schaltweg, Ölservice, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019 · Handschaltung",
+      "summary": "Der F22 ist eine der letzten Baureihen mit verbreitetem Handschalter. Bei den drehmomentstarken Ausführungen zeigt sich Verschleiß früher — die Prüfreihenfolge bleibt dieselbe.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte; Sorte nie raten",
+        "Bei den drehmomentstarken M-Ausführungen zeigen sich Synchron- und Lagerbefunde früher",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-113"
+      ],
       "model": "f22"
     },
     {
@@ -9181,6 +9524,29 @@
       "pins": [],
       "engines": [],
       "details": [],
+      "model": "f30"
+    },
+    {
+      "id": "D4F-F30-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe F30 · Ölservice, Schaltweg, xDrive abgrenzen",
+      "valid": "F30, F31 · 2011–2019 · Handschaltung",
+      "summary": "Beim F30 ist der Handschalter noch verbreitet. Die Fehlersuche folgt derselben Reihenfolge wie in den älteren Baureihen — mit dem Verteilergetriebe als zusätzlichem Kandidaten.",
+      "points": [
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch; Sorte nie raten",
+        "Bei xDrive gehört Ruckeln beim Rangieren zum Verteilergetriebe, nicht zum Schaltgetriebe",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Bei abgenommenem Getriebe Simmerringe, Führungshülse und Ausrücklager mitmachen",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch, ohne Ausbau erreichbar"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F30-113"
+      ],
       "model": "f30"
     }
   ],
@@ -16368,26 +16734,26 @@
     }
   },
   "stats": {
-    "total_docs": 332,
+    "total_docs": 348,
     "total_guides": 40,
     "per_model": {
-      "e28": 18,
-      "e30": 25,
-      "e34": 20,
-      "e36": 20,
-      "e38": 20,
-      "e39": 21,
-      "e46": 22,
-      "e60": 21,
-      "e70": 20,
-      "e87": 21,
-      "e88": 18,
-      "e90": 23,
+      "e28": 19,
+      "e30": 26,
+      "e34": 21,
+      "e36": 21,
+      "e38": 21,
+      "e39": 22,
+      "e46": 23,
+      "e60": 22,
+      "e70": 21,
+      "e87": 22,
+      "e88": 19,
+      "e90": 24,
       "f-series": 5,
-      "f10": 19,
-      "f15": 19,
-      "f22": 20,
-      "f30": 20
+      "f10": 20,
+      "f15": 20,
+      "f22": 21,
+      "f30": 21
     }
   }
 }

@@ -470,6 +470,28 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E38-114",
+      "type": "GUIDE",
+      "gruppe": "23",
+      "cat": "Schaltgetriebe",
+      "title": "Schaltgetriebe E38 · Handschaltung selten, Ölservice, Abgrenzung zum Wandler",
+      "valid": "E38 · 1993–2001 · nur Handschaltung, in dieser Baureihe selten",
+      "summary": "Der E38 ist überwiegend Automatik. Wer einen Handschalter vor sich hat, arbeitet wie bei den kleineren Baureihen — mit dem Vorbehalt, dass Teile schwerer zu bekommen sind.",
+      "points": [
+        "Erst klären, ob überhaupt ein Schaltgetriebe verbaut ist. Beim Wandlerfahrzeug gehören Schaltbefunde in die Gruppe des Automatikgetriebes",
+        "Schwammiger Schaltweg bei sauber einlegenden Gängen: Schaltmechanik, nicht Getriebe",
+        "Kalt hakender Gang: Ölwechsel mit vorgeschriebener Sorte als erster Versuch",
+        "Geräusch verschwindet beim Treten der Kupplung: Eingangslager. Es entsteht beim Treten: Ausrücklager",
+        "Ölaustritt am Ausgang: Wellendichtring am Flansch. Am Eingang nur bei abgenommenem Getriebe",
+        "Teileverfügbarkeit bei seltenen Ausführungen vorher klären — das ist oft der längere Teil der Reparatur"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E38-113"
+      ]
     }
   ]
 }
