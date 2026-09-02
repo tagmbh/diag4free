@@ -741,6 +741,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F30-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach und Panoramadach F30 - Ablaeufe und Anlernen",
+      "valid": "F30 - 2011-2019",
+      "summary": "Am F30 endet der Dachablauf unten an der Karosserie, weit vom Dach entfernt. Wer den nassen Teppich am Dach sucht, sucht am falschen Ende.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Der nasse Teppich ist die Folge eines stehenden Ablaufs",
+        "Die Ablaeufe unten an der Austrittsstelle pruefen und reinigen. Am Dachrahmen ist der Ablauf fast immer frei",
+        "Der Schlauch loest sich am Anschluss haeufiger, als er verstopft. Frei heisst nicht angeschlossen",
+        "Beim Panoramadach sind Rollo und Glasdeckel zwei Antriebe. Welcher ausfaellt, grenzt den Befund ein",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor ein unvollstaendig fahrendes Dach als defekt gilt",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

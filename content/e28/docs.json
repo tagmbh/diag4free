@@ -647,6 +647,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E28-128",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Schiebehebedach E28 - Ablaeufe, Fuehrungen, Notbetaetigung",
+      "valid": "E28 - 1981-1987",
+      "summary": "Am E28 ist der nasse Himmel kein Dichtungsschaden. Das Dach hat eine Regenrinne, und wenn deren Ablauf steht, laeuft das Wasser nach innen. Diese Gruppe ordnet Ablauf, Mechanik und Notbetaetigung.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Ein nasser Himmel ist deshalb ein Ablaufbefund und kein Dichtungsbefund",
+        "Die Ablaeufe enden weit vom Dach entfernt. Die Suche endet unten an der Austrittsstelle, nicht oben am Dachrahmen -- wer nur am Dach schaut, findet die Verstopfung nicht",
+        "Bei Fahrzeugen dieses Alters ist die Rinne selbst oft durchgerostet. Dann ist der Ablauf frei und das Wasser laeuft trotzdem hinein",
+        "Nie mit Draht stochern. Ein durchstossener Schlauch leitet das Wasser danach in die Karosserie statt daneben -- aus einem Ablaufproblem wird ein Rostproblem",
+        "Fuehrungen und Mechanik freigaengig halten, bevor der Antrieb verdaechtigt wird. Ein schwergaengiges Dach laesst den Antrieb abschalten, und das sieht aus wie ein Antriebsschaden",
+        "Die Notbetaetigung gehoert zur Diagnose: Laesst sich das Dach von Hand sauber bewegen, ist die Mechanik in Ordnung und der Befund liegt beim Antrieb"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

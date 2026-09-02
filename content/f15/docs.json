@@ -685,6 +685,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F15-126",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach F15 - Grosse Rinne, vier Ablaeufe, Rollo",
+      "valid": "F15 - 2013-2018",
+      "summary": "Das Panoramadach des F15 sammelt viel Wasser und leitet es ueber vier Ablaeufe ab. Steht einer davon, kommt das Wasser innen an -- nicht durch die Dichtung, sondern ueber die Rinne.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- je groesser die Flaeche, desto mehr haengt am Ablauf",
+        "Vier Ablaeufe getrennt beurteilen. Eine nasse Ecke benennt die Stelle, ein nasser Teppich nicht",
+        "Die Ablaeufe enden unten an der Karosserie. Geprueft wird dort, nicht am Dachrahmen",
+        "Rollo und Glasdeckel sind zwei Antriebe. Faellt nur einer aus, ist der Befund bereits eingegrenzt",
+        "Nach Spannungsverlust die Endlagen anlernen. Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand, keine Stoerung",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch fuehrt das Wasser in den Hohlraum"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

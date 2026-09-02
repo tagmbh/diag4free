@@ -913,6 +913,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-E90-125",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Panoramadach und Schiebedach E90 - Ablaeufe am Schweller",
+      "valid": "E90 - 2004-2013",
+      "summary": "Beim E90 und E91 enden die vorderen Dachablaeufe unten an der Karosserie, weit hinter dem Dach. Genau dort sitzt die Verstopfung -- und genau dort schaut kaum jemand.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus. Tropft es aus dem Himmel, steht der Ablauf",
+        "Die vorderen Ablaeufe enden unten am Schweller hinter dem Radkasten. Die Enden lassen sich dort abziehen und reinigen -- am Dachrahmen ist der Ablauf meist frei",
+        "Vier Ablaeufe getrennt beurteilen. Eine nasse Ecke sagt mehr als ein nasser Teppich",
+        "Nicht mit Draht stochern. Der durchstossene Schlauch entlaesst das Wasser in den Hohlraum, und der Schaden zeigt sich Jahre spaeter als Rost",
+        "Beim Panoramadach sind Rollo und Glasdeckel zwei Antriebe. Welcher ausfaellt, grenzt den Befund ein",
+        "Nach Spannungsverlust die Endlagen anlernen, bevor das Dach als defekt gilt"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

@@ -151,6 +151,26 @@
       "pins": [],
       "engines": [],
       "details": []
+    },
+    {
+      "id": "D4F-F-104",
+      "type": "GUIDE",
+      "gruppe": "54",
+      "cat": "Dach",
+      "title": "Dachsysteme F-Baureihen - Was sich gegenueber den E-Baureihen aendert",
+      "valid": "F-Baureihen - ab 2010",
+      "summary": "In den F-Baureihen sind Dach und Rollo Funktionen mit Endlagen, Freigaben und Einklemmschutz. Die Wasserfuehrung dagegen ist unveraendert eine Rinne mit vier Ablaeufen.",
+      "points": [
+        "Ein Schiebedach ist nicht dicht -- es hat eine Regenrinne. Wasser gehoert hinein, es muss nur wieder heraus -- das gilt in jeder Baureihe und aendert sich mit der Elektronik nicht",
+        "Endlagen sind lernbare Werte und gehen bei Spannungsverlust verloren. Anlernen steht vor dem Urteil, nicht danach",
+        "Ein ansprechender Einklemmschutz ist eine Meldung ueber Widerstand. Erst die Mechanik freigaengig machen, dann die Elektrik beurteilen",
+        "Rollo und Glasdeckel sind getrennte Antriebe. Welcher ausfaellt, ist bereits die halbe Diagnose",
+        "Ablaeufe unten an der Austrittsstelle pruefen. Die Verstopfung sitzt dort, wo der Ablauf endet, und nicht dort, wo er anfaengt",
+        "Nie mit Draht in den Ablauf. Der durchstossene Schlauch macht aus einem Ablaufproblem ein Rostproblem"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }
