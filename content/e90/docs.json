@@ -770,6 +770,29 @@
       "details": [
         "D4F-E90-115"
       ]
+    },
+    {
+      "id": "D4F-E90-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E90 · Reifenpannenanzeige zurücksetzen, Encoderring beachten",
+      "valid": "E90 · 2005–2013",
+      "summary": "Am E90 hängt die Reifenpannenanzeige an denselben Raddrehzahlgebern wie die DSC. Wer das weiß, deutet einen Doppelbefund richtig.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Reifenpannenanzeige und DSC gleichzeitig gestoert: Das ist ein Raddrehzahlbefund, nicht zwei Fehler. Der Geberring sitzt im Radlager und geht nur mit ihm",
+        "Radbolzen nach Herstellervorgabe anziehen und nachziehen; den Wert nie schaetzen"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-E90-103",
+        "D4F-E90-108"
+      ]
     }
   ]
 }

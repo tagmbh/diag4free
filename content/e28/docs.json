@@ -490,6 +490,26 @@
       "details": [
         "D4F-E28-115"
       ]
+    },
+    {
+      "id": "D4F-E28-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen E28 · Auswuchten, Radbolzen, Reifenalter",
+      "valid": "E28 · 1981–1988",
+      "summary": "Diese Baureihe hat in aller Regel keine elektronische Reifendrucküberwachung. Damit ist die Gruppe rein mechanisch — und die häufigste Klage, ein zitterndes Lenkrad, hat eine klare Prüfreihenfolge.",
+      "points": [
+        "Radbolzen nach Herstellervorgabe anziehen und nach kurzer Fahrstrecke nachziehen. Den Wert nie schaetzen -- zu fest verzieht die Bremsscheibe, zu locker loest sich das Rad",
+        "Lenkradzittern bei bestimmter Geschwindigkeit ist zuerst eine Auswuchtfrage. Erst wenn das Auswuchten nichts bringt, lohnt der Blick auf Bremsscheibe und Fahrwerk",
+        "Unwucht, die nach dem Auswuchten wiederkommt: Reifen mit Hoehen- oder Seitenschlag, verzogene Felge oder Schmutz auf der Nabenauflage",
+        "Nabenauflage bei jedem Radwechsel reinigen. Rost dort erzeugt Unwucht und verhindert das plane Anliegen",
+        "Reifenalter mitpruefen: Gummi altert zeitabhaengig, unabhaengig vom Profil. Ein Reifen mit viel Profil kann trotzdem hart und rissig sein",
+        "Ungleichmaessiger Reifenverschleiss ist ein Achsbefund, kein Reifenbefund -- Spur und Sturz pruefen, bevor neue Reifen aufgezogen werden"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": []
     }
   ]
 }

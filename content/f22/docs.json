@@ -554,6 +554,28 @@
       "details": [
         "D4F-F22-115"
       ]
+    },
+    {
+      "id": "D4F-F22-117",
+      "type": "GUIDE",
+      "gruppe": "36",
+      "cat": "Räder und Reifen",
+      "title": "Räder und Reifen F22 · Druckkontrolle, Mischbereifung, M-Ausführungen",
+      "valid": "F20, F21, F22, F23 · 2011–2019",
+      "summary": "Beim F22 kommt eine Besonderheit dazu, die zu Fehldeutungen führt: Bei Mischbereifung sind vorn und hinten unterschiedliche Größen und Drücke vorgesehen.",
+      "points": [
+        "Zuerst klaeren, welches System verbaut ist: eine Reifendruckkontrolle mit Sensoren in den Raedern oder eine Reifenpannenanzeige ohne Sensoren, die den Druckverlust aus den Raddrehzahlen ableitet. Alles Weitere haengt an dieser Antwort",
+        "Ohne Sensoren: Das System vergleicht die Raeder untereinander. Ein gleichmaessiger Druckverlust an allen vier Raedern wird deshalb nicht erkannt -- das ist keine Stoerung, sondern die Grenze des Verfahrens, und sie gehoert dem Fahrer gesagt",
+        "Ohne Sensoren haengt die Ueberwachung an den Raddrehzahlgebern. Ein Sensor- oder Encoderringfehler legt sie mit still; wer beides zugleich sieht, hat einen Befund, nicht zwei",
+        "Nach jeder Druckkorrektur und nach jedem Radwechsel zuruecksetzen. Ein haeufiger Fehler ist, den Taster zu kurz zu druecken -- die Bestaetigung abwarten, sonst laeuft die Initialisierung nicht an",
+        "Mischbereifung: Vorne und hinten koennen unterschiedliche Groessen und Druecke vorgeschrieben sein. Ein Radtausch von vorn nach hinten ist dann nicht zulaessig",
+        "Sensoren im Rad haben eine eingebaute Batterie ohne Wechselmoeglichkeit; ein zweiter Radsatz braucht eigene"
+      ],
+      "pins": [],
+      "engines": [],
+      "details": [
+        "D4F-F22-103"
+      ]
     }
   ]
 }
